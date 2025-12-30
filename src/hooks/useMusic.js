@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { db } from "../../firebase-config";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
 export function useMusic() {
   const [songs, setSongs] = useState([]);
@@ -8,26 +6,31 @@ export function useMusic() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchSongs = async () => {
+    let cancelled = false;
+
+    (async () => {
       try {
-        const q = query(collection(db, "songs"), orderBy("createdAt", "desc"));
-        const snapshot = await getDocs(q);
+        setLoading(true);
+        setError(null);
 
-        const list = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
+        const res = await fetch("/api/songs");
+        if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
 
-        setSongs(list);
+        const json = await res.json();
+        const list = json?.songs ?? [];
+
+        if (!cancelled) setSongs(list);
       } catch (err) {
-        console.error("Lỗi load bài hát:", err);
-        setError(err.message);
+        console.error(err);
+        if (!cancelled) setError(err?.message || "Unknown error");
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
-    };
+    })();
 
-    fetchSongs();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return { songs, loading, error };
