@@ -1,37 +1,37 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export function useMusic() {
+export function useMusic(albumId) {
   const [songs, setSongs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
 
+    // chưa chọn album -> không load songs
+    if (!albumId) {
+      setSongs([]);
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
     (async () => {
       try {
         setLoading(true);
-        setError(null);
-
-        const res = await fetch("/api/songs");
-        if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
-
+        const res = await fetch(`/api/songs?albumId=${encodeURIComponent(albumId)}`);
+        if (!res.ok) throw new Error(`Fetch songs failed: ${res.status}`);
         const json = await res.json();
-        const list = json?.songs ?? [];
-
-        if (!cancelled) setSongs(list);
-      } catch (err) {
-        console.error(err);
-        if (!cancelled) setError(err?.message || "Unknown error");
+        if (!cancelled) setSongs(json?.songs ?? []);
+      } catch (e) {
+        if (!cancelled) setError(e.message);
       } finally {
         if (!cancelled) setLoading(false);
       }
     })();
 
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+    return () => { cancelled = true; };
+  }, [albumId]);
 
   return { songs, loading, error };
 }
