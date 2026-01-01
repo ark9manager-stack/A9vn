@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useAlbums } from "../hooks/useAlbums";
 import { useMusic } from "../hooks/useMusic";
 
@@ -8,27 +8,27 @@ import Pagination from "../components/Music/Pagination";
 
 import MusicDetailModal from "../components/Music/MusicDetailModal";
 import Rightbar from "../components/Music/Rightbar";
-import { songsData } from "../assets/icon-assets/assets";
 
 const Music = () => {
+  // Grid luôn hiển thị album
   const { albums, loading: loadingAlbums, error: errorAlbums } = useAlbums();
-  const [selectedAlbum, setSelectedAlbum] = useState(null);
-  const {
-    songs: rawSongs,
-    loading: loadingSongs,
-    error: errorSongs,
-  } = useMusic(selectedAlbum?.id);
 
+  // Album được chọn -> load songs để đưa vào playlist (Rightbar)
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
+  const { songs: rawSongs, loading: loadingSongs, error: errorSongs } = useMusic(
+    selectedAlbum?.id
+  );
+
+  // UI state
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  const [selectedMusic, setSelectedMusic] = useState(null);
   const [rightbarOpen, setRightbarOpen] = useState(false);
+  const [selectedMusic, setSelectedMusic] = useState(null);
+  const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
-  // View mode
-  const viewingAlbums = !selectedAlbum;
-
+  // Album cards cho grid
   const albumItems = useMemo(() => {
     return (albums ?? []).map((a) => ({
       id: a.id,
@@ -39,37 +39,20 @@ const Music = () => {
     }));
   }, [albums]);
 
-  const songItems = useMemo(() => {
-    return (rawSongs ?? []).map((s) => ({
-      name: s.name ?? s.song_name ?? "",
-      desc: selectedAlbum?.name ?? "",
-      image: selectedAlbum?.url ?? "",
-      audio: s.audio ?? s.url_song ?? s.urlSong ?? "",
-      lyrics: s.lyrics ?? s.url_lyric ?? s.urlLyric ?? null,
-      id_list: s.id_list ?? s.idList,
-    }));
-  }, [rawSongs, selectedAlbum]);
-
-  const listToShow = viewingAlbums ? albumItems : songItems;
-
-  const loading = viewingAlbums ? loadingAlbums : loadingSongs;
-  const error = viewingAlbums ? errorAlbums : errorSongs;
-
-  const filteredList = useMemo(() => {
+  // Search chỉ áp dụng cho album
+  const filteredAlbums = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
-    if (!q) return listToShow;
+    if (!q) return albumItems;
+    return albumItems.filter((item) =>
+      (item.name || "").toLowerCase().includes(q)
+    );
+  }, [searchTerm, albumItems]);
 
-    return listToShow.filter((item) => {
-      const name = (item.name || "").toLowerCase();
-      const desc = (item.desc || "").toLowerCase();
-      return name.includes(q) || desc.includes(q);
-    });
-  }, [searchTerm, listToShow]);
-
-  const totalPages = Math.ceil(filteredList.length / itemsPerPage);
+  // Pagination cho album
+  const totalPages = Math.ceil(filteredAlbums.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentItems = filteredList.slice(startIndex, endIndex);
+  const currentAlbums = filteredAlbums.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -77,16 +60,42 @@ const Music = () => {
     if (musicSection) musicSection.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleSelectItem = (item) => {
-    if (viewingAlbums) {
-      setSelectedAlbum(item._album ?? { id: item.id, name: item.name, url: item.image });
-      setSearchTerm("");
-      setCurrentPage(1);
-      setSelectedMusic(null);
-      setRightbarOpen(false);
-      return;
-    }
-    setSelectedMusic(item);
+  // Click album -> mở playlist và load songs
+  const handleSelectAlbum = (item) => {
+    const a = item._album ?? { id: item.id, name: item.name, url: item.image };
+    setSelectedAlbum({ id: a.id, name: a.name, url: a.url ?? item.image });
+
+    setRightbarOpen(true);
+    setSelectedMusic(null);
+    setCurrentSongIndex(-1);
+  };
+
+  // Chuẩn hoá songs để đổ vào Rightbar
+  const playlistItems = useMemo(() => {
+    const cover = selectedAlbum?.url ?? "";
+    const albumName = selectedAlbum?.name ?? "";
+
+    return (rawSongs ?? []).map((s, idx) => ({
+      id: `${selectedAlbum?.id ?? "x"}-${s.id_list ?? idx + 1}`,
+      id_list: s.id_list ?? s.idList ?? idx + 1,
+      name: s.name ?? s.song_name ?? "",
+      audio: s.audio ?? s.url_song ?? s.urlSong ?? "",
+      lyrics: s.lyrics ?? s.url_lyric ?? s.urlLyric ?? null,
+
+      // để modal dùng
+      cover,
+      albumName,
+    }));
+  }, [rawSongs, selectedAlbum]);
+
+  const openSongModalFromPlaylist = (song, idx) => {
+    setCurrentSongIndex(idx);
+    setSelectedMusic({
+      name: song.name,
+      image: song.cover,
+      audio: song.audio,
+      lyrics: song.lyrics,
+    });
   };
 
   return (
@@ -95,41 +104,18 @@ const Music = () => {
       className="fullpage-section bg-gradient-to-br from-blue-900 via-black to-cyan-900"
     >
       <div className="w-full h-full flex flex-col justify-center px-6">
-        {/* Header when in album songs view */}
-        {!viewingAlbums && selectedAlbum && (
-          <div className="flex items-center justify-between mt-6 mb-2">
-            <div className="text-gray-200 font-semibold">
-              Album: {selectedAlbum.name}
-            </div>
-            <button
-              className="text-sm text-cyan-300 hover:text-cyan-200 underline"
-              onClick={() => {
-                setSelectedAlbum(null);
-                setSearchTerm("");
-                setCurrentPage(1);
-                setSelectedMusic(null);
-                setRightbarOpen(false);
-              }}
-            >
-              ← Quay lại Album
-            </button>
-          </div>
+        {/* Loading/Error: album */}
+        {loadingAlbums && (
+          <p className="text-center text-gray-300 mt-10">Đang tải album...</p>
         )}
-
-        {/* Loading & Error */}
-        {loading && (
-          <p className="text-center text-gray-300 mt-10">
-            {viewingAlbums ? "Đang tải album..." : "Đang tải bài hát..."}
-          </p>
-        )}
-        {error && (
+        {errorAlbums && (
           <p className="text-center text-red-400 mt-10">
-            Lỗi khi tải {viewingAlbums ? "album" : "bài hát"}: {error}
+            Lỗi khi tải album: {errorAlbums}
           </p>
         )}
 
-        {/* Search Bar */}
-        {!loading && (
+        {/* Search album */}
+        {!loadingAlbums && (
           <MusicSearchBar
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -137,17 +123,17 @@ const Music = () => {
           />
         )}
 
-        {/* Grid */}
-        {!loading && (
+        {/* Grid: chỉ album */}
+        {!loadingAlbums && (
           <MusicGrid
-            songs={currentItems}
+            songs={currentAlbums}
             startIndex={startIndex}
-            onSelectMusic={handleSelectItem}
+            onSelectMusic={handleSelectAlbum}
           />
         )}
 
-        {/* Pagination */}
-        {!loading && totalPages > 1 && (
+        {/* Pagination album */}
+        {!loadingAlbums && totalPages > 1 && (
           <Pagination
             totalPages={totalPages}
             currentPage={currentPage}
@@ -156,16 +142,16 @@ const Music = () => {
         )}
 
         {/* Info text */}
-        {!loading && totalPages > 1 && (
+        {!loadingAlbums && totalPages > 1 && (
           <div className="text-center text-gray-400 text-sm mb-4">
             Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
-            {Math.min(endIndex, filteredList.length)} / {filteredList.length}{" "}
-            {viewingAlbums ? "album" : "bài hát"}
+            {Math.min(endIndex, filteredAlbums.length)} / {filteredAlbums.length}{" "}
+            album
           </div>
         )}
       </div>
 
-      {/* Modal (chỉ mở khi chọn song) */}
+      {/* Modal: mở khi click bài trong playlist */}
       <MusicDetailModal
         open={!!selectedMusic}
         music={
@@ -179,14 +165,35 @@ const Music = () => {
             : null
         }
         onClose={() => {
+          // Đóng modal KHÔNG đóng playlist nữa
           setSelectedMusic(null);
-          setRightbarOpen(false);
         }}
         onOpenPlaylist={() => setRightbarOpen((v) => !v)}
       />
 
-      {/* Right Sidebar (tạm giữ như bạn đang dùng) */}
-      <Rightbar open={rightbarOpen} playlist={songsData} />
+      {/* Rightbar: hiển thị songs của album đã chọn */}
+      <Rightbar
+        open={rightbarOpen}
+        albumName={selectedAlbum?.name || "PLAYLIST"}
+        playlist={playlistItems}
+        currentIndex={currentSongIndex}
+        onSelectSong={(song, idx) => openSongModalFromPlaylist(song, idx)}
+      />
+
+      {/* (Tuỳ chọn) Nếu muốn show trạng thái load songs trong playlist:
+          Bạn có thể thêm UI trong Rightbar để dùng loadingSongs/errorSongs.
+          Hiện tại Music.jsx đã có sẵn 2 biến này: loadingSongs / errorSongs
+      */}
+      {rightbarOpen && selectedAlbum && loadingSongs && (
+        <div className="fixed right-6 top-[10%] z-50 text-gray-200 text-sm">
+          Đang tải bài hát...
+        </div>
+      )}
+      {rightbarOpen && selectedAlbum && errorSongs && (
+        <div className="fixed right-6 top-[10%] z-50 text-red-300 text-sm">
+          Lỗi tải bài hát: {errorSongs}
+        </div>
+      )}
     </div>
   );
 };

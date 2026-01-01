@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export function useAlbums() {
   const [albums, setAlbums] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export function useAlbums() {
         const json = await res.json();
         if (!cancelled) setAlbums(json?.albums ?? []);
       } catch (e) {
-        if (!cancelled) setError(e.message);
+        if (!cancelled) setError(e?.message || "Unknown error");
       } finally {
         if (!cancelled) setLoading(false);
       }

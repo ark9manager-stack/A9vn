@@ -1,8 +1,11 @@
 import React from "react";
 
-const Playlist = ({ name, desc, image }) => {
+const Playlist = ({ name, desc, image, onClick }) => {
   return (
-    <div className="bg-[#242424] p-4 rounded-xl hover:bg-[#2a2a2a] transition-colors duration-200 cursor-pointer">
+    <div
+      onClick={onClick}
+      className="bg-[#242424] p-4 rounded-xl hover:bg-[#2a2a2a] transition-colors duration-200 cursor-pointer"
+    >
       <img
         src={image}
         alt={name}
