@@ -10,7 +10,7 @@ function getPool() {
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
 
-      ssl: { rejectUnauthorized: false },
+      //ssl: { rejectUnauthorized: false },
 
       waitForConnections: true,
       connectionLimit: 2,
