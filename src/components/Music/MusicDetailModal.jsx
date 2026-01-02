@@ -1,7 +1,13 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLyrics } from "../../hooks/useLyrics";
 
-const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen }) => {
+const MusicDetailModal = ({
+  open,
+  onClose,
+  music,
+  onOpenPlaylist,
+  isPlaylistOpen,
+}) => {
   const audioRef = useRef(null);
   const listRef = useRef(null);
 
@@ -11,7 +17,9 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
   // Tìm dòng lyric hiện tại (binary search)
   const activeIndex = useMemo(() => {
     if (!entries || entries.length === 0) return -1;
-    let lo = 0, hi = entries.length - 1, ans = -1;
+    let lo = 0,
+      hi = entries.length - 1,
+      ans = -1;
     while (lo <= hi) {
       const mid = (lo + hi) >> 1;
       if (entries[mid].time <= currentTime + 0.05) {
@@ -45,16 +53,31 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
 
   return (
     <div
+      // ✅ click nền đen để đóng lyric
+      onClick={onClose}
       className={`fixed inset-0 z-40 flex justify-center bg-black/80
-        ${isPlaylistOpen ? "items-start pt-4 pb-[42vh] md:items-center md:pt-0 md:pb-0" : "items-center"}`}
+        ${
+          isPlaylistOpen
+            ? "items-start pt-4 pb-[42vh] md:items-center md:pt-0 md:pb-0"
+            : "items-center"
+        }`}
     >
-
-      {/* chừa chỗ cho playlist bên phải nếu đang mở */}
+      {/* ✅ Box modal: chặn click để không bị đóng */}
       <div
-        className={`bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden
+        onClick={(e) => e.stopPropagation()}
+        className={`relative bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden
           ${isPlaylistOpen ? "md:mr-[420px]" : ""}`}
         style={{ width: "min(920px, 92vw)" }}
       >
+        {/* ✅ Nút tắt Lyric (đóng modal) */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2 text-sm font-semibold"
+          aria-label="Close lyric"
+        >
+          ✕
+        </button>
 
         <div className="p-6 flex flex-col gap-4">
           {/* Top: cover + title + audio */}
@@ -65,7 +88,9 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
               className="w-32 h-32 object-cover rounded-xl border border-gray-700"
             />
             <div className="flex-1 min-w-0">
-              <div className="text-white text-2xl font-bold truncate">{music.title}</div>
+              <div className="text-white text-2xl font-bold truncate">
+                {music.title}
+              </div>
 
               <div className="mt-3">
                 <audio
@@ -81,6 +106,7 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
               <button
                 className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition font-semibold"
                 onClick={onOpenPlaylist}
+                type="button"
               >
                 🎵 PLAYLIST
               </button>
@@ -107,7 +133,11 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
                     key={`${e.time}-${idx}`}
                     data-idx={idx}
                     className={`text-base leading-relaxed break-words
-                      ${idx === activeIndex ? "text-white font-bold" : "text-gray-400"}`}
+                      ${
+                        idx === activeIndex
+                          ? "text-white font-bold"
+                          : "text-gray-400"
+                      }`}
                   >
                     {e.text}
                   </div>
