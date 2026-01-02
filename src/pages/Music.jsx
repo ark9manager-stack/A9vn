@@ -70,6 +70,16 @@ const Music = () => {
     setCurrentSongIndex(-1);
   };
 
+  // ✅ Đóng playlist (Back bên phải)
+  const closePlaylist = () => {
+    setRightbarOpen(false);
+
+    // theo yêu cầu: tắt playlist thì lyric/modal cũng mất
+    setSelectedMusic(null);
+
+    setCurrentSongIndex(-1);
+  };
+
   // Chuẩn hoá songs để đổ vào Rightbar
   const playlistItems = useMemo(() => {
     const cover = selectedAlbum?.url ?? "";
@@ -92,7 +102,7 @@ const Music = () => {
     setCurrentSongIndex(idx);
     setSelectedMusic({
       name: song.name,
-      image: song.cover,
+      image: song.cover ?? selectedAlbum?.url ?? "",
       audio: song.audio,
       lyrics: song.lyrics,
     });
@@ -164,26 +174,21 @@ const Music = () => {
               }
             : null
         }
-        onClose={() => {
-          // Đóng modal KHÔNG đóng playlist nữa
-          setSelectedMusic(null);
-        }}
+        onClose={() => setSelectedMusic(null)}
         onOpenPlaylist={() => setRightbarOpen((v) => !v)}
       />
 
-      {/* Rightbar: hiển thị songs của album đã chọn */}
+      {/* ✅ Rightbar: truyền onClose để Back hoạt động */}
       <Rightbar
         open={rightbarOpen}
         albumName={selectedAlbum?.name || "PLAYLIST"}
         playlist={playlistItems}
         currentIndex={currentSongIndex}
         onSelectSong={(song, idx) => openSongModalFromPlaylist(song, idx)}
+        onClose={closePlaylist}
       />
 
-      {/* (Tuỳ chọn) Nếu muốn show trạng thái load songs trong playlist:
-          Bạn có thể thêm UI trong Rightbar để dùng loadingSongs/errorSongs.
-          Hiện tại Music.jsx đã có sẵn 2 biến này: loadingSongs / errorSongs
-      */}
+      {/* Status load songs */}
       {rightbarOpen && selectedAlbum && loadingSongs && (
         <div className="fixed right-6 top-[10%] z-50 text-gray-200 text-sm">
           Đang tải bài hát...
