@@ -45,13 +45,6 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
 
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/80">
-      <button
-        className="absolute top-8 left-8 text-white text-2xl bg-black/50 rounded-full p-2 hover:bg-black/70 transition"
-        onClick={onClose}
-      >
-        ←
-      </button>
-
       {/* chừa chỗ cho playlist bên phải nếu đang mở */}
       <div
         className="bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden"
