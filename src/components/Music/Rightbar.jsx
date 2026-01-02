@@ -1,18 +1,17 @@
 import React from "react";
 
-// Mock: bài đang phát là bài đầu tiên
-const currentIndex = 0;
-
-const Rightbar = ({ open, playlist }) => {
+const Rightbar = ({
+  open,
+  albumName = "PLAYLIST",
+  playlist = [],
+  currentIndex = -1,
+  onSelectSong,
+}) => {
   return (
     <div
-      className={`fixed left-[1250px] top-1/2 z-50 w-[80vw] h-[80vh] bg-black shadow-2xl flex flex-col rounded-xl border border-gray-700 transition-transform duration-500 ease-in-out
-        ${
-          open
-            ? "translate-x-0 -translate-y-1/2"
-            : "translate-x-full -translate-y-1/2"
-        }
-      `}
+      className={`fixed right-6 top-1/2 z-50 w-[360px] max-w-[85vw] h-[80vh] bg-black border border-gray-700 rounded-xl shadow-2xl
+      transition-transform duration-500 ease-in-out
+      ${open ? "translate-x-0 -translate-y-1/2" : "translate-x-full -translate-y-1/2"}`}
       style={{ boxShadow: open ? "-8px 0 32px 0 #000a" : "none" }}
     >
       {/* Header */}
@@ -22,35 +21,51 @@ const Rightbar = ({ open, playlist }) => {
             🎵
           </span>
         </div>
-        <span className="text-white text-xl font-bold tracking-widest">
-          PLAYLIST
-        </span>
-      </div>
-      {/* Danh sách nhạc */}
-      <div className="flex-1 overflow-y-auto p-4">
-        {playlist && playlist.length > 0 && (
-          <div className="mb-2">
-            <div className="text-white text-lg font-bold uppercase tracking-wider mb-2">
-              {playlist[0].name}
-            </div>
-            <div className="flex flex-col gap-1">
-              {playlist.map((song, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-center px-3 py-2 rounded transition-all cursor-pointer
-                    ${
-                      idx === currentIndex
-                        ? "bg-white bg-opacity-10 text-white font-bold"
-                        : "text-gray-400 hover:bg-[#23232b]"
-                    }
-                    ${idx !== 0 ? "pl-8 text-base" : "text-lg"}
-                  `}
-                >
-                  {song.name}
-                </div>
-              ))}
-            </div>
+        <div className="min-w-0">
+          <div className="text-white text-xs opacity-70 tracking-widest">
+            PLAYLIST
           </div>
+          <div className="text-white text-lg font-bold truncate">
+            {albumName}
+          </div>
+        </div>
+      </div>
+
+      {/* List */}
+      <div className="flex-1 overflow-y-auto p-3">
+        {(!playlist || playlist.length === 0) ? (
+          <div className="text-gray-400 px-2 py-3">
+            Chưa có bài hát trong album này.
+          </div>
+        ) : (
+          <ul className="flex flex-col gap-1">
+            {playlist.map((song, idx) => {
+              const active = idx === currentIndex;
+
+              return (
+                <li key={song.id ?? `${song.id_list ?? idx}-${idx}`}>
+                  <button
+                    type="button"
+                    onClick={() => onSelectSong?.(song, idx)}
+                    className={`w-full text-left rounded-lg px-3 py-2 transition
+                      ${active ? "bg-white/10 text-white" : "text-gray-300 hover:bg-[#23232b]"}`}
+                  >
+                    {/* Grid giúp chữ “đều hàng” (không thụt lùi khi xuống dòng) */}
+                    <div className="grid grid-cols-[40px,1fr] gap-3 items-start">
+                      <span className="text-gray-500 text-right tabular-nums">
+                        {song.id_list ?? idx + 1}
+                      </span>
+
+                      {/* Cho phép xuống dòng nhưng vẫn thẳng hàng */}
+                      <span className="min-w-0 whitespace-normal break-words leading-snug">
+                        {song.name}
+                      </span>
+                    </div>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
         )}
       </div>
     </div>
