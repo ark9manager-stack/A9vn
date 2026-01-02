@@ -14,7 +14,22 @@ const MusicDetailModal = ({
   const { entries, loading, error } = useLyrics(music?.lyrics);
   const [currentTime, setCurrentTime] = useState(0);
 
-  // Tìm dòng lyric hiện tại (binary search)
+  useEffect(() => {
+    if (!open) return;
+
+    setCurrentTime(0);
+
+    if (listRef.current) {
+      listRef.current.scrollTop = 0;
+    }
+
+    if (audioRef.current) {
+      try {
+        audioRef.current.currentTime = 0;
+      } catch {}
+    }
+  }, [open, music?.audio, music?.lyrics]);
+
   const activeIndex = useMemo(() => {
     if (!entries || entries.length === 0) return -1;
     let lo = 0,
@@ -35,25 +50,36 @@ const MusicDetailModal = ({
     if (!open || !el) return;
 
     const onTime = () => setCurrentTime(el.currentTime || 0);
-    el.addEventListener("timeupdate", onTime);
-    return () => el.removeEventListener("timeupdate", onTime);
-  }, [open]);
 
-  // Auto scroll đến dòng active
+    el.addEventListener("timeupdate", onTime);
+    el.addEventListener("loadedmetadata", onTime);
+    el.addEventListener("play", onTime);
+
+    return () => {
+      el.removeEventListener("timeupdate", onTime);
+      el.removeEventListener("loadedmetadata", onTime);
+      el.removeEventListener("play", onTime);
+    };
+  }, [open, music?.audio]);
+
   useEffect(() => {
     if (activeIndex < 0) return;
     const container = listRef.current;
     if (!container) return;
 
     const row = container.querySelector(`[data-idx="${activeIndex}"]`);
-    if (row) row.scrollIntoView({ block: "center", behavior: "smooth" });
-  }, [activeIndex]);
+    if (row) {
+      row.scrollIntoView({
+        block: "center",
+        behavior: currentTime < 0.3 ? "auto" : "smooth",
+      });
+    }
+  }, [activeIndex, currentTime]);
 
   if (!open || !music) return null;
 
   return (
     <div
-      // ✅ click nền đen để đóng lyric
       onClick={onClose}
       className={`fixed inset-0 z-40 flex justify-center bg-black/80
         ${
@@ -62,14 +88,13 @@ const MusicDetailModal = ({
             : "items-center"
         }`}
     >
-      {/* ✅ Box modal: chặn click để không bị đóng */}
       <div
         onClick={(e) => e.stopPropagation()}
         className={`relative bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden
           ${isPlaylistOpen ? "md:mr-[420px]" : ""}`}
         style={{ width: "min(920px, 92vw)" }}
       >
-        {/* ✅ Nút tắt Lyric (đóng modal) */}
+        {/* Nút tắt Lyric */}
         <button
           type="button"
           onClick={onClose}
@@ -80,7 +105,7 @@ const MusicDetailModal = ({
         </button>
 
         <div className="p-6 flex flex-col gap-4">
-          {/* Top: cover + title + audio */}
+          {/* Top */}
           <div className="flex gap-4 items-start">
             <img
               src={music.cover}
@@ -113,7 +138,7 @@ const MusicDetailModal = ({
             </div>
           </div>
 
-          {/* Middle: Lyric */}
+          {/* Lyrics */}
           <div className="text-white font-semibold">Lyrics</div>
           <div
             ref={listRef}
