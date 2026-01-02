@@ -70,15 +70,10 @@ const Music = () => {
     setCurrentSongIndex(-1);
   };
 
-  // ✅ Đóng playlist (Back bên phải)
   const closePlaylist = () => {
-    setRightbarOpen(false);
+  setRightbarOpen(false);
+};
 
-    // theo yêu cầu: tắt playlist thì lyric/modal cũng mất
-    setSelectedMusic(null);
-
-    setCurrentSongIndex(-1);
-  };
 
   // Chuẩn hoá songs để đổ vào Rightbar
   const playlistItems = useMemo(() => {
@@ -176,6 +171,7 @@ const Music = () => {
         }
         onClose={() => setSelectedMusic(null)}
         onOpenPlaylist={() => setRightbarOpen((v) => !v)}
+        isPlaylistOpen={rightbarOpen}
       />
 
       {/* ✅ Rightbar: truyền onClose để Back hoạt động */}

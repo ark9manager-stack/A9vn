@@ -44,7 +44,11 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
   if (!open || !music) return null;
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/80">
+    <div
+      className={`fixed inset-0 z-40 flex justify-center bg-black/80
+        ${isPlaylistOpen ? "items-start pt-4 pb-[42vh] md:items-center md:pt-0 md:pb-0" : "items-center"}`}
+    >
+
       {/* chừa chỗ cho playlist bên phải nếu đang mở */}
       <div
         className={`bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden
@@ -87,7 +91,7 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
           <div className="text-white font-semibold">Lyrics</div>
           <div
             ref={listRef}
-            className="bg-black/40 border border-gray-700 rounded-xl p-4 h-[360px] overflow-y-auto"
+            className="bg-black/40 border border-gray-700 rounded-xl p-4 h-[42vh] md:h-[360px] overflow-y-auto"
           >
             {loading && <div className="text-gray-300">Đang tải lời...</div>}
             {error && <div className="text-red-300">Lỗi lyric: {error}</div>}

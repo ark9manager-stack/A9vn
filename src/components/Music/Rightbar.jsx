@@ -8,14 +8,14 @@ const Rightbar = ({
   onSelectSong,
   onClose,
 }) => {
-  // ✅ đóng là ẩn hoàn toàn (không lòi góc)
+  // ✅ đóng là ẩn hoàn toàn
   if (!open) return null;
 
   return (
     <>
-      {/* Backdrop: MOBILE có (để focus lyric), PC thì nhẹ thôi */}
+      {/* ✅ Backdrop chỉ MOBILE */}
       <div
-        className="fixed inset-0 z-40 bg-black/50 md:bg-black/20"
+        className="fixed inset-0 z-40 bg-black/60 md:hidden"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -25,12 +25,12 @@ const Rightbar = ({
         className={`
           fixed z-50 bg-black border border-gray-700 shadow-2xl flex flex-col
 
-          /* ✅ MOBILE: không full screen, chỉ là drawer bên phải */
-          top-0 right-0 h-full w-[78vw] max-w-[340px] rounded-l-xl
+          /* ✅ MOBILE: bottom-sheet nhỏ để ưu tiên lyric */
+          left-0 right-0 bottom-0 h-[40vh] rounded-t-2xl
 
-          /* ✅ PC: trả về panel nhỏ bên phải như trước */
-          md:top-1/2 md:right-6 md:-translate-y-1/2
-          md:h-[80vh] md:w-[360px] md:rounded-xl
+          /* ✅ PC: giữ panel bên phải như trước */
+          md:left-auto md:right-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2
+          md:w-[360px] md:max-w-[85vw] md:h-[80vh] md:rounded-xl
         `}
         style={{ boxShadow: "-8px 0 32px 0 #000a" }}
       >
@@ -68,7 +68,7 @@ const Rightbar = ({
 
         {/* List */}
         <div className="flex-1 overflow-y-auto p-3">
-          {!playlist?.length ? (
+          {(!playlist || playlist.length === 0) ? (
             <div className="text-gray-400 px-2 py-3">
               Chưa có bài hát trong album này.
             </div>
@@ -76,17 +76,14 @@ const Rightbar = ({
             <ul className="flex flex-col gap-1">
               {playlist.map((song, idx) => {
                 const active = idx === currentIndex;
+
                 return (
                   <li key={song.id ?? `${song.id_list ?? idx}-${idx}`}>
                     <button
                       type="button"
                       onClick={() => onSelectSong?.(song, idx)}
                       className={`w-full text-left rounded-lg px-3 py-2 transition
-                        ${
-                          active
-                            ? "bg-white/10 text-white"
-                            : "text-gray-300 hover:bg-[#23232b]"
-                        }`}
+                        ${active ? "bg-white/10 text-white" : "text-gray-300 hover:bg-[#23232b]"}`}
                     >
                       <div className="grid grid-cols-[44px,1fr] gap-3 items-start">
                         <span className="text-gray-500 text-right tabular-nums">
