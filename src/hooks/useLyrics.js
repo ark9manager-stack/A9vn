@@ -1,14 +1,61 @@
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+function parseLrc(text) {
+  const lines = text.split(/\r?\n/);
+  let offset = 0; // ms
+  const entries = [];
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) continue;
+
+    // metadata: [ar:..], [ti:..], [offset:123]
+    const meta = line.match(/^\[(ar|ti|al|by|offset):(.+)\]$/i);
+    if (meta) {
+      if (meta[1].toLowerCase() === "offset") {
+        const v = Number(meta[2]);
+        if (!Number.isNaN(v)) offset = v;
+      }
+      continue;
+    }
+
+    // timestamps: [mm:ss.xx] or [mm:ss.xxx] (có thể nhiều timestamp trên 1 dòng)
+    const timeMatches = [...line.matchAll(/\[(\d{2}):(\d{2})(?:\.(\d{1,3}))?\]/g)];
+    if (timeMatches.length === 0) continue;
+
+    const content = line.replace(/\[(\d{2}):(\d{2})(?:\.(\d{1,3}))?\]/g, "").trim();
+    // nếu dòng chỉ có timestamp mà không có chữ thì bỏ
+    if (!content) continue;
+
+    for (const m of timeMatches) {
+      const mm = Number(m[1]);
+      const ss = Number(m[2]);
+      const frac = m[3] ? Number(m[3].padEnd(3, "0")) : 0;
+      const t = mm * 60 + ss + frac / 1000 + offset / 1000;
+      entries.push({ time: Math.max(0, t), text: content });
+    }
+  }
+
+  entries.sort((a, b) => a.time - b.time);
+  return entries;
+}
 
 export function useLyrics(url) {
-  const [lyrics, setLyrics] = useState("");
+  const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!url) return;
+    let cancelled = false;
 
-    const fetchLyrics = async () => {
+    if (!url) {
+      setEntries([]);
+      setError(null);
+      setLoading(false);
+      return;
+    }
+
+    (async () => {
       try {
         setLoading(true);
         setError(null);
@@ -17,32 +64,20 @@ export function useLyrics(url) {
         if (!res.ok) throw new Error("Không thể tải lyrics từ URL.");
 
         const text = await res.text();
-        const lines = text.split("\n");
+        const parsed = parseLrc(text);
 
-        // Lọc lyrics giống code cũ
-        const filtered = lines
-          .map((line) => line.trim())
-          .filter((line) => {
-            if (!line) return false;
-            if (/^\[\d{2}:\d{2}\.\d{2,3}\]/.test(line)) {
-              const content = line.replace(/^\[\d{2}:\d{2}\.\d{2,3}\]\s*/, "");
-              return content.length > 0;
-            }
-            if (/^\[(ar|ti|al|by):.*\]/.test(line)) return false;
-            return true;
-          })
-          .map((line) => line.replace(/^\[\d{2}:\d{2}\.\d{2,3}\]\s*/, ""));
-
-        setLyrics(filtered.join("\n"));
+        if (!cancelled) setEntries(parsed);
       } catch (err) {
-        setError(err.message);
+        if (!cancelled) setError(err.message);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
-    };
+    })();
 
-    fetchLyrics();
+    return () => {
+      cancelled = true;
+    };
   }, [url]);
 
-  return { lyrics, loading, error };
+  return { entries, loading, error };
 }
