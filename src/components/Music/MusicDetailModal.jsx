@@ -47,12 +47,11 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/80">
       {/* chừa chỗ cho playlist bên phải nếu đang mở */}
       <div
-        className="bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden"
-        style={{
-          width: "min(920px, 92vw)",
-          marginRight: isPlaylistOpen ? "420px" : "0px",
-        }}
+        className={`bg-[#0b0b0f] border border-gray-700 rounded-2xl overflow-hidden
+          ${isPlaylistOpen ? "md:mr-[420px]" : ""}`}
+        style={{ width: "min(920px, 92vw)" }}
       >
+
         <div className="p-6 flex flex-col gap-4">
           {/* Top: cover + title + audio */}
           <div className="flex gap-4 items-start">
