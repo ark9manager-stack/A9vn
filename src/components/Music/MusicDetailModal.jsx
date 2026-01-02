@@ -103,7 +103,7 @@ const MusicDetailModal = ({ open, onClose, music, onOpenPlaylist, isPlaylistOpen
             {!loading && !error && (
               <div className="flex flex-col gap-2">
                 {entries.length === 0 && (
-                  <div className="text-gray-400">Không có lời (URL_LYRIC null hoặc file rỗng).</div>
+                  <div className="text-gray-400">no lyric</div>
                 )}
 
                 {entries.map((e, idx) => (
