@@ -4,12 +4,12 @@
 
 /* Hide scrollbar for all elements */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
 
 /* Hide scrollbar globally */
@@ -136,7 +136,7 @@ html {
     gap: 1rem;
     padding: 0 1rem;
   }
-  
+
   .music-card img {
     height: 150px;
   }
@@ -148,7 +148,7 @@ html {
     grid-template-rows: repeat(5, 1fr);
     gap: 0.75rem;
   }
-  
+
   .music-card img {
     height: 120px;
   }
@@ -199,14 +199,50 @@ html {
 }
 
 /* Stagger animation delays */
-.animate-in:nth-child(1) { animation-delay: 0.1s; }
-.animate-in:nth-child(2) { animation-delay: 0.2s; }
-.animate-in:nth-child(3) { animation-delay: 0.3s; }
-.animate-in:nth-child(4) { animation-delay: 0.4s; }
-.animate-in:nth-child(5) { animation-delay: 0.5s; }
-.animate-in:nth-child(6) { animation-delay: 0.6s; }
-.animate-in:nth-child(7) { animation-delay: 0.7s; }
-.animate-in:nth-child(8) { animation-delay: 0.8s; }
-.animate-in:nth-child(9) { animation-delay: 0.9s; }
-.animate-in:nth-child(10) { animation-delay: 1s; }
+.animate-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animate-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.animate-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.animate-in:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.animate-in:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.animate-in:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.animate-in:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.animate-in:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.animate-in:nth-child(10) {
+  animation-delay: 1s;
+}
 
+line {
+  transition: all 0.3s ease-in-out;
+}
+
+.open .hamburger-top {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.open .hamburger-middle {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.open .hamburger-bottom {
+  transform: translateY(-6px) rotate(-45deg);
+}

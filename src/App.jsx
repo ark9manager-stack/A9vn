@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "./components/UI/Sidebar";
-import SidebarToggle from "./components/UI/SidebarToggle";
+import Navbar from "./components/UI/Navbar";
 // import SidebarOverlay from "./components/UI/SidebarOverlay";
 import Player from "./components/Player/Player";
 import Display from "./pages/Display";
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="h-screen bg-black">
-      <SidebarToggle isOpen={isSidebarOpen} onToggle={toggleSidebar} />
+      <Navbar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
       <div className="h-[90%] flex">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <Display />
