@@ -30,14 +30,26 @@ const Music = () => {
 
   // Album cards cho grid
   const albumItems = useMemo(() => {
-    return (albums ?? []).map((a) => ({
+    const sorted = [...(albums ?? [])].sort((a, b) => {
+      const ai = Number(a.id);
+      const bi = Number(b.id);
+
+    // ưu tiên sort số (1..xxx)
+      if (!Number.isNaN(ai) && !Number.isNaN(bi)) return bi - ai;
+
+    // fallback nếu id không phải số
+      return String(b.id).localeCompare(String(a.id));
+    });
+
+    return sorted.map((a) => ({
       id: a.id,
       name: a.name,
       desc: "Album",
       image: a.url,
       _album: a,
     }));
-  }, [albums]);
+}, [albums]);
+
 
   // Search chỉ áp dụng cho album
   const filteredAlbums = useMemo(() => {
