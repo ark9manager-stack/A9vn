@@ -3,6 +3,7 @@ import { songsData } from "../../assets/icon-assets/assets";
 import { assets } from "../../assets/icon-assets/assets";
 
 const Player = () => {
+   return null;
   const [position, setPosition] = useState({
     x: window.innerWidth / 2,
     y: window.innerHeight - 100,
