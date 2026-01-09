@@ -1,7 +1,9 @@
 {
   "albumAliases": {
     "1": ["ost1", "main menu", "lifeflow", "the void"],
+    "8": ["cc0", "cc#0"],
     "12": ["ep", "w"],
+    "68": ["cc8", "cc#8"],
     "181": ["april fool", "all"],
     "229": ["laterano"]
   }
