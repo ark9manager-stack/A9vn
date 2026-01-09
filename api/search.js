@@ -16,11 +16,14 @@ function norm(str) {
 function matchAlias(qNorm, alias) {
   const a = norm(alias);
   if (!a) return false;
+  // match kiểu contains (đủ dùng cho alias)
   return a.includes(qNorm) || (a.length >= 3 && qNorm.includes(a));
 }
 
 function loadAliases() {
   if (cached) return cached;
+
+  // giữ đúng cấu trúc bạn đang dùng: /data/searchmusic.json
   const p = path.join(process.cwd(), "data", "searchmusic.json");
   if (!fs.existsSync(p)) {
     cached = { albumAliases: {} };
@@ -34,7 +37,10 @@ function loadAliases() {
 export default async function handler(req, res) {
   const q = String(req.query.q || "").trim();
   const qNorm = norm(q);
-  if (!q || qNorm.length < 2) return res.status(200).json({ results: [] });
+
+  if (!q || qNorm.length < 2) {
+    return res.status(200).json({ results: [] });
+  }
 
   const { albumAliases } = loadAliases();
 
@@ -47,145 +53,84 @@ export default async function handler(req, res) {
   });
 
   try {
-    const results = [];
-    const seen = new Set();
-    const pushUnique = (item) => {
-      const key =
-        item.type === "song"
-          ? `song:${item.album_id}:${item.id_list}`
-          : `album:${item.album_id}`;
-      if (seen.has(key)) return;
-      seen.add(key);
-      results.push(item);
+    const albumMap = new Map(); // album_id -> item
+
+    const pushAlbum = (row) => {
+      const id = row?.album_id ?? row?.id;
+      if (id == null) return;
+      const key = String(id);
+      if (albumMap.has(key)) return;
+
+      albumMap.set(key, {
+        type: "album",
+        album_id: id,
+        album_name: row.album_name ?? row.name ?? "",
+        album_url: row.album_url ?? row.url ?? "",
+      });
     };
 
-    // 1) Search DB trực tiếp (tên gốc)
     const like = `%${q}%`;
-    const [dbSongs] = await conn.execute(
+
+    // 1) Match tên album (DB)
+    const [albumsByName] = await conn.execute(
       `
-      SELECT 
-        s.album_id,
-        a.name  AS album_name,
-        a.url   AS album_url,
-        s.id_list,
-        s.name  AS song_name,
-        s.url_song,
-        s.url_lyric
+      SELECT id AS album_id, name AS album_name, url AS album_url
+      FROM album
+      WHERE name LIKE ?
+      ORDER BY id DESC
+      LIMIT 40
+      `,
+      [like]
+    );
+    for (const a of albumsByName) pushAlbum(a);
+
+    // 2) Match tên bài hát (DB) -> trả về album chứa bài đó
+    const [albumsBySong] = await conn.execute(
+      `
+      SELECT DISTINCT a.id AS album_id, a.name AS album_name, a.url AS album_url
       FROM song s
       JOIN album a ON a.id = s.album_id
-      WHERE s.name LIKE ? OR a.name LIKE ?
-      ORDER BY a.id DESC, s.id_list ASC
-      LIMIT 30
+      WHERE s.name LIKE ?
+      ORDER BY a.id DESC
+      LIMIT 40
       `,
-      [like, like]
+      [like]
     );
+    for (const a of albumsBySong) pushAlbum(a);
 
-    for (const r of dbSongs) {
-      pushUnique({
-        type: "song",
-        album_id: r.album_id,
-        album_name: r.album_name,
-        album_url: r.album_url,
-        id_list: r.id_list,
-        song_name: r.song_name,
-        url_song: r.url_song,
-        url_lyric: r.url_lyric,
-      });
-    }
-
-    // 2) Match albumAliases -> lấy songs trong album đó
+    // 3) Match alias trong searchmusic.json -> trả về album
     const hitAlbumIds = [];
     for (const [albumId, aliases] of Object.entries(albumAliases || {})) {
       const arr = Array.isArray(aliases) ? aliases : [];
-      if (arr.some((a) => matchAlias(qNorm, a))) {
-        hitAlbumIds.push(Number(albumId));
+      if (arr.some((al) => matchAlias(qNorm, al))) {
+        const n = Number(albumId);
+        if (!Number.isNaN(n)) hitAlbumIds.push(n);
       }
     }
 
     if (hitAlbumIds.length > 0) {
-      const placeholders = hitAlbumIds.map(() => "?").join(",");
-      const [rows] = await conn.execute(
-        `
-        SELECT 
-          s.album_id,
-          a.name  AS album_name,
-          a.url   AS album_url,
-          s.id_list,
-          s.name  AS song_name,
-          s.url_song,
-          s.url_lyric
-        FROM song s
-        JOIN album a ON a.id = s.album_id
-        WHERE s.album_id IN (${placeholders})
-        ORDER BY a.id DESC, s.id_list ASC
-        LIMIT 60
-        `,
-        hitAlbumIds
-      );
+      // unique + sort desc + cap để tránh IN quá dài
+      const uniq = [...new Set(hitAlbumIds)].sort((a, b) => b - a).slice(0, 40);
+      const placeholders = uniq.map(() => "?").join(",");
 
-      // lọc tiếp theo keyword để ra bài liên quan (giảm spam)
-      // nhưng nếu keyword là nickname (chỉ có trong albumAliases) thì fallback trả toàn bộ bài trong album
-      let pushed = 0;
-
-      for (const r of rows) {
-        const nameHit =
-          matchAlias(qNorm, r.song_name) || matchAlias(qNorm, r.album_name);
-
-        if (nameHit) {
-          pushUnique({
-            type: "song",
-            album_id: r.album_id,
-            album_name: r.album_name,
-            album_url: r.album_url,
-            id_list: r.id_list,
-            song_name: r.song_name,
-            url_song: r.url_song,
-            url_lyric: r.url_lyric,
-          });
-          pushed++;
-        }
-      }
-
-      // ✅ fallback: nickname match albumAliases nhưng không match tên gốc trong DB
-      if (pushed === 0) {
-        for (const r of rows) {
-          pushUnique({
-            type: "song",
-            album_id: r.album_id,
-            album_name: r.album_name,
-            album_url: r.album_url,
-            id_list: r.id_list,
-            song_name: r.song_name,
-            url_song: r.url_song,
-            url_lyric: r.url_lyric,
-          });
-        }
-      }
-
-      // đồng thời trả về album result (để user click mở album)
-      const [albums] = await conn.execute(
+      const [albumsByAlias] = await conn.execute(
         `
         SELECT id AS album_id, name AS album_name, url AS album_url
         FROM album
         WHERE id IN (${placeholders})
-        LIMIT 10
+        ORDER BY id DESC
+        LIMIT 40
         `,
-        hitAlbumIds
+        uniq
       );
-
-      for (const a of albums) {
-        pushUnique({
-          type: "album",
-          album_id: a.album_id,
-          album_name: a.album_name,
-          album_url: a.album_url,
-        });
-      }
+      for (const a of albumsByAlias) pushAlbum(a);
     }
 
-    res.status(200).json({ results: results.slice(0, 40) });
+    return res.status(200).json({ results: Array.from(albumMap.values()) });
   } catch (e) {
-    res.status(500).json({ error: "Search failed", detail: String(e?.message || e) });
+    return res
+      .status(500)
+      .json({ error: "Search failed", detail: String(e?.message || e) });
   } finally {
     await conn.end();
   }
