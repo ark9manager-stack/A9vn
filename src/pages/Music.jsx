@@ -9,17 +9,28 @@ import Pagination from "../components/Music/Pagination";
 import MusicDetailModal from "../components/Music/MusicDetailModal";
 import Rightbar from "../components/Music/Rightbar";
 
+function norm(str) {
+  return String(str || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // bỏ dấu VN
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function matchAlias(qNorm, aliasNorm) {
+  if (!aliasNorm) return false;
+  return aliasNorm.includes(qNorm) || (aliasNorm.length >= 3 && qNorm.includes(aliasNorm));
+}
+
 const Music = () => {
-  // Grid luôn hiển thị album
   const { albums, loading: loadingAlbums, error: errorAlbums } = useAlbums();
 
-  // Album được chọn -> load songs để đưa vào playlist (Rightbar)
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const { songs: rawSongs, loading: loadingSongs, error: errorSongs } = useMusic(
     selectedAlbum?.id
   );
 
-  // UI state
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -28,16 +39,41 @@ const Music = () => {
   const [selectedMusic, setSelectedMusic] = useState(null);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
-  // ✅ album ids match từ /api/search (tên bài, nickname, keyword)
-  const [searchAlbumIds, setSearchAlbumIds] = useState(null); // Set<number> | null
-  const abortRef = useRef(null);
+  // ✅ load alias JSON 1 lần (từ public/ — rất nhanh)
+  const [albumAliasNormMap, setAlbumAliasNormMap] = useState(null); // Map<number, string[]>
 
-  // Album cards cho grid (id lớn -> nhỏ)
+  useEffect(() => {
+    let ignore = false;
+    (async () => {
+      try {
+        const res = await fetch("/searchmusic.json", { cache: "force-cache" });
+        const json = await res.json();
+        const map = new Map();
+
+        const albumAliases = json?.albumAliases || {};
+        for (const [albumId, aliases] of Object.entries(albumAliases)) {
+          const arr = Array.isArray(aliases) ? aliases : [];
+          map.set(
+            Number(albumId),
+            arr.map((x) => norm(x)).filter(Boolean)
+          );
+        }
+
+        if (!ignore) setAlbumAliasNormMap(map);
+      } catch {
+        if (!ignore) setAlbumAliasNormMap(new Map());
+      }
+    })();
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  // Album cards (sort id DESC)
   const albumItems = useMemo(() => {
     const sorted = [...(albums ?? [])].sort((a, b) => {
       const ai = Number(a.id);
       const bi = Number(b.id);
-
       if (!Number.isNaN(ai) && !Number.isNaN(bi)) return bi - ai;
       return String(b.id).localeCompare(String(a.id));
     });
@@ -51,11 +87,54 @@ const Music = () => {
     }));
   }, [albums]);
 
-  // ✅ Khi user gõ searchTerm, gọi /api/search để lấy album_id phù hợp
+  const qNorm = useMemo(() => norm(searchTerm), [searchTerm]);
+
+  // ✅ local match theo tên album (nhanh)
+  const nameMatchedIds = useMemo(() => {
+    if (!qNorm || qNorm.length < 2) return null;
+    const set = new Set();
+    for (const a of albumItems) {
+      if (matchAlias(qNorm, norm(a.name))) set.add(Number(a.id));
+    }
+    return set;
+  }, [qNorm, albumItems]);
+
+  // ✅ local match theo alias (nhanh như filter local, không DB)
+  const aliasMatchedIds = useMemo(() => {
+    if (!qNorm || qNorm.length < 2) return null;
+    if (!albumAliasNormMap) return null;
+
+    const set = new Set();
+    for (const [albumId, aliasNorms] of albumAliasNormMap.entries()) {
+      if (aliasNorms.some((a) => matchAlias(qNorm, a))) set.add(albumId);
+    }
+    return set;
+  }, [qNorm, albumAliasNormMap]);
+
+  // ✅ remote match theo tên bài gốc (chỉ khi local không match)
+  const [remoteMatchedIds, setRemoteMatchedIds] = useState(null);
+  const remoteCacheRef = useRef(new Map()); // qNorm -> Set
+  const abortRef = useRef(null);
+
   useEffect(() => {
-    const q = searchTerm.trim();
-    if (q.length < 2) {
-      setSearchAlbumIds(null);
+    if (!qNorm || qNorm.length < 2) {
+      setRemoteMatchedIds(null);
+      return;
+    }
+
+    // Nếu local đã match (tên album hoặc alias) -> KHÔNG gọi API
+    const hasLocal =
+      (nameMatchedIds && nameMatchedIds.size > 0) ||
+      (aliasMatchedIds && aliasMatchedIds.size > 0);
+
+    if (hasLocal) {
+      setRemoteMatchedIds(null);
+      return;
+    }
+
+    // cache
+    if (remoteCacheRef.current.has(qNorm)) {
+      setRemoteMatchedIds(remoteCacheRef.current.get(qNorm));
       return;
     }
 
@@ -65,52 +144,55 @@ const Music = () => {
 
     const t = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(searchTerm.trim())}`, {
           signal: controller.signal,
         });
         if (!res.ok) throw new Error("Search failed");
         const data = await res.json();
         const arr = Array.isArray(data?.results) ? data.results : [];
 
-        const ids = new Set();
+        const set = new Set();
         for (const r of arr) {
-          if (r?.album_id != null) ids.add(Number(r.album_id));
+          if (r?.album_id != null) set.add(Number(r.album_id));
         }
-        setSearchAlbumIds(ids);
+
+        remoteCacheRef.current.set(qNorm, set);
+        setRemoteMatchedIds(set);
       } catch (e) {
-        if (e.name !== "AbortError") {
-          // fallback: nếu api lỗi thì chỉ search theo tên album local
-          setSearchAlbumIds(null);
-        }
+        if (e.name !== "AbortError") setRemoteMatchedIds(null);
       }
-    }, 250);
+    }, 350); // debounce lớn hơn chút để giảm spam server
 
     return () => {
       clearTimeout(t);
       controller.abort();
     };
-  }, [searchTerm]);
+  }, [qNorm, searchTerm, nameMatchedIds, aliasMatchedIds]);
 
-  // ✅ Filter albums grid: nếu có searchAlbumIds -> lọc theo album_id match
+  // ✅ Kết quả cuối: ưu tiên local (tên album + alias), fallback remote (tên bài)
   const filteredAlbums = useMemo(() => {
-    const q = searchTerm.trim().toLowerCase();
-    if (!q) return albumItems;
+    if (!qNorm) return albumItems;
 
-    // luôn cho match theo tên album local (để không phụ thuộc api)
-    const nameMatch = (item) =>
-      (item.name || "").toLowerCase().includes(q);
+    const union = new Set();
+    if (nameMatchedIds) for (const id of nameMatchedIds) union.add(id);
+    if (aliasMatchedIds) for (const id of aliasMatchedIds) union.add(id);
 
-    if (!searchAlbumIds) {
-      return albumItems.filter(nameMatch);
+    // nếu local có match thì dùng local luôn (siêu nhanh)
+    if (union.size > 0) {
+      return albumItems.filter((a) => union.has(Number(a.id)));
     }
 
-    return albumItems.filter(
-      (item) => searchAlbumIds.has(Number(item.id)) || nameMatch(item)
-    );
-  }, [searchTerm, albumItems, searchAlbumIds]);
+    // fallback remote (tên bài)
+    if (remoteMatchedIds && remoteMatchedIds.size > 0) {
+      return albumItems.filter((a) => remoteMatchedIds.has(Number(a.id)));
+    }
 
-  // Pagination cho album
-  const totalPages = Math.ceil(filteredAlbums.length / itemsPerPage);
+    // không có gì -> trả rỗng
+    return [];
+  }, [qNorm, albumItems, nameMatchedIds, aliasMatchedIds, remoteMatchedIds]);
+
+  // Pagination
+  const totalPages = Math.ceil(filteredAlbums.length / itemsPerPage) || 1;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentAlbums = filteredAlbums.slice(startIndex, endIndex);
@@ -121,7 +203,6 @@ const Music = () => {
     if (musicSection) musicSection.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Click album -> mở playlist và load songs
   const handleSelectAlbum = (item) => {
     const a = item._album ?? { id: item.id, name: item.name, url: item.image };
     setSelectedAlbum({ id: a.id, name: a.name, url: a.url ?? item.image });
@@ -131,12 +212,8 @@ const Music = () => {
     setCurrentSongIndex(-1);
   };
 
-  const closePlaylist = () => {
-    setRightbarOpen(false);
-    // ✅ không tắt lyric
-  };
+  const closePlaylist = () => setRightbarOpen(false);
 
-  // Chuẩn hoá songs để đổ vào Rightbar
   const playlistItems = useMemo(() => {
     const cover = selectedAlbum?.url ?? "";
     const albumName = selectedAlbum?.name ?? "";
@@ -193,7 +270,7 @@ const Music = () => {
           />
         )}
 
-        {!loadingAlbums && totalPages > 1 && (
+        {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
           <Pagination
             totalPages={totalPages}
             currentPage={currentPage}
@@ -201,11 +278,10 @@ const Music = () => {
           />
         )}
 
-        {!loadingAlbums && totalPages > 1 && (
+        {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
           <div className="text-center text-gray-400 text-sm mb-4">
             Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
-            {Math.min(endIndex, filteredAlbums.length)} / {filteredAlbums.length}{" "}
-            album
+            {Math.min(endIndex, filteredAlbums.length)} / {filteredAlbums.length} album
           </div>
         )}
       </div>
@@ -227,6 +303,7 @@ const Music = () => {
         isPlaylistOpen={rightbarOpen}
       />
 
+      {/* ✅ bỏ 2 dòng "fixed right-6..." vì Rightbar tự hiển thị loading/error */}
       <Rightbar
         open={rightbarOpen}
         albumName={selectedAlbum?.name || "PLAYLIST"}
