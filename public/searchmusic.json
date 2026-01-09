@@ -1,7 +1,8 @@
 {
   "albumAliases": {
     "1": ["ost1", "main menu", "lifeflow", "the void"],
-    "2": ["ep", "renegade", "w"],
-    "3": ["april", "all", "terra"]
+    "12": ["ep", "w"],
+    "181": ["april fool", "all"],
+    "229": ["laterano"]
   }
 }
