@@ -7,13 +7,16 @@ const Rightbar = ({
   currentIndex = -1,
   onSelectSong,
   onClose,
+
+  // ✅ mới
+  loading = false,
+  error = null,
 }) => {
-  // ✅ đóng là ẩn hoàn toàn
   if (!open) return null;
 
   return (
     <>
-      {/* ✅ Backdrop chỉ MOBILE */}
+      {/* Backdrop chỉ MOBILE */}
       <div
         className="fixed inset-0 z-40 bg-black/60 md:hidden"
         onClick={onClose}
@@ -25,10 +28,10 @@ const Rightbar = ({
         className={`
           fixed z-50 bg-black border border-gray-700 shadow-2xl flex flex-col
 
-          /* ✅ MOBILE: bottom-sheet nhỏ để ưu tiên lyric */
+          /* MOBILE */
           left-0 right-0 bottom-0 h-[40vh] rounded-t-2xl
 
-          /* ✅ PC: giữ panel bên phải như trước */
+          /* PC */
           md:left-auto md:right-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2
           md:w-[360px] md:max-w-[85vw] md:h-[80vh] md:rounded-xl
         `}
@@ -68,9 +71,13 @@ const Rightbar = ({
 
         {/* List */}
         <div className="flex-1 overflow-y-auto p-3">
-          {(!playlist || playlist.length === 0) ? (
+          {error ? (
+            <div className="text-red-300 px-2 py-3">
+              Lỗi tải nhạc: {String(error)}
+            </div>
+          ) : (!playlist || playlist.length === 0) ? (
             <div className="text-gray-400 px-2 py-3">
-              Đang tải nhạc...
+              {loading ? "Đang tải nhạc..." : "Không có bài hát."}
             </div>
           ) : (
             <ul className="flex flex-col gap-1">
@@ -83,7 +90,11 @@ const Rightbar = ({
                       type="button"
                       onClick={() => onSelectSong?.(song, idx)}
                       className={`w-full text-left rounded-lg px-3 py-2 transition
-                        ${active ? "bg-white/10 text-white" : "text-gray-300 hover:bg-[#23232b]"}`}
+                        ${
+                          active
+                            ? "bg-white/10 text-white"
+                            : "text-gray-300 hover:bg-[#23232b]"
+                        }`}
                     >
                       <div className="grid grid-cols-[44px,1fr] gap-3 items-start">
                         <span className="text-gray-500 text-right tabular-nums">

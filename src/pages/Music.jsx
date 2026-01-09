@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useAlbums } from "../hooks/useAlbums";
 import { useMusic } from "../hooks/useMusic";
 
@@ -28,19 +28,17 @@ const Music = () => {
   const [selectedMusic, setSelectedMusic] = useState(null);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
-  // ✅ để khi click search result (song) thì highlight đúng id_list sau khi playlist load xong
-  const [pendingPick, setPendingPick] = useState(null); // { album_id, id_list }
+  // ✅ album ids match từ /api/search (tên bài, nickname, keyword)
+  const [searchAlbumIds, setSearchAlbumIds] = useState(null); // Set<number> | null
+  const abortRef = useRef(null);
 
-  // Album cards cho grid
+  // Album cards cho grid (id lớn -> nhỏ)
   const albumItems = useMemo(() => {
     const sorted = [...(albums ?? [])].sort((a, b) => {
       const ai = Number(a.id);
       const bi = Number(b.id);
 
-      // ưu tiên sort số (1..xxx)
       if (!Number.isNaN(ai) && !Number.isNaN(bi)) return bi - ai;
-
-      // fallback nếu id không phải số
       return String(b.id).localeCompare(String(a.id));
     });
 
@@ -53,14 +51,63 @@ const Music = () => {
     }));
   }, [albums]);
 
-  // Search chỉ áp dụng cho album grid (để giữ behavior cũ)
+  // ✅ Khi user gõ searchTerm, gọi /api/search để lấy album_id phù hợp
+  useEffect(() => {
+    const q = searchTerm.trim();
+    if (q.length < 2) {
+      setSearchAlbumIds(null);
+      return;
+    }
+
+    if (abortRef.current) abortRef.current.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    const t = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {
+          signal: controller.signal,
+        });
+        if (!res.ok) throw new Error("Search failed");
+        const data = await res.json();
+        const arr = Array.isArray(data?.results) ? data.results : [];
+
+        const ids = new Set();
+        for (const r of arr) {
+          if (r?.album_id != null) ids.add(Number(r.album_id));
+        }
+        setSearchAlbumIds(ids);
+      } catch (e) {
+        if (e.name !== "AbortError") {
+          // fallback: nếu api lỗi thì chỉ search theo tên album local
+          setSearchAlbumIds(null);
+        }
+      }
+    }, 250);
+
+    return () => {
+      clearTimeout(t);
+      controller.abort();
+    };
+  }, [searchTerm]);
+
+  // ✅ Filter albums grid: nếu có searchAlbumIds -> lọc theo album_id match
   const filteredAlbums = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
     if (!q) return albumItems;
-    return albumItems.filter((item) =>
-      (item.name || "").toLowerCase().includes(q)
+
+    // luôn cho match theo tên album local (để không phụ thuộc api)
+    const nameMatch = (item) =>
+      (item.name || "").toLowerCase().includes(q);
+
+    if (!searchAlbumIds) {
+      return albumItems.filter(nameMatch);
+    }
+
+    return albumItems.filter(
+      (item) => searchAlbumIds.has(Number(item.id)) || nameMatch(item)
     );
-  }, [searchTerm, albumItems]);
+  }, [searchTerm, albumItems, searchAlbumIds]);
 
   // Pagination cho album
   const totalPages = Math.ceil(filteredAlbums.length / itemsPerPage);
@@ -82,7 +129,6 @@ const Music = () => {
     setRightbarOpen(true);
     setSelectedMusic(null);
     setCurrentSongIndex(-1);
-    setPendingPick(null);
   };
 
   const closePlaylist = () => {
@@ -101,30 +147,12 @@ const Music = () => {
       name: s.name ?? s.song_name ?? "",
       audio: s.audio ?? s.url_song ?? s.urlSong ?? "",
       lyrics: s.lyrics ?? s.url_lyric ?? s.urlLyric ?? null,
-
-      // để modal dùng
       cover,
       albumName,
     }));
   }, [rawSongs, selectedAlbum]);
 
-  // ✅ Khi vừa chọn song từ search -> sau khi playlist load, set đúng currentSongIndex
-  useEffect(() => {
-    if (!pendingPick) return;
-    if (!selectedAlbum) return;
-    if (Number(selectedAlbum.id) !== Number(pendingPick.album_id)) return;
-    if (!playlistItems?.length) return;
-
-    const idx = playlistItems.findIndex(
-      (x) => Number(x.id_list) === Number(pendingPick.id_list)
-    );
-    if (idx >= 0) setCurrentSongIndex(idx);
-
-    setPendingPick(null);
-  }, [pendingPick, selectedAlbum, playlistItems]);
-
   const openSongModalFromPlaylist = (song, idx) => {
-    setPendingPick(null);
     setCurrentSongIndex(idx);
     setSelectedMusic({
       name: song.name,
@@ -134,42 +162,12 @@ const Music = () => {
     });
   };
 
-  // ✅ Click kết quả SEARCH: mở album
-  const handlePickAlbumFromSearch = (a) => {
-    setSelectedAlbum({ id: a.album_id, name: a.album_name, url: a.album_url });
-    setRightbarOpen(true);
-
-    // mở album thì reset modal
-    setSelectedMusic(null);
-    setCurrentSongIndex(-1);
-    setPendingPick(null);
-  };
-
-  // ✅ Click kết quả SEARCH: mở & phát bài
-  const handlePickSongFromSearch = (s) => {
-    setSelectedAlbum({ id: s.album_id, name: s.album_name, url: s.album_url });
-    setRightbarOpen(true);
-
-    // phát luôn (không cần chờ playlist load)
-    setSelectedMusic({
-      name: s.song_name,
-      image: s.album_url,
-      audio: s.url_song,
-      lyrics: s.url_lyric,
-    });
-
-    // highlight đúng bài trong playlist khi load xong
-    setCurrentSongIndex(-1);
-    setPendingPick({ album_id: s.album_id, id_list: s.id_list });
-  };
-
   return (
     <div
       id="music"
       className="fullpage-section bg-gradient-to-br from-blue-900 via-black to-cyan-900"
     >
       <div className="w-full h-full flex flex-col justify-center px-6">
-        {/* Loading/Error: album */}
         {loadingAlbums && (
           <p className="text-center text-gray-300 mt-10">Đang tải album...</p>
         )}
@@ -179,18 +177,14 @@ const Music = () => {
           </p>
         )}
 
-        {/* ✅ Search (album + song dropdown) */}
         {!loadingAlbums && (
           <MusicSearchBar
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             setCurrentPage={setCurrentPage}
-            onPickAlbum={handlePickAlbumFromSearch}
-            onPickSong={handlePickSongFromSearch}
           />
         )}
 
-        {/* Grid: chỉ album */}
         {!loadingAlbums && (
           <MusicGrid
             songs={currentAlbums}
@@ -199,7 +193,6 @@ const Music = () => {
           />
         )}
 
-        {/* Pagination album */}
         {!loadingAlbums && totalPages > 1 && (
           <Pagination
             totalPages={totalPages}
@@ -208,7 +201,6 @@ const Music = () => {
           />
         )}
 
-        {/* Info text */}
         {!loadingAlbums && totalPages > 1 && (
           <div className="text-center text-gray-400 text-sm mb-4">
             Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
@@ -218,7 +210,6 @@ const Music = () => {
         )}
       </div>
 
-      {/* Modal: mở khi click bài trong playlist hoặc click search result */}
       <MusicDetailModal
         open={!!selectedMusic}
         music={
@@ -236,7 +227,6 @@ const Music = () => {
         isPlaylistOpen={rightbarOpen}
       />
 
-      {/* Rightbar */}
       <Rightbar
         open={rightbarOpen}
         albumName={selectedAlbum?.name || "PLAYLIST"}
@@ -244,19 +234,9 @@ const Music = () => {
         currentIndex={currentSongIndex}
         onSelectSong={(song, idx) => openSongModalFromPlaylist(song, idx)}
         onClose={closePlaylist}
+        loading={loadingSongs}
+        error={errorSongs}
       />
-
-      {/* Status load songs */}
-      {rightbarOpen && selectedAlbum && loadingSongs && (
-        <div className="fixed right-6 top-[10%] z-50 text-gray-200 text-sm">
-          Đang tải bài hát...
-        </div>
-      )}
-      {rightbarOpen && selectedAlbum && errorSongs && (
-        <div className="fixed right-6 top-[10%] z-50 text-red-300 text-sm">
-          Lỗi tải bài hát: {errorSongs}
-        </div>
-      )}
     </div>
   );
 };
