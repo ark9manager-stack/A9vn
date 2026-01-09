@@ -209,7 +209,7 @@ const Music = () => {
         {/* ✅ status search remote (chỉ khi đang tìm song/alias) */}
         {!loadingAlbums && searchTerm.trim().length >= 2 && remoteSearching && (
           <div className="text-center text-gray-300 text-sm mb-3">
-            Đang tìm theo tên bài hát...
+            Đang tải nhạc...
           </div>
         )}
 
