@@ -124,9 +124,31 @@ export default async function handler(req, res) {
       );
 
       // lọc tiếp theo keyword để ra bài liên quan (giảm spam)
+      // nhưng nếu keyword là nickname (chỉ có trong albumAliases) thì fallback trả toàn bộ bài trong album
+      let pushed = 0;
+
       for (const r of rows) {
-        const nameHit = matchAlias(qNorm, r.song_name) || matchAlias(qNorm, r.album_name);
+        const nameHit =
+          matchAlias(qNorm, r.song_name) || matchAlias(qNorm, r.album_name);
+
         if (nameHit) {
+          pushUnique({
+            type: "song",
+            album_id: r.album_id,
+            album_name: r.album_name,
+            album_url: r.album_url,
+            id_list: r.id_list,
+            song_name: r.song_name,
+            url_song: r.url_song,
+            url_lyric: r.url_lyric,
+          });
+          pushed++;
+        }
+      }
+
+      // ✅ fallback: nickname match albumAliases nhưng không match tên gốc trong DB
+      if (pushed === 0) {
+        for (const r of rows) {
           pushUnique({
             type: "song",
             album_id: r.album_id,
