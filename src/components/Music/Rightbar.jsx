@@ -8,7 +8,7 @@ const Rightbar = ({
   onSelectSong,
   onClose,
 
-  // ✅ mới
+  // ✅ new
   loading = false,
   error = null,
 }) => {
@@ -68,7 +68,7 @@ const Rightbar = ({
             <div className="text-red-300 px-2 py-3">
               Lỗi tải nhạc: {String(error)}
             </div>
-          ) : loading && (!playlist || playlist.length === 0) ? (
+          ) : loading ? (
             <div className="text-gray-400 px-2 py-3">Đang tải nhạc...</div>
           ) : !playlist || playlist.length === 0 ? (
             <div className="text-gray-400 px-2 py-3">Không có bài hát.</div>

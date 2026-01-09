@@ -9,28 +9,45 @@ import Pagination from "../components/Music/Pagination";
 import MusicDetailModal from "../components/Music/MusicDetailModal";
 import Rightbar from "../components/Music/Rightbar";
 
+// ---- helpers ----
 function norm(str) {
   return String(str || "")
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // bỏ dấu VN
+    .replace(/[\u0300-\u036f]/g, "") // bỏ dấu
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
 
-function includesMatch(qNorm, targetNorm) {
+function tokensOf(normStr) {
+  return String(normStr || "").split(/\s+/).filter(Boolean);
+}
+
+/**
+ * Match cho query ngắn:
+ * - q length <= 3: match theo token (tránh "valley" dính "all", "deep" dính "ep")
+ * - q length > 3: match substring bình thường
+ */
+function smartMatch(qNorm, targetNorm) {
   if (!qNorm || !targetNorm) return false;
+  if (qNorm.length <= 3) {
+    const toks = tokensOf(targetNorm);
+    return toks.includes(qNorm);
+  }
   return targetNorm.includes(qNorm);
 }
 
 const Music = () => {
+  // albums
   const { albums, loading: loadingAlbums, error: errorAlbums } = useAlbums();
 
+  // selected album -> songs
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const { songs: rawSongs, loading: loadingSongs, error: errorSongs } = useMusic(
     selectedAlbum?.id
   );
 
+  // UI state
   const [searchTerm, setSearchTerm] = useState("");
   const qNorm = useMemo(() => norm(searchTerm), [searchTerm]);
 
@@ -41,8 +58,8 @@ const Music = () => {
   const [selectedMusic, setSelectedMusic] = useState(null);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
-  // ===== 1) Load alias local (frontend) =====
-  const [albumAliasMap, setAlbumAliasMap] = useState(new Map()); // Map<number, string[] (normalized)>
+  // ---- load aliases from public/searchmusic.json (frontend) ----
+  const [aliasMap, setAliasMap] = useState(new Map()); // Map<number, string[] normalized>
   useEffect(() => {
     let ignore = false;
     (async () => {
@@ -50,7 +67,6 @@ const Music = () => {
         const res = await fetch("/searchmusic.json", { cache: "force-cache" });
         const json = await res.json();
         const map = new Map();
-
         const albumAliases = json?.albumAliases || {};
         for (const [albumId, aliases] of Object.entries(albumAliases)) {
           const arr = Array.isArray(aliases) ? aliases : [];
@@ -59,10 +75,9 @@ const Music = () => {
             arr.map((x) => norm(x)).filter(Boolean)
           );
         }
-
-        if (!ignore) setAlbumAliasMap(map);
+        if (!ignore) setAliasMap(map);
       } catch {
-        if (!ignore) setAlbumAliasMap(new Map());
+        if (!ignore) setAliasMap(new Map());
       }
     })();
     return () => {
@@ -70,7 +85,7 @@ const Music = () => {
     };
   }, []);
 
-  // ===== 2) Album cards (sort id DESC) =====
+  // ---- album cards for grid (sort id DESC) ----
   const albumItems = useMemo(() => {
     const sorted = [...(albums ?? [])].sort((a, b) => {
       const ai = Number(a.id);
@@ -88,60 +103,60 @@ const Music = () => {
     }));
   }, [albums]);
 
-  // ===== 3) Local match: album-name + alias =====
+  // ---- local match: album name ----
   const nameMatchedIds = useMemo(() => {
     const set = new Set();
-    if (!qNorm) return set;
-
-    // nếu chỉ 1 ký tự -> KHÔNG match tên album để tránh quá nhiều kết quả
-    if (qNorm.length < 2) return set;
+    if (!qNorm || qNorm.length < 2) return set;
 
     for (const a of albumItems) {
-      if (includesMatch(qNorm, norm(a.name))) set.add(Number(a.id));
+      if (smartMatch(qNorm, norm(a.name))) set.add(Number(a.id));
     }
     return set;
   }, [qNorm, albumItems]);
 
+  // ---- local match: aliases ----
   const aliasMatchedIds = useMemo(() => {
     const set = new Set();
     if (!qNorm) return set;
 
-    for (const [albumId, aliasNorms] of albumAliasMap.entries()) {
-      // Nếu query chỉ 1 ký tự (vd "w") -> chỉ match EXACT alias (tránh trùng lung tung)
-      if (qNorm.length < 2) {
-        if (aliasNorms.some((a) => a === qNorm)) set.add(albumId);
-        continue;
-      }
+    // cho phép query 1 ký tự chỉ match alias đúng bằng (vd "w")
+    const shortExact = qNorm.length < 2;
 
-      // bình thường: contains
-      if (aliasNorms.some((a) => includesMatch(qNorm, a))) set.add(albumId);
+    for (const [albumId, aliasNorms] of aliasMap.entries()) {
+      const ok = aliasNorms.some((a) =>
+        shortExact ? a === qNorm : smartMatch(qNorm, a)
+      );
+      if (ok) set.add(albumId);
     }
     return set;
-  }, [qNorm, albumAliasMap]);
+  }, [qNorm, aliasMap]);
 
-  // ===== 4) Remote match: khi không match local gì -> tìm theo tên BÀI (DB) =====
+  // ---- remote match: song name (DB) -> album ids ----
+  // Giữ giống behavior "cũ": chỉ gọi remote khi cần.
+  // Nhưng để tránh “song bị miss”, nếu query dài (>=4) thì vẫn gọi remote để union thêm.
   const [remoteAlbumIds, setRemoteAlbumIds] = useState(null); // Set<number> | null
   const [remoteSearching, setRemoteSearching] = useState(false);
   const remoteCacheRef = useRef(new Map()); // qNorm -> Set<number>
   const abortRef = useRef(null);
 
   useEffect(() => {
-    // không search khi rỗng
-    if (!qNorm) {
+    if (!qNorm || qNorm.length < 2) {
       setRemoteAlbumIds(null);
       setRemoteSearching(false);
       return;
     }
 
-    // chỉ gọi remote khi query >= 2 (tránh spam) và local không match gì
     const hasLocal = nameMatchedIds.size > 0 || aliasMatchedIds.size > 0;
-    if (qNorm.length < 2 || hasLocal) {
+
+    // ✅ giống bản cũ nhưng “an toàn hơn”:
+    // - nếu query < 4 và đã có local match -> không gọi API (nhanh)
+    // - nếu query >= 4 -> vẫn gọi API để bắt song name
+    if (hasLocal && qNorm.length < 4) {
       setRemoteAlbumIds(null);
       setRemoteSearching(false);
       return;
     }
 
-    // cache
     if (remoteCacheRef.current.has(qNorm)) {
       setRemoteAlbumIds(remoteCacheRef.current.get(qNorm));
       setRemoteSearching(false);
@@ -183,41 +198,32 @@ const Music = () => {
     };
   }, [qNorm, searchTerm, nameMatchedIds, aliasMatchedIds]);
 
-  // ===== 5) Final filter + PRIORITY sorting (alias first) =====
+  // ---- final filtered albums: UNION (đây là phần sửa đúng lỗi bạn nói) ----
+  // ✅ alias luôn được cộng thêm, kể cả khi đã có kết quả từ tên album
+  // ✅ ưu tiên alias lên trước để search "all" ra album 181 nằm đầu
   const filteredAlbums = useMemo(() => {
     if (!qNorm) return albumItems;
 
-    const remoteSet = remoteAlbumIds ?? new Set();
-
-    // union
     const union = new Set();
     for (const id of nameMatchedIds) union.add(id);
     for (const id of aliasMatchedIds) union.add(id);
-    for (const id of remoteSet) union.add(id);
+    for (const id of (remoteAlbumIds ?? new Set())) union.add(id);
 
-    // Nếu query đang có mà union rỗng -> show rỗng (đỡ hiện all albums)
     if (union.size === 0) return [];
 
-    const scored = albumItems
+    return albumItems
       .filter((a) => union.has(Number(a.id)))
-      .map((a) => {
-        const id = Number(a.id);
-        const score = aliasMatchedIds.has(id)
-          ? 0
-          : nameMatchedIds.has(id)
-          ? 1
-          : remoteSet.has(id)
-          ? 2
-          : 9;
-        return { a, score, id };
-      })
       .sort((x, y) => {
-        if (x.score !== y.score) return x.score - y.score; // alias lên đầu
-        return y.id - x.id; // cùng nhóm -> id desc
-      })
-      .map((x) => x.a);
+        const xi = Number(x.id);
+        const yi = Number(y.id);
 
-    return scored;
+        const xAlias = aliasMatchedIds.has(xi);
+        const yAlias = aliasMatchedIds.has(yi);
+        if (xAlias !== yAlias) return xAlias ? -1 : 1; // alias lên đầu
+
+        // cùng nhóm -> id desc
+        return yi - xi;
+      });
   }, [qNorm, albumItems, nameMatchedIds, aliasMatchedIds, remoteAlbumIds]);
 
   // Pagination
@@ -232,6 +238,7 @@ const Music = () => {
     if (musicSection) musicSection.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Click album -> open playlist
   const handleSelectAlbum = (item) => {
     const a = item._album ?? { id: item.id, name: item.name, url: item.image };
     setSelectedAlbum({ id: a.id, name: a.name, url: a.url ?? item.image });
@@ -243,6 +250,7 @@ const Music = () => {
 
   const closePlaylist = () => setRightbarOpen(false);
 
+  // Normalize songs for Rightbar
   const playlistItems = useMemo(() => {
     const cover = selectedAlbum?.url ?? "";
     const albumName = selectedAlbum?.name ?? "";
@@ -291,7 +299,7 @@ const Music = () => {
           />
         )}
 
-        {/* Remote searching (chỉ khi đang tìm theo tên bài trong DB) */}
+        {/* chỉ báo remote search theo tên bài (khi cần) */}
         {!loadingAlbums && qNorm.length >= 2 && remoteSearching && (
           <div className="text-center text-gray-300 text-sm mb-3">
             Đang tìm theo tên bài hát...
@@ -339,7 +347,7 @@ const Music = () => {
         isPlaylistOpen={rightbarOpen}
       />
 
-      {/* ✅ FIX: bỏ block fixed "Đang tải bài hát..." ở ngoài, dùng Rightbar loading/error */}
+      {/* ✅ bỏ block fixed "Đang tải bài hát..." khỏi Music.jsx */}
       <Rightbar
         open={rightbarOpen}
         albumName={selectedAlbum?.name || "PLAYLIST"}
