@@ -70,7 +70,7 @@ const Rightbar = ({
         <div className="flex-1 overflow-y-auto p-3">
           {(!playlist || playlist.length === 0) ? (
             <div className="text-gray-400 px-2 py-3">
-              Chưa có bài hát trong album này.
+              Đang tải nhạc...
             </div>
           ) : (
             <ul className="flex flex-col gap-1">
