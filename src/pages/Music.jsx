@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useAlbums } from "../hooks/useAlbums";
 import { useMusic } from "../hooks/useMusic";
 
@@ -28,16 +28,19 @@ const Music = () => {
   const [selectedMusic, setSelectedMusic] = useState(null);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
+  // ✅ để khi click search result (song) thì highlight đúng id_list sau khi playlist load xong
+  const [pendingPick, setPendingPick] = useState(null); // { album_id, id_list }
+
   // Album cards cho grid
   const albumItems = useMemo(() => {
     const sorted = [...(albums ?? [])].sort((a, b) => {
       const ai = Number(a.id);
       const bi = Number(b.id);
 
-    // ưu tiên sort số (1..xxx)
+      // ưu tiên sort số (1..xxx)
       if (!Number.isNaN(ai) && !Number.isNaN(bi)) return bi - ai;
 
-    // fallback nếu id không phải số
+      // fallback nếu id không phải số
       return String(b.id).localeCompare(String(a.id));
     });
 
@@ -48,10 +51,9 @@ const Music = () => {
       image: a.url,
       _album: a,
     }));
-}, [albums]);
+  }, [albums]);
 
-
-  // Search chỉ áp dụng cho album
+  // Search chỉ áp dụng cho album grid (để giữ behavior cũ)
   const filteredAlbums = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
     if (!q) return albumItems;
@@ -80,12 +82,13 @@ const Music = () => {
     setRightbarOpen(true);
     setSelectedMusic(null);
     setCurrentSongIndex(-1);
+    setPendingPick(null);
   };
 
   const closePlaylist = () => {
-  setRightbarOpen(false);
-};
-
+    setRightbarOpen(false);
+    // ✅ không tắt lyric
+  };
 
   // Chuẩn hoá songs để đổ vào Rightbar
   const playlistItems = useMemo(() => {
@@ -105,7 +108,23 @@ const Music = () => {
     }));
   }, [rawSongs, selectedAlbum]);
 
+  // ✅ Khi vừa chọn song từ search -> sau khi playlist load, set đúng currentSongIndex
+  useEffect(() => {
+    if (!pendingPick) return;
+    if (!selectedAlbum) return;
+    if (Number(selectedAlbum.id) !== Number(pendingPick.album_id)) return;
+    if (!playlistItems?.length) return;
+
+    const idx = playlistItems.findIndex(
+      (x) => Number(x.id_list) === Number(pendingPick.id_list)
+    );
+    if (idx >= 0) setCurrentSongIndex(idx);
+
+    setPendingPick(null);
+  }, [pendingPick, selectedAlbum, playlistItems]);
+
   const openSongModalFromPlaylist = (song, idx) => {
+    setPendingPick(null);
     setCurrentSongIndex(idx);
     setSelectedMusic({
       name: song.name,
@@ -113,6 +132,35 @@ const Music = () => {
       audio: song.audio,
       lyrics: song.lyrics,
     });
+  };
+
+  // ✅ Click kết quả SEARCH: mở album
+  const handlePickAlbumFromSearch = (a) => {
+    setSelectedAlbum({ id: a.album_id, name: a.album_name, url: a.album_url });
+    setRightbarOpen(true);
+
+    // mở album thì reset modal
+    setSelectedMusic(null);
+    setCurrentSongIndex(-1);
+    setPendingPick(null);
+  };
+
+  // ✅ Click kết quả SEARCH: mở & phát bài
+  const handlePickSongFromSearch = (s) => {
+    setSelectedAlbum({ id: s.album_id, name: s.album_name, url: s.album_url });
+    setRightbarOpen(true);
+
+    // phát luôn (không cần chờ playlist load)
+    setSelectedMusic({
+      name: s.song_name,
+      image: s.album_url,
+      audio: s.url_song,
+      lyrics: s.url_lyric,
+    });
+
+    // highlight đúng bài trong playlist khi load xong
+    setCurrentSongIndex(-1);
+    setPendingPick({ album_id: s.album_id, id_list: s.id_list });
   };
 
   return (
@@ -131,12 +179,14 @@ const Music = () => {
           </p>
         )}
 
-        {/* Search album */}
+        {/* ✅ Search (album + song dropdown) */}
         {!loadingAlbums && (
           <MusicSearchBar
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             setCurrentPage={setCurrentPage}
+            onPickAlbum={handlePickAlbumFromSearch}
+            onPickSong={handlePickSongFromSearch}
           />
         )}
 
@@ -168,7 +218,7 @@ const Music = () => {
         )}
       </div>
 
-      {/* Modal: mở khi click bài trong playlist */}
+      {/* Modal: mở khi click bài trong playlist hoặc click search result */}
       <MusicDetailModal
         open={!!selectedMusic}
         music={
@@ -186,7 +236,7 @@ const Music = () => {
         isPlaylistOpen={rightbarOpen}
       />
 
-      {/* ✅ Rightbar: truyền onClose để Back hoạt động */}
+      {/* Rightbar */}
       <Rightbar
         open={rightbarOpen}
         albumName={selectedAlbum?.name || "PLAYLIST"}
