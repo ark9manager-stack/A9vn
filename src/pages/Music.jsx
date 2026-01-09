@@ -19,24 +19,6 @@ function norm(str) {
     .trim();
 }
 
-function tokensOf(normStr) {
-  return String(normStr || "").split(/\s+/).filter(Boolean);
-}
-
-/**
- * Match cho query ngắn:
- * - q length <= 3: match theo token (tránh "valley" dính "all", "deep" dính "ep")
- * - q length > 3: match substring bình thường
- */
-function smartMatch(qNorm, targetNorm) {
-  if (!qNorm || !targetNorm) return false;
-  if (qNorm.length <= 3) {
-    const toks = tokensOf(targetNorm);
-    return toks.includes(qNorm);
-  }
-  return targetNorm.includes(qNorm);
-}
-
 const Music = () => {
   // albums
   const { albums, loading: loadingAlbums, error: errorAlbums } = useAlbums();
@@ -59,6 +41,7 @@ const Music = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
   // ---- load aliases from public/searchmusic.json (frontend) ----
+  // cấu trúc file: { "albumAliases": { "181": ["all", "april fool", ...], ... } }
   const [aliasMap, setAliasMap] = useState(new Map()); // Map<number, string[] normalized>
   useEffect(() => {
     let ignore = false;
@@ -66,6 +49,7 @@ const Music = () => {
       try {
         const res = await fetch("/searchmusic.json", { cache: "force-cache" });
         const json = await res.json();
+
         const map = new Map();
         const albumAliases = json?.albumAliases || {};
         for (const [albumId, aliases] of Object.entries(albumAliases)) {
@@ -80,10 +64,30 @@ const Music = () => {
         if (!ignore) setAliasMap(new Map());
       }
     })();
+
     return () => {
       ignore = true;
     };
   }, []);
+
+  // ---- build alias index (nhanh hơn khi search) ----
+  const aliasIndex = useMemo(() => {
+    // exact: dùng cho query 1 ký tự (vd "w")
+    const exact = new Map(); // aliasNorm -> Set(albumId)
+    const list = []; // [{ albumId, a }]
+
+    for (const [albumId, aliasNorms] of aliasMap.entries()) {
+      for (const a of aliasNorms) {
+        if (!a) continue;
+        list.push({ albumId, a });
+
+        if (!exact.has(a)) exact.set(a, new Set());
+        exact.get(a).add(albumId);
+      }
+    }
+
+    return { exact, list };
+  }, [aliasMap]);
 
   // ---- album cards for grid (sort id DESC) ----
   const albumItems = useMemo(() => {
@@ -94,46 +98,68 @@ const Music = () => {
       return String(b.id).localeCompare(String(a.id));
     });
 
-    return sorted.map((a) => ({
-      id: a.id,
-      name: a.name,
-      desc: "Album",
-      image: a.url,
-      _album: a,
-    }));
+    return sorted.map((a) => {
+      const idNum = Number(a.id);
+      return {
+        id: a.id,
+        _idNum: Number.isFinite(idNum) ? idNum : null,
+        name: a.name,
+        _nameNorm: norm(a.name),
+        desc: "Album",
+        image: a.url,
+        _album: a,
+      };
+    });
   }, [albums]);
 
-  // ---- local match: album name ----
+  // ---- local match: album name (GIỐNG BẢN CŨ: includes substring) ----
   const nameMatchedIds = useMemo(() => {
     const set = new Set();
     if (!qNorm || qNorm.length < 2) return set;
 
     for (const a of albumItems) {
-      if (smartMatch(qNorm, norm(a.name))) set.add(Number(a.id));
+      if (a._nameNorm && a._nameNorm.includes(qNorm)) {
+        set.add(Number(a.id));
+      }
     }
     return set;
   }, [qNorm, albumItems]);
 
-  // ---- local match: aliases ----
+  // ---- local match: aliases từ searchmusic.json (LUÔN UNION) ----
   const aliasMatchedIds = useMemo(() => {
     const set = new Set();
     if (!qNorm) return set;
 
-    // cho phép query 1 ký tự chỉ match alias đúng bằng (vd "w")
-    const shortExact = qNorm.length < 2;
-
-    for (const [albumId, aliasNorms] of aliasMap.entries()) {
-      const ok = aliasNorms.some((a) =>
-        shortExact ? a === qNorm : smartMatch(qNorm, a)
-      );
-      if (ok) set.add(albumId);
+    // query 1 ký tự: chỉ exact match (vd "w")
+    if (qNorm.length < 2) {
+      const hits = aliasIndex.exact.get(qNorm);
+      if (hits) for (const id of hits) set.add(id);
+      return set;
     }
+
+    // query >= 2: contains
+    for (const { albumId, a } of aliasIndex.list) {
+      if (!a) continue;
+
+      // alias contains query
+      if (a.includes(qNorm)) {
+        set.add(albumId);
+        continue;
+      }
+
+      // query contains alias (chỉ khi alias đủ dài để tránh "ep" / "w" dính bậy)
+      if (a.length >= 3 && qNorm.length >= 4 && qNorm.includes(a)) {
+        set.add(albumId);
+      }
+    }
+
     return set;
-  }, [qNorm, aliasMap]);
+  }, [qNorm, aliasIndex]);
 
   // ---- remote match: song name (DB) -> album ids ----
-  // Giữ giống behavior "cũ": chỉ gọi remote khi cần.
-  // Nhưng để tránh “song bị miss”, nếu query dài (>=4) thì vẫn gọi remote để union thêm.
+  // mục tiêu:
+  // - query < 4 và đã có local match => KHÔNG gọi API (tránh false positive kiểu "all")
+  // - query >= 4 => gọi API để bắt theo tên bài hát và UNION thêm
   const [remoteAlbumIds, setRemoteAlbumIds] = useState(null); // Set<number> | null
   const [remoteSearching, setRemoteSearching] = useState(false);
   const remoteCacheRef = useRef(new Map()); // qNorm -> Set<number>
@@ -148,10 +174,15 @@ const Music = () => {
 
     const hasLocal = nameMatchedIds.size > 0 || aliasMatchedIds.size > 0;
 
-    // ✅ giống bản cũ nhưng “an toàn hơn”:
-    // - nếu query < 4 và đã có local match -> không gọi API (nhanh)
-    // - nếu query >= 4 -> vẫn gọi API để bắt song name
+    // ✅ query ngắn + đã có local => không remote
     if (hasLocal && qNorm.length < 4) {
+      setRemoteAlbumIds(null);
+      setRemoteSearching(false);
+      return;
+    }
+
+    // ✅ chỉ remote khi query đủ dài (>=4)
+    if (qNorm.length < 4) {
       setRemoteAlbumIds(null);
       setRemoteSearching(false);
       return;
@@ -170,7 +201,8 @@ const Music = () => {
     const t = setTimeout(async () => {
       try {
         setRemoteSearching(true);
-        const res = await fetch(`/api/search?q=${encodeURIComponent(searchTerm.trim())}`, {
+        const q = searchTerm.trim(); // giữ nguyên để DB LIKE bắt được tiếng Việt/đúng dấu nếu cần
+        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {
           signal: controller.signal,
         });
         if (!res.ok) throw new Error("Search failed");
@@ -179,7 +211,7 @@ const Music = () => {
 
         const set = new Set();
         for (const r of arr) {
-          const id = r?.album_id ?? r?.id;
+          const id = r?.album_id ?? r?.id ?? r?.albumId;
           if (id != null) set.add(Number(id));
         }
 
@@ -190,7 +222,7 @@ const Music = () => {
       } finally {
         setRemoteSearching(false);
       }
-    }, 250);
+    }, 220);
 
     return () => {
       clearTimeout(t);
@@ -198,32 +230,19 @@ const Music = () => {
     };
   }, [qNorm, searchTerm, nameMatchedIds, aliasMatchedIds]);
 
-  // ---- final filtered albums: UNION (đây là phần sửa đúng lỗi bạn nói) ----
-  // ✅ alias luôn được cộng thêm, kể cả khi đã có kết quả từ tên album
-  // ✅ ưu tiên alias lên trước để search "all" ra album 181 nằm đầu
+  // ---- final filtered albums: UNION (DB album name + searchmusic.json + remote song) ----
   const filteredAlbums = useMemo(() => {
     if (!qNorm) return albumItems;
 
     const union = new Set();
     for (const id of nameMatchedIds) union.add(id);
     for (const id of aliasMatchedIds) union.add(id);
-    for (const id of (remoteAlbumIds ?? new Set())) union.add(id);
+    for (const id of remoteAlbumIds ?? new Set()) union.add(id);
 
     if (union.size === 0) return [];
 
-    return albumItems
-      .filter((a) => union.has(Number(a.id)))
-      .sort((x, y) => {
-        const xi = Number(x.id);
-        const yi = Number(y.id);
-
-        const xAlias = aliasMatchedIds.has(xi);
-        const yAlias = aliasMatchedIds.has(yi);
-        if (xAlias !== yAlias) return xAlias ? -1 : 1; // alias lên đầu
-
-        // cùng nhóm -> id desc
-        return yi - xi;
-      });
+    // albumItems đã sort id DESC, filter sẽ giữ đúng thứ tự
+    return albumItems.filter((a) => union.has(Number(a.id)));
   }, [qNorm, albumItems, nameMatchedIds, aliasMatchedIds, remoteAlbumIds]);
 
   // Pagination
@@ -347,7 +366,6 @@ const Music = () => {
         isPlaylistOpen={rightbarOpen}
       />
 
-      {/* ✅ bỏ block fixed "Đang tải bài hát..." khỏi Music.jsx */}
       <Rightbar
         open={rightbarOpen}
         albumName={selectedAlbum?.name || "PLAYLIST"}
