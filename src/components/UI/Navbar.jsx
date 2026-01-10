@@ -48,7 +48,7 @@ const Navbar = ({ isOpen, onToggle }) => {
         </button>
 
         {/* Logo và tên trang web */}
-        <div className="w-full flex justify-between items-center font-semibold">
+        <div className="w-full flex justify-between items-center hidden md:block font-semibold">
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg shadow-lg">
             <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-sm">M</span>
