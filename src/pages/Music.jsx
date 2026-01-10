@@ -47,7 +47,7 @@ const Music = () => {
     let ignore = false;
     (async () => {
       try {
-        const res = await fetch("/searchmusic.json", { cache: "force-cache" });
+        const res = await fetch("/searchmusic.json", { cache: "no-store" });
         const json = await res.json();
 
         const map = new Map();
