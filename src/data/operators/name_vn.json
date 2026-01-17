@@ -185,17 +185,17 @@
     "name_vn": "Hoshiguma the Breacher"
   },
   "char_1045_svash2": {
-    "idweb": null,
+    "idweb": 397,
     "name": "凛御银灰",
     "name_vn": "SilverAsh the Reignfrost"
   },
   "char_1046_sbell2": {
-    "idweb": null,
+    "idweb": 396,
     "name": "圣聆初雪",
     "name_vn": "Pramanix the Prerita"
   },
   "char_1047_halo2": {
-    "idweb": null,
+    "idweb": 395,
     "name": "溯光星源",
     "name_vn": "Astgenne the Lightchaser"
   },
@@ -1745,12 +1745,12 @@
     "name_vn": "Nasti"
   },
   "char_4213_skybx": {
-    "idweb": null,
+    "idweb": 398,
     "name": "天空盒",
     "name_vn": "Skybox"
   },
   "char_4214_cairn": {
-    "idweb": null,
+    "idweb": 399,
     "name": "响石",
     "name_vn": "Cairn"
   },
