@@ -170,18 +170,18 @@
     "name_vn": "Exusiai the New Covenant"
   },
   "char_1042_phatm2": {
-    "idweb": null,
+    "idweb": 376,
     "name": "酒神",
     "name_vn": "Tragodia"
   },
   "char_1043_leizi2": {
-    "idweb": null,
+    "idweb": 378,
     "name": "司霆惊蛰",
     "name_vn": "Leizi the Thunderbringer"
   },
   "char_1044_hsgma2": {
-    "idweb": null,
-    "name": "383",
+    "idweb": 383,
+    "name": "斩业星熊",
     "name_vn": "Hoshiguma the Breacher"
   },
   "char_1045_svash2": {
@@ -1670,7 +1670,7 @@
     "name_vn": "CONFESS-47"
   },
   "char_4191_tippi": {
-    "idweb": null,
+    "idweb": 375,
     "name": "蒂比",
     "name_vn": "Tippi"
   },
@@ -1690,12 +1690,12 @@
     "name_vn": "Raidian"
   },
   "char_4196_reckpr": {
-    "idweb": null,
+    "idweb": 377,
     "name": "录武官",
     "name_vn": "Record Keeper"
   },
   "char_4198_christ": {
-    "idweb": null,
+    "idweb": 374,
     "name": "Miss.Christine",
     "name_vn": "Miss.Christine"
   },
