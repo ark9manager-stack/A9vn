@@ -585,7 +585,7 @@
     "name_vn": "Gnosis"
   },
   "char_208_melan": {
-    "idweb": null,
+    "idweb": 11,
     "name": "玫兰莎",
     "name_vn": "Melantha"
   },
@@ -1735,8 +1735,8 @@
     "name_vn": "Flametail"
   },
   "char_4211_snhunt": {
-    "idweb": null,
-    "name": "394",
+    "idweb": 394,
+    "name": "雪猎",
     "name_vn": "Snow Hunter"
   },
   "char_4212_nasti": {
