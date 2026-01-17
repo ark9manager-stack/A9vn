@@ -57,7 +57,7 @@
   },
   "char_1022_flwr2": {
     "name": "撷英调香师",
-    "name_vn": ""
+    "name_vn": "Perfumer the Distilled"
   },
   "char_1023_ghost2": {
     "name": "归溟幽灵鲨",
@@ -145,19 +145,19 @@
   },
   "char_1044_hsgma2": {
     "name": "斩业星熊",
-    "name_vn": ""
+    "name_vn": "Hoshiguma the Breacher"
   },
   "char_1045_svash2": {
     "name": "凛御银灰",
-    "name_vn": ""
+    "name_vn": "SilverAsh the Reignfrost"
   },
   "char_1046_sbell2": {
     "name": "圣聆初雪",
-    "name_vn": ""
+    "name_vn": "Pramanix the Prerita"
   },
   "char_1047_halo2": {
     "name": "溯光星源",
-    "name_vn": ""
+    "name_vn": "Astgenne the Lightchaser"
   },
   "char_106_franka": {
     "name": "芙兰卡",
@@ -869,7 +869,7 @@
   },
   "char_394_hadiya": {
     "name": "哈蒂娅",
-    "name_vn": ""
+    "name_vn": "Hadiya"
   },
   "char_4000_jnight": {
     "name": "正义骑士号",
@@ -993,7 +993,7 @@
   },
   "char_4051_akkord": {
     "name": "协律",
-    "name_vn": ""
+    "name_vn": "Akkord"
   },
   "char_4052_surfer": {
     "name": "寻澜",
@@ -1009,7 +1009,7 @@
   },
   "char_4056_titi": {
     "name": "缇缇",
-    "name_vn": ""
+    "name_vn": "Titi"
   },
   "char_4058_pepe": {
     "name": "佩佩",
@@ -1277,7 +1277,7 @@
   },
   "char_4166_varkis": {
     "name": "摆渡人",
-    "name_vn": ""
+    "name_vn": "Varkáris"
   },
   "char_416_zumama": {
     "name": "森蚺",
@@ -1309,23 +1309,23 @@
   },
   "char_4182_oblvns": {
     "name": "丰川祥子",
-    "name_vn": ""
+    "name_vn": "Togawa Sakiko"
   },
   "char_4183_mortis": {
     "name": "若叶睦",
-    "name_vn": ""
+    "name_vn": "Wakaba Mutsumi"
   },
   "char_4184_dolris": {
     "name": "三角初华",
-    "name_vn": ""
+    "name_vn": "Misumi Uika"
   },
   "char_4185_amoris": {
     "name": "祐天寺若麦",
-    "name_vn": ""
+    "name_vn": "Yūtenji Nyamu"
   },
   "char_4186_tmoris": {
     "name": "八幡海铃",
-    "name_vn": ""
+    "name_vn": "Yahata Umiri"
   },
   "char_4187_graceb": {
     "name": "聆音",
@@ -1361,27 +1361,27 @@
   },
   "char_4199_makiri": {
     "name": "松桐",
-    "name_vn": ""
+    "name_vn": "Matsukiri"
   },
   "char_4202_haruka": {
     "name": "遥",
-    "name_vn": ""
+    "name_vn": "Haruka"
   },
   "char_4203_kichi": {
     "name": "吉星",
-    "name_vn": ""
+    "name_vn": "Kichisei"
   },
   "char_4204_mantra": {
     "name": "真言",
-    "name_vn": ""
+    "name_vn": "Mantra"
   },
   "char_4207_branch": {
     "name": "折桠",
-    "name_vn": ""
+    "name_vn": "Vetochki"
   },
   "char_4208_wintim": {
     "name": "冬时",
-    "name_vn": ""
+    "name_vn": "Snegurochka"
   },
   "char_420_flamtl": {
     "name": "焰尾",
@@ -1389,19 +1389,19 @@
   },
   "char_4211_snhunt": {
     "name": "雪猎",
-    "name_vn": ""
+    "name_vn": "Snow Hunter"
   },
   "char_4212_nasti": {
     "name": "娜斯提",
-    "name_vn": ""
+    "name_vn": "Nasti"
   },
   "char_4213_skybx": {
     "name": "天空盒",
-    "name_vn": ""
+    "name_vn": "Skybox"
   },
   "char_4214_cairn": {
     "name": "响石",
-    "name_vn": ""
+    "name_vn": "Cairn"
   },
   "char_421_crow": {
     "name": "羽毛笔",
@@ -1717,7 +1717,7 @@
   },
   "char_617_sharp2": {
     "name": "领主·Sharp",
-    "name_vn": ""
+    "name_vn": "Sharp·Lord"
   },
   "token_10000_silent_healrb": {
     "name": "医疗探机",
