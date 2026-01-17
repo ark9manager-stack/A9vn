@@ -237,16 +237,21 @@ const Operator = () => {
                     type="button"
                     title={sub.label}
                   >
-                    <img
-                      src={sub.icon}
-                      className="max-w-[44px] w-auto h-auto object-contain"
-                      alt={sub.label}
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
+                    {/* ✅ Khung icon cố định -> icon ngang/dọc đều đẹp, label không bị nhảy */}
+                    <div className="h-[44px] w-full flex items-center justify-center">
+                      <img
+                        src={sub.icon}
+                        alt={sub.label}
+                        className="max-h-[44px] max-w-[56px] w-auto h-auto object-contain"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    </div>
 
-                    <span className="text-[11px] text-gray-200 mt-1 truncate w-full text-center">
+                    {/* ✅ Label luôn nằm đúng chỗ */}
+                    <span className="mt-1 text-[11px] leading-tight text-gray-200 truncate w-full text-center">
                       {sub.label}
                     </span>
                   </button>
