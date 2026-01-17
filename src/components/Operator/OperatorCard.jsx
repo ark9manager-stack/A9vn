@@ -35,7 +35,7 @@ function buildCnAvatarUrl(charId) {
   return `${CN_AVATAR_BASE}${id}.png`;
 }
 
-// ✅ Chuẩn hóa rarity về tier 1..6
+// ✅ Chuẩn hóa rarity về tier 1..6 (hỗ trợ cả "TIER_6" lẫn số 0..5 / 1..6)
 function getRarityTier(rarity) {
   // dạng "TIER_6"
   if (typeof rarity === "string") {
@@ -57,11 +57,14 @@ function getRarityTier(rarity) {
 }
 
 const OperatorCard = ({ operator, onClick }) => {
+  // tier 1..6 để dùng background sprite_item_r{tier}.png
   const tier = getRarityTier(operator?.rarity);
-  const rarityIndex = Math.max(0, Math.min(5, tier - 1)); // 0..5
+
+  // rarityClass đang map theo index 0..5 (đúng như file hiện tại của bạn)
+  const rarityIndex = Math.max(0, Math.min(5, tier - 1));
   const rarityClass = rarityBorderMap[rarityIndex] || "border-gray-400";
 
-  // ✅ background theo tier
+  // ✅ background URL nằm trong Avatar box
   const bgUrl = `${MAIL_BG_BASE}${tier}.png`;
 
   // Ưu tiên lấy id/key đúng kiểu char_285_medic2
@@ -99,15 +102,9 @@ const OperatorCard = ({ operator, onClick }) => {
     <div
       onClick={() => onClick?.(operator)}
       className="
-        cursor-pointer rounded-xl
+        cursor-pointer rounded-xl bg-[#1b1b1b]
         hover:scale-105 transition p-3
       "
-      style={{
-        backgroundImage: `url(${bgUrl})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
     >
       {/* Avatar */}
       <div
@@ -115,6 +112,12 @@ const OperatorCard = ({ operator, onClick }) => {
           relative rounded-lg overflow-hidden
           border-2 ${rarityClass}
         `}
+        style={{
+          backgroundImage: `url(${bgUrl})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
       >
         {imgSrc ? (
           <img
@@ -137,8 +140,8 @@ const OperatorCard = ({ operator, onClick }) => {
           {operator?.name || String(charId || "")}
         </div>
 
-        {/* nếu rarity là "TIER_6" thì hiển thị ★6, nếu là 0..5 sẽ hiển thị ★(tier) */}
-        <div className="text-xs text-gray-200">★{tier}</div>
+        {/* Hiển thị ★ theo tier (1..6), ổn cho cả dữ liệu TIER_X hoặc số */}
+        <div className="text-xs text-gray-400">★{tier}</div>
       </div>
     </div>
   );
