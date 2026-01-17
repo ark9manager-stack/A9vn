@@ -12,11 +12,11 @@ const rarityBorderMap = {
 const CN_AVATAR_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
 
-// Background sprite theo rarity tier (TIER_1..TIER_6)
+// sprite background theo rarity tier (TIER_1..TIER_6)
 const MAIL_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/sprite_item_r";
 
-// Các trường hợp ngoại lệ (key là charId trong character_table.json)
+// ngoại lệ avatar
 const CN_AVATAR_OVERRIDES = {
   char_271_spikes: `${CN_AVATAR_BASE}elite/char_271_spikes.png`,
 };
@@ -31,7 +31,7 @@ function buildCnAvatarUrl(charId) {
   return `${CN_AVATAR_BASE}${id}.png`;
 }
 
-// Chuẩn hóa rarity về tier 1..6 (hỗ trợ cả "TIER_6" lẫn số 0..5 / 1..6)
+// Chuẩn hóa rarity về tier 1..6 (hỗ trợ "TIER_6" hoặc số 0..5 / 1..6)
 function getRarityTier(rarity) {
   if (typeof rarity === "string") {
     const m = rarity.match(/TIER_(\d)/i);
@@ -52,14 +52,13 @@ function getRarityTier(rarity) {
 const OperatorCard = ({ operator, onClick }) => {
   const tier = getRarityTier(operator?.rarity);
 
-  // rarityClass map theo index 0..5
+  // Map border theo index 0..5
   const rarityIndex = Math.max(0, Math.min(5, tier - 1));
   const rarityClass = rarityBorderMap[rarityIndex] || "border-gray-400";
 
-  // sprite overlay hiển thị chính trong Avatar
+  // ✅ sprite background (không đè lên nhân vật)
   const bgUrl = `${MAIL_BG_BASE}${tier}.png`;
 
-  // lấy id/key kiểu char_285_medic2
   const charId = useMemo(() => {
     return (
       operator?.charId ||
@@ -80,12 +79,10 @@ const OperatorCard = ({ operator, onClick }) => {
   }, [preferredAvatar, operator?.avatar]);
 
   const handleImgError = () => {
-    // fallback về avatar cũ nếu có
     if (operator?.avatar && imgSrc !== operator.avatar) {
       setImgSrc(operator.avatar);
       return;
     }
-    // nếu vẫn lỗi thì bỏ ảnh operator để chỉ còn sprite
     if (imgSrc) setImgSrc("");
   };
 
@@ -102,29 +99,32 @@ const OperatorCard = ({ operator, onClick }) => {
         className={`
           relative rounded-lg overflow-hidden
           border-2 ${rarityClass}
+          aspect-square
         `}
+        style={{
+          backgroundImage: `url(${bgUrl})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          // sprite kiểu frame thường đẹp hơn với contain để không bị zoom mất viền
+          backgroundSize: "contain",
+        }}
       >
-        {/* Ảnh operator nằm dưới (nếu có) */}
-        {imgSrc ? (
-          <img
-            src={imgSrc}
-            alt={operator?.name || String(charId || "")}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            onError={handleImgError}
-          />
-        ) : (
-          <div className="w-full aspect-square bg-black/30" />
-        )}
-
-        {/* Sprite overlay nằm trên => "thay luôn phần Avatar" */}
-        <img
-          src={bgUrl}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-          loading="lazy"
-        />
+        {/* ✅ Ảnh nhân vật nằm phía trên, nhưng inset để lộ background sprite */}
+        <div className="absolute inset-2 rounded-md overflow-hidden">
+          {imgSrc ? (
+            <img
+              src={imgSrc}
+              alt={operator?.name || String(charId || "")}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              onError={handleImgError}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-xs text-gray-400 bg-black/30">
+              No Image
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Info */}
