@@ -3,6 +3,7 @@ import AnimatedContent from "../components/UI/AnimatedContent";
 import OperatorCard from "../components/Operator/OperatorCard";
 import OperatorModal from "../components/Operator/OperatorModal";
 import { useOperators } from "../hooks/useOperators";
+import ScrollLockContainer from "../components/UI/ScrollLockContainer";
 
 const classes = [
   {
@@ -107,7 +108,7 @@ const Operator = () => {
           <div className="w-full border-t border-gray-600 my-4" />
 
           {/* Operator Grid */}
-          <div className="w-full flex-1 overflow-y-auto p-4">
+          <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
               {filteredOperators.map((op) => (
                 <OperatorCard
@@ -117,7 +118,7 @@ const Operator = () => {
                 />
               ))}
             </div>
-          </div>
+          </ScrollLockContainer>
         </div>
       </div>
 
