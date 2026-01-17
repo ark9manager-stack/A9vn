@@ -8,8 +8,8 @@ export function useOperators() {
 
   useEffect(() => {
     const parsed = Object.entries(operators)
-      .filter(([id]) => id !== "char_512_aprot") // ✅ remove duplicate aprot
-      .filter(([id, op]) => op.profession !== "TOKEN") // ✅ fix destructuring
+      .filter(([id]) => id !== "char_512_aprot")
+      .filter(([id, op]) => op.profession !== "TOKEN")
       .map(([id, op]) => ({
         id,
         name: op.name,
