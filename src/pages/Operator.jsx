@@ -6,35 +6,43 @@ import { useOperators } from "../hooks/useOperators";
 
 const classes = [
   {
-    name: "VANGUARD",
+    value: "PIONEER",
+    label: "Vanguard",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_pioneer.png",
   },
   {
-    name: "GUARD",
+    value: "WARRIOR",
+    label: "Guard",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_warrior.png",
   },
   {
-    name: "DEFENDER",
+    value: "TANK",
+    label: "Defender",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Buc%5Dcharcommon/dynprofession/icon_profession_tank.png",
   },
   {
-    name: "SNIPER",
+    value: "SNIPER",
+    label: "Sniper",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_sniper.png",
   },
   {
-    name: "CASTER",
+    value: "CASTER",
+    label: "Caster",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_caster.png",
   },
   {
-    name: "MEDIC",
+    value: "MEDIC",
+    label: "Medic",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_medic.png",
   },
   {
-    name: "SUPPORTER",
+    value: "SUPPORT",
+    label: "Supporter",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_support.png",
   },
   {
-    name: "SPECIALIST",
+    value: "SPECIAL",
+    label: "Specialist",
     icon: "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]charcommon/dynprofession/icon_profession_special.png",
   },
 ];
@@ -75,20 +83,22 @@ const Operator = () => {
             <div className="flex flex-wrap gap-2 ml-auto pt-4">
               {classes.map((cls) => (
                 <button
-                  key={cls.name}
+                  key={cls.value}
                   onClick={() =>
-                    setActiveClass(activeClass === cls.name ? null : cls.name)
+                    setActiveClass(activeClass === cls.value ? null : cls.value)
                   }
                   className={`p-2 rounded-lg w-20 flex flex-col items-center transition
                     ${
-                      activeClass === cls.name
+                      activeClass === cls.value
                         ? "bg-green-600"
                         : "bg-[#242424] bg-opacity-50 hover:bg-opacity-70"
                     }
                   `}
                 >
                   <img src={cls.icon} className="w-10 h-10" />
-                  <span className="text-xs text-gray-300 mt-1">{cls.name}</span>
+                  <span className="text-xs text-gray-300 mt-1">
+                    {cls.label}
+                  </span>
                 </button>
               ))}
             </div>
