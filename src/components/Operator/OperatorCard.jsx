@@ -21,7 +21,7 @@ function buildCnAvatarUrl(charId) {
   if (!charId) return null;
 
   const id = String(charId).trim().replace(/\.png$/i, "");
-  // Chỉ build avatar cho operator thật (char_...). Trap/token thường không có ở path này
+  // Chỉ build avatar cho operator thật (char_.). Trap/token thường không có ở path này
   if (!id.startsWith("char_")) return null;
 
   // ✅ ưu tiên ngoại lệ trước
@@ -31,8 +31,59 @@ function buildCnAvatarUrl(charId) {
   return `${CN_AVATAR_BASE}${id}.png`;
 }
 
+// Chuẩn hóa rarity về index 0..5 để dùng cho border + tier
+function normalizeRarityIndex(rarity) {
+  if (rarity == null) return null;
+
+  // Nếu là number:
+  // - dạng 0..5 (thường gặp) => giữ nguyên
+  // - dạng 1..6 (nếu bạn đã convert) => trừ 1
+  if (typeof rarity === "number" && Number.isFinite(rarity)) {
+    if (rarity >= 0 && rarity <= 5) return rarity;
+    if (rarity >= 1 && rarity <= 6) return rarity - 1;
+    return null;
+  }
+
+  // Nếu là string kiểu "TIER_3"
+  const s = String(rarity).trim().toUpperCase();
+  const m = s.match(/TIER_(\d+)/) || s.match(/(\d+)/);
+  if (!m) return null;
+
+  const tier = Number(m[1] ?? m[0]);
+  if (!Number.isFinite(tier)) return null;
+
+  // tier 1..6 => index 0..5
+  const idx = tier - 1;
+  if (idx < 0 || idx > 5) return null;
+  return idx;
+}
+
+function getInfoGradient(tier) {
+  switch (tier) {
+    case 6:
+      return "linear-gradient(to top, rgba(255,200,0,1), rgba(255,200,0,0))";
+    case 5:
+      return "linear-gradient(to top, rgba(255,255,169,1), rgba(255,255,169,0))";
+    case 4:
+      return "linear-gradient(to top, rgba(214,197,214,1), rgba(214,197,214,0))";
+    case 3:
+      return "linear-gradient(to top, rgba(0,170,238,1), rgba(0,170,238,0))";
+    case 2:
+      return "linear-gradient(to top, rgba(220,220,0,1), rgba(220,220,0,0))";
+    case 1:
+      return "linear-gradient(to top, rgba(160,160,160,1), rgba(160,160,160,0))";
+    default:
+      return "transparent";
+  }
+}
+
 const OperatorCard = ({ operator, onClick }) => {
-  const rarityClass = rarityBorderMap[operator?.rarity] || "border-gray-400";
+  const rarityIdx = useMemo(
+    () => normalizeRarityIndex(operator?.rarity),
+    [operator?.rarity]
+  );
+  const tier = rarityIdx != null ? rarityIdx + 1 : "?";
+  const rarityClass = rarityBorderMap[rarityIdx] || "border-gray-400";
 
   // Ưu tiên lấy id/key đúng kiểu char_285_medic2
   const charId = useMemo(() => {
@@ -46,9 +97,7 @@ const OperatorCard = ({ operator, onClick }) => {
 
   const preferredAvatar = useMemo(() => buildCnAvatarUrl(charId), [charId]);
 
-  const [imgSrc, setImgSrc] = useState(
-    preferredAvatar || operator?.avatar || ""
-  );
+  const [imgSrc, setImgSrc] = useState(preferredAvatar || operator?.avatar || "");
 
   // Khi operator đổi -> reset ảnh theo preferredAvatar
   useEffect(() => {
@@ -64,6 +113,8 @@ const OperatorCard = ({ operator, onClick }) => {
     // Nếu vẫn lỗi thì bỏ ảnh (hiện placeholder)
     if (imgSrc) setImgSrc("");
   };
+
+  const infoBg = useMemo(() => getInfoGradient(tier), [tier]);
 
   return (
     <div
@@ -84,7 +135,7 @@ const OperatorCard = ({ operator, onClick }) => {
           <img
             src={imgSrc}
             alt={operator?.name || String(charId || "")}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-[1.08]"
             loading="lazy"
             onError={handleImgError}
           />
@@ -96,11 +147,13 @@ const OperatorCard = ({ operator, onClick }) => {
       </div>
 
       {/* Info */}
-      <div className="mt-2 text-center">
+      <div
+        className="mt-2 text-center rounded-lg px-2 py-2"
+        style={{ background: infoBg }}
+      >
         <div className="text-white font-semibold truncate">
           {operator?.name || String(charId || "")}
         </div>
-        <div className="text-xs text-gray-400">★{operator?.rarity ?? "?"}</div>
       </div>
     </div>
   );
