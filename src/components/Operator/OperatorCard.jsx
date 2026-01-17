@@ -154,7 +154,6 @@ const OperatorCard = ({ operator, onClick }) => {
         <div className="text-white font-semibold truncate">
           {operator?.name || String(charId || "")}
         </div>
-        <div className="text-xs text-gray-900/90 font-semibold">★{tier}</div>
       </div>
     </div>
   );
