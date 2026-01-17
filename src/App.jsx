@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="h-screen bg-black">
       <Navbar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
-      <div className="h-[90%] flex">
+      <div className="h-screen">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <Display />
       </div>
