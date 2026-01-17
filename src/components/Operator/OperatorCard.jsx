@@ -12,6 +12,10 @@ const rarityBorderMap = {
 const CN_AVATAR_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
 
+// ✅ Background theo rarity tier (TIER_1..TIER_6)
+const MAIL_BG_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/sprite_item_r";
+
 // ✅ Các trường hợp ngoại lệ (key là charId trong character_table.json)
 const CN_AVATAR_OVERRIDES = {
   char_271_spikes: `${CN_AVATAR_BASE}elite/char_271_spikes.png`,
@@ -31,8 +35,34 @@ function buildCnAvatarUrl(charId) {
   return `${CN_AVATAR_BASE}${id}.png`;
 }
 
+// ✅ Chuẩn hóa rarity về tier 1..6
+function getRarityTier(rarity) {
+  // dạng "TIER_6"
+  if (typeof rarity === "string") {
+    const m = rarity.match(/TIER_(\d)/i);
+    if (m) {
+      const t = Number(m[1]);
+      if (Number.isFinite(t)) return Math.min(6, Math.max(1, t));
+    }
+  }
+
+  // dạng số: có thể là 0..5 hoặc 1..6
+  if (typeof rarity === "number" && Number.isFinite(rarity)) {
+    if (rarity >= 1 && rarity <= 6) return rarity; // 1..6
+    if (rarity >= 0 && rarity <= 5) return rarity + 1; // 0..5 => 1..6
+  }
+
+  // fallback
+  return 6;
+}
+
 const OperatorCard = ({ operator, onClick }) => {
-  const rarityClass = rarityBorderMap[operator?.rarity] || "border-gray-400";
+  const tier = getRarityTier(operator?.rarity);
+  const rarityIndex = Math.max(0, Math.min(5, tier - 1)); // 0..5
+  const rarityClass = rarityBorderMap[rarityIndex] || "border-gray-400";
+
+  // ✅ background theo tier
+  const bgUrl = `${MAIL_BG_BASE}${tier}.png`;
 
   // Ưu tiên lấy id/key đúng kiểu char_285_medic2
   const charId = useMemo(() => {
@@ -69,9 +99,15 @@ const OperatorCard = ({ operator, onClick }) => {
     <div
       onClick={() => onClick?.(operator)}
       className="
-        cursor-pointer rounded-xl bg-[#1b1b1b]
+        cursor-pointer rounded-xl
         hover:scale-105 transition p-3
       "
+      style={{
+        backgroundImage: `url(${bgUrl})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
     >
       {/* Avatar */}
       <div
@@ -100,7 +136,9 @@ const OperatorCard = ({ operator, onClick }) => {
         <div className="text-white font-semibold truncate">
           {operator?.name || String(charId || "")}
         </div>
-        <div className="text-xs text-gray-400">★{operator?.rarity ?? "?"}</div>
+
+        {/* nếu rarity là "TIER_6" thì hiển thị ★6, nếu là 0..5 sẽ hiển thị ★(tier) */}
+        <div className="text-xs text-gray-200">★{tier}</div>
       </div>
     </div>
   );
