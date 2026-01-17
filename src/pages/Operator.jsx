@@ -48,6 +48,8 @@ const classes = [
   },
 ];
 
+const RARITY_ORDER = [6, 5, 4, 3, 2, 1];
+
 const SUBPROF_LABELS = {
   agent: "Agent",
   bearer: "Standard Bearer",
@@ -109,7 +111,6 @@ const SUBPROF_LABELS = {
   slower: "Decel Binder",
   summoner: "Summoner",
   underminer: "Hexer",
-
   alchemist: "Alchemist",
   dollkeeper: "Dollkeeper",
   executor: "Executor",
@@ -132,13 +133,36 @@ function subProfLabel(subProfessionId) {
   return SUBPROF_LABELS[subProfessionId] || subProfessionId;
 }
 
+function getRarityTier(rarity) {
+  if (rarity == null) return 0;
+
+  if (typeof rarity === "string") {
+    const m = rarity.match(/TIER_(\d+)/i);
+    if (m) {
+      const t = Number(m[1]);
+      return Number.isFinite(t) ? t : 0;
+    }
+  }
+
+  if (typeof rarity === "number" && Number.isFinite(rarity)) {
+    if (rarity >= 0 && rarity <= 5) return rarity + 1;
+    if (rarity >= 1 && rarity <= 6) return rarity;
+  }
+
+  return 0;
+}
+
+function rarityRank(tier) {
+  const idx = RARITY_ORDER.indexOf(tier);
+  return idx === -1 ? 999 : idx;
+}
+
 const Operator = () => {
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
 
   const [activeClass, setActiveClass] = useState(null);
   const [activeSubClass, setActiveSubClass] = useState(null);
 
-  // ✅ danh sách subclass theo main class đang chọn
   const availableSubclasses = useMemo(() => {
     if (!activeClass) return [];
 
@@ -165,20 +189,22 @@ const Operator = () => {
       .filter((op) => (activeClass ? op.profession === activeClass : true))
       .filter((op) => (activeSubClass ? op.subProfession === activeSubClass : true))
       .sort((a, b) => {
-        if (b.rarity !== a.rarity) return b.rarity - a.rarity;
-        if (b.releaseTime && a.releaseTime) return b.releaseTime - a.releaseTime;
-        return 0;
+        const ra = rarityRank(getRarityTier(a.rarity));
+        const rb = rarityRank(getRarityTier(b.rarity));
+        if (ra !== rb) return ra - rb;
+        const sa = Number(a.sortIndex || 0);
+        const sb = Number(b.sortIndex || 0);
+        if (sb !== sa) return sb - sa;
+        return String(a.name || "").localeCompare(String(b.name || ""));
       });
   }, [operators, activeClass, activeSubClass]);
 
   const handleToggleClass = (clsValue) => {
-    // click lại cùng class => bỏ chọn + ẩn subclass
     if (activeClass === clsValue) {
       setActiveClass(null);
       setActiveSubClass(null);
       return;
     }
-    // đổi class => reset subclass
     setActiveClass(clsValue);
     setActiveSubClass(null);
   };
@@ -190,7 +216,6 @@ const Operator = () => {
     >
       <div className="w-full h-full">
         <div className="w-full max-w-6xl mx-auto px-6 h-full flex flex-col">
-          {/* Header */}
           <div className="w-full flex items-center mb-4 gap-4 pt-12">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
@@ -259,7 +284,6 @@ const Operator = () => {
 
           <div className="w-full border-t border-gray-600 my-4" />
 
-          {/* Operator Grid */}
           <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
               {filteredOperators.map((op) => (
@@ -274,7 +298,6 @@ const Operator = () => {
         </div>
       </div>
 
-      {/* Modal */}
       {selectedOperator && (
         <OperatorModal
           operator={selectedOperator}

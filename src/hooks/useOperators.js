@@ -10,13 +10,14 @@ export function useOperators() {
   useEffect(() => {
     const parsed = Object.entries(operators)
       .filter(([id]) => id !== "char_512_aprot")
-      .filter(([id, op]) => op.profession !== "TOKEN")
+      .filter(([, op]) => op.profession !== "TOKEN")
       .map(([id, op]) => ({
         id,
         name: nameVN?.[id]?.name_vn || op.name,
         rarity: op.rarity,
         profession: op.profession,
         subProfession: op.subProfessionId,
+        sortIndex: op.sortIndex ?? 0,
         description: op.description,
         phases: op.phases,
         skills: op.skills,
