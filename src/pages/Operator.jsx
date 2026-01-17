@@ -239,13 +239,13 @@ const Operator = () => {
                   >
                     <img
                       src={sub.icon}
-                      className="w-10 h-10"
+                      className="max-w-[44px] w-auto h-auto object-contain"
                       alt={sub.label}
                       onError={(e) => {
-                        // nếu icon không tồn tại, ẩn hình để khỏi xấu
                         e.currentTarget.style.display = "none";
                       }}
                     />
+
                     <span className="text-[11px] text-gray-200 mt-1 truncate w-full text-center">
                       {sub.label}
                     </span>
