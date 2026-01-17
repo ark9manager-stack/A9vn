@@ -10,7 +10,7 @@
     "name_vn": "Kal'tsit"
   },
   "char_009_12fce": {
-    "idweb": null,
+    "idweb": 7,
     "name": "12F",
     "name_vn": "12F"
   },
@@ -265,7 +265,7 @@
     "name_vn": "Beagle"
   },
   "char_123_fang": {
-    "idweb": null,
+    "idweb": 8,
     "name": "芬",
     "name_vn": "Fang"
   },
@@ -485,7 +485,7 @@
     "name_vn": "Vermeil"
   },
   "char_192_falco": {
-    "idweb": null,
+    "idweb": 10,
     "name": "翎羽",
     "name_vn": "Plume"
   },
@@ -675,7 +675,7 @@
     "name_vn": "Gravel"
   },
   "char_240_wyvern": {
-    "idweb": null,
+    "idweb": 9,
     "name": "香草",
     "name_vn": "Vanilla"
   },
@@ -815,12 +815,12 @@
     "name_vn": "Spot"
   },
   "char_285_medic2": {
-    "idweb": null,
+    "idweb": 1,
     "name": "Lancet-2",
     "name_vn": "Lancet-2"
   },
   "char_286_cast3": {
-    "idweb": null,
+    "idweb": 2,
     "name": "Castle-3",
     "name_vn": "Castle-3"
   },
@@ -1736,7 +1736,7 @@
   },
   "char_4211_snhunt": {
     "idweb": null,
-    "name": "雪猎",
+    "name": "394",
     "name_vn": "Snow Hunter"
   },
   "char_4212_nasti": {
@@ -1985,22 +1985,22 @@
     "name_vn": "Diamante"
   },
   "char_500_noirc": {
-    "idweb": null,
+    "idweb": 4,
     "name": "黑角",
     "name_vn": "Noir Corne"
   },
   "char_501_durin": {
-    "idweb": null,
+    "idweb": 6,
     "name": "杜林",
     "name_vn": "Durin"
   },
   "char_502_nblade": {
-    "idweb": null,
+    "idweb": 3,
     "name": "夜刀",
     "name_vn": "Yato"
   },
   "char_503_rang": {
-    "idweb": null,
+    "idweb": 5,
     "name": "巡林者",
     "name_vn": "Rangers"
   },
