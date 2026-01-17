@@ -14,10 +14,12 @@ export function useOperators() {
       .map(([id, op]) => ({
         id,
         name: nameVN?.[id]?.name_vn || op.name,
+        nameRaw: op.name,
+        idweb: nameVN?.[id]?.idweb ?? null,
+        sortIndex: op.sortIndex ?? 0,
         rarity: op.rarity,
         profession: op.profession,
         subProfession: op.subProfessionId,
-        sortIndex: op.sortIndex ?? 0,
         description: op.description,
         phases: op.phases,
         skills: op.skills,

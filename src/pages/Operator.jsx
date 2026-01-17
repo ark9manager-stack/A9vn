@@ -157,6 +157,13 @@ function rarityRank(tier) {
   return idx === -1 ? 999 : idx;
 }
 
+function getIdWebNumber(op) {
+  const raw = op?.idweb ?? op?.idWeb ?? op?.id_web ?? null;
+  if (raw === null || raw === undefined || raw === "") return null;
+  const n = Number(raw);
+  return Number.isFinite(n) ? n : null;
+}
+
 const Operator = () => {
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
 
@@ -192,6 +199,15 @@ const Operator = () => {
         const ra = rarityRank(getRarityTier(a.rarity));
         const rb = rarityRank(getRarityTier(b.rarity));
         if (ra !== rb) return ra - rb;
+        const ia = getIdWebNumber(a);
+        const ib = getIdWebNumber(b);
+
+        const aHas = ia !== null;
+        const bHas = ib !== null;
+
+        if (aHas && bHas && ib !== ia) return ib - ia;
+        if (aHas && !bHas) return -1;
+        if (!aHas && bHas) return 1;
         const sa = Number(a.sortIndex || 0);
         const sb = Number(b.sortIndex || 0);
         if (sb !== sa) return sb - sa;
