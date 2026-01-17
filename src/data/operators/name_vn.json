@@ -1,0 +1,4418 @@
+{
+  "char_002_amiya": {
+    "name": "阿米娅",
+    "name_vn": "Amiya"
+  },
+  "char_003_kalts": {
+    "name": "凯尔希",
+    "name_vn": "Kal'tsit"
+  },
+  "char_009_12fce": {
+    "name": "12F",
+    "name_vn": "12F"
+  },
+  "char_010_chen": {
+    "name": "陈",
+    "name_vn": "Ch'en"
+  },
+  "char_017_huang": {
+    "name": "煌",
+    "name_vn": "Blaze"
+  },
+  "char_1011_lava2": {
+    "name": "炎狱炎熔",
+    "name_vn": "Lava the Purgatory"
+  },
+  "char_1012_skadi2": {
+    "name": "浊心斯卡蒂",
+    "name_vn": "Skadi the Corrupting Heart"
+  },
+  "char_1013_chen2": {
+    "name": "假日威龙陈",
+    "name_vn": "Ch'en the Holungday"
+  },
+  "char_1014_nearl2": {
+    "name": "耀骑士临光",
+    "name_vn": "Nearl the Radiant Knight"
+  },
+  "char_1016_agoat2": {
+    "name": "纯烬艾雅法拉",
+    "name_vn": "Eyjafjalla the Hvít Aska"
+  },
+  "char_1019_siege2": {
+    "name": "维娜·维多利亚",
+    "name_vn": "Vina Victoria"
+  },
+  "char_101_sora": {
+    "name": "空",
+    "name_vn": "Sora"
+  },
+  "char_1020_reed2": {
+    "name": "焰影苇草",
+    "name_vn": "Reed the Flame Shadow"
+  },
+  "char_1021_kroos2": {
+    "name": "寒芒克洛丝",
+    "name_vn": "Kroos the Keen Glint"
+  },
+  "char_1022_flwr2": {
+    "name": "撷英调香师",
+    "name_vn": ""
+  },
+  "char_1023_ghost2": {
+    "name": "归溟幽灵鲨",
+    "name_vn": "Specter the Unchained"
+  },
+  "char_1024_hbisc2": {
+    "name": "濯尘芙蓉",
+    "name_vn": "Hibiscus the Purifier"
+  },
+  "char_1026_gvial2": {
+    "name": "百炼嘉维尔",
+    "name_vn": "Gavial the Invincible"
+  },
+  "char_1027_greyy2": {
+    "name": "承曦格雷伊",
+    "name_vn": "Greyy the Lightningbearer"
+  },
+  "char_1028_texas2": {
+    "name": "缄默德克萨斯",
+    "name_vn": "Texas the Omertosa"
+  },
+  "char_1029_yato2": {
+    "name": "麒麟R夜刀",
+    "name_vn": "Kirin R Yato"
+  },
+  "char_102_texas": {
+    "name": "德克萨斯",
+    "name_vn": "Texas"
+  },
+  "char_1030_noirc2": {
+    "name": "火龙S黑角",
+    "name_vn": "Rathalos S Noir Corne"
+  },
+  "char_1031_slent2": {
+    "name": "淬羽赫默",
+    "name_vn": "Silence the Paradigmatic"
+  },
+  "char_1032_excu2": {
+    "name": "圣约送葬人",
+    "name_vn": "Executor the Ex Foedere"
+  },
+  "char_1033_swire2": {
+    "name": "琳琅诗怀雅",
+    "name_vn": "Swire the Elegant Wit"
+  },
+  "char_1034_jesca2": {
+    "name": "涤火杰西卡",
+    "name_vn": "Jessica the Liberated"
+  },
+  "char_1035_wisdel": {
+    "name": "维什戴尔",
+    "name_vn": "Wiš'adel"
+  },
+  "char_1036_fang2": {
+    "name": "历阵锐枪芬",
+    "name_vn": "Fang the Fire-Sharpened"
+  },
+  "char_1038_whitw2": {
+    "name": "荒芜拉普兰德",
+    "name_vn": "Lappland the Decadenza"
+  },
+  "char_1039_thorn2": {
+    "name": "引星棘刺",
+    "name_vn": "Thorns the Lodestar"
+  },
+  "char_103_angel": {
+    "name": "能天使",
+    "name_vn": "Exusiai"
+  },
+  "char_1040_blaze2": {
+    "name": "烛煌",
+    "name_vn": "Blaze the Igniting Spark"
+  },
+  "char_1041_angel2": {
+    "name": "新约能天使",
+    "name_vn": "Exusiai the New Covenant"
+  },
+  "char_1042_phatm2": {
+    "name": "酒神",
+    "name_vn": "Tragodia"
+  },
+  "char_1043_leizi2": {
+    "name": "司霆惊蛰",
+    "name_vn": "Leizi the Thunderbringer"
+  },
+  "char_1044_hsgma2": {
+    "name": "斩业星熊",
+    "name_vn": ""
+  },
+  "char_1045_svash2": {
+    "name": "凛御银灰",
+    "name_vn": ""
+  },
+  "char_1046_sbell2": {
+    "name": "圣聆初雪",
+    "name_vn": ""
+  },
+  "char_1047_halo2": {
+    "name": "溯光星源",
+    "name_vn": ""
+  },
+  "char_106_franka": {
+    "name": "芙兰卡",
+    "name_vn": "Franka"
+  },
+  "char_107_liskam": {
+    "name": "雷蛇",
+    "name_vn": "Liskarm"
+  },
+  "char_108_silent": {
+    "name": "赫默",
+    "name_vn": "Silence"
+  },
+  "char_109_fmout": {
+    "name": "远山",
+    "name_vn": "Gitano"
+  },
+  "char_110_deepcl": {
+    "name": "深海色",
+    "name_vn": "Deepcolor"
+  },
+  "char_112_siege": {
+    "name": "推进之王",
+    "name_vn": "Siege"
+  },
+  "char_113_cqbw": {
+    "name": "W",
+    "name_vn": "W"
+  },
+  "char_115_headbr": {
+    "name": "凛冬",
+    "name_vn": "Zima"
+  },
+  "char_117_myrrh": {
+    "name": "末药",
+    "name_vn": "Myrrh"
+  },
+  "char_118_yuki": {
+    "name": "白雪",
+    "name_vn": "Shirayuki"
+  },
+  "char_120_hibisc": {
+    "name": "芙蓉",
+    "name_vn": "Hibiscus"
+  },
+  "char_121_lava": {
+    "name": "炎熔",
+    "name_vn": "Lava"
+  },
+  "char_122_beagle": {
+    "name": "米格鲁",
+    "name_vn": "Beagle"
+  },
+  "char_123_fang": {
+    "name": "芬",
+    "name_vn": "Fang"
+  },
+  "char_124_kroos": {
+    "name": "克洛丝",
+    "name_vn": "Kroos"
+  },
+  "char_126_shotst": {
+    "name": "流星",
+    "name_vn": "Meteor"
+  },
+  "char_127_estell": {
+    "name": "艾丝黛尔",
+    "name_vn": "Estelle"
+  },
+  "char_128_plosis": {
+    "name": "白面鸮",
+    "name_vn": "Ptilopsis"
+  },
+  "char_129_bluep": {
+    "name": "蓝毒",
+    "name_vn": "Blue Poison"
+  },
+  "char_130_doberm": {
+    "name": "杜宾",
+    "name_vn": "Dobermann"
+  },
+  "char_131_flameb": {
+    "name": "炎客",
+    "name_vn": "Flamebringer"
+  },
+  "char_133_mm": {
+    "name": "梅",
+    "name_vn": "May"
+  },
+  "char_134_ifrit": {
+    "name": "伊芙利特",
+    "name_vn": "Ifrit"
+  },
+  "char_135_halo": {
+    "name": "星源",
+    "name_vn": "Astgenne"
+  },
+  "char_136_hsguma": {
+    "name": "星熊",
+    "name_vn": "Hoshiguma"
+  },
+  "char_137_brownb": {
+    "name": "猎蜂",
+    "name_vn": "Beehunter"
+  },
+  "char_140_whitew": {
+    "name": "拉普兰德",
+    "name_vn": "Lappland"
+  },
+  "char_141_nights": {
+    "name": "夜烟",
+    "name_vn": "Haze"
+  },
+  "char_143_ghost": {
+    "name": "幽灵鲨",
+    "name_vn": "Specter"
+  },
+  "char_144_red": {
+    "name": "红",
+    "name_vn": "Projekt Red"
+  },
+  "char_145_prove": {
+    "name": "普罗旺斯",
+    "name_vn": "Provence"
+  },
+  "char_147_shining": {
+    "name": "闪灵",
+    "name_vn": "Shining"
+  },
+  "char_148_nearl": {
+    "name": "临光",
+    "name_vn": "Nearl"
+  },
+  "char_149_scave": {
+    "name": "清道夫",
+    "name_vn": "Scavenger"
+  },
+  "char_1502_crosly": {
+    "name": "弑君者",
+    "name_vn": "Crownslayer"
+  },
+  "char_150_snakek": {
+    "name": "蛇屠箱",
+    "name_vn": "Cuora"
+  },
+  "char_151_myrtle": {
+    "name": "桃金娘",
+    "name_vn": "Myrtle"
+  },
+  "char_154_morgan": {
+    "name": "摩根",
+    "name_vn": "Morgan"
+  },
+  "char_155_tiger": {
+    "name": "因陀罗",
+    "name_vn": "Indra"
+  },
+  "char_157_dagda": {
+    "name": "达格达",
+    "name_vn": "Dagda"
+  },
+  "char_158_milu": {
+    "name": "守林人",
+    "name_vn": "Firewatch"
+  },
+  "char_159_peacok": {
+    "name": "断罪者",
+    "name_vn": "Conviction"
+  },
+  "char_163_hpsts": {
+    "name": "火神",
+    "name_vn": "Vulcan"
+  },
+  "char_164_nightm": {
+    "name": "夜魔",
+    "name_vn": "Nightmare"
+  },
+  "char_166_skfire": {
+    "name": "天火",
+    "name_vn": "Skyfire"
+  },
+  "char_171_bldsk": {
+    "name": "华法琳",
+    "name_vn": "Warfarin"
+  },
+  "char_172_svrash": {
+    "name": "银灰",
+    "name_vn": "SilverAsh"
+  },
+  "char_173_slchan": {
+    "name": "崖心",
+    "name_vn": "Cliffheart"
+  },
+  "char_174_slbell": {
+    "name": "初雪",
+    "name_vn": "Pramanix"
+  },
+  "char_179_cgbird": {
+    "name": "夜莺",
+    "name_vn": "Nightingale"
+  },
+  "char_180_amgoat": {
+    "name": "艾雅法拉",
+    "name_vn": "Eyjafjalla"
+  },
+  "char_181_flower": {
+    "name": "调香师",
+    "name_vn": "Perfumer"
+  },
+  "char_183_skgoat": {
+    "name": "地灵",
+    "name_vn": "Earthspirit"
+  },
+  "char_185_frncat": {
+    "name": "慕斯",
+    "name_vn": "Mousse"
+  },
+  "char_187_ccheal": {
+    "name": "嘉维尔",
+    "name_vn": "Gavial"
+  },
+  "char_188_helage": {
+    "name": "赫拉格",
+    "name_vn": "Hellagur"
+  },
+  "char_190_clour": {
+    "name": "红云",
+    "name_vn": "Vermeil"
+  },
+  "char_192_falco": {
+    "name": "翎羽",
+    "name_vn": "Plume"
+  },
+  "char_193_frostl": {
+    "name": "霜叶",
+    "name_vn": "Frostleaf"
+  },
+  "char_194_leto": {
+    "name": "烈夏",
+    "name_vn": "Leto"
+  },
+  "char_195_glassb": {
+    "name": "真理",
+    "name_vn": "Istina"
+  },
+  "char_196_sunbr": {
+    "name": "古米",
+    "name_vn": "Gummy"
+  },
+  "char_197_poca": {
+    "name": "早露",
+    "name_vn": "Rosa"
+  },
+  "char_198_blackd": {
+    "name": "讯使",
+    "name_vn": "Courier"
+  },
+  "char_199_yak": {
+    "name": "角峰",
+    "name_vn": "Matterhorn"
+  },
+  "char_2012_typhon": {
+    "name": "提丰",
+    "name_vn": "Typhon"
+  },
+  "char_2013_cerber": {
+    "name": "刻俄柏",
+    "name_vn": "Ceobe"
+  },
+  "char_2014_nian": {
+    "name": "年",
+    "name_vn": "Nian"
+  },
+  "char_2015_dusk": {
+    "name": "夕",
+    "name_vn": "Dusk"
+  },
+  "char_201_moeshd": {
+    "name": "可颂",
+    "name_vn": "Croissant"
+  },
+  "char_2023_ling": {
+    "name": "令",
+    "name_vn": "Ling"
+  },
+  "char_2024_chyue": {
+    "name": "重岳",
+    "name_vn": "Chongyue"
+  },
+  "char_2025_shu": {
+    "name": "黍",
+    "name_vn": "Shu"
+  },
+  "char_2026_yu": {
+    "name": "余",
+    "name_vn": "Yu"
+  },
+  "char_202_demkni": {
+    "name": "塞雷娅",
+    "name_vn": "Saria"
+  },
+  "char_204_platnm": {
+    "name": "白金",
+    "name_vn": "Platinum"
+  },
+  "char_206_gnosis": {
+    "name": "灵知",
+    "name_vn": "Gnosis"
+  },
+  "char_208_melan": {
+    "name": "玫兰莎",
+    "name_vn": "Melantha"
+  },
+  "char_209_ardign": {
+    "name": "卡缇",
+    "name_vn": "Cardigan"
+  },
+  "char_210_stward": {
+    "name": "史都华德",
+    "name_vn": "Steward"
+  },
+  "char_211_adnach": {
+    "name": "安德切尔",
+    "name_vn": "Adnachiel"
+  },
+  "char_212_ansel": {
+    "name": "安赛尔",
+    "name_vn": "Ansel"
+  },
+  "char_213_mostma": {
+    "name": "莫斯提马",
+    "name_vn": "Mostima"
+  },
+  "char_214_kafka": {
+    "name": "卡夫卡",
+    "name_vn": "Kafka"
+  },
+  "char_215_mantic": {
+    "name": "狮蝎",
+    "name_vn": "Manticore"
+  },
+  "char_218_cuttle": {
+    "name": "安哲拉",
+    "name_vn": "Andreana"
+  },
+  "char_219_meteo": {
+    "name": "陨星",
+    "name_vn": "Meteorite"
+  },
+  "char_220_grani": {
+    "name": "格拉尼",
+    "name_vn": "Grani"
+  },
+  "char_222_bpipe": {
+    "name": "风笛",
+    "name_vn": "Bagpipe"
+  },
+  "char_225_haak": {
+    "name": "阿",
+    "name_vn": "Aak"
+  },
+  "char_226_hmau": {
+    "name": "吽",
+    "name_vn": "Hung"
+  },
+  "char_230_savage": {
+    "name": "暴行",
+    "name_vn": "Savage"
+  },
+  "char_235_jesica": {
+    "name": "杰西卡",
+    "name_vn": "Jessica"
+  },
+  "char_236_rope": {
+    "name": "暗索",
+    "name_vn": "Rope"
+  },
+  "char_237_gravel": {
+    "name": "砾",
+    "name_vn": "Gravel"
+  },
+  "char_240_wyvern": {
+    "name": "香草",
+    "name_vn": "Vanilla"
+  },
+  "char_241_panda": {
+    "name": "食铁兽",
+    "name_vn": "FEater"
+  },
+  "char_242_otter": {
+    "name": "梅尔",
+    "name_vn": "Mayer"
+  },
+  "char_243_waaifu": {
+    "name": "槐琥",
+    "name_vn": "Waai Fu"
+  },
+  "char_245_cello": {
+    "name": "塑心",
+    "name_vn": "Virtuosa"
+  },
+  "char_248_mgllan": {
+    "name": "麦哲伦",
+    "name_vn": "Magallan"
+  },
+  "char_249_mlyss": {
+    "name": "缪尔赛思",
+    "name_vn": "Muelsyse"
+  },
+  "char_250_phatom": {
+    "name": "傀影",
+    "name_vn": "Phantom"
+  },
+  "char_252_bibeak": {
+    "name": "柏喙",
+    "name_vn": "Bibeak"
+  },
+  "char_253_greyy": {
+    "name": "格雷伊",
+    "name_vn": "Greyy"
+  },
+  "char_254_vodfox": {
+    "name": "巫恋",
+    "name_vn": "Shamare"
+  },
+  "char_258_podego": {
+    "name": "波登可",
+    "name_vn": "Podenco"
+  },
+  "char_260_durnar": {
+    "name": "坚雷",
+    "name_vn": "Dur-nar"
+  },
+  "char_261_sddrag": {
+    "name": "苇草",
+    "name_vn": "Reed"
+  },
+  "char_263_skadi": {
+    "name": "斯卡蒂",
+    "name_vn": "Skadi"
+  },
+  "char_264_f12yin": {
+    "name": "山",
+    "name_vn": "Mountain"
+  },
+  "char_265_sophia": {
+    "name": "鞭刃",
+    "name_vn": "Whislash"
+  },
+  "char_271_spikes": {
+    "name": "芳汀",
+    "name_vn": "Arene"
+  },
+  "char_272_strong": {
+    "name": "孑",
+    "name_vn": "Jaye"
+  },
+  "char_274_astesi": {
+    "name": "星极",
+    "name_vn": "Astesia"
+  },
+  "char_275_breeze": {
+    "name": "微风",
+    "name_vn": "Breeze"
+  },
+  "char_277_sqrrel": {
+    "name": "阿消",
+    "name_vn": "Shaw"
+  },
+  "char_278_orchid": {
+    "name": "梓兰",
+    "name_vn": "Orchid"
+  },
+  "char_279_excu": {
+    "name": "送葬人",
+    "name_vn": "Executor"
+  },
+  "char_281_popka": {
+    "name": "泡普卡",
+    "name_vn": "Popukar"
+  },
+  "char_282_catap": {
+    "name": "空爆",
+    "name_vn": "Catapult"
+  },
+  "char_283_midn": {
+    "name": "月见夜",
+    "name_vn": "Midnight"
+  },
+  "char_284_spot": {
+    "name": "斑点",
+    "name_vn": "Spot"
+  },
+  "char_285_medic2": {
+    "name": "Lancet-2",
+    "name_vn": "Lancet-2"
+  },
+  "char_286_cast3": {
+    "name": "Castle-3",
+    "name_vn": "Castle-3"
+  },
+  "char_289_gyuki": {
+    "name": "缠丸",
+    "name_vn": "Matoimaru"
+  },
+  "char_290_vigna": {
+    "name": "红豆",
+    "name_vn": "Vigna"
+  },
+  "char_291_aglina": {
+    "name": "安洁莉娜",
+    "name_vn": "Angelina"
+  },
+  "char_293_thorns": {
+    "name": "棘刺",
+    "name_vn": "Thorns"
+  },
+  "char_294_ayer": {
+    "name": "断崖",
+    "name_vn": "Ayerscarpe"
+  },
+  "char_297_hamoni": {
+    "name": "和弦",
+    "name_vn": "Harmonie"
+  },
+  "char_298_susuro": {
+    "name": "苏苏洛",
+    "name_vn": "Sussurro"
+  },
+  "char_300_phenxi": {
+    "name": "菲亚梅塔",
+    "name_vn": "Fiammetta"
+  },
+  "char_301_cutter": {
+    "name": "刻刀",
+    "name_vn": "Cutter"
+  },
+  "char_302_glaze": {
+    "name": "安比尔",
+    "name_vn": "Ambriel"
+  },
+  "char_304_zebra": {
+    "name": "暴雨",
+    "name_vn": "Heavyrain"
+  },
+  "char_306_leizi": {
+    "name": "惊蛰",
+    "name_vn": "Leizi"
+  },
+  "char_308_swire": {
+    "name": "诗怀雅",
+    "name_vn": "Swire"
+  },
+  "char_311_mudrok": {
+    "name": "泥岩",
+    "name_vn": "Mudrock"
+  },
+  "char_322_lmlee": {
+    "name": "老鲤",
+    "name_vn": "Lee"
+  },
+  "char_325_bison": {
+    "name": "拜松",
+    "name_vn": "Bison"
+  },
+  "char_326_glacus": {
+    "name": "格劳克斯",
+    "name_vn": "Glaucus"
+  },
+  "char_328_cammou": {
+    "name": "卡达",
+    "name_vn": "Click"
+  },
+  "char_332_archet": {
+    "name": "空弦",
+    "name_vn": "Archetto"
+  },
+  "char_333_sidero": {
+    "name": "铸铁",
+    "name_vn": "Sideroca"
+  },
+  "char_336_folivo": {
+    "name": "稀音",
+    "name_vn": "Scene"
+  },
+  "char_337_utage": {
+    "name": "宴",
+    "name_vn": "Utage"
+  },
+  "char_338_iris": {
+    "name": "爱丽丝",
+    "name_vn": "Iris"
+  },
+  "char_340_shwaz": {
+    "name": "黑",
+    "name_vn": "Schwarz"
+  },
+  "char_341_sntlla": {
+    "name": "寒檀",
+    "name_vn": "Santalla"
+  },
+  "char_343_tknogi": {
+    "name": "月禾",
+    "name_vn": "Tsukinogi"
+  },
+  "char_344_beewax": {
+    "name": "蜜蜡",
+    "name_vn": "Beeswax"
+  },
+  "char_345_folnic": {
+    "name": "亚叶",
+    "name_vn": "Folinic"
+  },
+  "char_346_aosta": {
+    "name": "奥斯塔",
+    "name_vn": "Aosta"
+  },
+  "char_347_jaksel": {
+    "name": "杰克",
+    "name_vn": "Jackie"
+  },
+  "char_348_ceylon": {
+    "name": "锡兰",
+    "name_vn": "Ceylon"
+  },
+  "char_349_chiave": {
+    "name": "贾维",
+    "name_vn": "Chiave"
+  },
+  "char_350_surtr": {
+    "name": "史尔特尔",
+    "name_vn": "Surtr"
+  },
+  "char_355_ethan": {
+    "name": "伊桑",
+    "name_vn": "Ethan"
+  },
+  "char_356_broca": {
+    "name": "布洛卡",
+    "name_vn": "Broca"
+  },
+  "char_358_lisa": {
+    "name": "铃兰",
+    "name_vn": "Suzuran"
+  },
+  "char_362_saga": {
+    "name": "嵯峨",
+    "name_vn": "Saga"
+  },
+  "char_363_toddi": {
+    "name": "熔泉",
+    "name_vn": "Toddifons"
+  },
+  "char_365_aprl": {
+    "name": "四月",
+    "name_vn": "April"
+  },
+  "char_366_acdrop": {
+    "name": "酸糖",
+    "name_vn": "Aciddrop"
+  },
+  "char_367_swllow": {
+    "name": "灰喉",
+    "name_vn": "GreyThroat"
+  },
+  "char_369_bena": {
+    "name": "贝娜",
+    "name_vn": "Bena"
+  },
+  "char_373_lionhd": {
+    "name": "莱恩哈特",
+    "name_vn": "Leonhardt"
+  },
+  "char_376_therex": {
+    "name": "THRM-EX",
+    "name_vn": "THRM-EX"
+  },
+  "char_377_gdglow": {
+    "name": "澄闪",
+    "name_vn": "Goldenglow"
+  },
+  "char_378_asbest": {
+    "name": "石棉",
+    "name_vn": "Asbestos"
+  },
+  "char_379_sesa": {
+    "name": "慑砂",
+    "name_vn": "Sesa"
+  },
+  "char_381_bubble": {
+    "name": "泡泡",
+    "name_vn": "Bubble"
+  },
+  "char_383_snsant": {
+    "name": "雪雉",
+    "name_vn": "Snowsant"
+  },
+  "char_385_finlpp": {
+    "name": "清流",
+    "name_vn": "Purestream"
+  },
+  "char_388_mint": {
+    "name": "薄绿",
+    "name_vn": "Mint"
+  },
+  "char_391_rosmon": {
+    "name": "迷迭香",
+    "name_vn": "Rosmontis"
+  },
+  "char_394_hadiya": {
+    "name": "哈蒂娅",
+    "name_vn": ""
+  },
+  "char_4000_jnight": {
+    "name": "正义骑士号",
+    "name_vn": "'Justice Knight'"
+  },
+  "char_4004_pudd": {
+    "name": "布丁",
+    "name_vn": "Pudding"
+  },
+  "char_4006_melnte": {
+    "name": "玫拉",
+    "name_vn": "Melanite"
+  },
+  "char_4009_irene": {
+    "name": "艾丽妮",
+    "name_vn": "Irene"
+  },
+  "char_400_weedy": {
+    "name": "温蒂",
+    "name_vn": "Weedy"
+  },
+  "char_4010_etlchi": {
+    "name": "隐德来希",
+    "name_vn": "Entelechia"
+  },
+  "char_4011_lessng": {
+    "name": "止颂",
+    "name_vn": "Lessing"
+  },
+  "char_4013_kjera": {
+    "name": "耶拉",
+    "name_vn": "Kjera"
+  },
+  "char_4014_lunacu": {
+    "name": "子月",
+    "name_vn": "Lunacub"
+  },
+  "char_4015_spuria": {
+    "name": "空构",
+    "name_vn": "Spuria"
+  },
+  "char_4016_kazema": {
+    "name": "风丸",
+    "name_vn": "Kazemaru"
+  },
+  "char_4017_puzzle": {
+    "name": "谜图",
+    "name_vn": "Puzzle"
+  },
+  "char_4019_ncdeer": {
+    "name": "九色鹿",
+    "name_vn": "Nine-Colored Deer"
+  },
+  "char_401_elysm": {
+    "name": "极境",
+    "name_vn": "Elysium"
+  },
+  "char_4023_rfalcn": {
+    "name": "红隼",
+    "name_vn": "Kestrel"
+  },
+  "char_4025_aprot2": {
+    "name": "暮落",
+    "name_vn": "Shalem"
+  },
+  "char_4026_vulpis": {
+    "name": "忍冬",
+    "name_vn": "Vulpisfoglia"
+  },
+  "char_4027_heyak": {
+    "name": "霍尔海雅",
+    "name_vn": "Ho'olheyak"
+  },
+  "char_402_tuye": {
+    "name": "图耶",
+    "name_vn": "Tuye"
+  },
+  "char_4032_provs": {
+    "name": "但书",
+    "name_vn": "Proviso"
+  },
+  "char_4036_forcer": {
+    "name": "见行者",
+    "name_vn": "Enforcer"
+  },
+  "char_4039_horn": {
+    "name": "号角",
+    "name_vn": "Horn"
+  },
+  "char_4040_rockr": {
+    "name": "洛洛",
+    "name_vn": "Rockrock"
+  },
+  "char_4041_chnut": {
+    "name": "褐果",
+    "name_vn": "Chestnut"
+  },
+  "char_4042_lumen": {
+    "name": "流明",
+    "name_vn": "Lumen"
+  },
+  "char_4043_erato": {
+    "name": "埃拉托",
+    "name_vn": "Erato"
+  },
+  "char_4045_heidi": {
+    "name": "海蒂",
+    "name_vn": "Heidi"
+  },
+  "char_4046_ebnhlz": {
+    "name": "黑键",
+    "name_vn": "Ebenholz"
+  },
+  "char_4047_pianst": {
+    "name": "车尔尼",
+    "name_vn": "Czerny"
+  },
+  "char_4048_doroth": {
+    "name": "多萝西",
+    "name_vn": "Dorothy"
+  },
+  "char_4051_akkord": {
+    "name": "协律",
+    "name_vn": ""
+  },
+  "char_4052_surfer": {
+    "name": "寻澜",
+    "name_vn": "Surfer"
+  },
+  "char_4054_malist": {
+    "name": "至简",
+    "name_vn": "Minimalist"
+  },
+  "char_4055_bgsnow": {
+    "name": "鸿雪",
+    "name_vn": "Pozëmka"
+  },
+  "char_4056_titi": {
+    "name": "缇缇",
+    "name_vn": ""
+  },
+  "char_4058_pepe": {
+    "name": "佩佩",
+    "name_vn": "Pepe"
+  },
+  "char_405_absin": {
+    "name": "苦艾",
+    "name_vn": "Absinthe"
+  },
+  "char_4062_totter": {
+    "name": "铅踝",
+    "name_vn": "Totter"
+  },
+  "char_4063_quartz": {
+    "name": "石英",
+    "name_vn": "Quartz"
+  },
+  "char_4064_mlynar": {
+    "name": "玛恩纳",
+    "name_vn": "Młynar"
+  },
+  "char_4065_judge": {
+    "name": "斥罪",
+    "name_vn": "Penance"
+  },
+  "char_4066_highmo": {
+    "name": "海沫",
+    "name_vn": "Highmore"
+  },
+  "char_4067_lolxh": {
+    "name": "罗小黑",
+    "name_vn": "Luo Xiaohei"
+  },
+  "char_4071_peper": {
+    "name": "明椒",
+    "name_vn": "Paprika"
+  },
+  "char_4072_ironmn": {
+    "name": "白铁",
+    "name_vn": "Stainless"
+  },
+  "char_4077_palico": {
+    "name": "泰拉大陆调查团",
+    "name_vn": "Terra Research Commission"
+  },
+  "char_4078_bdhkgt": {
+    "name": "截云",
+    "name_vn": "Jieyun"
+  },
+  "char_4079_haini": {
+    "name": "海霓",
+    "name_vn": "Lucilla"
+  },
+  "char_4080_lin": {
+    "name": "林",
+    "name_vn": "Lin"
+  },
+  "char_4081_warmy": {
+    "name": "温米",
+    "name_vn": "Warmy"
+  },
+  "char_4082_qiubai": {
+    "name": "仇白",
+    "name_vn": "Qiubai"
+  },
+  "char_4083_chimes": {
+    "name": "铎铃",
+    "name_vn": "Wind Chimes"
+  },
+  "char_4087_ines": {
+    "name": "伊内丝",
+    "name_vn": "Ines"
+  },
+  "char_4088_hodrer": {
+    "name": "赫德雷",
+    "name_vn": "Hoederer"
+  },
+  "char_4091_ulika": {
+    "name": "U-Official",
+    "name_vn": "U-Official"
+  },
+  "char_4093_frston": {
+    "name": "Friston-3",
+    "name_vn": "Friston-3"
+  },
+  "char_4098_vvana": {
+    "name": "薇薇安娜",
+    "name_vn": "Viviana"
+  },
+  "char_4100_caper": {
+    "name": "跃跃",
+    "name_vn": "Caper"
+  },
+  "char_4102_threye": {
+    "name": "凛视",
+    "name_vn": "Valarqvin"
+  },
+  "char_4104_coldst": {
+    "name": "冰酿",
+    "name_vn": "Coldshot"
+  },
+  "char_4105_almond": {
+    "name": "杏仁",
+    "name_vn": "Almond"
+  },
+  "char_4106_bryota": {
+    "name": "苍苔",
+    "name_vn": "Bryophyta"
+  },
+  "char_4107_vrdant": {
+    "name": "维荻",
+    "name_vn": "Verdant"
+  },
+  "char_4109_baslin": {
+    "name": "深律",
+    "name_vn": "Bassline"
+  },
+  "char_4110_delphn": {
+    "name": "戴菲恩",
+    "name_vn": "Delphine"
+  },
+  "char_4114_harold": {
+    "name": "哈洛德",
+    "name_vn": "Harold"
+  },
+  "char_4116_blkkgt": {
+    "name": "锏",
+    "name_vn": "Degenbrecher"
+  },
+  "char_4117_ray": {
+    "name": "莱伊",
+    "name_vn": "Ray"
+  },
+  "char_4119_wanqin": {
+    "name": "万顷",
+    "name_vn": "Wanqing"
+  },
+  "char_411_tomimi": {
+    "name": "特米米",
+    "name_vn": "Tomimi"
+  },
+  "char_4121_zuole": {
+    "name": "左乐",
+    "name_vn": "Zuo Le"
+  },
+  "char_4122_grabds": {
+    "name": "小满",
+    "name_vn": "Grain Buds"
+  },
+  "char_4123_ela": {
+    "name": "艾拉",
+    "name_vn": "Ela"
+  },
+  "char_4124_iana": {
+    "name": "双月",
+    "name_vn": "Iana"
+  },
+  "char_4125_rdoc": {
+    "name": "医生",
+    "name_vn": "Doc"
+  },
+  "char_4126_fuze": {
+    "name": "导火索",
+    "name_vn": "Fuze"
+  },
+  "char_4130_luton": {
+    "name": "露托",
+    "name_vn": "Lutonada"
+  },
+  "char_4131_odda": {
+    "name": "奥达",
+    "name_vn": "Odda"
+  },
+  "char_4132_ascln": {
+    "name": "阿斯卡纶",
+    "name_vn": "Ascalon"
+  },
+  "char_4133_logos": {
+    "name": "逻各斯",
+    "name_vn": "Logos"
+  },
+  "char_4134_cetsyr": {
+    "name": "魔王",
+    "name_vn": "Civilight Eterna"
+  },
+  "char_4136_phonor": {
+    "name": "PhonoR-0",
+    "name_vn": "PhonoR-0"
+  },
+  "char_4137_udflow": {
+    "name": "深巡",
+    "name_vn": "Underflow"
+  },
+  "char_4138_narant": {
+    "name": "娜仁图亚",
+    "name_vn": "Narantuya"
+  },
+  "char_4139_papyrs": {
+    "name": "莎草",
+    "name_vn": "Papyrus"
+  },
+  "char_4140_lasher": {
+    "name": "衡沙",
+    "name_vn": "Sand Reckoner"
+  },
+  "char_4141_marcil": {
+    "name": "玛露西尔",
+    "name_vn": "Marcille"
+  },
+  "char_4142_laios": {
+    "name": "莱欧斯",
+    "name_vn": "Laios"
+  },
+  "char_4143_sensi": {
+    "name": "森西",
+    "name_vn": "Senshi"
+  },
+  "char_4144_chilc": {
+    "name": "齐尔查克",
+    "name_vn": "Chilchuck"
+  },
+  "char_4145_ulpia": {
+    "name": "乌尔比安",
+    "name_vn": "Ulpianus"
+  },
+  "char_4146_nymph": {
+    "name": "妮芙",
+    "name_vn": "Nymph"
+  },
+  "char_4147_mitm": {
+    "name": "渡桥",
+    "name_vn": "Mitm"
+  },
+  "char_4148_philae": {
+    "name": "菲莱",
+    "name_vn": "Philae"
+  },
+  "char_4151_tinman": {
+    "name": "锡人",
+    "name_vn": "Tin Man"
+  },
+  "char_4155_talr": {
+    "name": "裁度",
+    "name_vn": "Figurino"
+  },
+  "char_415_flint": {
+    "name": "燧石",
+    "name_vn": "Flint"
+  },
+  "char_4162_cathy": {
+    "name": "凯瑟琳",
+    "name_vn": "Catherine"
+  },
+  "char_4163_rosesa": {
+    "name": "瑰盐",
+    "name_vn": "Rose Salt"
+  },
+  "char_4164_tecno": {
+    "name": "特克诺",
+    "name_vn": "Tecno"
+  },
+  "char_4165_ctrail": {
+    "name": "云迹",
+    "name_vn": "Contrail"
+  },
+  "char_4166_varkis": {
+    "name": "摆渡人",
+    "name_vn": ""
+  },
+  "char_416_zumama": {
+    "name": "森蚺",
+    "name_vn": "Eunectes"
+  },
+  "char_4171_wulfen": {
+    "name": "钼铅",
+    "name_vn": "Wulfenite"
+  },
+  "char_4172_xingzh": {
+    "name": "行箸",
+    "name_vn": "Xingzhu"
+  },
+  "char_4173_nowell": {
+    "name": "诺威尔",
+    "name_vn": "Nowell"
+  },
+  "char_4177_brigid": {
+    "name": "水灯心",
+    "name_vn": "Brigid"
+  },
+  "char_4178_alanna": {
+    "name": "阿兰娜",
+    "name_vn": "Alanna"
+  },
+  "char_4179_monstr": {
+    "name": "Mon3tr",
+    "name_vn": "Mon3tr"
+  },
+  "char_4182_oblvns": {
+    "name": "丰川祥子",
+    "name_vn": ""
+  },
+  "char_4183_mortis": {
+    "name": "若叶睦",
+    "name_vn": ""
+  },
+  "char_4184_dolris": {
+    "name": "三角初华",
+    "name_vn": ""
+  },
+  "char_4185_amoris": {
+    "name": "祐天寺若麦",
+    "name_vn": ""
+  },
+  "char_4186_tmoris": {
+    "name": "八幡海铃",
+    "name_vn": ""
+  },
+  "char_4187_graceb": {
+    "name": "聆音",
+    "name_vn": "Gracebearer"
+  },
+  "char_4188_confes": {
+    "name": "CONFESS-47",
+    "name_vn": "CONFESS-47"
+  },
+  "char_4191_tippi": {
+    "name": "蒂比",
+    "name_vn": "Tippi"
+  },
+  "char_4193_lemuen": {
+    "name": "蕾缪安",
+    "name_vn": "Lemuen"
+  },
+  "char_4194_rmixer": {
+    "name": "信仰搅拌机",
+    "name_vn": "Sankta Miksaparato"
+  },
+  "char_4195_radian": {
+    "name": "电弧",
+    "name_vn": "Raidian"
+  },
+  "char_4196_reckpr": {
+    "name": "录武官",
+    "name_vn": "Record Keeper"
+  },
+  "char_4198_christ": {
+    "name": "Miss.Christine",
+    "name_vn": "Miss.Christine"
+  },
+  "char_4199_makiri": {
+    "name": "松桐",
+    "name_vn": ""
+  },
+  "char_4202_haruka": {
+    "name": "遥",
+    "name_vn": ""
+  },
+  "char_4203_kichi": {
+    "name": "吉星",
+    "name_vn": ""
+  },
+  "char_4204_mantra": {
+    "name": "真言",
+    "name_vn": ""
+  },
+  "char_4207_branch": {
+    "name": "折桠",
+    "name_vn": ""
+  },
+  "char_4208_wintim": {
+    "name": "冬时",
+    "name_vn": ""
+  },
+  "char_420_flamtl": {
+    "name": "焰尾",
+    "name_vn": "Flametail"
+  },
+  "char_4211_snhunt": {
+    "name": "雪猎",
+    "name_vn": ""
+  },
+  "char_4212_nasti": {
+    "name": "娜斯提",
+    "name_vn": ""
+  },
+  "char_4213_skybx": {
+    "name": "天空盒",
+    "name_vn": ""
+  },
+  "char_4214_cairn": {
+    "name": "响石",
+    "name_vn": ""
+  },
+  "char_421_crow": {
+    "name": "羽毛笔",
+    "name_vn": "La Pluma"
+  },
+  "char_422_aurora": {
+    "name": "极光",
+    "name_vn": "Aurora"
+  },
+  "char_423_blemsh": {
+    "name": "瑕光",
+    "name_vn": "Blemishine"
+  },
+  "char_426_billro": {
+    "name": "卡涅利安",
+    "name_vn": "Carnelian"
+  },
+  "char_427_vigil": {
+    "name": "伺夜",
+    "name_vn": "Vigil"
+  },
+  "char_430_fartth": {
+    "name": "远牙",
+    "name_vn": "Fartooth"
+  },
+  "char_431_ashlok": {
+    "name": "灰毫",
+    "name_vn": "Ashlock"
+  },
+  "char_433_windft": {
+    "name": "掠风",
+    "name_vn": "Windflit"
+  },
+  "char_436_whispr": {
+    "name": "絮雨",
+    "name_vn": "Whisperain"
+  },
+  "char_437_mizuki": {
+    "name": "水月",
+    "name_vn": "Mizuki"
+  },
+  "char_440_pinecn": {
+    "name": "松果",
+    "name_vn": "Pinecone"
+  },
+  "char_445_wscoot": {
+    "name": "骋风",
+    "name_vn": "Windscoot"
+  },
+  "char_446_aroma": {
+    "name": "阿罗玛",
+    "name_vn": "Aroma"
+  },
+  "char_449_glider": {
+    "name": "蜜莓",
+    "name_vn": "Honeyberry"
+  },
+  "char_450_necras": {
+    "name": "死芒",
+    "name_vn": "Necrass"
+  },
+  "char_451_robin": {
+    "name": "罗宾",
+    "name_vn": "Robin"
+  },
+  "char_452_bstalk": {
+    "name": "豆苗",
+    "name_vn": "Beanstalk"
+  },
+  "char_455_nothin": {
+    "name": "乌有",
+    "name_vn": "Mr. Nothing"
+  },
+  "char_456_ash": {
+    "name": "灰烬",
+    "name_vn": "Ash"
+  },
+  "char_457_blitz": {
+    "name": "闪击",
+    "name_vn": "Blitz"
+  },
+  "char_458_rfrost": {
+    "name": "霜华",
+    "name_vn": "Frost"
+  },
+  "char_459_tachak": {
+    "name": "战车",
+    "name_vn": "Tachanka"
+  },
+  "char_464_cement": {
+    "name": "洋灰",
+    "name_vn": "Cement"
+  },
+  "char_466_qanik": {
+    "name": "雪绒",
+    "name_vn": "Qanipalaat"
+  },
+  "char_469_indigo": {
+    "name": "深靛",
+    "name_vn": "Indigo"
+  },
+  "char_472_pasngr": {
+    "name": "异客",
+    "name_vn": "Passenger"
+  },
+  "char_473_mberry": {
+    "name": "桑葚",
+    "name_vn": "Mulberry"
+  },
+  "char_474_glady": {
+    "name": "歌蕾蒂娅",
+    "name_vn": "Gladiia"
+  },
+  "char_475_akafyu": {
+    "name": "赤冬",
+    "name_vn": "Akafuyu"
+  },
+  "char_476_blkngt": {
+    "name": "夜半",
+    "name_vn": "Blacknight"
+  },
+  "char_478_kirara": {
+    "name": "绮良",
+    "name_vn": "Kirara"
+  },
+  "char_479_sleach": {
+    "name": "琴柳",
+    "name_vn": "Saileach"
+  },
+  "char_484_robrta": {
+    "name": "罗比菈塔",
+    "name_vn": "Roberta"
+  },
+  "char_485_pallas": {
+    "name": "帕拉斯",
+    "name_vn": "Pallas"
+  },
+  "char_486_takila": {
+    "name": "龙舌兰",
+    "name_vn": "Tequila"
+  },
+  "char_487_bobb": {
+    "name": "波卜",
+    "name_vn": "Bobbing"
+  },
+  "char_488_buildr": {
+    "name": "青枳",
+    "name_vn": "Poncirus"
+  },
+  "char_489_serum": {
+    "name": "蚀清",
+    "name_vn": "Corroserum"
+  },
+  "char_491_humus": {
+    "name": "休谟斯",
+    "name_vn": "Humus"
+  },
+  "char_492_quercu": {
+    "name": "夏栎",
+    "name_vn": "Quercus"
+  },
+  "char_493_firwhl": {
+    "name": "火哨",
+    "name_vn": "Firewhistle"
+  },
+  "char_494_vendla": {
+    "name": "刺玫",
+    "name_vn": "Vendela"
+  },
+  "char_496_wildmn": {
+    "name": "野鬃",
+    "name_vn": "Wild Mane"
+  },
+  "char_497_ctable": {
+    "name": "晓歌",
+    "name_vn": "Cantabile"
+  },
+  "char_498_inside": {
+    "name": "隐现",
+    "name_vn": "Insider"
+  },
+  "char_499_kaitou": {
+    "name": "折光",
+    "name_vn": "Diamante"
+  },
+  "char_500_noirc": {
+    "name": "黑角",
+    "name_vn": "Noir Corne"
+  },
+  "char_501_durin": {
+    "name": "杜林",
+    "name_vn": "Durin"
+  },
+  "char_502_nblade": {
+    "name": "夜刀",
+    "name_vn": "Yato"
+  },
+  "char_503_rang": {
+    "name": "巡林者",
+    "name_vn": "Rangers"
+  },
+  "char_504_rguard": {
+    "name": "预备干员-近战",
+    "name_vn": "Reserve Operator - Melee"
+  },
+  "char_505_rcast": {
+    "name": "预备干员-术师",
+    "name_vn": "Reserve Operator - Caster"
+  },
+  "char_506_rmedic": {
+    "name": "预备干员-后勤",
+    "name_vn": "Reserve Operator - Logistics"
+  },
+  "char_507_rsnipe": {
+    "name": "预备干员-狙击",
+    "name_vn": "Reserve Operator - Sniper"
+  },
+  "char_508_aguard": {
+    "name": "Sharp",
+    "name_vn": "Sharp"
+  },
+  "char_509_acast": {
+    "name": "Pith",
+    "name_vn": "Pith"
+  },
+  "char_510_amedic": {
+    "name": "Touch",
+    "name_vn": "Touch"
+  },
+  "char_511_asnipe": {
+    "name": "Stormeye",
+    "name_vn": "Stormeye"
+  },
+  "char_512_aprot": {
+    "name": "暮落",
+    "name_vn": "Shalem"
+  },
+  "char_513_apionr": {
+    "name": "郁金香",
+    "name_vn": "Tulip"
+  },
+  "char_514_rdfend": {
+    "name": "预备干员-重装",
+    "name_vn": "Reserve Operator - Defender"
+  },
+  "char_600_cpione": {
+    "name": "预备干员-先锋",
+    "name_vn": "Reserve Operator - Vanguard"
+  },
+  "char_601_cguard": {
+    "name": "预备干员-近卫",
+    "name_vn": "Reserve Operator - Guard"
+  },
+  "char_602_cdfend": {
+    "name": "预备干员-重装",
+    "name_vn": "Reserve Operator - Defender"
+  },
+  "char_603_csnipe": {
+    "name": "预备干员-狙击",
+    "name_vn": "Reserve Operator - Sniper"
+  },
+  "char_604_ccast": {
+    "name": "预备干员-术师",
+    "name_vn": "Reserve Operator - Caster"
+  },
+  "char_605_cmedic": {
+    "name": "预备干员-医疗",
+    "name_vn": "Reserve Operator - Medic"
+  },
+  "char_606_csuppo": {
+    "name": "预备干员-辅助",
+    "name_vn": "Reserve Operator - Supporter"
+  },
+  "char_607_cspec": {
+    "name": "预备干员-特种",
+    "name_vn": "Reserve Operator - Specialist"
+  },
+  "char_608_acpion": {
+    "name": "郁金香",
+    "name_vn": "Tulip"
+  },
+  "char_609_acguad": {
+    "name": "Sharp",
+    "name_vn": "Sharp"
+  },
+  "char_610_acfend": {
+    "name": "Mechanist",
+    "name_vn": "Mechanist"
+  },
+  "char_611_acnipe": {
+    "name": "Stormeye",
+    "name_vn": "Stormeye"
+  },
+  "char_612_accast": {
+    "name": "Pith",
+    "name_vn": "Pith"
+  },
+  "char_613_acmedc": {
+    "name": "Touch",
+    "name_vn": "Touch"
+  },
+  "char_614_acsupo": {
+    "name": "Raidian",
+    "name_vn": "Raidian"
+  },
+  "char_615_acspec": {
+    "name": "Misery",
+    "name_vn": "Misery"
+  },
+  "char_616_pithst": {
+    "name": "盟约·辅助干员",
+    "name_vn": ""
+  },
+  "char_617_sharp2": {
+    "name": "领主·Sharp",
+    "name_vn": ""
+  },
+  "token_10000_silent_healrb": {
+    "name": "医疗探机",
+    "name_vn": "Medic Drone"
+  },
+  "token_10001_deepcl_tentac": {
+    "name": "触手",
+    "name_vn": "Tentacle"
+  },
+  "token_10002_kalts_mon3tr": {
+    "name": "Mon3tr",
+    "name_vn": "Mon3tr"
+  },
+  "token_10003_cgbird_bird": {
+    "name": "幻影",
+    "name_vn": "Mirage"
+  },
+  "token_10004_otter_motter": {
+    "name": "机械水獭",
+    "name_vn": "Robotter"
+  },
+  "token_10005_mgllan_drone1": {
+    "name": "龙腾.F",
+    "name_vn": "Soaring Dragon F"
+  },
+  "token_10005_mgllan_drone2": {
+    "name": "龙腾.L",
+    "name_vn": "Soaring Dragon L"
+  },
+  "token_10005_mgllan_drone3": {
+    "name": "龙腾.A",
+    "name_vn": "Soaring Dragon A"
+  },
+  "token_10006_vodfox_doll": {
+    "name": "诅咒娃娃",
+    "name_vn": "Cursed Doll"
+  },
+  "token_10007_phatom_twin": {
+    "name": "镜中虚影",
+    "name_vn": "Phantom in the Mirror"
+  },
+  "token_10008_cqbw_box": {
+    "name": "此面向敌",
+    "name_vn": "Front Toward Enemy"
+  },
+  "token_10009_weedy_cannon": {
+    "name": "工程蓄水炮",
+    "name_vn": "Industrial Water Cannon"
+  },
+  "token_10010_folivo_car": {
+    "name": "移动摄影器",
+    "name_vn": "Mobile Buggy Cam"
+  },
+  "token_10011_beewax_oblisk": {
+    "name": "沙之碑",
+    "name_vn": "Sand Obelisk"
+  },
+  "token_10012_rosmon_shield": {
+    "name": "迷迭香的战术装备",
+    "name_vn": "Rosmontis's Tactical Equipment"
+  },
+  "token_10013_robin_mine": {
+    "name": "“夹子”",
+    "name_vn": "'Clip'"
+  },
+  "token_10014_bstalk_crab": {
+    "name": "磐蟹护卫队",
+    "name_vn": "Metal Crab Guard Team"
+  },
+  "token_10015_dusk_drgn": {
+    "name": "“小自在”",
+    "name_vn": "'Freeling'"
+  },
+  "token_10016_rfrost_mine": {
+    "name": "迎宾踏垫",
+    "name_vn": "Welcome Mat"
+  },
+  "token_10017_skadi2_dedant": {
+    "name": "斯卡蒂的海嗣",
+    "name_vn": "Skadi's Seaborn"
+  },
+  "token_10018_robrta_mach": {
+    "name": "全自动造型仪",
+    "name_vn": "Full Auto Modeler"
+  },
+  "token_10019_nearl2_sword": {
+    "name": "“耀阳”",
+    "name_vn": "'Blazing Sun'"
+  },
+  "token_10020_ling_soul1": {
+    "name": "“清平”",
+    "name_vn": "'Tranquility'"
+  },
+  "token_10020_ling_soul2": {
+    "name": "“逍遥”",
+    "name_vn": "'Peripateticism'"
+  },
+  "token_10020_ling_soul3": {
+    "name": "“弦惊”",
+    "name_vn": "'Thunderer'"
+  },
+  "token_10021_blkngt_hypnos": {
+    "name": "眠兽",
+    "name_vn": "Slumberfoot"
+  },
+  "token_10022_kazema_shadow": {
+    "name": "纸偶",
+    "name_vn": "Kaminingyo"
+  },
+  "token_10023_windft_wrench": {
+    "name": "可靠电池",
+    "name_vn": "Reliable Battery"
+  },
+  "token_10024_ebnhlz_rcube": {
+    "name": "旧日残影",
+    "name_vn": "Remnants of Days Past"
+  },
+  "token_10025_doroth_recttp": {
+    "name": "共振装置",
+    "name_vn": "Resonator"
+  },
+  "token_10026_bgsnow_subbow": {
+    "name": "“打字机”",
+    "name_vn": "'Typewriter'"
+  },
+  "token_10027_ironmn_pile1": {
+    "name": "白铁™多功能平台",
+    "name_vn": "Stainless™ Multifunctional Platform"
+  },
+  "token_10027_ironmn_pile2": {
+    "name": "白铁™多功能平台",
+    "name_vn": "Stainless™ Multifunctional Platform"
+  },
+  "token_10027_ironmn_pile3": {
+    "name": "铁钳号·原型机",
+    "name_vn": "Prototype of Feist's Metal Crab"
+  },
+  "token_10028_vigil_wolf": {
+    "name": "狼群",
+    "name_vn": "Wolfpack"
+  },
+  "token_10029_slent2_protrb": {
+    "name": "夜灯",
+    "name_vn": "Night Banisher"
+  },
+  "token_10030_mlyss_wtrman": {
+    "name": "流形",
+    "name_vn": "Flowing Shape"
+  },
+  "token_10031_swire2_gdtrap": {
+    "name": "香槟炸弹",
+    "name_vn": "Champagne Bomb"
+  },
+  "token_10032_jesca2_jckshd": {
+    "name": "机动盾牌",
+    "name_vn": "Mobile Riot Shield"
+  },
+  "token_10033_ela_grzmot": {
+    "name": "雷鸣地雷",
+    "name_vn": "Grzmot Mine"
+  },
+  "token_10034_ray_sndbst": {
+    "name": "沙地兽",
+    "name_vn": "Sandbeast"
+  },
+  "token_10035_wisdel_wward": {
+    "name": "魂灵之影",
+    "name_vn": "Revenant's Shadow"
+  },
+  "token_10036_lasher_mcbird": {
+    "name": "发条羽兽",
+    "name_vn": "Clockwork Fowlbeast"
+  },
+  "token_10037_mitm_trshrb": {
+    "name": "樱桃三号",
+    "name_vn": "Cherry-3"
+  },
+  "token_10039_ulpia_block": {
+    "name": "从不混淆的方向",
+    "name_vn": "Undeviating Course"
+  },
+  "token_10040_siege2_vlion": {
+    "name": "黄金盟誓",
+    "name_vn": "Golden Vows"
+  },
+  "token_10041_cathy_catsld": {
+    "name": "爬行号·防护单元",
+    "name_vn": "Crawler Protection Unit"
+  },
+  "token_10042_tecno_puppet": {
+    "name": "木偶舞者",
+    "name_vn": "Puppet Dancer"
+  },
+  "token_10043_necras_skeltn": {
+    "name": "悲叹的仆役",
+    "name_vn": "Servant of Lamentation"
+  },
+  "token_10044_wulfen_mine": {
+    "name": "矿石“杀手”",
+    "name_vn": "Ore 'Killer'"
+  },
+  "token_10045_alanna_crane": {
+    "name": "小螺帽",
+    "name_vn": "Nutty"
+  },
+  "token_10050_monstr_prosts": {
+    "name": "重构体",
+    "name_vn": "Reconstruction"
+  },
+  "token_10051_radian_tower1": {
+    "name": "戴乌",
+    "name_vn": "Dive"
+  },
+  "token_10052_radian_tower2": {
+    "name": "赛柯",
+    "name_vn": "Cycle"
+  },
+  "token_10053_radian_tower3": {
+    "name": "桑特拉",
+    "name_vn": "Center"
+  },
+  "token_10054_phatm2_encdool": {
+    "name": "本能的召唤",
+    "name_vn": "Blood's Whisper"
+  },
+  "token_10055_phatm2_mndclv": {
+    "name": "迷狂牢笼",
+    "name_vn": "Cage of Chaos"
+  },
+  "token_10056_angel2_target": {
+    "name": "投递坐标",
+    "name_vn": "Delivery Coordinates"
+  },
+  "token_10057_svash2_eagle1": {
+    "name": "风雪之眼",
+    "name_vn": ""
+  },
+  "token_10057_svash2_eagle2": {
+    "name": "风雪之眼",
+    "name_vn": ""
+  },
+  "token_10057_svash2_eagle3": {
+    "name": "风雪之眼",
+    "name_vn": ""
+  },
+  "token_10058_sbell2_icetgt": {
+    "name": "保护目标（冻结状态）",
+    "name_vn": ""
+  },
+  "token_10059_nasti_nstdef": {
+    "name": "“质检专员”",
+    "name_vn": ""
+  },
+  "token_10060_nasti_nstchr": {
+    "name": "“监工专员”",
+    "name_vn": ""
+  },
+  "token_10061_nasti_nstbld": {
+    "name": "“应急承重小组”",
+    "name_vn": ""
+  },
+  "trap_001_crate": {
+    "name": "障碍物",
+    "name_vn": "Roadblock"
+  },
+  "trap_002_emp": {
+    "name": "震撼装置",
+    "name_vn": "Stun Generator"
+  },
+  "trap_003_gate": {
+    "name": "闸门",
+    "name_vn": "Gate"
+  },
+  "trap_005_sensor": {
+    "name": "侦测器",
+    "name_vn": "Detector"
+  },
+  "trap_006_antidr": {
+    "name": "干扰装置",
+    "name_vn": "Jammer"
+  },
+  "trap_007_ballis": {
+    "name": "弩炮",
+    "name_vn": "Turret"
+  },
+  "trap_008_farm": {
+    "name": "指挥终端",
+    "name_vn": "Command Terminal"
+  },
+  "trap_009_battery": {
+    "name": "便携式补给站",
+    "name_vn": "Portable Supply Station"
+  },
+  "trap_010_frosts": {
+    "name": "源石冰晶",
+    "name_vn": "Originium Ice Crystal"
+  },
+  "trap_011_ore": {
+    "name": "源石祭坛",
+    "name_vn": "Originium Altar"
+  },
+  "trap_012_mine": {
+    "name": "干扰地雷",
+    "name_vn": "Interference Mine"
+  },
+  "trap_013_blower": {
+    "name": "源石流发生装置",
+    "name_vn": "Originium Flow Generator"
+  },
+  "trap_014_tower": {
+    "name": "L-44\"留声机\"",
+    "name_vn": "L-44 'Gramophone'"
+  },
+  "trap_015_tree": {
+    "name": "巨蕈",
+    "name_vn": "Giant Mushroom"
+  },
+  "trap_016_peon": {
+    "name": "罗德岛临时雇员",
+    "name_vn": "Temporary Rhodes Island Employee"
+  },
+  "trap_018_bomb": {
+    "name": "轰隆隆先生",
+    "name_vn": "Mr. Boom"
+  },
+  "trap_019_electric": {
+    "name": "梅什科线圈",
+    "name_vn": "Mieszko Coil"
+  },
+  "trap_020_roadblock": {
+    "name": "道路障碍物",
+    "name_vn": "Static Roadblock"
+  },
+  "trap_021_flame": {
+    "name": "能量聚合体",
+    "name_vn": "Energy Aggregate"
+  },
+  "trap_022_frosts_friend": {
+    "name": "霜星的源石冰晶",
+    "name_vn": "FrostNova's Originium Ice Crystal"
+  },
+  "trap_023_ore_friend": {
+    "name": "爱国者的源石祭坛",
+    "name_vn": "Patriot's Originium Altar"
+  },
+  "trap_024_npcsld": {
+    "name": "盾卫",
+    "name_vn": "Shieldguard"
+  },
+  "trap_025_prison": {
+    "name": "禁锢装置",
+    "name_vn": "Imprisonment Device"
+  },
+  "trap_026_inverter": {
+    "name": "改良型二踢脚",
+    "name_vn": "Two-Step Firecracker mk2"
+  },
+  "trap_027_stone": {
+    "name": "碎石",
+    "name_vn": "Rubble"
+  },
+  "trap_028_cannon": {
+    "name": "脉冲防御模组",
+    "name_vn": "Pulse Defense Module"
+  },
+  "trap_029_poison": {
+    "name": "催泪瓦斯控制阀",
+    "name_vn": "Teargas Control Valve"
+  },
+  "trap_030_factory": {
+    "name": "无人机工厂",
+    "name_vn": "Drone Factory"
+  },
+  "trap_031_sleep": {
+    "name": "雪雉的安全起重机",
+    "name_vn": "Snowsant's Safe Escape Crane"
+  },
+  "trap_032_mound": {
+    "name": "土石结构",
+    "name_vn": "Dirt Mound"
+  },
+  "trap_033_sbomb": {
+    "name": "高能源石炸弹",
+    "name_vn": "High-Energy Originium Bomb"
+  },
+  "trap_034_machst": {
+    "name": "加固装置",
+    "name_vn": "Reinforcement Device"
+  },
+  "trap_035_emperor": {
+    "name": "大帝",
+    "name_vn": "Emperor"
+  },
+  "trap_036_storm": {
+    "name": "沙尘暴",
+    "name_vn": "Sandstorm"
+  },
+  "trap_037_airsup": {
+    "name": "可移动战术机库",
+    "name_vn": "Mobile Tactical Hangar"
+  },
+  "trap_038_dsbell": {
+    "name": "应急救治设施",
+    "name_vn": "Emergency Aid Building"
+  },
+  "trap_039_dstnta": {
+    "name": "子代",
+    "name_vn": "Offspring"
+  },
+  "trap_040_canoe": {
+    "name": "特制水上平台",
+    "name_vn": "Custom Floating Platform"
+  },
+  "trap_041_fcanon": {
+    "name": "风筝",
+    "name_vn": "Kite"
+  },
+  "trap_042_tidectrl": {
+    "name": "涨潮控制",
+    "name_vn": "Tide Controller"
+  },
+  "trap_043_dupilr": {
+    "name": "破碎支柱",
+    "name_vn": "Tattered Pillar"
+  },
+  "trap_044_duruin": {
+    "name": "战场废墟",
+    "name_vn": "Battlefield Ruins"
+  },
+  "trap_045_dublst": {
+    "name": "爆破装置",
+    "name_vn": "Demolition Device"
+  },
+  "trap_046_oxygen": {
+    "name": "防水蚀镀膜装置",
+    "name_vn": "Erosion-Resistant Coating Application Device"
+  },
+  "trap_048_neonlamp": {
+    "name": "城市霓虹",
+    "name_vn": "City Neon"
+  },
+  "trap_049_candle": {
+    "name": "骑士之徽",
+    "name_vn": "Knight Crest"
+  },
+  "trap_050_blizzard": {
+    "name": "暴风雪",
+    "name_vn": "Blizzard"
+  },
+  "trap_051_vultres": {
+    "name": "无主的财富",
+    "name_vn": "Unowned Treasure"
+  },
+  "trap_052_slowfd": {
+    "name": "失修舞台雾机",
+    "name_vn": "Broken Fog Machine"
+  },
+  "trap_053_airbomb": {
+    "name": "便携气罐",
+    "name_vn": "Gas Tank P."
+  },
+  "trap_054_dancdol": {
+    "name": "“报幕助手”",
+    "name_vn": "'Host's Assistant'"
+  },
+  "trap_055_tileblock": {
+    "name": "封印的地面",
+    "name_vn": "Sealed Floor"
+  },
+  "trap_056_sfsuifire": {
+    "name": "丹田",
+    "name_vn": "Dantian"
+  },
+  "trap_057_wpnsts": {
+    "name": "“冰淇淋机”",
+    "name_vn": "'Gelato Stop'"
+  },
+  "trap_058_gunctrl": {
+    "name": "伦蒂尼姆城防副炮",
+    "name_vn": "Londinium Secondary Defense Artillery"
+  },
+  "trap_059_peacokfool": {
+    "name": "断罪者",
+    "name_vn": "Conviction"
+  },
+  "trap_060_bouncy": {
+    "name": "圣徒之手",
+    "name_vn": "Hand of the Saint"
+  },
+  "trap_061_creep": {
+    "name": "溟痕",
+    "name_vn": "Nethersea Brand"
+  },
+  "trap_062_magicstart": {
+    "name": "“低音号”",
+    "name_vn": "'Tuba'"
+  },
+  "trap_063_magicturn": {
+    "name": "L-7 “回音壁”",
+    "name_vn": "L-7 'Whisperer'"
+  },
+  "trap_064_magiccircle": {
+    "name": "“谐振器”",
+    "name_vn": "'Resonator'"
+  },
+  "trap_065_normbox": {
+    "name": "宝箱",
+    "name_vn": "Treasure Chest"
+  },
+  "trap_066_rarebox": {
+    "name": "尖刺宝箱",
+    "name_vn": "Spiked Treasure Chest"
+  },
+  "trap_067_dice": {
+    "name": "骰子",
+    "name_vn": "Dice"
+  },
+  "trap_068_badbox": {
+    "name": "箱形恐鱼",
+    "name_vn": "Chest Seaborn"
+  },
+  "trap_069_buffcard": {
+    "name": "战备激活阀",
+    "name_vn": "Equipment Activation Valve"
+  },
+  "trap_070_supplycard": {
+    "name": "预备区发讯器",
+    "name_vn": "Preparation Area Transmitter"
+  },
+  "trap_071_recyclecard": {
+    "name": "紧急召回情报箱",
+    "name_vn": "Emergency Recall Box"
+  },
+  "trap_072_revivecard": {
+    "name": "休整区发讯器",
+    "name_vn": "Recuperation Area Transmitter"
+  },
+  "trap_073_btauntcard": {
+    "name": "污染晶石",
+    "name_vn": "Contaminated Mineral"
+  },
+  "trap_074_bbombcard": {
+    "name": "聚热晶簇",
+    "name_vn": "Heat Cluster"
+  },
+  "trap_075_bgarmn": {
+    "name": "R-31重型动力装甲",
+    "name_vn": "R-31 Heavy Power Armor"
+  },
+  "trap_076_bgarms": {
+    "name": "R-31a重型动力装甲",
+    "name_vn": "R-31a Heavy Power Armor"
+  },
+  "trap_077_rmtarmn": {
+    "name": "R-11突击动力装甲",
+    "name_vn": "R-11 Assault Power Armor"
+  },
+  "trap_078_rmtarms": {
+    "name": "R-11a突击动力装甲",
+    "name_vn": "R-11a Assault Power Armor"
+  },
+  "trap_079_allydonq": {
+    "name": "猎潮的骑士",
+    "name_vn": "Tide-Hunt Knight"
+  },
+  "trap_080_garage": {
+    "name": "自走车出发点",
+    "name_vn": "Self-Driving Cart Launchpoint"
+  },
+  "trap_081_turngear": {
+    "name": "自走车单行道",
+    "name_vn": "Self-Driving Cart One-Way Road"
+  },
+  "trap_082_salecard": {
+    "name": "改派发讯器",
+    "name_vn": "Reassignment Transmitter"
+  },
+  "trap_083_bunker": {
+    "name": "掩体",
+    "name_vn": "Barrier"
+  },
+  "trap_084_aidkit": {
+    "name": "急救包",
+    "name_vn": "First-aid Kit"
+  },
+  "trap_085_paras": {
+    "name": "荧光孢子",
+    "name_vn": "Fluorescent Spores"
+  },
+  "trap_086_larva": {
+    "name": "“汲营枯枝” ",
+    "name_vn": "'Twigs That Crave'"
+  },
+  "trap_087_allady": {
+    "name": "阿勒黛的卫护",
+    "name_vn": "Allerdale's Guard"
+  },
+  "trap_088_dice2": {
+    "name": "8面骰子",
+    "name_vn": "8-Sided Dice"
+  },
+  "trap_089_dice3": {
+    "name": "12面骰子",
+    "name_vn": "12-Sided Dice"
+  },
+  "trap_090_recodr": {
+    "name": "实体程式",
+    "name_vn": "Entitative Program"
+  },
+  "trap_091_brctrl": {
+    "name": "实体程式控制",
+    "name_vn": "Entitative Program Controller"
+  },
+  "trap_092_vgctrl": {
+    "name": "复仇黑手",
+    "name_vn": "Vengeful Mafioso"
+  },
+  "trap_093_tbattbc": {
+    "name": "钳兽壳粉",
+    "name_vn": "Gloompincer Shell Meal"
+  },
+  "trap_094_tbpsnc": {
+    "name": "高效泡打粉",
+    "name_vn": "High-Efficiency Baking Powder"
+  },
+  "trap_095_tbsmmc": {
+    "name": "芳香精油",
+    "name_vn": "Fragrant Essential Oil"
+  },
+  "trap_096_gflag": {
+    "name": "山海密语仪",
+    "name_vn": "Shanhaizhong Cipher Machine"
+  },
+  "trap_097_hstone": {
+    "name": "城防路障",
+    "name_vn": "Roadblocks"
+  },
+  "trap_098_mire": {
+    "name": "沼泽控制",
+    "name_vn": "Mire Control"
+  },
+  "trap_099_mhflsb": {
+    "name": "眩光手雷",
+    "name_vn": "Flash Grenade"
+  },
+  "trap_1000_acarm000": {
+    "name": "小盾",
+    "name_vn": "Small Shield"
+  },
+  "trap_1001_acarm001": {
+    "name": "短剑",
+    "name_vn": "Dirk"
+  },
+  "trap_1002_acarm002": {
+    "name": "幸运币",
+    "name_vn": "Lucky Coin"
+  },
+  "trap_1003_acarm003": {
+    "name": "冰块",
+    "name_vn": "Chunk of Ice"
+  },
+  "trap_1004_acarm004": {
+    "name": "压缩饼干",
+    "name_vn": "Hardtack"
+  },
+  "trap_1005_acarm005": {
+    "name": "信标",
+    "name_vn": "Transmitter"
+  },
+  "trap_1006_acarm006": {
+    "name": "源岩匕首",
+    "name_vn": "Orirock Dagger"
+  },
+  "trap_1007_acarm007": {
+    "name": "源石溶剂",
+    "name_vn": "Originium Solvent"
+  },
+  "trap_1008_acarm008": {
+    "name": "激光发射器",
+    "name_vn": "Laser Sighter"
+  },
+  "trap_1009_acarm009": {
+    "name": "喀兰贸易文档",
+    "name_vn": "Karlan Trade File"
+  },
+  "trap_100_mhlbmb": {
+    "name": "高能源石爆桶",
+    "name_vn": "High-Energy Originium Barrel Bomb"
+  },
+  "trap_1010_acarm010": {
+    "name": "卡西米尔文档",
+    "name_vn": "Kazimierz File"
+  },
+  "trap_1011_acarm011": {
+    "name": "深海猎人文档",
+    "name_vn": "Abyssal Hunter File"
+  },
+  "trap_1012_acarm012": {
+    "name": "浓茶",
+    "name_vn": "Strong Tea"
+  },
+  "trap_1013_acarm013": {
+    "name": "蜂鸣器",
+    "name_vn": "Buzzer"
+  },
+  "trap_1014_acarm014": {
+    "name": "精打细算玩偶",
+    "name_vn": "Budget-Savvy Doll"
+  },
+  "trap_1015_acarm015": {
+    "name": "见钱眼开玩偶",
+    "name_vn": "Money-Grubbing Doll"
+  },
+  "trap_1016_acarm016": {
+    "name": "预备进阶许可",
+    "name_vn": "Promotion Permit"
+  },
+  "trap_1017_acarm017": {
+    "name": "战场分析仪",
+    "name_vn": "Battlefield Analyzer"
+  },
+  "trap_1018_acarm018": {
+    "name": "震撼弹",
+    "name_vn": "Stun Grenade"
+  },
+  "trap_1019_acarm019": {
+    "name": "制式重装盾",
+    "name_vn": "Standard Defender Shield"
+  },
+  "trap_101_mhshok": {
+    "name": "高压脉冲诡雷",
+    "name_vn": "High-Voltage Shock Trap"
+  },
+  "trap_1020_acarm020": {
+    "name": "制式狙击镜",
+    "name_vn": "Standard Sniper Scope"
+  },
+  "trap_1021_acarm021": {
+    "name": "制式术师杖",
+    "name_vn": "Standard Caster Wand"
+  },
+  "trap_1022_acarm022": {
+    "name": "口袋法阵",
+    "name_vn": "Pocket Arts Circle"
+  },
+  "trap_1023_acarm023": {
+    "name": "竞技投币机",
+    "name_vn": "Coin-Operated Machine"
+  },
+  "trap_1024_acarm024": {
+    "name": "工匠锤",
+    "name_vn": "Engineer's Hammer"
+  },
+  "trap_1025_acarm025": {
+    "name": "休眠子裔",
+    "name_vn": "Dormant Heir"
+  },
+  "trap_1026_acarm026": {
+    "name": "术师无人机",
+    "name_vn": "Caster Drone"
+  },
+  "trap_1027_acarm027": {
+    "name": "卡西米尔模型",
+    "name_vn": "Kazimierz Model"
+  },
+  "trap_1028_acarm028": {
+    "name": "喀兰贸易模型",
+    "name_vn": "Karlan Trade Model"
+  },
+  "trap_1029_acarm029": {
+    "name": "深海猎人模型",
+    "name_vn": "Abyssal Hunter Model"
+  },
+  "trap_102_mhwrbg": {
+    "name": "滞空牵引无人机",
+    "name_vn": "Wiredrone"
+  },
+  "trap_1030_acarm030": {
+    "name": "精英重装套组",
+    "name_vn": "Elite Defender Set"
+  },
+  "trap_1031_acarm031": {
+    "name": "精英狙击套组",
+    "name_vn": "Elite Sniper Set"
+  },
+  "trap_1032_acarm032": {
+    "name": "精英术师套组",
+    "name_vn": "Elite Caster Set"
+  },
+  "trap_1033_acarm033": {
+    "name": "歌利亚头盔",
+    "name_vn": "Goliath Helmet"
+  },
+  "trap_1034_acarm034": {
+    "name": "M3护甲",
+    "name_vn": "M3 Armor"
+  },
+  "trap_1035_acarm035": {
+    "name": "M3利爪",
+    "name_vn": "M3 Claw"
+  },
+  "trap_1036_acarm036": {
+    "name": "便携弹射器",
+    "name_vn": "Portable Launcher"
+  },
+  "trap_1037_acarm037": {
+    "name": "有限加速器",
+    "name_vn": "Miniature Accelerator"
+  },
+  "trap_1038_acarm038": {
+    "name": "全能机械臂",
+    "name_vn": "Multi-Purpose Robotic Arm"
+  },
+  "trap_1039_acarm039": {
+    "name": "博士投影",
+    "name_vn": "Doctor Hologram"
+  },
+  "trap_103_ymdgct": {
+    "name": "地形增伤控制",
+    "name_vn": "Mire Controller"
+  },
+  "trap_1040_acarm040": {
+    "name": "炎国短刀",
+    "name_vn": ""
+  },
+  "trap_1041_acarm041": {
+    "name": "维式重锤",
+    "name_vn": ""
+  },
+  "trap_1042_acarm042": {
+    "name": "灼燃维式重锤",
+    "name_vn": ""
+  },
+  "trap_1043_acarm043": {
+    "name": "坚定维式重锤",
+    "name_vn": ""
+  },
+  "trap_1044_acarm044": {
+    "name": "加速维式重锤",
+    "name_vn": ""
+  },
+  "trap_1045_acarm045": {
+    "name": "战栗维式重锤",
+    "name_vn": ""
+  },
+  "trap_1046_acarm046": {
+    "name": "阿戈尔重刃",
+    "name_vn": ""
+  },
+  "trap_1047_acarm047": {
+    "name": "坚守盾牌",
+    "name_vn": ""
+  },
+  "trap_1048_acarm048": {
+    "name": "口袋法阵",
+    "name_vn": ""
+  },
+  "trap_1049_acarm049": {
+    "name": "歌利亚头盔",
+    "name_vn": ""
+  },
+  "trap_104_dplant": {
+    "name": "改性植物激素",
+    "name_vn": "Modified Phytohormone"
+  },
+  "trap_1050_acarm050": {
+    "name": "萨尔贡浓茶",
+    "name_vn": ""
+  },
+  "trap_1051_acarm051": {
+    "name": "迅捷作战粮",
+    "name_vn": ""
+  },
+  "trap_1052_acarm052": {
+    "name": "有限加速器",
+    "name_vn": ""
+  },
+  "trap_1053_acarm053": {
+    "name": "激光发射器",
+    "name_vn": ""
+  },
+  "trap_1054_acarm054": {
+    "name": "蜂鸣器",
+    "name_vn": ""
+  },
+  "trap_1055_acarm055": {
+    "name": "伪装服",
+    "name_vn": ""
+  },
+  "trap_1056_acarm056": {
+    "name": "不屈弹射器",
+    "name_vn": ""
+  },
+  "trap_1057_acarm057": {
+    "name": "拉特兰桥夹",
+    "name_vn": ""
+  },
+  "trap_1058_acarm058": {
+    "name": "催泪瓦斯",
+    "name_vn": ""
+  },
+  "trap_1059_acarm059": {
+    "name": "浓缩嗅盐",
+    "name_vn": ""
+  },
+  "trap_105_mhwrct": {
+    "name": "滞空牵引无人机",
+    "name_vn": "Wiredrone"
+  },
+  "trap_1060_acarm060": {
+    "name": "防暴盾",
+    "name_vn": ""
+  },
+  "trap_1061_acarm061": {
+    "name": "护盾无人机",
+    "name_vn": ""
+  },
+  "trap_1062_acarm062": {
+    "name": "谢拉格不融冰",
+    "name_vn": ""
+  },
+  "trap_1063_acarm063": {
+    "name": "精准狙击镜",
+    "name_vn": ""
+  },
+  "trap_1064_acarm064": {
+    "name": "突袭手雷",
+    "name_vn": ""
+  },
+  "trap_1065_acarm065": {
+    "name": "休眠子裔",
+    "name_vn": ""
+  },
+  "trap_1066_acarm066": {
+    "name": "幸运硬币",
+    "name_vn": ""
+  },
+  "trap_1067_acarm067": {
+    "name": "双模机械臂",
+    "name_vn": ""
+  },
+  "trap_1068_acarm068": {
+    "name": "M3茧甲",
+    "name_vn": ""
+  },
+  "trap_1069_acarm069": {
+    "name": "拟态物质",
+    "name_vn": ""
+  },
+  "trap_106_smtree": {
+    "name": "积雪银凇 ",
+    "name_vn": "Silvernwhite Bulwark"
+  },
+  "trap_1070_acarm070": {
+    "name": "人事部文档",
+    "name_vn": ""
+  },
+  "trap_1071_acarm071": {
+    "name": "博士投影",
+    "name_vn": ""
+  },
+  "trap_1072_acarm072": {
+    "name": "突变细胞",
+    "name_vn": ""
+  },
+  "trap_1073_acarm073": {
+    "name": "变形同构体",
+    "name_vn": ""
+  },
+  "trap_1074_acarm074": {
+    "name": "商业包装方案",
+    "name_vn": ""
+  },
+  "trap_1075_acarm075": {
+    "name": "寻呼模块",
+    "name_vn": ""
+  },
+  "trap_1076_acarm076": {
+    "name": "铳骑之威",
+    "name_vn": ""
+  },
+  "trap_1077_acarm077": {
+    "name": "天师古鼎",
+    "name_vn": ""
+  },
+  "trap_1078_acarm078": {
+    "name": "海沟实验体",
+    "name_vn": ""
+  },
+  "trap_1079_acarm079": {
+    "name": "蒸汽之心",
+    "name_vn": ""
+  },
+  "trap_107_smpow": {
+    "name": "空间稳定设施",
+    "name_vn": "Dimensional Anchoring Pylon"
+  },
+  "trap_1080_acspell001": {
+    "name": "法术：恢复",
+    "name_vn": "Arts: Recovery"
+  },
+  "trap_1081_acspell002": {
+    "name": "法术：力量",
+    "name_vn": "Arts: Strength"
+  },
+  "trap_1082_acspell003": {
+    "name": "法术：传动",
+    "name_vn": "Arts: Transmission"
+  },
+  "trap_1083_acspell004": {
+    "name": "法术：贪婪",
+    "name_vn": "Arts: Greed"
+  },
+  "trap_1084_acspell005": {
+    "name": "法术：满足",
+    "name_vn": "Arts: Satisfaction"
+  },
+  "trap_1085_acspell006": {
+    "name": "法术：护盾",
+    "name_vn": "Arts: Shield"
+  },
+  "trap_1086_acspell007": {
+    "name": "法术：榜样",
+    "name_vn": "Arts: Role Model"
+  },
+  "trap_1087_acspell008": {
+    "name": "法术：屏障",
+    "name_vn": "Arts: Barrier"
+  },
+  "trap_1088_acspell009": {
+    "name": "法术：熟人",
+    "name_vn": "Arts: Familiar Face"
+  },
+  "trap_1089_acspell010": {
+    "name": "法术：同行",
+    "name_vn": "Arts: Peer"
+  },
+  "trap_108_smbox": {
+    "name": "宝箱",
+    "name_vn": "Treasure Chest"
+  },
+  "trap_1090_acspell011": {
+    "name": "法术：提升",
+    "name_vn": "Arts: Boost"
+  },
+  "trap_1091_acspell012": {
+    "name": "法术：迟缓",
+    "name_vn": "Arts: Slow"
+  },
+  "trap_1093_acspell014": {
+    "name": "法术：全力",
+    "name_vn": "Arts: All-Out"
+  },
+  "trap_1094_acspell015": {
+    "name": "法术：血税",
+    "name_vn": "Arts: Blood Tax"
+  },
+  "trap_1095_acspell016": {
+    "name": "法术：破袭",
+    "name_vn": "Arts: Infiltration"
+  },
+  "trap_1096_acshopup": {
+    "name": "驳船操作员",
+    "name_vn": "Barge Captain"
+  },
+  "trap_1097_acshopre": {
+    "name": "补给调配器",
+    "name_vn": "Supply Distributor"
+  },
+  "trap_1098_acshopfr": {
+    "name": "补给留存器",
+    "name_vn": "Supply Retainer"
+  },
+  "trap_1099_acspell017": {
+    "name": "晋升调配特许",
+    "name_vn": "Advanced Deployment Permit"
+  },
+  "trap_109_smrbox": {
+    "name": "尖刺宝箱",
+    "name_vn": "Spiked Treasure Chest"
+  },
+  "trap_1100_acreddoor": {
+    "name": "敌人入口",
+    "name_vn": "Enemy Entrance"
+  },
+  "trap_1101_acplane": {
+    "name": "补给驳船",
+    "name_vn": "Supply Barge"
+  },
+  "trap_1102_acarm102": {
+    "name": "耶拉冈德之泪",
+    "name_vn": ""
+  },
+  "trap_1103_acarm103": {
+    "name": "黄沙罗盘",
+    "name_vn": ""
+  },
+  "trap_1104_aclasert": {
+    "name": "“双眼皮”",
+    "name_vn": ""
+  },
+  "trap_1105_accrate": {
+    "name": "阻隔工事",
+    "name_vn": ""
+  },
+  "trap_1106_achplat": {
+    "name": "射击台",
+    "name_vn": ""
+  },
+  "trap_1107_acblock": {
+    "name": "封印的地面",
+    "name_vn": ""
+  },
+  "trap_1108_acdisney": {
+    "name": "“神秘顾客”",
+    "name_vn": ""
+  },
+  "trap_1109_acarm109": {
+    "name": "信标",
+    "name_vn": ""
+  },
+  "trap_110_smbbox": {
+    "name": "巨壳藤蔓",
+    "name_vn": "Testaceous Vinecreeps"
+  },
+  "trap_1110_accopy": {
+    "name": "画卷",
+    "name_vn": ""
+  },
+  "trap_1111_acchal": {
+    "name": "教鞭",
+    "name_vn": ""
+  },
+  "trap_1112_acblzd": {
+    "name": "盟约寒风",
+    "name_vn": ""
+  },
+  "trap_111_wdfarm": {
+    "name": "街头应急储备",
+    "name_vn": "Roadside Emergency Reserves"
+  },
+  "trap_112_crsbow": {
+    "name": "解雇者清债程序",
+    "name_vn": "Post-Firing Debt Relief Program"
+  },
+  "trap_113_snflwr": {
+    "name": "全自动划账器",
+    "name_vn": "Full-Auto Debit Machine"
+  },
+  "trap_114_smkbmb": {
+    "name": "爆裂毒气罐",
+    "name_vn": "Rupturing Canister"
+  },
+  "trap_115_gasctrl": {
+    "name": "毒雾塔控制",
+    "name_vn": "Gas Controller"
+  },
+  "trap_116_stdurk": {
+    "name": "“过去的我”",
+    "name_vn": "'My Past Self'"
+  },
+  "trap_117_ltstat": {
+    "name": "圣像",
+    "name_vn": "Holy Statue"
+  },
+  "trap_118_rockfl": {
+    "name": "塌落的墙垣",
+    "name_vn": "Crumbling Masonry"
+  },
+  "trap_119_rdrepair": {
+    "name": "备用木材",
+    "name_vn": "Spare Timber"
+  },
+  "trap_120_rdblock": {
+    "name": "破旧的木篱",
+    "name_vn": "Shabby Fence"
+  },
+  "trap_121_gractrl": {
+    "name": "重力",
+    "name_vn": "Gravity"
+  },
+  "trap_122_stmpq": {
+    "name": "景观喷泉",
+    "name_vn": "Decorative Geyser"
+  },
+  "trap_123_stmbot": {
+    "name": "水汽汽水瓶",
+    "name_vn": "Steam Soda Bottle"
+  },
+  "trap_124_eradio": {
+    "name": "废热喷口",
+    "name_vn": "Waste Heat Vent"
+  },
+  "trap_125_bonore": {
+    "name": "唤血祭坛",
+    "name_vn": "Bloodcalling Altar"
+  },
+  "trap_126_outset": {
+    "name": "炸弹载荷点",
+    "name_vn": "Bomb Loading Point"
+  },
+  "trap_127_bldore": {
+    "name": "沥血王座",
+    "name_vn": "Throne of Blood"
+  },
+  "trap_128_toolore": {
+    "name": "祭坛式雷达",
+    "name_vn": "Altar-type Radar"
+  },
+  "trap_129_tooltower": {
+    "name": "R-45便携式“留声机”",
+    "name_vn": "R-45 Portable 'Gramophone'"
+  },
+  "trap_130_tooltree": {
+    "name": "景观巨蕈",
+    "name_vn": "Ornamental Giant Mushroom"
+  },
+  "trap_131_toolgun": {
+    "name": "战场装置LUD-99X",
+    "name_vn": "Field Device LUD-99X"
+  },
+  "trap_132_toolinvert": {
+    "name": "“二踢脚”型数据收集装置",
+    "name_vn": "Two-step Firecracker and Data-collector"
+  },
+  "trap_133_toolgarage": {
+    "name": "勘察用自走车",
+    "name_vn": "Self-Driving Recon Cart"
+  },
+  "trap_134_condtr": {
+    "name": "调谐节点",
+    "name_vn": "Tuning Node"
+  },
+  "trap_135_portlent": {
+    "name": "湮灭之相",
+    "name_vn": "Aspect of Annihilation"
+  },
+  "trap_136_portlexi": {
+    "name": "创生之相",
+    "name_vn": "Aspect of Creation"
+  },
+  "trap_137_winfire": {
+    "name": "紧急供暖器",
+    "name_vn": "Emergency Heater"
+  },
+  "trap_138_winstone": {
+    "name": "点火石",
+    "name_vn": "Flint"
+  },
+  "trap_139_dhtl": {
+    "name": "阻流阀",
+    "name_vn": "Throttle Valve"
+  },
+  "trap_140_dhsb": {
+    "name": "泵站",
+    "name_vn": "Pumping Station"
+  },
+  "trap_141_sheltr": {
+    "name": "封阻物",
+    "name_vn": "Barricade"
+  },
+  "trap_142_barrel": {
+    "name": "源石爆炸物",
+    "name_vn": "Originium Explosive"
+  },
+  "trap_143_rnfcar": {
+    "name": "封阻加固装置",
+    "name_vn": "Block Reinforcement Device"
+  },
+  "trap_144_ads": {
+    "name": "临时掩护装置",
+    "name_vn": "Temporary Cover"
+  },
+  "trap_145_edd": {
+    "name": "诡雷布设装置",
+    "name_vn": "Mine Deployer"
+  },
+  "trap_146_dhdcr": {
+    "name": "天桩",
+    "name_vn": "Sky Pole"
+  },
+  "trap_147_spblls": {
+    "name": "巫术弩炮",
+    "name_vn": "Witchcraft Ballista"
+  },
+  "trap_148_amblls": {
+    "name": "幽影门扉",
+    "name_vn": "Umbral Door"
+  },
+  "trap_1500_lhgras": {
+    "name": "草丛",
+    "name_vn": ""
+  },
+  "trap_1501_lhpark": {
+    "name": "花丛",
+    "name_vn": ""
+  },
+  "trap_1502_lhrock": {
+    "name": "岩石",
+    "name_vn": ""
+  },
+  "trap_1503_lhshan": {
+    "name": "山脉",
+    "name_vn": ""
+  },
+  "trap_1504_lhtree": {
+    "name": "林地",
+    "name_vn": ""
+  },
+  "trap_1505_lhfrst": {
+    "name": "密林",
+    "name_vn": ""
+  },
+  "trap_1506_lhhe": {
+    "name": "河流",
+    "name_vn": ""
+  },
+  "trap_1507_lhukmi": {
+    "name": "富集矿区",
+    "name_vn": ""
+  },
+  "trap_1508_lhmine": {
+    "name": "源石矿场",
+    "name_vn": ""
+  },
+  "trap_1509_lhbot": {
+    "name": "勘探器",
+    "name_vn": ""
+  },
+  "trap_1510_lhplt": {
+    "name": "源石晶簇",
+    "name_vn": ""
+  },
+  "trap_1511_lhfac": {
+    "name": "晶簇稳定器",
+    "name_vn": ""
+  },
+  "trap_1512_lhfarm": {
+    "name": "源石回收炉",
+    "name_vn": ""
+  },
+  "trap_1513_lhshop": {
+    "name": "冶铸车",
+    "name_vn": ""
+  },
+  "trap_1514_lhpad": {
+    "name": "田地",
+    "name_vn": ""
+  },
+  "trap_1515_lhfacp": {
+    "name": "被污染的回收炉",
+    "name_vn": ""
+  },
+  "trap_1516_lhnat": {
+    "name": "供能基站",
+    "name_vn": ""
+  },
+  "trap_1517_lhcol": {
+    "name": "藏书馆",
+    "name_vn": ""
+  },
+  "trap_1518_lhdoor": {
+    "name": "改良巫术祭坛",
+    "name_vn": ""
+  },
+  "trap_1519_lhrift": {
+    "name": "巫术村落",
+    "name_vn": ""
+  },
+  "trap_151_muruinw": {
+    "name": "折叠式堡垒模块",
+    "name_vn": "Foldable Bastion"
+  },
+  "trap_1520_lhcolb": {
+    "name": "大图书馆",
+    "name_vn": ""
+  },
+  "trap_1521_lhmagd": {
+    "name": "术法岗哨",
+    "name_vn": ""
+  },
+  "trap_1522_lhvlg": {
+    "name": "先遣侦测器",
+    "name_vn": ""
+  },
+  "trap_1523_lhtown": {
+    "name": "侦测中心",
+    "name_vn": ""
+  },
+  "trap_1524_lhport": {
+    "name": "装卸机",
+    "name_vn": ""
+  },
+  "trap_1525_lhswer": {
+    "name": "水产村落",
+    "name_vn": ""
+  },
+  "trap_1526_lharen": {
+    "name": "冲突围栏",
+    "name_vn": ""
+  },
+  "trap_1527_lhtwer": {
+    "name": "警戒岗哨",
+    "name_vn": ""
+  },
+  "trap_1528_lhruin": {
+    "name": "废墟",
+    "name_vn": ""
+  },
+  "trap_1529_lhsht": {
+    "name": "岗哨",
+    "name_vn": ""
+  },
+  "trap_152_muruino": {
+    "name": "折叠式辅助器械",
+    "name_vn": "Foldable Auxiliary Apparatus"
+  },
+  "trap_1530_lhcamp": {
+    "name": "荒野村落",
+    "name_vn": ""
+  },
+  "trap_1531_lhcampa": {
+    "name": "猎户村落",
+    "name_vn": ""
+  },
+  "trap_1532_lhcampb": {
+    "name": "山地村落",
+    "name_vn": ""
+  },
+  "trap_1533_lhcampc": {
+    "name": "牧场村落",
+    "name_vn": ""
+  },
+  "trap_1534_lheqp": {
+    "name": "插件补给点",
+    "name_vn": ""
+  },
+  "trap_1535_lhupgd": {
+    "name": "插件强化点",
+    "name_vn": ""
+  },
+  "trap_1536_lhbat": {
+    "name": "噬血诅地",
+    "name_vn": ""
+  },
+  "trap_1537_lhside": {
+    "name": "信号基站",
+    "name_vn": ""
+  },
+  "trap_1538_lhblod": {
+    "name": "血裔胞体",
+    "name_vn": ""
+  },
+  "trap_1539_lhflwr": {
+    "name": "精怪实验室",
+    "name_vn": ""
+  },
+  "trap_1540_lhpad2": {
+    "name": "温室拱棚",
+    "name_vn": ""
+  },
+  "trap_154_mugtps": {
+    "name": "阵地屏障",
+    "name_vn": "Positional Barrier"
+  },
+  "trap_155_aegiret": {
+    "name": "航道信标",
+    "name_vn": "Waterway Beacon"
+  },
+  "trap_156_dsshell": {
+    "name": "赘生甲壳",
+    "name_vn": "Excrescent Carapace"
+  },
+  "trap_157_bounc2": {
+    "name": "小帮手",
+    "name_vn": "'Little Handy'"
+  },
+  "trap_158_lrsteam": {
+    "name": "查尔斯·林奇",
+    "name_vn": "Charles Lynch"
+  },
+  "trap_159_lrcore": {
+    "name": "核心增幅器",
+    "name_vn": "Core Amplifier"
+  },
+  "trap_160_lrlgun": {
+    "name": "洪流束激发器",
+    "name_vn": "Torrent Beam Activator"
+  },
+  "trap_161_lrcage": {
+    "name": "枯朽祭坛",
+    "name_vn": "Withered Altar"
+  },
+  "trap_162_lrctrl": {
+    "name": "十四章机制控制器",
+    "name_vn": "EP14 Mechanics Controller"
+  },
+  "trap_163_foolcrate": {
+    "name": "障碍物",
+    "name_vn": "Roadblock"
+  },
+  "trap_164_lrsiege": {
+    "name": "振奋荣光",
+    "name_vn": "Light of Glory"
+  },
+  "trap_165_muftbl": {
+    "name": "足球",
+    "name_vn": "Football"
+  },
+  "trap_166_muwork": {
+    "name": "设施建筑工",
+    "name_vn": "Facility Builder"
+  },
+  "trap_167_muruinf": {
+    "name": "折叠式维护车",
+    "name_vn": "Foldable Maintenance Vehicle"
+  },
+  "trap_169_muruinb": {
+    "name": "折叠式后勤站",
+    "name_vn": "Foldable Logistics Hub"
+  },
+  "trap_171_trpot": {
+    "name": "很大的锅",
+    "name_vn": "Really Big Pot"
+  },
+  "trap_172_trbox": {
+    "name": "“宝箱”",
+    "name_vn": "'Treasure Chest'"
+  },
+  "trap_173_slfrut": {
+    "name": "闪亮果实",
+    "name_vn": "Shiny Berries"
+  },
+  "trap_174_smfrut": {
+    "name": "奇异黑光果实",
+    "name_vn": "Glooming Berry"
+  },
+  "trap_175_frfrut": {
+    "name": "香甜烤果子",
+    "name_vn": "Roast Berry"
+  },
+  "trap_176_frutwn": {
+    "name": "缤纷果酒",
+    "name_vn": "Shiny Brew"
+  },
+  "trap_177_tentcl": {
+    "name": "宝箱的肉？",
+    "name_vn": "Chest Limb?"
+  },
+  "trap_178_trrbox": {
+    "name": "“宝箱”",
+    "name_vn": "'Treasure Chest'"
+  },
+  "trap_179_muctrl": {
+    "name": "促融共竞控制",
+    "name_vn": "Icebreaker Games Control"
+  },
+  "trap_180_dsblock": {
+    "name": "封印的地面",
+    "name_vn": "Sealed Floor"
+  },
+  "trap_181_sgray": {
+    "name": "结晶消除桩",
+    "name_vn": "Decrystallizing Totem"
+  },
+  "trap_182_sglink": {
+    "name": "纯净结晶",
+    "name_vn": "Pure Crystal"
+  },
+  "trap_183_sheltk": {
+    "name": "作战专用掩体",
+    "name_vn": "Combat Special Barricade"
+  },
+  "trap_184_vtarsn": {
+    "name": "军工厂指令平台",
+    "name_vn": "Munitions Factory Command Center"
+  },
+  "trap_185_vtlntw": {
+    "name": "黄金回响",
+    "name_vn": "Golden Echo"
+  },
+  "trap_186_cnvfwks": {
+    "name": "烟花发射器",
+    "name_vn": "Firework Launcher"
+  },
+  "trap_187_arcgacha": {
+    "name": "扭蛋机",
+    "name_vn": "Gacha Machine"
+  },
+  "trap_188_arcsum1": {
+    "name": "街边电话亭",
+    "name_vn": "Street Telephone Booth"
+  },
+  "trap_189_arcsum2": {
+    "name": "军营电话亭",
+    "name_vn": "Camp Telephone Booth"
+  },
+  "trap_190_arcsum3": {
+    "name": "超时空电话亭",
+    "name_vn": "Timey-Wimey Telephone Booth"
+  },
+  "trap_191_arcexpd": {
+    "name": "菜单电话机",
+    "name_vn": "Menu Telephone"
+  },
+  "trap_192_archook": {
+    "name": "勾爪",
+    "name_vn": "Hook"
+  },
+  "trap_193_arctoll": {
+    "name": "大战记分站",
+    "name_vn": "Scoring Station"
+  },
+  "trap_194_arcsoda": {
+    "name": "口渴乐乐",
+    "name_vn": "Quenchy Cola"
+  },
+  "trap_195_arcpw": {
+    "name": "大力拳套",
+    "name_vn": "Power Gauntlet"
+  },
+  "trap_196_cnnon": {
+    "name": "盐坨子炮",
+    "name_vn": "Saltheap Cannon"
+  },
+  "trap_197_muulwr": {
+    "name": "护具分发员",
+    "name_vn": "Protective Gear Giver"
+  },
+  "trap_198_muulas": {
+    "name": "混乱烟花箱",
+    "name_vn": "Chaotic Fireworks"
+  },
+  "trap_199_muulrg": {
+    "name": "猛兽能量饮料",
+    "name_vn": "Beastmode Energy Drink"
+  },
+  "trap_200_muulcl": {
+    "name": "喷射汽水机",
+    "name_vn": "Soda Dispenser"
+  },
+  "trap_201_muulco": {
+    "name": "赛场啦啦队",
+    "name_vn": "Cheerleader"
+  },
+  "trap_202_muworkg": {
+    "name": "高级设施建筑工",
+    "name_vn": "Expert Facility Builder"
+  },
+  "trap_203_mufrprn": {
+    "name": "坍塌的杂物堆",
+    "name_vn": "Collapsed Junk Pile"
+  },
+  "trap_205_mufrfm": {
+    "name": "建筑工具间",
+    "name_vn": "Construction Workshop"
+  },
+  "trap_206_mufrbk": {
+    "name": "临时休息舱",
+    "name_vn": "Recuperation Pod"
+  },
+  "trap_207_mufrwl": {
+    "name": "液压式高台 ",
+    "name_vn": "Hydraulic Platform"
+  },
+  "trap_208_mufrst": {
+    "name": "混凝土路障 ",
+    "name_vn": "Concrete Roadblock"
+  },
+  "trap_209_mufrbs": {
+    "name": "便携健身架",
+    "name_vn": "Portable Exercise Rack"
+  },
+  "trap_210_arcgrg": {
+    "name": "两栖码头",
+    "name_vn": "Amphibious Dock"
+  },
+  "trap_211_cjgtow": {
+    "name": "火灶",
+    "name_vn": "Stove"
+  },
+  "trap_212_cjbtow": {
+    "name": "废弃火灶",
+    "name_vn": "Derelict Stove"
+  },
+  "trap_213_dqore": {
+    "name": "源石祭坛",
+    "name_vn": "Originium Altar"
+  },
+  "trap_214_dqballis": {
+    "name": "弩炮",
+    "name_vn": "Turret"
+  },
+  "trap_215_dqcrsbow": {
+    "name": "解雇者清债程序",
+    "name_vn": "Post-Firing Debt Relief Program"
+  },
+  "trap_216_dqelec": {
+    "name": "梅什科线圈",
+    "name_vn": "Mieszko Coil"
+  },
+  "trap_218_fttree": {
+    "name": "树丛",
+    "name_vn": "Thicket"
+  },
+  "trap_219_fttreant": {
+    "name": "盾与墙",
+    "name_vn": "Shield and Wall"
+  },
+  "trap_220_ftbone": {
+    "name": "旧日之火",
+    "name_vn": "Fires of Days Past"
+  },
+  "trap_221_ftshad": {
+    "name": "空壳",
+    "name_vn": "Empty Shell"
+  },
+  "trap_222_rgdysm": {
+    "name": "雕伥",
+    "name_vn": "Statuegeist"
+  },
+  "trap_223_dynbox": {
+    "name": "宝葫芦",
+    "name_vn": "Magic Gourd"
+  },
+  "trap_224_dyrbox": {
+    "name": "铁葫芦",
+    "name_vn": "Iron Gourd"
+  },
+  "trap_225_dysbox": {
+    "name": "怪葫芦",
+    "name_vn": "Strange Gourd"
+  },
+  "trap_226_dychss": {
+    "name": "瑕",
+    "name_vn": "Flaw"
+  },
+  "trap_227_mpweak": {
+    "name": "弱化节点",
+    "name_vn": "Weakening Node"
+  },
+  "trap_228_mptxs": {
+    "name": "特雷西斯",
+    "name_vn": "Theresis"
+  },
+  "trap_229_mpcata": {
+    "name": "冰镇饮料机",
+    "name_vn": "Cold Drink Machine"
+  },
+  "trap_230_mpcatab": {
+    "name": "加热饮料机",
+    "name_vn": "Hot Drink Machine"
+  },
+  "trap_231_mpgrou": {
+    "name": "“寒灾回响”",
+    "name_vn": "'Frozen Monstrosity's Echo'"
+  },
+  "trap_232_mpgroub": {
+    "name": "“风雪中的影子”",
+    "name_vn": "'Shadow in the Snow'"
+  },
+  "trap_233_mpmage": {
+    "name": "稳定态萨卡兹术师结晶",
+    "name_vn": "Stable Sarkaz Caster Crystal"
+  },
+  "trap_234_mpmageb": {
+    "name": "活性态萨卡兹术师结晶",
+    "name_vn": "Active Sarkaz Caster Crystal"
+  },
+  "trap_235_hlnpcm": {
+    "name": "圣徒像扮演者",
+    "name_vn": "Saint Statue Cosplayer"
+  },
+  "trap_236_hlnpcs": {
+    "name": "圣堂射手扮演者",
+    "name_vn": "Shrine Marksman Cosplayer"
+  },
+  "trap_237_hlnpcb": {
+    "name": "圣堂保育员扮演者",
+    "name_vn": "Shrine Nurturer Cosplayer"
+  },
+  "trap_238_dydfst": {
+    "name": "明烛台",
+    "name_vn": "Candle Stand"
+  },
+  "trap_239_dyffgd": {
+    "name": "狭路相逢",
+    "name_vn": "Face to Face"
+  },
+  "trap_240_dyffdd": {
+    "name": "狭路相逢",
+    "name_vn": "Face to Face"
+  },
+  "trap_241_dyldlz": {
+    "name": "聚宝斋",
+    "name_vn": "Chamber of Treasures"
+  },
+  "trap_247_crfilm": {
+    "name": "摄影机",
+    "name_vn": "Camera"
+  },
+  "trap_248_crprop": {
+    "name": "打光道具",
+    "name_vn": "Lighting Prop"
+  },
+  "trap_249_mjcsdw": {
+    "name": "“月影之茧”",
+    "name_vn": ""
+  },
+  "trap_250_hlctrl": {
+    "name": "寻根圣事",
+    "name_vn": "Sacrament of Genesis"
+  },
+  "trap_251_buftrp": {
+    "name": "遗物中枢",
+    "name_vn": "Artifact Center"
+  },
+  "trap_252_pckstp": {
+    "name": "天命来袭",
+    "name_vn": ""
+  },
+  "trap_253_boxnma": {
+    "name": "压力舒缓帮手",
+    "name_vn": ""
+  },
+  "trap_254_boxmac": {
+    "name": "压力归零帮手",
+    "name_vn": ""
+  },
+  "trap_255_pckzhn": {
+    "name": "“斩”",
+    "name_vn": ""
+  },
+  "trap_257_muulct": {
+    "name": "迷幻反射镜",
+    "name_vn": ""
+  },
+  "trap_258_rgcssm": {
+    "name": "古雕伥",
+    "name_vn": ""
+  },
+  "trap_259_murjet": {
+    "name": "全手动推进器",
+    "name_vn": ""
+  },
+  "trap_260_murbas": {
+    "name": "基础浮板",
+    "name_vn": ""
+  },
+  "trap_261_murmag": {
+    "name": "引力浮板",
+    "name_vn": ""
+  },
+  "trap_262_murtre": {
+    "name": "物资浮板",
+    "name_vn": ""
+  },
+  "trap_263_murbox": {
+    "name": "防水物资箱",
+    "name_vn": ""
+  },
+  "trap_264_xdplat": {
+    "name": "伊斯贝塔高台",
+    "name_vn": ""
+  },
+  "trap_265_xdice1": {
+    "name": "圣女像",
+    "name_vn": ""
+  },
+  "trap_267_xdmac1": {
+    "name": "雪崩触发装置",
+    "name_vn": ""
+  },
+  "trap_268_xdmac2": {
+    "name": "积雪固定装置",
+    "name_vn": ""
+  },
+  "trap_269_xdmac3": {
+    "name": "落雪防护装置",
+    "name_vn": ""
+  },
+  "trap_270_spawnp": {
+    "name": "隐蔽矿道",
+    "name_vn": ""
+  },
+  "trap_271_fowstn": {
+    "name": "严重污染设施",
+    "name_vn": ""
+  },
+  "trap_272_nomstn": {
+    "name": "阻道岩壁",
+    "name_vn": ""
+  },
+  "trap_278_dyfgdd": {
+    "name": "狭路相逢",
+    "name_vn": ""
+  },
+  "trap_279_pirene": {
+    "name": "喷泉水池",
+    "name_vn": ""
+  },
+  "trap_400_xbfarm": {
+    "name": "便携式种植槽",
+    "name_vn": "Portable Planting Trough"
+  },
+  "trap_401_xbfato": {
+    "name": "木材采集站",
+    "name_vn": "Sawing Harvester Hub"
+  },
+  "trap_403_wfactory": {
+    "name": "蟹蟹抽水泵",
+    "name_vn": "Crabbie Pumpie"
+  },
+  "trap_404_xbfortress": {
+    "name": "坚固筑台",
+    "name_vn": "Firm Platform"
+  },
+  "trap_405_xbroadblock": {
+    "name": "都市风壁障",
+    "name_vn": "Urban Style Barrier"
+  },
+  "trap_406_xboverwatch": {
+    "name": "监控塔",
+    "name_vn": "Monitoring Tower"
+  },
+  "trap_408_xbbase": {
+    "name": "基地",
+    "name_vn": "Base"
+  },
+  "trap_409_xbwood": {
+    "name": "杂木林",
+    "name_vn": "Thickets"
+  },
+  "trap_410_xbstone": {
+    "name": "巨大岩石",
+    "name_vn": "Monoliths"
+  },
+  "trap_411_xbiron": {
+    "name": "奇异矿脉",
+    "name_vn": "Strange Ore Vein"
+  },
+  "trap_412_redtower": {
+    "name": "移动战塔",
+    "name_vn": "Mobile Battle Tower"
+  },
+  "trap_413_hiddenstone": {
+    "name": "遗迹残骸",
+    "name_vn": "Historical Remains"
+  },
+  "trap_414_vegetation": {
+    "name": "灌木丛",
+    "name_vn": "Bush"
+  },
+  "trap_415_trademan": {
+    "name": "联络员",
+    "name_vn": "Liaison"
+  },
+  "trap_416_gtreasure": {
+    "name": "埋没金属箱",
+    "name_vn": "Buried Metal Chest"
+  },
+  "trap_417_shielder": {
+    "name": "护盾遥控器",
+    "name_vn": "Remote Shield Generator"
+  },
+  "trap_418_smokebomb": {
+    "name": "安眠迷香",
+    "name_vn": "Hypnotic Censer"
+  },
+  "trap_419_enhancer": {
+    "name": "醒神秘药",
+    "name_vn": "Refreshing Potion"
+  },
+  "trap_420_umbrella": {
+    "name": "反侦察藏匿机",
+    "name_vn": "Camouflage Device"
+  },
+  "trap_421_repairman": {
+    "name": "应急修理车",
+    "name_vn": "Emergency Repair Vehicle"
+  },
+  "trap_422_streasure": {
+    "name": "宝刺金属箱",
+    "name_vn": "Thorned Treasure Chest"
+  },
+  "trap_423_bondtw": {
+    "name": "缚网发射台",
+    "name_vn": "Trap Net Launcher"
+  },
+  "trap_424_pushtw": {
+    "name": "喷拒器",
+    "name_vn": "Gas Jet Thrower"
+  },
+  "trap_425_xbwall": {
+    "name": "防御工事",
+    "name_vn": "Fortification"
+  },
+  "trap_426_xbmrcl": {
+    "name": "模块演算设施",
+    "name_vn": "Modular Computing Station"
+  },
+  "trap_427_xbprsh": {
+    "name": "资源规划站",
+    "name_vn": "Resource Planning Station"
+  },
+  "trap_428_xblrsh": {
+    "name": "备勤激活站",
+    "name_vn": "Combat Readiness Station"
+  },
+  "trap_429_xbescp": {
+    "name": "跨地块通讯站",
+    "name_vn": "Transregional Communication Station"
+  },
+  "trap_430_wdescp": {
+    "name": "逃脱点",
+    "name_vn": "Escape Route"
+  },
+  "trap_431_xbgldn": {
+    "name": "冶铸台",
+    "name_vn": "Mint"
+  },
+  "trap_432_oldisin": {
+    "name": "老伊辛",
+    "name_vn": "Old Isin"
+  },
+  "trap_433_sandsdr": {
+    "name": "“沙卒”",
+    "name_vn": "'Sand Soldier'"
+  },
+  "trap_434_klmantc": {
+    "name": "曼提柯杀手",
+    "name_vn": "Manticore Killer"
+  },
+  "trap_435_trsrhuntr": {
+    "name": "寻宝人",
+    "name_vn": "Treasure Hunter"
+  },
+  "trap_437_poachr": {
+    "name": "老练猎手",
+    "name_vn": "Veteran Hunter"
+  },
+  "trap_438_xbfato2": {
+    "name": "石材采集站",
+    "name_vn": "Quarrying Harvester Hub"
+  },
+  "trap_439_xbfato3": {
+    "name": "铁矿采集站",
+    "name_vn": "Mining Harvester Hub"
+  },
+  "trap_440_xbalis": {
+    "name": "简易弩台",
+    "name_vn": "Basic Repeater Turret"
+  },
+  "trap_441_xbmgbird": {
+    "name": "喙中奇物",
+    "name_vn": "Fowlbeast's Return"
+  },
+  "trap_442_xbtrap": {
+    "name": "流沙黯坑",
+    "name_vn": "Occluded Quicksand Pit"
+  },
+  "trap_443_xbtent": {
+    "name": "作战中心",
+    "name_vn": "Operations Station"
+  },
+  "trap_444_xbexbi": {
+    "name": "“纪念”",
+    "name_vn": "Lootmark"
+  },
+  "trap_445_xbfence": {
+    "name": "兽栏",
+    "name_vn": "Corral"
+  },
+  "trap_446_xbfdtion": {
+    "name": "风沙营垒",
+    "name_vn": "Headquarter of Sandbank"
+  },
+  "trap_447_xbmcv": {
+    "name": "旷野房车\n",
+    "name_vn": "Campervan\n"
+  },
+  "trap_448_xbmire": {
+    "name": "污浊泥沼",
+    "name_vn": "Cursed Mire"
+  },
+  "trap_449_xbspgun": {
+    "name": "烟雾发射台",
+    "name_vn": "Smoke Launcher"
+  },
+  "trap_450_xbdrill": {
+    "name": "澄亮采集站",
+    "name_vn": "Extracting Harvester Hub"
+  },
+  "trap_451_xbflare": {
+    "name": "荧光棒",
+    "name_vn": "Glow Stick"
+  },
+  "trap_452_xbcage": {
+    "name": "捕猎笼",
+    "name_vn": "Beast Trap"
+  },
+  "trap_453_xbbee": {
+    "name": "寻宝仪",
+    "name_vn": "Prospector"
+  },
+  "trap_454_xbember": {
+    "name": "激励剂",
+    "name_vn": "Restanding Potion"
+  },
+  "trap_455_xbistorm": {
+    "name": "冰爆罐",
+    "name_vn": "Ice Bomb"
+  },
+  "trap_456_xbfarmm": {
+    "name": "种植箱集群\n",
+    "name_vn": "Planting Box Group\n"
+  },
+  "trap_457_xbfort": {
+    "name": "高台工事",
+    "name_vn": "Battlement"
+  },
+  "trap_458_xbbarir": {
+    "name": "反应壁障",
+    "name_vn": "Reactive Barrier"
+  },
+  "trap_459_xblight": {
+    "name": "监视哨站",
+    "name_vn": "Watch Tower"
+  },
+  "trap_460_xbdiam": {
+    "name": "澄亮矿脉",
+    "name_vn": "Lighting Ore Vein"
+  },
+  "trap_461_xbhydr": {
+    "name": "机关石门",
+    "name_vn": "Olden Keystone"
+  },
+  "trap_462_xbsighta": {
+    "name": "灵动清泉",
+    "name_vn": "Fountain"
+  },
+  "trap_463_xbsightb": {
+    "name": "静谧盆栽",
+    "name_vn": "Potting"
+  },
+  "trap_464_xbsightc": {
+    "name": "休闲长椅",
+    "name_vn": "Bench"
+  },
+  "trap_465_xbstation": {
+    "name": "号令点",
+    "name_vn": "Command Point"
+  },
+  "trap_466_tzumama": {
+    "name": "森蚺",
+    "name_vn": "Eunectes"
+  },
+  "trap_467_ttuye": {
+    "name": "图耶",
+    "name_vn": "Tuye"
+  },
+  "trap_468_tpriest": {
+    "name": "大祭司",
+    "name_vn": "High Priest"
+  },
+  "trap_469_tpasngr": {
+    "name": "异客",
+    "name_vn": "Passenger"
+  },
+  "trap_470_tmantic": {
+    "name": "狮蝎",
+    "name_vn": "Manticore"
+  },
+  "trap_471_tegmaus": {
+    "name": "佩佩",
+    "name_vn": "Pepe"
+  },
+  "trap_472_tfalco": {
+    "name": "红隼",
+    "name_vn": "Kestrel"
+  },
+  "trap_473_trmedic": {
+    "name": "罗德岛工作人员",
+    "name_vn": "Rhodes Island Staff Worker"
+  },
+  "trap_474_mailbox": {
+    "name": "信使邮筒",
+    "name_vn": "Mail Box"
+  },
+  "trap_475_xbcbag": {
+    "name": "猎获笼",
+    "name_vn": "Beast Cage"
+  },
+  "trap_476_mscskt": {
+    "name": "讯息匣",
+    "name_vn": "Message Casket"
+  },
+  "trap_477_xbspps": {
+    "name": "失衡异香",
+    "name_vn": "Overspeed Spice"
+  },
+  "trap_478_xbcanoe": {
+    "name": "特制水上平台",
+    "name_vn": "Custom Floating Platform"
+  },
+  "trap_479_xbbillb": {
+    "name": "告示牌",
+    "name_vn": "Billboard"
+  },
+  "trap_480_roadblockxb": {
+    "name": "道路障碍物",
+    "name_vn": "Static Roadblock"
+  },
+  "trap_481_gtreasureb": {
+    "name": "埋没金属箱",
+    "name_vn": "Buried Metal Chest"
+  },
+  "trap_482_xbblure": {
+    "name": "源石虫引诱器",
+    "name_vn": "Slug Lure"
+  },
+  "trap_483_xbtrophy": {
+    "name": "“源石虫之心”",
+    "name_vn": "'Heart of a Slug'"
+  },
+  "trap_484_xbcp": {
+    "name": "检查点",
+    "name_vn": "Checkpoint"
+  },
+  "trap_485_xbrandprop": {
+    "name": "随机道具盒",
+    "name_vn": "Random Item Box"
+  },
+  "trap_486_xbspd": {
+    "name": "加速块",
+    "name_vn": "Accelerator Tile"
+  },
+  "trap_487_xblfen": {
+    "name": "大型兽栏",
+    "name_vn": "Large Corral"
+  },
+  "trap_488_xbtwod": {
+    "name": "全自动切木站",
+    "name_vn": "Auto Sawing Hub"
+  },
+  "trap_489_xbtrok": {
+    "name": "全自动掘石站",
+    "name_vn": "Auto Quarry Hub"
+  },
+  "trap_490_xbtiro": {
+    "name": "全自动采铁站",
+    "name_vn": "Auto Mining Hub"
+  },
+  "trap_491_xbtwal": {
+    "name": "虚影壁障",
+    "name_vn": "Phantomic Barrier"
+  },
+  "trap_492_xbamai": {
+    "name": "狩闻匣",
+    "name_vn": "Discovery Casket"
+  },
+  "trap_493_xbabal": {
+    "name": "追猎发射台",
+    "name_vn": "Hunting Net Launcher"
+  },
+  "trap_494_xbasky": {
+    "name": "拟南盏",
+    "name_vn": "Thale Calyx"
+  },
+  "trap_495_xbasmi": {
+    "name": "草香粉",
+    "name_vn": "Spicy Pollen"
+  },
+  "trap_496_xbaasm": {
+    "name": "稀有·草香粉",
+    "name_vn": "Rare Spicy Pollen"
+  },
+  "trap_497_xbarok": {
+    "name": "岩锤",
+    "name_vn": "Rock Hammer"
+  },
+  "trap_498_xbaaro": {
+    "name": "稀有·岩锤",
+    "name_vn": "Rare Rock Hammer"
+  },
+  "trap_499_xbaask": {
+    "name": "稀有·拟南盏",
+    "name_vn": "Rare Thale Calyx"
+  },
+  "trap_500_xbaflu": {
+    "name": "荧光棒弹射装置",
+    "name_vn": "Glow Stick Launcher"
+  },
+  "trap_501_xbaarm": {
+    "name": "外骨骼",
+    "name_vn": "Exoskeleton"
+  },
+  "trap_502_xbaice": {
+    "name": "冰瀑喷射罐",
+    "name_vn": "Ice Blaster"
+  },
+  "trap_503_xbabla": {
+    "name": "凋亡发射器",
+    "name_vn": "Necrosis Transmitter"
+  },
+  "trap_504_xbaess": {
+    "name": "桶装液香",
+    "name_vn": "Barreled Perfume"
+  },
+  "trap_505_xbawea": {
+    "name": "庇护制造器",
+    "name_vn": "Omni Umbrella"
+  },
+  "trap_506_xbadiv": {
+    "name": "驯兽口粮",
+    "name_vn": "Hunting Rations"
+  },
+  "trap_507_xbabut": {
+    "name": "感知链接器",
+    "name_vn": "Neural Chain"
+  },
+  "trap_508_xbabat": {
+    "name": "行动套装",
+    "name_vn": "Operation Kit"
+  },
+  "trap_509_xbf1g": {
+    "name": "木材采集站·采购",
+    "name_vn": "Deluxe Sawing Harvester Hub"
+  },
+  "trap_510_xbf2g": {
+    "name": "石材采集站·采购",
+    "name_vn": "Deluxe Quarrying Harvester Hub"
+  },
+  "trap_511_xbf3g": {
+    "name": "铁矿采集站·采购",
+    "name_vn": "Deluxe Mining Harvester Hub"
+  },
+  "trap_512_xbwfg": {
+    "name": "蟹蟹抽水泵·采购",
+    "name_vn": "Deluxe Crabbie Pumpie"
+  },
+  "trap_700_cdabyss": {
+    "name": "阿戈尔示波器",
+    "name_vn": "Ægirian Oscilloscope"
+  },
+  "trap_701_cdabyssa": {
+    "name": "阿戈尔示波器",
+    "name_vn": "Ægirian Oscilloscope"
+  },
+  "trap_702_cdabyssb": {
+    "name": "阿戈尔示波器",
+    "name_vn": "Ægirian Oscilloscope"
+  },
+  "trap_703_cdcredit": {
+    "name": "自适应补给元件",
+    "name_vn": "Adaptive Supply Component"
+  },
+  "trap_704_cdcredita": {
+    "name": "自适应补给元件",
+    "name_vn": "Adaptive Supply Component"
+  },
+  "trap_705_cdcreditb": {
+    "name": "自适应补给元件",
+    "name_vn": "Adaptive Supply Component"
+  },
+  "trap_706_cdshield": {
+    "name": "镀膜装置导能阀",
+    "name_vn": "Coating Device Conduction Valve"
+  },
+  "trap_707_cdshielda": {
+    "name": "重整导能组件",
+    "name_vn": "Redeployment Conduction Component"
+  },
+  "trap_708_cdshieldb": {
+    "name": "镀膜装置导能阀",
+    "name_vn": "Coating Device Conduction Valve"
+  },
+  "trap_709_cdbeacon": {
+    "name": "丛林用示踪信标",
+    "name_vn": "Eunectes' Beacon"
+  },
+  "trap_710_cdbeacona": {
+    "name": "阻断波长",
+    "name_vn": "Block Wavelength"
+  },
+  "trap_711_cdbeaconb": {
+    "name": "干扰波长",
+    "name_vn": "Jam Wavelength"
+  },
+  "trap_712_cdhvrk": {
+    "name": "超重绝缘水泥",
+    "name_vn": "Heavy Insulated Concrete"
+  },
+  "trap_713_cdflsb": {
+    "name": "劣质闪光弹",
+    "name_vn": "Shoddy Flashbang"
+  },
+  "trap_714_cdaltar": {
+    "name": "能量扰动放大器",
+    "name_vn": "Energy Perturbation Amplifier"
+  },
+  "trap_715_cdaltara": {
+    "name": "能量扰动放大器",
+    "name_vn": "Energy Perturbation Amplifier"
+  },
+  "trap_716_cdaltarb": {
+    "name": "能量扰动放大器",
+    "name_vn": "Energy Perturbation Amplifier"
+  },
+  "trap_717_cddiff": {
+    "name": "战术装备整理箱",
+    "name_vn": "Tactical Equipment Toolbox"
+  },
+  "trap_718_cddiffa": {
+    "name": "战术装备整理箱",
+    "name_vn": "Tactical Equipment Toolbox"
+  },
+  "trap_719_cddiffb": {
+    "name": "战术装备整理箱",
+    "name_vn": "Tactical Equipment Toolbox"
+  },
+  "trap_720_cdheal": {
+    "name": "便携式医疗设备",
+    "name_vn": "Portable First-aid Kit"
+  },
+  "trap_721_cdheala": {
+    "name": "便携式医疗设备",
+    "name_vn": "Portable First-aid Kit"
+  },
+  "trap_722_cdhealb": {
+    "name": "便携式医疗设备",
+    "name_vn": "Portable First-aid Kit"
+  },
+  "trap_723_cdcvrt": {
+    "name": "溢能回收转化器",
+    "name_vn": "Energy Overflow Converter"
+  },
+  "trap_724_cdcvrta": {
+    "name": "溢能回收转化器",
+    "name_vn": "Energy Overflow Converter"
+  },
+  "trap_725_cdcvrtb": {
+    "name": "溢能回收转化器",
+    "name_vn": "Energy Overflow Converter"
+  },
+  "trap_726_cdrone": {
+    "name": "战地援护无人机",
+    "name_vn": "Field Support Drone"
+  },
+  "trap_727_cdronea": {
+    "name": "战地援护无人机",
+    "name_vn": "Field Support Drone"
+  },
+  "trap_728_cdroneb": {
+    "name": "战地援护无人机",
+    "name_vn": "Field Support Drone"
+  },
+  "trap_729_cdkzmr": {
+    "name": "竞技记录分析仪",
+    "name_vn": "Competition Records Analyzer"
+  },
+  "trap_730_truamr": {
+    "name": "“甜蜜狂搅”",
+    "name_vn": "'Supersweetie Superblend'"
+  },
+  "trap_732_ltnova": {
+    "name": "神经再生",
+    "name_vn": "Neuronal Revival"
+  },
+  "trap_733_cdkzmra": {
+    "name": "竞技记录分析仪",
+    "name_vn": "Competition Records Analyzer"
+  },
+  "trap_734_cdkzmrb": {
+    "name": "竞技记录分析仪",
+    "name_vn": "Competition Records Analyzer"
+  },
+  "trap_735_platre": {
+    "name": "汲取体",
+    "name_vn": "Absorber"
+  },
+  "trap_736_mercha": {
+    "name": "可充能督战音响",
+    "name_vn": "Chargeable Supervisory Speaker"
+  },
+  "trap_737_merchaa": {
+    "name": "可充能督战音响",
+    "name_vn": "Chargeable Supervisory Speaker"
+  },
+  "trap_738_merchab": {
+    "name": "可充能督战音响",
+    "name_vn": "Chargeable Supervisory Speaker"
+  },
+  "trap_739_sniper": {
+    "name": "智能空域控制机",
+    "name_vn": "Smart Airspace Controller"
+  },
+  "trap_740_snipera": {
+    "name": "智能空域控制机",
+    "name_vn": "Smart Airspace Controller"
+  },
+  "trap_741_sniperb": {
+    "name": "智能空域控制机",
+    "name_vn": "Smart Airspace Controller"
+  },
+  "trap_742_gasbot": {
+    "name": "速冷喷雾发射台",
+    "name_vn": "Quick-freezing Sprayer Platform"
+  },
+  "trap_743_gasbota": {
+    "name": "速冷喷雾发射台",
+    "name_vn": "Quick-freezing Sprayer Platform"
+  },
+  "trap_744_gasbotb": {
+    "name": "速冷喷雾发射台",
+    "name_vn": "Quick-freezing Sprayer Platform"
+  },
+  "trap_745_beer": {
+    "name": "“蜜酿万岁！”",
+    "name_vn": "'Long Live Mead!'"
+  },
+  "trap_746_cdrhine": {
+    "name": "尖端研究成果共享终端",
+    "name_vn": "Pinnacle Insights Port"
+  },
+  "trap_747_cdrhinea": {
+    "name": "尖端研究成果共享终端",
+    "name_vn": "Pinnacle Insights Port"
+  },
+  "trap_748_cdrhineb": {
+    "name": "尖端研究成果共享终端",
+    "name_vn": "Pinnacle Insights Port"
+  },
+  "trap_749_cd1punch": {
+    "name": "声波记录扩音器",
+    "name_vn": "Sound Recording Amplifier"
+  },
+  "trap_750_cd1puncha": {
+    "name": "声波记录扩音器",
+    "name_vn": "Sound Recording Amplifier"
+  },
+  "trap_751_cd1punchb": {
+    "name": "声波记录扩音器",
+    "name_vn": "Sound Recording Amplifier"
+  },
+  "trap_752_cdcaster": {
+    "name": "法术调和能量场",
+    "name_vn": "Arts Resonant Energy Field"
+  },
+  "trap_753_cdcastera": {
+    "name": "法术调和能量场",
+    "name_vn": "Arts Resonant Energy Field"
+  },
+  "trap_754_cdcasterb": {
+    "name": "法术调和能量场",
+    "name_vn": "Arts Resonant Energy Field"
+  },
+  "trap_755_cdsoul": {
+    "name": "啸叫音响",
+    "name_vn": "Squeaking Sound"
+  },
+  "trap_756_cdnest": {
+    "name": "“黏黏的赠品”",
+    "name_vn": "'Sticky Prize'"
+  },
+  "trap_757_skzbox": {
+    "name": "宝箱",
+    "name_vn": "Treasure Chest"
+  },
+  "trap_758_skzmbx": {
+    "name": "停滞巧械",
+    "name_vn": "Idle Exquisicart"
+  },
+  "trap_759_skzwyx": {
+    "name": "垂死羽兽",
+    "name_vn": "Dying Fowlbeast"
+  },
+  "trap_760_skztzs": {
+    "name": "年代之刺",
+    "name_vn": "Spines of Epoch"
+  },
+  "trap_761_skzthx": {
+    "name": "尊主的残影",
+    "name_vn": "Shadows of the Lord"
+  },
+  "trap_762_skztxy": {
+    "name": "特蕾西娅，黑冠圣贤",
+    "name_vn": "Theresa, Black-crowned Sage"
+  },
+  "trap_763_skzddd": {
+    "name": "圣卫坚盾",
+    "name_vn": "Guardian Bulwark"
+  },
+  "trap_764_skzshp": {
+    "name": "驮兽旅行家",
+    "name_vn": "Burdenbeast Traveler"
+  },
+  "trap_765_bmoney": {
+    "name": "无可置疑的罪证",
+    "name_vn": "Indisputable Evidence"
+  },
+  "trap_766_duelwal": {
+    "name": "狭路相逢",
+    "name_vn": "Face to Face"
+  },
+  "trap_767_duelcdt": {
+    "name": "狭路相逢",
+    "name_vn": "Face to Face"
+  },
+  "trap_768_godch": {
+    "name": "保全人才合作协议",
+    "name_vn": "Security Talent Agreement"
+  },
+  "trap_769_godcha": {
+    "name": "加急许可条款",
+    "name_vn": "Expedited Licensing Terms"
+  },
+  "trap_770_godchb": {
+    "name": "临时任命条款",
+    "name_vn": "Interim Appointment Terms"
+  },
+  "trap_771_bqrnge": {
+    "name": "皇家科学院望远镜",
+    "name_vn": "Royal Academy of Sciences Telescope"
+  },
+  "trap_772_bqrngea": {
+    "name": "专业显示模块",
+    "name_vn": "Professional Display Module"
+  },
+  "trap_773_bqrngeb": {
+    "name": "灵活架设模块",
+    "name_vn": "Agile Installation Module"
+  },
+  "trap_774_bqmlee": {
+    "name": "攀云机",
+    "name_vn": "Cloudstepper"
+  },
+  "trap_775_bqmleea": {
+    "name": "加固扩存改装",
+    "name_vn": "Reinforcement Expansion Modification"
+  },
+  "trap_776_bqmleeb": {
+    "name": "长距增运改装",
+    "name_vn": "Long-Expansion Modification"
+  },
+  "trap_777_giacan": {
+    "name": "“留声机”底座",
+    "name_vn": "Gramophone Pedestal"
+  },
+  "trap_778_giatow": {
+    "name": "L-44\"留声机\"",
+    "name_vn": "L-44 'Gramophone'"
+  },
+  "trap_779_skzth": {
+    "name": "尼卢火",
+    "name_vn": "Aggini of Nila"
+  },
+  "trap_780_supspt": {
+    "name": "天工夜行套装",
+    "name_vn": "Nightwalker's Gear"
+  },
+  "trap_781_supspta": {
+    "name": "夜行斗篷模块",
+    "name_vn": "Nightwalker's Cloak Module"
+  },
+  "trap_782_supsptb": {
+    "name": "夜行钩爪模块",
+    "name_vn": "Nightwalker's Hook Module"
+  },
+  "trap_783_tnkspk": {
+    "name": "反制装甲套组",
+    "name_vn": ""
+  },
+  "trap_784_tnkspka": {
+    "name": "微型尖刺配件",
+    "name_vn": ""
+  },
+  "trap_785_tnkspkb": {
+    "name": "维生监测配件",
+    "name_vn": ""
+  },
+  "trap_786_fxdtwr": {
+    "name": "“绝对助手”",
+    "name_vn": ""
+  },
+  "trap_787_supctl": {
+    "name": "冷爆机",
+    "name_vn": ""
+  },
+  "trap_788_supctla": {
+    "name": "低温传导模块",
+    "name_vn": ""
+  },
+  "trap_789_supctlb": {
+    "name": "冰浪脉冲模块",
+    "name_vn": ""
+  }
+}

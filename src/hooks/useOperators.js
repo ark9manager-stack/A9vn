@@ -1,6 +1,7 @@
 // src/hooks/useOperators.js
 import { useEffect, useState } from "react";
 import operators from "../data/operators/character_table.json";
+import nameVN from "../data/operators/name_vn.json";
 
 export function useOperators() {
   const [list, setList] = useState([]);
@@ -12,7 +13,7 @@ export function useOperators() {
       .filter(([id, op]) => op.profession !== "TOKEN")
       .map(([id, op]) => ({
         id,
-        name: op.name,
+        name: nameVN?.[id]?.name_vn || op.name,
         rarity: op.rarity,
         profession: op.profession,
         subProfession: op.subProfessionId,
