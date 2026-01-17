@@ -12,6 +12,11 @@ const rarityBorderMap = {
 const CN_AVATAR_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
 
+// ✅ Các trường hợp ngoại lệ (key là charId trong character_table.json)
+const CN_AVATAR_OVERRIDES = {
+  char_271_spikes: `${CN_AVATAR_BASE}elite/char_271_spikes.png`,
+};
+
 function buildCnAvatarUrl(charId) {
   if (!charId) return null;
 
@@ -19,6 +24,10 @@ function buildCnAvatarUrl(charId) {
   // Chỉ build avatar cho operator thật (char_...). Trap/token thường không có ở path này
   if (!id.startsWith("char_")) return null;
 
+  // ✅ ưu tiên ngoại lệ trước
+  if (CN_AVATAR_OVERRIDES[id]) return CN_AVATAR_OVERRIDES[id];
+
+  // mặc định
   return `${CN_AVATAR_BASE}${id}.png`;
 }
 
