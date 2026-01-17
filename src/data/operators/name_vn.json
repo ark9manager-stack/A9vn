@@ -181,7 +181,7 @@
   },
   "char_1044_hsgma2": {
     "idweb": null,
-    "name": "斩业星熊",
+    "name": "383",
     "name_vn": "Hoshiguma the Breacher"
   },
   "char_1045_svash2": {
@@ -1085,7 +1085,7 @@
     "name_vn": "Rosmontis"
   },
   "char_394_hadiya": {
-    "idweb": null,
+    "idweb": 393,
     "name": "哈蒂娅",
     "name_vn": "Hadiya"
   },
@@ -1240,7 +1240,7 @@
     "name_vn": "Dorothy"
   },
   "char_4051_akkord": {
-    "idweb": null,
+    "idweb": 392,
     "name": "协律",
     "name_vn": "Akkord"
   },
@@ -1635,27 +1635,27 @@
     "name_vn": "Mon3tr"
   },
   "char_4182_oblvns": {
-    "idweb": null,
+    "idweb": 388,
     "name": "丰川祥子",
     "name_vn": "Togawa Sakiko"
   },
   "char_4183_mortis": {
-    "idweb": null,
+    "idweb": 387,
     "name": "若叶睦",
     "name_vn": "Wakaba Mutsumi"
   },
   "char_4184_dolris": {
-    "idweb": null,
+    "idweb": 386,
     "name": "三角初华",
     "name_vn": "Misumi Uika"
   },
   "char_4185_amoris": {
-    "idweb": null,
+    "idweb": 385,
     "name": "祐天寺若麦",
     "name_vn": "Yūtenji Nyamu"
   },
   "char_4186_tmoris": {
-    "idweb": null,
+    "idweb": 384,
     "name": "八幡海铃",
     "name_vn": "Yahata Umiri"
   },
@@ -1685,7 +1685,7 @@
     "name_vn": "Sankta Miksaparato"
   },
   "char_4195_radian": {
-    "idweb": null,
+    "idweb": 379,
     "name": "电弧",
     "name_vn": "Raidian"
   },
@@ -1700,32 +1700,32 @@
     "name_vn": "Miss.Christine"
   },
   "char_4199_makiri": {
-    "idweb": null,
+    "idweb": 381,
     "name": "松桐",
     "name_vn": "Matsukiri"
   },
   "char_4202_haruka": {
-    "idweb": null,
+    "idweb": 382,
     "name": "遥",
     "name_vn": "Haruka"
   },
   "char_4203_kichi": {
-    "idweb": null,
+    "idweb": 380,
     "name": "吉星",
     "name_vn": "Kichisei"
   },
   "char_4204_mantra": {
-    "idweb": null,
+    "idweb": 391,
     "name": "真言",
     "name_vn": "Mantra"
   },
   "char_4207_branch": {
-    "idweb": null,
+    "idweb": 390,
     "name": "折桠",
     "name_vn": "Vetochki"
   },
   "char_4208_wintim": {
-    "idweb": null,
+    "idweb": 389,
     "name": "冬时",
     "name_vn": "Snegurochka"
   },
