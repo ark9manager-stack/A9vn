@@ -1450,22 +1450,22 @@
     "name_vn": "Grain Buds"
   },
   "char_4123_ela": {
-    "idweb": null,
+    "idweb": 320,
     "name": "艾拉",
     "name_vn": "Ela"
   },
   "char_4124_iana": {
-    "idweb": null,
+    "idweb": 319,
     "name": "双月",
     "name_vn": "Iana"
   },
   "char_4125_rdoc": {
-    "idweb": null,
+    "idweb": 318,
     "name": "医生",
     "name_vn": "Doc"
   },
   "char_4126_fuze": {
-    "idweb": null,
+    "idweb": 317,
     "name": "导火索",
     "name_vn": "Fuze"
   },
