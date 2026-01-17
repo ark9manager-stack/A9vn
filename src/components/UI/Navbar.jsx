@@ -66,16 +66,16 @@ const Navbar = ({ isOpen, onToggle }) => {
           Home
         </button>
         <button
-          onClick={() => scrollToSection("music")}
-          className="text-white text-[15px] px-4 py-2 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
-        >
-          Music
-        </button>
-        <button
           onClick={() => scrollToSection("operator")}
           className="text-white text-[15px] py-2 px-3 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
         >
           Operator
+        </button>
+        <button
+          onClick={() => scrollToSection("music")}
+          className="text-white text-[15px] px-4 py-2 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
+        >
+          Music
         </button>
         {/* User profile - moved to left side */}
         <div className="flex items-center gap-2 px-3 py-2 rounded-2xl hidden md:block shadow-lg ">

@@ -17,8 +17,8 @@ const Display = () => {
           element={
             <div className="fullpage-container scrollbar-hide">
               <DisplayHome />
-              <Music />
               <Operator />
+              <Music />
             </div>
           }
         />
