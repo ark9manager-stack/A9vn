@@ -48,25 +48,74 @@ const classes = [
   },
 ];
 
+// (Bạn có thể thêm dần vào đây nếu muốn tên hiển thị đẹp hơn)
+const SUBPROF_LABELS = {
+  aoesniper: "Artilleryman",
+  closerange: "Heavyshooter",
+  physician: "Medic",
+  agent: "Agent",
+};
+
+function subProfIconUrl(subProfessionId) {
+  if (!subProfessionId) return "";
+  return `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/subprofessionicon/sub_${subProfessionId}_icon.png`;
+}
+
+function subProfLabel(subProfessionId) {
+  if (!subProfessionId) return "";
+  return SUBPROF_LABELS[subProfessionId] || subProfessionId;
+}
+
 const Operator = () => {
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
+
   const [activeClass, setActiveClass] = useState(null);
+  const [activeSubClass, setActiveSubClass] = useState(null);
+
+  // ✅ danh sách subclass theo main class đang chọn
+  const availableSubclasses = useMemo(() => {
+    if (!activeClass) return [];
+
+    const set = new Set();
+    for (const op of operators) {
+      if (op.profession === "TRAP" || op.profession === "TOKEN") continue;
+      if (op.profession !== activeClass) continue;
+      if (op.subProfession) set.add(op.subProfession);
+    }
+
+    return Array.from(set)
+      .map((id) => ({
+        id,
+        icon: subProfIconUrl(id),
+        label: subProfLabel(id),
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+  }, [operators, activeClass]);
 
   const filteredOperators = useMemo(() => {
     return operators
       .filter((op) => op.profession !== "TRAP")
       .filter((op) => op.profession !== "TOKEN")
       .filter((op) => (activeClass ? op.profession === activeClass : true))
+      .filter((op) => (activeSubClass ? op.subProfession === activeSubClass : true))
       .sort((a, b) => {
-        if (b.rarity !== a.rarity) {
-          return b.rarity - a.rarity;
-        }
-        if (b.releaseTime && a.releaseTime) {
-          return b.releaseTime - a.releaseTime;
-        }
+        if (b.rarity !== a.rarity) return b.rarity - a.rarity;
+        if (b.releaseTime && a.releaseTime) return b.releaseTime - a.releaseTime;
         return 0;
       });
-  }, [operators, activeClass]);
+  }, [operators, activeClass, activeSubClass]);
+
+  const handleToggleClass = (clsValue) => {
+    // click lại cùng class => bỏ chọn + ẩn subclass
+    if (activeClass === clsValue) {
+      setActiveClass(null);
+      setActiveSubClass(null);
+      return;
+    }
+    // đổi class => reset subclass
+    setActiveClass(clsValue);
+    setActiveSubClass(null);
+  };
 
   return (
     <div
@@ -85,9 +134,7 @@ const Operator = () => {
               {classes.map((cls) => (
                 <button
                   key={cls.value}
-                  onClick={() =>
-                    setActiveClass(activeClass === cls.value ? null : cls.value)
-                  }
+                  onClick={() => handleToggleClass(cls.value)}
                   className={`p-2 rounded-lg w-20 flex flex-col items-center transition
                     ${
                       activeClass === cls.value
@@ -95,15 +142,52 @@ const Operator = () => {
                         : "bg-[#242424] bg-opacity-50 hover:bg-opacity-70"
                     }
                   `}
+                  type="button"
                 >
-                  <img src={cls.icon} className="w-10 h-10" />
-                  <span className="text-xs text-gray-300 mt-1">
-                    {cls.label}
-                  </span>
+                  <img src={cls.icon} className="w-10 h-10" alt={cls.label} />
+                  <span className="text-xs text-gray-300 mt-1">{cls.label}</span>
                 </button>
               ))}
             </div>
           </div>
+
+          {/* ✅ Subclass filter row: chỉ hiện khi có activeClass */}
+          {activeClass && availableSubclasses.length > 0 && (
+            <div className="w-full mb-2">
+              <div className="flex flex-wrap gap-2 justify-end">
+                {availableSubclasses.map((sub) => (
+                  <button
+                    key={sub.id}
+                    onClick={() =>
+                      setActiveSubClass(activeSubClass === sub.id ? null : sub.id)
+                    }
+                    className={`p-2 rounded-lg w-24 flex flex-col items-center transition
+                      ${
+                        activeSubClass === sub.id
+                          ? "bg-emerald-600"
+                          : "bg-[#242424] bg-opacity-40 hover:bg-opacity-70"
+                      }
+                    `}
+                    type="button"
+                    title={sub.label}
+                  >
+                    <img
+                      src={sub.icon}
+                      className="w-10 h-10"
+                      alt={sub.label}
+                      onError={(e) => {
+                        // nếu icon không tồn tại, ẩn hình để khỏi xấu
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                    <span className="text-[11px] text-gray-200 mt-1 truncate w-full text-center">
+                      {sub.label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="w-full border-t border-gray-600 my-4" />
 
