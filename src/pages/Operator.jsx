@@ -217,7 +217,6 @@ const Operator = () => {
             </div>
           </div>
 
-          {/* ✅ Subclass filter row: chỉ hiện khi có activeClass */}
           {activeClass && availableSubclasses.length > 0 && (
             <div className="w-full mb-2">
               <div className="flex flex-wrap gap-2 justify-end">
@@ -237,7 +236,6 @@ const Operator = () => {
                     type="button"
                     title={sub.label}
                   >
-                    {/* ✅ Khung icon cố định -> icon ngang/dọc đều đẹp, label không bị nhảy */}
                     <div className="h-[44px] w-full flex items-center justify-center">
                       <img
                         src={sub.icon}
@@ -250,7 +248,6 @@ const Operator = () => {
                       />
                     </div>
 
-                    {/* ✅ Label luôn nằm đúng chỗ */}
                     <span className="mt-1 text-[11px] leading-tight text-gray-200 truncate w-full text-center">
                       {sub.label}
                     </span>
