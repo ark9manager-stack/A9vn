@@ -115,7 +115,7 @@
     "name_vn": "Rathalos S Noir Corne"
   },
   "char_1031_slent2": {
-    "idweb": null,
+    "idweb": 280,
     "name": "淬羽赫默",
     "name_vn": "Silence the Paradigmatic"
   },
@@ -385,7 +385,7 @@
     "name_vn": "Myrtle"
   },
   "char_154_morgan": {
-    "idweb": null,
+    "idweb": 276,
     "name": "摩根",
     "name_vn": "Morgan"
   },
@@ -705,7 +705,7 @@
     "name_vn": "Magallan"
   },
   "char_249_mlyss": {
-    "idweb": null,
+    "idweb": 282,
     "name": "缪尔赛思",
     "name_vn": "Muelsyse"
   },
@@ -1100,7 +1100,7 @@
     "name_vn": "Pudding"
   },
   "char_4006_melnte": {
-    "idweb": null,
+    "idweb": 279,
     "name": "玫拉",
     "name_vn": "Melanite"
   },
@@ -1175,7 +1175,7 @@
     "name_vn": "Vulpisfoglia"
   },
   "char_4027_heyak": {
-    "idweb": null,
+    "idweb": 281,
     "name": "霍尔海雅",
     "name_vn": "Ho'olheyak"
   },
@@ -1350,7 +1350,7 @@
     "name_vn": "Wind Chimes"
   },
   "char_4087_ines": {
-    "idweb": null,
+    "idweb": 278,
     "name": "伊内丝",
     "name_vn": "Ines"
   },
@@ -1360,12 +1360,12 @@
     "name_vn": "Hoederer"
   },
   "char_4091_ulika": {
-    "idweb": null,
+    "idweb": 274,
     "name": "U-Official",
     "name_vn": "U-Official"
   },
   "char_4093_frston": {
-    "idweb": null,
+    "idweb": 283,
     "name": "Friston-3",
     "name_vn": "Friston-3"
   },
@@ -1865,7 +1865,7 @@
     "name_vn": "Tachanka"
   },
   "char_464_cement": {
-    "idweb": null,
+    "idweb": 277,
     "name": "洋灰",
     "name_vn": "Cement"
   },
@@ -1945,7 +1945,7 @@
     "name_vn": "Corroserum"
   },
   "char_491_humus": {
-    "idweb": null,
+    "idweb": 275,
     "name": "休谟斯",
     "name_vn": "Humus"
   },
