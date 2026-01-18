@@ -1880,7 +1880,7 @@
     "name_vn": "Indigo"
   },
   "char_472_pasngr": {
-    "idweb": null,
+    "idweb": 191,
     "name": "异客",
     "name_vn": "Passenger"
   },
@@ -4855,7 +4855,7 @@
     "name_vn": "High Priest"
   },
   "trap_469_tpasngr": {
-    "idweb": 191,
+    "idweb": null,
     "name": "异客",
     "name_vn": "Passenger"
   },
