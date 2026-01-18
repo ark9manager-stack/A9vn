@@ -5,7 +5,7 @@
     "name_vn": "Amiya"
   },
   "char_003_kalts": {
-    "idweb": null,
+    "idweb": 194,
     "name": "凯尔希",
     "name_vn": "Kal'tsit"
   },
@@ -25,22 +25,22 @@
     "name_vn": "Blaze"
   },
   "char_1011_lava2": {
-    "idweb": null,
+    "idweb": 181,
     "name": "炎狱炎熔",
     "name_vn": "Lava the Purgatory"
   },
   "char_1012_skadi2": {
-    "idweb": null,
+    "idweb": 195,
     "name": "浊心斯卡蒂",
     "name_vn": "Skadi the Corrupting Heart"
   },
   "char_1013_chen2": {
-    "idweb": null,
+    "idweb": 204,
     "name": "假日威龙陈",
     "name_vn": "Ch'en the Holungday"
   },
   "char_1014_nearl2": {
-    "idweb": null,
+    "idweb": 216,
     "name": "耀骑士临光",
     "name_vn": "Nearl the Radiant Knight"
   },
@@ -60,12 +60,12 @@
     "name_vn": "Sora"
   },
   "char_1020_reed2": {
-    "idweb": null,
+    "idweb": 264,
     "name": "焰影苇草",
     "name_vn": "Reed the Flame Shadow"
   },
   "char_1021_kroos2": {
-    "idweb": null,
+    "idweb": 222,
     "name": "寒芒克洛丝",
     "name_vn": "Kroos the Keen Glint"
   },
@@ -75,32 +75,32 @@
     "name_vn": "Perfumer the Distilled"
   },
   "char_1023_ghost2": {
-    "idweb": null,
+    "idweb": 237,
     "name": "归溟幽灵鲨",
     "name_vn": "Specter the Unchained"
   },
   "char_1024_hbisc2": {
-    "idweb": null,
+    "idweb": 240,
     "name": "濯尘芙蓉",
     "name_vn": "Hibiscus the Purifier"
   },
   "char_1026_gvial2": {
-    "idweb": null,
+    "idweb": 248,
     "name": "百炼嘉维尔",
     "name_vn": "Gavial the Invincible"
   },
   "char_1027_greyy2": {
-    "idweb": null,
+    "idweb": 243,
     "name": "承曦格雷伊",
     "name_vn": "Greyy the Lightningbearer"
   },
   "char_1028_texas2": {
-    "idweb": null,
+    "idweb": 261,
     "name": "缄默德克萨斯",
     "name_vn": "Texas the Omertosa"
   },
   "char_1029_yato2": {
-    "idweb": null,
+    "idweb": 273,
     "name": "麒麟R夜刀",
     "name_vn": "Kirin R Yato"
   },
@@ -110,7 +110,7 @@
     "name_vn": "Texas"
   },
   "char_1030_noirc2": {
-    "idweb": null,
+    "idweb": 272,
     "name": "火龙S黑角",
     "name_vn": "Rathalos S Noir Corne"
   },
@@ -315,7 +315,7 @@
     "name_vn": "Ifrit"
   },
   "char_135_halo": {
-    "idweb": null,
+    "idweb": 242,
     "name": "星源",
     "name_vn": "Astgenne"
   },
@@ -395,7 +395,7 @@
     "name_vn": "Indra"
   },
   "char_157_dagda": {
-    "idweb": null,
+    "idweb": 253,
     "name": "达格达",
     "name_vn": "Dagda"
   },
@@ -540,7 +540,7 @@
     "name_vn": "Nian"
   },
   "char_2015_dusk": {
-    "idweb": null,
+    "idweb": 184,
     "name": "夕",
     "name_vn": "Dusk"
   },
@@ -550,12 +550,12 @@
     "name_vn": "Croissant"
   },
   "char_2023_ling": {
-    "idweb": null,
+    "idweb": 225,
     "name": "令",
     "name_vn": "Ling"
   },
   "char_2024_chyue": {
-    "idweb": null,
+    "idweb": 268,
     "name": "重岳",
     "name_vn": "Chongyue"
   },
@@ -580,7 +580,7 @@
     "name_vn": "Platinum"
   },
   "char_206_gnosis": {
-    "idweb": null,
+    "idweb": 219,
     "name": "灵知",
     "name_vn": "Gnosis"
   },
@@ -615,7 +615,7 @@
     "name_vn": "Mostima"
   },
   "char_214_kafka": {
-    "idweb": null,
+    "idweb": 175,
     "name": "卡夫卡",
     "name_vn": "Kafka"
   },
@@ -625,7 +625,7 @@
     "name_vn": "Manticore"
   },
   "char_218_cuttle": {
-    "idweb": null,
+    "idweb": 154,
     "name": "安哲拉",
     "name_vn": "Andreana"
   },
@@ -750,22 +750,22 @@
     "name_vn": "Skadi"
   },
   "char_264_f12yin": {
-    "idweb": null,
+    "idweb": 176,
     "name": "山",
     "name_vn": "Mountain"
   },
   "char_265_sophia": {
-    "idweb": null,
+    "idweb": 165,
     "name": "鞭刃",
     "name_vn": "Whislash"
   },
   "char_271_spikes": {
-    "idweb": null,
+    "idweb": 160,
     "name": "芳汀",
     "name_vn": "Arene"
   },
   "char_272_strong": {
-    "idweb": null,
+    "idweb": 153,
     "name": "孑",
     "name_vn": "Jaye"
   },
@@ -840,7 +840,7 @@
     "name_vn": "Angelina"
   },
   "char_293_thorns": {
-    "idweb": null,
+    "idweb": 155,
     "name": "棘刺",
     "name_vn": "Thorns"
   },
@@ -850,7 +850,7 @@
     "name_vn": "Ayerscarpe"
   },
   "char_297_hamoni": {
-    "idweb": null,
+    "idweb": 263,
     "name": "和弦",
     "name_vn": "Harmonie"
   },
@@ -860,7 +860,7 @@
     "name_vn": "Sussurro"
   },
   "char_300_phenxi": {
-    "idweb": null,
+    "idweb": 230,
     "name": "菲亚梅塔",
     "name_vn": "Fiammetta"
   },
@@ -875,7 +875,7 @@
     "name_vn": "Ambriel"
   },
   "char_304_zebra": {
-    "idweb": null,
+    "idweb": 189,
     "name": "暴雨",
     "name_vn": "Heavyrain"
   },
@@ -890,12 +890,12 @@
     "name_vn": "Swire"
   },
   "char_311_mudrok": {
-    "idweb": null,
+    "idweb": 170,
     "name": "泥岩",
     "name_vn": "Mudrock"
   },
   "char_322_lmlee": {
-    "idweb": null,
+    "idweb": 224,
     "name": "老鲤",
     "name_vn": "Lee"
   },
@@ -915,7 +915,7 @@
     "name_vn": "Click"
   },
   "char_332_archet": {
-    "idweb": null,
+    "idweb": 179,
     "name": "空弦",
     "name_vn": "Archetto"
   },
@@ -925,7 +925,7 @@
     "name_vn": "Sideroca"
   },
   "char_336_folivo": {
-    "idweb": null,
+    "idweb": 150,
     "name": "稀音",
     "name_vn": "Scene"
   },
@@ -935,7 +935,7 @@
     "name_vn": "Utage"
   },
   "char_338_iris": {
-    "idweb": null,
+    "idweb": 178,
     "name": "爱丽丝",
     "name_vn": "Iris"
   },
@@ -955,7 +955,7 @@
     "name_vn": "Tsukinogi"
   },
   "char_344_beewax": {
-    "idweb": null,
+    "idweb": 151,
     "name": "蜜蜡",
     "name_vn": "Beeswax"
   },
@@ -965,12 +965,12 @@
     "name_vn": "Folinic"
   },
   "char_346_aosta": {
-    "idweb": null,
+    "idweb": 166,
     "name": "奥斯塔",
     "name_vn": "Aosta"
   },
   "char_347_jaksel": {
-    "idweb": null,
+    "idweb": 168,
     "name": "杰克",
     "name_vn": "Jackie"
   },
@@ -980,12 +980,12 @@
     "name_vn": "Ceylon"
   },
   "char_349_chiave": {
-    "idweb": null,
+    "idweb": 152,
     "name": "贾维",
     "name_vn": "Chiave"
   },
   "char_350_surtr": {
-    "idweb": null,
+    "idweb": 163,
     "name": "史尔特尔",
     "name_vn": "Surtr"
   },
@@ -1005,22 +1005,22 @@
     "name_vn": "Suzuran"
   },
   "char_362_saga": {
-    "idweb": null,
+    "idweb": 183,
     "name": "嵯峨",
     "name_vn": "Saga"
   },
   "char_363_toddi": {
-    "idweb": null,
+    "idweb": 190,
     "name": "熔泉",
     "name_vn": "Toddifons"
   },
   "char_365_aprl": {
-    "idweb": null,
+    "idweb": 162,
     "name": "四月",
     "name_vn": "April"
   },
   "char_366_acdrop": {
-    "idweb": null,
+    "idweb": 156,
     "name": "酸糖",
     "name_vn": "Aciddrop"
   },
@@ -1030,7 +1030,7 @@
     "name_vn": "GreyThroat"
   },
   "char_369_bena": {
-    "idweb": null,
+    "idweb": 197,
     "name": "贝娜",
     "name_vn": "Bena"
   },
@@ -1045,7 +1045,7 @@
     "name_vn": "THRM-EX"
   },
   "char_377_gdglow": {
-    "idweb": null,
+    "idweb": 227,
     "name": "澄闪",
     "name_vn": "Goldenglow"
   },
@@ -1060,7 +1060,7 @@
     "name_vn": "Sesa"
   },
   "char_381_bubble": {
-    "idweb": null,
+    "idweb": 164,
     "name": "泡泡",
     "name_vn": "Bubble"
   },
@@ -1075,12 +1075,12 @@
     "name_vn": "Purestream"
   },
   "char_388_mint": {
-    "idweb": null,
+    "idweb": 161,
     "name": "薄绿",
     "name_vn": "Mint"
   },
   "char_391_rosmon": {
-    "idweb": null,
+    "idweb": 171,
     "name": "迷迭香",
     "name_vn": "Rosmontis"
   },
@@ -1090,12 +1090,12 @@
     "name_vn": "Hadiya"
   },
   "char_4000_jnight": {
-    "idweb": null,
+    "idweb": 210,
     "name": "正义骑士号",
     "name_vn": "'Justice Knight'"
   },
   "char_4004_pudd": {
-    "idweb": null,
+    "idweb": 211,
     "name": "布丁",
     "name_vn": "Pudding"
   },
@@ -1105,7 +1105,7 @@
     "name_vn": "Melanite"
   },
   "char_4009_irene": {
-    "idweb": null,
+    "idweb": 236,
     "name": "艾丽妮",
     "name_vn": "Irene"
   },
@@ -1125,12 +1125,12 @@
     "name_vn": "Lessing"
   },
   "char_4013_kjera": {
-    "idweb": null,
+    "idweb": 217,
     "name": "耶拉",
     "name_vn": "Kjera"
   },
   "char_4014_lunacu": {
-    "idweb": null,
+    "idweb": 258,
     "name": "子月",
     "name_vn": "Lunacub"
   },
@@ -1140,17 +1140,17 @@
     "name_vn": "Spuria"
   },
   "char_4016_kazema": {
-    "idweb": null,
+    "idweb": 229,
     "name": "风丸",
     "name_vn": "Kazemaru"
   },
   "char_4017_puzzle": {
-    "idweb": null,
+    "idweb": 262,
     "name": "谜图",
     "name_vn": "Puzzle"
   },
   "char_4019_ncdeer": {
-    "idweb": null,
+    "idweb": 221,
     "name": "九色鹿",
     "name_vn": "Nine-Colored Deer"
   },
@@ -1165,7 +1165,7 @@
     "name_vn": "Kestrel"
   },
   "char_4025_aprot2": {
-    "idweb": null,
+    "idweb": 220,
     "name": "暮落",
     "name_vn": "Shalem"
   },
@@ -1180,62 +1180,62 @@
     "name_vn": "Ho'olheyak"
   },
   "char_402_tuye": {
-    "idweb": null,
+    "idweb": 180,
     "name": "图耶",
     "name_vn": "Tuye"
   },
   "char_4032_provs": {
-    "idweb": null,
+    "idweb": 249,
     "name": "但书",
     "name_vn": "Proviso"
   },
   "char_4036_forcer": {
-    "idweb": null,
+    "idweb": 228,
     "name": "见行者",
     "name_vn": "Enforcer"
   },
   "char_4039_horn": {
-    "idweb": null,
+    "idweb": 233,
     "name": "号角",
     "name_vn": "Horn"
   },
   "char_4040_rockr": {
-    "idweb": null,
+    "idweb": 232,
     "name": "洛洛",
     "name_vn": "Rockrock"
   },
   "char_4041_chnut": {
-    "idweb": null,
+    "idweb": 230,
     "name": "褐果",
     "name_vn": "Chestnut"
   },
   "char_4042_lumen": {
-    "idweb": null,
+    "idweb": 235,
     "name": "流明",
     "name_vn": "Lumen"
   },
   "char_4043_erato": {
-    "idweb": null,
+    "idweb": 238,
     "name": "埃拉托",
     "name_vn": "Erato"
   },
   "char_4045_heidi": {
-    "idweb": null,
+    "idweb": 231,
     "name": "海蒂",
     "name_vn": "Heidi"
   },
   "char_4046_ebnhlz": {
-    "idweb": null,
+    "idweb": 241,
     "name": "黑键",
     "name_vn": "Ebenholz"
   },
   "char_4047_pianst": {
-    "idweb": null,
+    "idweb": 239,
     "name": "车尔尼",
     "name_vn": "Czerny"
   },
   "char_4048_doroth": {
-    "idweb": null,
+    "idweb": 244,
     "name": "多萝西",
     "name_vn": "Dorothy"
   },
@@ -1250,12 +1250,12 @@
     "name_vn": "Surfer"
   },
   "char_4054_malist": {
-    "idweb": null,
+    "idweb": 245,
     "name": "至简",
     "name_vn": "Minimalist"
   },
   "char_4055_bgsnow": {
-    "idweb": null,
+    "idweb": 247,
     "name": "鸿雪",
     "name_vn": "Pozëmka"
   },
@@ -1275,27 +1275,27 @@
     "name_vn": "Absinthe"
   },
   "char_4062_totter": {
-    "idweb": null,
+    "idweb": 252,
     "name": "铅踝",
     "name_vn": "Totter"
   },
   "char_4063_quartz": {
-    "idweb": null,
+    "idweb": 256,
     "name": "石英",
     "name_vn": "Quartz"
   },
   "char_4064_mlynar": {
-    "idweb": null,
+    "idweb": 250,
     "name": "玛恩纳",
     "name_vn": "Młynar"
   },
   "char_4065_judge": {
-    "idweb": null,
+    "idweb": 260,
     "name": "斥罪",
     "name_vn": "Penance"
   },
   "char_4066_highmo": {
-    "idweb": null,
+    "idweb": 251,
     "name": "海沫",
     "name_vn": "Highmore"
   },
@@ -1305,22 +1305,22 @@
     "name_vn": "Luo Xiaohei"
   },
   "char_4071_peper": {
-    "idweb": null,
+    "idweb": 254,
     "name": "明椒",
     "name_vn": "Paprika"
   },
   "char_4072_ironmn": {
-    "idweb": null,
+    "idweb": 255,
     "name": "白铁",
     "name_vn": "Stainless"
   },
   "char_4077_palico": {
-    "idweb": null,
+    "idweb": 271,
     "name": "泰拉大陆调查团",
     "name_vn": "Terra Research Commission"
   },
   "char_4078_bdhkgt": {
-    "idweb": null,
+    "idweb": 265,
     "name": "截云",
     "name_vn": "Jieyun"
   },
@@ -1330,7 +1330,7 @@
     "name_vn": "Lucilla"
   },
   "char_4080_lin": {
-    "idweb": null,
+    "idweb": 267,
     "name": "林",
     "name_vn": "Lin"
   },
@@ -1340,12 +1340,12 @@
     "name_vn": "Warmy"
   },
   "char_4082_qiubai": {
-    "idweb": null,
+    "idweb": 270,
     "name": "仇白",
     "name_vn": "Qiubai"
   },
   "char_4083_chimes": {
-    "idweb": null,
+    "idweb": 269,
     "name": "铎铃",
     "name_vn": "Wind Chimes"
   },
@@ -1435,7 +1435,7 @@
     "name_vn": "Wanqing"
   },
   "char_411_tomimi": {
-    "idweb": null,
+    "idweb": 157,
     "name": "特米米",
     "name_vn": "Tomimi"
   },
@@ -1600,7 +1600,7 @@
     "name_vn": "Varkáris"
   },
   "char_416_zumama": {
-    "idweb": null,
+    "idweb": 159,
     "name": "森蚺",
     "name_vn": "Eunectes"
   },
@@ -1730,7 +1730,7 @@
     "name_vn": "Snegurochka"
   },
   "char_420_flamtl": {
-    "idweb": null,
+    "idweb": 215,
     "name": "焰尾",
     "name_vn": "Flametail"
   },
@@ -1755,57 +1755,57 @@
     "name_vn": "Cairn"
   },
   "char_421_crow": {
-    "idweb": null,
+    "idweb": 202,
     "name": "羽毛笔",
     "name_vn": "La Pluma"
   },
   "char_422_aurora": {
-    "idweb": null,
+    "idweb": 218,
     "name": "极光",
     "name_vn": "Aurora"
   },
   "char_423_blemsh": {
-    "idweb": null,
+    "idweb": 167,
     "name": "瑕光",
     "name_vn": "Blemishine"
   },
   "char_426_billro": {
-    "idweb": null,
+    "idweb": 199,
     "name": "卡涅利安",
     "name_vn": "Carnelian"
   },
   "char_427_vigil": {
-    "idweb": null,
+    "idweb": 259,
     "name": "伺夜",
     "name_vn": "Vigil"
   },
   "char_430_fartth": {
-    "idweb": null,
+    "idweb": 209,
     "name": "远牙",
     "name_vn": "Fartooth"
   },
   "char_431_ashlok": {
-    "idweb": null,
+    "idweb": 208,
     "name": "灰毫",
     "name_vn": "Ashlock"
   },
   "char_433_windft": {
-    "idweb": null,
+    "idweb": 234,
     "name": "掠风",
     "name_vn": "Windflit"
   },
   "char_436_whispr": {
-    "idweb": null,
+    "idweb": 169,
     "name": "絮雨",
     "name_vn": "Whisperain"
   },
   "char_437_mizuki": {
-    "idweb": null,
+    "idweb": 203,
     "name": "水月",
     "name_vn": "Mizuki"
   },
   "char_440_pinecn": {
-    "idweb": null,
+    "idweb": 173,
     "name": "松果",
     "name_vn": "Pinecone"
   },
@@ -1820,7 +1820,7 @@
     "name_vn": "Aroma"
   },
   "char_449_glider": {
-    "idweb": null,
+    "idweb": 212,
     "name": "蜜莓",
     "name_vn": "Honeyberry"
   },
@@ -1830,37 +1830,37 @@
     "name_vn": "Necrass"
   },
   "char_451_robin": {
-    "idweb": null,
+    "idweb": 174,
     "name": "罗宾",
     "name_vn": "Robin"
   },
   "char_452_bstalk": {
-    "idweb": null,
+    "idweb": 177,
     "name": "豆苗",
     "name_vn": "Beanstalk"
   },
   "char_455_nothin": {
-    "idweb": null,
+    "idweb": 182,
     "name": "乌有",
     "name_vn": "Mr. Nothing"
   },
   "char_456_ash": {
-    "idweb": null,
+    "idweb": 188,
     "name": "灰烬",
     "name_vn": "Ash"
   },
   "char_457_blitz": {
-    "idweb": null,
+    "idweb": 186,
     "name": "闪击",
     "name_vn": "Blitz"
   },
   "char_458_rfrost": {
-    "idweb": null,
+    "idweb": 187,
     "name": "霜华",
     "name_vn": "Frost"
   },
   "char_459_tachak": {
-    "idweb": null,
+    "idweb": 185,
     "name": "战车",
     "name_vn": "Tachanka"
   },
@@ -1870,12 +1870,12 @@
     "name_vn": "Cement"
   },
   "char_466_qanik": {
-    "idweb": null,
+    "idweb": 257,
     "name": "雪绒",
     "name_vn": "Qanipalaat"
   },
   "char_469_indigo": {
-    "idweb": null,
+    "idweb": 196,
     "name": "深靛",
     "name_vn": "Indigo"
   },
@@ -1885,47 +1885,47 @@
     "name_vn": "Passenger"
   },
   "char_473_mberry": {
-    "idweb": null,
+    "idweb": 206,
     "name": "桑葚",
     "name_vn": "Mulberry"
   },
   "char_474_glady": {
-    "idweb": null,
+    "idweb": 193,
     "name": "歌蕾蒂娅",
     "name_vn": "Gladiia"
   },
   "char_475_akafyu": {
-    "idweb": null,
+    "idweb": 192,
     "name": "赤冬",
     "name_vn": "Akafuyu"
   },
   "char_476_blkngt": {
-    "idweb": null,
+    "idweb": 223,
     "name": "夜半",
     "name_vn": "Blacknight"
   },
   "char_478_kirara": {
-    "idweb": null,
+    "idweb": 198,
     "name": "绮良",
     "name_vn": "Kirara"
   },
   "char_479_sleach": {
-    "idweb": null,
+    "idweb": 207,
     "name": "琴柳",
     "name_vn": "Saileach"
   },
   "char_484_robrta": {
-    "idweb": null,
+    "idweb": 205,
     "name": "罗比菈塔",
     "name_vn": "Roberta"
   },
   "char_485_pallas": {
-    "idweb": null,
+    "idweb": 200,
     "name": "帕拉斯",
     "name_vn": "Pallas"
   },
   "char_486_takila": {
-    "idweb": null,
+    "idweb": 201,
     "name": "龙舌兰",
     "name_vn": "Tequila"
   },
@@ -1940,7 +1940,7 @@
     "name_vn": "Poncirus"
   },
   "char_489_serum": {
-    "idweb": null,
+    "idweb": 214,
     "name": "蚀清",
     "name_vn": "Corroserum"
   },
@@ -1950,12 +1950,12 @@
     "name_vn": "Humus"
   },
   "char_492_quercu": {
-    "idweb": null,
+    "idweb": 226,
     "name": "夏栎",
     "name_vn": "Quercus"
   },
   "char_493_firwhl": {
-    "idweb": null,
+    "idweb": 266,
     "name": "火哨",
     "name_vn": "Firewhistle"
   },
@@ -1965,12 +1965,12 @@
     "name_vn": "Vendela"
   },
   "char_496_wildmn": {
-    "idweb": null,
+    "idweb": 213,
     "name": "野鬃",
     "name_vn": "Wild Mane"
   },
   "char_497_ctable": {
-    "idweb": null,
+    "idweb": 246,
     "name": "晓歌",
     "name_vn": "Cantabile"
   },
@@ -3705,7 +3705,7 @@
     "name_vn": "Emergency Heater"
   },
   "trap_138_winstone": {
-    "idweb": null,
+    "idweb": 158,
     "name": "点火石",
     "name_vn": "Flint"
   },
@@ -4855,7 +4855,7 @@
     "name_vn": "High Priest"
   },
   "trap_469_tpasngr": {
-    "idweb": null,
+    "idweb": 191,
     "name": "异客",
     "name_vn": "Passenger"
   },
