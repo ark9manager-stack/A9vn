@@ -405,7 +405,7 @@
     "name_vn": "Firewatch"
   },
   "char_159_peacok": {
-    "idweb": null,
+    "idweb": 130,
     "name": "断罪者",
     "name_vn": "Conviction"
   },
@@ -2750,7 +2750,7 @@
     "name_vn": "Londinium Secondary Defense Artillery"
   },
   "trap_059_peacokfool": {
-    "idweb": 130,
+    "idweb": null,
     "name": "断罪者",
     "name_vn": "Conviction"
   },
