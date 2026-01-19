@@ -210,7 +210,7 @@ export default function OperatorModal({ operator, onClose }) {
         {/* ✅ dark overlay 5-10% */}
         <div
           className="absolute inset-0"
-          style={{ background: "rgba(0,0,0,0.08)" }}
+          style={{ background: "rgba(0,0,0,0.10)" }}
         />
 
         {/* Close */}
