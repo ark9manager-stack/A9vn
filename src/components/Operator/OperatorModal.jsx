@@ -241,34 +241,37 @@ export default function OperatorModal({ isOpen = true, operator, onClose }) {
               )}
             </div>
 
-            {/* Bottom-left: ONE LINE info */}
+            {/* Bottom-left: Skin name + drawer (VERTICAL) */}
             <div className="absolute bottom-3 left-3 z-10 w-[460px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
-              <div className="flex items-center gap-2 text-sm leading-snug">
+              {/* Line 1: Skin name */}
+              <div className="flex items-start gap-2">
                 <img
                   src={ICON_MODEL_URL}
                   alt="skin"
-                  className="h-5 w-5 opacity-90"
+                  className="h-4 w-4 opacity-90 mt-[2px]"
                   draggable={false}
                 />
-                <span className="min-w-0 flex-1 truncate font-semibold">
-                  {selectedMeta.skinName}
-                </span>
-                <span className="text-white/45">•</span>
-                <img
-                  src={ICON_DRAWER_URL}
-                  alt="drawer"
-                  className="h-5 w-5 opacity-90"
-                  draggable={false}
-                />
-                <span className="min-w-0 flex-1 truncate text-white/85">
-                  {selectedMeta.drawer}
-                </span>
+                <div className="min-w-0">
+                  <div className="text-sm font-semibold leading-snug truncate">
+                    {selectedMeta.skinName}
+                  </div>
+                  <div className="mt-1 flex items-center gap-2 text-xs text-white/85">
+                    <img
+                      src={ICON_DRAWER_URL}
+                      alt="drawer"
+                      className="h-4 w-4 opacity-90"
+                      draggable={false}
+                    />
+                    <span className="truncate">{selectedMeta.drawer}</span>
+                  </div>
+                </div>
               </div>
             </div>
 
+
             {/* Bottom-right: options (no title, no scroll) */}
             {options.length > 1 && (
-              <div className="absolute bottom-3 right-2 z-10 w-[220px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
+              <div className="absolute bottom-3 right-2 z-10 w-[100px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
                 <div className="flex flex-col gap-1">
                   {options.map((o) => {
                     const isSelected = o.skinId === selectedSkinId;
