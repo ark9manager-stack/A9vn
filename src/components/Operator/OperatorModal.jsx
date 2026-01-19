@@ -11,9 +11,6 @@ const SKIN_UI_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Bpack%5Dskinres";
 
 function buildEliteUrl(charId, elite) {
-  // Elite 0 => _1
-  // Elite 2 => _2
-  // Elite 1 special only for Amiya => _1+ (need encode +)
   if (elite === "E0") return `${ART_BASE}/${charId}/${charId}_1.png`;
   if (elite === "E2") return `${ART_BASE}/${charId}/${charId}_2.png`;
   if (elite === "E1") {
@@ -25,31 +22,25 @@ function buildEliteUrl(charId, elite) {
 }
 
 function buildSkinUrl(charId, skinId) {
-  // Example:
-  // char_002_amiya#1 -> char_002_amiya_1.png
-  // char_002_amiya@winter#1 -> char_002_amiya_winter%231.png
   if (!skinId) return null;
 
   if (skinId.includes("@")) {
-    // @ -> _ and keep # but encode as %23
     const file = skinId.replace("@", "_").replaceAll("#", "%23");
     return `${ART_BASE}/${charId}/${file}.png`;
   }
 
-  // no @ => # -> _
   const file = skinId.replaceAll("#", "_");
   return `${ART_BASE}/${charId}/${file}.png`;
 }
 
 function pickDisplaySkin(obj) {
-  // robust: skin data may sit under displaySkin or other keys
   return obj?.displaySkin || obj?.skin || obj || null;
 }
 
 const OperatorModal = ({ operator, onClose }) => {
   if (!operator) return null;
 
-  const charId = operator?.id; // IMPORTANT: operator.id should be like "char_002_amiya"
+  const charId = operator?.id;
   const hasElite1 = charId === "char_002_amiya";
 
   const skinsForChar = useMemo(() => {
@@ -57,17 +48,13 @@ const OperatorModal = ({ operator, onClose }) => {
     const all = Object.values(dict);
 
     const matched = all.filter((s) => s?.charId === charId);
-
-    // only keep real skins (usually contain @...), exclude default elite-like ids if exist
     const extra = matched.filter((s) => {
       const sid = s?.skinId;
       if (!sid) return false;
-      // exclude base-like ids (charId#1, charId#2) from "skin list"
       if (sid === `${charId}#1` || sid === `${charId}#2`) return false;
       return true;
     });
 
-    // map to a clean structure
     return extra
       .map((s) => {
         const display = pickDisplaySkin(s);
@@ -123,7 +110,6 @@ const OperatorModal = ({ operator, onClose }) => {
       drawerList: s.drawerList || [],
     }));
 
-    // Order: E0 > E1 > E2 > skins
     return [...elite, ...skins];
   }, [charId, hasElite1, skinsForChar]);
 
@@ -135,7 +121,6 @@ const OperatorModal = ({ operator, onClose }) => {
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
-    // If skinName is null => use Elite name
     if (!selectedOption.skinName) return selectedOption.label;
     return selectedOption.skinName;
   }, [selectedOption]);
@@ -148,15 +133,11 @@ const OperatorModal = ({ operator, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
-      {/* 1280x720 canvas (scaled) */}
       <div className="relative w-[95vw] max-w-[1280px] aspect-[16/9] rounded-2xl overflow-hidden">
-        {/* Background */}
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{ backgroundImage: `url(${BG_URL})` }}
         />
-
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute top-3 right-3 z-20 text-white/90 hover:text-white bg-black/40 hover:bg-black/60 rounded-lg px-3 py-2"
@@ -164,9 +145,7 @@ const OperatorModal = ({ operator, onClose }) => {
         >
           ✕
         </button>
-
-        {/* Content grid: LEFT ~580, RIGHT ~700 (as in 1280 design) */}
-        <div className="relative z-10 h-full w-full grid grid-cols-1 md:grid-cols-[580px_700px]">
+        <div className="relative z-10 h-full w-full grid grid-cols-1 md:grid-cols-[680px_600px]">
           {/* LEFT */}
           <div className="relative h-full p-4">
             {/* Character art area */}
@@ -186,8 +165,6 @@ const OperatorModal = ({ operator, onClose }) => {
                   <div className="text-white/70 text-sm">No Image</div>
                 )}
               </div>
-
-              {/* Bottom-left info: skin name + drawer */}
               <div className="absolute left-3 bottom-3 z-20 bg-black/55 backdrop-blur rounded-xl px-3 py-2 max-w-[360px]">
                 <div className="flex items-center gap-2">
                   <img
@@ -211,8 +188,6 @@ const OperatorModal = ({ operator, onClose }) => {
                   </div>
                 </div>
               </div>
-
-              {/* Bottom-right list: elite + skins (do not cross into RIGHT area) */}
               <div className="absolute right-3 bottom-3 z-20 bg-black/55 backdrop-blur rounded-xl p-2 w-[210px] max-h-[260px] overflow-auto">
                 <div className="text-white/80 text-xs font-semibold mb-2">
                   Select Art / Skin
@@ -242,7 +217,6 @@ const OperatorModal = ({ operator, onClose }) => {
 
           {/* RIGHT */}
           <div className="h-full p-4">
-            {/* giữ nguyên block này theo yêu cầu của bạn */}
             <div className="bg-[#1a1a1a] rounded-xl p-4 text-white h-full">
               <h3 className="font-semibold mb-2">Stats (Base)</h3>
               <ul className="text-sm space-y-1">
@@ -261,7 +235,7 @@ const OperatorModal = ({ operator, onClose }) => {
             {operator.name}
           </h2>
           <p className="text-white/80 text-sm mt-1 whitespace-pre-line drop-shadow">
-            {operator.description}
+            {/*operator.description*/}
           </p>
         </div>
       </div>
