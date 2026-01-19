@@ -300,31 +300,26 @@ export default function OperatorModal({ operator, onClose }) {
 
               {/* Art */}
               <div className="absolute inset-0 flex items-center justify-center">
-                {imgSrc && !imgError ? (
+                {isLoadingImg && (
+                  <div className="text-white/70 text-sm">Loading...</div>
+                )}
+
+                {!isLoadingImg && imgError && (
+                  <div className="text-white/70 text-sm">No Image</div>
+                )}
+
+                {!isLoadingImg && !imgError && displaySrc && (
                   <img
-                    src={imgSrc}
+                    src={displaySrc}
                     alt={operator?.name || charId}
                     className="max-h-full max-w-full object-contain"
                     loading="eager"
                     draggable={false}
-                    onError={() => {
-                      // retry with lowercase-theme fallback for problematic skins
-                      if (
-                        !triedFallback &&
-                        selectedOption?.fallbackUrl &&
-                        selectedOption.fallbackUrl !== imgSrc
-                      ) {
-                        setTriedFallback(true);
-                        setImgSrc(selectedOption.fallbackUrl);
-                        return;
-                      }
-                      setImgError(true);
-                    }}
                   />
-                ) : (
-                  <div className="text-white/70 text-sm">No Image</div>
                 )}
               </div>
+
+
 
               {/* Bottom-left: Skin name + drawer */}
               <div className="absolute bottom-3 left-3 z-20 w-[145px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
