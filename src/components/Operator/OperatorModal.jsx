@@ -31,7 +31,6 @@ function buildArtUrl(charId, skinId, skinsMap) {
   const entry = skinsMap?.[skinId];
   if (!entry) return null;
 
-  // Prefer illustId (more accurate)
   const illustId = entry.illustId;
   let suffix = null;
 
@@ -54,15 +53,16 @@ function buildArtUrl(charId, skinId, skinsMap) {
   return `${ART_BASE}/${charId}/${charId}_${safeSuffix}.png`;
 }
 
-export default function OperatorModal({ isOpen, operator, onClose }) {
-  const charId = operator?.charId || operator?.id || operator?.char_id;
+export default function OperatorModal({ isOpen = true, operator, onClose }) {
+  const open = !!isOpen && !!operator;
+  const charId = operator?.charId || operator?.id || operator?.char_id || "";
 
   const [skinTable, setSkinTable] = useState(null);
   const [skinLoadError, setSkinLoadError] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
-    if (!isOpen) return;
+    if (!open) return;
     if (skinTable) return;
 
     (async () => {
@@ -79,7 +79,7 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
     return () => {
       cancelled = true;
     };
-  }, [isOpen, skinTable]);
+  }, [open, skinTable]);
 
   const skinsMap = skinTable?.charSkins || {};
 
@@ -124,22 +124,21 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
   const [artError, setArtError] = useState(false);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!open) return;
     if (!options.length) return;
 
     if (!selectedSkinId) {
       setSelectedSkinId(options[0].skinId);
       return;
     }
-
     const stillExists = options.some((o) => o.skinId === selectedSkinId);
     if (!stillExists) setSelectedSkinId(options[0].skinId);
-  }, [isOpen, options, selectedSkinId]);
+  }, [open, options, selectedSkinId]);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!open) return;
     setArtError(false);
-  }, [isOpen, selectedSkinId]);
+  }, [open, selectedSkinId]);
 
   const selectedMeta = useMemo(() => {
     const entry = skinsMap?.[selectedSkinId];
@@ -152,7 +151,10 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
         : getEliteLabelFromSkinId(selectedSkinId)
       : "Elite 0";
 
-    const drawer = Array.isArray(display?.drawerList) ? display.drawerList.filter(Boolean) : [];
+    const drawer = Array.isArray(display?.drawerList)
+      ? display.drawerList.filter(Boolean)
+      : [];
+
     return {
       skinName: skinName || fallbackName,
       drawer: drawer.length ? drawer.join(", ") : "-",
@@ -164,7 +166,9 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
     return buildArtUrl(charId, selectedSkinId, skinsMap);
   }, [charId, selectedSkinId, skinsMap]);
 
-  if (!isOpen || !operator) return null;
+  const titleText = operator?.name_vn || operator?.name || charId;
+
+  if (!open) return null;
 
   return (
     <div
@@ -182,15 +186,32 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
           className="absolute inset-0 h-full w-full object-cover"
           draggable={false}
         />
-        {/* slight dark overlay */}
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.12)" }} />
+        {/* ✅ dark overlay ~8% */}
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.08)" }} />
 
-        {/* EXACT 680 + 600 */}
+        {/* Close */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-3 top-3 z-20 rounded-lg bg-black/50 px-3 py-2 text-sm font-semibold text-white/90 hover:bg-black/70"
+          aria-label="Close modal"
+        >
+          ✕
+        </button>
+
         <div className="relative z-10 grid h-full w-full grid-cols-1 md:grid-cols-[680px_600px]">
           {/* LEFT */}
           <div className="relative h-full w-full">
+            {/* Name (top-right of left area) */}
+            <div className="absolute right-3 top-3 z-10 text-right">
+              <div className="text-2xl font-extrabold text-white leading-tight">
+                {titleText}
+              </div>
+              <div className="text-xs font-semibold text-white/85">{charId}</div>
+            </div>
+
+            {/* Art area */}
             <div className="absolute inset-0">
-              {/* Loading / Error for skin table */}
               {!skinTable && !skinLoadError ? (
                 <div className="flex h-full w-full items-center justify-center text-white/80">
                   <div className="rounded-xl bg-black/55 px-4 py-3 text-sm backdrop-blur">
@@ -209,35 +230,47 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
                   alt="art"
                   className="h-full w-full object-contain"
                   draggable={false}
-                  onError={() => {
-                    setArtError(true);
-                  }}
+                  onError={() => setArtError(true)}
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center text-white/80">
                   <div className="rounded-xl bg-black/55 px-4 py-3 text-sm backdrop-blur">
-                    load
+                    Art load failed
                   </div>
                 </div>
               )}
             </div>
 
             {/* Bottom-left: ONE LINE info */}
-            <div className="absolute bottom-3 left-3 z-10 w-[420px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
+            <div className="absolute bottom-3 left-3 z-10 w-[460px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
               <div className="flex items-center gap-2 text-sm leading-snug">
-                <img src={ICON_MODEL_URL} alt="skin" className="h-5 w-5 opacity-90" draggable={false} />
-                <span className="min-w-0 flex-1 truncate font-semibold">{selectedMeta.skinName}</span>
+                <img
+                  src={ICON_MODEL_URL}
+                  alt="skin"
+                  className="h-5 w-5 opacity-90"
+                  draggable={false}
+                />
+                <span className="min-w-0 flex-1 truncate font-semibold">
+                  {selectedMeta.skinName}
+                </span>
                 <span className="text-white/45">•</span>
-                <img src={ICON_DRAWER_URL} alt="drawer" className="h-5 w-5 opacity-90" draggable={false} />
-                <span className="min-w-0 flex-1 truncate text-white/85">{selectedMeta.drawer}</span>
+                <img
+                  src={ICON_DRAWER_URL}
+                  alt="drawer"
+                  className="h-5 w-5 opacity-90"
+                  draggable={false}
+                />
+                <span className="min-w-0 flex-1 truncate text-white/85">
+                  {selectedMeta.drawer}
+                </span>
               </div>
             </div>
 
-            {/* Bottom-right: options (no scroll, no title) */}
-            <div className="absolute bottom-3 right-2 z-10 w-[220px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
-              <div className="flex flex-col gap-1">
-                {options.length ? (
-                  options.map((o) => {
+            {/* Bottom-right: options (no title, no scroll) */}
+            {options.length > 1 && (
+              <div className="absolute bottom-3 right-2 z-10 w-[220px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
+                <div className="flex flex-col gap-1">
+                  {options.map((o) => {
                     const isSelected = o.skinId === selectedSkinId;
                     return (
                       <button
@@ -254,20 +287,15 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
                         <div className="truncate">{o.label}</div>
                       </button>
                     );
-                  })
-                ) : (
-                  <div className="px-3 py-2 text-xs text-white/70">No arts/skins.</div>
-                )}
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT (600x720) */}
           <div className="relative h-full w-full p-4">
-            <div className="mb-3">
-              <div className="text-2xl font-extrabold text-white">{operator.name}</div>
-              <div className="text-xs text-white/70">{operator.charId || operator.id}</div>
-            </div>
+            {/* RIGHT */}
             <div className="bg-[#1a1a1a] rounded-xl p-4 text-white">
               <h3 className="font-semibold mb-2">Stats (Base)</h3>
               <ul className="text-sm space-y-1">
@@ -277,15 +305,6 @@ export default function OperatorModal({ isOpen, operator, onClose }) {
                 <li>RES: {operator.stats?.magicResistance}</li>
               </ul>
             </div>
-
-            <button
-              type="button"
-              onClick={onClose}
-              className="absolute top-3 right-3 rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white/85 hover:bg-white/20 hover:text-white"
-              aria-label="Close modal"
-            >
-              ✕
-            </button>
           </div>
         </div>
       </div>
