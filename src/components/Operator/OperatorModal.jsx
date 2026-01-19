@@ -1,305 +1,316 @@
 import React, { useEffect, useMemo, useState } from "react";
+import skinTable from "../../data/skins/skin_table.json";
 
 const BG_URL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]packed/bg_img.png";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Buc%5Dpacked/bg_img.png";
 
 const ART_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/characters";
 
 const ICON_MODEL_URL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[pack]skinres/icon_model.png";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_model.png";
 const ICON_DRAWER_URL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[pack]skinres/icon_drawer.png";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_drawer.png";
 
-function getEliteLabelFromSkinId(skinId) {
-  if (!skinId) return "Elite 0";
-  if (skinId.endsWith("#1+")) return "Elite 1";
-  if (skinId.endsWith("#2")) return "Elite 2";
-  return "Elite 0";
+function buildEliteUrl(charId, elite) {
+  if (!charId) return null;
+  if (elite === "E0") return `${ART_BASE}/${charId}/${charId}_1.png`;
+  if (elite === "E2") return `${ART_BASE}/${charId}/${charId}_2.png`;
+  if (elite === "E1") {
+    // only Amiya uses _1+
+    const filename = `${charId}_1+.png`.replace("+", "%2B");
+    return `${ART_BASE}/${charId}/${filename}`;
+  }
+  return `${ART_BASE}/${charId}/${charId}_1.png`;
 }
 
-function getCharIdPrefixFromKey(key) {
-  if (!key) return "";
-  const at = key.indexOf("@");
-  const hash = key.indexOf("#");
-  const cut = at !== -1 ? at : hash !== -1 ? hash : key.length;
-  return key.slice(0, cut);
-}
-
-function buildArtUrl(charId, skinId, skinsMap) {
+function buildSkinUrl(charId, skinId) {
   if (!charId || !skinId) return null;
-  const entry = skinsMap?.[skinId];
-  if (!entry) return null;
 
-  const illustId = entry.illustId;
-  let suffix = null;
-
-  const prefix = `illust_${charId}_`;
-  if (typeof illustId === "string" && illustId.startsWith(prefix)) {
-    suffix = illustId.slice(prefix.length);
+  // skinId like: char_002_amiya@winter#1  -> char_002_amiya_winter%231.png
+  if (skinId.includes("@")) {
+    const file = skinId.replace("@", "_").replaceAll("#", "%23");
+    return `${ART_BASE}/${charId}/${file}.png`;
   }
 
-  if (!suffix) {
-    if (skinId.includes("@")) {
-      suffix = skinId.split("@")[1] || "";
-    } else if (skinId.includes("#")) {
-      suffix = skinId.split("#")[1] || "1";
-    } else {
-      suffix = "1";
-    }
-  }
-
-  const safeSuffix = String(suffix).replace(/#/g, "%23");
-  return `${ART_BASE}/${charId}/${charId}_${safeSuffix}.png`;
+  // fallback (shouldn't be used for elite keys; we filter them out)
+  const file = skinId.replaceAll("#", "_");
+  return `${ART_BASE}/${charId}/${file}.png`;
 }
 
-export default function OperatorModal({ isOpen = true, operator, onClose }) {
-  const open = !!isOpen && !!operator;
-  const charId = operator?.charId || operator?.id || operator?.char_id || "";
+function pickDisplaySkin(obj) {
+  return obj?.displaySkin || obj?.skin || obj || null;
+}
 
-  const [skinTable, setSkinTable] = useState(null);
-  const [skinLoadError, setSkinLoadError] = useState(null);
+export default function OperatorModal({ operator, onClose }) {
+  if (!operator) return null;
 
-  useEffect(() => {
-    let cancelled = false;
-    if (!open) return;
-    if (skinTable) return;
+  const charId = operator?.id || operator?.charId || operator?.char_id || "";
+  const titleText = operator?.name_vn || operator?.name || charId;
 
-    (async () => {
-      try {
-        const mod = await import("../../data/skins/skin_table.json");
-        if (cancelled) return;
-        setSkinTable(mod?.default ?? mod);
-      } catch (e) {
-        if (cancelled) return;
-        setSkinLoadError(e?.message || String(e));
-      }
-    })();
+  // phases length: 1-2★ => 1 phase, 3★ => 2 phases, 4-6★ => 3 phases
+  const phaseCount = operator?.phases?.length ?? 1;
+  const hasElite2 = phaseCount >= 3;
+  const hasElite1Art = charId === "char_002_amiya"; // ONLY Amiya has _1+
 
-    return () => {
-      cancelled = true;
-    };
-  }, [open, skinTable]);
+  const skinsDict = skinTable?.charSkins || skinTable?.skins || {};
 
-  const skinsMap = skinTable?.charSkins || {};
-
-  const allKeysForThisChar = useMemo(() => {
-    if (!charId) return [];
-    return Object.keys(skinsMap).filter((k) => getCharIdPrefixFromKey(k) === charId);
-  }, [charId, skinsMap]);
-
-  const options = useMemo(() => {
-    if (!charId) return [];
-
+  const eliteMeta = useMemo(() => {
     const e0Key = `${charId}#1`;
     const e1Key = `${charId}#1+`;
     const e2Key = `${charId}#2`;
 
-    const out = [];
-
-    if (skinsMap[e0Key]) out.push({ skinId: e0Key, label: "Elite 0", order: 0 });
-
-    if (skinsMap[e1Key] && charId === "char_002_amiya")
-      out.push({ skinId: e1Key, label: "Elite 1", order: 1 });
-
-    if (skinsMap[e2Key]) out.push({ skinId: e2Key, label: "Elite 2", order: 2 });
-
-    const skinKeys = allKeysForThisChar.filter((k) => k.startsWith(`${charId}@`));
-    skinKeys.sort((a, b) => a.localeCompare(b));
-
-    skinKeys.forEach((k, idx) => {
-      const meta = skinsMap[k]?.displaySkin || {};
-      const skinName = meta?.skinName;
-      out.push({
-        skinId: k,
-        label: skinName || k.split("@")[1] || "Skin",
-        order: 100 + idx,
-      });
-    });
-
-    return out.sort((a, b) => a.order - b.order);
-  }, [charId, skinsMap, allKeysForThisChar]);
-
-  const [selectedSkinId, setSelectedSkinId] = useState(null);
-  const [artError, setArtError] = useState(false);
-
-  useEffect(() => {
-    if (!open) return;
-    if (!options.length) return;
-
-    if (!selectedSkinId) {
-      setSelectedSkinId(options[0].skinId);
-      return;
-    }
-    const stillExists = options.some((o) => o.skinId === selectedSkinId);
-    if (!stillExists) setSelectedSkinId(options[0].skinId);
-  }, [open, options, selectedSkinId]);
-
-  useEffect(() => {
-    if (!open) return;
-    setArtError(false);
-  }, [open, selectedSkinId]);
-
-  const selectedMeta = useMemo(() => {
-    const entry = skinsMap?.[selectedSkinId];
-    const display = entry?.displaySkin || {};
-    const skinName = display?.skinName;
-
-    const fallbackName = selectedSkinId
-      ? selectedSkinId.includes("@")
-        ? selectedSkinId.split("@")[1] || "Skin"
-        : getEliteLabelFromSkinId(selectedSkinId)
-      : "Elite 0";
-
-    const drawer = Array.isArray(display?.drawerList)
-      ? display.drawerList.filter(Boolean)
-      : [];
+    const e0 = skinsDict?.[e0Key];
+    const e1 = skinsDict?.[e1Key];
+    const e2 = skinsDict?.[e2Key];
 
     return {
-      skinName: skinName || fallbackName,
-      drawer: drawer.length ? drawer.join(", ") : "-",
+      e0: pickDisplaySkin(e0),
+      e1: pickDisplaySkin(e1),
+      e2: pickDisplaySkin(e2),
     };
-  }, [skinsMap, selectedSkinId]);
+  }, [charId, skinsDict]);
 
-  const artUrl = useMemo(() => {
-    if (!charId || !selectedSkinId) return null;
-    return buildArtUrl(charId, selectedSkinId, skinsMap);
-  }, [charId, selectedSkinId, skinsMap]);
+  // Only list true skins (charId@xxxx...), exclude elite keys (#1, #1+, #2)
+  const skinsForChar = useMemo(() => {
+    const dict = skinsDict || {};
+    const all = Object.values(dict);
 
-  const titleText = operator?.name_vn || operator?.name || charId;
+    const matched = all.filter((s) => s?.charId === charId);
 
-  if (!open) return null;
+    const extra = matched.filter((s) => {
+      const sid = s?.skinId;
+      if (!sid) return false;
+      if (sid === `${charId}#1`) return false;
+      if (sid === `${charId}#2`) return false;
+      if (sid === `${charId}#1+`) return false; // ✅ prevent Amiya dupe
+      // keep only skin (usually contains @)
+      return sid.startsWith(`${charId}@`);
+    });
+
+    return extra
+      .map((s) => {
+        const display = pickDisplaySkin(s);
+        return {
+          key: s.skinId,
+          kind: "skin",
+          skinId: s.skinId,
+          skinName: display?.skinName ?? null,
+          drawerList: display?.drawerList ?? [],
+          url: buildSkinUrl(charId, s.skinId),
+        };
+      })
+      .filter((x) => !!x.url);
+  }, [charId, skinsDict]);
+
+  const options = useMemo(() => {
+    if (!charId) return [];
+
+    const out = [];
+
+    // Elite 0 always exists
+    out.push({
+      key: "E0",
+      kind: "elite",
+      label: "Elite 0",
+      url: buildEliteUrl(charId, "E0"),
+      skinName: eliteMeta?.e0?.skinName ?? null,
+      drawerList: eliteMeta?.e0?.drawerList ?? [],
+      order: 0,
+    });
+
+    // Elite 1 only for Amiya
+    if (hasElite1Art) {
+      out.push({
+        key: "E1",
+        kind: "elite",
+        label: "Elite 1",
+        url: buildEliteUrl(charId, "E1"),
+        skinName: eliteMeta?.e1?.skinName ?? null,
+        drawerList: eliteMeta?.e1?.drawerList ?? [],
+        order: 1,
+      });
+    }
+
+    // Elite 2 only if operator has E2
+    if (hasElite2) {
+      out.push({
+        key: "E2",
+        kind: "elite",
+        label: "Elite 2",
+        url: buildEliteUrl(charId, "E2"),
+        skinName: eliteMeta?.e2?.skinName ?? null,
+        drawerList: eliteMeta?.e2?.drawerList ?? [],
+        order: 2,
+      });
+    }
+
+    // Skins
+    const skins = skinsForChar
+      .slice()
+      .sort((a, b) => String(a.skinId).localeCompare(String(b.skinId)))
+      .map((s, idx) => ({
+        key: s.key,
+        kind: "skin",
+        label: s.skinName || s.skinId,
+        url: s.url,
+        skinName: s.skinName,
+        drawerList: s.drawerList || [],
+        order: 100 + idx,
+      }));
+
+    return [...out, ...skins].sort((a, b) => a.order - b.order);
+  }, [charId, eliteMeta, hasElite1Art, hasElite2, skinsForChar]);
+
+  const [selectedKey, setSelectedKey] = useState(options?.[0]?.key || "E0");
+  const [imgError, setImgError] = useState(false);
+
+  // Reset selection safely when changing operator/options (prevents “click skin -> bounce to E0”)
+  useEffect(() => {
+    if (!options.length) return;
+    const exists = options.some((o) => o.key === selectedKey);
+    if (!exists) setSelectedKey(options[0].key);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [charId, options.length]);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [selectedKey, charId]);
+
+  const selectedOption = useMemo(() => {
+    return options.find((x) => x.key === selectedKey) || options[0];
+  }, [options, selectedKey]);
+
+  const displaySkinName = useMemo(() => {
+    if (!selectedOption) return "";
+    if (!selectedOption.skinName) return selectedOption.label;
+    return selectedOption.skinName;
+  }, [selectedOption]);
+
+  const displayDrawer = useMemo(() => {
+    const list = selectedOption?.drawerList || [];
+    const arr = Array.isArray(list) ? list.filter(Boolean) : [];
+    return arr.length ? arr.join(", ") : "-";
+  }, [selectedOption]);
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+      className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
       onClick={() => onClose?.()}
     >
       <div
-        className="relative w-[min(1280px,96vw)] aspect-[16/9] max-h-[90vh] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl"
+        className="relative w-[95vw] max-w-[1280px] aspect-[16/9] rounded-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* BG */}
-        <img
-          src={BG_URL}
-          alt="bg"
-          className="absolute inset-0 h-full w-full object-cover"
-          draggable={false}
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: `url(${BG_URL})` }}
         />
-        {/* ✅ dark overlay ~8% */}
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.08)" }} />
+        {/* ✅ dark overlay 5-10% */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "rgba(0,0,0,0.08)" }}
+        />
 
         {/* Close */}
         <button
-          type="button"
           onClick={onClose}
-          className="absolute right-3 top-3 z-20 rounded-lg bg-black/50 px-3 py-2 text-sm font-semibold text-white/90 hover:bg-black/70"
-          aria-label="Close modal"
+          className="absolute top-3 right-3 z-20 text-white/90 hover:text-white bg-black/40 hover:bg-black/60 rounded-lg px-3 py-2"
+          aria-label="Close"
         >
           ✕
         </button>
 
-        <div className="relative z-10 grid h-full w-full grid-cols-1 md:grid-cols-[680px_600px]">
+        <div className="relative z-10 h-full w-full grid grid-cols-1 md:grid-cols-[680px_600px]">
           {/* LEFT */}
-          <div className="relative h-full w-full">
-            {/* Name (top-right of left area) */}
-            <div className="absolute right-3 top-3 z-10 text-right">
-              <div className="text-2xl font-extrabold text-white leading-tight">
-                {titleText}
+          <div className="relative h-full p-4">
+            <div className="relative h-full">
+              {/* Name (top-right of LEFT area) */}
+              <div className="absolute right-3 top-3 z-20 text-right">
+                <div className="text-2xl font-extrabold text-white leading-tight drop-shadow">
+                  {titleText}
+                </div>
+                <div className="text-xs font-semibold text-white/85 drop-shadow">
+                  {charId}
+                </div>
               </div>
-              <div className="text-xs font-semibold text-white/85">{charId}</div>
-            </div>
 
-            {/* Art area */}
-            <div className="absolute inset-0">
-              {!skinTable && !skinLoadError ? (
-                <div className="flex h-full w-full items-center justify-center text-white/80">
-                  <div className="rounded-xl bg-black/55 px-4 py-3 text-sm backdrop-blur">
-                    Loading skins...
+              {/* Art */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {selectedOption?.url && !imgError ? (
+                  <img
+                    src={selectedOption.url}
+                    alt={operator?.name || charId}
+                    className="max-h-full max-w-full object-contain"
+                    loading="eager"
+                    draggable={false}
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div className="text-white/70 text-sm">No Image</div>
+                )}
+              </div>
+
+              {/* Bottom-left: Skin name + drawer (VERTICAL, h-4 w-4) */}
+              <div className="absolute bottom-3 left-3 z-20 w-[360px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
+                <div className="flex items-start gap-2">
+                  <img
+                    src={ICON_MODEL_URL}
+                    alt="skin"
+                    className="h-4 w-4 opacity-90 mt-[2px]"
+                    draggable={false}
+                  />
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold leading-snug truncate">
+                      {displaySkinName || "—"}
+                    </div>
+                    <div className="mt-1 flex items-center gap-2 text-xs text-white/85">
+                      <img
+                        src={ICON_DRAWER_URL}
+                        alt="drawer"
+                        className="h-4 w-4 opacity-90"
+                        draggable={false}
+                      />
+                      <span className="truncate">{displayDrawer}</span>
+                    </div>
                   </div>
                 </div>
-              ) : skinLoadError ? (
-                <div className="flex h-full w-full items-center justify-center text-white/80">
-                  <div className="rounded-xl bg-black/55 px-4 py-3 text-sm backdrop-blur">
-                    Skin table load failed: {skinLoadError}
-                  </div>
-                </div>
-              ) : artUrl && !artError ? (
-                <img
-                  src={artUrl}
-                  alt="art"
-                  className="h-full w-full object-contain"
-                  draggable={false}
-                  onError={() => setArtError(true)}
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-white/80">
-                  <div className="rounded-xl bg-black/55 px-4 py-3 text-sm backdrop-blur">
-                    Art load failed
+              </div>
+
+              {/* Bottom-right: options (like draw_model, no title, no scroll, wider/closer) */}
+              {options.length > 1 && (
+                <div className="absolute right-3 bottom-3 z-20 w-[180px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
+                  <div className="flex flex-col gap-1">
+                    {options.map((opt) => {
+                      const active = selectedKey === opt.key;
+                      return (
+                        <button
+                          key={opt.key}
+                          type="button"
+                          onClick={() => setSelectedKey(opt.key)}
+                          className={`w-full text-left rounded-lg px-2 py-1.5 text-xs font-semibold transition
+                            ${
+                              active
+                                ? "bg-emerald-600 text-white"
+                                : "bg-white/10 hover:bg-white/20 text-white/90"
+                            }`}
+                          title={opt.label}
+                        >
+                          <div className="truncate">{opt.label}</div>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               )}
             </div>
-
-            {/* Bottom-left: Skin name + drawer (VERTICAL) */}
-            <div className="absolute bottom-3 left-3 z-10 w-[150px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
-              {/* Line 1: Skin name */}
-              <div className="flex items-start gap-2">
-                <img
-                  src={ICON_MODEL_URL}
-                  alt="skin"
-                  className="h-4 w-4 opacity-90 mt-[2px]"
-                  draggable={false}
-                />
-                <div className="min-w-0">
-                  <div className="text-sm font-semibold leading-snug truncate">
-                    {selectedMeta.skinName}
-                  </div>
-                  <div className="mt-1 flex items-center gap-2 text-xs text-white/85">
-                    <img
-                      src={ICON_DRAWER_URL}
-                      alt="drawer"
-                      className="h-4 w-4 opacity-90"
-                      draggable={false}
-                    />
-                    <span className="truncate">{selectedMeta.drawer}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            {/* Bottom-right: options (no title, no scroll) */}
-            {options.length > 1 && (
-              <div className="absolute bottom-3 right-2 z-10 w-[100px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
-                <div className="flex flex-col gap-1">
-                  {options.map((o) => {
-                    const isSelected = o.skinId === selectedSkinId;
-                    return (
-                      <button
-                        key={o.skinId}
-                        type="button"
-                        onClick={() => setSelectedSkinId(o.skinId)}
-                        className={[
-                          "w-full rounded-lg px-3 py-2 text-left text-xs font-semibold transition",
-                          "hover:bg-white/15",
-                          isSelected ? "bg-white/20" : "bg-white/5",
-                        ].join(" ")}
-                        title={o.label}
-                      >
-                        <div className="truncate">{o.label}</div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
           </div>
 
           {/* RIGHT (600x720) */}
-          <div className="relative h-full w-full p-4">
+          <div className="h-full p-4">
             {/* RIGHT */}
-            <div className="bg-[#1a1a1a] rounded-xl p-4 text-white">
+            <div className="bg-[#1a1a1a] rounded-xl p-4 text-white h-full">
               <h3 className="font-semibold mb-2">Stats (Base)</h3>
               <ul className="text-sm space-y-1">
                 <li>HP: {operator.stats?.maxHp}</li>
@@ -310,6 +321,8 @@ export default function OperatorModal({ isOpen = true, operator, onClose }) {
             </div>
           </div>
         </div>
+
+        {/* (Giữ chỗ đoạn RIGHT theo yêu cầu của bạn — đã giữ nguyên nội dung) */}
       </div>
     </div>
   );
