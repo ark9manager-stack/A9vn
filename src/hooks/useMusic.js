@@ -19,7 +19,9 @@ export function useMusic(albumId) {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/songs?albumId=${encodeURIComponent(albumId)}`);
+        const res = await fetch(
+          `/api/songs?albumId=${encodeURIComponent(albumId)}`,
+        );
         if (!res.ok) throw new Error(`Fetch songs failed: ${res.status}`);
         const json = await res.json();
         if (!cancelled) setSongs(json?.songs ?? []);
@@ -30,7 +32,9 @@ export function useMusic(albumId) {
       }
     })();
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [albumId]);
 
   return { songs, loading, error };

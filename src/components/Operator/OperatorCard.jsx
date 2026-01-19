@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 const rarityBorderMap = {
-  5: "border-orange-500 shadow-orange-500/40", // 6★
-  4: "border-yellow-400 shadow-yellow-400/40", // 5★
+  5: "border-orange-500", // 6★
+  4: "border-yellow-400", // 5★
   3: "border-purple-400",
   2: "border-blue-400",
   1: "border-green-400",
@@ -20,7 +20,9 @@ const CN_AVATAR_OVERRIDES = {
 function buildCnAvatarUrl(charId) {
   if (!charId) return null;
 
-  const id = String(charId).trim().replace(/\.png$/i, "");
+  const id = String(charId)
+    .trim()
+    .replace(/\.png$/i, "");
   // Chỉ build avatar cho operator thật (char_.). Trap/token thường không có ở path này
   if (!id.startsWith("char_")) return null;
 
@@ -80,7 +82,7 @@ function getInfoGradient(tier) {
 const OperatorCard = ({ operator, onClick }) => {
   const rarityIdx = useMemo(
     () => normalizeRarityIndex(operator?.rarity),
-    [operator?.rarity]
+    [operator?.rarity],
   );
   const tier = rarityIdx != null ? rarityIdx + 1 : "?";
   const rarityClass = rarityBorderMap[rarityIdx] || "border-gray-400";
@@ -97,7 +99,9 @@ const OperatorCard = ({ operator, onClick }) => {
 
   const preferredAvatar = useMemo(() => buildCnAvatarUrl(charId), [charId]);
 
-  const [imgSrc, setImgSrc] = useState(preferredAvatar || operator?.avatar || "");
+  const [imgSrc, setImgSrc] = useState(
+    preferredAvatar || operator?.avatar || "",
+  );
 
   // Khi operator đổi -> reset ảnh theo preferredAvatar
   useEffect(() => {

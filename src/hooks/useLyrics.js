@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 function parseLrc(text) {
   const lines = text.split(/\r?\n/);
@@ -20,10 +20,14 @@ function parseLrc(text) {
     }
 
     // timestamps: [mm:ss.xx] or [mm:ss.xxx] (có thể nhiều timestamp trên 1 dòng)
-    const timeMatches = [...line.matchAll(/\[(\d{2}):(\d{2})(?:\.(\d{1,3}))?\]/g)];
+    const timeMatches = [
+      ...line.matchAll(/\[(\d{2}):(\d{2})(?:\.(\d{1,3}))?\]/g),
+    ];
     if (timeMatches.length === 0) continue;
 
-    const content = line.replace(/\[(\d{2}):(\d{2})(?:\.(\d{1,3}))?\]/g, "").trim();
+    const content = line
+      .replace(/\[(\d{2}):(\d{2})(?:\.(\d{1,3}))?\]/g, "")
+      .trim();
     // nếu dòng chỉ có timestamp mà không có chữ thì bỏ
     if (!content) continue;
 
