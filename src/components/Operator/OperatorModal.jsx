@@ -286,7 +286,7 @@ export default function OperatorModal({ operator, onClose }) {
 
         <div className="relative z-10 h-full w-full grid grid-cols-1 md:grid-cols-[680px_600px]">
           {/* LEFT */}
-          <div className="relative h-full p-4">
+          <div className="relative h-full py-4 pl-4 pr-1">
             <div className="relative h-full">
               {/* Name (top-right of LEFT area) */}
               <div className="absolute right-1 top-3 z-20 text-right">
