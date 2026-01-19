@@ -242,7 +242,7 @@ export default function OperatorModal({ isOpen = true, operator, onClose }) {
             </div>
 
             {/* Bottom-left: Skin name + drawer (VERTICAL) */}
-            <div className="absolute bottom-3 left-3 z-10 w-[460px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
+            <div className="absolute bottom-3 left-3 z-10 w-[150px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
               {/* Line 1: Skin name */}
               <div className="flex items-start gap-2">
                 <img
