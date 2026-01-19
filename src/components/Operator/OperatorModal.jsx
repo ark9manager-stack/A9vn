@@ -248,7 +248,7 @@ export default function OperatorModal({ isOpen = true, operator, onClose }) {
                 <img
                   src={ICON_MODEL_URL}
                   alt="skin"
-                  className="h-4 w-4 opacity-90 mt-[2px]"
+                  className="h-4 w-4 opacity-90"
                   draggable={false}
                 />
                 <div className="min-w-0">
