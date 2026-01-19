@@ -289,7 +289,7 @@ export default function OperatorModal({ operator, onClose }) {
           <div className="relative h-full p-4">
             <div className="relative h-full">
               {/* Name (top-right of LEFT area) */}
-              <div className="absolute right-3 top-3 z-20 text-right">
+              <div className="absolute right-1 top-3 z-20 text-right">
                 <div className="text-2xl font-extrabold text-white leading-tight drop-shadow">
                   {titleText}
                 </div>
