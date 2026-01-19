@@ -181,8 +181,9 @@ export default function OperatorModal({ operator, onClose }) {
 
   // image state (supports fallback retry)
   const [imgError, setImgError] = useState(false);
-  const [imgSrc, setImgSrc] = useState(null);
-  const [triedFallback, setTriedFallback] = useState(false);
+  const [isLoadingImg, setIsLoadingImg] = useState(false);
+  const [displaySrc, setDisplaySrc] = useState(null);
+
 
   useEffect(() => {
     if (!options.length) return;
@@ -195,10 +196,52 @@ export default function OperatorModal({ operator, onClose }) {
   }, [options, selectedKey]);
 
   useEffect(() => {
+    let cancelled = false;
+
+    const primary = selectedOption?.url || null;
+    const fallback = selectedOption?.fallbackUrl || null;
+
+    // bấm đổi -> ẩn ảnh cũ ngay lập tức
     setImgError(false);
-    setTriedFallback(false);
-    setImgSrc(selectedOption?.url || null);
-  }, [selectedOption?.url, charId, selectedKey]);
+    setIsLoadingImg(!!primary);
+    setDisplaySrc(null);
+
+    const load = (src) =>
+      new Promise((resolve, reject) => {
+        if (!src) return reject(new Error("no-src"));
+        const img = new Image();
+        img.onload = () => resolve(src);
+        img.onerror = reject;
+        img.src = src;
+      });
+
+    (async () => {
+      try {
+        const ok = await load(primary);
+        if (cancelled) return;
+        setDisplaySrc(ok);
+        setIsLoadingImg(false);
+      } catch {
+        if (fallback) {
+          try {
+            const ok2 = await load(fallback);
+            if (cancelled) return;
+            setDisplaySrc(ok2);
+            setIsLoadingImg(false);
+            return;
+          } catch {}
+        }
+        if (cancelled) return;
+        setImgError(true);
+        setIsLoadingImg(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedOption?.url, selectedOption?.fallbackUrl, charId, selectedKey]);
+
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
