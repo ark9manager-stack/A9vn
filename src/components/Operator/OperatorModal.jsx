@@ -23,18 +23,32 @@ function buildEliteUrl(charId, elite) {
   return `${ART_BASE}/${charId}/${charId}_1.png`;
 }
 
-function buildSkinUrl(charId, skinOrId) {
-  if (!charId || !skinOrId) return null;
-  const rawId =
-    typeof skinOrId === "string"
-      ? skinOrId
-      : skinOrId.portraitId || skinOrId.avatarId || skinOrId.skinId;
+/**
+ * Skin file pattern in repo is typically:
+ *   {ART_BASE}/{charId}/{charId}_{theme}%23{ver}.png
+ * theme may be camelCase in JSON but can be lowercase in repo for some skins.
+ */
+function buildSkinUrl(charId, skinId, { forceLowerTheme = false } = {}) {
+  if (!charId || !skinId) return null;
 
-  if (!rawId) return null;
-  const base = String(rawId).replace(/\.png$/i, "").replace("@", "_");
-  return `${ART_BASE}/${charId}/${encodeURIComponent(base)}.png`;
+  // Most extra skins are: char_xxx@theme#n
+  if (typeof skinId === "string" && skinId.startsWith(`${charId}@`)) {
+    const rest = skinId.slice(`${charId}@`.length); // "ambienceSynesthesia#3"
+    const hashPos = rest.lastIndexOf("#");
+    const theme = hashPos >= 0 ? rest.slice(0, hashPos) : rest;
+    const ver = hashPos >= 0 ? rest.slice(hashPos + 1) : "";
+
+    const themeNorm = forceLowerTheme ? theme.toLowerCase() : theme;
+    const base = `${charId}_${themeNorm}${hashPos >= 0 ? `#${ver}` : ""}`;
+
+    return `${ART_BASE}/${charId}/${encodeURIComponent(base)}.png`;
+  }
+
+  // Fallback (should rarely be used for extra skins)
+  const file = String(skinId).replaceAll("#", "_");
+  const normalized = forceLowerTheme ? file.toLowerCase() : file;
+  return `${ART_BASE}/${charId}/${encodeURIComponent(normalized)}.png`;
 }
-
 
 function pickDisplaySkin(obj) {
   return obj?.displaySkin || obj?.skin || obj || null;
@@ -68,7 +82,6 @@ export default function OperatorModal({ operator, onClose }) {
     };
   }, [charId, skinsDict]);
 
-  // Only list true skins (charId@xxxx...), exclude elite keys (#1, #1+, #2)
   const skinsForChar = useMemo(() => {
     const dict = skinsDict || {};
     const all = Object.values(dict);
@@ -87,13 +100,19 @@ export default function OperatorModal({ operator, onClose }) {
     return extra
       .map((s) => {
         const display = pickDisplaySkin(s);
+        const primaryUrl = buildSkinUrl(charId, s.skinId);
+        const fallbackUrl = buildSkinUrl(charId, s.skinId, {
+          forceLowerTheme: true,
+        });
+
         return {
           key: s.skinId,
           kind: "skin",
           skinId: s.skinId,
           skinName: display?.skinName ?? null,
           drawerList: display?.drawerList ?? [],
-          url: buildSkinUrl(charId, s),
+          url: primaryUrl,
+          fallbackUrl: fallbackUrl !== primaryUrl ? fallbackUrl : null,
         };
       })
       .filter((x) => !!x.url);
@@ -109,6 +128,7 @@ export default function OperatorModal({ operator, onClose }) {
       kind: "elite",
       label: "Elite 0",
       url: buildEliteUrl(charId, "E0"),
+      fallbackUrl: null,
       skinName: eliteMeta?.e0?.skinName ?? null,
       drawerList: eliteMeta?.e0?.drawerList ?? [],
       order: 0,
@@ -120,6 +140,7 @@ export default function OperatorModal({ operator, onClose }) {
         kind: "elite",
         label: "Elite 1",
         url: buildEliteUrl(charId, "E1"),
+        fallbackUrl: null,
         skinName: eliteMeta?.e1?.skinName ?? null,
         drawerList: eliteMeta?.e1?.drawerList ?? [],
         order: 1,
@@ -132,6 +153,7 @@ export default function OperatorModal({ operator, onClose }) {
         kind: "elite",
         label: "Elite 2",
         url: buildEliteUrl(charId, "E2"),
+        fallbackUrl: null,
         skinName: eliteMeta?.e2?.skinName ?? null,
         drawerList: eliteMeta?.e2?.drawerList ?? [],
         order: 2,
@@ -146,6 +168,7 @@ export default function OperatorModal({ operator, onClose }) {
         kind: "skin",
         label: s.skinName || s.skinId,
         url: s.url,
+        fallbackUrl: s.fallbackUrl || null,
         skinName: s.skinName,
         drawerList: s.drawerList || [],
         order: 100 + idx,
@@ -155,21 +178,27 @@ export default function OperatorModal({ operator, onClose }) {
   }, [charId, eliteMeta, hasElite1Art, hasElite2, skinsForChar]);
 
   const [selectedKey, setSelectedKey] = useState(options?.[0]?.key || "E0");
+
+  // image state (supports fallback retry)
   const [imgError, setImgError] = useState(false);
+  const [imgSrc, setImgSrc] = useState(null);
+  const [triedFallback, setTriedFallback] = useState(false);
 
   useEffect(() => {
     if (!options.length) return;
     const exists = options.some((o) => o.key === selectedKey);
     if (!exists) setSelectedKey(options[0].key);
-  }, [charId, options.length]);
-
-  useEffect(() => {
-    setImgError(false);
-  }, [selectedKey, charId]);
+  }, [charId, options, selectedKey]);
 
   const selectedOption = useMemo(() => {
     return options.find((x) => x.key === selectedKey) || options[0];
   }, [options, selectedKey]);
+
+  useEffect(() => {
+    setImgError(false);
+    setTriedFallback(false);
+    setImgSrc(selectedOption?.url || null);
+  }, [selectedOption?.url, charId, selectedKey]);
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
@@ -197,7 +226,7 @@ export default function OperatorModal({ operator, onClose }) {
           className="absolute inset-0 bg-center bg-cover"
           style={{ backgroundImage: `url(${BG_URL})` }}
         />
-        {/* ✅ dark overlay 5-10% */}
+        {/* dark overlay */}
         <div
           className="absolute inset-0"
           style={{ background: "rgba(0,0,0,0.10)" }}
@@ -228,14 +257,26 @@ export default function OperatorModal({ operator, onClose }) {
 
               {/* Art */}
               <div className="absolute inset-0 flex items-center justify-center">
-                {selectedOption?.url && !imgError ? (
+                {imgSrc && !imgError ? (
                   <img
-                    src={selectedOption.url}
+                    src={imgSrc}
                     alt={operator?.name || charId}
                     className="max-h-full max-w-full object-contain"
                     loading="eager"
                     draggable={false}
-                    onError={() => setImgError(true)}
+                    onError={() => {
+                      // retry with lowercase-theme fallback for problematic skins
+                      if (
+                        !triedFallback &&
+                        selectedOption?.fallbackUrl &&
+                        selectedOption.fallbackUrl !== imgSrc
+                      ) {
+                        setTriedFallback(true);
+                        setImgSrc(selectedOption.fallbackUrl);
+                        return;
+                      }
+                      setImgError(true);
+                    }}
                   />
                 ) : (
                   <div className="text-white/70 text-sm">No Image</div>
@@ -269,8 +310,7 @@ export default function OperatorModal({ operator, onClose }) {
                 </div>
               </div>
 
-
-              {/* Bottom-right: options (like draw_model, no title, no scroll, wider/closer) */}
+              {/* Bottom-right: options */}
               {options.length > 1 && (
                 <div className="absolute right-1 bottom-3 z-20 w-[140px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
                   <div className="flex flex-col gap-1">
@@ -301,7 +341,6 @@ export default function OperatorModal({ operator, onClose }) {
 
           {/* RIGHT (600x720) */}
           <div className="h-full p-4">
-            {/* RIGHT */}
             <div className="bg-[#1a1a1a] rounded-xl p-4 text-white h-full">
               <h3 className="font-semibold mb-2">Stats (Base)</h3>
               <ul className="text-sm space-y-1">
