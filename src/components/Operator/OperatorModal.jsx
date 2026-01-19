@@ -253,7 +253,7 @@ export default function OperatorModal({ operator, onClose }) {
               </div>
 
               {/* Bottom-left: Skin name + drawer */}
-              <div className="absolute bottom-3 left-3 z-20 w-[360px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
+              <div className="absolute bottom-3 left-3 z-20 w-[100px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
                 <div className="grid grid-cols-[24px_1fr] gap-x-2 gap-y-1">
                   {/* Row 1: skin */}
                   <img
@@ -282,7 +282,7 @@ export default function OperatorModal({ operator, onClose }) {
 
               {/* Bottom-right: options (like draw_model, no title, no scroll, wider/closer) */}
               {options.length > 1 && (
-                <div className="absolute right-3 bottom-3 z-20 w-[180px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
+                <div className="absolute right-3 bottom-3 z-20 w-[140px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
                   <div className="flex flex-col gap-1">
                     {options.map((opt) => {
                       const active = selectedKey === opt.key;
