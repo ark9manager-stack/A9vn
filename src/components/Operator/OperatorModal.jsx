@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import skinTable from "../../data/skins/skin_table.json";
 
 const BG_URL =
@@ -7,293 +7,326 @@ const BG_URL =
 const ART_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/characters";
 
+const ICON_MODEL_URL =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[pack]skinres/icon_model.png";
 const ICON_DRAWER_URL =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[pack]skinres/icon_drawer.png";
 
-const ICON_MODEL_URL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[pack]skinres/icon_model.png";
-
-function safeGetCharSkins() {
-  return skinTable?.charSkins && typeof skinTable.charSkins === "object"
-    ? skinTable.charSkins
-    : {};
+function getEliteLabelFromSkinId(skinId) {
+  if (!skinId) return "Elite 0";
+  if (skinId.endsWith("#1+")) return "Elite 1";
+  if (skinId.endsWith("#2")) return "Elite 2";
+  return "Elite 0";
 }
 
-function getSkinMeta(charSkins, skinId) {
-  const entry = charSkins?.[skinId];
-  const display = entry?.displaySkin || {};
-  return {
-    skinName: display?.skinName ?? null,
-    drawerList: Array.isArray(display?.drawerList) ? display.drawerList : [],
-  };
+function getCharIdPrefixFromKey(key) {
+
+  if (!key) return "";
+  const at = key.indexOf("@");
+  const hash = key.indexOf("#");
+  const cut = at !== -1 ? at : hash !== -1 ? hash : key.length;
+  return key.slice(0, cut);
 }
 
-function buildArtUrl(charId, skinId) {
-  if (!charId || !skinId) return "";
-  if (skinId.includes("@")) {
-    const suffixRaw = skinId.split("@")[1] || "";
-    const suffix = suffixRaw.replaceAll("#", "%23");
-    return `${ART_BASE}/${charId}/${charId}_${suffix}.png`;
+function buildArtUrl(charId, skinId, skinsMap) {
+  if (!charId || !skinId) return null;
+  const entry = skinsMap?.[skinId];
+  if (!entry) return null;
+
+  const illustId = entry.illustId;
+  let suffix = null;
+
+  const prefix = `illust_${charId}_`;
+  if (typeof illustId === "string" && illustId.startsWith(prefix)) {
+    suffix = illustId.slice(prefix.length);
   }
 
-  if (skinId.includes("#")) {
-    const suffix = skinId.split("#")[1] || "";
-    return `${ART_BASE}/${charId}/${charId}_${suffix}.png`;
+  if (!suffix) {
+    if (skinId.includes("@")) {
+      suffix = skinId.split("@")[1] || "";
+    } else if (skinId.includes("#")) {
+      suffix = skinId.split("#")[1] || "1";
+    } else {
+      suffix = "1";
+    }
   }
 
-  return `${ART_BASE}/${charId}/${charId}.png`;
+  const safeSuffix = String(suffix).replace(/#/g, "%23");
+  return `${ART_BASE}/${charId}/${charId}_${safeSuffix}.png`;
 }
 
-export default function OperatorModal({ operator, onClose }) {
-  const charId = operator?.id || operator?.charId || "";
+export default function OperatorModal({ isOpen, operator, onClose }) {
+  const charId = operator?.charId || operator?.id || operator?.char_id;
 
-  const charSkins = useMemo(() => safeGetCharSkins(), []);
+  const skinsMap = skinTable?.charSkins || {};
 
-  const { eliteOptions, skinOptions } = useMemo(() => {
-    if (!charId) {
-      return { eliteOptions: [], skinOptions: [] };
+  const allKeysForThisChar = useMemo(() => {
+    if (!charId) return [];
+    const prefix = `${charId}`;
+    return Object.keys(skinsMap).filter((k) => getCharIdPrefixFromKey(k) === prefix);
+  }, [charId, skinsMap]);
+
+  const options = useMemo(() => {
+    if (!charId) return [];
+
+    const e0Key = `${charId}#1`;
+    const e1Key = `${charId}#1+`;
+    const e2Key = `${charId}#2`;
+
+    const out = [];
+
+    if (skinsMap[e0Key]) {
+      out.push({ skinId: e0Key, label: "Elite 0", kind: "elite", order: 0 });
     }
 
-    const baseIds = new Set([`${charId}#1`, `${charId}#1+`, `${charId}#2`]);
-
-    const elite = [];
-    if (charSkins[`${charId}#1`]) {
-      elite.push({
-        skinId: `${charId}#1`,
-        kind: "elite",
-        label: "Elite 0",
-        url: buildArtUrl(charId, `${charId}#1`),
-        meta: getSkinMeta(charSkins, `${charId}#1`),
-      });
+    if (skinsMap[e1Key] && charId === "char_002_amiya") {
+      out.push({ skinId: e1Key, label: "Elite 1", kind: "elite", order: 1 });
     }
 
-    if (charSkins[`${charId}#1+`]) {
-      elite.push({
-        skinId: `${charId}#1+`,
-        kind: "elite",
-        label: "Elite 1",
-        url: buildArtUrl(charId, `${charId}#1+`),
-        meta: getSkinMeta(charSkins, `${charId}#1+`),
-      });
+    if (skinsMap[e2Key]) {
+      out.push({ skinId: e2Key, label: "Elite 2", kind: "elite", order: 2 });
     }
 
-    if (charSkins[`${charId}#2`]) {
-      elite.push({
-        skinId: `${charId}#2`,
-        kind: "elite",
-        label: "Elite 2",
-        url: buildArtUrl(charId, `${charId}#2`),
-        meta: getSkinMeta(charSkins, `${charId}#2`),
-      });
-    }
+    const skinKeys = allKeysForThisChar.filter((k) => k.startsWith(`${charId}@`));
+    skinKeys.sort((a, b) => a.localeCompare(b));
 
-    const skinsMap = new Map();
-    for (const [skinId, entry] of Object.entries(charSkins)) {
-      if (!skinId.startsWith(charId)) continue;
-      if (baseIds.has(skinId)) continue;
-      if (!entry) continue;
-
-      const meta = getSkinMeta(charSkins, skinId);
-      const url = buildArtUrl(charId, skinId);
-      const label = meta.skinName || "(No Name)";
-
-      skinsMap.set(skinId, {
-        skinId,
+    skinKeys.forEach((k, idx) => {
+      const meta = skinsMap[k]?.displaySkin || {};
+      const skinName = meta?.skinName;
+      out.push({
+        skinId: k,
+        label: skinName || k.split("@")[1] || "Skin",
         kind: "skin",
-        label,
-        url,
-        meta,
+        order: 100 + idx,
       });
-    }
-
-    const skins = Array.from(skinsMap.values());
-
-    return { eliteOptions: elite, skinOptions: skins };
-  }, [charId, charSkins]);
-
-  const [eliteAvailability, setEliteAvailability] = useState({});
-
-  useEffect(() => {
-    if (!charId) return;
-
-    setEliteAvailability({});
-
-    const elites = eliteOptions.map((o) => ({ skinId: o.skinId, url: o.url }));
-    elites.forEach(({ skinId, url }) => {
-      const img = new Image();
-      img.onload = () =>
-        setEliteAvailability((prev) => ({ ...prev, [skinId]: true }));
-      img.onerror = () =>
-        setEliteAvailability((prev) => ({ ...prev, [skinId]: false }));
-      img.src = url;
     });
-  }, [charId, eliteOptions]);
 
-  const effectiveEliteOptions = useMemo(() => {
-    return eliteOptions.filter((o) => eliteAvailability[o.skinId] !== false);
-  }, [eliteOptions, eliteAvailability]);
+    return out.sort((a, b) => a.order - b.order);
+  }, [charId, skinsMap, allKeysForThisChar]);
 
-  const effectiveOptions = useMemo(() => {
-    // Elite 0 > 1 > 2 then skins
-    return [...effectiveEliteOptions, ...skinOptions];
-  }, [effectiveEliteOptions, skinOptions]);
-
-  const [selectedSkinId, setSelectedSkinId] = useState("");
+  const [selectedSkinId, setSelectedSkinId] = useState(null);
+  const [artError, setArtError] = useState(false);
+  const [availability, setAvailability] = useState({});
 
   useEffect(() => {
-    if (!effectiveOptions.length) {
-      setSelectedSkinId("");
+    if (!isOpen) return;
+    if (!options.length) return;
+
+    if (!selectedSkinId) {
+      setSelectedSkinId(options[0].skinId);
       return;
     }
 
-    const stillExists = effectiveOptions.some((o) => o.skinId === selectedSkinId);
+    const stillExists = options.some((o) => o.skinId === selectedSkinId);
     if (!stillExists) {
-      setSelectedSkinId(effectiveOptions[0].skinId);
+      setSelectedSkinId(options[0].skinId);
     }
-  }, [charId, effectiveOptions, selectedSkinId]);
+  }, [isOpen, options, selectedSkinId]);
 
-  const selectedOption =
-    effectiveOptions.find((o) => o.skinId === selectedSkinId) ||
-    effectiveOptions[0] ||
-    null;
+  useEffect(() => {
+    if (!isOpen) return;
+    setArtError(false);
+  }, [isOpen, selectedSkinId]);
 
-  const selectedMeta = selectedOption
-    ? getSkinMeta(charSkins, selectedOption.skinId)
-    : { skinName: null, drawerList: [] };
+  useEffect(() => {
+    if (!isOpen) return;
+    if (!charId) return;
+    if (!options.length) return;
 
-  const displaySkinName =
-    selectedMeta.skinName || selectedOption?.label || "(Unknown)";
+    let cancelled = false;
 
-  const displayDrawer =
-    selectedMeta.drawerList && selectedMeta.drawerList.length
-      ? selectedMeta.drawerList.join(", ")
-      : "-";
+    setAvailability({});
 
-  const titleText = operator?.name_vn || operator?.name || charId;
+    const doCheck = (skinId) =>
+      new Promise((resolve) => {
+        const url = buildArtUrl(charId, skinId, skinsMap);
+        if (!url) return resolve({ skinId, ok: false });
 
-  if (!operator) return null;
+        const img = new Image();
+        img.onload = () => resolve({ skinId, ok: true });
+        img.onerror = () => resolve({ skinId, ok: false });
+        img.src = url;
+      });
+
+    Promise.all(options.map((o) => doCheck(o.skinId))).then((results) => {
+      if (cancelled) return;
+      const map = {};
+      results.forEach((r) => {
+        map[r.skinId] = r.ok;
+      });
+      setAvailability(map);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen, charId, options, skinsMap]);
+
+  const selectedMeta = useMemo(() => {
+    const entry = skinsMap?.[selectedSkinId];
+    const display = entry?.displaySkin || {};
+    const skinName = display?.skinName;
+
+    const fallbackName = selectedSkinId
+      ? selectedSkinId.includes("@")
+        ? (selectedSkinId.split("@")[1] || "Skin")
+        : getEliteLabelFromSkinId(selectedSkinId)
+      : "Elite 0";
+
+    const drawer = Array.isArray(display?.drawerList) ? display.drawerList.filter(Boolean) : [];
+    return {
+      skinName: skinName || fallbackName,
+      drawer: drawer.length ? drawer.join(", ") : "-",
+    };
+  }, [skinsMap, selectedSkinId]);
+
+  const artUrl = useMemo(() => {
+    if (!charId || !selectedSkinId) return null;
+    return buildArtUrl(charId, selectedSkinId, skinsMap);
+  }, [charId, selectedSkinId, skinsMap]);
+
+  if (!isOpen || !operator) return null;
+
+  const onBackdropClick = () => onClose?.();
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-      <div className="relative w-[1280px] h-[720px] max-w-[96vw] max-h-[92vh] overflow-hidden rounded-2xl shadow-2xl">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+      onClick={onBackdropClick}
+    >
+      <div
+        className="relative w-[min(1280px,96vw)] aspect-[16/9] max-h-[90vh] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${BG_URL})` }}
+        <img
+          src={BG_URL}
+          alt="bg"
+          className="absolute inset-0 h-full w-full object-cover"
+          draggable={false}
         />
-        <div className="absolute inset-0 bg-black/10" />
 
-        {/* Close */}
-        <button
-          onClick={onClose}
-          className="absolute right-3 top-3 z-20 rounded-lg bg-black/50 px-3 py-1 text-sm text-white hover:bg-black/70"
-        >
-          ✕
-        </button>
+        <div
+          className="absolute inset-0"
+          style={{ background: "rgba(0,0,0,0.15)" }}
+        />
 
-        <div className="relative z-10 h-full w-full p-4">
-          <div className="grid h-full grid-cols-[680px_600px] gap-4">
-            {/* LEFT (Art area 680x720) */}
-            <div className="relative h-full w-full overflow-hidden rounded-xl">
-              {/* Name (top-right of the art area) */}
-              <div
-                className="absolute right-3 top-3 z-10 text-right"
-                style={{
-                  WebkitTextStroke: "1px rgba(0,0,0,0.85)",
-                  textShadow: "0 2px 8px rgba(0,0,0,0.9)",
-                }}
-              >
-                <div className="text-2xl font-extrabold text-white leading-tight">
-                  {titleText}
-                </div>
-                <div className="text-xs font-semibold text-white/90">{charId}</div>
-              </div>
+        <div className="relative z-10 grid h-full w-full grid-cols-1 md:grid-cols-[680px_600px]">
+          {/* LEFT (art area) */}
+          <div className="relative h-full w-full">
+            {/* Character art */}
+            <div className="absolute inset-0">
+              {artUrl && !artError ? (
+                <img
+                  src={artUrl}
+                  alt="art"
+                  className="h-full w-full object-contain"
+                  draggable={false}
+                  onError={() => {
 
-              {/* Art */}
-              <div className="absolute inset-0">
-                {selectedOption?.url ? (
-                  <img
-                    src={selectedOption.url}
-                    alt={displaySkinName}
-                    className="h-full w-full object-contain"
-                    loading="lazy"
-                    onError={() => {
-                      if (effectiveOptions?.[0]?.skinId) {
-                        setSelectedSkinId(effectiveOptions[0].skinId);
-                      }
-                    }}
-                  />
-                ) : null}
-              </div>
-
-              {/* Bottom-left: Skin name + drawer */}
-              <div className="absolute bottom-3 left-3 z-10 w-[360px] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
-                <div className="flex items-start gap-3">
-                  <img
-                    src={ICON_MODEL_URL}
-                    alt="skin"
-                    className="h-6 w-6 opacity-90"
-                    draggable={false}
-                  />
-                  <div className="min-w-0">
-                    <div className="text-sm font-semibold leading-snug">
-                      {displaySkinName}
-                    </div>
-                    <div className="mt-1 flex items-center gap-2 text-xs text-white/85">
-                      <img
-                        src={ICON_DRAWER_URL}
-                        alt="drawer"
-                        className="h-4 w-4 opacity-90"
-                        draggable={false}
-                      />
-                      <span className="truncate">{displayDrawer}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom-right: Art/Skin list (no title, no scroll) */}
-              {effectiveOptions.length > 1 && (
-                <div className="absolute bottom-3 right-1 z-10 w-48 rounded-xl bg-black/55 p-2 text-white backdrop-blur">
-                  <div className="space-y-1">
-                    {effectiveOptions.map((o) => {
-                      const isActive = o.skinId === selectedSkinId;
-                      const meta = getSkinMeta(charSkins, o.skinId);
-
-                      const label = meta.skinName ? meta.skinName : o.label;
-
-                      return (
-                        <button
-                          key={o.skinId}
-                          onClick={() => setSelectedSkinId(o.skinId)}
-                          className={
-                            "w-full rounded-lg px-2 py-1.5 text-left text-xs transition " +
-                            (isActive ? "bg-white/20" : "hover:bg-white/10")
-                          }
-                          title={label}
-                        >
-                          <div className="truncate font-medium">{label}</div>
-                        </button>
-                      );
-                    })}
+                    setArtError(true);
+                    setAvailability((prev) => ({ ...prev, [selectedSkinId]: false }));
+                  }}
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-white/80">
+                  <div className="rounded-xl bg-black/55 px-4 py-3 text-sm backdrop-blur">
+                    loading
                   </div>
                 </div>
               )}
             </div>
 
-            {/* RIGHT (Stats area 600x720) */}
-            <div className="h-full w-full">
-              {/* RIGHT */}
-              <div className="bg-[#1a1a1a] rounded-xl p-4 text-white">
-                <h3 className="font-semibold mb-2">Stats (Base)</h3>
-                <ul className="text-sm space-y-1">
-                  <li>HP: {operator.stats?.maxHp}</li>
-                  <li>ATK: {operator.stats?.atk}</li>
-                  <li>DEF: {operator.stats?.def}</li>
-                  <li>RES: {operator.stats?.magicResistance}</li>
-                </ul>
+            {/* Bottom-left: Skin name + drawer*/}
+            <div className="absolute bottom-3 left-3 z-10 w-[420px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
+              <div className="flex items-center gap-2 text-sm leading-snug">
+                <img
+                  src={ICON_MODEL_URL}
+                  alt="skin"
+                  className="h-5 w-5 opacity-90"
+                  draggable={false}
+                />
+                <span className="min-w-0 flex-1 truncate font-semibold">
+                  {selectedMeta.skinName}
+                </span>
+
+                <span className="text-white/45">•</span>
+
+                <img
+                  src={ICON_DRAWER_URL}
+                  alt="drawer"
+                  className="h-5 w-5 opacity-90"
+                  draggable={false}
+                />
+                <span className="min-w-0 flex-1 truncate text-white/85">
+                  {selectedMeta.drawer}
+                </span>
               </div>
             </div>
+
+            <div className="absolute bottom-3 right-2 z-10 w-[240px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
+              <div className="flex flex-col gap-1">
+                {options.map((o) => {
+                  const isSelected = o.skinId === selectedSkinId;
+                  const ok = availability[o.skinId];
+                  const disabled = ok === false;
+
+                  return (
+                    <button
+                      key={o.skinId}
+                      type="button"
+                      disabled={disabled}
+                      onClick={() => {
+                        if (disabled) return;
+                        setSelectedSkinId(o.skinId);
+                      }}
+                      className={[
+                        "w-full rounded-lg px-3 py-2 text-left text-xs font-semibold transition",
+                        disabled
+                          ? "cursor-not-allowed opacity-40"
+                          : "hover:bg-white/15",
+                        isSelected ? "bg-white/20" : "bg-white/5",
+                      ].join(" ")}
+                      title={disabled ? "Art not available" : o.label}
+                    >
+                      <div className="truncate">{o.label}</div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT (exact 600 wide) */}
+          <div className="relative h-full w-full p-4">
+            <div className="mb-3">
+              <div className="text-2xl font-extrabold text-white">
+                {operator.name}
+              </div>
+              <div className="text-xs text-white/70">
+                {operator.charId || operator.id}
+              </div>
+            </div>
+
+            <div className="bg-[#1a1a1a] rounded-xl p-4 text-white">
+              <h3 className="font-semibold mb-2">Stats (Base)</h3>
+              <ul className="text-sm space-y-1">
+                <li>HP: {operator.stats?.maxHp}</li>
+                <li>ATK: {operator.stats?.atk}</li>
+                <li>DEF: {operator.stats?.def}</li>
+                <li>RES: {operator.stats?.magicResistance}</li>
+              </ul>
+            </div>
+
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={onClose}
+              className="absolute top-3 right-3 rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white/85 hover:bg-white/20 hover:text-white"
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
           </div>
         </div>
       </div>
