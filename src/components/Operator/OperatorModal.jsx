@@ -17,26 +17,24 @@ function buildEliteUrl(charId, elite) {
   if (elite === "E0") return `${ART_BASE}/${charId}/${charId}_1.png`;
   if (elite === "E2") return `${ART_BASE}/${charId}/${charId}_2.png`;
   if (elite === "E1") {
-    // only Amiya uses _1+
     const filename = `${charId}_1+.png`.replace("+", "%2B");
     return `${ART_BASE}/${charId}/${filename}`;
   }
   return `${ART_BASE}/${charId}/${charId}_1.png`;
 }
 
-function buildSkinUrl(charId, skinId) {
-  if (!charId || !skinId) return null;
+function buildSkinUrl(charId, skinOrId) {
+  if (!charId || !skinOrId) return null;
+  const rawId =
+    typeof skinOrId === "string"
+      ? skinOrId
+      : skinOrId.portraitId || skinOrId.avatarId || skinOrId.skinId;
 
-  // skinId like: char_002_amiya@winter#1  -> char_002_amiya_winter%231.png
-  if (skinId.includes("@")) {
-    const file = skinId.replace("@", "_").replaceAll("#", "%23");
-    return `${ART_BASE}/${charId}/${file}.png`;
-  }
-
-  // fallback (shouldn't be used for elite keys; we filter them out)
-  const file = skinId.replaceAll("#", "_");
-  return `${ART_BASE}/${charId}/${file}.png`;
+  if (!rawId) return null;
+  const base = String(rawId).replace(/\.png$/i, "").replace("@", "_");
+  return `${ART_BASE}/${charId}/${encodeURIComponent(base)}.png`;
 }
+
 
 function pickDisplaySkin(obj) {
   return obj?.displaySkin || obj?.skin || obj || null;
@@ -48,10 +46,9 @@ export default function OperatorModal({ operator, onClose }) {
   const charId = operator?.id || operator?.charId || operator?.char_id || "";
   const titleText = operator?.name_vn || operator?.name || charId;
 
-  // phases length: 1-2★ => 1 phase, 3★ => 2 phases, 4-6★ => 3 phases
   const phaseCount = operator?.phases?.length ?? 1;
   const hasElite2 = phaseCount >= 3;
-  const hasElite1Art = charId === "char_002_amiya"; // ONLY Amiya has _1+
+  const hasElite1Art = charId === "char_002_amiya";
 
   const skinsDict = skinTable?.charSkins || skinTable?.skins || {};
 
@@ -83,8 +80,7 @@ export default function OperatorModal({ operator, onClose }) {
       if (!sid) return false;
       if (sid === `${charId}#1`) return false;
       if (sid === `${charId}#2`) return false;
-      if (sid === `${charId}#1+`) return false; // ✅ prevent Amiya dupe
-      // keep only skin (usually contains @)
+      if (sid === `${charId}#1+`) return false;
       return sid.startsWith(`${charId}@`);
     });
 
@@ -97,7 +93,7 @@ export default function OperatorModal({ operator, onClose }) {
           skinId: s.skinId,
           skinName: display?.skinName ?? null,
           drawerList: display?.drawerList ?? [],
-          url: buildSkinUrl(charId, s.skinId),
+          url: buildSkinUrl(charId, s),
         };
       })
       .filter((x) => !!x.url);
@@ -108,7 +104,6 @@ export default function OperatorModal({ operator, onClose }) {
 
     const out = [];
 
-    // Elite 0 always exists
     out.push({
       key: "E0",
       kind: "elite",
@@ -119,7 +114,6 @@ export default function OperatorModal({ operator, onClose }) {
       order: 0,
     });
 
-    // Elite 1 only for Amiya
     if (hasElite1Art) {
       out.push({
         key: "E1",
@@ -132,7 +126,6 @@ export default function OperatorModal({ operator, onClose }) {
       });
     }
 
-    // Elite 2 only if operator has E2
     if (hasElite2) {
       out.push({
         key: "E2",
@@ -145,7 +138,6 @@ export default function OperatorModal({ operator, onClose }) {
       });
     }
 
-    // Skins
     const skins = skinsForChar
       .slice()
       .sort((a, b) => String(a.skinId).localeCompare(String(b.skinId)))
@@ -165,12 +157,10 @@ export default function OperatorModal({ operator, onClose }) {
   const [selectedKey, setSelectedKey] = useState(options?.[0]?.key || "E0");
   const [imgError, setImgError] = useState(false);
 
-  // Reset selection safely when changing operator/options (prevents “click skin -> bounce to E0”)
   useEffect(() => {
     if (!options.length) return;
     const exists = options.some((o) => o.key === selectedKey);
     if (!exists) setSelectedKey(options[0].key);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charId, options.length]);
 
   useEffect(() => {
