@@ -305,7 +305,10 @@ export default function OperatorModal({ operator, onClose }) {
                 )}
 
                 {!isLoadingImg && imgError && (
-                  <div className="text-white/70 text-sm">No Image</div>
+                  <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
+                    Loading...
+                  </div>
+
                 )}
 
                 {!isLoadingImg && !imgError && displaySrc && (
