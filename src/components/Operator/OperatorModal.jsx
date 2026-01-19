@@ -282,7 +282,7 @@ export default function OperatorModal({ operator, onClose }) {
 
               {/* Bottom-right: options (like draw_model, no title, no scroll, wider/closer) */}
               {options.length > 1 && (
-                <div className="absolute right-3 bottom-3 z-20 w-[140px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
+                <div className="absolute right-1 bottom-3 z-20 w-[140px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
                   <div className="flex flex-col gap-1">
                     {options.map((opt) => {
                       const active = selectedKey === opt.key;
