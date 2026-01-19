@@ -241,32 +241,31 @@ export default function OperatorModal({ isOpen = true, operator, onClose }) {
               )}
             </div>
 
-            {/* Bottom-left: Skin name + drawer (VERTICAL) */}
-            <div className="absolute bottom-3 left-3 z-10 w-[150px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
-              {/* Line 1: Skin name */}
-              <div className="flex items-start gap-2">
-                <img
-                  src={ICON_MODEL_URL}
-                  alt="skin"
-                  className="h-4 w-4 opacity-90"
-                  draggable={false}
-                />
-                <div className="min-w-0">
-                  <div className="text-sm font-semibold leading-snug truncate">
-                    {selectedMeta.skinName}
-                  </div>
-                  <div className="mt-1 flex items-center gap-2 text-xs text-white/85">
-                    <img
-                      src={ICON_DRAWER_URL}
-                      alt="drawer"
-                      className="h-4 w-4 opacity-90"
-                      draggable={false}
-                    />
-                    <span className="truncate">{selectedMeta.drawer}</span>
-                  </div>
+            <div className="flex items-center gap-2">
+              <img
+                src={ICON_MODEL_URL}
+                alt="skin"
+                className="h-4 w-4 opacity-90 shrink-0"
+                draggable={false}
+              />
+
+              <div className="min-w-0 flex flex-col justify-center">
+                <div className="text-sm font-semibold truncate">
+                  {selectedMeta.skinName}
+                </div>
+
+                <div className="mt-1 flex items-center gap-2 text-xs text-white/85">
+                  <img
+                    src={ICON_DRAWER_URL}
+                    alt="drawer"
+                    className="h-4 w-4 opacity-90 shrink-0"
+                    draggable={false}
+                  />
+                  <span className="truncate">{selectedMeta.drawer}</span>
                 </div>
               </div>
             </div>
+
 
 
             {/* Bottom-right: options (no title, no scroll) */}
