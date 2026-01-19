@@ -253,7 +253,7 @@ export default function OperatorModal({ operator, onClose }) {
               </div>
 
               {/* Bottom-left: Skin name + drawer */}
-              <div className="absolute bottom-3 left-3 z-20 w-[150px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
+              <div className="absolute bottom-3 left-3 z-20 w-[145px] max-w-[calc(100%-24px)] rounded-xl bg-black/55 p-3 text-white backdrop-blur">
                 <div className="grid grid-cols-[24px_1fr] gap-x-2 gap-y-1">
                   {/* Row 1: skin */}
                   <img
