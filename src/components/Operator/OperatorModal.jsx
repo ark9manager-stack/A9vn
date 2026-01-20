@@ -301,7 +301,10 @@ export default function OperatorModal({ operator, onClose }) {
               {/* Art */}
               <div className="absolute inset-0 flex items-center justify-center">
                 {isLoadingImg && (
-                  <div className="text-white/70 text-sm">Loading...</div>
+                  <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
+                    Loading...
+                  </div>
+
                 )}
 
                 {!isLoadingImg && imgError && (
