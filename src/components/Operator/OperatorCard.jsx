@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 const rarityBorderMap = {
-  5: "border-orange-500", // 6★
-  4: "border-yellow-400", // 5★
+  5: "border-orange-500 shadow-orange-500/40", // 6★
+  4: "border-yellow-400 shadow-yellow-400/40", // 5★
   3: "border-purple-400",
   2: "border-blue-400",
   1: "border-green-400",

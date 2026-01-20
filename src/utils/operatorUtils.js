@@ -1,4 +1,3 @@
-// src/utils/operatorUtils.js
 import {
   RARITY_ORDER,
   SUBPROF_LABELS,
