@@ -4,8 +4,7 @@ import OperatorContent from "./Modal/OperatorContent";
 
 const OperatorModal = ({ operator, onClose }) => {
   const [activeTab, setActiveTab] = useState("profile");
-  const [lang, setLang] = useState("EN"); // EN | VN
-
+  const [lang, setLang] = useState("EN");
   if (!operator) return null;
 
   return (
