@@ -1,33 +1,35 @@
+import React from "react";
+import OperatorHeader from "./modal/OperatorHeader";
+import OperatorProfile from "./modal/OperatorProfile";
+import OperatorStats from "./modal/OperatorStats";
+import OperatorSkills from "./modal/OperatorSkills";
+import OperatorTalents from "./modal/OperatorTalents";
+
 const OperatorModal = ({ operator, onClose }) => {
   if (!operator) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
-      <div className="w-[90%] max-w-5xl bg-[#121212] rounded-2xl p-6 relative">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-white text-xl"
-        >
-          ✕
-        </button>
+      {/* Overlay */}
+      <div className="absolute inset-0" onClick={onClose} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* LEFT */}
-          <div>
-            <h2 className="text-3xl font-bold text-white">{operator.name}</h2>
-            <p className="text-gray-400 mt-2">{operator.description}</p>
-          </div>
+      {/* Modal */}
+      <div
+        className="relative w-[92%] max-w-6xl h-[90vh]
+        bg-[#121212] rounded-2xl shadow-2xl overflow-hidden flex
+      "
+      >
+        {/* Left */}
+        <div className="w-[320px] bg-[#1a1a1a] border-r border-white/10">
+          <OperatorHeader operator={operator} />
+        </div>
 
-          {/* RIGHT */}
-          <div className="bg-[#1a1a1a] rounded-xl p-4 text-white">
-            <h3 className="font-semibold mb-2">Stats (Base)</h3>
-            <ul className="text-sm space-y-1">
-              <li>HP: {operator.stats?.maxHp}</li>
-              <li>ATK: {operator.stats?.atk}</li>
-              <li>DEF: {operator.stats?.def}</li>
-              <li>RES: {operator.stats?.magicResistance}</li>
-            </ul>
-          </div>
+        {/* Right */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          <OperatorProfile operator={operator} />
+          <OperatorStats operator={operator} />
+          <OperatorTalents operator={operator} />
+          <OperatorSkills operator={operator} />
         </div>
       </div>
     </div>
