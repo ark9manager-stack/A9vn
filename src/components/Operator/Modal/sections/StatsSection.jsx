@@ -1,7 +1,7 @@
 import React from "react";
-import StatBar from "../../ui/StatBar";
+import StatBar from "../../../ui/StatBar";
 
-const OperatorStats = () => {
+const StatsSection = () => {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4">
       <h3 className="text-lg font-semibold text-white mb-4">Stats</h3>
@@ -16,4 +16,4 @@ const OperatorStats = () => {
   );
 };
 
-export default OperatorStats;
+export default StatsSection;

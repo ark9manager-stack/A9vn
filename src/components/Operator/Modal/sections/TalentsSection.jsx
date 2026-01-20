@@ -1,6 +1,6 @@
 import React from "react";
 
-const OperatorTalents = () => {
+const StatsSection = () => {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
       <h3 className="text-lg font-semibold mb-2">Talents</h3>
@@ -13,4 +13,4 @@ const OperatorTalents = () => {
   );
 };
 
-export default OperatorTalents;
+export default StatsSection;

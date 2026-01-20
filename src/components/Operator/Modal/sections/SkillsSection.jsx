@@ -1,6 +1,6 @@
 import React from "react";
 
-const OperatorSkills = () => {
+const SkillsSection = () => {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
       <h3 className="text-lg font-semibold mb-2">Skills</h3>
@@ -14,4 +14,4 @@ const OperatorSkills = () => {
   );
 };
 
-export default OperatorSkills;
+export default SkillsSection;
