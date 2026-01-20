@@ -2,11 +2,11 @@ import React from "react";
 import LangToggle from "../../UI/LangToggle";
 
 const tabs = [
+  { id: "skins", label: "Skins" },
   { id: "profile", label: "Profile" },
   { id: "stats", label: "Stats" },
   { id: "skills", label: "Skills" },
   { id: "talents", label: "Talents" },
-  { id: "skins", label: "Skins" },
 ];
 
 const OperatorSidebar = ({
@@ -16,6 +16,16 @@ const OperatorSidebar = ({
   lang,
   onLangChange,
 }) => {
+  const mainClass =
+    lang === "vn"
+      ? operator.classNameVN || operator.className
+      : operator.className;
+
+  const subClass =
+    lang === "vn"
+      ? operator.subClassNameVN || operator.subClassName
+      : operator.subClassName;
+
   return (
     <div
       className="w-[300px] bg-[#1a1a1a] border-r border-white/10
