@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import skinTable from "../../data/skins/skin_table.json";
+import OperatorStats from "./OperatorStats";
+
 
 const BG_URL =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Buc%5Dpacked/bg_img.png";
@@ -384,20 +386,9 @@ export default function OperatorModal({ operator, onClose }) {
           </div>
 
           {/* RIGHT (600x720) */}
-          <div className="h-full p-4">
-            <div className="bg-[#1a1a1a] rounded-xl p-4 text-white h-full">
-              <h3 className="font-semibold mb-2">Stats (Base)</h3>
-              <ul className="text-sm space-y-1">
-                <li>HP: {operator.stats?.maxHp}</li>
-                <li>ATK: {operator.stats?.atk}</li>
-                <li>DEF: {operator.stats?.def}</li>
-                <li>RES: {operator.stats?.magicResistance}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+          <OperatorStats operator={operator} />
 
-        {/* (Giữ chỗ đoạn RIGHT theo yêu cầu của bạn — đã giữ nguyên nội dung) */}
+        </div>
       </div>
     </div>
   );
