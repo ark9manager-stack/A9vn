@@ -286,7 +286,7 @@ export default function OperatorModal({ operator, onClose }) {
           ✕
         </button>
 
-        <div className="relative z-10 h-full w-full grid grid-cols-1 md:grid-cols-[680px_600px]">
+        <div className="relative z-10 h-full w-full grid grid-cols-1 md:grid-cols-[730px_550px]">
           {/* LEFT */}
           <div className="relative h-full py-4 pl-4 pr-1">
             <div className="relative h-full">
