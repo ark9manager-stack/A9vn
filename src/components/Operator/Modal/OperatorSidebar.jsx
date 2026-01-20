@@ -44,9 +44,13 @@ const OperatorSidebar = ({
 
       {/* Class + Lang */}
       <div className="flex items-center justify-center gap-2 mt-2 text-sm text-gray-300">
-        <span>Main Class</span>
-        <span>•</span>
-        <span>Sub Class</span>
+        <span>{mainClass}</span>
+        {subClass && (
+          <>
+            <span>•</span>
+            <span>{subClass}</span>
+          </>
+        )}
         <LangToggle value={lang} onChange={onLangChange} />
       </div>
 
