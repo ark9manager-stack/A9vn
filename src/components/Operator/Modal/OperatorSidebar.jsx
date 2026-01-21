@@ -125,12 +125,12 @@ const OperatorSidebar = ({
               src={profIcon}
               alt={profession || "profession"}
               title={profession || ""}
-              className="w-[88px] h-[88px] mx-auto object-contain"
+              className="w-[66px] h-[66px] mx-auto object-contain"
               loading="lazy"
               draggable={false}
             />
           ) : (
-            <div className="w-[88px] h-[88px] mx-auto rounded-lg bg-black/30 flex items-center justify-center text-[10px] text-white/60">
+            <div className="w-[66px] h-[66px] mx-auto rounded-lg bg-black/30 flex items-center justify-center text-[10px] text-white/60">
               —
             </div>
           )}
@@ -146,12 +146,12 @@ const OperatorSidebar = ({
               src={subIcon}
               alt={subProfessionId || "subProfession"}
               title={subProfessionId || ""}
-              className="w-[88px] h-[88px] mx-auto object-contain"
+              className="w-[66px] h-[66px] mx-auto object-contain"
               loading="lazy"
               draggable={false}
             />
           ) : (
-            <div className="w-[88px] h-[88px] mx-auto rounded-lg bg-black/30 flex items-center justify-center text-[10px] text-white/60">
+            <div className="w-[66px] h-[66px] mx-auto rounded-lg bg-black/30 flex items-center justify-center text-[10px] text-white/60">
               —
             </div>
           )}
