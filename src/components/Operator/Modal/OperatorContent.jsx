@@ -3,7 +3,7 @@ import React from "react";
 import ProfileSection from "./sections/ProfileSection";
 import StatsSection from "./sections/StatsSection";
 import SkillsSection from "./sections/SkillsSection";
-import TalentsSection from "./sections/TalentsSection";
+import VoiceSection from "./sections/VoiceSection";
 
 const OperatorContent = ({ activeTab }) => {
   return (
@@ -12,7 +12,7 @@ const OperatorContent = ({ activeTab }) => {
       {activeTab === "profile" && <ProfileSection />}
       {activeTab === "stats" && <StatsSection />}
       {activeTab === "skills" && <SkillsSection />}
-      {activeTab === "talents" && <TalentsSection />}
+      {activeTab === "voice" && <VoiceSection />}
     </div>
   );
 };

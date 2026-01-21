@@ -11,11 +11,11 @@ import {
 } from "../../../utils/operatorUtils";
 
 const tabs = [
-  { id: "skins", label: "Skins" },
-  { id: "profile", label: "Profile" },
-  { id: "stats", label: "Stats" },
-  { id: "skills", label: "Skills" },
-  { id: "talents", label: "Talents" },
+  { id: "skins", label: "Trang phục" },
+  { id: "profile", label: "Hồ sơ" },
+  { id: "stats", label: "Thông số" },
+  { id: "skills", label: "Kỹ năng" },
+  { id: "voice", label: "Lời thoại" },
 ];
 
 const OperatorSidebar = ({
