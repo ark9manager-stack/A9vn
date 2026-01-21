@@ -3,6 +3,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import { buildCnAvatarUrl, getOperatorCharId } from "../../../utils/operatorAvatar";
 import characterTable from "../../../data/operators/character_table.json";
 
+import {
+  professionIconUrl,
+  professionLabel,
+  subProfIconUrl,
+  subProfLabel,
+} from "../../../utils/operatorUtils";
+
 const tabs = [
   { id: "skins", label: "Skins" },
   { id: "profile", label: "Profile" },
@@ -18,21 +25,43 @@ const OperatorSidebar = ({
   lang,
   onLangChange,
 }) => {
-  const mainClass =
-    lang === "vn"
-      ? operator.classNameVN || operator.className
-      : operator.className;
-
-  const subClass =
-    lang === "vn"
-      ? operator.subClassNameVN || operator.subClassName
-      : operator.subClassName;
+  // normalize lang to EN/VN
+  const langNorm = useMemo(() => {
+    const s = String(lang || "EN").toUpperCase();
+    return s === "VN" ? "VN" : "EN";
+  }, [lang]);
 
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
-  const displayNumber = useMemo(() => {
-    const entry = characterTable?.[charId];
-    return entry?.displayNumber || "";
+
+  const charEntry = useMemo(() => {
+    return characterTable?.[charId] || null;
   }, [charId]);
+
+  const displayNumber = useMemo(() => {
+    return charEntry?.displayNumber || "";
+  }, [charEntry]);
+
+  // ✅ profession / subProfessionId from character_table.json
+  const profession = useMemo(() => {
+    return charEntry?.profession || "";
+  }, [charEntry]);
+
+  const subProfessionId = useMemo(() => {
+    return charEntry?.subProfessionId || "";
+  }, [charEntry]);
+
+  const profIcon = useMemo(() => professionIconUrl(profession), [profession]);
+  const subIcon = useMemo(() => subProfIconUrl(subProfessionId), [subProfessionId]);
+
+  const profText = useMemo(
+    () => professionLabel(profession, langNorm),
+    [profession, langNorm]
+  );
+
+  const subText = useMemo(
+    () => subProfLabel(subProfessionId, langNorm),
+    [subProfessionId, langNorm]
+  );
 
   const avatarCandidates = useMemo(() => {
     const arr = [
@@ -74,7 +103,7 @@ const OperatorSidebar = ({
           onError={handleAvatarError}
         />
       ) : (
-        <div className="w-[128px] h-[128px] mx-auto object-contain mb-3">
+        <div className="w-[128px] h-[128px] mx-auto flex items-center justify-center text-xs text-gray-400 bg-black/30 rounded-lg mb-3">
           No Image
         </div>
       )}
@@ -88,16 +117,53 @@ const OperatorSidebar = ({
         {displayNumber ? ` | ${displayNumber}` : ""}
       </div>
 
-      {/* Class + Lang */}
-      <div className="flex items-center justify-center gap-2 mt-2 text-sm text-gray-300">
-        <span>{mainClass}</span>
-        {subClass && (
-          <>
-            <span>•</span>
-            <span>{subClass}</span>
-          </>
-        )}
-        <LangToggle value={lang} onChange={onLangChange} />
+      <div className="mt-3 flex items-start justify-center gap-3">
+        {/* Main class */}
+        <div className="w-[88px] text-center">
+          {profIcon ? (
+            <img
+              src={profIcon}
+              alt={profession || "profession"}
+              title={profession || ""}
+              className="w-[88px] h-[88px] mx-auto object-contain"
+              loading="lazy"
+              draggable={false}
+            />
+          ) : (
+            <div className="w-[88px] h-[88px] mx-auto rounded-lg bg-black/30 flex items-center justify-center text-[10px] text-white/60">
+              —
+            </div>
+          )}
+          <div className="mt-1 text-[11px] leading-tight text-white/80">
+            {profText || profession || "—"}
+          </div>
+        </div>
+
+        {/* Sub class */}
+        <div className="w-[88px] text-center">
+          {subIcon ? (
+            <img
+              src={subIcon}
+              alt={subProfessionId || "subProfession"}
+              title={subProfessionId || ""}
+              className="w-[88px] h-[88px] mx-auto object-contain"
+              loading="lazy"
+              draggable={false}
+            />
+          ) : (
+            <div className="w-[88px] h-[88px] mx-auto rounded-lg bg-black/30 flex items-center justify-center text-[10px] text-white/60">
+              —
+            </div>
+          )}
+          <div className="mt-1 text-[11px] leading-tight text-white/80">
+            {subText || subProfessionId || "—"}
+          </div>
+        </div>
+      </div>
+
+      {/* Lang Toggle */}
+      <div className="mt-2 flex justify-center">
+        <LangToggle value={langNorm} onChange={onLangChange} />
       </div>
 
       {/* Tabs */}

@@ -1,13 +1,19 @@
 import {
   RARITY_ORDER,
-  SUBPROF_LABELS,
+  SUBPROF_LABELS_I18N,
   PROF_ICON_BASE,
   PROFESSION_ICON_MAP,
+  CLASS_LABELS_I18N,
 } from "../config/operatorConfig";
 
 export function professionIconUrl(profession) {
   const file = PROFESSION_ICON_MAP[profession];
   return file ? `${PROF_ICON_BASE}/${file}` : "";
+}
+
+export function professionLabel(profession, lang = "EN") {
+  const L = String(lang || "EN").toUpperCase() === "VN" ? "VN" : "EN";
+  return CLASS_LABELS_I18N?.[L]?.[profession] || profession || "";
 }
 
 export function getRarityTier(rarity) {
@@ -41,6 +47,8 @@ export function subProfIconUrl(id) {
   return `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/subprofessionicon/sub_${id}_icon.png`;
 }
 
-export function subProfLabel(id) {
-  return SUBPROF_LABELS[id] || id || "";
+export function subProfLabel(id, lang = "EN") {
+  const L = String(lang || "EN").toUpperCase() === "VN" ? "VN" : "EN";
+  const dict = SUBPROF_LABELS_I18N?.[L] || {};
+  return dict[id] || id || "";
 }
