@@ -1,6 +1,7 @@
 import LangToggle from "../../UI/LangToggle";
 import React, { useEffect, useMemo, useState } from "react";
 import { buildCnAvatarUrl, getOperatorCharId } from "../../../utils/operatorAvatar";
+import characterTable from "../../../data/operators/character_table.json";
 
 const tabs = [
   { id: "skins", label: "Skins" },
@@ -28,6 +29,10 @@ const OperatorSidebar = ({
       : operator.subClassName;
 
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
+  const displayNumber = useMemo(() => {
+    const entry = characterTable?.[charId];
+    return entry?.displayNumber || "";
+  }, [charId]);
 
   const avatarCandidates = useMemo(() => {
     const arr = [
@@ -76,6 +81,12 @@ const OperatorSidebar = ({
 
       {/* Name */}
       <h2 className="text-xl font-bold text-center">{operator.name}</h2>
+
+      {/* charId | displayNumber */}
+      <div className="mt-1 text-center text-xs text-white/70 font-mono">
+        {charId || "—"}
+        {displayNumber ? ` | ${displayNumber}` : ""}
+      </div>
 
       {/* Class + Lang */}
       <div className="flex items-center justify-center gap-2 mt-2 text-sm text-gray-300">
