@@ -119,7 +119,7 @@ const OperatorSidebar = ({
 
       <div className="mt-3 flex items-start justify-center gap-3">
         {/* Main class */}
-        <div className="w-[55px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
+        <div className="w-[88px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {profIcon ? (
             <img
               src={profIcon}
@@ -134,13 +134,13 @@ const OperatorSidebar = ({
               —
             </div>
           )}
-          <div className="mt-1 text-[11px] leading-tight text-white/80">
+          <div className="mt-1 text-[11px] leading-tight text-white/80 truncate">
             {profText || profession || "—"}
           </div>
         </div>
 
         {/* Sub class */}
-        <div className="w-[55px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
+        <div className="w-[88px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {subIcon ? (
             <img
               src={subIcon}
@@ -155,7 +155,7 @@ const OperatorSidebar = ({
               —
             </div>
           )}
-          <div className="mt-1 text-[11px] leading-tight text-white/80">
+          <div className="mt-1 text-[11px] leading-tight text-white/80 truncate">
             {subText || subProfessionId || "—"}
           </div>
         </div>
