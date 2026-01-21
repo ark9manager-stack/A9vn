@@ -1,5 +1,5 @@
 export const PROF_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/activity/[uc]act1vhalfidle/arts/icon/professionlarge/hub";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/activity/[uc]act1vhalfidle";
 
 export const CLASSES = [
   { value: "PIONEER", label: "Vanguard" },
@@ -15,14 +15,14 @@ export const CLASSES = [
 export const RARITY_ORDER = [6, 5, 4, 3, 2, 1];
 
 export const PROFESSION_ICON_MAP = {
-  PIONEER: "icon_profession_pioneer.png",
-  WARRIOR: "icon_profession_warrior.png",
-  TANK: "icon_profession_tank.png",
-  SNIPER: "icon_profession_sniper.png",
-  CASTER: "icon_profession_caster.png",
-  MEDIC: "icon_profession_medic.png",
-  SUPPORT: "icon_profession_support.png",
-  SPECIAL: "icon_profession_special.png",
+  PIONEER: "arts/icon/professionlarge/hub/icon_profession_pioneer.png", 
+  WARRIOR: "arts/icon/professionlarge/hub/icon_profession_warrior.png", 
+  TANK: "arts/icon/professionlarge/hub/icon_profession_tank.png", 
+  SNIPER: "arts/icon/professionlarge/hub/icon_profession_sniper.png", 
+  CASTER: "arts/icon/professionlarge/hub/icon_profession_caster.png", 
+  MEDIC: "arts/icon/professionlarge/hub/icon_profession_medic.png", 
+  SUPPORT: "prefabs/depotbuff/depot_buff_item/icon_profession_support.png", 
+  SPECIAL: "arts/icon/professionlarge/hub/icon_profession_special.png", 
 };
 
 export const SUBPROF_LABELS = {
