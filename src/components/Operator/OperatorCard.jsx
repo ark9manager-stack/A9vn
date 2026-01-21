@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { buildCnAvatarUrl, getOperatorCharId } from "../../utils/operatorAvatar";
 
 const rarityBorderMap = {
   5: "border-orange-500 shadow-orange-500/40", // 6★
@@ -9,44 +10,16 @@ const rarityBorderMap = {
   0: "border-gray-400",
 };
 
-const CN_AVATAR_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
-
-// ✅ Các trường hợp ngoại lệ (key là charId trong character_table.json)
-const CN_AVATAR_OVERRIDES = {
-  char_271_spikes: `${CN_AVATAR_BASE}elite/char_271_spikes.png`,
-};
-
-function buildCnAvatarUrl(charId) {
-  if (!charId) return null;
-
-  const id = String(charId)
-    .trim()
-    .replace(/\.png$/i, "");
-  // Chỉ build avatar cho operator thật (char_.). Trap/token thường không có ở path này
-  if (!id.startsWith("char_")) return null;
-
-  // ✅ ưu tiên ngoại lệ trước
-  if (CN_AVATAR_OVERRIDES[id]) return CN_AVATAR_OVERRIDES[id];
-
-  // mặc định
-  return `${CN_AVATAR_BASE}${id}.png`;
-}
-
 // Chuẩn hóa rarity về index 0..5 để dùng cho border + tier
 function normalizeRarityIndex(rarity) {
   if (rarity == null) return null;
 
-  // Nếu là number:
-  // - dạng 0..5 (thường gặp) => giữ nguyên
-  // - dạng 1..6 (nếu bạn đã convert) => trừ 1
   if (typeof rarity === "number" && Number.isFinite(rarity)) {
     if (rarity >= 0 && rarity <= 5) return rarity;
     if (rarity >= 1 && rarity <= 6) return rarity - 1;
     return null;
   }
 
-  // Nếu là string kiểu "TIER_3"
   const s = String(rarity).trim().toUpperCase();
   const m = s.match(/TIER_(\d+)/) || s.match(/(\d+)/);
   if (!m) return null;
@@ -54,7 +27,6 @@ function normalizeRarityIndex(rarity) {
   const tier = Number(m[1] ?? m[0]);
   if (!Number.isFinite(tier)) return null;
 
-  // tier 1..6 => index 0..5
   const idx = tier - 1;
   if (idx < 0 || idx > 5) return null;
   return idx;
@@ -87,35 +59,36 @@ const OperatorCard = ({ operator, onClick }) => {
   const tier = rarityIdx != null ? rarityIdx + 1 : "?";
   const rarityClass = rarityBorderMap[rarityIdx] || "border-gray-400";
 
-  // Ưu tiên lấy id/key đúng kiểu char_285_medic2
-  const charId = useMemo(() => {
-    return (
-      operator?.charId ||
-      operator?.id ||
-      operator?.characterPrefabKey ||
-      operator?.code // nếu bạn đặt tên field khác
-    );
-  }, [operator]);
+  const charId = useMemo(() => getOperatorCharId(operator), [operator]);
 
-  const preferredAvatar = useMemo(() => buildCnAvatarUrl(charId), [charId]);
+  // ✅ candidates theo thứ tự ưu tiên: CN avatar -> operator.avatar -> operator.image
+  const avatarCandidates = useMemo(() => {
+    const arr = [
+      buildCnAvatarUrl(charId),
+      operator?.avatar,
+      operator?.image,
+    ].filter(Boolean);
 
-  const [imgSrc, setImgSrc] = useState(
-    preferredAvatar || operator?.avatar || "",
-  );
+    // dedupe
+    return Array.from(new Set(arr));
+  }, [charId, operator?.avatar, operator?.image]);
 
-  // Khi operator đổi -> reset ảnh theo preferredAvatar
+  const [avatarIdx, setAvatarIdx] = useState(0);
+
+  // reset khi operator / candidates đổi
   useEffect(() => {
-    setImgSrc(preferredAvatar || operator?.avatar || "");
-  }, [preferredAvatar, operator?.avatar]);
+    setAvatarIdx(0);
+  }, [avatarCandidates.join("|")]);
+
+  const imgSrc = avatarCandidates[avatarIdx] || "";
 
   const handleImgError = () => {
-    // Fallback về avatar cũ nếu có
-    if (operator?.avatar && imgSrc !== operator.avatar) {
-      setImgSrc(operator.avatar);
-      return;
+    const next = avatarIdx + 1;
+    if (next < avatarCandidates.length) {
+      setAvatarIdx(next);
+    } else {
+      setAvatarIdx(avatarCandidates.length); // -> imgSrc rỗng => placeholder
     }
-    // Nếu vẫn lỗi thì bỏ ảnh (hiện placeholder)
-    if (imgSrc) setImgSrc("");
   };
 
   const infoBg = useMemo(() => getInfoGradient(tier), [tier]);
@@ -141,6 +114,7 @@ const OperatorCard = ({ operator, onClick }) => {
             alt={operator?.name || String(charId || "")}
             className="w-full h-full object-cover scale-[1.08]"
             loading="lazy"
+            draggable={false}
             onError={handleImgError}
           />
         ) : (

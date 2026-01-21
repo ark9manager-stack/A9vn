@@ -1,5 +1,6 @@
-import React from "react";
 import LangToggle from "../../UI/LangToggle";
+import React, { useEffect, useMemo, useState } from "react";
+import { buildCnAvatarUrl, getOperatorCharId } from "../../../utils/operatorAvatar";
 
 const tabs = [
   { id: "skins", label: "Skins" },
@@ -26,6 +27,31 @@ const OperatorSidebar = ({
       ? operator.subClassNameVN || operator.subClassName
       : operator.subClassName;
 
+  const charId = useMemo(() => getOperatorCharId(operator), [operator]);
+
+  const avatarCandidates = useMemo(() => {
+    const arr = [
+      buildCnAvatarUrl(charId),
+      operator?.avatar,
+      operator?.image,
+    ].filter(Boolean);
+    return Array.from(new Set(arr));
+  }, [charId, operator?.avatar, operator?.image]);
+
+  const [avatarIdx, setAvatarIdx] = useState(0);
+
+  useEffect(() => {
+    setAvatarIdx(0);
+  }, [avatarCandidates.join("|")]);
+
+  const avatarSrc = avatarCandidates[avatarIdx] || "";
+
+  const handleAvatarError = () => {
+    const next = avatarIdx + 1;
+    if (next < avatarCandidates.length) setAvatarIdx(next);
+    else setAvatarIdx(avatarCandidates.length);
+  };
+
   return (
     <div
       className="w-[300px] bg-[#1a1a1a] border-r border-white/10
@@ -33,11 +59,20 @@ const OperatorSidebar = ({
     "
     >
       {/* Avatar */}
-      <img
-        src={operator.avatar || operator.image}
-        alt={operator.name}
-        className="w-44 h-44 mx-auto object-contain mb-3"
-      />
+      {avatarSrc ? (
+        <img
+          src={avatarSrc}
+          alt={operator?.name || String(charId || "")}
+          className="w-44 h-44 mx-auto object-contain mb-3"
+          loading="lazy"
+          draggable={false}
+          onError={handleAvatarError}
+        />
+      ) : (
+        <div className="w-44 h-44 mx-auto flex items-center justify-center text-xs text-gray-400 bg-black/30 rounded-lg mb-3">
+          No Image
+        </div>
+      )}
 
       {/* Name */}
       <h2 className="text-xl font-bold text-center">{operator.name}</h2>
