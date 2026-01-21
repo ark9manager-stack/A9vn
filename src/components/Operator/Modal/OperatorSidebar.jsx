@@ -136,11 +136,10 @@ const OperatorSidebar = ({
           )}
           <div
             className="mt-1 text-[11px] leading-snug text-white/80 break-words"
-            title={subText || subProfessionId || ""}
+            title={profText || profession || ""}
           >
-            {subText || subProfessionId || "—"}
+            {profText || profession || "—"}
           </div>
-
         </div>
 
         {/* Sub class */}
@@ -165,7 +164,9 @@ const OperatorSidebar = ({
           >
             {subText || subProfessionId || "—"}
           </div>
+        </div>
       </div>
+
 
       {/* Lang Toggle */}
       <div className="mt-2 flex justify-center">
