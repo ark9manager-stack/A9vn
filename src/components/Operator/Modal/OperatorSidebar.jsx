@@ -63,7 +63,7 @@ const OperatorSidebar = ({
         <img
           src={avatarSrc}
           alt={operator?.name || String(charId || "")}
-          className="w-44 h-44 mx-auto object-contain mb-3"
+          className="w-33 h-33 mx-auto object-contain mb-3"
           loading="lazy"
           draggable={false}
           onError={handleAvatarError}
