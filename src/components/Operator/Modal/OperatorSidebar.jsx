@@ -117,9 +117,9 @@ const OperatorSidebar = ({
         {displayNumber ? ` | ${displayNumber}` : ""}
       </div>
 
-      <div className="mt-3 flex items-start justify-center gap-3 rounded-xl border border-gray-500/40 bg-white/5 p-2">
+      <div className="mt-3 flex items-start justify-center gap-3">
         {/* Main class */}
-        <div className="w-[88px] text-center">
+        <div className="w-[55px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {profIcon ? (
             <img
               src={profIcon}
@@ -140,7 +140,7 @@ const OperatorSidebar = ({
         </div>
 
         {/* Sub class */}
-        <div className="w-[88px] text-center">
+        <div className="w-[55px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {subIcon ? (
             <img
               src={subIcon}
