@@ -1,5 +1,5 @@
 import React from "react";
-import StatBar from "../../../ui/StatBar";
+import StatBar from "../../../UI/StatBar";
 
 const StatsSection = () => {
   return (
