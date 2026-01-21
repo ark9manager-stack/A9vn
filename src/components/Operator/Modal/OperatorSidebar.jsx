@@ -117,9 +117,9 @@ const OperatorSidebar = ({
         {displayNumber ? ` | ${displayNumber}` : ""}
       </div>
 
-      <div className="mt-3 flex items-start justify-center gap-3">
+      <div className="mt-3 flex items-start justify-between gap-4 w-full">
         {/* Main class */}
-        <div className="w-[88px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
+        <div className="w-[124px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {profIcon ? (
             <img
               src={profIcon}
@@ -134,13 +134,17 @@ const OperatorSidebar = ({
               —
             </div>
           )}
-          <div className="mt-1 text-[11px] leading-tight text-white/80 truncate">
-            {profText || profession || "—"}
+          <div
+            className="mt-1 text-[11px] leading-snug text-white/80 break-words"
+            title={subText || subProfessionId || ""}
+          >
+            {subText || subProfessionId || "—"}
           </div>
+
         </div>
 
         {/* Sub class */}
-        <div className="w-[88px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
+        <div className="w-[124px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {subIcon ? (
             <img
               src={subIcon}
@@ -155,10 +159,12 @@ const OperatorSidebar = ({
               —
             </div>
           )}
-          <div className="mt-1 text-[11px] leading-tight text-white/80 truncate">
+          <div
+            className="mt-1 text-[11px] leading-snug text-white/80 break-words"
+            title={subText || subProfessionId || ""}
+          >
             {subText || subProfessionId || "—"}
           </div>
-        </div>
       </div>
 
       {/* Lang Toggle */}
