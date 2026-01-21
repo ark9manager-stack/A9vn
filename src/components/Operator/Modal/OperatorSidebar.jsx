@@ -117,7 +117,7 @@ const OperatorSidebar = ({
         {displayNumber ? ` | ${displayNumber}` : ""}
       </div>
 
-      <div className="mt-3 flex items-start justify-center gap-3">
+      <div className="mt-3 flex items-start justify-center gap-3 rounded-xl border border-gray-500/40 bg-white/5 p-2">
         {/* Main class */}
         <div className="w-[88px] text-center">
           {profIcon ? (
