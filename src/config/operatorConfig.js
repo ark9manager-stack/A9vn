@@ -1,5 +1,5 @@
 export const PROF_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/923feb23e98e1b924d9577b6e88d24f2e5a270d8/assets/dyn/arts/ui/[uc]charcommon/dynprofession";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/activity/[uc]act1vhalfidle/arts/icon/professionlarge/hub";
 
 export const CLASSES = [
   { value: "PIONEER", label: "Vanguard" },
