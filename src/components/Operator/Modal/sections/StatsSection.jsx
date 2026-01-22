@@ -382,16 +382,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   }, [trustFrame]);
 
   const handlePickPotentialLevel = (idx1) => {
-    // idx1 = 1..N
-    setUsePotentials(true);
-    setPotentialLevel((prev) => {
-
-      if (prev === idx1) {
-        setUsePotentials(false);
-        return 0;
-      }
-      return idx1;
-    });
+    const nextLevel = potentialLevel === idx1 ? 0 : idx1;
+    setPotentialLevel(nextLevel);
+    setUsePotentials(nextLevel > 0);
   };
 
   return (
@@ -649,24 +642,20 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 const vn = translatePotentialDesc(desc, potMap) || desc;
                 const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
 
-                const active = usePotentials && potentialLevel > 0 && idx < potentialLevel;
+                const selected = potentialLevel > 0 && idx < potentialLevel;
+                const active = usePotentials && selected;
 
                 return (
                   <div
                     key={idx}
                     className={`text-sm leading-snug flex items-start gap-2 ${
-                      !hasBuff
-                        ? "opacity-60"
-                        : active
-                        ? "text-white/90"
-                        : "text-white/70"
-                    } ${hasBuff ? "cursor-pointer hover:text-white" : ""}`}
-                    onClick={() => hasBuff && handlePickPotentialLevel(idx + 1)}
-                    title={hasBuff ? "Click to set potential level" : ""}
-                    role={hasBuff ? "button" : undefined}
-                    tabIndex={hasBuff ? 0 : undefined}
+                      !hasBuff ? "opacity-60" : active ? "text-white/90" : selected ? "text-white/80" : "text-white/70"
+                    } cursor-pointer hover:text-white`}
+                    onClick={() => handlePickPotentialLevel(idx + 1)}
+                    title="Click to set potential level"
+                    role="button"
+                    tabIndex={0}
                     onKeyDown={(e) => {
-                      if (!hasBuff) return;
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
                         handlePickPotentialLevel(idx + 1);
@@ -687,9 +676,12 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
                     <div className="min-w-0">{vn}</div>
 
-                    {/* xanh = active */}
-                    {hasBuff && active && (
-                      <div className="ml-auto mt-[3px] w-2.5 h-2.5 rounded-full bg-emerald-400 shadow shrink-0" />
+                    {selected && (
+                      <div
+                        className={`ml-auto mt-[3px] w-2.5 h-2.5 rounded-full shadow shrink-0 ${
+                          active ? "bg-emerald-400" : "bg-white/25"
+                        }`}
+                      />
                     )}
                   </div>
                 );
