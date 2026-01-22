@@ -3,6 +3,7 @@
     { "pot": "攻击力", "pot_vn": "ATK" },
     { "pot": "防御力", "pot_vn": "DEF" },
     { "pot": "生命上限", "pot_vn": "HP" },
+    { "pot": "最大生命值", "pot_vn": "HP" },
     { "pot": "攻击速度", "pot_vn": "ASPD" },
     { "pot": "法术抗性", "pot_vn": "RES" },
     { "pot": "秒", "pot_vn": " giây" },
