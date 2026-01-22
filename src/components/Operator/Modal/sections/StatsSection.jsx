@@ -270,6 +270,12 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     [charData]
   );
 
+  const maxPotentialSelectable = useMemo(() => {
+    const mp = Number(charData?.maxPotentialLevel);
+    const maxByData = Number.isFinite(mp) && mp > 0 ? mp : ranks.length;
+    return Math.min(ranks.length, maxByData);
+  }, [charData, ranks.length]);
+
   const [usePotentials, setUsePotentials] = useState(false);
   const [potentialLevel, setPotentialLevel] = useState(0);
 
@@ -278,6 +284,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     setPotentialLevel(0);
     setUseTrust(false);
   }, [resolvedCharId]);
+
+  useEffect(() => {
+    setPotentialLevel((lv) => clamp(lv, 0, maxPotentialSelectable));
+  }, [maxPotentialSelectable]);
 
   const computed = useMemo(() => {
     if (!currentPhase) return null;
@@ -346,15 +356,20 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     const nextPhase = phases[i];
     const nextMax = getMaxLevelForPhase(nextPhase);
     setPhaseIndex(i);
-    setLevel(nextMax); // đổi Elite -> nhảy lên max
+    setLevel(nextMax);
   };
 
-  //click rank pot
   const handlePickPotentialLevel = (idx1, isApplicable) => {
     if (!isApplicable) return;
     const next = potentialLevel === idx1 ? 0 : idx1;
     setPotentialLevel(next);
-    if (next > 0) setUsePotentials(true);
+  };
+
+  const handleTogglePotentialsApply = (checked) => {
+    setUsePotentials(checked);
+    if (checked) {
+      setPotentialLevel((lv) => (lv > 0 ? lv : maxPotentialSelectable));
+    }
   };
 
   if (!resolvedCharId) {
@@ -626,7 +641,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               <input
                 type="checkbox"
                 checked={usePotentials}
-                onChange={(e) => setUsePotentials(e.target.checked)}
+                onChange={(e) => handleTogglePotentialsApply(e.target.checked)}
                 className="accent-emerald-500"
               />
               Apply
