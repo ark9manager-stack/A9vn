@@ -485,7 +485,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               {[
                 {
                   icon: STAT_ICON.respawnTime,
-                  label: "Redeploy",
+                  label: "Thời gian tái triển khai",
                   value: (
                     <ValueWithDeltas
                       value={stats.respawnTime}
@@ -496,17 +496,17 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 },
                 {
                   icon: STAT_ICON.cost,
-                  label: "Cost",
+                  label: "Phí",
                   value: <ValueWithDeltas value={stats.cost} deltas={deltas.cost} formatter={(v) => fmtInt(v)} />,
                 },
                 {
                   icon: STAT_ICON.blockCnt,
-                  label: "Block",
+                  label: "Chặn",
                   value: <ValueWithDeltas value={stats.blockCnt} deltas={deltas.blockCnt} formatter={(v) => fmtInt(v)} />,
                 },
                 {
                   icon: STAT_ICON.baseAttackTime,
-                  label: "ATK Time",
+                  label: "Thời gian tấn công",
                   value: (
                     <ValueWithDeltas
                       value={stats.baseAttackTime}
