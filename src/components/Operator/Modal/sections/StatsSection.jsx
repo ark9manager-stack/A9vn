@@ -619,7 +619,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 ))}
               </div>
             ) : (
-              <div className="text-sm text-white/60">No trust buffs.</div>
+              <div className="text-sm text-white/60">Không có data</div>
             )
           ) : (
             <div className="text-sm text-white/60">No trust data.</div>
