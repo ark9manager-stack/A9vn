@@ -211,6 +211,20 @@ function RangeGrid({ rangeId }) {
   );
 }
 
+/** maxLevel for a given phase (used when switching Elite -> set level = max immediately) */
+function getMaxLevelForPhase(phase) {
+  if (!phase) return 1;
+  const m = phase?.maxLevel;
+  if (Number.isFinite(Number(m)) && Number(m) > 0) return Number(m);
+
+  const frames = phase?.attributesKeyFrames;
+  if (Array.isArray(frames) && frames.length > 0) {
+    const last = frames.reduce((acc, it) => (it.level > acc ? it.level : acc), 1);
+    return last;
+  }
+  return 1;
+}
+
 const StatsSection = ({ operator, charId: charIdProp }) => {
   const resolvedCharId = useMemo(() => {
     if (charIdProp) return String(charIdProp);
@@ -232,6 +246,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [level, setLevel] = useState(1);
 
+  // reset per operator
   useEffect(() => {
     setPhaseIndex(0);
     setLevel(1);
@@ -239,20 +254,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const currentPhase = phases[phaseIndex];
 
-  const maxLevel = useMemo(() => {
-    const m = currentPhase?.maxLevel;
-    if (Number.isFinite(Number(m)) && Number(m) > 0) return Number(m);
-    const frames = currentPhase?.attributesKeyFrames;
-    if (Array.isArray(frames) && frames.length > 0) {
-      const last = frames.reduce(
-        (acc, it) => (it.level > acc ? it.level : acc),
-        1
-      );
-      return last;
-    }
-    return 1;
-  }, [currentPhase]);
+  const maxLevel = useMemo(() => getMaxLevelForPhase(currentPhase), [currentPhase]);
 
+  // Keep level in range (but DO NOT force max unless switching Elite)
   useEffect(() => {
     setLevel((lv) => clamp(lv, 1, maxLevel));
   }, [maxLevel]);
@@ -329,10 +333,18 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       baseAttackTime: applyDeltas("baseAttackTime", base.baseAttackTime),
     };
 
-    return { base, stats, deltas };
+    return { stats, deltas };
   }, [currentPhase, safeLevel, ranks, selectedPotentials, trustFrame, useTrust]);
 
   const eliteButtons = useMemo(() => phases.map((_, idx) => idx), [phases]);
+
+  const handleEliteChange = (i) => {
+    const nextPhase = phases[i];
+    const nextMax = getMaxLevelForPhase(nextPhase);
+    setPhaseIndex(i);
+    // (1) Khi đổi Elite -> level nhảy lên MAX ngay
+    setLevel(nextMax);
+  };
 
   if (!resolvedCharId) {
     return (
@@ -506,8 +518,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 <button
                   key={i}
                   type="button"
-                  onClick={() => setPhaseIndex(i)}
-                  className={`rounded-lg p-1.5 transition ${active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"}`}
+                  onClick={() => handleEliteChange(i)}
+                  className={`rounded-lg p-1.5 transition ${
+                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                  }`}
                   title={`E${i}`}
                 >
                   <img src={src} alt={`E${i}`} className="w-10 h-10 object-contain" draggable={false} />
@@ -559,7 +573,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             <h3 className="text-base font-semibold text-white">Phạm vi</h3>
           </div>
 
-          {/* center the grid */}
           <div className="flex justify-center">
             <RangeGrid rangeId={currentPhase?.rangeId} />
           </div>
@@ -569,22 +582,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Trust</h3>
-            <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                checked={useTrust}
-                onChange={(e) => setUseTrust(e.target.checked)}
-                className="accent-emerald-500"
-              />
-              Apply
-            </label>
           </div>
 
           {trustFrame?.data ? (
             <div className="space-y-1 text-sm">
-              <div className="text-xs text-white/60 mb-2">
-                Use max favor frame (lv {trustFrame.level})
-              </div>
+              {/* (2) Removed: Use max favor frame (lv ...) */}
               <div className="flex items-center justify-between">
                 <span className="text-white/70">HP</span>
                 <span className="text-emerald-400">+{fmtInt(trustFrame.data.maxHp || 0)}</span>
@@ -605,62 +607,69 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
         {/* Potentials */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <div className="flex items-start justify-between mb-3">
+          <div className="flex items-start justify-between mb-3 gap-3">
             <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
 
-            {/* icons top-right like Trust */}
-            <div className="flex items-center gap-1">
-              {ranks.slice(0, 5).map((r, idx) => {
-                const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
-                const checked = selectedPotentials.has(idx);
-
-                return (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => hasBuff && togglePotential(idx)}
-                    disabled={!hasBuff}
-                    className={`relative rounded-md p-1 transition ${
-                      !hasBuff
-                        ? "opacity-40 cursor-not-allowed"
-                        : checked
-                        ? "bg-emerald-600/70"
-                        : "bg-white/10 hover:bg-white/20"
-                    }`}
-                    title={`Potential ${idx + 1}`}
-                  >
-                    <img
-                      src={getPotIcon(idx + 1)}
-                      alt={`pot-${idx + 1}`}
-                      className="w-6 h-6 object-contain"
-                      draggable={false}
-                      loading="lazy"
-                    />
-                    {checked && (
-                      <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow" />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+            {/* (3) moved Trust Apply checkbox to Potentials header */}
+            <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={useTrust}
+                onChange={(e) => setUseTrust(e.target.checked)}
+                className="accent-emerald-500"
+              />
+              Apply
+            </label>
           </div>
 
           {ranks.length > 0 ? (
             <div className="space-y-2">
               {ranks.map((r, idx) => {
                 const desc = r?.description || "";
-                const vn = translatePotentialDesc(desc, potMap) || desc;
+                const vn = translatePotentialDesc(desc, potMap) || desc; // chỉ tiếng Việt
                 const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
                 const active = selectedPotentials.has(idx);
 
                 return (
                   <div
                     key={idx}
-                    className={`text-sm leading-snug ${
-                      !hasBuff ? "opacity-60" : active ? "text-white/90" : "text-white/70"
-                    }`}
+                    className={`text-sm leading-snug flex items-start gap-2 ${
+                      !hasBuff
+                        ? "opacity-60"
+                        : active
+                        ? "text-white/90"
+                        : "text-white/70"
+                    } ${hasBuff ? "cursor-pointer hover:text-white" : ""}`}
+                    onClick={() => hasBuff && togglePotential(idx)}
+                    title={hasBuff ? "Click to toggle" : ""}
+                    role={hasBuff ? "button" : undefined}
+                    tabIndex={hasBuff ? 0 : undefined}
+                    onKeyDown={(e) => {
+                      if (!hasBuff) return;
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        togglePotential(idx);
+                      }
+                    }}
                   >
-                    {vn}
+                    {/* (3) icon URL nằm chung với từng dòng */}
+                    {idx < 5 ? (
+                      <img
+                        src={getPotIcon(idx + 1)}
+                        alt={`pot-${idx + 1}`}
+                        className="w-5 h-5 mt-[1px] object-contain shrink-0"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-5 h-5 shrink-0" />
+                    )}
+
+                    <div className="min-w-0">{vn}</div>
+
+                    {hasBuff && active && (
+                      <div className="ml-auto mt-[3px] w-2.5 h-2.5 rounded-full bg-emerald-400 shadow shrink-0" />
+                    )}
                   </div>
                 );
               })}
@@ -673,8 +682,12 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       {/* Promotion Requirements (frame only for now) */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-        <h3 className="text-lg font-semibold text-white mb-2">Promotion Requirements</h3>
-        <div className="text-sm text-white/60">(Điều kiện thăng tiến) — placeholder for evolveCost.</div>
+        <h3 className="text-lg font-semibold text-white mb-2">
+          Điều kiện thăng tiến
+        </h3>
+        <div className="text-sm text-white/60">
+          evolveCost 404
+        </div>
       </div>
     </div>
   );
