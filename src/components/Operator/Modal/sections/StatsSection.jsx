@@ -28,6 +28,11 @@ const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
 const ELITE_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/elite_hub/";
 
+const POT_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/potential_hub/";
+
+const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
+
 const ATTR_TYPE_TO_STAT = {
   COST: "cost",
   ATK: "atk",
@@ -64,7 +69,8 @@ function interpolateAttributes(frames, level) {
   const lv = Number(level);
 
   if (lv <= sorted[0].level) return sorted[0].data;
-  if (lv >= sorted[sorted.length - 1].level) return sorted[sorted.length - 1].data;
+  if (lv >= sorted[sorted.length - 1].level)
+    return sorted[sorted.length - 1].data;
 
   for (let i = 0; i < sorted.length - 1; i++) {
     const A = sorted[i];
@@ -73,11 +79,11 @@ function interpolateAttributes(frames, level) {
       const t = (lv - A.level) / (B.level - A.level);
 
       const out = { ...A.data };
-      // interpolate numeric fields that exist in both A and B
       Object.keys(B.data || {}).forEach((k) => {
         const av = A.data?.[k];
         const bv = B.data?.[k];
-        if (typeof av === "number" && typeof bv === "number") out[k] = lerp(av, bv, t);
+        if (typeof av === "number" && typeof bv === "number")
+          out[k] = lerp(av, bv, t);
         else out[k] = av ?? bv;
       });
       return out;
@@ -89,7 +95,8 @@ function interpolateAttributes(frames, level) {
 
 function normalizePotMap(potJson) {
   if (Array.isArray(potJson)) return potJson;
-  if (potJson && Array.isArray(potJson.potentialRanks)) return potJson.potentialRanks;
+  if (potJson && Array.isArray(potJson.potentialRanks))
+    return potJson.potentialRanks;
   return [];
 }
 
@@ -171,7 +178,7 @@ function RangeGrid({ rangeId }) {
       }}
     >
       {Array.from({ length: height }).map((_, rIdx) => {
-        const r = maxR - rIdx; // top to bottom
+        const r = maxR - rIdx;
         return Array.from({ length: width }).map((__, cIdx) => {
           const c = minC + cIdx;
           const isCenter = r === 0 && c === 0;
@@ -184,9 +191,17 @@ function RangeGrid({ rangeId }) {
               title={isCenter ? "Stand" : isAttack ? "Attack" : ""}
             >
               {isCenter ? (
-                <img src={RANGE_STAND} alt="stand" className="w-[14px] h-[14px] object-contain" />
+                <img
+                  src={RANGE_STAND}
+                  alt="stand"
+                  className="w-[14px] h-[14px] object-contain"
+                />
               ) : isAttack ? (
-                <img src={RANGE_ATTACK} alt="atk" className="w-[14px] h-[14px] object-contain" />
+                <img
+                  src={RANGE_ATTACK}
+                  alt="atk"
+                  className="w-[14px] h-[14px] object-contain"
+                />
               ) : null}
             </div>
           );
@@ -197,7 +212,6 @@ function RangeGrid({ rangeId }) {
 }
 
 const StatsSection = ({ operator, charId: charIdProp }) => {
-  // ✅ resolve charId giống OperatorSidebar
   const resolvedCharId = useMemo(() => {
     if (charIdProp) return String(charIdProp);
     const fromOp = getOperatorCharId?.(operator);
@@ -218,7 +232,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [level, setLevel] = useState(1);
 
-  // reset when operator changes
   useEffect(() => {
     setPhaseIndex(0);
     setLevel(1);
@@ -231,31 +244,35 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     if (Number.isFinite(Number(m)) && Number(m) > 0) return Number(m);
     const frames = currentPhase?.attributesKeyFrames;
     if (Array.isArray(frames) && frames.length > 0) {
-      const last = frames.reduce((acc, it) => (it.level > acc ? it.level : acc), 1);
+      const last = frames.reduce(
+        (acc, it) => (it.level > acc ? it.level : acc),
+        1
+      );
       return last;
     }
     return 1;
   }, [currentPhase]);
 
-  // clamp level when phase changes
   useEffect(() => {
     setLevel((lv) => clamp(lv, 1, maxLevel));
   }, [maxLevel]);
 
   const safeLevel = clamp(level, 1, maxLevel);
 
-  // Trust
   const trustFrame = useMemo(() => {
     const frames = charData?.favorKeyFrames;
     if (!Array.isArray(frames) || frames.length === 0) return null;
-    return frames[frames.length - 1]; // max favor frame
+    return frames[frames.length - 1];
   }, [charData]);
 
   const [useTrust, setUseTrust] = useState(false);
 
-  // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
-  const ranks = useMemo(() => (Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : []), [charData]);
+  const ranks = useMemo(
+    () => (Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : []),
+    [charData]
+  );
+
   const [selectedPotentials, setSelectedPotentials] = useState(() => new Set());
 
   const togglePotential = (idx) => {
@@ -275,7 +292,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     const deltas = buildEmptyDeltas();
 
-    // trust adds
     if (useTrust && trustFrame?.data) {
       const t = trustFrame.data;
       if (t.maxHp) deltas.maxHp.push(t.maxHp);
@@ -284,7 +300,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       if (t.magicResistance) deltas.magicResistance.push(t.magicResistance);
     }
 
-    // potential adds (each selected -> one (+x))
     selectedPotentials.forEach((idx) => {
       const r = ranks[idx];
       const mods = extractAttributeModifiers(r);
@@ -317,9 +332,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     return { base, stats, deltas };
   }, [currentPhase, safeLevel, ranks, selectedPotentials, trustFrame, useTrust]);
 
-  const eliteButtons = useMemo(() => {
-    return phases.map((_, idx) => idx); // [0..n-1]
-  }, [phases]);
+  const eliteButtons = useMemo(() => phases.map((_, idx) => idx), [phases]);
 
   if (!resolvedCharId) {
     return (
@@ -466,12 +479,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2 min-w-0">
-                  <img
-                    src={STAT_ICON.baseAttackTime}
-                    alt="atk time"
-                    className="w-5 h-5 object-contain"
-                    draggable={false}
-                  />
+                  <img src={STAT_ICON.baseAttackTime} alt="atk time" className="w-5 h-5 object-contain" draggable={false} />
                   <div className="text-xs text-white/70 truncate">ATK Time</div>
                 </div>
                 <div className="text-sm text-white">
@@ -499,9 +507,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   key={i}
                   type="button"
                   onClick={() => setPhaseIndex(i)}
-                  className={`rounded-lg p-1.5 transition ${
-                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-                  }`}
+                  className={`rounded-lg p-1.5 transition ${active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"}`}
                   title={`E${i}`}
                 >
                   <img src={src} alt={`E${i}`} className="w-10 h-10 object-contain" draggable={false} />
@@ -550,10 +556,13 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         {/* Range */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-base font-semibold text-white">Range</h3>
-            <div className="text-xs text-white/50">(Phạm vi)</div>
+            <h3 className="text-base font-semibold text-white">Phạm vi</h3>
           </div>
-          <RangeGrid rangeId={currentPhase?.rangeId} />
+
+          {/* center the grid */}
+          <div className="flex justify-center">
+            <RangeGrid rangeId={currentPhase?.rangeId} />
+          </div>
         </div>
 
         {/* Trust */}
@@ -573,7 +582,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
           {trustFrame?.data ? (
             <div className="space-y-1 text-sm">
-              <div className="text-xs text-white/60 mb-2">Use max favor frame (lv {trustFrame.level})</div>
+              <div className="text-xs text-white/60 mb-2">
+                Use max favor frame (lv {trustFrame.level})
+              </div>
               <div className="flex items-center justify-between">
                 <span className="text-white/70">HP</span>
                 <span className="text-emerald-400">+{fmtInt(trustFrame.data.maxHp || 0)}</span>
@@ -594,9 +605,44 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
         {/* Potentials */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-base font-semibold text-white">Potentials</h3>
-            <div className="text-xs text-white/50">(Tiềm năng)</div>
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
+
+            {/* icons top-right like Trust */}
+            <div className="flex items-center gap-1">
+              {ranks.slice(0, 5).map((r, idx) => {
+                const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
+                const checked = selectedPotentials.has(idx);
+
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => hasBuff && togglePotential(idx)}
+                    disabled={!hasBuff}
+                    className={`relative rounded-md p-1 transition ${
+                      !hasBuff
+                        ? "opacity-40 cursor-not-allowed"
+                        : checked
+                        ? "bg-emerald-600/70"
+                        : "bg-white/10 hover:bg-white/20"
+                    }`}
+                    title={`Potential ${idx + 1}`}
+                  >
+                    <img
+                      src={getPotIcon(idx + 1)}
+                      alt={`pot-${idx + 1}`}
+                      className="w-6 h-6 object-contain"
+                      draggable={false}
+                      loading="lazy"
+                    />
+                    {checked && (
+                      <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {ranks.length > 0 ? (
@@ -605,26 +651,17 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 const desc = r?.description || "";
                 const vn = translatePotentialDesc(desc, potMap) || desc;
                 const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
-                const checked = selectedPotentials.has(idx);
+                const active = selectedPotentials.has(idx);
+
                 return (
-                  <label
+                  <div
                     key={idx}
-                    className={`flex items-start gap-2 text-sm cursor-pointer select-none ${
-                      !hasBuff ? "opacity-60" : ""
+                    className={`text-sm leading-snug ${
+                      !hasBuff ? "opacity-60" : active ? "text-white/90" : "text-white/70"
                     }`}
                   >
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      onChange={() => togglePotential(idx)}
-                      disabled={!hasBuff}
-                      className="mt-1 accent-emerald-500"
-                    />
-                    <div className="leading-snug">
-                      <div className="text-white/90">{vn}</div>
-                      {vn !== desc && desc ? <div className="text-xs text-white/50">{desc}</div> : null}
-                    </div>
-                  </label>
+                    {vn}
+                  </div>
                 );
               })}
             </div>

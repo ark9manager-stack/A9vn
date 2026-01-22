@@ -17,10 +17,9 @@ const StatBar = ({ label, value, max, displayValue }) => {
     return DEFAULT_MAX_BY_LABEL[key] ?? 100;
   }, [label, max]);
 
-  const { percent, widthPct, isOverCap } = useMemo(() => {
+  const widthPct = useMemo(() => {
     const pct = resolvedMax > 0 ? (safeValue / resolvedMax) * 100 : 0;
-    const clamped = Math.max(0, Math.min(pct, 100));
-    return { percent: pct, widthPct: clamped, isOverCap: pct > 100 };
+    return Math.max(0, Math.min(pct, 100));
   }, [safeValue, resolvedMax]);
 
   return (
@@ -35,21 +34,7 @@ const StatBar = ({ label, value, max, displayValue }) => {
           className="h-2 bg-emerald-500 rounded"
           style={{ width: `${widthPct}%` }}
         />
-
-        {/* If value exceeds max, show a subtle indicator at the end */}
-        {isOverCap && (
-          <div className="absolute inset-y-0 right-0 flex items-center pr-1">
-            <div className="h-2 w-2 rounded-sm bg-white/60" />
-          </div>
-        )}
       </div>
-
-      {/* Optional: show over-cap % */}
-      {isOverCap && (
-        <div className="mt-1 text-[10px] text-white/50 text-right">
-          +{Math.round(percent - 100)}% over
-        </div>
-      )}
     </div>
   );
 };
