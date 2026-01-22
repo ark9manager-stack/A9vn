@@ -582,7 +582,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         {/* Trust */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-base font-semibold text-white">Trust</h3>
+            <h3 className="text-base font-semibold text-white">Tin tưởng</h3>
 
             <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
               <input
