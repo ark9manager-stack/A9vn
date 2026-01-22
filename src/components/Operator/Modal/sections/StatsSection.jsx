@@ -253,6 +253,16 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const [useTrust, setUseTrust] = useState(false);
 
+  const trustRows = useMemo(() => {
+    const t = trustFrame?.data || {};
+    const rows = [
+      { label: "HP", v: Number(t.maxHp || 0) },
+      { label: "ATK", v: Number(t.atk || 0) },
+      { label: "DEF", v: Number(t.def || 0) },
+    ];
+    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
+  }, [trustFrame]);
+
   // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
   const ranks = useMemo(
@@ -293,9 +303,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         const r = ranks[idx];
         const mods = extractAttributeModifiers(r);
         mods.forEach((m) => {
-          const statKey = ATTR_TYPE_TO_STAT[m.attributeType];
+          const statKey = ATTR_TYPE_TO_STAT[m?.attributeType];
           if (!statKey) return;
-          const v = Number(m.value);
+          const v = Number(m?.value);
           if (!Number.isFinite(v) || v === 0) return;
           deltas[statKey].push(v);
         });
@@ -339,6 +349,14 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     setLevel(nextMax); // đổi Elite -> nhảy lên max
   };
 
+  //click rank pot
+  const handlePickPotentialLevel = (idx1, isApplicable) => {
+    if (!isApplicable) return;
+    const next = potentialLevel === idx1 ? 0 : idx1;
+    setPotentialLevel(next);
+    if (next > 0) setUsePotentials(true);
+  };
+
   if (!resolvedCharId) {
     return (
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
@@ -368,24 +386,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   }
 
   const { stats, deltas } = computed;
-
-  // ẩn các dòng buff = 0
-  const trustRows = useMemo(() => {
-    const t = trustFrame?.data || {};
-    const rows = [
-      { label: "HP", v: Number(t.maxHp || 0) },
-      { label: "ATK", v: Number(t.atk || 0) },
-      { label: "DEF", v: Number(t.def || 0) },
-      // { label: "RES", v: Number(t.magicResistance || 0) },
-    ];
-    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
-  }, [trustFrame]);
-
-  const handlePickPotentialLevel = (idx1) => {
-    const nextLevel = potentialLevel === idx1 ? 0 : idx1;
-    setPotentialLevel(nextLevel);
-    setUsePotentials(nextLevel > 0);
-  };
 
   return (
     <div className="space-y-4">
@@ -524,9 +524,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   key={i}
                   type="button"
                   onClick={() => handleEliteChange(i)}
-                  className={`rounded-lg p-1.5 transition ${
-                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-                  }`}
+                  className={`rounded-lg p-1.5 transition ${active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"}`}
                   title={`E${i}`}
                 >
                   <img src={src} alt={`E${i}`} className="w-10 h-10 object-contain" draggable={false} />
@@ -640,25 +638,28 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               {ranks.map((r, idx) => {
                 const desc = r?.description || "";
                 const vn = translatePotentialDesc(desc, potMap) || desc;
-                const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
+
+                const mods = extractAttributeModifiers(r);
+                const isApplicable = mods.some((m) => !!ATTR_TYPE_TO_STAT[m?.attributeType]);
 
                 const selected = potentialLevel > 0 && idx < potentialLevel;
-                const active = usePotentials && selected;
+                const active = usePotentials && selected && isApplicable;
 
                 return (
                   <div
                     key={idx}
                     className={`text-sm leading-snug flex items-start gap-2 ${
-                      !hasBuff ? "opacity-60" : active ? "text-white/90" : selected ? "text-white/80" : "text-white/70"
-                    } cursor-pointer hover:text-white`}
-                    onClick={() => handlePickPotentialLevel(idx + 1)}
-                    title="Click to set potential level"
-                    role="button"
-                    tabIndex={0}
+                      isApplicable ? "cursor-pointer hover:text-white" : "cursor-default"
+                    } ${active ? "text-white/90" : "text-white/80"}`}
+                    onClick={() => handlePickPotentialLevel(idx + 1, isApplicable)}
+                    title={isApplicable ? "Click to set potential level" : ""}
+                    role={isApplicable ? "button" : undefined}
+                    tabIndex={isApplicable ? 0 : undefined}
                     onKeyDown={(e) => {
+                      if (!isApplicable) return;
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        handlePickPotentialLevel(idx + 1);
+                        handlePickPotentialLevel(idx + 1, isApplicable);
                       }
                     }}
                   >
@@ -676,12 +677,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
                     <div className="min-w-0">{vn}</div>
 
-                    {selected && (
-                      <div
-                        className={`ml-auto mt-[3px] w-2.5 h-2.5 rounded-full shadow shrink-0 ${
-                          active ? "bg-emerald-400" : "bg-white/25"
-                        }`}
-                      />
+                    {active && (
+                      <div className="ml-auto mt-[3px] w-2.5 h-2.5 rounded-full shadow shrink-0 bg-emerald-400" />
                     )}
                   </div>
                 );
