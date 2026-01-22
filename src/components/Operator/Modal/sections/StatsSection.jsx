@@ -96,14 +96,21 @@ function normalizePotMap(potJson) {
 
 function translatePotentialDesc(desc, potMap) {
   if (!desc) return desc;
-  for (const row of potMap) {
-    if (!row?.pot) continue;
-    if (desc.includes(row.pot)) {
-      return desc.replace(row.pot, row.pot_vn || row.pot);
+  const sorted = [...potMap]
+    .filter((r) => r?.pot && typeof r.pot_vn === "string")
+    .sort((a, b) => b.pot.length - a.pot.length);
+
+  let out = desc;
+
+  for (const row of sorted) {
+    if (out.includes(row.pot)) {
+      out = out.split(row.pot).join(row.pot_vn);
     }
   }
-  return desc;
+
+  return out;
 }
+
 
 function extractAttributeModifiers(potentialRank) {
   const mods = potentialRank?.buff?.attributes?.attributeModifiers;
