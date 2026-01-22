@@ -482,53 +482,54 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
             {/* right */}
             <div className="space-y-3">
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2 min-w-0">
-                  <img src={STAT_ICON.respawnTime} alt="time" className="w-5 h-5 object-contain" draggable={false} />
-                  <div className="text-xs text-white/70 truncate">Redeploy</div>
-                </div>
-                <div className="text-sm text-white">
-                  <ValueWithDeltas
-                    value={stats.respawnTime}
-                    deltas={deltas.respawnTime}
-                    formatter={(v) => formatNumber(v, { decimals: 0, suffix: "s" })}
+              {[
+                {
+                  icon: STAT_ICON.respawnTime,
+                  label: "Redeploy",
+                  value: (
+                    <ValueWithDeltas
+                      value={stats.respawnTime}
+                      deltas={deltas.respawnTime}
+                      formatter={(v) => formatNumber(v, { decimals: 0, suffix: "s" })}
+                    />
+                  ),
+                },
+                {
+                  icon: STAT_ICON.cost,
+                  label: "Cost",
+                  value: <ValueWithDeltas value={stats.cost} deltas={deltas.cost} formatter={(v) => fmtInt(v)} />,
+                },
+                {
+                  icon: STAT_ICON.blockCnt,
+                  label: "Block",
+                  value: <ValueWithDeltas value={stats.blockCnt} deltas={deltas.blockCnt} formatter={(v) => fmtInt(v)} />,
+                },
+                {
+                  icon: STAT_ICON.baseAttackTime,
+                  label: "ATK Time",
+                  value: (
+                    <ValueWithDeltas
+                      value={stats.baseAttackTime}
+                      deltas={deltas.baseAttackTime}
+                      formatter={(v) => formatNumber(v, { decimals: 1, suffix: "s" })}
+                    />
+                  ),
+                },
+              ].map((row) => (
+                <div key={row.label} className="flex items-center gap-3 min-h-[44px]">
+                  <img
+                    src={row.icon}
+                    alt={row.label}
+                    className="w-5 h-5 object-contain shrink-0"
+                    draggable={false}
                   />
-                </div>
-              </div>
 
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2 min-w-0">
-                  <img src={STAT_ICON.cost} alt="cost" className="w-5 h-5 object-contain" draggable={false} />
-                  <div className="text-xs text-white/70 truncate">Cost</div>
+                  <div className="flex-1 flex items-center justify-between gap-3">
+                    <div className="text-xs text-white/70 truncate">{row.label}</div>
+                    <div className="text-sm text-white tabular-nums">{row.value}</div>
+                  </div>
                 </div>
-                <div className="text-sm text-white">
-                  <ValueWithDeltas value={stats.cost} deltas={deltas.cost} formatter={(v) => fmtInt(v)} />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2 min-w-0">
-                  <img src={STAT_ICON.blockCnt} alt="block" className="w-5 h-5 object-contain" draggable={false} />
-                  <div className="text-xs text-white/70 truncate">Block</div>
-                </div>
-                <div className="text-sm text-white">
-                  <ValueWithDeltas value={stats.blockCnt} deltas={deltas.blockCnt} formatter={(v) => fmtInt(v)} />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2 min-w-0">
-                  <img src={STAT_ICON.baseAttackTime} alt="atk time" className="w-5 h-5 object-contain" draggable={false} />
-                  <div className="text-xs text-white/70 truncate">ATK Time</div>
-                </div>
-                <div className="text-sm text-white">
-                  <ValueWithDeltas
-                    value={stats.baseAttackTime}
-                    deltas={deltas.baseAttackTime}
-                    formatter={(v) => formatNumber(v, { decimals: 1, suffix: "s" })}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
