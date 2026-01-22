@@ -55,13 +55,9 @@ const formatNumber = (n, { decimals = 0, suffix = "" } = {}) => {
 };
 
 const fmtInt = (n) => formatNumber(n, { decimals: 0 });
-
 const lerp = (a, b, t) => a + (b - a) * t;
 
-/**
- * Piecewise linear interpolate by attributesKeyFrames.
- * frames: [{level, data:{...}}]
- */
+/** interpolate by attributesKeyFrames */
 function interpolateAttributes(frames, level) {
   if (!Array.isArray(frames) || frames.length === 0) return null;
 
@@ -82,8 +78,7 @@ function interpolateAttributes(frames, level) {
       Object.keys(B.data || {}).forEach((k) => {
         const av = A.data?.[k];
         const bv = B.data?.[k];
-        if (typeof av === "number" && typeof bv === "number")
-          out[k] = lerp(av, bv, t);
+        if (typeof av === "number" && typeof bv === "number") out[k] = lerp(av, bv, t);
         else out[k] = av ?? bv;
       });
       return out;
@@ -95,8 +90,7 @@ function interpolateAttributes(frames, level) {
 
 function normalizePotMap(potJson) {
   if (Array.isArray(potJson)) return potJson;
-  if (potJson && Array.isArray(potJson.potentialRanks))
-    return potJson.potentialRanks;
+  if (potJson && Array.isArray(potJson.potentialRanks)) return potJson.potentialRanks;
   return [];
 }
 
@@ -113,8 +107,7 @@ function translatePotentialDesc(desc, potMap) {
 
 function extractAttributeModifiers(potentialRank) {
   const mods = potentialRank?.buff?.attributes?.attributeModifiers;
-  if (Array.isArray(mods)) return mods;
-  return [];
+  return Array.isArray(mods) ? mods : [];
 }
 
 function buildEmptyDeltas() {
@@ -191,17 +184,9 @@ function RangeGrid({ rangeId }) {
               title={isCenter ? "Stand" : isAttack ? "Attack" : ""}
             >
               {isCenter ? (
-                <img
-                  src={RANGE_STAND}
-                  alt="stand"
-                  className="w-[14px] h-[14px] object-contain"
-                />
+                <img src={RANGE_STAND} alt="stand" className="w-[14px] h-[14px] object-contain" />
               ) : isAttack ? (
-                <img
-                  src={RANGE_ATTACK}
-                  alt="atk"
-                  className="w-[14px] h-[14px] object-contain"
-                />
+                <img src={RANGE_ATTACK} alt="atk" className="w-[14px] h-[14px] object-contain" />
               ) : null}
             </div>
           );
@@ -211,7 +196,6 @@ function RangeGrid({ rangeId }) {
   );
 }
 
-/** maxLevel for a given phase (used when switching Elite -> set level = max immediately) */
 function getMaxLevelForPhase(phase) {
   if (!phase) return 1;
   const m = phase?.maxLevel;
@@ -246,23 +230,21 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [level, setLevel] = useState(1);
 
-  // reset per operator
   useEffect(() => {
     setPhaseIndex(0);
     setLevel(1);
   }, [resolvedCharId]);
 
   const currentPhase = phases[phaseIndex];
-
   const maxLevel = useMemo(() => getMaxLevelForPhase(currentPhase), [currentPhase]);
 
-  // Keep level in range (but DO NOT force max unless switching Elite)
   useEffect(() => {
     setLevel((lv) => clamp(lv, 1, maxLevel));
   }, [maxLevel]);
 
   const safeLevel = clamp(level, 1, maxLevel);
 
+  // Trust
   const trustFrame = useMemo(() => {
     const frames = charData?.favorKeyFrames;
     if (!Array.isArray(frames) || frames.length === 0) return null;
@@ -271,6 +253,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const [useTrust, setUseTrust] = useState(false);
 
+  // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
   const ranks = useMemo(
     () => (Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : []),
@@ -342,8 +325,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     const nextPhase = phases[i];
     const nextMax = getMaxLevelForPhase(nextPhase);
     setPhaseIndex(i);
-    // (1) Khi đổi Elite -> level nhảy lên MAX ngay
-    setLevel(nextMax);
+    setLevel(nextMax); // đổi Elite -> nhảy lên max
   };
 
   if (!resolvedCharId) {
@@ -376,6 +358,18 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const { stats, deltas } = computed;
 
+  // ✅ Trust: ẩn các dòng buff = 0
+  const trustRows = useMemo(() => {
+    const t = trustFrame?.data || {};
+    const rows = [
+      { label: "HP", v: Number(t.maxHp || 0) },
+      { label: "ATK", v: Number(t.atk || 0) },
+      { label: "DEF", v: Number(t.def || 0) },
+      { label: "RES", v: Number(t.magicResistance || 0) }, // nếu bạn không muốn show RES thì xóa dòng này
+    ];
+    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
+  }, [trustFrame]);
+
   return (
     <div className="space-y-4">
       {/* TOP: Stats (2/3) + Level (1/3) */}
@@ -394,9 +388,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     label="HP"
                     value={stats.maxHp}
                     max={6000}
-                    displayValue={
-                      <ValueWithDeltas value={stats.maxHp} deltas={deltas.maxHp} formatter={(v) => fmtInt(v)} />
-                    }
+                    displayValue={<ValueWithDeltas value={stats.maxHp} deltas={deltas.maxHp} formatter={(v) => fmtInt(v)} />}
                   />
                 </div>
               </div>
@@ -408,9 +400,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     label="ATK"
                     value={stats.atk}
                     max={2000}
-                    displayValue={
-                      <ValueWithDeltas value={stats.atk} deltas={deltas.atk} formatter={(v) => fmtInt(v)} />
-                    }
+                    displayValue={<ValueWithDeltas value={stats.atk} deltas={deltas.atk} formatter={(v) => fmtInt(v)} />}
                   />
                 </div>
               </div>
@@ -422,9 +412,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     label="DEF"
                     value={stats.def}
                     max={1000}
-                    displayValue={
-                      <ValueWithDeltas value={stats.def} deltas={deltas.def} formatter={(v) => fmtInt(v)} />
-                    }
+                    displayValue={<ValueWithDeltas value={stats.def} deltas={deltas.def} formatter={(v) => fmtInt(v)} />}
                   />
                 </div>
               </div>
@@ -572,7 +560,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Phạm vi</h3>
           </div>
-
           <div className="flex justify-center">
             <RangeGrid rangeId={currentPhase?.rangeId} />
           </div>
@@ -582,24 +569,35 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Trust</h3>
+
+            {/* ✅ giữ Apply ở Trust */}
+            <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={useTrust}
+                onChange={(e) => setUseTrust(e.target.checked)}
+                className="accent-emerald-500"
+              />
+              Apply
+            </label>
           </div>
 
           {trustFrame?.data ? (
-            <div className="space-y-1 text-sm">
-              {/* (2) Removed: Use max favor frame (lv ...) */}
-              <div className="flex items-center justify-between">
-                <span className="text-white/70">HP</span>
-                <span className="text-emerald-400">+{fmtInt(trustFrame.data.maxHp || 0)}</span>
+            trustRows.length > 0 ? (
+              <div className="space-y-1 text-sm">
+                {trustRows.map((r) => (
+                  <div key={r.label} className="flex items-center justify-between">
+                    <span className="text-white/70">{r.label}</span>
+                    <span className="text-emerald-400">
+                      {r.v > 0 ? "+" : ""}
+                      {fmtInt(r.v)}
+                    </span>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/70">ATK</span>
-                <span className="text-emerald-400">+{fmtInt(trustFrame.data.atk || 0)}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/70">DEF</span>
-                <span className="text-emerald-400">+{fmtInt(trustFrame.data.def || 0)}</span>
-              </div>
-            </div>
+            ) : (
+              <div className="text-sm text-white/60">No trust buffs.</div>
+            )
           ) : (
             <div className="text-sm text-white/60">No trust data.</div>
           )}
@@ -610,7 +608,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           <div className="flex items-start justify-between mb-3 gap-3">
             <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
 
-            {/* (3) moved Trust Apply checkbox to Potentials header */}
+            {/* ✅ copy Apply sang Potentials (không di chuyển) */}
             <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
               <input
                 type="checkbox"
@@ -634,14 +632,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   <div
                     key={idx}
                     className={`text-sm leading-snug flex items-start gap-2 ${
-                      !hasBuff
-                        ? "opacity-60"
-                        : active
-                        ? "text-white/90"
-                        : "text-white/70"
+                      !hasBuff ? "opacity-60" : active ? "text-white/90" : "text-white/70"
                     } ${hasBuff ? "cursor-pointer hover:text-white" : ""}`}
                     onClick={() => hasBuff && togglePotential(idx)}
-                    title={hasBuff ? "Click to toggle" : ""}
                     role={hasBuff ? "button" : undefined}
                     tabIndex={hasBuff ? 0 : undefined}
                     onKeyDown={(e) => {
@@ -651,8 +644,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                         togglePotential(idx);
                       }
                     }}
+                    title={hasBuff ? "Click to toggle" : ""}
                   >
-                    {/* (3) icon URL nằm chung với từng dòng */}
+                    {/* icon nằm chung với từng dòng */}
                     {idx < 5 ? (
                       <img
                         src={getPotIcon(idx + 1)}
@@ -682,12 +676,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       {/* Promotion Requirements (frame only for now) */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-        <h3 className="text-lg font-semibold text-white mb-2">
-          Điều kiện thăng tiến
-        </h3>
-        <div className="text-sm text-white/60">
-          evolveCost 404
-        </div>
+        <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
+        <div className="text-sm text-white/60">evolveCost 404</div>
       </div>
     </div>
   );
