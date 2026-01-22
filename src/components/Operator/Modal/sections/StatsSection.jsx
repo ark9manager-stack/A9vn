@@ -260,16 +260,14 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     [charData]
   );
 
-  const [selectedPotentials, setSelectedPotentials] = useState(() => new Set());
+  const [usePotentials, setUsePotentials] = useState(false);
+  const [potentialLevel, setPotentialLevel] = useState(0);
 
-  const togglePotential = (idx) => {
-    setSelectedPotentials((prev) => {
-      const next = new Set(prev);
-      if (next.has(idx)) next.delete(idx);
-      else next.add(idx);
-      return next;
-    });
-  };
+  useEffect(() => {
+    setUsePotentials(false);
+    setPotentialLevel(0);
+    setUseTrust(false);
+  }, [resolvedCharId]);
 
   const computed = useMemo(() => {
     if (!currentPhase) return null;
@@ -279,6 +277,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     const deltas = buildEmptyDeltas();
 
+    // Trust deltas
     if (useTrust && trustFrame?.data) {
       const t = trustFrame.data;
       if (t.maxHp) deltas.maxHp.push(t.maxHp);
@@ -287,17 +286,21 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       if (t.magicResistance) deltas.magicResistance.push(t.magicResistance);
     }
 
-    selectedPotentials.forEach((idx) => {
-      const r = ranks[idx];
-      const mods = extractAttributeModifiers(r);
-      mods.forEach((m) => {
-        const statKey = ATTR_TYPE_TO_STAT[m.attributeType];
-        if (!statKey) return;
-        const v = Number(m.value);
-        if (!Number.isFinite(v) || v === 0) return;
-        deltas[statKey].push(v);
-      });
-    });
+    // Potentials deltas
+    if (usePotentials && potentialLevel > 0) {
+      const limit = Math.min(potentialLevel, ranks.length);
+      for (let idx = 0; idx < limit; idx++) {
+        const r = ranks[idx];
+        const mods = extractAttributeModifiers(r);
+        mods.forEach((m) => {
+          const statKey = ATTR_TYPE_TO_STAT[m.attributeType];
+          if (!statKey) return;
+          const v = Number(m.value);
+          if (!Number.isFinite(v) || v === 0) return;
+          deltas[statKey].push(v);
+        });
+      }
+    }
 
     const applyDeltas = (key, baseVal) => {
       const sum = (deltas[key] || []).reduce((a, b) => a + Number(b || 0), 0);
@@ -317,7 +320,15 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     };
 
     return { stats, deltas };
-  }, [currentPhase, safeLevel, ranks, selectedPotentials, trustFrame, useTrust]);
+  }, [
+    currentPhase,
+    safeLevel,
+    ranks,
+    trustFrame,
+    useTrust,
+    usePotentials,
+    potentialLevel,
+  ]);
 
   const eliteButtons = useMemo(() => phases.map((_, idx) => idx), [phases]);
 
@@ -358,17 +369,30 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const { stats, deltas } = computed;
 
-  // ✅ Trust: ẩn các dòng buff = 0
+  // ẩn các dòng buff = 0
   const trustRows = useMemo(() => {
     const t = trustFrame?.data || {};
     const rows = [
       { label: "HP", v: Number(t.maxHp || 0) },
       { label: "ATK", v: Number(t.atk || 0) },
       { label: "DEF", v: Number(t.def || 0) },
-      { label: "RES", v: Number(t.magicResistance || 0) }, // nếu bạn không muốn show RES thì xóa dòng này
+      // { label: "RES", v: Number(t.magicResistance || 0) },
     ];
     return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
   }, [trustFrame]);
+
+  const handlePickPotentialLevel = (idx1) => {
+    // idx1 = 1..N
+    setUsePotentials(true);
+    setPotentialLevel((prev) => {
+
+      if (prev === idx1) {
+        setUsePotentials(false);
+        return 0;
+      }
+      return idx1;
+    });
+  };
 
   return (
     <div className="space-y-4">
@@ -570,7 +594,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Trust</h3>
 
-            {/* ✅ giữ Apply ở Trust */}
             <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
               <input
                 type="checkbox"
@@ -608,12 +631,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           <div className="flex items-start justify-between mb-3 gap-3">
             <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
 
-            {/* ✅ copy Apply sang Potentials (không di chuyển) */}
             <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
               <input
                 type="checkbox"
-                checked={useTrust}
-                onChange={(e) => setUseTrust(e.target.checked)}
+                checked={usePotentials}
+                onChange={(e) => setUsePotentials(e.target.checked)}
                 className="accent-emerald-500"
               />
               Apply
@@ -624,29 +646,33 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             <div className="space-y-2">
               {ranks.map((r, idx) => {
                 const desc = r?.description || "";
-                const vn = translatePotentialDesc(desc, potMap) || desc; // chỉ tiếng Việt
+                const vn = translatePotentialDesc(desc, potMap) || desc;
                 const hasBuff = Array.isArray(r?.buff?.attributes?.attributeModifiers);
-                const active = selectedPotentials.has(idx);
+
+                const active = usePotentials && potentialLevel > 0 && idx < potentialLevel;
 
                 return (
                   <div
                     key={idx}
                     className={`text-sm leading-snug flex items-start gap-2 ${
-                      !hasBuff ? "opacity-60" : active ? "text-white/90" : "text-white/70"
+                      !hasBuff
+                        ? "opacity-60"
+                        : active
+                        ? "text-white/90"
+                        : "text-white/70"
                     } ${hasBuff ? "cursor-pointer hover:text-white" : ""}`}
-                    onClick={() => hasBuff && togglePotential(idx)}
+                    onClick={() => hasBuff && handlePickPotentialLevel(idx + 1)}
+                    title={hasBuff ? "Click to set potential level" : ""}
                     role={hasBuff ? "button" : undefined}
                     tabIndex={hasBuff ? 0 : undefined}
                     onKeyDown={(e) => {
                       if (!hasBuff) return;
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        togglePotential(idx);
+                        handlePickPotentialLevel(idx + 1);
                       }
                     }}
-                    title={hasBuff ? "Click to toggle" : ""}
                   >
-                    {/* icon nằm chung với từng dòng */}
                     {idx < 5 ? (
                       <img
                         src={getPotIcon(idx + 1)}
@@ -661,6 +687,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
                     <div className="min-w-0">{vn}</div>
 
+                    {/* xanh = active */}
                     {hasBuff && active && (
                       <div className="ml-auto mt-[3px] w-2.5 h-2.5 rounded-full bg-emerald-400 shadow shrink-0" />
                     )}
@@ -677,7 +704,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       {/* Promotion Requirements (frame only for now) */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
         <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
-        <div className="text-sm text-white/60">evolveCost 404</div>
+        <div className="text-sm text-white/60">evolveCost no info</div>
       </div>
     </div>
   );
