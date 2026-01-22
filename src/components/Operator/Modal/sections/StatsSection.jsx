@@ -408,7 +408,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Stats */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 md:col-span-2">
-          <h3 className="text-lg font-semibold text-white mb-4">Stats</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Chỉ số cơ bản</h3>
 
           <div className="grid grid-cols-[1fr_10px_1fr] gap-3 items-start">
             {/* left */}
@@ -528,7 +528,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
         {/* Level */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <h3 className="text-lg font-semibold text-white mb-4">Level</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Cấp</h3>
 
           <div className="flex items-center justify-center gap-2 mb-4">
             {eliteButtons.map((i) => {
@@ -598,7 +598,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         {/* Trust */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-base font-semibold text-white">Trust</h3>
+            <h3 className="text-base font-semibold text-white">Tin tưởng</h3>
 
             <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
               <input
