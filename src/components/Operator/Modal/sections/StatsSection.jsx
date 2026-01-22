@@ -565,7 +565,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 max={maxLevel}
                 value={safeLevel}
                 onChange={(e) => setLevel(clamp(e.target.value, 1, maxLevel))}
-                className="w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
+                className="no-spin w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
               />
             </div>
 
