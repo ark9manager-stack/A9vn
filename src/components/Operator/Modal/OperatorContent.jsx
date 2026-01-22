@@ -9,10 +9,10 @@ const OperatorContent = ({ activeTab, operator }) => {
   return (
     <div className="flex-1 overflow-y-auto p-6">
       {activeTab === "skins" && <SkinsSection operator={operator} />}
-      {activeTab === "profile" && <ProfileSection operator={operator} />}
-      {activeTab === "stats" && <StatsSection operator={operator} />}
-      {activeTab === "skills" && <SkillsSection operator={operator} />}
-      {activeTab === "voice" && <VoiceSection operator={operator} />}
+      {activeTab === "profile" && <ProfileSection />}
+      {activeTab === "stats" && <StatsSection />}
+      {activeTab === "skills" && <SkillsSection />}
+      {activeTab === "voice" && <VoiceSection />}
     </div>
   );
 };
