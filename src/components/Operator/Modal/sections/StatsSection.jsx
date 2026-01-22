@@ -65,8 +65,7 @@ function interpolateAttributes(frames, level) {
   const lv = Number(level);
 
   if (lv <= sorted[0].level) return sorted[0].data;
-  if (lv >= sorted[sorted.length - 1].level)
-    return sorted[sorted.length - 1].data;
+  if (lv >= sorted[sorted.length - 1].level) return sorted[sorted.length - 1].data;
 
   for (let i = 0; i < sorted.length - 1; i++) {
     const A = sorted[i];
@@ -94,23 +93,27 @@ function normalizePotMap(potJson) {
   return [];
 }
 
+/**
+ * Translate potential description by applying ALL matches.
+ * - Sort patterns by length (longest first) to avoid "秒" winning over "再部署时间"
+ * - Replace ALL occurrences (not only first)
+ */
 function translatePotentialDesc(desc, potMap) {
   if (!desc) return desc;
-  const sorted = [...potMap]
-    .filter((r) => r?.pot && typeof r.pot_vn === "string")
-    .sort((a, b) => b.pot.length - a.pot.length);
 
-  let out = desc;
+  const rows = [...(potMap || [])]
+    .filter((r) => r?.pot)
+    .sort((a, b) => String(b.pot).length - String(a.pot).length);
 
-  for (const row of sorted) {
-    if (out.includes(row.pot)) {
-      out = out.split(row.pot).join(row.pot_vn);
-    }
+  let out = String(desc);
+  for (const row of rows) {
+    const from = String(row.pot);
+    const to = String(row.pot_vn || row.pot);
+    if (!from) continue;
+    out = out.split(from).join(to);
   }
-
   return out;
 }
-
 
 function extractAttributeModifiers(potentialRank) {
   const mods = potentialRank?.buff?.attributes?.attributeModifiers;
@@ -260,16 +263,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const [useTrust, setUseTrust] = useState(false);
 
-  const trustRows = useMemo(() => {
-    const t = trustFrame?.data || {};
-    const rows = [
-      { label: "HP", v: Number(t.maxHp || 0) },
-      { label: "ATK", v: Number(t.atk || 0) },
-      { label: "DEF", v: Number(t.def || 0) },
-    ];
-    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
-  }, [trustFrame]);
-
   // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
   const ranks = useMemo(
@@ -277,24 +270,12 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     [charData]
   );
 
-  const maxPotentialSelectable = useMemo(() => {
-    const mp = Number(charData?.maxPotentialLevel);
-    const maxByData = Number.isFinite(mp) && mp > 0 ? mp : ranks.length;
-    return Math.min(ranks.length, maxByData);
-  }, [charData, ranks.length]);
-
   const [usePotentials, setUsePotentials] = useState(false);
-  const [potentialLevel, setPotentialLevel] = useState(0);
 
   useEffect(() => {
     setUsePotentials(false);
-    setPotentialLevel(0);
     setUseTrust(false);
   }, [resolvedCharId]);
-
-  useEffect(() => {
-    setPotentialLevel((lv) => clamp(lv, 0, maxPotentialSelectable));
-  }, [maxPotentialSelectable]);
 
   const computed = useMemo(() => {
     if (!currentPhase) return null;
@@ -304,29 +285,32 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     const deltas = buildEmptyDeltas();
 
-    // Trust deltas
+    // Trust deltas (ignore 0)
     if (useTrust && trustFrame?.data) {
       const t = trustFrame.data;
-      if (t.maxHp) deltas.maxHp.push(t.maxHp);
-      if (t.atk) deltas.atk.push(t.atk);
-      if (t.def) deltas.def.push(t.def);
-      if (t.magicResistance) deltas.magicResistance.push(t.magicResistance);
+      const pushIfNonZero = (k, v) => {
+        const n = Number(v);
+        if (!Number.isFinite(n) || n === 0) return;
+        deltas[k].push(n);
+      };
+      pushIfNonZero("maxHp", t.maxHp);
+      pushIfNonZero("atk", t.atk);
+      pushIfNonZero("def", t.def);
+      pushIfNonZero("magicResistance", t.magicResistance);
     }
 
-    // Potentials deltas
-    if (usePotentials && potentialLevel > 0) {
-      const limit = Math.min(potentialLevel, ranks.length);
-      for (let idx = 0; idx < limit; idx++) {
-        const r = ranks[idx];
+    // Potentials deltas: Apply = apply ALL ranks
+    if (usePotentials && ranks.length > 0) {
+      ranks.forEach((r) => {
         const mods = extractAttributeModifiers(r);
         mods.forEach((m) => {
           const statKey = ATTR_TYPE_TO_STAT[m?.attributeType];
           if (!statKey) return;
-          const v = Number(m?.value);
+          const v = Number(m.value);
           if (!Number.isFinite(v) || v === 0) return;
           deltas[statKey].push(v);
         });
-      }
+      });
     }
 
     const applyDeltas = (key, baseVal) => {
@@ -347,15 +331,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     };
 
     return { stats, deltas };
-  }, [
-    currentPhase,
-    safeLevel,
-    ranks,
-    trustFrame,
-    useTrust,
-    usePotentials,
-    potentialLevel,
-  ]);
+  }, [currentPhase, safeLevel, ranks, trustFrame, useTrust, usePotentials]);
 
   const eliteButtons = useMemo(() => phases.map((_, idx) => idx), [phases]);
 
@@ -363,20 +339,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     const nextPhase = phases[i];
     const nextMax = getMaxLevelForPhase(nextPhase);
     setPhaseIndex(i);
-    setLevel(nextMax);
-  };
-
-  const handlePickPotentialLevel = (idx1, isApplicable) => {
-    if (!isApplicable) return;
-    const next = potentialLevel === idx1 ? 0 : idx1;
-    setPotentialLevel(next);
-  };
-
-  const handleTogglePotentialsApply = (checked) => {
-    setUsePotentials(checked);
-    if (checked) {
-      setPotentialLevel((lv) => (lv > 0 ? lv : maxPotentialSelectable));
-    }
+    setLevel(nextMax); // đổi Elite -> nhảy lên max
   };
 
   if (!resolvedCharId) {
@@ -409,13 +372,25 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const { stats, deltas } = computed;
 
+  // ẩn các dòng buff = 0 (Trust list)
+  const trustRows = useMemo(() => {
+    const t = trustFrame?.data || {};
+    const rows = [
+      { label: "HP", v: Number(t.maxHp || 0) },
+      { label: "ATK", v: Number(t.atk || 0) },
+      { label: "DEF", v: Number(t.def || 0) },
+      { label: "RES", v: Number(t.magicResistance || 0) },
+    ];
+    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
+  }, [trustFrame]);
+
   return (
     <div className="space-y-4">
       {/* TOP: Stats (2/3) + Level (1/3) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Stats */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 md:col-span-2">
-          <h3 className="text-lg font-semibold text-white mb-4">Chỉ số cơ bản</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Stats</h3>
 
           <div className="grid grid-cols-[1fr_10px_1fr] gap-3 items-start">
             {/* left */}
@@ -427,7 +402,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     label="HP"
                     value={stats.maxHp}
                     max={6000}
-                    displayValue={<ValueWithDeltas value={stats.maxHp} deltas={deltas.maxHp} formatter={(v) => fmtInt(v)} />}
+                    displayValue={
+                      <ValueWithDeltas value={stats.maxHp} deltas={deltas.maxHp} formatter={(v) => fmtInt(v)} />
+                    }
                   />
                 </div>
               </div>
@@ -439,7 +416,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     label="ATK"
                     value={stats.atk}
                     max={2000}
-                    displayValue={<ValueWithDeltas value={stats.atk} deltas={deltas.atk} formatter={(v) => fmtInt(v)} />}
+                    displayValue={
+                      <ValueWithDeltas value={stats.atk} deltas={deltas.atk} formatter={(v) => fmtInt(v)} />
+                    }
                   />
                 </div>
               </div>
@@ -451,7 +430,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     label="DEF"
                     value={stats.def}
                     max={1000}
-                    displayValue={<ValueWithDeltas value={stats.def} deltas={deltas.def} formatter={(v) => fmtInt(v)} />}
+                    displayValue={
+                      <ValueWithDeltas value={stats.def} deltas={deltas.def} formatter={(v) => fmtInt(v)} />
+                    }
                   />
                 </div>
               </div>
@@ -481,62 +462,66 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             </div>
 
             {/* right */}
-            <div className="space-y-2">
-              {[
-                {
-                  icon: STAT_ICON.respawnTime,
-                  label: "Thời gian tái triển khai",
-                  value: (
-                    <ValueWithDeltas
-                      value={stats.respawnTime}
-                      deltas={deltas.respawnTime}
-                      formatter={(v) => formatNumber(v, { decimals: 0, suffix: "s" })}
-                    />
-                  ),
-                },
-                {
-                  icon: STAT_ICON.cost,
-                  label: "Phí",
-                  value: <ValueWithDeltas value={stats.cost} deltas={deltas.cost} formatter={(v) => fmtInt(v)} />,
-                },
-                {
-                  icon: STAT_ICON.blockCnt,
-                  label: "Chặn",
-                  value: <ValueWithDeltas value={stats.blockCnt} deltas={deltas.blockCnt} formatter={(v) => fmtInt(v)} />,
-                },
-                {
-                  icon: STAT_ICON.baseAttackTime,
-                  label: "Thời gian tấn công",
-                  value: (
-                    <ValueWithDeltas
-                      value={stats.baseAttackTime}
-                      deltas={deltas.baseAttackTime}
-                      formatter={(v) => formatNumber(v, { decimals: 1, suffix: "s" })}
-                    />
-                  ),
-                },
-              ].map((row) => (
-                <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 min-w-0">
+                  <img src={STAT_ICON.respawnTime} alt="time" className="w-5 h-5 object-contain" draggable={false} />
+                  <div className="text-xs text-white/70 truncate">Redeploy</div>
+                </div>
+                <div className="text-sm text-white">
+                  <ValueWithDeltas
+                    value={stats.respawnTime}
+                    deltas={deltas.respawnTime}
+                    formatter={(v) => formatNumber(v, { decimals: 0, suffix: "s" })}
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 min-w-0">
+                  <img src={STAT_ICON.cost} alt="cost" className="w-5 h-5 object-contain" draggable={false} />
+                  <div className="text-xs text-white/70 truncate">Cost</div>
+                </div>
+                <div className="text-sm text-white">
+                  <ValueWithDeltas value={stats.cost} deltas={deltas.cost} formatter={(v) => fmtInt(v)} />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 min-w-0">
+                  <img src={STAT_ICON.blockCnt} alt="block" className="w-5 h-5 object-contain" draggable={false} />
+                  <div className="text-xs text-white/70 truncate">Block</div>
+                </div>
+                <div className="text-sm text-white">
+                  <ValueWithDeltas value={stats.blockCnt} deltas={deltas.blockCnt} formatter={(v) => fmtInt(v)} />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 min-w-0">
                   <img
-                    src={row.icon}
-                    alt={row.label}
-                    className="w-5 h-5 object-contain shrink-0"
+                    src={STAT_ICON.baseAttackTime}
+                    alt="atk time"
+                    className="w-5 h-5 object-contain"
                     draggable={false}
                   />
-
-                  <div className="flex-1 flex items-center justify-between gap-3">
-                    <div className="text-xs text-white/70 truncate">{row.label}</div>
-                    <div className="text-sm text-white tabular-nums">{row.value}</div>
-                  </div>
+                  <div className="text-xs text-white/70 truncate">ATK Time</div>
                 </div>
-              ))}
+                <div className="text-sm text-white">
+                  <ValueWithDeltas
+                    value={stats.baseAttackTime}
+                    deltas={deltas.baseAttackTime}
+                    formatter={(v) => formatNumber(v, { decimals: 1, suffix: "s" })}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Level */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <h3 className="text-lg font-semibold text-white mb-4">Cấp</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Level</h3>
 
           <div className="flex items-center justify-center gap-2 mb-4">
             {eliteButtons.map((i) => {
@@ -547,7 +532,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   key={i}
                   type="button"
                   onClick={() => handleEliteChange(i)}
-                  className={`rounded-lg p-1.5 transition ${active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"}`}
+                  className={`rounded-lg p-1.5 transition ${
+                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                  }`}
                   title={`E${i}`}
                 >
                   <img src={src} alt={`E${i}`} className="w-10 h-10 object-contain" draggable={false} />
@@ -566,15 +553,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               −
             </button>
 
+            {/* hide numeric input to avoid browser spinner shifting layout */}
             <div className="w-16 h-16 rounded-full bg-black/40 border border-white/10 flex items-center justify-center">
-              <input
-                type="number"
-                min={1}
-                max={maxLevel}
-                value={safeLevel}
-                onChange={(e) => setLevel(clamp(e.target.value, 1, maxLevel))}
-                className="no-spin w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
-              />
+              <div className="text-white text-lg font-extrabold tabular-nums">{safeLevel}</div>
             </div>
 
             <button
@@ -593,12 +574,14 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       {/* ROW: Range / Trust / Potentials */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Range */}
-        <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
+        {/* Range (center both small & large grids) */}
+        <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 flex flex-col">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Phạm vi</h3>
           </div>
-          <div className="flex justify-center">
+
+          {/* flex-1 centers vertically when other columns are taller */}
+          <div className="flex-1 flex items-center justify-center">
             <RangeGrid rangeId={currentPhase?.rangeId} />
           </div>
         </div>
@@ -606,7 +589,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         {/* Trust */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-base font-semibold text-white">Tin tưởng</h3>
+            <h3 className="text-base font-semibold text-white">Trust</h3>
 
             <label className="flex items-center gap-2 text-xs text-white/70 cursor-pointer select-none">
               <input
@@ -640,7 +623,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           )}
         </div>
 
-        {/* Potentials */}
+        {/* Potentials (Apply = apply ALL) */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-start justify-between mb-3 gap-3">
             <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
@@ -649,7 +632,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               <input
                 type="checkbox"
                 checked={usePotentials}
-                onChange={(e) => handleTogglePotentialsApply(e.target.checked)}
+                onChange={(e) => setUsePotentials(e.target.checked)}
                 className="accent-emerald-500"
               />
               Apply
@@ -665,26 +648,14 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 const mods = extractAttributeModifiers(r);
                 const isApplicable = mods.some((m) => !!ATTR_TYPE_TO_STAT[m?.attributeType]);
 
-                const selected = potentialLevel > 0 && idx < potentialLevel;
-                const active = usePotentials && selected && isApplicable;
+                const active = usePotentials && isApplicable;
 
                 return (
                   <div
                     key={idx}
                     className={`text-sm leading-snug flex items-start gap-2 ${
-                      isApplicable ? "cursor-pointer hover:text-white" : "cursor-default"
-                    } ${active ? "text-white/90" : "text-white/80"}`}
-                    onClick={() => handlePickPotentialLevel(idx + 1, isApplicable)}
-                    title={isApplicable ? "Click to set potential level" : ""}
-                    role={isApplicable ? "button" : undefined}
-                    tabIndex={isApplicable ? 0 : undefined}
-                    onKeyDown={(e) => {
-                      if (!isApplicable) return;
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        handlePickPotentialLevel(idx + 1, isApplicable);
-                      }
-                    }}
+                      active ? "text-white/90" : "text-white/80"
+                    }`}
                   >
                     {idx < 5 ? (
                       <img
@@ -701,7 +672,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     <div className="min-w-0">{vn}</div>
 
                     {active && (
-                      <div className="ml-auto mt-[3px] w-2.5 h-2.5 rounded-full shadow shrink-0 bg-emerald-400" />
+                      <div className="ml-auto mt-[3px] w-2.5 h-2.5 rounded-full bg-emerald-400 shadow shrink-0" />
                     )}
                   </div>
                 );
