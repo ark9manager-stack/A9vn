@@ -481,7 +481,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             </div>
 
             {/* right */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               {[
                 {
                   icon: STAT_ICON.respawnTime,
@@ -516,7 +516,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   ),
                 },
               ].map((row) => (
-                <div key={row.label} className="flex items-center gap-3 min-h-[44px]">
+                <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
                   <img
                     src={row.icon}
                     alt={row.label}
