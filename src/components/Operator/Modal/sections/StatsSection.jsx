@@ -294,17 +294,27 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     }
 
     if (usePotentials && ranks.length > 0) {
+      const sumByStat = {};
+
       ranks.forEach((r) => {
         const mods = extractAttributeModifiers(r);
         mods.forEach((m) => {
           const statKey = ATTR_TYPE_TO_STAT[m?.attributeType];
           if (!statKey) return;
+
           const v = Number(m.value);
           if (!Number.isFinite(v) || v === 0) return;
-          deltas[statKey].push(v);
+
+          sumByStat[statKey] = (sumByStat[statKey] || 0) + v;
         });
       });
+
+      Object.entries(sumByStat).forEach(([statKey, sum]) => {
+        if (!Number.isFinite(sum) || sum === 0) return;
+        deltas[statKey].push(sum);
+      });
     }
+
 
     const applyDeltas = (key, baseVal) => {
       const sum = (deltas[key] || []).reduce((a, b) => a + Number(b || 0), 0);
@@ -616,7 +626,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           )}
         </div>
 
-        {/* Potentials (Apply = apply ALL) */}
+        {/*Potentials*/}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-start justify-between mb-3 gap-3">
             <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
