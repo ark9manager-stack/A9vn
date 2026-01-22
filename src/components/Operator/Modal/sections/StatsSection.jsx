@@ -93,11 +93,6 @@ function normalizePotMap(potJson) {
   return [];
 }
 
-/**
- * Translate potential description by applying ALL matches.
- * - Sort patterns by length (longest first) to avoid "秒" winning over "再部署时间"
- * - Replace ALL occurrences (not only first)
- */
 function translatePotentialDesc(desc, potMap) {
   if (!desc) return desc;
 
@@ -285,7 +280,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     const deltas = buildEmptyDeltas();
 
-    // Trust deltas (ignore 0)
     if (useTrust && trustFrame?.data) {
       const t = trustFrame.data;
       const pushIfNonZero = (k, v) => {
@@ -299,7 +293,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       pushIfNonZero("magicResistance", t.magicResistance);
     }
 
-    // Potentials deltas: Apply = apply ALL ranks
     if (usePotentials && ranks.length > 0) {
       ranks.forEach((r) => {
         const mods = extractAttributeModifiers(r);
@@ -339,7 +332,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     const nextPhase = phases[i];
     const nextMax = getMaxLevelForPhase(nextPhase);
     setPhaseIndex(i);
-    setLevel(nextMax); // đổi Elite -> nhảy lên max
+    setLevel(nextMax);
   };
 
   if (!resolvedCharId) {
@@ -372,7 +365,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const { stats, deltas } = computed;
 
-  // ẩn các dòng buff = 0 (Trust list)
   const trustRows = useMemo(() => {
     const t = trustFrame?.data || {};
     const rows = [
@@ -521,8 +513,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
         {/* Level */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <h3 className="text-lg font-semibold text-white mb-4">Level</h3>
-
+          <h3 className="text-lg font-semibold text-white mb-4">Cấp</h3>
           <div className="flex items-center justify-center gap-2 mb-4">
             {eliteButtons.map((i) => {
               const active = i === phaseIndex;
@@ -532,9 +523,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   key={i}
                   type="button"
                   onClick={() => handleEliteChange(i)}
-                  className={`rounded-lg p-1.5 transition ${
-                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-                  }`}
+                  className={`rounded-lg p-1.5 transition ${active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"}`}
                   title={`E${i}`}
                 >
                   <img src={src} alt={`E${i}`} className="w-10 h-10 object-contain" draggable={false} />
@@ -555,7 +544,14 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
             {/* hide numeric input to avoid browser spinner shifting layout */}
             <div className="w-16 h-16 rounded-full bg-black/40 border border-white/10 flex items-center justify-center">
-              <div className="text-white text-lg font-extrabold tabular-nums">{safeLevel}</div>
+              <input
+                type="number"
+                min={1}
+                max={maxLevel}
+                value={safeLevel}
+                onChange={(e) => setLevel(clamp(e.target.value, 1, maxLevel))}
+                className="no-spin w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
+              />
             </div>
 
             <button
