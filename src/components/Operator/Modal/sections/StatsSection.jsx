@@ -682,7 +682,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               })}
             </div>
           ) : (
-            <div className="text-sm text-white/60">No potential data.</div>
+            <div className="text-sm text-white/60">Không có data</div>
           )}
         </div>
       </div>
