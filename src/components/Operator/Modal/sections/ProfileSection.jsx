@@ -10,6 +10,8 @@ import {
   normalizeCharId,
 } from "../../../../utils/operatorAvatar";
 
+import StatHover from "../../../components/StatHover";
+
 const RECRUIT_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
 
@@ -58,18 +60,53 @@ function renderInlineItalic(str, keyPrefix = "t") {
     const end = re.lastIndex;
 
     if (start > last) nodes.push(str.slice(last, start));
-
-    nodes.push(
-      <i key={`${keyPrefix}-i-${start}-${end}`}>
-        {m[1]}
-      </i>
-    );
-
+    nodes.push(<i key={`${keyPrefix}-i-${start}-${end}`}>{m[1]}</i>);
     last = end;
   }
 
   if (last < str.length) nodes.push(str.slice(last));
   return nodes;
+}
+
+function renderLineWithNotes(line, keyPrefix = "line") {
+  // quick path for performance
+  if (!line.includes("[[")) {
+    return renderInlineItalic(line, `${keyPrefix}-plain`);
+  }
+
+  const re = /\[\[([^|\]]+)\|([^\]]+)\]\]/g;
+  const out = [];
+  let last = 0;
+  let m;
+
+  while ((m = re.exec(line)) !== null) {
+    const start = m.index;
+    const end = re.lastIndex;
+    const label = m[1];
+    const noteKey = m[2];
+
+    if (start > last) {
+      const chunk = line.slice(last, start);
+      out.push(...renderInlineItalic(chunk, `${keyPrefix}-t-${start}`));
+    }
+
+    out.push(
+      <StatHover
+        key={`${keyPrefix}-note-${start}-${end}-${noteKey}`}
+        label={label}
+        noteKey={noteKey}
+      />
+    );
+
+    last = end;
+  }
+
+  if (last < line.length) {
+    const tail = line.slice(last);
+    out.push(...renderInlineItalic(tail, `${keyPrefix}-tail`));
+  }
+
+  return out;
 }
 
 function renderMultiline(text) {
@@ -79,12 +116,11 @@ function renderMultiline(text) {
 
   return parts.map((line, idx) => (
     <React.Fragment key={`line-${idx}`}>
-      {renderInlineItalic(line, `line-${idx}`)}
+      {renderLineWithNotes(line, `line-${idx}`)}
       {idx < parts.length - 1 ? <br /> : null}
     </React.Fragment>
   ));
 }
-
 
 function rarityToRecruitBg(rarity) {
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
@@ -122,8 +158,6 @@ function SectionTitle({ children }) {
     </div>
   );
 }
-
-
 
 function TextBody({ text }) {
   if (!isNonEmptyString(text)) return null;
@@ -305,17 +339,9 @@ export default function ProfileSection({ operator, charId }) {
 
     let _physicalPanel = null;
     if (isNonEmptyString(physicalText)) {
-      _physicalPanel = {
-        id: "physicalexam",
-        title: "Kiểm tra sức khỏe",
-        text: physicalText,
-      };
+      _physicalPanel = { id: "physicalexam", title: "Kiểm tra sức khỏe", text: physicalText };
     } else if (isNonEmptyString(performanceText)) {
-      _physicalPanel = {
-        id: "performancereview",
-        title: "Đánh giá hiệu suất",
-        text: performanceText,
-      };
+      _physicalPanel = { id: "performancereview", title: "Đánh giá hiệu suất", text: performanceText };
     }
 
     return {
@@ -329,13 +355,7 @@ export default function ProfileSection({ operator, charId }) {
     };
   }, [resolvedCharId]);
 
-  const optionalKeys = new Set([
-    "file_2",
-    "file_3",
-    "file_4",
-    "promotion_record",
-    "paradox",
-  ]);
+  const optionalKeys = new Set(["file_2", "file_3", "file_4", "promotion_record", "paradox"]);
 
   const recuitText = getText("recuit");
   const tokenText = getText("token");
@@ -371,7 +391,6 @@ export default function ProfileSection({ operator, charId }) {
         </div>
       ) : null}
 
-      {/* Row 1 */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         <ImageTextPanel
           id="recuit"
@@ -394,27 +413,16 @@ export default function ProfileSection({ operator, charId }) {
         />
       </div>
 
-      {/* Row 2 */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         <TextPanel id="basicinfo" title="Thông tin cơ bản" text={basicInfoText} />
-
         {physicalPanel ? (
-          <TextPanel
-            id={physicalPanel.id}
-            title={physicalPanel.title}
-            text={physicalPanel.text}
-          />
+          <TextPanel id={physicalPanel.id} title={physicalPanel.title} text={physicalPanel.text} />
         ) : null}
       </div>
 
-      {/* Single column */}
       <TextPanel id="profile" title="Hồ sơ" text={profileText} />
 
-      <TextPanel
-        id="clinicalanalysis"
-        title="Phân tích y tế"
-        text={clinicalAnalysisText}
-      />
+      <TextPanel id="clinicalanalysis" title="Phân tích y tế" text={clinicalAnalysisText} />
 
       {sections.map((s) => {
         const text = getText(s.key);
