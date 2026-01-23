@@ -17,8 +17,8 @@ const TOKEN_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/potential/";
 
 const UI_SCALE = {
-  overlayDx: 0,
-  overlayDy: 0,
+  overlayDx: -4,
+  overlayDy: -4,
   imgBox: 112, // was 92
   imgMain: 90, // was 72
   imgOverlay: 45, // was 32
