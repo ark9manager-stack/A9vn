@@ -253,6 +253,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   }, [maxLevel]);
 
   const safeLevel = clamp(level, 1, maxLevel);
+    const levelPct = useMemo(() => {
+    if (maxLevel <= 1) return 0;
+    return ((safeLevel - 1) / (maxLevel - 1)) * 100;
+  }, [safeLevel, maxLevel]);
+
   const commitLevelDraft = () => {
     const n = Number.parseInt(levelDraft, 10);
 
