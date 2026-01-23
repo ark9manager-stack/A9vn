@@ -163,7 +163,7 @@ export default function StatHover({ label, noteKey }) {
     >
       <div className="rounded-lg border border-white/15 bg-black/90 shadow-lg overflow-hidden">
         {isNonEmptyString(title) ? (
-          <div className="px-3 py-2 bg-white/10 border-b border-white/10 font-semibold">
+          <div className="px-3 py-2 bg-white/10 border-b border-white/10 font-semibold text-white">
             {renderMultiline(title, `st-title-${noteKey}`)}
           </div>
         ) : null}
@@ -190,10 +190,9 @@ export default function StatHover({ label, noteKey }) {
           underline-offset-4
         "
         style={{
-          fontFamily:
-            '"Inter","Noto Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif',
-          textDecorationThickness: "2px",
-        }}
+            fontFamily: "inherit",
+            textDecorationThickness: "2px",
+            }}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         onClick={togglePin}
