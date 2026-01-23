@@ -10,11 +10,9 @@ import {
   normalizeCharId,
 } from "../../../../utils/operatorAvatar";
 
-// Recruit panel bg (rarity-based)
 const RECRUIT_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
 
-// Token icon (potential item)
 const TOKEN_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/potential/";
 
@@ -41,7 +39,6 @@ function renderMultiline(text) {
 }
 
 function rarityToRecruitBg(rarity) {
-  // rarity: "TIER_1" -> op_r1.png ... "TIER_6" -> op_r6.png
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
   const n = m ? Number(m[1]) : 1;
   const safe = Number.isFinite(n) && n >= 1 && n <= 6 ? n : 1;
@@ -50,7 +47,6 @@ function rarityToRecruitBg(rarity) {
 
 function getItemEntryById(id) {
   if (!id) return null;
-  // item_table.json can be either { items: { ... } } or direct map
   if (itemTable?.items && itemTable.items[id]) return itemTable.items[id];
   if (itemTable?.[id]) return itemTable[id];
   return null;
@@ -73,13 +69,6 @@ function TextBody({ text }) {
   );
 }
 
-/**
- * Image block style per your request:
- * - no background
- * - no rounded corners
- * - recruit bg centered a bit (objectPosition)
- * - avatar overlay top-left similar to reference
- */
 function ImageTextPanel({
   title,
   imgUrl,
@@ -87,7 +76,7 @@ function ImageTextPanel({
   overlayUrl,
   text,
   id,
-  imgObjectPosition, // optional
+  imgObjectPosition,
 }) {
   return (
     <div
@@ -162,6 +151,7 @@ function ImageTextPanel({
 }
 
 function TextPanel({ title, text, id }) {
+  if (!isNonEmptyString(text)) return null;
   return (
     <div
       id={id}
@@ -193,7 +183,7 @@ export default function ProfileSection({ operator, charId }) {
     recruitBgUrl,
     avatarUrl,
     tokenIconUrl,
-    clinicalSection,
+    physicalPanel, // physicalexam OR performancereview
   } = useMemo(() => {
     const profileEntry = resolvedCharId ? profileVN?.[resolvedCharId] : null;
 
@@ -202,14 +192,10 @@ export default function ProfileSection({ operator, charId }) {
     const cn = profileEntry?.cn || {};
 
     const _getText = (key) => pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
-
     const trans = pickFirstNonEmpty(vn?.trans);
 
     const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
-
-    const rarity = charData?.rarity;
-    const recruitBg = rarityToRecruitBg(rarity);
-
+    const recruitBg = rarityToRecruitBg(charData?.rarity);
     const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
 
     const potentialItemId =
@@ -220,22 +206,30 @@ export default function ProfileSection({ operator, charId }) {
 
     const itemEntry = getItemEntryById(potentialItemId);
     const iconId = pickFirstNonEmpty(itemEntry?.iconId, potentialItemId);
-    const tokenUrl = isNonEmptyString(iconId) ? `${TOKEN_ICON_BASE}${iconId}.png` : "";
-    const clinicalText1 = _getText("clinical_analysis");
-    const clinicalText2 = _getText("clinical_analysis_2");
+    const tokenUrl = isNonEmptyString(iconId)
+      ? `${TOKEN_ICON_BASE}${iconId}.png`
+      : "";
 
-    let _clinicalSection = null;
-    if (isNonEmptyString(clinicalText1)) {
-      _clinicalSection = {
-        id: "clinicalanalysis",
-        title: "Phân tích y tế",
-        text: clinicalText1,
+    /**
+     * Physical slot (right in row 2):
+     * - Prefer physical_exam
+     * - If empty, use physical_exam_2 and title becomes "Đánh giá hiệu suất"
+     */
+    const physicalText = _getText("physical_exam");
+    const performanceText = _getText("physical_exam_2"); // ✅ renamed
+
+    let _physicalPanel = null;
+    if (isNonEmptyString(physicalText)) {
+      _physicalPanel = {
+        id: "physicalexam",
+        title: "Kiểm tra sức khỏe",
+        text: physicalText,
       };
-    } else if (isNonEmptyString(clinicalText2)) {
-      _clinicalSection = {
+    } else if (isNonEmptyString(performanceText)) {
+      _physicalPanel = {
         id: "performancereview",
         title: "Đánh giá hiệu suất",
-        text: clinicalText2,
+        text: performanceText,
       };
     }
 
@@ -245,10 +239,11 @@ export default function ProfileSection({ operator, charId }) {
       recruitBgUrl: recruitBg,
       avatarUrl: _avatarUrl,
       tokenIconUrl: tokenUrl,
-      clinicalSection: _clinicalSection,
+      physicalPanel: _physicalPanel,
     };
   }, [resolvedCharId]);
 
+  // Hide these when empty
   const optionalKeys = new Set([
     "file_2",
     "file_3",
@@ -259,27 +254,23 @@ export default function ProfileSection({ operator, charId }) {
 
   const recuitText = getText("recuit");
   const tokenText = getText("token");
-
   const basicInfoText = getText("basic_info");
-  const physicalExamText = getText("physical_exam");
 
-  const singleSections = [
-    { id: "profile", key: "profile", title: "Hồ sơ" },
+  const profileText = getText("profile");
+  const clinicalAnalysisText = getText("clinical_analysis"); // stays single-column
+
+  const sections = [
     { id: "file_1", key: "file_1", title: "Tài liệu lưu trữ 1" },
     { id: "file_2", key: "file_2", title: "Tài liệu lưu trữ 2" },
     { id: "file_3", key: "file_3", title: "Tài liệu lưu trữ 3" },
     { id: "file_4", key: "file_4", title: "Tài liệu lưu trữ 4" },
     { id: "promotion", key: "promotion_record", title: "Bản ghi thăng tiến" },
-    {
-      id: "paradox",
-      key: "paradox",
-      title: "Giả thuyết/Paradox Simulation",
-    },
+    { id: "paradox", key: "paradox", title: "Giả thuyết/Paradox Simulation" },
   ];
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-      {/* Translator line (only VN has "trans"). Hide if empty. */}
+      {/* Translator line */}
       {isNonEmptyString(transText) ? (
         <div
           style={{
@@ -295,7 +286,7 @@ export default function ProfileSection({ operator, charId }) {
         </div>
       ) : null}
 
-      {/* Row 1: Recruit (left) + Token (right) */}
+      {/* Row 1 */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         <ImageTextPanel
           id="recuit"
@@ -316,41 +307,35 @@ export default function ProfileSection({ operator, charId }) {
         />
       </div>
 
-      {/* Row 2: Basic Info (left) + Physical Exam (right) */}
+      {/* Row 2 */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        <TextPanel
-          id="basicinfo"
-          title="Thông tin cơ bản"
-          text={basicInfoText}
-        />
-        <TextPanel
-          id="physicalexam"
-          title="Kiểm tra sức khỏe"
-          text={physicalExamText}
-        />
+        <TextPanel id="basicinfo" title="Thông tin cơ bản" text={basicInfoText} />
+
+        {/* PhysicalExam OR PerformanceReview */}
+        {physicalPanel ? (
+          <TextPanel
+            id={physicalPanel.id}
+            title={physicalPanel.title}
+            text={physicalPanel.text}
+          />
+        ) : null}
       </div>
 
-      {/* Rows below: single-column */}
-      <TextPanel id="profile" title="Hồ sơ" text={getText("profile")} />
+      {/* Single column */}
+      <TextPanel id="profile" title="Hồ sơ" text={profileText} />
 
-      {/* Clinical section (dynamic: clinicalanalysis OR performancereview) */}
-      {clinicalSection ? (
-        <TextPanel
-          id={clinicalSection.id}
-          title={clinicalSection.title}
-          text={clinicalSection.text}
-        />
-      ) : null}
+      {/* Clinical analysis stays here, hides if empty */}
+      <TextPanel
+        id="clinicalanalysis"
+        title="Phân tích y tế"
+        text={clinicalAnalysisText}
+      />
 
-      {singleSections
-        .filter((s) => s.key !== "profile")
-        .map((s) => {
-          const text = getText(s.key);
-
-          if (optionalKeys.has(s.key) && !isNonEmptyString(text)) return null;
-
-          return <TextPanel key={s.id} id={s.id} title={s.title} text={text} />;
-        })}
+      {sections.map((s) => {
+        const text = getText(s.key);
+        if (optionalKeys.has(s.key) && !isNonEmptyString(text)) return null;
+        return <TextPanel key={s.id} id={s.id} title={s.title} text={text} />;
+      })}
     </div>
   );
 }
