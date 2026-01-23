@@ -339,7 +339,7 @@ export default function ProfileSection({ operator, charId }) {
 
     let _physicalPanel = null;
     if (isNonEmptyString(physicalText)) {
-      _physicalPanel = { id: "physicalexam", title: "Kiểm tra sức khỏe", text: physicalText };
+      _physicalPanel = { id: "physicalexam", title: "Sức khỏe tổng quát", text: physicalText };
     } else if (isNonEmptyString(performanceText)) {
       _physicalPanel = { id: "performancereview", title: "Đánh giá hiệu suất", text: performanceText };
     }
