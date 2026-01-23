@@ -16,6 +16,19 @@ const RECRUIT_BG_BASE =
 const TOKEN_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/potential/";
 
+/** ✅ Bigger UI scales */
+const UI_SCALE = {
+  titleFont: 18,
+  bodyFont: 16,
+  transFont: 15,
+
+  // image block size
+  imgBox: 112, // was 92
+  imgMain: 90, // was 72
+  imgOverlay: 40, // was 32
+  overlayOffset: 12, // was 10
+};
+
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
@@ -54,7 +67,14 @@ function getItemEntryById(id) {
 
 function SectionTitle({ children }) {
   return (
-    <div style={{ fontWeight: 700, marginBottom: 6, lineHeight: 1.2 }}>
+    <div
+      style={{
+        fontWeight: 800,
+        marginBottom: 8,
+        lineHeight: 1.2,
+        fontSize: UI_SCALE.titleFont,
+      }}
+    >
       {children}
     </div>
   );
@@ -63,7 +83,13 @@ function SectionTitle({ children }) {
 function TextBody({ text }) {
   if (!isNonEmptyString(text)) return null;
   return (
-    <div style={{ lineHeight: 1.5, fontSize: 14, opacity: 0.95 }}>
+    <div
+      style={{
+        lineHeight: 1.6,
+        fontSize: UI_SCALE.bodyFont,
+        opacity: 0.95,
+      }}
+    >
       {renderMultiline(text)}
     </div>
   );
@@ -83,8 +109,8 @@ function ImageTextPanel({
       id={id}
       style={{
         display: "flex",
-        gap: 12,
-        padding: 12,
+        gap: 14,
+        padding: 14,
         borderRadius: 10,
         border: "1px solid rgba(255,255,255,0.10)",
         background: "rgba(0,0,0,0.18)",
@@ -94,8 +120,8 @@ function ImageTextPanel({
     >
       <div
         style={{
-          width: 92,
-          height: 92,
+          width: UI_SCALE.imgBox,
+          height: UI_SCALE.imgBox,
           position: "relative",
           flex: "0 0 auto",
           display: "flex",
@@ -111,8 +137,8 @@ function ImageTextPanel({
             src={imgUrl}
             alt={imgAlt || title}
             style={{
-              width: 72,
-              height: 72,
+              width: UI_SCALE.imgMain,
+              height: UI_SCALE.imgMain,
               objectFit: "contain",
               objectPosition: imgObjectPosition || "50% 50%",
               display: "block",
@@ -128,10 +154,10 @@ function ImageTextPanel({
             alt=""
             style={{
               position: "absolute",
-              top: 10,
-              left: 10,
-              width: 32,
-              height: 32,
+              top: UI_SCALE.overlayOffset,
+              left: UI_SCALE.overlayOffset,
+              width: UI_SCALE.imgOverlay,
+              height: UI_SCALE.imgOverlay,
               borderRadius: 0,
               objectFit: "cover",
               boxShadow: "0 4px 10px rgba(0,0,0,0.35)",
@@ -156,7 +182,7 @@ function TextPanel({ title, text, id }) {
     <div
       id={id}
       style={{
-        padding: 12,
+        padding: 14,
         borderRadius: 10,
         border: "1px solid rgba(255,255,255,0.10)",
         background: "rgba(0,0,0,0.18)",
@@ -183,7 +209,7 @@ export default function ProfileSection({ operator, charId }) {
     recruitBgUrl,
     avatarUrl,
     tokenIconUrl,
-    physicalPanel, // physicalexam OR performancereview
+    physicalPanel,
   } = useMemo(() => {
     const profileEntry = resolvedCharId ? profileVN?.[resolvedCharId] : null;
 
@@ -210,13 +236,9 @@ export default function ProfileSection({ operator, charId }) {
       ? `${TOKEN_ICON_BASE}${iconId}.png`
       : "";
 
-    /**
-     * Physical slot (right in row 2):
-     * - Prefer physical_exam
-     * - If empty, use physical_exam_2 and title becomes "Đánh giá hiệu suất"
-     */
+    // Right slot row 2: physical_exam OR physical_exam_2 (Performance Review)
     const physicalText = _getText("physical_exam");
-    const performanceText = _getText("physical_exam_2"); // ✅ renamed
+    const performanceText = _getText("physical_exam_2");
 
     let _physicalPanel = null;
     if (isNonEmptyString(physicalText)) {
@@ -243,7 +265,6 @@ export default function ProfileSection({ operator, charId }) {
     };
   }, [resolvedCharId]);
 
-  // Hide these when empty
   const optionalKeys = new Set([
     "file_2",
     "file_3",
@@ -257,7 +278,7 @@ export default function ProfileSection({ operator, charId }) {
   const basicInfoText = getText("basic_info");
 
   const profileText = getText("profile");
-  const clinicalAnalysisText = getText("clinical_analysis"); // stays single-column
+  const clinicalAnalysisText = getText("clinical_analysis");
 
   const sections = [
     { id: "file_1", key: "file_1", title: "Tài liệu lưu trữ 1" },
@@ -270,15 +291,15 @@ export default function ProfileSection({ operator, charId }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-      {/* Translator line */}
       {isNonEmptyString(transText) ? (
         <div
           style={{
-            padding: "10px 12px",
+            padding: "12px 14px",
             borderRadius: 10,
             border: "1px dashed rgba(255,255,255,0.18)",
             background: "rgba(0,0,0,0.12)",
-            fontSize: 13,
+            fontSize: UI_SCALE.transFont,
+            lineHeight: 1.6,
             opacity: 0.95,
           }}
         >
@@ -311,7 +332,6 @@ export default function ProfileSection({ operator, charId }) {
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         <TextPanel id="basicinfo" title="Thông tin cơ bản" text={basicInfoText} />
 
-        {/* PhysicalExam OR PerformanceReview */}
         {physicalPanel ? (
           <TextPanel
             id={physicalPanel.id}
@@ -324,7 +344,6 @@ export default function ProfileSection({ operator, charId }) {
       {/* Single column */}
       <TextPanel id="profile" title="Hồ sơ" text={profileText} />
 
-      {/* Clinical analysis stays here, hides if empty */}
       <TextPanel
         id="clinicalanalysis"
         title="Phân tích y tế"
