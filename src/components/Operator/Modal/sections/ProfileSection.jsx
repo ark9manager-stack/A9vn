@@ -47,16 +47,44 @@ function pickFirstNonEmpty(...vals) {
   return "";
 }
 
+function renderInlineItalic(str, keyPrefix = "t") {
+  const re = /<i>(.*?)<\/i>/gis;
+  const nodes = [];
+  let last = 0;
+  let m;
+
+  while ((m = re.exec(str)) !== null) {
+    const start = m.index;
+    const end = re.lastIndex;
+
+    if (start > last) nodes.push(str.slice(last, start));
+
+    nodes.push(
+      <i key={`${keyPrefix}-i-${start}-${end}`}>
+        {m[1]}
+      </i>
+    );
+
+    last = end;
+  }
+
+  if (last < str.length) nodes.push(str.slice(last));
+  return nodes;
+}
+
 function renderMultiline(text) {
   if (!isNonEmptyString(text)) return null;
+
   const parts = String(text).replace(/\r\n/g, "\n").split("\n");
-  return parts.map((part, idx) => (
-    <React.Fragment key={idx}>
-      {part}
+
+  return parts.map((line, idx) => (
+    <React.Fragment key={`line-${idx}`}>
+      {renderInlineItalic(line, `line-${idx}`)}
       {idx < parts.length - 1 ? <br /> : null}
     </React.Fragment>
   ));
 }
+
 
 function rarityToRecruitBg(rarity) {
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
