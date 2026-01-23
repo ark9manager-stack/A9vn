@@ -16,11 +16,10 @@ const RECRUIT_BG_BASE =
 const TOKEN_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/potential/";
 
-/** ✅ Bigger UI scales */
 const UI_SCALE = {
-  titleFont: 18,
-  bodyFont: 16,
-  transFont: 15,
+  imgOverlay: 40,
+  overlayDx: 0,
+  overlayDy: 0,
 
   // image block size
   imgBox: 112, // was 92
@@ -154,18 +153,20 @@ function ImageTextPanel({
             alt=""
             style={{
               position: "absolute",
-              top: UI_SCALE.overlayOffset,
-              left: UI_SCALE.overlayOffset,
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
               width: UI_SCALE.imgOverlay,
               height: UI_SCALE.imgOverlay,
-              borderRadius: 0,
               objectFit: "cover",
+              borderRadius: 0,
               boxShadow: "0 4px 10px rgba(0,0,0,0.35)",
               border: "1px solid rgba(255,255,255,0.25)",
               background: "transparent",
             }}
           />
         ) : null}
+
       </div>
 
       <div style={{ minWidth: 0, flex: 1 }}>
