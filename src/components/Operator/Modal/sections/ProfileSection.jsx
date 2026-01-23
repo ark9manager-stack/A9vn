@@ -88,18 +88,16 @@ function SectionTitle({ children }) {
       >
         {children}
       </div>
-      <div
-        style={{
-          marginTop: 6,
-          opacity: 0.6,
-          fontFamily: UI_SCALE.dividerFontFamily,
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          lineHeight: 1,
-          userSelect: "none",
-        }}
-      >
-        {"-".repeat(200)}
+      <div style={{ marginTop: 8 }}>
+        <div
+          style={{
+            width: "100%",
+            height: 2,
+            opacity: 0.55,
+            backgroundImage:
+              "repeating-linear-gradient(to right, rgba(255,255,255,0.65) 0px, rgba(255,255,255,0.65) 12px, transparent 12px, transparent 18px)",
+          }}
+        />
       </div>
     </div>
   );
