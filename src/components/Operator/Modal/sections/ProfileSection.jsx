@@ -13,16 +13,21 @@ import {
 const RECRUIT_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
 
-const TOKEN_ICON_BASE =
+const TOKEN_ICON_BASE_POTENTIAL =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/potential/";
+const TOKEN_ICON_BASE_CLASSPOTENTIAL =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/classpotential/";
 
 const UI_SCALE = {
   overlayDx: -4,
   overlayDy: -4,
-  imgBox: 112, // was 92
-  imgMain: 90, // was 72
-  imgOverlay: 45, // was 32
-  overlayOffset: 12, // was 10
+  titleFont: 18,
+  bodyFont: 16,
+  transFont: 15,
+  imgBox: 112,
+  imgMain: 90,
+  imgOverlay: 45,
+  overlayOffset: 12,
 };
 
 function isNonEmptyString(v) {
@@ -163,7 +168,6 @@ function ImageTextPanel({
             }}
           />
         ) : null}
-
       </div>
 
       <div style={{ minWidth: 0, flex: 1 }}>
@@ -215,11 +219,13 @@ export default function ProfileSection({ operator, charId }) {
     const en = profileEntry?.en || {};
     const cn = profileEntry?.cn || {};
 
-    const _getText = (key) => pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
+    const _getText = (key) =>
+      pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
     const trans = pickFirstNonEmpty(vn?.trans);
 
     const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
-    const recruitBg = rarityToRecruitBg(charData?.rarity);
+    const rarity = charData?.rarity || "";
+    const recruitBg = rarityToRecruitBg(rarity);
     const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
 
     const potentialItemId =
@@ -230,11 +236,12 @@ export default function ProfileSection({ operator, charId }) {
 
     const itemEntry = getItemEntryById(potentialItemId);
     const iconId = pickFirstNonEmpty(itemEntry?.iconId, potentialItemId);
-    const tokenUrl = isNonEmptyString(iconId)
-      ? `${TOKEN_ICON_BASE}${iconId}.png`
-      : "";
+    const isTier56 = rarity === "TIER_5" || rarity === "TIER_6";
+    const tokenBase = isTier56
+      ? TOKEN_ICON_BASE_CLASSPOTENTIAL
+      : TOKEN_ICON_BASE_POTENTIAL;
 
-    // Right slot row 2: physical_exam OR physical_exam_2 (Performance Review)
+    const tokenUrl = isNonEmptyString(iconId) ? `${tokenBase}${iconId}.png` : "";
     const physicalText = _getText("physical_exam");
     const performanceText = _getText("physical_exam_2");
 
@@ -316,6 +323,7 @@ export default function ProfileSection({ operator, charId }) {
           text={recuitText}
           imgObjectPosition="50% 55%"
         />
+
         <ImageTextPanel
           id="token"
           title="Tín vật"
