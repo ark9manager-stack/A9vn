@@ -10,7 +10,7 @@ import {
   normalizeCharId,
 } from "../../../../utils/operatorAvatar";
 
-import StatHover from "../../../components/StatHover";
+import StatHover from "../../../StatHover";
 
 const RECRUIT_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
