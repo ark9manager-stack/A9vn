@@ -564,7 +564,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           </div>
 
           {/* Slider */}
-          <div className="mt-2">
+          <div className="mt-2 -mx-3 px-3">
             <div className="flex items-center justify-between text-xs text-white/60 mb-2">
               <span>1</span>
               <span>Cấp tối đa {maxLevel}</span>
@@ -582,7 +582,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 setLevel(next);
                 setLevelDraft(String(next));
               }}
-              className="w-full accent-emerald-500"
+              className="level-slider w-full"
+              style={{ "--pct": `${levelPct}%` }}
             />
 
             <div className="mt-2 text-center text-xs text-white/70">
