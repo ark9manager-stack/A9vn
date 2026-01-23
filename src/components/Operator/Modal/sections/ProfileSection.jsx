@@ -117,7 +117,7 @@ function SectionTitle({ children }) {
         {children}
       </div>
       <div className="mt-2 w-full">
-        <div className="h-px w-full bg-white/10" />
+        <div className="h-[2px] w-full bg-white/10" />
       </div>
     </div>
   );
