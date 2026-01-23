@@ -152,7 +152,7 @@ function ImageTextPanel({
               position: "absolute",
               top: "50%",
               left: "50%",
-              transform: "translate(-50%, -50%)",
+              transform: `translate(-50%, -50%) translate(${UI_SCALE.overlayDx}px, ${UI_SCALE.overlayDy}px)`,
               width: UI_SCALE.imgOverlay,
               height: UI_SCALE.imgOverlay,
               objectFit: "cover",
