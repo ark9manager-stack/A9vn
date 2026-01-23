@@ -116,20 +116,13 @@ function SectionTitle({ children }) {
       >
         {children}
       </div>
-      <div style={{ marginTop: 8 }}>
-        <div
-          style={{
-            width: "100%",
-            height: 2,
-            opacity: 0.55,
-            backgroundImage:
-              "repeating-linear-gradient(to right, rgba(255,255,255,0.65) 0px, rgba(255,255,255,0.65) 12px, transparent 12px, transparent 18px)",
-          }}
-        />
+      <div className="mt-2 w-full">
+        <div className="h-px w-full bg-white/10" />
       </div>
     </div>
   );
 }
+
 
 
 function TextBody({ text }) {
