@@ -73,7 +73,22 @@ function TextBody({ text }) {
   );
 }
 
-function ImageTextPanel({ title, imgUrl, imgAlt, overlayUrl, text, id }) {
+/**
+ * Image block style per your request:
+ * - no background
+ * - no rounded corners
+ * - recruit bg centered a bit (objectPosition)
+ * - avatar overlay top-left similar to reference
+ */
+function ImageTextPanel({
+  title,
+  imgUrl,
+  imgAlt,
+  overlayUrl,
+  text,
+  id,
+  imgObjectPosition, // optional
+}) {
   return (
     <div
       id={id}
@@ -90,13 +105,16 @@ function ImageTextPanel({ title, imgUrl, imgAlt, overlayUrl, text, id }) {
     >
       <div
         style={{
-          width: 120,
-          height: 120,
+          width: 92,
+          height: 92,
           position: "relative",
           flex: "0 0 auto",
-          borderRadius: 10,
-          overflow: "hidden",
-          background: "rgba(255,255,255,0.06)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "transparent",
+          borderRadius: 0,
+          overflow: "visible",
         }}
       >
         {imgUrl ? (
@@ -104,10 +122,13 @@ function ImageTextPanel({ title, imgUrl, imgAlt, overlayUrl, text, id }) {
             src={imgUrl}
             alt={imgAlt || title}
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
+              width: 72,
+              height: 72,
+              objectFit: "contain",
+              objectPosition: imgObjectPosition || "50% 50%",
               display: "block",
+              borderRadius: 0,
+              background: "transparent",
             }}
           />
         ) : null}
@@ -118,15 +139,15 @@ function ImageTextPanel({ title, imgUrl, imgAlt, overlayUrl, text, id }) {
             alt=""
             style={{
               position: "absolute",
-              left: 8,
-              bottom: 8,
-              width: 44,
-              height: 44,
-              borderRadius: 10,
+              top: 10,
+              left: 10,
+              width: 32,
+              height: 32,
+              borderRadius: 0,
               objectFit: "cover",
               boxShadow: "0 4px 10px rgba(0,0,0,0.35)",
               border: "1px solid rgba(255,255,255,0.25)",
-              background: "rgba(0,0,0,0.25)",
+              background: "transparent",
             }}
           />
         ) : null}
@@ -166,57 +187,84 @@ export default function ProfileSection({ operator, charId }) {
     return normalizeCharId(fromProp || fromOperator || "");
   }, [operator, charId]);
 
-  const { transText, getText, recruitBgUrl, avatarUrl, tokenIconUrl } =
-    useMemo(() => {
-      const profileEntry = resolvedCharId ? profileVN?.[resolvedCharId] : null;
+  const {
+    transText,
+    getText,
+    recruitBgUrl,
+    avatarUrl,
+    tokenIconUrl,
+    clinicalSection,
+  } = useMemo(() => {
+    const profileEntry = resolvedCharId ? profileVN?.[resolvedCharId] : null;
 
-      const vn = profileEntry?.vn || {};
-      const en = profileEntry?.en || {};
-      const cn = profileEntry?.cn || {};
+    const vn = profileEntry?.vn || {};
+    const en = profileEntry?.en || {};
+    const cn = profileEntry?.cn || {};
 
-      const _getText = (key) =>
-        pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
+    const _getText = (key) => pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
 
-      const trans = pickFirstNonEmpty(vn?.trans);
+    const trans = pickFirstNonEmpty(vn?.trans);
 
-      const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
+    const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
 
-      const rarity = charData?.rarity;
-      const recruitBg = rarityToRecruitBg(rarity);
+    const rarity = charData?.rarity;
+    const recruitBg = rarityToRecruitBg(rarity);
 
-      const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
+    const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
 
-      const potentialItemId =
-        charData?.potentialItemId ||
-        charData?.activityPotentialItemId ||
-        charData?.classicPotentialItemId ||
-        "";
+    const potentialItemId =
+      charData?.potentialItemId ||
+      charData?.activityPotentialItemId ||
+      charData?.classicPotentialItemId ||
+      "";
 
-      const itemEntry = getItemEntryById(potentialItemId);
-      const iconId = pickFirstNonEmpty(itemEntry?.iconId, potentialItemId);
-      const tokenUrl = isNonEmptyString(iconId)
-        ? `${TOKEN_ICON_BASE}${iconId}.png`
-        : "";
+    const itemEntry = getItemEntryById(potentialItemId);
+    const iconId = pickFirstNonEmpty(itemEntry?.iconId, potentialItemId);
+    const tokenUrl = isNonEmptyString(iconId) ? `${TOKEN_ICON_BASE}${iconId}.png` : "";
+    const clinicalText1 = _getText("clinical_analysis");
+    const clinicalText2 = _getText("clinical_analysis_2");
 
-      return {
-        transText: trans,
-        getText: _getText,
-        recruitBgUrl: recruitBg,
-        avatarUrl: _avatarUrl,
-        tokenIconUrl: tokenUrl,
+    let _clinicalSection = null;
+    if (isNonEmptyString(clinicalText1)) {
+      _clinicalSection = {
+        id: "clinicalanalysis",
+        title: "Phân tích y tế",
+        text: clinicalText1,
       };
-    }, [resolvedCharId]);
+    } else if (isNonEmptyString(clinicalText2)) {
+      _clinicalSection = {
+        id: "performancereview",
+        title: "Đánh giá hiệu suất",
+        text: clinicalText2,
+      };
+    }
 
-  // Optional sections to hide if empty (as requested)
-  const optionalIfEmpty = new Set(["file_4", "promotion_record", "paradox"]);
+    return {
+      transText: trans,
+      getText: _getText,
+      recruitBgUrl: recruitBg,
+      avatarUrl: _avatarUrl,
+      tokenIconUrl: tokenUrl,
+      clinicalSection: _clinicalSection,
+    };
+  }, [resolvedCharId]);
+
+  const optionalKeys = new Set([
+    "file_2",
+    "file_3",
+    "file_4",
+    "promotion_record",
+    "paradox",
+  ]);
+
+  const recuitText = getText("recuit");
+  const tokenText = getText("token");
+
+  const basicInfoText = getText("basic_info");
+  const physicalExamText = getText("physical_exam");
 
   const singleSections = [
     { id: "profile", key: "profile", title: "Hồ sơ" },
-    {
-      id: "clinicalanalysis",
-      key: "clinical_analysis",
-      title: "Phân tích y tế",
-    },
     { id: "file_1", key: "file_1", title: "Tài liệu lưu trữ 1" },
     { id: "file_2", key: "file_2", title: "Tài liệu lưu trữ 2" },
     { id: "file_3", key: "file_3", title: "Tài liệu lưu trữ 3" },
@@ -228,12 +276,6 @@ export default function ProfileSection({ operator, charId }) {
       title: "Giả thuyết/Paradox Simulation",
     },
   ];
-
-  const recuitText = getText("recuit");
-  const tokenText = getText("token");
-
-  const basicInfoText = getText("basic_info");
-  const physicalExamText = getText("physical_exam");
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -262,6 +304,7 @@ export default function ProfileSection({ operator, charId }) {
           imgAlt="Recruit Contract"
           overlayUrl={avatarUrl}
           text={recuitText}
+          imgObjectPosition="50% 55%"
         />
         <ImageTextPanel
           id="token"
@@ -288,15 +331,26 @@ export default function ProfileSection({ operator, charId }) {
       </div>
 
       {/* Rows below: single-column */}
-      {singleSections.map((s) => {
-        const text = getText(s.key);
+      <TextPanel id="profile" title="Hồ sơ" text={getText("profile")} />
 
-        if (optionalIfEmpty.has(s.key) && !isNonEmptyString(text)) return null;
+      {/* Clinical section (dynamic: clinicalanalysis OR performancereview) */}
+      {clinicalSection ? (
+        <TextPanel
+          id={clinicalSection.id}
+          title={clinicalSection.title}
+          text={clinicalSection.text}
+        />
+      ) : null}
 
-        return (
-          <TextPanel key={s.id} id={s.id} title={s.title} text={text} />
-        );
-      })}
+      {singleSections
+        .filter((s) => s.key !== "profile")
+        .map((s) => {
+          const text = getText(s.key);
+
+          if (optionalKeys.has(s.key) && !isNonEmptyString(text)) return null;
+
+          return <TextPanel key={s.id} id={s.id} title={s.title} text={text} />;
+        })}
     </div>
   );
 }
