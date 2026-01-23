@@ -617,20 +617,27 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     }
                     commitLevelDraft();
                   }}
-                  className="w-12 text-center bg-transparent outline-none text-white font-semibold border-b border-white/30 focus:border-white/60"
                   placeholder={String(safeLevel)}
+                  className="inline-block w-16 px-2 py-1 text-center
+                            rounded-md bg-white/10 border border-white/20
+                            text-white font-semibold outline-none
+                            focus:bg-white/15 focus:border-white/40"
                 />
               ) : (
-                <span
-                  className="text-white font-semibold cursor-pointer underline decoration-white/30 hover:decoration-white/60"
+                <button
+                  type="button"
                   title="Bấm để nhập cấp"
                   onClick={() => {
                     setIsEditingLevel(true);
                     setLevelDraft("");
                   }}
+                  className="inline-flex items-center justify-center w-16 px-2 py-1
+                            rounded-md bg-white/10 border border-white/20
+                            text-white font-semibold
+                            hover:bg-white/15 hover:border-white/30 transition"
                 >
                   {safeLevel}
-                </span>
+                </button>
               )}
             </div>
           </div>
