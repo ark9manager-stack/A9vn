@@ -234,10 +234,15 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [level, setLevel] = useState(1);
+  const [levelDraft, setLevelDraft] = useState("1");
+  const [isEditingLevel, setIsEditingLevel] = useState(false);
+
 
   useEffect(() => {
     setPhaseIndex(0);
     setLevel(1);
+    setIsEditingLevel(false);
+    setLevelDraft("1");
   }, [resolvedCharId]);
 
   const currentPhase = phases[phaseIndex];
@@ -248,6 +253,22 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   }, [maxLevel]);
 
   const safeLevel = clamp(level, 1, maxLevel);
+  const commitLevelDraft = () => {
+    const n = Number.parseInt(levelDraft, 10);
+
+    if (!Number.isFinite(n)) {
+      setLevelDraft(String(safeLevel));
+      return;
+    }
+
+    const next = clamp(n, 1, maxLevel);
+    setLevel(next);
+    setLevelDraft(String(next));
+  };
+
+  useEffect(() => {
+    if (!isEditingLevel) setLevelDraft(String(safeLevel));
+  }, [safeLevel, isEditingLevel]);
 
   // Trust
   const trustFrame = useMemo(() => {
@@ -343,6 +364,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     const nextMax = getMaxLevelForPhase(nextPhase);
     setPhaseIndex(i);
     setLevel(nextMax);
+    setIsEditingLevel(false);
+    setLevelDraft(String(nextMax));
   };
 
   if (!resolvedCharId) {
@@ -521,6 +544,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         {/* Level */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <h3 className="text-lg font-semibold text-white mb-4">Cấp</h3>
+
           <div className="flex items-center justify-center gap-2 mb-4">
             {eliteButtons.map((i) => {
               const active = i === phaseIndex;
@@ -539,39 +563,73 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             })}
           </div>
 
-          <div className="flex items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={() => setLevel((lv) => clamp(lv - 1, 1, maxLevel))}
-              className="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 transition flex items-center justify-center"
-              title="-"
-            >
-              −
-            </button>
-
-            {/* hide numeric input to avoid browser spinner shifting layout */}
-            <div className="w-16 h-16 rounded-full bg-black/40 border border-white/10 flex items-center justify-center">
-              <input
-                type="number"
-                min={1}
-                max={maxLevel}
-                value={safeLevel}
-                onChange={(e) => setLevel(clamp(e.target.value, 1, maxLevel))}
-                className="no-spin w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
-              />
+          {/* Slider */}
+          <div className="mt-2">
+            <div className="flex items-center justify-between text-xs text-white/60 mb-2">
+              <span>1</span>
+              <span>Cấp tối đa {maxLevel}</span>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setLevel((lv) => clamp(lv + 1, 1, maxLevel))}
-              className="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 transition flex items-center justify-center"
-              title="+"
-            >
-              +
-            </button>
+            <input
+              type="range"
+              min={1}
+              max={maxLevel}
+              step={1}
+              value={safeLevel}
+              onChange={(e) => {
+                const next = clamp(e.target.value, 1, maxLevel);
+                setIsEditingLevel(false);
+                setLevel(next);
+                setLevelDraft(String(next));
+              }}
+              className="w-full accent-emerald-500"
+            />
+
+            <div className="mt-2 text-center text-xs text-white/70">
+              Hiện tại: <span className="text-white font-semibold">{safeLevel}</span>
+            </div>
           </div>
 
-          <div className="mt-3 text-center text-xs text-white/60">Cấp tối đa {maxLevel}</div>
+          {/* Numeric input: click/focus -> clear để nhập */}
+          <div className="mt-4 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-black/40 border border-white/10 flex items-center justify-center">
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                value={levelDraft}
+                onFocus={() => {
+                  setIsEditingLevel(true);
+                  setLevelDraft("");
+                }}
+                onChange={(e) => {
+                  const onlyDigits = e.target.value.replace(/[^\d]/g, "");
+                  setLevelDraft(onlyDigits);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    setIsEditingLevel(false);
+                    commitLevelDraft();
+                    e.currentTarget.blur();
+                  } else if (e.key === "Escape") {
+                    setIsEditingLevel(false);
+                    setLevelDraft(String(safeLevel));
+                    e.currentTarget.blur();
+                  }
+                }}
+                onBlur={() => {
+                  setIsEditingLevel(false);
+                  if (!levelDraft) {
+                    setLevelDraft(String(safeLevel));
+                    return;
+                  }
+                  commitLevelDraft();
+                }}
+                className="no-spin w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
+                placeholder={String(safeLevel)}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
