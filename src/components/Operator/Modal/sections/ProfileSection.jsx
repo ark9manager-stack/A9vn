@@ -69,45 +69,57 @@ function renderInlineItalic(str, keyPrefix = "t") {
 }
 
 function renderLineWithNotes(line, keyPrefix = "line") {
-  // quick path for performance
   if (!line.includes("[[")) {
     return renderInlineItalic(line, `${keyPrefix}-plain`);
   }
 
-  const re = /\[\[([^|\]]+)\|([^\]]+)\]\]/g;
   const out = [];
-  let last = 0;
-  let m;
+  let i = 0;
 
-  while ((m = re.exec(line)) !== null) {
-    const start = m.index;
-    const end = re.lastIndex;
-    const label = m[1];
-    const noteKey = m[2];
-
-    if (start > last) {
-      const chunk = line.slice(last, start);
-      out.push(...renderInlineItalic(chunk, `${keyPrefix}-t-${start}`));
+  while (true) {
+    const start = line.indexOf("[[", i);
+    if (start === -1) break;
+    if (start > i) {
+      const chunk = line.slice(i, start);
+      out.push(...renderInlineItalic(chunk, `${keyPrefix}-t-${i}`));
     }
 
-    out.push(
-      <StatHover
-        key={`${keyPrefix}-note-${start}-${end}-${noteKey}`}
-        label={label}
-        noteKey={noteKey}
-      />
-    );
+    const end = line.indexOf("]]", start + 2);
+    if (end === -1) {
+      const tail = line.slice(start);
+      out.push(...renderInlineItalic(tail, `${keyPrefix}-broken-${start}`));
+      i = line.length;
+      break;
+    }
 
-    last = end;
+    const inner = line.slice(start + 2, end);
+    const pipe = inner.indexOf("|");
+
+    if (pipe === -1) {
+      out.push(...renderInlineItalic(line.slice(start, end + 2), `${keyPrefix}-raw-${start}`));
+    } else {
+      const label = inner.slice(0, pipe);
+      const noteKey = inner.slice(pipe + 1);
+
+      out.push(
+        <StatHover
+          key={`${keyPrefix}-note-${start}-${end}-${noteKey}`}
+          label={label}
+          noteKey={noteKey}
+        />
+      );
+    }
+
+    i = end + 2;
   }
 
-  if (last < line.length) {
-    const tail = line.slice(last);
-    out.push(...renderInlineItalic(tail, `${keyPrefix}-tail`));
+  if (i < line.length) {
+    out.push(...renderInlineItalic(line.slice(i), `${keyPrefix}-tail-${i}`));
   }
 
   return out;
 }
+
 
 function renderMultiline(text) {
   if (!isNonEmptyString(text)) return null;

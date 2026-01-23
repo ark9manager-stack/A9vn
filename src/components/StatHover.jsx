@@ -1,10 +1,14 @@
 import React from "react";
+import { createPortal } from "react-dom";
 import statHoverVN from "../data/stathover_vn.json";
+
+const TOOLTIP_Z_INDEX = 999999;
 
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
+// Whitelist ONLY <i>...</i>
 function renderInlineItalic(str, keyPrefix = "t") {
   const re = /<i>(.*?)<\/i>/gis;
   const nodes = [];
@@ -41,7 +45,6 @@ function getNote(noteKey) {
   if (statHoverVN?.[noteKey]) return statHoverVN[noteKey];
 
   const lower = noteKey.toLowerCase();
-
   if (statHoverVN?.[lower]) return statHoverVN[lower];
 
   const keys = Object.keys(statHoverVN || {});
@@ -49,10 +52,14 @@ function getNote(noteKey) {
   return found ? statHoverVN[found] : null;
 }
 
-function StatHover({ label, noteKey }) {
-  const ref = React.useRef(null);
+export default function StatHover({ label, noteKey }) {
+  const anchorRef = React.useRef(null);
+  const tooltipRef = React.useRef(null);
+  const hoveringRef = React.useRef(false);
+
   const [open, setOpen] = React.useState(false);
   const [pinned, setPinned] = React.useState(false);
+  const [pos, setPos] = React.useState({ top: 0, left: 0, place: "bottom" });
 
   const note = getNote(noteKey);
   const title = note?.title || "";
@@ -60,30 +67,34 @@ function StatHover({ label, noteKey }) {
 
   const visible = open || pinned;
 
-  React.useEffect(() => {
-    if (!visible) return;
+  const updatePos = React.useCallback(() => {
+    const el = anchorRef.current;
+    if (!el) return;
 
-    const onPointerDown = (e) => {
-      if (!ref.current) return;
-      if (!ref.current.contains(e.target)) {
-        setPinned(false);
-        setOpen(false);
-      }
-    };
+    const rect = el.getBoundingClientRect();
+    const margin = 8;
+    const estH = 170;
 
-    document.addEventListener("pointerdown", onPointerDown, true);
-    return () => document.removeEventListener("pointerdown", onPointerDown, true);
-  }, [visible]);
+    const canPlaceBottom = rect.bottom + margin + estH < window.innerHeight;
+    const place = canPlaceBottom ? "bottom" : "top";
 
-  if (!isNonEmptyString(label)) return null;
+    const top = place === "bottom" ? rect.bottom + margin : rect.top - margin;
+    const left = rect.left + rect.width / 2;
 
-  if (!note || (!isNonEmptyString(title) && !isNonEmptyString(text))) {
-    return <>{label}</>;
-  }
+    setPos({ top, left, place });
+  }, []);
 
-  const onEnter = () => setOpen(true);
+  const onEnter = () => {
+    hoveringRef.current = true;
+    setOpen(true);
+    updatePos();
+  };
+
   const onLeave = () => {
-    if (!pinned) setOpen(false);
+    hoveringRef.current = false;
+    window.setTimeout(() => {
+      if (!pinned && !hoveringRef.current) setOpen(false);
+    }, 80);
   };
 
   const togglePin = (e) => {
@@ -94,24 +105,97 @@ function StatHover({ label, noteKey }) {
       setOpen(true);
       return next;
     });
+    updatePos();
   };
 
-  return (
-    <span
-      ref={ref}
-      className="relative inline-block"
+  React.useEffect(() => {
+    if (!visible) return;
+
+    updatePos();
+
+    const onPointerDown = (e) => {
+      const a = anchorRef.current;
+      const t = tooltipRef.current;
+      if (a && a.contains(e.target)) return;
+      if (t && t.contains(e.target)) return;
+
+      setPinned(false);
+      setOpen(false);
+    };
+
+    const onScrollResize = () => updatePos();
+
+    document.addEventListener("pointerdown", onPointerDown, true);
+    window.addEventListener("scroll", onScrollResize, true);
+    window.addEventListener("resize", onScrollResize);
+
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown, true);
+      window.removeEventListener("scroll", onScrollResize, true);
+      window.removeEventListener("resize", onScrollResize);
+    };
+  }, [visible, pinned, updatePos]);
+
+  if (!isNonEmptyString(label)) return null;
+  if (!note || (!isNonEmptyString(title) && !isNonEmptyString(text))) {
+    return <>{label}</>;
+  }
+
+  const tooltipNode = (
+    <div
+      ref={tooltipRef}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      data-open={visible ? "true" : "false"}
+      style={{
+        position: "fixed",
+        top: pos.top,
+        left: pos.left,
+        transform:
+          pos.place === "bottom"
+            ? "translate(-50%, 0)"
+            : "translate(-50%, -100%)",
+        zIndex: TOOLTIP_Z_INDEX,
+        pointerEvents: "auto",
+        width: "320px",
+        maxWidth: "82vw",
+      }}
+      onClick={(e) => e.stopPropagation()}
     >
-      {/* highlighted word */}
+      <div className="rounded-lg border border-white/15 bg-black/90 shadow-lg overflow-hidden">
+        {isNonEmptyString(title) ? (
+          <div className="px-3 py-2 bg-white/10 border-b border-white/10 font-semibold">
+            {renderMultiline(title, `st-title-${noteKey}`)}
+          </div>
+        ) : null}
+
+        {isNonEmptyString(text) ? (
+          <div className="px-3 py-2 text-sm leading-relaxed text-white/90">
+            {renderMultiline(text, `st-body-${noteKey}`)}
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+
+  return (
+    <>
       <span
+        ref={anchorRef}
         className="
           stathover
           cursor-pointer select-none
-          underline decoration-dotted underline-offset-4
-          decoration-white/40 hover:decoration-white/70
+          font-semibold
+          text-cyan-300 hover:text-cyan-200
+          underline decoration-cyan-300/60 hover:decoration-cyan-200/70
+          underline-offset-4
         "
+        style={{
+          fontFamily:
+            '"Inter","Noto Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif',
+          textDecorationThickness: "2px",
+        }}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
         onClick={togglePin}
         role="button"
         tabIndex={0}
@@ -119,32 +203,7 @@ function StatHover({ label, noteKey }) {
         {label}
       </span>
 
-      {visible ? (
-        <div
-          className="
-            absolute z-50 mt-2
-            left-1/2 -translate-x-1/2
-            w-[320px] max-w-[82vw]
-          "
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="rounded-lg border border-white/15 bg-black/90 shadow-lg overflow-hidden">
-            {isNonEmptyString(title) ? (
-              <div className="px-3 py-2 bg-white/10 border-b border-white/10 font-semibold">
-                {renderMultiline(title, `st-title-${noteKey}`)}
-              </div>
-            ) : null}
-
-            {isNonEmptyString(text) ? (
-              <div className="px-3 py-2 text-sm leading-relaxed text-white/90">
-                {renderMultiline(text, `st-body-${noteKey}`)}
-              </div>
-            ) : null}
-          </div>
-        </div>
-      ) : null}
-    </span>
+      {visible ? createPortal(tooltipNode, document.body) : null}
+    </>
   );
 }
-
-export default StatHover;
