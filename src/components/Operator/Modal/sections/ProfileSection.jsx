@@ -29,6 +29,11 @@ const UI_SCALE = {
   imgMain: 90,
   imgOverlay: 45,
   overlayOffset: 12,
+
+  titleFontFamily:
+    '"Inter","Noto Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif',
+  dividerFontFamily:
+    'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
 };
 
 function isNonEmptyString(v) {
@@ -69,18 +74,37 @@ function getItemEntryById(id) {
 
 function SectionTitle({ children }) {
   return (
-    <div
-      style={{
-        fontWeight: 800,
-        marginBottom: 8,
-        lineHeight: 1.2,
-        fontSize: UI_SCALE.titleFont,
-      }}
-    >
-      {children}
+    <div style={{ marginBottom: 10 }}>
+      <div
+        style={{
+          fontFamily: UI_SCALE.titleFontFamily,
+          fontWeight: 700,
+          lineHeight: 1.2,
+          fontSize: UI_SCALE.titleFont,
+          letterSpacing: 0.2,
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
+        }}
+      >
+        {children}
+      </div>
+      <div
+        style={{
+          marginTop: 6,
+          opacity: 0.6,
+          fontFamily: UI_SCALE.dividerFontFamily,
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          lineHeight: 1,
+          userSelect: "none",
+        }}
+      >
+        {"-".repeat(200)}
+      </div>
     </div>
   );
 }
+
 
 function TextBody({ text }) {
   if (!isNonEmptyString(text)) return null;
