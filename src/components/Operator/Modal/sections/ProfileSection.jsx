@@ -15,6 +15,7 @@ const RECRUIT_BG_BASE =
 
 const TOKEN_ICON_BASE_POTENTIAL =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/potential/";
+
 const TOKEN_ICON_BASE_CLASSPOTENTIAL =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/classpotential/";
 
@@ -84,13 +85,7 @@ function SectionTitle({ children }) {
 function TextBody({ text }) {
   if (!isNonEmptyString(text)) return null;
   return (
-    <div
-      style={{
-        lineHeight: 1.6,
-        fontSize: UI_SCALE.bodyFont,
-        opacity: 0.95,
-      }}
-    >
+    <div style={{ lineHeight: 1.6, fontSize: UI_SCALE.bodyFont, opacity: 0.95 }}>
       {renderMultiline(text)}
     </div>
   );
@@ -99,12 +94,30 @@ function TextBody({ text }) {
 function ImageTextPanel({
   title,
   imgUrl,
+  fallbackImgUrl,
   imgAlt,
   overlayUrl,
   text,
   id,
   imgObjectPosition,
 }) {
+  const [src, setSrc] = React.useState(imgUrl || "");
+  const [usedFallback, setUsedFallback] = React.useState(false);
+
+  React.useEffect(() => {
+    setSrc(imgUrl || "");
+    setUsedFallback(false);
+  }, [imgUrl, fallbackImgUrl]);
+
+  const handleImgError = () => {
+    if (!usedFallback && isNonEmptyString(fallbackImgUrl)) {
+      setUsedFallback(true);
+      setSrc(fallbackImgUrl);
+      return;
+    }
+    setSrc("");
+  };
+
   return (
     <div
       id={id}
@@ -133,9 +146,10 @@ function ImageTextPanel({
           overflow: "visible",
         }}
       >
-        {imgUrl ? (
+        {isNonEmptyString(src) ? (
           <img
-            src={imgUrl}
+            src={src}
+            onError={handleImgError}
             alt={imgAlt || title}
             style={{
               width: UI_SCALE.imgMain,
@@ -211,6 +225,7 @@ export default function ProfileSection({ operator, charId }) {
     recruitBgUrl,
     avatarUrl,
     tokenIconUrl,
+    tokenIconFallbackUrl,
     physicalPanel,
   } = useMemo(() => {
     const profileEntry = resolvedCharId ? profileVN?.[resolvedCharId] : null;
@@ -219,13 +234,11 @@ export default function ProfileSection({ operator, charId }) {
     const en = profileEntry?.en || {};
     const cn = profileEntry?.cn || {};
 
-    const _getText = (key) =>
-      pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
+    const _getText = (key) => pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
     const trans = pickFirstNonEmpty(vn?.trans);
 
     const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
-    const rarity = charData?.rarity || "";
-    const recruitBg = rarityToRecruitBg(rarity);
+    const recruitBg = rarityToRecruitBg(charData?.rarity);
     const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
 
     const potentialItemId =
@@ -236,12 +249,14 @@ export default function ProfileSection({ operator, charId }) {
 
     const itemEntry = getItemEntryById(potentialItemId);
     const iconId = pickFirstNonEmpty(itemEntry?.iconId, potentialItemId);
-    const isTier56 = rarity === "TIER_5" || rarity === "TIER_6";
-    const tokenBase = isTier56
-      ? TOKEN_ICON_BASE_CLASSPOTENTIAL
-      : TOKEN_ICON_BASE_POTENTIAL;
 
-    const tokenUrl = isNonEmptyString(iconId) ? `${tokenBase}${iconId}.png` : "";
+    const tokenUrlPrimary = isNonEmptyString(iconId)
+      ? `${TOKEN_ICON_BASE_POTENTIAL}${iconId}.png`
+      : "";
+    const tokenUrlFallback = isNonEmptyString(iconId)
+      ? `${TOKEN_ICON_BASE_CLASSPOTENTIAL}${iconId}.png`
+      : "";
+
     const physicalText = _getText("physical_exam");
     const performanceText = _getText("physical_exam_2");
 
@@ -265,7 +280,8 @@ export default function ProfileSection({ operator, charId }) {
       getText: _getText,
       recruitBgUrl: recruitBg,
       avatarUrl: _avatarUrl,
-      tokenIconUrl: tokenUrl,
+      tokenIconUrl: tokenUrlPrimary,
+      tokenIconFallbackUrl: tokenUrlFallback,
       physicalPanel: _physicalPanel,
     };
   }, [resolvedCharId]);
@@ -328,6 +344,7 @@ export default function ProfileSection({ operator, charId }) {
           id="token"
           title="Tín vật"
           imgUrl={tokenIconUrl}
+          fallbackImgUrl={tokenIconFallbackUrl}
           imgAlt="Token"
           overlayUrl=""
           text={tokenText}
