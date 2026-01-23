@@ -575,6 +575,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               min={1}
               max={maxLevel}
               step={1}
+              value={safeLevel}
               onChange={(e) => {
                 const next = clamp(e.target.value, 1, maxLevel);
                 setIsEditingLevel(false);
@@ -585,48 +586,52 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             />
 
             <div className="mt-2 text-center text-xs text-white/70">
-              <span className="text-white font-semibold">Bấm số bên dưới để điều chỉnh cấp</span>
-            </div>
-          </div>
-
-          {/* Numeric input: click/focus -> clear để nhập */}
-          <div className="mt-4 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-black/40 border border-white/10 flex items-center justify-center">
-              <input
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                value={levelDraft}
-                onFocus={() => {
-                  setIsEditingLevel(true);
-                  setLevelDraft("");
-                }}
-                onChange={(e) => {
-                  const onlyDigits = e.target.value.replace(/[^\d]/g, "");
-                  setLevelDraft(onlyDigits);
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
+              Hiện tại:{" "}
+              {isEditingLevel ? (
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  autoFocus
+                  value={levelDraft}
+                  onChange={(e) => {
+                    const onlyDigits = e.target.value.replace(/[^\d]/g, "");
+                    setLevelDraft(onlyDigits);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      setIsEditingLevel(false);
+                      commitLevelDraft();
+                      e.currentTarget.blur();
+                    } else if (e.key === "Escape") {
+                      setIsEditingLevel(false);
+                      setLevelDraft(String(safeLevel));
+                      e.currentTarget.blur();
+                    }
+                  }}
+                  onBlur={() => {
                     setIsEditingLevel(false);
+                    if (!levelDraft) {
+                      setLevelDraft(String(safeLevel));
+                      return;
+                    }
                     commitLevelDraft();
-                    e.currentTarget.blur();
-                  } else if (e.key === "Escape") {
-                    setIsEditingLevel(false);
-                    setLevelDraft(String(safeLevel));
-                    e.currentTarget.blur();
-                  }
-                }}
-                onBlur={() => {
-                  setIsEditingLevel(false);
-                  if (!levelDraft) {
-                    setLevelDraft(String(safeLevel));
-                    return;
-                  }
-                  commitLevelDraft();
-                }}
-                className="no-spin w-14 text-center bg-transparent outline-none text-white text-lg font-extrabold"
-                placeholder={String(safeLevel)}
-              />
+                  }}
+                  className="w-12 text-center bg-transparent outline-none text-white font-semibold border-b border-white/30 focus:border-white/60"
+                  placeholder={String(safeLevel)}
+                />
+              ) : (
+                <span
+                  className="text-white font-semibold cursor-pointer underline decoration-white/30 hover:decoration-white/60"
+                  title="Bấm để nhập cấp"
+                  onClick={() => {
+                    setIsEditingLevel(true);
+                    setLevelDraft("");
+                  }}
+                >
+                  {safeLevel}
+                </span>
+              )}
             </div>
           </div>
         </div>
