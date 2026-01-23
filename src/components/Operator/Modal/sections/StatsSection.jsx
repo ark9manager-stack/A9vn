@@ -575,7 +575,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               min={1}
               max={maxLevel}
               step={1}
-              value={safeLevel}
               onChange={(e) => {
                 const next = clamp(e.target.value, 1, maxLevel);
                 setIsEditingLevel(false);
@@ -586,7 +585,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             />
 
             <div className="mt-2 text-center text-xs text-white/70">
-              Hiện tại: <span className="text-white font-semibold">{safeLevel}</span>
+              <span className="text-white font-semibold">Bấm số bên dưới để điều chỉnh cấp</span>
             </div>
           </div>
 
