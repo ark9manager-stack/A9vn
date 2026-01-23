@@ -185,12 +185,12 @@ export default function StatHover({ label, noteKey }) {
           stathover
           cursor-pointer select-none
           font-semibold
-          text-cyan-300 hover:text-cyan-200
-          underline decoration-cyan-300/60 hover:decoration-cyan-200/70
           underline-offset-4
         "
         style={{
             fontFamily: "inherit",
+            color: "#0098DC",
+            textDecorationColor: "#0098DC",
             textDecorationThickness: "2px",
             }}
         onMouseEnter={onEnter}
