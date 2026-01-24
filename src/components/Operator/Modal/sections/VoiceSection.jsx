@@ -230,11 +230,19 @@ const VoiceSection = ({ operator }) => {
   const voiceLines = useMemo(() => {
     const words = charwordTable?.charWords || {};
     if (!activeWordKey) return [];
-    const prefix = `${activeWordKey}_`;
+
     const list = [];
 
-    for (const [k, v] of Object.entries(words)) {
-      if (k.startsWith(prefix)) list.push(v);
+    for (const v of Object.values(words)) {
+      if (!v) continue;
+      if (v.wordKey === activeWordKey) list.push(v);
+    }
+
+    if (!list.length) {
+      const prefix = `${activeWordKey}_`;
+      for (const [k, v] of Object.entries(words)) {
+        if (k.startsWith(prefix)) list.push(v);
+      }
     }
 
     list.sort((a, b) => {
@@ -246,6 +254,7 @@ const VoiceSection = ({ operator }) => {
 
     return list;
   }, [activeWordKey]);
+
 
   useEffect(() => {
     stopAllAudios();
