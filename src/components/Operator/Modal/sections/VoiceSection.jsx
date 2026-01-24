@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import StatHover from "../../../StatHover";
+import { ItalicText } from "../../../StatHover";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
 import { buildCnAvatarUrl, CN_AVATAR_BASE, getOperatorCharId } from "../../../../utils/operatorAvatar";
