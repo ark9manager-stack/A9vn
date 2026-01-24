@@ -11422,7 +11422,7 @@
     "CN_044": "Puzzle.' It's the identity I've both kept the longest, and had the least motive to work under. Rhodes Island really is a strange place. What is it that makes you all gather here...? Doctor, I've already handed in my on-board continuance application to our superiors."
   },
   "char_4019_ncdeer": {
-    "LINKAGE_voice": "LINKAGE - Menglu Yang",
+    "LINKAGE_voice": "CN - Menglu Yang",
     "CN_001": "The files that needed sorting have all been put away. I hope it'll help reduce some of your pressure, Doctor.",
     "CN_002": "The atmosphere in here is duly soothing, much like my mountain forest. Doctor, you're free to come play when you're not busy.",
     "CN_003": "I've talked a lot with the Medical Department's operators, and now I can understand what everyone's goal is. Doctor, allow me to rescue this land together with you.",
@@ -13015,7 +13015,7 @@
     "CN_044": "Dr. {@nickname}, thank you. Being with my Rhodes Island companions makes me see more clearly what it is I'm resisting. Everyone should have the freedom to run about their own city, and we fight for that right. That's a future that belongs to us all, including the Infected."
   },
   "char_4077_palico": {
-    "LINKAGE_voice": "LINKAGE - -",
+    "LINKAGE_voice": "Meow",
     "CN_001": "Remember, you two, this purr-ticular assistant role calls for maximum vigilance. If any meownsters come knocking, we throw the Doctor on the cart and go!",
     "CN_002": "Curious about our latest research? We're gnawing on 'An Investigation into Biological Discrepancies Between Us Felynes with a Y and Terran Felines with an I.' We were halfway done, but then we found out you have Aslans too, so it's back to the scratching post for us... You Terrans are meowder with your subspecies!",
     "CN_003": "Your Meowjesty, never forget to eat your fill before you go on a hunt. Dive into a fight with full stamina, and you might end up doing things you didn't even think you could... mrrreow!",
@@ -14264,7 +14264,7 @@
     "CN_044": "I saw Rhodes Island splitting the sandstorm and sailing here. It felt just like the first time I saw Dahuang's new buildings, how they protected the fields from the Catastrophe. As long as everyone works together, no matter if it's a Catastrophe or anything else, there's always a way, right?"
   },
   "char_4123_ela": {
-    "LINKAGE_voice": "LINKAGE - Monica Nowak",
+    "LINKAGE_voice": "EN - Monica Nowak",
     "CN_001": "Since you're stuck here sifting through documents, I might as well help you solve a few problems around the office.",
     "CN_002": "Hitting supply lines does a whole lot more damage than taking out people.",
     "CN_003": "If you ask me, your office is on the bland side. Just hit me up if you ever want to mix things up a little.",
@@ -14302,7 +14302,7 @@
     "CN_042": "I'm here."
   },
   "char_4124_iana": {
-    "LINKAGE_voice": "LINKAGE - Clare McConnell",
+    "LINKAGE_voice": "EN - Clare McConnell",
     "CN_001": "Not sure if it's really me standing before you? Here's a hint: the Gemini doesn't talk.",
     "CN_002": "Multitasking has never been a problem for me.",
     "CN_003": "Intel is half the battle.",
@@ -14340,7 +14340,7 @@
     "CN_042": "Ready for more action?"
   },
   "char_4125_rdoc": {
-    "LINKAGE_voice": "LINKAGE - Alex Ivanovici",
+    "LINKAGE_voice": "EN - Alex Ivanovici",
     "CN_001": "Here are the files, and this is your coffee. No need to thank me.",
     "CN_002": "Yes…? Oh! Sorry Doctor, I thought an operator was calling out to me.",
     "CN_003": "If you can hold a scalpel, you can hold a gun. Never doubt the steadiness of a surgeon's hand.",
@@ -14378,7 +14378,7 @@
     "CN_042": "Bonjour."
   },
   "char_4126_fuze": {
-    "LINKAGE_voice": "LINKAGE - Gabriel Furman",
+    "LINKAGE_voice": "EN - Gabriel Furman",
     "CN_001": "Right... Let me know if you need anything.",
     "CN_002": "Watch out. There are a lot of dangerous materials in the workroom.",
     "CN_003": "Engineering Department... Not bad. The head of the department, though... A bit too talkative.",
@@ -14933,7 +14933,7 @@
     "CN_044": "My family's atonement is a secret, and as such, no one has ever asked me how one is to wash away the whole of Sargon's golden sands. Rhodes Island chose a similarly long-winding road. It is seeing you doubted by others that made me reexamine myself, after which I learned from your experience."
   },
   "char_4141_marcil": {
-    "LINKAGE_voice": "LINKAGE - Sayaka Sembongi",
+    "LINKAGE_voice": "JP - Sayaka Sembongi",
     "CN_001": "I did this all the time back in magic school, and I've mastered how to use all your magical tools, so you can leave everything to me! ...Someone blew up that Originium flashlight? *ahem* Well, it wasn't me!",
     "CN_002": "Canned sandworm? Lemon fin-mint noon tea? Sea Terror jerky?... NOOO! NO, NO, ABSOLUTELY NOT! ABSOLUTELY NOT!",
     "CN_003": "Here, your summary on healing magic compared to restorative Arts. What? You thought I'd take longer to finish? Heh-heh! Back in school, when I was developing a new healing magic, I'd read through tons of papers like that every day. So the next time you have any work like this, just let me handle it!",
@@ -14974,7 +14974,7 @@
     "CN_044": "I studied the theory of maladies and injuries in magic school, and took up developing healing magic as well. I know just how excruciating it is to battle with a seemingly incurable disease. Doctor, if you're ever in need, I'll be there to give all the help I can."
   },
   "char_4142_laios": {
-    "LINKAGE_voice": "LINKAGE - Kentaro Kumagai",
+    "LINKAGE_voice": "JP - Kentaro Kumagai",
     "CN_001": "Oh! This machine carries people's voices straight over, and l can talk back to them too! That 'photocopier' over there can produce exact replicas of anything painted on paper... Is my job to learn to use all of them? I'd love to know how they work!",
     "CN_002": "Do you like the brined sandworm, Kay? How about this gloompincer mushroom pâté? Just as good? I've got garlic fin shiokara here, do you like that too? I'm so glad I meet you here! Come on, let's look for more new mon—whaaagh?! Vulcan? What are you doing? Where are you taking me?!",
     "CN_003": "Doctor! I'm behind this door! The little room next to you! I need your help, Mon3tr's sick... it's not eating anything I feed it. Do you have any ideas? What? But Dr. Kal'tsit saw how good friends we were and asked me to look after it for her. What do you mean she was keeping me shut in here? You're lying, right?",
@@ -15012,7 +15012,7 @@
     "CN_044": "They say so long as you defeat the Lunatic Magician of the dungeon, all that lies within is yours. When I was in the depths before, I wasn't thinking at all about why I was down there, or what it was that I truly wanted... but meeting you all made me realize just what it's like to have a goal in life."
   },
   "char_4143_sensi": {
-    "LINKAGE_voice": "LINKAGE - Hiroshi Naka",
+    "LINKAGE_voice": "JP - Hiroshi Naka",
     "CN_001": "Can't say I wrap my head around your job. Anything you want me to cook? Rice omelette, veggie stew, barbecue?",
     "CN_002": "Take a deep breath! Skyfire, young lady, your body heat'll burn a fritter at this rate! Gummy, wonderful cookies you made—Goldenglow, why's your popcorn all stuck in your hair? There now, let me think how to go about this…",
     "CN_003": "AH-CHOO! I was going to see inside the greenhouse where they raise the metal crabs, and fancy Marcille and Perfumer having a talk in there! I thought I'd slip out, but Marcille dragged me right back in to spray all these fancy smells on my beard. Now I can't even whiff an onion! AH-CHOO!",
@@ -15053,7 +15053,7 @@
     "CN_044": "This whole journey's been one endless surprise... Laios and Marcille are both much tougher than I'd thought, Chilchuck's really acting like a grown-up now, and I've made plenty of exciting new friends. It's been a fulfilling time, this."
   },
   "char_4144_chilc": {
-    "LINKAGE_voice": "LINKAGE - Asuna Tomari",
+    "LINKAGE_voice": "JP - Asuna Tomari",
     "CN_001": "Uh-huh... I see. Hand me this paperwork. I'll sort it out. What? Don't tell me 'I know you can do this'. I'm not a child!",
     "CN_002": "Tch... I had a feeling, but actually hearing the doc dissect my numbers during the checkup was another thing. I need a while away from any missions with Senshi and Laios. Can't keep eating with them at this rate.",
     "CN_003": "I see your face, and I know what you're thinking—'I didn't even know you could eat this!' or something like that. I was reluctant at first, but then I got used to it. Spend enough time with them, and you will too. Uh, not that getting used to it matters or anything, I mean.",
@@ -17826,7 +17826,7 @@
     "CN_TOPOLECT_CN_044": "My master did tell me I was suited to martial arts, but she never taught of any place where you could use it, only that we shouldn't let down the conscience. Ah, I'm just thinking. If I'd not come to Rhodes Island, I'd probably be in Lungmen running a gym, I suppose? But all moneymaking aside, I fear I'd have never used this fan again."
   },
   "char_456_ash": {
-    "LINKAGE_voice": "LINKAGE - Patricia Summersett",
+    "LINKAGE_voice": "EN - Patricia Summersett",
     "CN_001": "Brace yourselves.",
     "CN_002": "The most important thing my safta taught me was that life shouldn't have too many taboos.",
     "CN_003": "Focus on the work at hand and don't jump to any conclusions.",
@@ -17864,7 +17864,7 @@
     "CN_042": "I'm with you."
   },
   "char_457_blitz": {
-    "LINKAGE_voice": "LINKAGE - Christopher J. Domig",
+    "LINKAGE_voice": "EN - Christopher J. Domig",
     "CN_001": "Instead of sitting here, why don't we walk out together?",
     "CN_002": "I'm in the starting lineup for next week's football match. Come watch the game!",
     "CN_003": "If you know how we can improve my G52 Tactical Shield, please submit a test application. I'll be there anytime.",
@@ -17902,7 +17902,7 @@
     "CN_042": "Is it time to go?"
   },
   "char_458_rfrost": {
-    "LINKAGE_voice": "LINKAGE - Julie Tamiko Manning",
+    "LINKAGE_voice": "EN - Julie Tamiko Manning",
     "CN_001": "Here's the schedule. You'll also need to review the weekly reports, expense records, and meeting agendas. Which do you want to do first?",
     "CN_002": "We'll overcome any obstacle as long as we work together.",
     "CN_003": "Excuse me, sir, but do you mind if I tidy up the bookshelf?",
@@ -17940,7 +17940,7 @@
     "CN_042": "Would you like a bonfire?"
   },
   "char_459_tachak": {
-    "LINKAGE_voice": "LINKAGE - Vlado Stokanic",
+    "LINKAGE_voice": "EN - Vlado Stokanic",
     "CN_001": "If you invited me, you must not be looking for a tactician.",
     "CN_002": "I love my country, for better or for worse.",
     "CN_003": "Have you met my sister? She's the one in the white coat in the photo, and those are her children.",
