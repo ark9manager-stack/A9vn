@@ -8,8 +8,7 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-// Whitelist ONLY <i>...</i>
-function renderInlineItalic(str, keyPrefix = "t") {
+export function renderInlineItalic(str, keyPrefix = "t") {
   const re = /<i>(.*?)<\/i>/gis;
   const nodes = [];
   let last = 0;
@@ -28,7 +27,7 @@ function renderInlineItalic(str, keyPrefix = "t") {
   return nodes;
 }
 
-function renderMultiline(text, keyPrefix = "ml") {
+export function renderMultiline(text, keyPrefix = "ml") {
   if (!isNonEmptyString(text)) return null;
   const lines = String(text).replace(/\r\n/g, "\n").split("\n");
   return lines.map((line, idx) => (
@@ -37,6 +36,11 @@ function renderMultiline(text, keyPrefix = "ml") {
       {idx < lines.length - 1 ? <br /> : null}
     </React.Fragment>
   ));
+}
+
+export function ItalicText({ text, as: As = "span", className, keyPrefix = "it" }) {
+  if (!isNonEmptyString(text)) return null;
+  return <As className={className}>{renderMultiline(text, keyPrefix)}</As>;
 }
 
 function getNote(noteKey) {
@@ -150,10 +154,7 @@ export default function StatHover({ label, noteKey }) {
         position: "fixed",
         top: pos.top,
         left: pos.left,
-        transform:
-          pos.place === "bottom"
-            ? "translate(-50%, 0)"
-            : "translate(-50%, -100%)",
+        transform: pos.place === "bottom" ? "translate(-50%, 0)" : "translate(-50%, -100%)",
         zIndex: TOOLTIP_Z_INDEX,
         pointerEvents: "auto",
         width: "320px",
@@ -188,11 +189,11 @@ export default function StatHover({ label, noteKey }) {
           underline-offset-4
         "
         style={{
-            fontFamily: "inherit",
-            color: "#0098DC",
-            textDecorationColor: "#0098DC",
-            textDecorationThickness: "2px",
-            }}
+          fontFamily: "inherit",
+          color: "#0098DC",
+          textDecorationColor: "#0098DC",
+          textDecorationThickness: "2px",
+        }}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         onClick={togglePin}

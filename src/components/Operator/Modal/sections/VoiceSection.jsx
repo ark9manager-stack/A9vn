@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import StatHover from "../../../StatHover";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
 import { buildCnAvatarUrl, CN_AVATAR_BASE, getOperatorCharId } from "../../../../utils/operatorAvatar";
@@ -266,7 +267,6 @@ const VoiceSection = ({ operator }) => {
       ) : null}
 
       <div className="mb-4 flex items-center justify-between gap-4">
-        {/* Left: Default/Skin switch (images only, 68x68) */}
         <div className="flex items-center gap-2 overflow-x-auto">
           {variants.map((wk) => {
             const isSelected = wk === selectedVariantKey;
@@ -360,7 +360,7 @@ const VoiceSection = ({ operator }) => {
 
               {/* Text (bigger) */}
               <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
-                {text}
+                <ItalicText text={text} keyPrefix={`voice-text-${v.charWordId}`} />
               </div>
             </div>
           );
