@@ -4,6 +4,7 @@ import StatBar from "../../../UI/StatBar";
 import characterTable from "../../../../data/operators/character_table.json";
 import rangeTable from "../../../../data/range_table.json";
 import potVN from "../../../../data/operators/pot_vn.json";
+import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
 
@@ -33,6 +34,77 @@ const POT_ICON_BASE =
 
 const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
 
+/* Summon/Token */
+const CHARAVATAR_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
+const SKILL_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/skills/";
+
+const SUMMON_AVATAR_OVERRIDES = {
+  token_10012_rosmon_shield: `${SKILL_ICON_BASE}skill_icon_sktok_rosmon.png`,
+};
+
+const TOKEN_TO_SKILL_ICON_OVERRIDES = {
+  token_10051_radian_tower1: "skill_icon_sktok_radian_tower3",
+  token_10052_radian_tower2: "skill_icon_sktok_radian_tower2",
+  token_10053_radian_tower3: "skill_icon_sktok_radian_tower1",
+};
+
+const tokenToSkillIconKey = (tokenId) => {
+  if (!tokenId) return "";
+  if (TOKEN_TO_SKILL_ICON_OVERRIDES[tokenId]) return TOKEN_TO_SKILL_ICON_OVERRIDES[tokenId];
+
+  const rest = String(tokenId).replace(/^token_\d+_/, "");
+  return rest ? `skill_icon_sktok_${rest}` : "";
+};
+
+const getSummonAvatarUrl = (tokenId) => {
+  if (!tokenId) return "";
+  if (SUMMON_AVATAR_OVERRIDES[tokenId]) return SUMMON_AVATAR_OVERRIDES[tokenId];
+  return `${CHARAVATAR_BASE}${tokenId}.png`;
+};
+
+const getSummonSkillIconUrl = (tokenId) => {
+  const key = tokenToSkillIconKey(tokenId);
+  if (!key) return "";
+  return `${SKILL_ICON_BASE}${key}.png`;
+};
+
+const POSITION_VN = {
+  ALL: "Toàn bộ",
+  RANGED: "Trên cao",
+  MELEE: "Mặt đất",
+};
+
+const SUMMON_STAT_KEYS = [
+  "maxHp",
+  "atk",
+  "def",
+  "magicResistance",
+  "respawnTime",
+  "cost",
+  "blockCnt",
+  "baseAttackTime",
+];
+
+const hasAnyScalingInPhases = (phases) => {
+  if (!Array.isArray(phases) || phases.length === 0) return false;
+  for (const ph of phases) {
+    const ml = getMaxLevelForPhase(ph);
+    const a1 = interpolateAttributes(ph?.attributesKeyFrames, 1);
+    const a2 = interpolateAttributes(ph?.attributesKeyFrames, ml);
+    if (!a1 || !a2) continue;
+
+    for (const k of SUMMON_STAT_KEYS) {
+      const v1 = Number(a1?.[k]);
+      const v2 = Number(a2?.[k]);
+      if (!Number.isFinite(v1) || !Number.isFinite(v2)) continue;
+      if (Math.abs(v1 - v2) > 1e-9) return true;
+    }
+  }
+  return false;
+};
+
 const ATTR_TYPE_TO_STAT = {
   COST: "cost",
   ATK: "atk",
@@ -53,6 +125,15 @@ const formatNumber = (n, { decimals = 0, suffix = "" } = {}) => {
   if (!Number.isFinite(x)) return "—";
   return `${x.toFixed(decimals)}${suffix}`;
 };
+
+const formatNumberTrim = (n, { maxDecimals = 2, suffix = "" } = {}) => {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return "—";
+  const s = x.toFixed(maxDecimals).replace(/\.?0+$/, "");
+  return `${s}${suffix}`;
+};
+
+const formatSecondsTrim = (n, { maxDecimals = 2 } = {}) => formatNumberTrim(n, { maxDecimals, suffix: "s" });
 
 const fmtInt = (n) => formatNumber(n, { decimals: 0 });
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -298,6 +379,103 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     setUseTrust(false);
   }, [resolvedCharId]);
 
+  const summonOptions = useMemo(() => {
+    const out = [];
+    const seen = new Set();
+
+    const skills = Array.isArray(charData?.skills) ? charData.skills : [];
+    skills.forEach((s, idx) => {
+      const tokenId = s?.overrideTokenKey;
+      if (!tokenId || typeof tokenId !== "string") return;
+      if (!tokenId.startsWith("token_")) return;
+      if (seen.has(tokenId)) return;
+
+      const tokenData = characterTable?.[tokenId];
+      if (!tokenData) return;
+
+      // Ẩn summons
+      if (!hasAnyScalingInPhases(tokenData?.phases)) return;
+
+      seen.add(tokenId);
+      out.push({ tokenId, skillIndex: idx + 1 });
+    });
+
+    // Tham chiếu Token
+    const dict = charData?.displayTokenDict || {};
+    Object.keys(dict || {}).forEach((tokenId) => {
+      if (!tokenId || typeof tokenId !== "string") return;
+      if (!tokenId.startsWith("token_")) return;
+      if (seen.has(tokenId)) return;
+      const tokenData = characterTable?.[tokenId];
+      if (!tokenData) return;
+      if (!hasAnyScalingInPhases(tokenData?.phases)) return;
+
+      seen.add(tokenId);
+      out.push({ tokenId, skillIndex: null });
+    });
+
+    return out;
+  }, [charData]);
+
+  const [summonIndex, setSummonIndex] = useState(0);
+
+  useEffect(() => {
+    setSummonIndex(0);
+  }, [resolvedCharId]);
+
+  useEffect(() => {
+    if (summonIndex >= summonOptions.length) setSummonIndex(0);
+  }, [summonIndex, summonOptions.length]);
+
+  const selectedSummon = summonOptions[summonIndex] || null;
+  const summonCharData = useMemo(() => {
+    if (!selectedSummon?.tokenId) return null;
+    return characterTable?.[selectedSummon.tokenId] || null;
+  }, [selectedSummon]);
+
+  const summonPhases = useMemo(() => {
+    const arr = summonCharData?.phases;
+    if (!Array.isArray(arr)) return [];
+    return arr.slice(0, 3);
+  }, [summonCharData]);
+
+  const summonPhaseIndex = useMemo(() => {
+    if (summonPhases.length === 0) return 0;
+    return Math.min(phaseIndex, summonPhases.length - 1);
+  }, [phaseIndex, summonPhases.length]);
+
+  const summonPhase = summonPhases[summonPhaseIndex];
+  const summonMaxLevel = useMemo(() => getMaxLevelForPhase(summonPhase), [summonPhase]);
+
+  const summonStats = useMemo(() => {
+    if (!summonPhase) return null;
+    const base = interpolateAttributes(summonPhase?.attributesKeyFrames, summonMaxLevel);
+    if (!base) return null;
+    return {
+      maxHp: base.maxHp,
+      atk: base.atk,
+      def: base.def,
+      magicResistance: base.magicResistance,
+      respawnTime: base.respawnTime,
+      cost: base.cost,
+      blockCnt: base.blockCnt,
+      baseAttackTime: base.baseAttackTime,
+    };
+  }, [summonPhase, summonMaxLevel]);
+
+  const summonNameRow = useMemo(() => {
+    if (!selectedSummon?.tokenId) return null;
+    return nameVN?.[selectedSummon.tokenId] || null;
+  }, [selectedSummon]);
+
+  const summonDisplayName =
+    (summonNameRow?.name_vn && String(summonNameRow.name_vn).trim()) || summonCharData?.name || selectedSummon?.tokenId;
+
+  const summonDescription =
+    (summonNameRow?.Descripton && String(summonNameRow.Descripton).trim()) || summonCharData?.description || "";
+
+  const summonPositionText = POSITION_VN[summonCharData?.position] || summonCharData?.position || "";
+
   const computed = useMemo(() => {
     if (!currentPhase) return null;
 
@@ -522,7 +700,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     <ValueWithDeltas
                       value={stats.baseAttackTime}
                       deltas={deltas.baseAttackTime}
-                      formatter={(v) => formatNumber(v, { decimals: 1, suffix: "s" })}
+                      formatter={(v) => formatSecondsTrim(v, { maxDecimals: 2 })}
                     />
                   ),
                 },
@@ -652,7 +830,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       {/* ROW: Range / Trust / Potentials */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Range (center both small & large grids) */}
+        {/* Range */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 flex flex-col">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Phạm vi</h3>
@@ -761,6 +939,144 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           )}
         </div>
       </div>
+
+      {/* Summon */}
+      {summonOptions.length > 0 && selectedSummon && summonCharData && summonStats ? (
+        <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
+          <div className="flex items-center justify-between gap-3 mb-3">
+            <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
+
+            {summonOptions.length > 1 && (
+              <div className="flex items-center gap-2">
+                {summonOptions.map((opt, idx) => {
+                  const active = idx === summonIndex;
+                  const iconUrl = getSummonSkillIconUrl(opt.tokenId);
+                  const label = `skill ${opt.skillIndex ?? idx + 1}`;
+
+                  return (
+                    <button
+                      key={opt.tokenId}
+                      type="button"
+                      onClick={() => setSummonIndex(idx)}
+                      className={`flex items-center gap-1.5 rounded-lg px-2 py-1.5 transition border ${
+                        active
+                          ? "bg-white/10 border-white/30"
+                          : "bg-transparent border-white/10 hover:bg-white/5 hover:border-white/20"
+                      }`}
+                    >
+                      {iconUrl ? (
+                        <img
+                          src={iconUrl}
+                          alt={label}
+                          className="w-7 h-7 object-contain shrink-0"
+                          draggable={false}
+                          loading="lazy"
+                        />
+                      ) : null}
+
+                      <span className="text-xs text-white/80 whitespace-nowrap">{label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Header: avatar + info */}
+          <div className="flex items-start gap-3">
+            <img
+              src={getSummonAvatarUrl(selectedSummon.tokenId)}
+              alt={selectedSummon.tokenId}
+              className="w-16 h-16 rounded-lg bg-white/5 object-contain shrink-0"
+              draggable={false}
+              loading="lazy"
+            />
+
+            <div className="min-w-0">
+              <div className="text-white font-semibold leading-snug">{summonDisplayName}</div>
+
+              {summonPositionText ? (
+                <div className="text-xs text-white/60 mt-0.5">Vị trí: {summonPositionText}</div>
+              ) : null}
+
+              {summonDescription ? (
+                <div className="text-sm text-white/70 mt-2 whitespace-pre-line">{summonDescription}</div>
+              ) : null}
+            </div>
+          </div>
+
+          {/* divider */}
+          <div className="mt-4 h-px bg-white/10" />
+
+          {/* Range + Stats */}
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            {/* Range */}
+            <div className="flex items-center justify-center">
+              <RangeGrid rangeId={summonPhase?.rangeId} />
+            </div>
+
+            {/* Stats */}
+            <div className="flex items-center justify-center">
+              <div className="space-y-2">
+                {[
+                  {
+                    icon: STAT_ICON.maxHp,
+                    label: "HP",
+                    value: fmtInt(summonStats.maxHp),
+                  },
+                  {
+                    icon: STAT_ICON.atk,
+                    label: "ATK",
+                    value: fmtInt(summonStats.atk),
+                  },
+                  {
+                    icon: STAT_ICON.def,
+                    label: "DEF",
+                    value: fmtInt(summonStats.def),
+                  },
+                  {
+                    icon: STAT_ICON.magicResistance,
+                    label: "RES",
+                    value: fmtInt(summonStats.magicResistance),
+                  },
+                  {
+                    icon: STAT_ICON.respawnTime,
+                    label: "Thời gian hồi",
+                    value: `${fmtInt(summonStats.respawnTime)}s`,
+                  },
+                  {
+                    icon: STAT_ICON.cost,
+                    label: "Phí",
+                    value: fmtInt(summonStats.cost),
+                  },
+                  {
+                    icon: STAT_ICON.blockCnt,
+                    label: "Chặn",
+                    value: fmtInt(summonStats.blockCnt),
+                  },
+                  {
+                    icon: STAT_ICON.baseAttackTime,
+                    label: "Thời gian tấn công",
+                    value: formatSecondsTrim(summonStats.baseAttackTime, { maxDecimals: 2 }),
+                  },
+                ].map((row) => (
+                  <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                    <img
+                      src={row.icon}
+                      alt=""
+                      className="w-5 h-5 object-contain opacity-90"
+                      draggable={false}
+                      loading="lazy"
+                    />
+                    <span className="text-xs text-white/70 whitespace-nowrap">{row.label}</span>
+                    <span className="ml-auto text-sm font-semibold text-white">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       {/* Promotion Requirements (frame only for now) */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">

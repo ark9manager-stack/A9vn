@@ -2152,7 +2152,8 @@
   "token_10000_silent_healrb": {
     "idweb": null,
     "name": "医疗探机",
-    "name_vn": "Medic Drone"
+    "name_vn": "Medic Drone",
+    "Descripton": ""
   },
   "token_10001_deepcl_tentac": {
     "idweb": null,
