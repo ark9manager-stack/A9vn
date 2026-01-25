@@ -1137,7 +1137,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             <div className="md:flex-1 flex flex-col">
               <div className="text-base font-semibold text-white mb-2">Chỉ số cơ bản</div>
 
-              <div className="grid grid-cols-[2fr_10px_1fr] gap-3 items-start">
+              <div className="grid grid-cols-[1fr_10px_1fr] gap-3 items-start">
                 {/* left */}
                 <div className="space-y-2">
                   {[
