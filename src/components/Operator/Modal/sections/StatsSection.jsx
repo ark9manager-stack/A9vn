@@ -4,7 +4,6 @@ import StatBar from "../../../UI/StatBar";
 import characterTable from "../../../../data/operators/character_table.json";
 import rangeTable from "../../../../data/range_table.json";
 import potVN from "../../../../data/operators/pot_vn.json";
-import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
 
@@ -34,77 +33,6 @@ const POT_ICON_BASE =
 
 const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
 
-/* Summon/Token */
-const CHARAVATAR_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
-const SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/skills/";
-
-const SUMMON_AVATAR_OVERRIDES = {
-  token_10012_rosmon_shield: `${SKILL_ICON_BASE}skill_icon_sktok_rosmon.png`,
-};
-
-const TOKEN_TO_SKILL_ICON_OVERRIDES = {
-  token_10051_radian_tower1: "skill_icon_sktok_radian_tower3",
-  token_10052_radian_tower2: "skill_icon_sktok_radian_tower2",
-  token_10053_radian_tower3: "skill_icon_sktok_radian_tower1",
-};
-
-const tokenToSkillIconKey = (tokenId) => {
-  if (!tokenId) return "";
-  if (TOKEN_TO_SKILL_ICON_OVERRIDES[tokenId]) return TOKEN_TO_SKILL_ICON_OVERRIDES[tokenId];
-
-  const rest = String(tokenId).replace(/^token_\d+_/, "");
-  return rest ? `skill_icon_sktok_${rest}` : "";
-};
-
-const getSummonAvatarUrl = (tokenId) => {
-  if (!tokenId) return "";
-  if (SUMMON_AVATAR_OVERRIDES[tokenId]) return SUMMON_AVATAR_OVERRIDES[tokenId];
-  return `${CHARAVATAR_BASE}${tokenId}.png`;
-};
-
-const getSummonSkillIconUrl = (tokenId) => {
-  const key = tokenToSkillIconKey(tokenId);
-  if (!key) return "";
-  return `${SKILL_ICON_BASE}${key}.png`;
-};
-
-const POSITION_VN = {
-  ALL: "Toàn bộ",
-  RANGED: "Trên cao",
-  MELEE: "Mặt đất",
-};
-
-const SUMMON_STAT_KEYS = [
-  "maxHp",
-  "atk",
-  "def",
-  "magicResistance",
-  "respawnTime",
-  "cost",
-  "blockCnt",
-  "baseAttackTime",
-];
-
-const hasAnyScalingInPhases = (phases) => {
-  if (!Array.isArray(phases) || phases.length === 0) return false;
-  for (const ph of phases) {
-    const ml = getMaxLevelForPhase(ph);
-    const a1 = interpolateAttributes(ph?.attributesKeyFrames, 1);
-    const a2 = interpolateAttributes(ph?.attributesKeyFrames, ml);
-    if (!a1 || !a2) continue;
-
-    for (const k of SUMMON_STAT_KEYS) {
-      const v1 = Number(a1?.[k]);
-      const v2 = Number(a2?.[k]);
-      if (!Number.isFinite(v1) || !Number.isFinite(v2)) continue;
-      if (Math.abs(v1 - v2) > 1e-9) return true;
-    }
-  }
-  return false;
-};
-
 const ATTR_TYPE_TO_STAT = {
   COST: "cost",
   ATK: "atk",
@@ -125,15 +53,6 @@ const formatNumber = (n, { decimals = 0, suffix = "" } = {}) => {
   if (!Number.isFinite(x)) return "—";
   return `${x.toFixed(decimals)}${suffix}`;
 };
-
-const formatNumberTrim = (n, { maxDecimals = 2, suffix = "" } = {}) => {
-  const x = Number(n);
-  if (!Number.isFinite(x)) return "—";
-  const s = x.toFixed(maxDecimals).replace(/\.?0+$/, "");
-  return `${s}${suffix}`;
-};
-
-const formatSecondsTrim = (n, { maxDecimals = 2 } = {}) => formatNumberTrim(n, { maxDecimals, suffix: "s" });
 
 const fmtInt = (n) => formatNumber(n, { decimals: 0 });
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -356,7 +275,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     if (!isEditingLevel) setLevelDraft(String(safeLevel));
   }, [safeLevel, isEditingLevel]);
 
-  // Trust
   const trustFrame = useMemo(() => {
     const frames = charData?.favorKeyFrames;
     if (!Array.isArray(frames) || frames.length === 0) return null;
@@ -365,7 +283,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const [useTrust, setUseTrust] = useState(false);
 
-  // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
   const ranks = useMemo(
     () => (Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : []),
@@ -379,79 +296,79 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     setUseTrust(false);
   }, [resolvedCharId]);
 
-  const summonOptions = useMemo(() => {
-    const out = [];
-    const seen = new Set();
 
-    const skills = Array.isArray(charData?.skills) ? charData.skills : [];
-    skills.forEach((s, idx) => {
-      const tokenId = s?.overrideTokenKey;
-      if (!tokenId || typeof tokenId !== "string") return;
-      if (!tokenId.startsWith("token_")) return;
-      if (seen.has(tokenId)) return;
+const summonOptions = useMemo(() => {
+  if (!charData) return [];
 
-      const tokenData = characterTable?.[tokenId];
-      if (!tokenData) return;
+  const out = [];
+  const pushUniqueIfValid = (tokenId, meta = {}) => {
+    const tid = String(tokenId || "");
+    if (!tid.startsWith("token_")) return;
+    if (!characterTable?.[tid]) return;
+    if (out.some((x) => x.tokenId === tid)) return;
 
-      // Ẩn summons
-      if (!hasAnyScalingInPhases(tokenData?.phases)) return;
+    const tokenChar = characterTable[tid];
+    const tokenPhases = Array.isArray(tokenChar?.phases) ? tokenChar.phases : [];
+    if (!hasAnyScalingInPhases(tokenPhases)) return;
 
-      seen.add(tokenId);
-      out.push({ tokenId, skillIndex: idx + 1 });
+    out.push({
+      tokenId: tid,
+      skillIndex: meta.skillIndex ?? null,
     });
+  };
 
-    // Tham chiếu Token
-    const dict = charData?.displayTokenDict || {};
-    Object.keys(dict || {}).forEach((tokenId) => {
-      if (!tokenId || typeof tokenId !== "string") return;
-      if (!tokenId.startsWith("token_")) return;
-      if (seen.has(tokenId)) return;
-      const tokenData = characterTable?.[tokenId];
-      if (!tokenData) return;
-      if (!hasAnyScalingInPhases(tokenData?.phases)) return;
+  (charData?.skills || []).forEach((s, idx) => {
+    if (s?.overrideTokenKey) pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
+  });
 
-      seen.add(tokenId);
-      out.push({ tokenId, skillIndex: null });
-    });
+  const tokenDict = charData?.displayTokenDict;
+  if (tokenDict && typeof tokenDict === "object") {
+    Object.keys(tokenDict).forEach((k) => pushUniqueIfValid(k));
+  }
 
-    return out;
-  }, [charData]);
+  return out;
+}, [charData]);
 
-  const [summonIndex, setSummonIndex] = useState(0);
+const [summonIndex, setSummonIndex] = useState(0);
 
-  useEffect(() => {
-    setSummonIndex(0);
-  }, [resolvedCharId]);
+useEffect(() => {
+  setSummonIndex(0);
+}, [resolvedCharId]);
 
-  useEffect(() => {
-    if (summonIndex >= summonOptions.length) setSummonIndex(0);
-  }, [summonIndex, summonOptions.length]);
+useEffect(() => {
+  if (summonIndex >= summonOptions.length) setSummonIndex(0);
+}, [summonIndex, summonOptions.length]);
 
-  const selectedSummon = summonOptions[summonIndex] || null;
-  const summonCharData = useMemo(() => {
-    if (!selectedSummon?.tokenId) return null;
-    return characterTable?.[selectedSummon.tokenId] || null;
-  }, [selectedSummon]);
+const selectedSummon = summonOptions[summonIndex] || null;
 
-  const summonPhases = useMemo(() => {
-    const arr = summonCharData?.phases;
-    if (!Array.isArray(arr)) return [];
-    return arr.slice(0, 3);
-  }, [summonCharData]);
+const summonCharData = useMemo(() => {
+  if (!selectedSummon?.tokenId) return null;
+  return characterTable?.[selectedSummon.tokenId] || null;
+}, [selectedSummon]);
 
-  const summonPhaseIndex = useMemo(() => {
-    if (summonPhases.length === 0) return 0;
-    return Math.min(phaseIndex, summonPhases.length - 1);
-  }, [phaseIndex, summonPhases.length]);
+const summonPhases = useMemo(() => {
+  const arr = summonCharData?.phases;
+  if (!Array.isArray(arr)) return [];
+  return arr.slice(0, 3);
+}, [summonCharData]);
 
-  const summonPhase = summonPhases[summonPhaseIndex];
-  const summonMaxLevel = useMemo(() => getMaxLevelForPhase(summonPhase), [summonPhase]);
+const summonPhaseIndex = useMemo(() => {
+  if (summonPhases.length === 0) return 0;
+  return clamp(phaseIndex, 0, summonPhases.length - 1);
+}, [phaseIndex, summonPhases.length]);
 
-  const summonStats = useMemo(() => {
-    if (!summonPhase) return null;
-    const base = interpolateAttributes(summonPhase?.attributesKeyFrames, summonMaxLevel);
-    if (!base) return null;
-    return {
+const summonPhase = summonPhases[summonPhaseIndex];
+const summonMaxLevel = useMemo(() => getMaxLevelForPhase(summonPhase), [summonPhase]);
+
+const summonLevel = useMemo(() => clamp(safeLevel, 1, summonMaxLevel), [safeLevel, summonMaxLevel]);
+
+const summonComputed = useMemo(() => {
+  if (!summonPhase) return null;
+  const base = interpolateAttributes(summonPhase.attributesKeyFrames, summonLevel);
+  if (!base) return null;
+
+  return {
+    stats: {
       maxHp: base.maxHp,
       atk: base.atk,
       def: base.def,
@@ -460,21 +377,32 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       cost: base.cost,
       blockCnt: base.blockCnt,
       baseAttackTime: base.baseAttackTime,
-    };
-  }, [summonPhase, summonMaxLevel]);
+    },
+  };
+}, [summonPhase, summonLevel]);
 
-  const summonNameRow = useMemo(() => {
-    if (!selectedSummon?.tokenId) return null;
-    return nameVN?.[selectedSummon.tokenId] || null;
-  }, [selectedSummon]);
+const summonNameVNRow = useMemo(() => {
+  const tid = selectedSummon?.tokenId;
+  if (!tid) return null;
+  return nameVN?.[tid] || null;
+}, [selectedSummon]);
 
-  const summonDisplayName =
-    (summonNameRow?.name_vn && String(summonNameRow.name_vn).trim()) || summonCharData?.name || selectedSummon?.tokenId;
+const summonDisplayName = useMemo(() => {
+  const vnName = summonNameVNRow?.name_vn;
+  if (vnName) return vnName;
+  return summonCharData?.name || selectedSummon?.tokenId || "";
+}, [summonNameVNRow, summonCharData, selectedSummon]);
 
-  const summonDescription =
-    (summonNameRow?.Descripton && String(summonNameRow.Descripton).trim()) || summonCharData?.description || "";
+const summonDisplayDesc = useMemo(() => {
+  const vnDesc = summonNameVNRow?.Descripton;
+  if (vnDesc) return vnDesc;
+  return summonCharData?.description || "";
+}, [summonNameVNRow, summonCharData]);
 
-  const summonPositionText = POSITION_VN[summonCharData?.position] || summonCharData?.position || "";
+const summonPositionVN = useMemo(() => {
+  const pos = summonCharData?.position;
+  return POSITION_VN[pos] || pos || "—";
+}, [summonCharData]);
 
   const computed = useMemo(() => {
     if (!currentPhase) return null;
@@ -594,7 +522,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   return (
     <div className="space-y-4">
-      {/* TOP: Stats (2/3) + Level (1/3) */}
+      {/* TOP: Stats + Level */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Stats */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 md:col-span-2">
@@ -830,13 +758,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       {/* ROW: Range / Trust / Potentials */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Range */}
+        {/* Range (center both small & large grids) */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 flex flex-col">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Phạm vi</h3>
           </div>
-
-          {/* flex-1 centers vertically when other columns are taller */}
           <div className="flex-1 flex items-center justify-center">
             <RangeGrid rangeId={currentPhase?.rangeId} />
           </div>
@@ -940,143 +866,153 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         </div>
       </div>
 
-      {/* Summon */}
-      {summonOptions.length > 0 && selectedSummon && summonCharData && summonStats ? (
-        <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <div className="flex items-center justify-between gap-3 mb-3">
-            <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
 
-            {summonOptions.length > 1 && (
-              <div className="flex items-center gap-2">
-                {summonOptions.map((opt, idx) => {
-                  const active = idx === summonIndex;
-                  const iconUrl = getSummonSkillIconUrl(opt.tokenId);
-                  const label = `skill ${opt.skillIndex ?? idx + 1}`;
 
-                  return (
-                    <button
-                      key={opt.tokenId}
-                      type="button"
-                      onClick={() => setSummonIndex(idx)}
-                      className={`flex items-center gap-1.5 rounded-lg px-2 py-1.5 transition border ${
-                        active
-                          ? "bg-white/10 border-white/30"
-                          : "bg-transparent border-white/10 hover:bg-white/5 hover:border-white/20"
-                      }`}
-                    >
-                      {iconUrl ? (
-                        <img
-                          src={iconUrl}
-                          alt={label}
-                          className="w-7 h-7 object-contain shrink-0"
-                          draggable={false}
-                          loading="lazy"
-                        />
-                      ) : null}
+{/* Summon / Token */}
+{summonOptions.length > 0 && selectedSummon && summonCharData && summonComputed && (
+  <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
+    <div className="flex items-start justify-between gap-3 mb-3">
+      <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
 
-                      <span className="text-xs text-white/80 whitespace-nowrap">{label}</span>
-                    </button>
-                  );
-                })}
+      {summonOptions.length > 1 && (
+        <div className="flex items-center gap-2 flex-wrap justify-end">
+          {summonOptions.map((opt, idx) => {
+            const active = idx === summonIndex;
+            const skillLabel = `Skill ${opt.skillIndex ?? idx + 1}`;
+            const icon = getSummonSkillIconUrl(opt.tokenId) || getSummonAvatarUrl(opt.tokenId);
+
+            return (
+              <button
+                key={opt.tokenId}
+                type="button"
+                onClick={() => setSummonIndex(idx)}
+                title={skillLabel}
+                className={`flex items-center gap-2 rounded-lg px-2 py-1.5 transition ${
+                  active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                }`}
+              >
+                <img
+                  src={icon}
+                  alt={skillLabel}
+                  className="w-7 h-7 object-contain shrink-0"
+                  draggable={false}
+                  loading="lazy"
+                />
+                <span className="text-xs text-white/90 whitespace-nowrap">{skillLabel}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+
+    {/* Header: avatar + basic info */}
+    <div className="flex items-start gap-3">
+      <img
+        src={getSummonAvatarUrl(selectedSummon.tokenId)}
+        alt={summonDisplayName}
+        className="w-14 h-14 rounded-lg bg-white/5 object-contain shrink-0"
+        draggable={false}
+        loading="lazy"
+      />
+
+      <div className="min-w-0">
+        <div className="text-base font-semibold text-white truncate">{summonDisplayName}</div>
+
+        <div className="text-xs text-white/70 mt-0.5">
+          Vị trí: <span className="text-white/90">{summonPositionVN}</span>
+        </div>
+
+        {!!summonDisplayDesc && (
+          <div className="text-xs text-white/70 mt-1 whitespace-pre-wrap">{summonDisplayDesc}</div>
+        )}
+      </div>
+
+      <div className="ml-auto text-xs text-white/60 whitespace-nowrap">
+        Cấp: <span className="text-white/80">{summonLevel}</span>
+        <span className="text-white/40"> / </span>
+        <span className="text-white/80">{summonMaxLevel}</span>
+      </div>
+    </div>
+
+    {/* divider */}
+    <div className="h-px bg-white/10 my-4" />
+
+    {/* Range + Stats */}
+    <div className="flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0">
+      {/* Range */}
+      <div className="md:w-1/3 flex flex-col">
+        <div className="text-base font-semibold text-white mb-2">Phạm vi</div>
+        <div className="flex-1 flex items-center justify-center">
+          <RangeGrid rangeId={summonPhase?.rangeId} />
+        </div>
+      </div>
+
+      {/* divider */}
+      <div className="hidden md:flex px-4">
+        <div className="w-px bg-white/10 self-stretch" />
+      </div>
+
+      {/* mobile divider */}
+      <div className="md:hidden">
+        <div className="h-px bg-white/10 my-2" />
+      </div>
+
+      {/* Stats */}
+      <div className="md:flex-1 flex flex-col">
+        <div className="text-base font-semibold text-white mb-2">Chỉ số cơ bản</div>
+
+        <div className="grid grid-cols-[2fr_10px_1fr] gap-3 items-start">
+          <div className="space-y-2">
+            {[
+              { icon: STAT_ICON.maxHp, label: "HP", value: fmtInt(summonComputed.stats.maxHp) },
+              { icon: STAT_ICON.atk, label: "ATK", value: fmtInt(summonComputed.stats.atk) },
+              { icon: STAT_ICON.def, label: "DEF", value: fmtInt(summonComputed.stats.def) },
+              { icon: STAT_ICON.magicResistance, label: "RES", value: fmtInt(summonComputed.stats.magicResistance) },
+            ].map((row) => (
+              <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                <img src={row.icon} alt={row.label} className="w-5 h-5 object-contain shrink-0" draggable={false} />
+                <div className="flex-1 flex items-center justify-between gap-3">
+                  <div className="text-xs text-white/70 truncate">{row.label}</div>
+                  <div className="text-sm text-white tabular-nums">{row.value}</div>
+                </div>
               </div>
-            )}
+            ))}
           </div>
 
-          {/* Header: avatar + info */}
-          <div className="flex items-start gap-3">
-            <img
-              src={getSummonAvatarUrl(selectedSummon.tokenId)}
-              alt={selectedSummon.tokenId}
-              className="w-16 h-16 rounded-lg bg-white/5 object-contain shrink-0"
-              draggable={false}
-              loading="lazy"
-            />
-
-            <div className="min-w-0">
-              <div className="text-white font-semibold leading-snug">{summonDisplayName}</div>
-
-              {summonPositionText ? (
-                <div className="text-xs text-white/60 mt-0.5">Vị trí: {summonPositionText}</div>
-              ) : null}
-
-              {summonDescription ? (
-                <div className="text-sm text-white/70 mt-2 whitespace-pre-line">{summonDescription}</div>
-              ) : null}
-            </div>
+          <div className="h-full flex justify-center">
+            <div className="w-px bg-white/10" />
           </div>
 
-          {/* divider */}
-          <div className="mt-4 h-px bg-white/10" />
-
-          {/* Range + Stats */}
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-            {/* Range */}
-            <div className="flex items-center justify-center">
-              <RangeGrid rangeId={summonPhase?.rangeId} />
-            </div>
-
-            {/* Stats */}
-            <div className="flex items-center justify-center">
-              <div className="space-y-2">
-                {[
-                  {
-                    icon: STAT_ICON.maxHp,
-                    label: "HP",
-                    value: fmtInt(summonStats.maxHp),
-                  },
-                  {
-                    icon: STAT_ICON.atk,
-                    label: "ATK",
-                    value: fmtInt(summonStats.atk),
-                  },
-                  {
-                    icon: STAT_ICON.def,
-                    label: "DEF",
-                    value: fmtInt(summonStats.def),
-                  },
-                  {
-                    icon: STAT_ICON.magicResistance,
-                    label: "RES",
-                    value: fmtInt(summonStats.magicResistance),
-                  },
-                  {
-                    icon: STAT_ICON.respawnTime,
-                    label: "Thời gian hồi",
-                    value: `${fmtInt(summonStats.respawnTime)}s`,
-                  },
-                  {
-                    icon: STAT_ICON.cost,
-                    label: "Phí",
-                    value: fmtInt(summonStats.cost),
-                  },
-                  {
-                    icon: STAT_ICON.blockCnt,
-                    label: "Chặn",
-                    value: fmtInt(summonStats.blockCnt),
-                  },
-                  {
-                    icon: STAT_ICON.baseAttackTime,
-                    label: "Thời gian tấn công",
-                    value: formatSecondsTrim(summonStats.baseAttackTime, { maxDecimals: 2 }),
-                  },
-                ].map((row) => (
-                  <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
-                    <img
-                      src={row.icon}
-                      alt=""
-                      className="w-5 h-5 object-contain opacity-90"
-                      draggable={false}
-                      loading="lazy"
-                    />
-                    <span className="text-xs text-white/70 whitespace-nowrap">{row.label}</span>
-                    <span className="ml-auto text-sm font-semibold text-white">{row.value}</span>
-                  </div>
-                ))}
+          <div className="space-y-2">
+            {[
+              {
+                icon: STAT_ICON.respawnTime,
+                label: "Thời gian hồi",
+                value: formatNumber(summonComputed.stats.respawnTime, { decimals: 0, suffix: "s" }),
+              },
+              { icon: STAT_ICON.cost, label: "Phí", value: fmtInt(summonComputed.stats.cost) },
+              { icon: STAT_ICON.blockCnt, label: "Chặn", value: fmtInt(summonComputed.stats.blockCnt) },
+              {
+                icon: STAT_ICON.baseAttackTime,
+                label: "Thời gian tấn công",
+                value: formatSecondsTrim(summonComputed.stats.baseAttackTime, { maxDecimals: 2 }),
+              },
+            ].map((row) => (
+              <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                <img src={row.icon} alt={row.label} className="w-5 h-5 object-contain shrink-0" draggable={false} />
+                <div className="flex-1 flex items-center justify-between gap-3">
+                  <div className="text-xs text-white/70 truncate">{row.label}</div>
+                  <div className="text-sm text-white tabular-nums">{row.value}</div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      ) : null}
+      </div>
+    </div>
+  </div>
+)}
 
       {/* Promotion Requirements (frame only for now) */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
