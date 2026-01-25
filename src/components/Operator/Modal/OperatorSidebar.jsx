@@ -1,6 +1,9 @@
 import LangToggle from "../../UI/LangToggle";
 import React, { useEffect, useMemo, useState } from "react";
-import { buildCnAvatarUrl, getOperatorCharId } from "../../../utils/operatorAvatar";
+import {
+  buildCnAvatarUrl,
+  getOperatorCharId,
+} from "../../../utils/operatorAvatar";
 import characterTable from "../../../data/operators/character_table.json";
 
 import {
@@ -51,16 +54,19 @@ const OperatorSidebar = ({
   }, [charEntry]);
 
   const profIcon = useMemo(() => professionIconUrl(profession), [profession]);
-  const subIcon = useMemo(() => subProfIconUrl(subProfessionId), [subProfessionId]);
+  const subIcon = useMemo(
+    () => subProfIconUrl(subProfessionId),
+    [subProfessionId],
+  );
 
   const profText = useMemo(
     () => professionLabel(profession, langNorm),
-    [profession, langNorm]
+    [profession, langNorm],
   );
 
   const subText = useMemo(
     () => subProfLabel(subProfessionId, langNorm),
-    [subProfessionId, langNorm]
+    [subProfessionId, langNorm],
   );
 
   const avatarCandidates = useMemo(() => {
@@ -166,7 +172,6 @@ const OperatorSidebar = ({
           </div>
         </div>
       </div>
-
 
       {/* Lang Toggle */}
       <div className="mt-2 flex justify-center">

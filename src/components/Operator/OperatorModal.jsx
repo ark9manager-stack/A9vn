@@ -3,7 +3,7 @@ import OperatorSidebar from "./Modal/OperatorSidebar";
 import OperatorContent from "./Modal/OperatorContent";
 
 const OperatorModal = ({ operator, onClose }) => {
-  const [activeTab, setActiveTab] = useState("profile");
+  const [activeTab, setActiveTab] = useState("skins");
   const [lang, setLang] = useState("EN");
   if (!operator) return null;
 

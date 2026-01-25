@@ -1,8 +1,18 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { ItalicText } from "../../../StatHover";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
-import { buildCnAvatarUrl, CN_AVATAR_BASE, getOperatorCharId } from "../../../../utils/operatorAvatar";
+import {
+  buildCnAvatarUrl,
+  CN_AVATAR_BASE,
+  getOperatorCharId,
+} from "../../../../utils/operatorAvatar";
 
 const VOICE_ASSET_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/voice/assets/dyn/audio/sound_beta_2";
@@ -55,7 +65,8 @@ function translateVoiceTitle(voiceTitle) {
 
 function getPrefixFromWordKey(charId, wordKey) {
   if (!wordKey || !charId || wordKey === charId) return "";
-  if (wordKey.startsWith(`${charId}_`)) return wordKey.slice(`${charId}_`.length);
+  if (wordKey.startsWith(`${charId}_`))
+    return wordKey.slice(`${charId}_`.length);
   if (wordKey.startsWith(`${charId}#`)) return wordKey.slice(charId.length);
   if (wordKey.startsWith(charId)) {
     let rest = wordKey.slice(charId.length);
@@ -95,7 +106,6 @@ function buildVoiceAudioUrl(voiceAsset, voiceId, langType) {
     folder = f || "";
     vid = v || voiceId;
   } else {
-
     folder = voiceAsset || "";
     vid = voiceId;
   }
@@ -115,7 +125,9 @@ function buildVoiceAudioUrl(voiceAsset, voiceId, langType) {
 
 function getLangLabel(vnObj, skinPrefix, langType) {
   if (!vnObj) return langType;
-  const key = skinPrefix ? `${skinPrefix}_${langType}_voice` : `${langType}_voice`;
+  const key = skinPrefix
+    ? `${skinPrefix}_${langType}_voice`
+    : `${langType}_voice`;
   return vnObj[key] || langType;
 }
 
@@ -162,9 +174,7 @@ const VoiceSection = ({ operator }) => {
       try {
         audio.pause();
         audio.currentTime = 0;
-      } catch {
-
-      }
+      } catch {}
     });
   }, []);
 
@@ -174,9 +184,7 @@ const VoiceSection = ({ operator }) => {
       try {
         audio.pause();
         audio.currentTime = 0;
-      } catch {
-
-      }
+      } catch {}
     });
   }, []);
 
@@ -192,39 +200,49 @@ const VoiceSection = ({ operator }) => {
 
   const skinPrefix = useMemo(
     () => getPrefixFromWordKey(charId, selectedVariantKey),
-    [charId, selectedVariantKey]
+    [charId, selectedVariantKey],
   );
 
   const availableLangTypes = useMemo(() => {
-    const entry = charwordTable?.voiceLangDict?.[selectedVariantKey] || charwordTable?.voiceLangDict?.[charId];
+    const entry =
+      charwordTable?.voiceLangDict?.[selectedVariantKey] ||
+      charwordTable?.voiceLangDict?.[charId];
     const dict = entry?.dict || {};
     return Object.keys(dict);
   }, [charId, selectedVariantKey]);
 
   const preferredDefaultLang = useMemo(() => {
-    return charwordTable?.charDefaultTypeDict?.[charId] || charwordTable?.defaultLangType || "CN_MANDARIN";
+    return (
+      charwordTable?.charDefaultTypeDict?.[charId] ||
+      charwordTable?.defaultLangType ||
+      "CN_MANDARIN"
+    );
   }, [charId]);
 
-  const [selectedLangType, setSelectedLangType] = useState(preferredDefaultLang);
+  const [selectedLangType, setSelectedLangType] =
+    useState(preferredDefaultLang);
 
   useEffect(() => {
     if (!availableLangTypes.length) return;
     setSelectedLangType((prev) => {
       if (availableLangTypes.includes(prev)) return prev;
-      if (availableLangTypes.includes(preferredDefaultLang)) return preferredDefaultLang;
+      if (availableLangTypes.includes(preferredDefaultLang))
+        return preferredDefaultLang;
       return availableLangTypes[0];
     });
   }, [availableLangTypes, preferredDefaultLang]);
 
   const activeWordKey = useMemo(() => {
-    const entry = charwordTable?.voiceLangDict?.[selectedVariantKey] || charwordTable?.voiceLangDict?.[charId];
+    const entry =
+      charwordTable?.voiceLangDict?.[selectedVariantKey] ||
+      charwordTable?.voiceLangDict?.[charId];
     const langInfo = entry?.dict?.[selectedLangType];
     return langInfo?.wordkey || selectedVariantKey || charId || "";
   }, [charId, selectedVariantKey, selectedLangType]);
 
   const activePrefix = useMemo(
     () => getPrefixFromWordKey(charId, activeWordKey),
-    [charId, activeWordKey]
+    [charId, activeWordKey],
   );
 
   const voiceLines = useMemo(() => {
@@ -255,7 +273,6 @@ const VoiceSection = ({ operator }) => {
     return list;
   }, [activeWordKey]);
 
-
   useEffect(() => {
     stopAllAudios();
   }, [selectedVariantKey, selectedLangType, activeWordKey, stopAllAudios]);
@@ -280,7 +297,9 @@ const VoiceSection = ({ operator }) => {
           {variants.map((wk) => {
             const isSelected = wk === selectedVariantKey;
             const isDefault = wk === charId;
-            const imgUrl = isDefault ? defaultAvatarUrl : buildCnSkinAvatarUrl(wk);
+            const imgUrl = isDefault
+              ? defaultAvatarUrl
+              : buildCnSkinAvatarUrl(wk);
 
             return (
               <button
@@ -291,7 +310,9 @@ const VoiceSection = ({ operator }) => {
                   setSelectedVariantKey(wk);
                 }}
                 className={`shrink-0 rounded-xl border transition ${
-                  isSelected ? "border-white" : "border-gray-700 hover:border-gray-400"
+                  isSelected
+                    ? "border-white"
+                    : "border-gray-700 hover:border-gray-400"
                 }`}
                 style={{ padding: 0 }}
               >
@@ -309,7 +330,9 @@ const VoiceSection = ({ operator }) => {
               </button>
             );
           })}
-          {!variants.length ? <div className="text-base text-gray-300">No voice data.</div> : null}
+          {!variants.length ? (
+            <div className="text-base text-gray-300">No voice data.</div>
+          ) : null}
         </div>
 
         {/* Right: language dropdown */}
@@ -336,11 +359,23 @@ const VoiceSection = ({ operator }) => {
       <div className="space-y-4">
         {voiceLines.map((v) => {
           const title = translateVoiceTitle(v.voiceTitle);
-          const audioUrl = buildVoiceAudioUrl(v.voiceAsset, v.voiceId, selectedLangType);
-          const text = getVoiceText(vnObj, activePrefix, v.voiceId, v.voiceText);
+          const audioUrl = buildVoiceAudioUrl(
+            v.voiceAsset,
+            v.voiceId,
+            selectedLangType,
+          );
+          const text = getVoiceText(
+            vnObj,
+            activePrefix,
+            v.voiceId,
+            v.voiceText,
+          );
 
           return (
-            <div key={v.charWordId} className="overflow-hidden rounded-xl border border-gray-800">
+            <div
+              key={v.charWordId}
+              className="overflow-hidden rounded-xl border border-gray-800"
+            >
               {/* Title (bigger) */}
               <div className="bg-black px-4 py-3 text-lg font-semibold">
                 <span className="text-gray-300">{v.voiceId}</span>
@@ -369,14 +404,19 @@ const VoiceSection = ({ operator }) => {
 
               {/* Text (bigger) */}
               <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
-                <ItalicText text={text} keyPrefix={`voice-text-${v.charWordId}`} />
+                <ItalicText
+                  text={text}
+                  keyPrefix={`voice-text-${v.charWordId}`}
+                />
               </div>
             </div>
           );
         })}
 
         {!voiceLines.length ? (
-          <div className="text-base text-gray-300">No voice lines for this operator.</div>
+          <div className="text-base text-gray-300">
+            No voice lines for this operator.
+          </div>
         ) : null}
       </div>
     </div>
