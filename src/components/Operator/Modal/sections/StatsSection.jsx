@@ -4,6 +4,7 @@ import StatBar from "../../../UI/StatBar";
 import characterTable from "../../../../data/operators/character_table.json";
 import rangeTable from "../../../../data/range_table.json";
 import potVN from "../../../../data/operators/pot_vn.json";
+import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
 
@@ -33,6 +34,44 @@ const POT_ICON_BASE =
 
 const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
 
+/* Summon/Token */
+const CHARAVATAR_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
+const SKILL_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/skills/";
+
+const SUMMON_AVATAR_OVERRIDE = {
+  token_10012_rosmon_shield: `${SKILL_ICON_BASE}skill_icon_sktok_rosmon.png`,
+};
+
+const tokenToSkillIconKey = (tokenId) => {
+  const t = String(tokenId || "");
+  if (!t.startsWith("token_")) return null;
+
+  if (t === "token_10051_radian_tower1") return "skill_icon_sktok_radian_tower3";
+
+  return `skill_icon_sktok_${t.replace(/^token_\d+_/, "")}`;
+};
+
+const getSummonAvatarUrl = (tokenId) => {
+  const tid = String(tokenId || "");
+  if (!tid) return "";
+  if (SUMMON_AVATAR_OVERRIDE[tid]) return SUMMON_AVATAR_OVERRIDE[tid];
+  return `${CHARAVATAR_BASE}${tid}.png`;
+};
+
+const getSummonSkillIconUrl = (tokenId) => {
+  const key = tokenToSkillIconKey(tokenId);
+  if (!key) return "";
+  return `${SKILL_ICON_BASE}${key}.png`;
+};
+
+const POSITION_VN = {
+  ALL: "Toàn bộ",
+  RANGED: "Trên cao",
+  MELEE: "Mặt đất",
+};
+
 const ATTR_TYPE_TO_STAT = {
   COST: "cost",
   ATK: "atk",
@@ -54,10 +93,24 @@ const formatNumber = (n, { decimals = 0, suffix = "" } = {}) => {
   return `${x.toFixed(decimals)}${suffix}`;
 };
 
+const formatNumberTrim = (n, { maxDecimals = 2, suffix = "" } = {}) => {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return "—";
+
+  let s = x.toFixed(maxDecimals);
+  if (maxDecimals > 0) {
+    s = s.replace(/\.?0+$/, "");
+  }
+  return `${s}${suffix}`;
+};
+
+const formatSecondsTrim = (n, { maxDecimals = 2 } = {}) =>
+  formatNumberTrim(n, { maxDecimals, suffix: "s" });
+
 const fmtInt = (n) => formatNumber(n, { decimals: 0 });
+
 const lerp = (a, b, t) => a + (b - a) * t;
 
-/** interpolate by attributesKeyFrames */
 function interpolateAttributes(frames, level) {
   if (!Array.isArray(frames) || frames.length === 0) return null;
 
@@ -65,7 +118,8 @@ function interpolateAttributes(frames, level) {
   const lv = Number(level);
 
   if (lv <= sorted[0].level) return sorted[0].data;
-  if (lv >= sorted[sorted.length - 1].level) return sorted[sorted.length - 1].data;
+  if (lv >= sorted[sorted.length - 1].level)
+    return sorted[sorted.length - 1].data;
 
   for (let i = 0; i < sorted.length - 1; i++) {
     const A = sorted[i];
@@ -77,7 +131,8 @@ function interpolateAttributes(frames, level) {
       Object.keys(B.data || {}).forEach((k) => {
         const av = A.data?.[k];
         const bv = B.data?.[k];
-        if (typeof av === "number" && typeof bv === "number") out[k] = lerp(av, bv, t);
+        if (typeof av === "number" && typeof bv === "number")
+          out[k] = lerp(av, bv, t);
         else out[k] = av ?? bv;
       });
       return out;
@@ -89,7 +144,8 @@ function interpolateAttributes(frames, level) {
 
 function normalizePotMap(potJson) {
   if (Array.isArray(potJson)) return potJson;
-  if (potJson && Array.isArray(potJson.potentialRanks)) return potJson.potentialRanks;
+  if (potJson && Array.isArray(potJson.potentialRanks))
+    return potJson.potentialRanks;
   return [];
 }
 
@@ -189,9 +245,17 @@ function RangeGrid({ rangeId }) {
               title={isCenter ? "Stand" : isAttack ? "Attack" : ""}
             >
               {isCenter ? (
-                <img src={RANGE_STAND} alt="stand" className="w-[14px] h-[14px] object-contain" />
+                <img
+                  src={RANGE_STAND}
+                  alt="stand"
+                  className="w-[14px] h-[14px] object-contain"
+                />
               ) : isAttack ? (
-                <img src={RANGE_ATTACK} alt="atk" className="w-[14px] h-[14px] object-contain" />
+                <img
+                  src={RANGE_ATTACK}
+                  alt="atk"
+                  className="w-[14px] h-[14px] object-contain"
+                />
               ) : null}
             </div>
           );
@@ -208,10 +272,41 @@ function getMaxLevelForPhase(phase) {
 
   const frames = phase?.attributesKeyFrames;
   if (Array.isArray(frames) && frames.length > 0) {
-    const last = frames.reduce((acc, it) => (it.level > acc ? it.level : acc), 1);
+    const last = frames.reduce(
+      (acc, it) => (it.level > acc ? it.level : acc),
+      1
+    );
     return last;
   }
   return 1;
+}
+
+function hasAnyScalingInPhases(phases) {
+  if (!Array.isArray(phases) || phases.length === 0) return false;
+
+  const statKeys = [
+    "maxHp",
+    "atk",
+    "def",
+    "magicResistance",
+    "respawnTime",
+    "cost",
+    "blockCnt",
+    "baseAttackTime",
+  ];
+
+  for (const p of phases) {
+    const maxLv = getMaxLevelForPhase(p);
+    const a1 = interpolateAttributes(p?.attributesKeyFrames, 1);
+    const a2 = interpolateAttributes(p?.attributesKeyFrames, maxLv);
+
+    if (!a1 || !a2) continue;
+
+    const changed = statKeys.some((k) => Number(a1[k]) !== Number(a2[k]));
+    if (changed) return true;
+  }
+
+  return false;
 }
 
 const StatsSection = ({ operator, charId: charIdProp }) => {
@@ -237,7 +332,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const [levelDraft, setLevelDraft] = useState("1");
   const [isEditingLevel, setIsEditingLevel] = useState(false);
 
-
   useEffect(() => {
     setPhaseIndex(0);
     setLevel(1);
@@ -246,14 +340,17 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   }, [resolvedCharId]);
 
   const currentPhase = phases[phaseIndex];
-  const maxLevel = useMemo(() => getMaxLevelForPhase(currentPhase), [currentPhase]);
+  const maxLevel = useMemo(
+    () => getMaxLevelForPhase(currentPhase),
+    [currentPhase]
+  );
 
   useEffect(() => {
     setLevel((lv) => clamp(lv, 1, maxLevel));
   }, [maxLevel]);
 
   const safeLevel = clamp(level, 1, maxLevel);
-    const levelPct = useMemo(() => {
+  const levelPct = useMemo(() => {
     if (maxLevel <= 1) return 0;
     return ((safeLevel - 1) / (maxLevel - 1)) * 100;
   }, [safeLevel, maxLevel]);
@@ -275,14 +372,27 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     if (!isEditingLevel) setLevelDraft(String(safeLevel));
   }, [safeLevel, isEditingLevel]);
 
+  // Trust
   const trustFrame = useMemo(() => {
     const frames = charData?.favorKeyFrames;
     if (!Array.isArray(frames) || frames.length === 0) return null;
     return frames[frames.length - 1];
   }, [charData]);
 
+  const trustRows = useMemo(() => {
+    const t = trustFrame?.data || {};
+    const rows = [
+      { label: "HP", v: Number(t.maxHp || 0) },
+      { label: "ATK", v: Number(t.atk || 0) },
+      { label: "DEF", v: Number(t.def || 0) },
+      { label: "RES", v: Number(t.magicResistance || 0) },
+    ];
+    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
+  }, [trustFrame]);
+
   const [useTrust, setUseTrust] = useState(false);
 
+  // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
   const ranks = useMemo(
     () => (Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : []),
@@ -296,79 +406,85 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     setUseTrust(false);
   }, [resolvedCharId]);
 
+  // Summon / Token 
+  const summonOptions = useMemo(() => {
+    if (!charData) return [];
 
-const summonOptions = useMemo(() => {
-  if (!charData) return [];
+    const out = [];
+    const pushUniqueIfValid = (tokenId, meta = {}) => {
+      const tid = String(tokenId || "");
+      if (!tid.startsWith("token_")) return;
+      if (!characterTable?.[tid]) return;
+      if (out.some((x) => x.tokenId === tid)) return;
 
-  const out = [];
-  const pushUniqueIfValid = (tokenId, meta = {}) => {
-    const tid = String(tokenId || "");
-    if (!tid.startsWith("token_")) return;
-    if (!characterTable?.[tid]) return;
-    if (out.some((x) => x.tokenId === tid)) return;
+      const tokenChar = characterTable[tid];
+      const tokenPhases = Array.isArray(tokenChar?.phases) ? tokenChar.phases : [];
+      if (!hasAnyScalingInPhases(tokenPhases)) return;
 
-    const tokenChar = characterTable[tid];
-    const tokenPhases = Array.isArray(tokenChar?.phases) ? tokenChar.phases : [];
-    if (!hasAnyScalingInPhases(tokenPhases)) return;
+      out.push({
+        tokenId: tid,
+        skillIndex: meta.skillIndex ?? null,
+      });
+    };
 
-    out.push({
-      tokenId: tid,
-      skillIndex: meta.skillIndex ?? null,
+    (charData?.skills || []).forEach((s, idx) => {
+      if (s?.overrideTokenKey) pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
     });
-  };
 
-  (charData?.skills || []).forEach((s, idx) => {
-    if (s?.overrideTokenKey) pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
-  });
+    const tokenDict = charData?.displayTokenDict;
+    if (tokenDict && typeof tokenDict === "object") {
+      Object.keys(tokenDict).forEach((k) => pushUniqueIfValid(k));
+    }
 
-  const tokenDict = charData?.displayTokenDict;
-  if (tokenDict && typeof tokenDict === "object") {
-    Object.keys(tokenDict).forEach((k) => pushUniqueIfValid(k));
-  }
+    return out;
+  }, [charData]);
 
-  return out;
-}, [charData]);
+  const [summonIndex, setSummonIndex] = useState(0);
 
-const [summonIndex, setSummonIndex] = useState(0);
+  useEffect(() => {
+    setSummonIndex(0);
+  }, [resolvedCharId]);
 
-useEffect(() => {
-  setSummonIndex(0);
-}, [resolvedCharId]);
+  useEffect(() => {
+    if (summonIndex >= summonOptions.length) setSummonIndex(0);
+  }, [summonIndex, summonOptions.length]);
 
-useEffect(() => {
-  if (summonIndex >= summonOptions.length) setSummonIndex(0);
-}, [summonIndex, summonOptions.length]);
+  const selectedSummon = summonOptions[summonIndex] || null;
 
-const selectedSummon = summonOptions[summonIndex] || null;
+  const summonCharData = useMemo(() => {
+    if (!selectedSummon?.tokenId) return null;
+    return characterTable?.[selectedSummon.tokenId] || null;
+  }, [selectedSummon]);
 
-const summonCharData = useMemo(() => {
-  if (!selectedSummon?.tokenId) return null;
-  return characterTable?.[selectedSummon.tokenId] || null;
-}, [selectedSummon]);
+  const summonPhases = useMemo(() => {
+    const arr = summonCharData?.phases;
+    if (!Array.isArray(arr)) return [];
+    return arr.slice(0, 3);
+  }, [summonCharData]);
 
-const summonPhases = useMemo(() => {
-  const arr = summonCharData?.phases;
-  if (!Array.isArray(arr)) return [];
-  return arr.slice(0, 3);
-}, [summonCharData]);
+  const summonPhaseIndex = useMemo(() => {
+    if (summonPhases.length === 0) return 0;
+    return clamp(phaseIndex, 0, summonPhases.length - 1);
+  }, [phaseIndex, summonPhases.length]);
 
-const summonPhaseIndex = useMemo(() => {
-  if (summonPhases.length === 0) return 0;
-  return clamp(phaseIndex, 0, summonPhases.length - 1);
-}, [phaseIndex, summonPhases.length]);
+  const summonPhase = summonPhases[summonPhaseIndex];
+  const summonMaxLevel = useMemo(
+    () => getMaxLevelForPhase(summonPhase),
+    [summonPhase]
+  );
 
-const summonPhase = summonPhases[summonPhaseIndex];
-const summonMaxLevel = useMemo(() => getMaxLevelForPhase(summonPhase), [summonPhase]);
+  const summonLevel = useMemo(
+    () => clamp(safeLevel, 1, summonMaxLevel),
+    [safeLevel, summonMaxLevel]
+  );
 
-const summonLevel = useMemo(() => clamp(safeLevel, 1, summonMaxLevel), [safeLevel, summonMaxLevel]);
+  const summonStats = useMemo(() => {
+    if (!summonPhase) return null;
 
-const summonComputed = useMemo(() => {
-  if (!summonPhase) return null;
-  const base = interpolateAttributes(summonPhase.attributesKeyFrames, summonLevel);
-  if (!base) return null;
+    const base = interpolateAttributes(summonPhase?.attributesKeyFrames, summonLevel);
+    if (!base) return null;
 
-  return {
-    stats: {
+    return {
       maxHp: base.maxHp,
       atk: base.atk,
       def: base.def,
@@ -377,32 +493,31 @@ const summonComputed = useMemo(() => {
       cost: base.cost,
       blockCnt: base.blockCnt,
       baseAttackTime: base.baseAttackTime,
-    },
-  };
-}, [summonPhase, summonLevel]);
+    };
+  }, [summonPhase, summonLevel]);
 
-const summonNameVNRow = useMemo(() => {
-  const tid = selectedSummon?.tokenId;
-  if (!tid) return null;
-  return nameVN?.[tid] || null;
-}, [selectedSummon]);
+  const summonNameVNRow = useMemo(() => {
+    const tid = selectedSummon?.tokenId;
+    if (!tid) return null;
+    return nameVN?.[tid] || null;
+  }, [selectedSummon]);
 
-const summonDisplayName = useMemo(() => {
-  const vnName = summonNameVNRow?.name_vn;
-  if (vnName) return vnName;
-  return summonCharData?.name || selectedSummon?.tokenId || "";
-}, [summonNameVNRow, summonCharData, selectedSummon]);
+  const summonDisplayName = useMemo(() => {
+    const vnName = summonNameVNRow?.name_vn;
+    if (vnName) return vnName;
+    return summonCharData?.name || selectedSummon?.tokenId || "";
+  }, [summonNameVNRow, summonCharData, selectedSummon]);
 
-const summonDisplayDesc = useMemo(() => {
-  const vnDesc = summonNameVNRow?.Descripton;
-  if (vnDesc) return vnDesc;
-  return summonCharData?.description || "";
-}, [summonNameVNRow, summonCharData]);
+  const summonDisplayDesc = useMemo(() => {
+    const vnDesc = summonNameVNRow?.Descripton;
+    if (vnDesc) return vnDesc;
+    return summonCharData?.description || "";
+  }, [summonNameVNRow, summonCharData]);
 
-const summonPositionVN = useMemo(() => {
-  const pos = summonCharData?.position;
-  return POSITION_VN[pos] || pos || "—";
-}, [summonCharData]);
+  const summonPositionVN = useMemo(() => {
+    const pos = summonCharData?.position;
+    return POSITION_VN[pos] || pos || "—";
+  }, [summonCharData]);
 
   const computed = useMemo(() => {
     if (!currentPhase) return null;
@@ -447,7 +562,6 @@ const summonPositionVN = useMemo(() => {
       });
     }
 
-
     const applyDeltas = (key, baseVal) => {
       const sum = (deltas[key] || []).reduce((a, b) => a + Number(b || 0), 0);
       return (Number(baseVal) || 0) + sum;
@@ -483,7 +597,8 @@ const summonPositionVN = useMemo(() => {
     return (
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
         <div className="text-sm text-white/70">
-          No operator selected. (Bạn cần truyền <code>operator</code> hoặc <code>charId</code> vào StatsSection)
+          No operator selected. (Bạn cần truyền <code>operator</code> hoặc{" "}
+          <code>charId</code> vào StatsSection)
         </div>
       </div>
     );
@@ -509,17 +624,6 @@ const summonPositionVN = useMemo(() => {
 
   const { stats, deltas } = computed;
 
-  const trustRows = useMemo(() => {
-    const t = trustFrame?.data || {};
-    const rows = [
-      { label: "HP", v: Number(t.maxHp || 0) },
-      { label: "ATK", v: Number(t.atk || 0) },
-      { label: "DEF", v: Number(t.def || 0) },
-      { label: "RES", v: Number(t.magicResistance || 0) },
-    ];
-    return rows.filter((r) => Number.isFinite(r.v) && r.v !== 0);
-  }, [trustFrame]);
-
   return (
     <div className="space-y-4">
       {/* TOP: Stats + Level */}
@@ -532,49 +636,81 @@ const summonPositionVN = useMemo(() => {
             {/* left */}
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <img src={STAT_ICON.maxHp} alt="hp" className="w-5 h-5 object-contain" draggable={false} />
+                <img
+                  src={STAT_ICON.maxHp}
+                  alt="hp"
+                  className="w-5 h-5 object-contain"
+                  draggable={false}
+                />
                 <div className="flex-1">
                   <StatBar
                     label="HP"
                     value={stats.maxHp}
                     max={6000}
                     displayValue={
-                      <ValueWithDeltas value={stats.maxHp} deltas={deltas.maxHp} formatter={(v) => fmtInt(v)} />
+                      <ValueWithDeltas
+                        value={stats.maxHp}
+                        deltas={deltas.maxHp}
+                        formatter={(v) => fmtInt(v)}
+                      />
                     }
                   />
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <img src={STAT_ICON.atk} alt="atk" className="w-5 h-5 object-contain" draggable={false} />
+                <img
+                  src={STAT_ICON.atk}
+                  alt="atk"
+                  className="w-5 h-5 object-contain"
+                  draggable={false}
+                />
                 <div className="flex-1">
                   <StatBar
                     label="ATK"
                     value={stats.atk}
                     max={2000}
                     displayValue={
-                      <ValueWithDeltas value={stats.atk} deltas={deltas.atk} formatter={(v) => fmtInt(v)} />
+                      <ValueWithDeltas
+                        value={stats.atk}
+                        deltas={deltas.atk}
+                        formatter={(v) => fmtInt(v)}
+                      />
                     }
                   />
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <img src={STAT_ICON.def} alt="def" className="w-5 h-5 object-contain" draggable={false} />
+                <img
+                  src={STAT_ICON.def}
+                  alt="def"
+                  className="w-5 h-5 object-contain"
+                  draggable={false}
+                />
                 <div className="flex-1">
                   <StatBar
                     label="DEF"
                     value={stats.def}
                     max={1000}
                     displayValue={
-                      <ValueWithDeltas value={stats.def} deltas={deltas.def} formatter={(v) => fmtInt(v)} />
+                      <ValueWithDeltas
+                        value={stats.def}
+                        deltas={deltas.def}
+                        formatter={(v) => fmtInt(v)}
+                      />
                     }
                   />
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <img src={STAT_ICON.magicResistance} alt="res" className="w-5 h-5 object-contain" draggable={false} />
+                <img
+                  src={STAT_ICON.magicResistance}
+                  alt="res"
+                  className="w-5 h-5 object-contain"
+                  draggable={false}
+                />
                 <div className="flex-1">
                   <StatBar
                     label="RES"
@@ -614,12 +750,24 @@ const summonPositionVN = useMemo(() => {
                 {
                   icon: STAT_ICON.cost,
                   label: "Phí",
-                  value: <ValueWithDeltas value={stats.cost} deltas={deltas.cost} formatter={(v) => fmtInt(v)} />,
+                  value: (
+                    <ValueWithDeltas
+                      value={stats.cost}
+                      deltas={deltas.cost}
+                      formatter={(v) => fmtInt(v)}
+                    />
+                  ),
                 },
                 {
                   icon: STAT_ICON.blockCnt,
                   label: "Chặn",
-                  value: <ValueWithDeltas value={stats.blockCnt} deltas={deltas.blockCnt} formatter={(v) => fmtInt(v)} />,
+                  value: (
+                    <ValueWithDeltas
+                      value={stats.blockCnt}
+                      deltas={deltas.blockCnt}
+                      formatter={(v) => fmtInt(v)}
+                    />
+                  ),
                 },
                 {
                   icon: STAT_ICON.baseAttackTime,
@@ -648,7 +796,6 @@ const summonPositionVN = useMemo(() => {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
 
@@ -665,10 +812,17 @@ const summonPositionVN = useMemo(() => {
                   key={i}
                   type="button"
                   onClick={() => handleEliteChange(i)}
-                  className={`rounded-lg p-1.5 transition ${active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"}`}
+                  className={`rounded-lg p-1.5 transition ${
+                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                  }`}
                   title={`E${i}`}
                 >
-                  <img src={src} alt={`E${i}`} className="w-10 h-10 object-contain" draggable={false} />
+                  <img
+                    src={src}
+                    alt={`E${i}`}
+                    className="w-10 h-10 object-contain"
+                    draggable={false}
+                  />
                 </button>
               );
             })}
@@ -758,11 +912,12 @@ const summonPositionVN = useMemo(() => {
 
       {/* ROW: Range / Trust / Potentials */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Range (center both small & large grids) */}
+        {/* Range */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 flex flex-col">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-semibold text-white">Phạm vi</h3>
           </div>
+
           <div className="flex-1 flex items-center justify-center">
             <RangeGrid rangeId={currentPhase?.rangeId} />
           </div>
@@ -805,7 +960,7 @@ const summonPositionVN = useMemo(() => {
           )}
         </div>
 
-        {/*Potentials*/}
+        {/* Potentials */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-start justify-between mb-3 gap-3">
             <h3 className="text-base font-semibold text-white">Tiềm năng</h3>
@@ -866,155 +1021,197 @@ const summonPositionVN = useMemo(() => {
         </div>
       </div>
 
+      {/* Summon / Token */}
+      {summonOptions.length > 0 && selectedSummon && summonCharData && summonStats ? (
+        <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
+          <div className="flex items-center justify-between gap-3">
+            <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
 
+            {summonOptions.length > 1 && (
+              <div className="flex items-center gap-2 flex-wrap justify-end">
+                {summonOptions.map((opt, idx) => {
+                  const active = idx === summonIndex;
+                  const skillLabel = `Skill ${opt.skillIndex ?? idx + 1}`;
+                  const icon = getSummonSkillIconUrl(opt.tokenId) || getSummonAvatarUrl(opt.tokenId);
 
-{/* Summon / Token */}
-{summonOptions.length > 0 && selectedSummon && summonCharData && summonComputed && (
-  <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-    <div className="flex items-start justify-between gap-3 mb-3">
-      <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
+                  return (
+                    <button
+                      key={opt.tokenId}
+                      type="button"
+                      onClick={() => setSummonIndex(idx)}
+                      title={skillLabel}
+                      className={`flex items-center gap-2 rounded-lg px-2 py-1.5 transition ${
+                        active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                      }`}
+                    >
+                      <img
+                        src={icon}
+                        alt={skillLabel}
+                        className="w-7 h-7 object-contain shrink-0"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                      <span className="text-xs text-white/90 whitespace-nowrap">{skillLabel}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
 
-      {summonOptions.length > 1 && (
-        <div className="flex items-center gap-2 flex-wrap justify-end">
-          {summonOptions.map((opt, idx) => {
-            const active = idx === summonIndex;
-            const skillLabel = `Skill ${opt.skillIndex ?? idx + 1}`;
-            const icon = getSummonSkillIconUrl(opt.tokenId) || getSummonAvatarUrl(opt.tokenId);
+          {/* Header: avatar + basic info */}
+          <div className="mt-3 flex items-start gap-3">
+            <img
+              src={getSummonAvatarUrl(selectedSummon.tokenId)}
+              alt=""
+              className="w-14 h-14 rounded-lg bg-white/5 object-contain shrink-0"
+              draggable={false}
+              loading="lazy"
+            />
 
-            return (
-              <button
-                key={opt.tokenId}
-                type="button"
-                onClick={() => setSummonIndex(idx)}
-                title={skillLabel}
-                className={`flex items-center gap-2 rounded-lg px-2 py-1.5 transition ${
-                  active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-                }`}
-              >
-                <img
-                  src={icon}
-                  alt={skillLabel}
-                  className="w-7 h-7 object-contain shrink-0"
-                  draggable={false}
-                  loading="lazy"
-                />
-                <span className="text-xs text-white/90 whitespace-nowrap">{skillLabel}</span>
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </div>
+            <div className="min-w-0">
+              <div className="text-base font-semibold text-white truncate">
+                {summonDisplayName}
+              </div>
 
-    {/* Header: avatar + basic info */}
-    <div className="flex items-start gap-3">
-      <img
-        src={getSummonAvatarUrl(selectedSummon.tokenId)}
-        alt={summonDisplayName}
-        className="w-14 h-14 rounded-lg bg-white/5 object-contain shrink-0"
-        draggable={false}
-        loading="lazy"
-      />
+              <div className="text-xs text-white/70 mt-0.5">
+                Vị trí: <span className="text-white/90">{summonPositionVN}</span>
+              </div>
 
-      <div className="min-w-0">
-        <div className="text-base font-semibold text-white truncate">{summonDisplayName}</div>
+              {!!summonDisplayDesc && (
+                <div className="text-xs text-white/70 mt-1 whitespace-pre-wrap">
+                  {summonDisplayDesc}
+                </div>
+              )}
+            </div>
+          </div>
 
-        <div className="text-xs text-white/70 mt-0.5">
-          Vị trí: <span className="text-white/90">{summonPositionVN}</span>
-        </div>
+          {/* divider */}
+          <div className="h-px bg-white/10 my-4" />
 
-        {!!summonDisplayDesc && (
-          <div className="text-xs text-white/70 mt-1 whitespace-pre-wrap">{summonDisplayDesc}</div>
-        )}
-      </div>
+          {/* Range + Stats */}
+          <div className="mt-1 flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0">
+            {/* Range */}
+            <div className="md:w-1/3 flex flex-col">
+              <div className="text-base font-semibold text-white mb-2">Phạm vi</div>
 
-      <div className="ml-auto text-xs text-white/60 whitespace-nowrap">
-        Cấp: <span className="text-white/80">{summonLevel}</span>
-        <span className="text-white/40"> / </span>
-        <span className="text-white/80">{summonMaxLevel}</span>
-      </div>
-    </div>
+              <div className="flex-1 flex items-center justify-center">
+                <RangeGrid rangeId={summonPhase?.rangeId} />
+              </div>
+            </div>
 
-    {/* divider */}
-    <div className="h-px bg-white/10 my-4" />
+            {/* divider */}
+            <div className="hidden md:flex px-4">
+              <div className="w-px bg-white/10 self-stretch" />
+            </div>
 
-    {/* Range + Stats */}
-    <div className="flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0">
-      {/* Range */}
-      <div className="md:w-1/3 flex flex-col">
-        <div className="text-base font-semibold text-white mb-2">Phạm vi</div>
-        <div className="flex-1 flex items-center justify-center">
-          <RangeGrid rangeId={summonPhase?.rangeId} />
-        </div>
-      </div>
+            {/* mobile divider */}
+            <div className="md:hidden">
+              <div className="h-px bg-white/10 my-2" />
+            </div>
 
-      {/* divider */}
-      <div className="hidden md:flex px-4">
-        <div className="w-px bg-white/10 self-stretch" />
-      </div>
+            {/* Stats */}
+            <div className="md:flex-1 flex flex-col">
+              <div className="text-base font-semibold text-white mb-2">Chỉ số cơ bản</div>
 
-      {/* mobile divider */}
-      <div className="md:hidden">
-        <div className="h-px bg-white/10 my-2" />
-      </div>
+              <div className="grid grid-cols-[2fr_10px_1fr] gap-3 items-start">
+                {/* left */}
+                <div className="space-y-2">
+                  {[
+                    {
+                      icon: STAT_ICON.maxHp,
+                      label: "HP",
+                      value: fmtInt(summonStats.maxHp),
+                    },
+                    {
+                      icon: STAT_ICON.atk,
+                      label: "ATK",
+                      value: fmtInt(summonStats.atk),
+                    },
+                    {
+                      icon: STAT_ICON.def,
+                      label: "DEF",
+                      value: fmtInt(summonStats.def),
+                    },
+                    {
+                      icon: STAT_ICON.magicResistance,
+                      label: "RES",
+                      value: fmtInt(summonStats.magicResistance),
+                    },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                      <img
+                        src={row.icon}
+                        alt={row.label}
+                        className="w-5 h-5 object-contain shrink-0"
+                        draggable={false}
+                        loading="lazy"
+                      />
 
-      {/* Stats */}
-      <div className="md:flex-1 flex flex-col">
-        <div className="text-base font-semibold text-white mb-2">Chỉ số cơ bản</div>
+                      <div className="flex-1 flex items-center justify-between gap-3">
+                        <div className="text-xs text-white/70 truncate">{row.label}</div>
+                        <div className="ml-auto text-sm font-semibold text-white tabular-nums">
+                          {row.value}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-        <div className="grid grid-cols-[2fr_10px_1fr] gap-3 items-start">
-          <div className="space-y-2">
-            {[
-              { icon: STAT_ICON.maxHp, label: "HP", value: fmtInt(summonComputed.stats.maxHp) },
-              { icon: STAT_ICON.atk, label: "ATK", value: fmtInt(summonComputed.stats.atk) },
-              { icon: STAT_ICON.def, label: "DEF", value: fmtInt(summonComputed.stats.def) },
-              { icon: STAT_ICON.magicResistance, label: "RES", value: fmtInt(summonComputed.stats.magicResistance) },
-            ].map((row) => (
-              <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
-                <img src={row.icon} alt={row.label} className="w-5 h-5 object-contain shrink-0" draggable={false} />
-                <div className="flex-1 flex items-center justify-between gap-3">
-                  <div className="text-xs text-white/70 truncate">{row.label}</div>
-                  <div className="text-sm text-white tabular-nums">{row.value}</div>
+                {/* divider */}
+                <div className="h-full flex justify-center">
+                  <div className="w-px bg-white/10" />
+                </div>
+
+                {/* right */}
+                <div className="space-y-2">
+                  {[
+                    {
+                      icon: STAT_ICON.respawnTime,
+                      label: "Thời gian hồi",
+                      value: formatNumber(summonStats.respawnTime, { decimals: 0, suffix: "s" }),
+                    },
+                    {
+                      icon: STAT_ICON.cost,
+                      label: "Phí",
+                      value: fmtInt(summonStats.cost),
+                    },
+                    {
+                      icon: STAT_ICON.blockCnt,
+                      label: "Chặn",
+                      value: fmtInt(summonStats.blockCnt),
+                    },
+                    {
+                      icon: STAT_ICON.baseAttackTime,
+                      label: "Thời gian tấn công",
+                      value: formatSecondsTrim(summonStats.baseAttackTime, { maxDecimals: 2 }),
+                    },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                      <img
+                        src={row.icon}
+                        alt={row.label}
+                        className="w-5 h-5 object-contain shrink-0 opacity-90"
+                        draggable={false}
+                        loading="lazy"
+                      />
+
+                      <div className="flex-1 flex items-center justify-between gap-3">
+                        <div className="text-xs text-white/70 truncate">{row.label}</div>
+                        <div className="ml-auto text-sm font-semibold text-white tabular-nums">
+                          {row.value}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="h-full flex justify-center">
-            <div className="w-px bg-white/10" />
-          </div>
-
-          <div className="space-y-2">
-            {[
-              {
-                icon: STAT_ICON.respawnTime,
-                label: "Thời gian hồi",
-                value: formatNumber(summonComputed.stats.respawnTime, { decimals: 0, suffix: "s" }),
-              },
-              { icon: STAT_ICON.cost, label: "Phí", value: fmtInt(summonComputed.stats.cost) },
-              { icon: STAT_ICON.blockCnt, label: "Chặn", value: fmtInt(summonComputed.stats.blockCnt) },
-              {
-                icon: STAT_ICON.baseAttackTime,
-                label: "Thời gian tấn công",
-                value: formatSecondsTrim(summonComputed.stats.baseAttackTime, { maxDecimals: 2 }),
-              },
-            ].map((row) => (
-              <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
-                <img src={row.icon} alt={row.label} className="w-5 h-5 object-contain shrink-0" draggable={false} />
-                <div className="flex-1 flex items-center justify-between gap-3">
-                  <div className="text-xs text-white/70 truncate">{row.label}</div>
-                  <div className="text-sm text-white tabular-nums">{row.value}</div>
-                </div>
-              </div>
-            ))}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
+      ) : null}
 
-      {/* Promotion Requirements (frame only for now) */}
+      {/* Promotion Requirements */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
         <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
         <div className="text-sm text-white/60">evolveCost no info</div>
