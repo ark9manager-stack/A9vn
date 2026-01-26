@@ -964,7 +964,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 {trustRows.map((r) => (
                   <div key={r.label} className="flex items-center justify-between">
                     <span className="text-white/70">{r.label}</span>
-                    <span className="text-emerald-400">
+                    <span className="ml-auto text-sm font-semibold text-emerald-400 tabular-nums">
                       {r.v > 0 ? "+" : ""}
                       {fmtInt(r.v)}
                     </span>
