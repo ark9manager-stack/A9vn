@@ -808,7 +808,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
                   <div className="flex-1 flex items-center justify-between gap-3">
                     <div className="text-xs text-white/70 truncate">{row.label}</div>
-                    <div className="text-sm text-white tabular-nums">{row.value}</div>
+                    <div className="ml-auto text-sm font-semibold text-white tabular-nums">
+                      {row.value}
+                    </div>
                   </div>
                 </div>
               ))}
