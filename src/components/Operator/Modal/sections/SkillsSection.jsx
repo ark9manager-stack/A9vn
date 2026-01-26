@@ -126,20 +126,18 @@ function renderTextWithHovers(text, keyPrefix = "txt") {
 function InfoTable({ title, children }) {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
-      <div className="flex items-stretch gap-4">
-        <div className="w-40 shrink-0">
-          <h3 className="text-lg font-semibold leading-snug">{title}</h3>
-        </div>
+      <h3 className="text-lg font-semibold leading-snug">{title}</h3>
 
-        <div className="w-px bg-white/10" />
+      <div className="h-px bg-white/10 my-3" />
 
-        <div className="min-w-0 flex-1 text-sm text-gray-300 leading-relaxed break-words">
-          {children}
-        </div>
+      {/* Text */}
+      <div className="text-sm text-gray-300 leading-relaxed break-words">
+        {children}
       </div>
     </div>
   );
 }
+
 
 export default function SkillsSection(props) {
   const traitMap = React.useMemo(() => buildTraitMap(traitVN), []);
