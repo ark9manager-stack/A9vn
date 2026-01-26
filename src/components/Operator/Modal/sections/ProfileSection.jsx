@@ -120,7 +120,6 @@ function renderLineWithNotes(line, keyPrefix = "line") {
   return out;
 }
 
-
 function renderMultiline(text) {
   if (!isNonEmptyString(text)) return null;
 
@@ -316,6 +315,8 @@ export default function ProfileSection({ operator, charId }) {
     tokenIconUrl,
     tokenIconFallbackUrl,
     physicalPanel,
+    recruitFallbackText,
+    tokenFallbackText,
   } = useMemo(() => {
     const profileEntry = resolvedCharId ? profileVN?.[resolvedCharId] : null;
 
@@ -346,6 +347,15 @@ export default function ProfileSection({ operator, charId }) {
       ? `${TOKEN_ICON_BASE_CLASSPOTENTIAL}${iconId}.png`
       : "";
 
+    const _recruitFallbackText = (() => {
+      const itemDesc = charData?.itemDesc;
+      const itemUsage = charData?.itemUsage;
+      if (isNonEmptyString(itemDesc) && isNonEmptyString(itemUsage)) return `${itemDesc}\n${itemUsage}`;
+      return pickFirstNonEmpty(itemDesc, itemUsage, "");
+    })();
+
+    const _tokenFallbackText = pickFirstNonEmpty(itemEntry?.description, "");
+
     const physicalText = _getText("physical_exam");
     const performanceText = _getText("physical_exam_2");
 
@@ -364,13 +374,15 @@ export default function ProfileSection({ operator, charId }) {
       tokenIconUrl: tokenUrlPrimary,
       tokenIconFallbackUrl: tokenUrlFallback,
       physicalPanel: _physicalPanel,
+      recruitFallbackText: _recruitFallbackText,
+      tokenFallbackText: _tokenFallbackText,
     };
   }, [resolvedCharId]);
 
   const optionalKeys = new Set(["file_2", "file_3", "file_4", "promotion_record", "paradox"]);
 
-  const recuitText = getText("recuit");
-  const tokenText = getText("token");
+  const recuitText = pickFirstNonEmpty(getText("recuit"), recruitFallbackText);
+  const tokenText = pickFirstNonEmpty(getText("token"), tokenFallbackText);
   const basicInfoText = getText("basic_info");
 
   const profileText = getText("profile");
