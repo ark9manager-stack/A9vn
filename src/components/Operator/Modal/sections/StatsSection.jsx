@@ -1043,6 +1043,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-center justify-between gap-3">
             <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
+            <p className="mt-1 text-xs text-white/60">
+              Chỉ những vật phẩm thay đổi chỉ số mới có ở đây, còn lại sẽ nằm ở phần kỹ năng
+            </p>
+
 
             {summonOptions.length > 1 && (
               <div className="flex items-center gap-2 flex-wrap justify-end">
