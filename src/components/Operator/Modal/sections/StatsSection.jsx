@@ -195,13 +195,13 @@ function ValueWithDeltas({ value, deltas, formatter }) {
   const base = fmt(value);
 
   return (
-    <span className="whitespace-nowrap">
+    <span className="whitespace-nowrap ml-auto text-sm font-semibold text-white tabular-nums">
       {base}
       {Array.isArray(deltas) &&
         deltas
           .filter((d) => Number(d) !== 0 && Number.isFinite(Number(d)))
           .map((d, idx) => (
-            <span key={idx} className="ml-1 text-cyan-400">
+            <span key={idx} className="ml-1 text-sm font-semibold text-cyan-400 tabular-nums">
               ({d > 0 ? "+" : ""}
               {fmt(d)})
             </span>
