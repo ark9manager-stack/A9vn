@@ -1,18 +1,7 @@
 {
-  "potentialRanks": [
-    { "pot": "攻击力", "pot_vn": "ATK " },
-    { "pot": "防御力", "pot_vn": "DEF " },
-    { "pot": "生命上限", "pot_vn": "HP " },
-    { "pot": "最大生命值", "pot_vn": "HP " },
-    { "pot": "攻击速度", "pot_vn": "ASPD " },
-    { "pot": "法术抗性", "pot_vn": "RES " },
-    { "pot": "秒", "pot_vn": " giây" },
-    { "pot": "部署费用", "pot_vn": "Phí triển khai " },
-    { "pot": "再部署时间", "pot_vn": "Thời gian tái triển khai " },
-    { "pot": "天赋效果增强", "pot_vn": "Cải thiện thiên phú" },
-    { "pot": "天赋效果加强", "pot_vn": "Cải thiện thiên phú" },
-    { "pot": "第一天赋效果增强", "pot_vn": "Cải thiện thiên phú 1" },
-    { "pot": "第二天赋效果增强", "pot_vn": "Cải thiện thiên phú 2" },
-    { "pot": "阻挡数", "pot_vn": "Chặn" }
+  "traitDescription": [
+    { "summoner": "Các đòn tấn công gây<@ba.kw>Arts damage</>\\nCó thể sử dụng<@ba.kw>vật phẩm triệu hồi</>để hỗ trợ trong trận" },
+    { "physician1": "Hồi HP cho các đơn vị đồng minh, bản thân không bị ảnh hưởng bởi [[Giới hạn triển khai|DeployLimit]], bù lại thời gian tái triển khai cực kỳ lâu." },
+    { "physician": "Hồi HP cho các đơn vị đồng minh." }
   ]
 }
