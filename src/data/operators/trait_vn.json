@@ -1,6 +1,6 @@
 {
   "traitDescription": [
-    { "summoner": "Các đòn tấn công gây<@ba.kw>Arts damage</>\\nCó thể sử dụng<@ba.kw>vật phẩm triệu hồi</>để hỗ trợ trong trận" },
+    { "summoner": "Các đòn tấn công gây <@ba.kw>Arts damage</>\\nCó thể sử dụng <@ba.kw>vật phẩm triệu hồi</> để hỗ trợ trong trận" },
     { "physician1": "Hồi HP cho các đơn vị đồng minh, bản thân không bị ảnh hưởng bởi [[Giới hạn triển khai|DeployLimit]], bù lại thời gian tái triển khai cực kỳ lâu." },
     { "physician": "Hồi HP cho các đơn vị đồng minh." }
   ]
