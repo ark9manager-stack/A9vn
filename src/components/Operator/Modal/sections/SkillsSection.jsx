@@ -126,12 +126,12 @@ function renderTextWithHovers(text, keyPrefix = "txt") {
 function InfoTable({ title, children }) {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
-      <h3 className="text-lg font-semibold leading-snug">{title}</h3>
+      <h3 className="text-xl font-semibold leading-snug">{title}</h3>
 
       <div className="h-px bg-white/10 my-3" />
 
       {/* Text */}
-      <div className="text-sm text-gray-300 leading-relaxed break-words">
+      <div className="text-base text-gray-300 leading-relaxed break-words">
         {children}
       </div>
     </div>
