@@ -10,5 +10,9 @@
   "OrigiArts": {
     "title": "Khởi Nguyên Thuật/Originium Arts",
     "text": "Originium Arts"
+  },
+  "DeployLimit": {
+    "title": "Giới hạn triển khai/Deployment Limit",
+    "text": "Giới hạn số lượng triển khai trong trận"
   }
 }
