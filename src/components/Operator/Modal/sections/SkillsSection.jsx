@@ -131,7 +131,7 @@ function InfoTable({ title, children }) {
       <div className="h-px bg-white/10 my-3" />
 
       {/* Text */}
-      <div className="text-[1.05rem] text-gray-300 leading-relaxed break-words">
+      <div className="text-[1.025rem] text-gray-300 leading-relaxed break-words">
         {children}
       </div>
     </div>
