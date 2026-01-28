@@ -87,13 +87,15 @@ function renderLineWithHovers(line, keyPrefix) {
         <span
           key={`${keyPrefix}-h-${start}`}
           style={{
-            textDecoration: "underline",
-            textUnderlineOffset: "3px",
+            display: "inline-block",
+            borderBottom: "1px solid currentColor",
+            paddingBottom: "3px",
+            lineHeight: "1.2",
           }}
-  >
-    <StatHover label={label} noteKey={noteKey} />
-  </span>
-);
+        >
+          <StatHover label={label} noteKey={noteKey} />
+        </span>
+      );
 
       last = end;
       continue;
