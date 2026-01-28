@@ -82,7 +82,13 @@ function renderLineWithHovers(line, keyPrefix) {
     if (typeof m[1] === "string" && typeof m[2] === "string") {
       const label = m[1];
       const noteKey = m[2].trim();
-      nodes.push(<StatHover key={`${keyPrefix}-h-${start}`} label={label} noteKey={noteKey} />);
+
+      nodes.push(
+        <span key={`${keyPrefix}-h-${start}`} style={{ textDecoration: "underline" }}>
+          <StatHover label={label} noteKey={noteKey} />
+        </span>
+      );
+
       last = end;
       continue;
     }
