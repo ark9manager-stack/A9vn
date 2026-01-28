@@ -14,5 +14,9 @@
   "DeployLimit": {
     "title": "Giới hạn triển khai/Deployment Limit",
     "text": "Giới hạn số lượng triển khai trong trận"
+  },
+  "Inspiration": {
+    "title": "Khích lệ/Inspiration",
+    "text": "Tăng chỉ số cơ bản (Chỉ áp dụng mức cao nhất của mỗi loại). \nNgười có buff [Khích lệ] sẽ lấy % chỉ số của bản thân tính ra chỉ số cố định rồi mới chuyển cho người nhận. \nNhiều nguồn [Khích lệ] sẽ chỉ lấy mức cao nhất của mỗi loại (ATK, HP, DEF) chứ không cộng dồn. \nVí dụ: Nếu có 2 nguồn [Khích lệ] đang buff cho 1 người gồm có 60% ATK và DEF | 100% ATK thì sẽ nhận 100% ATK và 60% DEF."
   }
 }
