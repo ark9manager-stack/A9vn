@@ -84,10 +84,16 @@ function renderLineWithHovers(line, keyPrefix) {
       const noteKey = m[2].trim();
 
       nodes.push(
-        <span key={`${keyPrefix}-h-${start}`} style={{ textDecoration: "underline" }}>
-          <StatHover label={label} noteKey={noteKey} />
-        </span>
-      );
+        <span
+          key={`${keyPrefix}-h-${start}`}
+          style={{
+            textDecoration: "underline",
+            textUnderlineOffset: "3px",
+          }}
+  >
+    <StatHover label={label} noteKey={noteKey} />
+  </span>
+);
 
       last = end;
       continue;
