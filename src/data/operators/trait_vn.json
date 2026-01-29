@@ -49,7 +49,7 @@
     { "longrange": "Ưu tiên tấn công kẻ địch có <@ba.kw>DEF thấp nhất</> trong phạm vi tấn công." },
     { "closerange": "Tầm bắn ở cự ly gần với độ chính xác cao." },
     { "hunter": "Khi tấn công, tiêu hao đạn để tăng ATK lên <@ba.kw>120%</>; Khi không tấn công, sẽ từ từ nạp lại đạn (tối đa <@ba.kw>{value}</> viên)." },
-    { "loopshooter": "" },
+    { "loopshooter": "Chỉ có thể tấn công khi đang giữ <@ba.kw>vũ khí boomerang</> (vũ khí cần thời gian để quay về)." },
     { "skybreaker": "" },
     { "reaperrange": "" },
     { "blastcaster": "" },
