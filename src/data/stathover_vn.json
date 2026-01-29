@@ -38,5 +38,9 @@
   "liftoff": {
     "title": "Cất cánh/Taking off",
     "text": "Không chặn kẻ địch trên mặt đất và cũng không bị kẻ địch trên mặt đất tấn công, nhưng có thể chặn kẻ địch trên không."
+  },
+  "Slow": {
+    "title": "Làm chậm/Slow",
+    "text": "Giảm 80% tốc độ di chuyển của kẻ địch."
   }
 }
