@@ -50,7 +50,7 @@
     { "closerange": "Tầm bắn ở cự ly gần với độ chính xác cao." },
     { "hunter": "Khi tấn công, tiêu hao đạn để tăng ATK lên <@ba.kw>120%</>; Khi không tấn công, sẽ từ từ nạp lại đạn (tối đa <@ba.kw>{value}</> viên)." },
     { "loopshooter": "Chỉ có thể tấn công khi đang giữ <@ba.kw>vũ khí boomerang</> (vũ khí cần thời gian để quay về)." },
-    { "skybreaker": "" },
+    { "skybreaker": "[[Cất cánh|liftoff]] sau khi được triển khai và chỉ tấn công kẻ địch trên không. Khi kích hoạt kỹ năng sẽ hạ cánh và đòn tấn công gây <@ba.kw>sát thương vật lý diện rộng</>." },
     { "reaperrange": "" },
     { "blastcaster": "" },
     { "chain": "" },
@@ -60,6 +60,6 @@
     { "primcaster": "" },
     { "soulcaster": "" },
     { "splashcaster": "" },
-    { "corecaster": "" }
+    { "corecaster": "Đòn tấn công gây <@ba.kw>Arts damage</>." }
   ]
 }

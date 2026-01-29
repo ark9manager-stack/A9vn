@@ -34,5 +34,9 @@
   "SP": {
     "title": "Điểm kỹ năng/Skill Point",
     "text": "Điểm kỹ năng là điểm tích lũy để sử dụng được kỹ năng, và có 3 loại chính:\n【Automatic Recovery/Hồi tự động】Hồi phục SP mỗi giây.\n【Offensive Recovery/Hồi theo đòn đánh】Hồi SP mỗi khi đánh thường(Áp dụng cho cả hồi máu).\n【Defensive Recovery】Hồi SP khi bị tấn công."
+  },
+  "liftoff": {
+    "title": "Cất cánh/Taking off",
+    "text": "Không chặn kẻ địch trên mặt đất và cũng không bị kẻ địch trên mặt đất tấn công, nhưng có thể chặn kẻ địch trên không."
   }
 }
