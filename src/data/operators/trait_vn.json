@@ -43,6 +43,23 @@
     { "guardian": "Kỹ năng có thể hồi phục HP cho đồng minh." },
     { "primprotector": "Chặn được 3 kẻ địch, và có thể gây [[Hiệu ứng nguyên tố|EleInjury]]." },
     { "shotprotector": "Chặn được 3 kẻ địch, và có thể tấn công tầm xa." },
-    { "unyield": "Không thể nhận hồi phục từ đồng minh." }
+    { "unyield": "Không thể nhận hồi phục từ đồng minh." },
+    { "aoesniper": "Đòn tấn công gây <@ba.kw>sát thương vật lý diện rộng</>." },
+    { "siegesniper": "Ưu tiên tấn công kẻ địch có trọng lượng lớn nhất." },
+    { "longrange": "Ưu tiên tấn công kẻ địch có <@ba.kw>DEF thấp nhất</> trong phạm vi tấn công." },
+    { "closerange": "Tầm bắn ở cự ly gần với độ chính xác cao." },
+    { "hunter": "Khi tấn công, tiêu hao đạn để tăng ATK lên <@ba.kw>120%</>; Khi không tấn công, sẽ từ từ nạp lại đạn (tối đa <@ba.kw>{value}</> viên)." },
+    { "loopshooter": "" },
+    { "skybreaker": "" },
+    { "reaperrange": "" },
+    { "blastcaster": "" },
+    { "chain": "" },
+    { "funnel": "" },
+    { "mystic": "" },
+    { "phalanx": "" },
+    { "primcaster": "" },
+    { "soulcaster": "" },
+    { "splashcaster": "" },
+    { "corecaster": "" }
   ]
 }
