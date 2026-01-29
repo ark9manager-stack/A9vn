@@ -189,10 +189,8 @@ function renderLineWithHovers(line, keyPrefix) {
         <span
           key={`${keyPrefix}-h-${start}`}
           style={{
-            textDecorationLine: "underline",
-            textUnderlineOffset: "0.18em",
-            textDecorationThickness: "1px",
-            textDecorationColor: "currentColor",
+            textDecoration: "underline",
+            textUnderlineOffset: "1px",
             textDecorationSkipInk: "auto",
           }}
         >
