@@ -153,7 +153,7 @@ function applyBlackboard(text, bbMap) {
   if (!bbMap || typeof bbMap !== "object") return text;
 
   // {key} or {key:0%} / {key:0.0%} / {key:0.0} ...
-  return String(text).replace(/\{([a-zA-Z0-9_.-]+)(?::([^}]+))?\}/g, (m, key, fmt) => {
+  return String(text).replace(/\{([a-zA-Z0-9_.@-]+)(?::([^}]+))?\}/g, (m, key, fmt) => {
     if (!key || !(key in bbMap)) return m;
     return formatPlaceholderValue(bbMap[key], fmt);
   });
