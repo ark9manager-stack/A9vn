@@ -55,6 +55,7 @@
     { "blastcaster": "Đòn tấn công gây <@ba.kw>sát thương phép diện rộng</> theo đường thẳng ở khoảng cách xa" },
     { "chain": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và sẽ nảy giữa <@ba.kw>{attack@max_target}</> kẻ địch. Mỗi lần nảy, sát thương giảm 15% và gây hiệu ứng [[Làm chậm|Slow]] trong thời gian ngắn." },
     { "funnel": "Điều khiển <@ba.kw>Drone</> để tấn công và gây <@ba.kw>sát thương phép</> lên kẻ địch.\nATK của <@ba.kw>Drone</> sẽ tăng dần khi <@ba.kw>Drone</> liên tục tấn công cùng một kẻ địch (tối đa tới 110% ATK của Operator)." },
+    { "funnel_2": "ATK của Drone = 20% ATK của OP, và mỗi lần tấn công cùng 1 mục tiêu sẽ tăng 15% ATK. Nếu thay đổi mục tiêu thì ATK về lại 20%." },
     { "mystic": "Đòn tấn công gây <@ba.kw>sát thương phép</>, khi không có mục tiêu tấn công sẽ <@ba.kw>tích trữ</> đòn đánh và bắn ra cùng lúc sau đó (tối đa 3 lần tích trữ)." },
     { "phalanx": "Bình thường sẽ <@ba.kw>không tấn công</>, bù lại <@ba.kw>tăng đáng kể</> DEF và RES. Khi kích hoạt kỹ năng, đòn tấn công gây <@ba.kw>sát thương phép diện rộng</>." },
     { "primcaster": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và có thể gây <@ba.kw>sát thương nguyên tố</>" },
