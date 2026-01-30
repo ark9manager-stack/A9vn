@@ -44,7 +44,7 @@ function getCharEntry(rawCharId) {
   return { charKey: null, charData: null };
 }
 
-function resolveTraitText({ subProfessionId, rarity, description }, traitMap) {
+function resolveTraitTexts({ subProfessionId, rarity, description }, traitMap) {
   const base = isNonEmptyString(subProfessionId) ? String(subProfessionId).trim() : "";
   const isTier1 = String(rarity || "") === "TIER_1";
 
@@ -52,13 +52,41 @@ function resolveTraitText({ subProfessionId, rarity, description }, traitMap) {
   // Avoid matching both physician & physician1 by using exact key only.
   const keyCandidates = isTier1 ? [`${base}1`, base] : [base];
 
+  // Main text
+  let usedKey = null;
+  let mainText = "";
   for (const key of keyCandidates) {
     if (!isNonEmptyString(key)) continue;
     const v = traitMap?.[key];
-    if (isNonEmptyString(v)) return v;
+    if (isNonEmptyString(v)) {
+      usedKey = key;
+      mainText = v;
+      break;
+    }
+  }
+  if (!isNonEmptyString(mainText)) mainText = isNonEmptyString(description) ? description : "";
+
+  // Extra text ("*_2")
+  const extraKeyCandidates = [];
+  if (isNonEmptyString(usedKey)) extraKeyCandidates.push(`${usedKey}_2`);
+  for (const key of keyCandidates) {
+    if (!isNonEmptyString(key)) continue;
+    extraKeyCandidates.push(`${key}_2`);
+  }
+  // De-dup
+  const seen = new Set();
+  let extraText = "";
+  for (const k of extraKeyCandidates) {
+    if (!isNonEmptyString(k) || seen.has(k)) continue;
+    seen.add(k);
+    const v2 = traitMap?.[k];
+    if (isNonEmptyString(v2)) {
+      extraText = v2;
+      break;
+    }
   }
 
-  return isNonEmptyString(description) ? description : "";
+  return { mainText, extraText, usedKey };
 }
 
 function phaseToIndex(phase) {
@@ -280,19 +308,29 @@ export default function SkillsSection(props) {
 
     // No per-phase trait data → just render the base (translated) trait text.
     if (candidates.length === 0) {
-      const baseText = resolveTraitText({ subProfessionId, rarity, description: baseDesc }, traitMap);
-      return { variants: [{ phaseIndex: 0, text: baseText }], showElite: false };
+      const { mainText, extraText } = resolveTraitTexts(
+        { subProfessionId, rarity, description: baseDesc },
+        traitMap
+      );
+      return { variants: [{ phaseIndex: 0, text: mainText, extraText }], showElite: false };
     }
 
     const variants = candidates.map(({ phaseIndex, cand }) => {
       const desc = isNonEmptyString(cand?.description) ? cand.description : baseDesc;
-      const baseText = resolveTraitText({ subProfessionId, rarity, description: desc }, traitMap);
+
+      const { mainText, extraText } = resolveTraitTexts(
+        { subProfessionId, rarity, description: desc },
+        traitMap
+      );
+
       const bbMap = buildBlackboardMap(cand?.blackboard);
-      const text = applyBlackboard(baseText, bbMap);
-      return { phaseIndex, text };
+      const text = applyBlackboard(mainText, bbMap);
+      const extra = applyBlackboard(extraText, bbMap);
+
+      return { phaseIndex, text, extraText: extra };
     });
 
-    const uniq = new Set(variants.map((v) => v.text));
+    const uniq = new Set(variants.map((v) => `${v.text}||${v.extraText || ""}`));
     const showElite = variants.length > 1 && uniq.size > 1;
 
     // If all phases render the same text → use ONE (pick highest phase) and hide Elite buttons.
@@ -319,6 +357,7 @@ export default function SkillsSection(props) {
   );
 
   const currentTraitText = traitResolved?.variants?.[safeTraitVariantIdx]?.text || "";
+  const currentTraitExtraText = traitResolved?.variants?.[safeTraitVariantIdx]?.extraText || "";
 
   const traitEliteButtons = traitResolved?.showElite ? (
     <div className="flex items-center gap-2">
@@ -352,7 +391,35 @@ export default function SkillsSection(props) {
     <div className="space-y-3">
       <InfoTable title="Đặc tính/Trait" titleRight={traitEliteButtons}>
         {isNonEmptyString(currentTraitText) ? (
-          renderTextWithHovers(currentTraitText, `trait-${charKey || "unknown"}`)
+          <>
+            {renderTextWithHovers(
+              currentTraitText,
+              `trait-${charKey || "unknown"}-p${
+                traitResolved?.variants?.[safeTraitVariantIdx]?.phaseIndex ?? 0
+              }`
+            )}
+
+            {isNonEmptyString(currentTraitExtraText) ? (
+              <>
+                <div className="h-px bg-white/10 my-4" />
+
+                <details className="mw-collapsible mw-made-collapsible">
+                  <summary className="mw-collapsible-toggle cursor-pointer select-none text-white/80 font-semibold">
+                    Thông tin bổ sung
+                  </summary>
+
+                  <div className="mt-3">
+                    {renderTextWithHovers(
+                      currentTraitExtraText,
+                      `trait-extra-${charKey || "unknown"}-p${
+                        traitResolved?.variants?.[safeTraitVariantIdx]?.phaseIndex ?? 0
+                      }`
+                    )}
+                  </div>
+                </details>
+              </>
+            ) : null}
+          </>
         ) : (
           <span className="text-white/40 italic">-</span>
         )}
