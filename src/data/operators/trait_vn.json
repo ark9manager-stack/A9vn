@@ -1,6 +1,6 @@
 {
   "traitDescription": [
-    { "summoner": "Đòn tấn công gây <@ba.kw>sát thương phép</>.\\nCó thể sử dụng <@ba.kw>vật phẩm triệu hồi</> để hỗ trợ trong trận" },
+    { "summoner": "Đòn tấn công gây <@ba.kw>sát thương phép</>.\\nCó thể sử dụng <@ba.kw>vật phẩm triệu hồi</> để hỗ trợ trong chiến đấu." },
     { "physician1": "Hồi HP cho đồng minh, bản thân không bị ảnh hưởng bởi [[Giới hạn triển khai|DeployLimit]], bù lại thời gian tái triển khai cực kỳ lâu." },
     { "physician": "Hồi HP cho đồng minh." },
     { "fearless": "Chặn được 1 kẻ địch." },
@@ -60,6 +60,23 @@
     { "primcaster": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và có thể gây <@ba.kw>sát thương nguyên tố</>" },
     { "soulcaster": "Đòn tấn công gây <@ba.kw>sát thương phép</>. Khi hạ gục kẻ địch sẽ tạo ra <@ba.kw>vật triệu hồi</>, và có thể tấn công kẻ địch đang bị <@ba.kw>vật triệu hồi</> của bản thân chặn." },
     { "splashcaster": "Đòn tấn công gây <@ba.kw>sát thương phép diện rộng</>." },
-    { "corecaster": "Đòn tấn công gây <@ba.kw>sát thương phép</>." }
+    { "corecaster": "Đòn tấn công gây <@ba.kw>sát thương phép</>." },
+    { "chainhealer": "Hồi HP cho đồng minh và sẽ nảy giữa <@ba.kw>3</> đồng minh. Lượng hồi phục giảm 25% cho mỗi lần nảy." },
+    { "incantationmedic": "Đòn tấn công gây <@ba.kw>sát thương phép</> và hồi HP cho 1 đồng minh trong phạm vi tấn công bằng 50% sát thương gây ra." },
+    { "healer": "Có phạm vi hồi máu rộng, nhưng lượng hồi phục giảm xuống còn <@ba.kw>{heal_scale:0%}</> cho mục tiêu ở xa." },
+    { "wandermedic": "Hồi HP cho đồng minh, đồng thời giảm thanh [[Hiệu ứng nguyên tố|EleInjury]] với lượng tương đương 50% ATK. (có thể giảm thanh [[Hiệu ứng nguyên tố|EleInjury]] cho cả đồng minh chưa bị mất HP)." },
+    { "blessing": "Đòn tấn công gây <@ba.kw>sát thương phép</>. Khi kỹ năng đang kích hoạt, đòn tấn công chuyển thành hồi HP cho đồng minh (lượng hồi bằng 75% ATK)." },
+    { "craftsman": "Chặn được 2 kẻ địch, có thể sử dụng <Thiết bị hỗ trợ> trong chiến đấu." },
+    { "slower": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và gây hiệu ứng [[Làm chậm|Slow]] trong thời gian ngắn." },
+    { "underminer": "Đòn tấn công gây <@ba.kw>sát thương phép</>." },
+    { "alchemist": "Có thể ném các <@ba.kw>đơn vị Luyện Kim</> để hỗ trợ trong chiến đấu." },
+    { "stalker": "Gây sát thương lên <@ba.kw>tất cả kẻ địch</> trong phạm vi tấn công\nCó 50% né sát thương vật lý và phép, đồng thời ít bị kẻ địch <@ba.kw>chọn làm mục tiêu</> tấn công." },
+    { "dollkeeper": "Khi nhận sát thương chí tử sẽ không rút lui, mà chuyển sang <Thế thân> chiến đấu (chặn của <Thế thân> là 0). Sau 20 giây sẽ đổi trở lại bản thể ban đầu." },
+    { "geek": "Liên tục tự mất HP theo thời gian." },
+    { "hookmaster": "" },
+    { "merchant": "<@ba.kw>Giảm</> thời gian tái triển khai, nhưng sẽ không hoàn trả [[DP|DP]] khi rút lui. Khi đang ở trên sân, sẽ <@ba.kw>tiêu hao</> 3 [[DP|DP]] mỗi 3 giây(nếu không đủ [[DP|DP]] thì tự động rút lui)." },
+    { "pusher": "" },
+    { "skywalker": "Sau khi [[Cất cánh|liftoff]], có thể chặn được 2 kẻ địch trên không." },
+    { "traper": "Có thể dùng bẫy để hỗ trợ trong chiến đấu, nhưng không thể đặt bẫy lên ô <@ba.kw>có kẻ địch đang đứng</>." }
   ]
 }
