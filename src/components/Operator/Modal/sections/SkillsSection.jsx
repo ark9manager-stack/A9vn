@@ -622,6 +622,20 @@ export default function SkillsSection(props) {
   }, [charData]);
 
   const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
+
+// Only show Potential buttons that actually exist for this operator (plus Pot 1 = 0).
+const availablePotRanks = React.useMemo(() => {
+  const set = new Set([0]);
+  for (const tb of talentBlocks) {
+    const cands = tb?.candidates;
+    if (!Array.isArray(cands)) continue;
+    for (const c of cands) {
+      const req = Number(c?.requiredPotentialRank || 0);
+      if (Number.isFinite(req) && req >= 0 && req <= 5) set.add(req);
+    }
+  }
+  return [...set].sort((a, b) => a - b);
+}, [talentBlocks]);
   const allTalentPhases = React.useMemo(() => {
     const set = new Set();
     for (const tb of talentBlocks) {
@@ -643,6 +657,11 @@ export default function SkillsSection(props) {
     setTalentGlobalPhase(maxTalentPhase);
     setTalentPhaseByBlock({ 0: maxTalentPhase, 1: maxTalentPhase });
   }, [charKey, maxTalentPhase]);
+
+// If current Pot selection doesn't exist for this operator, fall back to Pot 1.
+React.useEffect(() => {
+  if (!availablePotRanks.includes(potRank)) setPotRank(0);
+}, [availablePotRanks, potRank]);
 
   const talent1Resolved = React.useMemo(() =>
     computeTalentResolved({ talentBlock: talentBlocks?.[0], talentIdx: 0, potRank, vnEntry: vnTalentEntry }),
@@ -682,10 +701,13 @@ export default function SkillsSection(props) {
     </div>
   ) : null;
 
-  const potPicker = (
+
+  const potPicker =
+    availablePotRanks.length > 1 ? (
     <div className="flex items-center gap-1">
-      {Array.from({ length: 6 }).map((_, idx0) => {
+      {availablePotRanks.map((idx0) => {
         const active = idx0 === potRank;
+
         return (
           <button
             key={`pot-${idx0}`}
@@ -708,7 +730,19 @@ export default function SkillsSection(props) {
         );
       })}
     </div>
+  ) : (
+    <div className="flex items-center gap-1 rounded-lg px-2 py-1 bg-white/10" title="Pot 1">
+      <img
+        src={getPotIcon(0)}
+        alt="pot-0"
+        className="w-6 h-6 object-contain"
+        draggable={false}
+        loading="lazy"
+      />
+      <span className="text-sm font-semibold tabular-nums">1</span>
+    </div>
   );
+
 
   const renderTalentCard = (talentIdx, resolved, desiredPhase) => {
     const variants = resolved?.variants || [];
@@ -724,7 +758,8 @@ export default function SkillsSection(props) {
     const v = variants[Math.min(Math.max(0, currentIdx), variants.length - 1)];
     const titleName = getTalentTitle(vnTalentEntry, talentIdx) || v?.name || "";
 
-    const eliteButtons = resolved?.showElite ? (
+    const eliteButtons =
+      talentIdx === 0 ? null : resolved?.showElite ? (
       <div className="flex items-center gap-2">
         {variants.map((it) => {
           const active = it.phaseIndex === v.phaseIndex;
@@ -760,8 +795,6 @@ export default function SkillsSection(props) {
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0 flex-wrap">
             <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
-              <span className="font-bold mr-1">T{talentIdx + 1}</span>
-              <span className="text-black/60 mr-1">•</span>
               <span className="truncate">{isNonEmptyString(titleName) ? titleName : `Talent ${talentIdx + 1}`}</span>
             </span>
 
@@ -833,9 +866,7 @@ export default function SkillsSection(props) {
             {talentBlocks?.[0]
               ? renderTalentCard(0, talent1Resolved, talentPhaseByBlock?.[0] ?? maxTalentPhase)
               : null}
-            {talentBlocks?.[1]
-              ? renderTalentCard(1, talent2Resolved, talentPhaseByBlock?.[1] ?? maxTalentPhase)
-              : null}
+            {talentBlocks?.[1] && talentGlobalPhase >= 2 ? renderTalentCard(1, talent2Resolved, talentPhaseByBlock?.[1] ?? maxTalentPhase) : null}
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>
