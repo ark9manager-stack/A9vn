@@ -1,0 +1,6865 @@
+{
+  "char_002_amiya": {
+    "TitleTalent1": "Emotional Absorption",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1_2": "",
+    "Talent1_2_p5": ""
+  },
+  "char_003_kalts": {
+    "TitleTalent1": "Mon3tr",
+    "TitleTalent2": "Non-Damaging Restructuring",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_009_12fce": {
+    "TitleTalent1": "Dodge Rate Up",
+    "TitleTalent2": "",
+    "Talent0_lv30": ""
+  },
+  "char_010_chen": {
+    "TitleTalent1": "Scolding",
+    "TitleTalent2": "Blade Art",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_017_huang": {
+    "TitleTalent1": "Emergency Defibrillation",
+    "TitleTalent2": "Harsh Training",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1011_lava2": {
+    "TitleTalent1": "Spell Formation",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_1012_skadi2": {
+    "TitleTalent1": "Ancient Kin",
+    "TitleTalent2": "Predatory Habits",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1013_chen2": {
+    "TitleTalent1": "Frugality",
+    "TitleTalent2": "Vestiges of Vacation",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_1014_nearl2": {
+    "TitleTalent1": "Brave the Darkness",
+    "TitleTalent2": "Daybreak",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1016_agoat2": {
+    "TitleTalent1": "Replenishing Mist",
+    "TitleTalent2": "Volcanic Ash Remedy",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1019_siege2": {
+    "TitleTalent1": "The Kings' Sighs",
+    "TitleTalent2": "Unsheathed Sword",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_101_sora": {
+    "TitleTalent1": "Encore",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_1020_reed2": {
+    "TitleTalent1": "Cinder",
+    "TitleTalent2": "Reflected Shine",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
+  },
+  "char_1021_kroos2": {
+    "TitleTalent1": "Bullseye",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_1022_flwr2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_1023_ghost2": {
+    "TitleTalent1": "Embraced Self",
+    "TitleTalent2": "Ægir's Depths",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1024_hbisc2": {
+    "TitleTalent1": "Dusk and Dawn",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_1026_gvial2": {
+    "TitleTalent1": "Battleaxe",
+    "TitleTalent2": "Medical Background",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1027_greyy2": {
+    "TitleTalent1": "Light-Stealing Chain",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_1028_texas2": {
+    "TitleTalent1": "Texas Tradition",
+    "TitleTalent2": "Texas Swordsmanship",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1029_yato2": {
+    "TitleTalent1": "Kirin Bolts",
+    "TitleTalent2": "Archdemon Mode",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_102_texas": {
+    "TitleTalent1": "Tactical Delivery",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_1030_noirc2": {
+    "TitleTalent1": "Decisive",
+    "TitleTalent2": "Spirit",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "char_1031_slent2": {
+    "TitleTalent1": "Silent Sentinel",
+    "TitleTalent2": "Plumes of Plenty",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1032_excu2": {
+    "TitleTalent1": "The Chosen One",
+    "TitleTalent2": "Empathy by Shotgun",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_1033_swire2": {
+    "TitleTalent1": "Big Spendthrift",
+    "TitleTalent2": "Cash Claps Calamity",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_1034_jesca2": {
+    "TitleTalent1": "Adaptable",
+    "TitleTalent2": "Charge and Release",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1035_wisdel": {
+    "TitleTalent1": "Souvenir",
+    "TitleTalent2": "Revenant's Echo",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_1036_fang2": {
+    "TitleTalent1": "Lightweight Gambit",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_1038_whitw2": {
+    "TitleTalent1": "Alpha Wolf",
+    "TitleTalent2": "Honor of Siracusa",
+    "Talent1": "",
+    "Talent1_p5": "",
+    "Talent1_2": "",
+    "Talent1_2_p5": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "char_1039_thorn2": {
+    "TitleTalent1": "La Forma del Corazón",
+    "TitleTalent2": "El Alcance de la Visión",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_103_angel": {
+    "TitleTalent1": "Fast Cartridge",
+    "TitleTalent2": "Angel's Blessings",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
+  },
+  "char_1040_blaze2": {
+    "TitleTalent1": "Meltdown",
+    "TitleTalent2": "From the Ashes",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "char_1041_angel2": {
+    "TitleTalent1": "Firepower FM",
+    "TitleTalent2": "Covenant of Bullets",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "char_1042_phatm2": {
+    "TitleTalent1": "Mind Over Matter",
+    "TitleTalent2": "Descend into Dream",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_1043_leizi2": {
+    "TitleTalent1": "Clarity of Judgment",
+    "TitleTalent2": "Call to Account",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent3": ""
+  },
+  "char_1044_hsgma2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "char_1045_svash2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent3": "",
+    "Talent4": "",
+    "Talent5": "",
+    "Talent6": "",
+    "Talent7": "",
+    "Talent8": ""
+  },
+  "char_1046_sbell2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_1047_halo2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_106_franka": {
+    "TitleTalent1": "Thermite Blade",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_107_liskam": {
+    "TitleTalent1": "Tactical Defense",
+    "TitleTalent2": "Thunder Resistance",
+    "Talent1": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_108_silent": {
+    "TitleTalent1": "Booster Injection",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_109_fmout": {
+    "TitleTalent1": "Divination",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_110_deepcl": {
+    "TitleTalent1": "Tentacle Summoner",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_112_siege": {
+    "TitleTalent1": "King of Beasts",
+    "TitleTalent2": "Crushing",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_113_cqbw": {
+    "TitleTalent1": "Ambush",
+    "TitleTalent2": "Insult to Injury",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_115_headbr": {
+    "TitleTalent1": "Spearheader",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_117_myrrh": {
+    "TitleTalent1": "First Aid Kit",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_118_yuki": {
+    "TitleTalent1": "Heavy Shuriken",
+    "TitleTalent2": "",
+    "Talent1_2": ""
+  },
+  "char_120_hibisc": {
+    "TitleTalent1": "Healing Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_121_lava": {
+    "TitleTalent1": "Quick Skill Usage",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_lv55": "",
+    "Talent1_lv55_p4": ""
+  },
+  "char_122_beagle": {
+    "TitleTalent1": "DEF Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_123_fang": {
+    "TitleTalent1": "Lightweight",
+    "TitleTalent2": "",
+    "Talent1": ""
+  },
+  "char_124_kroos": {
+    "TitleTalent1": "Targeting - Primary",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_lv55": "",
+    "Talent1_lv55_p4": ""
+  },
+  "char_126_shotst": {
+    "TitleTalent1": "Anti-Air Specialist",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_127_estell": {
+    "TitleTalent1": "Self-Healing",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_128_plosis": {
+    "TitleTalent1": "Skill Aura",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_129_bluep": {
+    "TitleTalent1": "Neurotoxin",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_130_doberm": {
+    "TitleTalent1": "Starter Instructor",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_131_flameb": {
+    "TitleTalent1": "Bloody Slaughter",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_133_mm": {
+    "TitleTalent1": "Victorian Agent",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_134_ifrit": {
+    "TitleTalent1": "Spiritual Dissolution",
+    "TitleTalent2": "Rhine Loop",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
+  },
+  "char_135_halo": {
+    "TitleTalent1": "Passion for Research",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_136_hsguma": {
+    "TitleTalent1": "Tactical Armor",
+    "TitleTalent2": "Special Operation Strategy",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
+  },
+  "char_137_brownb": {
+    "TitleTalent1": "Boxer's Concentration",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_140_whitew": {
+    "TitleTalent1": "Spiritual Destruction",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_141_nights": {
+    "TitleTalent1": "Black Mist",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_143_ghost": {
+    "TitleTalent1": "Stamina Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_144_red": {
+    "TitleTalent1": "Chill",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_145_prove": {
+    "TitleTalent1": "Hunter's Arrow",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_147_shining": {
+    "TitleTalent1": "Black Fiend's Protection",
+    "TitleTalent2": "Code of Law",
+    "Talent0": "",
+    "Talent0_p5": "",
+    "Talent1": "",
+    "Talent1_p5": "",
+    "Talent1_2": "",
+    "Talent1_2_p5": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_148_nearl": {
+    "TitleTalent1": "Healing Boost",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_149_scave": {
+    "TitleTalent1": "Lone Wolf",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_1502_crosly": {
+    "TitleTalent1": "Swallow Your Suffering",
+    "TitleTalent2": "Crownslayer's Glory",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_150_snakek": {
+    "TitleTalent1": "Defense Specialist",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_151_myrtle": {
+    "TitleTalent1": "Glistening",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_154_morgan": {
+    "TitleTalent1": "Hot-Blooded Vanguard",
+    "TitleTalent2": "Home-Ground Advantage",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_155_tiger": {
+    "TitleTalent1": "Quick Fists",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_157_dagda": {
+    "TitleTalent1": "Gang Spirit",
+    "TitleTalent2": "Knight's Honor",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_158_milu": {
+    "TitleTalent1": "Assassin",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_159_peacok": {
+    "TitleTalent1": "Safe Landing",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1_2": ""
+  },
+  "char_163_hpsts": {
+    "TitleTalent1": "Self-Defense",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_164_nightm": {
+    "TitleTalent1": "Dual Personality",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_166_skfire": {
+    "TitleTalent1": "Arts Sniper",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_171_bldsk": {
+    "TitleTalent1": "Blood Sample Recycle",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_172_svrash": {
+    "TitleTalent1": "Leader",
+    "TitleTalent2": "Eagle Eyes",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_173_slchan": {
+    "TitleTalent1": "Karlan Hunter",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_174_slbell": {
+    "TitleTalent1": "Weakening",
+    "TitleTalent2": "The Bell Tolls Twice",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_179_cgbird": {
+    "TitleTalent1": "White Fiend's Protection",
+    "TitleTalent2": "Fleeting Phantom",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_180_amgoat": {
+    "TitleTalent1": "Pyrobreath",
+    "TitleTalent2": "Wild Fire",
+    "Talent1": "",
+    "Talent1_p5": "",
+    "Talent1_2": "",
+    "Talent1_2_p5": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_181_flower": {
+    "TitleTalent1": "Lavender",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_183_skgoat": {
+    "TitleTalent1": "Geological Survey",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_185_frncat": {
+    "TitleTalent1": "Combo",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_187_ccheal": {
+    "TitleTalent1": "Battlefield Medic",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_188_helage": {
+    "TitleTalent1": "Waxing Moon",
+    "TitleTalent2": "Ingenious Strategist",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_190_clour": {
+    "TitleTalent1": "Hunter's Wisdom",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_192_falco": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_193_frostl": {
+    "TitleTalent1": "Covered Strike",
+    "TitleTalent2": "",
+    "Talent1_2": ""
+  },
+  "char_194_leto": {
+    "TitleTalent1": "Hurry Up Already!",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_195_glassb": {
+    "TitleTalent1": "Explorer",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_196_sunbr": {
+    "TitleTalent1": "Frying Pan Specialist",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_197_poca": {
+    "TitleTalent1": "Bone Piercer",
+    "TitleTalent2": "Ideal Student",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_198_blackd": {
+    "TitleTalent1": "Karlan Patrol",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_199_yak": {
+    "TitleTalent1": "Snowfield Guard",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_2012_typhon": {
+    "TitleTalent1": "Sharp as a Beast's Fang",
+    "TitleTalent2": "Heavy as the Swamp's Mire",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_2013_cerber": {
+    "TitleTalent1": "Thresher",
+    "TitleTalent2": "Lone Journey",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_2014_nian": {
+    "TitleTalent1": "Tectonic Armor",
+    "TitleTalent2": "Clairvoyance",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_2015_dusk": {
+    "TitleTalent1": "Sublimity",
+    "TitleTalent2": "Finishing Touch",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_201_moeshd": {
+    "TitleTalent1": "Miracle Field",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_2023_ling": {
+    "TitleTalent1": "Lantern Lit, Thy Dream Sought",
+    "TitleTalent2": "So is Writ, an Ode to Wine",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": ""
+  },
+  "char_2024_chyue": {
+    "TitleTalent1": "An End to War",
+    "TitleTalent2": "All Are Guests",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_2025_shu": {
+    "TitleTalent1": "Myriad Grains, Everlasting",
+    "TitleTalent2": "From Seasons Fourfold",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_2026_yu": {
+    "TitleTalent1": "You Feed Me, I Feed You",
+    "TitleTalent2": "Midst Markets, Dragons Dwell",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_202_demkni": {
+    "TitleTalent1": "Rhine Charged Suit",
+    "TitleTalent2": "Refreshment",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_204_platnm": {
+    "TitleTalent1": "All-Out Attack",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_206_gnosis": {
+    "TitleTalent1": "Rigid Ice",
+    "TitleTalent2": "Two Paths, One Goal",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_208_melan": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_209_ardign": {
+    "TitleTalent1": "Max HP Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_210_stward": {
+    "TitleTalent1": "Armor Break",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_211_adnach": {
+    "TitleTalent1": "Shortcoming Breakthrough",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_212_ansel": {
+    "TitleTalent1": "Additional Healing",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_lv55": "",
+    "Talent1_lv55_p4": ""
+  },
+  "char_213_mostma": {
+    "TitleTalent1": "Skill Aura - Caster",
+    "TitleTalent2": "Subjective Time Dilation",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_214_kafka": {
+    "TitleTalent1": "Misdirection",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_215_mantic": {
+    "TitleTalent1": "Hidden Killer - Medium",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_218_cuttle": {
+    "TitleTalent1": "Abyssal Intuition",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_219_meteo": {
+    "TitleTalent1": "Blast Attachment Refit",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_220_grani": {
+    "TitleTalent1": "Mounted Police",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_222_bpipe": {
+    "TitleTalent1": "Precise Reloading",
+    "TitleTalent2": "Martial Tradition",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_225_haak": {
+    "TitleTalent1": "Drug Cocktail Administration",
+    "TitleTalent2": "Pharmaceutical Diffusion",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_226_hmau": {
+    "TitleTalent1": "Gatekeeper",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_230_savage": {
+    "TitleTalent1": "Valley",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_235_jesica": {
+    "TitleTalent1": "Fast Cartridge",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_236_rope": {
+    "TitleTalent1": "Auditory Training",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_237_gravel": {
+    "TitleTalent1": "Support of the Little",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_240_wyvern": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_241_panda": {
+    "TitleTalent1": "Kung Fu",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_242_otter": {
+    "TitleTalent1": "Robotter",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_243_waaifu": {
+    "TitleTalent1": "Hong Mei Wing Chun",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_245_cello": {
+    "TitleTalent1": "Wordless Elegy",
+    "TitleTalent2": "Mental Inversion",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_248_mgllan": {
+    "TitleTalent1": "Support Drone - Soaring Dragon",
+    "TitleTalent2": "Optical Refraction Accessories",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": ""
+  },
+  "char_249_mlyss": {
+    "TitleTalent1": "Pure Water is Life",
+    "TitleTalent2": "Expenditure Economization",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_250_phatom": {
+    "TitleTalent1": "Phantom in the Mirror",
+    "TitleTalent2": "Phantom Mastery",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_252_bibeak": {
+    "TitleTalent1": "Soul Drinker",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_253_greyy": {
+    "TitleTalent1": "Electrostatic Field",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_254_vodfox": {
+    "TitleTalent1": "Omen of Defeat",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_258_podego": {
+    "TitleTalent1": "Gardener",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_260_durnar": {
+    "TitleTalent1": "Sword and Shield",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_261_sddrag": {
+    "TitleTalent1": "Blighted Blood",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_263_skadi": {
+    "TitleTalent1": "Abyssal Predator",
+    "TitleTalent2": "Swift Action",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_264_f12yin": {
+    "TitleTalent1": "Forceful Fist",
+    "TitleTalent2": "Sturdy Constitution",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_265_sophia": {
+    "TitleTalent1": "Rebuke",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_271_spikes": {
+    "TitleTalent1": "Structural Decomposition",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_272_strong": {
+    "TitleTalent1": "Anatomy Master",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_274_astesi": {
+    "TitleTalent1": "Celestial Globe",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_275_breeze": {
+    "TitleTalent1": "Medic Squad Protection",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_277_sqrrel": {
+    "TitleTalent1": "Fireproof Suit",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_278_orchid": {
+    "TitleTalent1": "Casting Speed Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_lv55": ""
+  },
+  "char_279_excu": {
+    "TitleTalent1": "Final Modification",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_281_popka": {
+    "TitleTalent1": "HP Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_lv55": "",
+    "Talent1_lv55_p4": ""
+  },
+  "char_282_catap": {
+    "TitleTalent1": "Lightweight",
+    "TitleTalent2": "",
+    "Talent1": ""
+  },
+  "char_283_midn": {
+    "TitleTalent1": "Targeting - Primary",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_lv55": "",
+    "Talent1_lv55_p4": ""
+  },
+  "char_284_spot": {
+    "TitleTalent1": "Smoke Installation",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_lv55": "",
+    "Talent1_lv55_p4": ""
+  },
+  "char_285_medic2": {
+    "TitleTalent1": "Support Spray 1",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_286_cast3": {
+    "TitleTalent1": "Tactical Configuration 1",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_289_gyuki": {
+    "TitleTalent1": "Demonic Physique",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_290_vigna": {
+    "TitleTalent1": "Fierce Stabbing",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_291_aglina": {
+    "TitleTalent1": "Accelerator Field",
+    "TitleTalent2": "Part-time Job",
+    "Talent1": "",
+    "Talent1_p5": "",
+    "Talent1_2": "",
+    "Talent1_2_p5": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_293_thorns": {
+    "TitleTalent1": "Nerve Corrosion",
+    "TitleTalent2": "Echoes of Ancestral Waves",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_294_ayer": {
+    "TitleTalent1": "Seek Aid",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_297_hamoni": {
+    "TitleTalent1": "A Surprise Visitor",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_298_susuro": {
+    "TitleTalent1": "Minimally Invasive Surgery",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_300_phenxi": {
+    "TitleTalent1": "Sufferer of Tribulations",
+    "TitleTalent2": "Herald of Revelations",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_301_cutter": {
+    "TitleTalent1": "Photoetched Marks",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_302_glaze": {
+    "TitleTalent1": "Precise Strike",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_304_zebra": {
+    "TitleTalent1": "Striped Camouflage",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_306_leizi": {
+    "TitleTalent1": "Unobstructed Flow",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_308_swire": {
+    "TitleTalent1": "Melee Combat Guidance",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_311_mudrok": {
+    "TitleTalent1": "Ward of the Fertile Soil",
+    "TitleTalent2": "Unshakable Solidarity",
+    "Talent0": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身15%最大生命",
+    "Talent0_p4": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身17%<@ba.talpu>（+2%）</>最大生命",
+    "Talent1": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身20%最大生命",
+    "Talent1_p4": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身22%<@ba.talpu>（+2%）</>最大生命",
+    "Talent1_2": "每9秒获得1层<$ba.shield>护盾</>（最多3层，部署后立即获得1层），每层护盾破裂时恢复自身20%最大生命",
+    "Talent1_2_p4": "每9秒获得1层<$ba.shield>护盾</>（最多3层，部署后立即获得1层），每层护盾破裂时恢复自身22%<@ba.talpu>（+2%）</>最大生命",
+    "Talent2": "受到来自【萨卡兹】敌人的伤害降低30%"
+  },
+  "char_322_lmlee": {
+    "TitleTalent1": "Kindness Begets Prosperity",
+    "TitleTalent2": "Preparedness Averts Peril",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_325_bison": {
+    "TitleTalent1": "Interlocked Shield",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_326_glacus": {
+    "TitleTalent1": "Countermeasure Device",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_328_cammou": {
+    "TitleTalent1": "Coordinated",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_332_archet": {
+    "TitleTalent1": "Landen Tactics",
+    "TitleTalent2": "Iron Bowstring",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_333_sidero": {
+    "TitleTalent1": "Mercenary's Tenacity",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_336_folivo": {
+    "TitleTalent1": "Camera Squad",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_337_utage": {
+    "TitleTalent1": "Serious Mode",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_338_iris": {
+    "TitleTalent1": "Sealed Treasure",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_340_shwaz": {
+    "TitleTalent1": "Armor Penetration Arrow",
+    "TitleTalent2": "Crossfire",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
+  },
+  "char_341_sntlla": {
+    "TitleTalent1": "Born of the Biting Cold",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_343_tknogi": {
+    "TitleTalent1": "Blessing",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_344_beewax": {
+    "TitleTalent1": "Shambhala's Sanctuary",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_345_folnic": {
+    "TitleTalent1": "Drug Inhibition Technique",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_346_aosta": {
+    "TitleTalent1": "Sharp Nails",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_347_jaksel": {
+    "TitleTalent1": "Extreme Evasion",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_348_ceylon": {
+    "TitleTalent1": "Lake Walker",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_349_chiave": {
+    "TitleTalent1": "Technical Expertise",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_350_surtr": {
+    "TitleTalent1": "Molten Flame",
+    "TitleTalent2": "Remnant Ash",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent2_2": "",
+    "Talent2_2_p2": ""
+  },
+  "char_355_ethan": {
+    "TitleTalent1": "Entwined",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_356_broca": {
+    "TitleTalent1": "Drill Strengthening",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_358_lisa": {
+    "TitleTalent1": "Skill Aura - Supporter",
+    "TitleTalent2": "Binding Circle",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_362_saga": {
+    "TitleTalent1": "Preaching",
+    "TitleTalent2": "Clear Mind",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_363_toddi": {
+    "TitleTalent1": "Fiery Instinct",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_365_aprl": {
+    "TitleTalent1": "Experienced Hunter",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_366_acdrop": {
+    "TitleTalent1": "Slideshot Style",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_367_swllow": {
+    "TitleTalent1": "Tailwind",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_369_bena": {
+    "TitleTalent1": "Bena's Protractor",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_373_lionhd": {
+    "TitleTalent1": "Lethal Fragmentation",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_376_therex": {
+    "TitleTalent1": "Delayed Detonation 1",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_377_gdglow": {
+    "TitleTalent1": "Beacon's Wrath",
+    "TitleTalent2": "Precise Redirection",
+    "Talent1": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪200%攻击力的法术伤害",
+    "Talent1_p2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪215%<@ba.talpu>（+15%）</>攻击力的法术伤害",
+    "Talent1_2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪300%攻击力的法术伤害",
+    "Talent1_2_p2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪315%<@ba.talpu>（+15%）</>攻击力的法术伤害",
+    "Talent2": "自身与浮游单元无视敌人15点法术抗性",
+    "Talent2_p5": "自身与浮游单元无视敌人18<@ba.talpu>（+3）</>点法术抗性"
+  },
+  "char_378_asbest": {
+    "TitleTalent1": "Moist Skin",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_379_sesa": {
+    "TitleTalent1": "Vulnerability Deconstruction",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_381_bubble": {
+    "TitleTalent1": "Spiked Shield",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_383_snsant": {
+    "TitleTalent1": "Bug Catcher",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_385_finlpp": {
+    "TitleTalent1": "Rapid Restoration",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_388_mint": {
+    "TitleTalent1": "Geologist",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_391_rosmon": {
+    "TitleTalent1": "Armaments of Annihilation",
+    "TitleTalent2": "Stable Esthesia",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_394_hadiya": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4000_jnight": {
+    "TitleTalent1": "Justice Drive I",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_4004_pudd": {
+    "TitleTalent1": "Electromagnetic Waves",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4006_melnte": {
+    "TitleTalent1": "Calibrating Parameters",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4009_irene": {
+    "TitleTalent1": "Flames of Castigation",
+    "TitleTalent2": "Sword of Cleansing",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_400_weedy": {
+    "TitleTalent1": "Industrial Water Cannon",
+    "TitleTalent2": "Upgraded Water Cannon",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_4010_etlchi": {
+    "TitleTalent1": "Blood Bank",
+    "TitleTalent2": "Second Serving",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent3": ""
+  },
+  "char_4011_lessng": {
+    "TitleTalent1": "Pain Focus",
+    "TitleTalent2": "Whetted With Pain",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4013_kjera": {
+    "TitleTalent1": "Deference",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4014_lunacu": {
+    "TitleTalent1": "Wilderness Instinct",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4015_spuria": {
+    "TitleTalent1": "Differential Reloading Experiment",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4016_kazema": {
+    "TitleTalent1": "From Paper Comes Life",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4017_puzzle": {
+    "TitleTalent1": "Sequence",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4019_ncdeer": {
+    "TitleTalent1": "Ethereal Iridescent Clouds",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_401_elysm": {
+    "TitleTalent1": "Sniper Support",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4023_rfalcn": {
+    "TitleTalent1": "Brutal Blows",
+    "TitleTalent2": "A Matter of Habit",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4025_aprot2": {
+    "TitleTalent1": "Land of Memories",
+    "TitleTalent2": "Proclamation of Doom",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4026_vulpis": {
+    "TitleTalent1": "Fox Hunt",
+    "TitleTalent2": "Accelerando",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4027_heyak": {
+    "TitleTalent1": "Inherited End",
+    "TitleTalent2": "Bygone Wings",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_402_tuye": {
+    "TitleTalent1": "Water Storage",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4032_provs": {
+    "TitleTalent1": "Kazimierz Legal Expertise",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4036_forcer": {
+    "TitleTalent1": "Precise Aim",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4039_horn": {
+    "TitleTalent1": "Military Fortress",
+    "TitleTalent2": "Bloodbath",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4040_rockr": {
+    "TitleTalent1": "Firm Foundation",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4041_chnut": {
+    "TitleTalent1": "Solidly Grounded",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4042_lumen": {
+    "TitleTalent1": "An Everyman's Wish",
+    "TitleTalent2": "Quick Fix",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4043_erato": {
+    "TitleTalent1": "Song of Dreams",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4045_heidi": {
+    "TitleTalent1": "Crafty Rebel",
+    "TitleTalent2": "Private Messenger",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4046_ebnhlz": {
+    "TitleTalent1": "Dynamics",
+    "TitleTalent2": "Appoggiatura",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4047_pianst": {
+    "TitleTalent1": "Reverberation",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4048_doroth": {
+    "TitleTalent1": "Resonator",
+    "TitleTalent2": "Dreamer",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4051_akkord": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4052_surfer": {
+    "TitleTalent1": "Solo Traveler",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4054_malist": {
+    "TitleTalent1": "Flash of Insight",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4055_bgsnow": {
+    "TitleTalent1": "Automatic Typewriter",
+    "TitleTalent2": "Stenographer of Weaknesses",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4056_titi": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
+  },
+  "char_4058_pepe": {
+    "TitleTalent1": "Legacy of the Past",
+    "TitleTalent2": "Perfuse With Lotus",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_405_absin": {
+    "TitleTalent1": "Enforcer",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4062_totter": {
+    "TitleTalent1": "Illuminating Eyes",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4063_quartz": {
+    "TitleTalent1": "Wilderness Wanderer",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4064_mlynar": {
+    "TitleTalent1": "Wanderer",
+    "TitleTalent2": "Unmoved",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4065_judge": {
+    "TitleTalent1": "Guardian of the Law",
+    "TitleTalent2": "Wreathed in Thorns",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4066_highmo": {
+    "TitleTalent1": "Sustenance from the Reaper",
+    "TitleTalent2": "Interfluence from Maladie",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_2": ""
+  },
+  "char_4067_lolxh": {
+    "TitleTalent1": "Executor-in-Training",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1_2": ""
+  },
+  "char_4071_peper": {
+    "TitleTalent1": "Focused Attention",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4072_ironmn": {
+    "TitleTalent1": "Battlefield Engineer",
+    "TitleTalent2": "Cost Cutting",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4077_palico": {
+    "TitleTalent1": "Felyne Lottery Bomb I",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_4078_bdhkgt": {
+    "TitleTalent1": "First Step Into the Wilds",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4079_haini": {
+    "TitleTalent1": "Ingenius Usage of Survey Equipment",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4080_lin": {
+    "TitleTalent1": "Foolproof Plan",
+    "TitleTalent2": "Shrouded Strength",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_4081_warmy": {
+    "TitleTalent1": "Overflowing Pot",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4082_qiubai": {
+    "TitleTalent1": "Find an Opening",
+    "TitleTalent2": "Falling Petals",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_4083_chimes": {
+    "TitleTalent1": "Mountain Traveler",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4087_ines": {
+    "TitleTalent1": "Shadow Weaver",
+    "TitleTalent2": "Shadow Sentry",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4088_hodrer": {
+    "TitleTalent1": "Do or Die",
+    "TitleTalent2": "Cloak of Lingering Flame",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4091_ulika": {
+    "TitleTalent1": "Short-Circuiting Genius I",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_4093_frston": {
+    "TitleTalent1": "Persevere I",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_4098_vvana": {
+    "TitleTalent1": "Candlelight",
+    "TitleTalent2": "Nova",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_4100_caper": {
+    "TitleTalent1": "Larking About",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4102_threye": {
+    "TitleTalent1": "The One Who Reveals",
+    "TitleTalent2": "The Reclusive One",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4104_coldst": {
+    "TitleTalent1": "Not to be Outdone",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4105_almond": {
+    "TitleTalent1": "Engineer's Backpack",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4106_bryota": {
+    "TitleTalent1": "Cautious and Calculated",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4107_vrdant": {
+    "TitleTalent1": "Vegetative Regeneration",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4109_baslin": {
+    "TitleTalent1": "Authoritarian Teachings",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4110_delphn": {
+    "TitleTalent1": "Baptize the Blade",
+    "TitleTalent2": "Cut Without Mercy",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4114_harold": {
+    "TitleTalent1": "I Am the Camp",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4116_blkkgt": {
+    "TitleTalent1": "Born Warrior",
+    "TitleTalent2": "Living Legend",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4117_ray": {
+    "TitleTalent1": "Patrol Partner",
+    "TitleTalent2": "Extreme Focus",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4119_wanqin": {
+    "TitleTalent1": "Observe Nature's Way",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_411_tomimi": {
+    "TitleTalent1": "Arts of the Wild",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4121_zuole": {
+    "TitleTalent1": "Candlelight's Shadow",
+    "TitleTalent2": "Self-Evident Virtue",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4122_grabds": {
+    "TitleTalent1": "Please Behave",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4123_ela": {
+    "TitleTalent1": "GRZMOT Mine",
+    "TitleTalent2": "'Bullseye'",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4124_iana": {
+    "TitleTalent1": "Gemini Replicator",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4125_rdoc": {
+    "TitleTalent1": "Field Medic",
+    "TitleTalent2": "Sympathicus Simulation",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_2": ""
+  },
+  "char_4126_fuze": {
+    "TitleTalent1": "Ballistic Shield",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4130_luton": {
+    "TitleTalent1": "From Death's Clutches",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4131_odda": {
+    "TitleTalent1": "Hammerfall",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4132_ascln": {
+    "TitleTalent1": "Mortal Interrogation",
+    "TitleTalent2": "Penumbral Image",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4133_logos": {
+    "TitleTalent1": "Lexical Evolution",
+    "TitleTalent2": "Requiem Aeternam",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_4134_cetsyr": {
+    "TitleTalent1": "Dust of the Past",
+    "TitleTalent2": "The Echo of Kings",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4136_phonor": {
+    "TitleTalent1": "Chorus of a Distant Valley I",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_4137_udflow": {
+    "TitleTalent1": "Cell Activity Suppressant",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4138_narant": {
+    "TitleTalent1": "'I See, I Take'",
+    "TitleTalent2": "Graceful Shadow",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_4139_papyrs": {
+    "TitleTalent1": "Erudite of Ancient Scrolls",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4140_lasher": {
+    "TitleTalent1": "Teachings of the Dead Craftsman",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4141_marcil": {
+    "TitleTalent1": "The Most Brilliant Student In the School's History",
+    "TitleTalent2": "Reliable Companion",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent2": ""
+  },
+  "char_4142_laios": {
+    "TitleTalent1": "Dungeon Monster Expert",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4143_sensi": {
+    "TitleTalent1": "Ten Years of Monster Cooking Experience",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4144_chilc": {
+    "TitleTalent1": "Keen Senses",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4145_ulpia": {
+    "TitleTalent1": "Natural Holdfast",
+    "TitleTalent2": "Nourish the Blood",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent3": ""
+  },
+  "char_4146_nymph": {
+    "TitleTalent1": "Soul Stolen",
+    "TitleTalent2": "Key to the Heart",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4147_mitm": {
+    "TitleTalent1": "Scrapheap Buggies",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_4148_philae": {
+    "TitleTalent1": "Herald of the Divine River",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4151_tinman": {
+    "TitleTalent1": "'On My Way'",
+    "TitleTalent2": "Shriveled Soul",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4155_talr": {
+    "TitleTalent1": "Select Your Customers!",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_415_flint": {
+    "TitleTalent1": "Featherweight",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4162_cathy": {
+    "TitleTalent1": "Directional Support Signal",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "char_4163_rosesa": {
+    "TitleTalent1": "Herbalist Número Uno",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4164_tecno": {
+    "TitleTalent1": "Freestyle Puppetry",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "char_4165_ctrail": {
+    "TitleTalent1": "Low-Altitude Turbulence",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4166_varkis": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_416_zumama": {
+    "TitleTalent1": "Peerless Bravery",
+    "TitleTalent2": "Resilience",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4171_wulfen": {
+    "TitleTalent1": "Explorer's Stash",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4172_xingzh": {
+    "TitleTalent1": "Friendship Fair, Together Tied",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4173_nowell": {
+    "TitleTalent1": "Precise Prescription",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4177_brigid": {
+    "TitleTalent1": "Practiced Knot-Tier",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4178_alanna": {
+    "TitleTalent1": "Makeshift Modification",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4179_monstr": {
+    "TitleTalent1": "Self-Repair",
+    "TitleTalent2": "Tactical Coordination",
+    "Talent0": "",
+    "Talent0_p2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": "",
+    "Talent2_2": "",
+    "Talent2_2_p5": ""
+  },
+  "char_4182_oblvns": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_1_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": ""
+  },
+  "char_4183_mortis": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "char_4184_dolris": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "char_4185_amoris": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_1": "",
+    "Talent2_1_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": "",
+    "Talent3": ""
+  },
+  "char_4186_tmoris": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": ""
+  },
+  "char_4187_graceb": {
+    "TitleTalent1": "Opportune Mercy",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4188_confes": {
+    "TitleTalent1": "Pay-Per-Confession I",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_4191_tippi": {
+    "TitleTalent1": "Film Set Operational Manual",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4193_lemuen": {
+    "TitleTalent1": "Diploma Persecutionis Internationalis",
+    "TitleTalent2": "Modus Extraditio Fugitivi",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4194_rmixer": {
+    "TitleTalent1": "Machine-Gun Welcome Ceremony",
+    "TitleTalent2": "Shield-Up Farewell Ceremony",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4195_radian": {
+    "TitleTalent1": "Cassette Inspiration",
+    "TitleTalent2": "Do Your Best~",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4196_reckpr": {
+    "TitleTalent1": "Accumulated Knowledge",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4198_christ": {
+    "TitleTalent1": "Captivating Delicacy",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4199_makiri": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "char_4202_haruka": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4203_kichi": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4204_mantra": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4207_branch": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4208_wintim": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_420_flamtl": {
+    "TitleTalent1": "Vanguard Swordsmanship",
+    "TitleTalent2": "Pinus Sylvestris Leader",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4211_snhunt": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_4212_nasti": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_4213_skybx": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_4214_cairn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_421_crow": {
+    "TitleTalent1": "Into the Groove",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_422_aurora": {
+    "TitleTalent1": "Frigid Respite",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_423_blemsh": {
+    "TitleTalent1": "Knight of Sword and Shield",
+    "TitleTalent2": "Mercy",
+    "Talent1": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": ""
+  },
+  "char_426_billro": {
+    "TitleTalent1": "Meal of Life",
+    "TitleTalent2": "Poised for Action",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_427_vigil": {
+    "TitleTalent1": "Leader of the Wolfpack",
+    "TitleTalent2": "Wolven Nature",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_430_fartth": {
+    "TitleTalent1": "Concentration",
+    "TitleTalent2": "Stilled Breath",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_431_ashlok": {
+    "TitleTalent1": "Bombardment Studies",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_433_windft": {
+    "TitleTalent1": "Forward Together",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_436_whispr": {
+    "TitleTalent1": "Tower of Life",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_437_mizuki": {
+    "TitleTalent1": "Traumatic Hysteria",
+    "TitleTalent2": "Countertransference",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_440_pinecn": {
+    "TitleTalent1": "Portable Energy Source",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_445_wscoot": {
+    "TitleTalent1": "Sheathed Blade, Studied Foe",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_446_aroma": {
+    "TitleTalent1": "Let's Get Saponaceous!",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_449_glider": {
+    "TitleTalent1": "Collective Consciousness",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_450_necras": {
+    "TitleTalent1": "Rekindle",
+    "TitleTalent2": "Deathbed Deliverance",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "char_451_robin": {
+    "TitleTalent1": "'Clip' Specialist",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_452_bstalk": {
+    "TitleTalent1": "Professional Breeder",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_455_nothin": {
+    "TitleTalent1": "Unexpected Strike",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_456_ash": {
+    "TitleTalent1": "Auxiliary Equipment",
+    "TitleTalent2": "Breaching Specialist",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_457_blitz": {
+    "TitleTalent1": "Shielded Shooting",
+    "TitleTalent2": "Bunker Defense",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_458_rfrost": {
+    "TitleTalent1": "Welcome Mat",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_459_tachak": {
+    "TitleTalent1": "Heavy Firepower",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_464_cement": {
+    "TitleTalent1": "Blueprint Corrections",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_466_qanik": {
+    "TitleTalent1": "Tundra Survival",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_469_indigo": {
+    "TitleTalent1": "Gentle Binding Gaze",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_472_pasngr": {
+    "TitleTalent1": "Mechanism Analysis",
+    "TitleTalent2": "Lone Soldier",
+    "Talent1": "",
+    "Talent1_p5": "",
+    "Talent1_2": "",
+    "Talent1_2_p5": "",
+    "Talent2": "",
+    "Talent2_p2": ""
+  },
+  "char_473_mberry": {
+    "TitleTalent1": "Helper",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_474_glady": {
+    "TitleTalent1": "Waves of Ægir",
+    "TitleTalent2": "Survival of the Fittest",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_475_akafyu": {
+    "TitleTalent1": "Nobukage-ryu - Hatobu",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_476_blkngt": {
+    "TitleTalent1": "Nightwalker",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_478_kirara": {
+    "TitleTalent1": "Lonesome Protector",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_479_sleach": {
+    "TitleTalent1": "Unwavering Banner",
+    "TitleTalent2": "Spiritual Influence",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_484_robrta": {
+    "TitleTalent1": "Modeler Debugging",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_485_pallas": {
+    "TitleTalent1": "Birth of a Hero",
+    "TitleTalent2": "Goddess' Inspiration",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_486_takila": {
+    "TitleTalent1": "Waiting Game",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_487_bobb": {
+    "TitleTalent1": "Focused Guidance",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_488_buildr": {
+    "TitleTalent1": "Demolition Team's Code",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_489_serum": {
+    "TitleTalent1": "Tactical Readjustment",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_491_humus": {
+    "TitleTalent1": "Re-recycle",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_492_quercu": {
+    "TitleTalent1": "Forest Sanctuary",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_493_firwhl": {
+    "TitleTalent1": "Flexible Fighter",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_494_vendla": {
+    "TitleTalent1": "Soil Fertilizer Enhancement",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_496_wildmn": {
+    "TitleTalent1": "Forward March",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_497_ctable": {
+    "TitleTalent1": "Protean",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_498_inside": {
+    "TitleTalent1": "Fire Support",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_499_kaitou": {
+    "TitleTalent1": "Advanced Notice",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "char_500_noirc": {
+    "TitleTalent1": "Improved Armor",
+    "TitleTalent2": "",
+    "Talent0_lv30": ""
+  },
+  "char_501_durin": {
+    "TitleTalent1": "Lucky Lass",
+    "TitleTalent2": "",
+    "Talent0_lv30": ""
+  },
+  "char_502_nblade": {
+    "TitleTalent1": "Fast Redeployment",
+    "TitleTalent2": "",
+    "Talent0_lv30": ""
+  },
+  "char_503_rang": {
+    "TitleTalent1": "Anti-Air Master",
+    "TitleTalent2": "",
+    "Talent0_lv30": ""
+  },
+  "char_504_rguard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "char_505_rcast": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "char_506_rmedic": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "char_507_rsnipe": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "char_508_aguard": {
+    "TitleTalent1": "Invisible Blade",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_509_acast": {
+    "TitleTalent1": "'All That I See'",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_510_amedic": {
+    "TitleTalent1": "Promotion",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_511_asnipe": {
+    "TitleTalent1": "Windfall",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_512_aprot": {
+    "TitleTalent1": "Land of Memories",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_513_apionr": {
+    "TitleTalent1": "Boundless Heart",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_514_rdfend": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "char_600_cpione": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_601_cguard": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_602_cdfend": {
+    "TitleTalent1": "DEF Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_603_csnipe": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_604_ccast": {
+    "TitleTalent1": "Casting Speed Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_605_cmedic": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_606_csuppo": {
+    "TitleTalent1": "Casting Speed Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_607_cspec": {
+    "TitleTalent1": "ATK Up",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "char_608_acpion": {
+    "TitleTalent1": "Boundless Heart",
+    "TitleTalent2": "Heart of the Tides",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_609_acguad": {
+    "TitleTalent1": "Invisible Blade",
+    "TitleTalent2": "Not One Step Back",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "char_610_acfend": {
+    "TitleTalent1": "Research Materials",
+    "TitleTalent2": "Feedback Armor",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_2": ""
+  },
+  "char_611_acnipe": {
+    "TitleTalent1": "Windfall",
+    "TitleTalent2": "Brewing Storm",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_612_accast": {
+    "TitleTalent1": "'All That I See'",
+    "TitleTalent2": "'All That I Teach'",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_613_acmedc": {
+    "TitleTalent1": "Promotion",
+    "TitleTalent2": "Transcendence",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_614_acsupo": {
+    "TitleTalent1": "Phase Locked",
+    "TitleTalent2": "Decoy Blip",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_615_acspec": {
+    "TitleTalent1": "Double-Hit Experiment",
+    "TitleTalent2": "Four-Dimensional Separation",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "char_616_pithst": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "char_617_sharp2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10000_silent_healrb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10001_deepcl_tentac": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10002_kalts_mon3tr": {
+    "TitleTalent1": "Mon3tr",
+    "TitleTalent2": "Non-Damaging Restructuring",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "token_10003_cgbird_bird": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Fleeting Phantom",
+    "Talent2": ""
+  },
+  "token_10004_otter_motter": {
+    "TitleTalent1": "Robotter",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10005_mgllan_drone1": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Optical Refraction Accessories",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": "",
+    "Talent3": "",
+    "Talent3_p4": ""
+  },
+  "token_10005_mgllan_drone2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Optical Refraction Accessories",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": "",
+    "Talent3": "",
+    "Talent3_p4": ""
+  },
+  "token_10005_mgllan_drone3": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Optical Refraction Accessories",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": "",
+    "Talent2_2": "",
+    "Talent2_2_p4": "",
+    "Talent3": "",
+    "Talent3_p4": ""
+  },
+  "token_10006_vodfox_doll": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10007_phatom_twin": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Phantom Mastery",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10008_cqbw_box": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "token_10009_weedy_cannon": {
+    "TitleTalent1": "Industrial Water Cannon",
+    "TitleTalent2": "Upgraded Water Cannon",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10010_folivo_car": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10011_beewax_oblisk": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": ""
+  },
+  "token_10012_rosmon_shield": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1_2": ""
+  },
+  "token_10013_robin_mine": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10014_bstalk_crab": {
+    "TitleTalent1": "Professional Breeder",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10015_dusk_drgn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "token_10016_rfrost_mine": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10017_skadi2_dedant": {
+    "TitleTalent1": "Ancient Kin",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "token_10018_robrta_mach": {
+    "TitleTalent1": "Modeler Debugging",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "token_10019_nearl2_sword": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1_2": ""
+  },
+  "token_10020_ling_soul1": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10020_ling_soul2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10020_ling_soul3": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10021_blkngt_hypnos": {
+    "TitleTalent1": "Nightwalker",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10022_kazema_shadow": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "token_10023_windft_wrench": {
+    "TitleTalent1": "Forward Together",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "token_10024_ebnhlz_rcube": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "token_10025_doroth_recttp": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10026_bgsnow_subbow": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Stenographer of Weaknesses",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "token_10027_ironmn_pile1": {
+    "TitleTalent1": "Fire Support",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "token_10027_ironmn_pile2": {
+    "TitleTalent1": "Battle Resupply",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": "",
+    "Talent3": ""
+  },
+  "token_10027_ironmn_pile3": {
+    "TitleTalent1": "Power of Unity",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "token_10028_vigil_wolf": {
+    "TitleTalent1": "Leader of the Wolfpack",
+    "TitleTalent2": "Wolven Nature",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "token_10029_slent2_protrb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10030_mlyss_wtrman": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10031_swire2_gdtrap": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10032_jesca2_jckshd": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10033_ela_grzmot": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "token_10034_ray_sndbst": {
+    "TitleTalent1": "Patrol Partner",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": ""
+  },
+  "token_10035_wisdel_wward": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10036_lasher_mcbird": {
+    "TitleTalent1": "Teachings of the Dead Craftsman",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10037_mitm_trshrb": {
+    "TitleTalent1": "Scrapheap Buggies",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10039_ulpia_block": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "token_10040_siege2_vlion": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1_2": ""
+  },
+  "token_10041_cathy_catsld": {
+    "TitleTalent1": "Directional Support Signal",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "token_10042_tecno_puppet": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10043_necras_skeltn": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10044_wulfen_mine": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10045_alanna_crane": {
+    "TitleTalent1": "Makeshift Modification",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
+  },
+  "token_10050_monstr_prosts": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "token_10051_radian_tower1": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10052_radian_tower2": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10053_radian_tower3": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "token_10054_phatm2_encdool": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": ""
+  },
+  "token_10055_phatm2_mndclv": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10056_angel2_target": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10057_svash2_eagle1": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "token_10057_svash2_eagle2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "token_10057_svash2_eagle3": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "token_10058_sbell2_icetgt": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "token_10059_nasti_nstdef": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "token_10060_nasti_nstchr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": "",
+    "Talent2": "",
+    "Talent2_1": "",
+    "Talent2_2": ""
+  },
+  "token_10061_nasti_nstbld": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent1": "",
+    "Talent1_2": ""
+  },
+  "trap_001_crate": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_002_emp": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_003_gate": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_005_sensor": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_006_antidr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_007_ballis": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_008_farm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_009_battery": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_010_frosts": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_011_ore": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_012_mine": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_013_blower": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_014_tower": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": "",
+    "Talent5": ""
+  },
+  "trap_015_tree": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_016_peon": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_018_bomb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_019_electric": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_020_roadblock": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_021_flame": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_022_frosts_friend": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_023_ore_friend": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_024_npcsld": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_025_prison": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_026_inverter": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_027_stone": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_028_cannon": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_029_poison": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_030_factory": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_031_sleep": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_032_mound": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_033_sbomb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_034_machst": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_035_emperor": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_036_storm": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_037_airsup": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_038_dsbell": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_039_dstnta": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_040_canoe": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_041_fcanon": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_042_tidectrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_043_dupilr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_044_duruin": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_045_dublst": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_046_oxygen": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_048_neonlamp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_049_candle": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_050_blizzard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_051_vultres": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_052_slowfd": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_053_airbomb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_054_dancdol": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_055_tileblock": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_056_sfsuifire": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_057_wpnsts": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_058_gunctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_059_peacokfool": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_060_bouncy": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_061_creep": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_062_magicstart": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_063_magicturn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_064_magiccircle": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_065_normbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_066_rarebox": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_067_dice": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_068_badbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_069_buffcard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_070_supplycard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_071_recyclecard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_072_revivecard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_073_btauntcard": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_074_bbombcard": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_075_bgarmn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_076_bgarms": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_077_rmtarmn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_078_rmtarms": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_079_allydonq": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_080_garage": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_081_turngear": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_082_salecard": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_083_bunker": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_084_aidkit": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_085_paras": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_086_larva": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_087_allady": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_088_dice2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_089_dice3": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "trap_090_recodr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_091_brctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_092_vgctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_093_tbattbc": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_094_tbpsnc": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_095_tbsmmc": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_096_gflag": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_097_hstone": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_098_mire": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_099_mhflsb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1000_acarm000": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1001_acarm001": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1002_acarm002": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1003_acarm003": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1004_acarm004": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1005_acarm005": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1006_acarm006": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1007_acarm007": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1008_acarm008": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1009_acarm009": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_100_mhlbmb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1010_acarm010": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1011_acarm011": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1012_acarm012": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1013_acarm013": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1014_acarm014": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1015_acarm015": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1016_acarm016": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1017_acarm017": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1018_acarm018": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1019_acarm019": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_101_mhshok": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1020_acarm020": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1021_acarm021": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1022_acarm022": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1023_acarm023": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1024_acarm024": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1025_acarm025": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1026_acarm026": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1027_acarm027": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1028_acarm028": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1029_acarm029": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_102_mhwrbg": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1030_acarm030": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1031_acarm031": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1032_acarm032": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1033_acarm033": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1034_acarm034": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1035_acarm035": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1036_acarm036": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1037_acarm037": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1038_acarm038": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1039_acarm039": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_103_ymdgct": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1040_acarm040": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1041_acarm041": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1042_acarm042": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1043_acarm043": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1044_acarm044": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1045_acarm045": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1046_acarm046": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1047_acarm047": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1048_acarm048": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1049_acarm049": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_104_dplant": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1050_acarm050": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1051_acarm051": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1052_acarm052": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1053_acarm053": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1054_acarm054": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1055_acarm055": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1056_acarm056": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1057_acarm057": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1058_acarm058": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1059_acarm059": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_105_mhwrct": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1060_acarm060": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1061_acarm061": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1062_acarm062": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1063_acarm063": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1064_acarm064": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1065_acarm065": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1066_acarm066": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1067_acarm067": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1068_acarm068": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1069_acarm069": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_106_smtree": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1070_acarm070": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1071_acarm071": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1072_acarm072": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1073_acarm073": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1074_acarm074": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1075_acarm075": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1076_acarm076": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1077_acarm077": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1078_acarm078": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1079_acarm079": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_107_smpow": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1080_acspell001": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1081_acspell002": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1082_acspell003": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1083_acspell004": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1084_acspell005": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1085_acspell006": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1086_acspell007": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1087_acspell008": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1088_acspell009": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1089_acspell010": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_108_smbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1090_acspell011": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1091_acspell012": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1093_acspell014": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1094_acspell015": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1095_acspell016": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1096_acshopup": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1097_acshopre": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1098_acshopfr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1099_acspell017": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_109_smrbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1100_acreddoor": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1101_acplane": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1102_acarm102": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1103_acarm103": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1104_aclasert": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1105_accrate": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1106_achplat": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1107_acblock": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1108_acdisney": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1109_acarm109": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_110_smbbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1110_accopy": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1111_acchal": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1112_acblzd": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_111_wdfarm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_112_crsbow": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_113_snflwr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_114_smkbmb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_115_gasctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_116_stdurk": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_117_ltstat": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_118_rockfl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_119_rdrepair": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_120_rdblock": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_121_gractrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_122_stmpq": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_123_stmbot": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_124_eradio": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_125_bonore": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_126_outset": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_127_bldore": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_128_toolore": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_129_tooltower": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_130_tooltree": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_131_toolgun": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_132_toolinvert": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_133_toolgarage": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_134_condtr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_135_portlent": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_136_portlexi": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_137_winfire": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_138_winstone": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_139_dhtl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_140_dhsb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_141_sheltr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Fortified",
+    "Talent0": "",
+    "Talent2_lv30": ""
+  },
+  "trap_142_barrel": {
+    "TitleTalent1": "Explode",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_143_rnfcar": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_144_ads": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_145_edd": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_146_dhdcr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_147_spblls": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_148_amblls": {
+    "TitleTalent1": "Umbral Door",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1500_lhgras": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1501_lhpark": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_1502_lhrock": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1503_lhshan": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_1504_lhtree": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_1505_lhfrst": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_1506_lhhe": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1507_lhukmi": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1508_lhmine": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1509_lhbot": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1510_lhplt": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1511_lhfac": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1512_lhfarm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_1513_lhshop": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1514_lhpad": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1515_lhfacp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1516_lhnat": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1517_lhcol": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1518_lhdoor": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1519_lhrift": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_151_muruinw": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1520_lhcolb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1521_lhmagd": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1522_lhvlg": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1523_lhtown": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1524_lhport": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1525_lhswer": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1526_lharen": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1527_lhtwer": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1528_lhruin": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1529_lhsht": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_152_muruino": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1530_lhcamp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1531_lhcampa": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1532_lhcampb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1533_lhcampc": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1534_lheqp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1535_lhupgd": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1536_lhbat": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1537_lhside": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_1538_lhblod": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_1539_lhflwr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_1540_lhpad2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_154_mugtps": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_155_aegiret": {
+    "TitleTalent1": "Beacon Deployment",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_156_dsshell": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_157_bounc2": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_158_lrsteam": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_159_lrcore": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_160_lrlgun": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_161_lrcage": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_162_lrctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_163_foolcrate": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_164_lrsiege": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_165_muftbl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_166_muwork": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_167_muruinf": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_169_muruinb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_171_trpot": {
+    "TitleTalent1": "Really Big Pot",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_172_trbox": {
+    "TitleTalent1": "'Treasure Chest'",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_173_slfrut": {
+    "TitleTalent1": "Shiny Berries",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_174_smfrut": {
+    "TitleTalent1": "Glooming Berry",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_175_frfrut": {
+    "TitleTalent1": "Roast Berry",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_176_frutwn": {
+    "TitleTalent1": "Shiny Brew",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_177_tentcl": {
+    "TitleTalent1": "Chest Limb?",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_178_trrbox": {
+    "TitleTalent1": "'Treasure Chest'",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_179_muctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_180_dsblock": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_181_sgray": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_182_sglink": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_183_sheltk": {
+    "TitleTalent1": "",
+    "TitleTalent2": "Fortified",
+    "Talent0": "",
+    "Talent2_lv30": ""
+  },
+  "trap_184_vtarsn": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_185_vtlntw": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_186_cnvfwks": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": "",
+    "Talent5": ""
+  },
+  "trap_187_arcgacha": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_188_arcsum1": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_189_arcsum2": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_190_arcsum3": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_191_arcexpd": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_192_archook": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_193_arctoll": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_194_arcsoda": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_195_arcpw": {
+    "TitleTalent1": "Strong Spring",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_196_cnnon": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": "",
+    "Talent0_lv3": "",
+    "Talent0_lv4": "",
+    "Talent0_lv5": "",
+    "Talent0_lv6": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent3_lv2": "",
+    "Talent3_lv3": "",
+    "Talent3_lv4": "",
+    "Talent3_lv5": "",
+    "Talent3_lv6": "",
+    "Talent4": "",
+    "Talent5": "",
+    "Talent5_lv2": "",
+    "Talent5_lv3": "",
+    "Talent5_lv4": "",
+    "Talent5_lv5": "",
+    "Talent5_lv6": "",
+    "Talent6": "",
+    "Talent7": "",
+    "Talent7_lv2": "",
+    "Talent7_lv3": "",
+    "Talent7_lv4": "",
+    "Talent7_lv5": "",
+    "Talent7_lv6": "",
+    "Talent8": "",
+    "Talent9": "",
+    "Talent10": "",
+    "Talent10_lv2": "",
+    "Talent10_lv3": "",
+    "Talent10_lv4": "",
+    "Talent10_lv5": "",
+    "Talent10_lv6": "",
+    "Talent11": "",
+    "Talent12": ""
+  },
+  "trap_197_muulwr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_198_muulas": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_199_muulrg": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_200_muulcl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_201_muulco": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_202_muworkg": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_203_mufrprn": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_205_mufrfm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "trap_206_mufrbk": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "trap_207_mufrwl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "trap_208_mufrst": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": "",
+    "Talent5": ""
+  },
+  "trap_209_mufrbs": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "trap_210_arcgrg": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_211_cjgtow": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_212_cjbtow": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_213_dqore": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_214_dqballis": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_215_dqcrsbow": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_216_dqelec": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_218_fttree": {
+    "TitleTalent1": "Growth",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_219_fttreant": {
+    "TitleTalent1": "Growth",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_220_ftbone": {
+    "TitleTalent1": "Fires of Days Past",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_221_ftshad": {
+    "TitleTalent1": "Empty Shell",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_222_rgdysm": {
+    "TitleTalent1": "Statuegeist",
+    "TitleTalent2": "Pseudomut",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": ""
+  },
+  "trap_223_dynbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_224_dyrbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_225_dysbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_226_dychss": {
+    "TitleTalent1": "Flaw",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_227_mpweak": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_228_mptxs": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_229_mpcata": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_230_mpcatab": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_231_mpgrou": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_232_mpgroub": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_233_mpmage": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_234_mpmageb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_235_hlnpcm": {
+    "TitleTalent1": "Awaken",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_236_hlnpcs": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_237_hlnpcb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_238_dydfst": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_239_dyffgd": {
+    "TitleTalent1": "Face to Face",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_240_dyffdd": {
+    "TitleTalent1": "Face to Face",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_241_dyldlz": {
+    "TitleTalent1": "Amassed Treasures",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_247_crfilm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": "",
+    "Talent5": ""
+  },
+  "trap_248_crprop": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_249_mjcsdw": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_250_hlctrl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_251_buftrp": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_252_pckstp": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_253_boxnma": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_254_boxmac": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_255_pckzhn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_257_muulct": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_258_rgcssm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_259_murjet": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_260_murbas": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_261_murmag": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_262_murtre": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_263_murbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_264_xdplat": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_265_xdice1": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_267_xdmac1": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_268_xdmac2": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_269_xdmac3": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_270_spawnp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_271_fowstn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_272_nomstn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_278_dyfgdd": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_279_pirene": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_400_xbfarm": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_401_xbfato": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_403_wfactory": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_404_xbfortress": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_405_xbroadblock": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent2_lv3": ""
+  },
+  "trap_406_xboverwatch": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": "",
+    "Talent0_lv3": "",
+    "Talent2": ""
+  },
+  "trap_408_xbbase": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_409_xbwood": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_410_xbstone": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_411_xbiron": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_412_redtower": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_413_hiddenstone": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_414_vegetation": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_415_trademan": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_416_gtreasure": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_417_shielder": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_418_smokebomb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_419_enhancer": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_420_umbrella": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_421_repairman": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_422_streasure": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_423_bondtw": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": "",
+    "Talent2": ""
+  },
+  "trap_424_pushtw": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": "",
+    "Talent2": ""
+  },
+  "trap_425_xbwall": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_426_xbmrcl": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_427_xbprsh": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_428_xblrsh": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_429_xbescp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_430_wdescp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_431_xbgldn": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_432_oldisin": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_433_sandsdr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_434_klmantc": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_435_trsrhuntr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_437_poachr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_438_xbfato2": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_439_xbfato3": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_440_xbalis": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_441_xbmgbird": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_442_xbtrap": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_443_xbtent": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_444_xbexbi": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_445_xbfence": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_446_xbfdtion": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_447_xbmcv": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_448_xbmire": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": "",
+    "Talent0_lv3": ""
+  },
+  "trap_449_xbspgun": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": ""
+  },
+  "trap_450_xbdrill": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_451_xbflare": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_452_xbcage": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_453_xbbee": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_454_xbember": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_455_xbistorm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_456_xbfarmm": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_457_xbfort": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_458_xbbarir": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3_lv3": ""
+  },
+  "trap_459_xblight": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": "",
+    "Talent0_lv3": "",
+    "Talent2": "",
+    "Talent3_lv2": "",
+    "Talent3_lv3": ""
+  },
+  "trap_460_xbdiam": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_461_xbhydr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_462_xbsighta": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_463_xbsightb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_464_xbsightc": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_465_xbstation": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_466_tzumama": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_467_ttuye": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_468_tpriest": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_469_tpasngr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_470_tmantic": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_471_tegmaus": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_472_tfalco": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_473_trmedic": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_474_mailbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_475_xbcbag": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_476_mscskt": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_477_xbspps": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_478_xbcanoe": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_479_xbbillb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_480_roadblockxb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_481_gtreasureb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_482_xbblure": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_483_xbtrophy": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_484_xbcp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_485_xbrandprop": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_486_xbspd": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_487_xblfen": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_488_xbtwod": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_489_xbtrok": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_490_xbtiro": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_491_xbtwal": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv2": ""
+  },
+  "trap_492_xbamai": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_493_xbabal": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_494_xbasky": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_495_xbasmi": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_496_xbaasm": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_497_xbarok": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_498_xbaaro": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_499_xbaask": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_500_xbaflu": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_501_xbaarm": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_502_xbaice": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_503_xbabla": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_504_xbaess": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_505_xbawea": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_506_xbadiv": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_507_xbabut": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_508_xbabat": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_509_xbf1g": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_510_xbf2g": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_511_xbf3g": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_512_xbwfg": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_700_cdabyss": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_701_cdabyssa": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_702_cdabyssb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_703_cdcredit": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_704_cdcredita": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_705_cdcreditb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_706_cdshield": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_707_cdshielda": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_708_cdshieldb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_709_cdbeacon": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_710_cdbeacona": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_711_cdbeaconb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_712_cdhvrk": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_713_cdflsb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_714_cdaltar": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_715_cdaltara": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_716_cdaltarb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_717_cddiff": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_718_cddiffa": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_719_cddiffb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_720_cdheal": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_721_cdheala": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_722_cdhealb": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_723_cdcvrt": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_724_cdcvrta": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_725_cdcvrtb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_726_cdrone": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_727_cdronea": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_728_cdroneb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_729_cdkzmr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_730_truamr": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_732_ltnova": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_733_cdkzmra": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_734_cdkzmrb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_735_platre": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_736_mercha": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_737_merchaa": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_738_merchab": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_739_sniper": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_740_snipera": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_741_sniperb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_742_gasbot": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_743_gasbota": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_744_gasbotb": {
+    "TitleTalent1": "Revival",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_745_beer": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_746_cdrhine": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_747_cdrhinea": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_748_cdrhineb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_749_cd1punch": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_750_cd1puncha": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_751_cd1punchb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_752_cdcaster": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_753_cdcastera": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_754_cdcasterb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": ""
+  },
+  "trap_755_cdsoul": {
+    "TitleTalent1": "Resonance",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_756_cdnest": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_757_skzbox": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_758_skzmbx": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_759_skzwyx": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_760_skztzs": {
+    "TitleTalent1": "Mark of Epoch",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_761_skzthx": {
+    "TitleTalent1": "Brandish",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_762_skztxy": {
+    "TitleTalent1": "Continuation of Civilight Eterna",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_763_skzddd": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_lv30": ""
+  },
+  "trap_764_skzshp": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_765_bmoney": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_766_duelwal": {
+    "TitleTalent1": "Face to Face",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_767_duelcdt": {
+    "TitleTalent1": "",
+    "TitleTalent2": ""
+  },
+  "trap_768_godch": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_769_godcha": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_770_godchb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_771_bqrnge": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_772_bqrngea": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_773_bqrngeb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_774_bqmlee": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_775_bqmleea": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_776_bqmleeb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_777_giacan": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_778_giatow": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": "",
+    "Talent4": "",
+    "Talent5": ""
+  },
+  "trap_779_skzth": {
+    "TitleTalent1": "Agnishunyata",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent2": "",
+    "Talent3": ""
+  },
+  "trap_780_supspt": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_781_supspta": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_782_supsptb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_783_tnkspk": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_784_tnkspka": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_785_tnkspkb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_786_fxdtwr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_787_supctl": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_788_supctla": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  },
+  "trap_789_supctlb": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": ""
+  }
+}

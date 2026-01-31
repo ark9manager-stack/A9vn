@@ -2,12 +2,26 @@ import React from "react";
 
 import characterTable from "../../../../data/operators/character_table.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
+import talentVN from "../../../../data/operators/talent_vn.json";
+import rangeTable from "../../../../data/range_table.json";
 
 import StatHover, { renderInlineItalic } from "../../../StatHover";
 
 /** Icons (Elite) */
 const ELITE_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/elite_hub/";
+
+/** Icons (Range + Potential) */
+const UI_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
+
+const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
+const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
+
+const POT_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/potential_hub/";
+
+const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
 
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
@@ -187,6 +201,151 @@ function applyBlackboard(text, bbMap) {
   });
 }
 
+function getTalentVnEntry(charKey) {
+  if (!isNonEmptyString(charKey)) return null;
+  return talentVN?.[charKey] || null;
+}
+
+function getTalentTitle(vnEntry, talentIdx) {
+  if (!vnEntry || typeof vnEntry !== "object") return "";
+  const k = talentIdx === 0 ? "TitleTalent1" : "TitleTalent2";
+  const v = vnEntry?.[k];
+  return isNonEmptyString(v) ? String(v) : "";
+}
+
+function getTalentBaseKeyCandidates(talentIdx, phaseIndex) {
+  if (talentIdx === 0) {
+    if (phaseIndex === 2) return ["Talent1_2"];
+    return [`Talent${phaseIndex}`]; // Talent0 / Talent1
+  }
+
+  // Talent 2: default is Talent2 (some operators may later have phase-specific keys)
+  return [`Talent2_${phaseIndex}`, "Talent2"];
+}
+
+function resolveTalentText({ vnEntry, talentIdx, phaseIndex, requiredPotentialRank, fallbackText }) {
+  const bases = getTalentBaseKeyCandidates(talentIdx, phaseIndex);
+  const req = Number(requiredPotentialRank || 0);
+
+  if (vnEntry && typeof vnEntry === "object") {
+    for (const base of bases) {
+      if (!isNonEmptyString(base)) continue;
+
+      if (req > 0) {
+        const kpot = `${base}_p${req}`;
+        const vpot = vnEntry?.[kpot];
+        if (isNonEmptyString(vpot)) return String(vpot);
+      }
+
+      const v = vnEntry?.[base];
+      if (isNonEmptyString(v)) return String(v);
+    }
+  }
+
+  return isNonEmptyString(fallbackText) ? String(fallbackText) : "";
+}
+
+function groupCandidatesByPhase(candidates) {
+  const map = new Map();
+  if (!Array.isArray(candidates)) return map;
+
+  for (const cand of candidates) {
+    const phaseIndex = phaseToIndex(cand?.unlockCondition?.phase);
+    const arr = map.get(phaseIndex) || [];
+    arr.push(cand);
+    map.set(phaseIndex, arr);
+  }
+  return map;
+}
+
+function pickBestCandidateForPhase(candidates, potRank) {
+  if (!Array.isArray(candidates) || candidates.length === 0) return null;
+
+  let best = null;
+  let bestReq = -1;
+
+  for (const c of candidates) {
+    const req = Number(c?.requiredPotentialRank || 0);
+    if (!Number.isFinite(req)) continue;
+
+    if (req <= potRank && req > bestReq) {
+      best = c;
+      bestReq = req;
+    }
+  }
+
+  if (best) return best;
+
+  // No candidate is applicable for current potential: fallback to lowest requirement.
+  return [...candidates].sort(
+    (a, b) => Number(a?.requiredPotentialRank || 0) - Number(b?.requiredPotentialRank || 0)
+  )[0];
+}
+
+function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
+  const raw = talentBlock?.candidates;
+  if (!Array.isArray(raw) || raw.length === 0) return { variants: [], showElite: false };
+
+  const byPhase = groupCandidatesByPhase(raw);
+  const phases = [...byPhase.keys()].sort((a, b) => a - b);
+  const variants = phases.map((phaseIndex) => {
+    const list = byPhase.get(phaseIndex) || [];
+    const picked = pickBestCandidateForPhase(list, potRank);
+    if (!picked) return null;
+
+    const bbMap = buildBlackboardMap(picked?.blackboard);
+    const baseText = resolveTalentText({
+      vnEntry,
+      talentIdx,
+      phaseIndex,
+      requiredPotentialRank: picked?.requiredPotentialRank,
+      fallbackText: picked?.description || "",
+    });
+
+    const text = applyBlackboard(baseText, bbMap);
+
+    return {
+      phaseIndex,
+      requiredPotentialRank: Number(picked?.requiredPotentialRank || 0),
+      name: picked?.name || "",
+      text,
+      rangeId: picked?.rangeId || "",
+    };
+  });
+
+  const filtered = variants.filter(Boolean);
+  if (filtered.length === 0) return { variants: [], showElite: false };
+
+  const uniq = new Set(filtered.map((v) => `${v.text}||${v.rangeId || ""}`));
+  const showElite = filtered.length > 1 && uniq.size > 1;
+
+  if (!showElite) {
+    return { variants: [filtered[filtered.length - 1]], showElite: false };
+  }
+
+  return { variants: filtered, showElite: true };
+}
+
+function pickVariantIndexByPhase(variants, desiredPhaseIndex) {
+  if (!Array.isArray(variants) || variants.length === 0) return 0;
+
+  const exact = variants.findIndex((v) => v.phaseIndex === desiredPhaseIndex);
+  if (exact >= 0) return exact;
+
+  let bestIdx = -1;
+  let bestPhase = -1;
+  for (let i = 0; i < variants.length; i++) {
+    const p = variants[i]?.phaseIndex;
+    if (typeof p !== "number") continue;
+    if (p <= desiredPhaseIndex && p > bestPhase) {
+      bestPhase = p;
+      bestIdx = i;
+    }
+  }
+
+  return bestIdx >= 0 ? bestIdx : variants.length - 1;
+}
+
 function renderLineWithHovers(line, keyPrefix) {
   if (!isNonEmptyString(line)) return null;
 
@@ -266,11 +425,77 @@ function renderTextWithHovers(text, keyPrefix = "txt") {
   ));
 }
 
-function InfoTable({ title, titleRight, children }) {
+function RangeGrid({ rangeId }) {
+  const grids = rangeId ? rangeTable?.[rangeId]?.grids : null;
+
+  if (!rangeId || !Array.isArray(grids)) {
+    return <div className="text-sm text-white/60">No range data.</div>;
+  }
+
+  const rowVals = [0, ...grids.map((g) => g.row)];
+  const colVals = [0, ...grids.map((g) => g.col)];
+  const minR = Math.min(...rowVals);
+  const maxR = Math.max(...rowVals);
+  const minC = Math.min(...colVals);
+  const maxC = Math.max(...colVals);
+
+  const height = maxR - minR + 1;
+  const width = maxC - minC + 1;
+
+  const keySet = new Set(grids.map((g) => `${g.row},${g.col}`));
+
+  return (
+    <div
+      className="inline-grid gap-[2px] p-2 rounded-lg bg-black/30"
+      style={{
+        gridTemplateColumns: `repeat(${width}, 18px)`,
+        gridTemplateRows: `repeat(${height}, 18px)`,
+      }}
+    >
+      {Array.from({ length: height }).map((_, rIdx) => {
+        const r = maxR - rIdx;
+        return Array.from({ length: width }).map((__, cIdx) => {
+          const c = minC + cIdx;
+          const isCenter = r === 0 && c === 0;
+          const isAttack = keySet.has(`${r},${c}`);
+
+          return (
+            <div
+              key={`${r},${c}`}
+              className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
+              title={isCenter ? "Stand" : isAttack ? "Attack" : ""}
+            >
+              {isCenter ? (
+                <img
+                  src={RANGE_STAND}
+                  alt="stand"
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                />
+              ) : isAttack ? (
+                <img
+                  src={RANGE_ATTACK}
+                  alt="atk"
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                />
+              ) : null}
+            </div>
+          );
+        });
+      })}
+    </div>
+  );
+}
+
+function InfoTable({ title, titleInline, titleRight, children }) {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
       <div className="flex items-center justify-between gap-3">
-        <h3 className="text-[1.375rem] font-semibold leading-snug">{title}</h3>
+        <div className="flex items-center gap-3 min-w-0">
+          <h3 className="text-[1.375rem] font-semibold leading-snug">{title}</h3>
+          {titleInline ? <div className="shrink-0">{titleInline}</div> : null}
+        </div>
         {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
       </div>
 
@@ -387,6 +612,183 @@ export default function SkillsSection(props) {
     </div>
   ) : null;
 
+  /** -----------------------------
+   * Talents
+   * ----------------------------- */
+  const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
+  const talentBlocks = React.useMemo(() => {
+    const raw = charData?.talents;
+    return Array.isArray(raw) ? raw : [];
+  }, [charData]);
+
+  const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
+  const allTalentPhases = React.useMemo(() => {
+    const set = new Set();
+    for (const tb of talentBlocks) {
+      const cands = tb?.candidates;
+      if (!Array.isArray(cands)) continue;
+      for (const c of cands) set.add(phaseToIndex(c?.unlockCondition?.phase));
+    }
+    return [...set].sort((a, b) => a - b);
+  }, [talentBlocks]);
+
+  const maxTalentPhase = allTalentPhases.length > 0 ? allTalentPhases[allTalentPhases.length - 1] : 0;
+
+  const [talentGlobalPhase, setTalentGlobalPhase] = React.useState(maxTalentPhase);
+  const [talentPhaseByBlock, setTalentPhaseByBlock] = React.useState({ 0: maxTalentPhase, 1: maxTalentPhase });
+
+  React.useEffect(() => {
+    // Reset when operator changes
+    setPotRank(0);
+    setTalentGlobalPhase(maxTalentPhase);
+    setTalentPhaseByBlock({ 0: maxTalentPhase, 1: maxTalentPhase });
+  }, [charKey, maxTalentPhase]);
+
+  const talent1Resolved = React.useMemo(() =>
+    computeTalentResolved({ talentBlock: talentBlocks?.[0], talentIdx: 0, potRank, vnEntry: vnTalentEntry }),
+  [talentBlocks, potRank, vnTalentEntry]);
+
+  const talent2Resolved = React.useMemo(() =>
+    computeTalentResolved({ talentBlock: talentBlocks?.[1], talentIdx: 1, potRank, vnEntry: vnTalentEntry }),
+  [talentBlocks, potRank, vnTalentEntry]);
+
+  const talentHeaderElite = allTalentPhases.length > 1 ? (
+    <div className="flex items-center gap-2">
+      {allTalentPhases.map((phaseIndex) => {
+        const active = phaseIndex === talentGlobalPhase;
+        const src = `${ELITE_ICON_BASE}elite_${phaseIndex}_large.png`;
+        return (
+          <button
+            key={`talent-global-elite-${phaseIndex}`}
+            type="button"
+            onClick={() => {
+              setTalentGlobalPhase(phaseIndex);
+              setTalentPhaseByBlock((prev) => ({ ...prev, 0: phaseIndex, 1: phaseIndex }));
+            }}
+            className={`rounded-lg p-1.5 transition ${
+              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+            }`}
+            title={`E${phaseIndex}`}
+          >
+            <img
+              src={src}
+              alt={`E${phaseIndex}`}
+              className="w-7 h-7 object-contain"
+              draggable={false}
+            />
+          </button>
+        );
+      })}
+    </div>
+  ) : null;
+
+  const potPicker = (
+    <div className="flex items-center gap-1">
+      {Array.from({ length: 6 }).map((_, idx0) => {
+        const active = idx0 === potRank;
+        return (
+          <button
+            key={`pot-${idx0}`}
+            type="button"
+            onClick={() => setPotRank(idx0)}
+            className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
+              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+            }`}
+            title={`Pot ${idx0 + 1}`}
+          >
+            <img
+              src={getPotIcon(idx0)}
+              alt={`pot-${idx0}`}
+              className="w-6 h-6 object-contain"
+              draggable={false}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold tabular-nums">{idx0 + 1}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+
+  const renderTalentCard = (talentIdx, resolved, desiredPhase) => {
+    const variants = resolved?.variants || [];
+    if (variants.length === 0) {
+      return (
+        <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+          <span className="text-white/40 italic">-</span>
+        </div>
+      );
+    }
+
+    const currentIdx = resolved?.showElite ? pickVariantIndexByPhase(variants, desiredPhase) : 0;
+    const v = variants[Math.min(Math.max(0, currentIdx), variants.length - 1)];
+    const titleName = getTalentTitle(vnTalentEntry, talentIdx) || v?.name || "";
+
+    const eliteButtons = resolved?.showElite ? (
+      <div className="flex items-center gap-2">
+        {variants.map((it) => {
+          const active = it.phaseIndex === v.phaseIndex;
+          const src = `${ELITE_ICON_BASE}elite_${it.phaseIndex}_large.png`;
+          return (
+            <button
+              key={`talent-${talentIdx}-elite-${it.phaseIndex}`}
+              type="button"
+              onClick={() =>
+                setTalentPhaseByBlock((prev) => ({ ...prev, [talentIdx]: it.phaseIndex }))
+              }
+              className={`rounded-lg p-1.5 transition ${
+                active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+              }`}
+              title={`E${it.phaseIndex}`}
+            >
+              <img
+                src={src}
+                alt={`E${it.phaseIndex}`}
+                className="w-7 h-7 object-contain"
+                draggable={false}
+              />
+            </button>
+          );
+        })}
+      </div>
+    ) : null;
+
+    const hasRange = isNonEmptyString(v?.rangeId);
+
+    return (
+      <div className="rounded-xl border border-white/10 bg-black/20 p-4 space-y-3">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-center gap-3 min-w-0 flex-wrap">
+            <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
+              <span className="font-bold mr-1">T{talentIdx + 1}</span>
+              <span className="text-black/60 mr-1">•</span>
+              <span className="truncate">{isNonEmptyString(titleName) ? titleName : `Talent ${talentIdx + 1}`}</span>
+            </span>
+
+            {eliteButtons}
+          </div>
+        </div>
+
+        <div className={`flex items-start gap-4 ${hasRange ? "flex-col lg:flex-row" : ""}`}>
+          <div className="min-w-0 flex-1">
+            {isNonEmptyString(v?.text) ? (
+              renderTextWithHovers(v.text, `talent-${charKey || "unknown"}-${talentIdx}-p${v.phaseIndex}-pot${potRank}`)
+            ) : (
+              <span className="text-white/40 italic">-</span>
+            )}
+          </div>
+
+          {hasRange ? (
+            <div className="shrink-0 rounded-xl border border-white/10 bg-black/30 p-3">
+              <div className="text-sm font-semibold text-white text-center mb-2">Phạm vi</div>
+              <RangeGrid rangeId={v.rangeId} />
+            </div>
+          ) : null}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="space-y-3">
       <InfoTable title="Đặc tính/Trait" titleRight={traitEliteButtons}>
@@ -425,8 +827,19 @@ export default function SkillsSection(props) {
         )}
       </InfoTable>
 
-      <InfoTable title="Thiên phú/Talent">
-        <span className="text-white/40 italic">-</span>
+      <InfoTable title="Thiên phú/Talent" titleInline={talentHeaderElite} titleRight={potPicker}>
+        {talentBlocks.length > 0 ? (
+          <div className="space-y-3">
+            {talentBlocks?.[0]
+              ? renderTalentCard(0, talent1Resolved, talentPhaseByBlock?.[0] ?? maxTalentPhase)
+              : null}
+            {talentBlocks?.[1]
+              ? renderTalentCard(1, talent2Resolved, talentPhaseByBlock?.[1] ?? maxTalentPhase)
+              : null}
+          </div>
+        ) : (
+          <span className="text-white/40 italic">-</span>
+        )}
       </InfoTable>
 
       <InfoTable title="Kỹ năng">
