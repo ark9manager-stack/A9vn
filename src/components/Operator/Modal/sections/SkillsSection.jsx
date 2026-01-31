@@ -223,18 +223,39 @@ function getTalentBaseKeyCandidates(talentIdx, phaseIndex) {
   return [`Talent2_${phaseIndex}`, "Talent2"];
 }
 
-function resolveTalentText({ vnEntry, talentIdx, phaseIndex, requiredPotentialRank, fallbackText }) {
+function resolveTalentText({
+  vnEntry,
+  talentIdx,
+  phaseIndex,
+  level,
+  requiredPotentialRank,
+  fallbackText,
+}) {
   const bases = getTalentBaseKeyCandidates(talentIdx, phaseIndex);
   const req = Number(requiredPotentialRank || 0);
+  const lvl = Number(level || 0);
 
   if (vnEntry && typeof vnEntry === "object") {
     for (const base of bases) {
       if (!isNonEmptyString(base)) continue;
 
+      // Prefer level-specific key when available, e.g. Talent1_lv55, Talent0_lv30, Talent1_2_lv60...
+      if (Number.isFinite(lvl) && lvl > 1) {
+        if (req > 0) {
+          const kLvPot = `${base}_lv${lvl}_p${req}`;
+          const vLvPot = vnEntry?.[kLvPot];
+          if (isNonEmptyString(vLvPot)) return String(vLvPot);
+        }
+
+        const kLv = `${base}_lv${lvl}`;
+        const vLv = vnEntry?.[kLv];
+        if (isNonEmptyString(vLv)) return String(vLv);
+      }
+
       if (req > 0) {
-        const kpot = `${base}_p${req}`;
-        const vpot = vnEntry?.[kpot];
-        if (isNonEmptyString(vpot)) return String(vpot);
+        const kPot = `${base}_p${req}`;
+        const vPot = vnEntry?.[kPot];
+        if (isNonEmptyString(vPot)) return String(vPot);
       }
 
       const v = vnEntry?.[base];
@@ -245,20 +266,25 @@ function resolveTalentText({ vnEntry, talentIdx, phaseIndex, requiredPotentialRa
   return isNonEmptyString(fallbackText) ? String(fallbackText) : "";
 }
 
-function groupCandidatesByPhase(candidates) {
+function groupCandidatesByPhaseLevel(candidates) {
   const map = new Map();
   if (!Array.isArray(candidates)) return map;
 
   for (const cand of candidates) {
     const phaseIndex = phaseToIndex(cand?.unlockCondition?.phase);
-    const arr = map.get(phaseIndex) || [];
+    const level = Number(cand?.unlockCondition?.level || 1);
+    const lvl = Number.isFinite(level) ? level : 1;
+
+    const key = `${phaseIndex}:${lvl}`;
+    const arr = map.get(key) || [];
     arr.push(cand);
-    map.set(phaseIndex, arr);
+    map.set(key, arr);
   }
+
   return map;
 }
 
-function pickBestCandidateForPhase(candidates, potRank) {
+function pickBestCandidateByPot(candidates, potRank) {
   if (!Array.isArray(candidates) || candidates.length === 0) return null;
 
   let best = null;
@@ -284,66 +310,118 @@ function pickBestCandidateForPhase(candidates, potRank) {
 
 function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
   const raw = talentBlock?.candidates;
-  if (!Array.isArray(raw) || raw.length === 0) return { variants: [], showElite: false };
+  if (!Array.isArray(raw) || raw.length === 0) return { variants: [], minPhaseIndex: 0 };
 
-  const byPhase = groupCandidatesByPhase(raw);
-  const phases = [...byPhase.keys()].sort((a, b) => a - b);
-  const variants = phases.map((phaseIndex) => {
-    const list = byPhase.get(phaseIndex) || [];
-    const picked = pickBestCandidateForPhase(list, potRank);
-    if (!picked) return null;
+  const grouped = groupCandidatesByPhaseLevel(raw);
+  const combos = [...grouped.keys()]
+    .map((k) => {
+      const [p, l] = k.split(":");
+      return { phaseIndex: Number(p), level: Number(l) };
+    })
+    .filter((x) => Number.isFinite(x.phaseIndex) && Number.isFinite(x.level))
+    .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level));
 
-    const bbMap = buildBlackboardMap(picked?.blackboard);
-    const baseText = resolveTalentText({
-      vnEntry,
-      talentIdx,
-      phaseIndex,
-      requiredPotentialRank: picked?.requiredPotentialRank,
-      fallbackText: picked?.description || "",
-    });
+  const variants = combos
+    .map(({ phaseIndex, level }) => {
+      const key = `${phaseIndex}:${level}`;
+      const list = grouped.get(key) || [];
+      const picked = pickBestCandidateByPot(list, potRank);
+      if (!picked) return null;
 
-    const text = applyBlackboard(baseText, bbMap);
+      const bbMap = buildBlackboardMap(picked?.blackboard);
+      const baseText = resolveTalentText({
+        vnEntry,
+        talentIdx,
+        phaseIndex,
+        level,
+        requiredPotentialRank: picked?.requiredPotentialRank,
+        fallbackText: picked?.description || "",
+      });
 
-    return {
-      phaseIndex,
-      requiredPotentialRank: Number(picked?.requiredPotentialRank || 0),
-      name: picked?.name || "",
-      text,
-      rangeId: picked?.rangeId || "",
-    };
-  });
+      const text = applyBlackboard(baseText, bbMap);
 
-  const filtered = variants.filter(Boolean);
-  if (filtered.length === 0) return { variants: [], showElite: false };
+      return {
+        phaseIndex,
+        level,
+        requiredPotentialRank: Number(picked?.requiredPotentialRank || 0),
+        name: picked?.name || "",
+        text,
+        rangeId: picked?.rangeId || "",
+      };
+    })
+    .filter(Boolean);
 
-  const uniq = new Set(filtered.map((v) => `${v.text}||${v.rangeId || ""}`));
-  const showElite = filtered.length > 1 && uniq.size > 1;
+  const minPhaseIndex =
+    variants.length > 0 ? Math.min(...variants.map((v) => v.phaseIndex)) : 0;
 
-  if (!showElite) {
-    return { variants: [filtered[filtered.length - 1]], showElite: false };
-  }
-
-  return { variants: filtered, showElite: true };
+  return { variants, minPhaseIndex };
 }
 
-function pickVariantIndexByPhase(variants, desiredPhaseIndex) {
-  if (!Array.isArray(variants) || variants.length === 0) return 0;
+function collectTalentHeaderOptions(talentBlocks) {
+  // Build options like: E1, E1 Lv55 (same icon; Lv label only for higher levels within that phase)
+  const map = new Map(); // phaseIndex -> Set(levels)
+  if (!Array.isArray(talentBlocks)) return [];
 
-  const exact = variants.findIndex((v) => v.phaseIndex === desiredPhaseIndex);
-  if (exact >= 0) return exact;
+  for (const tb of talentBlocks) {
+    const cands = tb?.candidates;
+    if (!Array.isArray(cands)) continue;
 
-  let bestIdx = -1;
-  let bestPhase = -1;
-  for (let i = 0; i < variants.length; i++) {
-    const p = variants[i]?.phaseIndex;
-    if (typeof p !== "number") continue;
-    if (p <= desiredPhaseIndex && p > bestPhase) {
-      bestPhase = p;
-      bestIdx = i;
+    for (const c of cands) {
+      const p = phaseToIndex(c?.unlockCondition?.phase);
+      const l = Number(c?.unlockCondition?.level || 1);
+      const lvl = Number.isFinite(l) ? l : 1;
+
+      if (!map.has(p)) map.set(p, new Set());
+      map.get(p).add(lvl);
     }
   }
 
-  return bestIdx >= 0 ? bestIdx : variants.length - 1;
+  const phases = [...map.keys()].sort((a, b) => a - b);
+  const options = [];
+
+  for (const p of phases) {
+    const levels = [...(map.get(p) || [])].sort((a, b) => a - b);
+    if (levels.length === 0) continue;
+
+    const baseLevel = levels[0];
+    options.push({ phaseIndex: p, level: baseLevel, showLv: false });
+
+    for (const lvl of levels.slice(1)) {
+      options.push({ phaseIndex: p, level: lvl, showLv: true });
+    }
+  }
+
+  return options;
+}
+
+function pickVariantByHeaderOption(variants, opt) {
+  if (!Array.isArray(variants) || variants.length === 0) return null;
+  if (!opt) return variants[variants.length - 1];
+
+  const desiredPhase = Number(opt.phaseIndex);
+  const desiredLevel = Number(opt.level);
+
+  // Exact phase + level
+  const exact = variants.find(
+    (v) => v.phaseIndex === desiredPhase && v.level === desiredLevel
+  );
+  if (exact) return exact;
+
+  // Same phase: choose best level <= desiredLevel, otherwise lowest level in that phase
+  const samePhase = variants.filter((v) => v.phaseIndex === desiredPhase);
+  if (samePhase.length > 0) {
+    const le = samePhase
+      .filter((v) => v.level <= desiredLevel)
+      .sort((a, b) => b.level - a.level)[0];
+    return le || samePhase.sort((a, b) => a.level - b.level)[0];
+  }
+
+  // Different phase: choose best phase <= desiredPhase, otherwise highest phase
+  const lePhase = variants
+    .filter((v) => v.phaseIndex <= desiredPhase)
+    .sort((a, b) => (b.phaseIndex - a.phaseIndex) || (b.level - a.level))[0];
+
+  return lePhase || variants[variants.length - 1];
 }
 
 function renderLineWithHovers(line, keyPrefix) {
@@ -613,214 +691,194 @@ export default function SkillsSection(props) {
   ) : null;
 
   /** -----------------------------
-   * Talents
-   * ----------------------------- */
-  const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
-  const talentBlocks = React.useMemo(() => {
-    const raw = charData?.talents;
-    return Array.isArray(raw) ? raw : [];
-  }, [charData]);
+ * Talents
+ * ----------------------------- */
+const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
+const talentBlocks = React.useMemo(() => {
+  const raw = charData?.talents;
+  return Array.isArray(raw) ? raw : [];
+}, [charData]);
 
-  const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
-
-// Only show Potential buttons that actually exist for this operator (plus Pot 1 = 0).
+// Potential ranks that actually exist in this operator's talent candidates
 const availablePotRanks = React.useMemo(() => {
-  const set = new Set([0]);
+  const set = new Set([0]); // Pot 1 always
   for (const tb of talentBlocks) {
     const cands = tb?.candidates;
     if (!Array.isArray(cands)) continue;
     for (const c of cands) {
-      const req = Number(c?.requiredPotentialRank || 0);
-      if (Number.isFinite(req) && req >= 0 && req <= 5) set.add(req);
+      const r = Number(c?.requiredPotentialRank || 0);
+      if (Number.isFinite(r)) set.add(r);
     }
   }
-  return [...set].sort((a, b) => a - b);
+  return [...set].filter((n) => n >= 0 && n <= 5).sort((a, b) => a - b);
 }, [talentBlocks]);
-  const allTalentPhases = React.useMemo(() => {
-    const set = new Set();
-    for (const tb of talentBlocks) {
-      const cands = tb?.candidates;
-      if (!Array.isArray(cands)) continue;
-      for (const c of cands) set.add(phaseToIndex(c?.unlockCondition?.phase));
-    }
-    return [...set].sort((a, b) => a - b);
-  }, [talentBlocks]);
 
-  const maxTalentPhase = allTalentPhases.length > 0 ? allTalentPhases[allTalentPhases.length - 1] : 0;
-
-  const [talentGlobalPhase, setTalentGlobalPhase] = React.useState(maxTalentPhase);
-  const [talentPhaseByBlock, setTalentPhaseByBlock] = React.useState({ 0: maxTalentPhase, 1: maxTalentPhase });
-
-  React.useEffect(() => {
-    // Reset when operator changes
-    setPotRank(0);
-    setTalentGlobalPhase(maxTalentPhase);
-    setTalentPhaseByBlock({ 0: maxTalentPhase, 1: maxTalentPhase });
-  }, [charKey, maxTalentPhase]);
-
-// If current Pot selection doesn't exist for this operator, fall back to Pot 1.
+const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
 React.useEffect(() => {
-  if (!availablePotRanks.includes(potRank)) setPotRank(0);
-}, [availablePotRanks, potRank]);
+  // Reset and clamp
+  setPotRank(0);
+}, [charKey]);
 
-  const talent1Resolved = React.useMemo(() =>
-    computeTalentResolved({ talentBlock: talentBlocks?.[0], talentIdx: 0, potRank, vnEntry: vnTalentEntry }),
-  [talentBlocks, potRank, vnTalentEntry]);
+// Elite header options: phase + optional Lv variants (e.g. E1, E1 Lv55)
+const talentHeaderOptions = React.useMemo(
+  () => collectTalentHeaderOptions(talentBlocks),
+  [talentBlocks]
+);
 
-  const talent2Resolved = React.useMemo(() =>
-    computeTalentResolved({ talentBlock: talentBlocks?.[1], talentIdx: 1, potRank, vnEntry: vnTalentEntry }),
-  [talentBlocks, potRank, vnTalentEntry]);
+const defaultHeaderOptIdx =
+  talentHeaderOptions.length > 0 ? talentHeaderOptions.length - 1 : 0;
 
-  const talentHeaderElite = allTalentPhases.length > 1 ? (
-    <div className="flex items-center gap-2">
-      {allTalentPhases.map((phaseIndex) => {
-        const active = phaseIndex === talentGlobalPhase;
-        const src = `${ELITE_ICON_BASE}elite_${phaseIndex}_large.png`;
-        return (
-          <button
-            key={`talent-global-elite-${phaseIndex}`}
-            type="button"
-            onClick={() => {
-              setTalentGlobalPhase(phaseIndex);
-              setTalentPhaseByBlock((prev) => ({ ...prev, 0: phaseIndex, 1: phaseIndex }));
-            }}
-            className={`rounded-lg p-1.5 transition ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-            }`}
-            title={`E${phaseIndex}`}
-          >
-            <img
-              src={src}
-              alt={`E${phaseIndex}`}
-              className="w-7 h-7 object-contain"
-              draggable={false}
-            />
-          </button>
-        );
-      })}
-    </div>
-  ) : null;
+const [talentHeaderOptIdx, setTalentHeaderOptIdx] = React.useState(defaultHeaderOptIdx);
 
+React.useEffect(() => {
+  setTalentHeaderOptIdx(defaultHeaderOptIdx);
+}, [charKey, defaultHeaderOptIdx]);
 
-  const potPicker =
-    availablePotRanks.length > 1 ? (
-    <div className="flex items-center gap-1">
-      {availablePotRanks.map((idx0) => {
-        const active = idx0 === potRank;
+const activeTalentHeaderOpt =
+  talentHeaderOptions[Math.min(Math.max(0, talentHeaderOptIdx), Math.max(0, talentHeaderOptions.length - 1))] ||
+  { phaseIndex: 0, level: 1, showLv: false };
 
-        return (
-          <button
-            key={`pot-${idx0}`}
-            type="button"
-            onClick={() => setPotRank(idx0)}
-            className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-            }`}
-            title={`Pot ${idx0 + 1}`}
-          >
-            <img
-              src={getPotIcon(idx0)}
-              alt={`pot-${idx0}`}
-              className="w-6 h-6 object-contain"
-              draggable={false}
-              loading="lazy"
-            />
-            <span className="text-sm font-semibold tabular-nums">{idx0 + 1}</span>
-          </button>
-        );
-      })}
-    </div>
-  ) : (
-    <div className="flex items-center gap-1 rounded-lg px-2 py-1 bg-white/10" title="Pot 1">
-      <img
-        src={getPotIcon(0)}
-        alt="pot-0"
-        className="w-6 h-6 object-contain"
-        draggable={false}
-        loading="lazy"
-      />
-      <span className="text-sm font-semibold tabular-nums">1</span>
-    </div>
-  );
+const talent1Resolved = React.useMemo(
+  () =>
+    computeTalentResolved({
+      talentBlock: talentBlocks?.[0],
+      talentIdx: 0,
+      potRank,
+      vnEntry: vnTalentEntry,
+    }),
+  [talentBlocks, potRank, vnTalentEntry]
+);
 
+const talent2Resolved = React.useMemo(
+  () =>
+    computeTalentResolved({
+      talentBlock: talentBlocks?.[1],
+      talentIdx: 1,
+      potRank,
+      vnEntry: vnTalentEntry,
+    }),
+  [talentBlocks, potRank, vnTalentEntry]
+);
 
-  const renderTalentCard = (talentIdx, resolved, desiredPhase) => {
-    const variants = resolved?.variants || [];
-    if (variants.length === 0) {
+const showTalentHeaderElite = talentHeaderOptions.length > 1;
+
+const talentHeaderElite = showTalentHeaderElite ? (
+  <div className="flex items-center gap-2">
+    {talentHeaderOptions.map((opt, idx) => {
+      const active = idx === talentHeaderOptIdx;
+      const src = `${ELITE_ICON_BASE}elite_${opt.phaseIndex}_large.png`;
       return (
-        <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-          <span className="text-white/40 italic">-</span>
-        </div>
-      );
-    }
-
-    const currentIdx = resolved?.showElite ? pickVariantIndexByPhase(variants, desiredPhase) : 0;
-    const v = variants[Math.min(Math.max(0, currentIdx), variants.length - 1)];
-    const titleName = getTalentTitle(vnTalentEntry, talentIdx) || v?.name || "";
-
-    const eliteButtons =
-      talentIdx === 0 ? null : resolved?.showElite ? (
-      <div className="flex items-center gap-2">
-        {variants.map((it) => {
-          const active = it.phaseIndex === v.phaseIndex;
-          const src = `${ELITE_ICON_BASE}elite_${it.phaseIndex}_large.png`;
-          return (
-            <button
-              key={`talent-${talentIdx}-elite-${it.phaseIndex}`}
-              type="button"
-              onClick={() =>
-                setTalentPhaseByBlock((prev) => ({ ...prev, [talentIdx]: it.phaseIndex }))
-              }
-              className={`rounded-lg p-1.5 transition ${
-                active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-              }`}
-              title={`E${it.phaseIndex}`}
-            >
-              <img
-                src={src}
-                alt={`E${it.phaseIndex}`}
-                className="w-7 h-7 object-contain"
-                draggable={false}
-              />
-            </button>
-          );
-        })}
-      </div>
-    ) : null;
-
-    const hasRange = isNonEmptyString(v?.rangeId);
-
-    return (
-      <div className="rounded-xl border border-white/10 bg-black/20 p-4 space-y-3">
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0 flex-wrap">
-            <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
-              <span className="truncate">{isNonEmptyString(titleName) ? titleName : `Talent ${talentIdx + 1}`}</span>
-            </span>
-
-            {eliteButtons}
-          </div>
-        </div>
-
-        <div className={`flex items-start gap-4 ${hasRange ? "flex-col lg:flex-row" : ""}`}>
-          <div className="min-w-0 flex-1">
-            {isNonEmptyString(v?.text) ? (
-              renderTextWithHovers(v.text, `talent-${charKey || "unknown"}-${talentIdx}-p${v.phaseIndex}-pot${potRank}`)
-            ) : (
-              <span className="text-white/40 italic">-</span>
-            )}
-          </div>
-
-          {hasRange ? (
-            <div className="shrink-0 rounded-xl border border-white/10 bg-black/30 p-3">
-              <div className="text-sm font-semibold text-white text-center mb-2">Phạm vi</div>
-              <RangeGrid rangeId={v.rangeId} />
-            </div>
+        <button
+          key={`talent-header-opt-${opt.phaseIndex}-${opt.level}-${idx}`}
+          type="button"
+          onClick={() => setTalentHeaderOptIdx(idx)}
+          className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
+            active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+          }`}
+          title={opt.showLv ? `E${opt.phaseIndex} Lv${opt.level}` : `E${opt.phaseIndex}`}
+        >
+          <img
+            src={src}
+            alt={`E${opt.phaseIndex}`}
+            className="w-7 h-7 object-contain"
+            draggable={false}
+          />
+          {opt.showLv ? (
+            <span className="text-xs font-semibold tabular-nums">Lv{opt.level}</span>
           ) : null}
-        </div>
+        </button>
+      );
+    })}
+  </div>
+) : null;
+
+const showPotPicker = availablePotRanks.length > 1;
+
+const potPicker = showPotPicker ? (
+  <div className="flex items-center gap-1">
+    {availablePotRanks.map((idx0) => {
+      const active = idx0 === potRank;
+      return (
+        <button
+          key={`pot-${idx0}`}
+          type="button"
+          onClick={() => setPotRank(idx0)}
+          className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
+            active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+          }`}
+          title={`Pot ${idx0 + 1}`}
+        >
+          <img
+            src={getPotIcon(idx0)}
+            alt={`pot-${idx0}`}
+            className="w-6 h-6 object-contain"
+            draggable={false}
+            loading="lazy"
+          />
+          <span className="text-sm font-semibold tabular-nums">{idx0 + 1}</span>
+        </button>
+      );
+    })}
+  </div>
+) : null;
+
+// Hide Talent 2 when it only exists at E2+ and user is viewing E0/E1
+const shouldHideTalent2 =
+  (talent2Resolved?.variants?.length || 0) > 0 &&
+  (talent2Resolved?.minPhaseIndex ?? 0) >= 2 &&
+  Number(activeTalentHeaderOpt?.phaseIndex ?? 0) < (talent2Resolved?.minPhaseIndex ?? 2);
+
+const renderTalentCard = (talentIdx, resolved) => {
+  const variants = resolved?.variants || [];
+  if (variants.length === 0) {
+    return (
+      <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+        <span className="text-white/40 italic">-</span>
       </div>
     );
-  };
+  }
+
+  const v =
+    pickVariantByHeaderOption(variants, activeTalentHeaderOpt) ||
+    variants[variants.length - 1];
+
+  const titleName = getTalentTitle(vnTalentEntry, talentIdx) || v?.name || "";
+  const badgeText = isNonEmptyString(titleName)
+    ? `Talent ${talentIdx + 1}: ${titleName}`
+    : `Talent ${talentIdx + 1}`;
+
+  const hasRange = isNonEmptyString(v?.rangeId);
+
+  return (
+    <div className="rounded-xl border border-white/10 bg-black/20 p-4 space-y-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0 flex-wrap">
+          <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
+            <span className="truncate">{badgeText}</span>
+          </span>
+        </div>
+
+        {hasRange ? (
+          <div className="shrink-0 rounded-xl border border-white/10 bg-black/30 p-3">
+            <div className="text-sm font-semibold text-white text-center mb-2">Phạm vi</div>
+            <RangeGrid rangeId={v.rangeId} />
+          </div>
+        ) : null}
+      </div>
+
+      <div className="min-w-0">
+        {isNonEmptyString(v?.text) ? (
+          renderTextWithHovers(
+            v.text,
+            `talent-${charKey || "unknown"}-${talentIdx}-e${v.phaseIndex}-lv${v.level}-pot${potRank}`
+          )
+        ) : (
+          <span className="text-white/40 italic">-</span>
+        )}
+      </div>
+    </div>
+  );
+};
 
   return (
     <div className="space-y-3">
@@ -861,17 +919,15 @@ React.useEffect(() => {
       </InfoTable>
 
       <InfoTable title="Thiên phú/Talent" titleInline={talentHeaderElite} titleRight={potPicker}>
-        {talentBlocks.length > 0 ? (
-          <div className="space-y-3">
-            {talentBlocks?.[0]
-              ? renderTalentCard(0, talent1Resolved, talentPhaseByBlock?.[0] ?? maxTalentPhase)
-              : null}
-            {talentBlocks?.[1] && talentGlobalPhase >= 2 ? renderTalentCard(1, talent2Resolved, talentPhaseByBlock?.[1] ?? maxTalentPhase) : null}
-          </div>
-        ) : (
-          <span className="text-white/40 italic">-</span>
-        )}
-      </InfoTable>
+  {talentBlocks.length > 0 ? (
+    <div className="space-y-3">
+      {talentBlocks?.[0] ? renderTalentCard(0, talent1Resolved) : null}
+      {!shouldHideTalent2 && talentBlocks?.[1] ? renderTalentCard(1, talent2Resolved) : null}
+    </div>
+  ) : (
+    <span className="text-white/40 italic">-</span>
+  )}
+</InfoTable>
 
       <InfoTable title="Kỹ năng">
         <span className="text-white/40 italic">-</span>
