@@ -1326,12 +1326,12 @@
   "char_285_medic2": {
     "TitleTalent1": "Support Spray 1",
     "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p1": "",
-    "Talent0_p2": "",
-    "Talent0_p3": "",
-    "Talent0_p4": "",
-    "Talent0_p5": ""
+    "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
+    "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>260(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p2": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>320(+120)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p3": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>380(+180)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p4": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>440(+240)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>500(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
   },
   "char_286_cast3": {
     "TitleTalent1": "Tactical Configuration 1",
