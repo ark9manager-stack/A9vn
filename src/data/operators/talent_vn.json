@@ -1061,8 +1061,8 @@
     "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
     "Talent1_2": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
     "Talent1_2_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】 sẽ nhận +6 SP đầu vào.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】 sẽ nhận +8<@ba.talpu>(+2)</> SP đầu vào."
+    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】sẽ nhận +6 SP đầu vào.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】sẽ nhận +8<@ba.talpu>(+2)</> SP đầu vào."
   },
   "char_225_haak": {
     "TitleTalent1": "Drug Cocktail Administration",
@@ -1893,12 +1893,12 @@
     "Talent2_p4": ""
   },
   "char_4026_vulpis": {
-    "TitleTalent1": "Fox Hunt",
-    "TitleTalent2": "Accelerando",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "TitleTalent1": "Truy sát",
+    "TitleTalent2": "Thế trận dâng cao",
+    "Talent1": "Sau khi gây sát thương đầu tiên lên mỗi kẻ địch sẽ đánh dấu chúng trong 10 giây, mỗi lần tấn công kẻ địch bị đánh dấu sẽ gây thêm sát thương phép bằng 20% ATK.",
+    "Talent1_2": "Sau khi gây sát thương đầu tiên lên mỗi kẻ địch sẽ đánh dấu chúng trong 10 giây, mỗi lần tấn công kẻ địch bị đánh dấu sẽ gây thêm sát thương phép bằng 30% ATK.",
+    "Talent2": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 4% HP tối đa mỗi giây.",
+    "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
   "char_4027_heyak": {
     "TitleTalent1": "Inherited End",
