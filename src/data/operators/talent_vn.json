@@ -172,10 +172,10 @@
     "Talent2_p4": ""
   },
   "char_102_texas": {
-    "TitleTalent1": "Tactical Delivery",
+    "TitleTalent1": "Chiến thuật chuyển phát",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Khi có mặt trong đội hình, nhận 1 DP khởi đầu.",
+    "Talent1_2": "Khi có mặt trong đội hình, nhận 2 DP khởi đầu."
   },
   "char_1030_noirc2": {
     "TitleTalent1": "Decisive",
@@ -406,13 +406,13 @@
     "Talent1_2": ""
   },
   "char_112_siege": {
-    "TitleTalent1": "King of Beasts",
-    "TitleTalent2": "Crushing",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Chúa tể muôn loài",
+    "TitleTalent2": "Nghiền Nát",
+    "Talent1": "Tất cả cán viên thuộc【Tiên Phong】nhận +4% ATK và DEF.",
+    "Talent1_p4": "Tất cả cán viên thuộc【Tiên Phong】nhận +6%<@ba.talpu>(+2%)</> ATK và DEF.",
+    "Talent1_2": "Tất cả cán viên thuộc【Tiên Phong】nhận +8% ATK và DEF.",
+    "Talent1_2_p4": "Tất cả cán viên thuộc【Tiên Phong】nhận +10%<@ba.talpu>(+2%)</> ATK và DEF.",
+    "Talent2": "Nhận 1 SP khi có kẻ địch bị hạ gục trong 4 ô xung quanh."
   },
   "char_113_cqbw": {
     "TitleTalent1": "Ambush",
@@ -423,10 +423,10 @@
     "Talent2_p4": ""
   },
   "char_115_headbr": {
-    "TitleTalent1": "Spearheader",
+    "TitleTalent1": "Thủ lĩnh tiên phong",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Phí triển khai -1.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】-1 phí triển khai."
   },
   "char_117_myrrh": {
     "TitleTalent1": "First Aid Kit",
@@ -462,9 +462,9 @@
     "Talent1_lv55": ""
   },
   "char_123_fang": {
-    "TitleTalent1": "Lightweight",
+    "TitleTalent1": "Thân thủ linh hoạt",
     "TitleTalent2": "",
-    "Talent1": ""
+    "Talent1": "Phí triển khai -1."
   },
   "char_124_kroos": {
     "TitleTalent1": "Targeting - Primary",
@@ -625,12 +625,12 @@
     "Talent1_2_p4": ""
   },
   "char_149_scave": {
-    "TitleTalent1": "Lone Wolf",
+    "TitleTalent1": "Sói cô độc",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +5%.",
+    "Talent1_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +7%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +11%.",
+    "Talent1_2_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_1502_crosly": {
     "TitleTalent1": "Swallow Your Suffering",
@@ -854,12 +854,12 @@
     "Talent2_p4": ""
   },
   "char_198_blackd": {
-    "TitleTalent1": "Karlan Patrol",
+    "TitleTalent1": "Tuần cảnh Karlan",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +8%.",
+    "Talent1_p4": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +11%<@ba.talpu>(+3%)</>.",
+    "Talent1_2": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +16%.",
+    "Talent1_2_p4": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +19%<@ba.talpu>(+3%)</>."
   },
   "char_199_yak": {
     "TitleTalent1": "Snowfield Guard",
@@ -1061,8 +1061,8 @@
     "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
     "Talent1_2": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
     "Talent1_2_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】sẽ nhận +6 SP đầu vào.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】sẽ nhận +8<@ba.talpu>(+2)</> SP đầu vào."
+    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】sẽ nhận +6 SP khởi đầu.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
   },
   "char_225_haak": {
     "TitleTalent1": "Drug Cocktail Administration",
@@ -1111,8 +1111,8 @@
   "char_240_wyvern": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "Talent1": "ATK +4%",
+    "Talent1_lv55": "ATK +8%"
   },
   "char_241_panda": {
     "TitleTalent1": "Kung Fu",
@@ -1591,12 +1591,12 @@
     "Talent1_2_p4": ""
   },
   "char_349_chiave": {
-    "TitleTalent1": "Technical Expertise",
+    "TitleTalent1": "Chuyên môn kỹ thuật",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên thuộc【Robot】giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +7% ATK và DEF.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Robot】giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +9%<@ba.talpu>（+2%）</> ATK và DEF.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên thuộc【Robot】giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +11% ATK và DEF.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Robot】giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +13%<@ba.talpu>（+2%）</> ATK và DEF."
   },
   "char_350_surtr": {
     "TitleTalent1": "Molten Flame",
@@ -1633,12 +1633,12 @@
     "Talent2_p4": ""
   },
   "char_362_saga": {
-    "TitleTalent1": "Preaching",
-    "TitleTalent2": "Clear Mind",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "TitleTalent1": "Thuyết Pháp",
+    "TitleTalent2": "Tĩnh Tâm",
+    "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái [[Trọng thương|Wounded]](người hạ gục nhận +1 SP); Saga không tấn công mục tiêu [[Trọng thương|Wounded]].",
+    "Talent1": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái [[Trọng thương|Wounded]](người hạ gục nhận +2 SP); Saga không tấn công mục tiêu [[Trọng thương|Wounded]].",
+    "Talent2": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 5% HP tối đa mỗi giây, kéo dài 15 giây. Hiệu ứng này chỉ kích hoạt một lần.",
+    "Talent2_p4": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 6%<@ba.talpu>(+1%)</> HP tối đa mỗi giây, kéo dài 17<@ba.talpu>(+2)</> giây. Hiệu ứng này chỉ kích hoạt một lần."
   },
   "char_363_toddi": {
     "TitleTalent1": "Fiery Instinct",
@@ -1875,13 +1875,13 @@
     "Talent1_2_p4": ""
   },
   "char_4023_rfalcn": {
-    "TitleTalent1": "Brutal Blows",
-    "TitleTalent2": "A Matter of Habit",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Đòn đánh thô bạo",
+    "TitleTalent2": "Phản xạ nghề nghiệp",
+    "Talent1": "Có 15% xác suất tăng ATK lên 140%.",
+    "Talent1_p4": "Có 17%<@ba.talpu>(+2%)</> xác suất tăng ATK lên 140%.",
+    "Talent1_2": "Có 20% xác suất tăng ATK lên 140%.",
+    "Talent1_2_p4": "Có 22%<@ba.talpu>(+2%)</> xác suất tăng ATK lên 140%.",
+    "Talent2": "Trong chế độ【Tales Within the Sand】(RA mode), mỗi khi kích hoạt kỹ năng, toàn bộ tài nguyên đang mang sẽ được chuyển vào túi đồ."
   },
   "char_4025_aprot2": {
     "TitleTalent1": "Land of Memories",
@@ -1895,8 +1895,8 @@
   "char_4026_vulpis": {
     "TitleTalent1": "Truy sát",
     "TitleTalent2": "Thế trận dâng cao",
-    "Talent1": "Sau khi gây sát thương đầu tiên lên mỗi kẻ địch sẽ đánh dấu chúng trong 10 giây, mỗi lần tấn công kẻ địch bị đánh dấu sẽ gây thêm sát thương phép bằng 20% ATK.",
-    "Talent1_2": "Sau khi gây sát thương đầu tiên lên mỗi kẻ địch sẽ đánh dấu chúng trong 10 giây, mỗi lần tấn công kẻ địch bị đánh dấu sẽ gây thêm sát thương phép bằng 30% ATK.",
+    "Talent1": "Sau khi gây sát thương lần đầu lên kẻ địch, trong 10 giây tiếp theo, mỗi khi Vulpisfoglia gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 20% ATK.",
+    "Talent1_2": "Sau khi gây sát thương lần đầu lên kẻ địch, trong 10 giây tiếp theo, mỗi khi Vulpisfoglia gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 30% ATK.",
     "Talent2": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 4% HP tối đa mỗi giây.",
     "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
@@ -2784,14 +2784,14 @@
     "Talent1_2_p4": ""
   },
   "char_4188_confes": {
-    "TitleTalent1": "Pay-Per-Confession I",
+    "TitleTalent1": "Thanh toán trước, Xưng tội sau·I",
     "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p1": "",
-    "Talent0_p2": "",
-    "Talent0_p3": "",
-    "Talent0_p4": "",
-    "Talent0_p5": ""
+    "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 5 giây.",
+    "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
+    "Talent0_p2": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
+    "Talent0_p3": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 7<@ba.talpu>(+2)</> giây.",
+    "Talent0_p4": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 7<@ba.talpu>(+2)</> giây.",
+    "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
   },
   "char_4191_tippi": {
     "TitleTalent1": "Film Set Operational Manual",
@@ -2896,12 +2896,12 @@
     "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này."
   },
   "char_420_flamtl": {
-    "TitleTalent1": "Vanguard Swordsmanship",
-    "TitleTalent2": "Pinus Sylvestris Leader",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "TitleTalent1": "Kiếm thuật tiên phong",
+    "TitleTalent2": "Thủ lĩnh Pinus Sylvestris",
+    "Talent1": "Mỗi khi né đòn, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp.",
+    "Talent1_2": "Mỗi khi né đòn, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp lên toàn bộ kẻ địch đang bị chặn.",
+    "Talent2": "Khi có mặt trên sân, tất cả cán viên thuộc【Kazimierz】nhận 22% tỷ lệ né sát thương vật lý.",
+    "Talent2_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Kazimierz】nhận 25%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
   "char_4211_snhunt": {
     "TitleTalent1": "",
@@ -3241,12 +3241,12 @@
     "Talent1_2_p4": ""
   },
   "char_488_buildr": {
-    "TitleTalent1": "Demolition Team's Code",
+    "TitleTalent1": "Quy tắc của đội phá dỡ",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Sau khi được triển khai được 30 giây, HP tối đa +8%.",
+    "Talent1_p4": "Sau khi được triển khai được 30 giây, HP tối đa +11%<@ba.talpu>(+3%)</>.",
+    "Talent1_2": "Sau khi được triển khai được 30 giây, HP tối đa +15%.",
+    "Talent1_2_p4": "Sau khi được triển khai được 30 giây, HP tối đa +18%<@ba.talpu>(+3%)</>."
   },
   "char_489_serum": {
     "TitleTalent1": "Tactical Readjustment",
@@ -3327,9 +3327,9 @@
     "Talent0_lv30": ""
   },
   "char_502_nblade": {
-    "TitleTalent1": "Fast Redeployment",
+    "TitleTalent1": "Tái triển khai siêu tốc",
     "TitleTalent2": "",
-    "Talent0_lv30": ""
+    "Talent0_lv30": "Giảm 30 giây thời gian tái triển khai."
   },
   "char_503_rang": {
     "TitleTalent1": "Anti-Air Master",
@@ -3384,10 +3384,10 @@
     "Talent1_2": ""
   },
   "char_513_apionr": {
-    "TitleTalent1": "Boundless Heart",
+    "TitleTalent1": "Tâm vô tận",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,6/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
+    "Talent1_2": "Sau khi triển khai, tốc độ hồi SP tự nhiên +1/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2."
   },
   "char_514_rdfend": {
     "TitleTalent1": "",
@@ -3396,8 +3396,8 @@
   "char_600_cpione": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK +4%",
+    "Talent1_2": "ATK +8%"
   },
   "char_601_cguard": {
     "TitleTalent1": "Tăng ATK",
@@ -3442,12 +3442,12 @@
     "Talent1_2": ""
   },
   "char_608_acpion": {
-    "TitleTalent1": "Boundless Heart",
-    "TitleTalent2": "Heart of the Tides",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": ""
+    "TitleTalent1": "Tâm vô tận",
+    "TitleTalent2": "Tâm sóng triều",
+    "Talent0": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,3/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
+    "Talent1": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,4/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
+    "Talent1_2": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,6/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
+    "Talent2": "ATK +10%, nhận thêm 1 DP mỗi khi hạ gục kẻ địch."
   },
   "char_609_acguad": {
     "TitleTalent1": "Invisible Blade",

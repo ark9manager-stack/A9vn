@@ -110,7 +110,7 @@ export const CLASS_LABELS_I18N = {
     SPECIAL: "Specialist",
   },
   VN: {
-    PIONEER: "Tiền tuyến",
+    PIONEER: "Tiên phong",
     WARRIOR: "Cận vệ",
     TANK: "Phòng ngự",
     SNIPER: "Bắn tỉa",
@@ -123,10 +123,10 @@ export const CLASS_LABELS_I18N = {
 
 export const SUBPROF_LABELS_VN_OVERRIDES = {
   agent: "Đặc vụ",
-  bearer: "Quân Kỳ",
+  bearer: "Cờ hiệu",
   charger: "Xung kích",
   counsellor: "Chiến lược gia",
-  pioneer: "Tiên phong",
+  pioneer: "Tiền tuyến",
   tactician: "Chiến thuật gia",
   artsfghter: "Arts Fighter",
   centurion: "Cường kích",

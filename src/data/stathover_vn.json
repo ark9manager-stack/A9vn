@@ -50,5 +50,13 @@
   "Invisible": {
     "title": "Tàng hình/Invisible",
     "text": "Khi không bị chặn sẽ không bị chọn làm mục tiêu tấn công.\nĐối với kẻ địch sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\nHiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\nHiệu ứng này khác với Ngụy trang/Camouflage."
+  },
+  "Wounded": {
+    "title": "Trọng thương/Critically Wounded",
+    "text": "Giảm 80% tốc độ di chuyển và không thể bị chặn, sau 10 giây sẽ tự chết. Người hạ gục kẻ đang dính hiệu ứng này sẽ hồi SP."
+  },
+  "Sleep": {
+    "title": "Ngủ/Sleep",
+    "text": "Trở nên bất tử và không thể thực hiện bất kỳ hành động nào. Đồng thời cũng không thể chặn hoặc bị chặn."
   }
 }
