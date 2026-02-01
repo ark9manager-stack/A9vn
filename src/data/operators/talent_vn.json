@@ -1327,11 +1327,11 @@
     "TitleTalent1": "Support Spray 1",
     "TitleTalent2": "",
     "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
-    "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>260(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p2": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>320(+120)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p3": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>380(+180)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p4": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>440(+240)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi <@ba.talpu>500(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
+    "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p2": "Ngay sau khi triển khai, lập tức hồi 320<@ba.talpu>(+120)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p3": "Ngay sau khi triển khai, lập tức hồi 380<@ba.talpu>(+180)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p4": "Ngay sau khi triển khai, lập tức hồi 440<@ba.talpu>(+240)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
+    "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi 500<@ba.talpu>(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
   },
   "char_286_cast3": {
     "TitleTalent1": "Tactical Configuration 1",
@@ -1852,12 +1852,12 @@
     "Talent1_2_p4": ""
   },
   "char_4017_puzzle": {
-    "TitleTalent1": "Sequence",
+    "TitleTalent1": "Trình Tự",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 110% và hồi thêm 1 SP.",
+    "Talent1_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 115%<@ba.talpu>（+5%）</> và hồi thêm 1 SP.",
+    "Talent1_2": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 120% và hồi thêm 1 SP.",
+    "Talent1_2_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 125%<@ba.talpu>（+5%）</> và hồi thêm 2 SP."
   },
   "char_4019_ncdeer": {
     "TitleTalent1": "Ethereal Iridescent Clouds",
@@ -2890,10 +2890,10 @@
   "char_4208_wintim": {
     "TitleTalent1": "",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ASPD +5，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
+    "Talent1_p4": "ASPD +7<@ba.talpu>（+2）</>，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
+    "Talent1_2": "ASPD +10，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
+    "Talent1_2_p4": "ASPD +12<@ba.talpu>（+2）</>，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này."
   },
   "char_420_flamtl": {
     "TitleTalent1": "Vanguard Swordsmanship",
@@ -3295,12 +3295,12 @@
     "Talent1_2": ""
   },
   "char_497_ctable": {
-    "TitleTalent1": "Protean",
+    "TitleTalent1": "Linh Hoạt",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ASPD +6 khi không chặn kẻ địch, ATK +6% khi đang chặn kẻ địch.",
+    "Talent1_p4": "ASPD +8<@ba.talpu>（+2）</> khi không chặn kẻ địch, ATK +8%<@ba.talpu>（+2%）</> khi đang chặn kẻ địch.",
+    "Talent1_2": "ASPD +12 khi không chặn kẻ địch, ATK +12% khi đang chặn kẻ địch.",
+    "Talent1_2_p4": "ASPD +14<@ba.talpu>（+2）</> khi không chặn kẻ địch, ATK +14%<@ba.talpu>（+2%）</> khi đang chặn kẻ địch."
   },
   "char_498_inside": {
     "TitleTalent1": "Fire Support",

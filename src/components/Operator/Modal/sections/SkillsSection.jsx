@@ -850,31 +850,36 @@ const renderTalentCard = (talentIdx, resolved) => {
   const hasRange = isNonEmptyString(v?.rangeId);
 
   return (
-    <div className="rounded-xl border border-white/10 bg-black/20 p-4 space-y-3">
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0 flex-wrap">
-          <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
-            <span className="truncate">{badgeText}</span>
-          </span>
+    <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+      <div className="flex items-start gap-3">
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
+              <span className="truncate">{badgeText}</span>
+            </span>
+          </div>
+
+          <div
+            className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+            style={{ overflowWrap: "anywhere" }}
+          >
+            {isNonEmptyString(v?.text) ? (
+              renderTextWithHovers(
+                v.text,
+                `talent-${charKey || "unknown"}-${talentIdx}-e${v.phaseIndex}-lv${v.level}-pot${potRank}`
+              )
+            ) : (
+              <span className="text-white/40 italic">-</span>
+            )}
+          </div>
         </div>
 
         {hasRange ? (
-          <div className="shrink-0 rounded-xl border border-white/10 bg-black/30 p-3">
+          <div className="shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
             <div className="text-sm font-semibold text-white text-center mb-2">Phạm vi</div>
             <RangeGrid rangeId={v.rangeId} />
           </div>
         ) : null}
-      </div>
-
-      <div className="min-w-0">
-        {isNonEmptyString(v?.text) ? (
-          renderTextWithHovers(
-            v.text,
-            `talent-${charKey || "unknown"}-${talentIdx}-e${v.phaseIndex}-lv${v.level}-pot${potRank}`
-          )
-        ) : (
-          <span className="text-white/40 italic">-</span>
-        )}
       </div>
     </div>
   );
