@@ -2020,12 +2020,12 @@
     "Talent1_2_p4": ""
   },
   "char_4052_surfer": {
-    "TitleTalent1": "Solo Traveler",
+    "TitleTalent1": "Lữ hành đơn độc",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 1 DP.",
+    "Talent1_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 2<@ba.talpu>（+1）</> DP.",
+    "Talent1_2": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 2 DP.",
+    "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 3<@ba.talpu>（+1）</> DP."
   },
   "char_4054_malist": {
     "TitleTalent1": "Flash of Insight",
@@ -2208,13 +2208,13 @@
     "Talent1_2_p4": ""
   },
   "char_4087_ines": {
-    "TitleTalent1": "Shadow Weaver",
-    "TitleTalent2": "Shadow Sentry",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Ảnh Chức",
+    "TitleTalent2": "Ảnh Vệ",
+    "Talent1": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 3 giây và [[Cướp|Steal]] 50 ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
+    "Talent1_p4": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 3 giây và [[Cướp|Steal]] 60<@ba.talpu>(+10)</> ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
+    "Talent1_2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 5 giây và [[Cướp|Steal]] 90 ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
+    "Talent1_2_p4": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 5 giây và [[Cướp|Steal]] 100<@ba.talpu>(+10)</> ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
+    "Talent2": "Kẻ địch trong phạm vi tấn công bị vô hiệu hoá [[Tàng hình|Invisible]] và giảm 30% tốc độ di chuyển. Sau khi rút lui, Ines để lại một 'Ảnh Vệ' với cùng hiệu ứng trên (tối đa 1)."
   },
   "char_4088_hodrer": {
     "TitleTalent1": "Do or Die",
@@ -2532,12 +2532,12 @@
     "Talent1_2": ""
   },
   "char_4144_chilc": {
-    "TitleTalent1": "Keen Senses",
+    "TitleTalent1": "Giác quan nhạy bén",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 35 giây.",
+    "Talent1_p4": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 40<@ba.talpu>(+5)</> giây.",
+    "Talent1_2": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 45 giây.",
+    "Talent1_2_p4": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 50<@ba.talpu>(+5)</> giây."
   },
   "char_4145_ulpia": {
     "TitleTalent1": "Natural Holdfast",
