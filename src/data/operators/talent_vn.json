@@ -1855,9 +1855,9 @@
     "TitleTalent1": "Trình Tự",
     "TitleTalent2": "",
     "Talent1": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 110% và hồi thêm 1 SP.",
-    "Talent1_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 115%<@ba.talpu>（+5%）</> và hồi thêm 1 SP.",
+    "Talent1_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 115%<@ba.talpu>(+5%)</> và hồi thêm 1 SP.",
     "Talent1_2": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 120% và hồi thêm 1 SP.",
-    "Talent1_2_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 125%<@ba.talpu>（+5%）</> và hồi thêm 2 SP."
+    "Talent1_2_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 125%<@ba.talpu>(+5%)</> và hồi thêm 2 SP."
   },
   "char_4019_ncdeer": {
     "TitleTalent1": "Ethereal Iridescent Clouds",
@@ -2023,9 +2023,9 @@
     "TitleTalent1": "Lữ hành đơn độc",
     "TitleTalent2": "",
     "Talent1": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 1 DP.",
-    "Talent1_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 2<@ba.talpu>（+1）</> DP.",
+    "Talent1_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 2<@ba.talpu>(+1)</> DP.",
     "Talent1_2": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 2 DP.",
-    "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 3<@ba.talpu>（+1）</> DP."
+    "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 3<@ba.talpu>(+1)</> DP."
   },
   "char_4054_malist": {
     "TitleTalent1": "Flash of Insight",
@@ -2890,10 +2890,10 @@
   "char_4208_wintim": {
     "TitleTalent1": "",
     "TitleTalent2": "",
-    "Talent1": "ASPD +5，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
-    "Talent1_p4": "ASPD +7<@ba.talpu>（+2）</>，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
-    "Talent1_2": "ASPD +10，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
-    "Talent1_2_p4": "ASPD +12<@ba.talpu>（+2）</>，sau khi bản thân chịu sát thương sẽ mất hiệu ứng này."
+    "Talent1": "ASPD +5, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
+    "Talent1_p4": "ASPD +7<@ba.talpu>(+2)</>, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
+    "Talent1_2": "ASPD +10, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
+    "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này."
   },
   "char_420_flamtl": {
     "TitleTalent1": "Vanguard Swordsmanship",
@@ -3298,9 +3298,9 @@
     "TitleTalent1": "Linh Hoạt",
     "TitleTalent2": "",
     "Talent1": "ASPD +6 khi không chặn kẻ địch, ATK +6% khi đang chặn kẻ địch.",
-    "Talent1_p4": "ASPD +8<@ba.talpu>（+2）</> khi không chặn kẻ địch, ATK +8%<@ba.talpu>（+2%）</> khi đang chặn kẻ địch.",
+    "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +8%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch.",
     "Talent1_2": "ASPD +12 khi không chặn kẻ địch, ATK +12% khi đang chặn kẻ địch.",
-    "Talent1_2_p4": "ASPD +14<@ba.talpu>（+2）</> khi không chặn kẻ địch, ATK +14%<@ba.talpu>（+2%）</> khi đang chặn kẻ địch."
+    "Talent1_2_p4": "ASPD +14<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +14%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch."
   },
   "char_498_inside": {
     "TitleTalent1": "Fire Support",
