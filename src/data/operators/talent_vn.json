@@ -237,10 +237,10 @@
     "Talent2": ""
   },
   "char_1036_fang2": {
-    "TitleTalent1": "Lightweight Gambit",
+    "TitleTalent1": "Nước cờ linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Phí triển khai ban đầu -2; Sau khi rút lui, cán viên tiếp theo sẽ -1 phí triển khai.",
+    "Talent1_2": "Phí triển khai ban đầu -3; Sau khi rút lui, cán viên tiếp theo sẽ -1 phí triển khai."
   },
   "char_1038_whitw2": {
     "TitleTalent1": "Alpha Wolf",
@@ -456,7 +456,7 @@
     "Talent1_lv55_p4": ""
   },
   "char_122_beagle": {
-    "TitleTalent1": "DEF Up",
+    "TitleTalent1": "Tăng DEF",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
@@ -813,10 +813,10 @@
     "Talent1_2": ""
   },
   "char_192_falco": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "Talent1": "ATK +4%",
+    "Talent1_lv55": "ATK +8%"
   },
   "char_193_frostl": {
     "TitleTalent1": "Covered Strike",
@@ -976,7 +976,7 @@
     "Talent2": ""
   },
   "char_208_melan": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
@@ -1047,22 +1047,22 @@
     "Talent1_2": ""
   },
   "char_220_grani": {
-    "TitleTalent1": "Mounted Police",
+    "TitleTalent1": "Cảnh sát kỵ binh",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiền tuyến】nhận 10% tỷ lệ né sát thương vật lý.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiền tuyến】nhận 15%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiền tuyến】nhận 20% tỷ lệ né sát thương vật lý.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiền tuyến】nhận 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý."
   },
   "char_222_bpipe": {
-    "TitleTalent1": "Precise Reloading",
-    "TitleTalent2": "Martial Tradition",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "TitleTalent1": "Tiếp đạn tinh vi",
+    "TitleTalent2": "Truyền thống quân đội",
+    "Talent1": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
+    "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
+    "Talent1_2": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
+    "Talent1_2_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
+    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】 sẽ nhận +6 SP đầu vào.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiền tuyến】 sẽ nhận +8<@ba.talpu>(+2)</> SP đầu vào."
   },
   "char_225_haak": {
     "TitleTalent1": "Drug Cocktail Administration",
@@ -1109,7 +1109,7 @@
     "Talent1_2_p4": ""
   },
   "char_240_wyvern": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
@@ -1212,10 +1212,10 @@
     "Talent1_2": ""
   },
   "char_261_sddrag": {
-    "TitleTalent1": "Blighted Blood",
+    "TitleTalent1": "Huyết mạch lụi tàn",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "RES +10",
+    "Talent1_2": "RES +20"
   },
   "char_263_skadi": {
     "TitleTalent1": "Abyssal Predator",
@@ -1350,12 +1350,12 @@
     "Talent1_2_p4": ""
   },
   "char_290_vigna": {
-    "TitleTalent1": "Fierce Stabbing",
+    "TitleTalent1": "Nhát đâm chí mạng",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 50%. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
+    "Talent1_p4": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 60%<@ba.talpu>(+10%)</>. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
+    "Talent1_2": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 100%. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
+    "Talent1_2_p4": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 110%<@ba.talpu>(+10%)</>. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng."
   },
   "char_291_aglina": {
     "TitleTalent1": "Accelerator Field",
@@ -3289,10 +3289,10 @@
     "Talent1_2_p4": ""
   },
   "char_496_wildmn": {
-    "TitleTalent1": "Forward March",
+    "TitleTalent1": "Đồng lòng tiến quân",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên thuộc【Cận Vệ】chưa triển khai sẽ -1 phí triển khai.",
+    "Talent1_2": "Sau khi được triển khai, tất cả cán viên thuộc【Cận Vệ】chưa triển khai sẽ -1 phí triển khai (mỗi cán viên được giảm tối đa -5 phí triển khai trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
     "TitleTalent1": "Linh Hoạt",
@@ -3394,25 +3394,25 @@
     "TitleTalent2": ""
   },
   "char_600_cpione": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_601_cguard": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_602_cdfend": {
-    "TitleTalent1": "DEF Up",
+    "TitleTalent1": "Tăng DEF",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_603_csnipe": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -3424,7 +3424,7 @@
     "Talent1_2": ""
   },
   "char_605_cmedic": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -3436,7 +3436,7 @@
     "Talent1_2": ""
   },
   "char_607_cspec": {
-    "TitleTalent1": "ATK Up",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
