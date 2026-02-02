@@ -17,11 +17,11 @@
   },
   "Inspiration": {
     "title": "Khích lệ/Inspiration",
-    "text": "Tăng chỉ số cơ bản (Chỉ áp dụng mức cao nhất của mỗi loại). \n- Người có buff【Khích lệ】sẽ lấy % chỉ số của bản thân tính ra chỉ số cố định rồi mới chuyển cho người nhận. \n- Nhiều nguồn【Khích lệ】sẽ chỉ lấy mức cao nhất của mỗi loại (ATK, HP, DEF) chứ không cộng dồn. \nVí dụ: Nếu có 2 nguồn【Khích lệ】đang buff cho 1 người gồm có 60% ATK và DEF | 100% ATK thì sẽ nhận 100% ATK và 60% DEF."
+    "text": "Tăng chỉ số cơ bản (Chỉ áp dụng mức cao nhất của mỗi loại). \n• Người có buff【Khích lệ】sẽ lấy % chỉ số của bản thân tính ra chỉ số cố định rồi mới chuyển cho người nhận. \n• Nhiều nguồn【Khích lệ】sẽ chỉ lấy mức cao nhất của mỗi loại (ATK, HP, DEF) chứ không cộng dồn. \n• Ví dụ: Nếu có 2 nguồn【Khích lệ】đang buff cho 1 người gồm có 60% ATK và DEF | 100% ATK thì sẽ nhận 100% ATK và 60% DEF."
   },
   "EleInjury": {
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
-    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n - Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n- Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ kích hoạt thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
+    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ kích hoạt thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
   },
   "DP": {
     "title": "Điểm triển khai/Deployment Point",
@@ -49,7 +49,7 @@
   },
   "Invisible": {
     "title": "Tàng hình/Invisible",
-    "text": "Khi không bị chặn sẽ không bị chọn làm mục tiêu tấn công.\nĐối với kẻ địch sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\nHiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\nHiệu ứng này khác với Ngụy trang/Camouflage."
+    "text": "Khi không bị chặn sẽ không bị chọn làm mục tiêu tấn công.\n• Đối với kẻ địch sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Ngụy trang/Camouflage."
   },
   "Wounded": {
     "title": "Trọng thương/Critically Wounded",
@@ -58,5 +58,13 @@
   "Sleep": {
     "title": "Ngủ/Sleep",
     "text": "Trở nên bất tử và không thể thực hiện bất kỳ hành động nào. Đồng thời cũng không thể chặn hoặc bị chặn."
+  },
+  "Cold": {
+    "title": "Lạnh/Cold",
+    "text": "Giảm 30 ASPD, nếu hiệu ứng này cộng dồn 2 lần thì sẽ trở thành【Đóng băng】.\n• Đối với các đơn vị miễn nhiễm【Đóng băng】thì không cộng dồn hiệu ứng【Lạnh】nữa."
+  },
+  "Frozen": {
+    "title": "Đóng băng/Frozen",
+    "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng(kích hoạt thông qua【Lạnh】). Đồng thời giảm 15 RES khi bị【Đóng băng】."
   }
 }
