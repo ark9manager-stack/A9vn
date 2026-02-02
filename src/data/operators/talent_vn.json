@@ -2838,13 +2838,12 @@
     "Talent1_2_p4": ""
   },
   "char_4199_makiri": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Chậm mà chắc",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Sau khi triển khai được 30 giây, tăng 5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_p4": "Sau khi triển khai được 30 giây, tăng 7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2": "Sau khi triển khai được 30 giây, tăng 10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2_p4": "Sau khi triển khai được 30 giây, tăng 12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
     "TitleTalent1": "",
