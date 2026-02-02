@@ -201,6 +201,27 @@ function applyBlackboard(text, bbMap) {
   });
 }
 
+
+function getVisibleTalentCandidates(block) {
+  const cands = block?.candidates;
+  if (!Array.isArray(cands)) return [];
+
+  return cands.filter((c) => {
+    if (!c) return false;
+    if (c.isHideTalent === true) return false;
+
+    const hasName = typeof c.name === "string" && c.name.trim().length > 0;
+    const hasDesc = typeof c.description === "string" && c.description.trim().length > 0;
+
+    // Some placeholder candidates are fully empty (name null, description ""), treat as hidden.
+    return hasName || hasDesc;
+  });
+}
+
+function isValidTalentBlock(block) {
+  return getVisibleTalentCandidates(block).length > 0;
+}
+
 function getTalentVnEntry(charKey) {
   if (!isNonEmptyString(charKey)) return null;
   return talentVN?.[charKey] || null;
@@ -309,7 +330,7 @@ function pickBestCandidateByPot(candidates, potRank) {
 }
 
 function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
-  const raw = talentBlock?.candidates;
+  const raw = getVisibleTalentCandidates(talentBlock);
   if (!Array.isArray(raw) || raw.length === 0) return { variants: [], minPhaseIndex: 0 };
 
   const grouped = groupCandidatesByPhaseLevel(raw);
@@ -363,8 +384,8 @@ function collectTalentHeaderOptions(talentBlocks) {
   if (!Array.isArray(talentBlocks)) return [];
 
   for (const tb of talentBlocks) {
-    const cands = tb?.candidates;
-    if (!Array.isArray(cands)) continue;
+    const cands = getVisibleTalentCandidates(tb);
+    if (!Array.isArray(cands) || cands.length === 0) continue;
 
     for (const c of cands) {
       const p = phaseToIndex(c?.unlockCondition?.phase);
@@ -696,15 +717,17 @@ export default function SkillsSection(props) {
 const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
 const talentBlocks = React.useMemo(() => {
   const raw = charData?.talents;
-  return Array.isArray(raw) ? raw : [];
+  if (!Array.isArray(raw)) return [];
+  // Filter out hidden/placeholder talent blocks (e.g. isHideTalent=true with empty name/description)
+  return raw.filter(isValidTalentBlock);
 }, [charData]);
 
 // Potential ranks that actually exist in this operator's talent candidates
 const availablePotRanks = React.useMemo(() => {
   const set = new Set([0]); // Pot 1 always
   for (const tb of talentBlocks) {
-    const cands = tb?.candidates;
-    if (!Array.isArray(cands)) continue;
+    const cands = getVisibleTalentCandidates(tb);
+    if (!Array.isArray(cands) || cands.length === 0) continue;
     for (const c of cands) {
       const r = Number(c?.requiredPotentialRank || 0);
       if (Number.isFinite(r)) set.add(r);
