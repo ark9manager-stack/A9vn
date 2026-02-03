@@ -1,6 +1,6 @@
 {
   "char_002_amiya": {
-    "TitleTalent1": "Đồng hóa cảm xúc",
+    "TitleTalent1": "Emotional Absorption",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1_2": "",
@@ -8,7 +8,7 @@
   },
   "char_003_kalts": {
     "TitleTalent1": "Mon3tr",
-    "TitleTalent2": "Tái Cấu Trúc Bất Hoại",
+    "TitleTalent2": "Non-Damaging Restructuring",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -16,21 +16,21 @@
     "Talent2_p4": ""
   },
   "char_009_12fce": {
-    "TitleTalent1": "Linh Hoạt Né Tránh",
+    "TitleTalent1": "Dodge Rate Up",
     "TitleTalent2": "",
     "Talent0_lv30": ""
   },
   "char_010_chen": {
-    "TitleTalent1": "Răn Đe",
-    "TitleTalent2": "Đao Thuật Cận Chiến",
+    "TitleTalent1": "Scolding",
+    "TitleTalent2": "Blade Art",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_017_huang": {
-    "TitleTalent1": "Kích Tâm Cấp Cứu",
-    "TitleTalent2": "Huấn Luyện Khắc Nghiệt",
+    "TitleTalent1": "Emergency Defibrillation",
+    "TitleTalent2": "Harsh Training",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -39,7 +39,7 @@
     "Talent2_p4": ""
   },
   "char_1011_lava2": {
-    "TitleTalent1": "Trận Pháp Chú Thuật",
+    "TitleTalent1": "Spell Formation",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -47,16 +47,16 @@
     "Talent1_2_p4": ""
   },
   "char_1012_skadi2": {
-    "TitleTalent1": "Huyết Mạch Viễn Cổ",
-    "TitleTalent2": "Tập Tính Săn Mồi",
+    "TitleTalent1": "Ancient Kin",
+    "TitleTalent2": "Predatory Habits",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1013_chen2": {
-    "TitleTalent1": "Lối Sống Tiết Kiệm",
-    "TitleTalent2": "Dư Âm Ngày Nghỉ",
+    "TitleTalent1": "Frugality",
+    "TitleTalent2": "Vestiges of Vacation",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -64,24 +64,24 @@
     "Talent2": ""
   },
   "char_1014_nearl2": {
-    "TitleTalent1": "Nghịch Hành Trong Bóng Tối",
-    "TitleTalent2": "Phá Hiểu",
+    "TitleTalent1": "Brave the Darkness",
+    "TitleTalent2": "Daybreak",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1016_agoat2": {
-    "TitleTalent1": "Làn Sương Lan Tỏa",
-    "TitleTalent2": "Liệu Pháp Tro Núi Lửa",
+    "TitleTalent1": "Replenishing Mist",
+    "TitleTalent2": "Volcanic Ash Remedy",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1019_siege2": {
-    "TitleTalent1": "Vương Quyền Bi Thán",
-    "TitleTalent2": "Lưỡi Kiếm Tuốt Vỏ",
+    "TitleTalent1": "The Kings' Sighs",
+    "TitleTalent2": "Unsheathed Sword",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -96,8 +96,8 @@
     "Talent1_2": ""
   },
   "char_1020_reed2": {
-    "TitleTalent1": "Tàn Tích Thiêu Đốt",
-    "TitleTalent2": "Ánh Dương Phản Chiếu",
+    "TitleTalent1": "Cinder",
+    "TitleTalent2": "Reflected Shine",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -106,7 +106,7 @@
     "Talent2_p5": ""
   },
   "char_1021_kroos2": {
-    "TitleTalent1": "Trúng Hồng Tâm",
+    "TitleTalent1": "Bullseye",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -114,7 +114,7 @@
     "Talent1_2_p4": ""
   },
   "char_1022_flwr2": {
-    "TitleTalent1": "Cỏ Xạ Hương",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -122,8 +122,8 @@
     "Talent1_2_p4": ""
   },
   "char_1023_ghost2": {
-    "TitleTalent1": "Chấp Nhận Bản Ngã",
-    "TitleTalent2": "Vực Thẳm Của Ægir",
+    "TitleTalent1": "Embraced Self",
+    "TitleTalent2": "Ægir's Depths",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -131,7 +131,7 @@
     "Talent2_p4": ""
   },
   "char_1024_hbisc2": {
-    "TitleTalent1": "Sáng Nở Tối Tàn",
+    "TitleTalent1": "Dusk and Dawn",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -139,8 +139,8 @@
     "Talent1_2_p4": ""
   },
   "char_1026_gvial2": {
-    "TitleTalent1": "Rìu Chiến",
-    "TitleTalent2": "Nền Tảng Y Khoa",
+    "TitleTalent1": "Battleaxe",
+    "TitleTalent2": "Medical Background",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -149,22 +149,22 @@
     "Talent2_p4": ""
   },
   "char_1027_greyy2": {
-    "TitleTalent1": "Xiềng Xích Đoạt Quang",
+    "TitleTalent1": "Light-Stealing Chain",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_1028_texas2": {
-    "TitleTalent1": "Truyền Thống Texas",
-    "TitleTalent2": "Kiếm thuật Texas",
+    "TitleTalent1": "Texas Tradition",
+    "TitleTalent2": "Texas Swordsmanship",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1029_yato2": {
-    "TitleTalent1": "Song Lôi Kiếm Kirin",
-    "TitleTalent2": "Trạng thái Quỷ nhân hóa",
+    "TitleTalent1": "Kirin Bolts",
+    "TitleTalent2": "Archdemon Mode",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -172,14 +172,14 @@
     "Talent2_p4": ""
   },
   "char_102_texas": {
-    "TitleTalent1": "Giao hàng chiến thuật",
+    "TitleTalent1": "Chiến thuật chuyển phát",
     "TitleTalent2": "",
     "Talent1": "Khi có mặt trong đội hình, nhận 1 DP khởi đầu.",
     "Talent1_2": "Khi có mặt trong đội hình, nhận 2 DP khởi đầu."
   },
   "char_1030_noirc2": {
-    "TitleTalent1": "Ngoan cường",
-    "TitleTalent2": "Luyện khí",
+    "TitleTalent1": "Decisive",
+    "TitleTalent2": "Spirit",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -188,16 +188,16 @@
     "Talent2_2": ""
   },
   "char_1031_slent2": {
-    "TitleTalent1": "Trụ cột thầm lặng",
-    "TitleTalent2": "Đôi cánh trù phú",
+    "TitleTalent1": "Silent Sentinel",
+    "TitleTalent2": "Plumes of Plenty",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1032_excu2": {
-    "TitleTalent1": "Người được chọn",
-    "TitleTalent2": "Thấu cảm đạn súng",
+    "TitleTalent1": "The Chosen One",
+    "TitleTalent2": "Empathy by Shotgun",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -205,8 +205,8 @@
     "Talent2": ""
   },
   "char_1033_swire2": {
-    "TitleTalent1": "Đại gia mua sắm",
-    "TitleTalent2": "Phá tài tiêu tai",
+    "TitleTalent1": "Big Spendthrift",
+    "TitleTalent2": "Cash Claps Calamity",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -216,8 +216,8 @@
     "Talent2_p2": ""
   },
   "char_1034_jesca2": {
-    "TitleTalent1": "Thích ứng linh hoạt",
-    "TitleTalent2": "Tích năng giải phóng",
+    "TitleTalent1": "Adaptable",
+    "TitleTalent2": "Charge and Release",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -228,8 +228,8 @@
     "Talent2_p4": ""
   },
   "char_1035_wisdel": {
-    "TitleTalent1": "Quà lưu niệm",
-    "TitleTalent2": "Hơi Thở Của Vong Linh (Revenant's Echo)",
+    "TitleTalent1": "Souvenir",
+    "TitleTalent2": "Revenant's Echo",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -237,14 +237,14 @@
     "Talent2": ""
   },
   "char_1036_fang2": {
-    "TitleTalent1": "Khinh Trang Thượng Trận (Lightweight Gambit)",
+    "TitleTalent1": "Nước cờ linh hoạt",
     "TitleTalent2": "",
     "Talent1": "Giảm 2 phí triển khai ban đầu; Sau khi rút lui, cán viên tiếp theo sẽ giảm 1 phí triển khai.",
     "Talent1_2": "Giảm 3 phí triển khai ban đầu; Sau khi rút lui, cán viên tiếp theo sẽ giảm 1 phí triển khai."
   },
   "char_1038_whitw2": {
-    "TitleTalent1": "Sói Đầu Đàn (Alpha Wolf)",
-    "TitleTalent2": "Vinh Quang Siracusa (Honor of Siracusa)",
+    "TitleTalent1": "Alpha Wolf",
+    "TitleTalent2": "Honor of Siracusa",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -255,8 +255,8 @@
     "Talent4": ""
   },
   "char_1039_thorn2": {
-    "TitleTalent1": "Tâm Hình (La Forma del Corazón)",
-    "TitleTalent2": "Tầm Nhìn (El Alcance de la Visión)",
+    "TitleTalent1": "La Forma del Corazón",
+    "TitleTalent2": "El Alcance de la Visión",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -266,8 +266,8 @@
     "Talent2": ""
   },
   "char_103_angel": {
-    "TitleTalent1": "Băng Đạn Nhanh (Fast Cartridge)",
-    "TitleTalent2": "Lời Chúc Của Thiên Thần (Angel's Blessings)",
+    "TitleTalent1": "Fast Cartridge",
+    "TitleTalent2": "Angel's Blessings",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -276,8 +276,8 @@
     "Talent2_p5": ""
   },
   "char_1040_blaze2": {
-    "TitleTalent1": "Điểm Tan Chảy (Meltdown)",
-    "TitleTalent2": "Tro Tàn Tái Sinh (From the Ashes)",
+    "TitleTalent1": "Meltdown",
+    "TitleTalent2": "From the Ashes",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -288,8 +288,8 @@
     "Talent4": ""
   },
   "char_1041_angel2": {
-    "TitleTalent1": "Đài Phát Thanh Hỏa Lực (Firepower FM)",
-    "TitleTalent2": "Hiệp Ước Súng Đạn (Covenant of Bullets)",
+    "TitleTalent1": "Firepower FM",
+    "TitleTalent2": "Covenant of Bullets",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -300,8 +300,8 @@
     "Talent4": ""
   },
   "char_1042_phatm2": {
-    "TitleTalent1": "Tâm Trí Vượt Vật Chất (Mind Over Matter)",
-    "TitleTalent2": "Đọa Mộng (Descend into Dream)",
+    "TitleTalent1": "Mind Over Matter",
+    "TitleTalent2": "Descend into Dream",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -312,8 +312,8 @@
     "Talent2_p4": ""
   },
   "char_1043_leizi2": {
-    "TitleTalent1": "Minh Đoán (Clarity of Judgment)",
-    "TitleTalent2": "Truy Cứu Trách Nhiệm",
+    "TitleTalent1": "Clarity of Judgment",
+    "TitleTalent2": "Call to Account",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -325,8 +325,8 @@
     "Talent3": ""
   },
   "char_1044_hsgma2": {
-    "TitleTalent1": "Nghiệp Hỏa",
-    "TitleTalent2": "Thế Của Quỷ",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -335,7 +335,7 @@
     "Talent3": ""
   },
   "char_1045_svash2": {
-    "TitleTalent1": "Thế Khai Cuộc",
+    "TitleTalent1": "Thế cờ mở",
     "TitleTalent2": "Sứ giả Karlan",
     "Talent0": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +2 SP khởi đầu, đồng thời giảm 10% thời gian tái triển khai.",
     "Talent1": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +3 SP khởi đầu, đồng thời giảm 15% thời gian tái triển khai.",
@@ -344,8 +344,8 @@
     "Talent2_p4": "Khi có mặt trên sân, các cán viên thuộc【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], tăng 80<@ba.talpu>(+20)</> DEF và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
   },
   "char_1046_sbell2": {
-    "TitleTalent1": "Tuyết Cảnh Vô Ngần",
-    "TitleTalent2": "Phước Lành Thánh Sơn",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -356,28 +356,28 @@
     "Talent2_p2": ""
   },
   "char_1047_halo2": {
-    "TitleTalent1": "Mô Hình Hóa Dữ Liệu",
-    "TitleTalent2": "Phân Tích Năng Lượng",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_106_franka": {
-    "TitleTalent1": "Kiếm Nhiệt Nhôm",
+    "TitleTalent1": "Thermite Blade",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_107_liskam": {
-    "TitleTalent1": "Phòng Ngự Chiến Thuật",
-    "TitleTalent2": "Kháng Lôi",
+    "TitleTalent1": "Tactical Defense",
+    "TitleTalent2": "Thunder Resistance",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_108_silent": {
-    "TitleTalent1": "Tiêm Tăng Cường",
+    "TitleTalent1": "Booster Injection",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -385,7 +385,7 @@
     "Talent1_2_p4": ""
   },
   "char_109_fmout": {
-    "TitleTalent1": "Chiêm Tinh",
+    "TitleTalent1": "Divination",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -393,14 +393,14 @@
     "Talent1_2_p4": ""
   },
   "char_110_deepcl": {
-    "TitleTalent1": "Triệu Hồi Xúc Tu",
+    "TitleTalent1": "Tentacle Summoner",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_112_siege": {
-    "TitleTalent1": "Vạn Thú Chi Vương",
+    "TitleTalent1": "Chúa tể muôn loài",
     "TitleTalent2": "Nghiền Nát",
     "Talent1": "Tất cả cán viên thuộc【Tiên Phong】tăng 4% ATK và DEF.",
     "Talent1_p4": "Tất cả cán viên thuộc【Tiên Phong】tăng 6%<@ba.talpu>(+2%)</> ATK và DEF.",
@@ -409,21 +409,21 @@
     "Talent2": "Nhận 1 SP khi có kẻ địch bị hạ gục trong 4 ô xung quanh."
   },
   "char_113_cqbw": {
-    "TitleTalent1": "Phục Kích",
-    "TitleTalent2": "Thừa Cơ Công Kích",
+    "TitleTalent1": "Ambush",
+    "TitleTalent2": "Insult to Injury",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_115_headbr": {
-    "TitleTalent1": "Thủ Lĩnh Xung Phong",
+    "TitleTalent1": "Thủ lĩnh tiên phong",
     "TitleTalent2": "",
     "Talent1": "Giảm 1 phí triển khai.",
     "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】được giảm 1 phí triển khai."
   },
   "char_117_myrrh": {
-    "TitleTalent1": "Túi Sơ Cứu",
+    "TitleTalent1": "First Aid Kit",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -431,18 +431,18 @@
     "Talent1_2_p4": ""
   },
   "char_118_yuki": {
-    "TitleTalent1": "Shuriken Hạng Nặng",
+    "TitleTalent1": "Heavy Shuriken",
     "TitleTalent2": "",
     "Talent1_2": ""
   },
   "char_120_hibisc": {
-    "TitleTalent1": "Tăng Cường Trị Liệu",
+    "TitleTalent1": "Healing Up",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_121_lava": {
-    "TitleTalent1": "Sử Dụng Kỹ Năng Nhanh",
+    "TitleTalent1": "Quick Skill Usage",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -450,18 +450,18 @@
     "Talent1_lv55_p4": ""
   },
   "char_122_beagle": {
-    "TitleTalent1": "Tăng Phòng Ngự",
+    "TitleTalent1": "Tăng DEF",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_123_fang": {
-    "TitleTalent1": "Trọng Lượng Nhẹ",
+    "TitleTalent1": "Thân thủ linh hoạt",
     "TitleTalent2": "",
     "Talent1": "Phí triển khai -1."
   },
   "char_124_kroos": {
-    "TitleTalent1": "Nhắm Vào Điểm Yếu - Sơ Cấp",
+    "TitleTalent1": "Targeting - Primary",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -469,7 +469,7 @@
     "Talent1_lv55_p4": ""
   },
   "char_126_shotst": {
-    "TitleTalent1": "Chuyên Tinh Đối Không",
+    "TitleTalent1": "Anti-Air Specialist",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -477,7 +477,7 @@
     "Talent1_2_p4": ""
   },
   "char_127_estell": {
-    "TitleTalent1": "Khả Năng Tự Hồi Phục",
+    "TitleTalent1": "Self-Healing",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -485,13 +485,13 @@
     "Talent1_2_p4": ""
   },
   "char_128_plosis": {
-    "TitleTalent1": "Hào Quang Kỹ Năng",
+    "TitleTalent1": "Skill Aura",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_129_bluep": {
-    "TitleTalent1": "Độc Tố Thần Kinh",
+    "TitleTalent1": "Neurotoxin",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -499,7 +499,7 @@
     "Talent1_2_p4": ""
   },
   "char_130_doberm": {
-    "TitleTalent1": "Huấn Luyện Viên Tân Binh",
+    "TitleTalent1": "Starter Instructor",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -507,7 +507,7 @@
     "Talent1_2_p4": ""
   },
   "char_131_flameb": {
-    "TitleTalent1": "Huyết Lục",
+    "TitleTalent1": "Bloody Slaughter",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -515,7 +515,7 @@
     "Talent1_2_p4": ""
   },
   "char_133_mm": {
-    "TitleTalent1": "Đặc Vụ Victoria",
+    "TitleTalent1": "Victorian Agent",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -523,8 +523,8 @@
     "Talent1_2_p4": ""
   },
   "char_134_ifrit": {
-    "TitleTalent1": "Hòa Tan Tinh Thần",
-    "TitleTalent2": "Mạch Rhine",
+    "TitleTalent1": "Spiritual Dissolution",
+    "TitleTalent2": "Rhine Loop",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -535,14 +535,14 @@
     "Talent2_p5": ""
   },
   "char_135_halo": {
-    "TitleTalent1": "Nhiệt Huyết Nghiên Cứu",
+    "TitleTalent1": "Passion for Research",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_136_hsguma": {
-    "TitleTalent1": "Giáp Chiến Thuật",
-    "TitleTalent2": "Chiến Lược Tác Chiến Đặc Biệt",
+    "TitleTalent1": "Tactical Armor",
+    "TitleTalent2": "Special Operation Strategy",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -551,7 +551,7 @@
     "Talent2_p5": ""
   },
   "char_137_brownb": {
-    "TitleTalent1": "Tập Trung Quyền Thủ",
+    "TitleTalent1": "Boxer's Concentration",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -559,7 +559,7 @@
     "Talent1_2_p4": ""
   },
   "char_140_whitew": {
-    "TitleTalent1": "Hủy Diệt Tinh Thần",
+    "TitleTalent1": "Spiritual Destruction",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -567,7 +567,7 @@
     "Talent1_2_p4": ""
   },
   "char_141_nights": {
-    "TitleTalent1": "Sương Mù Đen",
+    "TitleTalent1": "Black Mist",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -575,7 +575,7 @@
     "Talent1_2_p4": ""
   },
   "char_143_ghost": {
-    "TitleTalent1": "Tăng Giới Hạn Thể Lực",
+    "TitleTalent1": "Stamina Up",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -583,7 +583,7 @@
     "Talent1_2_p4": ""
   },
   "char_144_red": {
-    "TitleTalent1": "Thấu Xương",
+    "TitleTalent1": "Chill",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -591,7 +591,7 @@
     "Talent1_2_p4": ""
   },
   "char_145_prove": {
-    "TitleTalent1": "Mũi Tên Săn Bắn",
+    "TitleTalent1": "Hunter's Arrow",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -599,8 +599,8 @@
     "Talent1_2_p4": ""
   },
   "char_147_shining": {
-    "TitleTalent1": "Sự Bảo Hộ Của Ác Quỷ Đen",
-    "TitleTalent2": "Pháp Điển",
+    "TitleTalent1": "Black Fiend's Protection",
+    "TitleTalent2": "Code of Law",
     "Talent0": "",
     "Talent0_p5": "",
     "Talent1": "",
@@ -611,7 +611,7 @@
     "Talent2_p2": ""
   },
   "char_148_nearl": {
-    "TitleTalent1": "Tăng Mạnh Hiệu Quả Trị Liệu",
+    "TitleTalent1": "Healing Boost",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -619,7 +619,7 @@
     "Talent1_2_p4": ""
   },
   "char_149_scave": {
-    "TitleTalent1": "Hành Động Độc Lập",
+    "TitleTalent1": "Sói cô độc",
     "TitleTalent2": "",
     "Talent1": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 5% ATK và DEF.",
     "Talent1_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 7%<@ba.talpu>(+2%)</> ATK và DEF.",
@@ -627,28 +627,28 @@
     "Talent1_2_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 13%<@ba.talpu>(+2%)</> ATK và DEF."
   },
   "char_1502_crosly": {
-    "TitleTalent1": "Nuốt Chửng Khổ Đau",
-    "TitleTalent2": "Uy Danh Của Crownslayer",
+    "TitleTalent1": "Swallow Your Suffering",
+    "TitleTalent2": "Crownslayer's Glory",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_150_snakek": {
-    "TitleTalent1": "Chuyên Tinh Phòng Thủ",
+    "TitleTalent1": "Defense Specialist",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_151_myrtle": {
-    "TitleTalent1": "Phù Quang Dược Kim",
+    "TitleTalent1": "Tỏa sáng",
     "TitleTalent2": "",
     "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Tiên Phong】hồi 25 HP mỗi giây.",
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Tiên Phong】hồi 28<@ba.talpu>（+3）</> HP mỗi giây."
   },
   "char_154_morgan": {
-    "TitleTalent1": "Tiên Phong Nhiệt Huyết",
-    "TitleTalent2": "Lợi Thế Sân Nhà",
+    "TitleTalent1": "Hot-Blooded Vanguard",
+    "TitleTalent2": "Home-Ground Advantage",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -656,7 +656,7 @@
     "Talent2": ""
   },
   "char_155_tiger": {
-    "TitleTalent1": "Hổ Quyền Tấn Kích",
+    "TitleTalent1": "Quick Fists",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -664,14 +664,14 @@
     "Talent1_2_p4": ""
   },
   "char_157_dagda": {
-    "TitleTalent1": "Tinh Thần Băng Đảng",
-    "TitleTalent2": "Ý Chí Hiệp Sĩ",
+    "TitleTalent1": "Gang Spirit",
+    "TitleTalent2": "Knight's Honor",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_158_milu": {
-    "TitleTalent1": "Ám Sát Giả",
+    "TitleTalent1": "Assassin",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -679,13 +679,13 @@
     "Talent1_2_p4": ""
   },
   "char_159_peacok": {
-    "TitleTalent1": "Tiếp Đất An Toàn",
+    "TitleTalent1": "Safe Landing",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1_2": ""
   },
   "char_163_hpsts": {
-    "TitleTalent1": "Tự Phòng Thủ",
+    "TitleTalent1": "Self-Defense",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -693,7 +693,7 @@
     "Talent1_2_p4": ""
   },
   "char_164_nightm": {
-    "TitleTalent1": "Nhân Cách Song Diện",
+    "TitleTalent1": "Dual Personality",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -701,7 +701,7 @@
     "Talent1_2_p4": ""
   },
   "char_166_skfire": {
-    "TitleTalent1": "Xạ Kích Pháp Thuật",
+    "TitleTalent1": "Arts Sniper",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -709,14 +709,14 @@
     "Talent1_2_p4": ""
   },
   "char_171_bldsk": {
-    "TitleTalent1": "Thu Thập Mẫu Máu",
+    "TitleTalent1": "Blood Sample Recycle",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_172_svrash": {
-    "TitleTalent1": "Lãnh Đạo",
-    "TitleTalent2": "Thị Giác Ưng Nhãn",
+    "TitleTalent1": "Leader",
+    "TitleTalent2": "Eagle Eyes",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -724,7 +724,7 @@
     "Talent2": ""
   },
   "char_173_slchan": {
-    "TitleTalent1": "Thợ Săn Karlan",
+    "TitleTalent1": "Karlan Hunter",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -732,8 +732,8 @@
     "Talent1_2_p4": ""
   },
   "char_174_slbell": {
-    "TitleTalent1": "Suy Yếu",
-    "TitleTalent2": "Song Hưởng",
+    "TitleTalent1": "Weakening",
+    "TitleTalent2": "The Bell Tolls Twice",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -741,8 +741,8 @@
     "Talent2": ""
   },
   "char_179_cgbird": {
-    "TitleTalent1": "Sự Bảo Hộ Của Quỷ Trắng",
-    "TitleTalent2": "Ảo Ảnh Thoáng Qua",
+    "TitleTalent1": "White Fiend's Protection",
+    "TitleTalent2": "Fleeting Phantom",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -752,8 +752,8 @@
     "Talent2": ""
   },
   "char_180_amgoat": {
-    "TitleTalent1": "Hơi Thở Rực Lửa",
-    "TitleTalent2": "Hỏa Loạn",
+    "TitleTalent1": "Pyrobreath",
+    "TitleTalent2": "Wild Fire",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -762,7 +762,7 @@
     "Talent2_p2": ""
   },
   "char_181_flower": {
-    "TitleTalent1": "Hoa Oải Hương",
+    "TitleTalent1": "Lavender",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -770,13 +770,13 @@
     "Talent1_2_p4": ""
   },
   "char_183_skgoat": {
-    "TitleTalent1": "Thăm Dò Địa Chất",
+    "TitleTalent1": "Geological Survey",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_185_frncat": {
-    "TitleTalent1": "Liên Kích",
+    "TitleTalent1": "Combo",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -784,7 +784,7 @@
     "Talent1_2_p4": ""
   },
   "char_187_ccheal": {
-    "TitleTalent1": "Y Sĩ Chiến Trường",
+    "TitleTalent1": "Battlefield Medic",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -792,8 +792,8 @@
     "Talent1_2_p4": ""
   },
   "char_188_helage": {
-    "TitleTalent1": "Nguyệt Doanh Tinh Khuy",
-    "TitleTalent2": "Vận Trù Duy Ác",
+    "TitleTalent1": "Waxing Moon",
+    "TitleTalent2": "Ingenious Strategist",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -801,24 +801,24 @@
     "Talent2_p4": ""
   },
   "char_190_clour": {
-    "TitleTalent1": "Kinh Nghiệm Thợ Săn",
+    "TitleTalent1": "Hunter's Wisdom",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_192_falco": {
-    "TitleTalent1": "Tăng Tấn Công",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "Tăng 4% ATK.",
     "Talent1_lv55": "Tăng 8% ATK."
   },
   "char_193_frostl": {
-    "TitleTalent1": "Đòn Đánh Yểm Trợ",
+    "TitleTalent1": "Covered Strike",
     "TitleTalent2": "",
     "Talent1_2": ""
   },
   "char_194_leto": {
-    "TitleTalent1": "Nhanh Lên Nhanh Lên!",
+    "TitleTalent1": "Hurry Up Already!",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -826,13 +826,13 @@
     "Talent1_2_p4": ""
   },
   "char_195_glassb": {
-    "TitleTalent1": "Nhà Thăm Dò",
+    "TitleTalent1": "Explorer",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_196_sunbr": {
-    "TitleTalent1": "Chuyên Gia Chảo Phẳng",
+    "TitleTalent1": "Frying Pan Specialist",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -840,8 +840,8 @@
     "Talent1_2_p4": ""
   },
   "char_197_poca": {
-    "TitleTalent1": "Thấu Cốt",
-    "TitleTalent2": "Học Sinh Kiểu Mẫu",
+    "TitleTalent1": "Bone Piercer",
+    "TitleTalent2": "Ideal Student",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -856,22 +856,22 @@
     "Talent1_2_p4": "Khi đang chặn từ 2 kẻ địch trở lên, tăng 19%<@ba.talpu>(+3%)</> DEF."
   },
   "char_199_yak": {
-    "TitleTalent1": "Vệ Binh Tuyết Nguyên",
+    "TitleTalent1": "Snowfield Guard",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_2012_typhon": {
-    "TitleTalent1": "Sắc Bén Như Nanh Thú",
-    "TitleTalent2": "Nặng Tựa Đầm Lầy",
+    "TitleTalent1": "Sharp as a Beast's Fang",
+    "TitleTalent2": "Heavy as the Swamp's Mire",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_2013_cerber": {
-    "TitleTalent1": "Bóc Vỏ",
-    "TitleTalent2": "Độc Hành Trường Lộ",
+    "TitleTalent1": "Thresher",
+    "TitleTalent2": "Lone Journey",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -879,8 +879,8 @@
     "Talent2": ""
   },
   "char_2014_nian": {
-    "TitleTalent1": "Giáp Tích Thành Sơn",
-    "TitleTalent2": "Càn Minh Khả Giám",
+    "TitleTalent1": "Tectonic Armor",
+    "TitleTalent2": "Clairvoyance",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -888,8 +888,8 @@
     "Talent2": ""
   },
   "char_2015_dusk": {
-    "TitleTalent1": "Hóa Cảnh",
-    "TitleTalent2": "Điểm Tĩnh",
+    "TitleTalent1": "Sublimity",
+    "TitleTalent2": "Finishing Touch",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -897,7 +897,7 @@
     "Talent2": ""
   },
   "char_201_moeshd": {
-    "TitleTalent1": "Lực Trường Kỳ Diệu",
+    "TitleTalent1": "Miracle Field",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -905,8 +905,8 @@
     "Talent1_2_p4": ""
   },
   "char_2023_ling": {
-    "TitleTalent1": "Khiêu Đăng Vấn Mộng",
-    "TitleTalent2": "Tùy Phó Tiên Vịnh Túy Đồ Tô",
+    "TitleTalent1": "Lantern Lit, Thy Dream Sought",
+    "TitleTalent2": "So is Writ, an Ode to Wine",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -916,8 +916,8 @@
     "Talent2_2_p4": ""
   },
   "char_2024_chyue": {
-    "TitleTalent1": "Chỉ Qua",
-    "TitleTalent2": "Vạn Tượng Vi Tân",
+    "TitleTalent1": "An End to War",
+    "TitleTalent2": "All Are Guests",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -925,8 +925,8 @@
     "Talent2": ""
   },
   "char_2025_shu": {
-    "TitleTalent1": "Bách Cốc Trường Thanh",
-    "TitleTalent2": "Thiên Hữu Tứ Thời",
+    "TitleTalent1": "Myriad Grains, Everlasting",
+    "TitleTalent2": "From Seasons Fourfold",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -934,8 +934,8 @@
     "Talent2": ""
   },
   "char_2026_yu": {
-    "TitleTalent1": "Lễ Thượng Vãng Lai",
-    "TitleTalent2": "Nhàn Vân Ẩn Thị",
+    "TitleTalent1": "You Feed Me, I Feed You",
+    "TitleTalent2": "Midst Markets, Dragons Dwell",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -944,8 +944,8 @@
     "Talent2_p4": ""
   },
   "char_202_demkni": {
-    "TitleTalent1": "Giáp Sạc Rhine Lab",
-    "TitleTalent2": "Hồi Phục Tinh Thần",
+    "TitleTalent1": "Rhine Charged Suit",
+    "TitleTalent2": "Refreshment",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -953,7 +953,7 @@
     "Talent2": ""
   },
   "char_204_platnm": {
-    "TitleTalent1": "Tấn Công Toàn Lực",
+    "TitleTalent1": "All-Out Attack",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -961,8 +961,8 @@
     "Talent1_2_p4": ""
   },
   "char_206_gnosis": {
-    "TitleTalent1": "Băng Kiên Cố",
-    "TitleTalent2": "Thù Đồ Đồng Quy",
+    "TitleTalent1": "Rigid Ice",
+    "TitleTalent2": "Two Paths, One Goal",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -970,31 +970,31 @@
     "Talent2": ""
   },
   "char_208_melan": {
-    "TitleTalent1": "Tăng Tấn Công",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_209_ardign": {
-    "TitleTalent1": "Tăng HP Tối Đa",
+    "TitleTalent1": "Max HP Up",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_210_stward": {
-    "TitleTalent1": "Phá Giáp",
+    "TitleTalent1": "Armor Break",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_211_adnach": {
-    "TitleTalent1": "Bứt Phá Điểm Yếu",
+    "TitleTalent1": "Shortcoming Breakthrough",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_212_ansel": {
-    "TitleTalent1": "Trị Liệu Bổ Sung",
+    "TitleTalent1": "Additional Healing",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1002,15 +1002,15 @@
     "Talent1_lv55_p4": ""
   },
   "char_213_mostma": {
-    "TitleTalent1": "Hào Quang Kỹ Năng - Thuật Sĩ",
-    "TitleTalent2": "Giãn Nở Thời Gian Chủ Quan",
+    "TitleTalent1": "Skill Aura - Caster",
+    "TitleTalent2": "Subjective Time Dilation",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_214_kafka": {
-    "TitleTalent1": "Đánh Lạc Hướng",
+    "TitleTalent1": "Misdirection",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1019,7 +1019,7 @@
     "Talent1_2_p4": ""
   },
   "char_215_mantic": {
-    "TitleTalent1": "Sát Thủ Ẩn Nấp - Trung Cấp",
+    "TitleTalent1": "Hidden Killer - Medium",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1027,7 +1027,7 @@
     "Talent1_2_p4": ""
   },
   "char_218_cuttle": {
-    "TitleTalent1": "Trực Giác Thâm Hải",
+    "TitleTalent1": "Abyssal Intuition",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1035,13 +1035,13 @@
     "Talent1_2_p4": ""
   },
   "char_219_meteo": {
-    "TitleTalent1": "Cải Tiến Gắn Thuốc Nổ",
+    "TitleTalent1": "Blast Attachment Refit",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_220_grani": {
-    "TitleTalent1": "Kỵ Cảnh",
+    "TitleTalent1": "Cảnh sát kỵ binh",
     "TitleTalent2": "",
     "Talent1": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiên Phong】nhận 10% tỷ lệ né sát thương vật lý.",
     "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiên Phong】nhận 15%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý.",
@@ -1049,8 +1049,8 @@
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Tiên Phong】nhận 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý."
   },
   "char_222_bpipe": {
-    "TitleTalent1": "Nạp Đạn Chính Xác",
-    "TitleTalent2": "Truyền Thống Quân Sự",
+    "TitleTalent1": "Tiếp đạn tinh vi",
+    "TitleTalent2": "Truyền thống quân đội",
     "Talent1": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
     "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
     "Talent1_2": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
@@ -1059,8 +1059,8 @@
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên thuộc【Tiên Phong】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
   },
   "char_225_haak": {
-    "TitleTalent1": "Bắn Thuốc Hỗn Hợp",
-    "TitleTalent2": "Khuếch Tán Dược Phẩm",
+    "TitleTalent1": "Drug Cocktail Administration",
+    "TitleTalent2": "Pharmaceutical Diffusion",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1068,7 +1068,7 @@
     "Talent2_p4": ""
   },
   "char_226_hmau": {
-    "TitleTalent1": "Môn Thần",
+    "TitleTalent1": "Gatekeeper",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1076,19 +1076,19 @@
     "Talent1_2_p4": ""
   },
   "char_230_savage": {
-    "TitleTalent1": "Sơn Cốc",
+    "TitleTalent1": "Valley",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_235_jesica": {
-    "TitleTalent1": "Băng Đạn Nhanh",
+    "TitleTalent1": "Fast Cartridge",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_236_rope": {
-    "TitleTalent1": "Huấn Luyện Thính Giác",
+    "TitleTalent1": "Auditory Training",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1096,14 +1096,14 @@
     "Talent1_2_p4": ""
   },
   "char_237_gravel": {
-    "TitleTalent1": "Triển Khai Nhanh",
+    "TitleTalent1": "Support of the Little",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_240_wyvern": {
-    "TitleTalent1": "Tăng Tấn Công",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "Tăng 4% ATK.",
     "Talent1_lv55": "Tăng 8% ATK."
@@ -1117,14 +1117,14 @@
     "Talent1_2_p4": ""
   },
   "char_242_otter": {
-    "TitleTalent1": "Rái Cá Máy",
+    "TitleTalent1": "Robotter",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_243_waaifu": {
-    "TitleTalent1": "Hồng Mi Vịnh Xuân",
+    "TitleTalent1": "Hong Mei Wing Chun",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1132,8 +1132,8 @@
     "Talent1_2_p4": ""
   },
   "char_245_cello": {
-    "TitleTalent1": "Ai Ca Không Lời",
-    "TitleTalent2": "Nghịch Cấu Tinh Thần",
+    "TitleTalent1": "Wordless Elegy",
+    "TitleTalent2": "Mental Inversion",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1141,8 +1141,8 @@
     "Talent2_p4": ""
   },
   "char_248_mgllan": {
-    "TitleTalent1": "Drone Hỗ Trợ - Long Đằng",
-    "TitleTalent2": "Phụ Kiện Khúc Xạ Quang Học",
+    "TitleTalent1": "Support Drone - Soaring Dragon",
+    "TitleTalent2": "Optical Refraction Accessories",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1152,8 +1152,8 @@
     "Talent2_2_p4": ""
   },
   "char_249_mlyss": {
-    "TitleTalent1": "Nước Sạch Là Sự Sống",
-    "TitleTalent2": "Tăng Thu Giảm Chi",
+    "TitleTalent1": "Pure Water is Life",
+    "TitleTalent2": "Expenditure Economization",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1161,14 +1161,14 @@
     "Talent2_p4": ""
   },
   "char_250_phatom": {
-    "TitleTalent1": "Hư Ảnh Trong Gương",
-    "TitleTalent2": "Tinh Thông Hư Ảnh",
+    "TitleTalent1": "Phantom in the Mirror",
+    "TitleTalent2": "Phantom Mastery",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_252_bibeak": {
-    "TitleTalent1": "Nhiếp Hồn",
+    "TitleTalent1": "Soul Drinker",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1176,13 +1176,13 @@
     "Talent1_2_p4": ""
   },
   "char_253_greyy": {
-    "TitleTalent1": "Trường Tĩnh Điện",
+    "TitleTalent1": "Electrostatic Field",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_254_vodfox": {
-    "TitleTalent1": "Ám Thị Bại Trận",
+    "TitleTalent1": "Omen of Defeat",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1192,7 +1192,7 @@
     "Talent1_2_p4": ""
   },
   "char_258_podego": {
-    "TitleTalent1": "Người Làm Vườn",
+    "TitleTalent1": "Gardener",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1200,20 +1200,20 @@
     "Talent1_2_p4": ""
   },
   "char_260_durnar": {
-    "TitleTalent1": "Công Thủ Toàn Diện",
+    "TitleTalent1": "Sword and Shield",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_261_sddrag": {
-    "TitleTalent1": "Huyết Mạch Lụi Tàn",
+    "TitleTalent1": "Huyết mạch lụi tàn",
     "TitleTalent2": "",
     "Talent1": "RES +10",
     "Talent1_2": "RES +20"
   },
   "char_263_skadi": {
-    "TitleTalent1": "Kẻ Săn Mồi Thâm Hải",
-    "TitleTalent2": "Xuất Kích Thần Tốc",
+    "TitleTalent1": "Abyssal Predator",
+    "TitleTalent2": "Swift Action",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1221,8 +1221,8 @@
     "Talent2": ""
   },
   "char_264_f12yin": {
-    "TitleTalent1": "Cú Đấm Uy Lực",
-    "TitleTalent2": "Cơ Thể Cường Tráng",
+    "TitleTalent1": "Forceful Fist",
+    "TitleTalent2": "Sturdy Constitution",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1230,7 +1230,7 @@
     "Talent2": ""
   },
   "char_265_sophia": {
-    "TitleTalent1": "Quở Trách",
+    "TitleTalent1": "Rebuke",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1240,7 +1240,7 @@
     "Talent1_2_p4": ""
   },
   "char_271_spikes": {
-    "TitleTalent1": "Phân Tách Cấu Trúc",
+    "TitleTalent1": "Structural Decomposition",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1249,7 +1249,7 @@
     "Talent1_2_p4": ""
   },
   "char_272_strong": {
-    "TitleTalent1": "Bậc Thầy Giải Phẫu",
+    "TitleTalent1": "Anatomy Master",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1257,31 +1257,31 @@
     "Talent1_2_p4": ""
   },
   "char_274_astesi": {
-    "TitleTalent1": "Thiên Nghi",
+    "TitleTalent1": "Celestial Globe",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_275_breeze": {
-    "TitleTalent1": "Bảo Vệ Đội Y Tế",
+    "TitleTalent1": "Medic Squad Protection",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_277_sqrrel": {
-    "TitleTalent1": "Đồ Bảo Hộ Chống Cháy",
+    "TitleTalent1": "Fireproof Suit",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_278_orchid": {
-    "TitleTalent1": "Tăng Tốc Độ Thi Triển",
+    "TitleTalent1": "Casting Speed Up",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_lv55": ""
   },
   "char_279_excu": {
-    "TitleTalent1": "Cải Tiến Cuối Cùng",
+    "TitleTalent1": "Final Modification",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1289,7 +1289,7 @@
     "Talent1_2_p4": ""
   },
   "char_281_popka": {
-    "TitleTalent1": "Tăng HP",
+    "TitleTalent1": "HP Up",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1297,12 +1297,12 @@
     "Talent1_lv55_p4": ""
   },
   "char_282_catap": {
-    "TitleTalent1": "Nhẹ Hóa",
+    "TitleTalent1": "Lightweight",
     "TitleTalent2": "",
     "Talent1": ""
   },
   "char_283_midn": {
-    "TitleTalent1": "Nhắm Vào Điểm Yếu - Sơ Cấp",
+    "TitleTalent1": "Targeting - Primary",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1310,7 +1310,7 @@
     "Talent1_lv55_p4": ""
   },
   "char_284_spot": {
-    "TitleTalent1": "Lắp Đặt Màn Khói",
+    "TitleTalent1": "Smoke Installation",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1318,7 +1318,7 @@
     "Talent1_lv55_p4": ""
   },
   "char_285_medic2": {
-    "TitleTalent1": "Bình Xịt Cứu Trợ I",
+    "TitleTalent1": "Support Spray 1",
     "TitleTalent2": "",
     "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
     "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
@@ -1328,7 +1328,7 @@
     "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi 500<@ba.talpu>(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
   },
   "char_286_cast3": {
-    "TitleTalent1": "Chỉnh Lý Chiến Thuật I",
+    "TitleTalent1": "Tactical Configuration 1",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1338,13 +1338,13 @@
     "Talent0_p5": ""
   },
   "char_289_gyuki": {
-    "TitleTalent1": "Thể Chất Ác Quỷ",
+    "TitleTalent1": "Demonic Physique",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_290_vigna": {
-    "TitleTalent1": "Nhát Đâm Chí Mạng",
+    "TitleTalent1": "Nhát đâm chí mạng",
     "TitleTalent2": "",
     "Talent1": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 50%. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
     "Talent1_p4": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 60%<@ba.talpu>(+10%)</>. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
@@ -1352,8 +1352,8 @@
     "Talent1_2_p4": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 110%<@ba.talpu>(+10%)</>. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng."
   },
   "char_291_aglina": {
-    "TitleTalent1": "Trường Gia Tốc",
-    "TitleTalent2": "Công Việc Làm Thêm",
+    "TitleTalent1": "Accelerator Field",
+    "TitleTalent2": "Part-time Job",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -1362,8 +1362,8 @@
     "Talent2_p2": ""
   },
   "char_293_thorns": {
-    "TitleTalent1": "Ăn Mòn Thần Kinh",
-    "TitleTalent2": "Tiếng Triều Cố Hương",
+    "TitleTalent1": "Nerve Corrosion",
+    "TitleTalent2": "Echoes of Ancestral Waves",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1372,7 +1372,7 @@
     "Talent2_p2": ""
   },
   "char_294_ayer": {
-    "TitleTalent1": "Hỗ Trợ Dò Tìm",
+    "TitleTalent1": "Seek Aid",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1380,7 +1380,7 @@
     "Talent1_2_p4": ""
   },
   "char_297_hamoni": {
-    "TitleTalent1": "Vị Khách Bất Ngờ",
+    "TitleTalent1": "A Surprise Visitor",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1388,7 +1388,7 @@
     "Talent1_2_p4": ""
   },
   "char_298_susuro": {
-    "TitleTalent1": "Trị Liệu Xâm Lấn Tối Thiểu",
+    "TitleTalent1": "Minimally Invasive Surgery",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1396,8 +1396,8 @@
     "Talent1_2_p4": ""
   },
   "char_300_phenxi": {
-    "TitleTalent1": "Trình Bày Khổ Đau",
-    "TitleTalent2": "Tuyên Cáo Chung Cuộc",
+    "TitleTalent1": "Sufferer of Tribulations",
+    "TitleTalent2": "Herald of Revelations",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1405,7 +1405,7 @@
     "Talent2_p4": ""
   },
   "char_301_cutter": {
-    "TitleTalent1": "Vết Khắc Quang Học",
+    "TitleTalent1": "Photoetched Marks",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1413,13 +1413,13 @@
     "Talent1_2_p4": ""
   },
   "char_302_glaze": {
-    "TitleTalent1": "Đòn Đánh Chính Xác",
+    "TitleTalent1": "Precise Strike",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_304_zebra": {
-    "TitleTalent1": "Ngụy Trang Vằn",
+    "TitleTalent1": "Striped Camouflage",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1427,7 +1427,7 @@
     "Talent1_2_p4": ""
   },
   "char_306_leizi": {
-    "TitleTalent1": "Thông Lưu Vô Trở",
+    "TitleTalent1": "Unobstructed Flow",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1435,7 +1435,7 @@
     "Talent1_2_p4": ""
   },
   "char_308_swire": {
-    "TitleTalent1": "Chỉ Đạo Tác Chiến Cận Chiến",
+    "TitleTalent1": "Melee Combat Guidance",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1445,8 +1445,8 @@
     "Talent1_2_p4": ""
   },
   "char_311_mudrok": {
-    "TitleTalent1": "Đất Màu Hộ Thân",
-    "TitleTalent2": "Thủ Túc Tương Tích",
+    "TitleTalent1": "Ward of the Fertile Soil",
+    "TitleTalent2": "Unshakable Solidarity",
     "Talent0": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身15%最大生命",
     "Talent0_p4": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身17%<@ba.talpu>（+2%）</>最大生命",
     "Talent1": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身20%最大生命",
@@ -1456,8 +1456,8 @@
     "Talent2": "受到来自【萨卡兹】敌人的伤害降低30%"
   },
   "char_322_lmlee": {
-    "TitleTalent1": "Hòa Khí Sinh Tài",
-    "TitleTalent2": "Hữu Bị Vô Hoạn",
+    "TitleTalent1": "Kindness Begets Prosperity",
+    "TitleTalent2": "Preparedness Averts Peril",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1465,7 +1465,7 @@
     "Talent2": ""
   },
   "char_325_bison": {
-    "TitleTalent1": "Yểm Trợ Chéo",
+    "TitleTalent1": "Interlocked Shield",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1473,7 +1473,7 @@
     "Talent1_2_p4": ""
   },
   "char_326_glacus": {
-    "TitleTalent1": "Thiết Bị Phản Chế",
+    "TitleTalent1": "Countermeasure Device",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1481,41 +1481,41 @@
     "Talent1_2_p4": ""
   },
   "char_328_cammou": {
-    "TitleTalent1": "Phối Hợp Nhịp Nhàng",
+    "TitleTalent1": "Coordinated",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_332_archet": {
-    "TitleTalent1": "Chiến Thuật Landen",
-    "TitleTalent2": "Dây Cung Sắt",
+    "TitleTalent1": "Landen Tactics",
+    "TitleTalent2": "Iron Bowstring",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_333_sidero": {
-    "TitleTalent1": "Lính Thuê Ngoan Cường",
+    "TitleTalent1": "Mercenary's Tenacity",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_336_folivo": {
-    "TitleTalent1": "Tiểu Đội Nhiếp Ảnh",
+    "TitleTalent1": "Camera Squad",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_337_utage": {
-    "TitleTalent1": "Chế độ Nghiêm túc",
+    "TitleTalent1": "Serious Mode",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_338_iris": {
-    "TitleTalent1": "Hộp báu Niêm phong",
+    "TitleTalent1": "Sealed Treasure",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1523,8 +1523,8 @@
     "Talent1_2_p4": ""
   },
   "char_340_shwaz": {
-    "TitleTalent1": "Mũi tên Sắc bén",
-    "TitleTalent2": "Hỏa lực Đan xen",
+    "TitleTalent1": "Armor Penetration Arrow",
+    "TitleTalent2": "Crossfire",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1532,7 +1532,7 @@
     "Talent2_p5": ""
   },
   "char_341_sntlla": {
-    "TitleTalent1": "Sinh ra trong Giá lạnh",
+    "TitleTalent1": "Born of the Biting Cold",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1540,7 +1540,7 @@
     "Talent1_2_p4": ""
   },
   "char_343_tknogi": {
-    "TitleTalent1": "Chúc Phúc",
+    "TitleTalent1": "Blessing",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1548,20 +1548,20 @@
     "Talent1_2_p4": ""
   },
   "char_344_beewax": {
-    "TitleTalent1": "Sự che chở của Shambhala",
+    "TitleTalent1": "Shambhala's Sanctuary",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_345_folnic": {
-    "TitleTalent1": "Kỹ thuật Ức chế Thuốc",
+    "TitleTalent1": "Drug Inhibition Technique",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_346_aosta": {
-    "TitleTalent1": "Gai nhọn",
+    "TitleTalent1": "Sharp Nails",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1569,7 +1569,7 @@
     "Talent1_2_p4": ""
   },
   "char_347_jaksel": {
-    "TitleTalent1": "Né tránh Cực hạn",
+    "TitleTalent1": "Extreme Evasion",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1577,7 +1577,7 @@
     "Talent1_2_p4": ""
   },
   "char_348_ceylon": {
-    "TitleTalent1": "Kẻ dạo bước Bên hồ",
+    "TitleTalent1": "Lake Walker",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1585,7 +1585,7 @@
     "Talent1_2_p4": ""
   },
   "char_349_chiave": {
-    "TitleTalent1": "Chuyên môn Kỹ thuật",
+    "TitleTalent1": "Chuyên môn kỹ thuật",
     "TitleTalent2": "",
     "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 7% ATK và DEF.",
     "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 9%<@ba.talpu>(+2%)</> ATK và DEF.",
@@ -1593,8 +1593,8 @@
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 13%<@ba.talpu>(+2%)</> ATK và DEF."
   },
   "char_350_surtr": {
-    "TitleTalent1": "Lửa nóng chảy",
-    "TitleTalent2": "Tàn tro",
+    "TitleTalent1": "Molten Flame",
+    "TitleTalent2": "Remnant Ash",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1605,13 +1605,13 @@
     "Talent2_2_p2": ""
   },
   "char_355_ethan": {
-    "TitleTalent1": "Quấn quanh",
+    "TitleTalent1": "Entwined",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_356_broca": {
-    "TitleTalent1": "Cường hóa mũi khoan",
+    "TitleTalent1": "Drill Strengthening",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1619,15 +1619,15 @@
     "Talent1_2_p4": ""
   },
   "char_358_lisa": {
-    "TitleTalent1": "Hào quang SP - Hỗ trợ",
-    "TitleTalent2": "Họa địa vi lao",
+    "TitleTalent1": "Skill Aura - Supporter",
+    "TitleTalent2": "Binding Circle",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_362_saga": {
-    "TitleTalent1": "Khuyên thiện",
+    "TitleTalent1": "Thuyết Pháp",
     "TitleTalent2": "Tĩnh Tâm",
     "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái [[Trọng thương|Wounded]](người hạ gục nhận +1 SP); Saga không tấn công mục tiêu [[Trọng thương|Wounded]].",
     "Talent1": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái [[Trọng thương|Wounded]](người hạ gục nhận +2 SP); Saga không tấn công mục tiêu [[Trọng thương|Wounded]].",
@@ -1635,7 +1635,7 @@
     "Talent2_p4": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 6%<@ba.talpu>(+1%)</> HP tối đa mỗi giây, kéo dài 17<@ba.talpu>(+2)</> giây. Hiệu ứng này chỉ kích hoạt một lần."
   },
   "char_363_toddi": {
-    "TitleTalent1": "Bản năng rực cháy",
+    "TitleTalent1": "Fiery Instinct",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1643,25 +1643,25 @@
     "Talent1_2_p4": ""
   },
   "char_365_aprl": {
-    "TitleTalent1": "Thợ săn lão luyện",
+    "TitleTalent1": "Experienced Hunter",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_366_acdrop": {
-    "TitleTalent1": "Kỹ thuật trượt bắn",
+    "TitleTalent1": "Slideshot Style",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_367_swllow": {
-    "TitleTalent1": "Thuận phong",
+    "TitleTalent1": "Tailwind",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_369_bena": {
-    "TitleTalent1": "Thước đo của Bena",
+    "TitleTalent1": "Bena's Protractor",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1670,7 +1670,7 @@
     "Talent1_2_p4": ""
   },
   "char_373_lionhd": {
-    "TitleTalent1": "Sát thương mảnh văng",
+    "TitleTalent1": "Lethal Fragmentation",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1678,7 +1678,7 @@
     "Talent1_2_p4": ""
   },
   "char_376_therex": {
-    "TitleTalent1": "Kích nổ trì hoãn I",
+    "TitleTalent1": "Delayed Detonation 1",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1688,8 +1688,8 @@
     "Talent0_p5": ""
   },
   "char_377_gdglow": {
-    "TitleTalent1": "Cơn thịnh nộ của Đèn hiệu",
-    "TitleTalent2": "Dẫn luồng chính xác",
+    "TitleTalent1": "Beacon's Wrath",
+    "TitleTalent2": "Precise Redirection",
     "Talent1": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪200%攻击力的法术伤害",
     "Talent1_p2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪215%<@ba.talpu>（+15%）</>攻击力的法术伤害",
     "Talent1_2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪300%攻击力的法术伤害",
@@ -1698,13 +1698,13 @@
     "Talent2_p5": "自身与浮游单元无视敌人18<@ba.talpu>（+3）</>点法术抗性"
   },
   "char_378_asbest": {
-    "TitleTalent1": "Làn da ẩm ướt",
+    "TitleTalent1": "Moist Skin",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_379_sesa": {
-    "TitleTalent1": "Phân Tích Điểm Yếu",
+    "TitleTalent1": "Vulnerability Deconstruction",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1712,13 +1712,13 @@
     "Talent1_2_p4": ""
   },
   "char_381_bubble": {
-    "TitleTalent1": "Khiên Gai",
+    "TitleTalent1": "Spiked Shield",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_383_snsant": {
-    "TitleTalent1": "Chuyên Gia Bắt Côn Trùng",
+    "TitleTalent1": "Bug Catcher",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1726,13 +1726,13 @@
     "Talent1_2_p4": ""
   },
   "char_385_finlpp": {
-    "TitleTalent1": "Hồi Phục Nhanh",
+    "TitleTalent1": "Rapid Restoration",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_388_mint": {
-    "TitleTalent1": "Nhà Địa Chất",
+    "TitleTalent1": "Geologist",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1740,8 +1740,8 @@
     "Talent1_2_p4": ""
   },
   "char_391_rosmon": {
-    "TitleTalent1": "Trang Bị Tiêu Diệt",
-    "TitleTalent2": "Ổn Định Cảm Giác",
+    "TitleTalent1": "Armaments of Annihilation",
+    "TitleTalent2": "Stable Esthesia",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1749,7 +1749,7 @@
     "Talent2": ""
   },
   "char_394_hadiya": {
-    "TitleTalent1": "Hậu Duệ Hoang Dã",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1757,7 +1757,7 @@
     "Talent1_2_p4": ""
   },
   "char_4000_jnight": {
-    "TitleTalent1": "Cổ Vũ Công Lý I",
+    "TitleTalent1": "Justice Drive I",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1767,13 +1767,13 @@
     "Talent0_p5": ""
   },
   "char_4004_pudd": {
-    "TitleTalent1": "Sóng Điện Từ",
+    "TitleTalent1": "Electromagnetic Waves",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4006_melnte": {
-    "TitleTalent1": "Hiệu Chỉnh Thông Số",
+    "TitleTalent1": "Calibrating Parameters",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1781,23 +1781,23 @@
     "Talent1_2_p4": ""
   },
   "char_4009_irene": {
-    "TitleTalent1": "Ngọn Lửa Phán Xét",
-    "TitleTalent2": "Thanh Kiếm Thanh Tẩy",
+    "TitleTalent1": "Flames of Castigation",
+    "TitleTalent2": "Sword of Cleansing",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_400_weedy": {
-    "TitleTalent1": "Súng Phun Nước Công Trình",
-    "TitleTalent2": "Súng Phun Nước Cải Tiến",
+    "TitleTalent1": "Industrial Water Cannon",
+    "TitleTalent2": "Upgraded Water Cannon",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_4010_etlchi": {
-    "TitleTalent1": "Huyết Kho",
-    "TitleTalent2": "Hồi Vị",
+    "TitleTalent1": "Blood Bank",
+    "TitleTalent2": "Second Serving",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1807,15 +1807,15 @@
     "Talent3": ""
   },
   "char_4011_lessng": {
-    "TitleTalent1": "Khắc Ghi Nỗi Đau",
-    "TitleTalent2": "Mài Giũa Trong Nghịch Cảnh",
+    "TitleTalent1": "Pain Focus",
+    "TitleTalent2": "Whetted With Pain",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4013_kjera": {
-    "TitleTalent1": "Lòng Thành Kính",
+    "TitleTalent1": "Deference",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1823,20 +1823,20 @@
     "Talent1_2_p4": ""
   },
   "char_4014_lunacu": {
-    "TitleTalent1": "Bản Năng Hoang Dã",
+    "TitleTalent1": "Wilderness Instinct",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4015_spuria": {
-    "TitleTalent1": "Thực Nghiệm Nạp Đạn Phân Tách",
+    "TitleTalent1": "Differential Reloading Experiment",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4016_kazema": {
-    "TitleTalent1": "Họa Chỉ Sinh Linh",
+    "TitleTalent1": "From Paper Comes Life",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1854,7 +1854,7 @@
     "Talent1_2_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 125%<@ba.talpu>(+5%)</> và hồi thêm 2 SP."
   },
   "char_4019_ncdeer": {
-    "TitleTalent1": "Linh Quang Thụy Vân",
+    "TitleTalent1": "Ethereal Iridescent Clouds",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1878,8 +1878,8 @@
     "Talent2": "Trong chế độ【Tales Within the Sand】(RA mode), mỗi khi kích hoạt kỹ năng, toàn bộ tài nguyên đang mang sẽ được chuyển vào túi đồ."
   },
   "char_4025_aprot2": {
-    "TitleTalent1": "Vùng đất ký ức",
-    "TitleTalent2": "Phán Quyết Diệt Vong",
+    "TitleTalent1": "Land of Memories",
+    "TitleTalent2": "Proclamation of Doom",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1895,8 +1895,8 @@
     "Talent2_p4": "Khi có mặt trên sân, tăng 10% tốc độ hồi DP tự nhiên. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
   "char_4027_heyak": {
-    "TitleTalent1": "Kế Thừa Chung Cục",
-    "TitleTalent2": "Tằng Hữu Vũ Dực",
+    "TitleTalent1": "Inherited End",
+    "TitleTalent2": "Bygone Wings",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1904,7 +1904,7 @@
     "Talent2": ""
   },
   "char_402_tuye": {
-    "TitleTalent1": "Thủy Áp Tích Tụ",
+    "TitleTalent1": "Water Storage",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1912,7 +1912,7 @@
     "Talent1_2_p4": ""
   },
   "char_4032_provs": {
-    "TitleTalent1": "Thiết Luật Kazimierz",
+    "TitleTalent1": "Kazimierz Legal Expertise",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1920,7 +1920,7 @@
     "Talent1_2_p4": ""
   },
   "char_4036_forcer": {
-    "TitleTalent1": "Xạ Kích Kỹ Xảo",
+    "TitleTalent1": "Precise Aim",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1928,8 +1928,8 @@
     "Talent1_2_p4": ""
   },
   "char_4039_horn": {
-    "TitleTalent1": "Pháo Đài Quân Sự",
-    "TitleTalent2": "Huyết Chiến",
+    "TitleTalent1": "Military Fortress",
+    "TitleTalent2": "Bloodbath",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -1938,7 +1938,7 @@
     "Talent2_p4": ""
   },
   "char_4040_rockr": {
-    "TitleTalent1": "nền tảng vững chắc",
+    "TitleTalent1": "Firm Foundation",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1946,7 +1946,7 @@
     "Talent1_2_p4": ""
   },
   "char_4041_chnut": {
-    "TitleTalent1": "Thực Địa Y Pháp",
+    "TitleTalent1": "Solidly Grounded",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1954,23 +1954,23 @@
     "Talent1_2_p4": ""
   },
   "char_4042_lumen": {
-    "TitleTalent1": "Ước Nguyện Của Kẻ Vô Danh",
-    "TitleTalent2": "Sơ Cứu Khẩn Cấp",
+    "TitleTalent1": "An Everyman's Wish",
+    "TitleTalent2": "Quick Fix",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4043_erato": {
-    "TitleTalent1": "Giai Điệu Mộng Mị",
+    "TitleTalent1": "Song of Dreams",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4045_heidi": {
-    "TitleTalent1": "Xảo Quyệt",
-    "TitleTalent2": "Tín Sứ Tư Nhân",
+    "TitleTalent1": "Crafty Rebel",
+    "TitleTalent2": "Private Messenger",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1978,15 +1978,15 @@
     "Talent2": ""
   },
   "char_4046_ebnhlz": {
-    "TitleTalent1": "Cường Nhược Pháp",
-    "TitleTalent2": "Âm Đệm",
+    "TitleTalent1": "Dynamics",
+    "TitleTalent2": "Appoggiatura",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4047_pianst": {
-    "TitleTalent1": "Hồi Âm",
+    "TitleTalent1": "Reverberation",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1994,8 +1994,8 @@
     "Talent1_2_p4": ""
   },
   "char_4048_doroth": {
-    "TitleTalent1": "Thiết Bị Cộng Hưởng",
-    "TitleTalent2": "Kẻ Mộng Mơ",
+    "TitleTalent1": "Resonator",
+    "TitleTalent2": "Dreamer",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2006,7 +2006,7 @@
     "Talent2_p4": ""
   },
   "char_4051_akkord": {
-    "TitleTalent1": "Đồng Cấu Luật Mạch",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2014,7 +2014,7 @@
     "Talent1_2_p4": ""
   },
   "char_4052_surfer": {
-    "TitleTalent1": "Độc Hành Viễn Phương",
+    "TitleTalent1": "Lữ hành đơn độc",
     "TitleTalent2": "",
     "Talent1": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 1 DP.",
     "Talent1_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 2<@ba.talpu>(+1)</> DP.",
@@ -2022,7 +2022,7 @@
     "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 3<@ba.talpu>(+1)</> DP."
   },
   "char_4054_malist": {
-    "TitleTalent1": "Chợt Ngộ",
+    "TitleTalent1": "Flash of Insight",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2030,8 +2030,8 @@
     "Talent1_2_p4": ""
   },
   "char_4055_bgsnow": {
-    "TitleTalent1": "Máy Đánh Chữ Tự Động",
-    "TitleTalent2": "Tốc Ký Điểm Yếu",
+    "TitleTalent1": "Automatic Typewriter",
+    "TitleTalent2": "Stenographer of Weaknesses",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2039,8 +2039,8 @@
     "Talent2_p4": ""
   },
   "char_4056_titi": {
-    "TitleTalent1": "Thời Gian Ngưng Đọng",
-    "TitleTalent2": "Báo Đáp Cho Lòng Dũng Cảm",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2049,8 +2049,8 @@
     "Talent2_p5": ""
   },
   "char_4058_pepe": {
-    "TitleTalent1": "Truyền Thừa Quá Khứ",
-    "TitleTalent2": "Hương Sen Lan Tỏa",
+    "TitleTalent1": "Legacy of the Past",
+    "TitleTalent2": "Perfuse With Lotus",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2059,7 +2059,7 @@
     "Talent2_p2": ""
   },
   "char_405_absin": {
-    "TitleTalent1": "Kẻ Hành Pháp",
+    "TitleTalent1": "Enforcer",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2067,7 +2067,7 @@
     "Talent1_2_p4": ""
   },
   "char_4062_totter": {
-    "TitleTalent1": "Ánh Nhìn Rực Lửa",
+    "TitleTalent1": "Illuminating Eyes",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2077,7 +2077,7 @@
     "Talent1_2_p4": ""
   },
   "char_4063_quartz": {
-    "TitleTalent1": "Bước Chân Hoang Dã",
+    "TitleTalent1": "Wilderness Wanderer",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2085,8 +2085,8 @@
     "Talent1_2_p4": ""
   },
   "char_4064_mlynar": {
-    "TitleTalent1": "Du Hiệp",
-    "TitleTalent2": "Tâm Bất Biến",
+    "TitleTalent1": "Wanderer",
+    "TitleTalent2": "Unmoved",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2095,8 +2095,8 @@
     "Talent2_p4": ""
   },
   "char_4065_judge": {
-    "TitleTalent1": "Hộ Vệ Luật Pháp",
-    "TitleTalent2": "Gai Nhọn Vây Quanh",
+    "TitleTalent1": "Guardian of the Law",
+    "TitleTalent2": "Wreathed in Thorns",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2107,8 +2107,8 @@
     "Talent2_p4": ""
   },
   "char_4066_highmo": {
-    "TitleTalent1": "Thu Hoạch, Tiếp Tế",
-    "TitleTalent2": "Giao Thoa, Bệnh Tật",
+    "TitleTalent1": "Sustenance from the Reaper",
+    "TitleTalent2": "Interfluence from Maladie",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2117,13 +2117,13 @@
     "Talent2_2": ""
   },
   "char_4067_lolxh": {
-    "TitleTalent1": "Chấp Hành Viên Tập Sự",
+    "TitleTalent1": "Executor-in-Training",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1_2": ""
   },
   "char_4071_peper": {
-    "TitleTalent1": "Chăm Sóc Đặc Biệt",
+    "TitleTalent1": "Focused Attention",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2131,8 +2131,8 @@
     "Talent1_2_p4": ""
   },
   "char_4072_ironmn": {
-    "TitleTalent1": "Kỹ Sư Chiến Trường",
-    "TitleTalent2": "Cắt Giảm Chi Phí",
+    "TitleTalent1": "Battlefield Engineer",
+    "TitleTalent2": "Cost Cutting",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2140,7 +2140,7 @@
     "Talent2_p4": ""
   },
   "char_4077_palico": {
-    "TitleTalent1": "Bom Xổ Số Kiểu Mèo I",
+    "TitleTalent1": "Felyne Lottery Bomb I",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2150,7 +2150,7 @@
     "Talent0_p5": ""
   },
   "char_4078_bdhkgt": {
-    "TitleTalent1": "Bước Đầu Vào Hoang Dã",
+    "TitleTalent1": "First Step Into the Wilds",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2158,7 +2158,7 @@
     "Talent1_2_p4": ""
   },
   "char_4079_haini": {
-    "TitleTalent1": "Diệu Dụng Thiết Bị Trắc Địa",
+    "TitleTalent1": "Ingenius Usage of Survey Equipment",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2166,8 +2166,8 @@
     "Talent1_2_p4": ""
   },
   "char_4080_lin": {
-    "TitleTalent1": "Kế Hoạch Vạn Toàn",
-    "TitleTalent2": "Thao Quang",
+    "TitleTalent1": "Foolproof Plan",
+    "TitleTalent2": "Shrouded Strength",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2176,7 +2176,7 @@
     "Talent2_p2": ""
   },
   "char_4081_warmy": {
-    "TitleTalent1": "Khó Tránh Trào Nồi",
+    "TitleTalent1": "Overflowing Pot",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2184,8 +2184,8 @@
     "Talent1_2_p4": ""
   },
   "char_4082_qiubai": {
-    "TitleTalent1": "Tìm Khe Hở",
-    "TitleTalent2": "Lạc Anh",
+    "TitleTalent1": "Find an Opening",
+    "TitleTalent2": "Falling Petals",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2194,7 +2194,7 @@
     "Talent2_p2": ""
   },
   "char_4083_chimes": {
-    "TitleTalent1": "Vượt Đường Núi",
+    "TitleTalent1": "Mountain Traveler",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2202,8 +2202,8 @@
     "Talent1_2_p4": ""
   },
   "char_4087_ines": {
-    "TitleTalent1": "Dệt Bóng",
-    "TitleTalent2": "Ảnh Tiêu",
+    "TitleTalent1": "Ảnh Chức",
+    "TitleTalent2": "Ảnh Vệ",
     "Talent1": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 3 giây và [[Cướp|Steal]] 50 ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
     "Talent1_p4": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 3 giây và [[Cướp|Steal]] 60<@ba.talpu>(+10)</> ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
     "Talent1_2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Trói chân|Bind]] trong 5 giây và [[Cướp|Steal]] 90 ATK của chúng (hiệu ứng kết thúc khi mục tiêu bị hạ hoặc Ines rút lui).",
@@ -2211,15 +2211,15 @@
     "Talent2": "Kẻ địch trong phạm vi tấn công bị vô hiệu hoá [[Tàng hình|Invisible]] và giảm 30% tốc độ di chuyển. Sau khi rút lui, Ines để lại một 'Ảnh Vệ' với cùng hiệu ứng trên (tối đa 1)."
   },
   "char_4088_hodrer": {
-    "TitleTalent1": "Tận Dụng Thời Cơ",
-    "TitleTalent2": "Áo Choàng Tàn Lửa",
+    "TitleTalent1": "Do or Die",
+    "TitleTalent2": "Cloak of Lingering Flame",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4091_ulika": {
-    "TitleTalent1": "Thiên Tài Đoản Mạch I",
+    "TitleTalent1": "Short-Circuiting Genius I",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2229,7 +2229,7 @@
     "Talent0_p5": ""
   },
   "char_4093_frston": {
-    "TitleTalent1": "Tồn Tục I",
+    "TitleTalent1": "Persevere I",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2239,8 +2239,8 @@
     "Talent0_p5": ""
   },
   "char_4098_vvana": {
-    "TitleTalent1": "Nến Cháy Soi Sáng",
-    "TitleTalent2": "Tán Hoa",
+    "TitleTalent1": "Candlelight",
+    "TitleTalent2": "Nova",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2249,7 +2249,7 @@
     "Talent2_p2": ""
   },
   "char_4100_caper": {
-    "TitleTalent1": "Tùy Tâm Đùa Giỡn",
+    "TitleTalent1": "Larking About",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2257,15 +2257,15 @@
     "Talent1_2_p4": ""
   },
   "char_4102_threye": {
-    "TitleTalent1": "Kẻ Tiết Lộ",
-    "TitleTalent2": "Kẻ Ẩn Cư",
+    "TitleTalent1": "The One Who Reveals",
+    "TitleTalent2": "The Reclusive One",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4104_coldst": {
-    "TitleTalent1": "Không Chịu Yếu Thế",
+    "TitleTalent1": "Not to be Outdone",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2273,7 +2273,7 @@
     "Talent1_2_p4": ""
   },
   "char_4105_almond": {
-    "TitleTalent1": "Balo Kỹ Thuật",
+    "TitleTalent1": "Engineer's Backpack",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2281,7 +2281,7 @@
     "Talent1_2_p4": ""
   },
   "char_4106_bryota": {
-    "TitleTalent1": "Lượng Thời Độ Lực",
+    "TitleTalent1": "Cautious and Calculated",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2291,7 +2291,7 @@
     "Talent1_2_p4": ""
   },
   "char_4107_vrdant": {
-    "TitleTalent1": "Khả Năng Tự Phục Hồi Của Thực Vật",
+    "TitleTalent1": "Vegetative Regeneration",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2299,14 +2299,14 @@
     "Talent1_2_p4": ""
   },
   "char_4109_baslin": {
-    "TitleTalent1": "Giáo Huấn Uy Quyền",
+    "TitleTalent1": "Authoritarian Teachings",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4110_delphn": {
-    "TitleTalent1": "Tẩy Lễ Kiếm Phong",
-    "TitleTalent2": "Trảm Đoạn Địch Sầu",
+    "TitleTalent1": "Baptize the Blade",
+    "TitleTalent2": "Cut Without Mercy",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2314,7 +2314,7 @@
     "Talent2": ""
   },
   "char_4114_harold": {
-    "TitleTalent1": "Ta Chính Là Doanh Trại",
+    "TitleTalent1": "I Am the Camp",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2322,8 +2322,8 @@
     "Talent1_2_p4": ""
   },
   "char_4116_blkkgt": {
-    "TitleTalent1": "\"Võ Giả Thiên Bẩm\"",
-    "TitleTalent2": "Huyền Thoại Sống",
+    "TitleTalent1": "Born Warrior",
+    "TitleTalent2": "Living Legend",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2332,15 +2332,15 @@
     "Talent2_p4": ""
   },
   "char_4117_ray": {
-    "TitleTalent1": "Bạn Đồng Hành Tuần Tra",
-    "TitleTalent2": "Nhập Thần",
+    "TitleTalent1": "Patrol Partner",
+    "TitleTalent2": "Extreme Focus",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4119_wanqin": {
-    "TitleTalent1": "Xem Thiên Thời",
+    "TitleTalent1": "Am hiểu thiên thời",
     "TitleTalent2": "",
     "Talent1": "Tăng 3% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 5% nếu triển khai cùng hướng với Wanqing.",
     "Talent1_p4": "Tăng 4%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 6%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing.",
@@ -2348,7 +2348,7 @@
     "Talent1_2_p4": "Tăng 6%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
   },
   "char_411_tomimi": {
-    "TitleTalent1": "Ma Pháp Hoang Dã",
+    "TitleTalent1": "Arts of the Wild",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2358,8 +2358,8 @@
     "Talent1_2_p4": ""
   },
   "char_4121_zuole": {
-    "TitleTalent1": "Chấp Chúc Chiếu Ảnh",
-    "TitleTalent2": "Thủ Chính Tự Minh",
+    "TitleTalent1": "Candlelight's Shadow",
+    "TitleTalent2": "Self-Evident Virtue",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2367,7 +2367,7 @@
     "Talent2_p4": ""
   },
   "char_4122_grabds": {
-    "TitleTalent1": "Ngoan Ngoãn Nghe Lời",
+    "TitleTalent1": "Please Behave",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2375,8 +2375,8 @@
     "Talent1_2_p4": ""
   },
   "char_4123_ela": {
-    "TitleTalent1": "Mìn Grzmot",
-    "TitleTalent2": "\"Trúng Hồng Tâm\"",
+    "TitleTalent1": "GRZMOT Mine",
+    "TitleTalent2": "'Bullseye'",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2387,7 +2387,7 @@
     "Talent2_p4": ""
   },
   "char_4124_iana": {
-    "TitleTalent1": "Thiết Bị Nhân Bản Song Sinh",
+    "TitleTalent1": "Gemini Replicator",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2397,8 +2397,8 @@
     "Talent1_2_p4": ""
   },
   "char_4125_rdoc": {
-    "TitleTalent1": "Quân Y",
-    "TitleTalent2": "Kích Hoạt Thần Kinh Giao Cảm",
+    "TitleTalent1": "Field Medic",
+    "TitleTalent2": "Sympathicus Simulation",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2409,7 +2409,7 @@
     "Talent2_2": ""
   },
   "char_4126_fuze": {
-    "TitleTalent1": "Khiên Chống Đạn",
+    "TitleTalent1": "Ballistic Shield",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2417,7 +2417,7 @@
     "Talent1_2_p4": ""
   },
   "char_4130_luton": {
-    "TitleTalent1": "Tìm Sống Trong Cái Chết",
+    "TitleTalent1": "From Death's Clutches",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2425,7 +2425,7 @@
     "Talent1_2_p4": ""
   },
   "char_4131_odda": {
-    "TitleTalent1": "Búa Rơi",
+    "TitleTalent1": "Hammerfall",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2433,8 +2433,8 @@
     "Talent1_2_p4": ""
   },
   "char_4132_ascln": {
-    "TitleTalent1": "Thẩm Vấn Tử Vong",
-    "TitleTalent2": "Tàn Ảnh Phệ Quang",
+    "TitleTalent1": "Mortal Interrogation",
+    "TitleTalent2": "Penumbral Image",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2442,8 +2442,8 @@
     "Talent2_p4": ""
   },
   "char_4133_logos": {
-    "TitleTalent1": "Tiến Hóa Từ Vựng",
-    "TitleTalent2": "Lời Nguyện Hồn",
+    "TitleTalent1": "Lexical Evolution",
+    "TitleTalent2": "Requiem Aeternam",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2452,15 +2452,15 @@
     "Talent2_p2": ""
   },
   "char_4134_cetsyr": {
-    "TitleTalent1": "Bụi Trần Quá Khứ",
-    "TitleTalent2": "Tàn Vang Ma Vương",
+    "TitleTalent1": "Dust of the Past",
+    "TitleTalent2": "The Echo of Kings",
     "Talent0": "",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4136_phonor": {
-    "TitleTalent1": "Đồng Ca Thung Lũng Xa Xăm I",
+    "TitleTalent1": "Chorus of a Distant Valley I",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2470,7 +2470,7 @@
     "Talent0_p5": ""
   },
   "char_4137_udflow": {
-    "TitleTalent1": "Thuốc Ức Chế Hoạt Tính Tế Bào",
+    "TitleTalent1": "Cell Activity Suppressant",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2478,8 +2478,8 @@
     "Talent1_2_p4": ""
   },
   "char_4138_narant": {
-    "TitleTalent1": "\"Ta Thấy, Ta Lấy\"",
-    "TitleTalent2": "Ảo Ảnh Thướt Tha",
+    "TitleTalent1": "'I See, I Take'",
+    "TitleTalent2": "Graceful Shadow",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2488,7 +2488,7 @@
     "Talent2_p2": ""
   },
   "char_4139_papyrs": {
-    "TitleTalent1": "Thông Hiểu Cổ Thư",
+    "TitleTalent1": "Erudite of Ancient Scrolls",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2498,15 +2498,15 @@
     "Talent1_2_p4": ""
   },
   "char_4140_lasher": {
-    "TitleTalent1": "Di Huấn Của Thợ Thủ Công",
+    "TitleTalent1": "Teachings of the Dead Craftsman",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4141_marcil": {
-    "TitleTalent1": "Thiên Tài Số Một Lịch Sử Trường",
-    "TitleTalent2": "Người Đồng Hành Đáng Tin Cậy",
+    "TitleTalent1": "The Most Brilliant Student In the School's History",
+    "TitleTalent2": "Reliable Companion",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2514,19 +2514,19 @@
     "Talent2": ""
   },
   "char_4142_laios": {
-    "TitleTalent1": "Chuyên Gia Quái Vật Mê Cung",
+    "TitleTalent1": "Dungeon Monster Expert",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4143_sensi": {
-    "TitleTalent1": "Mười Năm Kinh Nghiệm Nấu Quái Vật",
+    "TitleTalent1": "Ten Years of Monster Cooking Experience",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4144_chilc": {
-    "TitleTalent1": "Ngũ Quan Nhạy Bén",
+    "TitleTalent1": "Giác quan nhạy bén",
     "TitleTalent2": "",
     "Talent1": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 35 giây.",
     "Talent1_p4": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 40<@ba.talpu>(+5)</> giây.",
@@ -2534,8 +2534,8 @@
     "Talent1_2_p4": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 50<@ba.talpu>(+5)</> giây."
   },
   "char_4145_ulpia": {
-    "TitleTalent1": "Kiên Định Bản Tính",
-    "TitleTalent2": "Bồi Dưỡng Huyết Mạch",
+    "TitleTalent1": "Natural Holdfast",
+    "TitleTalent2": "Nourish the Blood",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -2543,22 +2543,22 @@
     "Talent3": ""
   },
   "char_4146_nymph": {
-    "TitleTalent1": "Thất Hồn",
-    "TitleTalent2": "Chìa Khóa Thấu Tâm",
+    "TitleTalent1": "Soul Stolen",
+    "TitleTalent2": "Key to the Heart",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4147_mitm": {
-    "TitleTalent1": "Xe Chiến Phế Liệu",
+    "TitleTalent1": "Scrapheap Buggies",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4148_philae": {
-    "TitleTalent1": "Sứ Giả Thần Hà",
+    "TitleTalent1": "Herald of the Divine River",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2566,8 +2566,8 @@
     "Talent1_2_p4": ""
   },
   "char_4151_tinman": {
-    "TitleTalent1": "\"Đang Trên Đường\"",
-    "TitleTalent2": "Linh Hồn Héo Úa",
+    "TitleTalent1": "'On My Way'",
+    "TitleTalent2": "Shriveled Soul",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p2": "",
@@ -2577,7 +2577,7 @@
     "Talent2_p4": ""
   },
   "char_4155_talr": {
-    "TitleTalent1": "Cẩn Thận Chọn Khách!",
+    "TitleTalent1": "Select Your Customers!",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2585,7 +2585,7 @@
     "Talent1_2_p4": ""
   },
   "char_415_flint": {
-    "TitleTalent1": "Thân Nhẹ Không Vết",
+    "TitleTalent1": "Featherweight",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2593,7 +2593,7 @@
     "Talent1_2_p4": ""
   },
   "char_4162_cathy": {
-    "TitleTalent1": "Tín Hiệu Hỗ Trợ Định Hướng",
+    "TitleTalent1": "Directional Support Signal",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2605,7 +2605,7 @@
     "Talent3": ""
   },
   "char_4163_rosesa": {
-    "TitleTalent1": "Thảo Dược Sư Số Một",
+    "TitleTalent1": "Herbalist Número Uno",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2615,7 +2615,7 @@
     "Talent1_2_p4": ""
   },
   "char_4164_tecno": {
-    "TitleTalent1": "Ngẫu Hứng Chế Rối",
+    "TitleTalent1": "Freestyle Puppetry",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -2624,7 +2624,7 @@
     "Talent3": ""
   },
   "char_4165_ctrail": {
-    "TitleTalent1": "Luồng Khí Thấp",
+    "TitleTalent1": "Low-Altitude Turbulence",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2632,7 +2632,7 @@
     "Talent1_2_p4": ""
   },
   "char_4166_varkis": {
-    "TitleTalent1": "Vĩnh Viễn Khắc Ghi",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2640,8 +2640,8 @@
     "Talent1_2_p4": ""
   },
   "char_416_zumama": {
-    "TitleTalent1": "Dũng Quán Tam Quân",
-    "TitleTalent2": "Càng Đánh Càng Hăng",
+    "TitleTalent1": "Peerless Bravery",
+    "TitleTalent2": "Resilience",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2649,7 +2649,7 @@
     "Talent2": ""
   },
   "char_4171_wulfen": {
-    "TitleTalent1": "Túi Đồ Nhà Thám Hiểm",
+    "TitleTalent1": "Explorer's Stash",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2659,7 +2659,7 @@
     "Talent1_2_p4": ""
   },
   "char_4172_xingzh": {
-    "TitleTalent1": "Tình Bạn Đồng Hành",
+    "TitleTalent1": "Friendship Fair, Together Tied",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2667,7 +2667,7 @@
     "Talent1_2_p4": ""
   },
   "char_4173_nowell": {
-    "TitleTalent1": "Kê Đơn Chính Xác",
+    "TitleTalent1": "Precise Prescription",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2675,7 +2675,7 @@
     "Talent1_2_p4": ""
   },
   "char_4177_brigid": {
-    "TitleTalent1": "Bậc Thầy Thắt Nút",
+    "TitleTalent1": "Practiced Knot-Tier",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2683,7 +2683,7 @@
     "Talent1_2_p4": ""
   },
   "char_4178_alanna": {
-    "TitleTalent1": "Cải Tiến Tạm Thời",
+    "TitleTalent1": "Makeshift Modification",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2693,8 +2693,8 @@
     "Talent1_2_p4": ""
   },
   "char_4179_monstr": {
-    "TitleTalent1": "Tự Phục Hồi",
-    "TitleTalent2": "Phối Hợp Chiến Thuật",
+    "TitleTalent1": "Self-Repair",
+    "TitleTalent2": "Tactical Coordination",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2707,8 +2707,8 @@
     "Talent2_2_p5": ""
   },
   "char_4182_oblvns": {
-    "TitleTalent1": "Nốt Nhạc Tụng Ca",
-    "TitleTalent2": "Vô Úy Lãng Quên",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2719,8 +2719,8 @@
     "Talent2_2_p4": ""
   },
   "char_4183_mortis": {
-    "TitleTalent1": "Một \"Cô Ấy\" Khác",
-    "TitleTalent2": "Vô Úy Tử Vong",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2732,8 +2732,8 @@
     "Talent2_2": ""
   },
   "char_4184_dolris": {
-    "TitleTalent1": "Mặt Nạ Dối Trá",
-    "TitleTalent2": "Vô Úy Bi Thương",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2745,8 +2745,8 @@
     "Talent2_2": ""
   },
   "char_4185_amoris": {
-    "TitleTalent1": "Thuận Hai Tay",
-    "TitleTalent2": "Tình Yêu Không Sợ Hãi",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2759,8 +2759,8 @@
     "Talent3": ""
   },
   "char_4186_tmoris": {
-    "TitleTalent1": "Đến Theo Tiếng Gọi",
-    "TitleTalent2": "Bất Úy Khủng Cụ",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2770,7 +2770,7 @@
     "Talent2_2_p4": ""
   },
   "char_4187_graceb": {
-    "TitleTalent1": "Thừa Cơ Khoan Dung",
+    "TitleTalent1": "Opportune Mercy",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2778,7 +2778,7 @@
     "Talent1_2_p4": ""
   },
   "char_4188_confes": {
-    "TitleTalent1": "Trả Phí Trước, Xưng Tội Sau I",
+    "TitleTalent1": "Thanh toán trước, Xưng tội sau·I",
     "TitleTalent2": "",
     "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 5 giây.",
     "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
@@ -2788,7 +2788,7 @@
     "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
   },
   "char_4191_tippi": {
-    "TitleTalent1": "Cẩm Nang Vận Hành Phim Trường",
+    "TitleTalent1": "Film Set Operational Manual",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2796,8 +2796,8 @@
     "Talent1_2_p4": ""
   },
   "char_4193_lemuen": {
-    "TitleTalent1": "Giấy Phép Truy Kích Xuyên Biên Giới",
-    "TitleTalent2": "Thủ Tục Dẫn Độ Tội Phạm",
+    "TitleTalent1": "Diploma Persecutionis Internationalis",
+    "TitleTalent2": "Modus Extraditio Fugitivi",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2805,16 +2805,16 @@
     "Talent2": ""
   },
   "char_4194_rmixer": {
-    "TitleTalent1": "Nghi Thức Chào Mừng Bằng Súng Máy",
-    "TitleTalent2": "Nghi Thức Tiễn Khách Dựng Khiên",
+    "TitleTalent1": "Machine-Gun Welcome Ceremony",
+    "TitleTalent2": "Shield-Up Farewell Ceremony",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4195_radian": {
-    "TitleTalent1": "Cảm Hứng Từ Băng Cassette",
-    "TitleTalent2": "Cố Lên Nào~",
+    "TitleTalent1": "Cassette Inspiration",
+    "TitleTalent2": "Do Your Best~",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2822,7 +2822,7 @@
     "Talent2_p4": ""
   },
   "char_4196_reckpr": {
-    "TitleTalent1": "Tích Lũy Tri Thức",
+    "TitleTalent1": "Accumulated Knowledge",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2830,7 +2830,7 @@
     "Talent1_2_p4": ""
   },
   "char_4198_christ": {
-    "TitleTalent1": "Mỹ Vị Quyến Rũ",
+    "TitleTalent1": "Captivating Delicacy",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2838,7 +2838,7 @@
     "Talent1_2_p4": ""
   },
   "char_4199_makiri": {
-    "TitleTalent1": "Trù Bị Chậm Rãi ()",
+    "TitleTalent1": "Chậm mà chắc",
     "TitleTalent2": "",
     "Talent1": "Sau khi triển khai được 30 giây, tăng 5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
     "Talent1_p4": "Sau khi triển khai được 30 giây, tăng 7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
@@ -2846,8 +2846,8 @@
     "Talent1_2_p4": "Sau khi triển khai được 30 giây, tăng 12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
-    "TitleTalent1": "Phù Quang Bào Ảnh ()",
-    "TitleTalent2": "Phù Dao Hoa Hỏa ()",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2855,7 +2855,7 @@
     "Talent2_p4": ""
   },
   "char_4203_kichi": {
-    "TitleTalent1": "Liên Kích May Mắn! ()",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2863,8 +2863,8 @@
     "Talent1_2_p4": ""
   },
   "char_4204_mantra": {
-    "TitleTalent1": "Cấm Vực Tĩnh Lặng ()",
-    "TitleTalent2": "Thông Suốt Toàn Cục ()",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2872,7 +2872,7 @@
     "Talent2": ""
   },
   "char_4207_branch": {
-    "TitleTalent1": "Băng Bó Sơ Cứu ()",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2880,7 +2880,7 @@
     "Talent1_2_p4": ""
   },
   "char_4208_wintim": {
-    "TitleTalent1": "Chấp Bút Ghi Chép ()",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "ASPD +5, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
     "Talent1_p4": "ASPD +7<@ba.talpu>(+2)</>, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
@@ -2888,15 +2888,15 @@
     "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này."
   },
   "char_420_flamtl": {
-    "TitleTalent1": "Kiếm Thuật Tiên Phong (Vanguard Swordsmanship)",
-    "TitleTalent2": "Đoàn Trưởng Hiệp Sĩ Thông Đỏ (Pinus Sylvestris Leader)",
+    "TitleTalent1": "Kiếm thuật tiên phong",
+    "TitleTalent2": "Thủ lĩnh Pinus Sylvestris",
     "Talent1": "Mỗi khi né đòn, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp.",
     "Talent1_2": "Mỗi khi né đòn, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp lên toàn bộ kẻ địch đang bị chặn.",
     "Talent2": "Khi có mặt trên sân, tất cả cán viên thuộc【Kazimierz】nhận 22% tỷ lệ né sát thương vật lý.",
     "Talent2_p4": "Khi có mặt trên sân, tất cả cán viên thuộc【Kazimierz】nhận 25%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
   "char_4211_snhunt": {
-    "TitleTalent1": "Nhất Kích Liệt Vân ()",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2904,8 +2904,8 @@
     "Talent1_2_p4": ""
   },
   "char_4212_nasti": {
-    "TitleTalent1": "Phía Trước Đang Thi Công ()",
-    "TitleTalent2": "Chú Ý An Toàn ()",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2913,14 +2913,14 @@
     "Talent2_p4": ""
   },
   "char_4213_skybx": {
-    "TitleTalent1": "Mở Cửa! Cục Quản Lý ()",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_4214_cairn": {
-    "TitleTalent1": "Giải Thích Quá Tải ()",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2928,14 +2928,14 @@
     "Talent1_2_p4": ""
   },
   "char_421_crow": {
-    "TitleTalent1": "Tiến Vào Trạng Thái",
+    "TitleTalent1": "Into the Groove",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_422_aurora": {
-    "TitleTalent1": "Nghỉ Ngơi Trong Giá Lạnh",
+    "TitleTalent1": "Frigid Respite",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2943,8 +2943,8 @@
     "Talent1_2_p4": ""
   },
   "char_423_blemsh": {
-    "TitleTalent1": "Hiệp Sĩ Kiếm Khiên",
-    "TitleTalent2": "Nhân Từ",
+    "TitleTalent1": "Knight of Sword and Shield",
+    "TitleTalent2": "Mercy",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": "",
@@ -2952,8 +2952,8 @@
     "Talent2_2_p4": ""
   },
   "char_426_billro": {
-    "TitleTalent1": "Bữa Ăn Sinh Mệnh",
-    "TitleTalent2": "Sẵn Sàng Hành Động",
+    "TitleTalent1": "Meal of Life",
+    "TitleTalent2": "Poised for Action",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2961,8 +2961,8 @@
     "Talent2": ""
   },
   "char_427_vigil": {
-    "TitleTalent1": "Thủ Lĩnh Đàn Sói",
-    "TitleTalent2": "Bản Năng Đàn Sói",
+    "TitleTalent1": "Leader of the Wolfpack",
+    "TitleTalent2": "Wolven Nature",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2970,8 +2970,8 @@
     "Talent2_p4": ""
   },
   "char_430_fartth": {
-    "TitleTalent1": "Tập Trung",
-    "TitleTalent2": "Nín Thở",
+    "TitleTalent1": "Concentration",
+    "TitleTalent2": "Stilled Breath",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2979,7 +2979,7 @@
     "Talent2": ""
   },
   "char_431_ashlok": {
-    "TitleTalent1": "Nghiên Cứu Pháo Kích",
+    "TitleTalent1": "Bombardment Studies",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2987,7 +2987,7 @@
     "Talent1_2_p4": ""
   },
   "char_433_windft": {
-    "TitleTalent1": "Cùng Tiến",
+    "TitleTalent1": "Forward Together",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2997,7 +2997,7 @@
     "Talent1_2_p4": ""
   },
   "char_436_whispr": {
-    "TitleTalent1": "Tháp Sinh Mệnh",
+    "TitleTalent1": "Tower of Life",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3005,8 +3005,8 @@
     "Talent1_2_p4": ""
   },
   "char_437_mizuki": {
-    "TitleTalent1": "Chứng Hysteria Do Sang Chấn",
-    "TitleTalent2": "Phản Chuyển Di",
+    "TitleTalent1": "Traumatic Hysteria",
+    "TitleTalent2": "Countertransference",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3014,7 +3014,7 @@
     "Talent2_p4": ""
   },
   "char_440_pinecn": {
-    "TitleTalent1": "Nguồn Điện Di Động",
+    "TitleTalent1": "Portable Energy Source",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3022,7 +3022,7 @@
     "Talent1_2_p4": ""
   },
   "char_445_wscoot": {
-    "TitleTalent1": "Tàng Phong Đợi Địch",
+    "TitleTalent1": "Sheathed Blade, Studied Foe",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3030,7 +3030,7 @@
     "Talent1_2_p4": ""
   },
   "char_446_aroma": {
-    "TitleTalent1": "Thử Nghiệm Hiệu Suất Tạo Bọt",
+    "TitleTalent1": "Let's Get Saponaceous!",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3038,7 +3038,7 @@
     "Talent1_2_p4": ""
   },
   "char_449_glider": {
-    "TitleTalent1": "Ý Thức Tập Thể",
+    "TitleTalent1": "Collective Consciousness",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3046,8 +3046,8 @@
     "Talent1_2_p4": ""
   },
   "char_450_necras": {
-    "TitleTalent1": "Nhen Nhóm Lại",
-    "TitleTalent2": "Hồi Quang Ám Đạm",
+    "TitleTalent1": "Rekindle",
+    "TitleTalent2": "Deathbed Deliverance",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3057,7 +3057,7 @@
     "Talent4": ""
   },
   "char_451_robin": {
-    "TitleTalent1": "Chuyên Gia 'Kẹp'",
+    "TitleTalent1": "'Clip' Specialist",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3067,14 +3067,14 @@
     "Talent1_2_p4": ""
   },
   "char_452_bstalk": {
-    "TitleTalent1": "Người Chăn Nuôi Chuyên Nghiệp",
+    "TitleTalent1": "Professional Breeder",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_455_nothin": {
-    "TitleTalent1": "Xuất Kỳ Bất Ý",
+    "TitleTalent1": "Unexpected Strike",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3082,16 +3082,16 @@
     "Talent1_2_p4": ""
   },
   "char_456_ash": {
-    "TitleTalent1": "Thiết Bị Phụ Trợ",
-    "TitleTalent2": "Chuyên Viên Đột Kích",
+    "TitleTalent1": "Auxiliary Equipment",
+    "TitleTalent2": "Breaching Specialist",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_457_blitz": {
-    "TitleTalent1": "Khiên Thủ Xạ Kích",
-    "TitleTalent2": "Phòng Ngự Công Sự",
+    "TitleTalent1": "Shielded Shooting",
+    "TitleTalent2": "Bunker Defense",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3099,7 +3099,7 @@
     "Talent2": ""
   },
   "char_458_rfrost": {
-    "TitleTalent1": "Thảm Chào Mừng",
+    "TitleTalent1": "Welcome Mat",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3109,7 +3109,7 @@
     "Talent1_2_p4": ""
   },
   "char_459_tachak": {
-    "TitleTalent1": "Hỏa Lực Hạng Nặng",
+    "TitleTalent1": "Heavy Firepower",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3118,7 +3118,7 @@
     "Talent1_2_p4": ""
   },
   "char_464_cement": {
-    "TitleTalent1": "Hiệu Chỉnh Bản Vẽ",
+    "TitleTalent1": "Blueprint Corrections",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3126,7 +3126,7 @@
     "Talent1_2_p4": ""
   },
   "char_466_qanik": {
-    "TitleTalent1": "Sinh Tồn Băng Nguyên",
+    "TitleTalent1": "Tundra Survival",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3134,7 +3134,7 @@
     "Talent1_2_p4": ""
   },
   "char_469_indigo": {
-    "TitleTalent1": "Ánh Sáng Ràng Buộc",
+    "TitleTalent1": "Gentle Binding Gaze",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3142,8 +3142,8 @@
     "Talent1_2_p4": ""
   },
   "char_472_pasngr": {
-    "TitleTalent1": "Phân Tích Cơ Chế",
-    "TitleTalent2": "Độc Binh",
+    "TitleTalent1": "Mechanism Analysis",
+    "TitleTalent2": "Lone Soldier",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -3152,7 +3152,7 @@
     "Talent2_p2": ""
   },
   "char_473_mberry": {
-    "TitleTalent1": "Phụ Tá",
+    "TitleTalent1": "Helper",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3160,29 +3160,29 @@
     "Talent1_2_p4": ""
   },
   "char_474_glady": {
-    "TitleTalent1": "Sóng Triều Ægir",
-    "TitleTalent2": "Nhược Nhục Cường Thực",
+    "TitleTalent1": "Waves of Ægir",
+    "TitleTalent2": "Survival of the Fittest",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_475_akafyu": {
-    "TitleTalent1": "Tín Ảnh Lưu - Vũ Phi",
+    "TitleTalent1": "Nobukage-ryu - Hatobu",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_476_blkngt": {
-    "TitleTalent1": "Dạ Hành",
+    "TitleTalent1": "Nightwalker",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_478_kirara": {
-    "TitleTalent1": "Độc Hành Thủ Hộ",
+    "TitleTalent1": "Lonesome Protector",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3190,8 +3190,8 @@
     "Talent1_2_p4": ""
   },
   "char_479_sleach": {
-    "TitleTalent1": "Ngọn Cờ Bất Khuất",
-    "TitleTalent2": "Cảm Hóa Tinh Thần",
+    "TitleTalent1": "Ngọn cờ bất khuất",
+    "TitleTalent2": "Khích lệ tinh thần",
     "Talent1": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 5 ASPD, và kẻ địch bị giảm 5 ASPD.",
     "Talent1_p4": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 7<@ba.talpu>(+2)</> ASPD, và kẻ địch bị giảm 7<@ba.talpu>(+2)</> ASPD.",
     "Talent1_2": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 10 ASPD, và kẻ địch bị giảm 10 ASPD.",
@@ -3199,7 +3199,7 @@
     "Talent2": "Sau khi triển khai, giảm 2 phí triển khai của cán viên kế tiếp."
   },
   "char_484_robrta": {
-    "TitleTalent1": "Hiệu Chỉnh Máy Tạo Hình",
+    "TitleTalent1": "Modeler Debugging",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3209,15 +3209,15 @@
     "Talent1_2_p4": ""
   },
   "char_485_pallas": {
-    "TitleTalent1": "Sự Ra Đời Của Anh Hùng",
-    "TitleTalent2": "Sự Khích Lệ Của Nữ Thần",
+    "TitleTalent1": "Birth of a Hero",
+    "TitleTalent2": "Goddess' Inspiration",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_486_takila": {
-    "TitleTalent1": "Chờ Đợi Thời Cơ",
+    "TitleTalent1": "Waiting Game",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3225,7 +3225,7 @@
     "Talent1_2_p4": ""
   },
   "char_487_bobb": {
-    "TitleTalent1": "Chỉ Dẫn Tiêu Điểm",
+    "TitleTalent1": "Focused Guidance",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3233,7 +3233,7 @@
     "Talent1_2_p4": ""
   },
   "char_488_buildr": {
-    "TitleTalent1": "Quy Tắc Đội Phá Dỡ",
+    "TitleTalent1": "Quy tắc của đội phá dỡ",
     "TitleTalent2": "",
     "Talent1": "Sau khi được triển khai được 30 giây, tăng 8% HP tối đa.",
     "Talent1_p4": "Sau khi được triển khai được 30 giây, tăng 11%<@ba.talpu>(+3%)</> HP tối đa.",
@@ -3241,7 +3241,7 @@
     "Talent1_2_p4": "Sau khi được triển khai được 30 giây, tăng 18%<@ba.talpu>(+3%)</> HP tối đa."
   },
   "char_489_serum": {
-    "TitleTalent1": "Điều Chỉnh Chiến Thuật",
+    "TitleTalent1": "Tactical Readjustment",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3249,7 +3249,7 @@
     "Talent1_2_p4": ""
   },
   "char_491_humus": {
-    "TitleTalent1": "Tái Thu Hồi",
+    "TitleTalent1": "Re-recycle",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3257,7 +3257,7 @@
     "Talent1_2_p4": ""
   },
   "char_492_quercu": {
-    "TitleTalent1": "Sự Che Chở Của Rừng Rậm",
+    "TitleTalent1": "Forest Sanctuary",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3265,7 +3265,7 @@
     "Talent1_2_p4": ""
   },
   "char_493_firwhl": {
-    "TitleTalent1": "Tiến Thoái Tự Tại",
+    "TitleTalent1": "Flexible Fighter",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3273,7 +3273,7 @@
     "Talent1_2_p4": ""
   },
   "char_494_vendla": {
-    "TitleTalent1": "Cải Thiện Phân Bón Đất",
+    "TitleTalent1": "Soil Fertilizer Enhancement",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3281,13 +3281,13 @@
     "Talent1_2_p4": ""
   },
   "char_496_wildmn": {
-    "TitleTalent1": "Đồng Lòng Tiến Bước",
+    "TitleTalent1": "Đồng lòng tiến quân",
     "TitleTalent2": "",
     "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên thuộc【Cận Vệ】chưa triển khai sẽ giảm 1 phí triển khai.",
     "Talent1_2": "Sau khi được triển khai, tất cả cán viên thuộc【Cận Vệ】chưa triển khai sẽ giảm 1 phí triển khai (mỗi cán viên được giảm tối đa -5 phí triển khai trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
-    "TitleTalent1": "Vạn Toàn",
+    "TitleTalent1": "Linh Hoạt",
     "TitleTalent2": "",
     "Talent1": "Tăng 6 ASPD khi không chặn kẻ địch, tăng 6% ATK khi đang chặn kẻ địch.",
     "Talent1_p4": "Tăng 8<@ba.talpu>(+2)</> ASPD khi không chặn kẻ địch, tăng 8%<@ba.talpu>(+2%)</> ATK khi đang chặn kẻ địch.",
@@ -3295,13 +3295,13 @@
     "Talent1_2_p4": "Tăng 14<@ba.talpu>(+2)</> ASPD khi không chặn kẻ địch, tăng 14%<@ba.talpu>(+2%)</> ATK khi đang chặn kẻ địch."
   },
   "char_498_inside": {
-    "TitleTalent1": "Hỏa Lực Chi Viện",
+    "TitleTalent1": "Fire Support",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_499_kaitou": {
-    "TitleTalent1": "Thông Báo Trước",
+    "TitleTalent1": "Advanced Notice",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3309,22 +3309,22 @@
     "Talent1_2_p4": ""
   },
   "char_500_noirc": {
-    "TitleTalent1": "Giáp Cải Tiến",
+    "TitleTalent1": "Improved Armor",
     "TitleTalent2": "",
     "Talent0_lv30": ""
   },
   "char_501_durin": {
-    "TitleTalent1": "Sự May Mắn Của Cô Gái Nhỏ",
+    "TitleTalent1": "Lucky Lass",
     "TitleTalent2": "",
     "Talent0_lv30": ""
   },
   "char_502_nblade": {
-    "TitleTalent1": "Tái triển khai nhanh",
+    "TitleTalent1": "Tái triển khai siêu tốc",
     "TitleTalent2": "",
     "Talent0_lv30": "Giảm 30 giây thời gian tái triển khai."
   },
   "char_503_rang": {
-    "TitleTalent1": "Bậc thầy đối không",
+    "TitleTalent1": "Anti-Air Master",
     "TitleTalent2": "",
     "Talent0_lv30": ""
   },
@@ -3345,38 +3345,38 @@
     "TitleTalent2": ""
   },
   "char_508_aguard": {
-    "TitleTalent1": "Lưỡi dao ẩn khuất",
+    "TitleTalent1": "Invisible Blade",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_509_acast": {
-    "TitleTalent1": "\"Thấy những gì ta thấy\"",
+    "TitleTalent1": "'All That I See'",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_510_amedic": {
-    "TitleTalent1": "Thăng tiến",
+    "TitleTalent1": "Promotion",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_511_asnipe": {
-    "TitleTalent1": "Gió rơi",
+    "TitleTalent1": "Windfall",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_512_aprot": {
-    "TitleTalent1": "Vùng đất ký ức",
+    "TitleTalent1": "Land of Memories",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_513_apionr": {
-    "TitleTalent1": "Trái tim vô tận",
+    "TitleTalent1": "Tâm vô tận",
     "TitleTalent2": "",
     "Talent1": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,6/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
     "Talent1_2": "Sau khi triển khai, tốc độ hồi SP tự nhiên +1/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2."
@@ -3386,19 +3386,19 @@
     "TitleTalent2": ""
   },
   "char_600_cpione": {
-    "TitleTalent1": "Tăng Tấn công",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "Tăng 4% ATK.",
     "Talent1_2": "Tăng 8% ATK."
   },
   "char_601_cguard": {
-    "TitleTalent1": "Tăng Phòng thủ",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_602_cdfend": {
-    "TitleTalent1": "Tăng Tốc độ thi triển",
+    "TitleTalent1": "Tăng DEF",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -3428,22 +3428,22 @@
     "Talent1_2": ""
   },
   "char_607_cspec": {
-    "TitleTalent1": "Tăng Tấn Công",
+    "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_608_acpion": {
-    "TitleTalent1": "Trái Tim Vô Ngần",
-    "TitleTalent2": "Trái Tim Của Sóng",
+    "TitleTalent1": "Tâm vô tận",
+    "TitleTalent2": "Tâm sóng triều",
     "Talent0": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,3/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
     "Talent1": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,4/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
     "Talent1_2": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,6/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
     "Talent2": "ATK +10%, nhận thêm 1 DP mỗi khi hạ gục kẻ địch."
   },
   "char_609_acguad": {
-    "TitleTalent1": "Lưỡi Đao Ẩn Khuất",
-    "TitleTalent2": "Không Lùi Một Bước",
+    "TitleTalent1": "Invisible Blade",
+    "TitleTalent2": "Not One Step Back",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3451,8 +3451,8 @@
     "Talent3": ""
   },
   "char_610_acfend": {
-    "TitleTalent1": "Nguyên Liệu Nghiên Cứu",
-    "TitleTalent2": "Giáp Phản Hồi",
+    "TitleTalent1": "Research Materials",
+    "TitleTalent2": "Feedback Armor",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3460,54 +3460,54 @@
     "Talent2_2": ""
   },
   "char_611_acnipe": {
-    "TitleTalent1": "Gió Rơi",
-    "TitleTalent2": "Gió Mưa Sắp Đến",
+    "TitleTalent1": "Windfall",
+    "TitleTalent2": "Brewing Storm",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_612_accast": {
-    "TitleTalent1": "“Thấy Điều Ta Thấy”",
-    "TitleTalent2": "“Dạy Điều Ta Dạy”",
+    "TitleTalent1": "'All That I See'",
+    "TitleTalent2": "'All That I Teach'",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_613_acmedc": {
-    "TitleTalent1": "Thăng Tiến",
-    "TitleTalent2": "Siêu Thoát",
+    "TitleTalent1": "Promotion",
+    "TitleTalent2": "Transcendence",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_614_acsupo": {
-    "TitleTalent1": "Đồng Điệu",
-    "TitleTalent2": "Tín Hiệu Nghi Binh",
+    "TitleTalent1": "Phase Locked",
+    "TitleTalent2": "Decoy Blip",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_615_acspec": {
-    "TitleTalent1": "Thí nghiệm Nhị tượng",
-    "TitleTalent2": "Phân tách Bốn chiều",
+    "TitleTalent1": "Double-Hit Experiment",
+    "TitleTalent2": "Four-Dimensional Separation",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_616_pithst": {
-    "TitleTalent1": "Nguyên tố Lặp",
-    "TitleTalent2": "Hiệp ước Linh hoạt",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent2": ""
   },
   "char_617_sharp2": {
-    "TitleTalent1": "Lưỡi kiếm Thầm lặng",
-    "TitleTalent2": "Dũng khí Xung trận",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3526,7 +3526,7 @@
   },
   "token_10002_kalts_mon3tr": {
     "TitleTalent1": "Mon3tr",
-    "TitleTalent2": "Tái cấu trúc Không phá hủy",
+    "TitleTalent2": "Non-Damaging Restructuring",
     "Talent0": "",
     "Talent2": "",
     "Talent2_p4": ""
@@ -3537,7 +3537,7 @@
     "Talent2": ""
   },
   "token_10004_otter_motter": {
-    "TitleTalent1": "Rái cá Cơ khí",
+    "TitleTalent1": "Robotter",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3599,8 +3599,8 @@
     "Talent0": ""
   },
   "token_10009_weedy_cannon": {
-    "TitleTalent1": "Pháo nước Công nghiệp",
-    "TitleTalent2": "Pháo nước Cường hóa",
+    "TitleTalent1": "Industrial Water Cannon",
+    "TitleTalent2": "Upgraded Water Cannon",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
@@ -3627,7 +3627,7 @@
     "TitleTalent2": ""
   },
   "token_10014_bstalk_crab": {
-    "TitleTalent1": "Chuyên gia Chăn nuôi",
+    "TitleTalent1": "Professional Breeder",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3644,7 +3644,7 @@
     "TitleTalent2": ""
   },
   "token_10017_skadi2_dedant": {
-    "TitleTalent1": "Huyết thân Cổ đại",
+    "TitleTalent1": "Ancient Kin",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3652,7 +3652,7 @@
     "Talent2_p4": ""
   },
   "token_10018_robrta_mach": {
-    "TitleTalent1": "Hiệu chỉnh Máy tạo mẫu",
+    "TitleTalent1": "Modeler Debugging",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3690,7 +3690,7 @@
     "Talent2": ""
   },
   "token_10021_blkngt_hypnos": {
-    "TitleTalent1": "Dạ hành",
+    "TitleTalent1": "Nightwalker",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3707,7 +3707,7 @@
     "Talent1_2_p4": ""
   },
   "token_10023_windft_wrench": {
-    "TitleTalent1": "Cùng Tiến",
+    "TitleTalent1": "Forward Together",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3735,7 +3735,7 @@
     "Talent2_p4": ""
   },
   "token_10027_ironmn_pile1": {
-    "TitleTalent1": "Hỏa Lực Hỗ Trợ",
+    "TitleTalent1": "Fire Support",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": "",
@@ -3743,7 +3743,7 @@
     "Talent2_2": ""
   },
   "token_10027_ironmn_pile2": {
-    "TitleTalent1": "Tiếp Tế Chiến Trường",
+    "TitleTalent1": "Battle Resupply",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": "",
@@ -3752,7 +3752,7 @@
     "Talent3": ""
   },
   "token_10027_ironmn_pile3": {
-    "TitleTalent1": "Sức Mạnh Đoàn Kết",
+    "TitleTalent1": "Power of Unity",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": "",
@@ -3760,8 +3760,8 @@
     "Talent2_2": ""
   },
   "token_10028_vigil_wolf": {
-    "TitleTalent1": "Thủ Lĩnh Đàn Sói",
-    "TitleTalent2": "Bản Năng Đàn Sói",
+    "TitleTalent1": "Leader of the Wolfpack",
+    "TitleTalent2": "Wolven Nature",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3799,7 +3799,7 @@
     "Talent0": ""
   },
   "token_10034_ray_sndbst": {
-    "TitleTalent1": "Cộng Sự Tuần Tra",
+    "TitleTalent1": "Patrol Partner",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3810,14 +3810,14 @@
     "TitleTalent2": ""
   },
   "token_10036_lasher_mcbird": {
-    "TitleTalent1": "Di Huấn Của Thợ Thủ Công",
+    "TitleTalent1": "Teachings of the Dead Craftsman",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "token_10037_mitm_trshrb": {
-    "TitleTalent1": "Xe Bọc Thép Phế Liệu",
+    "TitleTalent1": "Scrapheap Buggies",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3834,7 +3834,7 @@
     "Talent1_2": ""
   },
   "token_10041_cathy_catsld": {
-    "TitleTalent1": "Tín Hiệu Hỗ Trợ Định Hướng",
+    "TitleTalent1": "Directional Support Signal",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3856,7 +3856,7 @@
     "TitleTalent2": ""
   },
   "token_10045_alanna_crane": {
-    "TitleTalent1": "Cải Tiến Tạm Thời",
+    "TitleTalent1": "Makeshift Modification",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3900,13 +3900,13 @@
     "TitleTalent2": ""
   },
   "token_10057_svash2_eagle1": {
-    "TitleTalent1": "Khởi Đầu Cởi Mở",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": ""
   },
   "token_10057_svash2_eagle2": {
-    "TitleTalent1": "Nghiêm Cấm Rút Gọn Công Đoạn",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": ""
@@ -3923,15 +3923,15 @@
   },
   "token_10059_nasti_nstdef": {
     "TitleTalent1": "",
-    "TitleTalent2": "Nghiêm cấm Bớt xén Nguyên liệu",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent2": "",
     "Talent2_1": "",
     "Talent2_2": ""
   },
   "token_10060_nasti_nstchr": {
-    "TitleTalent1": "Bãi bỏ Quy trình Vô hiệu",
-    "TitleTalent2": "Triển khai Kết cấu Chịu lực",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3940,7 +3940,7 @@
     "Talent2_2": ""
   },
   "token_10061_nasti_nstbld": {
-    "TitleTalent1": "Vật chất Mô phỏng",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -4697,7 +4697,7 @@
     "TitleTalent2": ""
   },
   "trap_1069_acarm069": {
-    "TitleTalent1": "Hồ sơ Phòng Nhân sự",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
   },
@@ -4706,12 +4706,12 @@
     "TitleTalent2": ""
   },
   "trap_1070_acarm070": {
-    "TitleTalent1": "Hình chiếu Tiến sĩ",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
   },
   "trap_1071_acarm071": {
-    "TitleTalent1": "Đồng cấu Biến hình",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
   },
@@ -4720,7 +4720,7 @@
     "TitleTalent2": ""
   },
   "trap_1073_acarm073": {
-    "TitleTalent1": "Mô-đun Nhắn tin",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
   },
@@ -4729,7 +4729,7 @@
     "TitleTalent2": ""
   },
   "trap_1075_acarm075": {
-    "TitleTalent1": "Phát nổ",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
   },
@@ -5071,7 +5071,7 @@
     "Talent2_lv30": ""
   },
   "trap_142_barrel": {
-    "TitleTalent1": "Cánh cửa Bóng tối",
+    "TitleTalent1": "Explode",
     "TitleTalent2": "",
     "Talent0": ""
   },
@@ -5097,24 +5097,24 @@
     "TitleTalent2": ""
   },
   "trap_148_amblls": {
-    "TitleTalent1": "Bụi cỏ",
+    "TitleTalent1": "Umbral Door",
     "TitleTalent2": "",
     "Talent0": ""
   },
   "trap_1500_lhgras": {
-    "TitleTalent1": "Bụi hoa",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
   },
   "trap_1501_lhpark": {
-    "TitleTalent1": "Đá",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": "",
     "Talent3": ""
   },
   "trap_1502_lhrock": {
-    "TitleTalent1": "Dãy núi",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent2": ""
