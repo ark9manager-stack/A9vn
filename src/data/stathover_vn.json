@@ -73,7 +73,7 @@
   },
   "Shield": {
     "title": "Khiên/Shield",
-    "text": "Mỗi lớp khiên có thể giúp chặn 1 lần sát thương.• Trừ khi có mô tả quy tắc riêng thì khiên có thể chặn được toàn bộ loại sát thương."
+    "text": "Mỗi lớp khiên có thể giúp chặn 1 lần sát thương.\n• Trừ khi có mô tả quy tắc riêng thì khiên có thể chặn được toàn bộ loại sát thương."
   },
   "StatusRes": {
     "title": "Kháng hiệu ứng/Status Resistance",
