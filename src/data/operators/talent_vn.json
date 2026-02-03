@@ -1154,8 +1154,8 @@
   "char_249_mlyss": {
     "TitleTalent1": "Pure Water is Life",
     "TitleTalent2": "Expenditure Economization",
-    "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
-    "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
+    "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
+    "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
     "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
     "Talent2": "Khi có mặt trong đội hình, giảm 2 phí triển khai cho tất cả cán viên thuộc【Rhine Lab】, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm 1 phí.",
     "Talent2_p4": "Khi có mặt trong đội hình, giảm 2 phí triển khai cho tất cả cán viên thuộc【Rhine Lab】, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm 2<@ba.talpu>(+1)</> phí."
@@ -2963,9 +2963,9 @@
   "char_427_vigil": {
     "TitleTalent1": "Leader of the Wolfpack",
     "TitleTalent2": "Wolven Nature",
-    "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
-    "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
-    "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
     "Talent2": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 175 DEF của kẻ địch đang bị 'Ảnh Lang' chặn.",
     "Talent2_p4": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 200<@ba.talpu>(+25)</> DEF của kẻ địch đang bị 'Ảnh Lang' chặn."
   },
