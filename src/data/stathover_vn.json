@@ -66,5 +66,17 @@
   "Frozen": {
     "title": "Đóng băng/Frozen",
     "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng(kích hoạt thông qua【Lạnh】). Đồng thời giảm 15 RES khi bị【Đóng băng】."
+  },
+  "Frighten": {
+    "title": "Giải giới/Frighten",
+    "text": "Không thể đánh thường sau khi bị chặn.\n• Có thể chặn được các kỹ năng cần kích bằng đòn đánh.\n• Có thể gián đoạn đòn đánh của kẻ địch bị chặn khi chịu hiệu ứng này."
+  },
+  "Shield": {
+    "title": "Khiên/Shield",
+    "text": "Mỗi lớp khiên có thể giúp chặn 1 lần sát thương.• Trừ khi có mô tả quy tắc riêng thì khiên có thể chặn được toàn bộ loại sát thương."
+  },
+  "StatusRes": {
+    "title": "Kháng hiệu ứng/Status Resistance",
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   }
 }

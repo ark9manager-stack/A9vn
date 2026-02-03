@@ -82,12 +82,12 @@
   "char_1019_siege2": {
     "TitleTalent1": "The Kings' Sighs",
     "TitleTalent2": "Unsheathed Sword",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 3% ATK.",
+    "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 4%<@ba.talpu>(+1%)</> ATK.",
+    "Talent1_2": "Vina và đồng minh trong 8 ô xung quanh cô giảm 20% sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 5% ATK.",
+    "Talent1_2_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 22%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 6%<@ba.talpu>(+1%)</> ATK.",
+    "Talent2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Giải giới|Frighten]] trong 4 giây.",
+    "Talent2_p2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Giải giới|Frighten]] trong 5<@ba.talpu>(+1)</> giây."
   },
   "char_101_sora": {
     "TitleTalent1": "Encore",
@@ -778,10 +778,10 @@
   "char_185_frncat": {
     "TitleTalent1": "Combo",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tấn công, có 10% tỷ lệ tấn công 2 lần liên tiếp.",
+    "Talent1_p4": "Khi tấn công, có 13%<@ba.talpu>(+3%)</> tỷ lệ tấn công 2 lần liên tiếp.",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ tấn công 2 lần liên tiếp.",
+    "Talent1_2_p4": "Khi tấn công, có 23%<@ba.talpu>(+3%)</> tỷ lệ tấn công 2 lần liên tiếp."
   },
   "char_187_ccheal": {
     "TitleTalent1": "Battlefield Medic",
@@ -1154,11 +1154,11 @@
   "char_249_mlyss": {
     "TitleTalent1": "Pure Water is Life",
     "TitleTalent2": "Expenditure Economization",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
+    "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
+    "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
+    "Talent2": "Khi có mặt trong đội hình, giảm 2 phí triển khai cho tất cả cán viên thuộc【Rhine Lab】, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm 1 phí.",
+    "Talent2_p4": "Khi có mặt trong đội hình, giảm 2 phí triển khai cho tất cả cán viên thuộc【Rhine Lab】, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm 2<@ba.talpu>(+1)</> phí."
   },
   "char_250_phatom": {
     "TitleTalent1": "Phantom in the Mirror",
@@ -1259,8 +1259,8 @@
   "char_274_astesi": {
     "TitleTalent1": "Celestial Globe",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, tăng 3 ASPD(cộng dồn tối đa 5 lần).",
+    "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, tăng 5 ASPD(cộng dồn tối đa 5 lần)."
   },
   "char_275_breeze": {
     "TitleTalent1": "Medic Squad Protection",
@@ -1497,8 +1497,8 @@
   "char_333_sidero": {
     "TitleTalent1": "Mercenary's Tenacity",
     "TitleTalent2": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1_2": "Sau khi hạ được 7 kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và tăng 15 ASPD.",
+    "Talent1_2_p4": "Sau khi hạ được 5<@ba.talpu>(-2)</> kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và tăng 15 ASPD."
   },
   "char_336_folivo": {
     "TitleTalent1": "Camera Squad",
@@ -1595,14 +1595,14 @@
   "char_350_surtr": {
     "TitleTalent1": "Molten Flame",
     "TitleTalent2": "Remnant Ash",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": "",
-    "Talent2_2": "",
-    "Talent2_2_p2": ""
+    "Talent1": "Bỏ qua 12 RES của kẻ địch.",
+    "Talent1_p4": "Bỏ qua 14<@ba.talpu>(+2)</> RES của kẻ địch.",
+    "Talent1_2": "Bỏ qua 20 RES của kẻ địch.",
+    "Talent1_2_p4": "Bỏ qua 22<@ba.talpu>(+2)</> RES của kẻ địch.",
+    "Talent2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 4 giây sẽ bị cưỡng chế rút lui khỏi sân.",
+    "Talent2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 5<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút lui khỏi sân.",
+    "Talent2_2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 8 giây sẽ bị cưỡng chế rút lui khỏi sân.",
+    "Talent2_2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 9<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút lui khỏi sân."
   },
   "char_355_ethan": {
     "TitleTalent1": "Entwined",
@@ -2241,12 +2241,12 @@
   "char_4098_vvana": {
     "TitleTalent1": "Candlelight",
     "TitleTalent2": "Nova",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "Talent1": "Tăng 5% sát thương phép gây ra, đồng thời giảm -5% sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1_p4": "Tăng 6%<@ba.talpu>(+1%)</> sát thương phép gây ra, đồng thời giảm -6%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1_2": "Tăng 8% sát thương phép gây ra, đồng thời giảm -8% sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1_2_p4": "Tăng 9%<@ba.talpu>(+1%)</> sát thương phép gây ra, đồng thời giảm -9%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent2": "Khi tấn công kẻ địch bậc Tinh Anh hoặc Thủ Lĩnh, có 18% tỷ lệ nhận được một lớp [Khiên] giúp chặn đòn đánh cận chiến (tối đa 1 lớp).",
+    "Talent2_p2": "Khi tấn công kẻ địch bậc Tinh Anh hoặc Thủ Lĩnh, có 20%<@ba.talpu>(+2%)</> tỷ lệ nhận được một lớp [[Khiên|Shield]] giúp chặn đòn đánh cận chiến (tối đa 1 lớp)."
   },
   "char_4100_caper": {
     "TitleTalent1": "Larking About",
@@ -2553,9 +2553,9 @@
   "char_4147_mitm": {
     "TitleTalent1": "Scrapheap Buggies",
     "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 20 giây.",
+    "Talent1": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 17 giây.",
+    "Talent1_2": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 15 giây."
   },
   "char_4148_philae": {
     "TitleTalent1": "Herald of the Divine River",
@@ -2963,11 +2963,11 @@
   "char_427_vigil": {
     "TitleTalent1": "Leader of the Wolfpack",
     "TitleTalent2": "Wolven Nature",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent2": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 175 DEF của kẻ địch đang bị 'Ảnh Lang' chặn.",
+    "Talent2_p4": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 200<@ba.talpu>(+25)</> DEF của kẻ địch đang bị 'Ảnh Lang' chặn."
   },
   "char_430_fartth": {
     "TitleTalent1": "Concentration",
@@ -3069,9 +3069,9 @@
   "char_452_bstalk": {
     "TitleTalent1": "Professional Breeder",
     "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 20 giây.",
+    "Talent1": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 17 giây.",
+    "Talent1_2": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 15 giây."
   },
   "char_455_nothin": {
     "TitleTalent1": "Unexpected Strike",
@@ -3177,9 +3177,9 @@
   "char_476_blkngt": {
     "TitleTalent1": "Nightwalker",
     "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 20 giây.",
+    "Talent1": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 17 giây.",
+    "Talent1_2": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 15 giây."
   },
   "char_478_kirara": {
     "TitleTalent1": "Lonesome Protector",
