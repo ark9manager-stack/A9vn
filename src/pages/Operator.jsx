@@ -38,8 +38,8 @@ const Operator = () => {
     >
       <div className="w-full h-full">
         <div className="w-full max-w-6xl mx-auto px-6 h-full flex flex-col">
-          <div className="w-full flex items-center mb-4 gap-4 pt-12">
-            <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r hidden md:block from-green-400 to-emerald-400 bg-clip-text text-transparent">
+          <div className="w-full flex items-center mb-0 gap-4 pt-12">
+            <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r hidden md:block from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
             </h1>
 
@@ -72,7 +72,7 @@ const Operator = () => {
                   <img
                     src={professionIconUrl(cls.value)}
                     alt={cls.label}
-                    className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                    className="w-6 h-6 md:w-8 md:h-8 object-contain"
                   />
                   <span className="text-[10px] md:text-xs text-gray-300 mt-1">
                     {cls.label}
