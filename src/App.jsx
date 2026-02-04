@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./components/UI/Sidebar";
 import Navbar from "./components/UI/Navbar";
 // import SidebarOverlay from "./components/UI/SidebarOverlay";
-import Player from "./components/Player/Player";
+
 import Display from "./pages/Display";
 
 const App = () => {
@@ -12,14 +12,10 @@ const App = () => {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="h-screen bg-black">
+    <div className="flex  bg-black">
       <Navbar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
-      <div className="h-screen">
-        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-        <Display />
-      </div>
-
-      <Player />
+      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+      <Display />
     </div>
   );
 };

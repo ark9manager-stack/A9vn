@@ -8,7 +8,7 @@ import Operator from "./Operator";
 
 const Display = () => {
   return (
-    <div className="w-full h-full m-2 rounded bg-[#121212] text-white overflow-hidden">
+    <div className="w-full h-full rounded bg-[#121212] text-white overflow-hidden">
       <ScrollNavigation />
       <SectionIndicator />
       <Routes>
