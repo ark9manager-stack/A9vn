@@ -126,7 +126,7 @@ const Operator = () => {
 
           <div className="w-full border-t border-gray-600 my-4" />
 
-          <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-4">
+          <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-1">
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
               {filteredOperators.map((op) => (
                 <OperatorCard
