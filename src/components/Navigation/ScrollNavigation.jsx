@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const ScrollNavigation = () => {
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
+        behavior: "smooth",
+        block: "start",
+      });
     }
-  }
-}
+  };
+};
 
-export default ScrollNavigation
-
+export default ScrollNavigation;

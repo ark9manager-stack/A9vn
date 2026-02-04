@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { buildCnAvatarUrl, getOperatorCharId } from "../../utils/operatorAvatar";
+import {
+  buildCnAvatarUrl,
+  getOperatorCharId,
+} from "../../utils/operatorAvatar";
 
 const rarityBorderMap = {
   5: "border-orange-500 shadow-orange-500/40", // 6★

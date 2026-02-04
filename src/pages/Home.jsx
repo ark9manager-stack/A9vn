@@ -1,7 +1,7 @@
 import React from "react";
 import AnimatedContent from "../components/UI/AnimatedContent";
 
-const DisplayHome = () => {
+const Home = () => {
   return (
     <div
       id="home"
@@ -10,4 +10,4 @@ const DisplayHome = () => {
   );
 };
 
-export default DisplayHome;
+export default Home;

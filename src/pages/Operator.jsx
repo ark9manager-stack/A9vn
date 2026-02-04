@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaFilter } from "react-icons/fa";
+
 import OperatorCard from "../components/Operator/OperatorCard";
 import OperatorModal from "../components/Operator/OperatorModal";
 import ScrollLockContainer from "../components/UI/ScrollLockContainer";
@@ -11,6 +13,7 @@ const Operator = () => {
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
   const [activeClass, setActiveClass] = useState(null);
   const [activeSubClass, setActiveSubClass] = useState(null);
+  const [showClassFilter, setShowClassFilter] = useState(false);
 
   const { availableSubclasses, filteredOperators } = useOperatorFilter({
     operators,
@@ -27,6 +30,7 @@ const Operator = () => {
       setActiveSubClass(null);
     }
   };
+
   return (
     <div
       id="operator"
@@ -35,16 +39,28 @@ const Operator = () => {
       <div className="w-full h-full">
         <div className="w-full max-w-6xl mx-auto px-6 h-full flex flex-col">
           <div className="w-full flex items-center mb-4 gap-4 pt-12">
-            <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r hidden md:block from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
             </h1>
 
-            <div className="flex flex-wrap gap-2 ml-auto pt-4">
+            {/* Filter Icon for Mobile */}
+            <button
+              className="md:hidden p-2 bg-green-600 rounded-full text-white shadow-lg hover:bg-green-700"
+              onClick={() => setShowClassFilter(!showClassFilter)}
+            >
+              <FaFilter size={20} />
+            </button>
+
+            {/* Class Buttons */}
+            <div
+              className={`flex flex-wrap gap-2 ml-auto pt-4 transition-all duration-300 overflow-hidden 
+                ${showClassFilter ? "max-h-96" : "max-h-0"} md:max-h-full`}
+            >
               {CLASSES.map((cls) => (
                 <button
                   key={cls.value}
                   onClick={() => handleToggleClass(cls.value)}
-                  className={`p-2 rounded-lg w-20 flex flex-col items-center transition
+                  className={`p-1 md:p-2 rounded-md w-16 md:w-20 flex flex-col items-center transition
                     ${
                       activeClass === cls.value
                         ? "bg-green-600"
@@ -56,9 +72,9 @@ const Operator = () => {
                   <img
                     src={professionIconUrl(cls.value)}
                     alt={cls.label}
-                    className="w-10 h-10 object-contain"
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain"
                   />
-                  <span className="text-xs text-gray-300 mt-1">
+                  <span className="text-[10px] md:text-xs text-gray-300 mt-1">
                     {cls.label}
                   </span>
                 </button>
@@ -111,7 +127,7 @@ const Operator = () => {
           <div className="w-full border-t border-gray-600 my-4" />
 
           <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-4">
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
               {filteredOperators.map((op) => (
                 <OperatorCard
                   key={op.id}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import DisplayHome from "./DisplayHome";
+import Home from "./Home";
 import Music from "./Music";
 import ScrollNavigation from "../components/Navigation/ScrollNavigation";
 import SectionIndicator from "../components/Navigation/SectionIndicator";
@@ -16,7 +16,7 @@ const Display = () => {
           path="/"
           element={
             <div className="fullpage-container scrollbar-hide">
-              <DisplayHome />
+              <Home />
               <Operator />
               <Music />
             </div>

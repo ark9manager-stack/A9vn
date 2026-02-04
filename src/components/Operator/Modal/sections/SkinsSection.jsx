@@ -53,12 +53,12 @@ function pickDisplaySkin(obj) {
 }
 
 export default function SkinsSection({ operator, className = "" }) {
-  if (!operator) return null;
-
   const charId = operator?.id || operator?.charId || operator?.char_id || "";
-  const titleText = operator?.name_vn || operator?.name || charId;
 
-  const skinsDict = skinTable?.charSkins || skinTable?.skins || {};
+  const skinsDict = useMemo(
+    () => skinTable?.charSkins || skinTable?.skins || {},
+    [],
+  );
 
   // Elite metadata
   const eliteMeta = useMemo(() => {
@@ -225,7 +225,9 @@ export default function SkinsSection({ operator, className = "" }) {
             setDisplaySrc(ok2);
             setIsLoadingImg(false);
             return;
-          } catch {}
+          } catch (error) {
+            console.error("Error loading fallback image:", error);
+          }
         }
         if (cancelled) return;
         setImgError(true);
@@ -250,10 +252,13 @@ export default function SkinsSection({ operator, className = "" }) {
     return arr.length ? arr.join(", ") : "-";
   }, [selectedOption]);
 
-  return (
-    <div className={`relative w-full h-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}>
-      <div className="relative h-full w-full">
+  if (!operator) return null;
 
+  return (
+    <div
+      className={`relative w-full h-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}
+    >
+      <div className="relative h-full w-full">
         {/* Art */}
         <div className="absolute inset-0 flex items-center justify-center">
           {isLoadingImg && (

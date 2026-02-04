@@ -1,31 +1,31 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from "react";
 
 const AnimatedContent = ({ children, className = "" }) => {
-  const ref = useRef(null)
+  const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in')
+          entry.target.classList.add("animate-in");
         }
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    )
+        rootMargin: "0px 0px -50px 0px",
+      },
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current)
+        observer.unobserve(ref.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div
@@ -35,8 +35,7 @@ const AnimatedContent = ({ children, className = "" }) => {
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default AnimatedContent
-
+export default AnimatedContent;
