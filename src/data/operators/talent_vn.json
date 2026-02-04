@@ -3195,8 +3195,8 @@
     "Talent1": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 5 ASPD, và kẻ địch bị giảm 5 ASPD.",
     "Talent1_p4": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 7<@ba.talpu>(+2)</> ASPD, và kẻ địch bị giảm 7<@ba.talpu>(+2)</> ASPD.",
     "Talent1_2": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 10 ASPD, và kẻ địch bị giảm 10 ASPD.",
-    "Talent1_2_p4": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 12<@ba.talpu>(+2)</> ASPD, và kẻ địch bị giảm 12<@ba.talpu>(+2)</> ASPD.",
-    "Talent2": "Sau khi triển khai, giảm 2 phí triển khai của cán viên kế tiếp."
+    "Talent1_2_p4": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ ASPD +12<@ba.talpu>(+2)</>, và kẻ địch ASPD -12<@ba.talpu>(+2)</>.",
+    "Talent2": "Sau khi triển khai, phí triển khai -2 cho cán viên kế tiếp."
   },
   "char_484_robrta": {
     "TitleTalent1": "Modeler Debugging",
