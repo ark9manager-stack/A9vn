@@ -78,5 +78,17 @@
   "StatusRes": {
     "title": "Kháng hiệu ứng/Status Resistance",
     "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+  },
+  "Stun": {
+    "title": "Choáng/Stun",
+    "text": "Không thể di chuyển, chặn, tấn công, sử dụng kỹ năng."
+  },
+  "Sanctuary": {
+    "title": "Bảo hộ/Sanctuary",
+    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
+  },
+  "Vigor": {
+    "title": "Sung sức/Vigor",
+    "text": "Khi lượng máu cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
   }
 }

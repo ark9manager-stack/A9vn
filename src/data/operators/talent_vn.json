@@ -2085,10 +2085,10 @@
   "char_4063_quartz": {
     "TitleTalent1": "Wilderness Wanderer",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "HP +4%, ATK +4%.",
+    "Talent1_p4": "HP +5%<@ba.talpu>(+1%)</>, ATK +5%<@ba.talpu>(+1%)</>.",
+    "Talent1_2": "HP +8%, ATK +8%.",
+    "Talent1_2_p4": "HP +9%<@ba.talpu>(+1%)</>, ATK +9%<@ba.talpu>(+1%)</>."
   },
   "char_4064_mlynar": {
     "TitleTalent1": "Wanderer",
@@ -2202,10 +2202,10 @@
   "char_4083_chimes": {
     "TitleTalent1": "Mountain Traveler",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +15%.",
+    "Talent1_p4": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +17%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +20%.",
+    "Talent1_2_p4": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +22%<@ba.talpu>(+2%)</>."
   },
   "char_4087_ines": {
     "TitleTalent1": "Ảnh Chức",
@@ -2219,10 +2219,10 @@
   "char_4088_hodrer": {
     "TitleTalent1": "Do or Die",
     "TitleTalent2": "Cloak of Lingering Flame",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "ATK tăng lên 105% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 125%.",
+    "Talent1_2": "ATK tăng lên 110% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 140%.",
+    "Talent2": "Bản thân và đồng minh ở ngay đằng sau nhận 18% [[Bảo hộ|Sanctuary]].",
+    "Talent2_p4": "Bản thân và đồng minh ở ngay đằng sau nhận 21%<@ba.talpu>(+3%)</> [[Bảo hộ|Sanctuary]]."
   },
   "char_4091_ulika": {
     "TitleTalent1": "Short-Circuiting Genius I",
@@ -2542,11 +2542,10 @@
   "char_4145_ulpia": {
     "TitleTalent1": "Natural Holdfast",
     "TitleTalent2": "Nourish the Blood",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": "",
-    "Talent3": ""
+    "Talent1": "Hồi 80 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 120 HP.",
+    "Talent1_2": "Hồi 100 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 160 HP.",
+    "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên.",
+    "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên."
   },
   "char_4146_nymph": {
     "TitleTalent1": "Soul Stolen",
