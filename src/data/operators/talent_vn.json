@@ -141,12 +141,12 @@
   "char_1026_gvial2": {
     "TitleTalent1": "Battleaxe",
     "TitleTalent2": "Medical Background",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "ATK và DEF +5%, tăng thêm 3% cho mỗi kẻ địch bị chặn.",
+    "Talent1_p2": "ATK và DEF +7%<@ba.talpu>(+2%)</>, tăng thêm 4%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
+    "Talent1_2": "ATK và DEF +10%, tăng thêm 4% cho mỗi kẻ địch bị chặn.",
+    "Talent1_2_p2": "ATK và DEF +12%<@ba.talpu>(+2%)</>, tăng thêm 5%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
+    "Talent2": "Bản thân tăng 20% hiệu quả nhận hồi phục, tăng thành +40% khi HP dưới 50%.",
+    "Talent2_p4": "Bản thân tăng 25%<@ba.talpu>(+5%)</> hiệu quả nhận hồi phục, tăng thành +45%<@ba.talpu>(+5%)</> khi HP dưới 50%."
   },
   "char_1027_greyy2": {
     "TitleTalent1": "Light-Stealing Chain",
