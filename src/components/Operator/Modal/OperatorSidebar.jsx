@@ -18,6 +18,7 @@ const tabs = [
   { id: "profile", label: "Hồ sơ" },
   { id: "stats", label: "Thông số" },
   { id: "skills", label: "Kỹ năng" },
+  { id: "modules", label: "Module" },
   { id: "voice", label: "Lời thoại" },
 ];
 

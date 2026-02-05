@@ -4,7 +4,7 @@ import ProfileSection from "./sections/ProfileSection";
 import SkillsSection from "./sections/SkillsSection";
 import VoiceSection from "./sections/VoiceSection";
 import StatsSection from "./sections/StatsSection";
-
+import ModuleSection from "./sections/ModuleSection";
 const OperatorContent = ({ activeTab, operator, charId }) => {
   return (
     <div className="flex-1 overflow-y-auto p-6">
@@ -14,6 +14,7 @@ const OperatorContent = ({ activeTab, operator, charId }) => {
         <StatsSection operator={operator} charId={charId} />
       )}
       {activeTab === "skills" && <SkillsSection operator={operator} />}
+      {activeTab === "modules" && <ModuleSection operator={operator} />}
       {activeTab === "voice" && <VoiceSection operator={operator} />}
     </div>
   );
