@@ -61,9 +61,6 @@ function getCharEntry(rawCharId) {
 function resolveTraitTexts({ subProfessionId, rarity, description }, traitMap) {
   const base = isNonEmptyString(subProfessionId) ? String(subProfessionId).trim() : "";
   const isTier1 = String(rarity || "") === "TIER_1";
-
-  // Tier 1 uses a dedicated key, e.g. physician1, fearless1, executor1...
-  // Avoid matching both physician & physician1 by using exact key only.
   const keyCandidates = isTier1 ? [`${base}1`, base] : [base];
 
   // Main text
@@ -133,8 +130,6 @@ function buildBlackboardMap(blackboard) {
   for (const row of blackboard) {
     const k = row?.key;
     if (!isNonEmptyString(k)) continue;
-
-    // Prefer valueStr if present, otherwise numeric value.
     const v = row?.valueStr != null ? row.valueStr : row?.value;
     map[String(k)] = v;
   }
@@ -169,8 +164,6 @@ function formatPlaceholderValue(raw, fmt) {
   if (!fmt || !isNonEmptyString(fmt)) return isNum ? formatNumberDefault(num) : rawStr;
 
   const f = String(fmt).trim();
-
-  // Percent formats: 0%, 0.0%, 0.00% ...
   const pm = /^0(?:\.(0+))?%$/.exec(f);
   if (pm) {
     if (!isNum) return rawStr;
@@ -178,7 +171,6 @@ function formatPlaceholderValue(raw, fmt) {
     return `${trimFixed(num * 100, decimals)}%`;
   }
 
-  // Number formats: 0, 0.0, 0.00 ...
   const nm = /^0(?:\.(0+))?$/.exec(f);
   if (nm) {
     if (!isNum) return rawStr;
@@ -186,15 +178,12 @@ function formatPlaceholderValue(raw, fmt) {
     return trimFixed(num, decimals);
   }
 
-  // Unknown format → fallback
   return isNum ? formatNumberDefault(num) : rawStr;
 }
 
 function applyBlackboard(text, bbMap) {
   if (!isNonEmptyString(text)) return "";
   if (!bbMap || typeof bbMap !== "object") return text;
-
-  // {key} or {key:0%} / {key:0.0%} / {key:0.0} ...
   return String(text).replace(/\{([a-zA-Z0-9_.@-]+)(?::([^}]+))?\}/g, (m, key, fmt) => {
     if (!key || !(key in bbMap)) return m;
     return formatPlaceholderValue(bbMap[key], fmt);
@@ -212,8 +201,6 @@ function getVisibleTalentCandidates(block) {
 
     const hasName = typeof c.name === "string" && c.name.trim().length > 0;
     const hasDesc = typeof c.description === "string" && c.description.trim().length > 0;
-
-    // Some placeholder candidates are fully empty (name null, description ""), treat as hidden.
     return hasName || hasDesc;
   });
 }
@@ -227,10 +214,16 @@ function getTalentVnEntry(charKey) {
   return talentVN?.[charKey] || null;
 }
 
-function getTalentTitle(vnEntry, talentIdx) {
+function getTalentTitle(vnEntry, talentIdx, phaseIndex) {
   if (!vnEntry || typeof vnEntry !== "object") return "";
-  const k = talentIdx === 0 ? "TitleTalent1" : "TitleTalent2";
-  const v = vnEntry?.[k];
+  const baseKey = talentIdx === 0 ? "TitleTalent1" : "TitleTalent2";
+  if (Number(phaseIndex) === 2) {
+    const k2 = `${baseKey}_2`;
+    const v2 = vnEntry?.[k2];
+    if (isNonEmptyString(v2)) return String(v2);
+  }
+
+  const v = vnEntry?.[baseKey];
   return isNonEmptyString(v) ? String(v) : "";
 }
 
@@ -240,7 +233,6 @@ function getTalentBaseKeyCandidates(talentIdx, phaseIndex) {
     return [`Talent${phaseIndex}`]; // Talent0 / Talent1
   }
 
-  // Talent 2: default is Talent2 (some operators may later have phase-specific keys)
   return [`Talent2_${phaseIndex}`, "Talent2"];
 }
 
@@ -259,8 +251,6 @@ function resolveTalentText({
   if (vnEntry && typeof vnEntry === "object") {
     for (const base of bases) {
       if (!isNonEmptyString(base)) continue;
-
-      // Prefer level-specific key when available, e.g. Talent1_lv55, Talent0_lv30, Talent1_2_lv60...
       if (Number.isFinite(lvl) && lvl > 1) {
         if (req > 0) {
           const kLvPot = `${base}_lv${lvl}_p${req}`;
@@ -322,8 +312,6 @@ function pickBestCandidateByPot(candidates, potRank) {
   }
 
   if (best) return best;
-
-  // No candidate is applicable for current potential: fallback to lowest requirement.
   return [...candidates].sort(
     (a, b) => Number(a?.requiredPotentialRank || 0) - Number(b?.requiredPotentialRank || 0)
   )[0];
@@ -379,8 +367,7 @@ function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
 }
 
 function collectTalentHeaderOptions(talentBlocks) {
-  // Build options like: E1, E1 Lv55 (same icon; Lv label only for higher levels within that phase)
-  const map = new Map(); // phaseIndex -> Set(levels)
+  const map = new Map();
   if (!Array.isArray(talentBlocks)) return [];
 
   for (const tb of talentBlocks) {
@@ -427,8 +414,6 @@ function pickVariantByHeaderOption(variants, opt) {
     (v) => v.phaseIndex === desiredPhase && v.level === desiredLevel
   );
   if (exact) return exact;
-
-  // Same phase: choose best level <= desiredLevel, otherwise lowest level in that phase
   const samePhase = variants.filter((v) => v.phaseIndex === desiredPhase);
   if (samePhase.length > 0) {
     const le = samePhase
@@ -437,7 +422,6 @@ function pickVariantByHeaderOption(variants, opt) {
     return le || samePhase.sort((a, b) => a.level - b.level)[0];
   }
 
-  // Different phase: choose best phase <= desiredPhase, otherwise highest phase
   const lePhase = variants
     .filter((v) => v.phaseIndex <= desiredPhase)
     .sort((a, b) => (b.phaseIndex - a.phaseIndex) || (b.level - a.level))[0];
@@ -865,7 +849,41 @@ const renderTalentCard = (talentIdx, resolved) => {
     pickVariantByHeaderOption(variants, activeTalentHeaderOpt) ||
     variants[variants.length - 1];
 
-  const titleName = getTalentTitle(vnTalentEntry, talentIdx) || v?.name || "";
+  // Title handling: some operators change Talent 1 name at Elite 2 (PHASE_2).
+  // If TitleTalent1_2 is not provided yet, avoid showing the E1 title at E2 when the in-game name actually changed.
+  let titleName = "";
+  const phaseIndexForTitle = Number(v?.phaseIndex ?? 0);
+
+  if (talentIdx === 0 && phaseIndexForTitle === 2) {
+    const vnTitleE2 = isNonEmptyString(vnTalentEntry?.TitleTalent1_2)
+      ? String(vnTalentEntry.TitleTalent1_2)
+      : "";
+
+    if (isNonEmptyString(vnTitleE2)) {
+      titleName = vnTitleE2;
+    } else {
+      const vnTitleBase = isNonEmptyString(vnTalentEntry?.TitleTalent1)
+        ? String(vnTalentEntry.TitleTalent1)
+        : "";
+
+      // Compare against the best non-E2 variant name (usually E1) to detect name changes.
+      const ref = [...variants]
+        .filter((x) => Number(x?.phaseIndex ?? 0) < 2)
+        .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level))
+        .slice(-1)[0];
+      const refName = ref?.name || "";
+      const currentName = v?.name || "";
+
+      if (isNonEmptyString(currentName) && isNonEmptyString(refName) && currentName !== refName) {
+        // Name changed at E2 -> show the in-game name until TitleTalent1_2 is provided.
+        titleName = currentName;
+      } else {
+        titleName = vnTitleBase || currentName;
+      }
+    }
+  } else {
+    titleName = getTalentTitle(vnTalentEntry, talentIdx, phaseIndexForTitle) || v?.name || "";
+  }
   const badgeText = isNonEmptyString(titleName)
     ? `Talent ${talentIdx + 1}: ${titleName}`
     : `Talent ${talentIdx + 1}`;
