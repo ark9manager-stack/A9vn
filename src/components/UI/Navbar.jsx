@@ -1,13 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isOpen, onToggle }) => {
-  const scrollToSection = (sectionId) => {
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId, path) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
+      navigate(path); // Use push history for clicks to create a new history entry
     }
   };
 
@@ -60,19 +64,19 @@ const Navbar = ({ isOpen, onToggle }) => {
 
       <div className="flex items-center gap-4">
         <button
-          onClick={() => scrollToSection("home")}
+          onClick={() => scrollToSection("home", "/")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl hidden md:block cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
         >
           Home
         </button>
         <button
-          onClick={() => scrollToSection("operator")}
+          onClick={() => scrollToSection("operator", "/operator")}
           className="text-white text-[15px] py-2 px-3 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
         >
           Operator
         </button>
         <button
-          onClick={() => scrollToSection("music")}
+          onClick={() => scrollToSection("music", "/music")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
         >
           Music

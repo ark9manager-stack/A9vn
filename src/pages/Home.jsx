@@ -4,7 +4,7 @@ import AnimatedContent from "../components/UI/AnimatedContent";
 const Home = () => {
   return (
     <div
-      id="home"
+      id="/"
       className="fullpage-section bg-gradient-to-br from-purple-900 via-black to-pink-900"
     ></div>
   );

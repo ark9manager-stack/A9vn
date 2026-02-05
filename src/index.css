@@ -53,6 +53,13 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust for fixed navbar height */
+}
+
+/* iOS smooth scrolling */
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
 }
 
 /* Section transitions */
