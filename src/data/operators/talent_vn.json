@@ -82,10 +82,10 @@
   "char_1019_siege2": {
     "TitleTalent1": "The Kings' Sighs",
     "TitleTalent2": "Unsheathed Sword",
-    "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 3% ATK.",
-    "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 4%<@ba.talpu>(+1%)</> ATK.",
-    "Talent1_2": "Vina và đồng minh trong 8 ô xung quanh cô giảm 20% sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 5% ATK.",
-    "Talent1_2_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 22%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, mỗi đồng minh trong phạm vi này sẽ giúp Vina tăng 6%<@ba.talpu>(+1%)</> ATK.",
+    "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, Vina được +3% ATK cho mỗi đồng minh đứng trong phạm vi này.",
+    "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, Vina được +4%<@ba.talpu>(+1%)</> ATK cho mỗi đồng minh đứng trong phạm vi này.",
+    "Talent1_2": "Vina và đồng minh trong 8 ô xung quanh cô giảm 20% sát thương vật lý nhận vào. Đồng thời, Vina được +5% ATK cho mỗi đồng minh đứng trong phạm vi này.",
+    "Talent1_2_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 22%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, Vina được +6%<@ba.talpu>(+1%)</> ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Giải giới|Frighten]] trong 4 giây.",
     "Talent2_p2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Giải giới|Frighten]] trong 5<@ba.talpu>(+1)</> giây."
   },
@@ -239,8 +239,8 @@
   "char_1036_fang2": {
     "TitleTalent1": "Nước cờ linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "Giảm 2 phí triển khai ban đầu; Sau khi rút lui, cán viên tiếp theo sẽ giảm 1 phí triển khai.",
-    "Talent1_2": "Giảm 3 phí triển khai ban đầu; Sau khi rút lui, cán viên tiếp theo sẽ giảm 1 phí triển khai."
+    "Talent1": "Phí triển khai ban đầu -2; Sau khi rút lui, cán viên tiếp theo có phí triển khai -1.",
+    "Talent1_2": "Phí triển khai ban đầu -3; Sau khi rút lui, cán viên tiếp theo có phí triển khai -1."
   },
   "char_1038_whitw2": {
     "TitleTalent1": "Alpha Wolf",
@@ -337,11 +337,11 @@
   "char_1045_svash2": {
     "TitleTalent1": "Thế cờ mở",
     "TitleTalent2": "Sứ giả Karlan",
-    "Talent0": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +2 SP khởi đầu, đồng thời giảm 10% thời gian tái triển khai.",
-    "Talent1": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +3 SP khởi đầu, đồng thời giảm 15% thời gian tái triển khai.",
-    "Talent1_2": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +4 SP khởi đầu, đồng thời giảm 20% thời gian tái triển khai.",
-    "Talent2": "Khi có mặt trên sân, các cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], tăng 60 DEF và hồi 1.5% HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi.",
-    "Talent2_p4": "Khi có mặt trên sân, các cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], tăng 80<@ba.talpu>(+20)</> DEF và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
+    "Talent0": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +2 SP khởi đầu và thời gian tái triển khai -10%.",
+    "Talent1": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +3 SP khởi đầu, và thời gian tái triển khai -15%.",
+    "Talent1_2": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +4 SP khởi đầu và thời gian tái triển khai -20%.",
+    "Talent2": "Khi có mặt trên sân, các cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], nhận DEF +60 và hồi 1.5% HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi.",
+    "Talent2_p4": "Khi có mặt trên sân, các cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], nhận DEF +80<@ba.talpu>(+20)</> và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
   },
   "char_1046_sbell2": {
     "TitleTalent1": "",
@@ -402,10 +402,10 @@
   "char_112_siege": {
     "TitleTalent1": "Chúa tể muôn loài",
     "TitleTalent2": "Nghiền Nát",
-    "Talent1": "Tất cả cán viên【Tiên Phong】tăng 4% ATK và DEF.",
-    "Talent1_p4": "Tất cả cán viên【Tiên Phong】tăng 6%<@ba.talpu>(+2%)</> ATK và DEF.",
-    "Talent1_2": "Tất cả cán viên【Tiên Phong】tăng 8% ATK và DEF.",
-    "Talent1_2_p4": "Tất cả cán viên【Tiên Phong】tăng 10%<@ba.talpu>(+2%)</> ATK và DEF.",
+    "Talent1": "Tất cả cán viên【Tiên Phong】ATK và DEF +4%.",
+    "Talent1_p4": "Tất cả cán viên【Tiên Phong】ATK và DEF +6%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Tất cả cán viên【Tiên Phong】ATK và DEF +8%.",
+    "Talent1_2_p4": "Tất cả cán viên【Tiên Phong】ATK và DEF +10%<@ba.talpu>(+2%)</>.",
     "Talent2": "Nhận 1 SP khi có kẻ địch bị hạ gục trong 4 ô xung quanh."
   },
   "char_113_cqbw": {
@@ -419,8 +419,8 @@
   "char_115_headbr": {
     "TitleTalent1": "Thủ lĩnh tiên phong",
     "TitleTalent2": "",
-    "Talent1": "Giảm 1 phí triển khai.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】được giảm 1 phí triển khai."
+    "Talent1": "Phí triển khai -1.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】có phí triển khai -1."
   },
   "char_117_myrrh": {
     "TitleTalent1": "First Aid Kit",
@@ -458,7 +458,7 @@
   "char_123_fang": {
     "TitleTalent1": "Thân thủ linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "Phí triển khai -1."
+    "Talent1": "phí triển khai -1."
   },
   "char_124_kroos": {
     "TitleTalent1": "Targeting - Primary",
@@ -621,10 +621,10 @@
   "char_149_scave": {
     "TitleTalent1": "Sói cô độc",
     "TitleTalent2": "",
-    "Talent1": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 5% ATK và DEF.",
-    "Talent1_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 7%<@ba.talpu>(+2%)</> ATK và DEF.",
-    "Talent1_2": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 11% ATK và DEF.",
-    "Talent1_2_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, tăng 13%<@ba.talpu>(+2%)</> ATK và DEF."
+    "Talent1": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +5%.",
+    "Talent1_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +7%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +11%.",
+    "Talent1_2_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_1502_crosly": {
     "TitleTalent1": "Swallow Your Suffering",
@@ -809,8 +809,8 @@
   "char_192_falco": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "Tăng 4% ATK.",
-    "Talent1_lv55": "Tăng 8% ATK."
+    "Talent1": "ATK +4%.",
+    "Talent1_lv55": "ATK +8%."
   },
   "char_193_frostl": {
     "TitleTalent1": "Covered Strike",
@@ -850,10 +850,10 @@
   "char_198_blackd": {
     "TitleTalent1": "Tuần cảnh Karlan",
     "TitleTalent2": "",
-    "Talent1": "Khi đang chặn từ 2 kẻ địch trở lên, tăng 8% DEF.",
-    "Talent1_p4": "Khi đang chặn từ 2 kẻ địch trở lên, tăng 11%<@ba.talpu>(+3%)</> DEF.",
-    "Talent1_2": "Khi đang chặn từ 2 kẻ địch trở lên, tăng 16% DEF.",
-    "Talent1_2_p4": "Khi đang chặn từ 2 kẻ địch trở lên, tăng 19%<@ba.talpu>(+3%)</> DEF."
+    "Talent1": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +8%.",
+    "Talent1_p4": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +11%<@ba.talpu>(+3%)</>.",
+    "Talent1_2": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +16%.",
+    "Talent1_2_p4": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +19%<@ba.talpu>(+3%)</>."
   },
   "char_199_yak": {
     "TitleTalent1": "Snowfield Guard",
@@ -1105,8 +1105,8 @@
   "char_240_wyvern": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "Tăng 4% ATK.",
-    "Talent1_lv55": "Tăng 8% ATK."
+    "Talent1": "ATK +4%.",
+    "Talent1_lv55": "ATK +8%."
   },
   "char_241_panda": {
     "TitleTalent1": "Kung Fu",
@@ -1157,8 +1157,8 @@
     "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
     "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
     "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
-    "Talent2": "Khi có mặt trong đội hình, giảm 2 phí triển khai cho tất cả cán viên【Rhine Lab】, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm 1 phí.",
-    "Talent2_p4": "Khi có mặt trong đội hình, giảm 2 phí triển khai cho tất cả cán viên【Rhine Lab】, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm 2<@ba.talpu>(+1)</> phí."
+    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】có phí triển khai -2, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm -1 phí triển khai.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】có phí triển khai -2, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm -2<@ba.talpu>(+1)</> phí triển khai."
   },
   "char_250_phatom": {
     "TitleTalent1": "Phantom in the Mirror",
@@ -1259,8 +1259,8 @@
   "char_274_astesi": {
     "TitleTalent1": "Celestial Globe",
     "TitleTalent2": "",
-    "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, tăng 3 ASPD(cộng dồn tối đa 5 lần).",
-    "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, tăng 5 ASPD(cộng dồn tối đa 5 lần)."
+    "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +3(cộng dồn tối đa 5 lần).",
+    "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +5(cộng dồn tối đa 5 lần)."
   },
   "char_275_breeze": {
     "TitleTalent1": "Medic Squad Protection",
@@ -1497,8 +1497,8 @@
   "char_333_sidero": {
     "TitleTalent1": "Mercenary's Tenacity",
     "TitleTalent2": "",
-    "Talent1_2": "Sau khi hạ được 7 kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và tăng 15 ASPD.",
-    "Talent1_2_p4": "Sau khi hạ được 5<@ba.talpu>(-2)</> kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và tăng 15 ASPD."
+    "Talent1_2": "Sau khi hạ được 7 kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và +15 ASPD.",
+    "Talent1_2_p4": "Sau khi hạ được 5<@ba.talpu>(-2)</> kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và +15 ASPD."
   },
   "char_336_folivo": {
     "TitleTalent1": "Camera Squad",
@@ -1587,10 +1587,10 @@
   "char_349_chiave": {
     "TitleTalent1": "Chuyên môn kỹ thuật",
     "TitleTalent2": "",
-    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 7% ATK và DEF.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 9%<@ba.talpu>(+2%)</> ATK và DEF.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】dược giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 11% ATK và DEF.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân tăng 13%<@ba.talpu>(+2%)</> ATK và DEF."
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +7%.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +9%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】dược giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +11%.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_350_surtr": {
     "TitleTalent1": "Molten Flame",
@@ -1861,12 +1861,12 @@
     "Talent1_2": ""
   },
   "char_401_elysm": {
-    "TitleTalent1": "viện trợ xạ thủ",
+    "TitleTalent1": "Tiếp viện xạ thủ",
     "TitleTalent2": "",
-    "Talent1": "Khi có mặt trên sân, giảm 2 phí triển khai của tất cả cán viên【Xạ thủ】, và khi kỹ năng của Elysium đang hoạt động sẽ tăng 10 ASPD cho tất cả cán viên【Xạ thủ】.",
-    "Talent1_p4": "Khi có mặt trên sân, giảm 2 phí triển khai của tất cả cán viên【Xạ thủ】, và khi kỹ năng của Elysium đang hoạt động sẽ tăng 13<@ba.talpu>(+3)</> ASPD cho tất cả cán viên【Xạ thủ】.",
-    "Talent1_2": "Khi có mặt trên sân, giảm 2 phí triển khai của tất cả cán viên【Xạ thủ】, và khi kỹ năng của Elysium đang hoạt động sẽ tăng 20 ASPD cho tất cả cán viên【Xạ thủ】.",
-    "Talent1_2_p4": "Khi có mặt trên sân, giảm 2 phí triển khai của tất cả cán viên【Xạ thủ】, và khi kỹ năng của Elysium đang hoạt động sẽ tăng 23<@ba.talpu>(+3)</> ASPD cho tất cả cán viên【Xạ thủ】."
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +10 ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +13<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +20 ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +23<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động."
   },
   "char_4023_rfalcn": {
     "TitleTalent1": "Đòn đánh thô bạo",
@@ -1891,8 +1891,8 @@
     "TitleTalent2": "Thế trận dâng cao",
     "Talent1": "Sau khi gây sát thương lần đầu lên kẻ địch, trong 10 giây tiếp theo, mỗi khi Vulpisfoglia gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 20% ATK.",
     "Talent1_2": "Sau khi gây sát thương lần đầu lên kẻ địch, trong 10 giây tiếp theo, mỗi khi Vulpisfoglia gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 30% ATK.",
-    "Talent2": "Khi có mặt trên sân, tăng 10% tốc độ hồi DP tự nhiên. Nếu trong 4 giây không nhận sát thương, sẽ hồi 4% HP tối đa mỗi giây.",
-    "Talent2_p4": "Khi có mặt trên sân, tăng 10% tốc độ hồi DP tự nhiên. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
+    "Talent2": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 4% HP tối đa mỗi giây.",
+    "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
   "char_4027_heyak": {
     "TitleTalent1": "Inherited End",
@@ -2241,10 +2241,10 @@
   "char_4098_vvana": {
     "TitleTalent1": "Candlelight",
     "TitleTalent2": "Nova",
-    "Talent1": "Tăng 5% sát thương phép gây ra, đồng thời giảm -5% sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
-    "Talent1_p4": "Tăng 6%<@ba.talpu>(+1%)</> sát thương phép gây ra, đồng thời giảm -6%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
-    "Talent1_2": "Tăng 8% sát thương phép gây ra, đồng thời giảm -8% sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
-    "Talent1_2_p4": "Tăng 9%<@ba.talpu>(+1%)</> sát thương phép gây ra, đồng thời giảm -9%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương phép nhận vào. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1": "Sát thương phép gây ra +5%, đồng thời sát thương vật lý và sát thương phép nhận vào -5%. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1_p4": "Sát thương phép gây ra +6%<@ba.talpu>(+1%)</>, đồng thời sát thương vật lý và sát thương phép nhận vào -6%<@ba.talpu>(-1%)</>. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1_2": "Sát thương phép gây ra +8%, đồng thời sát thương vật lý và sát thương phép nhận vào -8%. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
+    "Talent1_2_p4": "Sát thương phép gây ra +9%<@ba.talpu>(+1%)</>, đồng thời sát thương vật lý và sát thương phép nhận vào -9%<@ba.talpu>(-1%)</>. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
     "Talent2": "Khi tấn công kẻ địch bậc Tinh Anh hoặc Thủ Lĩnh, có 18% tỷ lệ nhận được một lớp [Khiên] giúp chặn đòn đánh cận chiến (tối đa 1 lớp).",
     "Talent2_p2": "Khi tấn công kẻ địch bậc Tinh Anh hoặc Thủ Lĩnh, có 20%<@ba.talpu>(+2%)</> tỷ lệ nhận được một lớp [[Khiên|Shield]] giúp chặn đòn đánh cận chiến (tối đa 1 lớp)."
   },
@@ -2342,10 +2342,10 @@
   "char_4119_wanqin": {
     "TitleTalent1": "Am hiểu thiên thời",
     "TitleTalent2": "",
-    "Talent1": "Tăng 3% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 5% nếu triển khai cùng hướng với Wanqing.",
-    "Talent1_p4": "Tăng 4%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 6%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing.",
-    "Talent1_2": "Tăng 5% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 9% nếu triển khai cùng hướng với Wanqing.",
-    "Talent1_2_p4": "Tăng 6%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành 10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
+    "Talent1": "+3% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +5% nếu triển khai cùng hướng với Wanqing.",
+    "Talent1_p4": "+4%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +6%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing.",
+    "Talent1_2": "+5% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +9% nếu triển khai cùng hướng với Wanqing.",
+    "Talent1_2_p4": "+6%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
   },
   "char_411_tomimi": {
     "TitleTalent1": "Arts of the Wild",
@@ -3235,10 +3235,10 @@
   "char_488_buildr": {
     "TitleTalent1": "Quy tắc của đội phá dỡ",
     "TitleTalent2": "",
-    "Talent1": "Sau khi được triển khai được 30 giây, tăng 8% HP tối đa.",
-    "Talent1_p4": "Sau khi được triển khai được 30 giây, tăng 11%<@ba.talpu>(+3%)</> HP tối đa.",
-    "Talent1_2": "Sau khi được triển khai được 30 giây, tăng 15% HP tối đa.",
-    "Talent1_2_p4": "Sau khi được triển khai được 30 giây, tăng 18%<@ba.talpu>(+3%)</> HP tối đa."
+    "Talent1": "Sau khi được triển khai được 30 giây, HP tối đa +8%.",
+    "Talent1_p4": "Sau khi được triển khai được 30 giây, HP tối đa +11%<@ba.talpu>(+3%)</>.",
+    "Talent1_2": "Sau khi được triển khai được 30 giây, HP tối đa +15%.",
+    "Talent1_2_p4": "Sau khi được triển khai được 30 giây, HP tối đa +18%<@ba.talpu>(+3%)</>."
   },
   "char_489_serum": {
     "TitleTalent1": "Tactical Readjustment",
@@ -3283,16 +3283,16 @@
   "char_496_wildmn": {
     "TitleTalent1": "Đồng lòng tiến quân",
     "TitleTalent2": "",
-    "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên【Cận Vệ】chưa triển khai sẽ giảm 1 phí triển khai.",
-    "Talent1_2": "Sau khi được triển khai, tất cả cán viên【Cận Vệ】chưa triển khai sẽ giảm 1 phí triển khai (mỗi cán viên được giảm tối đa -5 phí triển khai trước mỗi lần triển khai)."
+    "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên【Cận Vệ】chưa triển khai -1 phí triển khai.",
+    "Talent1_2": "Sau khi được triển khai, tất cả cán viên【Cận Vệ】chưa triển khai -1 phí triển khai (mỗi cán viên được tối đa -5 phí triển khai trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
     "TitleTalent1": "Linh Hoạt",
     "TitleTalent2": "",
-    "Talent1": "Tăng 6 ASPD khi không chặn kẻ địch, tăng 6% ATK khi đang chặn kẻ địch.",
-    "Talent1_p4": "Tăng 8<@ba.talpu>(+2)</> ASPD khi không chặn kẻ địch, tăng 8%<@ba.talpu>(+2%)</> ATK khi đang chặn kẻ địch.",
-    "Talent1_2": "Tăng 12 ASPD khi không chặn kẻ địch, tăng 12% ATK khi đang chặn kẻ địch.",
-    "Talent1_2_p4": "Tăng 14<@ba.talpu>(+2)</> ASPD khi không chặn kẻ địch, tăng 14%<@ba.talpu>(+2%)</> ATK khi đang chặn kẻ địch."
+    "Talent1": "ASPD +6 khi không chặn kẻ địch, ATK +6% khi đang chặn kẻ địch.",
+    "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +8%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch.",
+    "Talent1_2": "ASPD +12 khi không chặn kẻ địch, ATK +12% khi đang chặn kẻ địch.",
+    "Talent1_2_p4": "ASPD +14<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +14%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch."
   },
   "char_498_inside": {
     "TitleTalent1": "Fire Support",
@@ -3321,7 +3321,7 @@
   "char_502_nblade": {
     "TitleTalent1": "Tái triển khai siêu tốc",
     "TitleTalent2": "",
-    "Talent0_lv30": "Giảm 30 giây thời gian tái triển khai."
+    "Talent0_lv30": "Thời gian tái triển khai -30 giây."
   },
   "char_503_rang": {
     "TitleTalent1": "Anti-Air Master",
@@ -3388,8 +3388,8 @@
   "char_600_cpione": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "Tăng 4% ATK.",
-    "Talent1_2": "Tăng 8% ATK."
+    "Talent1": "ATK +4%.",
+    "Talent1_2": "ATK +8%."
   },
   "char_601_cguard": {
     "TitleTalent1": "Tăng ATK",
