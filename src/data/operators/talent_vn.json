@@ -32,12 +32,12 @@
   "char_017_huang": {
     "TitleTalent1": "Emergency Defibrillation",
     "TitleTalent2": "Harsh Training",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "Khi HP giảm xuống dưới 25%，仅一次回复50%的生命值并在7<@ba.talpu>（+1）</>秒内使生命值不低于50%",
-    "Talent2": "",
-    "Talent2_p4": "在战场停留12<@ba.talpu>（-3）</>秒后获得<$ba.buffres>抵抗</>"
+    "Talent1": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 3 giây.",
+    "Talent1_p2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 4<@ba.talpu>(+1)</> giây.",
+    "Talent1_2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 6 giây.",
+    "Talent1_2_p2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 7<@ba.talpu>(+1)</> giây.",
+    "Talent2": "Sau khi triển khai được 15 giây, nhận [[Kháng hiệu ứng|StatusRes]].",
+    "Talent2_p4": "Sau khi triển khai được 12<@ba.talpu>(-3)</> giây, nhận [[Kháng hiệu ứng|StatusRes]]."
   },
   "char_1011_lava2": {
     "TitleTalent1": "Spell Formation",
@@ -480,10 +480,10 @@
   "char_127_estell": {
     "TitleTalent1": "Self-Healing",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Hồi 7% HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
+    "Talent1_p4": "Hồi 9%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
+    "Talent1_2": "Hồi 12% HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
+    "Talent1_2_p4": "Hồi 14%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân."
   },
   "char_128_plosis": {
     "TitleTalent1": "Skill Aura",
@@ -579,10 +579,10 @@
     "TitleTalent1": "Stamina Up",
     "TitleTalent1_2": "Abyssal Regeneration",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "HP tối đa +10%.",
+    "Talent1_p4": "HP tối đa +12%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "HP tối đa +10%, hồi 2% HP tối đa mỗi giây.",
+    "Talent1_2_p4": "HP tối đa +12%<@ba.talpu>(+2%)</>, hồi 2.5%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
   "char_144_red": {
     "TitleTalent1": "Chill",
@@ -1083,8 +1083,8 @@
   "char_230_savage": {
     "TitleTalent1": "Valley",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK và DEF +5% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên.",
+    "Talent1_2": "ATK và DEF +10% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên."
   },
   "char_235_jesica": {
     "TitleTalent1": "Fast Cartridge",
@@ -1295,12 +1295,12 @@
     "Talent1_2_p4": ""
   },
   "char_281_popka": {
-    "TitleTalent1": "HP Up",
+    "TitleTalent1": "Tăng HP",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_lv55": "",
-    "Talent1_lv55_p4": ""
+    "Talent1": "HP tối đa +3%, ATK +3%.",
+    "Talent1_p4": "HP tối đa +5%<@ba.talpu>(+2%)</>, ATK +5%<@ba.talpu>(+2%)</>.",
+    "Talent1_lv55": "HP tối đa +6%, ATK +6%.",
+    "Talent1_lv55_p4": "HP tối đa +8%<@ba.talpu>(+2%)</>, ATK +8%<@ba.talpu>(+2%)</>."
   },
   "char_282_catap": {
     "TitleTalent1": "Lightweight",
@@ -1619,10 +1619,10 @@
   "char_356_broca": {
     "TitleTalent1": "Drill Strengthening",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ATK và DEF +6% khi chặn từ 2 kẻ địch trở lên.",
+    "Talent1_p4": "ATK và DEF +8%<@ba.talpu>(+2%)</> khi chặn từ 2 kẻ địch trở lên.",
+    "Talent1_2": "ATK và DEF +12% khi chặn từ 2 kẻ địch trở lên.",
+    "Talent1_2_p4": "ATK và DEF +14%<@ba.talpu>(+2%)</> khi chặn từ 2 kẻ địch trở lên."
   },
   "char_358_lisa": {
     "TitleTalent1": "Skill Aura - Supporter",
@@ -2417,10 +2417,10 @@
   "char_4126_fuze": {
     "TitleTalent1": "Ballistic Shield",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nhận 17% giảm sát thương vật lý tầm xa.",
+    "Talent1_p4": "Nhận 20%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa.",
+    "Talent1_2": "Nhận 27% giảm sát thương vật lý tầm xa.",
+    "Talent1_2_p4": "Nhận 30%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa."
   },
   "char_4130_luton": {
     "TitleTalent1": "From Death's Clutches",
@@ -2638,12 +2638,12 @@
     "Talent1_2_p4": ""
   },
   "char_4166_varkis": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Khắc cốt ghi tâm",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 107% khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 109%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 110% khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân."
   },
   "char_416_zumama": {
     "TitleTalent1": "Peerless Bravery",
