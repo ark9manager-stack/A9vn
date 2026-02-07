@@ -214,18 +214,44 @@ function getTalentVnEntry(charKey) {
   return talentVN?.[charKey] || null;
 }
 
-function getTalentTitle(vnEntry, talentIdx, phaseIndex) {
+function getTalentTitle(vnEntry, talentIdx, phaseIndex, level, requiredPotentialRank) {
   if (!vnEntry || typeof vnEntry !== "object") return "";
+
   const baseKey = talentIdx === 0 ? "TitleTalent1" : "TitleTalent2";
-  if (Number(phaseIndex) === 2) {
-    const k2 = `${baseKey}_2`;
-    const v2 = vnEntry?.[k2];
-    if (isNonEmptyString(v2)) return String(v2);
+  const phase = Number(phaseIndex ?? 0);
+  const req = Number(requiredPotentialRank ?? 0);
+  const lvl = Number(level ?? 0);
+
+  const keys = [];
+
+  if (phase === 2) {
+    const b2 = `${baseKey}_2`;
+
+    if (Number.isFinite(lvl) && lvl > 1) {
+      if (Number.isFinite(req) && req > 0) keys.push(`${b2}_lv${lvl}_p${req}`);
+      keys.push(`${b2}_lv${lvl}`);
+    }
+
+    if (Number.isFinite(req) && req > 0) keys.push(`${b2}_p${req}`);
+    keys.push(b2);
   }
 
-  const v = vnEntry?.[baseKey];
-  return isNonEmptyString(v) ? String(v) : "";
+  if (Number.isFinite(lvl) && lvl > 1) {
+    if (Number.isFinite(req) && req > 0) keys.push(`${baseKey}_lv${lvl}_p${req}`);
+    keys.push(`${baseKey}_lv${lvl}`);
+  }
+
+  if (Number.isFinite(req) && req > 0) keys.push(`${baseKey}_p${req}`);
+  keys.push(baseKey);
+
+  for (const k of keys) {
+    const v = vnEntry?.[k];
+    if (isNonEmptyString(v)) return String(v);
+  }
+
+  return "";
 }
+
 
 function getTalentBaseKeyCandidates(talentIdx, phaseIndex) {
   if (talentIdx === 0) {
@@ -882,7 +908,14 @@ const renderTalentCard = (talentIdx, resolved) => {
       }
     }
   } else {
-    titleName = getTalentTitle(vnTalentEntry, talentIdx, phaseIndexForTitle) || v?.name || "";
+    titleName =
+      getTalentTitle(
+        vnTalentEntry,
+        talentIdx,
+        phaseIndexForTitle,
+        v?.level,
+        v?.requiredPotentialRank
+      ) || v?.name || "";
   }
   const badgeText = isNonEmptyString(titleName)
     ? `Talent ${talentIdx + 1}: ${titleName}`

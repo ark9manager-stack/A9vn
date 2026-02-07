@@ -1815,8 +1815,8 @@
   "char_4011_lessng": {
     "TitleTalent1": "Pain Focus",
     "TitleTalent2": "Whetted With Pain",
-    "Talent1": "",
-    "Talent1_2": "",
+    "Talent1": "Khi đang chặn kẻ địch giảm 20% sát thương vật lý và phép nhận vào từ các kẻ địch không bị bản thân chặn.",
+    "Talent1_2": "Khi đang chặn kẻ địch giảm 35% sát thương vật lý và phép nhận vào từ các kẻ địch không bị bản thân chặn.",
     "Talent2": "",
     "Talent2_p4": ""
   },
@@ -2784,6 +2784,11 @@
   },
   "char_4188_confes": {
     "TitleTalent1": "Thanh toán trước, Xưng tội sau·I",
+    "TitleTalent1_p1": "Thanh toán trước, Xưng tội sau·II",
+    "TitleTalent1_p2": "Thanh toán trước, Xưng tội sau·III",
+    "TitleTalent1_p3": "Thanh toán trước, Xưng tội sau·IV",
+    "TitleTalent1_p4": "Thanh toán trước, Xưng tội sau·V",
+    "TitleTalent1_p5": "Thanh toán trước, Xưng tội sau·VI",
     "TitleTalent2": "",
     "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 5 giây.",
     "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
