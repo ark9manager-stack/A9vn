@@ -1116,7 +1116,7 @@
     "JP_voice": "JP - Azusa Tadokoro",
     "KR_voice": "KR - Kim Chae-ha",
     "EN_voice": "EN - Jessica Preddy",
-    "ITA_ITA_voice": "ITA - Ilaria Silvestri",
+    "ITA_voice": "ITA - Ilaria Silvestri",
     "CN_001": "I'm your bodyguard again, just like old times, Doctor. And it's not just a job, it's a reunion. That's something worth cherishing.",
     "CN_002": "How does it feel to be back in Siracusa? Not great. It's for wise guys and famiglie, not me. I'm only staying long enough to cut ties with the past. After I'm done washing my hands of the whole business, I'm heading back to Lungmen to pick up the girls, and then going out for a nice drive.",
     "CN_003": "I didn't want to get Penguin Logistics involved, but it was a relief to see them in Siracusa. My noisy friends, that life of freedom... Looking back now, staying with them in Lungmen was the best decision I ever made. Just, don't tell them I said that.",
@@ -1243,7 +1243,7 @@
     "JP_voice": "JP - Azusa Tadokoro",
     "KR_voice": "KR - Kim Chae-ha",
     "EN_voice": "EN - Jessica Preddy",
-    "ITA_ITA_voice": "ITA - Ilaria Silvestri",
+    "ITA_voice": "ITA - Ilaria Silvestri",
     "CN_001": "My next mission is to protect you, Doctor.",
     "CN_002": "I don't say much? That's because I'd rather avoid thinking about most things.",
     "CN_003": "Our job is to deliver life and death.",
@@ -1757,7 +1757,7 @@
     "JP_voice": "JP - Asami Imai",
     "KR_voice": "KR - Seo Yu-ri",
     "EN_voice": "EN - Christina Kowalchuk",
-    "ITA_ITA_voice": "ITA - Elisa Contestabile",
+    "ITA_voice": "ITA - Elisa Contestabile",
     "CN_001": "Leaving all this work to me? Hahahaha, I appreciate your trust.",
     "CN_002": "It's Siracusan tradition to mask up and dress formally for a kill, but the people of Nuova Volsinii think such costuming means embracing a new life. But no matter the occasion, you must find the best tailor for the job, no? I certainly have.",
     "CN_003": "Ah, what nice weather today—Siracusa's rainy season is over, and the Grey Hall old guy can no longer stay in their seats as all the hungry opportunists rush in. Hahahaha, could the Carnival have been such a roaring success without my help?",
@@ -2140,6 +2140,11 @@
     "CN_044": "I must admit, I had many reservations about Rhodes Island due to your connection with that particular case. But now, when I join you on missions, it is not for observation's sake. To aid the weak and demand justice are not such different goals. May our collaboration continue on."
   },
   "char_1044_hsgma2": {
+    "CN_MANDARIN_voice": "CN_MANDARIN - Yu Chen",
+    "CN_TOPOLECT_voice":"CN_TOPOLECT - Shixin Peng",
+    "JP_voice": "JP - Kiyono Yasuno",
+    "KR_voice": "KR - Lee Sae-byeok",
+    "EN_voice": "EN - Meaghan Martin",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -3549,7 +3554,7 @@
     "JP_voice": "JP - Asami Imai",
     "KR_voice": "KR - Seo Yu-ri",
     "EN_voice": "EN - Christina Kowalchuk",
-    "ITA_ITA_voice": "ITA - Elisa Contestabile",
+    "ITA_voice": "ITA - Elisa Contestabile",
     "CN_001": "Ehi, Doctor. Hope you don't mind if I bring my weapons inside. I'll plop myself right over here.",
     "CN_002": "Somebody out to get you, huh? Then have a long, hard think about who you might've wronged in the past.",
     "CN_003": "If someone's out for revenge on you, don't hesitate, just take them out. Once you decide to pick up a weapon, you don't need a reason to kill.",
@@ -11600,7 +11605,7 @@
     "JP_voice": "JP - Kotono Mitsuishi",
     "KR_voice": "KR - Jeon Hae-ri",
     "EN_voice": "EN - Chiara Preziosi",
-    "ITA_ITA_voice": "ITA - Virginia Astarita",
+    "ITA_voice": "ITA - Virginia Astarita",
     "CN_001": "Have someone else handle the paperwork and filing. But if you need anyone dealt with, or protected, just give me the list of names. I'll take care of them.",
     "CN_002": "These are clothes and snacks for Lisa, along with gifts for her friends. As for this box of old books her papa insisted I bring, I'm not sure what they're for. I'll just let Lisa decide what to do with them.",
     "CN_003": "Uniform? No, thanks. I don't know why you people need so many pockets. Just as I can't grasp why the Higashinese stuff planks and pillows in their waistbands, making it so terribly hard to move around… Anyway, I'm fine with this outfit, and it has nothing to do with me being Siracusan.",
@@ -12733,7 +12738,7 @@
     "JP_voice": "JP - Sayaka Oohara",
     "KR_voice": "KR - Bi Ju-eon",
     "EN_voice": "EN - Allegra Clark",
-    "ITA_ITA_voice": "ITA - Annalisa Longo",
+    "ITA_voice": "ITA - Annalisa Longo",
     "CN_001": "It's been a long time since I've felt like there was any conviction or meaning in my work. Rather than sit through show trial after show trial, I prefer to wade through these thorny, complicated files.",
     "CN_002": "You don't have to tiptoe around me. I don't judge good or evil on any ironclad law. And with all the crimes staged in the name of order… Ah, pay no mind to this judge's grumble, a powerless judge waiting to be indicted for misconduct in office.",
     "CN_003": "The thorns on this codex? Yes, of course the spikes hurt, but I wish for the pain to remind me: No matter how weak the statutes in Siracusa, no matter how highly I think of my calling, perversion of justice and blasphemy against the law are crimes.",
@@ -15318,7 +15323,7 @@
     "JP_voice": "JP - Junta Terashima",
     "KR_voice": "KR - Kim Dong-hyun",
     "EN_voice": "EN - Tommaso Zalone",
-    "ITA_ITA_voice": "ITA - Ezio Vivolo",
+    "ITA_voice": "ITA - Ezio Vivolo",
     "CN_001": "Back when I was an assistant at the shop, I filled the binders with hundreds of customers' preferences. Materials, hem lengths, even the number of buttons they wanted on the cuffs. Rhodes Island's paperwork couldn't be more complicated than––oh, w-wait, so much?",
     "CN_002": "This strap buckle came from a Carnival stall, and the strap itself is an old measuring tape of mine. The hairpin was customized with a beading needle, and I embroidered this pattern here myself... It's too flamboyant? How silly, this is the pinnacle of Siracusan style. Get with the times.",
     "CN_003": "The tailor shop isn't half bad. Let me tell you about two of my good friends: one went to the police academy, the other joined a famiglia. They don't speak anymore. But they're both customers here at my shop. They come to me when they need clothes made.",
@@ -15966,6 +15971,7 @@
     "CN_044": "You are reminiscing about the old Rhodes Island—about all the tragic destruction we witnessed, about the happy reunions we celebrated. But no matter how time wears away our precious memories, the ark beneath our feet will press ahead on its course across the lands. Come, Doctor. Everyone's waiting for you."
   },
   "char_4182_oblvns": {
+    "LINKAGE_voice": "JP - Christopher J. Domig",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16006,6 +16012,7 @@
     "CN_044": ""
   },
   "char_4183_mortis": {
+    "LINKAGE_voice": "JP - Yuzuki Watase",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16046,6 +16053,7 @@
     "CN_044": ""
   },
   "char_4184_dolris": {
+    "LINKAGE_voice": "JP - Rico Sasaki",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16086,6 +16094,7 @@
     "CN_044": ""
   },
   "char_4185_amoris": {
+    "LINKAGE_voice": "JP - Akane Yonezawa",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16126,6 +16135,7 @@
     "CN_044": ""
   },
   "char_4186_tmoris": {
+    "LINKAGE_voice": "JP - Mei Okada",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16512,6 +16522,10 @@
     "CN_044": "Your operators really want to see me do this, do they? ...Oh, fine, special permission just for today. You can rest me on your shoulder while you go round the landship."
   },
   "char_4199_makiri": {
+    "CN_MANDARIN_voice": "CN_MANDARIN - Hongxi Zhu",
+    "JP_voice": "JP - Ryota Iwasaki",
+    "KR_voice": "KR - Lee Ju-seung",
+    "EN_voice": "EN - Andrew Kishino",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16552,6 +16566,10 @@
     "CN_044": ""
   },
   "char_4202_haruka": {
+    "CN_MANDARIN_voice": "CN_MANDARIN - kiyo",
+    "JP_voice": "JP - Moe Toyota",
+    "KR_voice": "KR - Kim Hyun-ji",
+    "EN_voice": "EN - Manami Tanaka",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -16592,6 +16610,10 @@
     "CN_044": ""
   },
   "char_4203_kichi": {
+    "CN_MANDARIN_voice": "CN_MANDARIN - Chen Tingting",
+    "JP_voice": "JP - Aoi Inase",
+    "KR_voice": "KR - Choi Hyun-ji",
+    "EN_voice": "EN - Crystal Lee",
     "CN_001": "",
     "CN_002": "",
     "CN_003": "",
@@ -17136,7 +17158,7 @@
     "JP_voice": "JP - KENN",
     "KR_voice": "KR - Lee Sang-ho",
     "EN_voice": "EN - Salvatore Scarpa",
-    "ITA_ITA_voice": "ITA - Alessandro Pili",
+    "ITA_voice": "ITA - Alessandro Pili",
     "CN_001": "Organizing documents? Doctor, we have much more important things to do. Bene, I'll give you a hand, if you insist. But do remember, I expect you to come up with a plan that's worth my while. Do <i>not</i> disappoint me.",
     "CN_002": "What do you want to know? Secrets of the Siracusan famiglie? There's hardly anything worth mentioning there. The things we do are no different from the wolves fighting in the wilderness thousands of years ago. Only, time has taught us some new tricks. Heh, you see 'order' could be the official name for 'tearing your prey to pieces.'",
     "CN_003": "For many years, I couldn't really understand my father. He paid the ultimate price, only to betray almost everything in the end... But I still remember the question my father posed to me many years ago, when we were sitting together in a park: 'Siracusa, sara un posto migliore senza le famiglie?'",
