@@ -8,6 +8,7 @@ import React, {
 import { ItalicText } from "../../../StatHover";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
+import charwordTableEn from "../../../../data/voiceline/charword_table_en.json";
 import {
   buildCnAvatarUrl,
   CN_AVATAR_BASE,
@@ -364,11 +365,17 @@ const VoiceSection = ({ operator }) => {
             v.voiceId,
             selectedLangType,
           );
+          const enText = charwordTableEn?.charWords?.[v.charWordId]?.voiceText;
+          const fallbackText =
+            typeof enText === "string" && enText.trim() !== "" && enText.trim() !== "/"
+              ? enText
+              : v.voiceText;
+
           const text = getVoiceText(
             vnObj,
             activePrefix,
             v.voiceId,
-            v.voiceText,
+            fallbackText,
           );
 
           return (
