@@ -58,14 +58,13 @@ html {
   scroll-padding-top: 80px; /* Adjust for fixed navbar height */
 }
 
-/* iOS smooth scrolling */
 html,
 body {
   height: 100%;
 }
 
 body {
-  overflow: hidden; /* ✅ không cho body/window scroll nữa */
+  overflow: hidden;
 }
 
 /* Section transitions */

@@ -6,7 +6,9 @@ function normalizePath(pathname) {
   const p = String(pathname || "/");
   if (p === "/" || /^\/home\/?$/i.test(p)) return "/Home";
   if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "/Operator";
-  if (/^\/music\/?$/i.test(p)) return "/Music";
+  if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "/Music";
+  if (/^\/Home\/?$/i.test(p)) return "/Home";
+  if (/^\/Operator(=.+)?\/?$/i.test(p)) return "/Operator";
   return p;
 }
 
@@ -21,57 +23,44 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
 
   const debounced = useMemo(
     () =>
-      debounce((sections, pathname, navigate, suppressRef) => {
+      debounce((sections, pathname, navigate, container, suppressRef) => {
         if (suppressRef?.current) return;
+        if (!container) return;
 
         const current = normalizePath(pathname);
-        const viewH = window.innerHeight;
-        const viewCenter = viewH / 2;
 
-        let best = null;
+        const h = container.clientHeight || window.innerHeight;
+        if (!h) return;
 
-        for (const s of sections) {
-          const el = document.getElementById(s.id);
-          if (!el) continue;
+        const idx = Math.max(
+          0,
+          Math.min(sections.length - 1, Math.round(container.scrollTop / h)),
+        );
 
-          const r = el.getBoundingClientRect();
-          const top = r.top;
-          const bottom = r.bottom;
+        const nextPath = normalizePath(sections[idx]?.path);
 
-          const intersects = bottom > viewH * 0.2 && top < viewH * 0.8;
-          if (!intersects) continue;
-
-          const center = (top + bottom) / 2;
-          const dist = Math.abs(center - viewCenter);
-
-          if (!best || dist < best.dist) best = { section: s, dist };
-        }
-
-        if (!best) return;
-
-        const nextPath = normalizePath(best.section.path);
-
-        if (nextPath !== current && lastPathRef.current !== nextPath) {
+        if (nextPath && nextPath !== current && lastPathRef.current !== nextPath) {
           lastPathRef.current = nextPath;
           navigate(nextPath, { replace: false });
         }
-      }, 180),
+      }, 120),
     [],
   );
 
   const onScroll = useCallback(() => {
-    debounced(sections, location.pathname, navigate, suppressRef);
-  }, [debounced, sections, location.pathname, navigate, suppressRef]);
+    const container = scrollContainerRef?.current;
+    debounced(sections, location.pathname, navigate, container, suppressRef);
+  }, [debounced, sections, location.pathname, navigate, scrollContainerRef, suppressRef]);
 
   useEffect(() => {
-    const target = scrollContainerRef?.current;
-    if (!target) return;
+    const container = scrollContainerRef?.current;
+    if (!container) return;
 
-    target.addEventListener("scroll", onScroll, { passive: true });
+    container.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
     return () => {
-      target.removeEventListener("scroll", onScroll);
+      container.removeEventListener("scroll", onScroll);
       debounced.cancel?.();
     };
   }, [onScroll, debounced, scrollContainerRef]);
