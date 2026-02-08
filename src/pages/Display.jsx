@@ -38,13 +38,12 @@ const Display = () => {
     if (!el) return;
 
     suppressRef.current = true;
-
     const behavior = navType === "POP" ? "auto" : "smooth";
     el.scrollIntoView({ behavior, block: "start" });
 
     const t = setTimeout(() => {
       suppressRef.current = false;
-    }, 600);
+    }, 700);
 
     return () => clearTimeout(t);
   }, [location.pathname, navType]);

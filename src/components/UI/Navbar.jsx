@@ -4,10 +4,6 @@ import { useNavigate } from "react-router-dom";
 const Navbar = ({ isOpen, onToggle }) => {
   const navigate = useNavigate();
 
-  const go = (path) => {
-    navigate(path);
-  };
-
   return (
     <div className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between ">
       <div className="flex items-center gap-3">
@@ -38,7 +34,7 @@ const Navbar = ({ isOpen, onToggle }) => {
 
       <div className="flex items-center gap-4">
         <button
-          onClick={() => go("/Home")}
+          onClick={() => navigate("/Home")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl hidden md:block cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
           type="button"
         >
@@ -46,7 +42,7 @@ const Navbar = ({ isOpen, onToggle }) => {
         </button>
 
         <button
-          onClick={() => go("/Operator")}
+          onClick={() => navigate("/Operator")}
           className="text-white text-[15px] py-2 px-3 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
           type="button"
         >
@@ -54,7 +50,7 @@ const Navbar = ({ isOpen, onToggle }) => {
         </button>
 
         <button
-          onClick={() => go("/Music")}
+          onClick={() => navigate("/Music")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
           type="button"
         >

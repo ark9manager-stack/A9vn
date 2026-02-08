@@ -23,16 +23,37 @@ function getScroller(scrollContainerRef) {
 export default function useScrollRouter(sections, scrollContainerRef, suppressRef) {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const lastUserScrollAtRef = useRef(0);
   const lastPathRef = useRef(normalizePath(location.pathname));
   useEffect(() => {
     lastPathRef.current = normalizePath(location.pathname);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const target = getScroller(scrollContainerRef);
+
+    const markUserScroll = () => {
+      lastUserScrollAtRef.current = Date.now();
+    };
+
+    target.addEventListener("wheel", markUserScroll, { passive: true });
+    target.addEventListener("touchstart", markUserScroll, { passive: true });
+    window.addEventListener("keydown", markUserScroll);
+
+    return () => {
+      target.removeEventListener("wheel", markUserScroll);
+      target.removeEventListener("touchstart", markUserScroll);
+      window.removeEventListener("keydown", markUserScroll);
+    };
+  }, [scrollContainerRef]);
+
   const debounced = useMemo(
     () =>
       debounce((sections, pathname, navigate, scroller, suppressRef) => {
         if (suppressRef?.current) return;
+
+        const justUserScrolled = Date.now() - lastUserScrollAtRef.current < 900;
+        if (!justUserScrolled) return;
 
         const current = normalizePath(pathname);
 
