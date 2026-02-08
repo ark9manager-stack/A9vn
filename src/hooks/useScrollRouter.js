@@ -9,16 +9,10 @@ function isDomEl(x) {
 function normalizePath(pathname) {
   const p = String(pathname || "/");
 
-  // Canonicalize
   if (p === "/" || /^\/home\/?$/i.test(p)) return "/Home";
-
-  // Operator (including modal style)
   if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "/Operator";
-
-  // Music
   if (/^\/music\/?$/i.test(p)) return "/Music";
 
-  // Already canonical
   return p;
 }
 
@@ -27,6 +21,7 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
   const location = useLocation();
 
   const lastPathRef = useRef(normalizePath(location.pathname));
+
   useEffect(() => {
     lastPathRef.current = normalizePath(location.pathname);
   }, [location.pathname]);
@@ -67,13 +62,13 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
         }
 
         if (!best) return;
+        const nextPath = normalizePath(best.section.path);
 
-        const nextPath = best.section.path;
-        if (normalizePath(nextPath) !== current && lastPathRef.current !== nextPath) {
+        if (nextPath !== current && lastPathRef.current !== nextPath) {
           lastPathRef.current = nextPath;
-          navigate(nextPath);
+          navigate(nextPath, { replace: false });
         }
-      }, 80),
+      }, 250),
     [],
   );
 
@@ -87,7 +82,6 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
     const target = scroller || window;
 
     target.addEventListener("scroll", onScroll, { passive: true });
-
     onScroll();
 
     return () => {
