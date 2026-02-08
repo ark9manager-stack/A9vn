@@ -8,12 +8,16 @@ function isDomEl(x) {
 
 function normalizePath(pathname) {
   const p = String(pathname || "/");
-
   if (p === "/" || /^\/home\/?$/i.test(p)) return "/Home";
   if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "/Operator";
   if (/^\/music\/?$/i.test(p)) return "/Music";
-
   return p;
+}
+
+function getScroller(scrollContainerRef) {
+  const el = scrollContainerRef?.current;
+  if (isDomEl(el) && el.scrollHeight > el.clientHeight + 1) return el;
+  return window;
 }
 
 export default function useScrollRouter(sections, scrollContainerRef, suppressRef) {
@@ -21,7 +25,6 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
   const location = useLocation();
 
   const lastPathRef = useRef(normalizePath(location.pathname));
-
   useEffect(() => {
     lastPathRef.current = normalizePath(location.pathname);
   }, [location.pathname]);
@@ -62,25 +65,24 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
         }
 
         if (!best) return;
+
         const nextPath = normalizePath(best.section.path);
 
         if (nextPath !== current && lastPathRef.current !== nextPath) {
           lastPathRef.current = nextPath;
-          navigate(nextPath, { replace: false });
+          navigate(nextPath);
         }
       }, 250),
     [],
   );
 
   const onScroll = useCallback(() => {
-    const scroller = scrollContainerRef?.current || window;
+    const scroller = getScroller(scrollContainerRef);
     debounced(sections, location.pathname, navigate, scroller, suppressRef);
   }, [debounced, sections, location.pathname, navigate, scrollContainerRef, suppressRef]);
 
   useEffect(() => {
-    const scroller = scrollContainerRef?.current;
-    const target = scroller || window;
-
+    const target = getScroller(scrollContainerRef);
     target.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 

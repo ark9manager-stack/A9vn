@@ -1,11 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isOpen, onToggle }) => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const navigate = useNavigate();
+
+  const go = (path) => {
+    navigate(path);
   };
 
   return (
@@ -15,6 +15,7 @@ const Navbar = ({ isOpen, onToggle }) => {
           onClick={onToggle}
           className="p-2 text-white rounded-lg shadow-lg hover:bg-[#242424] transition-colors duration-200"
           aria-label={isOpen ? "Ẩn sidebar" : "Hiện sidebar"}
+          type="button"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
@@ -37,7 +38,7 @@ const Navbar = ({ isOpen, onToggle }) => {
 
       <div className="flex items-center gap-4">
         <button
-          onClick={() => scrollToSection("home")}
+          onClick={() => go("/Home")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl hidden md:block cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
           type="button"
         >
@@ -45,7 +46,7 @@ const Navbar = ({ isOpen, onToggle }) => {
         </button>
 
         <button
-          onClick={() => scrollToSection("operator")}
+          onClick={() => go("/Operator")}
           className="text-white text-[15px] py-2 px-3 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
           type="button"
         >
@@ -53,7 +54,7 @@ const Navbar = ({ isOpen, onToggle }) => {
         </button>
 
         <button
-          onClick={() => scrollToSection("music")}
+          onClick={() => go("/Music")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
           type="button"
         >
@@ -71,4 +72,3 @@ const Navbar = ({ isOpen, onToggle }) => {
 };
 
 export default Navbar;
-
