@@ -1,14 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isOpen, onToggle }) => {
-  const navigate = useNavigate();
-
-  const scrollToSection = (sectionId, path) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-      navigate(path); // push history cho Back hoạt động đúng
     }
   };
 
@@ -41,22 +37,25 @@ const Navbar = ({ isOpen, onToggle }) => {
 
       <div className="flex items-center gap-4">
         <button
-          onClick={() => scrollToSection("home", "/Home")}
+          onClick={() => scrollToSection("home")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl hidden md:block cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
+          type="button"
         >
           Home
         </button>
 
         <button
-          onClick={() => scrollToSection("operator", "/Operator")}
+          onClick={() => scrollToSection("operator")}
           className="text-white text-[15px] py-2 px-3 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
+          type="button"
         >
           Operator
         </button>
 
         <button
-          onClick={() => scrollToSection("music", "/Music")}
+          onClick={() => scrollToSection("music")}
           className="text-white text-[15px] px-4 py-2 rounded-2xl cursor-pointer hover:bg-[#242424] transition-colors duration-200 font-semibold"
+          type="button"
         >
           Music
         </button>
@@ -72,3 +71,4 @@ const Navbar = ({ isOpen, onToggle }) => {
 };
 
 export default Navbar;
+

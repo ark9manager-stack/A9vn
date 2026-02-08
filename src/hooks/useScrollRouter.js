@@ -1,84 +1,98 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import debounce from "lodash.debounce";
-
-// Sync scroll position -> URL (replace để không spam history)
-// - Ưu tiên nghe scroll trên container (.fullpage-container)
-// - Normalize modal URL như /Operator=char_002_amiya => /Operator để không bị “đá” về /Operator
 
 function isDomEl(x) {
   return x && typeof x === "object" && x.nodeType === 1;
 }
 
-function normalizePathname(pathname) {
+function normalizePath(pathname) {
   const p = String(pathname || "/");
 
-  // Home aliases
+  // Canonicalize
   if (p === "/" || /^\/home\/?$/i.test(p)) return "/Home";
 
-  // Operator aliases (including modal-style)
-  if (/^\/operator=.+$/i.test(p)) return "/Operator";
-  if (/^\/operator\/?$/i.test(p)) return "/Operator";
+  // Operator (including modal style)
+  if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "/Operator";
 
-  // Music aliases
+  // Music
   if (/^\/music\/?$/i.test(p)) return "/Music";
 
+  // Already canonical
   return p;
 }
 
-const useScrollRouter = (sections, scrollContainerRef) => {
+export default function useScrollRouter(sections, scrollContainerRef, suppressRef) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const debouncedHandleScroll = useMemo(
+  const lastPathRef = useRef(normalizePath(location.pathname));
+  useEffect(() => {
+    lastPathRef.current = normalizePath(location.pathname);
+  }, [location.pathname]);
+
+  const debounced = useMemo(
     () =>
-      debounce((sections, pathname, navigate, scroller) => {
-        const current = normalizePathname(pathname);
+      debounce((sections, pathname, navigate, scroller, suppressRef) => {
+        if (suppressRef?.current) return;
+
+        const current = normalizePath(pathname);
 
         const isContainer = isDomEl(scroller);
         const containerRect = isContainer
           ? scroller.getBoundingClientRect()
           : { top: 0, height: window.innerHeight };
+
         const viewTop = containerRect.top;
         const viewH = containerRect.height || window.innerHeight;
+        const viewCenter = viewH / 2;
 
-        sections.forEach((section) => {
-          const element = document.getElementById(section.id);
-          if (!element) return;
+        let best = null;
 
-          const rect = element.getBoundingClientRect();
-          const top = rect.top - viewTop;
-          const bottom = rect.bottom - viewTop;
+        for (const s of sections) {
+          const el = document.getElementById(s.id);
+          if (!el) continue;
 
-          const isVisible = top < viewH * 0.6 && bottom > viewH * 0.4;
+          const r = el.getBoundingClientRect();
+          const top = r.top - viewTop;
+          const bottom = r.bottom - viewTop;
 
-          if (isVisible && current !== section.path) {
-            navigate(section.path, { replace: true });
-          }
-        });
+          const intersects = bottom > viewH * 0.2 && top < viewH * 0.8;
+          if (!intersects) continue;
+
+          const center = (top + bottom) / 2;
+          const dist = Math.abs(center - viewCenter);
+
+          if (!best || dist < best.dist) best = { section: s, dist };
+        }
+
+        if (!best) return;
+
+        const nextPath = best.section.path;
+        if (normalizePath(nextPath) !== current && lastPathRef.current !== nextPath) {
+          lastPathRef.current = nextPath;
+          navigate(nextPath);
+        }
       }, 80),
     [],
   );
 
-  const handleScroll = useCallback(() => {
+  const onScroll = useCallback(() => {
     const scroller = scrollContainerRef?.current || window;
-    debouncedHandleScroll(sections, location.pathname, navigate, scroller);
-  }, [debouncedHandleScroll, sections, location.pathname, navigate, scrollContainerRef]);
+    debounced(sections, location.pathname, navigate, scroller, suppressRef);
+  }, [debounced, sections, location.pathname, navigate, scrollContainerRef, suppressRef]);
 
   useEffect(() => {
     const scroller = scrollContainerRef?.current;
     const target = scroller || window;
 
-    target.addEventListener("scroll", handleScroll, { passive: true });
+    target.addEventListener("scroll", onScroll, { passive: true });
 
-    // chạy 1 lần để URL đúng ngay khi load
-    handleScroll();
+    onScroll();
 
     return () => {
-      target.removeEventListener("scroll", handleScroll);
-      debouncedHandleScroll.cancel?.();
+      target.removeEventListener("scroll", onScroll);
+      debounced.cancel?.();
     };
-  }, [handleScroll, debouncedHandleScroll, scrollContainerRef]);
-};
-
-export default useScrollRouter;
+  }, [onScroll, debounced, scrollContainerRef]);
+}

@@ -24,24 +24,38 @@ function pathToSectionId(pathname) {
 
 const Display = () => {
   const containerRef = useRef(null);
+  const suppressRef = useRef(false);
+
   const location = useLocation();
   const navigate = useNavigate();
   const navType = useNavigationType();
 
-  useScrollRouter(sections, containerRef);
+  useScrollRouter(sections, containerRef, suppressRef);
 
   useEffect(() => {
-    const id = pathToSectionId(location.pathname);
     const container = containerRef.current;
+    if (!container) return;
+
+    const id = pathToSectionId(location.pathname);
     const el = document.getElementById(id);
-    if (!container || !el) return;
+    if (!el) return;
+
+    suppressRef.current = true;
 
     const behavior = navType === "POP" ? "auto" : "smooth";
     container.scrollTo({ top: el.offsetTop, behavior });
+
+    const t = setTimeout(() => {
+      suppressRef.current = false;
+    }, 250);
+
+    return () => clearTimeout(t);
   }, [location.pathname, navType]);
 
   useEffect(() => {
-    if (location.pathname === "/") navigate("/Home", { replace: true });
+    if (location.pathname === "/") {
+      navigate("/Home", { replace: true });
+    }
   }, [location.pathname, navigate]);
 
   return (
