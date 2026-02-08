@@ -20,6 +20,7 @@ function normalizePath(pathname) {
 export default function useScrollRouter(sections, scrollContainerRef, suppressRef) {
   const navigate = useNavigate();
   const location = useLocation();
+
   const isOperatorModalPath = useMemo(
     () => /^\/Operator=.+$/i.test(String(location.pathname || "")),
     [location.pathname],
@@ -37,13 +38,12 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
   }, [sections]);
 
   useEffect(() => {
+    if (isOperatorModalPath) return;
+
     const root = scrollContainerRef?.current;
     if (!root) return;
 
-    const els = sections
-      .map((s) => document.getElementById(s.id))
-      .filter(Boolean);
-
+    const els = sections.map((s) => document.getElementById(s.id)).filter(Boolean);
     if (els.length === 0) return;
 
     const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
@@ -62,8 +62,6 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
 
       const current = normalizePath(location.pathname);
       const next = normalizePath(s.path);
-
-      if (isOperatorModalPath && next !== "/Operator") return;
 
       if (next !== current && lastPathRef.current !== next) {
         lastPathRef.current = next;
@@ -91,11 +89,7 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
           });
         }
       },
-      {
-        root,
-        threshold: thresholds,
-        rootMargin: "-25% 0px -25% 0px",
-      },
+      { root, threshold: thresholds, rootMargin: "-25% 0px -25% 0px" },
     );
 
     for (const el of els) io.observe(el);
@@ -104,13 +98,5 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
       if (raf) cancelAnimationFrame(raf);
       io.disconnect();
     };
-  }, [
-    navigate,
-    location.pathname,
-    sections,
-    sectionById,
-    scrollContainerRef,
-    suppressRef,
-    isOperatorModalPath,
-  ]);
+  }, [navigate, location.pathname, sections, sectionById, scrollContainerRef, suppressRef, isOperatorModalPath]);
 }

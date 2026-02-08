@@ -26,6 +26,8 @@ const App = () => {
           <Route path="/" element={<Navigate to="/Home" replace />} />
           <Route path="/Home" element={<Display />} />
           <Route path="/Operator" element={<Display />} />
+          <Route path="/Operator=:operatorId" element={<Display />} />
+          <Route path="/operator=:operatorId" element={<Display />} />
           <Route path="/Music" element={<Display />} />
           <Route path="/Operator=:operatorId" element={<Display />} />
           <Route path="/home" element={<Navigate to="/Home" replace />} />

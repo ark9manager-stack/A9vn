@@ -14,11 +14,9 @@ const sections = [
 
 function pathToSectionId(pathname) {
   const p = String(pathname || "/");
-
   if (p === "/" || /^\/home\/?$/i.test(p)) return "home";
   if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "operator";
   if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "music";
-
   if (/^\/Home\/?$/i.test(p)) return "home";
   if (/^\/Operator(=.+)?\/?$/i.test(p)) return "operator";
   return "home";
@@ -42,23 +40,19 @@ const Display = () => {
     if (!el) return;
 
     suppressRef.current = true;
+
     const reduceMotion =
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     const behavior = reduceMotion ? "auto" : "smooth";
-    const containerRect = container.getBoundingClientRect();
-    const elRect = el.getBoundingClientRect();
-    const top = elRect.top - containerRect.top + container.scrollTop;
 
-    container.scrollTo({ top, behavior });
-    let done = false;
+    el.scrollIntoView({ behavior, block: "start" });
+
     let idleTimer = null;
-    const MAX_MS = 2000;
     const IDLE_MS = 180;
+    const MAX_MS = 2000;
 
-    const cleanup = () => {
-      if (done) return;
-      done = true;
+    const release = () => {
       if (idleTimer) clearTimeout(idleTimer);
       container.removeEventListener("scroll", onScroll);
       suppressRef.current = false;
@@ -66,16 +60,16 @@ const Display = () => {
 
     const onScroll = () => {
       if (idleTimer) clearTimeout(idleTimer);
-      idleTimer = setTimeout(cleanup, IDLE_MS);
+      idleTimer = setTimeout(release, IDLE_MS);
     };
 
     container.addEventListener("scroll", onScroll, { passive: true });
-    const maxTimer = setTimeout(cleanup, MAX_MS);
     onScroll();
+    const maxTimer = setTimeout(release, MAX_MS);
 
     return () => {
       clearTimeout(maxTimer);
-      cleanup();
+      release();
     };
   }, [location.pathname, navType]);
 
