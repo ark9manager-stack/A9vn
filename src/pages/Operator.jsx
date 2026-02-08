@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FaFilter } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";
 import OperatorModal from "../components/Operator/OperatorModal";
@@ -10,6 +11,9 @@ import { CLASSES } from "../config/operatorConfig";
 import { professionIconUrl } from "../utils/operatorUtils";
 
 const Operator = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
   const [activeClass, setActiveClass] = useState(null);
   const [activeSubClass, setActiveSubClass] = useState(null);
@@ -31,6 +35,49 @@ const Operator = () => {
     }
   };
 
+  const operatorIdFromUrl = useMemo(() => {
+    const p = String(location.pathname || "");
+    const m = p.match(/^\/operator=([^/]+)$/i);
+    if (!m) return null;
+    try {
+      return decodeURIComponent(m[1]);
+    } catch {
+      return m[1];
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!operators || operators.length === 0) return;
+
+    if (!operatorIdFromUrl) {
+      if (selectedOperator) setSelectedOperator(null);
+      return;
+    }
+
+    const found = operators.find(
+      (op) => op.id === operatorIdFromUrl || String(op.idweb) === operatorIdFromUrl,
+    );
+    if (found) setSelectedOperator(found);
+  }, [operatorIdFromUrl, operators, selectedOperator, setSelectedOperator]);
+
+  const openOperator = (op) => {
+    setSelectedOperator(op);
+    navigate(`/Operator=${encodeURIComponent(op.id)}`, {
+      state: { background: location.state?.background ?? location },
+    });
+  };
+
+  const closeOperatorModal = () => {
+    setSelectedOperator(null);
+
+    if (location.state?.background) {
+      navigate(-1);
+      return;
+    }
+
+    navigate("/Operator", { replace: true });
+  };
+
   return (
     <div
       id="operator"
@@ -43,15 +90,14 @@ const Operator = () => {
               Operator
             </h1>
 
-            {/* Filter Icon for Mobile */}
             <button
               className="md:hidden p-2 bg-green-600 rounded-full text-white shadow-lg hover:bg-green-700"
               onClick={() => setShowClassFilter(!showClassFilter)}
+              type="button"
             >
               <FaFilter size={20} />
             </button>
 
-            {/* Class Buttons */}
             <div
               className={`flex flex-wrap gap-2 ml-auto pt-4 transition-all duration-300 overflow-hidden 
                 ${showClassFilter ? "max-h-96" : "max-h-0"} md:max-h-full`}
@@ -82,16 +128,14 @@ const Operator = () => {
             </div>
           </div>
 
-          {activeClass && availableSubclasses.length > 0 && (
+          {activeClass && (availableSubclasses?.length ?? 0) > 0 && (
             <div className="w-full mb-2">
               <div className="flex flex-wrap gap-2 justify-end">
                 {availableSubclasses.map((sub) => (
                   <button
                     key={sub.id}
                     onClick={() =>
-                      setActiveSubClass(
-                        activeSubClass === sub.id ? null : sub.id,
-                      )
+                      setActiveSubClass(activeSubClass === sub.id ? null : sub.id)
                     }
                     className={`p-2 rounded-lg w-24 flex flex-col items-center transition
                       ${
@@ -132,7 +176,7 @@ const Operator = () => {
                 <OperatorCard
                   key={op.id}
                   operator={op}
-                  onClick={() => setSelectedOperator(op)}
+                  onClick={() => openOperator(op)}
                 />
               ))}
             </div>
@@ -141,10 +185,7 @@ const Operator = () => {
       </div>
 
       {selectedOperator && (
-        <OperatorModal
-          operator={selectedOperator}
-          onClose={() => setSelectedOperator(null)}
-        />
+        <OperatorModal operator={selectedOperator} onClose={closeOperatorModal} />
       )}
     </div>
   );
