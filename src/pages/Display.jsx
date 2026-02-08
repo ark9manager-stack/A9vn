@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
+
 import Home from "./Home";
-import Music from "./Music";
 import Operator from "./Operator";
+import Music from "./Music";
 import useScrollRouter from "../hooks/useScrollRouter";
 
 const sections = [
@@ -13,12 +14,13 @@ const sections = [
 
 function pathToSectionId(pathname) {
   const p = String(pathname || "/");
+
   if (p === "/" || /^\/home\/?$/i.test(p)) return "home";
   if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "operator";
-  if (/^\/music\/?$/i.test(p)) return "music";
+  if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "music";
+
   if (/^\/Home\/?$/i.test(p)) return "home";
   if (/^\/Operator(=.+)?\/?$/i.test(p)) return "operator";
-  if (/^\/Music\/?$/i.test(p)) return "music";
   return "home";
 }
 
@@ -27,7 +29,6 @@ const Display = () => {
   const suppressRef = useRef(false);
 
   const location = useLocation();
-  const navigate = useNavigate();
   const navType = useNavigationType();
 
   useScrollRouter(sections, containerRef, suppressRef);
@@ -51,12 +52,6 @@ const Display = () => {
 
     return () => clearTimeout(t);
   }, [location.pathname, navType]);
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      navigate("/Home", { replace: true });
-    }
-  }, [location.pathname, navigate]);
 
   return (
     <div className="w-full h-full rounded bg-[#121212] text-white">

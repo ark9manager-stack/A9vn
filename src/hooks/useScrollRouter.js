@@ -1,14 +1,19 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import debounce from "lodash.debounce";
 
 function normalizePath(pathname) {
   const p = String(pathname || "/");
+
   if (p === "/" || /^\/home\/?$/i.test(p)) return "/Home";
-  if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "/Operator";
   if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "/Music";
+
+  if (/^\/operator=.+$/i.test(p) || /^\/Operator=.+$/i.test(p)) return "/Operator";
+  if (/^\/operator\/?$/i.test(p) || /^\/Operator\/?$/i.test(p)) return "/Operator";
+
   if (/^\/Home\/?$/i.test(p)) return "/Home";
+  if (/^\/Music\/?$/i.test(p)) return "/Music";
   if (/^\/Operator(=.+)?\/?$/i.test(p)) return "/Operator";
+
   return p;
 }
 
@@ -21,47 +26,77 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
     lastPathRef.current = normalizePath(location.pathname);
   }, [location.pathname]);
 
-  const debounced = useMemo(
-    () =>
-      debounce((sections, pathname, navigate, container, suppressRef) => {
-        if (suppressRef?.current) return;
-        if (!container) return;
-
-        const current = normalizePath(pathname);
-
-        const h = container.clientHeight || window.innerHeight;
-        if (!h) return;
-
-        const idx = Math.max(
-          0,
-          Math.min(sections.length - 1, Math.round(container.scrollTop / h)),
-        );
-
-        const nextPath = normalizePath(sections[idx]?.path);
-
-        if (nextPath && nextPath !== current && lastPathRef.current !== nextPath) {
-          lastPathRef.current = nextPath;
-          navigate(nextPath, { replace: false });
-        }
-      }, 120),
-    [],
-  );
-
-  const onScroll = useCallback(() => {
-    const container = scrollContainerRef?.current;
-    debounced(sections, location.pathname, navigate, container, suppressRef);
-  }, [debounced, sections, location.pathname, navigate, scrollContainerRef, suppressRef]);
+  const sectionById = useMemo(() => {
+    const m = new Map();
+    for (const s of sections) m.set(s.id, s);
+    return m;
+  }, [sections]);
 
   useEffect(() => {
-    const container = scrollContainerRef?.current;
-    if (!container) return;
+    const root = scrollContainerRef?.current;
+    if (!root) return;
 
-    container.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    const els = sections
+      .map((s) => document.getElementById(s.id))
+      .filter(Boolean);
+
+    if (els.length === 0) return;
+
+    const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
+
+    let raf = 0;
+    let bestId = null;
+    let bestRatio = 0;
+
+    const commit = () => {
+      raf = 0;
+      if (suppressRef?.current) return;
+      if (!bestId) return;
+
+      const s = sectionById.get(bestId);
+      if (!s) return;
+
+      const current = normalizePath(location.pathname);
+      const next = normalizePath(s.path);
+
+      if (next !== current && lastPathRef.current !== next) {
+        lastPathRef.current = next;
+        navigate(next, { replace: false });
+      }
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const ratio = e.intersectionRatio;
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = e.target.id;
+          }
+        }
+
+        if (!raf) {
+          raf = requestAnimationFrame(() => {
+            const tmpId = bestId;
+            bestId = tmpId;
+            bestRatio = 0;
+            commit();
+          });
+        }
+      },
+      {
+        root,
+        threshold: thresholds,
+        rootMargin: "-25% 0px -25% 0px",
+      },
+    );
+
+    for (const el of els) io.observe(el);
 
     return () => {
-      container.removeEventListener("scroll", onScroll);
-      debounced.cancel?.();
+      if (raf) cancelAnimationFrame(raf);
+      io.disconnect();
     };
-  }, [onScroll, debounced, scrollContainerRef]);
+  }, [navigate, location.pathname, sections, sectionById, scrollContainerRef, suppressRef]);
 }
