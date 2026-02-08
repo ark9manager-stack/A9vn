@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
 import Home from "./Home";
 import Music from "./Music";
 import Operator from "./Operator";
@@ -13,17 +13,12 @@ const sections = [
 
 function pathToSectionId(pathname) {
   const p = String(pathname || "/");
-
-  // aliases
   if (p === "/" || /^\/home\/?$/i.test(p)) return "home";
   if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "operator";
   if (/^\/music\/?$/i.test(p)) return "music";
-
-  // canonical (capitalized)
   if (/^\/Home\/?$/i.test(p)) return "home";
   if (/^\/Operator(=.+)?\/?$/i.test(p)) return "operator";
   if (/^\/Music\/?$/i.test(p)) return "music";
-
   return "home";
 }
 
@@ -33,10 +28,8 @@ const Display = () => {
   const navigate = useNavigate();
   const navType = useNavigationType();
 
-  // 1) Scroll -> URL
   useScrollRouter(sections, containerRef);
 
-  // 2) URL (kể cả Back/Forward) -> scroll
   useEffect(() => {
     const id = pathToSectionId(location.pathname);
     const container = containerRef.current;
@@ -47,11 +40,8 @@ const Display = () => {
     container.scrollTo({ top: el.offsetTop, behavior });
   }, [location.pathname, navType]);
 
-  // (tuỳ chọn) Redirect / -> /Home cho URL rõ ràng trên mobile
   useEffect(() => {
-    if (location.pathname === "/") {
-      navigate("/Home", { replace: true });
-    }
+    if (location.pathname === "/") navigate("/Home", { replace: true });
   }, [location.pathname, navigate]);
 
   return (
