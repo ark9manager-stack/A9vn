@@ -29,6 +29,8 @@
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }
 
 .fullpage-section {
@@ -57,9 +59,13 @@ html {
 }
 
 /* iOS smooth scrolling */
+html,
 body {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  height: 100%;
+}
+
+body {
+  overflow: hidden; /* ✅ không cho body/window scroll nữa */
 }
 
 /* Section transitions */

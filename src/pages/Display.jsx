@@ -33,17 +33,21 @@ const Display = () => {
   useScrollRouter(sections, containerRef, suppressRef);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const id = pathToSectionId(location.pathname);
     const el = document.getElementById(id);
     if (!el) return;
 
     suppressRef.current = true;
+
     const behavior = navType === "POP" ? "auto" : "smooth";
-    el.scrollIntoView({ behavior, block: "start" });
+    container.scrollTo({ top: el.offsetTop, behavior });
 
     const t = setTimeout(() => {
       suppressRef.current = false;
-    }, 700);
+    }, 600);
 
     return () => clearTimeout(t);
   }, [location.pathname, navType]);
