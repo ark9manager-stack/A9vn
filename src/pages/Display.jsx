@@ -42,15 +42,41 @@ const Display = () => {
     if (!el) return;
 
     suppressRef.current = true;
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const behavior = reduceMotion ? "auto" : "smooth";
+    const containerRect = container.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const top = elRect.top - containerRect.top + container.scrollTop;
 
-    const behavior = navType === "POP" ? "auto" : "smooth";
-    container.scrollTo({ top: el.offsetTop, behavior });
+    container.scrollTo({ top, behavior });
+    let done = false;
+    let idleTimer = null;
+    const MAX_MS = 2000;
+    const IDLE_MS = 180;
 
-    const t = setTimeout(() => {
+    const cleanup = () => {
+      if (done) return;
+      done = true;
+      if (idleTimer) clearTimeout(idleTimer);
+      container.removeEventListener("scroll", onScroll);
       suppressRef.current = false;
-    }, 600);
+    };
 
-    return () => clearTimeout(t);
+    const onScroll = () => {
+      if (idleTimer) clearTimeout(idleTimer);
+      idleTimer = setTimeout(cleanup, IDLE_MS);
+    };
+
+    container.addEventListener("scroll", onScroll, { passive: true });
+    const maxTimer = setTimeout(cleanup, MAX_MS);
+    onScroll();
+
+    return () => {
+      clearTimeout(maxTimer);
+      cleanup();
+    };
   }, [location.pathname, navType]);
 
   return (

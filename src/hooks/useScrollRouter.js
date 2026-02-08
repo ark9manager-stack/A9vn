@@ -20,6 +20,10 @@ function normalizePath(pathname) {
 export default function useScrollRouter(sections, scrollContainerRef, suppressRef) {
   const navigate = useNavigate();
   const location = useLocation();
+  const isOperatorModalPath = useMemo(
+    () => /^\/Operator=.+$/i.test(String(location.pathname || "")),
+    [location.pathname],
+  );
 
   const lastPathRef = useRef(normalizePath(location.pathname));
   useEffect(() => {
@@ -58,6 +62,8 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
 
       const current = normalizePath(location.pathname);
       const next = normalizePath(s.path);
+
+      if (isOperatorModalPath && next !== "/Operator") return;
 
       if (next !== current && lastPathRef.current !== next) {
         lastPathRef.current = next;
@@ -98,5 +104,13 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
       if (raf) cancelAnimationFrame(raf);
       io.disconnect();
     };
-  }, [navigate, location.pathname, sections, sectionById, scrollContainerRef, suppressRef]);
+  }, [
+    navigate,
+    location.pathname,
+    sections,
+    sectionById,
+    scrollContainerRef,
+    suppressRef,
+    isOperatorModalPath,
+  ]);
 }

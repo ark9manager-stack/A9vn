@@ -1,58 +1,25 @@
 import React, { useEffect, useRef } from "react";
 
-const WHEEL_COOLDOWN = 5000; // 5 giây
-
 const ScrollLockContainer = ({ children, className }) => {
   const ref = useRef(null);
-  const lockTimer = useRef(null);
-  const isLocked = useRef(false);
 
   useEffect(() => {
-    const handleWheel = (e) => {
-      // Nếu wheel xuất phát từ trong container
-      if (ref.current && ref.current.contains(e.target)) {
-        // 🔒 Khóa scroll page
-        lockPageScroll();
+    const el = ref.current;
+    if (!el) return;
 
-        // Cho phép scroll nội bộ
-        ref.current.scrollTop += e.deltaY;
+    const onWheel = (e) => {
+      if (!el.contains(e.target)) return;
 
-        // ❌ chặn page nhận wheel
-        e.preventDefault();
-      }
+      const canScroll = el.scrollHeight > el.clientHeight + 1;
+      if (!canScroll) return;
+
+      e.preventDefault();
+      el.scrollTop += e.deltaY;
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      unlockPageScroll();
-    };
-  });
-
-  const lockPageScroll = () => {
-    document.body.style.overflow = "hidden";
-    isLocked.current = true;
-
-    // Reset cooldown mỗi lần wheel
-    if (lockTimer.current) {
-      clearTimeout(lockTimer.current);
-    }
-
-    lockTimer.current = setTimeout(() => {
-      unlockPageScroll();
-    }, WHEEL_COOLDOWN);
-  };
-
-  const unlockPageScroll = () => {
-    document.body.style.overflow = "";
-    isLocked.current = false;
-
-    if (lockTimer.current) {
-      clearTimeout(lockTimer.current);
-      lockTimer.current = null;
-    }
-  };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
 
   return (
     <div ref={ref} className={className}>
