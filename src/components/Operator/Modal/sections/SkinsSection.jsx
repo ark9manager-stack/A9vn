@@ -1,5 +1,4 @@
-// src/components/Operator/Modal/sections/SkinsSection.jsx
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 
 const ART_BASE =
@@ -23,11 +22,7 @@ function buildEliteUrl(charId, elite) {
   return `${ART_BASE}/${charId}/${charId}_1.png`;
 }
 
-/**
- * Skin file pattern in repo is typically:
- *   {ART_BASE}/{charId}/{charId}_{theme}%23{ver}.png
- * theme may be camelCase in JSON but can be lowercase in repo for some skins.
- */
+
 function buildSkinUrl(charId, skinId, { forceLowerTheme = false } = {}) {
   if (!charId || !skinId) return null;
 
@@ -212,7 +207,10 @@ export default function SkinsSection({ operator, className = "" }) {
   }, [charId, options, selectedKey]);
 
   useEffect(() => {
-    // đổi skin => mặc định quay về art thường
+    if (skipSpResetRef.current) {
+      skipSpResetRef.current = false;
+      return;
+    }
     setSpMode(false);
   }, [selectedKey, charId]);
 
@@ -243,7 +241,6 @@ export default function SkinsSection({ operator, className = "" }) {
     const primary = effectiveUrl || null;
     const fallback = effectiveFallbackUrl || null;
 
-    // bấm đổi -> ẩn ảnh cũ ngay lập tức
     setImgError(false);
     setIsLoadingImg(!!primary);
     setDisplaySrc(null);
@@ -359,7 +356,7 @@ export default function SkinsSection({ operator, className = "" }) {
               draggable={false}
             />
             <div className="text-xs text-white/85 leading-snug truncate">
-              <span className="text-white/70">Họa sĩ:</span> {displayDrawer}
+              <span>Họa sĩ:</span> {displayDrawer}
             </div>
 
             {/* Row 3: designer */}
@@ -367,7 +364,7 @@ export default function SkinsSection({ operator, className = "" }) {
               <>
                 <div className="h-4 w-6" />
                 <div className="text-xs text-white/85 leading-snug truncate">
-                  <span className="text-white/70">Thiết kế:</span> {displayDesigner}
+                  <span>Thiết kế:</span> {displayDesigner}
                 </div>
               </>
             ) : null}
@@ -378,29 +375,17 @@ export default function SkinsSection({ operator, className = "" }) {
         {options.length > 1 && (
           <div className="absolute right-3 bottom-3 z-20 w-[160px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
             <div className="flex flex-col gap-1">
-              {selectedHasSp && (
-                <button
-                  type="button"
-                  onClick={() => setSpMode((v) => !v)}
-                  className="w-full text-left rounded-lg px-2 py-1.5 text-xs font-semibold transition bg-white/10 hover:bg-white/20 text-white/90"
-                  title="Chuyển đổi giữa art thường và art _sp"
-                >
-                  <div className="truncate">
-                    Dạng art: {spMode ? "SP" : "Thường"} (bấm để đổi)
-                  </div>
-                </button>
-              )}
 
               {options.map((opt) => {
                 const active = selectedKey === opt.key;
                 const canToggleSp = !!opt.hasSp;
 
                 return (
-                  <div key={opt.key} className="flex gap-1">
+                  <div key={opt.key} className="relative">
                     <button
                       type="button"
                       onClick={() => setSelectedKey(opt.key)}
-                      className={`flex-1 text-left rounded-lg px-2 py-1.5 text-xs font-semibold transition
+                      className={`w-full text-left rounded-lg pl-2 pr-10 py-1.5 text-xs font-semibold transition
                         ${
                           active
                             ? "bg-emerald-600 text-white"
@@ -414,19 +399,23 @@ export default function SkinsSection({ operator, className = "" }) {
                     {canToggleSp ? (
                       <button
                         type="button"
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
+
                           if (selectedKey !== opt.key) {
+                            skipSpResetRef.current = true;
                             setSelectedKey(opt.key);
                             setSpMode(true);
                             return;
                           }
+
                           setSpMode((v) => !v);
                         }}
-                        className={`shrink-0 rounded-lg px-2 py-1.5 text-[10px] font-bold transition
+                        className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[10px] font-bold transition
                           ${
                             active && spMode
                               ? "bg-amber-500 text-black"
-                              : "bg-white/10 hover:bg-white/20 text-white/90"
+                              : "bg-white/15 hover:bg-white/25 text-white/90"
                           }`}
                         title="Chuyển dạng art (thường ↔ _sp)"
                       >
@@ -434,6 +423,7 @@ export default function SkinsSection({ operator, className = "" }) {
                       </button>
                     ) : null}
                   </div>
+
                 );
               })}
             </div>
