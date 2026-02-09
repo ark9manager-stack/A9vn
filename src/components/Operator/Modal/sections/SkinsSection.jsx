@@ -376,8 +376,8 @@ export default function SkinsSection({ operator, className = "" }) {
               className="h-4 w-6 object-contain opacity-90 mt-[1px] shrink-0"
               draggable={false}
             />
-            <div className="text-xs text-white/85 leading-snug truncate">
-              <span>Họa sĩ:</span> {displayDrawer}
+            <div className="min-w-0 text-xs text-white/85 leading-snug whitespace-normal break-words">
+              <span className="whitespace-nowrap">Họa sĩ:</span>{" "}{displayDrawer}
             </div>
 
             {/* Row 3: designer */}
