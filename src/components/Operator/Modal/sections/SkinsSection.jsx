@@ -10,6 +10,8 @@ const ICON_MODEL_URL =
 const ICON_DRAWER_URL =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_drawer.png";
 
+const SP_DYN_SKINS = skinTable?.spDynSkins || {};
+
 function buildEliteUrl(charId, elite) {
   if (!charId) return null;
   if (elite === "E0") return `${ART_BASE}/${charId}/${charId}_1.png`;
@@ -47,6 +49,14 @@ function buildSkinUrl(charId, skinId, { forceLowerTheme = false } = {}) {
   const normalized = forceLowerTheme ? file.toLowerCase() : file;
   return `${ART_BASE}/${charId}/${encodeURIComponent(normalized)}.png`;
 }
+
+function withSpSuffix(url) {
+  if (!url) return url;
+  // avoid double "_sp"
+  if (/_sp\.(png|webp|jpg|jpeg)$/i.test(url)) return url;
+  return url.replace(/\.(png|webp|jpg|jpeg)$/i, "_sp.$1");
+}
+
 
 function pickDisplaySkin(obj) {
   return obj?.displaySkin || obj?.skin || obj || null;
@@ -108,6 +118,7 @@ export default function SkinsSection({ operator, className = "" }) {
           skinId: s.skinId,
           skinName: display?.skinName ?? null,
           drawerList: display?.drawerList ?? [],
+          designerList: display?.designerList ?? null,
           url: primaryUrl,
           fallbackUrl: fallbackUrl !== primaryUrl ? fallbackUrl : null,
         };
@@ -128,6 +139,9 @@ export default function SkinsSection({ operator, className = "" }) {
       fallbackUrl: null,
       skinName: eliteMeta?.e0?.skinName ?? null,
       drawerList: eliteMeta?.e0?.drawerList ?? [],
+      designerList: eliteMeta?.e0?.designerList ?? null,
+      hasSp: false,
+      skinId: null,
       order: 0,
     });
 
@@ -140,6 +154,9 @@ export default function SkinsSection({ operator, className = "" }) {
         fallbackUrl: null,
         skinName: eliteMeta?.e1?.skinName ?? null,
         drawerList: eliteMeta?.e1?.drawerList ?? [],
+        designerList: eliteMeta?.e1?.designerList ?? null,
+        hasSp: false,
+        skinId: null,
         order: 1,
       });
     }
@@ -153,6 +170,9 @@ export default function SkinsSection({ operator, className = "" }) {
         fallbackUrl: null,
         skinName: eliteMeta?.e2?.skinName ?? null,
         drawerList: eliteMeta?.e2?.drawerList ?? [],
+        designerList: eliteMeta?.e2?.designerList ?? null,
+        hasSp: false,
+        skinId: null,
         order: 2,
       });
     }
@@ -168,6 +188,9 @@ export default function SkinsSection({ operator, className = "" }) {
         fallbackUrl: s.fallbackUrl || null,
         skinName: s.skinName,
         drawerList: s.drawerList || [],
+        designerList: s.designerList ?? null,
+        skinId: s.skinId,
+        hasSp: !!SP_DYN_SKINS?.[s.skinId],
         order: 100 + idx,
       }));
 
@@ -175,6 +198,7 @@ export default function SkinsSection({ operator, className = "" }) {
   }, [charId, eliteMeta, skinsForChar]);
 
   const [selectedKey, setSelectedKey] = useState(options?.[0]?.key || "E0");
+  const [spMode, setSpMode] = useState(false);
 
   // image state (supports fallback retry)
   const [imgError, setImgError] = useState(false);
@@ -187,15 +211,37 @@ export default function SkinsSection({ operator, className = "" }) {
     if (!exists) setSelectedKey(options[0].key);
   }, [charId, options, selectedKey]);
 
+  useEffect(() => {
+    // đổi skin => mặc định quay về art thường
+    setSpMode(false);
+  }, [selectedKey, charId]);
+
   const selectedOption = useMemo(() => {
     return options.find((x) => x.key === selectedKey) || options[0];
   }, [options, selectedKey]);
 
+  const selectedHasSp = useMemo(() => {
+    if (!selectedOption) return false;
+    if (selectedOption.kind !== "skin") return false;
+    const sid = selectedOption.skinId || selectedOption.key;
+    return !!SP_DYN_SKINS?.[sid];
+  }, [selectedOption]);
+
+  const effectiveUrl = useMemo(() => {
+    const u = selectedOption?.url || null;
+    return selectedHasSp && spMode ? withSpSuffix(u) : u;
+  }, [selectedOption, selectedHasSp, spMode]);
+
+  const effectiveFallbackUrl = useMemo(() => {
+    const u = selectedOption?.fallbackUrl || null;
+    return selectedHasSp && spMode ? withSpSuffix(u) : u;
+  }, [selectedOption, selectedHasSp, spMode]);
+
   useEffect(() => {
     let cancelled = false;
 
-    const primary = selectedOption?.url || null;
-    const fallback = selectedOption?.fallbackUrl || null;
+    const primary = effectiveUrl || null;
+    const fallback = effectiveFallbackUrl || null;
 
     // bấm đổi -> ẩn ảnh cũ ngay lập tức
     setImgError(false);
@@ -238,7 +284,7 @@ export default function SkinsSection({ operator, className = "" }) {
     return () => {
       cancelled = true;
     };
-  }, [selectedOption?.url, selectedOption?.fallbackUrl, charId, selectedKey]);
+  }, [effectiveUrl, effectiveFallbackUrl, charId, selectedKey, spMode, selectedHasSp]);
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
@@ -250,6 +296,13 @@ export default function SkinsSection({ operator, className = "" }) {
     const list = selectedOption?.drawerList || [];
     const arr = Array.isArray(list) ? list.filter(Boolean) : [];
     return arr.length ? arr.join(", ") : "-";
+  }, [selectedOption]);
+
+
+  const displayDesigner = useMemo(() => {
+    const list = selectedOption?.designerList;
+    const arr = Array.isArray(list) ? list.filter(Boolean) : [];
+    return arr.length ? arr.join(", ") : "";
   }, [selectedOption]);
 
   if (!operator) return null;
@@ -306,8 +359,18 @@ export default function SkinsSection({ operator, className = "" }) {
               draggable={false}
             />
             <div className="text-xs text-white/85 leading-snug truncate">
-              {displayDrawer}
+              <span className="text-white/70">Họa sĩ:</span> {displayDrawer}
             </div>
+
+            {/* Row 3: designer */}
+            {displayDesigner ? (
+              <>
+                <div className="h-4 w-6" />
+                <div className="text-xs text-white/85 leading-snug truncate">
+                  <span className="text-white/70">Thiết kế:</span> {displayDesigner}
+                </div>
+              </>
+            ) : null}
           </div>
         </div>
 
@@ -315,23 +378,62 @@ export default function SkinsSection({ operator, className = "" }) {
         {options.length > 1 && (
           <div className="absolute right-3 bottom-3 z-20 w-[160px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
             <div className="flex flex-col gap-1">
+              {selectedHasSp && (
+                <button
+                  type="button"
+                  onClick={() => setSpMode((v) => !v)}
+                  className="w-full text-left rounded-lg px-2 py-1.5 text-xs font-semibold transition bg-white/10 hover:bg-white/20 text-white/90"
+                  title="Chuyển đổi giữa art thường và art _sp"
+                >
+                  <div className="truncate">
+                    Dạng art: {spMode ? "SP" : "Thường"} (bấm để đổi)
+                  </div>
+                </button>
+              )}
+
               {options.map((opt) => {
                 const active = selectedKey === opt.key;
+                const canToggleSp = !!opt.hasSp;
+
                 return (
-                  <button
-                    key={opt.key}
-                    type="button"
-                    onClick={() => setSelectedKey(opt.key)}
-                    className={`w-full text-left rounded-lg px-2 py-1.5 text-xs font-semibold transition
-                      ${
-                        active
-                          ? "bg-emerald-600 text-white"
-                          : "bg-white/10 hover:bg-white/20 text-white/90"
-                      }`}
-                    title={opt.label}
-                  >
-                    <div className="truncate">{opt.label}</div>
-                  </button>
+                  <div key={opt.key} className="flex gap-1">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedKey(opt.key)}
+                      className={`flex-1 text-left rounded-lg px-2 py-1.5 text-xs font-semibold transition
+                        ${
+                          active
+                            ? "bg-emerald-600 text-white"
+                            : "bg-white/10 hover:bg-white/20 text-white/90"
+                        }`}
+                      title={opt.label}
+                    >
+                      <div className="truncate">{opt.label}</div>
+                    </button>
+
+                    {canToggleSp ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (selectedKey !== opt.key) {
+                            setSelectedKey(opt.key);
+                            setSpMode(true);
+                            return;
+                          }
+                          setSpMode((v) => !v);
+                        }}
+                        className={`shrink-0 rounded-lg px-2 py-1.5 text-[10px] font-bold transition
+                          ${
+                            active && spMode
+                              ? "bg-amber-500 text-black"
+                              : "bg-white/10 hover:bg-white/20 text-white/90"
+                          }`}
+                        title="Chuyển dạng art (thường ↔ _sp)"
+                      >
+                        SP
+                      </button>
+                    ) : null}
+                  </div>
                 );
               })}
             </div>
