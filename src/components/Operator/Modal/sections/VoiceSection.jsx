@@ -124,12 +124,60 @@ function buildVoiceAudioUrl(voiceAsset, voiceId, langType) {
   return `${VOICE_ASSET_BASE}/${folderType}/${safeFolder}/${safeFile}`;
 }
 
-function getLangLabel(vnObj, skinPrefix, langType) {
-  if (!vnObj) return langType;
+function normalizeCvNames(cvName) {
+  if (!cvName) return [];
+  if (Array.isArray(cvName)) {
+    return cvName
+      .filter((x) => typeof x === "string")
+      .map((x) => x.trim())
+      .filter((x) => x !== "");
+  }
+  if (typeof cvName === "string") {
+    const s = cvName.trim();
+    return s ? [s] : [];
+  }
+  return [];
+}
+
+function buildLangCvLabel(langType, cvNames) {
+  const tag = langType;
+  const names = normalizeCvNames(cvNames).join(", ");
+  return names ? `${tag} - ${names}` : tag;
+}
+
+function getCvNamesFromTable(table, variantKey, charId, langType) {
+  const entry =
+    table?.voiceLangDict?.[variantKey] || table?.voiceLangDict?.[charId];
+  return entry?.dict?.[langType]?.cvName;
+}
+
+function getLangLabel(vnObj, skinPrefix, langType, variantKey, charId) {
   const key = skinPrefix
     ? `${skinPrefix}_${langType}_voice`
     : `${langType}_voice`;
-  return vnObj[key] || langType;
+
+  const vnVal = vnObj?.[key];
+  if (typeof vnVal === "string" && vnVal.trim() !== "") return vnVal;
+
+  const enCvNames = getCvNamesFromTable(
+    charwordTableEn,
+    variantKey,
+    charId,
+    langType,
+  );
+  if (normalizeCvNames(enCvNames).length)
+    return buildLangCvLabel(langType, enCvNames);
+
+  const baseCvNames = getCvNamesFromTable(
+    charwordTable,
+    variantKey,
+    charId,
+    langType,
+  );
+  if (normalizeCvNames(baseCvNames).length)
+    return buildLangCvLabel(langType, baseCvNames);s
+
+  return langType;
 }
 
 function getVoiceText(vnObj, activePrefix, voiceId, fallbackText) {
@@ -349,7 +397,7 @@ const VoiceSection = ({ operator }) => {
           >
             {availableLangTypes.map((lt) => (
               <option key={lt} value={lt}>
-                {getLangLabel(vnObj, skinPrefix, lt)}
+                {getLangLabel(vnObj, skinPrefix, lt, selectedVariantKey, charId)}
               </option>
             ))}
           </select>
