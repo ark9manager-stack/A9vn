@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
+import skinTableEn from "../../../../data/skins/skin_table_en.json";
 
 const ART_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/characters";
@@ -65,6 +66,11 @@ export default function SkinsSection({ operator, className = "" }) {
     [],
   );
 
+  const skinsDictEn = useMemo(
+    () => skinTableEn?.charSkins || skinTableEn?.skins || {},
+    [],
+  );
+
   // Elite metadata
   const eliteMeta = useMemo(() => {
     const e0Key = `${charId}#1`;
@@ -75,14 +81,26 @@ export default function SkinsSection({ operator, className = "" }) {
     const e1 = skinsDict?.[e1Key];
     const e2 = skinsDict?.[e2Key];
 
+    const e0En = skinsDictEn?.[e0Key];
+    const e1En = skinsDictEn?.[e1Key];
+    const e2En = skinsDictEn?.[e2Key];
+
+    const d0 = pickDisplaySkin(e0);
+    const d1 = pickDisplaySkin(e1);
+    const d2 = pickDisplaySkin(e2);
+
+    const d0En = pickDisplaySkin(e0En);
+    const d1En = pickDisplaySkin(e1En);
+    const d2En = pickDisplaySkin(e2En);
+
     return {
-      e0: pickDisplaySkin(e0),
-      e1: pickDisplaySkin(e1),
-      e2: pickDisplaySkin(e2),
-      hasE1: !!e1, // thay vì hard-code Amiya
+      e0: d0 ? { ...d0, skinName: d0En?.skinName ?? d0?.skinName ?? null } : null,
+      e1: d1 ? { ...d1, skinName: d1En?.skinName ?? d1?.skinName ?? null } : null,
+      e2: d2 ? { ...d2, skinName: d2En?.skinName ?? d2?.skinName ?? null } : null,
+      hasE1: !!e1,
       hasE2: !!e2,
     };
-  }, [charId, skinsDict]);
+  }, [charId, skinsDict, skinsDictEn]);
 
   const skinsForChar = useMemo(() => {
     const dict = skinsDict || {};
@@ -102,6 +120,8 @@ export default function SkinsSection({ operator, className = "" }) {
     return extra
       .map((s) => {
         const display = pickDisplaySkin(s);
+        const enEntry = skinsDictEn?.[s.skinId];
+        const displayEn = pickDisplaySkin(enEntry);
         const primaryUrl = buildSkinUrl(charId, s.skinId);
         const fallbackUrl = buildSkinUrl(charId, s.skinId, {
           forceLowerTheme: true,
@@ -111,7 +131,7 @@ export default function SkinsSection({ operator, className = "" }) {
           key: s.skinId,
           kind: "skin",
           skinId: s.skinId,
-          skinName: display?.skinName ?? null,
+          skinName: displayEn?.skinName ?? display?.skinName ?? null,
           drawerList: display?.drawerList ?? [],
           designerList: display?.designerList ?? null,
           url: primaryUrl,
@@ -119,7 +139,7 @@ export default function SkinsSection({ operator, className = "" }) {
         };
       })
       .filter((x) => !!x.url);
-  }, [charId, skinsDict]);
+  }, [charId, skinsDict, skinsDictEn]);
 
   const options = useMemo(() => {
     if (!charId) return [];
@@ -199,6 +219,7 @@ export default function SkinsSection({ operator, className = "" }) {
   const [imgError, setImgError] = useState(false);
   const [isLoadingImg, setIsLoadingImg] = useState(false);
   const [displaySrc, setDisplaySrc] = useState(null);
+  const skipSpResetRef = useRef(false);
 
   useEffect(() => {
     if (!options.length) return;
