@@ -365,7 +365,7 @@ export default function SkinsSection({ operator, className = "" }) {
               className="h-4 w-6 object-contain opacity-90 mt-[2px] shrink-0"
               draggable={false}
             />
-            <div className="text-sm font-semibold leading-snug truncate">
+            <div className="min-w-0 text-sm font-semibold leading-snug whitespace-normal break-words">
               {displaySkinName || "—"}
             </div>
 
@@ -432,13 +432,11 @@ export default function SkinsSection({ operator, className = "" }) {
 
                           setSpMode((v) => !v);
                         }}
-                        className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-[10px] font-bold transition
-                          ${
-                            active && spMode
-                              ? "bg-amber-500 text-black"
-                              : "bg-white/15 hover:bg-white/25 text-white/90"
-                          }`}
-                        title="Chuyển dạng art (thường ↔ _sp)"
+                        className={`absolute right-1 top-1/2 -translate-y-1/2 z-10 rounded-md px-2 py-1 text-[10px] font-bold transition
+                          bg-black/80 hover:bg-black/90 text-white
+                          ${active && spMode ? "ring-2 ring-amber-400 text-amber-200" : "ring-1 ring-white/15"}
+                        `}
+                        title="Art 2"
                       >
                         SP
                       </button>
