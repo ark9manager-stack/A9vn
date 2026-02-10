@@ -173,8 +173,8 @@ const Operator = () => {
 
           <div className="w-full border-t border-gray-600 my-4" />
 
-          <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-1">
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
+          <ScrollLockContainer className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(96px,1fr))] gap-2 justify-center">
               {filteredOperators.map((op) => (
                 <OperatorCard
                   key={op.id}
