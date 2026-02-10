@@ -129,7 +129,7 @@ const OperatorCard = ({ operator, onClick }) => {
 
       {/* Info */}
       <div
-        className="mt-2 text-center rounded-lg px-2 py-2"
+        className="hidden md:block mt-2 text-center rounded-lg  px-2 py-2"
         style={{ background: infoBg }}
       >
         <div className="text-white font-semibold truncate">
