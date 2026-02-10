@@ -99,11 +99,7 @@ const OperatorCard = ({ operator, onClick }) => {
   return (
     <div
       onClick={() => onClick?.(operator)}
-      className="
-    cursor-pointer rounded-xl bg-[#1b1b1b]
-    p-1 sm:p-2 md:p-3
-    transition-all duration-200
-    hover:scale-[1.03] md:hover:scale-105"
+      className="cursor-pointer rounded-xl bg-[#1b1b1b] p-1 sm:p-2 transition hover:scale-[1.03]"
     >
       {/* Avatar */}
       <div
