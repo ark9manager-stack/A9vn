@@ -55,7 +55,8 @@ const Operator = () => {
     }
 
     const found = operators.find(
-      (op) => op.id === operatorIdFromUrl || String(op.idweb) === operatorIdFromUrl,
+      (op) =>
+        op.id === operatorIdFromUrl || String(op.idweb) === operatorIdFromUrl,
     );
     if (found) setSelectedOperator(found);
   }, [operatorIdFromUrl, operators, selectedOperator, setSelectedOperator]);
@@ -95,7 +96,7 @@ const Operator = () => {
               onClick={() => setShowClassFilter(!showClassFilter)}
               type="button"
             >
-              <FaFilter size={20} />
+              <FaFilter size={15} />
             </button>
 
             <div
@@ -135,7 +136,9 @@ const Operator = () => {
                   <button
                     key={sub.id}
                     onClick={() =>
-                      setActiveSubClass(activeSubClass === sub.id ? null : sub.id)
+                      setActiveSubClass(
+                        activeSubClass === sub.id ? null : sub.id,
+                      )
                     }
                     className={`p-2 rounded-lg w-24 flex flex-col items-center transition
                       ${
@@ -171,7 +174,7 @@ const Operator = () => {
           <div className="w-full border-t border-gray-600 my-4" />
 
           <ScrollLockContainer className="w-full flex-1 overflow-y-auto p-1">
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
               {filteredOperators.map((op) => (
                 <OperatorCard
                   key={op.id}
@@ -185,7 +188,10 @@ const Operator = () => {
       </div>
 
       {selectedOperator && (
-        <OperatorModal operator={selectedOperator} onClose={closeOperatorModal} />
+        <OperatorModal
+          operator={selectedOperator}
+          onClose={closeOperatorModal}
+        />
       )}
     </div>
   );
