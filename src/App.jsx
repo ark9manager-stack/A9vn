@@ -17,7 +17,7 @@ const App = () => {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="flex bg-black">
+    <div className="flex bg-black h-screen w-screen overflow-hidden">
       <Navbar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
