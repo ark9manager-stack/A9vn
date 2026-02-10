@@ -384,8 +384,8 @@ export default function SkinsSection({ operator, className = "" }) {
             {displayDesigner ? (
               <>
                 <div className="h-4 w-6" />
-                <div className="text-xs text-white/85 leading-snug truncate">
-                  <span>Thiết kế:</span> {displayDesigner}
+                <div className="min-w-0 text-xs text-white/85 leading-snug whitespace-normal break-words">
+                  <span className="whitespace-nowrap">Thiết kế:</span>{" "}{displayDesigner}
                 </div>
               </>
             ) : null}
