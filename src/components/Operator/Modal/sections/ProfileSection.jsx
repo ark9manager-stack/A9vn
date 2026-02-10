@@ -5,6 +5,8 @@ import handbookInfoTable from "../../../../data/profile/handbook_info_table.json
 import handbookInfoTableEn from "../../../../data/profile/handbook_info_table_en.json";
 import characterTable from "../../../../data/operators/character_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
+import characterTableEn from "../../../../data/operators/character_table_en.json";
+import itemTableEn from "../../../../data/operators/item_table_en.json";
 
 import {
   buildCnAvatarUrl,
@@ -202,10 +204,17 @@ function rarityToRecruitBg(rarity) {
 }
 
 function getItemEntryById(id) {
-  if (!id) return null;
-  if (itemTable?.items && itemTable.items[id]) return itemTable.items[id];
-  if (itemTable?.[id]) return itemTable[id];
-  return null;
+  if (!id) return { en: null, base: null, picked: null };
+
+  const en =
+    (itemTableEn?.items && itemTableEn.items[id]) ? itemTableEn.items[id]
+    : (itemTableEn?.[id] ? itemTableEn[id] : null);
+
+  const base =
+    (itemTable?.items && itemTable.items[id]) ? itemTable.items[id]
+    : (itemTable?.[id] ? itemTable[id] : null);
+
+  return { en, base, picked: en || base || null };
 }
 
 function SectionTitle({ children }) {
@@ -388,12 +397,14 @@ export default function ProfileSection({ operator, charId }) {
     const _getText = (key) => {
       const fromProfile = pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
       if (isNonEmptyString(fromProfile)) return fromProfile;
-      
+
       return getHandbookText({ charId: resolvedCharId, key });
     };
     const trans = pickFirstNonEmpty(vn?.trans);
 
-    const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
+    const charDataEn = resolvedCharId ? characterTableEn?.[resolvedCharId] : null;
+    const charDataBase = resolvedCharId ? characterTable?.[resolvedCharId] : null;
+    const charData = charDataEn || charDataBase;
     const recruitBg = rarityToRecruitBg(charData?.rarity);
     const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
 
@@ -403,8 +414,12 @@ export default function ProfileSection({ operator, charId }) {
       charData?.classicPotentialItemId ||
       "";
 
-    const itemEntry = getItemEntryById(potentialItemId);
-    const iconId = pickFirstNonEmpty(itemEntry?.iconId, potentialItemId);
+    const itemPack = getItemEntryById(potentialItemId);
+    const iconId = pickFirstNonEmpty(
+      itemPack?.en?.iconId,
+      itemPack?.base?.iconId,
+      potentialItemId
+    );
 
     const tokenUrlPrimary = isNonEmptyString(iconId)
       ? `${TOKEN_ICON_BASE_POTENTIAL}${iconId}.png`
@@ -414,13 +429,17 @@ export default function ProfileSection({ operator, charId }) {
       : "";
 
     const _recruitFallbackText = (() => {
-      const itemDesc = charData?.itemDesc;
-      const itemUsage = charData?.itemUsage;
+      const itemDesc = pickFirstNonEmpty(charDataEn?.itemDesc, charDataBase?.itemDesc, "");
+      const itemUsage = pickFirstNonEmpty(charDataEn?.itemUsage, charDataBase?.itemUsage, "");
       if (isNonEmptyString(itemDesc) && isNonEmptyString(itemUsage)) return `${itemDesc}\n${itemUsage}`;
       return pickFirstNonEmpty(itemDesc, itemUsage, "");
     })();
 
-    const _tokenFallbackText = pickFirstNonEmpty(itemEntry?.description, "");
+    const _tokenFallbackText = pickFirstNonEmpty(
+      itemPack?.en?.description,
+      itemPack?.base?.description,
+      ""
+    );
 
     const physicalText = _getText("physical_exam");
     const performanceText = _getText("physical_exam_2");
