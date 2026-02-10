@@ -100,28 +100,30 @@ const OperatorCard = ({ operator, onClick }) => {
     <div
       onClick={() => onClick?.(operator)}
       className="
-        cursor-pointer rounded-xl bg-[#1b1b1b]
-        hover:scale-105 transition p-3
-      "
+    cursor-pointer rounded-xl bg-[#1b1b1b]
+    p-1 sm:p-2 md:p-3
+    transition-all duration-200
+    hover:scale-[1.03] md:hover:scale-105"
     >
       {/* Avatar */}
       <div
         className={`
-          relative rounded-lg overflow-hidden
-          border-2 ${rarityClass}
-        `}
+    relative rounded-lg overflow-hidden
+    border-2 ${rarityClass}
+    aspect-square
+  `}
       >
         {imgSrc ? (
           <img
             src={imgSrc}
             alt={operator?.name || String(charId || "")}
-            className="w-full h-full object-cover scale-[1.08]"
+            className="w-full h-full object-cover"
             loading="lazy"
             draggable={false}
             onError={handleImgError}
           />
         ) : (
-          <div className="w-full aspect-square flex items-center justify-center text-xs text-gray-400 bg-black/30">
+          <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-400 bg-black/30">
             No Image
           </div>
         )}
