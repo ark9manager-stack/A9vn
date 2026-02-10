@@ -1764,6 +1764,16 @@
     "name": "极光",
     "name_vn": "Aurora"
   },
+  "char_4221_ju": {
+    "idweb": 404,
+    "name": "矩",
+    "name_vn": "Ju"
+  },
+  "char_4222_taraxa": {
+    "idweb": 405,
+    "name": "风絮",
+    "name_vn": "Taraxacum"
+  },
   "char_423_blemsh": {
     "idweb": 167,
     "name": "瑕光",
@@ -5519,5 +5529,15 @@
     "idweb": null,
     "name": "冰浪脉冲模块",
     "name_vn": ""
+  },
+  "char_1050_chen3": {
+    "idweb": 406,
+    "name": "赤刃明霄陈",
+    "name_vn": "Ch'en the Dawnstreak"
+  },
+  "char_2027_wang": {
+    "idweb": 406,
+    "name": "望",
+    "name_vn": "Wang"
   }
 }
