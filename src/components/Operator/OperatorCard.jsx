@@ -103,11 +103,7 @@ const OperatorCard = ({ operator, onClick }) => {
     >
       {/* Avatar */}
       <div
-        className={`
-    relative rounded-lg overflow-hidden
-    border-2 ${rarityClass}
-    aspect-square
-  `}
+        className={`relative rounded-lg overflow-hidden border-2 ${rarityClass} aspect-square`}
       >
         {imgSrc ? (
           <img

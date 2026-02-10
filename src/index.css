@@ -58,8 +58,7 @@ html {
 
 html,
 body {
-  height: auto; /* Thay đổi từ 100% thành auto để tránh vấn đề về chiều cao */
-  overflow: auto; /* Cho phép cuộn nếu nội dung vượt quá kích thước màn hình */
+  height: 100%;
 }
 
 body {
@@ -87,7 +86,7 @@ body {
 .fullpage-section > div {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto; /* Cho phép cuộn ngang nếu cần thiết */
+  overflow-x: hidden;
 }
 
 /* Ensure proper spacing */

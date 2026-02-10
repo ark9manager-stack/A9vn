@@ -17,7 +17,7 @@ const App = () => {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="flex bg-black h-screen w-screen overflow-hidden">
+    <div className="flex bg-black">
       <Navbar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
@@ -28,7 +28,10 @@ const App = () => {
           <Route path="/Operator" element={<Display />} />
           <Route path="/Music" element={<Display />} />
           <Route path="/home" element={<Navigate to="/Home" replace />} />
-          <Route path="/operator" element={<Navigate to="/Operator" replace />} />
+          <Route
+            path="/operator"
+            element={<Navigate to="/Operator" replace />}
+          />
           <Route path="/music" element={<Navigate to="/Music" replace />} />
           <Route path="/:slug" element={<Display />} />
           <Route path="*" element={<Navigate to="/Home" replace />} />
