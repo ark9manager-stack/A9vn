@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 
-import profileVN from "../../../../data/operators/profile_vn.json";
+import profileVN from "../../../../data/profile/profile_vn.json";
+import handbookInfoTable from "../../../../data/profile/handbook_info_table.json";
+import handbookInfoTableEn from "../../../../data/profile/handbook_info_table_en.json";
 import characterTable from "../../../../data/operators/character_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
 
@@ -47,6 +49,65 @@ function pickFirstNonEmpty(...vals) {
     if (isNonEmptyString(v)) return v;
   }
   return "";
+}
+
+const HANDBOOK_TITLE_MAP = {
+  basic_info: { en: "Basic Info", cn: "基础档案" },
+  physical_exam: { en: "Physical Exam", cn: "综合体检测试" },
+  profile: { en: "Profile", cn: "客观履历" },
+  clinical_analysis: { en: "Clinical Analysis", cn: "临床诊断分析" },
+  file_1: { en: "Archive File 1", cn: "档案资料一" },
+  file_2: { en: "Archive File 2", cn: "档案资料二" },
+  file_3: { en: "Archive File 3", cn: "档案资料三" },
+  file_4: { en: "Archive File 4", cn: "档案资料四" },
+  promotion_record: { en: "Promotion Record", cn: "晋升记录" },
+};
+
+function getHandbookStoryTextByTitle(handbookEntry, storyTitle) {
+  const list = handbookEntry?.storyTextAudio;
+  if (!Array.isArray(list) || !isNonEmptyString(storyTitle)) return "";
+
+  const block = list.find((x) => x?.storyTitle === storyTitle);
+  const stories = block?.stories;
+  if (!Array.isArray(stories)) return "";
+
+  const texts = stories
+    .map((s) => s?.storyText)
+    .filter(isNonEmptyString);
+
+  return texts.join("\n\n");
+}
+
+function buildParadoxTextFromStage(stage) {
+  if (!stage || stage.zoneId !== "storyMission") return "";
+  const name = stage?.name ?? "";
+  const desc = stage?.description ?? "";
+  return [name, desc].filter(isNonEmptyString).join("\n\n");
+}
+
+function getHandbookText({ charId, key }) {
+  if (!isNonEmptyString(charId) || !isNonEmptyString(key)) return "";
+
+  // paradox: lấy từ handbookStageData, zoneId=storyMission
+  if (key === "paradox") {
+    const enStage = handbookInfoTableEn?.handbookStageData?.[charId];
+    const cnStage = handbookInfoTable?.handbookStageData?.[charId];
+    return pickFirstNonEmpty(
+      buildParadoxTextFromStage(enStage),
+      buildParadoxTextFromStage(cnStage),
+    );
+  }
+
+  const map = HANDBOOK_TITLE_MAP[key];
+  if (!map) return "";
+
+  const enEntry = handbookInfoTableEn?.handbookDict?.[charId];
+  const cnEntry = handbookInfoTable?.handbookDict?.[charId];
+
+  return pickFirstNonEmpty(
+    getHandbookStoryTextByTitle(enEntry, map.en),
+    getHandbookStoryTextByTitle(cnEntry, map.cn),
+  );
 }
 
 function renderInlineItalic(str, keyPrefix = "t") {
@@ -324,7 +385,12 @@ export default function ProfileSection({ operator, charId }) {
     const en = profileEntry?.en || {};
     const cn = profileEntry?.cn || {};
 
-    const _getText = (key) => pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
+    const _getText = (key) => {
+      const fromProfile = pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
+      if (isNonEmptyString(fromProfile)) return fromProfile;
+      
+      return getHandbookText({ charId: resolvedCharId, key });
+    };
     const trans = pickFirstNonEmpty(vn?.trans);
 
     const charData = resolvedCharId ? characterTable?.[resolvedCharId] : null;
