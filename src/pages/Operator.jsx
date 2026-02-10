@@ -85,7 +85,7 @@ const Operator = () => {
       className="fullpage-section bg-gradient-to-br from-green-900 via-black to-green-900"
     >
       <div className="w-full h-full">
-        <div className="w-full max-w-6xl mx-auto px-6 h-full flex flex-col">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col overflow-hidden">
           <div className="w-full flex items-center mb-0 gap-4 pt-12">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r hidden md:block from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
