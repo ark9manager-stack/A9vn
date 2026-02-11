@@ -15,7 +15,8 @@ const sections = [
 function pathToSectionId(pathname) {
   const p = String(pathname || "/");
   if (p === "/" || /^\/home\/?$/i.test(p)) return "home";
-  if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p)) return "operator";
+  if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p))
+    return "operator";
   if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "music";
   if (/^\/Home\/?$/i.test(p)) return "home";
   if (/^\/Operator(=.+)?\/?$/i.test(p)) return "operator";
@@ -74,7 +75,7 @@ const Display = () => {
   }, [location.pathname, navType]);
 
   return (
-    <div className="w-full h-full rounded bg-[#121212] text-white">
+    <div className="w-full h-full rounded bg-[#121212] text-white overflow-hidden">
       <div ref={containerRef} className="fullpage-container scrollbar-hide">
         <Home />
         <Operator />
