@@ -24,7 +24,7 @@
 
 /* Full page scroll styles - Fixed */
 .fullpage-container {
-  height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
@@ -32,7 +32,8 @@
 }
 
 .fullpage-section {
-  height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -101,7 +102,7 @@ body {
 }
 
 .fullpage-section {
-  flex: 0 0 100vh;
+  flex: 0 0 100dvh;
 }
 
 /* Music grid specific styles - Monster Siren exact sizing */
