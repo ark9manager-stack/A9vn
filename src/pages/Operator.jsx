@@ -85,7 +85,7 @@ const Operator = () => {
       className="fullpage-section bg-gradient-to-br from-green-900 via-black to-green-900"
     >
       <div className="w-full h-full">
-        <div className="w-full max-w-6xl mx-auto px-6 h-full flex flex-col">
+        <div className="w-full max-w-6xl mx-auto px-6 box-border">
           <div className="w-full flex items-center mb-0 gap-4 pt-12">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r hidden md:block from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
@@ -173,7 +173,7 @@ const Operator = () => {
 
           <div className="w-full border-t border-gray-600 my-4" />
 
-          {/* <ScrollLockContainer className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+          <ScrollLockContainer className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
               {filteredOperators.map((op) => (
                 <OperatorCard
@@ -183,7 +183,7 @@ const Operator = () => {
                 />
               ))}
             </div>
-          </ScrollLockContainer> */}
+          </ScrollLockContainer>
         </div>
       </div>
 
