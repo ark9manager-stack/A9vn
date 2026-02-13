@@ -390,7 +390,7 @@ function MaterialIcon({ itemId, count }) {
         src={bgUrl}
         alt=""
         className="absolute inset-0 w-full h-full object-contain"
-        style={{ transform: "scale(1.08)" }}
+        style={{ transform: "scale(1.18)" }}
         draggable={false}
         loading="lazy"
       />
