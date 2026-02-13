@@ -382,7 +382,7 @@ function MaterialIcon({ itemId, count }) {
   const INNER = 48;
   const BG_SCALE = 1.42;
   const ICON_SCALE = 1.22;
-  const PAD = 4;
+  const PAD = 2;
 
   const outer = Math.ceil(INNER * Math.max(BG_SCALE, ICON_SCALE)) + PAD * 2;
 
