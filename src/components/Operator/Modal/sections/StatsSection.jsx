@@ -462,9 +462,20 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       const raw = phases[i]?.evolveCost;
 
-      const materialCosts = Array.isArray(raw)
-        ? raw.filter((c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0)
-        : [];
+      if (raw == null) continue;
+
+      let list;
+      if (Array.isArray(raw)) {
+        list = raw;
+      } else if (raw && typeof raw === "object") {
+        list = [];
+      } else {
+        continue;
+      }
+
+      const materialCosts = list.filter(
+        (c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0
+      );
 
       const goldCost = getGoldCostForPromotion(charData?.rarity, from, to);
 
