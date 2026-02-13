@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import StatBar from "../../../UI/StatBar";
 
 import characterTable from "../../../../data/operators/character_table.json";
+import itemTable from "../../../../data/operators/item_table.json";
 import rangeTable from "../../../../data/range_table.json";
 import potVN from "../../../../data/operators/pot_vn.json";
 import nameVN from "../../../../data/operators/name_vn.json";
@@ -33,6 +34,35 @@ const POT_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/potential_hub/";
 
 const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
+
+/** Materials (Promotion Requirements) */
+const ITEM_BG_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
+const ITEM_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/";
+
+const getItemMeta = (itemId) => {
+  const id = String(itemId || "");
+  return itemTable?.items?.[id] || null;
+};
+
+const rarityToR = (rarity) => {
+  const m = String(rarity || "").match(/TIER_(\d+)/);
+  const n = m ? Number(m[1]) : 1;
+  return Number.isFinite(n) ? n : 1;
+};
+
+const getItemBgUrl = (rarity) => {
+  const r = clamp(rarityToR(rarity), 1, 6);
+  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
+};
+
+const getItemIconUrl = (iconId) => {
+  const key = String(iconId || "").toLowerCase();
+  if (!key) return "";
+  return `${ITEM_ICON_BASE}${key}.png`;
+};
+
 
 /* Summon/Token */
 const CHARAVATAR_BASE =
@@ -326,6 +356,55 @@ function hasAnyScalingInPhases(phases) {
   return false;
 }
 
+function MaterialIcon({ itemId, count }) {
+  const meta = getItemMeta(itemId);
+
+  const name = meta?.name || String(itemId || "Unknown");
+  const bgUrl = getItemBgUrl(meta?.rarity);
+  const iconUrl = getItemIconUrl(meta?.iconId);
+
+  return (
+    <div
+      className="relative w-12 h-12 shrink-0"
+      title={`${name} × ${count}`}
+      aria-label={`${name} × ${count}`}
+    >
+      {/* rarity background */}
+      <img
+        src={bgUrl}
+        alt=""
+        className="absolute inset-0 w-full h-full object-contain"
+        draggable={false}
+        loading="lazy"
+      />
+
+      {/* item icon (slightly larger) */}
+      {iconUrl ? (
+        <img
+          src={iconUrl}
+          alt={name}
+          className="absolute inset-0 w-full h-full object-contain origin-center"
+          style={{ transform: "scale(1.12)" }}
+          draggable={false}
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
+      ) : null}
+
+      {/* count */}
+      <div
+        className="absolute bottom-0 right-0 px-1 rounded bg-black/80 text-[11px] leading-[14px] font-bold text-white tabular-nums"
+        style={{ transform: "translate(2px, 2px)" }}
+      >
+        {count}
+      </div>
+    </div>
+  );
+}
+
+
 const StatsSection = ({ operator, charId: charIdProp }) => {
   const resolvedCharId = useMemo(() => {
     if (charIdProp) return String(charIdProp);
@@ -343,6 +422,21 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     if (!Array.isArray(arr)) return [];
     return arr.slice(0, 3);
   }, [charData]);
+
+  // Promotion Requirements: only use phases[i].evolveCost (i>0)
+  const promotionReqs = useMemo(() => {
+    const out = [];
+    for (let i = 1; i < phases.length; i++) {
+      const raw = phases[i]?.evolveCost;
+      const costs = Array.isArray(raw)
+        ? raw.filter((c) => c?.type === "MATERIAL" && c?.id)
+        : [];
+
+      out.push({ from: i - 1, to: i, costs });
+    }
+    return out;
+  }, [phases]);
+
 
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [level, setLevel] = useState(1);
@@ -929,6 +1023,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         </div>
       </div>
 
+      
+
       {/* ROW: Range / Trust / Potentials */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Range */}
@@ -1244,7 +1340,44 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       {/* Promotion Requirements */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
         <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
-        <div className="text-sm text-white/60">evolveCost no info</div>
+        {promotionReqs.length > 0 ? (
+          <div className="space-y-3">
+            {promotionReqs.map((req) => {
+              const fromLabel = `E${req.from}`;
+              const toLabel = `E${req.to}`;
+              const fromIcon = `${ELITE_ICON_BASE}elite_${req.from}_large.png`;
+              const toIcon = `${ELITE_ICON_BASE}elite_${req.to}_large.png`;
+
+              return (
+                <div
+                  key={`${req.from}-${req.to}`}
+                  className="rounded-lg bg-white/5 p-3 flex flex-col sm:flex-row sm:items-center gap-3"
+                >
+                  <div className="flex items-center gap-2 shrink-0">
+                    <img src={fromIcon} alt={fromLabel} className="w-9 h-9 object-contain" />
+                    <span className="text-white/40">→</span>
+                    <img src={toIcon} alt={toLabel} className="w-9 h-9 object-contain" />
+                    <span className="ml-1 text-sm font-semibold text-white/90 whitespace-nowrap">
+                      {fromLabel} → {toLabel}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {req.costs.length > 0 ? (
+                      req.costs.map((c, idx) => (
+                        <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
+                      ))
+                    ) : (
+                      <div className="text-sm text-white/60">Không có dữ liệu</div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-sm text-white/60">Không có dữ liệu thăng tiến</div>
+        )}
       </div>
     </div>
   );
