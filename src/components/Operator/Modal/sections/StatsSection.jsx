@@ -1433,7 +1433,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {req.costs?.map((c, idx) => (
                       <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
                     ))}
