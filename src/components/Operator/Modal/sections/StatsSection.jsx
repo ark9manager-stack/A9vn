@@ -379,7 +379,7 @@ function MaterialIcon({ itemId, count }) {
   const bgUrl = getItemBgUrl(meta?.rarity);
   const iconUrl = getItemIconUrl(meta?.iconId);
 
-  const INNER = 48;
+  const INNER = 44;
   const BG_SCALE = 1.42;
   const ICON_SCALE = 1.22;
   const PAD = 2;
@@ -1433,7 +1433,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                  <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
                     {req.costs?.map((c, idx) => (
                       <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
                     ))}
