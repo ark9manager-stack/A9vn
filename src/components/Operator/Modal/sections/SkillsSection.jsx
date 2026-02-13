@@ -595,7 +595,7 @@ function RangeGrid({ rangeId }) {
           return (
             <div
               key={`${r},${c}`}
-              className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
+              className="w-[18px] h-[18px] rounded-[3px] bg-black/35 border border-white/5 flex items-center justify-center"
               title={isCenter ? "Stand" : isAttack ? "Attack" : ""}
             >
               {isCenter ? (
@@ -1013,7 +1013,9 @@ const renderTalentCard = (talentIdx, resolved) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="rounded-xl border border-white/10 bg-black/20 p-3">
             {resolvedTags.length > 0 ? (
-              <div className="text-gray-300 break-words">{`Tag: ${resolvedTags.join(", ")}`}</div>
+              <div className="text-white/95 font-medium break-words leading-relaxed">
+                {`Tag: ${resolvedTags.join(", ")}`}
+              </div>
             ) : (
               <span className="text-white/40 italic">-</span>
             )}
@@ -1021,7 +1023,9 @@ const renderTalentCard = (talentIdx, resolved) => {
 
           <div className="rounded-xl border border-white/10 bg-black/20 p-3">
             {isNonEmptyString(positionLabel) ? (
-              <div className="text-gray-300">{positionLabel}</div>
+              <div className="text-white/95 font-medium leading-relaxed">
+                {positionLabel}
+              </div>
             ) : (
               <span className="text-white/40 italic">-</span>
             )}

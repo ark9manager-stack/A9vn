@@ -12,6 +12,11 @@
     { "tagList": "元素", "tagList_vn": "Elemental" },
     { "tagList": "新手", "tagList_vn": "Starter" },
     { "tagList": "召唤", "tagList_vn": "Summon" },
+    { "tagList": "减速", "tagList_vn": "Slow" },
+    { "tagList": "削弱", "tagList_vn": "Debuff" },
+    { "tagList": "快速复活", "tagList_vn": "Fast-Redeploy" },
+    { "tagList": "位移", "tagList_vn": "Shift" },
+    { "tagList": "高空", "tagList_vn": "Soar" },
     { "tagList": "费用回复", "tagList_vn": "DP-Recovery" }
   ]
 }
