@@ -1008,11 +1008,10 @@ const renderTalentCard = (talentIdx, resolved) => {
 
   return (
     <div className="space-y-3">
-      {/* Tag + Position (from character_table.json) */}
+      {/* Tag + Position */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="rounded-xl border border-white/10 bg-black/20 p-3">
-            <div className="text-white/80 font-semibold mb-1">Tag</div>
             {resolvedTags.length > 0 ? (
               <div className="text-gray-300 break-words">{`Tag: ${resolvedTags.join(", ")}`}</div>
             ) : (
@@ -1021,7 +1020,6 @@ const renderTalentCard = (talentIdx, resolved) => {
           </div>
 
           <div className="rounded-xl border border-white/10 bg-black/20 p-3">
-            <div className="text-white/80 font-semibold mb-1">Vị trí</div>
             {isNonEmptyString(positionLabel) ? (
               <div className="text-gray-300">{positionLabel}</div>
             ) : (
