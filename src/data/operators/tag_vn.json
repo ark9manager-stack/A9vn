@@ -2,6 +2,16 @@
   "tagList": [
     { "tagList": "输出", "tagList_vn": "DPS" },
     { "tagList": "群攻", "tagList_vn": "AoE" },
-    { "tagList": "生存", "tagList_vn": "Survival" }
+    { "tagList": "生存", "tagList_vn": "Survival" },
+    { "tagList": "治疗", "tagList_vn": "Healing" },
+    { "tagList": "支援机械", "tagList_vn": "Robot" },
+    { "tagList": "支援", "tagList_vn": "Support" },
+    { "tagList": "爆发", "tagList_vn": "Nuker" },
+    { "tagList": "控场", "tagList_vn": "Crowd-Control" },
+    { "tagList": "防护", "tagList_vn": "Defense" },
+    { "tagList": "元素", "tagList_vn": "Elemental" },
+    { "tagList": "新手", "tagList_vn": "Starter" },
+    { "tagList": "召唤", "tagList_vn": "Summon" },
+    { "tagList": "费用回复", "tagList_vn": "DP-Recovery" },
   ]
 }
