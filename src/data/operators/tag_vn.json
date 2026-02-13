@@ -12,6 +12,6 @@
     { "tagList": "元素", "tagList_vn": "Elemental" },
     { "tagList": "新手", "tagList_vn": "Starter" },
     { "tagList": "召唤", "tagList_vn": "Summon" },
-    { "tagList": "费用回复", "tagList_vn": "DP-Recovery" },
+    { "tagList": "费用回复", "tagList_vn": "DP-Recovery" }
   ]
 }
