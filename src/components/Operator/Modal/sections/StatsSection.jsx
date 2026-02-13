@@ -74,9 +74,9 @@ const getItemBgUrl = (rarity) => {
 };
 
 const getItemIconUrl = (iconId) => {
-  const key = String(iconId || "");
+  const key = String(iconId || "").trim();
   if (!key) return "";
-  return `${ITEM_ICON_BASE}${key}.png`;
+  return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 };
 
 
@@ -381,7 +381,7 @@ function MaterialIcon({ itemId, count }) {
 
   return (
     <div
-      className="relative w-12 h-12 shrink-0"
+      className="relative w-[60px] h-[60px] shrink-0 overflow-hidden rounded-[6px]"
       title={`${name} × ${count}`}
       aria-label={`${name} × ${count}`}
     >
@@ -390,7 +390,7 @@ function MaterialIcon({ itemId, count }) {
         src={bgUrl}
         alt=""
         className="absolute inset-0 w-full h-full object-contain"
-        style={{ transform: "scale(1.32)" }} 
+        style={{ transform: "scale(1.08)" }}
         draggable={false}
         loading="lazy"
       />
@@ -401,19 +401,24 @@ function MaterialIcon({ itemId, count }) {
           src={iconUrl}
           alt={name}
           className="absolute inset-0 w-full h-full object-contain origin-center"
-          style={{ transform: "scale(1.12)" }}
+          style={{ transform: "scale(1.18)" }}
           draggable={false}
           loading="lazy"
           onError={(e) => {
-            e.currentTarget.style.display = "none";
+            const img = e.currentTarget;
+            if (!img.dataset.triedFallback && meta?.iconId) {
+              img.dataset.triedFallback = "1";
+              img.src = `${ITEM_ICON_BASE}${String(meta.iconId)}.png`;
+              return;
+            }
+            img.style.display = "none";
           }}
         />
       ) : null}
 
       {/* count */}
       <div
-        className="absolute bottom-0 right-0 px-1 rounded bg-black/80 text-[11px] leading-[14px] font-bold text-white tabular-nums"
-        style={{ transform: "translate(2px, 2px)" }}
+        className="absolute bottom-[2px] right-[2px] px-1.5 rounded bg-black/80 text-[13px] leading-[15px] font-bold text-white tabular-nums"
       >
         {count}
       </div>
@@ -451,14 +456,12 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
       const raw = phases[i]?.evolveCost;
 
-      // evolveCost trong dataset có thể là Array, null, hoặc {} (ví dụ TIER_3 thường là {})
       const materialCosts = Array.isArray(raw)
         ? raw.filter((c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0)
         : [];
 
       const goldCost = getGoldCostForPromotion(charData?.rarity, from, to);
 
-      // merge: LMD (4001) + material
       const merged = [...materialCosts];
 
       if (goldCost > 0) {
@@ -468,7 +471,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         }
       }
 
-      // Nếu không có material & cũng không có vàng => coi như không có promotion requirement
       if (merged.length === 0) continue;
 
       out.push({ from, to, costs: merged });
@@ -1426,7 +1428,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3 sm:gap-4">
                     {req.costs?.map((c, idx) => (
                       <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
                     ))}
