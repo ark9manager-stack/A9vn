@@ -425,12 +425,17 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   // Promotion Requirements: only use phases[i].evolveCost (i>0)
   const promotionReqs = useMemo(() => {
+    if (!Array.isArray(phases) || phases.length <= 1) return [];
+
     const out = [];
     for (let i = 1; i < phases.length; i++) {
       const raw = phases[i]?.evolveCost;
       const costs = Array.isArray(raw)
-        ? raw.filter((c) => c?.type === "MATERIAL" && c?.id)
+        ? raw.filter((c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0)
         : [];
+
+      // Nếu promotion không có material => coi như không có dữ liệu
+      if (costs.length === 0) continue;
 
       out.push({ from: i - 1, to: i, costs });
     }
@@ -1338,9 +1343,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       ) : null}
 
       {/* Promotion Requirements */}
-      <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-        <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
-        {promotionReqs.length > 0 ? (
+      {/* Promotion Requirements */}
+      {promotionReqs.length > 0 ? (
+        <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
+          <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
+
           <div className="space-y-3">
             {promotionReqs.map((req) => {
               const fromLabel = `E${req.from}`;
@@ -1354,31 +1361,37 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   className="rounded-lg bg-white/5 p-3 flex flex-col sm:flex-row sm:items-center gap-3"
                 >
                   <div className="flex items-center gap-2 shrink-0">
-                    <img src={fromIcon} alt={fromLabel} className="w-9 h-9 object-contain" />
+                    <img
+                      src={fromIcon}
+                      alt={fromLabel}
+                      className="w-9 h-9 object-contain"
+                      draggable={false}
+                      loading="lazy"
+                    />
                     <span className="text-white/40">→</span>
-                    <img src={toIcon} alt={toLabel} className="w-9 h-9 object-contain" />
+                    <img
+                      src={toIcon}
+                      alt={toLabel}
+                      className="w-9 h-9 object-contain"
+                      draggable={false}
+                      loading="lazy"
+                    />
                     <span className="ml-1 text-sm font-semibold text-white/90 whitespace-nowrap">
                       {fromLabel} → {toLabel}
                     </span>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {req.costs.length > 0 ? (
-                      req.costs.map((c, idx) => (
-                        <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
-                      ))
-                    ) : (
-                      <div className="text-sm text-white/60">Không có dữ liệu</div>
-                    )}
+                    {req.costs?.map((c, idx) => (
+                      <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
+                    ))}
                   </div>
                 </div>
               );
             })}
           </div>
-        ) : (
-          <div className="text-sm text-white/60">Không có dữ liệu thăng tiến</div>
-        )}
-      </div>
+        </div>
+      ) : null}
     </div>
   );
 };
