@@ -41,6 +41,22 @@ const ITEM_BG_BASE =
 const ITEM_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/";
 
+const GOLD_ITEM_ID = "4001";
+
+const getGoldCostForPromotion = (rarity, fromElite, toElite) => {
+  const r = String(rarity || "");
+  const key = `${fromElite}-${toElite}`;
+
+  const map = {
+    TIER_3: { "0-1": 10000 },
+    TIER_4: { "0-1": 15000, "1-2": 60000 },
+    TIER_5: { "0-1": 20000, "1-2": 120000 },
+    TIER_6: { "0-1": 30000, "1-2": 180000 },
+  };
+
+  return Number(map?.[r]?.[key] || 0);
+};
+
 const getItemMeta = (itemId) => {
   const id = String(itemId || "");
   return itemTable?.items?.[id] || null;
@@ -58,7 +74,7 @@ const getItemBgUrl = (rarity) => {
 };
 
 const getItemIconUrl = (iconId) => {
-  const key = String(iconId || "").toLowerCase();
+  const key = String(iconId || "");
   if (!key) return "";
   return `${ITEM_ICON_BASE}${key}.png`;
 };
@@ -365,7 +381,7 @@ function MaterialIcon({ itemId, count }) {
 
   return (
     <div
-      className="relative w-12 h-12 shrink-0"
+      className="relative w-[60px] h-[60px] shrink-0"
       title={`${name} × ${count}`}
       aria-label={`${name} × ${count}`}
     >
@@ -396,8 +412,8 @@ function MaterialIcon({ itemId, count }) {
 
       {/* count */}
       <div
-        className="absolute bottom-0 right-0 px-1 rounded bg-black/80 text-[11px] leading-[14px] font-bold text-white tabular-nums"
-        style={{ transform: "translate(2px, 2px)" }}
+        className="absolute bottom-0 right-0 px-1.5 py-[1px] rounded bg-black/80 text-[14px] leading-[16px] font-bold text-white tabular-nums"
+        style={{ transform: "translate(3px, 3px)" }}
       >
         {count}
       </div>
@@ -430,18 +446,36 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     const out = [];
     for (let i = 1; i < phases.length; i++) {
+      const from = i - 1;
+      const to = i;
+
       const raw = phases[i]?.evolveCost;
-      const costs = Array.isArray(raw)
+
+      // evolveCost trong dataset có thể là Array, null, hoặc {} (ví dụ TIER_3 thường là {})
+      const materialCosts = Array.isArray(raw)
         ? raw.filter((c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0)
         : [];
 
-      // Nếu promotion không có material => coi như không có dữ liệu
-      if (costs.length === 0) continue;
+      const goldCost = getGoldCostForPromotion(charData?.rarity, from, to);
 
-      out.push({ from: i - 1, to: i, costs });
+      // merge: LMD (4001) + material
+      const merged = [...materialCosts];
+
+      if (goldCost > 0) {
+        const hasGold = merged.some((c) => String(c?.id) === GOLD_ITEM_ID);
+        if (!hasGold) {
+          merged.unshift({ id: GOLD_ITEM_ID, count: goldCost, type: "MATERIAL" });
+        }
+      }
+
+      // Nếu không có material & cũng không có vàng => coi như không có promotion requirement
+      if (merged.length === 0) continue;
+
+      out.push({ from, to, costs: merged });
     }
+
     return out;
-  }, [phases]);
+  }, [phases, charData?.rarity]);
 
 
   const [phaseIndex, setPhaseIndex] = useState(0);
@@ -1363,24 +1397,33 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   className="rounded-lg bg-white/5 p-3 flex flex-col sm:flex-row sm:items-center gap-3"
                 >
                   <div className="flex items-center gap-2 shrink-0">
-                    <img
-                      src={fromIcon}
-                      alt={fromLabel}
-                      className="w-9 h-9 object-contain"
-                      draggable={false}
-                      loading="lazy"
-                    />
+                    <div className="flex flex-col items-center">
+                      <img
+                        src={fromIcon}
+                        alt={fromLabel}
+                        className="w-9 h-9 object-contain"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                      <div className="mt-1 text-[10px] leading-[12px] font-semibold text-white/70">
+                        Elite {req.from}
+                      </div>
+                    </div>
+
                     <span className="text-white/40">→</span>
-                    <img
-                      src={toIcon}
-                      alt={toLabel}
-                      className="w-9 h-9 object-contain"
-                      draggable={false}
-                      loading="lazy"
-                    />
-                    <span className="ml-1 text-sm font-semibold text-white/90 whitespace-nowrap">
-                      {fromLabel} → {toLabel}
-                    </span>
+
+                    <div className="flex flex-col items-center">
+                      <img
+                        src={toIcon}
+                        alt={toLabel}
+                        className="w-9 h-9 object-contain"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                      <div className="mt-1 text-[10px] leading-[12px] font-semibold text-white/70">
+                        Elite {req.to}
+                      </div>
+                    </div>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
