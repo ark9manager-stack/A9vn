@@ -380,7 +380,7 @@ function MaterialIcon({ itemId, count }) {
   const iconUrl = getItemIconUrl(meta?.iconId);
 
   const INNER = 48;
-  const BG_SCALE = 1.18;
+  const BG_SCALE = 1.25;
   const ICON_SCALE = 1.12;
   const PAD = 6;
 
@@ -1403,16 +1403,16 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   key={`${req.from}-${req.to}`}
                   className="rounded-lg bg-white/5 p-3 flex flex-col sm:flex-row sm:items-center gap-3"
                 >
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-3 shrink-0">
                     <div className="flex flex-col items-center">
                       <img
                         src={fromIcon}
                         alt={fromLabel}
-                        className="w-9 h-9 object-contain"
+                        className="w-12 h-12 object-contain"
                         draggable={false}
                         loading="lazy"
                       />
-                      <div className="mt-1 text-[10px] leading-[12px] font-semibold text-white/70">
+                      <div className="mt-1 text-[13px] leading-[15px] font-semibold text-white/70">
                         Elite {req.from}
                       </div>
                     </div>
@@ -1423,11 +1423,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                       <img
                         src={toIcon}
                         alt={toLabel}
-                        className="w-9 h-9 object-contain"
+                        className="w-12 h-12 object-contain"
                         draggable={false}
                         loading="lazy"
                       />
-                      <div className="mt-1 text-[10px] leading-[12px] font-semibold text-white/70">
+                      <div className="mt-1 text-[13px] leading-[15px] font-semibold text-white/70">
                         Elite {req.to}
                       </div>
                     </div>
