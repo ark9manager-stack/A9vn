@@ -381,7 +381,7 @@ function MaterialIcon({ itemId, count }) {
 
   return (
     <div
-      className="relative w-[60px] h-[60px] shrink-0"
+      className="relative w-12 h-12 shrink-0"
       title={`${name} × ${count}`}
       aria-label={`${name} × ${count}`}
     >
@@ -412,8 +412,8 @@ function MaterialIcon({ itemId, count }) {
 
       {/* count */}
       <div
-        className="absolute bottom-0 right-0 px-1.5 py-[1px] rounded bg-black/80 text-[14px] leading-[16px] font-bold text-white tabular-nums"
-        style={{ transform: "translate(3px, 3px)" }}
+        className="absolute bottom-0 right-0 px-1 rounded bg-black/80 text-[11px] leading-[14px] font-bold text-white tabular-nums"
+        style={{ transform: "translate(2px, 2px)" }}
       >
         {count}
       </div>
