@@ -379,52 +379,58 @@ function MaterialIcon({ itemId, count }) {
   const bgUrl = getItemBgUrl(meta?.rarity);
   const iconUrl = getItemIconUrl(meta?.iconId);
 
+  const INNER = 48;
+  const BG_SCALE = 1.18;
+  const ICON_SCALE = 1.12;
+  const PAD = 6;
+
+  const outer = Math.ceil(INNER * Math.max(BG_SCALE, ICON_SCALE)) + PAD * 2;
+
   return (
     <div
-      className="relative w-[60px] h-[60px] shrink-0 overflow-hidden rounded-[6px]"
+      className="relative shrink-0"
+      style={{ width: outer, height: outer }}
       title={`${name} × ${count}`}
       aria-label={`${name} × ${count}`}
     >
-      {/* rarity background */}
-      <img
-        src={bgUrl}
-        alt=""
-        className="absolute inset-0 w-full h-full object-contain"
-        style={{ transform: "scale(1.18)" }}
-        draggable={false}
-        loading="lazy"
-      />
+      {/* Centered inner canvas */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative" style={{ width: INNER, height: INNER }}>
+          {/* rarity background */}
+          <img
+            src={bgUrl}
+            alt=""
+            className="absolute inset-0 w-full h-full object-contain origin-center"
+            style={{ transform: `scale(${BG_SCALE})` }}
+            draggable={false}
+            loading="lazy"
+          />
 
-      {/* item icon (slightly larger) */}
-      {iconUrl ? (
-        <img
-          src={iconUrl}
-          alt={name}
-          className="absolute inset-0 w-full h-full object-contain origin-center"
-          style={{ transform: "scale(1.18)" }}
-          draggable={false}
-          loading="lazy"
-          onError={(e) => {
-            const img = e.currentTarget;
-            if (!img.dataset.triedFallback && meta?.iconId) {
-              img.dataset.triedFallback = "1";
-              img.src = `${ITEM_ICON_BASE}${String(meta.iconId)}.png`;
-              return;
-            }
-            img.style.display = "none";
-          }}
-        />
-      ) : null}
+          {/* item icon (slightly larger) */}
+          {iconUrl ? (
+            <img
+              src={iconUrl}
+              alt={name}
+              className="absolute inset-0 w-full h-full object-contain origin-center"
+              style={{ transform: `scale(${ICON_SCALE})` }}
+              draggable={false}
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          ) : null}
+        </div>
+      </div>
 
       {/* count */}
-      <div
-        className="absolute bottom-[2px] right-[2px] px-1.5 rounded bg-black/80 text-[13px] leading-[15px] font-bold text-white tabular-nums"
-      >
+      <div className="absolute bottom-[2px] right-[2px] px-1.5 rounded bg-black/80 text-[13px] leading-[15px] font-bold text-white tabular-nums">
         {count}
       </div>
     </div>
   );
 }
+
 
 
 const StatsSection = ({ operator, charId: charIdProp }) => {
@@ -1380,7 +1386,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         </div>
       ) : null}
 
-      {/* Promotion Requirements */}
       {/* Promotion Requirements */}
       {promotionReqs.length > 0 ? (
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
