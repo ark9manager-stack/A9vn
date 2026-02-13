@@ -543,7 +543,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       });
     };
 
-    (charData?.skills || []).forEach((s, idx) => {
+    const skillsArr = Array.isArray(charData?.skills) ? charData.skills : [];
+    skillsArr.forEach((s, idx) => {
       if (s?.overrideTokenKey) pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
     });
 
