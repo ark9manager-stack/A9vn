@@ -4,7 +4,7 @@ import characterTable from "../../../../data/operators/character_table.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
-
+import tagVN from "../../../../data/operators/tag_vn.json";
 import StatHover, { renderInlineItalic } from "../../../StatHover";
 
 /** Icons (Elite) */
@@ -37,6 +37,30 @@ function buildTraitMap(traitJson) {
     for (const [k, v] of Object.entries(item)) {
       map[k] = v;
     }
+  }
+  return map;
+}
+
+function buildTagMap(tagJson) {
+  const raw = tagJson?.tagList;
+  if (!raw) return {};
+
+  if (!Array.isArray(raw) && typeof raw === "object") {
+    const map = {};
+    for (const [k, v] of Object.entries(raw)) {
+      if (isNonEmptyString(k) && isNonEmptyString(v)) map[String(k)] = String(v);
+    }
+    return map;
+  }
+
+  if (!Array.isArray(raw)) return {};
+
+  const map = {};
+  for (const row of raw) {
+    const k = row?.tagList ?? row?.key ?? row?.cn ?? row?.tag;
+    const v = row?.tagList_vn ?? row?.vn ?? row?.value;
+    if (!isNonEmptyString(k) || !isNonEmptyString(v)) continue;
+    map[String(k)] = String(v);
   }
   return map;
 }
@@ -616,8 +640,10 @@ function InfoTable({ title, titleInline, titleRight, children }) {
   );
 }
 
+
 export default function SkillsSection(props) {
   const traitMap = React.useMemo(() => buildTraitMap(traitVN), []);
+  const tagMap = React.useMemo(() => buildTagMap(tagVN), []);
 
   // Be tolerant with whatever the parent passes in.
   const operator = props?.operator || props?.data || null;
@@ -631,6 +657,27 @@ export default function SkillsSection(props) {
     null;
 
   const { charKey, charData } = React.useMemo(() => getCharEntry(rawCharId), [rawCharId]);
+
+  const rawTagList = charData?.tagList ?? operator?.tagList ?? [];
+  const resolvedTags = React.useMemo(() => {
+    if (!Array.isArray(rawTagList) || rawTagList.length === 0) return [];
+    return rawTagList
+      .filter((t) => isNonEmptyString(t))
+      .map((t) => {
+        const key = String(t).trim();
+        return tagMap && key in tagMap ? String(tagMap[key]) : key;
+      });
+  }, [rawTagList, tagMap]);
+
+  const positionRaw = charData?.position ?? operator?.position ?? "";
+  const positionLabel =
+    positionRaw === "MELEE"
+      ? "Vị trí: Cận chiến"
+      : positionRaw === "RANGED"
+      ? "Vị trí: Tầm xa"
+      : isNonEmptyString(positionRaw)
+      ? `Vị trí: ${positionRaw}`
+      : "";
 
   const traitResolved = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -961,6 +1008,28 @@ const renderTalentCard = (talentIdx, resolved) => {
 
   return (
     <div className="space-y-3">
+      {/* Tag + Position (from character_table.json) */}
+      <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="rounded-xl border border-white/10 bg-black/20 p-3">
+            <div className="text-white/80 font-semibold mb-1">Tag</div>
+            {resolvedTags.length > 0 ? (
+              <div className="text-gray-300 break-words">{`Tag: ${resolvedTags.join(", ")}`}</div>
+            ) : (
+              <span className="text-white/40 italic">-</span>
+            )}
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-black/20 p-3">
+            <div className="text-white/80 font-semibold mb-1">Vị trí</div>
+            {isNonEmptyString(positionLabel) ? (
+              <div className="text-gray-300">{positionLabel}</div>
+            ) : (
+              <span className="text-white/40 italic">-</span>
+            )}
+          </div>
+        </div>
+      </div>
       <InfoTable title="Đặc tính/Trait" titleRight={traitEliteButtons}>
         {isNonEmptyString(currentTraitText) ? (
           <>

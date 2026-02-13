@@ -90,5 +90,9 @@
   "Vigor": {
     "title": "Sung sức/Vigor",
     "text": "Khi lượng máu cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
+  },
+  "Slow": {
+    "title": "Làm chậm/Slow",
+    "text": "Giảm 80% tốc độ di chuyển."
   }
 }
