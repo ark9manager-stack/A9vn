@@ -380,9 +380,9 @@ function MaterialIcon({ itemId, count }) {
   const iconUrl = getItemIconUrl(meta?.iconId);
 
   const INNER = 48;
-  const BG_SCALE = 1.25;
-  const ICON_SCALE = 1.12;
-  const PAD = 6;
+  const BG_SCALE = 1.42;
+  const ICON_SCALE = 1.22;
+  const PAD = 5;
 
   const outer = Math.ceil(INNER * Math.max(BG_SCALE, ICON_SCALE)) + PAD * 2;
 
