@@ -1402,16 +1402,16 @@ const renderTalentCard = (talentIdx, resolved) => {
     const buffChar = buildingCharEntry?.buffChar;
     if (!Array.isArray(buffChar)) return [];
 
-    let maxElite = 0;
+    const set = new Set();
     buffChar.forEach((g) => {
       const arr = Array.isArray(g?.buffData) ? g.buffData : [];
       arr.forEach((b) => {
         const e = phaseToEliteIndex(b?.cond?.phase);
-        if (e > maxElite) maxElite = e;
+        if (Number.isFinite(e)) set.add(e);
       });
     });
 
-    return Array.from({ length: maxElite + 1 }, (_, i) => i);
+    return [...set].filter((n) => n >= 0 && n <= 2).sort((a, b) => a - b);
   }, [buildingCharEntry]);
 
   const [buildingEliteIdx, setBuildingEliteIdx] = React.useState(0);
@@ -1421,10 +1421,12 @@ const renderTalentCard = (talentIdx, resolved) => {
     } else {
       setBuildingEliteIdx(0);
     }
-  }, [charKey, buildingEliteOptions.length]);
+  }, [charKey, buildingEliteOptions]);
 
-  const buildingEliteButtons = buildingEliteOptions.length > 1 ? (
-    <div className="flex items-center gap-2 flex-wrap">
+  const showBuildingEliteHeader = buildingEliteOptions.length > 1;
+
+  const buildingHeaderElite = showBuildingEliteHeader ? (
+    <div className="flex items-center gap-2">
       {buildingEliteOptions.map((e) => {
         const active = e === buildingEliteIdx;
         const src = `${ELITE_ICON_BASE}elite_${e}_large.png`;
@@ -1434,7 +1436,7 @@ const renderTalentCard = (talentIdx, resolved) => {
             key={`bskill-elite-${charKey || "unknown"}-${e}`}
             type="button"
             onClick={() => setBuildingEliteIdx(e)}
-            className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
+            className={`rounded-lg p-1.5 transition ${
               active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
             }`}
             title={`Elite ${e}`}
@@ -1442,14 +1444,13 @@ const renderTalentCard = (talentIdx, resolved) => {
             <img
               src={src}
               alt={`E${e}`}
-              className="w-6 h-6 object-contain"
+              className="w-7 h-7 object-contain"
               draggable={false}
               loading="lazy"
               onError={(ev) => {
                 ev.currentTarget.style.display = "none";
               }}
             />
-            <span className="text-xs font-semibold text-white">E{e}</span>
           </button>
         );
       })}
@@ -1594,7 +1595,8 @@ const renderTalentCard = (talentIdx, resolved) => {
                   <img
                     src={getSkillIconUrl(selectedSkillId)}
                     alt={selectedSkillId}
-                    className="w-[72px] h-[72px] object-contain"
+                    className="w-20 h-20 object-contain"
+                    style={{ width: 80, height: 80, minWidth: 80 }}
                     draggable={false}
                     loading="lazy"
                     onError={(e) => {
@@ -1743,51 +1745,6 @@ const renderTalentCard = (talentIdx, resolved) => {
                         </button>
                       );
                     })}
-                  
-                  {selectedUpgradeInfo ? (
-                    <div className="mt-3 rounded-lg bg-white/5 p-3">
-                      <div className="text-xs text-white/70 mb-2">{isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}</div>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-sm font-semibold text-white">{selectedUpgradeInfo.label}</span>
-
-                        {selectedUpgradeInfo.unlockCond ? (
-                          <span
-                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                            style={{ backgroundColor: "#D3D3D3" }}
-                          >
-                            {(() => {
-                              const elite = phaseToEliteIndex(selectedUpgradeInfo.unlockCond?.phase);
-                              const lvReq = Number(selectedUpgradeInfo.unlockCond?.level || 0) || 1;
-                              return isEnglishUI
-                                ? `Required: Elite ${elite} level ${lvReq}`
-                                : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
-                            })()}
-                          </span>
-                        ) : null}
-
-                        {isNonEmptyString(selectedUpgradeInfo.time) ? (
-                          <span
-                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                            style={{ backgroundColor: "#D3D3D3" }}
-                          >
-                            {isEnglishUI
-                              ? `Training time: ${selectedUpgradeInfo.time}`
-                              : `Thời gian nâng cấp: ${selectedUpgradeInfo.time}`}
-                          </span>
-                        ) : null}
-                      </div>
-
-                      <div className="mt-2 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
-                        {Array.isArray(selectedUpgradeInfo.costs)
-                          ? selectedUpgradeInfo.costs.map((c, j) =>
-                              c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
-                                <MaterialIcon key={`${c.id}-${selectedSkillId}-${safeSkillLevelIdx}-${j}`} itemId={c.id} count={c.count} />
-                              ) : null
-                            )
-                          : null}
-                      </div>
-                    </div>
-                  ) : null}
 </div>
 
                   <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
@@ -1809,19 +1766,70 @@ const renderTalentCard = (talentIdx, resolved) => {
               ) : null}
 
                           </div>
+
+            {selectedUpgradeInfo ? (
+              <div className="space-y-2">
+                <div className="text-xs text-white/70">
+                  {isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}
+                </div>
+
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-sm font-semibold text-white">{selectedUpgradeInfo.label}</span>
+
+                  {selectedUpgradeInfo.unlockCond ? (
+                    <span
+                      className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                      style={{ backgroundColor: "#D3D3D3" }}
+                    >
+                      {(() => {
+                        const elite = phaseToEliteIndex(selectedUpgradeInfo.unlockCond?.phase);
+                        const lvReq = Number(selectedUpgradeInfo.unlockCond?.level || 0) || 1;
+                        return isEnglishUI
+                          ? `Required: Elite ${elite} level ${lvReq}`
+                          : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
+                      })()}
+                    </span>
+                  ) : null}
+
+                  {isNonEmptyString(selectedUpgradeInfo.time) ? (
+                    <span
+                      className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                      style={{ backgroundColor: "#D3D3D3" }}
+                    >
+                      {isEnglishUI
+                        ? `Training time: ${selectedUpgradeInfo.time}`
+                        : `Thời gian nâng cấp: ${selectedUpgradeInfo.time}`}
+                    </span>
+                  ) : null}
+                </div>
+
+                <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
+                  {Array.isArray(selectedUpgradeInfo.costs)
+                    ? selectedUpgradeInfo.costs.map((c, j) =>
+                        c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
+                          <MaterialIcon
+                            key={`${c.id}-${selectedSkillId}-${safeSkillLevelIdx}-${j}`}
+                            itemId={c.id}
+                            count={c.count}
+                          />
+                        ) : null
+                      )
+                    : null}
+                </div>
+              </div>
+            ) : null}
+
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>
         )}
       </InfoTable>
 
-      <InfoTable title="Kỹ năng hậu cầu">
+      <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
         {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
           <div className="space-y-3">
-            {buildingEliteButtons}
             {buildingBuffCards.map((b, idx0) => {
               const buffId = b?.buffId;
-              const cond = b?.cond;
 
               const cn = buffId ? buildingData?.buffs?.[buffId] : null;
               const en = buffId ? buildingDataEN?.buffs?.[buffId] : null;
@@ -1846,9 +1854,6 @@ const renderTalentCard = (talentIdx, resolved) => {
 
               const bg = def?.buffColor || "#FFFFFF";
               const tc = def?.textColor || "#000000";
-
-              const elite = phaseToEliteIndex(cond?.phase);
-              const lvReq = Number(cond?.level || 0) || 1;
 
               return (
                 <div key={`${buffId}-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
@@ -1875,15 +1880,6 @@ const renderTalentCard = (talentIdx, resolved) => {
                         >
                           <span className="truncate">{name}</span>
                         </span>
-
-                        {cond ? (
-                          <span
-                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                            style={{ backgroundColor: "#D3D3D3" }}
-                          >
-                            {isEnglishUI ? `Elite ${elite} level ${lvReq}` : `Elite ${elite} level ${lvReq}`}
-                          </span>
-                        ) : null}
                       </div>
 
                       <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
