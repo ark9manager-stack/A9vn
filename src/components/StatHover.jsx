@@ -4,7 +4,7 @@ import statHoverVN from "../data/stathover_vn.json";
 
 const TOOLTIP_Z_INDEX = 999999;
 
-const NOTEKEY_LABEL_TEMPLATES = {
+export const NOTEKEY_LABEL_TEMPLATES = {
   "mission.levelname": "<color=#FFDE00>{0}</color>",
   "mission.number": "<color=#FFDE00>{0}</color>",
   "tu.kw": "<color=#0098DC>{0}</color>",
@@ -170,7 +170,7 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-function getLabelTemplate(noteKey) {
+export function getLabelTemplate(noteKey) {
   if (!isNonEmptyString(noteKey)) return null;
 
   if (NOTEKEY_LABEL_TEMPLATES?.[noteKey]) return NOTEKEY_LABEL_TEMPLATES[noteKey];
@@ -183,11 +183,43 @@ function getLabelTemplate(noteKey) {
   return found ? NOTEKEY_LABEL_TEMPLATES[found] : null;
 }
 
-function applyLabelTemplate(label, template) {
+export function applyLabelTemplate(label, template) {
   if (!isNonEmptyString(template)) return label;
   return template.includes("{0}") ? template.replaceAll("{0}", String(label)) : String(label);
 }
+// Format a label using NOTEKEY_LABEL_TEMPLATES (returns a string that may contain <color> / <i> markup)
+export function formatLabelWithNoteKey(label, noteKey) {
+  const tpl = getLabelTemplate(noteKey);
+  return applyLabelTemplate(label, tpl);
+}
 
+// Convert nested note tags like "<@cc.rem>Text</>" inside a label into renderable markup (<color> / <i>).
+// This prevents raw "<@...>" from leaking when a note label contains another note tag.
+export function formatNestedNoteTags(text) {
+  if (text == null) return "";
+  let out = String(text);
+
+  // Replace [[label|noteKey]]
+  out = out.replace(/\[\[([\s\S]*?)\|([\s\S]*?)\]\]/g, (_, lb, nk) => {
+    const inner = formatNestedNoteTags(lb);
+    return formatLabelWithNoteKey(inner, String(nk || "").trim());
+  });
+
+  // Replace <@noteKey>label</> and <$noteKey>label</>
+  const re = /<([@$])([a-zA-Z0-9_.-]+)>([\s\S]*?)<\/>/g;
+
+  // Iterate a few times to handle nesting safely
+  for (let i = 0; i < 8; i += 1) {
+    const prev = out;
+    out = out.replace(re, (_, __sigil, nk, lb) => {
+      const inner = formatNestedNoteTags(lb);
+      return formatLabelWithNoteKey(inner, String(nk || "").trim());
+    });
+    if (out === prev) break;
+  }
+
+  return out;
+}
 function parseUnityHexColor(hexRaw) {
   const hex = String(hexRaw || "").replace(/^#/, "").trim();
   if (!/^[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$/.test(hex)) return null;

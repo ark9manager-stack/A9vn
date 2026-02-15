@@ -12,7 +12,7 @@ import buildingData from "../../../../data/operators/building_data.json";
 import buildingDataEN from "../../../../data/operators/building_data_en.json";
 import buildingVN from "../../../../data/operators/building_vn.json";
 import itemTable from "../../../../data/operators/item_table.json";
-import StatHover, { renderInlineItalic } from "../../../StatHover";
+import StatHover, { renderInlineItalic, formatNestedNoteTags } from "../../../StatHover";
 
 /** Icons (Elite) */
 const ELITE_ICON_BASE =
@@ -622,7 +622,7 @@ function renderLineWithHovers(line, keyPrefix) {
 
     // [[label|noteKey]]
     if (typeof m[1] === "string" && typeof m[2] === "string") {
-      const label = m[1];
+      const label = formatNestedNoteTags(m[1]);
       const noteKey = m[2].trim();
 
       nodes.push(
@@ -645,7 +645,7 @@ function renderLineWithHovers(line, keyPrefix) {
     // <@noteKey>label</> or <$noteKey>label</>
     if (typeof m[4] === "string" && typeof m[5] === "string") {
       const noteKey = m[4].trim();
-      const label = m[5];
+      const label = formatNestedNoteTags(m[5]);
       nodes.push(<StatHover key={`${keyPrefix}-h-${start}`} label={label} noteKey={noteKey} />);
       last = end;
       continue;
@@ -1724,10 +1724,10 @@ const renderTalentCard = (talentIdx, resolved) => {
                           key={`skill-lv-${selectedSkillId}-${lv}`}
                           type="button"
                           onClick={() => setActiveSkillLevelIdx(idx0)}
-                          className={`rounded-lg border transition px-2 py-1 ${
+                          className={`rounded-lg border transition px-2 py-1 text-white ${
                             isActive
-                              ? "bg-white text-black border-white"
-                              : "bg-white/10 text-white border-white/10 hover:bg-white/20"
+                              ? "bg-black/40 border-white ring-1 ring-white/40"
+                              : "bg-white/10 border-white/10 hover:bg-white/20"
                           }`}
                           title={lv <= 7 ? `Lv ${lv}` : `Lv 7 Mastery ${lv - 7}`}
                         >
@@ -1849,7 +1849,7 @@ const renderTalentCard = (talentIdx, resolved) => {
 
               const iconKey = def?.skillIcon || "";
               const iconUrl = isNonEmptyString(iconKey)
-                ? `${BUILDING_SKILL_ICON_BASE}${String(iconKey).trim()}.png`
+                ? `${BUILDING_SKILL_ICON_BASE}${String(iconKey).trim().toLowerCase()}.png`
                 : "";
 
               const bg = def?.buffColor || "#FFFFFF";
