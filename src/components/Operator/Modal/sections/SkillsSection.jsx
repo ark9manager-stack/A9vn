@@ -1,19 +1,17 @@
 import React from "react";
 
 import characterTable from "../../../../data/operators/character_table.json";
-import characterTableEN from "../../../../data/operators/character_table_en.json";
-import skillTable from "../../../../data/operators/skill_table.json";
-import skillTableEN from "../../../../data/operators/skill_table_en.json";
-import skillVN from "../../../../data/operators/skill_vn.json";
-import itemTable from "../../../../data/operators/item_table.json";
-import buildingData from "../../../../data/operators/building_data.json";
-import buildingDataEN from "../../../../data/operators/building_data_en.json";
-import buildingVN from "../../../../data/operators/building_vn.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
-import traitEN from "../../../../data/operators/trait_en.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import tagVN from "../../../../data/operators/tag_vn.json";
+import skillTable from "../../../../data/operators/skill_table.json";
+import skillTableEN from "../../../../data/operators/skill_table_en.json";
+import skillVN from "../../../../data/operators/skill_vn.json";
+import buildingData from "../../../../data/operators/building_data.json";
+import buildingDataEN from "../../../../data/operators/building_data_en.json";
+import buildingVN from "../../../../data/operators/building_vn.json";
+import itemTable from "../../../../data/operators/item_table.json";
 import StatHover, { renderInlineItalic } from "../../../StatHover";
 
 /** Icons (Elite) */
@@ -26,53 +24,44 @@ const UI_ICON_BASE =
 
 const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
 const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
+/** Icons (Skill Range) */
+const BATTLE_UI_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
+const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
+
+/** Icons (Skills) */
+const SKILL_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/skills/skill_icon_";
+
+/** Icons (Skill SP) */
+const INIT_SP_ICON =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
+const SP_COST_ICON =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
+
+/** Icons (Skill Level) */
+const LEVEL_SOLID_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/number_hub/solid_";
+const LEVEL_SPECIALIZED_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/specialized_hub/specialized_";
+
+/** Icons (Building Skills) */
+const BUILDING_SKILL_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/building/skills/";
+
+/** Materials */
+const ITEM_BG_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
+const ITEM_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/";
 
 const POT_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/potential_hub/";
 
-/* =============================
-   Existing helpers (yours)
-   ============================= */
+const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
 
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
-}
-
-function clamp(n, a, b) {
-  const x = Number(n);
-  if (!Number.isFinite(x)) return a;
-  return Math.max(a, Math.min(b, x));
-}
-
-function phaseToIndex(phase) {
-  const p = String(phase || "");
-  if (p === "PHASE_0") return 0;
-  if (p === "PHASE_1") return 1;
-  if (p === "PHASE_2") return 2;
-  return 0;
-}
-
-function getEliteText(idx) {
-  return `E${idx}`;
-}
-
-function getEliteIcon(idx) {
-  const i = clamp(idx, 0, 2);
-  return `${ELITE_ICON_BASE}elite_${i}.png`;
-}
-
-function buildTagMap(tagJson) {
-  const list = tagJson?.tagList;
-  if (!Array.isArray(list)) return {};
-
-  const map = {};
-  for (const item of list) {
-    if (!item || typeof item !== "object" || Array.isArray(item)) continue;
-    for (const [k, v] of Object.entries(item)) {
-      map[k] = v;
-    }
-  }
-  return map;
 }
 
 function buildTraitMap(traitJson) {
@@ -89,21 +78,31 @@ function buildTraitMap(traitJson) {
   return map;
 }
 
-function buildTalentMap(talentJson) {
-  const list = talentJson?.talents;
-  if (!Array.isArray(list)) return {};
+function buildTagMap(tagJson) {
+  const raw = tagJson?.tagList;
+  if (!raw) return {};
+
+  if (!Array.isArray(raw) && typeof raw === "object") {
+    const map = {};
+    for (const [k, v] of Object.entries(raw)) {
+      if (isNonEmptyString(k) && isNonEmptyString(v)) map[String(k)] = String(v);
+    }
+    return map;
+  }
+
+  if (!Array.isArray(raw)) return {};
 
   const map = {};
-  for (const item of list) {
-    if (!item || typeof item !== "object" || Array.isArray(item)) continue;
-    const charId = item?.charId;
-    if (!isNonEmptyString(charId)) continue;
-    map[charId] = item;
+  for (const row of raw) {
+    const k = row?.tagList ?? row?.key ?? row?.cn ?? row?.tag;
+    const v = row?.tagList_vn ?? row?.vn ?? row?.value;
+    if (!isNonEmptyString(k) || !isNonEmptyString(v)) continue;
+    map[String(k)] = String(v);
   }
   return map;
 }
 
-function getCharEntry(rawCharId, primaryTable = characterTable, fallbackTable = characterTable) {
+function getCharEntry(rawCharId) {
   if (!isNonEmptyString(rawCharId)) return { charKey: null, charData: null };
 
   const id = String(rawCharId).trim();
@@ -111,61 +110,555 @@ function getCharEntry(rawCharId, primaryTable = characterTable, fallbackTable = 
 
   if (!id.startsWith("char_")) candidates.push(`char_${id}`);
 
-  const tables = [primaryTable, fallbackTable].filter(Boolean);
-
   for (const k of candidates) {
-    if (!k?.startsWith("char_")) continue;
-    for (const tbl of tables) {
-      if (tbl?.[k]) return { charKey: k, charData: tbl[k] };
+    if (k?.startsWith("char_") && characterTable?.[k]) {
+      return { charKey: k, charData: characterTable[k] };
     }
   }
 
   return { charKey: null, charData: null };
 }
 
-/* === Hover/Blackboard render helpers (yours) === */
+function resolveTraitTexts({ subProfessionId, rarity, description }, traitMap) {
+  const base = isNonEmptyString(subProfessionId) ? String(subProfessionId).trim() : "";
+  const isTier1 = String(rarity || "") === "TIER_1";
+  const keyCandidates = isTier1 ? [`${base}1`, base] : [base];
 
-const HOVER_PAT = /\[\[([^\]|]+)\|([^\]]+)\]\]/g;
+  // Main text
+  let usedKey = null;
+  let mainText = "";
+  for (const key of keyCandidates) {
+    if (!isNonEmptyString(key)) continue;
+    const v = traitMap?.[key];
+    if (isNonEmptyString(v)) {
+      usedKey = key;
+      mainText = v;
+      break;
+    }
+  }
+  if (!isNonEmptyString(mainText)) mainText = isNonEmptyString(description) ? description : "";
 
-function renderLineWithHovers(line, keyPrefix) {
-  const parts = [];
-  let lastIndex = 0;
-  let m;
-  let idx = 0;
+  // Extra text ("*_2")
+  const extraKeyCandidates = [];
+  if (isNonEmptyString(usedKey)) extraKeyCandidates.push(`${usedKey}_2`);
+  for (const key of keyCandidates) {
+    if (!isNonEmptyString(key)) continue;
+    extraKeyCandidates.push(`${key}_2`);
+  }
+  // De-dup
+  const seen = new Set();
+  let extraText = "";
+  for (const k of extraKeyCandidates) {
+    if (!isNonEmptyString(k) || seen.has(k)) continue;
+    seen.add(k);
+    const v2 = traitMap?.[k];
+    if (isNonEmptyString(v2)) {
+      extraText = v2;
+      break;
+    }
+  }
 
-  while ((m = HOVER_PAT.exec(line)) !== null) {
-    const [full, hoverTitle, hoverText] = m;
-    const start = m.index;
+  return { mainText, extraText, usedKey };
+}
 
-    if (start > lastIndex) {
-      parts.push(line.slice(lastIndex, start));
+function phaseToIndex(phase) {
+  // e.g. "PHASE_0"
+  const m = /PHASE_(\d+)/.exec(String(phase || ""));
+  if (m) return Number(m[1]);
+  const n = Number(phase);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function getTraitCandidates(charData) {
+  const raw = charData?.trait?.candidates;
+  if (!Array.isArray(raw)) return [];
+
+  const byPhase = new Map();
+  for (const cand of raw) {
+    const idx = phaseToIndex(cand?.unlockCondition?.phase);
+    if (!byPhase.has(idx)) byPhase.set(idx, cand);
+  }
+
+  return Array.from(byPhase.entries())
+    .sort((a, b) => a[0] - b[0])
+    .map(([phaseIndex, cand]) => ({ phaseIndex, cand }));
+}
+
+function buildBlackboardMap(blackboard) {
+  const map = {};
+  if (!Array.isArray(blackboard)) return map;
+
+  for (const row of blackboard) {
+    const k = row?.key;
+    if (!isNonEmptyString(k)) continue;
+    const v = row?.valueStr != null ? row.valueStr : row?.value;
+    map[String(k)] = v;
+  }
+
+  return map;
+}
+
+const isAlmostInt = (n) => Math.abs(n - Math.round(n)) < 1e-6;
+
+function trimFixed(n, decimals) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return String(n ?? "");
+  let s = x.toFixed(decimals);
+  if (decimals > 0) s = s.replace(/\.?0+$/, "");
+  return s;
+}
+
+function formatNumberDefault(n) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return String(n ?? "");
+  if (isAlmostInt(x)) return String(Math.round(x));
+  return trimFixed(x, 2);
+}
+
+function formatPlaceholderValue(raw, fmt) {
+  if (raw == null) return "";
+  const rawStr = String(raw);
+
+  const num = Number(raw);
+  const isNum = Number.isFinite(num);
+
+  if (!fmt || !isNonEmptyString(fmt)) return isNum ? formatNumberDefault(num) : rawStr;
+
+  const f = String(fmt).trim();
+  const pm = /^0(?:\.(0+))?%$/.exec(f);
+  if (pm) {
+    if (!isNum) return rawStr;
+    const decimals = pm[1] ? pm[1].length : 0;
+    return `${trimFixed(num * 100, decimals)}%`;
+  }
+
+  const nm = /^0(?:\.(0+))?$/.exec(f);
+  if (nm) {
+    if (!isNum) return rawStr;
+    const decimals = nm[1] ? nm[1].length : 0;
+    return trimFixed(num, decimals);
+  }
+
+  return isNum ? formatNumberDefault(num) : rawStr;
+}
+
+function applyBlackboard(text, bbMap) {
+  if (!isNonEmptyString(text)) return "";
+  if (!bbMap || typeof bbMap !== "object") return text;
+  return String(text).replace(/\{([a-zA-Z0-9_.@-]+)(?::([^}]+))?\}/g, (m, key, fmt) => {
+    if (!key || !(key in bbMap)) return m;
+    return formatPlaceholderValue(bbMap[key], fmt);
+  });
+}
+
+
+function clamp(n, min, max) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return min;
+  return Math.min(Math.max(x, min), max);
+}
+
+
+const rarityToR = (rarity) => {
+  const m = String(rarity || "").match(/TIER_(\d+)/);
+  const n = m ? Number(m[1]) : 1;
+  return Number.isFinite(n) ? n : 1;
+};
+
+const getItemMeta = (itemId) => {
+  const id = String(itemId || "");
+  return itemTable?.items?.[id] || null;
+};
+
+const getItemBgUrl = (rarity) => {
+  const r = clamp(rarityToR(rarity), 1, 6);
+  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
+};
+
+const getItemIconUrl = (iconId) => {
+  const key = String(iconId || "").trim();
+  if (!key) return "";
+  return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
+};
+
+const getSkillIconUrl = (skillId) => {
+  const key = String(skillId || "").trim();
+  if (!key) return "";
+  return `${SKILL_ICON_BASE}${key}.png`;
+};
+
+const getSkillLevelIconUrl = (levelNum) => {
+  const n = Number(levelNum);
+  if (!Number.isFinite(n) || n <= 0) return "";
+  if (n <= 7) return `${LEVEL_SOLID_BASE}${n}.png`;
+  if (n <= 10) return `${LEVEL_SPECIALIZED_BASE}${n - 7}.png`;
+  return "";
+};
+
+const phaseToEliteIndex = (phase) => {
+  const p = String(phase || "");
+  if (p === "PHASE_2") return 2;
+  if (p === "PHASE_1") return 1;
+  return 0;
+};
+
+function formatHMS(totalSeconds) {
+  const s = Math.max(0, Math.floor(Number(totalSeconds) || 0));
+  const hh = String(Math.floor(s / 3600)).padStart(2, "0");
+  const mm = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+  const ss = String(s % 60).padStart(2, "0");
+  return `${hh}:${mm}:${ss}`;
+}
+
+const SP_TYPE_META = {
+  INCREASE_WHEN_TAKEN_DAMAGE: {
+    bg: "#F4AF09",
+    vi: "Hồi khi chịu đòn",
+    en: "Defensive Recovery",
+  },
+  INCREASE_WHEN_ATTACK: {
+    bg: "#FC793E",
+    vi: "Hồi theo đòn đánh",
+    en: "Offensive Recovery",
+  },
+  INCREASE_WITH_TIME: {
+    bg: "#8EC31F",
+    vi: "Hồi theo thời gian",
+    en: "Auto Recovery",
+  },
+};
+
+const SKILL_TYPE_META = {
+  AUTO: { vi: "Tự động", en: "Auto" },
+  MANUAL: { vi: "Thủ công", en: "Manual" },
+  PASSIVE: { vi: "Nội tại", en: "Passive" },
+};
+
+
+function getVisibleTalentCandidates(block) {
+  const cands = block?.candidates;
+  if (!Array.isArray(cands)) return [];
+
+  return cands.filter((c) => {
+    if (!c) return false;
+    if (c.isHideTalent === true) return false;
+
+    const hasName = typeof c.name === "string" && c.name.trim().length > 0;
+    const hasDesc = typeof c.description === "string" && c.description.trim().length > 0;
+    return hasName || hasDesc;
+  });
+}
+
+function isValidTalentBlock(block) {
+  return getVisibleTalentCandidates(block).length > 0;
+}
+
+function getTalentVnEntry(charKey) {
+  if (!isNonEmptyString(charKey)) return null;
+  return talentVN?.[charKey] || null;
+}
+
+function getTalentTitle(vnEntry, talentIdx, phaseIndex, level, requiredPotentialRank) {
+  if (!vnEntry || typeof vnEntry !== "object") return "";
+
+  const baseKey = talentIdx === 0 ? "TitleTalent1" : "TitleTalent2";
+  const phase = Number(phaseIndex ?? 0);
+  const req = Number(requiredPotentialRank ?? 0);
+  const lvl = Number(level ?? 0);
+
+  const keys = [];
+
+  if (phase === 2) {
+    const b2 = `${baseKey}_2`;
+
+    if (Number.isFinite(lvl) && lvl > 1) {
+      if (Number.isFinite(req) && req > 0) keys.push(`${b2}_lv${lvl}_p${req}`);
+      keys.push(`${b2}_lv${lvl}`);
     }
 
-    parts.push(
-      <StatHover
-        key={`${keyPrefix}-hover-${idx}`}
-        title={hoverTitle}
-        content={hoverText}
-      />
-    );
-
-    lastIndex = start + full.length;
-    idx += 1;
+    if (Number.isFinite(req) && req > 0) keys.push(`${b2}_p${req}`);
+    keys.push(b2);
   }
 
-  if (lastIndex < line.length) {
-    parts.push(line.slice(lastIndex));
+  if (Number.isFinite(lvl) && lvl > 1) {
+    if (Number.isFinite(req) && req > 0) keys.push(`${baseKey}_lv${lvl}_p${req}`);
+    keys.push(`${baseKey}_lv${lvl}`);
   }
 
-  return parts.map((p, i) =>
-    typeof p === "string" ? (
-      <React.Fragment key={`${keyPrefix}-txt-${i}`}>
-        {renderInlineItalic(p)}
-      </React.Fragment>
-    ) : (
-      p
-    )
+  if (Number.isFinite(req) && req > 0) keys.push(`${baseKey}_p${req}`);
+  keys.push(baseKey);
+
+  for (const k of keys) {
+    const v = vnEntry?.[k];
+    if (isNonEmptyString(v)) return String(v);
+  }
+
+  return "";
+}
+
+
+function getTalentBaseKeyCandidates(talentIdx, phaseIndex) {
+  if (talentIdx === 0) {
+    if (phaseIndex === 2) return ["Talent1_2"];
+    return [`Talent${phaseIndex}`]; // Talent0 / Talent1
+  }
+
+  return [`Talent2_${phaseIndex}`, "Talent2"];
+}
+
+function resolveTalentText({
+  vnEntry,
+  talentIdx,
+  phaseIndex,
+  level,
+  requiredPotentialRank,
+  fallbackText,
+}) {
+  const bases = getTalentBaseKeyCandidates(talentIdx, phaseIndex);
+  const req = Number(requiredPotentialRank || 0);
+  const lvl = Number(level || 0);
+
+  if (vnEntry && typeof vnEntry === "object") {
+    for (const base of bases) {
+      if (!isNonEmptyString(base)) continue;
+      if (Number.isFinite(lvl) && lvl > 1) {
+        if (req > 0) {
+          const kLvPot = `${base}_lv${lvl}_p${req}`;
+          const vLvPot = vnEntry?.[kLvPot];
+          if (isNonEmptyString(vLvPot)) return String(vLvPot);
+        }
+
+        const kLv = `${base}_lv${lvl}`;
+        const vLv = vnEntry?.[kLv];
+        if (isNonEmptyString(vLv)) return String(vLv);
+      }
+
+      if (req > 0) {
+        const kPot = `${base}_p${req}`;
+        const vPot = vnEntry?.[kPot];
+        if (isNonEmptyString(vPot)) return String(vPot);
+      }
+
+      const v = vnEntry?.[base];
+      if (isNonEmptyString(v)) return String(v);
+    }
+  }
+
+  return isNonEmptyString(fallbackText) ? String(fallbackText) : "";
+}
+
+function groupCandidatesByPhaseLevel(candidates) {
+  const map = new Map();
+  if (!Array.isArray(candidates)) return map;
+
+  for (const cand of candidates) {
+    const phaseIndex = phaseToIndex(cand?.unlockCondition?.phase);
+    const level = Number(cand?.unlockCondition?.level || 1);
+    const lvl = Number.isFinite(level) ? level : 1;
+
+    const key = `${phaseIndex}:${lvl}`;
+    const arr = map.get(key) || [];
+    arr.push(cand);
+    map.set(key, arr);
+  }
+
+  return map;
+}
+
+function pickBestCandidateByPot(candidates, potRank) {
+  if (!Array.isArray(candidates) || candidates.length === 0) return null;
+
+  let best = null;
+  let bestReq = -1;
+
+  for (const c of candidates) {
+    const req = Number(c?.requiredPotentialRank || 0);
+    if (!Number.isFinite(req)) continue;
+
+    if (req <= potRank && req > bestReq) {
+      best = c;
+      bestReq = req;
+    }
+  }
+
+  if (best) return best;
+  return [...candidates].sort(
+    (a, b) => Number(a?.requiredPotentialRank || 0) - Number(b?.requiredPotentialRank || 0)
+  )[0];
+}
+
+function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
+  const raw = getVisibleTalentCandidates(talentBlock);
+  if (!Array.isArray(raw) || raw.length === 0) return { variants: [], minPhaseIndex: 0 };
+
+  const grouped = groupCandidatesByPhaseLevel(raw);
+  const combos = [...grouped.keys()]
+    .map((k) => {
+      const [p, l] = k.split(":");
+      return { phaseIndex: Number(p), level: Number(l) };
+    })
+    .filter((x) => Number.isFinite(x.phaseIndex) && Number.isFinite(x.level))
+    .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level));
+
+  const variants = combos
+    .map(({ phaseIndex, level }) => {
+      const key = `${phaseIndex}:${level}`;
+      const list = grouped.get(key) || [];
+      const picked = pickBestCandidateByPot(list, potRank);
+      if (!picked) return null;
+
+      const bbMap = buildBlackboardMap(picked?.blackboard);
+      const baseText = resolveTalentText({
+        vnEntry,
+        talentIdx,
+        phaseIndex,
+        level,
+        requiredPotentialRank: picked?.requiredPotentialRank,
+        fallbackText: picked?.description || "",
+      });
+
+      const text = applyBlackboard(baseText, bbMap);
+
+      return {
+        phaseIndex,
+        level,
+        requiredPotentialRank: Number(picked?.requiredPotentialRank || 0),
+        name: picked?.name || "",
+        text,
+        rangeId: picked?.rangeId || "",
+      };
+    })
+    .filter(Boolean);
+
+  const minPhaseIndex =
+    variants.length > 0 ? Math.min(...variants.map((v) => v.phaseIndex)) : 0;
+
+  return { variants, minPhaseIndex };
+}
+
+function collectTalentHeaderOptions(talentBlocks) {
+  const map = new Map();
+  if (!Array.isArray(talentBlocks)) return [];
+
+  for (const tb of talentBlocks) {
+    const cands = getVisibleTalentCandidates(tb);
+    if (!Array.isArray(cands) || cands.length === 0) continue;
+
+    for (const c of cands) {
+      const p = phaseToIndex(c?.unlockCondition?.phase);
+      const l = Number(c?.unlockCondition?.level || 1);
+      const lvl = Number.isFinite(l) ? l : 1;
+
+      if (!map.has(p)) map.set(p, new Set());
+      map.get(p).add(lvl);
+    }
+  }
+
+  const phases = [...map.keys()].sort((a, b) => a - b);
+  const options = [];
+
+  for (const p of phases) {
+    const levels = [...(map.get(p) || [])].sort((a, b) => a - b);
+    if (levels.length === 0) continue;
+
+    const baseLevel = levels[0];
+    options.push({ phaseIndex: p, level: baseLevel, showLv: false });
+
+    for (const lvl of levels.slice(1)) {
+      options.push({ phaseIndex: p, level: lvl, showLv: true });
+    }
+  }
+
+  return options;
+}
+
+function pickVariantByHeaderOption(variants, opt) {
+  if (!Array.isArray(variants) || variants.length === 0) return null;
+  if (!opt) return variants[variants.length - 1];
+
+  const desiredPhase = Number(opt.phaseIndex);
+  const desiredLevel = Number(opt.level);
+
+  // Exact phase + level
+  const exact = variants.find(
+    (v) => v.phaseIndex === desiredPhase && v.level === desiredLevel
   );
+  if (exact) return exact;
+  const samePhase = variants.filter((v) => v.phaseIndex === desiredPhase);
+  if (samePhase.length > 0) {
+    const le = samePhase
+      .filter((v) => v.level <= desiredLevel)
+      .sort((a, b) => b.level - a.level)[0];
+    return le || samePhase.sort((a, b) => a.level - b.level)[0];
+  }
+
+  const lePhase = variants
+    .filter((v) => v.phaseIndex <= desiredPhase)
+    .sort((a, b) => (b.phaseIndex - a.phaseIndex) || (b.level - a.level))[0];
+
+  return lePhase || variants[variants.length - 1];
+}
+
+function renderLineWithHovers(line, keyPrefix) {
+  if (!isNonEmptyString(line)) return null;
+
+  // [[label|noteKey]] OR <@noteKey>label</> OR <$noteKey>label</>
+  const re = /\[\[([\s\S]*?)\|([\s\S]*?)\]\]|<([@$])([a-zA-Z0-9_.-]+)>([\s\S]*?)<\/>/g;
+
+  const nodes = [];
+  let last = 0;
+  let m;
+
+  const pushInline = (txt, kp) => {
+    if (!isNonEmptyString(txt)) return;
+    nodes.push(...renderInlineItalic(txt, kp));
+  };
+
+  while ((m = re.exec(line)) !== null) {
+    const start = m.index;
+    const end = re.lastIndex;
+
+    if (start > last) pushInline(line.slice(last, start), `${keyPrefix}-t-${last}`);
+
+    // [[label|noteKey]]
+    if (typeof m[1] === "string" && typeof m[2] === "string") {
+      const label = m[1];
+      const noteKey = m[2].trim();
+
+      nodes.push(
+        <span
+          key={`${keyPrefix}-h-${start}`}
+          style={{
+            textDecoration: "underline",
+            textUnderlineOffset: "1px",
+            textDecorationSkipInk: "auto",
+          }}
+        >
+          <StatHover label={label} noteKey={noteKey} />
+        </span>
+      );
+
+      last = end;
+      continue;
+    }
+
+    // <@noteKey>label</> or <$noteKey>label</>
+    if (typeof m[4] === "string" && typeof m[5] === "string") {
+      const noteKey = m[4].trim();
+      const label = m[5];
+      nodes.push(<StatHover key={`${keyPrefix}-h-${start}`} label={label} noteKey={noteKey} />);
+      last = end;
+      continue;
+    }
+
+    // Fallback
+    pushInline(line.slice(start, end), `${keyPrefix}-u-${start}`);
+    last = end;
+  }
+
+  if (last < line.length) pushInline(line.slice(last), `${keyPrefix}-t-${last}`);
+
+  return nodes;
 }
 
 function renderTextWithHovers(text, keyPrefix = "txt") {
@@ -173,6 +666,7 @@ function renderTextWithHovers(text, keyPrefix = "txt") {
 
   const normalized = String(text)
     .replace(/\r\n/g, "\n")
+    // trait_vn.json uses literal "\\n"
     .replace(/\\n/g, "\n");
 
   const lines = normalized.split("\n");
@@ -184,488 +678,214 @@ function renderTextWithHovers(text, keyPrefix = "txt") {
   ));
 }
 
-function buildBlackboardMap(bb) {
-  const map = {};
-  if (!Array.isArray(bb)) return map;
-  for (const it of bb) {
-    const k = it?.key;
-    if (!isNonEmptyString(k)) continue;
-    map[k] = it?.value;
-  }
-  return map;
-}
-
-function applyBlackboard(text, bbMap) {
-  if (!isNonEmptyString(text)) return "";
-  if (!bbMap || typeof bbMap !== "object") return text;
-
-  return String(text).replace(/\{([a-zA-Z0-9_]+)(?::([0-9]+))?(%?)\}/g, (_, key, idx, percent) => {
-    const raw = bbMap?.[key];
-    if (raw == null) return `{${key}}`;
-
-    let v = Number(raw);
-    if (!Number.isFinite(v)) return String(raw);
-
-    if (percent) v = v * 100;
-    if (idx != null) {
-      const n = Number(idx);
-      if (Number.isFinite(n)) v = Number(v.toFixed(n));
-    } else {
-      if (Math.abs(v - Math.round(v)) < 1e-6) v = Math.round(v);
-    }
-    return `${v}${percent ? "%" : ""}`;
-  });
-}
-
-/* === RangeGrid (yours) === */
-
 function RangeGrid({ rangeId }) {
-  if (!isNonEmptyString(rangeId)) return null;
-  const data = rangeTable?.[rangeId];
-  const grids = data?.grids;
-  if (!Array.isArray(grids) || grids.length === 0) return null;
+  const grids = rangeId ? rangeTable?.[rangeId]?.grids : null;
 
-  const xs = grids.map((g) => g?.col).filter((x) => Number.isFinite(x));
-  const ys = grids.map((g) => g?.row).filter((y) => Number.isFinite(y));
-  if (xs.length === 0 || ys.length === 0) return null;
+  if (!rangeId || !Array.isArray(grids)) {
+    return <div className="text-sm text-white/60">No range data.</div>;
+  }
 
-  const minX = Math.min(...xs);
-  const maxX = Math.max(...xs);
-  const minY = Math.min(...ys);
-  const maxY = Math.max(...ys);
+  const rowVals = [0, ...grids.map((g) => g.row)];
+  const colVals = [0, ...grids.map((g) => g.col)];
+  const minR = Math.min(...rowVals);
+  const maxR = Math.max(...rowVals);
+  const minC = Math.min(...colVals);
+  const maxC = Math.max(...colVals);
 
-  const w = maxX - minX + 1;
-  const h = maxY - minY + 1;
+  const height = maxR - minR + 1;
+  const width = maxC - minC + 1;
 
-  const cellMap = new Set(grids.map((g) => `${g.col},${g.row}`));
+  const keySet = new Set(grids.map((g) => `${g.row},${g.col}`));
 
   return (
-    <div className="inline-block">
-      <div
-        className="grid gap-[2px]"
-        style={{ gridTemplateColumns: `repeat(${w}, 22px)` }}
-      >
-        {Array.from({ length: h }).map((_, r) =>
-          Array.from({ length: w }).map((__, c) => {
-            const x = minX + c;
-            const y = maxY - r;
-            const key = `${x},${y}`;
-            const active = cellMap.has(key);
-            const center = x === 0 && y === 0;
-
-            return (
-              <div
-                key={key}
-                className="w-[22px] h-[22px] rounded-sm border border-white/10 bg-black/30 flex items-center justify-center"
-              >
-                {center ? (
-                  <img
-                    src={RANGE_STAND}
-                    alt=""
-                    className="w-[18px] h-[18px] object-contain"
-                    draggable={false}
-                  />
-                ) : active ? (
-                  <img
-                    src={RANGE_ATTACK}
-                    alt=""
-                    className="w-[18px] h-[18px] object-contain"
-                    draggable={false}
-                  />
-                ) : null}
-              </div>
-            );
-          })
-        )}
-      </div>
-    </div>
-  );
-}
-
-const SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/skills/";
-const SKILL_ICON_PREFIX = `${SKILL_ICON_BASE}skill_icon_`;
-
-const INIT_SP_ICON =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
-const SP_COST_ICON =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
-
-const SOLID_LV_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/number_hub/solid_";
-const SPECIALIZED_LV_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/specialized_hub/specialized_";
-
-const BUILD_SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/building/skills/";
-
-const ITEM_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/";
-const ITEM_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/";
-
-function rarityToR(rarity) {
-  const r = Number(rarity);
-  if (Number.isNaN(r)) return 0;
-  return Math.max(0, Math.min(5, r));
-}
-
-function getItemMeta(itemId) {
-  const id = String(itemId || "");
-  const items = itemTable?.items || itemTable;
-  return items?.[id] || null;
-}
-
-function getItemIconUrl(itemId) {
-  const meta = getItemMeta(itemId);
-  const iconId = meta?.iconId || meta?.icon || "";
-  if (!isNonEmptyString(iconId)) return "";
-  return `${ITEM_ICON_BASE}${iconId}.png`;
-}
-
-function getItemBgUrl(itemId) {
-  const meta = getItemMeta(itemId);
-  const rarity = rarityToR(meta?.rarity);
-  return `${ITEM_BG_BASE}itembg_${rarity}.png`;
-}
-
-function SkillBadge({ bg, textColor = "#000", title, children }) {
-  return (
-    <span
-      className="inline-flex items-center px-2 py-1 rounded-md text-[11px] font-semibold leading-none"
-      style={{ backgroundColor: bg, color: textColor }}
-      title={title || ""}
+    <div
+      className="inline-grid gap-[2px] p-2 rounded-lg bg-black/30"
+      style={{
+        gridTemplateColumns: `repeat(${width}, 18px)`,
+        gridTemplateRows: `repeat(${height}, 18px)`,
+      }}
     >
-      {children}
-    </span>
-  );
-}
+      {Array.from({ length: height }).map((_, rIdx) => {
+        const r = maxR - rIdx;
+        return Array.from({ length: width }).map((__, cIdx) => {
+          const c = minC + cIdx;
+          const isCenter = r === 0 && c === 0;
+          const isAttack = keySet.has(`${r},${c}`);
 
-function getSkillIconUrl(skillId) {
-  if (!isNonEmptyString(skillId)) return "";
-  return `${SKILL_ICON_PREFIX}${skillId}.png`;
-}
-
-function pickSkillText(langNorm, vnText, enText, cnText) {
-  if (langNorm === "EN") {
-    if (isNonEmptyString(enText)) return String(enText);
-    if (isNonEmptyString(cnText)) return String(cnText);
-    return "";
-  }
-  if (isNonEmptyString(vnText)) return String(vnText);
-  if (isNonEmptyString(enText)) return String(enText);
-  if (isNonEmptyString(cnText)) return String(cnText);
-  return "";
-}
-
-function getSkillVnDescription(vnEntry, skillNo, levelNo) {
-  if (!vnEntry || typeof vnEntry !== "object") return "";
-  const s = Number(skillNo);
-  const lv = Number(levelNo);
-  if (!Number.isFinite(s) || s < 1) return "";
-  if (!Number.isFinite(lv) || lv < 1) return "";
-
-  const prefix = `S${s}_`;
-  if (lv <= 7) return vnEntry?.[`${prefix}${lv}`] || "";
-  const m = lv - 7;
-  return vnEntry?.[`${prefix}7M${m}`] || "";
-}
-
-function getSpTypeMeta(spType, langNorm) {
-  if (spType === 8 || String(spType) === "8") return null;
-
-  const key = String(spType || "");
-  const map = {
-    INCREASE_WHEN_TAKEN_DAMAGE: {
-      bg: "#F4AF09",
-      vn: "Hồi khi chịu đòn",
-      en: "Defensive Recovery",
-      text: "#000",
-    },
-    INCREASE_WHEN_ATTACK: {
-      bg: "#FC793E",
-      vn: "Hồi theo đòn đánh",
-      en: "Offensive Recovery",
-      text: "#000",
-    },
-    INCREASE_WITH_TIME: {
-      bg: "#8EC31F",
-      vn: "Hồi theo thời gian",
-      en: "Auto Recovery",
-      text: "#000",
-    },
-  };
-
-  const meta = map[key];
-  if (meta) {
-    return {
-      bg: meta.bg,
-      textColor: meta.text,
-      label: langNorm === "EN" ? meta.en : meta.vn,
-    };
-  }
-
-  if (!isNonEmptyString(key)) return null;
-  return {
-    bg: "#D3D3D3",
-    textColor: "#000",
-    label: key,
-  };
-}
-
-function getSkillTypeMeta(skillType, langNorm) {
-  const key = String(skillType || "");
-  const map = {
-    AUTO: { vn: "Tự động", en: "Auto" },
-    MANUAL: { vn: "Thủ công", en: "Manual" },
-    PASSIVE: { vn: "Nội tại", en: "Passive" },
-  };
-  const meta = map[key];
-  if (!meta) return null;
-  return {
-    bg: "#808080",
-    textColor: "#fff",
-    label: langNorm === "EN" ? meta.en : meta.vn,
-  };
-}
-
-function getDurationMeta(duration, langNorm) {
-  const d = Number(duration);
-  if (!Number.isFinite(d)) return null;
-  if (d === -1 || d === 0) return null;
-
-  const isInt = Math.abs(d - Math.round(d)) < 1e-6;
-  const v = isInt ? String(Math.round(d)) : String(d);
-
-  return {
-    bg: "#D3D3D3",
-    textColor: "#000",
-    label: langNorm === "EN" ? `${v} seconds` : `${v} giây`,
-  };
-}
-
-function formatTimeHHMMSS(totalSeconds) {
-  const s = Number(totalSeconds);
-  if (!Number.isFinite(s) || s < 0) return "";
-  const hh = Math.floor(s / 3600);
-  const mm = Math.floor((s % 3600) / 60);
-  const ss = Math.floor(s % 60);
-  const pad = (x) => String(x).padStart(2, "0");
-  return `${pad(hh)}:${pad(mm)}:${pad(ss)}`;
-}
-
-function formatUnlockCond(cond, langNorm) {
-  if (!cond || typeof cond !== "object") return "";
-  const phase = String(cond?.phase || "");
-  const lv = Number(cond?.level);
-
-  let elite = 0;
-  if (phase === "PHASE_1") elite = 1;
-  else if (phase === "PHASE_2") elite = 2;
-
-  const levelText = Number.isFinite(lv) ? lv : "-";
-  if (langNorm === "EN") return `Requirement: Elite ${elite} level ${levelText}`;
-  return `Cấp độ yêu cầu: Elite ${elite} level ${levelText}`;
-}
-
-function MaterialIcon({ itemId, count }) {
-  const id = String(itemId || "");
-  const meta = getItemMeta(id);
-  const name = meta?.name || id;
-  const iconUrl = getItemIconUrl(id);
-  const bgUrl = getItemBgUrl(id);
-
-  return (
-    <div className="relative w-[56px] h-[56px] shrink-0" title={String(name || id)}>
-      {bgUrl ? (
-        <img
-          src={bgUrl}
-          alt=""
-          className="absolute inset-0 w-full h-full object-contain"
-          loading="lazy"
-          draggable={false}
-        />
-      ) : (
-        <div className="absolute inset-0 rounded-lg bg-black/30" />
-      )}
-
-      {iconUrl ? (
-        <img
-          src={iconUrl}
-          alt={String(name || id)}
-          className="absolute inset-0 w-full h-full p-[6px] object-contain"
-          loading="lazy"
-          draggable={false}
-        />
-      ) : null}
-
-      {Number.isFinite(Number(count)) ? (
-        <div className="absolute bottom-0 right-0 px-1 py-[1px] rounded-tl-md bg-black/70 text-white text-[11px] font-semibold">
-          {Number(count)}
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-function CostRow({ costs }) {
-  const arr = Array.isArray(costs) ? costs : [];
-  if (arr.length === 0) return <span className="text-white/40 italic">-</span>;
-
-  return (
-    <div className="flex flex-wrap gap-2">
-      {arr.map((c, idx) => (
-        <MaterialIcon key={`${c?.id || "x"}-${idx}`} itemId={c?.id} count={c?.count} />
-      ))}
-    </div>
-  );
-}
-
-function SpPill({ label, iconUrl, value }) {
-  if (!Number.isFinite(Number(value))) return null;
-
-  return (
-    <div className="flex items-center gap-2">
-      <span className="text-xs text-white/70">{label}</span>
-      <div className="relative w-[88px] h-[26px] shrink-0">
-        <img
-          src={iconUrl}
-          alt=""
-          className="absolute inset-0 w-full h-full object-contain"
-          loading="lazy"
-          draggable={false}
-        />
-        <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[13px] font-bold text-white drop-shadow">
-          {Number(value)}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function LevelPicker({ levelCount, activeIdx, onPick }) {
-  if (!Number.isFinite(levelCount) || levelCount <= 0) return null;
-
-  const btnClass = (active) =>
-    `relative w-[32px] h-[32px] rounded-md overflow-hidden border transition ${
-      active ? "border-emerald-500" : "border-white/10 hover:border-white/30"
-    }`;
-
-  return (
-    <div className="flex flex-wrap gap-2">
-      {Array.from({ length: levelCount }).map((_, i) => {
-        const levelNo = i + 1;
-        const iconUrl =
-          levelNo <= 7
-            ? `${SOLID_LV_ICON_BASE}${levelNo}.png`
-            : `${SPECIALIZED_LV_ICON_BASE}${levelNo - 7}.png`;
-
-        return (
-          <button
-            key={levelNo}
-            type="button"
-            onClick={() => onPick(i)}
-            className={btnClass(i === activeIdx)}
-            title={`Lv ${levelNo}`}
-          >
-            <img
-              src={iconUrl}
-              alt={`Lv ${levelNo}`}
-              className="absolute inset-0 w-full h-full object-contain p-[3px]"
-              loading="lazy"
-              draggable={false}
-            />
-          </button>
-        );
+          return (
+            <div
+              key={`${r},${c}`}
+              className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
+              title={isCenter ? "Stand" : isAttack ? "Attack" : ""}
+            >
+              {isCenter ? (
+                <img
+                  src={RANGE_STAND}
+                  alt="stand"
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                />
+              ) : isAttack ? (
+                <img
+                  src={RANGE_ATTACK}
+                  alt="atk"
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                />
+              ) : null}
+            </div>
+          );
+        });
       })}
     </div>
   );
 }
 
-function normalizeBuildingSlot(slot) {
-  const raw = slot?.buffData;
-  const list = Array.isArray(raw) ? raw.filter(Boolean) : [];
-  if (list.length === 0) return [];
-  if (list.length === 1) return list;
 
-  let best = list[0];
-  let bestP = phaseToIndex(best?.cond?.phase);
-  for (const it of list) {
-    const p = phaseToIndex(it?.cond?.phase);
-    if (p >= bestP) {
-      best = it;
-      bestP = p;
-    }
+function SkillRangeGrid({ baseRangeId, rangeId }) {
+  const skillGrids = rangeId ? rangeTable?.[rangeId]?.grids : null;
+  const baseGrids = baseRangeId ? rangeTable?.[baseRangeId]?.grids : null;
+
+  if (!rangeId || !Array.isArray(skillGrids)) {
+    return <div className="text-sm text-white/60">No range data.</div>;
   }
-  return best ? [best] : [];
-}
 
-function getBuildingBuffView(buffId, langNorm) {
-  const id = String(buffId || "");
-  if (!isNonEmptyString(id)) return null;
-
-  const cn = buildingData?.buffs?.[id] || null;
-  const en = buildingDataEN?.buffs?.[id] || null;
-  const base = en || cn;
-
-  const vnEntry = buildingVN?.[id] || null;
-
-  const name = pickSkillText(langNorm, vnEntry?.Name, en?.buffName || "", cn?.buffName || "");
-  const desc = pickSkillText(
-    langNorm,
-    vnEntry?.description,
-    en?.description || "",
-    cn?.description || ""
+  const skillSet = new Set(skillGrids.map((g) => `${g.row},${g.col}`));
+  const baseSet = new Set(
+    Array.isArray(baseGrids) ? baseGrids.map((g) => `${g.row},${g.col}`) : []
   );
 
-  const iconKey = base?.skillIcon || "";
-  const iconUrl = isNonEmptyString(iconKey) ? `${BUILD_SKILL_ICON_BASE}${iconKey}.png` : "";
+  const rowVals = [0, ...skillGrids.map((g) => g.row)];
+  const colVals = [0, ...skillGrids.map((g) => g.col)];
+  const minR = Math.min(...rowVals);
+  const maxR = Math.max(...rowVals);
+  const minC = Math.min(...colVals);
+  const maxC = Math.max(...colVals);
 
-  return {
-    buffColor: base?.buffColor || "#444",
-    textColor: base?.textColor || "#fff",
-    iconUrl,
-    name,
-    desc,
-  };
+  const height = maxR - minR + 1;
+  const width = maxC - minC + 1;
+
+  return (
+    <div
+      className="inline-grid gap-[2px] p-2 rounded-lg bg-black/30"
+      style={{
+        gridTemplateColumns: `repeat(${width}, 18px)`,
+        gridTemplateRows: `repeat(${height}, 18px)`,
+      }}
+    >
+      {Array.from({ length: height }).map((_, rIdx) => {
+        const r = maxR - rIdx;
+        return Array.from({ length: width }).map((__, cIdx) => {
+          const c = minC + cIdx;
+          const isCenter = r === 0 && c === 0;
+          const isInSkill = skillSet.has(`${r},${c}`);
+
+          const isBase = isInSkill && baseSet.has(`${r},${c}`);
+          const icon = isCenter ? RANGE_STAND : isInSkill ? (isBase ? RANGE_ATTACK : RANGE_ATTACK_SKILL) : "";
+
+          return (
+            <div
+              key={`${r},${c}`}
+              className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
+              title={isCenter ? "Stand" : isInSkill ? (isBase ? "Base Range" : "Extended Range") : ""}
+            >
+              {icon ? (
+                <img
+                  src={icon}
+                  alt=""
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                  loading="lazy"
+                />
+              ) : null}
+            </div>
+          );
+        });
+      })}
+    </div>
+  );
 }
 
-/* ===== InfoTable (yours) ===== */
+function MaterialIcon({ itemId, count }) {
+  const meta = getItemMeta(itemId);
 
-function InfoTable({ title, titleInline, titleRight, children }) {
+  const name = meta?.name || String(itemId || "Unknown");
+  const bgUrl = getItemBgUrl(meta?.rarity);
+  const iconUrl = getItemIconUrl(meta?.iconId);
+
+  const INNER = 44;
+  const BG_SCALE = 1.42;
+  const ICON_SCALE = 1.22;
+  const PAD = 2;
+  const outer = Math.ceil(INNER * Math.max(BG_SCALE, ICON_SCALE)) + PAD * 2;
+
   return (
-    <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
-      <div className="flex items-center justify-between gap-3 mb-3">
-        <div className="flex items-center gap-3">
-          <h3 className="text-lg font-bold">{title}</h3>
-          {titleInline}
+    <div
+      className="relative shrink-0"
+      style={{ width: outer, height: outer }}
+      title={`${name} × ${count}`}
+      aria-label={`${name} × ${count}`}
+    >
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative" style={{ width: INNER, height: INNER }}>
+          <img
+            src={bgUrl}
+            alt=""
+            className="absolute inset-0 w-full h-full object-contain origin-center"
+            style={{ transform: `scale(${BG_SCALE})` }}
+            draggable={false}
+            loading="lazy"
+          />
+
+          {iconUrl ? (
+            <img
+              src={iconUrl}
+              alt={name}
+              className="absolute inset-0 w-full h-full object-contain origin-center"
+              style={{ transform: `scale(${ICON_SCALE})` }}
+              draggable={false}
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          ) : null}
         </div>
-        {titleRight}
       </div>
 
-      <div className="text-[1.025rem] text-gray-300 leading-relaxed break-words">
-        {children}
+      <div className="absolute bottom-[2px] right-[2px] px-1.5 rounded bg-black/80 text-[13px] leading-[15px] font-bold text-white tabular-nums">
+        {count}
       </div>
     </div>
   );
 }
 
-/* ===== MAIN ===== */
+
+function InfoTable({ title, titleInline, titleRight, children }) {
+  return (
+    <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <h3 className="text-[1.375rem] font-semibold leading-snug">{title}</h3>
+          {titleInline ? <div className="shrink-0">{titleInline}</div> : null}
+        </div>
+        {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
+      </div>
+
+      <div className="h-px bg-white/10 my-3" />
+
+      {/* Text */}
+      <div className="text-[1.025rem] text-gray-300 leading-relaxed break-words">{children}</div>
+    </div>
+  );
+}
+
 
 export default function SkillsSection(props) {
-  const langNorm = React.useMemo(() => {
-    const s = String(props?.lang || props?.language || "VN").toUpperCase();
-    return s === "EN" ? "EN" : "VN";
-  }, [props?.lang, props?.language]);
-
-  const traitMap = React.useMemo(() => {
-    const src = langNorm === "EN" ? traitEN : traitVN;
-    return buildTraitMap(src);
-  }, [langNorm]);
-
+  const traitMap = React.useMemo(() => buildTraitMap(traitVN), []);
   const tagMap = React.useMemo(() => buildTagMap(tagVN), []);
-  const talentMap = React.useMemo(() => buildTalentMap(talentVN), []);
 
+  // Be tolerant with whatever the parent passes in.
   const operator = props?.operator || props?.data || null;
   const rawCharId =
     props?.charId ||
@@ -676,18 +896,7 @@ export default function SkillsSection(props) {
     operator?.charKey ||
     null;
 
-  const primaryCharTable = langNorm === "EN" ? characterTableEN : characterTable;
-  const { charKey, charData: charDataLang } = React.useMemo(
-    () => getCharEntry(rawCharId, primaryCharTable, characterTable),
-    [rawCharId, primaryCharTable]
-  );
-
-  const charDataCN = React.useMemo(() => {
-    if (!charKey) return null;
-    return characterTable?.[charKey] || null;
-  }, [charKey]);
-
-  const charData = charDataLang || charDataCN;
+  const { charKey, charData } = React.useMemo(() => getCharEntry(rawCharId), [rawCharId]);
 
   const rawTagList = charData?.tagList ?? operator?.tagList ?? [];
   const resolvedTags = React.useMemo(() => {
@@ -696,131 +905,491 @@ export default function SkillsSection(props) {
       .filter((t) => isNonEmptyString(t))
       .map((t) => {
         const key = String(t).trim();
-        const useTagMap = langNorm === "VN";
-        return useTagMap && tagMap && key in tagMap ? String(tagMap[key]) : key;
+        return tagMap && key in tagMap ? String(tagMap[key]) : key;
       });
-  }, [rawTagList, tagMap, langNorm]);
+  }, [rawTagList, tagMap]);
 
   const positionRaw = charData?.position ?? operator?.position ?? "";
+  const positionLabel =
+    positionRaw === "MELEE"
+      ? "Vị trí: Cận chiến"
+      : positionRaw === "RANGED"
+      ? "Vị trí: Tầm xa"
+      : isNonEmptyString(positionRaw)
+      ? `Vị trí: ${positionRaw}`
+      : "";
 
-  const positionLabel = React.useMemo(() => {
-    if (!isNonEmptyString(positionRaw)) return "";
-    const pos = String(positionRaw);
-    if (langNorm === "EN") {
-      if (pos === "MELEE") return "Position: Melee";
-      if (pos === "RANGED") return "Position: Ranged";
-      return `Position: ${pos}`;
+  const traitResolved = React.useMemo(() => {
+    const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
+    const rarity = charData?.rarity ?? operator?.rarity;
+
+    const baseDesc = charData?.description ?? operator?.description ?? "";
+
+    const candidates = getTraitCandidates(charData);
+
+    // No per-phase trait data → just render the base (translated) trait text.
+    if (candidates.length === 0) {
+      const { mainText, extraText } = resolveTraitTexts(
+        { subProfessionId, rarity, description: baseDesc },
+        traitMap
+      );
+      return { variants: [{ phaseIndex: 0, text: mainText, extraText }], showElite: false };
     }
-    if (pos === "MELEE") return "Vị trí: Cận chiến";
-    if (pos === "RANGED") return "Vị trí: Tầm xa";
-    return `Vị trí: ${pos}`;
-  }, [positionRaw, langNorm]);
 
-  /* === Trait/Talent phần cũ của bạn giữ nguyên ở đây...
-     (Mình không paste lại phần Trait/Talent để tránh quá dài trong chat,
-      nhưng file trên của bạn sẽ giữ đúng logic ban đầu)
-     => IMPORTANT: Khi bạn copy file này, bạn sẽ có đầy đủ phần Trait/Talent + Skills mới.
-  */
+    const variants = candidates.map(({ phaseIndex, cand }) => {
+      const desc = isNonEmptyString(cand?.description) ? cand.description : baseDesc;
 
-  // ==================================
-  // Combat skills section (NEW)
-  // ==================================
-  const charSkills = React.useMemo(() => {
-    const arr = charDataCN?.skills || charData?.skills || [];
-    return Array.isArray(arr) ? arr.filter((s) => s && isNonEmptyString(s.skillId)) : [];
-  }, [charDataCN, charData]);
+      const { mainText, extraText } = resolveTraitTexts(
+        { subProfessionId, rarity, description: desc },
+        traitMap
+      );
 
-  const [skillIdx, setSkillIdx] = React.useState(0);
-  React.useEffect(() => setSkillIdx(0), [charKey]);
+      const bbMap = buildBlackboardMap(cand?.blackboard);
+      const text = applyBlackboard(mainText, bbMap);
+      const extra = applyBlackboard(extraText, bbMap);
 
-  const selectedCharSkill = charSkills?.[skillIdx] || null;
-  const selectedSkillId = selectedCharSkill?.skillId || "";
+      return { phaseIndex, text, extraText: extra };
+    });
 
-  const skillCN = React.useMemo(() => {
-    if (!isNonEmptyString(selectedSkillId)) return null;
-    return skillTable?.[selectedSkillId] || null;
-  }, [selectedSkillId]);
+    const uniq = new Set(variants.map((v) => `${v.text}||${v.extraText || ""}`));
+    const showElite = variants.length > 1 && uniq.size > 1;
 
-  const skillEN = React.useMemo(() => {
-    if (!isNonEmptyString(selectedSkillId)) return null;
-    return skillTableEN?.[selectedSkillId] || null;
-  }, [selectedSkillId]);
+    // If all phases render the same text → use ONE (pick highest phase) and hide Elite buttons.
+    if (!showElite) {
+      return { variants: [variants[variants.length - 1]], showElite: false };
+    }
 
-  const levelsCN = skillCN?.levels || [];
-  const levelsEN = skillEN?.levels || [];
-  const levelCount = Math.max(levelsCN.length, levelsEN.length);
+    return { variants, showElite: true };
+  }, [charData, operator, traitMap]);
 
-  const maxLevelIdx = Math.max(0, levelCount - 1);
-  const [levelIdx, setLevelIdx] = React.useState(maxLevelIdx);
-  React.useEffect(() => setLevelIdx(maxLevelIdx), [selectedSkillId, maxLevelIdx]);
+  const [traitVariantIdx, setTraitVariantIdx] = React.useState(0);
 
-  const lvlCN = levelsCN?.[levelIdx] || null;
-  const lvlEN = levelsEN?.[levelIdx] || null;
-  const lvlAny = lvlCN || lvlEN;
+  React.useEffect(() => {
+    if (traitResolved?.showElite) {
+      setTraitVariantIdx(Math.max(0, (traitResolved.variants?.length || 1) - 1));
+    } else {
+      setTraitVariantIdx(0);
+    }
+  }, [charKey, traitResolved?.showElite, traitResolved?.variants?.length]);
 
-  const vnSkillEntry = React.useMemo(() => {
-    if (!charKey) return null;
-    const obj = skillVN?.[charKey];
-    return obj && typeof obj === "object" ? obj : null;
+  const safeTraitVariantIdx = Math.min(
+    Math.max(0, traitVariantIdx),
+    Math.max(0, (traitResolved.variants?.length || 1) - 1)
+  );
+
+  const currentTraitText = traitResolved?.variants?.[safeTraitVariantIdx]?.text || "";
+  const currentTraitExtraText = traitResolved?.variants?.[safeTraitVariantIdx]?.extraText || "";
+
+  const traitEliteButtons = traitResolved?.showElite ? (
+    <div className="flex items-center gap-2">
+      {traitResolved.variants.map((v, idx) => {
+        const active = idx === safeTraitVariantIdx;
+        const src = `${ELITE_ICON_BASE}elite_${v.phaseIndex}_large.png`;
+
+        return (
+          <button
+            key={`trait-elite-${v.phaseIndex}-${idx}`}
+            type="button"
+            onClick={() => setTraitVariantIdx(idx)}
+            className={`rounded-lg p-1.5 transition ${
+              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+            }`}
+            title={`E${v.phaseIndex}`}
+          >
+            <img
+              src={src}
+              alt={`E${v.phaseIndex}`}
+              className="w-8 h-8 object-contain"
+              draggable={false}
+            />
+          </button>
+        );
+      })}
+    </div>
+  ) : null;
+
+  /** -----------------------------
+ * Talents
+ * ----------------------------- */
+const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
+const talentBlocks = React.useMemo(() => {
+  const raw = charData?.talents;
+  if (!Array.isArray(raw)) return [];
+  // Filter out hidden/placeholder talent blocks (e.g. isHideTalent=true with empty name/description)
+  return raw.filter(isValidTalentBlock);
+}, [charData]);
+
+// Potential ranks that actually exist in this operator's talent candidates
+const availablePotRanks = React.useMemo(() => {
+  const set = new Set([0]); // Pot 1 always
+  for (const tb of talentBlocks) {
+    const cands = getVisibleTalentCandidates(tb);
+    if (!Array.isArray(cands) || cands.length === 0) continue;
+    for (const c of cands) {
+      const r = Number(c?.requiredPotentialRank || 0);
+      if (Number.isFinite(r)) set.add(r);
+    }
+  }
+  return [...set].filter((n) => n >= 0 && n <= 5).sort((a, b) => a - b);
+}, [talentBlocks]);
+
+const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
+React.useEffect(() => {
+  // Reset and clamp
+  setPotRank(0);
+}, [charKey]);
+
+// Elite header options: phase + optional Lv variants (e.g. E1, E1 Lv55)
+const talentHeaderOptions = React.useMemo(
+  () => collectTalentHeaderOptions(talentBlocks),
+  [talentBlocks]
+);
+
+const defaultHeaderOptIdx =
+  talentHeaderOptions.length > 0 ? talentHeaderOptions.length - 1 : 0;
+
+const [talentHeaderOptIdx, setTalentHeaderOptIdx] = React.useState(defaultHeaderOptIdx);
+
+React.useEffect(() => {
+  setTalentHeaderOptIdx(defaultHeaderOptIdx);
+}, [charKey, defaultHeaderOptIdx]);
+
+const activeTalentHeaderOpt =
+  talentHeaderOptions[Math.min(Math.max(0, talentHeaderOptIdx), Math.max(0, talentHeaderOptions.length - 1))] ||
+  { phaseIndex: 0, level: 1, showLv: false };
+
+const talent1Resolved = React.useMemo(
+  () =>
+    computeTalentResolved({
+      talentBlock: talentBlocks?.[0],
+      talentIdx: 0,
+      potRank,
+      vnEntry: vnTalentEntry,
+    }),
+  [talentBlocks, potRank, vnTalentEntry]
+);
+
+const talent2Resolved = React.useMemo(
+  () =>
+    computeTalentResolved({
+      talentBlock: talentBlocks?.[1],
+      talentIdx: 1,
+      potRank,
+      vnEntry: vnTalentEntry,
+    }),
+  [talentBlocks, potRank, vnTalentEntry]
+);
+
+const showTalentHeaderElite = talentHeaderOptions.length > 1;
+
+const talentHeaderElite = showTalentHeaderElite ? (
+  <div className="flex items-center gap-2">
+    {talentHeaderOptions.map((opt, idx) => {
+      const active = idx === talentHeaderOptIdx;
+      const src = `${ELITE_ICON_BASE}elite_${opt.phaseIndex}_large.png`;
+      return (
+        <button
+          key={`talent-header-opt-${opt.phaseIndex}-${opt.level}-${idx}`}
+          type="button"
+          onClick={() => setTalentHeaderOptIdx(idx)}
+          className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
+            active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+          }`}
+          title={opt.showLv ? `E${opt.phaseIndex} Lv${opt.level}` : `E${opt.phaseIndex}`}
+        >
+          <img
+            src={src}
+            alt={`E${opt.phaseIndex}`}
+            className="w-7 h-7 object-contain"
+            draggable={false}
+          />
+          {opt.showLv ? (
+            <span className="text-xs font-semibold tabular-nums">Lv{opt.level}</span>
+          ) : null}
+        </button>
+      );
+    })}
+  </div>
+) : null;
+
+const showPotPicker = availablePotRanks.length > 1;
+
+const potPicker = showPotPicker ? (
+  <div className="flex items-center gap-1">
+    {availablePotRanks.map((idx0) => {
+      const active = idx0 === potRank;
+      return (
+        <button
+          key={`pot-${idx0}`}
+          type="button"
+          onClick={() => setPotRank(idx0)}
+          className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
+            active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+          }`}
+          title={`Pot ${idx0 + 1}`}
+        >
+          <img
+            src={getPotIcon(idx0)}
+            alt={`pot-${idx0}`}
+            className="w-6 h-6 object-contain"
+            draggable={false}
+            loading="lazy"
+          />
+          <span className="text-sm font-semibold tabular-nums">{idx0 + 1}</span>
+        </button>
+      );
+    })}
+  </div>
+) : null;
+
+// Hide Talent 2 when it only exists at E2+ and user is viewing E0/E1
+const shouldHideTalent2 =
+  (talent2Resolved?.variants?.length || 0) > 0 &&
+  (talent2Resolved?.minPhaseIndex ?? 0) >= 2 &&
+  Number(activeTalentHeaderOpt?.phaseIndex ?? 0) < (talent2Resolved?.minPhaseIndex ?? 2);
+
+const renderTalentCard = (talentIdx, resolved) => {
+  const variants = resolved?.variants || [];
+  if (variants.length === 0) {
+    return (
+      <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+        <span className="text-white/40 italic">-</span>
+      </div>
+    );
+  }
+
+  const v =
+    pickVariantByHeaderOption(variants, activeTalentHeaderOpt) ||
+    variants[variants.length - 1];
+
+  // Title handling: some operators change Talent 1 name at Elite 2 (PHASE_2).
+  // If TitleTalent1_2 is not provided yet, avoid showing the E1 title at E2 when the in-game name actually changed.
+  let titleName = "";
+  const phaseIndexForTitle = Number(v?.phaseIndex ?? 0);
+
+  if (talentIdx === 0 && phaseIndexForTitle === 2) {
+    const vnTitleE2 = isNonEmptyString(vnTalentEntry?.TitleTalent1_2)
+      ? String(vnTalentEntry.TitleTalent1_2)
+      : "";
+
+    if (isNonEmptyString(vnTitleE2)) {
+      titleName = vnTitleE2;
+    } else {
+      const vnTitleBase = isNonEmptyString(vnTalentEntry?.TitleTalent1)
+        ? String(vnTalentEntry.TitleTalent1)
+        : "";
+
+      // Compare against the best non-E2 variant name (usually E1) to detect name changes.
+      const ref = [...variants]
+        .filter((x) => Number(x?.phaseIndex ?? 0) < 2)
+        .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level))
+        .slice(-1)[0];
+      const refName = ref?.name || "";
+      const currentName = v?.name || "";
+
+      if (isNonEmptyString(currentName) && isNonEmptyString(refName) && currentName !== refName) {
+        // Name changed at E2 -> show the in-game name until TitleTalent1_2 is provided.
+        titleName = currentName;
+      } else {
+        titleName = vnTitleBase || currentName;
+      }
+    }
+  } else {
+    titleName =
+      getTalentTitle(
+        vnTalentEntry,
+        talentIdx,
+        phaseIndexForTitle,
+        v?.level,
+        v?.requiredPotentialRank
+      ) || v?.name || "";
+  }
+  const badgeText = isNonEmptyString(titleName)
+    ? `Talent ${talentIdx + 1}: ${titleName}`
+    : `Talent ${talentIdx + 1}`;
+
+  const hasRange = isNonEmptyString(v?.rangeId);
+
+  return (
+    <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+      <div className="flex items-start gap-3">
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
+              <span className="truncate">{badgeText}</span>
+            </span>
+          </div>
+
+          <div
+            className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+            style={{ overflowWrap: "anywhere" }}
+          >
+            {isNonEmptyString(v?.text) ? (
+              renderTextWithHovers(
+                v.text,
+                `talent-${charKey || "unknown"}-${talentIdx}-e${v.phaseIndex}-lv${v.level}-pot${potRank}`
+              )
+            ) : (
+              <span className="text-white/40 italic">-</span>
+            )}
+          </div>
+        </div>
+
+        {hasRange ? (
+          <div className="shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
+            <div className="text-sm font-semibold text-white text-center mb-2">Phạm vi</div>
+            <RangeGrid rangeId={v.rangeId} />
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+};
+
+
+  // ===== Skills (Kỹ năng) =====
+  const isEnglishUI =
+    (typeof props?.lang === "string" && props.lang.toLowerCase().startsWith("en")) ||
+    (typeof props?.language === "string" && props.language.toLowerCase().startsWith("en")) ||
+    (typeof props?.locale === "string" && props.locale.toLowerCase().startsWith("en")) ||
+    props?.isEN === true ||
+    props?.isEn === true ||
+    props?.english === true;
+
+  const skillsList = React.useMemo(() => {
+    const raw = charData?.skills ?? operator?.skills ?? [];
+    if (!Array.isArray(raw)) return [];
+    return raw.filter((s) => isNonEmptyString(s?.skillId));
+  }, [charData, operator]);
+
+  const [activeSkillIdx, setActiveSkillIdx] = React.useState(0);
+  React.useEffect(() => {
+    setActiveSkillIdx(0);
   }, [charKey]);
 
-  const skillNo = skillIdx + 1;
+  const safeSkillIdx = clamp(activeSkillIdx, 0, Math.max(0, skillsList.length - 1));
+  const selectedSkillRef = skillsList?.[safeSkillIdx] || null;
+  const selectedSkillId = selectedSkillRef?.skillId || "";
+  const selectedSkillOrder = safeSkillIdx + 1;
 
-  const skillTitle = React.useMemo(() => {
-    const vnTitle = vnSkillEntry?.[`Title_S${skillNo}`];
-    const enTitle = lvlEN?.name || "";
-    const cnTitle = lvlCN?.name || lvlAny?.name || "";
-    return pickSkillText(langNorm, vnTitle, enTitle, cnTitle);
-  }, [langNorm, vnSkillEntry, skillNo, lvlEN?.name, lvlCN?.name, lvlAny?.name]);
+  const skillCnEntry = selectedSkillId ? skillTable?.[selectedSkillId] : null;
+  const skillEnEntry = selectedSkillId ? skillTableEN?.[selectedSkillId] : null;
 
-  const skillDesc = React.useMemo(() => {
-    const vnDesc = getSkillVnDescription(vnSkillEntry, skillNo, levelIdx + 1);
-    const enDesc = lvlEN?.description || "";
-    const cnDesc = lvlCN?.description || lvlAny?.description || "";
-    const base = pickSkillText(langNorm, vnDesc, enDesc, cnDesc);
-    const bb = buildBlackboardMap(lvlAny?.blackboard);
-    return applyBlackboard(base, bb);
-  }, [langNorm, vnSkillEntry, skillNo, levelIdx, lvlEN, lvlCN, lvlAny]);
+  const skillLevels = React.useMemo(() => {
+    const a = skillCnEntry?.levels;
+    const b = skillEnEntry?.levels;
+    if (Array.isArray(a) && a.length > 0) return a;
+    if (Array.isArray(b) && b.length > 0) return b;
+    return [];
+  }, [skillCnEntry, skillEnEntry]);
 
-  const spData = lvlAny?.spData || {};
-  const spTypeMeta = getSpTypeMeta(spData?.spType, langNorm);
-  const skillTypeMeta = getSkillTypeMeta(lvlAny?.skillType, langNorm);
-  const durationMeta = getDurationMeta(lvlAny?.duration, langNorm);
+  const levelCount = skillLevels.length;
+
+  const [activeSkillLevelIdx, setActiveSkillLevelIdx] = React.useState(0);
+  React.useEffect(() => {
+    setActiveSkillLevelIdx(levelCount > 0 ? levelCount - 1 : 0);
+  }, [selectedSkillId, levelCount]);
+
+  const safeSkillLevelIdx = clamp(activeSkillLevelIdx, 0, Math.max(0, levelCount - 1));
+  const currentSkillLevel = skillLevels?.[safeSkillLevelIdx] || null;
 
   const baseRangeId = React.useMemo(() => {
-    const rid =
-      charDataCN?.phases?.[2]?.rangeId ||
-      charDataCN?.phases?.[1]?.rangeId ||
-      charDataCN?.phases?.[0]?.rangeId ||
-      null;
-    return isNonEmptyString(rid) ? String(rid) : null;
-  }, [charDataCN]);
+    const phases = charData?.phases;
+    if (!Array.isArray(phases) || phases.length === 0) return "";
+    const p2 =
+      phases.find((p) => String(p?.phase || "") === "PHASE_2") ||
+      phases?.[2] ||
+      phases?.[phases.length - 1];
+    return isNonEmptyString(p2?.rangeId) ? String(p2.rangeId) : "";
+  }, [charData]);
 
-  const currentRangeId = isNonEmptyString(lvlAny?.rangeId) ? String(lvlAny.rangeId) : null;
-  const isExtendedRange = Boolean(currentRangeId && baseRangeId && currentRangeId !== baseRangeId);
-
-  const normalSkillUp = Array.isArray(charDataCN?.allSkillLvlup) ? charDataCN.allSkillLvlup : [];
-  const masteryUp = Array.isArray(selectedCharSkill?.levelUpCostCond)
-    ? selectedCharSkill.levelUpCostCond
-    : [];
-
-  // ==================================
-  // Building skills (NEW)
-  // ==================================
-  const buildingChar = React.useMemo(() => {
-    if (!charKey) return null;
-    return buildingData?.chars?.[charKey] || null;
+  const vnSkillEntry = React.useMemo(() => {
+    if (!isNonEmptyString(charKey)) return null;
+    return skillVN?.[charKey] || null;
   }, [charKey]);
 
-  const buildingSlots = React.useMemo(() => {
-    const arr = buildingChar?.buffChar;
-    if (!Array.isArray(arr)) return [];
-    return arr
-      .map((slot) => normalizeBuildingSlot(slot))
-      .filter((slot) => Array.isArray(slot) && slot.length > 0);
-  }, [buildingChar]);
+  const skillName = React.useMemo(() => {
+    const vnTitleKey = `Title_S${selectedSkillOrder}`;
+    const vnTitle = isNonEmptyString(vnSkillEntry?.[vnTitleKey])
+      ? String(vnSkillEntry[vnTitleKey]).trim()
+      : "";
 
-  // ====== UI ======
+    const enName = skillEnEntry?.levels?.[0]?.name || "";
+    const cnName = skillCnEntry?.levels?.[0]?.name || "";
+    return vnTitle || enName || cnName || "";
+  }, [vnSkillEntry, selectedSkillOrder, skillEnEntry, skillCnEntry]);
+
+  const skillDesc = React.useMemo(() => {
+    const levelNum = safeSkillLevelIdx + 1;
+    const vnKey =
+      levelNum <= 7 ? `S${selectedSkillOrder}_${levelNum}` : `S${selectedSkillOrder}_7M${levelNum - 7}`;
+
+    const vnText = isNonEmptyString(vnSkillEntry?.[vnKey]) ? String(vnSkillEntry[vnKey]) : "";
+    const enText = skillEnEntry?.levels?.[safeSkillLevelIdx]?.description || "";
+    const cnText = skillCnEntry?.levels?.[safeSkillLevelIdx]?.description || "";
+    const rawText = vnText || enText || cnText || "";
+
+    const bbMap = buildBlackboardMap(currentSkillLevel?.blackboard);
+    return applyBlackboard(rawText, bbMap);
+  }, [
+    vnSkillEntry,
+    selectedSkillOrder,
+    safeSkillLevelIdx,
+    currentSkillLevel,
+    skillEnEntry,
+    skillCnEntry,
+  ]);
+
+  const currentSpType = currentSkillLevel?.spData?.spType;
+  const currentSkillType = currentSkillLevel?.skillType;
+  const currentDuration = currentSkillLevel?.duration;
+
+  const currentRangeId = currentSkillLevel?.rangeId;
+
+  const currentInitSp = currentSkillLevel?.spData?.initSp;
+  const currentSpCost = currentSkillLevel?.spData?.spCost;
+
+  const allSkillLvlup = Array.isArray(charData?.allSkillLvlup) ? charData.allSkillLvlup : [];
+  const masteryConds = Array.isArray(selectedSkillRef?.levelUpCostCond)
+    ? selectedSkillRef.levelUpCostCond
+    : [];
+
+  // ===== Building Skills (Kỹ năng hậu cầu) =====
+  const buildingCharEntry = React.useMemo(() => {
+    if (!isNonEmptyString(charKey)) return null;
+    return buildingData?.chars?.[charKey] || buildingDataEN?.chars?.[charKey] || null;
+  }, [charKey]);
+
+  const buildingBuffCards = React.useMemo(() => {
+    const buffChar = buildingCharEntry?.buffChar;
+    if (!Array.isArray(buffChar)) return [];
+
+    const groups = buffChar
+      .map((g, idx) => ({ idx, data: Array.isArray(g?.buffData) ? g.buffData : [] }))
+      .filter((g) => Array.isArray(g.data) && g.data.length > 0);
+
+    const pickBest = (arr) => {
+      const sorted = [...arr].filter(Boolean).sort((a, b) => {
+        const pa = phaseToEliteIndex(a?.cond?.phase);
+        const pb = phaseToEliteIndex(b?.cond?.phase);
+        if (pa !== pb) return pa - pb;
+        const la = Number(a?.cond?.level || 0);
+        const lb = Number(b?.cond?.level || 0);
+        return la - lb;
+      });
+      return sorted.length > 0 ? sorted[sorted.length - 1] : null;
+    };
+
+    return groups
+      .map((g) => {
+        const best = pickBest(g.data);
+        if (!best) return null;
+        return { groupIndex: g.idx, ...best };
+      })
+      .filter(Boolean);
+  }, [buildingCharEntry]);
+
+
   return (
     <div className="space-y-3">
       {/* Tag + Position */}
@@ -838,219 +1407,359 @@ export default function SkillsSection(props) {
 
           <div className="rounded-xl border border-white/10 bg-black/20 p-3">
             {isNonEmptyString(positionLabel) ? (
-              <div className="text-white/95 font-medium leading-relaxed">{positionLabel}</div>
+              <div className="text-white/95 font-medium leading-relaxed">
+                {positionLabel}
+              </div>
             ) : (
               <span className="text-white/40 italic">-</span>
             )}
           </div>
         </div>
       </div>
+      <InfoTable title="Đặc tính/Trait" titleRight={traitEliteButtons}>
+        {isNonEmptyString(currentTraitText) ? (
+          <>
+            {renderTextWithHovers(
+              currentTraitText,
+              `trait-${charKey || "unknown"}-p${
+                traitResolved?.variants?.[safeTraitVariantIdx]?.phaseIndex ?? 0
+              }`
+            )}
 
-      {/* === Trait/Talent UI vẫn nằm ở đây (giữ nguyên file gốc bạn gửi) === */}
+            {isNonEmptyString(currentTraitExtraText) ? (
+              <>
+                <div className="h-px bg-white/10 my-4" />
 
-      {/* Skills */}
-      <InfoTable title="Kỹ năng">
-        {charSkills.length > 0 ? (
-          <div className="space-y-5">
-            {charSkills.length > 1 ? (
-              <div className="flex flex-wrap gap-2 justify-start">
-                {charSkills.map((s, idx) => {
-                  const active = idx === skillIdx;
-                  const sid = s?.skillId || "";
-                  return (
-                    <button
-                      key={`${sid}-${idx}`}
-                      type="button"
-                      onClick={() => setSkillIdx(idx)}
-                      className={[
-                        "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition",
-                        active
-                          ? "border-emerald-500 bg-emerald-500/15 text-white"
-                          : "border-white/10 bg-black/20 text-white/70 hover:text-white hover:border-white/30",
-                      ].join(" ")}
-                    >
-                      <img
-                        src={getSkillIconUrl(sid)}
-                        alt=""
-                        className="w-6 h-6 object-contain"
-                        loading="lazy"
-                        draggable={false}
-                      />
-                      <span>{`Skill ${idx + 1}`}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            ) : null}
+                <details className="mw-collapsible mw-made-collapsible">
+                  <summary className="mw-collapsible-toggle cursor-pointer select-none text-white/80 font-semibold">
+                    Thông tin bổ sung
+                  </summary>
 
-            <div className="flex flex-col lg:flex-row gap-4">
-              <div className="flex items-start gap-4 lg:w-[62%]">
-                <img
-                  src={getSkillIconUrl(selectedSkillId)}
-                  alt=""
-                  className="w-[88px] h-[88px] object-contain shrink-0"
-                  loading="lazy"
-                  draggable={false}
-                />
-
-                <div className="min-w-0 flex-1">
-                  <div className="text-white text-[1.15rem] font-bold break-words">
-                    {isNonEmptyString(skillTitle) ? skillTitle : (
-                      <span className="text-white/40 italic">-</span>
+                  <div className="mt-3">
+                    {renderTextWithHovers(
+                      currentTraitExtraText,
+                      `trait-extra-${charKey || "unknown"}-p${
+                        traitResolved?.variants?.[safeTraitVariantIdx]?.phaseIndex ?? 0
+                      }`
                     )}
                   </div>
+                </details>
+              </>
+            ) : null}
+          </>
+        ) : (
+          <span className="text-white/40 italic">-</span>
+        )}
+      </InfoTable>
 
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {spTypeMeta ? (
-                      <SkillBadge bg={spTypeMeta.bg} textColor={spTypeMeta.textColor}>
-                        {spTypeMeta.label}
-                      </SkillBadge>
-                    ) : null}
+      <InfoTable title="Thiên phú/Talent" titleInline={talentHeaderElite} titleRight={potPicker}>
+  {talentBlocks.length > 0 ? (
+    <div className="space-y-3">
+      {talentBlocks?.[0] ? renderTalentCard(0, talent1Resolved) : null}
+      {!shouldHideTalent2 && talentBlocks?.[1] ? renderTalentCard(1, talent2Resolved) : null}
+    </div>
+  ) : (
+    <span className="text-white/40 italic">-</span>
+  )}
+</InfoTable>
 
-                    {skillTypeMeta ? (
-                      <SkillBadge bg={skillTypeMeta.bg} textColor={skillTypeMeta.textColor}>
-                        {skillTypeMeta.label}
-                      </SkillBadge>
-                    ) : null}
-
-                    {durationMeta ? (
-                      <SkillBadge bg={durationMeta.bg} textColor={durationMeta.textColor}>
-                        {durationMeta.label}
-                      </SkillBadge>
-                    ) : null}
-                  </div>
-
-                  {String(lvlAny?.skillType || "") !== "PASSIVE" ? (
-                    <div className="mt-3 flex flex-wrap gap-4">
-                      <SpPill
-                        label={langNorm === "EN" ? "Initial SP:" : "SP khởi đầu:"}
-                        iconUrl={INIT_SP_ICON}
-                        value={spData?.initSp}
-                      />
-                      <SpPill
-                        label={langNorm === "EN" ? "SP Cost:" : "SP tiêu hao:"}
-                        iconUrl={SP_COST_ICON}
-                        value={spData?.spCost}
-                      />
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-
-              {currentRangeId ? (
-                <div className="lg:flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <img
-                      src={isExtendedRange ? RANGE_ATTACK : RANGE_STAND}
-                      alt=""
-                      className="w-5 h-5 object-contain"
-                      loading="lazy"
-                      draggable={false}
-                    />
-                    <div className="text-white/90 font-semibold">
-                      {langNorm === "EN" ? "Range" : "Phạm vi"}
-                    </div>
-                    {isExtendedRange ? (
-                      <SkillBadge bg="#0ea5e9" textColor="#fff">
-                        {langNorm === "EN" ? "Extended" : "Mở rộng"}
-                      </SkillBadge>
-                    ) : null}
-                  </div>
-
-                  <div className="rounded-xl border border-white/10 bg-black/20 p-3 overflow-auto">
-                    <RangeGrid rangeId={currentRangeId} />
-                  </div>
-                </div>
-              ) : null}
+      <InfoTable title="Kỹ năng">
+        {skillsList.length > 0 && isNonEmptyString(selectedSkillId) ? (
+          <div className="space-y-4">
+            {/* Skill selector */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {skillsList.map((s, idx0) => {
+                const isActive = idx0 === safeSkillIdx;
+                return (
+                  <button
+                    key={`${s.skillId}-${idx0}`}
+                    type="button"
+                    onClick={() => setActiveSkillIdx(idx0)}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition border ${
+                      isActive
+                        ? "bg-white text-black border-white"
+                        : "bg-white/10 text-white border-white/10 hover:bg-white/20"
+                    }`}
+                  >
+                    Skill {idx0 + 1}
+                  </button>
+                );
+              })}
             </div>
 
-            {levelCount > 0 ? (
-              <div className="space-y-2">
-                <div className="flex flex-wrap items-center gap-3">
-                  <div className="text-white/90 font-semibold">
-                    {langNorm === "EN" ? "Skill Level" : "Cấp kỹ năng"}
-                  </div>
-
-                  <LevelPicker levelCount={levelCount} activeIdx={levelIdx} onPick={setLevelIdx} />
+            {/* Skill header + range */}
+            <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+              <div className="flex flex-col md:flex-row md:items-start gap-4">
+                <div className="shrink-0">
+                  <img
+                    src={getSkillIconUrl(selectedSkillId)}
+                    alt={selectedSkillId}
+                    className="w-16 h-16 object-contain"
+                    draggable={false}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
                 </div>
 
-                <div className="rounded-xl border border-white/10 bg-black/20 p-3">
-                  {isNonEmptyString(skillDesc) ? (
-                    renderTextWithHovers(skillDesc, `skill-desc-${charKey}-${selectedSkillId}-lv${levelIdx}`)
-                  ) : (
-                    <span className="text-white/40 italic">-</span>
+                <div className="min-w-0 flex-1">
+                  <div className="text-lg font-semibold text-white break-words">
+                    {isNonEmptyString(skillName) ? skillName : `Skill ${selectedSkillOrder}`}
+                  </div>
+
+                  {/* Badges */}
+                  <div className="mt-2 flex items-center gap-2 flex-wrap">
+                    {Number(currentSpType) === 8 || String(currentSpType) === "8" ? null : (
+                      (() => {
+                        const k = String(currentSpType || "");
+                        const meta = SP_TYPE_META?.[k];
+                        const label = meta
+                          ? isEnglishUI
+                            ? meta.en
+                            : meta.vi
+                          : k;
+                        const bg = meta?.bg || "#808080";
+                        return isNonEmptyString(label) ? (
+                          <span
+                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold"
+                            style={{ backgroundColor: bg, color: "#000" }}
+                          >
+                            {label}
+                          </span>
+                        ) : null;
+                      })()
+                    )}
+
+                    {isNonEmptyString(currentSkillType) ? (
+                      <span
+                        className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white"
+                        style={{ backgroundColor: "#808080" }}
+                      >
+                        {SKILL_TYPE_META?.[currentSkillType]?.[isEnglishUI ? "en" : "vi"] ||
+                          String(currentSkillType)}
+                      </span>
+                    ) : null}
+
+                    {(() => {
+                      const d = Number(currentDuration);
+                      if (!Number.isFinite(d) || d <= 0 || d === -1) return null;
+                      const v = isAlmostInt(d) ? String(Math.round(d)) : trimFixed(d, 1);
+                      return (
+                        <span
+                          className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                          style={{ backgroundColor: "#D3D3D3" }}
+                        >
+                          {isEnglishUI ? `${v} seconds` : `${v} giây`}
+                        </span>
+                      );
+                    })()}
+                  </div>
+
+                  {/* initSp + spCost */}
+                  {String(currentSkillType || "") === "PASSIVE" ? null : (
+                    <div className="mt-3 flex items-center gap-6 flex-wrap">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white/70">
+                          {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
+                        </span>
+                        <img
+                          src={INIT_SP_ICON}
+                          alt="init-sp"
+                          className="w-6 h-6 object-contain"
+                          draggable={false}
+                          loading="lazy"
+                        />
+                        <span className="text-sm font-semibold text-white tabular-nums">
+                          {Number(currentInitSp) || 0}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white/70">
+                          {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
+                        </span>
+                        <img
+                          src={SP_COST_ICON}
+                          alt="sp-cost"
+                          className="w-6 h-6 object-contain"
+                          draggable={false}
+                          loading="lazy"
+                        />
+                        <span className="text-sm font-semibold text-white tabular-nums">
+                          {Number(currentSpCost) || 0}
+                        </span>
+                      </div>
+                    </div>
                   )}
                 </div>
+
+                {/* Range */}
+                {isNonEmptyString(currentRangeId) ? (
+                  <div className="shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
+                    <div className="text-sm font-semibold text-white text-center mb-2">
+                      {isEnglishUI ? "Range" : "Phạm vi"}
+                    </div>
+                    <SkillRangeGrid baseRangeId={baseRangeId} rangeId={currentRangeId} />
+                  </div>
+                ) : null}
               </div>
-            ) : null}
 
-            <div className="space-y-3">
-              <div className="text-white font-semibold">
-                {langNorm === "EN" ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}
-              </div>
-
-              {normalSkillUp.length > 0 ? (
-                <div className="space-y-3">
-                  {normalSkillUp.map((u, i) => {
-                    const condText = formatUnlockCond(u?.unlockCond, langNorm);
-                    return (
-                      <div key={`normal-${i}`} className="rounded-xl border border-white/10 bg-black/20 p-3 space-y-2">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <SkillBadge bg="#111827" textColor="#fff">
-                            {`Lv ${i + 1} → Lv ${i + 2}`}
-                          </SkillBadge>
-                          {isNonEmptyString(condText) ? (
-                            <SkillBadge bg="#1f2937" textColor="#fff">
-                              {condText}
-                            </SkillBadge>
-                          ) : null}
-                        </div>
-                        <CostRow costs={u?.lvlUpCost} />
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <span className="text-white/40 italic">-</span>
-              )}
-
-              {masteryUp.length > 0 ? (
-                <div className="space-y-3 pt-2">
-                  <div className="text-white/90 font-semibold">
-                    {langNorm === "EN" ? "Mastery" : "Chuyên tinh"}
+              {/* Levels + Description */}
+              {levelCount > 0 ? (
+                <div className="mt-4">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {skillLevels.map((_, idx0) => {
+                      const lv = idx0 + 1;
+                      const isActive = idx0 === safeSkillLevelIdx;
+                      const icon = getSkillLevelIconUrl(lv);
+                      return (
+                        <button
+                          key={`skill-lv-${selectedSkillId}-${lv}`}
+                          type="button"
+                          onClick={() => setActiveSkillLevelIdx(idx0)}
+                          className={`rounded-lg border transition px-2 py-1 ${
+                            isActive
+                              ? "bg-white text-black border-white"
+                              : "bg-white/10 text-white border-white/10 hover:bg-white/20"
+                          }`}
+                          title={`Lv ${lv}`}
+                        >
+                          {icon ? (
+                            <img
+                              src={icon}
+                              alt={`lv-${lv}`}
+                              className="w-7 h-7 object-contain"
+                              draggable={false}
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-sm font-semibold tabular-nums">{lv}</span>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
 
-                  {masteryUp.map((u, i) => {
-                    const condText = formatUnlockCond(u?.unlockCond, langNorm);
-                    const timeText = formatTimeHHMMSS(u?.lvlUpTime);
+                  <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
+                    <div
+                      className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                      style={{ overflowWrap: "anywhere" }}
+                    >
+                      {isNonEmptyString(skillDesc) ? (
+                        renderTextWithHovers(
+                          skillDesc,
+                          `skill-${charKey || "unknown"}-${selectedSkillId}-lv${safeSkillLevelIdx + 1}`
+                        )
+                      ) : (
+                        <span className="text-white/40 italic">-</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+
+              {/* Upgrade materials */}
+              <div className="mt-4">
+                <div className="text-base font-semibold text-white">
+                  {isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}
+                </div>
+
+                <div className="mt-2 space-y-3">
+                  {/* Lv 1-7 (allSkillLvlup) */}
+                  {allSkillLvlup.map((row, idx0) => {
+                    const costs = Array.isArray(row?.lvlUpCost) ? row.lvlUpCost : [];
+                    const unlockCond = row?.unlockCond;
+                    const elite = phaseToEliteIndex(unlockCond?.phase);
+                    const lvReq = Number(unlockCond?.level || 0) || 1;
+                    const reqLabel = isEnglishUI
+                      ? `Required: Elite ${elite} level ${lvReq}`
+                      : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
 
                     return (
-                      <div key={`mastery-${i}`} className="rounded-xl border border-white/10 bg-black/20 p-3 space-y-2">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <SkillBadge bg="#111827" textColor="#fff">
-                            {langNorm === "EN"
-                              ? `Mastery ${i + 1} (Lv 7 → Lv ${8 + i})`
-                              : `Chuyên tinh ${i + 1} (Lv 7 → Lv ${8 + i})`}
-                          </SkillBadge>
-                          {isNonEmptyString(condText) ? (
-                            <SkillBadge bg="#1f2937" textColor="#fff">
-                              {condText}
-                            </SkillBadge>
-                          ) : null}
+                      <div
+                        key={`skill-up-${idx0}`}
+                        className="rounded-lg bg-white/5 p-3 flex flex-col gap-2"
+                      >
+                        <div className="flex items-center justify-between gap-3 flex-wrap">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-sm font-semibold text-white">
+                              Lv {idx0 + 1} → {idx0 + 2}
+                            </span>
+
+                            {unlockCond ? (
+                              <span
+                                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                                style={{ backgroundColor: "#D3D3D3" }}
+                              >
+                                {reqLabel}
+                              </span>
+                            ) : null}
+                          </div>
                         </div>
 
-                        {isNonEmptyString(timeText) ? (
-                          <div className="text-sm text-white/75">
-                            {langNorm === "EN" ? `Upgrade time: ${timeText}` : `Thời gian nâng cấp: ${timeText}`}
-                          </div>
-                        ) : null}
+                        <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
+                          {costs.map((c, j) =>
+                            c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
+                              <MaterialIcon key={`${c.id}-${idx0}-${j}`} itemId={c.id} count={c.count} />
+                            ) : null
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
 
-                        <CostRow costs={u?.levelUpCost} />
+                  {/* Lv 8-10 (mastery) */}
+                  {masteryConds.map((row, idx0) => {
+                    const costs = Array.isArray(row?.levelUpCost) ? row.levelUpCost : [];
+                    const unlockCond = row?.unlockCond;
+                    const elite = phaseToEliteIndex(unlockCond?.phase);
+                    const lvReq = Number(unlockCond?.level || 0) || 1;
+
+                    const reqLabel = isEnglishUI
+                      ? `Required: Elite ${elite} level ${lvReq}`
+                      : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
+
+                    const timeLabel = isEnglishUI
+                      ? `Training time: ${formatHMS(row?.lvlUpTime)}`
+                      : `Thời gian nâng cấp: ${formatHMS(row?.lvlUpTime)}`;
+
+                    return (
+                      <div
+                        key={`skill-mastery-${idx0}`}
+                        className="rounded-lg bg-white/5 p-3 flex flex-col gap-2"
+                      >
+                        <div className="flex items-center justify-between gap-3 flex-wrap">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-sm font-semibold text-white">Lv {7 + idx0 + 1}</span>
+
+                            {unlockCond ? (
+                              <span
+                                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                                style={{ backgroundColor: "#D3D3D3" }}
+                              >
+                                {reqLabel}
+                              </span>
+                            ) : null}
+
+                            {row?.lvlUpTime != null ? (
+                              <span className="text-xs text-white/70">{timeLabel}</span>
+                            ) : null}
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
+                          {costs.map((c, j) =>
+                            c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
+                              <MaterialIcon key={`${c.id}-${idx0}-${j}`} itemId={c.id} count={c.count} />
+                            ) : null
+                          )}
+                        </div>
                       </div>
                     );
                   })}
                 </div>
-              ) : null}
+              </div>
             </div>
           </div>
         ) : (
@@ -1058,53 +1767,93 @@ export default function SkillsSection(props) {
         )}
       </InfoTable>
 
-      {/* Building Skills */}
-      <InfoTable title="Kỹ năng hậu cần">
-        {buildingSlots.length > 0 ? (
+      <InfoTable title="Kỹ năng hậu cầu">
+        {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
           <div className="space-y-3">
-            {buildingSlots.map((slot, slotIdx) => (
-              <div key={`bslot-${slotIdx}`} className="rounded-xl border border-white/10 bg-black/20 p-3 space-y-3">
-                {slot.map((b, idx) => {
-                  const view = getBuildingBuffView(b?.buffId, langNorm);
-                  if (!view) return null;
+            {buildingBuffCards.map((b, idx0) => {
+              const buffId = b?.buffId;
+              const cond = b?.cond;
 
-                  const condText = formatUnlockCond(b?.cond, langNorm);
+              const cn = buffId ? buildingData?.buffs?.[buffId] : null;
+              const en = buffId ? buildingDataEN?.buffs?.[buffId] : null;
+              const def = en || cn || null;
 
-                  return (
-                    <div key={`${b?.buffId || "x"}-${idx}`} className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        {view.iconUrl ? (
-                          <img src={view.iconUrl} alt="" className="w-10 h-10 object-contain shrink-0" loading="lazy" draggable={false} />
-                        ) : null}
+              const vn = buffId ? buildingVN?.[buffId] : null;
 
-                        <div className="min-w-0 flex-1 flex flex-wrap items-center gap-2">
+              const name =
+                (isNonEmptyString(vn?.Name) ? String(vn.Name) : "") ||
+                def?.buffName ||
+                String(buffId || "");
+
+              const desc =
+                (isNonEmptyString(vn?.description) ? String(vn.description) : "") ||
+                def?.description ||
+                "";
+
+              const iconKey = def?.skillIcon || "";
+              const iconUrl = isNonEmptyString(iconKey)
+                ? `${BUILDING_SKILL_ICON_BASE}${String(iconKey).trim()}.png`
+                : "";
+
+              const bg = def?.buffColor || "#FFFFFF";
+              const tc = def?.textColor || "#000000";
+
+              const elite = phaseToEliteIndex(cond?.phase);
+              const lvReq = Number(cond?.level || 0) || 1;
+
+              return (
+                <div key={`${buffId}-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
+                  <div className="flex items-start gap-3">
+                    {iconUrl ? (
+                      <img
+                        src={iconUrl}
+                        alt={String(buffId || "")}
+                        className="w-12 h-12 object-contain shrink-0"
+                        draggable={false}
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    ) : null}
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span
+                          className="inline-flex items-center rounded-md px-2 py-1 text-sm font-semibold max-w-full"
+                          style={{ backgroundColor: bg, color: tc }}
+                          title={name}
+                        >
+                          <span className="truncate">{name}</span>
+                        </span>
+
+                        {cond ? (
                           <span
-                            className="px-2 py-1 rounded-md text-sm font-bold leading-none"
-                            style={{ backgroundColor: view.buffColor, color: view.textColor }}
+                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                            style={{ backgroundColor: "#D3D3D3" }}
                           >
-                            {isNonEmptyString(view.name) ? view.name : b?.buffId}
+                            {isEnglishUI ? `Elite ${elite} level ${lvReq}` : `Elite ${elite} level ${lvReq}`}
                           </span>
+                        ) : null}
+                      </div>
 
-                          {isNonEmptyString(condText) ? (
-                            <SkillBadge bg="#1f2937" textColor="#fff">
-                              {condText}
-                            </SkillBadge>
-                          ) : null}
+                      <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
+                        <div
+                          className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                          style={{ overflowWrap: "anywhere" }}
+                        >
+                          {isNonEmptyString(desc) ? (
+                            renderTextWithHovers(desc, `bskill-${charKey || "unknown"}-${buffId}-${idx0}`)
+                          ) : (
+                            <span className="text-white/40 italic">-</span>
+                          )}
                         </div>
                       </div>
-
-                      <div className="rounded-xl border border-white/10 bg-black/20 p-3">
-                        {isNonEmptyString(view.desc) ? (
-                          renderTextWithHovers(view.desc, `bskill-${charKey}-${b?.buffId}-${slotIdx}-${idx}`)
-                        ) : (
-                          <span className="text-white/40 italic">-</span>
-                        )}
-                      </div>
                     </div>
-                  );
-                })}
-              </div>
-            ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>
