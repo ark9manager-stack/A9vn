@@ -1354,11 +1354,107 @@ const renderTalentCard = (talentIdx, resolved) => {
     ? selectedSkillRef.levelUpCostCond
     : [];
 
+
+  const selectedUpgradeInfo = React.useMemo(() => {
+    const lv = safeSkillLevelIdx + 1;
+
+    // Lv 1 has no upgrade cost
+    if (lv <= 1) return null;
+
+    // Lv 2-7
+    if (lv <= 7) {
+      const row = allSkillLvlup?.[lv - 2] || null;
+      const costs = Array.isArray(row?.lvlUpCost) ? row.lvlUpCost : [];
+      const unlockCond = row?.unlockCond || null;
+
+      return {
+        label: `Lv ${lv - 1} → ${lv}`,
+        unlockCond,
+        time: null,
+        costs,
+      };
+    }
+
+    // Lv 7 Mastery 1-3 (mapped from Lv 8-10)
+    const m = lv - 7;
+    const row = masteryConds?.[m - 1] || null;
+    if (!row) return null;
+
+    const costs = Array.isArray(row?.levelUpCost) ? row.levelUpCost : [];
+    const unlockCond = row?.unlockCond || null;
+    const time = row?.lvlUpTime != null ? formatHMS(row.lvlUpTime) : null;
+
+    return {
+      label: `Lv 7 Mastery ${m}`,
+      unlockCond,
+      time,
+      costs,
+    };
+  }, [safeSkillLevelIdx, allSkillLvlup, masteryConds]);
+
   // ===== Building Skills (Kỹ năng hậu cầu) =====
   const buildingCharEntry = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
     return buildingData?.chars?.[charKey] || buildingDataEN?.chars?.[charKey] || null;
   }, [charKey]);
+
+  const buildingEliteOptions = React.useMemo(() => {
+    const buffChar = buildingCharEntry?.buffChar;
+    if (!Array.isArray(buffChar)) return [];
+
+    let maxElite = 0;
+    buffChar.forEach((g) => {
+      const arr = Array.isArray(g?.buffData) ? g.buffData : [];
+      arr.forEach((b) => {
+        const e = phaseToEliteIndex(b?.cond?.phase);
+        if (e > maxElite) maxElite = e;
+      });
+    });
+
+    return Array.from({ length: maxElite + 1 }, (_, i) => i);
+  }, [buildingCharEntry]);
+
+  const [buildingEliteIdx, setBuildingEliteIdx] = React.useState(0);
+  React.useEffect(() => {
+    if (buildingEliteOptions.length > 0) {
+      setBuildingEliteIdx(buildingEliteOptions[buildingEliteOptions.length - 1]);
+    } else {
+      setBuildingEliteIdx(0);
+    }
+  }, [charKey, buildingEliteOptions.length]);
+
+  const buildingEliteButtons = buildingEliteOptions.length > 1 ? (
+    <div className="flex items-center gap-2 flex-wrap">
+      {buildingEliteOptions.map((e) => {
+        const active = e === buildingEliteIdx;
+        const src = `${ELITE_ICON_BASE}elite_${e}_large.png`;
+
+        return (
+          <button
+            key={`bskill-elite-${charKey || "unknown"}-${e}`}
+            type="button"
+            onClick={() => setBuildingEliteIdx(e)}
+            className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
+              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+            }`}
+            title={`Elite ${e}`}
+          >
+            <img
+              src={src}
+              alt={`E${e}`}
+              className="w-6 h-6 object-contain"
+              draggable={false}
+              loading="lazy"
+              onError={(ev) => {
+                ev.currentTarget.style.display = "none";
+              }}
+            />
+            <span className="text-xs font-semibold text-white">E{e}</span>
+          </button>
+        );
+      })}
+    </div>
+  ) : null;
 
   const buildingBuffCards = React.useMemo(() => {
     const buffChar = buildingCharEntry?.buffChar;
@@ -1368,8 +1464,10 @@ const renderTalentCard = (talentIdx, resolved) => {
       .map((g, idx) => ({ idx, data: Array.isArray(g?.buffData) ? g.buffData : [] }))
       .filter((g) => Array.isArray(g.data) && g.data.length > 0);
 
-    const pickBest = (arr) => {
-      const sorted = [...arr].filter(Boolean).sort((a, b) => {
+    const pickBestUpTo = (arr) => {
+      const filtered = [...arr].filter((a) => phaseToEliteIndex(a?.cond?.phase) <= buildingEliteIdx);
+
+      const sorted = filtered.filter(Boolean).sort((a, b) => {
         const pa = phaseToEliteIndex(a?.cond?.phase);
         const pb = phaseToEliteIndex(b?.cond?.phase);
         if (pa !== pb) return pa - pb;
@@ -1377,17 +1475,19 @@ const renderTalentCard = (talentIdx, resolved) => {
         const lb = Number(b?.cond?.level || 0);
         return la - lb;
       });
+
       return sorted.length > 0 ? sorted[sorted.length - 1] : null;
     };
 
     return groups
       .map((g) => {
-        const best = pickBest(g.data);
+        const best = pickBestUpTo(g.data);
         if (!best) return null;
         return { groupIndex: g.idx, ...best };
       })
       .filter(Boolean);
-  }, [buildingCharEntry]);
+  }, [buildingCharEntry, buildingEliteIdx]);
+
 
 
   return (
@@ -1494,7 +1594,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                   <img
                     src={getSkillIconUrl(selectedSkillId)}
                     alt={selectedSkillId}
-                    className="w-16 h-16 object-contain"
+                    className="w-[72px] h-[72px] object-contain"
                     draggable={false}
                     loading="lazy"
                     onError={(e) => {
@@ -1563,32 +1663,36 @@ const renderTalentCard = (talentIdx, resolved) => {
                         <span className="text-xs text-white/70">
                           {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
                         </span>
-                        <img
-                          src={INIT_SP_ICON}
-                          alt="init-sp"
-                          className="w-6 h-6 object-contain"
-                          draggable={false}
-                          loading="lazy"
-                        />
-                        <span className="text-sm font-semibold text-white tabular-nums">
-                          {Number(currentInitSp) || 0}
-                        </span>
+                        <div className="relative w-[52px] h-[28px] shrink-0">
+                          <img
+                            src={INIT_SP_ICON}
+                            alt="init-sp"
+                            className="w-full h-full object-contain"
+                            draggable={false}
+                            loading="lazy"
+                          />
+                          <span className="absolute right-[7px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                            {Number(currentInitSp) || 0}
+                          </span>
+                        </div>
                       </div>
 
                       <div className="flex items-center gap-2">
                         <span className="text-xs text-white/70">
                           {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
                         </span>
-                        <img
-                          src={SP_COST_ICON}
-                          alt="sp-cost"
-                          className="w-6 h-6 object-contain"
-                          draggable={false}
-                          loading="lazy"
-                        />
-                        <span className="text-sm font-semibold text-white tabular-nums">
-                          {Number(currentSpCost) || 0}
-                        </span>
+                        <div className="relative w-[52px] h-[28px] shrink-0">
+                          <img
+                            src={SP_COST_ICON}
+                            alt="sp-cost"
+                            className="w-full h-full object-contain"
+                            draggable={false}
+                            loading="lazy"
+                          />
+                          <span className="absolute right-[7px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                            {Number(currentSpCost) || 0}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -1623,7 +1727,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                               ? "bg-white text-black border-white"
                               : "bg-white/10 text-white border-white/10 hover:bg-white/20"
                           }`}
-                          title={`Lv ${lv}`}
+                          title={lv <= 7 ? `Lv ${lv}` : `Lv 7 Mastery ${lv - 7}`}
                         >
                           {icon ? (
                             <img
@@ -1639,7 +1743,52 @@ const renderTalentCard = (talentIdx, resolved) => {
                         </button>
                       );
                     })}
-                  </div>
+                  
+                  {selectedUpgradeInfo ? (
+                    <div className="mt-3 rounded-lg bg-white/5 p-3">
+                      <div className="text-xs text-white/70 mb-2">{isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}</div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-sm font-semibold text-white">{selectedUpgradeInfo.label}</span>
+
+                        {selectedUpgradeInfo.unlockCond ? (
+                          <span
+                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                            style={{ backgroundColor: "#D3D3D3" }}
+                          >
+                            {(() => {
+                              const elite = phaseToEliteIndex(selectedUpgradeInfo.unlockCond?.phase);
+                              const lvReq = Number(selectedUpgradeInfo.unlockCond?.level || 0) || 1;
+                              return isEnglishUI
+                                ? `Required: Elite ${elite} level ${lvReq}`
+                                : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
+                            })()}
+                          </span>
+                        ) : null}
+
+                        {isNonEmptyString(selectedUpgradeInfo.time) ? (
+                          <span
+                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                            style={{ backgroundColor: "#D3D3D3" }}
+                          >
+                            {isEnglishUI
+                              ? `Training time: ${selectedUpgradeInfo.time}`
+                              : `Thời gian nâng cấp: ${selectedUpgradeInfo.time}`}
+                          </span>
+                        ) : null}
+                      </div>
+
+                      <div className="mt-2 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
+                        {Array.isArray(selectedUpgradeInfo.costs)
+                          ? selectedUpgradeInfo.costs.map((c, j) =>
+                              c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
+                                <MaterialIcon key={`${c.id}-${selectedSkillId}-${safeSkillLevelIdx}-${j}`} itemId={c.id} count={c.count} />
+                              ) : null
+                            )
+                          : null}
+                      </div>
+                    </div>
+                  ) : null}
+</div>
 
                   <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
                     <div
@@ -1659,108 +1808,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                 </div>
               ) : null}
 
-              {/* Upgrade materials */}
-              <div className="mt-4">
-                <div className="text-base font-semibold text-white">
-                  {isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}
-                </div>
-
-                <div className="mt-2 space-y-3">
-                  {/* Lv 1-7 (allSkillLvlup) */}
-                  {allSkillLvlup.map((row, idx0) => {
-                    const costs = Array.isArray(row?.lvlUpCost) ? row.lvlUpCost : [];
-                    const unlockCond = row?.unlockCond;
-                    const elite = phaseToEliteIndex(unlockCond?.phase);
-                    const lvReq = Number(unlockCond?.level || 0) || 1;
-                    const reqLabel = isEnglishUI
-                      ? `Required: Elite ${elite} level ${lvReq}`
-                      : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
-
-                    return (
-                      <div
-                        key={`skill-up-${idx0}`}
-                        className="rounded-lg bg-white/5 p-3 flex flex-col gap-2"
-                      >
-                        <div className="flex items-center justify-between gap-3 flex-wrap">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-sm font-semibold text-white">
-                              Lv {idx0 + 1} → {idx0 + 2}
-                            </span>
-
-                            {unlockCond ? (
-                              <span
-                                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                                style={{ backgroundColor: "#D3D3D3" }}
-                              >
-                                {reqLabel}
-                              </span>
-                            ) : null}
                           </div>
-                        </div>
-
-                        <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
-                          {costs.map((c, j) =>
-                            c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
-                              <MaterialIcon key={`${c.id}-${idx0}-${j}`} itemId={c.id} count={c.count} />
-                            ) : null
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-
-                  {/* Lv 8-10 (mastery) */}
-                  {masteryConds.map((row, idx0) => {
-                    const costs = Array.isArray(row?.levelUpCost) ? row.levelUpCost : [];
-                    const unlockCond = row?.unlockCond;
-                    const elite = phaseToEliteIndex(unlockCond?.phase);
-                    const lvReq = Number(unlockCond?.level || 0) || 1;
-
-                    const reqLabel = isEnglishUI
-                      ? `Required: Elite ${elite} level ${lvReq}`
-                      : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`;
-
-                    const timeLabel = isEnglishUI
-                      ? `Training time: ${formatHMS(row?.lvlUpTime)}`
-                      : `Thời gian nâng cấp: ${formatHMS(row?.lvlUpTime)}`;
-
-                    return (
-                      <div
-                        key={`skill-mastery-${idx0}`}
-                        className="rounded-lg bg-white/5 p-3 flex flex-col gap-2"
-                      >
-                        <div className="flex items-center justify-between gap-3 flex-wrap">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-sm font-semibold text-white">Lv {7 + idx0 + 1}</span>
-
-                            {unlockCond ? (
-                              <span
-                                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                                style={{ backgroundColor: "#D3D3D3" }}
-                              >
-                                {reqLabel}
-                              </span>
-                            ) : null}
-
-                            {row?.lvlUpTime != null ? (
-                              <span className="text-xs text-white/70">{timeLabel}</span>
-                            ) : null}
-                          </div>
-                        </div>
-
-                        <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
-                          {costs.map((c, j) =>
-                            c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0 ? (
-                              <MaterialIcon key={`${c.id}-${idx0}-${j}`} itemId={c.id} count={c.count} />
-                            ) : null
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>
@@ -1770,6 +1818,7 @@ const renderTalentCard = (talentIdx, resolved) => {
       <InfoTable title="Kỹ năng hậu cầu">
         {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
           <div className="space-y-3">
+            {buildingEliteButtons}
             {buildingBuffCards.map((b, idx0) => {
               const buffId = b?.buffId;
               const cond = b?.cond;
