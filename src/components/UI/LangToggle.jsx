@@ -1,10 +1,12 @@
 import React from "react";
 
-const LangToggle = ({ value = "EN", onChange }) => {
-  const isEN = value === "EN";
+const LangToggle = ({ value = "VN", onChange }) => {
+  const isEN = String(value || "VN").toUpperCase() === "EN";
 
   const handleChange = () => {
-    onChange(isEN ? "VN" : "EN");
+    if (typeof onChange === "function") {
+      onChange(isEN ? "VN" : "EN");
+    }
   };
 
   return (

@@ -31,8 +31,8 @@ const OperatorSidebar = ({
 }) => {
   // normalize lang to EN/VN
   const langNorm = useMemo(() => {
-    const s = String(lang || "EN").toUpperCase();
-    return s === "VN" ? "VN" : "EN";
+    const s = String(lang || "VN").toUpperCase();
+    return s === "EN" ? "EN" : "VN";
   }, [lang]);
 
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
@@ -45,7 +45,7 @@ const OperatorSidebar = ({
     return charEntry?.displayNumber || "";
   }, [charEntry]);
 
-  // ✅ profession / subProfessionId from character_table.json
+  //profession / subProfessionId from character_table.json
   const profession = useMemo(() => {
     return charEntry?.profession || "";
   }, [charEntry]);
@@ -176,7 +176,13 @@ const OperatorSidebar = ({
 
       {/* Lang Toggle */}
       <div className="mt-2 flex justify-center">
-        <LangToggle value={langNorm} onChange={onLangChange} />
+        <LangToggle
+          value={langNorm}
+          onChange={(next) => {
+            const s = String(next || "VN").toUpperCase();
+            onLangChange(s === "EN" ? "EN" : "VN");
+          }}
+        />
       </div>
 
       {/* Tabs */}
