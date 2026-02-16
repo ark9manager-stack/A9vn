@@ -1699,7 +1699,7 @@ const renderTalentCard = (talentIdx, resolved) => {
       {/* Tag + Position */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div className="rounded-xl border border-white/10 bg-black/20 p-3">
+          <div className="pt-2">
             {resolvedTags.length > 0 ? (
               <div className="text-white/95 font-medium break-words leading-relaxed">
                 {`Tag: ${resolvedTags.join(", ")}`}
@@ -1709,7 +1709,7 @@ const renderTalentCard = (talentIdx, resolved) => {
             )}
           </div>
 
-          <div className="rounded-xl border border-white/10 bg-black/20 p-3">
+          <div className="pt-2">
             {isNonEmptyString(positionLabel) ? (
               <div className="text-white/95 font-medium leading-relaxed">
                 {positionLabel}
@@ -2111,12 +2111,12 @@ const renderTalentCard = (talentIdx, resolved) => {
                             return (
                               <div
                                 key={`term-${buffId || "unknown"}-${termId}`}
-                                className="rounded-xl border border-white/10 bg-black/20 p-3"
+                                className="pt-2"
                               >
-                                <div className="text-white/90 font-semibold mb-1">
-                                  {tName}:
+                                <div className="text-white/80 text-sm font-semibold">
+                                  {tName}: <span className="text-white/50 font-normal">ghi chú cho dòng gạch chân</span>
                                 </div>
-                                <div className="text-sm text-white/80 leading-relaxed break-words">
+                                <div className="text-sm text-white/80 leading-relaxed break-words mt-1">
                                   {isNonEmptyString(tDesc)
                                     ? renderTextWithHovers(tDesc, `term-${buffId || "unknown"}-${termId}`)
                                     : <span className="text-white/40 italic">-</span>}
