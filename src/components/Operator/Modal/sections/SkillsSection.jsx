@@ -484,7 +484,9 @@ const getItemIconUrl = (iconId) => {
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 };
 
-const getSkillIconUrl = (skillId) => {
+const getSkillIconUrl = (skillId, iconId) => {
+  const iconKey = String(iconId || "").trim();
+  if (iconKey) return `${SKILL_ICON_BASE}${iconKey}.png`;
   const key = String(skillId || "").trim();
   if (!key) return "";
   return `${SKILL_ICON_BASE}${key}.png`;
@@ -775,6 +777,43 @@ function collectTalentHeaderOptions(talentBlocks) {
   return options;
 }
 
+
+
+function collectBuildingHeaderOptions(buffChar) {
+  const map = new Map();
+  if (!Array.isArray(buffChar)) return [];
+
+  for (const g of buffChar) {
+    const arr = Array.isArray(g?.buffData) ? g.buffData : [];
+    for (const b of arr) {
+      const p = phaseToEliteIndex(b?.cond?.phase);
+      const l = Number(b?.cond?.level || 1);
+      const lvl = Number.isFinite(l) ? l : 1;
+
+      if (!map.has(p)) map.set(p, new Set());
+      map.get(p).add(lvl);
+    }
+  }
+
+  const phases = [...map.keys()]
+    .filter((n) => n >= 0 && n <= 2)
+    .sort((a, b) => a - b);
+
+  const options = [];
+  for (const p of phases) {
+    const levels = [...(map.get(p) || [])].sort((a, b) => a - b);
+    if (levels.length === 0) continue;
+
+    const baseLevel = levels[0];
+    options.push({ phaseIndex: p, level: baseLevel, showLv: false });
+
+    for (const lvl of levels.slice(1)) {
+      options.push({ phaseIndex: p, level: lvl, showLv: true });
+    }
+  }
+
+  return options;
+}
 function pickVariantByHeaderOption(variants, opt) {
   if (!Array.isArray(variants) || variants.length === 0) return null;
   if (!opt) return variants[variants.length - 1];
@@ -1601,52 +1640,51 @@ const renderTalentCard = (talentIdx, resolved) => {
     return buildingData?.chars?.[charKey] || buildingDataEN?.chars?.[charKey] || null;
   }, [charKey]);
 
-  const buildingEliteOptions = React.useMemo(() => {
-    const buffChar = buildingCharEntry?.buffChar;
-    if (!Array.isArray(buffChar)) return [];
+  const buildingHeaderOptions = React.useMemo(
+    () => collectBuildingHeaderOptions(buildingCharEntry?.buffChar),
+    [buildingCharEntry]
+  );
 
-    const set = new Set();
-    buffChar.forEach((g) => {
-      const arr = Array.isArray(g?.buffData) ? g.buffData : [];
-      arr.forEach((b) => {
-        const e = phaseToEliteIndex(b?.cond?.phase);
-        if (Number.isFinite(e)) set.add(e);
-      });
-    });
+  const defaultBuildingHeaderOptIdx =
+    buildingHeaderOptions.length > 0 ? buildingHeaderOptions.length - 1 : 0;
 
-    return [...set].filter((n) => n >= 0 && n <= 2).sort((a, b) => a - b);
-  }, [buildingCharEntry]);
+  const [buildingHeaderOptIdx, setBuildingHeaderOptIdx] = React.useState(
+    defaultBuildingHeaderOptIdx
+  );
 
-  const [buildingEliteIdx, setBuildingEliteIdx] = React.useState(0);
   React.useEffect(() => {
-    if (buildingEliteOptions.length > 0) {
-      setBuildingEliteIdx(buildingEliteOptions[buildingEliteOptions.length - 1]);
-    } else {
-      setBuildingEliteIdx(0);
-    }
-  }, [charKey, buildingEliteOptions]);
+    setBuildingHeaderOptIdx(defaultBuildingHeaderOptIdx);
+  }, [charKey, defaultBuildingHeaderOptIdx]);
 
-  const showBuildingEliteHeader = buildingEliteOptions.length > 1;
+  const activeBuildingHeaderOpt =
+    buildingHeaderOptions[
+      Math.min(
+        Math.max(0, buildingHeaderOptIdx),
+        Math.max(0, buildingHeaderOptions.length - 1)
+      )
+    ] || { phaseIndex: 0, level: 1, showLv: false };
+
+  const showBuildingEliteHeader = buildingHeaderOptions.length > 1;
 
   const buildingHeaderElite = showBuildingEliteHeader ? (
     <div className="flex items-center gap-2">
-      {buildingEliteOptions.map((e) => {
-        const active = e === buildingEliteIdx;
-        const src = `${ELITE_ICON_BASE}elite_${e}_large.png`;
+      {buildingHeaderOptions.map((opt, idx) => {
+        const active = idx === buildingHeaderOptIdx;
+        const src = `${ELITE_ICON_BASE}elite_${opt.phaseIndex}_large.png`;
 
         return (
           <button
-            key={`bskill-elite-${charKey || "unknown"}-${e}`}
+            key={`bskill-header-opt-${charKey || "unknown"}-${opt.phaseIndex}-${opt.level}-${idx}`}
             type="button"
-            onClick={() => setBuildingEliteIdx(e)}
-            className={`rounded-lg p-1.5 transition ${
+            onClick={() => setBuildingHeaderOptIdx(idx)}
+            className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
               active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
             }`}
-            title={`Elite ${e}`}
+            title={opt.showLv ? `E${opt.phaseIndex} Lv${opt.level}` : `E${opt.phaseIndex}`}
           >
             <img
               src={src}
-              alt={`E${e}`}
+              alt={`E${opt.phaseIndex}`}
               className="w-7 h-7 object-contain"
               draggable={false}
               loading="lazy"
@@ -1654,6 +1692,11 @@ const renderTalentCard = (talentIdx, resolved) => {
                 ev.currentTarget.style.display = "none";
               }}
             />
+            {opt.showLv ? (
+              <span className="text-xs font-semibold tabular-nums">
+                Lv{opt.level}
+              </span>
+            ) : null}
           </button>
         );
       })}
@@ -1669,7 +1712,16 @@ const renderTalentCard = (talentIdx, resolved) => {
       .filter((g) => Array.isArray(g.data) && g.data.length > 0);
 
     const pickBestUpTo = (arr) => {
-      const filtered = [...arr].filter((a) => phaseToEliteIndex(a?.cond?.phase) <= buildingEliteIdx);
+      const selPhase = Number(activeBuildingHeaderOpt?.phaseIndex ?? 0);
+      const selLevel = Number(activeBuildingHeaderOpt?.level ?? 1);
+
+      const filtered = [...arr].filter((a) => {
+        const p = phaseToEliteIndex(a?.cond?.phase);
+        const l = Number(a?.cond?.level || 1);
+        if (p < selPhase) return true;
+        if (p === selPhase) return l <= selLevel;
+        return false;
+      });
 
       const sorted = filtered.filter(Boolean).sort((a, b) => {
         const pa = phaseToEliteIndex(a?.cond?.phase);
@@ -1690,7 +1742,7 @@ const renderTalentCard = (talentIdx, resolved) => {
         return { groupIndex: g.idx, ...best };
       })
       .filter(Boolean);
-  }, [buildingCharEntry, buildingEliteIdx]);
+  }, [buildingCharEntry, buildingHeaderOptIdx, buildingHeaderOptions]);
 
 
 
@@ -1699,7 +1751,7 @@ const renderTalentCard = (talentIdx, resolved) => {
       {/* Tag + Position */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div className="pt-2">
+          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
             {resolvedTags.length > 0 ? (
               <div className="text-white/95 font-medium break-words leading-relaxed">
                 {`Tag: ${resolvedTags.join(", ")}`}
@@ -1709,7 +1761,7 @@ const renderTalentCard = (talentIdx, resolved) => {
             )}
           </div>
 
-          <div className="pt-2">
+          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
             {isNonEmptyString(positionLabel) ? (
               <div className="text-white/95 font-medium leading-relaxed">
                 {positionLabel}
@@ -1767,6 +1819,7 @@ const renderTalentCard = (talentIdx, resolved) => {
   )}
 </InfoTable>
 
+      {skillsList.length > 0 ? (
       <InfoTable title="Kỹ năng">
         {skillsList.length > 0 && isNonEmptyString(selectedSkillId) ? (
           <div className="space-y-4">
@@ -1796,7 +1849,7 @@ const renderTalentCard = (talentIdx, resolved) => {
               <div className="flex flex-col md:flex-row md:items-start gap-4">
                 <div className="shrink-0">
                   <img
-                    src={getSkillIconUrl(selectedSkillId)}
+                    src={getSkillIconUrl(selectedSkillId, skillCnEntry?.iconId || skillEnEntry?.iconId)}
                     alt={selectedSkillId}
                     className="w-20 h-20 object-contain"
                     style={{ width: 80, height: 80, minWidth: 80 }}
@@ -2027,6 +2080,7 @@ const renderTalentCard = (talentIdx, resolved) => {
           <span className="text-white/40 italic">-</span>
         )}
       </InfoTable>
+      ) : null}
 
       <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
         {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
