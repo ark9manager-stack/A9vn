@@ -2102,28 +2102,27 @@ const renderTalentCard = (talentIdx, resolved) => {
                       </div>
 
                       {Array.isArray(termIds) && termIds.length > 0 ? (
-                        <div className="mt-3 space-y-2">
-                          {termIds.map((termId) => {
-                            const t = getTermEntry(termId);
-                            if (!t) return null;
-                            const tName = isNonEmptyString(t?.termName) ? String(t.termName) : String(termId);
-                            const tDesc = isNonEmptyString(t?.description) ? String(t.description) : "";
-                            return (
-                              <div
-                                key={`term-${buffId || "unknown"}-${termId}`}
-                                className="pt-2"
-                              >
-                                <div className="text-white/80 text-sm font-semibold">
-                                  {tName}: <span className="text-white/50 font-normal">ghi chú cho dòng gạch chân</span>
+                        <div className="mt-3">
+                          <div className="text-white/50 text-sm">ghi chú cho dòng gạch chân</div>
+
+                          <div className="mt-2 space-y-3">
+                            {termIds.map((termId) => {
+                              const t = getTermEntry(termId);
+                              if (!t) return null;
+                              const tName = isNonEmptyString(t?.termName) ? String(t.termName) : String(termId);
+                              const tDesc = isNonEmptyString(t?.description) ? String(t.description) : "";
+                              return (
+                                <div key={`term-${buffId || "unknown"}-${termId}`}>
+                                  <div className="text-white/80 text-sm font-semibold">{tName}:</div>
+                                  <div className="text-sm text-white/80 leading-relaxed break-words mt-1">
+                                    {isNonEmptyString(tDesc)
+                                      ? renderTextWithHovers(tDesc, `term-${buffId || "unknown"}-${termId}`)
+                                      : <span className="text-white/40 italic">-</span>}
+                                  </div>
                                 </div>
-                                <div className="text-sm text-white/80 leading-relaxed break-words mt-1">
-                                  {isNonEmptyString(tDesc)
-                                    ? renderTextWithHovers(tDesc, `term-${buffId || "unknown"}-${termId}`)
-                                    : <span className="text-white/40 italic">-</span>}
-                                </div>
-                              </div>
-                            );
-                          })}
+                              );
+                            })}
+                          </div>
                         </div>
                       ) : null}
                     </div>
