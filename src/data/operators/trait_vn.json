@@ -43,7 +43,7 @@
     { "guardian": "Kỹ năng có thể hồi phục HP cho đồng minh." },
     { "primprotector": "Chặn được 3 kẻ địch, và có thể gây [[Hiệu ứng nguyên tố|EleInjury]]." },
     { "shotprotector": "Chặn được 3 kẻ địch, và có thể tấn công tầm xa." },
-    { "unyield": "Không thể nhận hồi phục từ đồng minh." },
+    { "unyield": "<@ba.kw>Không thể</> nhận hồi phục từ đồng minh." },
     { "aoesniper": "Đòn tấn công gây <@ba.kw>sát thương vật lý diện rộng</>." },
     { "siegesniper": "Ưu tiên tấn công kẻ địch có trọng lượng lớn nhất." },
     { "longrange": "Ưu tiên tấn công kẻ địch có <@ba.kw>DEF thấp nhất</> trong phạm vi tấn công." },
