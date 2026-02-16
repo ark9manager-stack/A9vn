@@ -1,7 +1,9 @@
 import React from "react";
 
 import characterTable from "../../../../data/operators/character_table.json";
+import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
+import traitEN from "../../../../data/operators/trait_en.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import gameDataConst from "../../../../data/gamedata_const.json";
@@ -448,11 +450,35 @@ function formatPlaceholderValue(raw, fmt) {
 function applyBlackboard(text, bbMap) {
   if (!isNonEmptyString(text)) return "";
   if (!bbMap || typeof bbMap !== "object") return text;
-  return String(text).replace(/\{([a-zA-Z0-9_.@-]+)(?::([^}]+))?\}/g, (m, key, fmt) => {
-    if (!key || !(key in bbMap)) return m;
-    return formatPlaceholderValue(bbMap[key], fmt);
-  });
+
+  return String(text).replace(
+    /\{([a-zA-Z0-9_.@-]+)(?::([^}]+))?\}/g,
+    (m, keyRaw, fmt) => {
+      const key = String(keyRaw || "");
+      if (!key) return m;
+
+      // Support Arknights negative-key placeholders like "{-max_hp:0%}"
+      // which usually appear as "-{-max_hp:0%}" in text.
+      if (key in bbMap) return formatPlaceholderValue(bbMap[key], fmt);
+
+      if ((key.startsWith("-") || key.startsWith("+")) && key.length > 1) {
+        const k2 = key.slice(1);
+        if (k2 in bbMap) {
+          const v = bbMap[k2];
+          if (key.startsWith("-")) {
+            const n = Number(v);
+            const vv = Number.isFinite(n) ? -n : v;
+            return formatPlaceholderValue(vv, fmt);
+          }
+          return formatPlaceholderValue(v, fmt);
+        }
+      }
+
+      return m;
+    }
+  );
 }
+
 
 
 function clamp(n, min, max) {
@@ -692,7 +718,47 @@ function pickBestCandidateByPot(candidates, potRank) {
   )[0];
 }
 
-function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
+
+function findMatchingTalentCandidate(talentBlock, phaseIndex, level, requiredPotentialRank) {
+  const raw = getVisibleTalentCandidates(talentBlock);
+  if (!Array.isArray(raw) || raw.length === 0) return null;
+
+  const p = Number(phaseIndex ?? 0);
+  const l = Number(level ?? 1);
+  const r = Number(requiredPotentialRank ?? 0);
+
+  // Exact match first (phase + level + requiredPotentialRank)
+  for (const c of raw) {
+    const cp = phaseToIndex(c?.unlockCondition?.phase);
+    const cl = Number(c?.unlockCondition?.level || 1);
+    const cr = Number(c?.requiredPotentialRank || 0);
+    if (cp === p && cl === l && cr === r) return c;
+  }
+
+  // Fallback: best <= r at same phase+level
+  let best = null;
+  let bestReq = -1;
+  for (const c of raw) {
+    const cp = phaseToIndex(c?.unlockCondition?.phase);
+    const cl = Number(c?.unlockCondition?.level || 1);
+    const cr = Number(c?.requiredPotentialRank || 0);
+    if (cp !== p || cl !== l) continue;
+    if (cr <= r && cr > bestReq) {
+      best = c;
+      bestReq = cr;
+    }
+  }
+  return best;
+}
+
+function computeTalentResolved({
+  talentBlock,
+  talentBlockEN,
+  talentIdx,
+  potRank,
+  vnEntry,
+  isEnglishUI,
+}) {
   const raw = getVisibleTalentCandidates(talentBlock);
   if (!Array.isArray(raw) || raw.length === 0) return { variants: [], minPhaseIndex: 0 };
 
@@ -703,7 +769,7 @@ function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
       return { phaseIndex: Number(p), level: Number(l) };
     })
     .filter((x) => Number.isFinite(x.phaseIndex) && Number.isFinite(x.level))
-    .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level));
+    .sort((a, b) => a.phaseIndex - b.phaseIndex || a.level - b.level);
 
   const variants = combos
     .map(({ phaseIndex, level }) => {
@@ -712,13 +778,34 @@ function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
       const picked = pickBestCandidateByPot(list, potRank);
       if (!picked) return null;
 
-      const bbMap = buildBlackboardMap(picked?.blackboard);
+      const req = Number(picked?.requiredPotentialRank || 0);
+
+      const pickedEN = isEnglishUI
+        ? findMatchingTalentCandidate(talentBlockEN, phaseIndex, level, req)
+        : null;
+
+      const bbMap = buildBlackboardMap(pickedEN?.blackboard || picked?.blackboard);
+
+      if (isEnglishUI) {
+        const baseText = pickedEN?.description || picked?.description || "";
+        const text = applyBlackboard(baseText, bbMap);
+
+        return {
+          phaseIndex,
+          level,
+          requiredPotentialRank: req,
+          name: pickedEN?.name || picked?.name || "",
+          text,
+          rangeId: pickedEN?.rangeId || picked?.rangeId || "",
+        };
+      }
+
       const baseText = resolveTalentText({
         vnEntry,
         talentIdx,
         phaseIndex,
         level,
-        requiredPotentialRank: picked?.requiredPotentialRank,
+        requiredPotentialRank: req,
         fallbackText: picked?.description || "",
       });
 
@@ -727,7 +814,7 @@ function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
       return {
         phaseIndex,
         level,
-        requiredPotentialRank: Number(picked?.requiredPotentialRank || 0),
+        requiredPotentialRank: req,
         name: picked?.name || "",
         text,
         rangeId: picked?.rangeId || "",
@@ -735,11 +822,11 @@ function computeTalentResolved({ talentBlock, talentIdx, potRank, vnEntry }) {
     })
     .filter(Boolean);
 
-  const minPhaseIndex =
-    variants.length > 0 ? Math.min(...variants.map((v) => v.phaseIndex)) : 0;
+  const minPhaseIndex = variants.length > 0 ? Math.min(...variants.map((v) => v.phaseIndex)) : 0;
 
   return { variants, minPhaseIndex };
 }
+
 
 function collectTalentHeaderOptions(talentBlocks) {
   const map = new Map();
@@ -1124,7 +1211,15 @@ function InfoTable({ title, titleInline, titleRight, children }) {
 
 
 export default function SkillsSection(props) {
-  const traitMap = React.useMemo(() => buildTraitMap(traitVN), []);
+  const isEnglishUI =
+    (typeof props?.lang === "string" && props.lang.toLowerCase().startsWith("en")) ||
+    (typeof props?.language === "string" && props.language.toLowerCase().startsWith("en")) ||
+    (typeof props?.locale === "string" && props.locale.toLowerCase().startsWith("en")) ||
+    props?.isEN === true ||
+    props?.isEn === true ||
+    props?.english === true;
+
+  const traitMap = React.useMemo(() => buildTraitMap(isEnglishUI ? traitEN : traitVN), [isEnglishUI]);
   const tagMap = React.useMemo(() => buildTagMap(tagVN), []);
 
   // Be tolerant with whatever the parent passes in.
@@ -1139,6 +1234,11 @@ export default function SkillsSection(props) {
     null;
 
   const { charKey, charData } = React.useMemo(() => getCharEntry(rawCharId), [rawCharId]);
+
+  const charDataEN = React.useMemo(() => {
+    if (!isNonEmptyString(charKey)) return null;
+    return characterTableEN?.[charKey] || null;
+  }, [charKey]);
 
   const rawTagList = charData?.tagList ?? operator?.tagList ?? [];
   const resolvedTags = React.useMemo(() => {
@@ -1165,9 +1265,13 @@ export default function SkillsSection(props) {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
     const rarity = charData?.rarity ?? operator?.rarity;
 
-    const baseDesc = charData?.description ?? operator?.description ?? "";
+    const baseDescCN = charData?.description ?? operator?.description ?? "";
+    const baseDescEN = charDataEN?.description ?? "";
+    const baseDesc = isEnglishUI ? (baseDescEN || baseDescCN) : baseDescCN;
 
     const candidates = getTraitCandidates(charData);
+    const candidatesEN = getTraitCandidates(charDataEN);
+    const candEnByPhase = new Map(candidatesEN.map((x) => [x.phaseIndex, x.cand]));
 
     // No per-phase trait data → just render the base (translated) trait text.
     if (candidates.length === 0) {
@@ -1179,14 +1283,17 @@ export default function SkillsSection(props) {
     }
 
     const variants = candidates.map(({ phaseIndex, cand }) => {
-      const desc = isNonEmptyString(cand?.description) ? cand.description : baseDesc;
+      const candEN = candEnByPhase.get(phaseIndex) || null;
+      const desc = isEnglishUI
+        ? (isNonEmptyString(candEN?.description) ? candEN.description : (isNonEmptyString(cand?.description) ? cand.description : baseDesc))
+        : (isNonEmptyString(cand?.description) ? cand.description : baseDesc);
 
       const { mainText, extraText } = resolveTraitTexts(
         { subProfessionId, rarity, description: desc },
         traitMap
       );
 
-      const bbMap = buildBlackboardMap(cand?.blackboard);
+      const bbMap = buildBlackboardMap(candEN?.blackboard || cand?.blackboard);
       const text = applyBlackboard(mainText, bbMap);
       const extra = applyBlackboard(extraText, bbMap);
 
@@ -1261,6 +1368,12 @@ const talentBlocks = React.useMemo(() => {
   return raw.filter(isValidTalentBlock);
 }, [charData]);
 
+const talentBlocksEN = React.useMemo(() => {
+  const raw = charDataEN?.talents;
+  if (!Array.isArray(raw)) return [];
+  return raw.filter(isValidTalentBlock);
+}, [charDataEN]);
+
 // Potential ranks that actually exist in this operator's talent candidates
 const availablePotRanks = React.useMemo(() => {
   const set = new Set([0]); // Pot 1 always
@@ -1304,22 +1417,26 @@ const talent1Resolved = React.useMemo(
   () =>
     computeTalentResolved({
       talentBlock: talentBlocks?.[0],
+      talentBlockEN: talentBlocksEN?.[0],
       talentIdx: 0,
       potRank,
       vnEntry: vnTalentEntry,
+      isEnglishUI,
     }),
-  [talentBlocks, potRank, vnTalentEntry]
+  [talentBlocks, talentBlocksEN, potRank, vnTalentEntry, isEnglishUI]
 );
 
 const talent2Resolved = React.useMemo(
   () =>
     computeTalentResolved({
       talentBlock: talentBlocks?.[1],
+      talentBlockEN: talentBlocksEN?.[1],
       talentIdx: 1,
       potRank,
       vnEntry: vnTalentEntry,
+      isEnglishUI,
     }),
-  [talentBlocks, potRank, vnTalentEntry]
+  [talentBlocks, talentBlocksEN, potRank, vnTalentEntry, isEnglishUI]
 );
 
 const showTalentHeaderElite = talentHeaderOptions.length > 1;
@@ -1409,6 +1526,10 @@ const renderTalentCard = (talentIdx, resolved) => {
   let titleName = "";
   const phaseIndexForTitle = Number(v?.phaseIndex ?? 0);
 
+  if (isEnglishUI) {
+    titleName = v?.name || "";
+  } else {
+
   if (talentIdx === 0 && phaseIndexForTitle === 2) {
     const vnTitleE2 = isNonEmptyString(vnTalentEntry?.TitleTalent1_2)
       ? String(vnTalentEntry.TitleTalent1_2)
@@ -1446,6 +1567,8 @@ const renderTalentCard = (talentIdx, resolved) => {
         v?.requiredPotentialRank
       ) || v?.name || "";
   }
+  }
+
   const badgeText = isNonEmptyString(titleName)
     ? `Talent ${talentIdx + 1}: ${titleName}`
     : `Talent ${talentIdx + 1}`;
@@ -1488,15 +1611,7 @@ const renderTalentCard = (talentIdx, resolved) => {
   );
 };
 
-
   // ===== Skills (Kỹ năng) =====
-  const isEnglishUI =
-    (typeof props?.lang === "string" && props.lang.toLowerCase().startsWith("en")) ||
-    (typeof props?.language === "string" && props.language.toLowerCase().startsWith("en")) ||
-    (typeof props?.locale === "string" && props.locale.toLowerCase().startsWith("en")) ||
-    props?.isEN === true ||
-    props?.isEn === true ||
-    props?.english === true;
 
   const skillsList = React.useMemo(() => {
     const raw = charData?.skills ?? operator?.skills ?? [];
