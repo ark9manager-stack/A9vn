@@ -4,6 +4,8 @@ import characterTable from "../../../../data/operators/character_table.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
+import gameDataConst from "../../../../data/gamedata_const.json";
+import gameDataConstEN from "../../../../data/gamedata_const_en.json";
 import tagVN from "../../../../data/operators/tag_vn.json";
 import skillTable from "../../../../data/operators/skill_table.json";
 import skillTableEN from "../../../../data/operators/skill_table_en.json";
@@ -12,7 +14,7 @@ import buildingData from "../../../../data/operators/building_data.json";
 import buildingDataEN from "../../../../data/operators/building_data_en.json";
 import buildingVN from "../../../../data/operators/building_vn.json";
 import itemTable from "../../../../data/operators/item_table.json";
-import StatHover, { renderInlineItalic, formatNestedNoteTags } from "../../../StatHover";
+import StatHover, { renderInlineItalic } from "../../../StatHover";
 
 /** Icons (Elite) */
 const ELITE_ICON_BASE =
@@ -63,6 +65,207 @@ const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
+
+function getTermEntry(termId) {
+  if (!isNonEmptyString(termId)) return null;
+  return (
+    gameDataConstEN?.termDescriptionDict?.[termId] ||
+    gameDataConst?.termDescriptionDict?.[termId] ||
+    null
+  );
+}
+
+/** Strip nested <@...> / <$...> tags used inside labels */
+function formatNestedNoteTags(input) {
+  if (!isNonEmptyString(input)) return "";
+  let s = String(input);
+  // remove open tags <@xxx> / <$xxx>
+  s = s.replace(/<[@$][a-zA-Z0-9_.-]+>/g, "");
+  // remove closing </>
+  s = s.replace(/<\/>/g, "");
+  return s;
+}
+
+function createTermCollector() {
+  const seen = new Set();
+  const order = [];
+  return {
+    order,
+    add(termId) {
+      if (!isNonEmptyString(termId)) return;
+      if (!seen.has(termId)) {
+        seen.add(termId);
+        order.push(termId);
+      }
+    },
+  };
+}
+
+/**
+ * Parse a line with nested <@...> and <$...> tags.
+ * - <@noteKey> applies StatHover highlight to inner plain text
+ * - <$termId> underlines inner and, if termId exists in termDescriptionDict, registers a note
+ * - Supports nesting like: <@cc.kw><$cc.angel>Exusiai</></>
+ */
+function parseMarkupSegment(
+  str,
+  keyPrefix,
+  termCollector,
+  noteKeyCtx = null,
+  startIndex = 0,
+  stopAtClose = false
+) {
+  const nodes = [];
+  let i = startIndex;
+  let buf = "";
+
+  const flush = () => {
+    if (buf === "") return;
+    const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
+
+    if (isNonEmptyString(noteKeyCtx)) {
+      // Don't wrap whitespace-only segments in StatHover (it would render null)
+      if (String(buf).trim() === "") {
+        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
+      } else {
+        nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
+      }
+    } else {
+      nodes.push(...renderInlineItalic(buf, kp));
+    }
+    buf = "";
+  };
+
+  while (i < str.length) {
+    if (stopAtClose && str.startsWith("</>", i)) {
+      flush();
+      i += 3;
+      return { nodes, index: i };
+    }
+
+    // [[label|noteKey]]
+    if (str.startsWith("[[", i)) {
+      const close = str.indexOf("]]", i + 2);
+      if (close === -1) {
+        buf += str[i];
+        i += 1;
+        continue;
+      }
+
+      flush();
+
+      const inner = str.slice(i + 2, close);
+      const barIdx = inner.indexOf("|");
+      if (barIdx === -1) {
+        buf += str.slice(i, close + 2);
+        i = close + 2;
+        continue;
+      }
+
+      const rawLabel = inner.slice(0, barIdx);
+      const noteKey = inner.slice(barIdx + 1).trim();
+      const label = formatNestedNoteTags(rawLabel);
+
+      nodes.push(
+        <span
+          key={`${keyPrefix}-h-${i}`}
+          style={{
+            textDecoration: "underline",
+            textUnderlineOffset: "1px",
+            textDecorationSkipInk: "auto",
+          }}
+        >
+          <StatHover label={label} noteKey={noteKey} />
+        </span>
+      );
+
+      i = close + 2;
+      continue;
+    }
+
+    // <@...> or <$...>
+    if (str[i] === "<" && (str[i + 1] === "@" || str[i + 1] === "$")) {
+      const gt = str.indexOf(">", i + 2);
+      if (gt === -1) {
+        buf += str[i];
+        i += 1;
+        continue;
+      }
+
+      flush();
+
+      const type = str[i + 1]; // '@' | '$'
+      const key = str.slice(i + 2, gt).trim();
+      const inner = parseMarkupSegment(
+        str,
+        `${keyPrefix}-in-${i}`,
+        termCollector,
+        type === "@" ? key : noteKeyCtx,
+        gt + 1,
+        true
+      );
+
+      const innerNodes = inner.nodes;
+
+      if (type === "$") {
+        const term = getTermEntry(key);
+        if (term) termCollector.add(key);
+
+        nodes.push(
+          term ? (
+            <span
+              key={`${keyPrefix}-term-${i}-${key}`}
+              className="inline-block border-b border-dashed border-white/70 pb-[1px]"
+              style={{ lineHeight: "1.2" }}
+            >
+              {innerNodes}
+            </span>
+          ) : (
+            <React.Fragment key={`${keyPrefix}-term-${i}-${key}`}>
+              {innerNodes}
+            </React.Fragment>
+          )
+        );
+      } else {
+        // '@' tag: styling applied via noteKeyCtx inside recursion
+        nodes.push(
+          <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
+            {innerNodes}
+          </React.Fragment>
+        );
+      }
+
+      i = inner.index;
+      continue;
+    }
+
+    buf += str[i];
+    i += 1;
+  }
+
+  flush();
+  return { nodes, index: i };
+}
+
+function renderTextWithTermNotes(text, keyPrefix, termCollector) {
+  if (!isNonEmptyString(text)) return null;
+
+  const normalized = String(text)
+    .replace(/\r\n/g, "\n")
+    .replace(/\\n/g, "\n");
+
+  const lines = normalized.split("\n");
+  return lines.map((line, idx) => {
+    const parsed = parseMarkupSegment(line, `${keyPrefix}-${idx}`, termCollector);
+    return (
+      <React.Fragment key={`${keyPrefix}-${idx}`}>
+        {parsed.nodes}
+        {idx < lines.length - 1 ? <br /> : null}
+      </React.Fragment>
+    );
+  });
+}
+
 
 function buildTraitMap(traitJson) {
   const list = traitJson?.traitDescription;
@@ -1855,6 +2058,13 @@ const renderTalentCard = (talentIdx, resolved) => {
               const bg = def?.buffColor || "#FFFFFF";
               const tc = def?.textColor || "#000000";
 
+              const termCollector = createTermCollector();
+              const bdescKeyPrefix = `bskill-${charKey || "unknown"}-${buffId}-${idx0}`;
+              const descRender = isNonEmptyString(desc)
+                ? renderTextWithTermNotes(desc, bdescKeyPrefix, termCollector)
+                : null;
+              const termIds = termCollector.order;
+
               return (
                 <div key={`${buffId}-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
                   <div className="flex items-start gap-3">
@@ -1887,13 +2097,35 @@ const renderTalentCard = (talentIdx, resolved) => {
                           className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
                           style={{ overflowWrap: "anywhere" }}
                         >
-                          {isNonEmptyString(desc) ? (
-                            renderTextWithHovers(desc, `bskill-${charKey || "unknown"}-${buffId}-${idx0}`)
-                          ) : (
-                            <span className="text-white/40 italic">-</span>
-                          )}
+                          {descRender ? descRender : <span className="text-white/40 italic">-</span>}
                         </div>
                       </div>
+
+                      {Array.isArray(termIds) && termIds.length > 0 ? (
+                        <div className="mt-3 space-y-2">
+                          {termIds.map((termId) => {
+                            const t = getTermEntry(termId);
+                            if (!t) return null;
+                            const tName = isNonEmptyString(t?.termName) ? String(t.termName) : String(termId);
+                            const tDesc = isNonEmptyString(t?.description) ? String(t.description) : "";
+                            return (
+                              <div
+                                key={`term-${buffId || "unknown"}-${termId}`}
+                                className="rounded-xl border border-white/10 bg-black/20 p-3"
+                              >
+                                <div className="text-white/90 font-semibold mb-1">
+                                  {tName}:
+                                </div>
+                                <div className="text-sm text-white/80 leading-relaxed break-words">
+                                  {isNonEmptyString(tDesc)
+                                    ? renderTextWithHovers(tDesc, `term-${buffId || "unknown"}-${termId}`)
+                                    : <span className="text-white/40 italic">-</span>}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </div>
