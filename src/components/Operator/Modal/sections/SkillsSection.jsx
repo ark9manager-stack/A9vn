@@ -77,13 +77,10 @@ function getTermEntry(termId) {
   );
 }
 
-/** Strip nested <@...> / <$...> tags used inside labels */
 function formatNestedNoteTags(input) {
   if (!isNonEmptyString(input)) return "";
   let s = String(input);
-  // remove open tags <@xxx> / <$xxx>
   s = s.replace(/<[@$][a-zA-Z0-9_.-]+>/g, "");
-  // remove closing </>
   s = s.replace(/<\/>/g, "");
   return s;
 }
@@ -107,7 +104,6 @@ function matchCloseTagAt(str, i) {
   if (typeof str !== "string") return 0;
   if (str.startsWith("</>", i)) return 3;
 
-  // Be tolerant to accidental whitespace like "</ >"
   if (str.startsWith("</ >", i)) return 4;
 
   if (str[i] === "<" && str[i + 1] === "/") {
@@ -119,12 +115,6 @@ function matchCloseTagAt(str, i) {
   return 0;
 }
 
-/**
- * Parse a line with nested <@...> and <$...> tags.
- * - <@noteKey> applies StatHover highlight to inner plain text
- * - <$termId> underlines inner and, if termId exists in termDescriptionDict, registers a note
- * - Supports nesting like: <@cc.kw><$cc.angel>Exusiai</></>
- */
 function parseMarkupSegment(
   str,
   keyPrefix,
@@ -142,7 +132,6 @@ function parseMarkupSegment(
     const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
 
     if (isNonEmptyString(noteKeyCtx)) {
-      // Don't wrap whitespace-only segments in StatHover (it would render null)
       if (String(buf).trim() === "") {
         nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
       } else {
@@ -155,18 +144,15 @@ function parseMarkupSegment(
   };
 
   while (i < str.length) {
-    // Close tag token (</>) handling
     const closeLen = matchCloseTagAt(str, i);
     if (closeLen) {
       flush();
       i += closeLen;
 
-      // If we're inside a tag, stop here; otherwise treat it as stray markup and just drop it
       if (stopAtClose) return { nodes, index: i };
       continue;
     }
 
-    // Newline -> <br/> (keep tag context across lines)
     if (str[i] === "\n") {
       flush();
       nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
@@ -265,6 +251,128 @@ function parseMarkupSegment(
           </React.Fragment>
         );
       }
+
+      i = inner.index;
+      continue;
+    }
+
+    buf += str[i];
+    i += 1;
+  }
+
+  flush();
+  return { nodes, index: i };
+}
+
+function parseMarkupHovers(
+  str,
+  keyPrefix,
+  noteKeyCtx = null,
+  startIndex = 0,
+  stopAtClose = false
+) {
+  const nodes = [];
+  let i = startIndex;
+  let buf = "";
+
+  const flush = () => {
+    if (buf === "") return;
+    const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
+
+    if (isNonEmptyString(noteKeyCtx)) {
+      if (String(buf).trim() === "") {
+        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
+      } else {
+        nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
+      }
+    } else {
+      nodes.push(...renderInlineItalic(buf, kp));
+    }
+    buf = "";
+  };
+
+  while (i < str.length) {
+    const closeLen = matchCloseTagAt(str, i);
+    if (closeLen) {
+      flush();
+      i += closeLen;
+      if (stopAtClose) return { nodes, index: i };
+      continue;
+    }
+
+    if (str[i] === "\n") {
+      flush();
+      nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
+      i += 1;
+      continue;
+    }
+
+    // [[label|noteKey]]
+    if (str.startsWith("[[", i)) {
+      const close = str.indexOf("]]", i + 2);
+      if (close === -1) {
+        buf += str[i];
+        i += 1;
+        continue;
+      }
+
+      flush();
+      const inner = str.slice(i + 2, close);
+      const barIdx = inner.indexOf("|");
+      if (barIdx === -1) {
+        buf += str.slice(i, close + 2);
+        i = close + 2;
+        continue;
+      }
+
+      const rawLabel = inner.slice(0, barIdx);
+      const noteKey = inner.slice(barIdx + 1).trim();
+      const label = formatNestedNoteTags(rawLabel);
+
+      nodes.push(
+        <span
+          key={`${keyPrefix}-h-${i}`}
+          style={{
+            textDecoration: "underline",
+            textUnderlineOffset: "1px",
+            textDecorationSkipInk: "auto",
+          }}
+        >
+          <StatHover label={label} noteKey={noteKey} />
+        </span>
+      );
+
+      i = close + 2;
+      continue;
+    }
+
+    // <@...> or <$...>
+    if (str[i] === "<" && (str[i + 1] === "@" || str[i + 1] === "$")) {
+      const gt = str.indexOf(">", i + 2);
+      if (gt === -1) {
+        buf += str[i];
+        i += 1;
+        continue;
+      }
+
+      const type = str[i + 1];
+      const key = str.slice(i + 2, gt).trim();
+
+      flush();
+
+      const innerKeyPrefix = `${keyPrefix}-${type}${key}-${i}`;
+      const inner = parseMarkupHovers(
+        str,
+        innerKeyPrefix,
+        type === "@" ? key : noteKeyCtx,
+        gt + 1,
+        true
+      );
+
+      // '$' terms are rendered as plain text here (no underline, no term notes)
+      nodes.push(
+        <React.Fragment key={`${keyPrefix}-${type}-${i}-${key}`}>{inner.nodes}</React.Fragment>
+      );
 
       i = inner.index;
       continue;
@@ -426,10 +534,8 @@ function buildBlackboardMap(blackboard) {
     const k = String(kRaw);
     const v = row?.valueStr != null ? row.valueStr : row?.value;
 
-    // Keep original key
     map[k] = v;
 
-    // Also store a lowercase version for case-insensitive placeholders
     const kl = k.toLowerCase();
     if (!(kl in map)) map[kl] = v;
   }
@@ -485,7 +591,6 @@ function formatPlaceholderValue(raw, fmt) {
 function buildSkillParamMap(skillLevel) {
   const map = buildBlackboardMap(skillLevel?.blackboard);
 
-  // Some descriptions use {duration} but the value can live on the skill level object (not in blackboard).
   const dn = Number(skillLevel?.duration);
   if (Number.isFinite(dn) && !("duration" in map)) {
     map.duration = dn;
@@ -510,11 +615,9 @@ function applyBlackboard(text, bbMap) {
     const key0 = String(keyRaw || "").trim();
     if (!key0) return m;
 
-    // Direct match (case-insensitive supported via buildBlackboardMap)
     const direct = lookup(key0);
     if (direct !== undefined) return formatPlaceholderValue(direct, fmt);
 
-    // Support Arknights signed placeholders like "{-max_hp:0%}" / "{+atk:0%}"
     if ((key0.startsWith("-") || key0.startsWith("+")) && key0.length > 1) {
       const k2 = key0.slice(1).trim();
       const v2 = lookup(k2);
@@ -1047,17 +1150,12 @@ function renderTextWithHovers(text, keyPrefix = "txt") {
   if (!isNonEmptyString(text)) return null;
 
   const normalized = String(text)
-    .replace(/\r\n/g, "\n")
-    // trait_vn.json uses literal "\\n"
-    .replace(/\\n/g, "\n");
+    .split("\r\n").join("\n")
+    .split("\r").join("\n")
+    .split("\\n").join("\n");
 
-  const lines = normalized.split("\n");
-  return lines.map((line, idx) => (
-    <React.Fragment key={`${keyPrefix}-${idx}`}>
-      {renderLineWithHovers(line, `${keyPrefix}-${idx}`)}
-      {idx < lines.length - 1 ? <br /> : null}
-    </React.Fragment>
-  ));
+  const parsed = parseMarkupHovers(normalized, keyPrefix);
+  return <>{parsed.nodes}</>;
 }
 
 function RangeGrid({ rangeId }) {
@@ -1774,8 +1872,14 @@ const renderTalentCard = (talentIdx, resolved) => {
     // Lv 2-7
     if (lv <= 7) {
       const row = allSkillLvlup?.[lv - 2] || null;
+      if (!row) return null;
+
       const costs = Array.isArray(row?.lvlUpCost) ? row.lvlUpCost : [];
       const unlockCond = row?.unlockCond || null;
+
+      // Some operators do not have global skill upgrade cost data.
+      // Hide the whole section in that case.
+      if (!unlockCond && costs.length === 0) return null;
 
       return {
         label: `Lv ${lv - 1} → ${lv}`,
@@ -1793,6 +1897,8 @@ const renderTalentCard = (talentIdx, resolved) => {
     const costs = Array.isArray(row?.levelUpCost) ? row.levelUpCost : [];
     const unlockCond = row?.unlockCond || null;
     const time = row?.lvlUpTime != null ? formatHMS(row.lvlUpTime) : null;
+
+    if (!unlockCond && !time && costs.length === 0) return null;
 
     return {
       label: `Lv 7 Mastery ${m}`,
@@ -2250,8 +2356,8 @@ const renderTalentCard = (talentIdx, resolved) => {
       </InfoTable>
       ) : null}
 
-      <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
-        {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
+      {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
+        <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
           <div className="space-y-3">
             {buildingBuffCards.map((b, idx0) => {
               const buffId = b?.buffId;
@@ -2353,10 +2459,8 @@ const renderTalentCard = (talentIdx, resolved) => {
               );
             })}
           </div>
-        ) : (
-          <span className="text-white/40 italic">-</span>
-        )}
-      </InfoTable>
+        </InfoTable>
+      ) : null}
     </div>
   );
 }
