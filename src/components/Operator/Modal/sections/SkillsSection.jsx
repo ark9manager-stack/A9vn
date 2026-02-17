@@ -282,12 +282,12 @@ function parseMarkupSegment(
 function renderTextWithTermNotes(text, keyPrefix, termCollector) {
   if (!isNonEmptyString(text)) return null;
 
+  // Normalize line breaks without regex literals
   const normalized = String(text)
-    .replace(/
-/g, "
-")
-    .replace(/\n/g, "
-");
+    .split("\r\n").join("\n")
+    .split("\r").join("\n")
+    // Some localized strings contain literal "\\n"
+    .split("\\n").join("\n");
 
   const parsed = parseMarkupSegment(normalized, keyPrefix, termCollector);
   return <>{parsed.nodes}</>;
