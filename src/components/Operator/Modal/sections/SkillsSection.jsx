@@ -103,6 +103,22 @@ function createTermCollector() {
   };
 }
 
+function matchCloseTagAt(str, i) {
+  if (typeof str !== "string") return 0;
+  if (str.startsWith("</>", i)) return 3;
+
+  // Be tolerant to accidental whitespace like "</ >"
+  if (str.startsWith("</ >", i)) return 4;
+
+  if (str[i] === "<" && str[i + 1] === "/") {
+    let j = i + 2;
+    while (j < str.length && /\s/.test(str[j])) j += 1;
+    if (str[j] === ">") return j - i + 1;
+  }
+
+  return 0;
+}
+
 /**
  * Parse a line with nested <@...> and <$...> tags.
  * - <@noteKey> applies StatHover highlight to inner plain text
@@ -139,10 +155,23 @@ function parseMarkupSegment(
   };
 
   while (i < str.length) {
-    if (stopAtClose && str.startsWith("</>", i)) {
+    // Close tag token (</>) handling
+    const closeLen = matchCloseTagAt(str, i);
+    if (closeLen) {
       flush();
-      i += 3;
-      return { nodes, index: i };
+      i += closeLen;
+
+      // If we're inside a tag, stop here; otherwise treat it as stray markup and just drop it
+      if (stopAtClose) return { nodes, index: i };
+      continue;
+    }
+
+    // Newline -> <br/> (keep tag context across lines)
+    if (str[i] === "\n") {
+      flush();
+      nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
+      i += 1;
+      continue;
     }
 
     // [[label|noteKey]]
@@ -249,24 +278,21 @@ function parseMarkupSegment(
   return { nodes, index: i };
 }
 
+
 function renderTextWithTermNotes(text, keyPrefix, termCollector) {
   if (!isNonEmptyString(text)) return null;
 
   const normalized = String(text)
-    .replace(/\r\n/g, "\n")
-    .replace(/\\n/g, "\n");
+    .replace(/
+/g, "
+")
+    .replace(/\n/g, "
+");
 
-  const lines = normalized.split("\n");
-  return lines.map((line, idx) => {
-    const parsed = parseMarkupSegment(line, `${keyPrefix}-${idx}`, termCollector);
-    return (
-      <React.Fragment key={`${keyPrefix}-${idx}`}>
-        {parsed.nodes}
-        {idx < lines.length - 1 ? <br /> : null}
-      </React.Fragment>
-    );
-  });
+  const parsed = parseMarkupSegment(normalized, keyPrefix, termCollector);
+  return <>{parsed.nodes}</>;
 }
+
 
 
 function buildTraitMap(traitJson) {
@@ -394,14 +420,23 @@ function buildBlackboardMap(blackboard) {
   if (!Array.isArray(blackboard)) return map;
 
   for (const row of blackboard) {
-    const k = row?.key;
-    if (!isNonEmptyString(k)) continue;
+    const kRaw = row?.key;
+    if (!isNonEmptyString(kRaw)) continue;
+
+    const k = String(kRaw);
     const v = row?.valueStr != null ? row.valueStr : row?.value;
-    map[String(k)] = v;
+
+    // Keep original key
+    map[k] = v;
+
+    // Also store a lowercase version for case-insensitive placeholders
+    const kl = k.toLowerCase();
+    if (!(kl in map)) map[kl] = v;
   }
 
   return map;
 }
+
 
 const isAlmostInt = (n) => Math.abs(n - Math.round(n)) < 1e-6;
 
@@ -447,36 +482,54 @@ function formatPlaceholderValue(raw, fmt) {
   return isNum ? formatNumberDefault(num) : rawStr;
 }
 
+function buildSkillParamMap(skillLevel) {
+  const map = buildBlackboardMap(skillLevel?.blackboard);
+
+  // Some descriptions use {duration} but the value can live on the skill level object (not in blackboard).
+  const dn = Number(skillLevel?.duration);
+  if (Number.isFinite(dn) && !("duration" in map)) {
+    map.duration = dn;
+  }
+
+  return map;
+}
+
 function applyBlackboard(text, bbMap) {
   if (!isNonEmptyString(text)) return "";
   if (!bbMap || typeof bbMap !== "object") return text;
 
-  return String(text).replace(
-    /\{([a-zA-Z0-9_.@-]+)(?::([^}]+))?\}/g,
-    (m, keyRaw, fmt) => {
-      const key = String(keyRaw || "");
-      if (!key) return m;
+  const lookup = (k) => {
+    if (!isNonEmptyString(k)) return undefined;
+    if (k in bbMap) return bbMap[k];
+    const kl = String(k).toLowerCase();
+    if (kl in bbMap) return bbMap[kl];
+    return undefined;
+  };
 
-      // Support Arknights negative-key placeholders like "{-max_hp:0%}"
-      // which usually appear as "-{-max_hp:0%}" in text.
-      if (key in bbMap) return formatPlaceholderValue(bbMap[key], fmt);
+  return String(text).replace(/\{([^}:]+)(?::([^}]+))?\}/g, (m, keyRaw, fmt) => {
+    const key0 = String(keyRaw || "").trim();
+    if (!key0) return m;
 
-      if ((key.startsWith("-") || key.startsWith("+")) && key.length > 1) {
-        const k2 = key.slice(1);
-        if (k2 in bbMap) {
-          const v = bbMap[k2];
-          if (key.startsWith("-")) {
-            const n = Number(v);
-            const vv = Number.isFinite(n) ? -n : v;
-            return formatPlaceholderValue(vv, fmt);
-          }
-          return formatPlaceholderValue(v, fmt);
+    // Direct match (case-insensitive supported via buildBlackboardMap)
+    const direct = lookup(key0);
+    if (direct !== undefined) return formatPlaceholderValue(direct, fmt);
+
+    // Support Arknights signed placeholders like "{-max_hp:0%}" / "{+atk:0%}"
+    if ((key0.startsWith("-") || key0.startsWith("+")) && key0.length > 1) {
+      const k2 = key0.slice(1).trim();
+      const v2 = lookup(k2);
+      if (v2 !== undefined) {
+        if (key0.startsWith("-")) {
+          const n = Number(v2);
+          const vv = Number.isFinite(n) ? -n : v2;
+          return formatPlaceholderValue(vv, fmt);
         }
+        return formatPlaceholderValue(v2, fmt);
       }
-
-      return m;
     }
-  );
+
+    return m;
+  });
 }
 
 
@@ -1686,7 +1739,7 @@ const renderTalentCard = (talentIdx, resolved) => {
     const cnText = skillCnEntry?.levels?.[safeSkillLevelIdx]?.description || "";
     const rawText = vnText || enText || cnText || "";
 
-    const bbMap = buildBlackboardMap(currentSkillLevel?.blackboard);
+    const bbMap = buildSkillParamMap(currentSkillLevel);
     return applyBlackboard(rawText, bbMap);
   }, [
     vnSkillEntry,
