@@ -1324,7 +1324,12 @@
     "Talent1_lv55_p4": ""
   },
   "char_285_medic2": {
-    "TitleTalent1": "Support Spray 1",
+    "TitleTalent1": "Phun sương y tế·I",
+    "TitleTalent1_p1": "Phun sương y tế·II",
+    "TitleTalent1_p2": "Phun sương y tế·III",
+    "TitleTalent1_p3": "Phun sương y tế·IV",
+    "TitleTalent1_p4": "Phun sương y tế·V",
+    "TitleTalent1_p5": "Phun sương y tế·VI",
     "TitleTalent2": "",
     "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
     "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
@@ -1334,7 +1339,12 @@
     "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi 500<@ba.talpu>(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
   },
   "char_286_cast3": {
-    "TitleTalent1": "Tactical Configuration 1",
+    "TitleTalent1": "Điều phối chiến thuật·I",
+    "TitleTalent1_p1": "Điều phối chiến thuật·II",
+    "TitleTalent1_p2": "Điều phối chiến thuật·III",
+    "TitleTalent1_p3": "Điều phối chiến thuật·IV",
+    "TitleTalent1_p4": "Điều phối chiến thuật·V",
+    "TitleTalent1_p5": "Điều phối chiến thuật·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1684,7 +1694,12 @@
     "Talent1_2_p4": ""
   },
   "char_376_therex": {
-    "TitleTalent1": "Delayed Detonation 1",
+    "TitleTalent1": "Bom hẹn giờ·I",
+    "TitleTalent1_p1": "Bom hẹn giờ·II",
+    "TitleTalent1_p2": "Bom hẹn giờ·III",
+    "TitleTalent1_p3": "Bom hẹn giờ·IV",
+    "TitleTalent1_p4": "Bom hẹn giờ·V",
+    "TitleTalent1_p5": "Bom hẹn giờ·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1763,7 +1778,12 @@
     "Talent1_2_p4": ""
   },
   "char_4000_jnight": {
-    "TitleTalent1": "Justice Drive I",
+    "TitleTalent1": "Trợ lực công lý·I",
+    "TitleTalent1_p1": "Trợ lực công lý·II",
+    "TitleTalent1_p2": "Trợ lực công lý·III",
+    "TitleTalent1_p3": "Trợ lực công lý·IV",
+    "TitleTalent1_p4": "Trợ lực công lý·V",
+    "TitleTalent1_p5": "Trợ lực công lý·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2146,7 +2166,12 @@
     "Talent2_p4": ""
   },
   "char_4077_palico": {
-    "TitleTalent1": "Felyne Lottery Bomb I",
+    "TitleTalent1": "Bom nhân phẩm của Felyne·I",
+    "TitleTalent1_p1": "Bom nhân phẩm của Felyne·II",
+    "TitleTalent1_p2": "Bom nhân phẩm của Felyne·III",
+    "TitleTalent1_p3": "Bom nhân phẩm của Felyne·IV",
+    "TitleTalent1_p4": "Bom nhân phẩm của Felyne·V",
+    "TitleTalent1_p5": "Bom nhân phẩm của Felyne·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2225,7 +2250,12 @@
     "Talent2_p4": "Bản thân và đồng minh ở ngay đằng sau nhận 21%<@ba.talpu>(+3%)</> [[Bảo hộ|Sanctuary]]."
   },
   "char_4091_ulika": {
-    "TitleTalent1": "Short-Circuiting Genius I",
+    "TitleTalent1": "Thiên tài chập mạch·I",
+    "TitleTalent1_p1": "Thiên tài chập mạch·II",
+    "TitleTalent1_p2": "Thiên tài chập mạch·III",
+    "TitleTalent1_p3": "Thiên tài chập mạch·IV",
+    "TitleTalent1_p4": "Thiên tài chập mạch·V",
+    "TitleTalent1_p5": "Thiên tài chập mạch·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2235,7 +2265,12 @@
     "Talent0_p5": ""
   },
   "char_4093_frston": {
-    "TitleTalent1": "Persevere I",
+    "TitleTalent1": "Trường tồn·I",
+    "TitleTalent1_p1": "Trường tồn·II",
+    "TitleTalent1_p2": "Trường tồn·III",
+    "TitleTalent1_p3": "Trường tồn·IV",
+    "TitleTalent1_p4": "Trường tồn·V",
+    "TitleTalent1_p5": "Trường tồn·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2466,7 +2501,12 @@
     "Talent2_p4": ""
   },
   "char_4136_phonor": {
-    "TitleTalent1": "Chorus of a Distant Valley I",
+    "TitleTalent1": "Khúc đồng ca từ thung lũng xa xôi·I",
+    "TitleTalent1_p1": "Khúc đồng ca từ thung lũng xa xôi·II",
+    "TitleTalent1_p2": "Khúc đồng ca từ thung lũng xa xôi·III",
+    "TitleTalent1_p3": "Khúc đồng ca từ thung lũng xa xôi·IV",
+    "TitleTalent1_p4": "Khúc đồng ca từ thung lũng xa xôi·V",
+    "TitleTalent1_p5": "Khúc đồng ca từ thung lũng xa xôi·VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
