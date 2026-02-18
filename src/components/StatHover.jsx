@@ -38,190 +38,26 @@ export const NOTEKEY_LABEL_TEMPLATES = {
   "eb.danger": "<color=#FF0000>{0}</color>",
   "ro.get": "<color=#0098DC>{0}</color>",
   "ro.lose": "<color=#C82A36>{0}</color>",
-  "rolv.rem": "<color=#FF4C22>{0}</color>",
-  "lv.description": "<color=#d8d769>{0}</color>",
-  "lv.extrades": "<color=#d8d769>{0}</color>",
-  "lv.item": "<color=#FFFFFF>{0}</color>",
-  "lv.rem": "<color=#FFFFFF>{0}</color>",
-  "lv.fs": "<color=#FF0000>{0}</color>",
-  "lv.sp": "<color=#fd4600>{0}</color>",
-  "lv.ez": "<color=#0098dc>{0}</color>",
-  "recalrune.nag": "<color=#c9001c>{0}</color>",
-  "recalrune.pos": "<color=#0098dc>{0}</color>",
-  "crisisv2.nag": "<color=#ea9818>{0}</color>",
-  "crisisv2.pos": "<color=#16acaa>{0}</color>",
-  "crisisv2.cra": "<color=#d7181c>{0}</color>",
-  "ro1.get": "<color=#E5B684>{0}</color>",
-  "ro2.lose": "<color=#FF6E6E>{0}</color>",
-  "ro2.get": "<color=#59DDDC>{0}</color>",
-  "ro2.virtue": "<color=#0098dc>{0}</color>",
-  "ro2.mutation": "<color=#9266b2>{0}</color>",
-  "ro2.desc": "<color=#6d6d6d>{0}</color>",
-  "ro3.lose": "<color=#FF6E6E>{0}</color>",
-  "ro3.get": "<color=#9ed9fd>{0}</color>",
-  "ro3.redt": "<color=#ff4532>{0}</color>",
-  "ro3.greent": "<color=#4ffaa5>{0}</color>",
-  "ro3.bluet": "<color=#0085ff>{0}</color>",
-  "ro3.bosst": "<color=#ffffff>{0}</color>",
-  "ro4.lose": "<color=#FF6E6E>{0}</color>",
-  "ro4.get": "<color=#28bfe5>{0}</color>",
-  "ro5.lose": "<color=#FF6E6E>{0}</color>",
-  "ro5.get": "<color=#28bfe5>{0}</color>",
-  "rc.title": "<color=#FFFFFF>{0}</color>",
-  "rc.subtitle": "<color=#FFC90E>{0}</color>",
-  "rc.em": "<color=#FF7F27>{0}</color>",
-  "rc.eml": "<color=#32CD32>{0}</color>",
-  "ga.title": "<color=#FFFFFF>{0}</color>",
-  "ga.subtitle": "<color=#FFC90E>{0}</color>",
-  "ga.up": "<color=#FF7F27>{0}</color>",
-  "ga.adgacha": "<color=#00C8FF>{0}</color>",
-  "ga.nbgacha": "<color=#00DDBB>{0}</color>",
-  "ga.limadgacha": "<color=#FF7E1F>{0}</color>",
-  "ga.percent": "<color=#FFD800>{0}</color>",
-  "ga.attention": "<color=#FF3126>{0}</color>",
-  "ga.classicgacha": "<color=#00A8FF>{0}</color>",
-  "attainga.desc": "<color=#FF0000>{0}</color>",
-  "attainga.desc2": "<color=#FFD800>{0}</color>",
-  "attainga.attention": "<color=#E1322C>{0}</color>",
-  "linkagega.charname": "<color=#FFF6A9>{0}</color>",
-  "linkagega.title": "<color=#FF8A00>{0}</color>",
-  "ga.spgacha": "<color=#FF8A00>{0}</color>",
-  "limtedga.title": "<color=#FFFFFF>{0}</color>",
-  "limtedga.subtitle": "<color=#FFC90E>{0}</color>",
-  "limtedga.up": "<color=#FF7F27>{0}</color>",
-  "limtedga.21": "<color=#D7BCFF>{0}</color>",
-  "limtedga.percent": "<color=#FFD800>{0}</color>",
-  "limtedga.attention": "<color=#E1322C>{0}</color>",
-  "limtedga.lattention": "<color=#FF9E58>{0}</color>",
-  "vc.newyear10": "<color=#FF3823>{0}</color>",
-  "vc.adgacha": "<color=#0098DC>{0}</color>",
-  "vc.attention": "<color=#FFD800>{0}</color>",
-  "act.missiontips": "<color=#d9bd6a>{0}</color>",
-  "lv.hdbg": "<color=#7ba61f>{0}</color>",
-  "autochess.gray": "<color=#777777>{0}</color>",
-  "autochess.dgreen": "<color=#40B196>{0}</color>",
-  "vecbreakv2.highlight": "<color=#d8741a>{0}</color>",
-  "duel.ping.low": "<color=#7fa826>{0}</color>",
-  "duel.ping.medium": "<color=#ec7a00>{0}</color>",
-  "duel.ping.high": "<color=#ff3d3d>{0}</color>",
-  "duel.milestone": "<color=#D4133C>{0}</color>",
-  "duel.dm.award": "<color=#36BBCC>{0}</color>",
-  "duel.dm.condition": "<color=#C9C9C9>{0}</color>",
-  "tu.ht": "<color=#ff8d00>{0}</color>",
-  "multiv3.teambuff": "<color=#d0294c>{0}</color>",
-  "multiv3.matchdesc": "<color=#2ea0af>{0}</color>",
-  "multiv3.unlocktoast": "<color=#ff3a64>{0}</color>",
-  "multiv3.photodesc": "<color=#31acbc>{0}</color>",
-  "acdm.award": "<color=#04d3a3>{0}</color>",
-  "acdm.milestone": "<color=#2da186>{0}</color>",
-  "acdm.hudtip": "<color=#04d3a3>{0}</color>",
-  "acdm.buff": "<color=#2da186>{0}</color>",
-  "acdm.tracker": "<color=#2da186>{0}</color>",
-  "trap.number": "<color=#018FCE>{0}</color>",
-  "trap.debuff": "<color=#d83c3c>{0}</color>",
-  "trap.monster": "<color=#d83c3c>{0}</color>",
-  "trap.combine": "<color=#018FCE>{0}</color>",
-  "trap.drop": "<color=#018FCE>{0}</color>",
-  "strategy.number": "<color=#018FCE>{0}</color>",
-  "strategy.text": "<color=#018FCE>{0}</color>",
-  "strategy.text2": "<color=#767676>{0}</color>",
-  "gacha.text": "<color=#f3e468>{0}</color>",
-  "buff.number": "<color=#ede160>{0}</color>",
-  "level.highlight": "<color=#ede161>{0}</color>",
-  "lv.act20side": "<color=#F7BC44>{0}</color>",
-  "lv.act20sre": "<color=#F7BC44>{0}</color>",
-  "lv.mhitem": "<color=#A57F5B>{0}</color>",
-  "lv.mhtx": "<color=#1B1B1B>{0}</color>",
-  "lv.mhfs": "<color=#A57F5B>{0}</color>",
-  "cc.miu": "<color=#8F7156>{0}</color>",
-  "ping.low": "<color=#7fa826>{0}</color>",
-  "ping.medium": "<color=#ec7a00>{0}</color>",
-  "ping.high": "<color=#ff3d3d>{0}</color>",
-  "match.success": "<color=#36BBCC>{0}</color>",
-  "map.normal": "<color=#36BBCC>{0}</color>",
-  "map.football": "<color=#36BBCC>{0}</color>",
-  "map.defence": "<color=#36BBCC>{0}</color>",
-  "milestone": "<color=#D4133C>{0}</color>",
-  "dm.award": "<color=#36BBCC>{0}</color>",
-  "dm.condition": "<color=#C9C9C9>{0}</color>",
-  "tutor": "<color=#36BBCC>{0}</color>",
-  "lv.muitem": "<color=#D4133C>{0}</color>",
-  "token.highlight": "<color=#d8741a>{0}</color>",
-  "ba.grt": "<color=#FFAB27>{0}</color>",
-  "ba.exl": "<color=#14F0AF>{0}</color>",
-  "ba.hrd": "<color=#DA2536>{0}</color>",
-  "firework.npc": "<color=#810d17>{0}</color>",
-  "act.spreward": "<color=#FF5001>{0}</color>",
-  "char.oblv": "<color=#7799cc>{0}</color>",
-  "char.mort": "<color=#779977>{0}</color>",
-  "char.dolr": "<color=#bb9955>{0}</color>",
-  "char.amor": "<color=#aa4477>{0}</color>",
-  "char.tmor": "<color=#335566>{0}</color>",
-  "act.timelimit": "<color=#ffe300>{0}</color>",
-  "vc.text": "<color=#898989>{0}</color>",
-  "vc.endtime": "<color=#ff0327>{0}</color>",
-  "firework.animal": "<color=#0098dc>{0}</color>",
-  "firework.animaldesc_1": "<color=#f05b6d>{0}</color>",
-  "firework.animaldesc_2": "<color=#b7d888>{0}</color>",
-  "firework.animaldesc_3": "<color=#ffc25e>{0}</color>",
-  "firework.animaldesc_4": "<color=#70c0db>{0}</color>",
-  "firework.animaldesc_all": "<color=#ffecb1>{0}</color>",
+  "rolv.rem": "<color=#F49800>{0}</color>",
+  "ba.steal": "<color=#0098DC>{0}</color>",
 };
 
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-export function getLabelTemplate(noteKey) {
-  if (!isNonEmptyString(noteKey)) return null;
-
-  if (NOTEKEY_LABEL_TEMPLATES?.[noteKey]) return NOTEKEY_LABEL_TEMPLATES[noteKey];
-
-  const lower = noteKey.toLowerCase();
-  if (NOTEKEY_LABEL_TEMPLATES?.[lower]) return NOTEKEY_LABEL_TEMPLATES[lower];
-
-  const keys = Object.keys(NOTEKEY_LABEL_TEMPLATES || {});
-  const found = keys.find((k) => k.toLowerCase() === lower);
-  return found ? NOTEKEY_LABEL_TEMPLATES[found] : null;
+function normalizeNewlines(text) {
+  // Avoid regex literals here to prevent CR/LF copy issues in some editors.
+  return String(text ?? "")
+    .split("\r\n")
+    .join("\n")
+    .split("\r")
+    .join("\n")
+    // Some localized strings contain literal "\n"
+    .split("\\n")
+    .join("\n");
 }
 
-export function applyLabelTemplate(label, template) {
-  if (!isNonEmptyString(template)) return label;
-  return template.includes("{0}") ? template.replaceAll("{0}", String(label)) : String(label);
-}
-// Format a label using NOTEKEY_LABEL_TEMPLATES (returns a string that may contain <color> / <i> markup)
-export function formatLabelWithNoteKey(label, noteKey) {
-  const tpl = getLabelTemplate(noteKey);
-  return applyLabelTemplate(label, tpl);
-}
-
-// Convert nested note tags like "<@cc.rem>Text</>" inside a label into renderable markup (<color> / <i>).
-// This prevents raw "<@...>" from leaking when a note label contains another note tag.
-export function formatNestedNoteTags(text) {
-  if (text == null) return "";
-  let out = String(text);
-
-  // Replace [[label|noteKey]]
-  out = out.replace(/\[\[([\s\S]*?)\|([\s\S]*?)\]\]/g, (_, lb, nk) => {
-    const inner = formatNestedNoteTags(lb);
-    return formatLabelWithNoteKey(inner, String(nk || "").trim());
-  });
-
-  // Replace <@noteKey>label</> and <$noteKey>label</>
-  const re = /<([@$])([a-zA-Z0-9_.-]+)>([\s\S]*?)<\/>/g;
-
-  // Iterate a few times to handle nesting safely
-  for (let i = 0; i < 8; i += 1) {
-    const prev = out;
-    out = out.replace(re, (_, __sigil, nk, lb) => {
-      const inner = formatNestedNoteTags(lb);
-      return formatLabelWithNoteKey(inner, String(nk || "").trim());
-    });
-    if (out === prev) break;
-  }
-
-  return out;
-}
 function parseUnityHexColor(hexRaw) {
   const hex = String(hexRaw || "").replace(/^#/, "").trim();
   if (!/^[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$/.test(hex)) return null;
@@ -235,14 +71,8 @@ function parseUnityHexColor(hexRaw) {
   return { color: `#${hex}`, opacity: 1 };
 }
 
-function extractFirstColorStyle(str) {
-  if (!isNonEmptyString(str)) return null;
-  const m = /<\s*color\s*=\s*#([0-9a-fA-F]{6,8})\s*>/i.exec(str);
-  return m ? parseUnityHexColor(m[1]) : null;
-}
-
 function renderInlineMarkup(str, keyPrefix = "t") {
-  if (!isNonEmptyString(str)) return [];
+  if (!isNonEmptyString(str)) return [str ?? ""];
 
   const re = /<color=#([0-9a-fA-F]{6,8})>([\s\S]*?)<\/color>|<i>([\s\S]*?)<\/i>/gi;
   const nodes = [];
@@ -299,8 +129,8 @@ export function renderInlineItalic(str, keyPrefix = "t") {
 }
 
 export function renderMultiline(text, keyPrefix = "ml") {
-  if (!isNonEmptyString(text)) return null;
-  const lines = String(text).replace(/\r\n/g, "\n").split("\n");
+  if (text == null) return null;
+  const lines = normalizeNewlines(text).split("\n");
   return lines.map((line, idx) => (
     <React.Fragment key={`${keyPrefix}-${idx}`}>
       {renderInlineMarkup(line, `${keyPrefix}-${idx}`)}
@@ -339,6 +169,205 @@ function getTerm(termId) {
   return dictEn[key] || dictEn[lower] || dictCn[key] || dictCn[lower] || null;
 }
 
+function getTemplateForNoteKey(noteKey) {
+  if (!isNonEmptyString(noteKey)) return null;
+  const direct = NOTEKEY_LABEL_TEMPLATES?.[noteKey];
+  if (direct) return direct;
+
+  const lower = noteKey.toLowerCase();
+  if (NOTEKEY_LABEL_TEMPLATES?.[lower]) return NOTEKEY_LABEL_TEMPLATES[lower];
+
+  const keys = Object.keys(NOTEKEY_LABEL_TEMPLATES || {});
+  const found = keys.find((k) => k.toLowerCase() === lower);
+  return found ? NOTEKEY_LABEL_TEMPLATES[found] : null;
+}
+
+function getNoteKeyStyle(noteKey) {
+  const tpl = getTemplateForNoteKey(noteKey);
+  if (!isNonEmptyString(tpl)) return null;
+
+  const italic = /<\s*i\s*>/i.test(tpl);
+  const m = /<\s*color\s*=\s*#([0-9a-fA-F]{6,8})\s*>/i.exec(tpl);
+  const colorStyle = m ? parseUnityHexColor(m[1]) : null;
+
+  if (!italic && !colorStyle) return null;
+  return { italic, colorStyle };
+}
+
+function applyNoteKeyStyle(nodes, noteKey, keyPrefix) {
+  const style = getNoteKeyStyle(noteKey);
+  const base = <React.Fragment key={`${keyPrefix}-base`}>{nodes}</React.Fragment>;
+
+  if (!style) return base;
+
+  const inner = style.italic ? <i key={`${keyPrefix}-it`}>{base}</i> : base;
+
+  if (style.colorStyle?.color) {
+    const st = {
+      color: style.colorStyle.color,
+      ...(style.colorStyle.opacity < 1 ? { opacity: style.colorStyle.opacity } : null),
+    };
+    return (
+      <span key={`${keyPrefix}-c`} style={st}>
+        {inner}
+      </span>
+    );
+  }
+
+  return inner;
+}
+
+function resolveHoverTarget(keyRaw) {
+  const key = String(keyRaw || "").trim();
+  if (!isNonEmptyString(key)) return { kind: null, key: "" };
+  const term = getTerm(key);
+  if (term) return { kind: "term", key };
+  const note = getNote(key);
+  if (note) return { kind: "note", key };
+  // Unknown: treat as noteKey (StatHover will render plain children if no tooltip)
+  return { kind: "note", key };
+}
+
+/**
+ * Parse text with:
+ * - [[label|hoverKey]]  -> creates StatHover (noteKey or termId)
+ * - <@noteKey>...</>    -> apply highlight style from NOTEKEY_LABEL_TEMPLATES
+ * - <$termId>...</>     -> creates StatHover for termId
+ * Also preserves stray </> by consuming it (never printing it).
+ *
+ * This parser intentionally does NOT rely on regex for nested tags.
+ */
+function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
+  const nodes = [];
+  let buf = "";
+
+  const flushBuf = () => {
+    if (buf.length === 0) return;
+    const cur = buf;
+    buf = "";
+
+    // Preserve whitespace-only segments (important to avoid "Steals70" issues)
+    if (cur.trim().length === 0) {
+      nodes.push(cur);
+      return;
+    }
+
+    const rendered = renderInlineMarkup(cur, `${keyPrefix}-tx-${state.k++}`);
+    nodes.push(...rendered);
+  };
+
+  const pushBr = () => {
+    nodes.push(<br key={`${keyPrefix}-br-${state.k++}`} />);
+  };
+
+  while (state.i < str.length) {
+    // Close tag </> (for @/$ blocks)
+    if (str.startsWith("</>", state.i)) {
+      if (stopAtClose) {
+        flushBuf();
+        state.i += 3;
+        return nodes;
+      }
+      // stray close => swallow
+      state.i += 3;
+      continue;
+    }
+
+    // Newline
+    if (opts.allowNewlines && str[state.i] === "\n") {
+      flushBuf();
+      state.i += 1;
+      pushBr();
+      continue;
+    }
+
+    // [[label|key]]
+    if (str.startsWith("[[", state.i)) {
+      const end = str.indexOf("]]", state.i + 2);
+      if (end !== -1) {
+        const inside = str.slice(state.i + 2, end);
+        const bar = inside.indexOf("|");
+        if (bar !== -1) {
+          flushBuf();
+          const labelPart = inside.slice(0, bar);
+          const keyPart = inside.slice(bar + 1);
+
+          const subState = { i: 0, k: 0 };
+          const labelNodes = parseRichNodes(labelPart, subState, `${keyPrefix}-wl-${state.k++}`, { allowNewlines: false }, false);
+
+          const target = resolveHoverTarget(keyPart);
+          const compKey = `${keyPrefix}-hv-${state.k++}-${state.i}-${end}`;
+
+          if (target.kind === "term") {
+            nodes.push(
+              <StatHover key={compKey} termId={target.key}>
+                {labelNodes}
+              </StatHover>
+            );
+          } else if (target.kind === "note") {
+            nodes.push(
+              <StatHover key={compKey} noteKey={target.key}>
+                {labelNodes}
+              </StatHover>
+            );
+          } else {
+            nodes.push(labelNodes);
+          }
+
+          state.i = end + 2;
+          continue;
+        }
+      }
+      // Not a valid pattern => treat as text
+    }
+
+    // <@noteKey>...</> or <$termId>...</>
+    if (str[state.i] === "<" && (str[state.i + 1] === "@" || str[state.i + 1] === "$")) {
+      // parse key until '>'
+      const sigil = str[state.i + 1];
+      const gt = str.indexOf(">", state.i + 2);
+      if (gt !== -1) {
+        const key = str.slice(state.i + 2, gt).trim();
+        flushBuf();
+        state.i = gt + 1;
+
+        const inner = parseRichNodes(str, state, `${keyPrefix}-in-${state.k++}`, opts, true);
+        const wrapKey = `${keyPrefix}-w-${sigil}-${key}-${state.k++}`;
+
+        if (sigil === "@") {
+          nodes.push(applyNoteKeyStyle(inner, key, wrapKey));
+        } else {
+          // term hover
+          nodes.push(
+            <StatHover key={wrapKey} termId={key}>
+              {inner}
+            </StatHover>
+          );
+        }
+        continue;
+      }
+    }
+
+    // Otherwise, append char
+    buf += str[state.i];
+    state.i += 1;
+  }
+
+  flushBuf();
+  return nodes;
+}
+
+function renderRich(text, keyPrefix, opts = {}) {
+  const normalized = normalizeNewlines(text);
+  const state = { i: 0, k: 0 };
+  return parseRichNodes(normalized, state, keyPrefix, { allowNewlines: true, ...opts }, false);
+}
+
+function renderRichInline(text, keyPrefix) {
+  const normalized = normalizeNewlines(text).split("\n").join(" ");
+  const state = { i: 0, k: 0 };
+  return parseRichNodes(normalized, state, keyPrefix, { allowNewlines: false }, false);
+}
 
 export default function StatHover({ label, noteKey, termId, children }) {
   const anchorRef = React.useRef(null);
@@ -363,18 +392,24 @@ export default function StatHover({ label, noteKey, termId, children }) {
   // If we have no children and no label text, nothing to render
   if (!hasChildren && !isNonEmptyString(label)) return null;
 
-  // Format label (for noteKey highlight tags / templates)
-  let formattedLabel = hasChildren ? "" : String(label || "");
-  if (!hasChildren) {
-    const normalizedLabel = formatNestedNoteTags(formattedLabel);
-    const tpl = isNonEmptyString(noteKey) ? NOTEKEY_LABEL_TEMPLATES?.[noteKey] : null;
+  // Build anchor content:
+  // - If children are provided, render them as-is.
+  // - If label is provided:
+  //    - parse shared tags ([[|]], <@>, <$>) and apply NOTEKEY template style if noteKey matches a template.
+  let anchorContent = null;
 
-    formattedLabel = tpl ? applyLabelTemplate(normalizedLabel, tpl) : normalizedLabel;
+  if (hasChildren) {
+    anchorContent = children;
+  } else {
+    const parsed = renderRichInline(String(label || ""), "sh-lbl");
+    const tpl = getTemplateForNoteKey(noteKey);
+    anchorContent = tpl ? applyNoteKeyStyle(parsed, noteKey, "sh-lblwrap") : parsed;
   }
 
-  const anchorBaseColorStyle = !hasChildren && isNonEmptyString(noteKey)
-    ? extractFirstColorStyle(formattedLabel)
-    : null;
+  // If there is no tooltip data, just render label/children without underline or handlers.
+  if (!hasTooltip) {
+    return <>{anchorContent}</>;
+  }
 
   const updatePos = React.useCallback(() => {
     const el = anchorRef.current;
@@ -385,16 +420,15 @@ export default function StatHover({ label, noteKey, termId, children }) {
     const vh = window.innerHeight;
 
     const tooltipEl = tooltipRef.current;
-    const tipW = tooltipEl?.offsetWidth || 260;
-    const tipH = tooltipEl?.offsetHeight || 120;
+    const tipW = tooltipEl?.offsetWidth || 280;
+    const tipH = tooltipEl?.offsetHeight || 140;
 
     const gap = 8;
 
     const spaceTop = rect.top;
     const spaceBottom = vh - rect.bottom;
 
-    const place =
-      spaceBottom >= tipH + gap || spaceBottom >= spaceTop ? "bottom" : "top";
+    const place = spaceBottom >= tipH + gap || spaceBottom >= spaceTop ? "bottom" : "top";
 
     const top =
       place === "bottom"
@@ -458,6 +492,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
       setOpen(false);
     }
   };
+
   // Close pinned tooltip when clicking/tapping outside (mobile-friendly)
   React.useEffect(() => {
     if (!pinned) return;
@@ -478,25 +513,37 @@ export default function StatHover({ label, noteKey, termId, children }) {
     return () => document.removeEventListener("pointerdown", onPointerDown, true);
   }, [pinned]);
 
+  const tooltipNode = visible ? (
+    <div
+      ref={tooltipRef}
+      className="fixed z-[999999] w-[300px] rounded-lg border border-white/10 bg-black/90 p-3 text-sm text-white shadow-xl"
+      style={{ top: pos.top, left: pos.left }}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
+      {isNonEmptyString(title) ? (
+        <div className="text-center text-white font-semibold">
+          {renderRich(title, "sh-ttl", { allowNewlines: true })}
+        </div>
+      ) : null}
 
-  const anchorStyle = {};
-  if (anchorBaseColorStyle?.color) {
-    anchorStyle.color = anchorBaseColorStyle.color;
-    anchorStyle.opacity = anchorBaseColorStyle.opacity ?? 1;
-  }
+      {isNonEmptyString(title) && isNonEmptyString(text) ? (
+        <div className="h-px bg-white/10 my-3" />
+      ) : null}
 
-  // If there is no tooltip data, just render the label/children without underline or handlers.
-  if (!hasTooltip) {
-    if (hasChildren) return <>{children}</>;
-    return <>{renderInlineMarkup(formattedLabel, "sh-lbl")}</>;
-  }
+      {isNonEmptyString(text) ? (
+        <div className="text-white/90 whitespace-pre-wrap leading-relaxed">
+          {renderRich(text, "sh-txt", { allowNewlines: true })}
+        </div>
+      ) : null}
+    </div>
+  ) : null;
 
   return (
     <>
       <span
         ref={anchorRef}
         className="cursor-pointer select-none inline-block border-b border-dashed border-white/70 pb-[1px] hover:border-white"
-        style={anchorStyle}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         onClick={onClick}
@@ -505,32 +552,10 @@ export default function StatHover({ label, noteKey, termId, children }) {
         tabIndex={0}
         aria-expanded={visible}
       >
-        {hasChildren ? children : renderInlineMarkup(formattedLabel, "sh-lbl")}
+        {anchorContent}
       </span>
 
-      {visible ? (
-        <div
-          ref={tooltipRef}
-          className="fixed z-[9999] w-[280px] rounded-lg border border-white/10 bg-black/90 p-3 text-sm text-white shadow-xl"
-          style={{
-            top: pos.top,
-            left: pos.left,
-          }}
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
-        >
-          {isNonEmptyString(title) ? (
-            <div className="mb-1 text-white font-semibold">
-              {renderMultiline(formatNestedNoteTags(title))}
-            </div>
-          ) : null}
-          {isNonEmptyString(text) ? (
-            <div className="text-white/90 whitespace-pre-wrap leading-relaxed">
-              {renderMultiline(formatNestedNoteTags(text))}
-            </div>
-          ) : null}
-        </div>
-      ) : null}
+      {tooltipNode ? createPortal(tooltipNode, document.body) : null}
     </>
   );
 }
