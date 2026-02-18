@@ -378,6 +378,17 @@ export default function StatHover({ label, noteKey, termId, children }) {
   const [pinned, setPinned] = React.useState(false);
   const [pos, setPos] = React.useState({ top: 0, left: 0, place: "bottom" });
 
+  // Desktop uses hover; mobile uses tap/click (no hover).
+  const [canHover, setCanHover] = React.useState(true);
+  React.useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    try {
+      setCanHover(window.matchMedia("(hover: hover)").matches);
+    } catch {
+      // ignore
+    }
+  }, []);
+
   const term = getTerm(termId);
   const note = getNote(noteKey);
 
@@ -464,21 +475,23 @@ export default function StatHover({ label, noteKey, termId, children }) {
   }, [pinned]);
 
   const onEnter = () => {
+    if (!canHover) return;
     hoveringRef.current = true;
     if (!pinned) setOpen(true);
   };
 
   const onLeave = () => {
+    if (!canHover) return;
     hoveringRef.current = false;
     closeSoon();
   };
 
   const onClick = (e) => {
-    e.preventDefault();
+    // Only enable click-to-pin on devices without hover (mobile/tablet).
+    if (canHover) return;
     e.stopPropagation();
     if (!hasTooltip) return;
 
-    // Tap/click to open (useful for mobile). Close by tapping elsewhere.
     setPinned(true);
     setOpen(true);
     updatePos();
@@ -543,7 +556,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
     <>
       <span
         ref={anchorRef}
-        className="cursor-pointer select-none inline-block border-b border-dashed border-white/70 pb-[1px] hover:border-white"
+        className="cursor-pointer select-text inline-block border-b border-dashed border-white/70 pb-[1px] hover:border-white"
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         onClick={onClick}
