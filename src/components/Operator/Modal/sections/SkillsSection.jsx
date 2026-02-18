@@ -133,12 +133,18 @@ function parseMarkupSegment(
 
     if (isNonEmptyString(noteKeyCtx)) {
       if (String(buf).trim() === "") {
+        // Preserve pure whitespace between markup tokens
         nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
       } else {
         nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
       }
     } else {
-      nodes.push(...renderInlineItalic(buf, kp));
+      if (String(buf).trim() === "") {
+        // IMPORTANT: don't drop whitespace-only chunks, or words will stick together (e.g. "Steals70")
+        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
+      } else {
+        nodes.push(...renderInlineItalic(buf, kp));
+      }
     }
     buf = "";
   };
@@ -281,12 +287,18 @@ function parseMarkupHovers(
 
     if (isNonEmptyString(noteKeyCtx)) {
       if (String(buf).trim() === "") {
+        // Preserve pure whitespace between markup tokens
         nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
       } else {
         nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
       }
     } else {
-      nodes.push(...renderInlineItalic(buf, kp));
+      if (String(buf).trim() === "") {
+        // IMPORTANT: don't drop whitespace-only chunks, or words will stick together (e.g. "Steals70")
+        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
+      } else {
+        nodes.push(...renderInlineItalic(buf, kp));
+      }
     }
     buf = "";
   };
