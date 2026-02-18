@@ -444,11 +444,10 @@ export default function StatHover({ label, noteKey, termId, children }) {
     e.stopPropagation();
     if (!hasTooltip) return;
 
-    setPinned((v) => {
-      const next = !v;
-      setOpen(next);
-      return next;
-    });
+    // Tap/click to open (useful for mobile). Close by tapping elsewhere.
+    setPinned(true);
+    setOpen(true);
+    updatePos();
   };
 
   const onKeyDown = (e) => {
@@ -459,6 +458,26 @@ export default function StatHover({ label, noteKey, termId, children }) {
       setOpen(false);
     }
   };
+  // Close pinned tooltip when clicking/tapping outside (mobile-friendly)
+  React.useEffect(() => {
+    if (!pinned) return;
+
+    const onPointerDown = (ev) => {
+      const a = anchorRef.current;
+      const t = tooltipRef.current;
+      const target = ev.target;
+
+      if (a && a.contains(target)) return;
+      if (t && t.contains(target)) return;
+
+      setPinned(false);
+      setOpen(false);
+    };
+
+    document.addEventListener("pointerdown", onPointerDown, true);
+    return () => document.removeEventListener("pointerdown", onPointerDown, true);
+  }, [pinned]);
+
 
   const anchorStyle = {};
   if (anchorBaseColorStyle?.color) {
@@ -510,9 +529,6 @@ export default function StatHover({ label, noteKey, termId, children }) {
               {renderMultiline(formatNestedNoteTags(text))}
             </div>
           ) : null}
-          <div className="mt-2 text-[11px] text-white/50">
-            {pinned ? "Click again (or press Esc) to close." : "Click to pin. Hover out to close."}
-          </div>
         </div>
       ) : null}
     </>
