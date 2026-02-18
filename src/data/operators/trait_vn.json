@@ -76,7 +76,7 @@
     { "alchemist": "Có thể ném các <@ba.kw>đơn vị Luyện Kim</> để hỗ trợ trong chiến đấu." },
     { "stalker": "Gây sát thương lên <@ba.kw>tất cả kẻ địch</> trong phạm vi tấn công\nCó 50% né sát thương vật lý và phép, đồng thời ít bị kẻ địch <@ba.kw>chọn làm mục tiêu</> tấn công." },
     { "dollkeeper": "Khi nhận sát thương chí tử sẽ không rút lui, mà chuyển sang <Thế thân> chiến đấu (chặn của <Thế thân> là 0). Sau 20 giây sẽ đổi trở lại bản thể ban đầu." },
-    { "geek": "Liên tục tự mất HP theo thời gian." },
+    { "geek": "Liên tục giảm HP theo thời gian." },
     { "geek_2": "Mất 1% HP tối đa mỗi giây và không giảm dưới 1 máu." },
     { "hookmaster": "Kỹ năng có thể <@ba.kw>kéo</> kẻ địch\nCó thể triển khai trên ô tầm xa." },
     { "merchant": "<@ba.kw>Giảm</> thời gian tái triển khai, nhưng sẽ không hoàn trả [[DP|DP]] khi rút lui. Khi đang ở trên sân, sẽ <@ba.kw>tiêu hao</> 3 [[DP|DP]] mỗi 3 giây(nếu không đủ [[DP|DP]] thì tự động rút lui)." },

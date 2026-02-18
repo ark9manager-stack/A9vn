@@ -94,5 +94,9 @@
   "Slow": {
     "title": "Làm chậm/Slow",
     "text": "Giảm 80% tốc độ di chuyển."
+  },
+  "Barrier": {
+    "title": "Lá chắn/Barrier",
+    "text": "Hấp thụ một lượng sát thương nhất định."
   }
 }

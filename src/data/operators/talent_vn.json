@@ -289,16 +289,14 @@
     "Talent4": ""
   },
   "char_1041_angel2": {
-    "TitleTalent1": "Firepower FM",
-    "TitleTalent2": "Covenant of Bullets",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent2": "",
-    "Talent2_p2": "",
-    "Talent3": "",
-    "Talent4": ""
+    "TitleTalent1": "Hỏa Lực FM",
+    "TitleTalent2": "Tân Ước Đạn Dược",
+    "Talent0": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 105% ATK của bản thân.",
+    "Talent0_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
+    "Talent1": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
+    "Talent1_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 165%<@ba.talpu>(+15%)</> ATK của bản thân.",
+    "Talent2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +9% ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano].",
+    "Talent2_p2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano]."
   },
   "char_1042_phatm2": {
     "TitleTalent1": "Mind Over Matter",
