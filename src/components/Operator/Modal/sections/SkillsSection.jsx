@@ -6,8 +6,6 @@ import traitVN from "../../../../data/operators/trait_vn.json";
 import traitEN from "../../../../data/operators/trait_en.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
-import gameDataConst from "../../../../data/gamedata_const.json";
-import gameDataConstEN from "../../../../data/gamedata_const_en.json";
 import tagVN from "../../../../data/operators/tag_vn.json";
 import skillTable from "../../../../data/operators/skill_table.json";
 import skillTableEN from "../../../../data/operators/skill_table_en.json";
@@ -68,36 +66,12 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-function getTermEntry(termId) {
-  if (!isNonEmptyString(termId)) return null;
-  return (
-    gameDataConstEN?.termDescriptionDict?.[termId] ||
-    gameDataConst?.termDescriptionDict?.[termId] ||
-    null
-  );
-}
-
 function formatNestedNoteTags(input) {
   if (!isNonEmptyString(input)) return "";
   let s = String(input);
   s = s.replace(/<[@$][a-zA-Z0-9_.-]+>/g, "");
   s = s.replace(/<\/>/g, "");
   return s;
-}
-
-function createTermCollector() {
-  const seen = new Set();
-  const order = [];
-  return {
-    order,
-    add(termId) {
-      if (!isNonEmptyString(termId)) return;
-      if (!seen.has(termId)) {
-        seen.add(termId);
-        order.push(termId);
-      }
-    },
-  };
 }
 
 function matchCloseTagAt(str, i) {
@@ -118,7 +92,6 @@ function matchCloseTagAt(str, i) {
 function parseMarkupSegment(
   str,
   keyPrefix,
-  termCollector,
   noteKeyCtx = null,
   startIndex = 0,
   stopAtClose = false
@@ -181,7 +154,8 @@ function parseMarkupSegment(
       const barIdx = inner.indexOf("|");
       if (barIdx === -1) {
         buf += str.slice(i, close + 2);
-        i = close + 2;
+
+      i = close + 2;
         continue;
       }
 
@@ -190,16 +164,7 @@ function parseMarkupSegment(
       const label = formatNestedNoteTags(rawLabel);
 
       nodes.push(
-        <span
-          key={`${keyPrefix}-h-${i}`}
-          style={{
-            textDecoration: "underline",
-            textUnderlineOffset: "1px",
-            textDecorationSkipInk: "auto",
-          }}
-        >
-          <StatHover label={label} noteKey={noteKey} />
-        </span>
+        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
       );
 
       i = close + 2;
@@ -222,7 +187,6 @@ function parseMarkupSegment(
       const inner = parseMarkupSegment(
         str,
         `${keyPrefix}-in-${i}`,
-        termCollector,
         type === "@" ? key : noteKeyCtx,
         gt + 1,
         true
@@ -231,23 +195,10 @@ function parseMarkupSegment(
       const innerNodes = inner.nodes;
 
       if (type === "$") {
-        const term = getTermEntry(key);
-        if (term) termCollector.add(key);
-
         nodes.push(
-          term ? (
-            <span
-              key={`${keyPrefix}-term-${i}-${key}`}
-              className="inline-block border-b border-dashed border-white/70 pb-[1px]"
-              style={{ lineHeight: "1.2" }}
-            >
-              {innerNodes}
-            </span>
-          ) : (
-            <React.Fragment key={`${keyPrefix}-term-${i}-${key}`}>
-              {innerNodes}
-            </React.Fragment>
-          )
+          <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
+            {innerNodes}
+          </StatHover>
         );
       } else {
         // '@' tag: styling applied via noteKeyCtx inside recursion
@@ -333,7 +284,8 @@ function parseMarkupHovers(
       const barIdx = inner.indexOf("|");
       if (barIdx === -1) {
         buf += str.slice(i, close + 2);
-        i = close + 2;
+
+      i = close + 2;
         continue;
       }
 
@@ -342,16 +294,7 @@ function parseMarkupHovers(
       const label = formatNestedNoteTags(rawLabel);
 
       nodes.push(
-        <span
-          key={`${keyPrefix}-h-${i}`}
-          style={{
-            textDecoration: "underline",
-            textUnderlineOffset: "1px",
-            textDecorationSkipInk: "auto",
-          }}
-        >
-          <StatHover label={label} noteKey={noteKey} />
-        </span>
+        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
       );
 
       i = close + 2;
@@ -380,11 +323,17 @@ function parseMarkupHovers(
         gt + 1,
         true
       );
-
-      // '$' terms are rendered as plain text here (no underline, no term notes)
-      nodes.push(
-        <React.Fragment key={`${keyPrefix}-${type}-${i}-${key}`}>{inner.nodes}</React.Fragment>
-      );
+      if (type === "$") {
+        nodes.push(
+          <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
+            {inner.nodes}
+          </StatHover>
+        );
+      } else {
+        nodes.push(
+          <React.Fragment key={`${keyPrefix}-${type}-${i}-${key}`}>{inner.nodes}</React.Fragment>
+        );
+      }
 
       i = inner.index;
       continue;
@@ -399,7 +348,7 @@ function parseMarkupHovers(
 }
 
 
-function renderTextWithTermNotes(text, keyPrefix, termCollector) {
+function renderTextWithTermNotes(text, keyPrefix) {
   if (!isNonEmptyString(text)) return null;
 
   // Normalize line breaks without regex literals
@@ -409,7 +358,7 @@ function renderTextWithTermNotes(text, keyPrefix, termCollector) {
     // Some localized strings contain literal "\\n"
     .split("\\n").join("\n");
 
-  const parsed = parseMarkupSegment(normalized, keyPrefix, termCollector);
+  const parsed = parseMarkupSegment(normalized, keyPrefix);
   return <>{parsed.nodes}</>;
 }
 
@@ -1123,19 +1072,8 @@ function renderLineWithHovers(line, keyPrefix) {
       const noteKey = m[2].trim();
 
       nodes.push(
-        <span
-          key={`${keyPrefix}-h-${start}`}
-          style={{
-            textDecoration: "underline",
-            textUnderlineOffset: "1px",
-            textDecorationSkipInk: "auto",
-          }}
-        >
-          <StatHover label={label} noteKey={noteKey} />
-        </span>
-      );
-
-      last = end;
+        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
+      );last = end;
       continue;
     }
 
@@ -2397,13 +2335,10 @@ const renderTalentCard = (talentIdx, resolved) => {
 
               const bg = def?.buffColor || "#FFFFFF";
               const tc = def?.textColor || "#000000";
-
-              const termCollector = createTermCollector();
               const bdescKeyPrefix = `bskill-${charKey || "unknown"}-${buffId}-${idx0}`;
               const descRender = isNonEmptyString(desc)
-                ? renderTextWithTermNotes(desc, bdescKeyPrefix, termCollector)
+                ? renderTextWithHovers(desc, bdescKeyPrefix)
                 : null;
-              const termIds = termCollector.order;
 
               return (
                 <div key={`${buffId}-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
@@ -2440,31 +2375,6 @@ const renderTalentCard = (talentIdx, resolved) => {
                           {descRender ? descRender : <span className="text-white/40 italic">-</span>}
                         </div>
                       </div>
-
-                      {Array.isArray(termIds) && termIds.length > 0 ? (
-                        <div className="mt-3">
-                          <div className="text-white/50 text-sm">ghi chú cho dòng gạch chân</div>
-
-                          <div className="mt-2 space-y-3">
-                            {termIds.map((termId) => {
-                              const t = getTermEntry(termId);
-                              if (!t) return null;
-                              const tName = isNonEmptyString(t?.termName) ? String(t.termName) : String(termId);
-                              const tDesc = isNonEmptyString(t?.description) ? String(t.description) : "";
-                              return (
-                                <div key={`term-${buffId || "unknown"}-${termId}`}>
-                                  <div className="text-white/80 text-sm font-semibold">{tName}:</div>
-                                  <div className="text-sm text-white/80 leading-relaxed break-words mt-1">
-                                    {isNonEmptyString(tDesc)
-                                      ? renderTextWithHovers(tDesc, `term-${buffId || "unknown"}-${termId}`)
-                                      : <span className="text-white/40 italic">-</span>}
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      ) : null}
                     </div>
                   </div>
                 </div>

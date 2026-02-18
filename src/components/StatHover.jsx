@@ -1,6 +1,8 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import statHoverVN from "../data/stathover_vn.json";
+import gameDataConst from "../data/gamedata_const.json";
+import gameDataConstEN from "../data/gamedata_const_en.json";
 
 const TOOLTIP_Z_INDEX = 999999;
 
@@ -325,7 +327,20 @@ function getNote(noteKey) {
   return found ? statHoverVN[found] : null;
 }
 
-export default function StatHover({ label, noteKey }) {
+function getTerm(termId) {
+  if (!isNonEmptyString(termId)) return null;
+
+  const key = String(termId).trim();
+  const lower = key.toLowerCase();
+
+  const dictEn = gameDataConstEN?.termDescriptionDict || {};
+  const dictCn = gameDataConst?.termDescriptionDict || {};
+
+  return dictEn[key] || dictEn[lower] || dictCn[key] || dictCn[lower] || null;
+}
+
+
+export default function StatHover({ label, noteKey, termId, children }) {
   const anchorRef = React.useRef(null);
   const tooltipRef = React.useRef(null);
   const hoveringRef = React.useRef(false);
@@ -334,153 +349,172 @@ export default function StatHover({ label, noteKey }) {
   const [pinned, setPinned] = React.useState(false);
   const [pos, setPos] = React.useState({ top: 0, left: 0, place: "bottom" });
 
+  const term = getTerm(termId);
   const note = getNote(noteKey);
-  const title = note?.title || "";
-  const text = note?.text || "";
 
-  const visible = open || pinned;
+  const title = term?.termName || note?.title || "";
+  const text = term?.description || note?.text || "";
+
+  const hasTooltip = isNonEmptyString(title) || isNonEmptyString(text);
+  const visible = hasTooltip && (open || pinned);
+
+  const hasChildren = children !== undefined && children !== null;
+
+  // If we have no children and no label text, nothing to render
+  if (!hasChildren && !isNonEmptyString(label)) return null;
+
+  // Format label (for noteKey highlight tags / templates)
+  let formattedLabel = hasChildren ? "" : String(label || "");
+  if (!hasChildren) {
+    const normalizedLabel = formatNestedNoteTags(formattedLabel);
+    const tpl = isNonEmptyString(noteKey) ? NOTEKEY_LABEL_TEMPLATES?.[noteKey] : null;
+
+    formattedLabel = tpl ? applyLabelTemplate(normalizedLabel, tpl) : normalizedLabel;
+  }
+
+  const anchorBaseColorStyle = !hasChildren && isNonEmptyString(noteKey)
+    ? extractFirstColorStyle(formattedLabel)
+    : null;
 
   const updatePos = React.useCallback(() => {
     const el = anchorRef.current;
     if (!el) return;
 
     const rect = el.getBoundingClientRect();
-    const margin = 8;
-    const estH = 170;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
 
-    const canPlaceBottom = rect.bottom + margin + estH < window.innerHeight;
-    const place = canPlaceBottom ? "bottom" : "top";
+    const tooltipEl = tooltipRef.current;
+    const tipW = tooltipEl?.offsetWidth || 260;
+    const tipH = tooltipEl?.offsetHeight || 120;
 
-    const top = place === "bottom" ? rect.bottom + margin : rect.top - margin;
-    const left = rect.left + rect.width / 2;
+    const gap = 8;
+
+    const spaceTop = rect.top;
+    const spaceBottom = vh - rect.bottom;
+
+    const place =
+      spaceBottom >= tipH + gap || spaceBottom >= spaceTop ? "bottom" : "top";
+
+    const top =
+      place === "bottom"
+        ? rect.bottom + gap + window.scrollY
+        : rect.top - gap - tipH + window.scrollY;
+
+    let left = rect.left + rect.width / 2 - tipW / 2 + window.scrollX;
+    left = Math.max(8 + window.scrollX, Math.min(left, vw - tipW - 8 + window.scrollX));
 
     setPos({ top, left, place });
   }, []);
-
-  const onEnter = () => {
-    hoveringRef.current = true;
-    setOpen(true);
-    updatePos();
-  };
-
-  const onLeave = () => {
-    hoveringRef.current = false;
-    window.setTimeout(() => {
-      if (!pinned && !hoveringRef.current) setOpen(false);
-    }, 80);
-  };
-
-  const togglePin = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setPinned((v) => {
-      const next = !v;
-      setOpen(true);
-      return next;
-    });
-    updatePos();
-  };
 
   React.useEffect(() => {
     if (!visible) return;
 
     updatePos();
 
-    const onPointerDown = (e) => {
-      const a = anchorRef.current;
-      const t = tooltipRef.current;
-      if (a && a.contains(e.target)) return;
-      if (t && t.contains(e.target)) return;
-
-      setPinned(false);
-      setOpen(false);
-    };
-
-    const onScrollResize = () => updatePos();
-
-    document.addEventListener("pointerdown", onPointerDown, true);
-    window.addEventListener("scroll", onScrollResize, true);
-    window.addEventListener("resize", onScrollResize);
+    const onScrollOrResize = () => updatePos();
+    window.addEventListener("scroll", onScrollOrResize, true);
+    window.addEventListener("resize", onScrollOrResize);
 
     return () => {
-      document.removeEventListener("pointerdown", onPointerDown, true);
-      window.removeEventListener("scroll", onScrollResize, true);
-      window.removeEventListener("resize", onScrollResize);
+      window.removeEventListener("scroll", onScrollOrResize, true);
+      window.removeEventListener("resize", onScrollOrResize);
     };
-  }, [visible, pinned, updatePos]);
+  }, [visible, updatePos]);
 
-  if (!isNonEmptyString(label)) return null;
+  const closeSoon = React.useCallback(() => {
+    window.setTimeout(() => {
+      if (hoveringRef.current) return;
+      if (!pinned) setOpen(false);
+    }, 120);
+  }, [pinned]);
 
-  const labelTemplate = getLabelTemplate(noteKey);
-  const formattedLabel = applyLabelTemplate(label, labelTemplate);
-  const labelColor = extractFirstColorStyle(labelTemplate);
+  const onEnter = () => {
+    hoveringRef.current = true;
+    if (!pinned) setOpen(true);
+  };
 
-  if (!note || (!isNonEmptyString(title) && !isNonEmptyString(text))) {
-    return <>{renderInlineMarkup(formattedLabel, `st-label-${noteKey || ""}`)}</>;
+  const onLeave = () => {
+    hoveringRef.current = false;
+    closeSoon();
+  };
+
+  const onClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!hasTooltip) return;
+
+    setPinned((v) => {
+      const next = !v;
+      setOpen(next);
+      return next;
+    });
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      onClick(e);
+    } else if (e.key === "Escape") {
+      setPinned(false);
+      setOpen(false);
+    }
+  };
+
+  const anchorStyle = {};
+  if (anchorBaseColorStyle?.color) {
+    anchorStyle.color = anchorBaseColorStyle.color;
+    anchorStyle.opacity = anchorBaseColorStyle.opacity ?? 1;
   }
 
-  const tooltipNode = (
-    <div
-      ref={tooltipRef}
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-      style={{
-        position: "fixed",
-        top: pos.top,
-        left: pos.left,
-        transform: pos.place === "bottom" ? "translate(-50%, 0)" : "translate(-50%, -100%)",
-        zIndex: TOOLTIP_Z_INDEX,
-        pointerEvents: "auto",
-        width: "320px",
-        maxWidth: "82vw",
-      }}
-      onClick={(e) => e.stopPropagation()}
-    >
-      <div className="rounded-lg border border-white/15 bg-black/90 shadow-lg overflow-hidden">
-        {isNonEmptyString(title) ? (
-          <div className="px-3 py-2 bg-white/10 border-b border-white/10 font-semibold text-white">
-            {renderMultiline(title, `st-title-${noteKey}`)}
-          </div>
-        ) : null}
-
-        {isNonEmptyString(text) ? (
-          <div className="px-3 py-2 text-sm leading-relaxed text-white/90">
-            {renderMultiline(text, `st-body-${noteKey}`)}
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-
-  const anchorBaseColor = labelColor?.color || "#0098DC";
+  // If there is no tooltip data, just render the label/children without underline or handlers.
+  if (!hasTooltip) {
+    if (hasChildren) return <>{children}</>;
+    return <>{renderInlineMarkup(formattedLabel, "sh-lbl")}</>;
+  }
 
   return (
     <>
       <span
         ref={anchorRef}
-        className="
-          stathover
-          cursor-pointer select-none
-          font-semibold
-          underline-offset-4
-        "
-        style={{
-          fontFamily: "inherit",
-          color: anchorBaseColor,
-          ...(labelColor?.opacity != null && labelColor.opacity < 1 ? { opacity: labelColor.opacity } : null),
-          textDecorationColor: anchorBaseColor,
-          textDecorationThickness: "2px",
-        }}
+        className="cursor-pointer select-none inline-block border-b border-dashed border-white/70 pb-[1px] hover:border-white"
+        style={anchorStyle}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
-        onClick={togglePin}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
         role="button"
         tabIndex={0}
+        aria-expanded={visible}
       >
-        {renderInlineMarkup(formattedLabel, `st-label-${noteKey || ""}`)}
+        {hasChildren ? children : renderInlineMarkup(formattedLabel, "sh-lbl")}
       </span>
 
-      {visible ? createPortal(tooltipNode, document.body) : null}
+      {visible ? (
+        <div
+          ref={tooltipRef}
+          className="fixed z-[9999] w-[280px] rounded-lg border border-white/10 bg-black/90 p-3 text-sm text-white shadow-xl"
+          style={{
+            top: pos.top,
+            left: pos.left,
+          }}
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
+        >
+          {isNonEmptyString(title) ? (
+            <div className="mb-1 text-white font-semibold">
+              {renderMultiline(formatNestedNoteTags(title))}
+            </div>
+          ) : null}
+          {isNonEmptyString(text) ? (
+            <div className="text-white/90 whitespace-pre-wrap leading-relaxed">
+              {renderMultiline(formatNestedNoteTags(text))}
+            </div>
+          ) : null}
+          <div className="mt-2 text-[11px] text-white/50">
+            {pinned ? "Click again (or press Esc) to close." : "Click to pin. Hover out to close."}
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
