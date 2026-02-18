@@ -1824,8 +1824,9 @@ const renderTalentCard = (talentIdx, resolved) => {
 
     const enName = skillEnEntry?.levels?.[0]?.name || "";
     const cnName = skillCnEntry?.levels?.[0]?.name || "";
+    if (isEnglishUI) return enName || cnName || "";
     return vnTitle || enName || cnName || "";
-  }, [vnSkillEntry, selectedSkillOrder, skillEnEntry, skillCnEntry]);
+  }, [vnSkillEntry, selectedSkillOrder, skillEnEntry, skillCnEntry, isEnglishUI]);
 
   const skillDesc = React.useMemo(() => {
     const levelNum = safeSkillLevelIdx + 1;
@@ -1835,7 +1836,7 @@ const renderTalentCard = (talentIdx, resolved) => {
     const vnText = isNonEmptyString(vnSkillEntry?.[vnKey]) ? String(vnSkillEntry[vnKey]) : "";
     const enText = skillEnEntry?.levels?.[safeSkillLevelIdx]?.description || "";
     const cnText = skillCnEntry?.levels?.[safeSkillLevelIdx]?.description || "";
-    const rawText = vnText || enText || cnText || "";
+    const rawText = isEnglishUI ? (enText || cnText || "") : (vnText || enText || cnText || "");
 
     const bbMap = buildSkillParamMap(currentSkillLevel);
     return applyBlackboard(rawText, bbMap);
@@ -1846,6 +1847,7 @@ const renderTalentCard = (talentIdx, resolved) => {
     currentSkillLevel,
     skillEnEntry,
     skillCnEntry,
+      isEnglishUI,
   ]);
 
   const currentSpType = currentSkillLevel?.spData?.spType;
@@ -2368,15 +2370,13 @@ const renderTalentCard = (talentIdx, resolved) => {
 
               const vn = buffId ? buildingVN?.[buffId] : null;
 
-              const name =
-                (isNonEmptyString(vn?.Name) ? String(vn.Name) : "") ||
-                def?.buffName ||
-                String(buffId || "");
+              const name = isEnglishUI
+                ? (def?.buffName || String(buffId || ""))
+                : ((isNonEmptyString(vn?.Name) ? String(vn.Name) : "") || def?.buffName || String(buffId || ""));
 
-              const desc =
-                (isNonEmptyString(vn?.description) ? String(vn.description) : "") ||
-                def?.description ||
-                "";
+              const desc = isEnglishUI
+                ? (def?.description || "")
+                : ((isNonEmptyString(vn?.description) ? String(vn.description) : "") || def?.description || "");
 
               const iconKey = def?.skillIcon || "";
               const iconUrl = isNonEmptyString(iconKey)
