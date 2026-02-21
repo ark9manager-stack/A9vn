@@ -17,9 +17,8 @@
     "Talent2_p4": ""
   },
   "char_009_12fce": {
-    "TitleTalent1": "Dodge Rate Up",
-    "TitleTalent2": "",
-    "Talent0_lv30": ""
+    "TitleTalent1": "Tăng cường tránh né",
+    "Talent0_lv30": "Có 50% né sát thương vật lý."
   },
   "char_010_chen": {
     "TitleTalent1": "Scolding",
@@ -291,10 +290,10 @@
   "char_1041_angel2": {
     "TitleTalent1": "Hỏa Lực FM",
     "TitleTalent2": "Tân Ước Đạn Dược",
-    "Talent0": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 105% ATK của bản thân.",
-    "Talent0_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
-    "Talent1": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
-    "Talent1_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% xác suất lập tức dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 165%<@ba.talpu>(+15%)</> ATK của bản thân.",
+    "Talent0": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 105% ATK của bản thân.",
+    "Talent0_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
+    "Talent1": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
+    "Talent1_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 165%<@ba.talpu>(+15%)</> ATK của bản thân.",
     "Talent2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +9% ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano].",
     "Talent2_p2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano]."
   },
@@ -384,12 +383,11 @@
     "Talent1_2_p4": ""
   },
   "char_109_fmout": {
-    "TitleTalent1": "Divination",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Bói toán",
+    "Talent1": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +7%; ASPD +7; HP Tối đa +12%",
+    "Talent1_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +14%<@ba.talpu>（+2%）</>; ASPD +14<@ba.talpu>（+2）</>; HP Tối đa +14%<@ba.talpu>（+2%）</>",
+    "Talent1_2": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +13%; ASPD +13; HP Tối đa +20%",
+    "Talent1_2_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +15%<@ba.talpu>（+2%）</>; ASPD +15<@ba.talpu>（+2）</>; HP Tối đa +22%<@ba.talpu>（+2%）</>"
   },
   "char_110_deepcl": {
     "TitleTalent1": "Tentacle Summoner",
@@ -435,37 +433,37 @@
     "Talent1_2": ""
   },
   "char_120_hibisc": {
-    "TitleTalent1": "Healing Up",
+    "TitleTalent1": "Tăng hồi phục",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "Talent1": "ATK +4%",
+    "Talent1_lv55": "ATK +8%"
   },
   "char_121_lava": {
-    "TitleTalent1": "Quick Skill Usage",
+    "TitleTalent1": "Xuất chiêu tức thì",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_lv55": "",
-    "Talent1_lv55_p4": ""
+    "Talent1": "Ngay lập tức nhận 15 SP sau khi triển khai.",
+    "Talent1_p4": "Ngay lập tức nhận 20<@ba.talpu>(+5)</> SP sau khi triển khai.",
+    "Talent1_lv55": "Ngay lập tức nhận 30 SP sau khi triển khai.",
+    "Talent1_lv55_p4": "Ngay lập tức nhận 35<@ba.talpu>(+5)</> SP sau khi triển khai."
   },
   "char_122_beagle": {
     "TitleTalent1": "Tăng DEF",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "Talent1": "DEF +5%",
+    "Talent1_lv55": "DEF +10%"
   },
   "char_123_fang": {
-    "TitleTalent1": "Thân thủ linh hoạt",
+    "TitleTalent1": "Linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "phí triển khai -1."
+    "Talent1": "Phí triển khai -1."
   },
   "char_124_kroos": {
-    "TitleTalent1": "Targeting - Primary",
+    "TitleTalent1": "Nhắm vào điểm yếu · Sơ cấp",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_lv55": "",
-    "Talent1_lv55_p4": ""
+    "Talent1": "Khi tấn công, có 10% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</>.",
+    "Talent1_lv55": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_lv55_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</>."
   },
   "char_126_shotst": {
     "TitleTalent1": "Anti-Air Specialist",
@@ -566,12 +564,11 @@
     "Talent1_2_p4": ""
   },
   "char_141_nights": {
-    "TitleTalent1": "Black Mist",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Màn sương đen",
+    "Talent1": "Đòn tấn công khiến RES của mục tiêu -10% trong 1 giây.",
+    "Talent1_p4": "Đòn tấn công khiến RES của mục tiêu -13%<@ba.talpu>(+3%)</> trong 1 giây.",
+    "Talent1_2": "Đòn tấn công khiến RES của mục tiêu -20% trong 1 giây.",
+    "Talent1_2_p4": "Đòn tấn công khiến RES của mục tiêu -23%<@ba.talpu>(+3%)</> trong 1 giây."
   },
   "char_143_ghost": {
     "TitleTalent1": "Stamina Up",
@@ -811,8 +808,8 @@
   "char_192_falco": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "ATK +4%.",
-    "Talent1_lv55": "ATK +8%."
+    "Talent1": "ATK +4%",
+    "Talent1_lv55": "ATK +8%"
   },
   "char_193_frostl": {
     "TitleTalent1": "Covered Strike",
@@ -974,34 +971,30 @@
   "char_208_melan": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "Talent1": "ATK +4%",
+    "Talent1_lv55": "ATK +8%"
   },
   "char_209_ardign": {
-    "TitleTalent1": "Max HP Up",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "TitleTalent1": "Tăng HP tối đa",
+    "Talent1": "HP tối đa +6%",
+    "Talent1_lv55": "HP tối đa +12%"
   },
   "char_210_stward": {
-    "TitleTalent1": "Armor Break",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "TitleTalent1": "Phá giáp",
+    "Talent1": "ATK +3%, ưu tiên tấn công kẻ địch có DEF cao nhất.",
+    "Talent1_lv55": "ATK +6%, ưu tiên tấn công kẻ địch có DEF cao nhất."
   },
   "char_211_adnach": {
-    "TitleTalent1": "Shortcoming Breakthrough",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "TitleTalent1": "Khắc phục điểm yếu",
+    "Talent1": "ASPD +4, ưu tiên tấn công kẻ địch đánh tầm xa.",
+    "Talent1_lv55": "ASPD +8, ưu tiên tấn công kẻ địch đánh tầm xa."
   },
   "char_212_ansel": {
-    "TitleTalent1": "Additional Healing",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_lv55": "",
-    "Talent1_lv55_p4": ""
+    "TitleTalent1": "Hồi phục cùng lúc",
+    "Talent1": "Có 7% tỷ lệ hồi phục thêm 1 đồng minh.",
+    "Talent1_p4": "Có 10%<@ba.talpu>(+3%)</> tỷ lệ hồi phục thêm 1 đồng minh.",
+    "Talent1_lv55": "Có 15% tỷ lệ hồi phục thêm 1 đồng minh.",
+    "Talent1_lv55_p4": "Có 18%<@ba.talpu>(+3%)</> tỷ lệ hồi phục thêm 1 đồng minh."
   },
   "char_213_mostma": {
     "TitleTalent1": "Skill Aura - Caster",
@@ -1054,10 +1047,10 @@
   "char_222_bpipe": {
     "TitleTalent1": "Tiếp đạn tinh vi",
     "TitleTalent2": "Truyền thống quân đội",
-    "Talent1": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
-    "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
-    "Talent1_2": "Mỗi lần tấn công có 25% xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
-    "Talent1_2_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> xác suất tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
+    "Talent1": "Mỗi lần tấn công có 25% tỷ lệ tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
+    "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> tỷ lệ tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
+    "Talent1_2": "Mỗi lần tấn công có 25% tỷ lệ tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
+    "Talent1_2_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> tỷ lệ tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
     "Talent2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】sẽ nhận +6 SP khởi đầu.",
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
   },
@@ -1109,8 +1102,8 @@
   "char_240_wyvern": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "ATK +4%.",
-    "Talent1_lv55": "ATK +8%."
+    "Talent1": "ATK +4%",
+    "Talent1_lv55": "ATK +8%"
   },
   "char_241_panda": {
     "TitleTalent1": "Kung Fu",
@@ -1279,10 +1272,9 @@
     "Talent1_2": ""
   },
   "char_278_orchid": {
-    "TitleTalent1": "Casting Speed Up",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_lv55": ""
+    "TitleTalent1": "Tăng tốc thi triển",
+    "Talent1": "ASPD +5",
+    "Talent1_lv55": "ASPD +9"
   },
   "char_279_excu": {
     "TitleTalent1": "Final Modification",
@@ -1301,25 +1293,24 @@
     "Talent1_lv55_p4": "HP tối đa +8%<@ba.talpu>(+2%)</>, ATK +8%<@ba.talpu>(+2%)</>."
   },
   "char_282_catap": {
-    "TitleTalent1": "Lightweight",
+    "TitleTalent1": "Linh hoạt",
     "TitleTalent2": "",
-    "Talent1": ""
+    "Talent1": "Phí triển khai -1."
   },
   "char_283_midn": {
-    "TitleTalent1": "Targeting - Primary",
+    "TitleTalent1": "Nhắm vào điểm yếu · Sơ cấp",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_lv55": "",
-    "Talent1_lv55_p4": ""
+    "Talent1": "Khi tấn công, có 10% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</>.",
+    "Talent1_lv55": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_lv55_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</>."
   },
   "char_284_spot": {
-    "TitleTalent1": "Smoke Installation",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_lv55": "",
-    "Talent1_lv55_p4": ""
+    "TitleTalent1": "Lắp đặt bom khói",
+    "Talent1": "Hồi phục cho đồng minh sẽ cung cấp thêm cho họ 10% tỷ lệ né sát thương vật lý trong 3 giây.",
+    "Talent1_p4": "Hồi phục cho đồng minh sẽ cung cấp thêm cho họ 15%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý trong 3 giây.",
+    "Talent1_lv55": "Hồi phục cho đồng minh sẽ cung cấp thêm cho họ 20% tỷ lệ né sát thương vật lý trong 3 giây.",
+    "Talent1_lv55_p4": "Hồi phục cho đồng minh sẽ cung cấp thêm cho họ 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý trong 3 giây."
   },
   "char_285_medic2": {
     "TitleTalent1": "Phun sương y tế·I",
@@ -1360,10 +1351,10 @@
   "char_290_vigna": {
     "TitleTalent1": "Nhát đâm chí mạng",
     "TitleTalent2": "",
-    "Talent1": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 50%. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
-    "Talent1_p4": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 60%<@ba.talpu>(+10%)</>. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
-    "Talent1_2": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 100%. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
-    "Talent1_2_p4": "Khi tấn công, có 10% xác suất khiến ATK đòn tấn công đó tăng thêm 110%<@ba.talpu>(+10%)</>. Xác suất này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng."
+    "Talent1": "Khi tấn công, có 10% tỷ lệ khiến ATK đòn tấn công đó tăng thêm 50%. tỷ lệ này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
+    "Talent1_p4": "Khi tấn công, có 10% tỷ lệ khiến ATK đòn tấn công đó tăng thêm 60%<@ba.talpu>(+10%)</>. tỷ lệ này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
+    "Talent1_2": "Khi tấn công, có 10% tỷ lệ khiến ATK đòn tấn công đó tăng thêm 100%. tỷ lệ này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng.",
+    "Talent1_2_p4": "Khi tấn công, có 10% tỷ lệ khiến ATK đòn tấn công đó tăng thêm 110%<@ba.talpu>(+10%)</>. tỷ lệ này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng."
   },
   "char_291_aglina": {
     "TitleTalent1": "Accelerator Field",
@@ -1895,10 +1886,10 @@
   "char_4023_rfalcn": {
     "TitleTalent1": "Đòn đánh thô bạo",
     "TitleTalent2": "Phản xạ nghề nghiệp",
-    "Talent1": "Có 15% xác suất tăng ATK lên 140%.",
-    "Talent1_p4": "Có 17%<@ba.talpu>(+2%)</> xác suất tăng ATK lên 140%.",
-    "Talent1_2": "Có 20% xác suất tăng ATK lên 140%.",
-    "Talent1_2_p4": "Có 22%<@ba.talpu>(+2%)</> xác suất tăng ATK lên 140%.",
+    "Talent1": "Có 15% tỷ lệ tăng ATK lên 140%.",
+    "Talent1_p4": "Có 17%<@ba.talpu>(+2%)</> tỷ lệ tăng ATK lên 140%.",
+    "Talent1_2": "Có 20% tỷ lệ tăng ATK lên 140%.",
+    "Talent1_2_p4": "Có 22%<@ba.talpu>(+2%)</> tỷ lệ tăng ATK lên 140%.",
     "Talent2": "Trong chế độ【Tales Within the Sand】(RA mode), mỗi khi kích hoạt kỹ năng, toàn bộ tài nguyên đang mang sẽ được chuyển vào túi đồ."
   },
   "char_4025_aprot2": {
@@ -3335,7 +3326,7 @@
     "Talent1_2": "Sau khi được triển khai, tất cả cán viên【Cận Vệ】chưa triển khai -1 phí triển khai (mỗi cán viên được tối đa -5 phí triển khai trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
-    "TitleTalent1": "Linh Hoạt",
+    "TitleTalent1": "Ứng biến",
     "TitleTalent2": "",
     "Talent1": "ASPD +6 khi không chặn kẻ địch, ATK +6% khi đang chặn kẻ địch.",
     "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +8%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch.",
@@ -3357,14 +3348,13 @@
     "Talent1_2_p4": ""
   },
   "char_500_noirc": {
-    "TitleTalent1": "Improved Armor",
-    "TitleTalent2": "",
-    "Talent0_lv30": ""
+    "TitleTalent1": "Giáp cải tiến",
+    "Talent0_lv30": "HP tối đa và DEF +12%"
   },
   "char_501_durin": {
-    "TitleTalent1": "Lucky Lass",
+    "TitleTalent1": "Cô nhóc may mắn",
     "TitleTalent2": "",
-    "Talent0_lv30": ""
+    "Talent0_lv30": "Có 50% né sát thương phép."
   },
   "char_502_nblade": {
     "TitleTalent1": "Tái triển khai siêu tốc",
@@ -3372,9 +3362,8 @@
     "Talent0_lv30": "Thời gian tái triển khai -30 giây."
   },
   "char_503_rang": {
-    "TitleTalent1": "Anti-Air Master",
-    "TitleTalent2": "",
-    "Talent0_lv30": ""
+    "TitleTalent1": "Bậc thầy phòng không",
+    "Talent0_lv30": "ATK +50% khi tấn công mục tiêu trên không"
   },
   "char_504_rguard": {
     "TitleTalent1": "",
@@ -3436,8 +3425,8 @@
   "char_600_cpione": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "ATK +4%.",
-    "Talent1_2": "ATK +8%."
+    "Talent1": "ATK +4%",
+    "Talent1_2": "ATK +8%"
   },
   "char_601_cguard": {
     "TitleTalent1": "Tăng ATK",
@@ -3454,32 +3443,32 @@
   "char_603_csnipe": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK +4%",
+    "Talent1_2": "ATK +8%"
   },
   "char_604_ccast": {
-    "TitleTalent1": "Casting Speed Up",
+    "TitleTalent1": "Tăng tốc thi triển",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ASPD +5",
+    "Talent1_2": "ASPD +9"
   },
   "char_605_cmedic": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK +4%",
+    "Talent1_2": "ATK +8%"
   },
   "char_606_csuppo": {
-    "TitleTalent1": "Casting Speed Up",
+    "TitleTalent1": "Tăng tốc thi triển",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ASPD +5",
+    "Talent1_2": "ASPD +9"
   },
   "char_607_cspec": {
     "TitleTalent1": "Tăng ATK",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK +4%",
+    "Talent1_2": "ATK +8%"
   },
   "char_608_acpion": {
     "TitleTalent1": "Tâm vô tận",
