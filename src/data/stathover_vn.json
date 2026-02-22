@@ -47,6 +47,10 @@
     "title": "Cướp/Steal",
     "text": "Giảm chỉ số cơ bản của mục tiêu rồi chuyển chỉ số tương ứng cho bản thân. Lượng tăng/giảm của bản thân và kẻ địch không vượt quá giới hạn tối đa nếu có quy định (với cùng một loại chỉ số thì chỉ áp dụng giá trị mạnh nhất)."
   },
+  "ba.steal": {
+    "title": "Cướp/Steal",
+    "text": "Giảm chỉ số cơ bản của mục tiêu rồi chuyển chỉ số tương ứng cho bản thân. Lượng tăng/giảm của bản thân và kẻ địch không vượt quá giới hạn tối đa nếu có quy định (với cùng một loại chỉ số thì chỉ áp dụng giá trị mạnh nhất)."
+  },
   "Invisible": {
     "title": "Tàng hình/Invisible",
     "text": "Khi không bị chặn sẽ không bị chọn làm mục tiêu tấn công.\n• Đối với kẻ địch sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Ngụy trang/Camouflage."
@@ -83,6 +87,10 @@
     "title": "Choáng/Stun",
     "text": "Không thể di chuyển, chặn, tấn công, sử dụng kỹ năng."
   },
+  "ba.stun": {
+    "title": "Choáng/Stun",
+    "text": "Không thể di chuyển, chặn, tấn công, sử dụng kỹ năng."
+  },
   "Sanctuary": {
     "title": "Bảo hộ/Sanctuary",
     "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
@@ -95,12 +103,12 @@
     "title": "Làm chậm/Slow",
     "text": "Giảm 80% tốc độ di chuyển."
   },
+  "ba.sluggish": {
+    "title": "Làm chậm/Slow",
+    "text": "Giảm 80% tốc độ di chuyển."
+  },
   "Barrier": {
     "title": "Lá chắn/Barrier",
     "text": "Hấp thụ một lượng sát thương nhất định."
-  },
-  "ba.steal": {
-    "title": "Cướp/Steal",
-    "text": "Giảm chỉ số cơ bản của mục tiêu rồi chuyển chỉ số tương ứng cho bản thân. Lượng tăng/giảm của bản thân và kẻ địch không vượt quá giới hạn tối đa nếu có quy định (với cùng một loại chỉ số thì chỉ áp dụng giá trị mạnh nhất)."
   }
 }

@@ -1,6 +1,6 @@
 {
   "traitDescription": [
-    { "summoner": "Đòn tấn công gây <@ba.kw>sát thương phép</>.\\nCó thể sử dụng <@ba.kw>vật phẩm triệu hồi</> để hỗ trợ trong chiến đấu." },
+    { "summoner": "Đòn tấn công gây <@ba.kw>sát thương phép</>.\\nCó thể sử dụng <@ba.kw>vật triệu hồi</> để hỗ trợ trong chiến đấu." },
     { "physician1": "Hồi HP cho đồng minh, bản thân không bị ảnh hưởng bởi <@ba.kw>[[Giới hạn triển khai|DeployLimit]]</>, bù lại thời gian tái triển khai cực kỳ lâu." },
     { "physician": "Hồi HP cho đồng minh." },
     { "fearless": "Chặn được 1 kẻ địch." },

@@ -1,7 +1,7 @@
 {
   "char_002_amiya": {
     "TitleTalent1": "？？？",
-    "TitleTalent1_2": "Emotional Absorption",
+    "TitleTalent1_2": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1_2": "",
@@ -9,7 +9,7 @@
   },
   "char_003_kalts": {
     "TitleTalent1": "Mon3tr",
-    "TitleTalent2": "Non-Damaging Restructuring",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -21,16 +21,16 @@
     "Talent0_lv30": "Có 50% né sát thương vật lý."
   },
   "char_010_chen": {
-    "TitleTalent1": "Scolding",
-    "TitleTalent2": "Blade Art",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_017_huang": {
-    "TitleTalent1": "Emergency Defibrillation",
-    "TitleTalent2": "Harsh Training",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 3 giây.",
     "Talent1_p2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 4<@ba.talpu>(+1)</> giây.",
     "Talent1_2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 6 giây.",
@@ -39,7 +39,7 @@
     "Talent2_p4": "Sau khi triển khai được 12<@ba.talpu>(-3)</> giây, nhận [[Kháng hiệu ứng|StatusRes]]."
   },
   "char_1011_lava2": {
-    "TitleTalent1": "Spell Formation",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -47,16 +47,16 @@
     "Talent1_2_p4": ""
   },
   "char_1012_skadi2": {
-    "TitleTalent1": "Ancient Kin",
-    "TitleTalent2": "Predatory Habits",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1013_chen2": {
-    "TitleTalent1": "Frugality",
-    "TitleTalent2": "Vestiges of Vacation",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -64,24 +64,24 @@
     "Talent2": ""
   },
   "char_1014_nearl2": {
-    "TitleTalent1": "Brave the Darkness",
-    "TitleTalent2": "Daybreak",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1016_agoat2": {
-    "TitleTalent1": "Replenishing Mist",
-    "TitleTalent2": "Volcanic Ash Remedy",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1019_siege2": {
-    "TitleTalent1": "The Kings' Sighs",
-    "TitleTalent2": "Unsheathed Sword",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, Vina được +3% ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, Vina được +4%<@ba.talpu>(+1%)</> ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_2": "Vina và đồng minh trong 8 ô xung quanh cô giảm 20% sát thương vật lý nhận vào. Đồng thời, Vina được +5% ATK cho mỗi đồng minh đứng trong phạm vi này.",
@@ -90,14 +90,14 @@
     "Talent2_p2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Giải giới|Frighten]] trong 5<@ba.talpu>(+1)</> giây."
   },
   "char_101_sora": {
-    "TitleTalent1": "Encore",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_1020_reed2": {
-    "TitleTalent1": "Cinder",
-    "TitleTalent2": "Reflected Shine",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -106,7 +106,7 @@
     "Talent2_p5": ""
   },
   "char_1021_kroos2": {
-    "TitleTalent1": "Bullseye",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -122,8 +122,8 @@
     "Talent1_2_p4": ""
   },
   "char_1023_ghost2": {
-    "TitleTalent1": "Embraced Self",
-    "TitleTalent2": "Ægir's Depths",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -131,7 +131,7 @@
     "Talent2_p4": ""
   },
   "char_1024_hbisc2": {
-    "TitleTalent1": "Dusk and Dawn",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -139,8 +139,8 @@
     "Talent1_2_p4": ""
   },
   "char_1026_gvial2": {
-    "TitleTalent1": "Battleaxe",
-    "TitleTalent2": "Medical Background",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "ATK và DEF +5%, tăng thêm 3% cho mỗi kẻ địch bị chặn.",
     "Talent1_p2": "ATK và DEF +7%<@ba.talpu>(+2%)</>, tăng thêm 4%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
     "Talent1_2": "ATK và DEF +10%, tăng thêm 4% cho mỗi kẻ địch bị chặn.",
@@ -149,22 +149,22 @@
     "Talent2_p4": "Bản thân tăng 25%<@ba.talpu>(+5%)</> hiệu quả nhận hồi phục, tăng thành +45%<@ba.talpu>(+5%)</> khi HP dưới 50%."
   },
   "char_1027_greyy2": {
-    "TitleTalent1": "Light-Stealing Chain",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_1028_texas2": {
-    "TitleTalent1": "Texas Tradition",
-    "TitleTalent2": "Texas Swordsmanship",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1029_yato2": {
-    "TitleTalent1": "Kirin Bolts",
-    "TitleTalent2": "Archdemon Mode",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -178,8 +178,8 @@
     "Talent1_2": "Khi có mặt trong đội hình, nhận 2 DP khởi đầu."
   },
   "char_1030_noirc2": {
-    "TitleTalent1": "Decisive",
-    "TitleTalent2": "Spirit",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -188,16 +188,16 @@
     "Talent2_2": ""
   },
   "char_1031_slent2": {
-    "TitleTalent1": "Silent Sentinel",
-    "TitleTalent2": "Plumes of Plenty",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1032_excu2": {
-    "TitleTalent1": "The Chosen One",
-    "TitleTalent2": "Empathy by Shotgun",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -205,8 +205,8 @@
     "Talent2": ""
   },
   "char_1033_swire2": {
-    "TitleTalent1": "Big Spendthrift",
-    "TitleTalent2": "Cash Claps Calamity",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -216,8 +216,8 @@
     "Talent2_p2": ""
   },
   "char_1034_jesca2": {
-    "TitleTalent1": "Adaptable",
-    "TitleTalent2": "Charge and Release",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -228,8 +228,8 @@
     "Talent2_p4": ""
   },
   "char_1035_wisdel": {
-    "TitleTalent1": "Souvenir",
-    "TitleTalent2": "Revenant's Echo",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -243,8 +243,8 @@
     "Talent1_2": "Phí triển khai ban đầu -3; Sau khi rút lui, cán viên tiếp theo có phí triển khai -1."
   },
   "char_1038_whitw2": {
-    "TitleTalent1": "Alpha Wolf",
-    "TitleTalent2": "Honor of Siracusa",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -255,8 +255,8 @@
     "Talent4": ""
   },
   "char_1039_thorn2": {
-    "TitleTalent1": "La Forma del Corazón",
-    "TitleTalent2": "El Alcance de la Visión",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -266,8 +266,8 @@
     "Talent2": ""
   },
   "char_103_angel": {
-    "TitleTalent1": "Fast Cartridge",
-    "TitleTalent2": "Angel's Blessings",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -276,8 +276,8 @@
     "Talent2_p5": ""
   },
   "char_1040_blaze2": {
-    "TitleTalent1": "Meltdown",
-    "TitleTalent2": "From the Ashes",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -298,8 +298,8 @@
     "Talent2_p2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano]."
   },
   "char_1042_phatm2": {
-    "TitleTalent1": "Mind Over Matter",
-    "TitleTalent2": "Descend into Dream",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -310,8 +310,8 @@
     "Talent2_p4": ""
   },
   "char_1043_leizi2": {
-    "TitleTalent1": "Clarity of Judgment",
-    "TitleTalent2": "Call to Account",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -362,20 +362,20 @@
     "Talent2_p4": ""
   },
   "char_106_franka": {
-    "TitleTalent1": "Thermite Blade",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_107_liskam": {
-    "TitleTalent1": "Tactical Defense",
-    "TitleTalent2": "Thunder Resistance",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_108_silent": {
-    "TitleTalent1": "Booster Injection",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -390,11 +390,10 @@
     "Talent1_2_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +15%<@ba.talpu>（+2%）</>; ASPD +15<@ba.talpu>（+2）</>; HP Tối đa +22%<@ba.talpu>（+2%）</>"
   },
   "char_110_deepcl": {
-    "TitleTalent1": "Tentacle Summoner",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Triệu hồi xúc tu",
+    "Talent0": "Có thể triệu hồi 2 Xúc tu để hỗ trợ trong chiến đấu.",
+    "Talent1": "Có thể triệu hồi 3 Xúc tu để hỗ trợ trong chiến đấu.",
+    "Talent1_2": "Có thể triệu hồi 4 Xúc tu để hỗ trợ trong chiến đấu."
   },
   "char_112_siege": {
     "TitleTalent1": "Chúa tể muôn loài",
@@ -406,8 +405,8 @@
     "Talent2": "Nhận 1 SP khi có kẻ địch bị hạ gục trong 4 ô xung quanh."
   },
   "char_113_cqbw": {
-    "TitleTalent1": "Ambush",
-    "TitleTalent2": "Insult to Injury",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -420,17 +419,15 @@
     "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】có phí triển khai -1."
   },
   "char_117_myrrh": {
-    "TitleTalent1": "First Aid Kit",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Bộ sơ cứu",
+    "Talent1": "Sau khi triển khai, sẽ ngay lập tức hồi HP cho toàn bộ đồng minh bằng 100% ATK của bản thân.",
+    "Talent1_p4": "Sau khi triển khai, sẽ ngay lập tức hồi HP cho toàn bộ đồng minh bằng 110%<@ba.talpu>(+10%)</> ATK của bản thân.",
+    "Talent1_2": "Sau khi triển khai, sẽ ngay lập tức hồi HP cho toàn bộ đồng minh bằng 150% ATK của bản thân.",
+    "Talent1_2_p4": "Sau khi triển khai, sẽ ngay lập tức hồi HP cho toàn bộ đồng minh bằng 160%<@ba.talpu>(+10%)</> ATK của bản thân."
   },
   "char_118_yuki": {
-    "TitleTalent1": "Heavy Shuriken",
-    "TitleTalent2": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Shuriken hạng nặng",
+    "Talent1_2": "Tăng nhẹ khoảng thời gian tấn công, bù lại ATK +20%"
   },
   "char_120_hibisc": {
     "TitleTalent1": "Tăng hồi phục",
@@ -466,15 +463,14 @@
     "Talent1_lv55_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</>."
   },
   "char_126_shotst": {
-    "TitleTalent1": "Anti-Air Specialist",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Chuyên gia phòng không",
+    "Talent1": "Tăng ATK lên 120% khi tấn công mục tiêu trên không.",
+    "Talent1_p4": "Tăng ATK lên 125%<@ba.talpu>(+5%)</> khi tấn công mục tiêu trên không.",
+    "Talent1_2": "Tăng ATK lên 135% khi tấn công mục tiêu trên không.",
+    "Talent1_2_p4": "Tăng ATK lên 140%<@ba.talpu>(+5%)</> khi tấn công mục tiêu trên không."
   },
   "char_127_estell": {
-    "TitleTalent1": "Self-Healing",
+    "TitleTalent1": "Tự hồi phục",
     "TitleTalent2": "",
     "Talent1": "Hồi 7% HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
     "Talent1_p4": "Hồi 9%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
@@ -482,13 +478,13 @@
     "Talent1_2_p4": "Hồi 14%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân."
   },
   "char_128_plosis": {
-    "TitleTalent1": "Skill Aura",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_129_bluep": {
-    "TitleTalent1": "Neurotoxin",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -496,15 +492,14 @@
     "Talent1_2_p4": ""
   },
   "char_130_doberm": {
-    "TitleTalent1": "Starter Instructor",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Giáo quan tân binh",
+    "Talent1": "Khi triển khai, tất cả cán viên 3-sao nhận +5% ATK.",
+    "Talent1_p4": "Khi triển khai, tất cả cán viên 3-sao nhận +6%<@ba.talpu>(+1%)</> ATK.",
+    "Talent1_2": "Khi triển khai, tất cả cán viên 3-sao nhận +10% ATK.",
+    "Talent1_2_p4": "Khi triển khai, tất cả cán viên 3-sao nhận +11%<@ba.talpu>(+1%)</> ATK."
   },
   "char_131_flameb": {
-    "TitleTalent1": "Bloody Slaughter",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -512,7 +507,7 @@
     "Talent1_2_p4": ""
   },
   "char_133_mm": {
-    "TitleTalent1": "Victorian Agent",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -520,8 +515,8 @@
     "Talent1_2_p4": ""
   },
   "char_134_ifrit": {
-    "TitleTalent1": "Spiritual Dissolution",
-    "TitleTalent2": "Rhine Loop",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -532,14 +527,14 @@
     "Talent2_p5": ""
   },
   "char_135_halo": {
-    "TitleTalent1": "Passion for Research",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_136_hsguma": {
-    "TitleTalent1": "Tactical Armor",
-    "TitleTalent2": "Special Operation Strategy",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -548,15 +543,14 @@
     "Talent2_p5": ""
   },
   "char_137_brownb": {
-    "TitleTalent1": "Boxer's Concentration",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Tập trung thi đấu ",
+    "Talent1": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 3% ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn.",
+    "Talent1_p4": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 4%<@ba.talpu>(+1%)</> ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn.",
+    "Talent1_2": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 5% ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn.",
+    "Talent1_2_p4": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 6%<@ba.talpu>(+1%)</> ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn."
   },
   "char_140_whitew": {
-    "TitleTalent1": "Spiritual Destruction",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -571,8 +565,8 @@
     "Talent1_2_p4": "Đòn tấn công khiến RES của mục tiêu -23%<@ba.talpu>(+3%)</> trong 1 giây."
   },
   "char_143_ghost": {
-    "TitleTalent1": "Stamina Up",
-    "TitleTalent1_2": "Abyssal Regeneration",
+    "TitleTalent1": "",
+    "TitleTalent1_2": "",
     "TitleTalent2": "",
     "Talent1": "HP tối đa +10%.",
     "Talent1_p4": "HP tối đa +12%<@ba.talpu>(+2%)</>.",
@@ -580,7 +574,7 @@
     "Talent1_2_p4": "HP tối đa +12%<@ba.talpu>(+2%)</>, hồi 2.5%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
   "char_144_red": {
-    "TitleTalent1": "Chill",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -588,7 +582,7 @@
     "Talent1_2_p4": ""
   },
   "char_145_prove": {
-    "TitleTalent1": "Hunter's Arrow",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -596,8 +590,8 @@
     "Talent1_2_p4": ""
   },
   "char_147_shining": {
-    "TitleTalent1": "Black Fiend's Protection",
-    "TitleTalent2": "Code of Law",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p5": "",
     "Talent1": "",
@@ -608,8 +602,8 @@
     "Talent2_p2": ""
   },
   "char_148_nearl": {
-    "TitleTalent1": "Healing Boost",
-    "TitleTalent1_2": "Pegasus's Halo",
+    "TitleTalent1": "",
+    "TitleTalent1_2": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -625,28 +619,28 @@
     "Talent1_2_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_1502_crosly": {
-    "TitleTalent1": "Swallow Your Suffering",
-    "TitleTalent2": "Crownslayer's Glory",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_150_snakek": {
-    "TitleTalent1": "Defense Specialist",
+    "TitleTalent1": "Chuyên gia phòng thủ",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "DEF +6%",
+    "Talent1_2": "DEF +12%"
   },
   "char_151_myrtle": {
     "TitleTalent1": "Tỏa sáng",
     "TitleTalent2": "",
     "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Tiên Phong】hồi 25 HP mỗi giây.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Tiên Phong】hồi 28<@ba.talpu>（+3）</> HP mỗi giây."
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Tiên Phong】hồi 28<@ba.talpu>(+3)</> HP mỗi giây."
   },
   "char_154_morgan": {
-    "TitleTalent1": "Hot-Blooded Vanguard",
-    "TitleTalent2": "Home-Ground Advantage",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -654,7 +648,7 @@
     "Talent2": ""
   },
   "char_155_tiger": {
-    "TitleTalent1": "Quick Fists",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -662,14 +656,14 @@
     "Talent1_2_p4": ""
   },
   "char_157_dagda": {
-    "TitleTalent1": "Gang Spirit",
-    "TitleTalent2": "Knight's Honor",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_158_milu": {
-    "TitleTalent1": "Assassin",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -677,13 +671,13 @@
     "Talent1_2_p4": ""
   },
   "char_159_peacok": {
-    "TitleTalent1": "Safe Landing",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1_2": ""
   },
   "char_163_hpsts": {
-    "TitleTalent1": "Self-Defense",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -691,7 +685,7 @@
     "Talent1_2_p4": ""
   },
   "char_164_nightm": {
-    "TitleTalent1": "Dual Personality",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -699,7 +693,7 @@
     "Talent1_2_p4": ""
   },
   "char_166_skfire": {
-    "TitleTalent1": "Arts Sniper",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -707,14 +701,14 @@
     "Talent1_2_p4": ""
   },
   "char_171_bldsk": {
-    "TitleTalent1": "Blood Sample Recycle",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_172_svrash": {
-    "TitleTalent1": "Leader",
-    "TitleTalent2": "Eagle Eyes",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -722,7 +716,7 @@
     "Talent2": ""
   },
   "char_173_slchan": {
-    "TitleTalent1": "Karlan Hunter",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -730,8 +724,8 @@
     "Talent1_2_p4": ""
   },
   "char_174_slbell": {
-    "TitleTalent1": "Weakening",
-    "TitleTalent2": "The Bell Tolls Twice",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -739,8 +733,8 @@
     "Talent2": ""
   },
   "char_179_cgbird": {
-    "TitleTalent1": "White Fiend's Protection",
-    "TitleTalent2": "Fleeting Phantom",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -750,8 +744,8 @@
     "Talent2": ""
   },
   "char_180_amgoat": {
-    "TitleTalent1": "Pyrobreath",
-    "TitleTalent2": "Wild Fire",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -760,39 +754,35 @@
     "Talent2_p2": ""
   },
   "char_181_flower": {
-    "TitleTalent1": "Lavender",
-    "TitleTalent1_2": "Lavender's Fragrance",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Hoa oải hương",
+    "TitleTalent1_2": "Hương hoa oải hương",
+    "Talent1": "Khi có mặt trên sân, tất cả đồng minh mỗi giây hồi lại HP bằng 3% ATK của Perfumer.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả đồng minh mỗi giây hồi lại HP bằng 3.5%<@ba.talpu>(+0.5%)</> ATK của Perfumer.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả đồng minh mỗi giây hồi lại HP bằng 5% ATK của Perfumer.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả đồng minh mỗi giây hồi lại HP bằng 5.5%<@ba.talpu>(+0.5%)</> ATK của Perfumer."
   },
   "char_183_skgoat": {
-    "TitleTalent1": "Geological Survey",
-    "TitleTalent2": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Khảo sát địa chất",
+    "Talent1_2": "Kéo dài thêm thời gian duy trì hiệu ứng <$ba.sluggish>Làm chậm</> của Đặc tính.",
+    "Talent1_2_p4": "Kéo dài thêm một chút thời gian duy trì hiệu ứng <$ba.sluggish>Làm chậm</> của Đặc tính."
   },
   "char_185_frncat": {
-    "TitleTalent1": "Combo",
-    "TitleTalent2": "",
+    "TitleTalent1": "Liên kích",
     "Talent1": "Khi tấn công, có 10% tỷ lệ tấn công 2 lần liên tiếp.",
     "Talent1_p4": "Khi tấn công, có 13%<@ba.talpu>(+3%)</> tỷ lệ tấn công 2 lần liên tiếp.",
     "Talent1_2": "Khi tấn công, có 20% tỷ lệ tấn công 2 lần liên tiếp.",
     "Talent1_2_p4": "Khi tấn công, có 23%<@ba.talpu>(+3%)</> tỷ lệ tấn công 2 lần liên tiếp."
   },
   "char_187_ccheal": {
-    "TitleTalent1": "Battlefield Medic",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Y sĩ tiền tuyến",
+    "Talent1": "Sau khi triển khai, tất cả cán viên【Y tế】nhận ATK +5% và DEF +50，kéo dài 15 giây.",
+    "Talent1_p4": "Sau khi triển khai, tất cả cán viên【Y tế】nhận ATK +7%<@ba.talpu>(+2%)</> và DEF +70<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây.",
+    "Talent1_2": "Sau khi triển khai, tất cả cán viên【Y tế】nhận ATK +10% và DEF +100，kéo dài 15 giây.",
+    "Talent1_2_p4": "Sau khi triển khai, tất cả cán viên【Y tế】nhận ATK +12%<@ba.talpu>(+2%)</> và DEF +120<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây."
   },
   "char_188_helage": {
-    "TitleTalent1": "Waxing Moon",
-    "TitleTalent2": "Ingenious Strategist",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -800,7 +790,7 @@
     "Talent2_p4": ""
   },
   "char_190_clour": {
-    "TitleTalent1": "Hunter's Wisdom",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -812,12 +802,11 @@
     "Talent1_lv55": "ATK +8%"
   },
   "char_193_frostl": {
-    "TitleTalent1": "Covered Strike",
-    "TitleTalent2": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Đánh yểm hộ",
+    "Talent1_2": "Mở rộng phạm vi tấn công, nhưng tăng nhẹ khoảng thời gian tấn công."
   },
   "char_194_leto": {
-    "TitleTalent1": "Hurry Up Already!",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -825,22 +814,21 @@
     "Talent1_2_p4": ""
   },
   "char_195_glassb": {
-    "TitleTalent1": "Explorer",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_196_sunbr": {
-    "TitleTalent1": "Frying Pan Specialist",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Chuyên gia dùng chảo",
+    "Talent1": "Khi tấn công, có 10% tỷ lệ giúp đòn tấn công đó gây 150% ATK và <$ba.stun>Choáng</> mục tiêu trong 1 giây.",
+    "Talent1_p4": "Khi tấn công, có 13%<@ba.talpu>(+3%)</> tỷ lệ giúp đòn tấn công đó gây 150% ATK và <$ba.stun>Choáng</> mục tiêu trong 1 giây.",
+    "Talent1_2": "Khi tấn công, có 15% tỷ lệ giúp đòn tấn công đó gây 200% ATK và <$ba.stun>Choáng</> mục tiêu trong 1 giây.",
+    "Talent1_2_p4": "Khi tấn công, có 18%<@ba.talpu>(+3%)</> tỷ lệ giúp đòn tấn công đó gây 200% ATK và <$ba.stun>Choáng</> mục tiêu trong 1 giây."
   },
   "char_197_poca": {
-    "TitleTalent1": "Bone Piercer",
-    "TitleTalent2": "Ideal Student",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -855,22 +843,22 @@
     "Talent1_2_p4": "Khi đang chặn từ 2 kẻ địch trở lên, DEF +19%<@ba.talpu>(+3%)</>."
   },
   "char_199_yak": {
-    "TitleTalent1": "Snowfield Guard",
+    "TitleTalent1": "Hộ vệ đồng tuyết",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "RES +7",
+    "Talent1_2": "RES +15"
   },
   "char_2012_typhon": {
-    "TitleTalent1": "Sharp as a Beast's Fang",
-    "TitleTalent2": "Heavy as the Swamp's Mire",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_2013_cerber": {
-    "TitleTalent1": "Thresher",
-    "TitleTalent2": "Lone Journey",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -878,8 +866,8 @@
     "Talent2": ""
   },
   "char_2014_nian": {
-    "TitleTalent1": "Tectonic Armor",
-    "TitleTalent2": "Clairvoyance",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -887,8 +875,8 @@
     "Talent2": ""
   },
   "char_2015_dusk": {
-    "TitleTalent1": "Sublimity",
-    "TitleTalent2": "Finishing Touch",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -896,7 +884,7 @@
     "Talent2": ""
   },
   "char_201_moeshd": {
-    "TitleTalent1": "Miracle Field",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -904,8 +892,8 @@
     "Talent1_2_p4": ""
   },
   "char_2023_ling": {
-    "TitleTalent1": "Lantern Lit, Thy Dream Sought",
-    "TitleTalent2": "So is Writ, an Ode to Wine",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -915,8 +903,8 @@
     "Talent2_2_p4": ""
   },
   "char_2024_chyue": {
-    "TitleTalent1": "An End to War",
-    "TitleTalent2": "All Are Guests",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -924,8 +912,8 @@
     "Talent2": ""
   },
   "char_2025_shu": {
-    "TitleTalent1": "Myriad Grains, Everlasting",
-    "TitleTalent2": "From Seasons Fourfold",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -933,8 +921,8 @@
     "Talent2": ""
   },
   "char_2026_yu": {
-    "TitleTalent1": "You Feed Me, I Feed You",
-    "TitleTalent2": "Midst Markets, Dragons Dwell",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -943,8 +931,8 @@
     "Talent2_p4": ""
   },
   "char_202_demkni": {
-    "TitleTalent1": "Rhine Charged Suit",
-    "TitleTalent2": "Refreshment",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -952,7 +940,7 @@
     "Talent2": ""
   },
   "char_204_platnm": {
-    "TitleTalent1": "All-Out Attack",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -960,8 +948,8 @@
     "Talent1_2_p4": ""
   },
   "char_206_gnosis": {
-    "TitleTalent1": "Rigid Ice",
-    "TitleTalent2": "Two Paths, One Goal",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -997,15 +985,15 @@
     "Talent1_lv55_p4": "Có 18%<@ba.talpu>(+3%)</> tỷ lệ hồi phục thêm 1 đồng minh."
   },
   "char_213_mostma": {
-    "TitleTalent1": "Skill Aura - Caster",
-    "TitleTalent2": "Subjective Time Dilation",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_214_kafka": {
-    "TitleTalent1": "Misdirection",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1014,8 +1002,8 @@
     "Talent1_2_p4": ""
   },
   "char_215_mantic": {
-    "TitleTalent1": "Hidden Killer - Medium",
-    "TitleTalent1_2": "Hidden Killer - Elite",
+    "TitleTalent1": "",
+    "TitleTalent1_2": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1023,7 +1011,7 @@
     "Talent1_2_p4": ""
   },
   "char_218_cuttle": {
-    "TitleTalent1": "Abyssal Intuition",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1031,7 +1019,7 @@
     "Talent1_2_p4": ""
   },
   "char_219_meteo": {
-    "TitleTalent1": "Blast Attachment Refit",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -1055,8 +1043,8 @@
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
   },
   "char_225_haak": {
-    "TitleTalent1": "Drug Cocktail Administration",
-    "TitleTalent2": "Pharmaceutical Diffusion",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1064,7 +1052,7 @@
     "Talent2_p4": ""
   },
   "char_226_hmau": {
-    "TitleTalent1": "Gatekeeper",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1072,32 +1060,30 @@
     "Talent1_2_p4": ""
   },
   "char_230_savage": {
-    "TitleTalent1": "Valley",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "ATK và DEF +5% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên.",
     "Talent1_2": "ATK và DEF +10% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên."
   },
   "char_235_jesica": {
-    "TitleTalent1": "Fast Cartridge",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Thay đạn siêu tốc",
+    "Talent1": "ASPD +6",
+    "Talent1_2": "ASPD +12"
   },
   "char_236_rope": {
-    "TitleTalent1": "Auditory Training",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Rèn luyện thính giác",
+    "Talent1": "Nhận 15% né sát thương vật lý.",
+    "Talent1_p4": "Nhận 19%<@ba.talpu>(+4%)</> né sát thương vật lý.",
+    "Talent1_2": "Nhận 30% né sát thương vật lý.",
+    "Talent1_2_p4": "Nhận 34%<@ba.talpu>(+4%)</> né sát thương vật lý."
   },
   "char_237_gravel": {
-    "TitleTalent1": "Fast Deployment",
-    "TitleTalent1_2": "Support of the Little",
+    "TitleTalent1": "Triển khai siêu tốc",
+    "TitleTalent1_2": "Hỗ trợ nhóm nhỏ",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Phí triển khai -1.",
+    "Talent1_2": "Phí triển khai -1. Các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận +6% DEF.",
+    "Talent1_2_p4": "Phí triển khai -1. Các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận +8%<@ba.talpu>(+2%)</> DEF."
   },
   "char_240_wyvern": {
     "TitleTalent1": "Tăng ATK",
@@ -1114,14 +1100,14 @@
     "Talent1_2_p4": ""
   },
   "char_242_otter": {
-    "TitleTalent1": "Robotter",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_243_waaifu": {
-    "TitleTalent1": "Hong Mei Wing Chun",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1129,8 +1115,8 @@
     "Talent1_2_p4": ""
   },
   "char_245_cello": {
-    "TitleTalent1": "Wordless Elegy",
-    "TitleTalent2": "Mental Inversion",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1138,8 +1124,8 @@
     "Talent2_p4": ""
   },
   "char_248_mgllan": {
-    "TitleTalent1": "Support Drone - Soaring Dragon",
-    "TitleTalent2": "Optical Refraction Accessories",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1149,8 +1135,8 @@
     "Talent2_2_p4": ""
   },
   "char_249_mlyss": {
-    "TitleTalent1": "Pure Water is Life",
-    "TitleTalent2": "Expenditure Economization",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
     "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
     "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
@@ -1158,14 +1144,14 @@
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】có phí triển khai -2, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm -2<@ba.talpu>(+1)</> phí triển khai."
   },
   "char_250_phatom": {
-    "TitleTalent1": "Phantom in the Mirror",
-    "TitleTalent2": "Phantom Mastery",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_252_bibeak": {
-    "TitleTalent1": "Soul Drinker",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1173,13 +1159,12 @@
     "Talent1_2_p4": ""
   },
   "char_253_greyy": {
-    "TitleTalent1": "Electrostatic Field",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Vùng tĩnh điện",
+    "Talent1": "Khi tấn công, gây hiệu ứng <$ba.sluggish>Làm chậm</> lên mục tiêu trong 0.4 giây.",
+    "Talent1_2": "Khi tấn công, gây hiệu ứng <$ba.sluggish>Làm chậm</> lên mục tiêu trong 0.6 giây."
   },
   "char_254_vodfox": {
-    "TitleTalent1": "Omen of Defeat",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1189,7 +1174,7 @@
     "Talent1_2_p4": ""
   },
   "char_258_podego": {
-    "TitleTalent1": "Gardener",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1197,7 +1182,7 @@
     "Talent1_2_p4": ""
   },
   "char_260_durnar": {
-    "TitleTalent1": "Sword and Shield",
+    "TitleTalent1": "Kiếm và Khiên",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -1209,8 +1194,8 @@
     "Talent1_2": "RES +20"
   },
   "char_263_skadi": {
-    "TitleTalent1": "Abyssal Predator",
-    "TitleTalent2": "Swift Action",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1218,8 +1203,8 @@
     "Talent2": ""
   },
   "char_264_f12yin": {
-    "TitleTalent1": "Forceful Fist",
-    "TitleTalent2": "Sturdy Constitution",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1227,7 +1212,7 @@
     "Talent2": ""
   },
   "char_265_sophia": {
-    "TitleTalent1": "Rebuke",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1237,7 +1222,7 @@
     "Talent1_2_p4": ""
   },
   "char_271_spikes": {
-    "TitleTalent1": "Structural Decomposition",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1246,7 +1231,7 @@
     "Talent1_2_p4": ""
   },
   "char_272_strong": {
-    "TitleTalent1": "Anatomy Master",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1254,22 +1239,22 @@
     "Talent1_2_p4": ""
   },
   "char_274_astesi": {
-    "TitleTalent1": "Celestial Globe",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +3(cộng dồn tối đa 5 lần).",
     "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +5(cộng dồn tối đa 5 lần)."
   },
   "char_275_breeze": {
-    "TitleTalent1": "Medic Squad Protection",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_277_sqrrel": {
-    "TitleTalent1": "Fireproof Suit",
+    "TitleTalent1": "Bộ đồ chống cháy",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "RES +7",
+    "Talent1_2": "RES +15"
   },
   "char_278_orchid": {
     "TitleTalent1": "Tăng tốc thi triển",
@@ -1277,7 +1262,7 @@
     "Talent1_lv55": "ASPD +9"
   },
   "char_279_excu": {
-    "TitleTalent1": "Final Modification",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1343,10 +1328,9 @@
     "Talent0_p5": ""
   },
   "char_289_gyuki": {
-    "TitleTalent1": "Demonic Physique",
-    "TitleTalent2": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Thể chất của quỷ",
+    "Talent1_2": "DEF -20%; HP tối đa +20%",
+    "Talent1_2_p4": "DEF -20%; HP tối đa +23%<@ba.talpu>(+3%)</>"
   },
   "char_290_vigna": {
     "TitleTalent1": "Nhát đâm chí mạng",
@@ -1357,8 +1341,8 @@
     "Talent1_2_p4": "Khi tấn công, có 10% tỷ lệ khiến ATK đòn tấn công đó tăng thêm 110%<@ba.talpu>(+10%)</>. tỷ lệ này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng."
   },
   "char_291_aglina": {
-    "TitleTalent1": "Accelerator Field",
-    "TitleTalent2": "Part-time Job",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -1367,8 +1351,8 @@
     "Talent2_p2": ""
   },
   "char_293_thorns": {
-    "TitleTalent1": "Nerve Corrosion",
-    "TitleTalent2": "Echoes of Ancestral Waves",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1377,7 +1361,7 @@
     "Talent2_p2": ""
   },
   "char_294_ayer": {
-    "TitleTalent1": "Seek Aid",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1385,7 +1369,7 @@
     "Talent1_2_p4": ""
   },
   "char_297_hamoni": {
-    "TitleTalent1": "A Surprise Visitor",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1393,7 +1377,7 @@
     "Talent1_2_p4": ""
   },
   "char_298_susuro": {
-    "TitleTalent1": "Minimally Invasive Surgery",
+    "TitleTalent1": "Phẫu thuật ít xâm lấn",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1401,8 +1385,8 @@
     "Talent1_2_p4": ""
   },
   "char_300_phenxi": {
-    "TitleTalent1": "Sufferer of Tribulations",
-    "TitleTalent2": "Herald of Revelations",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1410,7 +1394,7 @@
     "Talent2_p4": ""
   },
   "char_301_cutter": {
-    "TitleTalent1": "Photoetched Marks",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1418,13 +1402,13 @@
     "Talent1_2_p4": ""
   },
   "char_302_glaze": {
-    "TitleTalent1": "Precise Strike",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_304_zebra": {
-    "TitleTalent1": "Striped Camouflage",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1432,7 +1416,7 @@
     "Talent1_2_p4": ""
   },
   "char_306_leizi": {
-    "TitleTalent1": "Unobstructed Flow",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1440,7 +1424,7 @@
     "Talent1_2_p4": ""
   },
   "char_308_swire": {
-    "TitleTalent1": "Melee Combat Guidance",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1450,19 +1434,19 @@
     "Talent1_2_p4": ""
   },
   "char_311_mudrok": {
-    "TitleTalent1": "Ward of the Fertile Soil",
-    "TitleTalent2": "Unshakable Solidarity",
-    "Talent0": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身15%最大生命",
-    "Talent0_p4": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身17%<@ba.talpu>（+2%）</>最大生命",
-    "Talent1": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身20%最大生命",
-    "Talent1_p4": "每9秒获得1层<$ba.shield>护盾</>（最多2层，部署后立即获得1层），每层护盾破裂时恢复自身22%<@ba.talpu>（+2%）</>最大生命",
-    "Talent1_2": "每9秒获得1层<$ba.shield>护盾</>（最多3层，部署后立即获得1层），每层护盾破裂时恢复自身20%最大生命",
-    "Talent1_2_p4": "每9秒获得1层<$ba.shield>护盾</>（最多3层，部署后立即获得1层），每层护盾破裂时恢复自身22%<@ba.talpu>（+2%）</>最大生命",
-    "Talent2": "受到来自【萨卡兹】敌人的伤害降低30%"
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
   },
   "char_322_lmlee": {
-    "TitleTalent1": "Kindness Begets Prosperity",
-    "TitleTalent2": "Preparedness Averts Peril",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1470,7 +1454,7 @@
     "Talent2": ""
   },
   "char_325_bison": {
-    "TitleTalent1": "Interlocked Shield",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1478,7 +1462,7 @@
     "Talent1_2_p4": ""
   },
   "char_326_glacus": {
-    "TitleTalent1": "Countermeasure Device",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1486,41 +1470,41 @@
     "Talent1_2_p4": ""
   },
   "char_328_cammou": {
-    "TitleTalent1": "Coordinated",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_332_archet": {
-    "TitleTalent1": "Landen Tactics",
-    "TitleTalent2": "Iron Bowstring",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_333_sidero": {
-    "TitleTalent1": "Mercenary's Tenacity",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1_2": "Sau khi hạ được 7 kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và +15 ASPD.",
     "Talent1_2_p4": "Sau khi hạ được 5<@ba.talpu>(-2)</> kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và +15 ASPD."
   },
   "char_336_folivo": {
-    "TitleTalent1": "Camera Squad",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_337_utage": {
-    "TitleTalent1": "Serious Mode",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_338_iris": {
-    "TitleTalent1": "Sealed Treasure",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1528,8 +1512,8 @@
     "Talent1_2_p4": ""
   },
   "char_340_shwaz": {
-    "TitleTalent1": "Armor Penetration Arrow",
-    "TitleTalent2": "Crossfire",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1537,7 +1521,7 @@
     "Talent2_p5": ""
   },
   "char_341_sntlla": {
-    "TitleTalent1": "Born of the Biting Cold",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1545,7 +1529,7 @@
     "Talent1_2_p4": ""
   },
   "char_343_tknogi": {
-    "TitleTalent1": "Blessing",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1553,20 +1537,20 @@
     "Talent1_2_p4": ""
   },
   "char_344_beewax": {
-    "TitleTalent1": "Shambhala's Sanctuary",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_345_folnic": {
-    "TitleTalent1": "Drug Inhibition Technique",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_346_aosta": {
-    "TitleTalent1": "Sharp Nails",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1574,7 +1558,7 @@
     "Talent1_2_p4": ""
   },
   "char_347_jaksel": {
-    "TitleTalent1": "Extreme Evasion",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1582,7 +1566,7 @@
     "Talent1_2_p4": ""
   },
   "char_348_ceylon": {
-    "TitleTalent1": "Lake Walker",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1598,8 +1582,8 @@
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_350_surtr": {
-    "TitleTalent1": "Molten Flame",
-    "TitleTalent2": "Remnant Ash",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "Bỏ qua 12 RES của kẻ địch.",
     "Talent1_p4": "Bỏ qua 14<@ba.talpu>(+2)</> RES của kẻ địch.",
     "Talent1_2": "Bỏ qua 20 RES của kẻ địch.",
@@ -1610,13 +1594,13 @@
     "Talent2_2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 9<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút lui khỏi sân."
   },
   "char_355_ethan": {
-    "TitleTalent1": "Entwined",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_356_broca": {
-    "TitleTalent1": "Drill Strengthening",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "ATK và DEF +6% khi chặn từ 2 kẻ địch trở lên.",
     "Talent1_p4": "ATK và DEF +8%<@ba.talpu>(+2%)</> khi chặn từ 2 kẻ địch trở lên.",
@@ -1624,8 +1608,8 @@
     "Talent1_2_p4": "ATK và DEF +14%<@ba.talpu>(+2%)</> khi chặn từ 2 kẻ địch trở lên."
   },
   "char_358_lisa": {
-    "TitleTalent1": "Skill Aura - Supporter",
-    "TitleTalent2": "Binding Circle",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -1640,7 +1624,7 @@
     "Talent2_p4": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 6%<@ba.talpu>(+1%)</> HP tối đa mỗi giây, kéo dài 17<@ba.talpu>(+2)</> giây. Hiệu ứng này chỉ kích hoạt một lần."
   },
   "char_363_toddi": {
-    "TitleTalent1": "Fiery Instinct",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1648,25 +1632,25 @@
     "Talent1_2_p4": ""
   },
   "char_365_aprl": {
-    "TitleTalent1": "Experienced Hunter",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_366_acdrop": {
-    "TitleTalent1": "Slideshot Style",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_367_swllow": {
-    "TitleTalent1": "Tailwind",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_369_bena": {
-    "TitleTalent1": "Bena's Protractor",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1675,7 +1659,7 @@
     "Talent1_2_p4": ""
   },
   "char_373_lionhd": {
-    "TitleTalent1": "Lethal Fragmentation",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1698,23 +1682,23 @@
     "Talent0_p5": ""
   },
   "char_377_gdglow": {
-    "TitleTalent1": "Beacon's Wrath",
-    "TitleTalent2": "Precise Redirection",
-    "Talent1": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪200%攻击力的法术伤害",
-    "Talent1_p2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪215%<@ba.talpu>（+15%）</>攻击力的法术伤害",
-    "Talent1_2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪300%攻击力的法术伤害",
-    "Talent1_2_p2": "技能开启后浮游单元攻击时有10%概率自爆（回到干员身边）对小范围敌人造成澄闪315%<@ba.talpu>（+15%）</>攻击力的法术伤害",
-    "Talent2": "自身与浮游单元无视敌人15点法术抗性",
-    "Talent2_p5": "自身与浮游单元无视敌人18<@ba.talpu>（+3）</>点法术抗性"
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p5": ""
   },
   "char_378_asbest": {
-    "TitleTalent1": "Moist Skin",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_379_sesa": {
-    "TitleTalent1": "Vulnerability Deconstruction",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1722,13 +1706,13 @@
     "Talent1_2_p4": ""
   },
   "char_381_bubble": {
-    "TitleTalent1": "Spiked Shield",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_383_snsant": {
-    "TitleTalent1": "Bug Catcher",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1736,13 +1720,13 @@
     "Talent1_2_p4": ""
   },
   "char_385_finlpp": {
-    "TitleTalent1": "Rapid Restoration",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_388_mint": {
-    "TitleTalent1": "Geologist",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1750,8 +1734,8 @@
     "Talent1_2_p4": ""
   },
   "char_391_rosmon": {
-    "TitleTalent1": "Armaments of Annihilation",
-    "TitleTalent2": "Stable Esthesia",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1782,13 +1766,13 @@
     "Talent0_p5": ""
   },
   "char_4004_pudd": {
-    "TitleTalent1": "Electromagnetic Waves",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4006_melnte": {
-    "TitleTalent1": "Calibrating Parameters",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1796,23 +1780,23 @@
     "Talent1_2_p4": ""
   },
   "char_4009_irene": {
-    "TitleTalent1": "Flames of Castigation",
-    "TitleTalent2": "Sword of Cleansing",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_400_weedy": {
-    "TitleTalent1": "Industrial Water Cannon",
-    "TitleTalent2": "Upgraded Water Cannon",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_4010_etlchi": {
-    "TitleTalent1": "Blood Bank",
-    "TitleTalent2": "Second Serving",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1822,15 +1806,15 @@
     "Talent3": ""
   },
   "char_4011_lessng": {
-    "TitleTalent1": "Pain Focus",
-    "TitleTalent2": "Whetted With Pain",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "Khi đang chặn kẻ địch giảm 20% sát thương vật lý và phép nhận vào từ các kẻ địch không bị bản thân chặn.",
     "Talent1_2": "Khi đang chặn kẻ địch giảm 35% sát thương vật lý và phép nhận vào từ các kẻ địch không bị bản thân chặn.",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4013_kjera": {
-    "TitleTalent1": "Deference",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1838,20 +1822,20 @@
     "Talent1_2_p4": ""
   },
   "char_4014_lunacu": {
-    "TitleTalent1": "Wilderness Instinct",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4015_spuria": {
-    "TitleTalent1": "Differential Reloading Experiment",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4016_kazema": {
-    "TitleTalent1": "From Paper Comes Life",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -1869,7 +1853,7 @@
     "Talent1_2_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 125%<@ba.talpu>(+5%)</> và hồi thêm 2 SP."
   },
   "char_4019_ncdeer": {
-    "TitleTalent1": "Ethereal Iridescent Clouds",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -1893,8 +1877,8 @@
     "Talent2": "Trong chế độ【Tales Within the Sand】(RA mode), mỗi khi kích hoạt kỹ năng, toàn bộ tài nguyên đang mang sẽ được chuyển vào túi đồ."
   },
   "char_4025_aprot2": {
-    "TitleTalent1": "Land of Memories",
-    "TitleTalent2": "Proclamation of Doom",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1910,8 +1894,8 @@
     "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
   "char_4027_heyak": {
-    "TitleTalent1": "Inherited End",
-    "TitleTalent2": "Bygone Wings",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1919,7 +1903,7 @@
     "Talent2": ""
   },
   "char_402_tuye": {
-    "TitleTalent1": "Water Storage",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1927,7 +1911,7 @@
     "Talent1_2_p4": ""
   },
   "char_4032_provs": {
-    "TitleTalent1": "Kazimierz Legal Expertise",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1935,7 +1919,7 @@
     "Talent1_2_p4": ""
   },
   "char_4036_forcer": {
-    "TitleTalent1": "Precise Aim",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1943,8 +1927,8 @@
     "Talent1_2_p4": ""
   },
   "char_4039_horn": {
-    "TitleTalent1": "Military Fortress",
-    "TitleTalent2": "Bloodbath",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -1953,7 +1937,7 @@
     "Talent2_p4": ""
   },
   "char_4040_rockr": {
-    "TitleTalent1": "Firm Foundation",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1961,7 +1945,7 @@
     "Talent1_2_p4": ""
   },
   "char_4041_chnut": {
-    "TitleTalent1": "Solidly Grounded",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1969,23 +1953,23 @@
     "Talent1_2_p4": ""
   },
   "char_4042_lumen": {
-    "TitleTalent1": "An Everyman's Wish",
-    "TitleTalent2": "Quick Fix",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4043_erato": {
-    "TitleTalent1": "Song of Dreams",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4045_heidi": {
-    "TitleTalent1": "Crafty Rebel",
-    "TitleTalent2": "Private Messenger",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1993,15 +1977,15 @@
     "Talent2": ""
   },
   "char_4046_ebnhlz": {
-    "TitleTalent1": "Dynamics",
-    "TitleTalent2": "Appoggiatura",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4047_pianst": {
-    "TitleTalent1": "Reverberation",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2009,8 +1993,8 @@
     "Talent1_2_p4": ""
   },
   "char_4048_doroth": {
-    "TitleTalent1": "Resonator",
-    "TitleTalent2": "Dreamer",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2037,7 +2021,7 @@
     "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 3<@ba.talpu>(+1)</> DP."
   },
   "char_4054_malist": {
-    "TitleTalent1": "Flash of Insight",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2045,8 +2029,8 @@
     "Talent1_2_p4": ""
   },
   "char_4055_bgsnow": {
-    "TitleTalent1": "Automatic Typewriter",
-    "TitleTalent2": "Stenographer of Weaknesses",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2064,8 +2048,8 @@
     "Talent2_p5": ""
   },
   "char_4058_pepe": {
-    "TitleTalent1": "Legacy of the Past",
-    "TitleTalent2": "Perfuse With Lotus",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2074,7 +2058,7 @@
     "Talent2_p2": ""
   },
   "char_405_absin": {
-    "TitleTalent1": "Enforcer",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2082,7 +2066,7 @@
     "Talent1_2_p4": ""
   },
   "char_4062_totter": {
-    "TitleTalent1": "Illuminating Eyes",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2092,7 +2076,7 @@
     "Talent1_2_p4": ""
   },
   "char_4063_quartz": {
-    "TitleTalent1": "Wilderness Wanderer",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "HP +4%, ATK +4%.",
     "Talent1_p4": "HP +5%<@ba.talpu>(+1%)</>, ATK +5%<@ba.talpu>(+1%)</>.",
@@ -2100,8 +2084,8 @@
     "Talent1_2_p4": "HP +9%<@ba.talpu>(+1%)</>, ATK +9%<@ba.talpu>(+1%)</>."
   },
   "char_4064_mlynar": {
-    "TitleTalent1": "Wanderer",
-    "TitleTalent2": "Unmoved",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2110,8 +2094,8 @@
     "Talent2_p4": ""
   },
   "char_4065_judge": {
-    "TitleTalent1": "Guardian of the Law",
-    "TitleTalent2": "Wreathed in Thorns",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2122,8 +2106,8 @@
     "Talent2_p4": ""
   },
   "char_4066_highmo": {
-    "TitleTalent1": "Sustenance from the Reaper",
-    "TitleTalent2": "Interfluence from Maladie",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2132,13 +2116,13 @@
     "Talent2_2": ""
   },
   "char_4067_lolxh": {
-    "TitleTalent1": "Executor-in-Training",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1_2": ""
   },
   "char_4071_peper": {
-    "TitleTalent1": "Focused Attention",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2146,8 +2130,8 @@
     "Talent1_2_p4": ""
   },
   "char_4072_ironmn": {
-    "TitleTalent1": "Battlefield Engineer",
-    "TitleTalent2": "Cost Cutting",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2170,7 +2154,7 @@
     "Talent0_p5": ""
   },
   "char_4078_bdhkgt": {
-    "TitleTalent1": "First Step Into the Wilds",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2178,7 +2162,7 @@
     "Talent1_2_p4": ""
   },
   "char_4079_haini": {
-    "TitleTalent1": "Ingenius Usage of Survey Equipment",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2186,8 +2170,8 @@
     "Talent1_2_p4": ""
   },
   "char_4080_lin": {
-    "TitleTalent1": "Foolproof Plan",
-    "TitleTalent2": "Shrouded Strength",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2196,7 +2180,7 @@
     "Talent2_p2": ""
   },
   "char_4081_warmy": {
-    "TitleTalent1": "Overflowing Pot",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2204,8 +2188,8 @@
     "Talent1_2_p4": ""
   },
   "char_4082_qiubai": {
-    "TitleTalent1": "Find an Opening",
-    "TitleTalent2": "Falling Petals",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2214,7 +2198,7 @@
     "Talent2_p2": ""
   },
   "char_4083_chimes": {
-    "TitleTalent1": "Mountain Traveler",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +15%.",
     "Talent1_p4": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +17%<@ba.talpu>(+2%)</>.",
@@ -2231,8 +2215,8 @@
     "Talent2": "Kẻ địch trong phạm vi tấn công bị vô hiệu hoá [[Tàng hình|Invisible]] và giảm 30% tốc độ di chuyển. Sau khi rút lui, Ines để lại một 'Ảnh Vệ' với cùng hiệu ứng trên (tối đa 1)."
   },
   "char_4088_hodrer": {
-    "TitleTalent1": "Do or Die",
-    "TitleTalent2": "Cloak of Lingering Flame",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "ATK tăng lên 105% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 125%.",
     "Talent1_2": "ATK tăng lên 110% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 140%.",
     "Talent2": "Bản thân và đồng minh ở ngay đằng sau nhận 18% [[Bảo hộ|Sanctuary]].",
@@ -2269,8 +2253,8 @@
     "Talent0_p5": ""
   },
   "char_4098_vvana": {
-    "TitleTalent1": "Candlelight",
-    "TitleTalent2": "Nova",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "Sát thương phép gây ra +5%, đồng thời sát thương vật lý và sát thương phép nhận vào -5%. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
     "Talent1_p4": "Sát thương phép gây ra +6%<@ba.talpu>(+1%)</>, đồng thời sát thương vật lý và sát thương phép nhận vào -6%<@ba.talpu>(-1%)</>. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
     "Talent1_2": "Sát thương phép gây ra +8%, đồng thời sát thương vật lý và sát thương phép nhận vào -8%. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
@@ -2279,7 +2263,7 @@
     "Talent2_p2": "Khi tấn công kẻ địch bậc Tinh Anh hoặc Thủ Lĩnh, có 20%<@ba.talpu>(+2%)</> tỷ lệ nhận được một lớp [[Khiên|Shield]] giúp chặn đòn đánh cận chiến (tối đa 1 lớp)."
   },
   "char_4100_caper": {
-    "TitleTalent1": "Larking About",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2287,15 +2271,15 @@
     "Talent1_2_p4": ""
   },
   "char_4102_threye": {
-    "TitleTalent1": "The One Who Reveals",
-    "TitleTalent2": "The Reclusive One",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4104_coldst": {
-    "TitleTalent1": "Not to be Outdone",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2303,7 +2287,7 @@
     "Talent1_2_p4": ""
   },
   "char_4105_almond": {
-    "TitleTalent1": "Engineer's Backpack",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2311,7 +2295,7 @@
     "Talent1_2_p4": ""
   },
   "char_4106_bryota": {
-    "TitleTalent1": "Cautious and Calculated",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2321,7 +2305,7 @@
     "Talent1_2_p4": ""
   },
   "char_4107_vrdant": {
-    "TitleTalent1": "Vegetative Regeneration",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2329,14 +2313,14 @@
     "Talent1_2_p4": ""
   },
   "char_4109_baslin": {
-    "TitleTalent1": "Authoritarian Teachings",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4110_delphn": {
-    "TitleTalent1": "Baptize the Blade",
-    "TitleTalent2": "Cut Without Mercy",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2344,7 +2328,7 @@
     "Talent2": ""
   },
   "char_4114_harold": {
-    "TitleTalent1": "I Am the Camp",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2352,8 +2336,8 @@
     "Talent1_2_p4": ""
   },
   "char_4116_blkkgt": {
-    "TitleTalent1": "Born Warrior",
-    "TitleTalent2": "Living Legend",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2362,8 +2346,8 @@
     "Talent2_p4": ""
   },
   "char_4117_ray": {
-    "TitleTalent1": "Patrol Partner",
-    "TitleTalent2": "Extreme Focus",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -2378,7 +2362,7 @@
     "Talent1_2_p4": "+6%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
   },
   "char_411_tomimi": {
-    "TitleTalent1": "Arts of the Wild",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2388,8 +2372,8 @@
     "Talent1_2_p4": ""
   },
   "char_4121_zuole": {
-    "TitleTalent1": "Candlelight's Shadow",
-    "TitleTalent2": "Self-Evident Virtue",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2397,7 +2381,7 @@
     "Talent2_p4": ""
   },
   "char_4122_grabds": {
-    "TitleTalent1": "Please Behave",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2405,8 +2389,8 @@
     "Talent1_2_p4": ""
   },
   "char_4123_ela": {
-    "TitleTalent1": "GRZMOT Mine",
-    "TitleTalent2": "'Bullseye'",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2417,7 +2401,7 @@
     "Talent2_p4": ""
   },
   "char_4124_iana": {
-    "TitleTalent1": "Gemini Replicator",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2427,8 +2411,8 @@
     "Talent1_2_p4": ""
   },
   "char_4125_rdoc": {
-    "TitleTalent1": "Field Medic",
-    "TitleTalent2": "Sympathicus Simulation",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2439,7 +2423,7 @@
     "Talent2_2": ""
   },
   "char_4126_fuze": {
-    "TitleTalent1": "Ballistic Shield",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "Nhận 17% giảm sát thương vật lý tầm xa.",
     "Talent1_p4": "Nhận 20%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa.",
@@ -2447,7 +2431,7 @@
     "Talent1_2_p4": "Nhận 30%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa."
   },
   "char_4130_luton": {
-    "TitleTalent1": "From Death's Clutches",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2455,7 +2439,7 @@
     "Talent1_2_p4": ""
   },
   "char_4131_odda": {
-    "TitleTalent1": "Hammerfall",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2463,8 +2447,8 @@
     "Talent1_2_p4": ""
   },
   "char_4132_ascln": {
-    "TitleTalent1": "Mortal Interrogation",
-    "TitleTalent2": "Penumbral Image",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2472,8 +2456,8 @@
     "Talent2_p4": ""
   },
   "char_4133_logos": {
-    "TitleTalent1": "Lexical Evolution",
-    "TitleTalent2": "Requiem Aeternam",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2482,8 +2466,8 @@
     "Talent2_p2": ""
   },
   "char_4134_cetsyr": {
-    "TitleTalent1": "Dust of the Past",
-    "TitleTalent2": "The Echo of Kings",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent2": "",
@@ -2505,7 +2489,7 @@
     "Talent0_p5": ""
   },
   "char_4137_udflow": {
-    "TitleTalent1": "Cell Activity Suppressant",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2513,8 +2497,8 @@
     "Talent1_2_p4": ""
   },
   "char_4138_narant": {
-    "TitleTalent1": "'I See, I Take'",
-    "TitleTalent2": "Graceful Shadow",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2523,7 +2507,7 @@
     "Talent2_p2": ""
   },
   "char_4139_papyrs": {
-    "TitleTalent1": "Erudite of Ancient Scrolls",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2533,15 +2517,15 @@
     "Talent1_2_p4": ""
   },
   "char_4140_lasher": {
-    "TitleTalent1": "Teachings of the Dead Craftsman",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4141_marcil": {
-    "TitleTalent1": "The Most Brilliant Student In the School's History",
-    "TitleTalent2": "Reliable Companion",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2549,13 +2533,13 @@
     "Talent2": ""
   },
   "char_4142_laios": {
-    "TitleTalent1": "Dungeon Monster Expert",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4143_sensi": {
-    "TitleTalent1": "Ten Years of Monster Cooking Experience",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -2569,30 +2553,30 @@
     "Talent1_2_p4": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 50<@ba.talpu>(+5)</> giây."
   },
   "char_4145_ulpia": {
-    "TitleTalent1": "Natural Holdfast",
-    "TitleTalent2": "Nourish the Blood",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "Hồi 80 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 120 HP.",
     "Talent1_2": "Hồi 100 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 160 HP.",
     "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên.",
     "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên."
   },
   "char_4146_nymph": {
-    "TitleTalent1": "Soul Stolen",
-    "TitleTalent2": "Key to the Heart",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4147_mitm": {
-    "TitleTalent1": "Scrapheap Buggies",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 20 giây.",
     "Talent1": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 17 giây.",
     "Talent1_2": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 15 giây."
   },
   "char_4148_philae": {
-    "TitleTalent1": "Herald of the Divine River",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2600,8 +2584,8 @@
     "Talent1_2_p4": ""
   },
   "char_4151_tinman": {
-    "TitleTalent1": "'On My Way'",
-    "TitleTalent2": "Shriveled Soul",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p2": "",
@@ -2611,7 +2595,7 @@
     "Talent2_p4": ""
   },
   "char_4155_talr": {
-    "TitleTalent1": "Select Your Customers!",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2619,7 +2603,7 @@
     "Talent1_2_p4": ""
   },
   "char_415_flint": {
-    "TitleTalent1": "Featherweight",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2627,7 +2611,7 @@
     "Talent1_2_p4": ""
   },
   "char_4162_cathy": {
-    "TitleTalent1": "Directional Support Signal",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2639,7 +2623,7 @@
     "Talent3": ""
   },
   "char_4163_rosesa": {
-    "TitleTalent1": "Herbalist Número Uno",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2649,7 +2633,7 @@
     "Talent1_2_p4": ""
   },
   "char_4164_tecno": {
-    "TitleTalent1": "Freestyle Puppetry",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -2658,7 +2642,7 @@
     "Talent3": ""
   },
   "char_4165_ctrail": {
-    "TitleTalent1": "Low-Altitude Turbulence",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2674,8 +2658,8 @@
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân."
   },
   "char_416_zumama": {
-    "TitleTalent1": "Peerless Bravery",
-    "TitleTalent2": "Resilience",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2683,7 +2667,7 @@
     "Talent2": ""
   },
   "char_4171_wulfen": {
-    "TitleTalent1": "Explorer's Stash",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2693,7 +2677,7 @@
     "Talent1_2_p4": ""
   },
   "char_4172_xingzh": {
-    "TitleTalent1": "Friendship Fair, Together Tied",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2701,7 +2685,7 @@
     "Talent1_2_p4": ""
   },
   "char_4173_nowell": {
-    "TitleTalent1": "Precise Prescription",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2709,7 +2693,7 @@
     "Talent1_2_p4": ""
   },
   "char_4177_brigid": {
-    "TitleTalent1": "Practiced Knot-Tier",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2717,7 +2701,7 @@
     "Talent1_2_p4": ""
   },
   "char_4178_alanna": {
-    "TitleTalent1": "Makeshift Modification",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2727,8 +2711,8 @@
     "Talent1_2_p4": ""
   },
   "char_4179_monstr": {
-    "TitleTalent1": "Self-Repair",
-    "TitleTalent2": "Tactical Coordination",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2804,7 +2788,7 @@
     "Talent2_2_p4": ""
   },
   "char_4187_graceb": {
-    "TitleTalent1": "Opportune Mercy",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2827,7 +2811,7 @@
     "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
   },
   "char_4191_tippi": {
-    "TitleTalent1": "Film Set Operational Manual",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2835,8 +2819,8 @@
     "Talent1_2_p4": ""
   },
   "char_4193_lemuen": {
-    "TitleTalent1": "Diploma Persecutionis Internationalis",
-    "TitleTalent2": "Modus Extraditio Fugitivi",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2844,16 +2828,16 @@
     "Talent2": ""
   },
   "char_4194_rmixer": {
-    "TitleTalent1": "Machine-Gun Welcome Ceremony",
-    "TitleTalent2": "Shield-Up Farewell Ceremony",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4195_radian": {
-    "TitleTalent1": "Cassette Inspiration",
-    "TitleTalent2": "Do Your Best~",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2861,7 +2845,7 @@
     "Talent2_p4": ""
   },
   "char_4196_reckpr": {
-    "TitleTalent1": "Accumulated Knowledge",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2869,7 +2853,7 @@
     "Talent1_2_p4": ""
   },
   "char_4198_christ": {
-    "TitleTalent1": "Captivating Delicacy",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2967,14 +2951,14 @@
     "Talent1_2_p4": ""
   },
   "char_421_crow": {
-    "TitleTalent1": "Into the Groove",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_422_aurora": {
-    "TitleTalent1": "Frigid Respite",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2982,8 +2966,8 @@
     "Talent1_2_p4": ""
   },
   "char_423_blemsh": {
-    "TitleTalent1": "Knight of Sword and Shield",
-    "TitleTalent2": "Mercy",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": "",
@@ -2991,8 +2975,8 @@
     "Talent2_2_p4": ""
   },
   "char_426_billro": {
-    "TitleTalent1": "Meal of Life",
-    "TitleTalent2": "Poised for Action",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3000,8 +2984,8 @@
     "Talent2": ""
   },
   "char_427_vigil": {
-    "TitleTalent1": "Leader of the Wolfpack",
-    "TitleTalent2": "Wolven Nature",
+    "TitleTalent1": "Thủ lĩnh bầy sói",
+    "TitleTalent2": "Sói hoang dã",
     "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
     "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
     "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
@@ -3009,8 +2993,8 @@
     "Talent2_p4": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 200<@ba.talpu>(+25)</> DEF của kẻ địch đang bị 'Ảnh Lang' chặn."
   },
   "char_430_fartth": {
-    "TitleTalent1": "Concentration",
-    "TitleTalent2": "Stilled Breath",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3018,7 +3002,7 @@
     "Talent2": ""
   },
   "char_431_ashlok": {
-    "TitleTalent1": "Bombardment Studies",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3026,7 +3010,7 @@
     "Talent1_2_p4": ""
   },
   "char_433_windft": {
-    "TitleTalent1": "Forward Together",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3036,7 +3020,7 @@
     "Talent1_2_p4": ""
   },
   "char_436_whispr": {
-    "TitleTalent1": "Tower of Life",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3044,8 +3028,8 @@
     "Talent1_2_p4": ""
   },
   "char_437_mizuki": {
-    "TitleTalent1": "Traumatic Hysteria",
-    "TitleTalent2": "Countertransference",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3053,7 +3037,7 @@
     "Talent2_p4": ""
   },
   "char_440_pinecn": {
-    "TitleTalent1": "Portable Energy Source",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3061,7 +3045,7 @@
     "Talent1_2_p4": ""
   },
   "char_445_wscoot": {
-    "TitleTalent1": "Sheathed Blade, Studied Foe",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3069,7 +3053,7 @@
     "Talent1_2_p4": ""
   },
   "char_446_aroma": {
-    "TitleTalent1": "Let's Get Saponaceous!",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3077,7 +3061,7 @@
     "Talent1_2_p4": ""
   },
   "char_449_glider": {
-    "TitleTalent1": "Collective Consciousness",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3085,8 +3069,8 @@
     "Talent1_2_p4": ""
   },
   "char_450_necras": {
-    "TitleTalent1": "Rekindle",
-    "TitleTalent2": "Deathbed Deliverance",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3096,7 +3080,7 @@
     "Talent4": ""
   },
   "char_451_robin": {
-    "TitleTalent1": "'Clip' Specialist",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3106,14 +3090,14 @@
     "Talent1_2_p4": ""
   },
   "char_452_bstalk": {
-    "TitleTalent1": "Professional Breeder",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 20 giây.",
     "Talent1": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 17 giây.",
     "Talent1_2": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 15 giây."
   },
   "char_455_nothin": {
-    "TitleTalent1": "Unexpected Strike",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3121,16 +3105,16 @@
     "Talent1_2_p4": ""
   },
   "char_456_ash": {
-    "TitleTalent1": "Auxiliary Equipment",
-    "TitleTalent2": "Breaching Specialist",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_457_blitz": {
-    "TitleTalent1": "Shielded Shooting",
-    "TitleTalent2": "Bunker Defense",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3138,7 +3122,7 @@
     "Talent2": ""
   },
   "char_458_rfrost": {
-    "TitleTalent1": "Welcome Mat",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3148,7 +3132,7 @@
     "Talent1_2_p4": ""
   },
   "char_459_tachak": {
-    "TitleTalent1": "Heavy Firepower",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3157,7 +3141,7 @@
     "Talent1_2_p4": ""
   },
   "char_464_cement": {
-    "TitleTalent1": "Blueprint Corrections",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3165,7 +3149,7 @@
     "Talent1_2_p4": ""
   },
   "char_466_qanik": {
-    "TitleTalent1": "Tundra Survival",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3173,7 +3157,7 @@
     "Talent1_2_p4": ""
   },
   "char_469_indigo": {
-    "TitleTalent1": "Gentle Binding Gaze",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3181,8 +3165,8 @@
     "Talent1_2_p4": ""
   },
   "char_472_pasngr": {
-    "TitleTalent1": "Mechanism Analysis",
-    "TitleTalent2": "Lone Soldier",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -3191,7 +3175,7 @@
     "Talent2_p2": ""
   },
   "char_473_mberry": {
-    "TitleTalent1": "Helper",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3199,8 +3183,8 @@
     "Talent1_2_p4": ""
   },
   "char_474_glady": {
-    "TitleTalent1": "Waves of Ægir",
-    "TitleTalent2": "Survival of the Fittest",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -3214,14 +3198,14 @@
     "Talent1_2": ""
   },
   "char_476_blkngt": {
-    "TitleTalent1": "Nightwalker",
+    "TitleTalent1": "Mộng du",
     "TitleTalent2": "",
     "Talent0": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 20 giây.",
     "Talent1": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 17 giây.",
     "Talent1_2": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 15 giây."
   },
   "char_478_kirara": {
-    "TitleTalent1": "Lonesome Protector",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3238,7 +3222,7 @@
     "Talent2": "Sau khi triển khai, phí triển khai -2 cho cán viên kế tiếp."
   },
   "char_484_robrta": {
-    "TitleTalent1": "Modeler Debugging",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p4": "",
@@ -3248,15 +3232,15 @@
     "Talent1_2_p4": ""
   },
   "char_485_pallas": {
-    "TitleTalent1": "Birth of a Hero",
-    "TitleTalent2": "Goddess' Inspiration",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_486_takila": {
-    "TitleTalent1": "Waiting Game",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3264,7 +3248,7 @@
     "Talent1_2_p4": ""
   },
   "char_487_bobb": {
-    "TitleTalent1": "Focused Guidance",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3280,7 +3264,7 @@
     "Talent1_2_p4": "Sau khi được triển khai được 30 giây, HP tối đa +18%<@ba.talpu>(+3%)</>."
   },
   "char_489_serum": {
-    "TitleTalent1": "Tactical Readjustment",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3288,7 +3272,7 @@
     "Talent1_2_p4": ""
   },
   "char_491_humus": {
-    "TitleTalent1": "Re-recycle",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3296,7 +3280,7 @@
     "Talent1_2_p4": ""
   },
   "char_492_quercu": {
-    "TitleTalent1": "Forest Sanctuary",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3304,7 +3288,7 @@
     "Talent1_2_p4": ""
   },
   "char_493_firwhl": {
-    "TitleTalent1": "Flexible Fighter",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3312,7 +3296,7 @@
     "Talent1_2_p4": ""
   },
   "char_494_vendla": {
-    "TitleTalent1": "Soil Fertilizer Enhancement",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3334,13 +3318,13 @@
     "Talent1_2_p4": "ASPD +14<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +14%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch."
   },
   "char_498_inside": {
-    "TitleTalent1": "Fire Support",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_499_kaitou": {
-    "TitleTalent1": "Advanced Notice",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3382,31 +3366,31 @@
     "TitleTalent2": ""
   },
   "char_508_aguard": {
-    "TitleTalent1": "Invisible Blade",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_509_acast": {
-    "TitleTalent1": "'All That I See'",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_510_amedic": {
-    "TitleTalent1": "Promotion",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_511_asnipe": {
-    "TitleTalent1": "Windfall",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_512_aprot": {
-    "TitleTalent1": "Land of Memories",
+    "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
@@ -3479,8 +3463,8 @@
     "Talent2": "ATK +10%, nhận thêm 1 DP mỗi khi hạ gục kẻ địch."
   },
   "char_609_acguad": {
-    "TitleTalent1": "Invisible Blade",
-    "TitleTalent2": "Not One Step Back",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3488,8 +3472,8 @@
     "Talent3": ""
   },
   "char_610_acfend": {
-    "TitleTalent1": "Research Materials",
-    "TitleTalent2": "Feedback Armor",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3497,40 +3481,40 @@
     "Talent2_2": ""
   },
   "char_611_acnipe": {
-    "TitleTalent1": "Windfall",
-    "TitleTalent2": "Brewing Storm",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_612_accast": {
-    "TitleTalent1": "'All That I See'",
-    "TitleTalent2": "'All That I Teach'",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_613_acmedc": {
-    "TitleTalent1": "Promotion",
-    "TitleTalent2": "Transcendence",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_614_acsupo": {
-    "TitleTalent1": "Phase Locked",
-    "TitleTalent2": "Decoy Blip",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_615_acspec": {
-    "TitleTalent1": "Double-Hit Experiment",
-    "TitleTalent2": "Four-Dimensional Separation",
+    "TitleTalent1": "",
+    "TitleTalent2": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
