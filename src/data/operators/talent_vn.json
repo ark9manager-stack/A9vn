@@ -507,12 +507,11 @@
     "Talent1_2_p4": ""
   },
   "char_133_mm": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Thám tử Victoria",
+    "Talent1": "ATK +4%, ASPD +4",
+    "Talent1_p4": "ATK +5%<@ba.talpu>(+1%)</>, ASPD +5<@ba.talpu>(+1%)</>",
+    "Talent1_2": "ATK +7%, ASPD +7",
+    "Talent1_2_p4": "ATK +8%<@ba.talpu>(+1%)</>, ASPD +8<@ba.talpu>(+1%)</>"
   },
   "char_134_ifrit": {
     "TitleTalent1": "",
@@ -790,10 +789,9 @@
     "Talent2_p4": ""
   },
   "char_190_clour": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Kinh nghiệm của một thợ săn",
+    "Talent1": "Tốc độ hồi phục SP của bản thân thêm +0.15/giây.",
+    "Talent1_2": "Tốc độ hồi phục SP của bản thân thêm +0.3/giây."
   },
   "char_192_falco": {
     "TitleTalent1": "Tăng ATK",
@@ -1182,10 +1180,10 @@
     "Talent1_2_p4": ""
   },
   "char_260_durnar": {
-    "TitleTalent1": "Kiếm và Khiên",
+    "TitleTalent1": "Công thủ toàn diện",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK +4%, DEF +4%",
+    "Talent1_2": "ATK +7%, DEF +7%"
   },
   "char_261_sddrag": {
     "TitleTalent1": "Huyết mạch lụi tàn",
@@ -1377,12 +1375,12 @@
     "Talent1_2_p4": ""
   },
   "char_298_susuro": {
-    "TitleTalent1": "Phẫu thuật ít xâm lấn",
+    "TitleTalent1": "Phẫu thuật xâm lấn tối thiểu",
     "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 10% hiệu quả hồi phục.",
+    "Talent1_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 13%<@ba.talpu>(+3%)</> hiệu quả hồi phục.",
+    "Talent1_2": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 20% hiệu quả hồi phục.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 23%<@ba.talpu>(+3%)</> hiệu quả hồi phục."
   },
   "char_300_phenxi": {
     "TitleTalent1": "",
@@ -1594,10 +1592,9 @@
     "Talent2_2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 9<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút lui khỏi sân."
   },
   "char_355_ethan": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Trói buộc",
+    "Talent1": "Khi tấn công, có 25% tỷ lệ <$ba.root>Trói chân</> mục tiêu trong vòng 2 giây.",
+    "Talent1_2": "Khi tấn công, có 25% tỷ lệ <$ba.root>Trói chân</> mục tiêu trong vòng 3 giây."
   },
   "char_356_broca": {
     "TitleTalent1": "",
