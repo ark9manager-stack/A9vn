@@ -67,7 +67,7 @@
     { "chainhealer": "Hồi HP cho đồng minh và sẽ nảy giữa <@ba.kw>3</> đồng minh. Lượng hồi phục giảm 25% cho mỗi lần nảy." },
     { "incantationmedic": "Đòn tấn công gây <@ba.kw>sát thương phép</> và hồi HP cho 1 đồng minh trong phạm vi tấn công bằng 50% sát thương gây ra." },
     { "healer": "Có phạm vi hồi phục rộng, nhưng lượng hồi phục giảm xuống còn <@ba.kw>{heal_scale:0%}</> cho mục tiêu ở xa." },
-    { "wandermedic": "Hồi HP cho đồng minh, đồng thời giảm thanh [[Hiệu ứng nguyên tố|EleInjury]] với lượng tương đương 50% ATK. (có thể giảm thanh [[Hiệu ứng nguyên tố|EleInjury]] cho cả đồng minh chưa bị mất HP)." },
+    { "wandermedic": "Hồi HP cho đồng minh, đồng thời hồi phục thanh [[Hiệu ứng nguyên tố|EleInjury]] lượng hồi bằng 50% ATK. (có thể hồi thanh [[Hiệu ứng nguyên tố|EleInjury]] cho cả đồng minh chưa bị mất HP)." },
     { "blessing": "Đòn tấn công gây <@ba.kw>sát thương phép</>. Khi kỹ năng đang kích hoạt, đòn tấn công chuyển thành hồi HP cho đồng minh (lượng hồi bằng 75% ATK)." },
     { "craftsman": "Chặn được 2 kẻ địch, có thể sử dụng <Thiết bị hỗ trợ> trong chiến đấu." },
     { "slower": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và gây hiệu ứng [[Làm chậm|Slow]] trong thời gian ngắn." },

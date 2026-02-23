@@ -1602,13 +1602,13 @@
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
-    "Talent2_p4": ""
+    "Talent2_p4": "造成致命伤害时使敌人保留1点生命并使其<$ba.dying>重伤</>（击杀者技力+2）；罗小黑不攻击<$ba.dying>重伤</>单位"
   },
   "char_362_saga": {
     "TitleTalent1": "Thuyết Pháp",
     "TitleTalent2": "Tĩnh Tâm",
-    "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái [[Trọng thương|Wounded]](người hạ gục nhận +1 SP); Saga không tấn công mục tiêu [[Trọng thương|Wounded]].",
-    "Talent1": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái [[Trọng thương|Wounded]](người hạ gục nhận +2 SP); Saga không tấn công mục tiêu [[Trọng thương|Wounded]].",
+    "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +1 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>.",
+    "Talent1": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +2 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>.",
     "Talent2": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 5% HP tối đa mỗi giây, kéo dài 15 giây. Hiệu ứng này chỉ kích hoạt một lần.",
     "Talent2_p4": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 6%<@ba.talpu>(+1%)</> HP tối đa mỗi giây, kéo dài 17<@ba.talpu>(+2)</> giây. Hiệu ứng này chỉ kích hoạt một lần."
   },
@@ -1752,10 +1752,9 @@
     "Talent0_p5": ""
   },
   "char_4004_pudd": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Sóng điện từ",
+    "Talent1": "ATK +8%",
+    "Talent1_2": "ATK +10%"
   },
   "char_4006_melnte": {
     "TitleTalent1": "",
@@ -1931,12 +1930,11 @@
     "Talent1_2_p4": ""
   },
   "char_4041_chnut": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Vững như bàn thạch",
+    "Talent1": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 10% khi hồi phục cho đồng minh trên ô cận chiến.",
+    "Talent1_p4": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 13%<@ba.talpu>(+3%)</> khi hồi phục cho đồng minh trên ô cận chiến.",
+    "Talent1_2": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 20% khi hồi phục cho đồng minh trên ô cận chiến.",
+    "Talent1_2_p4": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 23%<@ba.talpu>(+3%)</> khi hồi phục cho đồng minh trên ô cận chiến."
   },
   "char_4042_lumen": {
     "TitleTalent1": "",
@@ -1991,12 +1989,11 @@
     "Talent2_p4": ""
   },
   "char_4051_akkord": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Cộng hưởng nhịp điệu",
+    "Talent1": "Khi trong phạm vi tấn công có ít nhất 1 đồng minh khác, ATK +8%.",
+    "Talent1_p4": "Khi trong phạm vi tấn công có ít nhất 1 đồng minh khác, ATK +10%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi trong phạm vi tấn công có ít nhất 1 đồng minh khác, ATK +15%.",
+    "Talent1_2_p4": "Khi trong phạm vi tấn công có ít nhất 1 đồng minh khác, ATK +17%<@ba.talpu>(+2%)</>."
   },
   "char_4052_surfer": {
     "TitleTalent1": "Lữ hành đơn độc",
@@ -2052,18 +2049,16 @@
     "Talent1_2_p4": ""
   },
   "char_4062_totter": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Đôi mắt tinh tường",
+    "Talent0": "Có thể tấn công kẻ địch <$ba.invisible>Tàng hình</>, ATK +4% nếu trong phạm vi tấn công có kẻ địch <$ba.invisible>Tàng hình</>.",
+    "Talent0_p4": "Có thể tấn công kẻ địch <$ba.invisible>Tàng hình</>, ATK +7%<@ba.talpu>(+3%)</> nếu trong phạm vi tấn công có kẻ địch <$ba.invisible>Tàng hình</>.",
+    "Talent1": "Có thể tấn công kẻ địch <$ba.invisible>Tàng hình</>, ATK +10% nếu trong phạm vi tấn công có kẻ địch <$ba.invisible>Tàng hình</>.",
+    "Talent1_p4": "Có thể tấn công kẻ địch <$ba.invisible>Tàng hình</>, ATK +13%<@ba.talpu>(+3%)</> nếu trong phạm vi tấn công có kẻ địch <$ba.invisible>Tàng hình</>.",
+    "Talent1_2": "Có thể tấn công kẻ địch <$ba.invisible>Tàng hình</>, ATK +17% nếu trong phạm vi tấn công có kẻ địch <$ba.invisible>Tàng hình</>.",
+    "Talent1_2_p4": "Có thể tấn công kẻ địch <$ba.invisible>Tàng hình</>, ATK +20%<@ba.talpu>(+3%)</> nếu trong phạm vi tấn công có kẻ địch <$ba.invisible>Tàng hình</>."
   },
   "char_4063_quartz": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Lang bạt nơi hoang dã",
     "Talent1": "HP +4%, ATK +4%.",
     "Talent1_p4": "HP +5%<@ba.talpu>(+1%)</>, ATK +5%<@ba.talpu>(+1%)</>.",
     "Talent1_2": "HP +8%, ATK +8%.",
@@ -2102,10 +2097,9 @@
     "Talent2_2": ""
   },
   "char_4067_lolxh": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Chấp hành giả tập sự",
+    "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +1 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>.",
+    "Talent1_2": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +2 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>."
   },
   "char_4071_peper": {
     "TitleTalent1": "",
@@ -2249,12 +2243,11 @@
     "Talent2_p2": "Khi tấn công kẻ địch bậc Tinh Anh hoặc Thủ Lĩnh, có 20%<@ba.talpu>(+2%)</> tỷ lệ nhận được một lớp [[Khiên|Shield]] giúp chặn đòn đánh cận chiến (tối đa 1 lớp)."
   },
   "char_4100_caper": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Trêu ghẹo tùy hứng",
+    "Talent1": "Khi tấn công, có 25% tỷ lệ tăng ATK của đòn tấn công đó lên 130%.",
+    "Talent1_p4": "Khi tấn công, có 25% tỷ lệ tăng ATK của đòn tấn công đó lên 140%<@ba.talpu>(+10%)</>.",
+    "Talent1_2": "Khi tấn công, có 25% tỷ lệ tăng ATK của đòn tấn công đó lên 150%.",
+    "Talent1_2_p4": "Khi tấn công, có 25% tỷ lệ tăng ATK của đòn tấn công đó lên 160%<@ba.talpu>(+10%)</>."
   },
   "char_4102_threye": {
     "TitleTalent1": "",
@@ -2291,12 +2284,11 @@
     "Talent1_2_p4": ""
   },
   "char_4107_vrdant": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Thực vật tái sinh",
+    "Talent1": "<Thế thân> hồi lại 2% HP mỗi giây.",
+    "Talent1_p4": "<Thế thân> hồi lại 2.5%<@ba.talpu>(0.5%)</> HP mỗi giây.",
+    "Talent1_2": "<Thế thân> hồi lại 3.5% HP mỗi giây.",
+    "Talent1_2_p4": "<Thế thân> hồi lại 4%<@ba.talpu>(0.5%)</> HP mỗi giây."
   },
   "char_4109_baslin": {
     "TitleTalent1": "",
@@ -2417,12 +2409,11 @@
     "Talent1_2_p4": "Nhận 30%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa."
   },
   "char_4130_luton": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Vượt qua tử thần",
+    "Talent1": "Hồi 12% HP khi kẻ địch do bản thân chặn bị hạ gục.",
+    "Talent1_p4": "Hồi 14%<@ba.talpu>(+2%)</> HP khi kẻ địch do bản thân chặn bị hạ gục.",
+    "Talent1_2": "Hồi 16% HP khi kẻ địch do bản thân chặn bị hạ gục.",
+    "Talent1_2_p4": "Hồi 18%<@ba.talpu>(+2%)</> HP khi kẻ địch do bản thân chặn bị hạ gục."
   },
   "char_4131_odda": {
     "TitleTalent1": "",
@@ -2628,12 +2619,11 @@
     "Talent3": ""
   },
   "char_4165_ctrail": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Nhiễu loạn không khí tầm thấp",
+    "Talent1": "Nhận +5% DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 105% khi tấn công kẻ địch.",
+    "Talent1_p4": "Nhận +7%<@ba.talpu>(+2%)</> DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 107%<@ba.talpu>(+2%)</> khi tấn công kẻ địch.",
+    "Talent1_2": "Nhận +10% DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 110% khi tấn công kẻ địch.",
+    "Talent1_2_p4": "Nhận +12%<@ba.talpu>(+2%)</> DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch."
   },
   "char_4166_varkis": {
     "TitleTalent1": "Khắc cốt ghi tâm",
@@ -2889,8 +2879,7 @@
     "Talent1_2_p4": ""
   },
   "char_4208_wintim": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ghi chép nhanh",
     "Talent1": "ASPD +5, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
     "Talent1_p4": "ASPD +7<@ba.talpu>(+2)</>, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
     "Talent1_2": "ASPD +10, sau khi bản thân chịu sát thương sẽ mất hiệu ứng này.",
@@ -3030,12 +3019,11 @@
     "Talent1_2_p4": "Sau khi triển khai, tốc độ hồi phục SP của bản thân thêm +0.5/giây<@ba.talpu>(+0.05%)</> trong vòng 60 giây."
   },
   "char_445_wscoot": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Thu kiếm chờ địch",
+    "Talent1": "Khi mức tăng ATK từ Đặc tính đạt tối đa, mỗi đòn tấn công gây thêm sát thương bằng 25% ATK.",
+    "Talent1_p4": "Khi mức tăng ATK từ Đặc tính đạt tối đa, mỗi đòn tấn công gây thêm sát thương bằng 28%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1_2": "Khi mức tăng ATK từ Đặc tính đạt tối đa, mỗi đòn tấn công gây thêm sát thương bằng 40% ATK.",
+    "Talent1_2_p4": "Khi mức tăng ATK từ Đặc tính đạt tối đa, mỗi đòn tấn công gây thêm sát thương bằng 43%<@ba.talpu>(+3%)</> ATK."
   },
   "char_446_aroma": {
     "TitleTalent1": "",
@@ -3141,12 +3129,11 @@
     "Talent1_2_p4": ""
   },
   "char_469_indigo": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Ánh mắt mê hoặc",
+    "Talent1": "Khi tấn công, có 12% tỷ lệ <$ba.root>Trói chân</> mục tiêu trong 4 giây. Bản thân không tấn công mục tiêu <$ba.root>Trói chân</>.",
+    "Talent1_p4": "Khi tấn công, có 14%<@ba.talpu>(+2%)</> tỷ lệ <$ba.root>Trói chân</> mục tiêu trong 4 giây. Bản thân không tấn công mục tiêu <$ba.root>Trói chân</>.",
+    "Talent1_2": "Khi tấn công, có 18% tỷ lệ <$ba.root>Trói chân</> mục tiêu trong 4 giây. Bản thân không tấn công mục tiêu <$ba.root>Trói chân</>.",
+    "Talent1_2_p4": "Khi tấn công, có 20%<@ba.talpu>(+2%)</> tỷ lệ <$ba.root>Trói chân</> mục tiêu trong 4 giây. Bản thân không tấn công mục tiêu <$ba.root>Trói chân</>."
   },
   "char_472_pasngr": {
     "TitleTalent1": "",
@@ -3206,14 +3193,13 @@
     "Talent2": "Sau khi triển khai, phí triển khai -2 cho cán viên kế tiếp."
   },
   "char_484_robrta": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Hiệu chỉnh mô hình",
+    "Talent0": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +10% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent0_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +13%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +20% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +23%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1_2": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +30% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1_2_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +33%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn)."
   },
   "char_485_pallas": {
     "TitleTalent1": "",
@@ -3256,12 +3242,11 @@
     "Talent1_2_p4": ""
   },
   "char_491_humus": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Siêu tái chế",
+    "Talent1": "Lượng HP hồi vượt mức HP tối đa sẽ được chuyển hóa thành <$ba.barrier>Lá chắn</>; và lượng <$ba.barrier>Lá chắn</> này không vượt quá 60% HP tối đa của bản thân.",
+    "Talent1_p4": "Lượng HP hồi vượt mức HP tối đa sẽ được chuyển hóa thành <$ba.barrier>Lá chắn</>; và lượng <$ba.barrier>Lá chắn</> này không vượt quá 64%<@ba.talpu>(+4%)</> HP tối đa của bản thân.",
+    "Talent1_2": "Lượng HP hồi vượt mức HP tối đa sẽ được chuyển hóa thành <$ba.barrier>Lá chắn</>; và lượng <$ba.barrier>Lá chắn</> này không vượt quá 100% HP tối đa của bản thân.",
+    "Talent1_2_p4": "Lượng HP hồi vượt mức HP tối đa sẽ được chuyển hóa thành <$ba.barrier>Lá chắn</>; và lượng <$ba.barrier>Lá chắn</> này không vượt quá 104%<@ba.talpu>(+4%)</> HP tối đa của bản thân."
   },
   "char_492_quercu": {
     "TitleTalent1": "",
