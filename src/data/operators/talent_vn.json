@@ -670,10 +670,9 @@
     "Talent1_2_p4": ""
   },
   "char_159_peacok": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Đáp đất an toàn",
+    "Talent0": "Phí triển khai -2, Thời gian tái triển khai -8 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây.",
+    "Talent1_2": "Phí triển khai -4, Thời gian tái triển khai -15 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây."
   },
   "char_163_hpsts": {
     "TitleTalent1": "",
@@ -1172,12 +1171,11 @@
     "Talent1_2_p4": ""
   },
   "char_258_podego": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Người chăm vườn hoa",
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Hỗ trợ】nhận +5% ATK.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Hỗ trợ】nhận +7%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Hỗ trợ】nhận +9% ATK.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Hỗ trợ】nhận +11%<@ba.talpu>(+2%)</> ATK."
   },
   "char_260_durnar": {
     "TitleTalent1": "Công thủ toàn diện",
@@ -1220,21 +1218,19 @@
     "Talent1_2_p4": ""
   },
   "char_271_spikes": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Phân rã cấu trúc",
+    "Talent0": "Ưu tiên tấn công Drone.",
+    "Talent1": "Ưu tiên tấn công Drone; ATK +20% khi tấn công Drone.",
+    "Talent1_p4": "Ưu tiên tấn công Drone; ATK +23%<@ba.talpu>(+3%)</> khi tấn công Drone.",
+    "Talent1_2": "Ưu tiên tấn công Drone; ATK +40% khi tấn công Drone.",
+    "Talent1_2_p4": "Ưu tiên tấn công Drone; ATK +43%<@ba.talpu>(+3%)</> khi tấn công Drone."
   },
   "char_272_strong": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Cao thủ giải phẫu",
+    "Talent1": "Tăng ATK lên 125% khi tấn công【Infected Creatures】",
+    "Talent1_p4": "Tăng ATK lên 130%<@ba.talpu>(+5%)</> khi tấn công【Infected Creatures】",
+    "Talent1_2": "Tăng ATK lên 145% khi tấn công【Infected Creatures】",
+    "Talent1_2_p4": "Tăng ATK lên 150%<@ba.talpu>(+5%)</> khi tấn công【Infected Creatures】"
   },
   "char_274_astesi": {
     "TitleTalent1": "",
@@ -1392,18 +1388,17 @@
     "Talent2_p4": ""
   },
   "char_301_cutter": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Vết khắc quang hóa",
+    "Talent1": "Khi gây sát thương, có 12% tỷ lệ hồi thêm 1 SP.",
+    "Talent1_p4": "Khi gây sát thương, có 15%<@ba.talpu>(+3%)</> tỷ lệ hồi thêm 1 SP.",
+    "Talent1_2": "Khi gây sát thương, có 20% tỷ lệ hồi thêm 1 SP.",
+    "Talent1_2_p4": "Khi gây sát thương, có 23%<@ba.talpu>(+3%)</> tỷ lệ hồi thêm 1 SP."
   },
   "char_302_glaze": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Phát bắn chuẩn xác",
     "TitleTalent2": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1_2": "Khi tấn công mục tiêu ngoài phạm vi tấn công gốc, có 25% tỷ lệ khiến mục tiêu đó bị <$ba.stun>Choáng</> trong 2 giây.",
+    "Talent1_2_p4": "Khi tấn công mục tiêu ngoài phạm vi tấn công gốc, có 28%<@ba.talpu>(+3%)</> tỷ lệ khiến mục tiêu đó bị <$ba.stun>Choáng</> trong 2 giây."
   },
   "char_304_zebra": {
     "TitleTalent1": "",
@@ -1468,10 +1463,9 @@
     "Talent1_2_p4": ""
   },
   "char_328_cammou": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Phối hợp ăn ý",
+    "Talent1": "Click và Drones của cô nhận +6 ASPD",
+    "Talent1_2": "Click và Drones của cô nhận +12 ASPD"
   },
   "char_332_archet": {
     "TitleTalent1": "",
@@ -1495,11 +1489,10 @@
     "Talent1_2": ""
   },
   "char_337_utage": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Chế độ nghiêm túc",
+    "Talent0": "Khi có mặt trên sân, bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +50 ASPD (đạt mức tăng tối đa khi mất 70% HP)",
+    "Talent1": "Khi có mặt trên sân, bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +75 ASPD (đạt mức tăng tối đa khi mất 70% HP)",
+    "Talent1_2": "Khi có mặt trên sân, bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +100 ASPD (đạt mức tăng tối đa khi mất 70% HP)"
   },
   "char_338_iris": {
     "TitleTalent1": "",
@@ -1556,12 +1549,11 @@
     "Talent1_2_p4": ""
   },
   "char_347_jaksel": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Phản xạ cấp tốc",
+    "Talent1": "Nhận 15% tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn).",
+    "Talent1_p4": "Nhận 18%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn).",
+    "Talent1_2": "Nhận 30% tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn).",
+    "Talent1_2_p4": "Nhận 33%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn)."
   },
   "char_348_ceylon": {
     "TitleTalent1": "",
@@ -1635,10 +1627,9 @@
     "Talent1_2": ""
   },
   "char_366_acdrop": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Kỹ thuật Slideshot",
+    "Talent1": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 20% ATK của bản thân (tăng lên 30% ATK nếu kẻ địch ở trong 2 ô trước mặt).",
+    "Talent1_2": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 25% ATK của bản thân (tăng lên 40% ATK nếu kẻ địch ở trong 2 ô trước mặt)."
   },
   "char_367_swllow": {
     "TitleTalent1": "",
@@ -1703,10 +1694,9 @@
     "Talent1_2_p4": ""
   },
   "char_381_bubble": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Giáp gai",
+    "Talent1": "Kẻ địch tấn công Bubble sẽ bị giảm 5% ATK trong 5 giây.",
+    "Talent1_2": "Kẻ địch tấn công Bubble sẽ bị giảm 8% ATK trong 5 giây."
   },
   "char_383_snsant": {
     "TitleTalent1": "",
@@ -1717,10 +1707,9 @@
     "Talent1_2_p4": ""
   },
   "char_385_finlpp": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Hồi phục nhanh chóng",
+    "Talent1": "Mục tiêu được Purestream hồi phục sẽ nhận <$ba.buffres>Kháng hiệu ứng</> trong 2 giây.",
+    "Talent1_2": "Mục tiêu được Purestream hồi phục sẽ nhận <$ba.buffres>Kháng hiệu ứng</> trong 4 giây."
   },
   "char_388_mint": {
     "TitleTalent1": "",
@@ -3034,12 +3023,11 @@
     "Talent2_p4": ""
   },
   "char_440_pinecn": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Nguồn điện di động",
+    "Talent1": "Sau khi triển khai, tốc độ hồi phục SP của bản thân thêm +0.2/giây trong vòng 60 giây.",
+    "Talent1_p4": "Sau khi triển khai, tốc độ hồi phục SP của bản thân thêm +0.25/giây<@ba.talpu>(+0.05%)</> trong vòng 60 giây.",
+    "Talent1_2": "Sau khi triển khai, tốc độ hồi phục SP của bản thân thêm +0.45/giây trong vòng 60 giây.",
+    "Talent1_2_p4": "Sau khi triển khai, tốc độ hồi phục SP của bản thân thêm +0.5/giây<@ba.talpu>(+0.05%)</> trong vòng 60 giây."
   },
   "char_445_wscoot": {
     "TitleTalent1": "",
@@ -3087,8 +3075,7 @@
     "Talent1_2_p4": ""
   },
   "char_452_bstalk": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chuyên gia nhân giống",
     "Talent0": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 20 giây.",
     "Talent1": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 17 giây.",
     "Talent1_2": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 15 giây."
