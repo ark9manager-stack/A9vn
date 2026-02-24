@@ -73,9 +73,7 @@ function getHandbookStoryTextByTitle(handbookEntry, storyTitle) {
   const stories = block?.stories;
   if (!Array.isArray(stories)) return "";
 
-  const texts = stories
-    .map((s) => s?.storyText)
-    .filter(isNonEmptyString);
+  const texts = stories.map((s) => s?.storyText).filter(isNonEmptyString);
 
   return texts.join("\n\n");
 }
@@ -159,7 +157,12 @@ function renderLineWithNotes(line, keyPrefix = "line") {
     const pipe = inner.indexOf("|");
 
     if (pipe === -1) {
-      out.push(...renderInlineItalic(line.slice(start, end + 2), `${keyPrefix}-raw-${start}`));
+      out.push(
+        ...renderInlineItalic(
+          line.slice(start, end + 2),
+          `${keyPrefix}-raw-${start}`,
+        ),
+      );
     } else {
       const label = inner.slice(0, pipe);
       const noteKey = inner.slice(pipe + 1);
@@ -169,7 +172,7 @@ function renderLineWithNotes(line, keyPrefix = "line") {
           key={`${keyPrefix}-note-${start}-${end}-${noteKey}`}
           label={label}
           noteKey={noteKey}
-        />
+        />,
       );
     }
 
@@ -207,12 +210,18 @@ function getItemEntryById(id) {
   if (!id) return { en: null, base: null, picked: null };
 
   const en =
-    (itemTableEn?.items && itemTableEn.items[id]) ? itemTableEn.items[id]
-    : (itemTableEn?.[id] ? itemTableEn[id] : null);
+    itemTableEn?.items && itemTableEn.items[id]
+      ? itemTableEn.items[id]
+      : itemTableEn?.[id]
+        ? itemTableEn[id]
+        : null;
 
   const base =
-    (itemTable?.items && itemTable.items[id]) ? itemTable.items[id]
-    : (itemTable?.[id] ? itemTable[id] : null);
+    itemTable?.items && itemTable.items[id]
+      ? itemTable.items[id]
+      : itemTable?.[id]
+        ? itemTable[id]
+        : null;
 
   return { en, base, picked: en || base || null };
 }
@@ -243,7 +252,9 @@ function SectionTitle({ children }) {
 function TextBody({ text }) {
   if (!isNonEmptyString(text)) return null;
   return (
-    <div style={{ lineHeight: 1.6, fontSize: UI_SCALE.bodyFont, opacity: 0.95 }}>
+    <div
+      style={{ lineHeight: 1.6, fontSize: UI_SCALE.bodyFont, opacity: 0.95 }}
+    >
       {renderMultiline(text)}
     </div>
   );
@@ -402,8 +413,12 @@ export default function ProfileSection({ operator, charId }) {
     };
     const trans = pickFirstNonEmpty(vn?.trans);
 
-    const charDataEn = resolvedCharId ? characterTableEn?.[resolvedCharId] : null;
-    const charDataBase = resolvedCharId ? characterTable?.[resolvedCharId] : null;
+    const charDataEn = resolvedCharId
+      ? characterTableEn?.[resolvedCharId]
+      : null;
+    const charDataBase = resolvedCharId
+      ? characterTable?.[resolvedCharId]
+      : null;
     const charData = charDataEn || charDataBase;
     const recruitBg = rarityToRecruitBg(charData?.rarity);
     const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
@@ -418,7 +433,7 @@ export default function ProfileSection({ operator, charId }) {
     const iconId = pickFirstNonEmpty(
       itemPack?.en?.iconId,
       itemPack?.base?.iconId,
-      potentialItemId
+      potentialItemId,
     );
 
     const tokenUrlPrimary = isNonEmptyString(iconId)
@@ -429,16 +444,25 @@ export default function ProfileSection({ operator, charId }) {
       : "";
 
     const _recruitFallbackText = (() => {
-      const itemDesc = pickFirstNonEmpty(charDataEn?.itemDesc, charDataBase?.itemDesc, "");
-      const itemUsage = pickFirstNonEmpty(charDataEn?.itemUsage, charDataBase?.itemUsage, "");
-      if (isNonEmptyString(itemDesc) && isNonEmptyString(itemUsage)) return `${itemDesc}\n${itemUsage}`;
+      const itemDesc = pickFirstNonEmpty(
+        charDataEn?.itemDesc,
+        charDataBase?.itemDesc,
+        "",
+      );
+      const itemUsage = pickFirstNonEmpty(
+        charDataEn?.itemUsage,
+        charDataBase?.itemUsage,
+        "",
+      );
+      if (isNonEmptyString(itemDesc) && isNonEmptyString(itemUsage))
+        return `${itemDesc}\n${itemUsage}`;
       return pickFirstNonEmpty(itemDesc, itemUsage, "");
     })();
 
     const _tokenFallbackText = pickFirstNonEmpty(
       itemPack?.en?.description,
       itemPack?.base?.description,
-      ""
+      "",
     );
 
     const physicalText = _getText("physical_exam");
@@ -446,9 +470,17 @@ export default function ProfileSection({ operator, charId }) {
 
     let _physicalPanel = null;
     if (isNonEmptyString(physicalText)) {
-      _physicalPanel = { id: "physicalexam", title: "Sức khỏe tổng quát", text: physicalText };
+      _physicalPanel = {
+        id: "physicalexam",
+        title: "Sức khỏe tổng quát",
+        text: physicalText,
+      };
     } else if (isNonEmptyString(performanceText)) {
-      _physicalPanel = { id: "performancereview", title: "Đánh giá hiệu suất", text: performanceText };
+      _physicalPanel = {
+        id: "performancereview",
+        title: "Đánh giá hiệu suất",
+        text: performanceText,
+      };
     }
 
     return {
@@ -464,7 +496,13 @@ export default function ProfileSection({ operator, charId }) {
     };
   }, [resolvedCharId]);
 
-  const optionalKeys = new Set(["file_2", "file_3", "file_4", "promotion_record", "paradox"]);
+  const optionalKeys = new Set([
+    "file_2",
+    "file_3",
+    "file_4",
+    "promotion_record",
+    "paradox",
+  ]);
 
   const recuitText = pickFirstNonEmpty(getText("recuit"), recruitFallbackText);
   const tokenText = pickFirstNonEmpty(getText("token"), tokenFallbackText);
@@ -500,7 +538,13 @@ export default function ProfileSection({ operator, charId }) {
         </div>
       ) : null}
 
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "grid",
+          gap: 12,
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+        }}
+      >
         <ImageTextPanel
           id="recuit"
           title="Hợp đồng tuyển dụng"
@@ -522,16 +566,34 @@ export default function ProfileSection({ operator, charId }) {
         />
       </div>
 
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        <TextPanel id="basicinfo" title="Thông tin cơ bản" text={basicInfoText} />
+      <div
+        style={{
+          display: "grid",
+          gap: 12,
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+        }}
+      >
+        <TextPanel
+          id="basicinfo"
+          title="Thông tin cơ bản"
+          text={basicInfoText}
+        />
         {physicalPanel ? (
-          <TextPanel id={physicalPanel.id} title={physicalPanel.title} text={physicalPanel.text} />
+          <TextPanel
+            id={physicalPanel.id}
+            title={physicalPanel.title}
+            text={physicalPanel.text}
+          />
         ) : null}
       </div>
 
       <TextPanel id="profile" title="Hồ sơ" text={profileText} />
 
-      <TextPanel id="clinicalanalysis" title="Phân tích y tế" text={clinicalAnalysisText} />
+      <TextPanel
+        id="clinicalanalysis"
+        title="Phân tích y tế"
+        text={clinicalAnalysisText}
+      />
 
       {sections.map((s) => {
         const text = getText(s.key);
