@@ -21,7 +21,7 @@ const App = () => {
       <Navbar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
-      <div className="flex-1 h-full">
+      <div className="flex-1 h-screen">
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />} />
           <Route path="/Home" element={<Display />} />

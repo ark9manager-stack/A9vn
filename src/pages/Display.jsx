@@ -75,8 +75,11 @@ const Display = () => {
   }, [location.pathname, navType]);
 
   return (
-    <div className="w-full h-full rounded bg-[#121212] text-white overflow-hidden">
-      <div ref={containerRef} className="fullpage-container scrollbar-hide">
+    <div className="w-full h-screen bg-[#121212] text-white overflow-hidden">
+      <div
+        ref={containerRef}
+        className="fullpage-container scrollbar-hide h-full"
+      >
         <Home />
         <Operator />
         <Music />
