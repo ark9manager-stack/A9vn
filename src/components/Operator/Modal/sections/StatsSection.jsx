@@ -79,7 +79,6 @@ const getItemIconUrl = (iconId) => {
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 };
 
-
 /* Summon/Token */
 const CHARAVATAR_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
@@ -247,7 +246,10 @@ function ValueWithDeltas({ value, deltas, formatter }) {
         deltas
           .filter((d) => Number(d) !== 0 && Number.isFinite(Number(d)))
           .map((d, idx) => (
-            <span key={idx} className="ml-1 text-sm font-semibold text-cyan-400 tabular-nums">
+            <span
+              key={idx}
+              className="ml-1 text-sm font-semibold text-cyan-400 tabular-nums"
+            >
               ({d > 0 ? "+" : ""}
               {fmt(d)})
             </span>
@@ -326,7 +328,7 @@ function getMaxLevelForPhase(phase) {
   if (Array.isArray(frames) && frames.length > 0) {
     const last = frames.reduce(
       (acc, it) => (it.level > acc ? it.level : acc),
-      1
+      1,
     );
     return last;
   }
@@ -431,8 +433,6 @@ function MaterialIcon({ itemId, count }) {
   );
 }
 
-
-
 const StatsSection = ({ operator, charId: charIdProp }) => {
   const resolvedCharId = useMemo(() => {
     if (charIdProp) return String(charIdProp);
@@ -474,7 +474,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       }
 
       const materialCosts = list.filter(
-        (c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0
+        (c) => c?.type === "MATERIAL" && c?.id && Number(c?.count) > 0,
       );
 
       const goldCost = getGoldCostForPromotion(charData?.rarity, from, to);
@@ -484,7 +484,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       if (goldCost > 0) {
         const hasGold = merged.some((c) => String(c?.id) === GOLD_ITEM_ID);
         if (!hasGold) {
-          merged.unshift({ id: GOLD_ITEM_ID, count: goldCost, type: "MATERIAL" });
+          merged.unshift({
+            id: GOLD_ITEM_ID,
+            count: goldCost,
+            type: "MATERIAL",
+          });
         }
       }
 
@@ -495,7 +499,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     return out;
   }, [phases, charData?.rarity]);
-
 
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [level, setLevel] = useState(1);
@@ -512,7 +515,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const currentPhase = phases[phaseIndex];
   const maxLevel = useMemo(
     () => getMaxLevelForPhase(currentPhase),
-    [currentPhase]
+    [currentPhase],
   );
 
   useEffect(() => {
@@ -565,8 +568,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   // Potentials
   const potMap = useMemo(() => normalizePotMap(potVN), []);
   const ranks = useMemo(
-    () => (Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : []),
-    [charData]
+    () =>
+      Array.isArray(charData?.potentialRanks) ? charData.potentialRanks : [],
+    [charData],
   );
 
   const [usePotentials, setUsePotentials] = useState(false);
@@ -576,7 +580,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     setUseTrust(false);
   }, [resolvedCharId]);
 
-  // Summon / Token 
+  // Summon / Token
   const summonOptions = useMemo(() => {
     if (!charData) return [];
 
@@ -588,7 +592,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       if (out.some((x) => x.tokenId === tid)) return;
 
       const tokenChar = characterTable[tid];
-      const tokenPhases = Array.isArray(tokenChar?.phases) ? tokenChar.phases : [];
+      const tokenPhases = Array.isArray(tokenChar?.phases)
+        ? tokenChar.phases
+        : [];
       if (!hasAnyScalingInPhases(tokenPhases)) return;
 
       out.push({
@@ -599,7 +605,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
     const skillsArr = Array.isArray(charData?.skills) ? charData.skills : [];
     skillsArr.forEach((s, idx) => {
-      if (s?.overrideTokenKey) pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
+      if (s?.overrideTokenKey)
+        pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
     });
 
     const tokenDict = charData?.displayTokenDict;
@@ -641,18 +648,21 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const summonPhase = summonPhases[summonPhaseIndex];
   const summonMaxLevel = useMemo(
     () => getMaxLevelForPhase(summonPhase),
-    [summonPhase]
+    [summonPhase],
   );
 
   const summonLevel = useMemo(
     () => clamp(safeLevel, 1, summonMaxLevel),
-    [safeLevel, summonMaxLevel]
+    [safeLevel, summonMaxLevel],
   );
 
   const summonStats = useMemo(() => {
     if (!summonPhase) return null;
 
-    const base = interpolateAttributes(summonPhase?.attributesKeyFrames, summonLevel);
+    const base = interpolateAttributes(
+      summonPhase?.attributesKeyFrames,
+      summonLevel,
+    );
     if (!base) return null;
 
     return {
@@ -693,7 +703,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const computed = useMemo(() => {
     if (!currentPhase) return null;
 
-    const base = interpolateAttributes(currentPhase.attributesKeyFrames, safeLevel);
+    const base = interpolateAttributes(
+      currentPhase.attributesKeyFrames,
+      safeLevel,
+    );
     if (!base) return null;
 
     const deltas = buildEmptyDeltas();
@@ -779,7 +792,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     return (
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
         <div className="text-sm text-white/70">
-          Operator not found in character_table.json: <code>{resolvedCharId}</code>
+          Operator not found in character_table.json:{" "}
+          <code>{resolvedCharId}</code>
         </div>
       </div>
     );
@@ -801,7 +815,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Stats */}
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200 md:col-span-2">
-          <h3 className="text-lg font-semibold text-white mb-4">Chỉ số cơ bản</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">
+            Chỉ số cơ bản
+          </h3>
 
           <div className="grid grid-cols-[1fr_10px_1fr] gap-3 items-start">
             {/* left */}
@@ -909,12 +925,14 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               {[
                 {
                   icon: STAT_ICON.respawnTime,
-                  label: "Thời gian tái triển khai",
+                  label: "Tái triển khai",
                   value: (
                     <ValueWithDeltas
                       value={stats.respawnTime}
                       deltas={deltas.respawnTime}
-                      formatter={(v) => formatNumber(v, { decimals: 0, suffix: "s" })}
+                      formatter={(v) =>
+                        formatNumber(v, { decimals: 0, suffix: "s" })
+                      }
                     />
                   ),
                 },
@@ -942,17 +960,22 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 },
                 {
                   icon: STAT_ICON.baseAttackTime,
-                  label: "Thời gian tấn công",
+                  label: "Tốc độ tấn công",
                   value: (
                     <ValueWithDeltas
                       value={stats.baseAttackTime}
                       deltas={deltas.baseAttackTime}
-                      formatter={(v) => formatSecondsTrim(v, { maxDecimals: 2 })}
+                      formatter={(v) =>
+                        formatSecondsTrim(v, { maxDecimals: 2 })
+                      }
                     />
                   ),
                 },
               ].map((row) => (
-                <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                <div
+                  key={row.label}
+                  className="flex items-center gap-2 min-h-[32px]"
+                >
                   <img
                     src={row.icon}
                     alt={row.label}
@@ -961,7 +984,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   />
 
                   <div className="flex-1 flex items-center justify-between gap-3">
-                    <div className="text-xs text-white/70 truncate">{row.label}</div>
+                    <div className="text-xs text-white/70 truncate">
+                      {row.label}
+                    </div>
                     <div className="ml-auto text-sm font-semibold text-white tabular-nums">
                       {row.value}
                     </div>
@@ -1083,8 +1108,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
         </div>
       </div>
 
-      
-
       {/* ROW: Range / Trust / Potentials */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Range */}
@@ -1118,7 +1141,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             trustRows.length > 0 ? (
               <div className="space-y-1 text-sm">
                 {trustRows.map((r) => (
-                  <div key={r.label} className="flex items-center justify-between">
+                  <div
+                    key={r.label}
+                    className="flex items-center justify-between"
+                  >
                     <span className="text-white/70">{r.label}</span>
                     <span className="ml-auto text-sm font-semibold text-emerald-400 tabular-nums">
                       {r.v > 0 ? "+" : ""}
@@ -1158,7 +1184,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 const vn = translatePotentialDesc(desc, potMap) || desc;
 
                 const mods = extractAttributeModifiers(r);
-                const isApplicable = mods.some((m) => !!ATTR_TYPE_TO_STAT[m?.attributeType]);
+                const isApplicable = mods.some(
+                  (m) => !!ATTR_TYPE_TO_STAT[m?.attributeType],
+                );
 
                 const active = usePotentials && isApplicable;
 
@@ -1197,13 +1225,19 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       </div>
 
       {/* Summon / Token */}
-      {summonOptions.length > 0 && selectedSummon && summonCharData && summonStats ? (
+      {summonOptions.length > 0 &&
+      selectedSummon &&
+      summonCharData &&
+      summonStats ? (
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-col">
-              <h3 className="text-lg font-semibold text-white">Vật phẩm triệu hồi</h3>
+              <h3 className="text-lg font-semibold text-white">
+                Vật phẩm triệu hồi
+              </h3>
               <p className="mt-1 text-xs text-white/60">
-                Chỉ những vật phẩm thay đổi chỉ số mới có ở đây, còn lại sẽ nằm ở phần kỹ năng
+                Chỉ những vật phẩm thay đổi chỉ số mới có ở đây, còn lại sẽ nằm
+                ở phần kỹ năng
               </p>
             </div>
 
@@ -1212,7 +1246,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 {summonOptions.map((opt, idx) => {
                   const active = idx === summonIndex;
                   const skillLabel = `Skill ${opt.skillIndex ?? idx + 1}`;
-                  const icon = getSummonSkillIconUrl(opt.tokenId) || getSummonAvatarUrl(opt.tokenId);
+                  const icon =
+                    getSummonSkillIconUrl(opt.tokenId) ||
+                    getSummonAvatarUrl(opt.tokenId);
 
                   return (
                     <button
@@ -1221,7 +1257,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                       onClick={() => setSummonIndex(idx)}
                       title={skillLabel}
                       className={`flex items-center gap-2 rounded-lg px-2 py-1.5 transition ${
-                        active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                        active
+                          ? "bg-emerald-600"
+                          : "bg-white/10 hover:bg-white/20"
                       }`}
                     >
                       <img
@@ -1237,7 +1275,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                           img.src = getSummonAvatarUrl(opt.tokenId);
                         }}
                       />
-                      <span className="text-xs text-white/90 whitespace-nowrap">{skillLabel}</span>
+                      <span className="text-xs text-white/90 whitespace-nowrap">
+                        {skillLabel}
+                      </span>
                     </button>
                   );
                 })}
@@ -1261,7 +1301,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               </div>
 
               <div className="text-xs text-white/70 mt-0.5">
-                Vị trí: <span className="text-white/90">{summonPositionVN}</span>
+                Vị trí:{" "}
+                <span className="text-white/90">{summonPositionVN}</span>
               </div>
 
               {!!summonDisplayDesc && (
@@ -1279,7 +1320,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           <div className="mt-1 flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0">
             {/* Range */}
             <div className="md:w-1/3 flex flex-col">
-              <div className="text-base font-semibold text-white mb-2">Phạm vi</div>
+              <div className="text-base font-semibold text-white mb-2">
+                Phạm vi
+              </div>
 
               <div className="flex-1 flex items-center justify-center">
                 <RangeGrid rangeId={summonPhase?.rangeId} />
@@ -1298,7 +1341,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
             {/* Stats */}
             <div className="md:flex-1 flex flex-col">
-              <div className="text-base font-semibold text-white mb-2">Chỉ số cơ bản</div>
+              <div className="text-base font-semibold text-white mb-2">
+                Chỉ số cơ bản
+              </div>
 
               <div className="grid grid-cols-[1fr_10px_1fr] gap-3 items-start">
                 {/* left */}
@@ -1325,7 +1370,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                       value: fmtInt(summonStats.magicResistance),
                     },
                   ].map((row) => (
-                    <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                    <div
+                      key={row.label}
+                      className="flex items-center gap-2 min-h-[32px]"
+                    >
                       <img
                         src={row.icon}
                         alt={row.label}
@@ -1335,7 +1383,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                       />
 
                       <div className="flex-1 flex items-center justify-between gap-3">
-                        <div className="text-xs text-white/70 truncate">{row.label}</div>
+                        <div className="text-xs text-white/70 truncate">
+                          {row.label}
+                        </div>
                         <div className="ml-auto text-sm font-semibold text-white tabular-nums">
                           {row.value}
                         </div>
@@ -1355,7 +1405,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     {
                       icon: STAT_ICON.respawnTime,
                       label: "Thời gian hồi",
-                      value: formatNumber(summonStats.respawnTime, { decimals: 0, suffix: "s" }),
+                      value: formatNumber(summonStats.respawnTime, {
+                        decimals: 0,
+                        suffix: "s",
+                      }),
                     },
                     {
                       icon: STAT_ICON.cost,
@@ -1370,10 +1423,15 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     {
                       icon: STAT_ICON.baseAttackTime,
                       label: "Thời gian tấn công",
-                      value: formatSecondsTrim(summonStats.baseAttackTime, { maxDecimals: 2 }),
+                      value: formatSecondsTrim(summonStats.baseAttackTime, {
+                        maxDecimals: 2,
+                      }),
                     },
                   ].map((row) => (
-                    <div key={row.label} className="flex items-center gap-2 min-h-[32px]">
+                    <div
+                      key={row.label}
+                      className="flex items-center gap-2 min-h-[32px]"
+                    >
                       <img
                         src={row.icon}
                         alt={row.label}
@@ -1383,7 +1441,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                       />
 
                       <div className="flex-1 flex items-center justify-between gap-3">
-                        <div className="text-xs text-white/70 truncate">{row.label}</div>
+                        <div className="text-xs text-white/70 truncate">
+                          {row.label}
+                        </div>
                         <div className="ml-auto text-sm font-semibold text-white tabular-nums">
                           {row.value}
                         </div>
@@ -1400,7 +1460,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
       {/* Promotion Requirements */}
       {promotionReqs.length > 0 ? (
         <div className="bg-[#1b1b1b] rounded-xl p-4 text-gray-200">
-          <h3 className="text-lg font-semibold text-white mb-2">Điều kiện thăng tiến</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">
+            Điều kiện thăng tiến
+          </h3>
 
           <div className="space-y-3">
             {promotionReqs.map((req) => {
@@ -1446,7 +1508,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
                   <div className="flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
                     {req.costs?.map((c, idx) => (
-                      <MaterialIcon key={`${c.id}-${idx}`} itemId={c.id} count={c.count} />
+                      <MaterialIcon
+                        key={`${c.id}-${idx}`}
+                        itemId={c.id}
+                        count={c.count}
+                      />
                     ))}
                   </div>
                 </div>
