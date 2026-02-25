@@ -1086,6 +1086,36 @@ export default function ModuleSection(props) {
     setModuleImgLoaded(false);
   }, [activeModuleImageUrl]);
 
+  // Warm cache for module images to avoid long stalls (especially when switching or falling back)
+  React.useEffect(() => {
+    const urls = Array.isArray(moduleImageCandidates) ? moduleImageCandidates : [];
+    const warm = [...new Set([`${MODULE_IMG_BASE}default.png`, ...urls.slice(0, 2)])];
+    warm.forEach((u) => {
+      if (!u) return;
+      const img = new Image();
+      img.decoding = "async";
+      img.src = u;
+    });
+  }, [moduleImageCandidates]);
+
+  // If the current image stalls (no load/error), advance to the next candidate quickly
+  React.useEffect(() => {
+    const len = moduleImageCandidates?.length || 0;
+    if (!activeModuleImageUrl || len <= 1) return;
+    if (moduleImgLoaded) return;
+    if (moduleImgIdx >= len - 1) return;
+
+    const t = setTimeout(() => {
+      setModuleImgIdx((prev) => {
+        const next = prev + 1;
+        return next < len ? next : prev;
+      });
+    }, 2500);
+
+    return () => clearTimeout(t);
+  }, [activeModuleImageUrl, moduleImgIdx, moduleImgLoaded, moduleImageCandidates]);
+
+
   const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
     return isNonEmptyString(subProfessionId) ? subProfIconUrl(subProfessionId) : "";
@@ -1178,7 +1208,11 @@ export default function ModuleSection(props) {
               <img
                 src={iconUrl}
                 alt={label}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[84px] object-contain"
+                className={
+                  iconKey === "original"
+                    ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[88px] h-[60px] object-contain"
+                    : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[84px] object-contain"
+                }
                 draggable={false}
                 loading="lazy"
                 onError={(e) => {
@@ -1204,21 +1238,24 @@ export default function ModuleSection(props) {
               ) : null}
 
               <img
-                key={activeModuleImageUrl}
+                key={`${activeModuleImageUrl}-${moduleImgIdx}`}
                 src={activeModuleImageUrl}
                 alt="module"
                 className="w-full h-full object-contain transition-opacity duration-150"
                 style={{ opacity: moduleImgLoaded ? 1 : 0 }}
                 draggable={false}
-                loading="lazy"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 onLoad={() => setModuleImgLoaded(true)}
                 onError={() => {
-                  // Try next candidate URL (some modules only exist as id.png instead of uniEquipIcon.png)
-                  if (moduleImgIdx + 1 < (moduleImageCandidates?.length || 0)) {
-                    setModuleImgIdx(moduleImgIdx + 1);
-                  } else {
-                    setModuleImgLoaded(false);
-                  }
+                  // Fallback fast: advance to the next candidate (including default.png).
+                  setModuleImgLoaded(false);
+                  setModuleImgIdx((prev) => {
+                    const len = moduleImageCandidates?.length || 0;
+                    const next = prev + 1;
+                    return next < len ? next : prev;
+                  });
                 }}
               />
 
