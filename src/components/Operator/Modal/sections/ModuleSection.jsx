@@ -13,6 +13,7 @@ import uniequipTableEN from "../../../../data/module/uniequip_table_en.json";
 import battleEquipTable from "../../../../data/module/battle_equip_table.json";
 import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.json";
 import moduleVN from "../../../../data/module/Module_vn.json";
+import traitModVN from "../../../../data/module/TraitMod_vn.json";
 
 import StatHover, { renderInlineItalic } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
@@ -515,33 +516,17 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
   const skillGrids = rangeId ? rangeTable?.[rangeId]?.grids : null;
   const baseGrids = baseRangeId ? rangeTable?.[baseRangeId]?.grids : null;
 
-  const hasBase = Array.isArray(baseGrids) && baseGrids.length > 0;
-  const hasSkill = Array.isArray(skillGrids) && skillGrids.length > 0;
-
-  // If module range is missing, still show base range (as requested: base first, then add skill extensions)
-  if (!hasBase && !hasSkill) {
+  if (!rangeId || !Array.isArray(skillGrids)) {
     return <div className="text-sm text-white/60">No range data.</div>;
   }
 
-  const baseSet = new Set(hasBase ? baseGrids.map((g) => `${g.row},${g.col}`) : []);
-  const skillSet = new Set(hasSkill ? skillGrids.map((g) => `${g.row},${g.col}`) : []);
+  const skillSet = new Set(skillGrids.map((g) => `${g.row},${g.col}`));
+  const baseSet = new Set(
+    Array.isArray(baseGrids) ? baseGrids.map((g) => `${g.row},${g.col}`) : []
+  );
 
-  // Union bounding box (base ∪ skill)
-  const rowVals = [0];
-  const colVals = [0];
-  if (hasBase) {
-    for (const g of baseGrids) {
-      rowVals.push(g.row);
-      colVals.push(g.col);
-    }
-  }
-  if (hasSkill) {
-    for (const g of skillGrids) {
-      rowVals.push(g.row);
-      colVals.push(g.col);
-    }
-  }
-
+  const rowVals = [0, ...skillGrids.map((g) => g.row)];
+  const colVals = [0, ...skillGrids.map((g) => g.col)];
   const minR = Math.min(...rowVals);
   const maxR = Math.max(...rowVals);
   const minC = Math.min(...colVals);
@@ -549,9 +534,6 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
 
   const height = maxR - minR + 1;
   const width = maxC - minC + 1;
-
-  const isInUnion = (r, c) => baseSet.has(`${r},${c}`) || skillSet.has(`${r},${c}`);
-  const isExtended = (r, c) => !baseSet.has(`${r},${c}`) && skillSet.has(`${r},${c}`);
 
   return (
     <div
@@ -566,35 +548,25 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
         return Array.from({ length: width }).map((__, cIdx) => {
           const c = minC + cIdx;
           const isCenter = r === 0 && c === 0;
+          const isInSkill = skillSet.has(`${r},${c}`);
 
-          // Base range first: RANGE_ATTACK; only if module adds new tiles -> RANGE_ATTACK_SKILL
-          const inUnion = isInUnion(r, c);
-          const icon = isCenter
-            ? RANGE_STAND
-            : inUnion
-            ? baseSet.has(`${r},${c}`)
-              ? RANGE_ATTACK
-              : isExtended(r, c)
-              ? RANGE_ATTACK_SKILL
-              : RANGE_ATTACK
-            : "";
+          const isBase = isInSkill && baseSet.has(`${r},${c}`);
+          const icon = isCenter ? RANGE_STAND : isInSkill ? (isBase ? RANGE_ATTACK : RANGE_ATTACK_SKILL) : "";
 
           return (
             <div
               key={`${r},${c}`}
               className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
-              title={
-                isCenter
-                  ? "Stand"
-                  : baseSet.has(`${r},${c}`)
-                  ? "Base Range"
-                  : isExtended(r, c)
-                  ? "Extended Range"
-                  : ""
-              }
+              title={isCenter ? "Stand" : isInSkill ? (isBase ? "Base Range" : "Extended Range") : ""}
             >
               {icon ? (
-                <img src={icon} alt="" className="w-[14px] h-[14px] object-contain" draggable={false} loading="lazy" />
+                <img
+                  src={icon}
+                  alt=""
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                  loading="lazy"
+                />
               ) : null}
             </div>
           );
@@ -603,6 +575,7 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
     </div>
   );
 }
+
 
 
 function getCharEntry(rawCharId) {
@@ -928,6 +901,20 @@ export default function ModuleSection(props) {
     return moduleVN?.[id] || null;
   }, [selected?.id]);
 
+
+  const traitModMapVN = React.useMemo(() => {
+    const arr = traitModVN?.overrideTraitDataBundle;
+    const m = new Map();
+    if (Array.isArray(arr)) {
+      for (const row of arr) {
+        const k = row?.trait;
+        const v = row?.trait_vn;
+        if (isNonEmptyString(k) && isNonEmptyString(v)) m.set(String(k), String(v));
+      }
+    }
+    return m;
+  }, []);
+
   const phasesByLevel = React.useMemo(() => {
     const entry = selectedBattle || selectedBattleFallbackCN;
     const phases = entry?.phases;
@@ -1029,14 +1016,26 @@ export default function ModuleSection(props) {
 
   const traitBBMap = React.useMemo(() => buildBlackboardMap(traitCandidate?.blackboard), [traitCandidate]);
 
-  const traitOverrideText = React.useMemo(
-    () => applyBlackboard(traitCandidate?.overrideDescripton || "", traitBBMap),
-    [traitCandidate, traitBBMap]
-  );
+  const traitOverrideText = React.useMemo(() => {
+    let raw = traitCandidate?.overrideDescripton || "";
+    if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
+      raw = traitModMapVN.get(raw);
+    }
+    return applyBlackboard(raw, traitBBMap);
+  }, [traitCandidate, traitBBMap, isEnglishUI, traitModMapVN]);
 
   const traitAdditionalText = React.useMemo(() => {
-    const raw = !isEnglishUI && isNonEmptyString(vnOverride?.Trait) ? String(vnOverride.Trait) : traitCandidate?.additionalDescription || "";
+    let raw = "";
+    if (!isEnglishUI && isNonEmptyString(vnOverride?.Trait)) {
+      raw = String(vnOverride.Trait);
+    } else {
+      raw = traitCandidate?.additionalDescription || "";
+      if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
+        raw = traitModMapVN.get(raw);
+      }
+    }
     return applyBlackboard(raw, traitBBMap);
+  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, traitModMapVN]);
   }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap]);
 
   const displayModuleName = React.useMemo(() => {
