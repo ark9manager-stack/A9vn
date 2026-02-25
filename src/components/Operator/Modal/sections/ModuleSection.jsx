@@ -616,36 +616,62 @@ export default function ModuleSection(props) {
 
   const moduleIds = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return [];
-    const enList = uniequipTableEN?.charEquip?.[charKey];
+
+    // Always prefer CN list as source of truth (EN list can be incomplete/out-of-sync)
     const cnList = uniequipTable?.charEquip?.[charKey];
-    const base = isEnglishUI && Array.isArray(enList) && enList.length > 0 ? enList : cnList;
-    return Array.isArray(base) ? base.filter((x) => isNonEmptyString(x)) : [];
-  }, [charKey, isEnglishUI]);
+    const enList = uniequipTableEN?.charEquip?.[charKey];
+    const base = Array.isArray(cnList) && cnList.length > 0 ? cnList : Array.isArray(enList) ? enList : [];
+
+    const seen = new Set();
+    const out = [];
+    for (const x of base) {
+      if (!isNonEmptyString(x)) continue;
+      const id = String(x);
+      if (seen.has(id)) continue;
+      seen.add(id);
+      out.push(id);
+    }
+    return out;
+  }, [charKey]);
 
   const modules = React.useMemo(() => {
     const out = [];
     for (const id of moduleIds) {
       const cnMeta = uniequipTable?.equipDict?.[id] || null;
       const enMeta = uniequipTableEN?.equipDict?.[id] || null;
-      const meta = isEnglishUI ? (enMeta || cnMeta) : cnMeta;
+      const meta = isEnglishUI ? (enMeta || cnMeta) : (cnMeta || enMeta);
       if (!meta) continue;
 
-      const typeName2 = meta?.typeName2 ?? cnMeta?.typeName2 ?? null;
+      const metaCharId = cnMeta?.charId || enMeta?.charId || meta?.charId || "";
+      if (isNonEmptyString(metaCharId) && isNonEmptyString(charKey) && String(metaCharId) !== String(charKey)) {
+        // Defensive: avoid mixing module metadata between different operators
+        continue;
+      }
+
+      // Treat any uniequip_001_* as the ORIGINAL module
+      const forcedOriginal = String(id).startsWith("uniequip_001_");
+
+      const typeName2 = forcedOriginal
+        ? null
+        : meta?.typeName2 ?? cnMeta?.typeName2 ?? enMeta?.typeName2 ?? null;
 
       out.push({
         id,
         metaCN: cnMeta,
         metaEN: enMeta,
         meta,
-        typeIcon: meta?.typeIcon || cnMeta?.typeIcon || "original",
+        typeIcon: forcedOriginal ? "original" : meta?.typeIcon || cnMeta?.typeIcon || enMeta?.typeIcon || "original",
         typeName2,
-        uniEquipIcon: meta?.uniEquipIcon || cnMeta?.uniEquipIcon || "",
+        uniEquipIcon: forcedOriginal
+          ? "original"
+          : meta?.uniEquipIcon || cnMeta?.uniEquipIcon || enMeta?.uniEquipIcon || String(id),
         sortKey: modSortKey(typeName2),
+        equipOrder: Number(meta?.charEquipOrder ?? cnMeta?.charEquipOrder ?? enMeta?.charEquipOrder ?? 999),
       });
     }
 
-    return out.sort((a, b) => a.sortKey - b.sortKey);
-  }, [moduleIds, isEnglishUI]);
+    return out.sort((a, b) => a.sortKey - b.sortKey || a.equipOrder - b.equipOrder);
+  }, [moduleIds, isEnglishUI, charKey]);
 
   const [activeModuleIdx, setActiveModuleIdx] = React.useState(0);
   React.useEffect(() => {
@@ -744,10 +770,17 @@ export default function ModuleSection(props) {
   ) : null;
 
   const isDefaultModule = React.useMemo(() => {
+    const id = selected?.id || "";
     const icon = selected?.uniEquipIcon || "";
+    const typeIcon = selected?.typeIcon || "";
     const typeName2 = selected?.typeName2;
-    return String(icon) === "original" || typeName2 == null;
-  }, [selected?.uniEquipIcon, selected?.typeName2]);
+    return (
+      String(id).startsWith("uniequip_001_") ||
+      String(icon) === "original" ||
+      String(typeIcon) === "original" ||
+      typeName2 == null
+    );
+  }, [selected?.id, selected?.uniEquipIcon, selected?.typeIcon, selected?.typeName2]);
 
   const baseTraitText = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -790,12 +823,28 @@ export default function ModuleSection(props) {
     return (isNonEmptyString(vnOverride?.description) ? vnOverride.description : cn) || "";
   }, [selected, isEnglishUI, vnOverride]);
 
-  const selectedModuleImageUrl = React.useMemo(() => {
-    const icon = selected?.uniEquipIcon;
-    if (!isNonEmptyString(icon)) return "";
-    if (String(icon) === "original") return `${MODULE_IMG_BASE}default.png`;
-    return `${MODULE_IMG_BASE}${icon}.png`;
-  }, [selected?.uniEquipIcon]);
+  const moduleImageCandidates = React.useMemo(() => {
+    if (!selected) return [];
+    const id = String(selected?.id || "");
+    const icon = String(selected?.uniEquipIcon || "");
+
+    // uniequip_001_* (ORIGINAL) must use default.png
+    if (id.startsWith("uniequip_001_") || icon === "original") {
+      return [`${MODULE_IMG_BASE}default.png`];
+    }
+
+    const arr = [];
+    if (isNonEmptyString(icon)) arr.push(`${MODULE_IMG_BASE}${icon}.png`);
+    if (isNonEmptyString(id)) arr.push(`${MODULE_IMG_BASE}${id}.png`);
+    return [...new Set(arr)];
+  }, [selected?.id, selected?.uniEquipIcon]);
+
+  const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
+  React.useEffect(() => {
+    setModuleImgIdx(0);
+  }, [selected?.id, selected?.uniEquipIcon]);
+
+  const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
   const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -892,8 +941,12 @@ export default function ModuleSection(props) {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[84px] object-contain"
                 draggable={false}
                 loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
+                onError={() => {
+                  if (moduleImgIdx + 1 < (moduleImageCandidates?.length || 0)) {
+                    setModuleImgIdx(moduleImgIdx + 1);
+                  } else {
+                    setModuleImgIdx(moduleImageCandidates?.length || 0);
+                  }
                 }}
               />
             </button>
@@ -908,10 +961,10 @@ export default function ModuleSection(props) {
     <div className="rounded-xl border border-white/10 bg-black/20 p-4">
       <div className="flex flex-col md:flex-row md:items-start gap-4">
         <div className="shrink-0">
-          {isNonEmptyString(selectedModuleImageUrl) ? (
+          {isNonEmptyString(activeModuleImageUrl) ? (
             <div className="relative w-[128px] h-[128px] rounded-xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center">
               <img
-                src={selectedModuleImageUrl}
+                src={activeModuleImageUrl}
                 alt="module"
                 className="w-full h-full object-contain"
                 draggable={false}
@@ -1067,17 +1120,17 @@ export default function ModuleSection(props) {
                       )}
                     </div>
 
-                    {/* Right: unlock/upgrade text + optional range */}
+                    {/* Middle: unlock/upgrade text */}
                     <div className="min-w-0 flex-1">
                       {lv >= 2 && isNonEmptyString(rightName) ? (
-                        <div className="flex items-center justify-end">
+                        <div className="mb-1">
                           <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-xs max-w-full">
                             <span className="truncate">{rightName}</span>
                           </span>
                         </div>
                       ) : null}
 
-                      <div className="mt-2">
+                      <div className={lv === 1 ? "" : "mt-1"}>
                         {lv === 1 ? (
                           <>
                             <div className="text-sm font-semibold text-white">{rightText}</div>
@@ -1109,16 +1162,16 @@ export default function ModuleSection(props) {
                           </div>
                         )}
                       </div>
-
-                      {isNonEmptyString(rangeId) ? (
-                        <div className="mt-3 shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3 inline-block">
-                          <div className="text-sm font-semibold text-white text-center mb-2">
-                            {isEnglishUI ? "Range" : "Phạm vi"}
-                          </div>
-                          <RangeGrid rangeId={rangeId} />
-                        </div>
-                      ) : null}
                     </div>
+
+                    {isNonEmptyString(rangeId) ? (
+                      <div className="shrink-0 rounded-xl border border-white/10 bg-black/30 p-3">
+                        <div className="text-sm font-semibold text-white text-center mb-2">
+                          {isEnglishUI ? "Range" : "Phạm vi"}
+                        </div>
+                        <RangeGrid rangeId={rangeId} />
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -1138,69 +1191,67 @@ export default function ModuleSection(props) {
         </div>
       </InfoTable>
 
-      <InfoTable title={isEnglishUI ? "Module Missions" : "Nhiệm vụ mở Module"}>
-        {missionTexts.length > 0 ? (
-          <div className="space-y-2">
-            {missionTexts.map((t, idx0) => (
-              <div key={`mis-${selected?.id}-${idx0}`} className="text-white/95 leading-relaxed">
-                {renderTextWithTermNotes(t, `module-mission-${selected?.id}-${idx0}`)}
+            {missionTexts.length > 0 ? (
+            <InfoTable title={isEnglishUI ? "Module Missions" : "Nhiệm vụ mở Module"}>
+              <div className="space-y-2">
+                {missionTexts.map((t, idx0) => (
+                  <div key={`mis-${selected?.id}-${idx0}`} className="text-white/95 leading-relaxed">
+                    {renderTextWithTermNotes(t, `module-mission-${selected?.id}-${idx0}`)}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : (
-          <span className="text-white/40 italic">-</span>
-        )}
-      </InfoTable>
+            </InfoTable>
+          ) : null}
 
-      <InfoTable title={isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}>
-        {upgradeCosts.length > 0 ? (
-          <div className="space-y-4">
-            {upgradeCosts.map((u) => {
-              const elite = u.unlockCond ? phaseToEliteIndex(u.unlockCond?.phase) : null;
-              const lvReq = u.unlockCond ? Number(u.unlockCond?.level || 0) || 1 : null;
-              const trustPct = trustToPercent(u.trust);
-
-              return (
-                <div key={`upcost-${selected?.id}-${u.lv}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <span className="text-sm font-semibold text-white">Lv{u.lv}</span>
-
-                    {u.unlockCond ? (
-                      <span
-                        className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                        style={{ backgroundColor: "#D3D3D3" }}
-                      >
-                        {isEnglishUI
-                          ? `Required: Elite ${elite} level ${lvReq}`
-                          : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`}
-                      </span>
-                    ) : null}
-
-                    <span
-                      className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                      style={{ backgroundColor: "#D3D3D3" }}
-                    >
-                      {isEnglishUI ? `Trust: ${trustPct}%` : `Tin tưởng: ${trustPct}%`}
-                    </span>
-                  </div>
-
-                  <div className="mt-3 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
-                    {Array.isArray(u.costs)
-                      ? u.costs
-                          .filter((c) => c?.id && Number(c?.count) > 0)
-                          .map((c, j) => (
-                            <MaterialIcon key={`${c.id}-${selected?.id}-${u.lv}-${j}`} itemId={c.id} count={c.count} />
-                          ))
-                      : null}
-                  </div>
+            {upgradeCosts.length > 0 ? (
+            <InfoTable title={isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}>
+              {upgradeCosts.length > 0 ? (
+                <div className="space-y-4">
+                  {upgradeCosts.map((u) => {
+                    const elite = u.unlockCond ? phaseToEliteIndex(u.unlockCond?.phase) : null;
+                    const lvReq = u.unlockCond ? Number(u.unlockCond?.level || 0) || 1 : null;
+                    const trustPct = trustToPercent(u.trust);
+      
+                    return (
+                      <div key={`upcost-${selected?.id}-${u.lv}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="text-sm font-semibold text-white">Lv{u.lv}</span>
+      
+                          {u.unlockCond ? (
+                            <span
+                              className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                              style={{ backgroundColor: "#D3D3D3" }}
+                            >
+                              {isEnglishUI
+                                ? `Required: Elite ${elite} level ${lvReq}`
+                                : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`}
+                            </span>
+                          ) : null}
+      
+                          <span
+                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                            style={{ backgroundColor: "#D3D3D3" }}
+                          >
+                            {isEnglishUI ? `Trust: ${trustPct}%` : `Tin tưởng: ${trustPct}%`}
+                          </span>
+                        </div>
+      
+                        <div className="mt-3 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
+                          {Array.isArray(u.costs)
+                            ? u.costs
+                                .filter((c) => c?.id && Number(c?.count) > 0)
+                                .map((c, j) => (
+                                  <MaterialIcon key={`${c.id}-${selected?.id}-${u.lv}-${j}`} itemId={c.id} count={c.count} />
+                                ))
+                            : null}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
-        ) : (
-          <span className="text-white/40 italic">-</span>
-        )}
-      </InfoTable>
+              ) : null}
+            </InfoTable>
+          ) : null}
 
       <InfoTable title={isEnglishUI ? "Story" : "Cốt truyện"}>
         {isNonEmptyString(displayStoryText) ? (
