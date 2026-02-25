@@ -25,12 +25,21 @@ const MODULE_IMG_BASE =
 const MODULE_LEVEL_BOARD_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/uniequip/uniequip_level_board/";
 
+
+// Module image box size (inline style to ensure it really changes)
+const MODULE_IMG_BOX_SIZE = 192;
+
 /** Icons (Range + Potential) - EXACT like SkillsSection */
 const UI_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
 
 const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
 const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
+
+/** Icons (Skill Range) */
+const BATTLE_UI_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
+const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
 
 /** Materials - EXACT like SkillsSection */
 const ITEM_BG_BASE =
@@ -46,6 +55,108 @@ const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
+
+
+function buildBlackboardMap(blackboard) {
+  const map = {};
+  if (!Array.isArray(blackboard)) return map;
+
+  for (const row of blackboard) {
+    const kRaw = row?.key;
+    if (!isNonEmptyString(kRaw)) continue;
+
+    const k = String(kRaw);
+    const v = row?.valueStr != null ? row.valueStr : row?.value;
+
+    map[k] = v;
+
+    const kl = k.toLowerCase();
+    if (!(kl in map)) map[kl] = v;
+  }
+
+  return map;
+}
+
+const isAlmostInt = (n) => Math.abs(n - Math.round(n)) < 1e-6;
+
+function trimFixed(n, decimals) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return String(n ?? "");
+  let s = x.toFixed(decimals);
+  if (decimals > 0) s = s.replace(/\.?0+$/, "");
+  return s;
+}
+
+function formatNumberDefault(n) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return String(n ?? "");
+  if (isAlmostInt(x)) return String(Math.round(x));
+  return trimFixed(x, 2);
+}
+
+function formatPlaceholderValue(raw, fmt) {
+  if (raw == null) return "";
+  const rawStr = String(raw);
+
+  const num = Number(raw);
+  const isNum = Number.isFinite(num);
+
+  if (!fmt || !isNonEmptyString(fmt)) return isNum ? formatNumberDefault(num) : rawStr;
+
+  const f = String(fmt).trim();
+  const pm = /^0(?:\.(0+))?%$/.exec(f);
+  if (pm) {
+    if (!isNum) return rawStr;
+    const decimals = pm[1] ? pm[1].length : 0;
+    return `${trimFixed(num * 100, decimals)}%`;
+  }
+
+  const nm = /^0(?:\.(0+))?$/.exec(f);
+  if (nm) {
+    if (!isNum) return rawStr;
+    const decimals = nm[1] ? nm[1].length : 0;
+    return trimFixed(num, decimals);
+  }
+
+  return isNum ? formatNumberDefault(num) : rawStr;
+}
+
+function applyBlackboard(text, bbMap) {
+  if (!isNonEmptyString(text)) return "";
+  if (!bbMap || typeof bbMap !== "object") return text;
+
+  const lookup = (k) => {
+    if (!isNonEmptyString(k)) return undefined;
+    if (k in bbMap) return bbMap[k];
+    const kl = String(k).toLowerCase();
+    if (kl in bbMap) return bbMap[kl];
+    return undefined;
+  };
+
+  return String(text).replace(/\{([^}:]+)(?::([^}]+))?\}/g, (m, keyRaw, fmt) => {
+    const key0 = String(keyRaw || "").trim();
+    if (!key0) return m;
+
+    const direct = lookup(key0);
+    if (direct !== undefined) return formatPlaceholderValue(direct, fmt);
+
+    if ((key0.startsWith("-") || key0.startsWith("+")) && key0.length > 1) {
+      const k2 = key0.slice(1).trim();
+      const v2 = lookup(k2);
+      if (v2 !== undefined) {
+        if (key0.startsWith("-")) {
+          const n = Number(v2);
+          const vv = Number.isFinite(n) ? -n : v2;
+          return formatPlaceholderValue(vv, fmt);
+        }
+        return formatPlaceholderValue(v2, fmt);
+      }
+    }
+
+    return m;
+  });
+}
+
 
 function formatNestedNoteTags(input) {
   if (!isNonEmptyString(input)) return "";
@@ -397,6 +508,71 @@ function RangeGrid({ rangeId }) {
   );
 }
 
+function SkillRangeGrid({ baseRangeId, rangeId }) {
+  const skillGrids = rangeId ? rangeTable?.[rangeId]?.grids : null;
+  const baseGrids = baseRangeId ? rangeTable?.[baseRangeId]?.grids : null;
+
+  if (!rangeId || !Array.isArray(skillGrids)) {
+    return <div className="text-sm text-white/60">No range data.</div>;
+  }
+
+  const skillSet = new Set(skillGrids.map((g) => `${g.row},${g.col}`));
+  const baseSet = new Set(
+    Array.isArray(baseGrids) ? baseGrids.map((g) => `${g.row},${g.col}`) : []
+  );
+
+  const rowVals = [0, ...skillGrids.map((g) => g.row)];
+  const colVals = [0, ...skillGrids.map((g) => g.col)];
+  const minR = Math.min(...rowVals);
+  const maxR = Math.max(...rowVals);
+  const minC = Math.min(...colVals);
+  const maxC = Math.max(...colVals);
+
+  const height = maxR - minR + 1;
+  const width = maxC - minC + 1;
+
+  return (
+    <div
+      className="inline-grid gap-[2px] p-2 rounded-lg bg-black/30"
+      style={{
+        gridTemplateColumns: `repeat(${width}, 18px)`,
+        gridTemplateRows: `repeat(${height}, 18px)`,
+      }}
+    >
+      {Array.from({ length: height }).map((_, rIdx) => {
+        const r = maxR - rIdx;
+        return Array.from({ length: width }).map((__, cIdx) => {
+          const c = minC + cIdx;
+          const isCenter = r === 0 && c === 0;
+          const isInSkill = skillSet.has(`${r},${c}`);
+
+          const isBase = isInSkill && baseSet.has(`${r},${c}`);
+          const icon = isCenter ? RANGE_STAND : isInSkill ? (isBase ? RANGE_ATTACK : RANGE_ATTACK_SKILL) : "";
+
+          return (
+            <div
+              key={`${r},${c}`}
+              className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
+              title={isCenter ? "Stand" : isInSkill ? (isBase ? "Base Range" : "Extended Range") : ""}
+            >
+              {icon ? (
+                <img
+                  src={icon}
+                  alt=""
+                  className="w-[14px] h-[14px] object-contain"
+                  draggable={false}
+                  loading="lazy"
+                />
+              ) : null}
+            </div>
+          );
+        });
+      })}
+    </div>
+  );
+}
+
+
 function getCharEntry(rawCharId) {
   if (!isNonEmptyString(rawCharId)) return { charKey: null, charData: null };
 
@@ -679,7 +855,7 @@ export default function ModuleSection(props) {
         metaCN: cnMeta,
         metaEN: enMeta,
         meta,
-        typeIcon: forcedOriginal ? "original" : meta?.typeIcon || cnMeta?.typeIcon || enMeta?.typeIcon || "original",
+        typeIcon: String(forcedOriginal ? "original" : meta?.typeIcon || cnMeta?.typeIcon || enMeta?.typeIcon || "original").toLowerCase(),
         typeName2,
         uniEquipIcon: forcedOriginal
           ? "original"
@@ -819,12 +995,17 @@ export default function ModuleSection(props) {
     return pickTraitCandidateForPot(ph1, potRank);
   }, [phasesByLevel, potRank]);
 
-  const traitOverrideText = React.useMemo(() => traitCandidate?.overrideDescripton || "", [traitCandidate]);
+  const traitBBMap = React.useMemo(() => buildBlackboardMap(traitCandidate?.blackboard), [traitCandidate]);
+
+  const traitOverrideText = React.useMemo(
+    () => applyBlackboard(traitCandidate?.overrideDescripton || "", traitBBMap),
+    [traitCandidate, traitBBMap]
+  );
 
   const traitAdditionalText = React.useMemo(() => {
-    if (!isEnglishUI && isNonEmptyString(vnOverride?.Trait)) return String(vnOverride.Trait);
-    return traitCandidate?.additionalDescription || "";
-  }, [traitCandidate, vnOverride, isEnglishUI]);
+    const raw = !isEnglishUI && isNonEmptyString(vnOverride?.Trait) ? String(vnOverride.Trait) : traitCandidate?.additionalDescription || "";
+    return applyBlackboard(raw, traitBBMap);
+  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap]);
 
   const displayModuleName = React.useMemo(() => {
     if (!selected) return "";
@@ -944,7 +1125,7 @@ export default function ModuleSection(props) {
     <div className="flex items-start gap-3 flex-wrap">
       {modules.map((m, idx0) => {
         const isActive = idx0 === safeModuleIdx;
-        const iconKey = m?.typeIcon || "original";
+        const iconKey = String(m?.typeIcon || "original").toLowerCase();
         const iconUrl = `${MODULE_DIR_ICON_BASE}${iconKey}.png`;
         const label = modTypeLabel(m?.typeName2);
 
@@ -983,7 +1164,7 @@ export default function ModuleSection(props) {
       <div className="flex flex-col md:flex-row md:items-start gap-4">
         <div className="shrink-0">
           {isNonEmptyString(activeModuleImageUrl) ? (
-            <div className="relative w-[160px] h-[160px] rounded-2xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center">
+            <div className="relative rounded-2xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center" style={{ width: MODULE_IMG_BOX_SIZE, height: MODULE_IMG_BOX_SIZE }}>
               {!moduleImgLoaded ? (
                 <div className="absolute inset-0 bg-white/5 animate-pulse" />
               ) : null}
@@ -1203,7 +1384,11 @@ export default function ModuleSection(props) {
                         <div className="text-sm font-semibold text-white text-center mb-2">
                           {isEnglishUI ? "Range" : "Phạm vi"}
                         </div>
-                        <RangeGrid rangeId={rangeId} />
+                        {lv === 1 ? (
+                          <SkillRangeGrid baseRangeId={charData?.rangeId} rangeId={rangeId} />
+                        ) : (
+                          <RangeGrid rangeId={rangeId} />
+                        )}
                       </div>
                     ) : null}
                   </div>
