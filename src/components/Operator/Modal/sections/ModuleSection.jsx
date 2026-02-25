@@ -1036,7 +1036,6 @@ export default function ModuleSection(props) {
     }
     return applyBlackboard(raw, traitBBMap);
   }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, traitModMapVN]);
-  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap]);
 
   const displayModuleName = React.useMemo(() => {
     if (!selected) return "";
