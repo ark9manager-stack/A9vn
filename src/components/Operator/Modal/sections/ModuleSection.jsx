@@ -526,23 +526,32 @@ function findFirstRangeId(phase) {
 function pickBestCandidateByPot(candidates, potRank) {
   if (!Array.isArray(candidates) || candidates.length === 0) return null;
 
-  let best = null;
-  let bestReq = -1;
+  const normalizeReq = (c) => {
+    const n = Number(c?.requiredPotentialRank);
+    return Number.isFinite(n) ? n : 0;
+  };
 
-  for (const c of candidates) {
-    const req = Number(c?.requiredPotentialRank || 0);
-    if (!Number.isFinite(req)) continue;
+  const priority = (c) => {
+    // lower = better
+    const src = String(c?._src || "");
+    const srcScore = src === "talent" ? 0 : 1; // prefer talent bundle
+    const hasText = isNonEmptyString(c?.upgradeDescription) ? 0 : 1; // prefer lines that actually render
+    const hasName = isNonEmptyString(c?.name) ? 0 : 1;
+    return hasText * 100 + srcScore * 10 + hasName;
+  };
 
-    if (req <= potRank && req > bestReq) {
-      best = c;
-      bestReq = req;
-    }
-  }
+  const withReq = candidates.map((c) => ({ ...c, _req: normalizeReq(c) }));
+  const eligible = withReq.filter((c) => c._req <= potRank);
 
-  if (best) return best;
-  return [...candidates].sort(
-    (a, b) => Number(a?.requiredPotentialRank || 0) - Number(b?.requiredPotentialRank || 0)
-  )[0];
+  const pool = eligible.length > 0 ? eligible : withReq;
+
+  pool.sort((a, b) => {
+    const dReq = b._req - a._req; // highest pot requirement first (<= potRank)
+    if (dReq !== 0) return dReq;
+    return priority(a) - priority(b);
+  });
+
+  return pool[0] || null;
 }
 
 function pickTraitCandidateForPot(phase, potRank) {
@@ -562,17 +571,20 @@ function collectUpgradeCandidatesForPot(phase) {
   const all = [];
 
   for (const part of parts) {
-    const target = String(part?.target || "");
-    if (target === "TRAIT") continue;
-
     const c1 = part?.addOrOverrideTalentDataBundle?.candidates;
     if (Array.isArray(c1)) {
-      for (const c of c1) all.push({ ...c, _src: "talent" });
+      for (const c of c1) {
+        // Only keep upgrade lines (avoid TRAIT candidates that don't have upgradeDescription)
+        if (isNonEmptyString(c?.upgradeDescription)) all.push({ ...c, _src: "talent" });
+      }
     }
 
     const c2 = part?.overrideTraitDataBundle?.candidates;
     if (Array.isArray(c2)) {
-      for (const c of c2) all.push({ ...c, _src: "trait" });
+      for (const c of c2) {
+        // Some modules store upgrade lines here; keep only if it has upgradeDescription
+        if (isNonEmptyString(c?.upgradeDescription)) all.push({ ...c, _src: "trait" });
+      }
     }
   }
 
@@ -617,20 +629,27 @@ export default function ModuleSection(props) {
   const moduleIds = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return [];
 
-    // Always prefer CN list as source of truth (EN list can be incomplete/out-of-sync)
-    const cnList = uniequipTable?.charEquip?.[charKey];
-    const enList = uniequipTableEN?.charEquip?.[charKey];
-    const base = Array.isArray(cnList) && cnList.length > 0 ? cnList : Array.isArray(enList) ? enList : [];
+    // Prefer CN list as base order, but merge EN list to avoid missing modules
+    const cnList = Array.isArray(uniequipTable?.charEquip?.[charKey]) ? uniequipTable.charEquip[charKey] : [];
+    const enList = Array.isArray(uniequipTableEN?.charEquip?.[charKey]) ? uniequipTableEN.charEquip[charKey] : [];
 
-    const seen = new Set();
     const out = [];
-    for (const x of base) {
-      if (!isNonEmptyString(x)) continue;
-      const id = String(x);
-      if (seen.has(id)) continue;
-      seen.add(id);
-      out.push(id);
-    }
+    const seen = new Set();
+
+    const push = (arr) => {
+      for (const x of arr) {
+        if (!isNonEmptyString(x)) continue;
+        const id = String(x);
+        if (seen.has(id)) continue;
+        seen.add(id);
+        out.push(id);
+      }
+    };
+
+    // CN first to keep expected in-game ordering, then append EN-only ids.
+    push(cnList);
+    push(enList);
+
     return out;
   }, [charKey]);
 
@@ -840,11 +859,17 @@ export default function ModuleSection(props) {
   }, [selected?.id, selected?.uniEquipIcon]);
 
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
+  const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
   React.useEffect(() => {
     setModuleImgIdx(0);
+    setModuleImgLoaded(false);
   }, [selected?.id, selected?.uniEquipIcon]);
 
   const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
+
+  React.useEffect(() => {
+    setModuleImgLoaded(false);
+  }, [activeModuleImageUrl]);
 
   const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -941,12 +966,8 @@ export default function ModuleSection(props) {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[84px] object-contain"
                 draggable={false}
                 loading="lazy"
-                onError={() => {
-                  if (moduleImgIdx + 1 < (moduleImageCandidates?.length || 0)) {
-                    setModuleImgIdx(moduleImgIdx + 1);
-                  } else {
-                    setModuleImgIdx(moduleImageCandidates?.length || 0);
-                  }
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
                 }}
               />
             </button>
@@ -962,22 +983,35 @@ export default function ModuleSection(props) {
       <div className="flex flex-col md:flex-row md:items-start gap-4">
         <div className="shrink-0">
           {isNonEmptyString(activeModuleImageUrl) ? (
-            <div className="relative w-[128px] h-[128px] rounded-xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center">
+            <div className="relative w-[160px] h-[160px] rounded-2xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center">
+              {!moduleImgLoaded ? (
+                <div className="absolute inset-0 bg-white/5 animate-pulse" />
+              ) : null}
+
               <img
+                key={activeModuleImageUrl}
                 src={activeModuleImageUrl}
                 alt="module"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain transition-opacity duration-150"
+                style={{ opacity: moduleImgLoaded ? 1 : 0 }}
                 draggable={false}
                 loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
+                onLoad={() => setModuleImgLoaded(true)}
+                onError={() => {
+                  // Try next candidate URL (some modules only exist as id.png instead of uniEquipIcon.png)
+                  if (moduleImgIdx + 1 < (moduleImageCandidates?.length || 0)) {
+                    setModuleImgIdx(moduleImgIdx + 1);
+                  } else {
+                    setModuleImgLoaded(false);
+                  }
                 }}
               />
-              {isDefaultModule && isNonEmptyString(subProfIcon) ? (
+
+              {moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
                 <img
                   src={subProfIcon}
                   alt="overlay"
-                  className="absolute inset-0 m-auto w-[64px] h-[64px] object-contain"
+                  className="absolute inset-0 m-auto w-[72px] h-[72px] object-contain"
                   draggable={false}
                   loading="lazy"
                   onError={(e) => {
