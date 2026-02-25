@@ -249,9 +249,16 @@ const getItemBgUrl = (rarity) => {
   return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
 };
 
-const getItemIconUrl = (iconId) => {
-  const key = String(iconId || "").trim();
+const getItemIconUrl = (itemId, iconId) => {
+  const raw = iconId || itemId || "";
+  const key = String(raw).trim();
   if (!key) return "";
+
+  // Special case: module unlock token icon lives in acticon/
+  if (key.toLowerCase() === "mod_unlock_token") {
+    return `${ITEM_ICON_BASE}acticon/mod_unlock_token.png`;
+  }
+
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 };
 
@@ -260,7 +267,7 @@ function MaterialIcon({ itemId, count }) {
 
   const name = meta?.name || String(itemId || "Unknown");
   const bgUrl = getItemBgUrl(meta?.rarity);
-  const iconUrl = getItemIconUrl(meta?.iconId);
+  const iconUrl = getItemIconUrl(itemId, meta?.iconId);
 
   const INNER = 44;
   const BG_SCALE = 1.42;
@@ -960,18 +967,17 @@ export default function ModuleSection(props) {
                       {isEnglishUI ? "Improve Trait" : "Cải thiện thiên phú"}
                     </span>
                     {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`)}
-                    <br />
+                    {isNonEmptyString(traitAdditionalText) ? <br /> : null}
                   </>
                 ) : null}
 
                 {/* Base trait + additionalDescription MUST be in one block */}
-                {isNonEmptyString(baseTraitText) ? (
-                  renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`)
-                ) : null}
-
                 {isNonEmptyString(traitAdditionalText) ? (
                   <>
-                    <br />
+                    {isNonEmptyString(baseTraitText)
+                      ? renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`)
+                      : null}
+                    {isNonEmptyString(baseTraitText) ? <br /> : null}
                     <span className="inline-flex items-center rounded-md bg-sky-500/20 text-sky-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Additional Trait" : "Bổ sung thiên phú"}
                     </span>
@@ -989,27 +995,7 @@ export default function ModuleSection(props) {
   const levelBoardTable =
     selected && !isDefaultModule && phasesByLevel.size > 0 ? (
       <div className="mt-4 rounded-xl border border-white/10 overflow-hidden">
-        <div className="grid grid-cols-3 grid-rows-2">
-          {[1, 2, 3].map((lv) => (
-            <div
-              key={`board-${selected.id}-${lv}`}
-              className={`bg-black/25 p-3 flex items-center justify-center ${
-                lv < 3 ? "border-r border-white/10" : ""
-              }`}
-            >
-              <img
-                src={`${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`}
-                alt={`lv-${lv}`}
-                className="h-10 w-auto object-contain"
-                draggable={false}
-                loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
-            </div>
-          ))}
-
+        <div className="divide-y divide-white/10">
           {[1, 2, 3].map((lv) => {
             const ph = phasesByLevel.get(lv) || null;
             const attrs = Array.isArray(ph?.attributeBlackboard) ? ph.attributeBlackboard : [];
@@ -1040,84 +1026,99 @@ export default function ModuleSection(props) {
             }
 
             return (
-              <div
-                key={`cell-${selected.id}-${lv}`}
-                className={`bg-black/15 p-3 ${
-                  lv < 3 ? "border-r border-white/10" : ""
-                } border-t border-white/10`}
-              >
-                <div className="flex items-start gap-3">
-                  {/* Left: attributes */}
-                  <div className="min-w-[92px]">
-                    {attrs.length > 0 ? (
-                      <div className="space-y-1">
-                        {attrs.map((a, idx0) => {
-                          const k = a?.key;
-                          const v = a?.value;
-                          if (!isNonEmptyString(k) || !Number.isFinite(Number(v))) return null;
-                          return (
-                            <div
-                              key={`attr-${selected.id}-${lv}-${k}-${idx0}`}
-                              className="text-sm text-white/90 font-semibold tabular-nums"
-                            >
-                              {formatAttrKey(k, isEnglishUI)} {formatAttrValue(v)}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ) : (
-                      <span className="text-white/40 italic">-</span>
-                    )}
-                  </div>
+              <div key={`row-${selected.id}-${lv}`} className="grid grid-cols-5">
+                {/* Left: level board (≈ 1/5 width) */}
+                <div className="col-span-1 bg-black/25 p-3 flex items-center justify-center border-r border-white/10">
+                  <img
+                    src={`${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`}
+                    alt={`lv-${lv}`}
+                    className="h-10 w-auto object-contain"
+                    draggable={false}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                </div>
 
-                  {/* Right: unlock/upgrade text + optional range */}
-                  <div className="min-w-0 flex-1">
-                    {lv >= 2 && isNonEmptyString(rightName) ? (
-                      <div className="flex items-center justify-end">
-                        <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-xs max-w-full">
-                          <span className="truncate">{rightName}</span>
-                        </span>
-                      </div>
-                    ) : null}
-
-                    <div className="mt-2">
-                      {lv === 1 ? (
-                        <>
-                          <div className="text-sm font-semibold text-white">{rightText}</div>
-                          {unlockCond ? (
-                            <div className="mt-1 text-xs text-white/70">
-                              {isEnglishUI
-                                ? `Required: Elite ${phaseToEliteIndex(unlockCond?.phase)} level ${
-                                    Number(unlockCond?.level || 0) || 1
-                                  }`
-                                : `Cấp độ yêu cầu: Elite ${phaseToEliteIndex(unlockCond?.phase)} level ${
-                                    Number(unlockCond?.level || 0) || 1
-                                  }`}
-                            </div>
-                          ) : null}
-                        </>
-                      ) : (
-                        <div
-                          className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
-                          style={{ overflowWrap: "anywhere" }}
-                        >
-                          {isNonEmptyString(rightText) ? (
-                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`)
-                          ) : (
-                            <span className="text-white/40 italic">-</span>
-                          )}
+                {/* Right: content (≈ 4/5 width) */}
+                <div className="col-span-4 bg-black/15 p-3">
+                  <div className="flex items-start gap-3">
+                    {/* Left: attributes */}
+                    <div className="min-w-[92px]">
+                      {attrs.length > 0 ? (
+                        <div className="space-y-1">
+                          {attrs.map((a, idx0) => {
+                            const k = a?.key;
+                            const v = a?.value;
+                            if (!isNonEmptyString(k) || !Number.isFinite(Number(v))) return null;
+                            return (
+                              <div
+                                key={`attr-${selected.id}-${lv}-${k}-${idx0}`}
+                                className="text-sm text-white/90 font-semibold tabular-nums"
+                              >
+                                {formatAttrKey(k, isEnglishUI)} {formatAttrValue(v)}
+                              </div>
+                            );
+                          })}
                         </div>
+                      ) : (
+                        <span className="text-white/40 italic">-</span>
                       )}
                     </div>
 
-                    {isNonEmptyString(rangeId) ? (
-                      <div className="mt-3 shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3 inline-block">
-                        <div className="text-sm font-semibold text-white text-center mb-2">
-                          {isEnglishUI ? "Range" : "Phạm vi"}
+                    {/* Right: unlock/upgrade text + optional range */}
+                    <div className="min-w-0 flex-1">
+                      {lv >= 2 && isNonEmptyString(rightName) ? (
+                        <div className="flex items-center justify-end">
+                          <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-xs max-w-full">
+                            <span className="truncate">{rightName}</span>
+                          </span>
                         </div>
-                        <RangeGrid rangeId={rangeId} />
+                      ) : null}
+
+                      <div className="mt-2">
+                        {lv === 1 ? (
+                          <>
+                            <div className="text-sm font-semibold text-white">{rightText}</div>
+                            {unlockCond ? (
+                              <div className="mt-1 text-xs text-white/70">
+                                {isEnglishUI
+                                  ? `Required: Elite ${phaseToEliteIndex(unlockCond?.phase)} level ${
+                                      Number(unlockCond?.level || 0) || 1
+                                    }`
+                                  : `Cấp độ yêu cầu: Elite ${phaseToEliteIndex(unlockCond?.phase)} level ${
+                                      Number(unlockCond?.level || 0) || 1
+                                    }`}
+                              </div>
+                            ) : null}
+                          </>
+                        ) : (
+                          <div
+                            className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                            style={{ overflowWrap: "anywhere" }}
+                          >
+                            {isNonEmptyString(rightText) ? (
+                              renderTextWithTermNotes(
+                                rightText,
+                                `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`
+                              )
+                            ) : (
+                              <span className="text-white/40 italic">-</span>
+                            )}
+                          </div>
+                        )}
                       </div>
-                    ) : null}
+
+                      {isNonEmptyString(rangeId) ? (
+                        <div className="mt-3 shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3 inline-block">
+                          <div className="text-sm font-semibold text-white text-center mb-2">
+                            {isEnglishUI ? "Range" : "Phạm vi"}
+                          </div>
+                          <RangeGrid rangeId={rangeId} />
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </div>
