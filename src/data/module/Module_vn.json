@@ -1,9 +1,7 @@
 {
   "uniequip_001_mgllan": {
     "Name": "Magallan's Badge",
-    "description": "Operator Magallan has demonstrated a remarkable aptitude in combat with the deployment and control of her self-developed drones.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Supporter Operator during field operations to exercise Summoner responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named.",
-     "Mission1": "",
-     "Mission2": ""
+    "description": "Operator Magallan has demonstrated a remarkable aptitude in combat with the deployment and control of her self-developed drones.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Supporter Operator during field operations to exercise Summoner responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_mgllan": {
     "Name": "Drone Control Module.P",
@@ -19,6 +17,26 @@
     "TalentLv2": "Drones gain",
     "TalentLv2_p4": "3456",
     "TitleLv3": "",
+    "TalentLv3": "Drones gain",
+    "TalentLv3_p4": ""
+  },
+  "uniequip_001_nights": {
+    "Name": "Haze's Badge",
+    "description": "Operator Haze has demonstrated a remarkable aptitude for inflicting Arts casualties on the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Core Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
+  },
+  "uniequip_002_nights": {
+    "Name": "The Witch's Hat",
+    "description": "Through the 'Forest' she makes her way. Between the bars of naked steel she skips, from one end of the alleyway to the other, and on top of a faded billboard she climbs. Not far away, an empty tin can topples over. She takes a small step back, crouching for a while under the shadow. Only once she's sure her silhouette is alone again under the moonlight—does her step pick up once again, deft like a wisp of fog. She finds her way straight through a window empty of its glass.\nA puddle of water rests on the ground, which she avoids with great intent. Probably the recent shower of rain, that tonight's so especially bright. Not a good omen, in any case. In times gone by, no one would dare trespass into the Forest thick of fog, for there was Witch's domain. The greedy merchant had want of the Witch's powers, but pitch-black smoke would bind the neck of such a soul. Only lost children would have good fortune in the night... Most of the coven had come to suffer a different kind of curse already, but in the hazy night those inauspicious stones would happily be hidden from view.\nA great fire of yore took the original Witch Forest. Thereafter, one nomadic city to the next, these empty rooms have been little more than the cracks amidst neon and skyscraper's reflections... hardly fit for a safe domain.\nShe silently patrols her temporary lodgings, and finds the Hat out of a pile of miscellanies. A broad-brimmed one, cloth heavy-set in all its layers. Its inside is riddled with patchwork, every hand which sewed on those eclectic fabrics still there in her memories. Some were wizened, some young, all so soft without exception, so tender. She jumps into it, lets the sheets of fabric surround her body, as if she's returned to their embrace.\nAnother hand rests upon her head. She remembers this one, the youngest among them, and the last to still follow her. This girl's hand once carried the scent of clean grass and fresh paper, like the others, but in these times it was always sullied with rust, with blood.\n'We've been found again.' The young Witch picks her up and cradles her, and puts on another hat entirely. 'Take a guess. How long can we still run, I wonder, before the next time we're caught?'\nThe creature brushes against the Witch's cheek, reflecting not an inch of light.\nTogether, she and the girl leap into the dark of night, straight through the Forest. Such is the freedom they were meant to share.",
+    "Mission1": "Deal a total of 80,000 damage with Haze (excluding Support Units)",
+    "Mission2": "Clear Main Theme S2-4 with a 3-star rating; You must deploy your own Haze, and have Haze defeat at least 2 Heavy Defenders",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "Màn sương đen",
+    "TalentLv2": "Drones gain",
+    "TalentLv2_p4": "3456",
+    "TitleLv3": "Màn sương đen",
     "TalentLv3": "Drones gain",
     "TalentLv3_p4": ""
   }

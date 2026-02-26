@@ -1370,22 +1370,18 @@ export default function ModuleSection(props) {
 
             let rightName = "";
             let rightText = "";
+            let lv1DetailText = "";
 
             if (lv === 1) {
+              rightText = isEnglishUI ? "Unlock Trait" : "Mở khóa đặc tính";
               const suf = isEnglishUI ? "EN" : "VN";
               const keyPot = potRank > 0 ? `TalentLv1_p${potRank}${suf}` : "";
               const keyBase = `TalentLv1${suf}`;
 
-              const fromVN =
+              lv1DetailText =
                 (isNonEmptyString(keyPot) && isNonEmptyString(vnOverride?.[keyPot]) && String(vnOverride[keyPot])) ||
                 (isNonEmptyString(vnOverride?.[keyBase]) && String(vnOverride[keyBase])) ||
                 "";
-
-              rightText = isNonEmptyString(fromVN)
-                ? fromVN
-                : isEnglishUI
-                  ? "Unlock Trait"
-                  : "Mở khóa đặc tính";
             } else {
               const cands = collectUpgradeCandidatesForPot(ph);
               const picked = pickBestCandidateByPot(cands, potRank);
@@ -1458,19 +1454,41 @@ export default function ModuleSection(props) {
                       ) : null}
 
                       <div className={lv === 1 ? "" : "mt-1"}>
-                        <div
-                          className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
-                          style={{ overflowWrap: "anywhere" }}
-                        >
-                          {isNonEmptyString(rightText) ? (
-                            renderTextWithTermNotes(
-                              rightText,
-                              `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`
-                            )
-                          ) : (
-                            <span className="text-white/40 italic">-</span>
-                          )}
-                        </div>
+                        {lv === 1 ? (
+                          <>
+                            <div className="text-sm font-semibold text-white">
+                              {rightText}
+                            </div>
+
+                            <div
+                              className="mt-2 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                              style={{ overflowWrap: "anywhere" }}
+                            >
+                              {isNonEmptyString(lv1DetailText) ? (
+                                renderTextWithTermNotes(
+                                  lv1DetailText,
+                                  `module-up-${charKey}-${selected.id}-lv1-pot${potRank}`
+                                )
+                              ) : (
+                                <span className="text-white/40 italic">-</span>
+                              )}
+                            </div>
+                          </>
+                        ) : (
+                          <div
+                            className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                            style={{ overflowWrap: "anywhere" }}
+                          >
+                            {isNonEmptyString(rightText) ? (
+                              renderTextWithTermNotes(
+                                rightText,
+                                `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`
+                              )
+                            ) : (
+                              <span className="text-white/40 italic">-</span>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
 
