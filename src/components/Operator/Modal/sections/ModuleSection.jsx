@@ -1330,7 +1330,7 @@ export default function ModuleSection(props) {
                 {isNonEmptyString(traitOverrideText) ? (
                   <>
                     <span className="inline-flex items-center rounded-md bg-amber-500/20 text-amber-200 px-2 py-1 text-xs font-semibold mr-2">
-                      {isEnglishUI ? "Improve Trait" : "Cải thiện thiên phú"}
+                      {isEnglishUI ? "Improve Trait" : "Cải thiện đặc tính"}
                     </span>
                     {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`)}
                     {isNonEmptyString(traitAdditionalText) ? <br /> : null}
@@ -1345,7 +1345,7 @@ export default function ModuleSection(props) {
                       : null}
                     {isNonEmptyString(baseTraitText) ? <br /> : null}
                     <span className="inline-flex items-center rounded-md bg-sky-500/20 text-sky-200 px-2 py-1 text-xs font-semibold mr-2">
-                      {isEnglishUI ? "Additional Trait" : "Bổ sung thiên phú"}
+                      {isEnglishUI ? "Additional Trait" : "Bổ sung đặc tính"}
                     </span>
                     {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`)}
                   </>
