@@ -525,12 +525,18 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
     Array.isArray(baseGrids) ? baseGrids.map((g) => `${g.row},${g.col}`) : []
   );
 
-  const rowVals = [0, ...skillGrids.map((g) => g.row)];
-  const colVals = [0, ...skillGrids.map((g) => g.col)];
-  const minR = Math.min(...rowVals);
-  const maxR = Math.max(...rowVals);
-  const minC = Math.min(...colVals);
-  const maxC = Math.max(...colVals);
+  // We must draw base range first (RANGE_ATTACK), then draw extension from module (RANGE_ATTACK_SKILL).
+  // Therefore, render UNION(base ∪ module) so base-only tiles still appear.
+  const union = new Set([...baseSet, ...skillSet, "0,0"]);
+
+  const coords = [...union].map((k) => k.split(",").map((x) => Number(x)));
+  const rows = coords.map((x) => x[0]);
+  const cols = coords.map((x) => x[1]);
+
+  const minR = Math.min(...rows);
+  const maxR = Math.max(...rows);
+  const minC = Math.min(...cols);
+  const maxC = Math.max(...cols);
 
   const height = maxR - minR + 1;
   const width = maxC - minC + 1;
@@ -548,10 +554,17 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
         return Array.from({ length: width }).map((__, cIdx) => {
           const c = minC + cIdx;
           const isCenter = r === 0 && c === 0;
-          const isInSkill = skillSet.has(`${r},${c}`);
 
-          const isBase = isInSkill && baseSet.has(`${r},${c}`);
-          const icon = isCenter ? RANGE_STAND : isInSkill ? (isBase ? RANGE_ATTACK : RANGE_ATTACK_SKILL) : "";
+          const key = `${r},${c}`;
+          const isInSkill = union.has(key);
+          const isBase = baseSet.has(key);
+          const icon = isCenter
+            ? RANGE_STAND
+            : isInSkill
+            ? isBase
+              ? RANGE_ATTACK
+              : RANGE_ATTACK_SKILL
+            : "";
 
           return (
             <div
@@ -1208,7 +1221,7 @@ export default function ModuleSection(props) {
                 alt={label}
                 className={
                   iconKey === "original"
-                    ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[88px] h-[60px] object-contain"
+                    ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[82px] h-[56px] object-contain"
                     : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[84px] object-contain"
                 }
                 draggable={false}
@@ -1261,7 +1274,7 @@ export default function ModuleSection(props) {
                 <img
                   src={subProfIcon}
                   alt="overlay"
-                  className="absolute inset-0 m-auto w-[60px] h-[60px] object-contain"
+                  className="absolute inset-0 m-auto w-[52px] h-[52px] object-contain"
                   draggable={false}
                   loading="lazy"
                   onError={(e) => {

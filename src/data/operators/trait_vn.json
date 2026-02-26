@@ -65,6 +65,7 @@
     { "splashcaster": "Đòn tấn công gây <@ba.kw>sát thương phép diện rộng</>." },
     { "corecaster": "Đòn tấn công gây <@ba.kw>sát thương phép</>." },
     { "chainhealer": "Hồi HP cho đồng minh và sẽ nảy giữa <@ba.kw>3</> đồng minh. Lượng hồi phục giảm 25% cho mỗi lần nảy." },
+    { "ringhealer": "Hồi HP cho 3 đồng minh cùng lúc." },
     { "incantationmedic": "Đòn tấn công gây <@ba.kw>sát thương phép</> và hồi HP cho 1 đồng minh trong phạm vi tấn công bằng 50% sát thương gây ra." },
     { "healer": "Có phạm vi hồi phục rộng, nhưng lượng hồi phục giảm xuống còn <@ba.kw>{heal_scale:0%}</> cho mục tiêu ở xa." },
     { "wandermedic": "Hồi HP cho đồng minh, đồng thời hồi phục thanh [[Hiệu ứng nguyên tố|EleInjury]] lượng hồi bằng 50% ATK. (có thể hồi thanh [[Hiệu ứng nguyên tố|EleInjury]] cho cả đồng minh chưa bị mất HP)." },
