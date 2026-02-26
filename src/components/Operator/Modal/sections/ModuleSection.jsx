@@ -61,6 +61,23 @@ function isNonEmptyString(v) {
 }
 
 
+function getBaseRangeIdE2(charData) {
+  // Modules are generally unlocked at E2, so we use Phase 2 range as base.
+  const phases = charData?.phases;
+  if (Array.isArray(phases) && phases.length > 0) {
+    const e2 = phases?.[2]?.rangeId;
+    if (isNonEmptyString(e2)) return String(e2);
+    // fallback: last phase that has rangeId
+    for (let i = phases.length - 1; i >= 0; i -= 1) {
+      const rid = phases?.[i]?.rangeId;
+      if (isNonEmptyString(rid)) return String(rid);
+    }
+  }
+  const rid0 = charData?.rangeId;
+  return isNonEmptyString(rid0) ? String(rid0) : "";
+}
+
+
 function buildBlackboardMap(blackboard) {
   const map = {};
   if (!Array.isArray(blackboard)) return map;
@@ -525,18 +542,13 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
     Array.isArray(baseGrids) ? baseGrids.map((g) => `${g.row},${g.col}`) : []
   );
 
-  // We must draw base range first (RANGE_ATTACK), then draw extension from module (RANGE_ATTACK_SKILL).
-  // Therefore, render UNION(base ∪ module) so base-only tiles still appear.
-  const union = new Set([...baseSet, ...skillSet, "0,0"]);
-
-  const coords = [...union].map((k) => k.split(",").map((x) => Number(x)));
-  const rows = coords.map((x) => x[0]);
-  const cols = coords.map((x) => x[1]);
-
-  const minR = Math.min(...rows);
-  const maxR = Math.max(...rows);
-  const minC = Math.min(...cols);
-  const maxC = Math.max(...cols);
+  // Bounding box follows skill range (same idea as SkillsSection)
+  const rowVals = [0, ...skillGrids.map((g) => g.row)];
+  const colVals = [0, ...skillGrids.map((g) => g.col)];
+  const minR = Math.min(...rowVals);
+  const maxR = Math.max(...rowVals);
+  const minC = Math.min(...colVals);
+  const maxC = Math.max(...colVals);
 
   const height = maxR - minR + 1;
   const width = maxC - minC + 1;
@@ -556,8 +568,9 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
           const isCenter = r === 0 && c === 0;
 
           const key = `${r},${c}`;
-          const isInSkill = union.has(key);
-          const isBase = baseSet.has(key);
+          const isInSkill = skillSet.has(key);
+          const isBase = isInSkill && baseSet.has(key);
+
           const icon = isCenter
             ? RANGE_STAND
             : isInSkill
@@ -819,6 +832,9 @@ export default function ModuleSection(props) {
     if (!isNonEmptyString(charKey)) return null;
     return characterTableEN?.[charKey] || null;
   }, [charKey]);
+
+  const baseRangeIdE2 = React.useMemo(() => getBaseRangeIdE2(charData), [charData]);
+
 
   const moduleIds = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return [];
@@ -1221,7 +1237,7 @@ export default function ModuleSection(props) {
                 alt={label}
                 className={
                   iconKey === "original"
-                    ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[82px] h-[56px] object-contain"
+                    ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[74px] h-[50px] object-contain"
                     : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[84px] object-contain"
                 }
                 draggable={false}
@@ -1274,7 +1290,7 @@ export default function ModuleSection(props) {
                 <img
                   src={subProfIcon}
                   alt="overlay"
-                  className="absolute inset-0 m-auto w-[52px] h-[52px] object-contain"
+                  className="absolute inset-0 m-auto w-[44px] h-[44px] object-contain"
                   draggable={false}
                   loading="lazy"
                   onError={(e) => {
@@ -1467,7 +1483,7 @@ export default function ModuleSection(props) {
                           {isEnglishUI ? "Range" : "Phạm vi"}
                         </div>
                         {lv === 1 ? (
-                          <SkillRangeGrid baseRangeId={charData?.rangeId} rangeId={rangeId} />
+                          <SkillRangeGrid baseRangeId={baseRangeIdE2} rangeId={rangeId} />
                         ) : (
                           <RangeGrid rangeId={rangeId} />
                         )}
