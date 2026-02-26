@@ -2,9 +2,8 @@
   "uniequip_001_mgllan": {
     "Name": "Magallan's Badge",
     "description": "Operator Magallan has demonstrated a remarkable aptitude in combat with the deployment and control of her self-developed drones.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Supporter Operator during field operations to exercise Summoner responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named.",
-     "Mission1": "",
-     "Mission2": "",
-     "Trait": ""
+     "Mission1": "Complete 5 operations and summon Magallan's summoned units at least 5 times in each operation (Magallan cannot be a Support Unit)",
+     "Mission2": "Clear Main Theme 2-5 with a 3-star rating using a squad of at most 2 units (including Support Units); a non-Support Magallan must be deployed during the operation and only Vanguard operators are allowed for the remaining units"
   },
   "uniequip_002_mgllan": {
     "Name": "Drone Control Module.P",
@@ -12,8 +11,14 @@
     "Trait": "The first summoned unit <@ba.kw>does not consume</> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
     "Mission1": "",
     "Mission2": "",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
     "TalentLv2": "",
     "TalentLv2_p4": "",
+    "TitleLv3": "",
     "TalentLv3": "",
     "TalentLv3_p4": ""
   }
