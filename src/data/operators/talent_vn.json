@@ -385,9 +385,9 @@
   "char_109_fmout": {
     "TitleTalent1": "Bói toán",
     "Talent1": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +7%; ASPD +7; HP Tối đa +12%",
-    "Talent1_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +14%<@ba.talpu>（+2%）</>; ASPD +14<@ba.talpu>（+2）</>; HP Tối đa +14%<@ba.talpu>（+2%）</>",
+    "Talent1_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +14%<@ba.talpu>(+2%)</>; ASPD +14<@ba.talpu>(+2%)</>; HP Tối đa +14%<@ba.talpu>(+2%)</>",
     "Talent1_2": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +13%; ASPD +13; HP Tối đa +20%",
-    "Talent1_2_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +15%<@ba.talpu>（+2%）</>; ASPD +15<@ba.talpu>（+2）</>; HP Tối đa +22%<@ba.talpu>（+2%）</>"
+    "Talent1_2_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +15%<@ba.talpu>(+2%)</>; ASPD +15<@ba.talpu>(+2%)</>; HP Tối đa +22%<@ba.talpu>(+2%)</>"
   },
   "char_110_deepcl": {
     "TitleTalent1": "Triệu hồi xúc tu",

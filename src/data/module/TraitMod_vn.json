@@ -2,7 +2,7 @@
   "overrideTraitDataBundle": [
     { "trait": "无视目标<@ba.kw>{magic_resist_penetrate_fixed}</>点法术抗性", "trait_vn": "Bỏ qua <@ba.kw>{magic_resist_penetrate_fixed}</> RES của mục tiêu" },
     { "trait": "攻击范围<@ba.kw>扩大</>", "trait_vn": "<@ba.kw>Mở rộng</> phạm vi tấn công" },
-    { "trait": "范围内存在地面敌人时攻击速度<@ba.kw>+8</>", "trait_vn": "Khi có kẻ địch đứng trên mặt đất nằm trong phạm vi tấn công, ASPD <@ba.kw>+8</>" },
+    { "trait": "范围内存在地面敌人时攻击速度<@ba.kw>+8</>", "trait_vn": "Khi trong phạm vi tấn công có kẻ địch đứng trên mặt đất, ASPD <@ba.kw>+8</>" },
     { "trait": "攻击空中单位时攻击力提升至<@ba.kw>{atk_scale:0%}</>", "trait_vn": "ATK tăng lên <@ba.kw>{atk_scale:0%}</> khi tấn công mục tiêu trên không." },
     { "trait": "攻击时无视敌人<@ba.vup>{def_penetrate_fixed}</>点的防御力", "trait_vn": "Đòn tấn công bỏ qua <@ba.vup>{def_penetrate_fixed}</> DEF" },
     { "trait": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％", "trait_vn": "Chặn được 2 kẻ địch, nhận +8% ATK và DEF khi đang chặn kẻ địch." },

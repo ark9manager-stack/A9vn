@@ -39,5 +39,25 @@
     "TitleLv3": "Màn sương đen",
     "TalentLv3": "Đòn tấn công khiến RES của mục tiêu -27% trong 1 giây.",
     "TalentLv3_p4": "Đòn tấn công khiến RES của mục tiêu -30%<@ba.talpu>(+3%)</> trong 1 giây."
+  },
+  "uniequip_001_fmout": {
+    "Name": "Gitano's Badge",
+    "description": "Operator Gitano has demonstrated a remarkable aptitude for inflicting Arts casualties on multitudes of enemies.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Splash Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
+  },
+  "uniequip_002_fmout": {
+    "Name": "Travel Kit for the Fortune-Teller",
+    "description": "The moment she raises her crystal ball, Gitano foresees danger.\nThe squad is escorting a group of rescued Infected to Rhodes Island's transport. After the intense battle, everyone is visibly exhausted. She reminds her teammates to watch out for an ambush, but not a moment after she finishes—and before her teammates had time to react—the ambushers have already emerged from behind the boulders.\nThe very next moment, the fog that clouds the barrenland is immediately split asunder by the blinding flash of Originium Arts, forcing the ambushers to take a step back.\nIt seems casting the Arts was too much for Gitano to bear, giving her a spell of dizziness and a burning sensation at the source of her infection. 'You can't keep using your Originium Arts like that.' The advice she got from her tribespeople years ago echoes in her ear. 'Your body can't withstand it anymore. You'll fall ill if you keep casting them.'\nNonetheless, she has pushed herself to her limits in the tundra more times than she can count. With the responsibilities she shoulders, she's never been one to fear falling ill.\nSome time later, she faintly overhears two men talking in hushed voices.\n'Shh—It's okay. She fell asleep because she's tired. Her infection hasn't gotten worse. Don't worry.'\n'We have her to thank for reacting so quickly, otherwise we wouldn't have made it back in one piece.'\n'How did she foresee the ambush, though? If she's really able to peek into the future, wouldn't she also know that—'\n'Don't be stupid. She herself often says that destiny is something that can be changed.'\n'Will you really resist the guidance of fate itself?' All those years ago, her tribespeople implored her. 'We need to turn around. We don't want to leave our homeland, and we've already paid a dear price.'\nBut the young fortune teller kept leading them onward.\n\nThe Rhodes Island transport pulls out of the site with the team, after their successful rescue mission. The Elafia holds tightly onto her crystal ball as she sleeps on the stretcher. She dreams of the black forest back home and the bitter, salty snowdrops, as well as the silhouettes of the mountain chains peeking above the horizon. She's never turned around, nor can she ever go back.",
+    "Mission1": "Complete a total of 5 battles; You must deploy your own Gitano, and have Gitano defeat at least 8 enemies",
+    "Mission2": "Clear Main Theme 1-10 with a 3-star rating; You must deploy your own Gitano, and have Gitano defeat at least 10 enemies",
+    "TalentLv1VN": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +13%; ASPD +13; HP Tối đa +20%",
+    "TalentLv1_p4VN": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +15%<@ba.talpu>(+2%)</>; ASPD +15<@ba.talpu>(+2%)</>; HP Tối đa +22%<@ba.talpu>(+2%)</>",
+    "TalentLv1EN": "Obtains one of the following buffs permanently when deployed: ATK +13%, ASPD +13, or Max HP +20%",
+    "TalentLv1_p4EN": "Obtains one of the following buffs permanently when deployed: ATK +15%<@ba.talpu>(+2%)</>, ASPD +15<@ba.talpu>(+2%)</>, Max HP +22%<@ba.talpu>(+2%)</>",
+    "TitleLv2": "Bói toán",
+    "TalentLv2": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +17%; ASPD +17; HP Tối đa +25%",
+    "TalentLv2_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +19%<@ba.talpu>(+2%)</>; ASPD +19<@ba.talpu>(+2%)</>; HP Tối đa +27%<@ba.talpu>(+2%)</>",
+    "TitleLv3": "Bói toán",
+    "TalentLv3": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +18%; ASPD +18; HP Tối đa +28%",
+    "TalentLv3_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +20%<@ba.talpu>(+2%)</>; ASPD +20<@ba.talpu>(+2%)</>; HP Tối đa +30%<@ba.talpu>(+2%)</>"
   }
 }
