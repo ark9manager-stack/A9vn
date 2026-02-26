@@ -1569,9 +1569,16 @@ export default function ModuleSection(props) {
                           >
                             {isEnglishUI ? `Trust Required: ${trustPct}%` : `Tin tưởng cần đạt: ${trustPct}%`}
                           </span>
-                          <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white bg-white/10 border border-white/10">
-                            {isEnglishUI ? "Complete both Module Missions Required" : "Yêu cầu hoàn thành nhiệm vụ mở Module"}
-                          </span>
+                          {u.lv === 1 ? (
+                            <span
+                              className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                              style={{ backgroundColor: "#D3D3D3" }}
+                            >
+                              {isEnglishUI
+                                ? "Complete both Module Missions Required"
+                                : "Yêu cầu hoàn thành nhiệm vụ mở Module"}
+                            </span>
+                          ) : null}
                         </div>
       
                         <div className="mt-3 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
