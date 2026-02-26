@@ -1368,12 +1368,24 @@ export default function ModuleSection(props) {
             const rangeId = findFirstRangeId(ph);
             const unlockCond = findFirstUnlockCondition(ph);
 
-            // Right side content
             let rightName = "";
             let rightText = "";
 
             if (lv === 1) {
-              rightText = isEnglishUI ? "Unlock Trait" : "Mở khóa đặc tính";
+              const suf = isEnglishUI ? "EN" : "VN";
+              const keyPot = potRank > 0 ? `TalentLv1_p${potRank}${suf}` : "";
+              const keyBase = `TalentLv1${suf}`;
+
+              const fromVN =
+                (isNonEmptyString(keyPot) && isNonEmptyString(vnOverride?.[keyPot]) && String(vnOverride[keyPot])) ||
+                (isNonEmptyString(vnOverride?.[keyBase]) && String(vnOverride[keyBase])) ||
+                "";
+
+              rightText = isNonEmptyString(fromVN)
+                ? fromVN
+                : isEnglishUI
+                  ? "Unlock Trait"
+                  : "Mở khóa đặc tính";
             } else {
               const cands = collectUpgradeCandidatesForPot(ph);
               const picked = pickBestCandidateByPot(cands, potRank);
@@ -1382,12 +1394,14 @@ export default function ModuleSection(props) {
               rightName = picked?.name || "";
               rightText = picked?.upgradeDescription || "";
 
-              // VN override: TalentLv2 / TalentLv2_p4 ...
               if (!isEnglishUI && vnOverride) {
                 const keyBase = `TalentLv${lv}`;
                 const key = req > 0 ? `${keyBase}_p${req}` : keyBase;
                 const ov = vnOverride?.[key];
                 if (isNonEmptyString(ov)) rightText = String(ov);
+
+                const titleKey = `TitleLv${lv}`;
+                if (isNonEmptyString(vnOverride?.[titleKey])) rightName = String(vnOverride[titleKey]);
               }
             }
 
@@ -1444,36 +1458,19 @@ export default function ModuleSection(props) {
                       ) : null}
 
                       <div className={lv === 1 ? "" : "mt-1"}>
-                        {lv === 1 ? (
-                          <>
-                            <div className="text-sm font-semibold text-white">{rightText}</div>
-                            {unlockCond ? (
-                              <div className="mt-1 text-xs text-white/70">
-                                {isEnglishUI
-                                  ? `Required: Elite ${phaseToEliteIndex(unlockCond?.phase)} level ${
-                                      Number(unlockCond?.level || 0) || 1
-                                    }`
-                                  : `Cấp độ yêu cầu: Elite ${phaseToEliteIndex(unlockCond?.phase)} level ${
-                                      Number(unlockCond?.level || 0) || 1
-                                    }`}
-                              </div>
-                            ) : null}
-                          </>
-                        ) : (
-                          <div
-                            className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
-                            style={{ overflowWrap: "anywhere" }}
-                          >
-                            {isNonEmptyString(rightText) ? (
-                              renderTextWithTermNotes(
-                                rightText,
-                                `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`
-                              )
-                            ) : (
-                              <span className="text-white/40 italic">-</span>
-                            )}
-                          </div>
-                        )}
+                        <div
+                          className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                          style={{ overflowWrap: "anywhere" }}
+                        >
+                          {isNonEmptyString(rightText) ? (
+                            renderTextWithTermNotes(
+                              rightText,
+                              `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`
+                            )
+                          ) : (
+                            <span className="text-white/40 italic">-</span>
+                          )}
+                        </div>
                       </div>
                     </div>
 
@@ -1512,8 +1509,11 @@ export default function ModuleSection(props) {
             <InfoTable title={isEnglishUI ? "Module Missions" : "Nhiệm vụ mở Module"}>
               <div className="space-y-2">
                 {missionTexts.map((t, idx0) => (
-                  <div key={`mis-${selected?.id}-${idx0}`} className="text-white/95 leading-relaxed">
-                    {renderTextWithTermNotes(t, `module-mission-${selected?.id}-${idx0}`)}
+                  <div key={`mis-${selected?.id}-${idx0}`} className="text-white/95 leading-relaxed flex gap-2">
+                    <span className="shrink-0">•</span>
+                    <div className="min-w-0">
+                      {renderTextWithTermNotes(t, `module-mission-${selected?.id}-${idx0}`)}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1527,7 +1527,7 @@ export default function ModuleSection(props) {
                   {upgradeCosts.map((u) => {
                     const elite = u.unlockCond ? phaseToEliteIndex(u.unlockCond?.phase) : null;
                     const lvReq = u.unlockCond ? Number(u.unlockCond?.level || 0) || 1 : null;
-                    const trustPct = trustToPercent(u.trust);
+                    const trustPct = u.lv === 1 ? 0 : u.lv === 2 ? 50 : 100;
       
                     return (
                       <div key={`upcost-${selected?.id}-${u.lv}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
@@ -1540,7 +1540,7 @@ export default function ModuleSection(props) {
                               style={{ backgroundColor: "#D3D3D3" }}
                             >
                               {isEnglishUI
-                                ? `Required: Elite ${elite} level ${lvReq}`
+                                ? `Level Required: Elite ${elite} level ${lvReq}`
                                 : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`}
                             </span>
                           ) : null}
@@ -1549,7 +1549,10 @@ export default function ModuleSection(props) {
                             className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
                             style={{ backgroundColor: "#D3D3D3" }}
                           >
-                            {isEnglishUI ? `Trust: ${trustPct}%` : `Tin tưởng: ${trustPct}%`}
+                            {isEnglishUI ? `Trust Required: ${trustPct}%` : `Tin tưởng cần đạt: ${trustPct}%`}
+                          </span>
+                          <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white bg-white/10 border border-white/10">
+                            {isEnglishUI ? "Complete both Module Missions Required" : "Yêu cầu hoàn thành nhiệm vụ mở Module"}
                           </span>
                         </div>
       
