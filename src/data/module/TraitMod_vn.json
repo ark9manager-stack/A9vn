@@ -19,7 +19,7 @@
     { "trait": "同时恢复<@ba.kw>四</>个友方单位的生命", "trait_vn": "Hồi HP cho <@ba.kw>4</>đồng minh cùng lúc" },
     { "trait": "能够阻挡四个敌人", "trait_vn": "Chặn được 4 kẻ địch." },
     { "trait": "攻击造成<@ba.kw>法术伤害</>，并对敌人造成<@ba.kw>较长</>的<$ba.sluggish>停顿</>", "trait_vn": "Chặn được 4 kẻ địch." },
-    { "trait": "召唤物持有上限，召唤物部署费用", "trait_vn": "Giới hạn vật triệu hồi được mang theo và triển khai cùng lúc <@ba.kw>+{cnt}</>, đồng thời <@ba.kw><$ba.moddeepcl>giảm</></> phí triển khai của vật triệu hồi" },
+    { "trait": "召唤物持有上限<@ba.kw>+{cnt}</>，召唤物部署费用<@ba.kw>减少</>", "trait_vn": "Giới hạn vật triệu hồi được mang theo và triển khai cùng lúc <@ba.kw>+{cnt}</>, đồng thời <@ba.kw><$ba.moddeepcl>giảm</></> phí triển khai của vật triệu hồi" },
     { "trait": "阻挡敌人时防御力<@ba.kw>+20%</>", "trait_vn": "DEF <@ba.kw>+20%</> khi chặn kẻ địch" }
   ]
 }
