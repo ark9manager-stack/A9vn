@@ -144,6 +144,10 @@ export function ItalicText({ text, as: As = "span", className, keyPrefix = "it" 
   return <As className={className}>{renderMultiline(text, keyPrefix)}</As>;
 }
 
+export function NoteKeyStyle({ noteKey, children, keyPrefix = "nks" }) {
+  return applyNoteKeyStyle(children, noteKey, keyPrefix);
+}
+
 function getNote(noteKey) {
   if (!isNonEmptyString(noteKey)) return null;
 

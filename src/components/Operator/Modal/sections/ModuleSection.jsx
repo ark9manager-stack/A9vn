@@ -15,7 +15,7 @@ import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.js
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
 
-import StatHover, { renderInlineItalic } from "../../../StatHover";
+import StatHover, { renderInlineItalic, NoteKeyStyle } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 
 /** Module icons */
@@ -299,7 +299,7 @@ function parseMarkupSegment(
       const inner = parseMarkupSegment(
         str,
         `${keyPrefix}-in-${i}`,
-        type === "@" ? key : noteKeyCtx,
+        null,
         gt + 1,
         true
       );
@@ -313,11 +313,11 @@ function parseMarkupSegment(
           </StatHover>
         );
       } else {
-        // '@' tag: styling applied via noteKeyCtx inside recursion
+        // '@' tag: apply NOTEKEY_LABEL_TEMPLATES style (color/italic) around ANY children, including [[...]] hovers
         nodes.push(
-          <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
+          <NoteKeyStyle key={`${keyPrefix}-at-${i}-${key}`} noteKey={key} keyPrefix={`${keyPrefix}-at-${i}-${key}`}>
             {innerNodes}
-          </React.Fragment>
+          </NoteKeyStyle>
         );
       }
 
