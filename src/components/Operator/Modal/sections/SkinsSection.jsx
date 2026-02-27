@@ -252,6 +252,9 @@ export default function SkinsSection({ operator, className = "" }) {
   const [imgError, setImgError] = useState(false);
   const [isLoadingImg, setIsLoadingImg] = useState(false);
   const [displaySrc, setDisplaySrc] = useState(null);
+  // Keep a small in-DOM cache of already displayed images so switching back doesn't trigger another request.
+  // LRU size = 6 (tweak as needed).
+  const [mountedSrcs, setMountedSrcs] = useState(() => []);
   const skipSpResetRef = useRef(false);
 
   useEffect(() => {
@@ -339,6 +342,15 @@ export default function SkinsSection({ operator, className = "" }) {
     };
   }, [effectiveUrl, effectiveFallbackUrl]);
 
+  useEffect(() => {
+    if (!displaySrc) return;
+    setMountedSrcs((prev) => {
+      if (prev.includes(displaySrc)) return prev;
+      const next = [...prev, displaySrc];
+      return next.length > 6 ? next.slice(next.length - 6) : next;
+    });
+  }, [displaySrc]);
+
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
     if (!selectedOption.skinName) return selectedOption.label;
@@ -367,26 +379,41 @@ export default function SkinsSection({ operator, className = "" }) {
       <div className="relative h-full w-full">
         {/* Art */}
         <div className="absolute inset-0 flex items-center justify-center">
+          {/*
+            IMPORTANT FIX:
+            Don't unmount/remount the <img> while loading.
+            Previously, we hid the image when isLoadingImg=true, which caused the <img>
+            element to be recreated on every switch. That can trigger repeated network
+            requests (especially if cache is disabled or the CDN forces revalidation).
+          */}
+          {!imgError && displaySrc && (
+            <>
+              {(mountedSrcs.includes(displaySrc) ? mountedSrcs : [...mountedSrcs, displaySrc])
+                .filter(Boolean)
+                .map((src) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={operator?.name || charId}
+                    className="max-h-full max-w-full object-contain"
+                    loading="eager"
+                    draggable={false}
+                    style={{ display: src === displaySrc ? "block" : "none" }}
+                  />
+                ))}
+            </>
+          )}
+
           {isLoadingImg && (
-            <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
               Loading...
             </div>
           )}
 
-          {!isLoadingImg && imgError && (
+          {imgError && (
             <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
               Failed to load
             </div>
-          )}
-
-          {!isLoadingImg && !imgError && displaySrc && (
-            <img
-              src={displaySrc}
-              alt={operator?.name || charId}
-              className="max-h-full max-w-full object-contain"
-              loading="eager"
-              draggable={false}
-            />
           )}
         </div>
 
