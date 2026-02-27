@@ -2,39 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
 
-// -------------------------
-// Image cache (in-memory)
-// -------------------------
-// Why: switching back/forth between skins was triggering repeated network loads because we
-//      always created a new `Image()` loader. This cache ensures each URL is only *actively*
-//      loaded once per session; later switches reuse the already-loaded result immediately.
-const __IMG_STATUS__ = new Map();
-
-function preloadImageCached(url) {
-  if (!url) return Promise.reject(new Error("no-url"));
-
-  const hit = __IMG_STATUS__.get(url);
-  if (hit === "loaded") return Promise.resolve(url);
-  if (hit && typeof hit.then === "function") return hit; // in-flight promise
-
-  const p = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.decoding = "async";
-    img.onload = () => {
-      __IMG_STATUS__.set(url, "loaded");
-      resolve(url);
-    };
-    img.onerror = (e) => {
-      __IMG_STATUS__.set(url, "error");
-      reject(e);
-    };
-    img.src = url;
-  });
-
-  __IMG_STATUS__.set(url, p);
-  return p;
-}
-
 const ART_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/characters";
 
@@ -248,14 +215,32 @@ export default function SkinsSection({ operator, className = "" }) {
   const [selectedKey, setSelectedKey] = useState(options?.[0]?.key || "E0");
   const [spMode, setSpMode] = useState(false);
 
-  // image state (supports fallback retry)
+  // image state
+  // Mode B (DOM cache): keep already-loaded images mounted in the DOM and only toggle visibility.
+  // This prevents repeated network fetches when spam-switching between skins.
   const [imgError, setImgError] = useState(false);
   const [isLoadingImg, setIsLoadingImg] = useState(false);
-  const [displaySrc, setDisplaySrc] = useState(null);
-  // Keep a small in-DOM cache of already displayed images so switching back doesn't trigger another request.
-  // LRU size = 6 (tweak as needed).
-  const [mountedSrcs, setMountedSrcs] = useState(() => []);
+  const [displaySrc, setDisplaySrc] = useState(null); // active URL currently displayed
+  const [loadedUrls, setLoadedUrls] = useState(() => new Set()); // URLs kept mounted
   const skipSpResetRef = useRef(false);
+
+  const markLoaded = (url) => {
+    if (!url) return;
+    setLoadedUrls((prev) => {
+      if (prev.has(url)) return prev;
+      const next = new Set(prev);
+      next.add(url);
+      return next;
+    });
+  };
+
+  // Reset per operator to avoid keeping too many large images in memory.
+  useEffect(() => {
+    setLoadedUrls(new Set());
+    setDisplaySrc(null);
+    setImgError(false);
+    setIsLoadingImg(false);
+  }, [charId]);
 
   useEffect(() => {
     if (!options.length) return;
@@ -298,10 +283,6 @@ export default function SkinsSection({ operator, className = "" }) {
     const primary = effectiveUrl || null;
     const fallback = effectiveFallbackUrl || null;
 
-    // IMPORTANT:
-    // - Do NOT clear displaySrc while loading a new skin (prevents flicker + avoids unnecessary re-mount).
-    // - Use preloadImageCached so switching back to a previously-seen skin won't re-trigger network work.
-
     setImgError(false);
 
     if (!primary) {
@@ -310,12 +291,27 @@ export default function SkinsSection({ operator, className = "" }) {
       return;
     }
 
+    // If the target is already mounted, switch instantly.
+    if (loadedUrls.has(primary)) {
+      setIsLoadingImg(false);
+      setDisplaySrc(primary);
+      return;
+    }
+    if (fallback && loadedUrls.has(fallback)) {
+      setIsLoadingImg(false);
+      setDisplaySrc(fallback);
+      return;
+    }
+
+    // Aesthetic requirement: hide the old image immediately while loading the new one.
+    setDisplaySrc(null);
     setIsLoadingImg(true);
 
     (async () => {
       try {
         await preloadImageCached(primary);
         if (cancelled) return;
+        markLoaded(primary);
         setDisplaySrc(primary);
         setIsLoadingImg(false);
       } catch {
@@ -323,6 +319,7 @@ export default function SkinsSection({ operator, className = "" }) {
           try {
             await preloadImageCached(fallback);
             if (cancelled) return;
+            markLoaded(fallback);
             setDisplaySrc(fallback);
             setIsLoadingImg(false);
             return;
@@ -330,7 +327,6 @@ export default function SkinsSection({ operator, className = "" }) {
             console.error("Error loading fallback image:", error);
           }
         }
-
         if (cancelled) return;
         setImgError(true);
         setIsLoadingImg(false);
@@ -340,16 +336,7 @@ export default function SkinsSection({ operator, className = "" }) {
     return () => {
       cancelled = true;
     };
-  }, [effectiveUrl, effectiveFallbackUrl]);
-
-  useEffect(() => {
-    if (!displaySrc) return;
-    setMountedSrcs((prev) => {
-      if (prev.includes(displaySrc)) return prev;
-      const next = [...prev, displaySrc];
-      return next.length > 6 ? next.slice(next.length - 6) : next;
-    });
-  }, [displaySrc]);
+  }, [effectiveUrl, effectiveFallbackUrl, loadedUrls]);
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
@@ -379,42 +366,36 @@ export default function SkinsSection({ operator, className = "" }) {
       <div className="relative h-full w-full">
         {/* Art */}
         <div className="absolute inset-0 flex items-center justify-center">
-          {/*
-            IMPORTANT FIX:
-            Don't unmount/remount the <img> while loading.
-            Previously, we hid the image when isLoadingImg=true, which caused the <img>
-            element to be recreated on every switch. That can trigger repeated network
-            requests (especially if cache is disabled or the CDN forces revalidation).
-          */}
-          {!imgError && displaySrc && (
-            <>
-              {(mountedSrcs.includes(displaySrc) ? mountedSrcs : [...mountedSrcs, displaySrc])
-                .filter(Boolean)
-                .map((src) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt={operator?.name || charId}
-                    className="max-h-full max-w-full object-contain"
-                    loading="eager"
-                    draggable={false}
-                    style={{ display: src === displaySrc ? "block" : "none" }}
-                  />
-                ))}
-            </>
-          )}
-
           {isLoadingImg && (
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
+            <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
               Loading...
             </div>
           )}
 
-          {imgError && (
+          {!isLoadingImg && imgError && (
             <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
               Failed to load
             </div>
           )}
+
+          {/*
+            Mode B (DOM cache): keep all previously-loaded URLs mounted.
+            We only toggle visibility, so switching back/forth doesn't trigger network fetches.
+          */}
+          {Array.from(loadedUrls).map((url) => {
+            const show = !isLoadingImg && !imgError && displaySrc === url;
+            return (
+              <img
+                key={url}
+                src={url}
+                alt={operator?.name || charId}
+                className="max-h-full max-w-full object-contain"
+                loading="eager"
+                draggable={false}
+                style={{ display: show ? "block" : "none" }}
+              />
+            );
+          })}
         </div>
 
         {/* Bottom-left: Skin name + drawer */}
@@ -468,13 +449,6 @@ export default function SkinsSection({ operator, className = "" }) {
                     <button
                       type="button"
                       onClick={() => setSelectedKey(opt.key)}
-                      onMouseEnter={() => {
-                        // Prefetch on hover to make switching feel instant
-                        const u = opt?.url;
-                        const fu = opt?.fallbackUrl;
-                        if (u) preloadImageCached(u).catch(() => {});
-                        if (fu) preloadImageCached(fu).catch(() => {});
-                      }}
                       className={`w-full text-left rounded-lg pl-2 pr-10 py-1.5 text-xs font-semibold transition
                         ${
                           active
