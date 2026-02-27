@@ -1,7 +1,7 @@
 // src/utils/operatorAvatar.js
 
 export const CN_AVATAR_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/charavatars/";
 
 export const CN_AVATAR_OVERRIDES = {
   char_271_spikes: `${CN_AVATAR_BASE}elite/char_271_spikes.png`,

@@ -11,7 +11,7 @@ import { getOperatorCharId } from "../../../../utils/operatorAvatar";
 
 /** Icons */
 const UI_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
 
 const STAT_ICON = {
   maxHp: `${UI_ICON_BASE}icon_hp.png`,
@@ -28,18 +28,18 @@ const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
 const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
 
 const ELITE_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/elite_hub/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/elite_hub/";
 
 const POT_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/potential_hub/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/potential_hub/";
 
 const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
 
 /** Materials (Promotion Requirements) */
 const ITEM_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
 const ITEM_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/items/icons/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/";
 
 const GOLD_ITEM_ID = "4001";
 
@@ -81,9 +81,9 @@ const getItemIconUrl = (iconId) => {
 
 /* Summon/Token */
 const CHARAVATAR_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/charavatars/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/charavatars/";
 const SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/skills/";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/";
 
 const SUMMON_AVATAR_OVERRIDE = {
   token_10012_rosmon_shield: `${SKILL_ICON_BASE}skill_icon_sktok_rosmon.png`,

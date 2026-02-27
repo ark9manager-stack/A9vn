@@ -16,7 +16,7 @@ import {
 } from "../../../../utils/operatorAvatar";
 
 const VOICE_ASSET_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/voice/assets/dyn/audio/sound_beta_2";
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/voice/assets/dyn/audio/sound_beta_2";
 
 const VOICE_TITLE_VI = {
   任命助理: "Bổ nhiệm làm trợ lý",

@@ -44,7 +44,7 @@ export function getIdWebNumber(op) {
 
 export function subProfIconUrl(id) {
   if (!id) return "";
-  return `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/ui/subprofessionicon/sub_${id}_icon.png`;
+  return `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/subprofessionicon/sub_${id}_icon.png`;
 }
 
 export function subProfLabel(id, lang = "EN") {
