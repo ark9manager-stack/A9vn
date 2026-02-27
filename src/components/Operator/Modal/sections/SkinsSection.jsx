@@ -2,6 +2,39 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
 
+// -------------------------
+// Image cache (in-memory)
+// -------------------------
+// Why: switching back/forth between skins was triggering repeated network loads because we
+//      always created a new `Image()` loader. This cache ensures each URL is only *actively*
+//      loaded once per session; later switches reuse the already-loaded result immediately.
+const __IMG_STATUS__ = new Map();
+
+function preloadImageCached(url) {
+  if (!url) return Promise.reject(new Error("no-url"));
+
+  const hit = __IMG_STATUS__.get(url);
+  if (hit === "loaded") return Promise.resolve(url);
+  if (hit && typeof hit.then === "function") return hit; // in-flight promise
+
+  const p = new Promise((resolve, reject) => {
+    const img = new Image();
+    img.decoding = "async";
+    img.onload = () => {
+      __IMG_STATUS__.set(url, "loaded");
+      resolve(url);
+    };
+    img.onerror = (e) => {
+      __IMG_STATUS__.set(url, "error");
+      reject(e);
+    };
+    img.src = url;
+  });
+
+  __IMG_STATUS__.set(url, p);
+  return p;
+}
+
 const ART_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/refs/heads/cn/assets/dyn/arts/characters";
 
@@ -262,37 +295,39 @@ export default function SkinsSection({ operator, className = "" }) {
     const primary = effectiveUrl || null;
     const fallback = effectiveFallbackUrl || null;
 
-    setImgError(false);
-    setIsLoadingImg(!!primary);
-    setDisplaySrc(null);
+    // IMPORTANT:
+    // - Do NOT clear displaySrc while loading a new skin (prevents flicker + avoids unnecessary re-mount).
+    // - Use preloadImageCached so switching back to a previously-seen skin won't re-trigger network work.
 
-    const load = (src) =>
-      new Promise((resolve, reject) => {
-        if (!src) return reject(new Error("no-src"));
-        const img = new Image();
-        img.onload = () => resolve(src);
-        img.onerror = reject;
-        img.src = src;
-      });
+    setImgError(false);
+
+    if (!primary) {
+      setIsLoadingImg(false);
+      setDisplaySrc(null);
+      return;
+    }
+
+    setIsLoadingImg(true);
 
     (async () => {
       try {
-        const ok = await load(primary);
+        await preloadImageCached(primary);
         if (cancelled) return;
-        setDisplaySrc(ok);
+        setDisplaySrc(primary);
         setIsLoadingImg(false);
       } catch {
         if (fallback) {
           try {
-            const ok2 = await load(fallback);
+            await preloadImageCached(fallback);
             if (cancelled) return;
-            setDisplaySrc(ok2);
+            setDisplaySrc(fallback);
             setIsLoadingImg(false);
             return;
           } catch (error) {
             console.error("Error loading fallback image:", error);
           }
         }
+
         if (cancelled) return;
         setImgError(true);
         setIsLoadingImg(false);
@@ -302,7 +337,7 @@ export default function SkinsSection({ operator, className = "" }) {
     return () => {
       cancelled = true;
     };
-  }, [effectiveUrl, effectiveFallbackUrl, charId, selectedKey, spMode, selectedHasSp]);
+  }, [effectiveUrl, effectiveFallbackUrl]);
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
@@ -406,6 +441,13 @@ export default function SkinsSection({ operator, className = "" }) {
                     <button
                       type="button"
                       onClick={() => setSelectedKey(opt.key)}
+                      onMouseEnter={() => {
+                        // Prefetch on hover to make switching feel instant
+                        const u = opt?.url;
+                        const fu = opt?.fallbackUrl;
+                        if (u) preloadImageCached(u).catch(() => {});
+                        if (fu) preloadImageCached(fu).catch(() => {});
+                      }}
                       className={`w-full text-left rounded-lg pl-2 pr-10 py-1.5 text-xs font-semibold transition
                         ${
                           active

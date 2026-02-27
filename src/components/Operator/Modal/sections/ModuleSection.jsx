@@ -15,8 +15,41 @@ import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.js
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
 
-import StatHover, { renderInlineItalic, NoteKeyStyle } from "../../../StatHover";
+import StatHover, { renderInlineItalic } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
+
+// -------------------------
+// Image cache (in-memory)
+// -------------------------
+// Some sections (module image previews) pre-warm images using `new Image()`.
+// Without a cache, switching back and forth can cause repeated network revalidation.
+// This cache ensures each URL is only actively loaded once per session.
+const __IMG_STATUS__ = new Map();
+
+function preloadImageCached(url) {
+  if (!url) return Promise.reject(new Error("no-url"));
+
+  const hit = __IMG_STATUS__.get(url);
+  if (hit === "loaded") return Promise.resolve(url);
+  if (hit && typeof hit.then === "function") return hit; // in-flight promise
+
+  const p = new Promise((resolve, reject) => {
+    const img = new Image();
+    img.decoding = "async";
+    img.onload = () => {
+      __IMG_STATUS__.set(url, "loaded");
+      resolve(url);
+    };
+    img.onerror = (e) => {
+      __IMG_STATUS__.set(url, "error");
+      reject(e);
+    };
+    img.src = url;
+  });
+
+  __IMG_STATUS__.set(url, p);
+  return p;
+}
 
 /** Module icons */
 const MODULE_DIR_ICON_BASE =
@@ -299,7 +332,7 @@ function parseMarkupSegment(
       const inner = parseMarkupSegment(
         str,
         `${keyPrefix}-in-${i}`,
-        null,
+        type === "@" ? key : noteKeyCtx,
         gt + 1,
         true
       );
@@ -313,11 +346,11 @@ function parseMarkupSegment(
           </StatHover>
         );
       } else {
-        // '@' tag: apply NOTEKEY_LABEL_TEMPLATES style (color/italic) around ANY children, including [[...]] hovers
+        // '@' tag: styling applied via noteKeyCtx inside recursion
         nodes.push(
-          <NoteKeyStyle key={`${keyPrefix}-at-${i}-${key}`} noteKey={key} keyPrefix={`${keyPrefix}-at-${i}-${key}`}>
+          <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
             {innerNodes}
-          </NoteKeyStyle>
+          </React.Fragment>
         );
       }
 
@@ -1119,9 +1152,7 @@ export default function ModuleSection(props) {
     const warm = [...new Set([`${MODULE_IMG_BASE}default.png`, ...urls.slice(0, 2)])];
     warm.forEach((u) => {
       if (!u) return;
-      const img = new Image();
-      img.decoding = "async";
-      img.src = u;
+      preloadImageCached(u).catch(() => {});
     });
   }, [moduleImageCandidates]);
 
@@ -1265,7 +1296,6 @@ export default function ModuleSection(props) {
               ) : null}
 
               <img
-                key={`${activeModuleImageUrl}-${moduleImgIdx}`}
                 src={activeModuleImageUrl}
                 alt="module"
                 className="w-full h-full object-contain transition-opacity duration-150"
