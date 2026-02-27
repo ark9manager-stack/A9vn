@@ -12,6 +12,24 @@ const ICON_DRAWER_URL =
 
 const SP_DYN_SKINS = skinTable?.spDynSkins || {};
 
+const __imgPreloadPromiseCache = new Map();
+
+function preloadImageCached(url) {
+  if (!url) return Promise.reject(new Error("Missing image URL"));
+  const cached = __imgPreloadPromiseCache.get(url);
+  if (cached) return cached;
+
+  const p = new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(url);
+    img.onerror = (e) => reject(e);
+    img.src = url;
+  });
+
+  __imgPreloadPromiseCache.set(url, p);
+  return p;
+}
+
 function buildEliteUrl(charId, elite) {
   if (!charId) return null;
   if (elite === "E0") return `${ART_BASE}/${charId}/${charId}_1.png`;
@@ -214,10 +232,6 @@ export default function SkinsSection({ operator, className = "" }) {
 
   const [selectedKey, setSelectedKey] = useState(options?.[0]?.key || "E0");
   const [spMode, setSpMode] = useState(false);
-
-  // image state
-  // Mode B (DOM cache): keep already-loaded images mounted in the DOM and only toggle visibility.
-  // This prevents repeated network fetches when spam-switching between skins.
   const [imgError, setImgError] = useState(false);
   const [isLoadingImg, setIsLoadingImg] = useState(false);
   const [displaySrc, setDisplaySrc] = useState(null); // active URL currently displayed
@@ -361,9 +375,9 @@ export default function SkinsSection({ operator, className = "" }) {
 
   return (
     <div
-      className={`relative w-full h-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}
+      className={`relative w-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}
     >
-      <div className="relative h-full w-full">
+      <div className="relative w-full min-h-[520px]">
         {/* Art */}
         <div className="absolute inset-0 flex items-center justify-center">
           {isLoadingImg && (
@@ -378,10 +392,6 @@ export default function SkinsSection({ operator, className = "" }) {
             </div>
           )}
 
-          {/*
-            Mode B (DOM cache): keep all previously-loaded URLs mounted.
-            We only toggle visibility, so switching back/forth doesn't trigger network fetches.
-          */}
           {Array.from(loadedUrls).map((url) => {
             const show = !isLoadingImg && !imgError && displaySrc === url;
             return (
