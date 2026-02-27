@@ -1345,7 +1345,7 @@ export default function ModuleSection(props) {
                       : null}
                     {isNonEmptyString(baseTraitText) ? <br /> : null}
                     <span className="inline-flex items-center rounded-md bg-sky-500/20 text-sky-200 px-2 py-1 text-xs font-semibold mr-2">
-                      {isEnglishUI ? "Additional Trait" : "Bổ sung đặc tính"}
+                      {isEnglishUI ? "Additional Trait" : "Thêm đặc tính"}
                     </span>
                     {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`)}
                   </>

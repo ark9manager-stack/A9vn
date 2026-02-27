@@ -7,6 +7,17 @@
     { "trait": "攻击时无视敌人<@ba.vup>{def_penetrate_fixed}</>点的防御力", "trait_vn": "Đòn tấn công bỏ qua <@ba.vup>{def_penetrate_fixed}</> DEF" },
     { "trait": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％", "trait_vn": "Chặn được 2 kẻ địch, nhận +8% ATK và DEF khi đang chặn kẻ địch." },
     { "trait": "攻击生命值低于<@ba.vup>{hp_ratio:0%}</>的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>", "trait_vn": "Khi tấn công kẻ địch dưới <@ba.vup>{hp_ratio:0%}</> HP tối đa, ATK tăng lên <@ba.vup>{atk_scale:0%}</>" },
-    { "trait": "可以额外部署在远程位", "trait_vn": "Có thể triển khai trên ô tầm xa" }
+    { "trait": "可以额外部署在远程位", "trait_vn": "Có thể triển khai trên ô tầm xa" },
+    { "trait": "被击倒时不撤退且回复所有生命但生命上限<@ba.vdown>-{value:0%}</>，攻击速度<@ba.vup>+{attack_speed}</>（单次部署只触发1次）", "trait_vn": "Khi bị hạ, sẽ không rút lui mà hồi đầy HP. Bù lại HP tối đa <@ba.vdown>-{value:0%}</> và ASPD <@ba.vup>+{attack_speed}</>(Mỗi lần triển khai chỉ kích hoạt 1 lần)" },
+    { "trait": "攻击附带<@ba.vup>{atk_scale_m:0%}</>攻击力的法术伤害", "trait_vn": "Đòn tấn công gây thêm sát thương phép bằng <@ba.vup>{atk_scale_m:0%}</> ATK" },
+    { "trait": "生命值高于50%时受到的物理伤害降低<@ba.kw>{damage_resistance:0%}</>", "trait_vn": "Khi HP trên 50%, giảm <@ba.kw>{damage_resistance:0%}</> sát thương vật lý nhận vào" },
+    { "trait": "未阻挡敌人时攻击速度<@ba.kw>+{attack_speed}</>", "trait_vn": "ASPD <@ba.kw>+{attack_speed}</> khi không chặn kẻ địch" },
+    { "trait": "撤退时返还<@ba.kw>大量</>该次部署费用", "trait_vn": "Khi rút lui, hoàn trả <@ba.kw>một lượng lớn</> phí triển khai hiện tại." },
+    { "trait": "拖拽期间敌人受到正比于距离的法术伤害", "trait_vn": "Kẻ địch chịu sát thương phép tỷ lệ thuận với quãng đường bị kéo" },
+    { "trait": "治疗生命值低于50%的友方单位时治疗量提升<@ba.kw>15%</>", "trait_vn": "Khi hồi phục cho đồng minh có HP dưới 50%, lượng hồi phục tăng <@ba.kw>15%</>" },
+    { "trait": "治疗地面单位时治疗量提升<@ba.kw>15%</>", "trait_vn": "Lượng hồi phục tăng <@ba.kw>15%</> khi hồi cho đồng minh đứng trên ô cận chiến (mặt đất)." },
+    { "trait": "同时恢复<@ba.kw>四</>个友方单位的生命", "trait_vn": "Hồi HP cho <@ba.kw>4</>đồng minh cùng lúc" },
+    { "trait": "能够阻挡四个敌人", "trait_vn": "Chặn được 4 kẻ địch." },
+    { "trait": "阻挡敌人时防御力<@ba.kw>+20%</>", "trait_vn": "DEF <@ba.kw>+20%</> khi chặn kẻ địch" }
   ]
 }
