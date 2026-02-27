@@ -361,9 +361,9 @@ export default function SkinsSection({ operator, className = "" }) {
 
   return (
     <div
-      className={`relative w-full h-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}
+      className={`relative w-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}
     >
-      <div className="relative h-full w-full">
+      <div className="relative w-full min-h-[520px]">
         {/* Art */}
         <div className="absolute inset-0 flex items-center justify-center">
           {isLoadingImg && (
