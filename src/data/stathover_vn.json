@@ -150,5 +150,9 @@
   "ba.berserk": {
     "title": "Kiên cường/Tenacity",
     "text": "Tăng chỉ số tỷ lệ thuận với lượng (HP)% đã mất, chỉ số đạt mức tối đa khi mất một ngưỡng (HP)% nhất định (Chỉ áp dụng mức cao nhất của mỗi loại)."
+  },
+  "ba.moddeepcl": {
+    "title": "",
+    "text": "-2 DP"
   }
 }
