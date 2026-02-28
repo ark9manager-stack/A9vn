@@ -1971,50 +1971,79 @@ const renderTalentCard = (talentIdx, resolved) => {
     </div>
   ) : null;
 
-  const buildingBuffCards = React.useMemo(() => {
-    const buffChar = buildingCharEntry?.buffChar;
-    if (!Array.isArray(buffChar)) return [];
+  // Build building-skill cards for EACH header option (Mode B):
+// keep previously opened header options mounted so their icons don't re-request when switching back.
+const computeBuildingBuffCardsForOpt = (buffChar, opt) => {
+  if (!Array.isArray(buffChar)) return [];
 
-    const groups = buffChar
-      .map((g, idx) => ({ idx, data: Array.isArray(g?.buffData) ? g.buffData : [] }))
-      .filter((g) => Array.isArray(g.data) && g.data.length > 0);
+  const groups = buffChar
+    .map((g, idx) => ({ idx, data: Array.isArray(g?.buffData) ? g.buffData : [] }))
+    .filter((g) => Array.isArray(g.data) && g.data.length > 0);
 
-    const pickBestUpTo = (arr) => {
-      const selPhase = Number(activeBuildingHeaderOpt?.phaseIndex ?? 0);
-      const selLevel = Number(activeBuildingHeaderOpt?.level ?? 1);
+  const selPhase = Number(opt?.phaseIndex ?? 0);
+  const selLevel = Number(opt?.level ?? 1);
 
-      const filtered = [...arr].filter((a) => {
-        const p = phaseToEliteIndex(a?.cond?.phase);
-        const l = Number(a?.cond?.level || 1);
-        if (p < selPhase) return true;
-        if (p === selPhase) return l <= selLevel;
-        return false;
-      });
+  const pickBestUpTo = (arr) => {
+    const filtered = [...arr].filter((a) => {
+      const p = phaseToEliteIndex(a?.cond?.phase);
+      const l = Number(a?.cond?.level || 1);
+      if (p < selPhase) return true;
+      if (p === selPhase) return l <= selLevel;
+      return false;
+    });
 
-      const sorted = filtered.filter(Boolean).sort((a, b) => {
-        const pa = phaseToEliteIndex(a?.cond?.phase);
-        const pb = phaseToEliteIndex(b?.cond?.phase);
-        if (pa !== pb) return pa - pb;
-        const la = Number(a?.cond?.level || 0);
-        const lb = Number(b?.cond?.level || 0);
-        return la - lb;
-      });
+    const sorted = filtered.filter(Boolean).sort((a, b) => {
+      const pa = phaseToEliteIndex(a?.cond?.phase);
+      const pb = phaseToEliteIndex(b?.cond?.phase);
+      if (pa !== pb) return pa - pb;
+      const la = Number(a?.cond?.level || 0);
+      const lb = Number(b?.cond?.level || 0);
+      return la - lb;
+    });
 
-      return sorted.length > 0 ? sorted[sorted.length - 1] : null;
-    };
+    return sorted.length > 0 ? sorted[sorted.length - 1] : null;
+  };
 
-    return groups
-      .map((g) => {
-        const best = pickBestUpTo(g.data);
-        if (!best) return null;
-        return { groupIndex: g.idx, ...best };
-      })
-      .filter(Boolean);
-  }, [buildingCharEntry, buildingHeaderOptIdx, buildingHeaderOptions]);
+  return groups
+    .map((g) => {
+      const best = pickBestUpTo(g.data);
+      if (!best) return null;
+      return { groupIndex: g.idx, ...best };
+    })
+    .filter(Boolean);
+};
 
+const buildingBuffCardsByOptIdx = React.useMemo(() => {
+  const buffChar = buildingCharEntry?.buffChar;
+  if (!Array.isArray(buffChar)) return [];
+  return buildingHeaderOptions.map((opt) => computeBuildingBuffCardsForOpt(buffChar, opt));
+}, [buildingCharEntry, buildingHeaderOptions]);
 
+const safeBuildingHeaderOptIdx = Math.min(
+  Math.max(0, buildingHeaderOptIdx),
+  Math.max(0, buildingHeaderOptions.length - 1)
+);
 
-  return (
+const activeBuildingBuffCards = buildingBuffCardsByOptIdx?.[safeBuildingHeaderOptIdx] || [];
+
+const [mountedBuildingHeaderIdxs, setMountedBuildingHeaderIdxs] = React.useState(
+  () => new Set([safeBuildingHeaderOptIdx])
+);
+
+React.useEffect(() => {
+  // Reset cache when switching operator
+  setMountedBuildingHeaderIdxs(new Set([safeBuildingHeaderOptIdx]));
+}, [charKey, safeBuildingHeaderOptIdx]);
+
+React.useEffect(() => {
+  setMountedBuildingHeaderIdxs((prev) => {
+    if (prev.has(safeBuildingHeaderOptIdx)) return prev;
+    const next = new Set(prev);
+    next.add(safeBuildingHeaderOptIdx);
+    return next;
+  });
+}, [safeBuildingHeaderOptIdx]);
+return (
     <div className="space-y-3">
       {/* Tag + Position */}
       <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
@@ -2278,7 +2307,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                       const icon = getSkillLevelIconUrl(lv);
                       return (
                         <button
-                          key={`skill-lv-${selectedSkillId}-${lv}`}
+                          key={`skill-lv-${lv}`}
                           type="button"
                           onClick={() => setActiveSkillLevelIdx(idx0)}
                           className={`rounded-lg border transition px-2 py-1 text-white ${
@@ -2383,10 +2412,22 @@ const renderTalentCard = (talentIdx, resolved) => {
       </InfoTable>
       ) : null}
 
-      {Array.isArray(buildingBuffCards) && buildingBuffCards.length > 0 ? (
-        <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
+      
+{Array.isArray(activeBuildingBuffCards) && activeBuildingBuffCards.length > 0 ? (
+  <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
+    {/* Mode B: keep previously opened header options mounted (hidden) */}
+    {buildingHeaderOptions.map((opt, optIdx) => {
+      const isActive = optIdx === safeBuildingHeaderOptIdx;
+      const shouldMount = isActive || mountedBuildingHeaderIdxs.has(optIdx);
+      if (!shouldMount) return null;
+
+      const cards = buildingBuffCardsByOptIdx?.[optIdx] || [];
+      if (!Array.isArray(cards) || cards.length === 0) return null;
+
+      return (
+        <div key={`bskill-pane-${charKey || "unknown"}-${opt.phaseIndex}-${opt.level}-${optIdx}`} style={{ display: isActive ? "block" : "none" }}>
           <div className="space-y-3">
-            {buildingBuffCards.map((b, idx0) => {
+            {cards.map((b) => {
               const buffId = b?.buffId;
 
               const cn = buffId ? buildingData?.buffs?.[buffId] : null;
@@ -2410,13 +2451,13 @@ const renderTalentCard = (talentIdx, resolved) => {
 
               const bg = def?.buffColor || "#FFFFFF";
               const tc = def?.textColor || "#000000";
-              const bdescKeyPrefix = `bskill-${charKey || "unknown"}-${buffId}-${idx0}`;
+              const bdescKeyPrefix = `bskill-${charKey || "unknown"}-${buffId || "unknown"}`;
               const descRender = isNonEmptyString(desc)
                 ? renderTextWithHovers(desc, bdescKeyPrefix)
                 : null;
 
               return (
-                <div key={`${buffId}-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
+                <div key={`bskill-${buffId || "unknown"}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
                   <div className="flex items-start gap-3">
                     {iconUrl ? (
                       <img
@@ -2456,8 +2497,11 @@ const renderTalentCard = (talentIdx, resolved) => {
               );
             })}
           </div>
-        </InfoTable>
-      ) : null}
+        </div>
+      );
+    })}
+  </InfoTable>
+) : null}
     </div>
   );
 }

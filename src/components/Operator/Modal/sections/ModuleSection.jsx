@@ -467,7 +467,7 @@ function MaterialIcon({ itemId, count }) {
               draggable={false}
               loading="lazy"
               onError={(e) => {
-                e.currentTarget.style.display = "none";
+                e.currentTarget.style.visibility = "hidden";
               }}
             />
           ) : null}
@@ -838,6 +838,349 @@ function trustToPercent(raw) {
   return Math.min(100, Math.round(n / 100));
 }
 
+/**
+ * Module panes (Mode B) for icon-heavy parts.
+ * These panes are mounted once per module id and then hidden via CSS when inactive.
+ * This prevents repeated image requests (Initiator: Other) when users spam-switch modules.
+ */
+function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, charKey }) {
+  const id = module?.id;
+  const selectedBattle = React.useMemo(() => {
+    if (!isNonEmptyString(id)) return null;
+    const en = battleEquipTableEN?.[id] || null;
+    const cn = battleEquipTable?.[id] || null;
+    return isEnglishUI ? (en || cn) : cn;
+  }, [id, isEnglishUI]);
+
+  const selectedBattleFallbackCN = React.useMemo(() => {
+    if (!isNonEmptyString(id)) return null;
+    return battleEquipTable?.[id] || null;
+  }, [id]);
+
+  const phasesByLevel = React.useMemo(() => {
+    const entry = selectedBattle || selectedBattleFallbackCN;
+    const phases = entry?.phases;
+    if (!Array.isArray(phases)) return new Map();
+    const m = new Map();
+    for (const ph of phases) {
+      const lv = Number(ph?.equipLevel || 0);
+      if (!Number.isFinite(lv) || lv <= 0) continue;
+      m.set(lv, ph);
+    }
+    return m;
+  }, [selectedBattle, selectedBattleFallbackCN]);
+
+  const vnOverride = React.useMemo(() => {
+    if (!isNonEmptyString(id)) return null;
+    return moduleVN?.[id] || null;
+  }, [id]);
+
+  const isDefaultModule = React.useMemo(() => {
+    const mid = id || "";
+    const icon = module?.uniEquipIcon || "";
+    const typeIcon = module?.typeIcon || "";
+    const typeName2 = module?.typeName2;
+    return (
+      String(mid).startsWith("uniequip_001_") ||
+      String(icon) === "original" ||
+      String(typeIcon) === "original" ||
+      typeName2 == null
+    );
+  }, [id, module?.uniEquipIcon, module?.typeIcon, module?.typeName2]);
+
+  if (!isNonEmptyString(id) || isDefaultModule || phasesByLevel.size <= 0) return null;
+
+  return (
+    <div className="mt-4 rounded-xl border border-white/10 overflow-hidden">
+      <div className="divide-y divide-white/10">
+        {[1, 2, 3].map((lv) => {
+          const ph = phasesByLevel.get(lv) || null;
+          const attrs = Array.isArray(ph?.attributeBlackboard) ? ph.attributeBlackboard : [];
+          const rangeId = findFirstRangeId(ph);
+
+          let rightName = "";
+          let rightText = "";
+          let lv1DetailText = "";
+
+          if (lv === 1) {
+            rightText = isEnglishUI ? "Unlock Trait" : "Mở khóa đặc tính";
+            const suf = isEnglishUI ? "EN" : "VN";
+            const keyPot = potRank > 0 ? `TalentLv1_p${potRank}${suf}` : "";
+            const keyBase = `TalentLv1${suf}`;
+
+            lv1DetailText =
+              (isNonEmptyString(keyPot) && isNonEmptyString(vnOverride?.[keyPot]) && String(vnOverride[keyPot])) ||
+              (isNonEmptyString(vnOverride?.[keyBase]) && String(vnOverride[keyBase])) ||
+              "";
+          } else {
+            const cands = collectUpgradeCandidatesForPot(ph);
+            const picked = pickBestCandidateByPot(cands, potRank);
+
+            const req = Number(picked?.requiredPotentialRank || 0) || 0;
+            rightName = picked?.name || "";
+            rightText = picked?.upgradeDescription || "";
+
+            if (!isEnglishUI && vnOverride) {
+              const keyBase = `TalentLv${lv}`;
+              const key = req > 0 ? `${keyBase}_p${req}` : keyBase;
+              const ov = vnOverride?.[key];
+              if (isNonEmptyString(ov)) rightText = String(ov);
+
+              const titleKey = `TitleLv${lv}`;
+              if (isNonEmptyString(vnOverride?.[titleKey])) rightName = String(vnOverride[titleKey]);
+            }
+          }
+
+          return (
+            <div key={`row-${id}-${lv}`} className="grid grid-cols-5">
+              <div className="col-span-1 bg-black/25 p-3 flex items-center justify-center border-r border-white/10">
+                <img
+                  src={`${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`}
+                  alt={`lv-${lv}`}
+                  className="h-10 w-auto object-contain"
+                  draggable={false}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.visibility = "hidden";
+                  }}
+                />
+              </div>
+
+              <div className="col-span-4 bg-black/15 p-3">
+                <div className="flex items-start gap-3">
+                  <div className="min-w-[92px]">
+                    {attrs.length > 0 ? (
+                      <div className="space-y-1">
+                        {attrs.map((a, idx0) => {
+                          const k = a?.key;
+                          const v = a?.value;
+                          if (!isNonEmptyString(k) || !Number.isFinite(Number(v))) return null;
+                          return (
+                            <div
+                              key={`attr-${id}-${lv}-${k}-${idx0}`}
+                              className="text-sm text-white/90 font-semibold tabular-nums"
+                            >
+                              {formatAttrKey(k, isEnglishUI)} {formatAttrValue(v)}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <span className="text-white/40 italic">-</span>
+                    )}
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    {lv >= 2 && isNonEmptyString(rightName) ? (
+                      <div className="mb-1">
+                        <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-xs max-w-full">
+                          <span className="truncate">{rightName}</span>
+                        </span>
+                      </div>
+                    ) : null}
+
+                    <div className={lv === 1 ? "" : "mt-1"}>
+                      {lv === 1 ? (
+                        <>
+                          <div className="text-sm font-semibold text-white">{rightText}</div>
+
+                          <div
+                            className="mt-2 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                            style={{ overflowWrap: "anywhere" }}
+                          >
+                            {isNonEmptyString(lv1DetailText) ? (
+                              renderTextWithTermNotes(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`)
+                            ) : (
+                              <span className="text-white/40 italic">-</span>
+                            )}
+                          </div>
+                        </>
+                      ) : (
+                        <div
+                          className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+                          style={{ overflowWrap: "anywhere" }}
+                        >
+                          {isNonEmptyString(rightText) ? (
+                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`)
+                          ) : (
+                            <span className="text-white/40 italic">-</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {isNonEmptyString(rangeId) ? (
+                    <div className="shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
+                      <div className="text-sm font-semibold text-white text-center mb-2">
+                        {isEnglishUI ? "Range" : "Phạm vi"}
+                      </div>
+                      {lv === 1 ? (
+                        <SkillRangeGrid baseRangeId={baseRangeIdE2} rangeId={rangeId} />
+                      ) : (
+                        <RangeGrid rangeId={rangeId} />
+                      )}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ModuleMissionsPane({ module, isEnglishUI, charKey }) {
+  const id = module?.id;
+  const vnOverride = React.useMemo(() => (isNonEmptyString(id) ? moduleVN?.[id] || null : null), [id]);
+
+  const missionTexts = React.useMemo(() => {
+    if (!module) return [];
+    const ids = module?.meta?.missionList || module?.metaCN?.missionList || [];
+    if (!Array.isArray(ids) || ids.length === 0) return [];
+
+    const out = [];
+    ids.forEach((mid, idx0) => {
+      const cn = uniequipTable?.missionList?.[mid]?.desc || "";
+      const en = uniequipTableEN?.missionList?.[mid]?.desc || "";
+      let text = isEnglishUI ? (en || cn) : cn;
+
+      if (!isEnglishUI && vnOverride) {
+        const k = idx0 === 0 ? "Mission1" : "Mission2";
+        const ov = vnOverride?.[k];
+        if (isNonEmptyString(ov)) text = ov;
+      }
+
+      if (isNonEmptyString(text)) out.push(text);
+    });
+
+    return out;
+  }, [module, isEnglishUI, vnOverride]);
+
+  if (!Array.isArray(missionTexts) || missionTexts.length === 0) return null;
+
+  return (
+    <InfoTable title={isEnglishUI ? "Module Missions" : "Nhiệm vụ mở Module"}>
+      <div className="space-y-2">
+        {missionTexts.map((t, idx0) => (
+          <div key={`mis-${id}-${idx0}`} className="text-white/95 leading-relaxed flex gap-2">
+            <span className="shrink-0">•</span>
+            <div className="min-w-0">{renderTextWithTermNotes(t, `module-mission-${id}-${idx0}`)}</div>
+          </div>
+        ))}
+      </div>
+    </InfoTable>
+  );
+}
+
+function ModuleUpgradeCostsPane({ module, isEnglishUI, charKey }) {
+  const id = module?.id;
+
+  const selectedBattle = React.useMemo(() => {
+    if (!isNonEmptyString(id)) return null;
+    const en = battleEquipTableEN?.[id] || null;
+    const cn = battleEquipTable?.[id] || null;
+    return isEnglishUI ? (en || cn) : cn;
+  }, [id, isEnglishUI]);
+
+  const selectedBattleFallbackCN = React.useMemo(() => {
+    if (!isNonEmptyString(id)) return null;
+    return battleEquipTable?.[id] || null;
+  }, [id]);
+
+  const phasesByLevel = React.useMemo(() => {
+    const entry = selectedBattle || selectedBattleFallbackCN;
+    const phases = entry?.phases;
+    if (!Array.isArray(phases)) return new Map();
+    const m = new Map();
+    for (const ph of phases) {
+      const lv = Number(ph?.equipLevel || 0);
+      if (!Number.isFinite(lv) || lv <= 0) continue;
+      m.set(lv, ph);
+    }
+    return m;
+  }, [selectedBattle, selectedBattleFallbackCN]);
+
+  const upgradeCosts = React.useMemo(() => {
+    if (!module) return [];
+    const itemCost = module?.meta?.itemCost || module?.metaCN?.itemCost || {};
+    const unlockFavors = module?.meta?.unlockFavors || module?.metaCN?.unlockFavors || {};
+
+    const res = [];
+    [1, 2, 3].forEach((lv) => {
+      const costs = itemCost?.[String(lv)];
+      if (!Array.isArray(costs) || costs.length === 0) return;
+
+      const ph = phasesByLevel.get(lv) || null;
+      const unlockCond = findFirstUnlockCondition(ph);
+      const trust = unlockFavors?.[String(lv)];
+
+      res.push({ lv, unlockCond, trust, costs });
+    });
+
+    return res;
+  }, [module, phasesByLevel]);
+
+  if (!Array.isArray(upgradeCosts) || upgradeCosts.length === 0) return null;
+
+  return (
+    <InfoTable title={isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}>
+      <div className="space-y-4">
+        {upgradeCosts.map((u) => {
+          const elite = u.unlockCond ? phaseToEliteIndex(u.unlockCond?.phase) : null;
+          const lvReq = u.unlockCond ? Number(u.unlockCond?.level || 0) || 1 : null;
+          const trustPct = u.lv === 1 ? 0 : u.lv === 2 ? 50 : 100;
+
+          return (
+            <div key={`upcost-${id}-${u.lv}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="text-sm font-semibold text-white">Lv{u.lv}</span>
+
+                {u.unlockCond ? (
+                  <span
+                    className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                    style={{ backgroundColor: "#D3D3D3" }}
+                  >
+                    {isEnglishUI ? `Level Required: Elite ${elite} level ${lvReq}` : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`}
+                  </span>
+                ) : null}
+
+                <span
+                  className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                  style={{ backgroundColor: "#D3D3D3" }}
+                >
+                  {isEnglishUI ? `Trust Required: ${trustPct}%` : `Tin tưởng cần đạt: ${trustPct}%`}
+                </span>
+
+                {u.lv === 1 ? (
+                  <span
+                    className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                    style={{ backgroundColor: "#D3D3D3" }}
+                  >
+                    {isEnglishUI ? "Complete both Module Missions Required" : "Yêu cầu hoàn thành nhiệm vụ mở Module"}
+                  </span>
+                ) : null}
+              </div>
+
+              <div className="mt-3 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
+                {Array.isArray(u.costs)
+                  ? u.costs
+                      .filter((c) => c?.id && Number(c?.count) > 0)
+                      .map((c, j) => (
+                        <MaterialIcon key={`${c.id}-${id}-${u.lv}-${j}`} itemId={c.id} count={c.count} />
+                      ))
+                  : null}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </InfoTable>
+  );
+}
+
 export default function ModuleSection(props) {
   const isEnglishUI =
     (typeof props?.lang === "string" && props.lang.toLowerCase().startsWith("en")) ||
@@ -943,6 +1286,34 @@ export default function ModuleSection(props) {
   const safeModuleIdx = clamp(activeModuleIdx, 0, Math.max(0, modules.length - 1));
   const selected = modules?.[safeModuleIdx] || null;
 
+
+// Mode B for module sub-panels (materials/level-board/missions):
+// keep previously selected module panes mounted so their icon <img> elements don't re-request when switching back.
+const [mountedModulePaneIds, setMountedModulePaneIds] = React.useState(() => {
+  const s = new Set();
+  if (selected?.id) s.add(String(selected.id));
+  return s;
+});
+
+React.useEffect(() => {
+  // Reset when switching operator
+  const s = new Set();
+  if (selected?.id) s.add(String(selected.id));
+  setMountedModulePaneIds(s);
+}, [charKey]);
+
+React.useEffect(() => {
+  const id = selected?.id;
+  if (!isNonEmptyString(id)) return;
+  setMountedModulePaneIds((prev) => {
+    const sid = String(id);
+    if (prev.has(sid)) return prev;
+    const next = new Set(prev);
+    next.add(sid);
+    return next;
+  });
+}, [selected?.id]);
+
   const selectedBattle = React.useMemo(() => {
     const id = selected?.id;
     if (!isNonEmptyString(id)) return null;
@@ -1017,8 +1388,8 @@ export default function ModuleSection(props) {
 
   const showPotPicker = availablePotRanks.length > 1;
 
-  const potPicker = showPotPicker ? (
-    <div className="flex items-center gap-1">
+  const potPicker = (
+    <div className={showPotPicker ? "flex items-center gap-1" : "hidden"}>
       {availablePotRanks.map((idx0) => {
         const active = idx0 === potRank;
         return (
@@ -1043,9 +1414,9 @@ export default function ModuleSection(props) {
         );
       })}
     </div>
-  ) : null;
+  )   );
 
-  const isDefaultModule = React.useMemo(() => {
+const isDefaultModule = React.useMemo(() => {
     const id = selected?.id || "";
     const icon = selected?.uniEquipIcon || "";
     const typeIcon = selected?.typeIcon || "";
@@ -1218,55 +1589,7 @@ const subProfIcon = React.useMemo(() => {
     return isNonEmptyString(subProfessionId) ? subProfIconUrl(subProfessionId) : "";
   }, [charData, operator]);
 
-  const missionTexts = React.useMemo(() => {
-    if (!selected) return [];
-    const ids = selected?.meta?.missionList || selected?.metaCN?.missionList || [];
-    if (!Array.isArray(ids) || ids.length === 0) return [];
-
-    const out = [];
-    ids.forEach((mid, idx0) => {
-      const cn = uniequipTable?.missionList?.[mid]?.desc || "";
-      const en = uniequipTableEN?.missionList?.[mid]?.desc || "";
-      let text = isEnglishUI ? (en || cn) : cn;
-
-      if (!isEnglishUI && vnOverride) {
-        const k = idx0 === 0 ? "Mission1" : "Mission2";
-        const ov = vnOverride?.[k];
-        if (isNonEmptyString(ov)) text = ov;
-      }
-
-      if (isNonEmptyString(text)) out.push(text);
-    });
-
-    return out;
-  }, [selected, isEnglishUI, vnOverride]);
-
-  const upgradeCosts = React.useMemo(() => {
-    if (!selected) return [];
-    const itemCost = selected?.meta?.itemCost || selected?.metaCN?.itemCost || {};
-    const unlockFavors = selected?.meta?.unlockFavors || selected?.metaCN?.unlockFavors || {};
-
-    const res = [];
-    [1, 2, 3].forEach((lv) => {
-      const costs = itemCost?.[String(lv)];
-      if (!Array.isArray(costs) || costs.length === 0) return;
-
-      const ph = phasesByLevel.get(lv) || null;
-      const unlockCond = findFirstUnlockCondition(ph);
-      const trust = unlockFavors?.[String(lv)];
-
-      res.push({
-        lv,
-        unlockCond,
-        trust,
-        costs,
-      });
-    });
-
-    return res;
-  }, [selected, phasesByLevel]);
-
-  if (!isNonEmptyString(charKey) || !charData) {
+if (!isNonEmptyString(charKey) || !charData) {
     return (
       <InfoTable title="Module">
         <span className="text-white/40 italic">-</span>
@@ -1313,7 +1636,7 @@ const subProfIcon = React.useMemo(() => {
                 draggable={false}
                 loading="lazy"
                 onError={(e) => {
-                  e.currentTarget.style.display = "none";
+                  e.currentTarget.style.visibility = "hidden";
                 }}
               />
             </button>
@@ -1377,7 +1700,7 @@ const subProfIcon = React.useMemo(() => {
                   draggable={false}
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.style.display = "none";
+                    e.currentTarget.style.visibility = "hidden";
                   }}
                 />
               ) : null}
@@ -1441,50 +1764,7 @@ const subProfIcon = React.useMemo(() => {
     </div>
   ) : null;
 
-  const levelBoardTable =
-    selected && !isDefaultModule && phasesByLevel.size > 0 ? (
-      <div className="mt-4 rounded-xl border border-white/10 overflow-hidden">
-        <div className="divide-y divide-white/10">
-          {[1, 2, 3].map((lv) => {
-            const ph = phasesByLevel.get(lv) || null;
-            const attrs = Array.isArray(ph?.attributeBlackboard) ? ph.attributeBlackboard : [];
-            const rangeId = findFirstRangeId(ph);
-            const unlockCond = findFirstUnlockCondition(ph);
-
-            let rightName = "";
-            let rightText = "";
-            let lv1DetailText = "";
-
-            if (lv === 1) {
-              rightText = isEnglishUI ? "Unlock Trait" : "Mở khóa đặc tính";
-              const suf = isEnglishUI ? "EN" : "VN";
-              const keyPot = potRank > 0 ? `TalentLv1_p${potRank}${suf}` : "";
-              const keyBase = `TalentLv1${suf}`;
-
-              lv1DetailText =
-                (isNonEmptyString(keyPot) && isNonEmptyString(vnOverride?.[keyPot]) && String(vnOverride[keyPot])) ||
-                (isNonEmptyString(vnOverride?.[keyBase]) && String(vnOverride[keyBase])) ||
-                "";
-            } else {
-              const cands = collectUpgradeCandidatesForPot(ph);
-              const picked = pickBestCandidateByPot(cands, potRank);
-
-              const req = Number(picked?.requiredPotentialRank || 0) || 0;
-              rightName = picked?.name || "";
-              rightText = picked?.upgradeDescription || "";
-
-              if (!isEnglishUI && vnOverride) {
-                const keyBase = `TalentLv${lv}`;
-                const key = req > 0 ? `${keyBase}_p${req}` : keyBase;
-                const ov = vnOverride?.[key];
-                if (isNonEmptyString(ov)) rightText = String(ov);
-
-                const titleKey = `TitleLv${lv}`;
-                if (isNonEmptyString(vnOverride?.[titleKey])) rightName = String(vnOverride[titleKey]);
-              }
-            }
-
-            return (
+  return (
               <div key={`row-${selected.id}-${lv}`} className="grid grid-cols-5">
                 {/* Left: level board (≈ 1/5 width) */}
                 <div className="col-span-1 bg-black/25 p-3 flex items-center justify-center border-r border-white/10">
@@ -1495,7 +1775,7 @@ const subProfIcon = React.useMemo(() => {
                     draggable={false}
                     loading="lazy"
                     onError={(e) => {
-                      e.currentTarget.style.display = "none";
+                      e.currentTarget.style.visibility = "hidden";
                     }}
                   />
                 </div>
@@ -1602,51 +1882,48 @@ const subProfIcon = React.useMemo(() => {
         <div className="space-y-4">
           {moduleSelector}
           {moduleDetailCard}
-          {levelBoardTable}
+          {/* Level board (Mode B per module) */}
+          {modules.map((m, idx0) => {
+            const isActive = idx0 === safeModuleIdx;
+            const mid = String(m?.id || "");
+            const shouldMount = isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
+            if (!shouldMount) return null;
+            return (
+              <div key={`lb-pane-${mid}`} style={{ display: isActive ? "block" : "none" }}>
+                <ModuleLevelBoardPane module={m} isEnglishUI={isEnglishUI} potRank={potRank} baseRangeIdE2={baseRangeIdE2} charKey={charKey} />
+              </div>
+            );
+          })}
         </div>
       </InfoTable>
 
-            {missionTexts.length > 0 ? (
-            <InfoTable title={isEnglishUI ? "Module Missions" : "Nhiệm vụ mở Module"}>
-              <div className="space-y-2">
-                {missionTexts.map((t, idx0) => (
-                  <div key={`mis-${selected?.id}-${idx0}`} className="text-white/95 leading-relaxed flex gap-2">
-                    <span className="shrink-0">•</span>
-                    <div className="min-w-0">
-                      {renderTextWithTermNotes(t, `module-mission-${selected?.id}-${idx0}`)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </InfoTable>
-          ) : null}
+            
+{/* Module Missions (Mode B per module) */}
+{modules.map((m, idx0) => {
+  const isActive = idx0 === safeModuleIdx;
+  const mid = String(m?.id || "");
+  const shouldMount = isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
+  if (!shouldMount) return null;
+  return (
+    <div key={`mis-pane-${mid}`} style={{ display: isActive ? "block" : "none" }}>
+      <ModuleMissionsPane module={m} isEnglishUI={isEnglishUI} charKey={charKey} />
+    </div>
+  );
+})}
 
-            {upgradeCosts.length > 0 ? (
-            <InfoTable title={isEnglishUI ? "Upgrade Materials" : "Nguyên liệu nâng cấp"}>
-              {upgradeCosts.length > 0 ? (
-                <div className="space-y-4">
-                  {upgradeCosts.map((u) => {
-                    const elite = u.unlockCond ? phaseToEliteIndex(u.unlockCond?.phase) : null;
-                    const lvReq = u.unlockCond ? Number(u.unlockCond?.level || 0) || 1 : null;
-                    const trustPct = u.lv === 1 ? 0 : u.lv === 2 ? 50 : 100;
-      
-                    return (
-                      <div key={`upcost-${selected?.id}-${u.lv}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <span className="text-sm font-semibold text-white">Lv{u.lv}</span>
-      
-                          {u.unlockCond ? (
-                            <span
-                              className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                              style={{ backgroundColor: "#D3D3D3" }}
-                            >
-                              {isEnglishUI
-                                ? `Level Required: Elite ${elite} level ${lvReq}`
-                                : `Cấp độ yêu cầu: Elite ${elite} level ${lvReq}`}
-                            </span>
-                          ) : null}
-      
-                          <span
+{/* Upgrade Materials (Mode B per module) */}
+{modules.map((m, idx0) => {
+  const isActive = idx0 === safeModuleIdx;
+  const mid = String(m?.id || "");
+  const shouldMount = isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
+  if (!shouldMount) return null;
+  return (
+    <div key={`up-pane-${mid}`} style={{ display: isActive ? "block" : "none" }}>
+      <ModuleUpgradeCostsPane module={m} isEnglishUI={isEnglishUI} charKey={charKey} />
+    </div>
+  );
+})}
+<span
                             className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
                             style={{ backgroundColor: "#D3D3D3" }}
                           >
