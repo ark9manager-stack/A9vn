@@ -635,88 +635,6 @@ const getSkillIconUrl = (skillId, iconId) => {
   return `${SKILL_ICON_BASE}${key}.png`;
 };
 
-
-/**
- * Mode B image: keep already-seen URLs mounted (DOM cache) and just hide/show them.
- * - When src changes, we immediately hide old image (thẩm mỹ) and show nothing until new one loads.
- * - Once a URL has loaded, switching back to it will not re-request (even if DevTools "Disable cache" is ON),
- *   because the <img> element stays mounted.
- */
-function ModeBImageBox({
-  src,
-  alt,
-  boxStyle,
-  boxClassName = "",
-  imgClassName = "",
-  loading = "lazy",
-  draggable = false,
-  decoding = "async",
-}) {
-  const loadedRef = React.useRef(new Set());
-  const [mountedUrls, setMountedUrls] = React.useState(() => new Set());
-  const [displayUrl, setDisplayUrl] = React.useState(null);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [hasError, setHasError] = React.useState(false);
-
-  React.useEffect(() => {
-    const url = src || "";
-    // hide old immediately
-    setDisplayUrl(null);
-    setHasError(false);
-
-    if (!url) {
-      setIsLoading(false);
-      setHasError(true);
-      return;
-    }
-
-    if (loadedRef.current.has(url)) {
-      setDisplayUrl(url);
-      setIsLoading(false);
-      return;
-    }
-
-    setIsLoading(true);
-    setMountedUrls((prev) => {
-      if (prev.has(url)) return prev;
-      const next = new Set(prev);
-      next.add(url);
-      return next;
-    });
-  }, [src]);
-
-  const shouldShow = (u) => displayUrl === u && !isLoading && !hasError;
-
-  return (
-    <div className={`relative ${boxClassName}`} style={boxStyle}>
-      {Array.from(mountedUrls).map((u) => (
-        <img
-          key={u}
-          src={u}
-          alt={alt}
-          className={imgClassName}
-          style={{ display: shouldShow(u) ? "block" : "none" }}
-          loading={loading}
-          draggable={draggable}
-          decoding={decoding}
-          onLoad={() => {
-            loadedRef.current.add(u);
-            if (u === src) {
-              setDisplayUrl(u);
-              setIsLoading(false);
-            }
-          }}
-          onError={() => {
-            if (u !== src) return;
-            setIsLoading(false);
-            setHasError(true);
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
 const getSkillLevelIconUrl = (levelNum) => {
   const n = Number(levelNum);
   if (!Number.isFinite(n) || n <= 0) return "";
@@ -1814,6 +1732,48 @@ const renderTalentCard = (talentIdx, resolved) => {
 
   const skillCnEntry = selectedSkillId ? skillTable?.[selectedSkillId] : null;
   const skillEnEntry = selectedSkillId ? skillTableEN?.[selectedSkillId] : null;
+  // Skill icon (Mode B): keep previously loaded icons mounted to avoid repeated requests when toggling.
+  const selectedSkillIconUrl = getSkillIconUrl(
+    selectedSkillId,
+    skillCnEntry?.iconId || skillEnEntry?.iconId
+  );
+
+  const skillIconLoadedSetRef = React.useRef(new Set());
+  const skillIconPendingUrlRef = React.useRef("");
+  const [mountedSkillIconUrls, setMountedSkillIconUrls] = React.useState(() => new Set());
+  const [displaySkillIconUrl, setDisplaySkillIconUrl] = React.useState("");
+  const [isSkillIconLoading, setIsSkillIconLoading] = React.useState(false);
+  const [skillIconError, setSkillIconError] = React.useState(false);
+
+  React.useEffect(() => {
+    const url = selectedSkillIconUrl;
+    skillIconPendingUrlRef.current = url;
+    setSkillIconError(false);
+
+    if (!url) {
+      setDisplaySkillIconUrl("");
+      setIsSkillIconLoading(false);
+      return;
+    }
+
+    setMountedSkillIconUrls((prev) => {
+      if (prev.has(url)) return prev;
+      const next = new Set(prev);
+      next.add(url);
+      return next;
+    });
+
+    if (skillIconLoadedSetRef.current.has(url)) {
+      // Instantly show if already loaded
+      setDisplaySkillIconUrl(url);
+      setIsSkillIconLoading(false);
+    } else {
+      // Aesthetic: hide old icon while loading the new one
+      setDisplaySkillIconUrl("");
+      setIsSkillIconLoading(true);
+    }
+  }, [selectedSkillIconUrl]);
+
 
   const skillLevels = React.useMemo(() => {
     const a = skillCnEntry?.levels;
@@ -2156,18 +2116,44 @@ const renderTalentCard = (talentIdx, resolved) => {
             <div className="rounded-xl border border-white/10 bg-black/20 p-4">
               <div className="flex flex-col md:flex-row md:items-start gap-4">
                 <div className="shrink-0">
-                  <ModeBImageBox
-                    src={getSkillIconUrl(
-                      selectedSkillId,
-                      skillCnEntry?.iconId || skillEnEntry?.iconId
-                    )}
-                    alt={selectedSkillId}
-                    boxStyle={{ width: 80, height: 80, minWidth: 80 }}
-                    boxClassName="w-20 h-20"
-                    imgClassName="w-full h-full object-contain"
-                    loading="lazy"
-                    draggable={false}
-                  />
+                  <div className="relative" style={{ width: 80, height: 80, minWidth: 80 }}>
+                    {Array.from(mountedSkillIconUrls).map((url) => (
+                      <img
+                        key={url}
+                        src={url}
+                        alt={selectedSkillId}
+                        className="w-20 h-20 object-contain absolute inset-0"
+                        style={{
+                          width: 80,
+                          height: 80,
+                          minWidth: 80,
+                          display:
+                            !isSkillIconLoading &&
+                            !skillIconError &&
+                            displaySkillIconUrl === url
+                              ? "block"
+                              : "none",
+                        }}
+                        draggable={false}
+                        loading="lazy"
+                        onLoad={() => {
+                          skillIconLoadedSetRef.current.add(url);
+                          if (skillIconPendingUrlRef.current === url) {
+                            setDisplaySkillIconUrl(url);
+                            setIsSkillIconLoading(false);
+                          }
+                        }}
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                          if (skillIconPendingUrlRef.current === url) {
+                            setIsSkillIconLoading(false);
+                            setSkillIconError(true);
+                            setDisplaySkillIconUrl("");
+                          }
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
 
                 <div className="min-w-0 flex-1">
@@ -2424,7 +2410,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                 : null;
 
               return (
-                <div key={buffId ? String(buffId) : `buff-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
+                <div key={`${buffId}-${idx0}`} className="rounded-xl border border-white/10 bg-black/20 p-4">
                   <div className="flex items-start gap-3">
                     {iconUrl ? (
                       <img

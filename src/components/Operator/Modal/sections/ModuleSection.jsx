@@ -18,6 +18,39 @@ import traitModVN from "../../../../data/module/TraitMod_vn.json";
 import StatHover, { renderInlineItalic } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 
+// -------------------------
+// Image cache (in-memory)
+// -------------------------
+// Some sections (module image previews) pre-warm images using `new Image()`.
+// Without a cache, switching back and forth can cause repeated network revalidation.
+// This cache ensures each URL is only actively loaded once per session.
+const __IMG_STATUS__ = new Map();
+
+function preloadImageCached(url) {
+  if (!url) return Promise.reject(new Error("no-url"));
+
+  const hit = __IMG_STATUS__.get(url);
+  if (hit === "loaded") return Promise.resolve(url);
+  if (hit && typeof hit.then === "function") return hit; // in-flight promise
+
+  const p = new Promise((resolve, reject) => {
+    const img = new Image();
+    img.decoding = "async";
+    img.onload = () => {
+      __IMG_STATUS__.set(url, "loaded");
+      resolve(url);
+    };
+    img.onerror = (e) => {
+      __IMG_STATUS__.set(url, "error");
+      reject(e);
+    };
+    img.src = url;
+  });
+
+  __IMG_STATUS__.set(url, p);
+  return p;
+}
+
 /** Module icons */
 const MODULE_DIR_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequipdirection/";
@@ -1100,80 +1133,86 @@ export default function ModuleSection(props) {
     return [...new Set(arr)];
   }, [selected?.id, selected?.uniEquipIcon]);
 
-  const MAX_CACHED_MODULE_IMGS = 12;
-  const mountedModuleImgOrderRef = React.useRef([]);
-  const loadedModuleImgUrlsRef = React.useRef(new Set());
-
-  // Mode B: keep already-loaded module images mounted (DOM cache), just hide/show them.
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
-  const [mountedModuleImgUrls, setMountedModuleImgUrls] = React.useState(() => new Set());
-  const [displayModuleImgUrl, setDisplayModuleImgUrl] = React.useState(null);
-  const [isLoadingModuleImg, setIsLoadingModuleImg] = React.useState(false);
-  const [moduleImgError, setModuleImgError] = React.useState(false);
 
-  React.useEffect(() => {
-    setModuleImgIdx(0);
-    setDisplayModuleImgUrl(null);
-    setIsLoadingModuleImg(true);
-    setModuleImgError(false);
-  }, [selected?.id, selected?.uniEquipIcon]);
+/**
+ * Mode B (DOM image cache):
+ * - Keep previously loaded module images mounted so toggling back/forth doesn't re-request them,
+ *   even when spamming the selector.
+ * - Hide the previous image immediately when switching to a new one (aesthetic).
+ */
+const moduleImgLoadedSetRef = React.useRef(new Set());
+const moduleImgPendingUrlRef = React.useRef("");
+const [mountedModuleImgUrls, setMountedModuleImgUrls] = React.useState(() => new Set());
+const [displayModuleImageUrl, setDisplayModuleImageUrl] = React.useState("");
+const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
 
-  const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
+React.useEffect(() => {
+  // When switching module, reset the visible image state.
+  setModuleImgIdx(0);
+  setDisplayModuleImageUrl("");
+  setModuleImgLoaded(false);
+}, [selected?.id, selected?.uniEquipIcon]);
 
-  React.useEffect(() => {
-    const url = activeModuleImageUrl;
-    const len = moduleImageCandidates?.length || 0;
+const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
-    // hide old immediately (thẩm mỹ)
-    setDisplayModuleImgUrl(null);
-    setModuleImgError(false);
-    setIsLoadingModuleImg(!!url);
+// Hide old image immediately when switching, but show instantly if the target URL was already loaded.
+React.useEffect(() => {
+  const url = activeModuleImageUrl;
+  moduleImgPendingUrlRef.current = url;
 
-    if (!isNonEmptyString(url)) {
-      setIsLoadingModuleImg(false);
-      setModuleImgError(true);
-      return;
-    }
+  if (!url) {
+    setDisplayModuleImageUrl("");
+    setModuleImgLoaded(false);
+    return;
+  }
 
-    // If we've already loaded this URL once, show instantly (no new requests)
-    if (loadedModuleImgUrlsRef.current.has(url)) {
-      setDisplayModuleImgUrl(url);
-      setIsLoadingModuleImg(false);
-      return;
-    }
+  setMountedModuleImgUrls((prev) => {
+    if (prev.has(url)) return prev;
+    const next = new Set(prev);
+    next.add(url);
+    return next;
+  });
 
-    // Ensure the URL is mounted once, then keep it in DOM
-    setMountedModuleImgUrls((prev) => {
-      if (prev.has(url)) return prev;
-      const next = new Set(prev);
-      next.add(url);
-      mountedModuleImgOrderRef.current.push(url);
+  if (moduleImgLoadedSetRef.current.has(url)) {
+    setDisplayModuleImageUrl(url);
+    setModuleImgLoaded(true);
+  } else {
+    // Aesthetic: don't show the old image while the new one is loading
+    setDisplayModuleImageUrl("");
+    setModuleImgLoaded(false);
+  }
+}, [activeModuleImageUrl]);
 
-      // LRU trim to avoid unbounded memory growth
-      while (mountedModuleImgOrderRef.current.length > MAX_CACHED_MODULE_IMGS) {
-        const drop = mountedModuleImgOrderRef.current.shift();
-        if (drop && drop !== url) next.delete(drop);
-      }
-      return next;
+// Warm cache for module images to avoid long stalls (especially when switching or falling back)
+React.useEffect(() => {
+  const urls = Array.isArray(moduleImageCandidates) ? moduleImageCandidates : [];
+  const warm = [...new Set([`${MODULE_IMG_BASE}default.png`, ...urls.slice(0, 2)])];
+  warm.forEach((u) => {
+    if (!u) return;
+    preloadImageCached(u).catch(() => {});
+  });
+}, [moduleImageCandidates]);
+
+// If the current image stalls (no load/error), advance to the next candidate quickly
+React.useEffect(() => {
+  const len = moduleImageCandidates?.length || 0;
+  if (!activeModuleImageUrl || len <= 1) return;
+  if (moduleImgLoaded) return;
+  if (moduleImgIdx >= len - 1) return;
+
+  const t = setTimeout(() => {
+    setModuleImgIdx((prev) => {
+      const next = prev + 1;
+      return next < len ? next : prev;
     });
+  }, 2500);
 
-    // Stall fallback: if it doesn't load within 2500ms, try next candidate
-    if (len > 1 && moduleImgIdx < len - 1) {
-      const t = setTimeout(() => {
-        // Only advance if still not loaded for this url
-        if (!loadedModuleImgUrlsRef.current.has(url)) {
-          setModuleImgIdx((prev) => {
-            const next = prev + 1;
-            return next < len ? next : prev;
-          });
-        }
-      }, 2500);
-      return () => clearTimeout(t);
-    }
-  }, [activeModuleImageUrl, moduleImgIdx, moduleImageCandidates]);
+  return () => clearTimeout(t);
+}, [activeModuleImageUrl, moduleImgIdx, moduleImgLoaded, moduleImageCandidates]);
 
-  const moduleImgLoaded =
-    isNonEmptyString(displayModuleImgUrl) && !isLoadingModuleImg && !moduleImgError;
+
+
 const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
     return isNonEmptyString(subProfessionId) ? subProfIconUrl(subProfessionId) : "";
@@ -1291,53 +1330,45 @@ const subProfIcon = React.useMemo(() => {
         <div className="shrink-0">
           {isNonEmptyString(activeModuleImageUrl) ? (
             <div className="relative rounded-2xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center" style={{ width: MODULE_IMG_BOX_SIZE, height: MODULE_IMG_BOX_SIZE }}>
-              {isLoadingModuleImg ? (
+              {!moduleImgLoaded ? (
                 <div className="absolute inset-0 bg-white/5 animate-pulse" />
               ) : null}
 
-              {isLoadingModuleImg ? (
-                <div className="absolute inset-0 bg-white/5 animate-pulse" />
-              ) : null}
-
-              {Array.from(mountedModuleImgUrls).map((u) => (
+              {Array.from(mountedModuleImgUrls).map((url) => (
                 <img
-                  key={u}
-                  src={u}
+                  key={url}
+                  src={url}
                   alt="module"
                   className="w-full h-full object-contain transition-opacity duration-150"
                   style={{
-                    display:
-                      moduleImgLoaded && displayModuleImgUrl === u ? "block" : "none",
-                    opacity:
-                      moduleImgLoaded && displayModuleImgUrl === u ? 1 : 0,
+                    opacity: displayModuleImageUrl === url && moduleImgLoaded ? 1 : 0,
+                    display: displayModuleImageUrl === url ? "block" : "none",
                   }}
                   draggable={false}
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
                   onLoad={() => {
-                    loadedModuleImgUrlsRef.current.add(u);
-                    if (u === activeModuleImageUrl) {
-                      setDisplayModuleImgUrl(u);
-                      setIsLoadingModuleImg(false);
+                    moduleImgLoadedSetRef.current.add(url);
+                    if (moduleImgPendingUrlRef.current === url) {
+                      setDisplayModuleImageUrl(url);
+                      setModuleImgLoaded(true);
                     }
                   }}
                   onError={() => {
-                    if (u !== activeModuleImageUrl) return;
-                    const len = moduleImageCandidates?.length || 0;
-                    setIsLoadingModuleImg(false);
-                    setModuleImgIdx((prev) => {
-                      const next = prev + 1;
-                      if (next < len) return next;
-                      setModuleImgError(true);
-                      return prev;
-                    });
+                    // If this URL is the currently requested one, fallback fast to the next candidate.
+                    if (moduleImgPendingUrlRef.current === url) {
+                      setModuleImgLoaded(false);
+                      setDisplayModuleImageUrl("");
+                      setModuleImgIdx((prev) => {
+                        const len = moduleImageCandidates?.length || 0;
+                        const next = prev + 1;
+                        return next < len ? next : prev;
+                      });
+                    }
                   }}
                 />
-              ))}
-
-
-              {moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
+              ))}{moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
                 <img
                   src={subProfIcon}
                   alt="overlay"
