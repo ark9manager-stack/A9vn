@@ -7,12 +7,13 @@ import StatsSection from "./sections/StatsSection";
 import ModuleSection from "./sections/ModuleSection";
 
 /**
- * Keep already-opened sections mounted to avoid re-fetching heavy assets (images/audio)
- * when switching tabs back and forth.
+ * v3 FIX:
+ * - Keep already-opened sections mounted (so switching tabs doesn't re-fetch assets)
+ * - ALSO keep a valid height chain for sections that use h-full + absolute layout (e.g. SkinsSection)
  *
- * IMPORTANT:
- * - This only works if OperatorContent itself is NOT being remounted by a parent (e.g. key={activeTab}).
- * - We always mount the CURRENT active tab immediately (no 1-render blank).
+ * Root cause of the broken Skins UI in v2:
+ * - v2 introduced an extra wrapper <div> per tab without h-full, which breaks percentage height.
+ *   SkinsSection uses h-full + absolute positioning, so its inner layout collapses.
  */
 const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   const tabIds = useMemo(
@@ -50,14 +51,18 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   );
 
   return (
-    <div className="flex-1 overflow-y-auto p-6">
+    // h-full + min-h-0 ensures children using h-full can resolve height inside flex layouts
+    <div className="flex-1 h-full min-h-0 overflow-y-auto p-6">
       {tabIds.map((id) => {
         const isActive = activeTab === id;
-        // Always mount the active tab; keep previously opened tabs mounted too.
         const shouldMount = isActive || mountedTabs.has(id);
 
         return (
-          <div key={id} style={{ display: isActive ? "block" : "none" }}>
+          // IMPORTANT: add h-full so sections with h-full work (SkinsSection)
+          <div
+            key={id}
+            className={isActive ? "block h-full" : "hidden h-full"}
+          >
             {shouldMount ? renderSection(id) : null}
           </div>
         );
