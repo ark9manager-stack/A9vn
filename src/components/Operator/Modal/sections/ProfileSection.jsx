@@ -393,6 +393,7 @@ export default function ProfileSection({ operator, charId }) {
     getText,
     recruitBgUrl,
     avatarUrl,
+    tokenPanelTitle,
     tokenIconUrl,
     tokenIconFallbackUrl,
     physicalPanel,
@@ -443,6 +444,46 @@ export default function ProfileSection({ operator, charId }) {
       ? `${TOKEN_ICON_BASE_CLASSPOTENTIAL}${iconId}.png`
       : "";
 
+    const activityPotentialItemIdRaw = (() => {
+      if (
+        charDataBase &&
+        Object.prototype.hasOwnProperty.call(charDataBase, "activityPotentialItemId")
+      ) {
+        return charDataBase.activityPotentialItemId;
+      }
+      if (
+        charDataEn &&
+        Object.prototype.hasOwnProperty.call(charDataEn, "activityPotentialItemId")
+      ) {
+        return charDataEn.activityPotentialItemId;
+      }
+      return null;
+    })();
+
+    const activityPotentialItemId =
+      typeof activityPotentialItemIdRaw === "string" ? activityPotentialItemIdRaw : "";
+    const hasActivityVoucher = isNonEmptyString(activityPotentialItemId);
+
+    const _tokenPanelTitle = hasActivityVoucher ? "Thư mục" : "Tín vật";
+
+    const activityIconBase = hasActivityVoucher
+      ? TOKEN_ICON_BASE_CLASSPOTENTIAL.replace(
+          "/classpotential/",
+          resolvedCharId === "char_4091_ulika" ||
+            activityPotentialItemId === "voucher_ulika"
+            ? "/acticon/"
+            : "/",
+        )
+      : "";
+    const activityIconUrl = hasActivityVoucher
+      ? `${activityIconBase}${activityPotentialItemId}.png`
+      : "";
+
+    const finalTokenUrlPrimary = hasActivityVoucher
+      ? activityIconUrl
+      : tokenUrlPrimary;
+    const finalTokenUrlFallback = hasActivityVoucher ? "" : tokenUrlFallback;
+
     const _recruitFallbackText = (() => {
       const itemDesc = pickFirstNonEmpty(
         charDataEn?.itemDesc,
@@ -488,8 +529,9 @@ export default function ProfileSection({ operator, charId }) {
       getText: _getText,
       recruitBgUrl: recruitBg,
       avatarUrl: _avatarUrl,
-      tokenIconUrl: tokenUrlPrimary,
-      tokenIconFallbackUrl: tokenUrlFallback,
+      tokenPanelTitle: _tokenPanelTitle,
+      tokenIconUrl: finalTokenUrlPrimary,
+      tokenIconFallbackUrl: finalTokenUrlFallback,
       physicalPanel: _physicalPanel,
       recruitFallbackText: _recruitFallbackText,
       tokenFallbackText: _tokenFallbackText,
@@ -557,7 +599,7 @@ export default function ProfileSection({ operator, charId }) {
 
         <ImageTextPanel
           id="token"
-          title="Tín vật"
+          title={tokenPanelTitle}
           imgUrl={tokenIconUrl}
           fallbackImgUrl={tokenIconFallbackUrl}
           imgAlt="Token"
