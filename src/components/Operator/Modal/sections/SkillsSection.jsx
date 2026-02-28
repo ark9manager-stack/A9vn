@@ -2145,17 +2145,17 @@ return (
             <div className="rounded-xl border border-white/10 bg-black/20 p-4">
               <div className="flex flex-col md:flex-row md:items-start gap-4">
                 <div className="shrink-0">
-                  <div className="relative" style={{ width: 80, height: 80, minWidth: 80 }}>
+                  <div className="relative" style={{ width: 96, height: 96, minWidth: 96 }}>
                     {Array.from(mountedSkillIconUrls).map((url) => (
                       <img
                         key={url}
                         src={url}
                         alt={selectedSkillId}
-                        className="w-20 h-20 object-contain absolute inset-0"
+                        className="w-24 h-24 object-contain absolute inset-0"
                         style={{
-                          width: 80,
-                          height: 80,
-                          minWidth: 80,
+                          width: 96,
+                          height: 96,
+                          minWidth: 96,
                           opacity:
                             !isSkillIconLoading &&
                             !skillIconError &&
