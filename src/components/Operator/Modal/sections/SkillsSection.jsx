@@ -1276,7 +1276,7 @@ function MaterialIcon({ itemId, count }) {
               draggable={false}
               loading="lazy"
               onError={(e) => {
-                e.currentTarget.style.display = "none";
+                e.currentTarget.style.visibility = "hidden";
               }}
             />
           ) : null}
@@ -2127,12 +2127,18 @@ const renderTalentCard = (talentIdx, resolved) => {
                           width: 80,
                           height: 80,
                           minWidth: 80,
-                          display:
+                          opacity:
                             !isSkillIconLoading &&
                             !skillIconError &&
                             displaySkillIconUrl === url
-                              ? "block"
-                              : "none",
+                              ? 1
+                              : 0,
+                          visibility:
+                            !isSkillIconLoading &&
+                            !skillIconError &&
+                            displaySkillIconUrl === url
+                              ? "visible"
+                              : "hidden",
                         }}
                         draggable={false}
                         loading="lazy"
@@ -2144,7 +2150,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                           }
                         }}
                         onError={(e) => {
-                          e.currentTarget.style.display = "none";
+                          e.currentTarget.style.visibility = "hidden";
                           if (skillIconPendingUrlRef.current === url) {
                             setIsSkillIconLoading(false);
                             setSkillIconError(true);
@@ -2420,7 +2426,7 @@ const renderTalentCard = (talentIdx, resolved) => {
                         draggable={false}
                         loading="lazy"
                         onError={(e) => {
-                          e.currentTarget.style.display = "none";
+                          e.currentTarget.style.visibility = "hidden";
                         }}
                       />
                     ) : null}

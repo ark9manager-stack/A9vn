@@ -1339,10 +1339,11 @@ const subProfIcon = React.useMemo(() => {
                   key={url}
                   src={url}
                   alt="module"
-                  className="w-full h-full object-contain transition-opacity duration-150"
+                  className="absolute inset-0 w-full h-full object-contain transition-opacity duration-150"
                   style={{
                     opacity: displayModuleImageUrl === url && moduleImgLoaded ? 1 : 0,
-                    display: displayModuleImageUrl === url ? "block" : "none",
+                    visibility:
+                      displayModuleImageUrl === url && moduleImgLoaded ? "visible" : "hidden",
                   }}
                   draggable={false}
                   loading="eager"
