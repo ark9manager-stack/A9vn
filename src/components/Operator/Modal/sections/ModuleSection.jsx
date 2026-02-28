@@ -1387,35 +1387,58 @@ React.useEffect(() => {
   }, [charKey, selected?.id]);
 
   const showPotPicker = availablePotRanks.length > 1;
+const ALL_POT_RANKS = [0, 1, 2, 3, 4, 5];
+const availSet = new Set(availablePotRanks);
 
-  const potPicker = (
-    <div className={showPotPicker ? "flex items-center gap-1" : "hidden"}>
-      {availablePotRanks.map((idx0) => {
-        const active = idx0 === potRank;
-        return (
-          <button
-            key={`pot-${idx0}`}
-            type="button"
-            onClick={() => setPotRank(idx0)}
-            className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
-            }`}
-            title={`Pot ${idx0 + 1}`}
-          >
-            <img
-              src={getPotIcon(idx0)}
-              alt={`pot-${idx0}`}
-              className="w-6 h-6 object-contain"
-              draggable={false}
-              loading="lazy"
-            />
-            <span className="text-sm font-semibold tabular-nums">{idx0 + 1}</span>
-          </button>
-        );
-      })}
-    </div>
-  )   );
+// Keep POT icon <img> mounted to avoid repeated requests when switching modules.
+// We render ALL ranks, but ranks not available for the current module are moved offscreen
+// (not display:none) so they don't affect layout but remain mounted.
+const potPicker = (
+  <div className="flex items-center gap-1 relative">
+    {ALL_POT_RANKS.map((idx0) => {
+      const available = availSet.has(idx0);
+      const active = idx0 === potRank;
 
+      const offscreen =
+        !showPotPicker || !available
+          ? {
+              position: "absolute",
+              left: -100000,
+              top: 0,
+              width: 1,
+              height: 1,
+              overflow: "hidden",
+              opacity: 0,
+              pointerEvents: "none",
+              visibility: "hidden",
+            }
+          : undefined;
+
+      return (
+        <button
+          key={`pot-${idx0}`}
+          type="button"
+          onClick={() => setPotRank(idx0)}
+          className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
+            active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+          }`}
+          title={`Pot ${idx0 + 1}`}
+          style={offscreen}
+          disabled={!available}
+        >
+          <img
+            src={getPotIcon(idx0)}
+            alt={`pot-${idx0}`}
+            className="w-6 h-6 object-contain"
+            draggable={false}
+            loading="lazy"
+          />
+          <span className="text-sm font-semibold tabular-nums">{idx0 + 1}</span>
+        </button>
+      );
+    })}
+  </div>
+);
 const isDefaultModule = React.useMemo(() => {
     const id = selected?.id || "";
     const icon = selected?.uniEquipIcon || "";
@@ -1764,199 +1787,116 @@ if (!isNonEmptyString(charKey) || !charData) {
     </div>
   ) : null;
 
-  return (
-              <div key={`row-${selected.id}-${lv}`} className="grid grid-cols-5">
-                {/* Left: level board (≈ 1/5 width) */}
-                <div className="col-span-1 bg-black/25 p-3 flex items-center justify-center border-r border-white/10">
-                  <img
-                    src={`${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`}
-                    alt={`lv-${lv}`}
-                    className="h-10 w-auto object-contain"
-                    draggable={false}
-                    loading="lazy"
-                    onError={(e) => {
-                      e.currentTarget.style.visibility = "hidden";
-                    }}
-                  />
-                </div>
-
-                {/* Right: content (≈ 4/5 width) */}
-                <div className="col-span-4 bg-black/15 p-3">
-                  <div className="flex items-start gap-3">
-                    {/* Left: attributes */}
-                    <div className="min-w-[92px]">
-                      {attrs.length > 0 ? (
-                        <div className="space-y-1">
-                          {attrs.map((a, idx0) => {
-                            const k = a?.key;
-                            const v = a?.value;
-                            if (!isNonEmptyString(k) || !Number.isFinite(Number(v))) return null;
-                            return (
-                              <div
-                                key={`attr-${selected.id}-${lv}-${k}-${idx0}`}
-                                className="text-sm text-white/90 font-semibold tabular-nums"
-                              >
-                                {formatAttrKey(k, isEnglishUI)} {formatAttrValue(v)}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      ) : (
-                        <span className="text-white/40 italic">-</span>
-                      )}
-                    </div>
-
-                    {/* Middle: unlock/upgrade text */}
-                    <div className="min-w-0 flex-1">
-                      {lv >= 2 && isNonEmptyString(rightName) ? (
-                        <div className="mb-1">
-                          <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-xs max-w-full">
-                            <span className="truncate">{rightName}</span>
-                          </span>
-                        </div>
-                      ) : null}
-
-                      <div className={lv === 1 ? "" : "mt-1"}>
-                        {lv === 1 ? (
-                          <>
-                            <div className="text-sm font-semibold text-white">
-                              {rightText}
-                            </div>
-
-                            <div
-                              className="mt-2 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
-                              style={{ overflowWrap: "anywhere" }}
-                            >
-                              {isNonEmptyString(lv1DetailText) ? (
-                                renderTextWithTermNotes(
-                                  lv1DetailText,
-                                  `module-up-${charKey}-${selected.id}-lv1-pot${potRank}`
-                                )
-                              ) : (
-                                <span className="text-white/40 italic">-</span>
-                              )}
-                            </div>
-                          </>
-                        ) : (
-                          <div
-                            className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
-                            style={{ overflowWrap: "anywhere" }}
-                          >
-                            {isNonEmptyString(rightText) ? (
-                              renderTextWithTermNotes(
-                                rightText,
-                                `module-up-${charKey}-${selected.id}-lv${lv}-pot${potRank}`
-                              )
-                            ) : (
-                              <span className="text-white/40 italic">-</span>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {isNonEmptyString(rangeId) ? (
-                      <div className="shrink-0 rounded-xl border border-white/10 bg-black/30 p-3">
-                        <div className="text-sm font-semibold text-white text-center mb-2">
-                          {isEnglishUI ? "Range" : "Phạm vi"}
-                        </div>
-                        {lv === 1 ? (
-                          <SkillRangeGrid baseRangeId={baseRangeIdE2} rangeId={rangeId} />
-                        ) : (
-                          <RangeGrid rangeId={rangeId} />
-                        )}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    ) : null;
-
-  return (
+    return (
     <div className="space-y-4">
-      <InfoTable title="Module" titleRight={potPicker}>
+      <InfoTable title="Module" titleRight={showPotPicker ? potPicker : null}>
         <div className="space-y-4">
           {moduleSelector}
           {moduleDetailCard}
+
           {/* Level board (Mode B per module) */}
-          {modules.map((m, idx0) => {
-            const isActive = idx0 === safeModuleIdx;
-            const mid = String(m?.id || "");
-            const shouldMount = isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
-            if (!shouldMount) return null;
-            return (
-              <div key={`lb-pane-${mid}`} style={{ display: isActive ? "block" : "none" }}>
-                <ModuleLevelBoardPane module={m} isEnglishUI={isEnglishUI} potRank={potRank} baseRangeIdE2={baseRangeIdE2} charKey={charKey} />
-              </div>
-            );
-          })}
+          <div className="relative">
+            {modules.map((m, idx0) => {
+              const isActive = idx0 === safeModuleIdx;
+              const mid = String(m?.id || "");
+              const shouldMount =
+                isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
+
+              if (!shouldMount) return null;
+
+              const offscreen = !isActive
+                ? {
+                    position: "absolute",
+                    left: -100000,
+                    top: 0,
+                    width: 1,
+                    height: 1,
+                    overflow: "hidden",
+                    opacity: 0,
+                    pointerEvents: "none",
+                    visibility: "hidden",
+                  }
+                : undefined;
+
+              return (
+                <div key={`lb-pane-${mid}`} style={offscreen}>
+                  <ModuleLevelBoardPane
+                    module={m}
+                    isEnglishUI={isEnglishUI}
+                    potRank={potRank}
+                    baseRangeIdE2={baseRangeIdE2}
+                    charKey={charKey}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </InfoTable>
 
-            
-{/* Module Missions (Mode B per module) */}
-{modules.map((m, idx0) => {
-  const isActive = idx0 === safeModuleIdx;
-  const mid = String(m?.id || "");
-  const shouldMount = isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
-  if (!shouldMount) return null;
-  return (
-    <div key={`mis-pane-${mid}`} style={{ display: isActive ? "block" : "none" }}>
-      <ModuleMissionsPane module={m} isEnglishUI={isEnglishUI} charKey={charKey} />
-    </div>
-  );
-})}
+      {/* Module Missions (Mode B per module) */}
+      <div className="relative">
+        {modules.map((m, idx0) => {
+          const isActive = idx0 === safeModuleIdx;
+          const mid = String(m?.id || "");
+          const shouldMount =
+            isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
 
-{/* Upgrade Materials (Mode B per module) */}
-{modules.map((m, idx0) => {
-  const isActive = idx0 === safeModuleIdx;
-  const mid = String(m?.id || "");
-  const shouldMount = isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
-  if (!shouldMount) return null;
-  return (
-    <div key={`up-pane-${mid}`} style={{ display: isActive ? "block" : "none" }}>
-      <ModuleUpgradeCostsPane module={m} isEnglishUI={isEnglishUI} charKey={charKey} />
-    </div>
-  );
-})}
-<span
-                            className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                            style={{ backgroundColor: "#D3D3D3" }}
-                          >
-                            {isEnglishUI ? `Trust Required: ${trustPct}%` : `Tin tưởng cần đạt: ${trustPct}%`}
-                          </span>
-                          {u.lv === 1 ? (
-                            <span
-                              className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                              style={{ backgroundColor: "#D3D3D3" }}
-                            >
-                              {isEnglishUI
-                                ? "Complete both Module Missions Required"
-                                : "Yêu cầu hoàn thành nhiệm vụ mở Module"}
-                            </span>
-                          ) : null}
-                        </div>
-      
-                        <div className="mt-3 flex flex-wrap items-start justify-start gap-y-2 gap-x-1.5 sm:gap-x-2">
-                          {Array.isArray(u.costs)
-                            ? u.costs
-                                .filter((c) => c?.id && Number(c?.count) > 0)
-                                .map((c, j) => (
-                                  <MaterialIcon key={`${c.id}-${selected?.id}-${u.lv}-${j}`} itemId={c.id} count={c.count} />
-                                ))
-                            : null}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : null}
-            </InfoTable>
-          ) : null}
+          if (!shouldMount) return null;
+
+          const offscreen = !isActive
+            ? {
+                position: "absolute",
+                left: -100000,
+                top: 0,
+                width: 1,
+                height: 1,
+                overflow: "hidden",
+                opacity: 0,
+                pointerEvents: "none",
+                visibility: "hidden",
+              }
+            : undefined;
+
+          return (
+            <div key={`mis-pane-${mid}`} style={offscreen}>
+              <ModuleMissionsPane module={m} isEnglishUI={isEnglishUI} charKey={charKey} />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Upgrade Materials (Mode B per module) */}
+      <div className="relative">
+        {modules.map((m, idx0) => {
+          const isActive = idx0 === safeModuleIdx;
+          const mid = String(m?.id || "");
+          const shouldMount =
+            isActive || (isNonEmptyString(mid) && mountedModulePaneIds.has(mid));
+
+          if (!shouldMount) return null;
+
+          const offscreen = !isActive
+            ? {
+                position: "absolute",
+                left: -100000,
+                top: 0,
+                width: 1,
+                height: 1,
+                overflow: "hidden",
+                opacity: 0,
+                pointerEvents: "none",
+                visibility: "hidden",
+              }
+            : undefined;
+
+          return (
+            <div key={`up-pane-${mid}`} style={offscreen}>
+              <ModuleUpgradeCostsPane module={m} isEnglishUI={isEnglishUI} charKey={charKey} />
+            </div>
+          );
+        })}
+      </div>
 
       <InfoTable title={isEnglishUI ? "Story" : "Cốt truyện"}>
         {isNonEmptyString(displayStoryText) ? (
