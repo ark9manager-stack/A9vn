@@ -18,7 +18,7 @@
     { "trait": "治疗地面单位时治疗量提升<@ba.kw>15%</>", "trait_vn": "Lượng hồi phục tăng <@ba.kw>15%</> khi hồi cho đồng minh đứng trên ô cận chiến (mặt đất)." },
     { "trait": "同时恢复<@ba.kw>四</>个友方单位的生命", "trait_vn": "Hồi HP cho <@ba.kw>4</>đồng minh cùng lúc" },
     { "trait": "能够阻挡四个敌人", "trait_vn": "Chặn được 4 kẻ địch." },
-    { "trait": "攻击越远的敌人造成的伤害越高（最高提升<@ba.kw>{damage_scale:0%}</>）", "trait_vn": "Kẻ địch càng ở xa, sát thương gây ra càng cao (tăng tối đa tới <@ba.kw>{damage_scale:0%}</>)" },
+    { "trait": "攻击越远的敌人造成的伤害越高（最高提升<@ba.kw>{damage_scale:0%}</>）", "trait_vn": "Kẻ địch càng ở xa, sát thương gây ra càng cao ([[tăng tối đa tới|DeadeyeModY]] <@ba.kw>{damage_scale:0%}</>)" },
     { "trait": "攻击范围内所有敌人移动速度<@ba.kw>-20%</>", "trait_vn": "Kẻ địch trong phạm vi tấn công của bản thân bị <@ba.kw>-20%</> tốc độ di chuyển." },
     { "trait": "技能开启时普通攻击会造成法术伤害，且攻击和受到攻击时对目标额外造成10％攻击力的法术伤害", "trait_vn": "Khi kỹ năng đang kích hoạt, đòn đánh thường sẽ gây <@ba.kw>sát thương phép</>; đồng thời mỗi khi tấn công hoặc bị tấn công, sẽ gây thêm sát thương phép bằng 10% ATK lên mục tiêu." },
     { "trait": "技能发动期间阻挡数变为0，但使身前一名干员阻挡数<@ba.kw>+1</>", "trait_vn": "Trong thời gian kích hoạt kỹ năng sẽ không thể chặn kẻ địch, bù lại +1 số lượng chặn cho một đồng minh ngay phía trước." },

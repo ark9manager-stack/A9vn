@@ -166,5 +166,9 @@
   "ModYDeepcolor": {
     "title": "",
     "text": "-2 DP"
+  },
+  "DeadeyeModY": {
+    "title": "",
+    "text": "Sát thương tăng theo phạm vi tấn công:\n5.0%   6.2%   9.1%    •      •\n0.0%   2.1%   6.2%  10.8%    •\nSELF   0.0%   5.0%  10.0%  15.0%\n0.0%   2.1%   6.2%  10.8%    •\n5.0%   6.2%   9.1%    •      •"
   }
 }
