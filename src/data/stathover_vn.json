@@ -135,6 +135,18 @@
     "title": "Làm chậm/Slow",
     "text": "Giảm 80% tốc độ di chuyển."
   },
+  "SlowerTrait": {
+    "title": "",
+    "text": "0.8 giây"
+  },
+  "Slowerskgoat": {
+    "title": "",
+    "text": "0.1 giây"
+  },
+  "Slowerskgoatp4": {
+    "title": "",
+    "text": "0.13 giây"
+  },
   "Barrier": {
     "title": "Lá chắn/Barrier",
     "text": "Hấp thụ một lượng sát thương nhất định."

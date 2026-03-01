@@ -1337,16 +1337,56 @@ React.useEffect(() => {
 
   const traitModMapVN = React.useMemo(() => {
     const arr = traitModVN?.overrideTraitDataBundle;
-    const m = new Map();
+    const generic = new Map();
+    const byUniEquip = new Map();
+
     if (Array.isArray(arr)) {
       for (const row of arr) {
-        const k = row?.trait;
-        const v = row?.trait_vn;
-        if (isNonEmptyString(k) && isNonEmptyString(v)) m.set(String(k), String(v));
+        const traitCN = row?.trait;
+        if (!isNonEmptyString(traitCN)) continue;
+        const t = String(traitCN);
+
+        // Backward compatible
+        if (isNonEmptyString(row?.trait_vn)) {
+          generic.set(t, String(row.trait_vn));
+        }
+
+        // New format: keys like "uniequip_002_deepcl"
+        for (const [k, v] of Object.entries(row || {})) {
+          if (k === "trait" || k === "trait_vn") continue;
+          if (!String(k).startsWith("uniequip_")) continue;
+          if (!isNonEmptyString(v)) continue;
+
+          const uniequipId = String(k);
+          let m = byUniEquip.get(uniequipId);
+          if (!m) {
+            m = new Map();
+            byUniEquip.set(uniequipId, m);
+          }
+          m.set(t, String(v));
+        }
       }
     }
-    return m;
-  }, []);
+
+    return { generic, byUniEquip };
+  }, [traitModVN]);
+
+  const resolveTraitModVN = React.useCallback(
+    (rawCN) => {
+      if (!isNonEmptyString(rawCN)) return rawCN;
+      const t = String(rawCN);
+
+      const uniequipId = String(selected?.id || "");
+      const per = traitModMapVN?.byUniEquip?.get(uniequipId)?.get(t);
+      if (isNonEmptyString(per)) return String(per);
+
+      const gen = traitModMapVN?.generic?.get(t);
+      if (isNonEmptyString(gen)) return String(gen);
+
+      return rawCN;
+    },
+    [selected?.id, traitModMapVN]
+  );
 
   const phasesByLevel = React.useMemo(() => {
     const entry = selectedBattle || selectedBattleFallbackCN;
@@ -1361,7 +1401,6 @@ React.useEffect(() => {
     return m;
   }, [selectedBattle, selectedBattleFallbackCN]);
 
-  // Potential ranks that actually exist in module candidates
   const availablePotRanks = React.useMemo(() => {
     const set = new Set([0]);
     for (const ph of phasesByLevel.values()) {
@@ -1390,9 +1429,6 @@ React.useEffect(() => {
 const ALL_POT_RANKS = [0, 1, 2, 3, 4, 5];
 const availSet = new Set(availablePotRanks);
 
-// Keep POT icon <img> mounted to avoid repeated requests when switching modules.
-// We render ALL ranks, but ranks not available for the current module are moved offscreen
-// (not display:none) so they don't affect layout but remain mounted.
 const potPicker = (
   <div className="flex items-center gap-1 relative">
     {ALL_POT_RANKS.map((idx0) => {
@@ -1474,24 +1510,20 @@ const isDefaultModule = React.useMemo(() => {
 
   const traitOverrideText = React.useMemo(() => {
     let raw = traitCandidate?.overrideDescripton || "";
-    if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
-      raw = traitModMapVN.get(raw);
-    }
+    if (!isEnglishUI) raw = resolveTraitModVN(raw);
     return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, traitBBMap, isEnglishUI, traitModMapVN]);
+  }, [traitCandidate, traitBBMap, isEnglishUI, resolveTraitModVN]);
 
   const traitAdditionalText = React.useMemo(() => {
-    let raw = "";
-    if (!isEnglishUI && isNonEmptyString(vnOverride?.Trait)) {
-      raw = String(vnOverride.Trait);
-    } else {
-      raw = traitCandidate?.additionalDescription || "";
-      if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
-        raw = traitModMapVN.get(raw);
-      }
-    }
-    return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, traitModMapVN]);
+  let raw = "";
+  if (!isEnglishUI && isNonEmptyString(vnOverride?.Trait)) {
+    raw = String(vnOverride.Trait);
+  } else {
+    raw = traitCandidate?.additionalDescription || "";
+    if (!isEnglishUI) raw = resolveTraitModVN(raw);
+  }
+  return applyBlackboard(raw, traitBBMap);
+}, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, resolveTraitModVN]);
 
   const displayModuleName = React.useMemo(() => {
     if (!selected) return "";

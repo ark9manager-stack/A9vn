@@ -761,8 +761,8 @@
   },
   "char_183_skgoat": {
     "TitleTalent1": "Khảo sát địa chất",
-    "Talent1_2": "Kéo dài thêm thời gian duy trì hiệu ứng <$ba.sluggish>Làm chậm</> của Đặc tính.",
-    "Talent1_2_p4": "Kéo dài thêm một chút thời gian duy trì hiệu ứng <$ba.sluggish>Làm chậm</> của Đặc tính."
+    "Talent1_2": "Kéo dài [[thêm|Slowerskgoat]] thời gian duy trì hiệu ứng <$ba.sluggish>Làm chậm</> của Đặc tính.",
+    "Talent1_2_p4": "Kéo dài [[thêm một chút|Slowerskgoatp4]] thời gian duy trì hiệu ứng <$ba.sluggish>Làm chậm</> của Đặc tính."
   },
   "char_185_frncat": {
     "TitleTalent1": "Liên kích",
