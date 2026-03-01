@@ -145,8 +145,8 @@
     "Talent1_p2": "ATK và DEF +7%<@ba.talpu>(+2%)</>, tăng thêm 4%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
     "Talent1_2": "ATK và DEF +10%, tăng thêm 4% cho mỗi kẻ địch bị chặn.",
     "Talent1_2_p2": "ATK và DEF +12%<@ba.talpu>(+2%)</>, tăng thêm 5%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
-    "Talent2": "Bản thân tăng 20% hiệu quả nhận hồi phục, tăng thành +40% khi HP dưới 50%.",
-    "Talent2_p4": "Bản thân tăng 25%<@ba.talpu>(+5%)</> hiệu quả nhận hồi phục, tăng thành +45%<@ba.talpu>(+5%)</> khi HP dưới 50%."
+    "Talent2": "Hiệu quả hồi phục nhận vào +20%, tăng thành +40% khi HP dưới 50%.",
+    "Talent2_p4": "Hiệu quả hồi phục nhận vào +25%<@ba.talpu>(+5%)</>, tăng thành +45%<@ba.talpu>(+5%)</> khi HP dưới 50%."
   },
   "char_1027_greyy2": {
     "TitleTalent1": "",
@@ -1373,10 +1373,10 @@
   "char_298_susuro": {
     "TitleTalent1": "Phẫu thuật xâm lấn tối thiểu",
     "TitleTalent2": "",
-    "Talent1": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 10% hiệu quả hồi phục.",
-    "Talent1_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 13%<@ba.talpu>(+3%)</> hiệu quả hồi phục.",
-    "Talent1_2": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 20% hiệu quả hồi phục.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận 23%<@ba.talpu>(+3%)</> hiệu quả hồi phục."
+    "Talent1": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 10% hiệu quả hồi phục nhận vào.",
+    "Talent1_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 13%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào.",
+    "Talent1_2": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 20% hiệu quả hồi phục nhận vào.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 23%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào."
   },
   "char_300_phenxi": {
     "TitleTalent1": "",

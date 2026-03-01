@@ -123,6 +123,10 @@
     "title": "Bảo hộ/Sanctuary",
     "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
+  "ba.protect": {
+    "title": "Bảo hộ/Sanctuary",
+    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
+  },
   "Vigor": {
     "title": "Sung sức/Vigor",
     "text": "Khi lượng máu cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
@@ -167,8 +171,12 @@
     "title": "",
     "text": "-2 DP"
   },
+  "ModXrobrta": {
+    "title": "",
+    "text": "-2 DP"
+  },
   "DeadeyeModX": {
     "title": "",
-    "text": "Sát thương tăng theo phạm vi tấn công:\n5.0%   6.2%   9.1%\n0.0%   2.1%   6.2%  10.8%\nSELF   0.0%   5.0%  10.0%  15.0%\n0.0%   2.1%   6.2%  10.8%\n5.0%   6.2%   9.1%"
+    "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n5.0%   6.2%   9.1%\n0.0%   2.1%   6.2%  10.8%\nSELF   0.0%   5.0%  10.0%  15.0%\n0.0%   2.1%   6.2%  10.8%\n5.0%   6.2%   9.1%"
   }
 }
