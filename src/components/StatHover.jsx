@@ -533,7 +533,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
   const tooltipNode = visible ? (
     <div
       ref={tooltipRef}
-      className="fixed z-[999999] w-[300px] rounded-lg border border-white/10 bg-black/90 p-3 text-sm text-white shadow-xl"
+      className="fixed z-[999999] inline-block w-fit max-w-[300px] rounded-lg border border-white/10 bg-black/90 p-3 text-sm text-white shadow-xl"
       style={{ top: pos.top, left: pos.left }}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
@@ -549,7 +549,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
       ) : null}
 
       {isNonEmptyString(text) ? (
-        <div className="text-white/90 whitespace-pre-wrap leading-relaxed">
+        <div className="text-white/90 whitespace-pre-wrap break-words leading-relaxed">
           {renderRich(text, "sh-txt", { allowNewlines: true })}
         </div>
       ) : null}
