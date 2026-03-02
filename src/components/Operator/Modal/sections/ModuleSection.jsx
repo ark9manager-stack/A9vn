@@ -87,14 +87,17 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-
+const SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS = new Set([
+  "uniequip_002_wscoot",
+  "uniequip_002_takila",
+  "uniequip_002_mlynar",
+  "uniequip_002_leizi2",
+]);
 function getBaseRangeIdE2(charData) {
-  // Modules are generally unlocked at E2, so we use Phase 2 range as base.
   const phases = charData?.phases;
   if (Array.isArray(phases) && phases.length > 0) {
     const e2 = phases?.[2]?.rangeId;
     if (isNonEmptyString(e2)) return String(e2);
-    // fallback: last phase that has rangeId
     for (let i = phases.length - 1; i >= 0; i -= 1) {
       const rid = phases?.[i]?.rangeId;
       if (isNonEmptyString(rid)) return String(rid);
@@ -265,14 +268,12 @@ function parseMarkupSegment(
 
     if (isNonEmptyString(noteKeyCtx)) {
       if (String(buf).trim() === "") {
-        // Preserve pure whitespace between markup tokens
         nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
       } else {
         nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
       }
     } else {
       if (String(buf).trim() === "") {
-        // IMPORTANT: don't drop whitespace-only chunks, or words will stick together
         nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
       } else {
         nodes.push(...renderInlineItalic(buf, kp));
@@ -298,7 +299,6 @@ function parseMarkupSegment(
       continue;
     }
 
-    // [[label|noteKey]]
     if (str.startsWith("[[", i)) {
       const close = str.indexOf("]]", i + 2);
       if (close === -1) {
@@ -431,7 +431,6 @@ const getItemIconUrl = (itemId, iconId) => {
   const key = String(raw).trim();
   if (!key) return "";
 
-  // Special case: module unlock token icon lives in acticon/
   if (key.toLowerCase() === "mod_unlock_token") {
     return `${ITEM_ICON_BASE}acticon/mod_unlock_token.png`;
   }
@@ -711,15 +710,10 @@ function pickCharTraitCandidateAtPhase(charData, elitePhaseIdx, potRank) {
     return Number.isFinite(idx) ? idx : 0;
   };
 
-  // 1) Prefer candidates that are unlocked by (<=) target phase.
   const phaseEligible = cands.filter((c) => ph(c) <= elitePhaseIdx);
   const phasePool = phaseEligible.length > 0 ? phaseEligible : cands;
-
-  // 2) Within that, prefer candidates eligible by potRank.
   const potEligible = phasePool.filter((c) => req(c) <= pot);
   const pool = potEligible.length > 0 ? potEligible : phasePool;
-
-  // 3) Pick the most specific: highest phase first, then highest requiredPotentialRank.
   const sorted = [...pool].sort((a, b) => ph(b) - ph(a) || req(b) - req(a));
   return sorted[0] || null;
 }
@@ -1541,11 +1535,19 @@ const isDefaultModule = React.useMemo(() => {
 
   const traitBBMap = React.useMemo(() => buildBlackboardMap(traitCandidate?.blackboard), [traitCandidate]);
 
+  
+
+  const suppressTraitOverride = React.useMemo(() => {
+    const mid = String(selected?.id || "");
+    return SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS.has(mid);
+  }, [selected?.id]);
+
   const traitOverrideText = React.useMemo(() => {
+    if (suppressTraitOverride) return "";
     let raw = traitCandidate?.overrideDescripton || "";
     if (!isEnglishUI) raw = resolveTraitModVN(raw);
     return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, traitBBMap, isEnglishUI, resolveTraitModVN]);
+  }, [traitCandidate, traitBBMap, isEnglishUI, resolveTraitModVN, suppressTraitOverride]);
 
   const traitAdditionalText = React.useMemo(() => {
     let raw = "";
