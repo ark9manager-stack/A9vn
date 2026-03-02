@@ -40,6 +40,7 @@
     { "trait": "拥有较大治疗范围，治疗较远目标时治疗量<@ba.kw>不再降低</>", "trait_vn": "Có phạm vi hồi phục rộng, và lượng hồi phục <@ba.kw>không còn giảm</> cho mục tiêu ở xa" },
     { "trait": "能够阻挡四个敌人", "trait_vn": "Chặn được 4 kẻ địch." },
     { "trait": "再部署时间<@ba.kw>减少</>", "trait_vn": "<@ba.kw>Giảm</> thời gian tái triển khai" },
+    { "trait": "部署后获得<@ba.kw>+100%</>加成", "trait_vn": "Sau khi triển khai, nhận ngay <@ba.kw>+100%</> ATK tích trữ." },
     { "trait": "受到来自自身阻挡单位的伤害降低<@ba.kw>15%</>", "trait_vn": "Giảm <@ba.kw>15%</> sát thương nhận vào từ các kẻ địch đang bị bản thân chặn." },
     { "trait": "攻击周围8格的敌人时攻击力提升至<@ba.kw>{atk_scale:0%}</>", "trait_vn": "ATK tăng lên <@ba.kw>{atk_scale:0%}</> khi tấn công kẻ địch trong phạm vi 8 ô xung quanh bản thân" },
     { "trait": "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0但生命值<@ba.kw>提升</>），持续20秒后自身再次替换<替身>", "trait_vn": "Khi nhận sát thương chí tử sẽ không rút lui, mà chuyển sang <Thế thân> chiến đấu (<Thế thân> có số lượng chặn là 0, bù lại <@ba.kw>tăng</> HP). Sau 20 giây sẽ đổi trở lại bản thể ban đầu." },

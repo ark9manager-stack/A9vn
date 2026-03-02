@@ -30,7 +30,7 @@
     { "hammer": "Đòn tấn công gây sát thương vật lý <@ba.kw>diện rộng</> bằng <@ba.kw>50%</> ATK lên các kẻ địch khác xung quanh mục tiêu chính." },
     { "fighter": "Chặn được 1 kẻ địch." },
     { "instructor": "Có thể tấn công kẻ địch ở vị trí <@ba.kw>tầm xa</>, tăng ATK lên 120% khi tấn công kẻ địch không bị bản thân chặn." },
-    { "librator": "Bình thường sẽ không tấn công và không chặn kẻ địch. Khi chưa kích hoạt kỹ năng sẽ tăng dần ATK lên tối đa <@ba.kw>+{atk:0%}</> trong <@ba.kw>{max_stack_cnt}</> giây，Khi kỹ năng kết thúc, đặt lại ATK được tăng." },
+    { "librator": "Bình thường sẽ không tấn công và không chặn kẻ địch. Khi chưa kích hoạt kỹ năng sẽ tăng dần ATK lên tối đa <@ba.kw>+{atk:0%}</> trong <@ba.kw>{max_stack_cnt}</> giây，Khi kỹ năng kết thúc, chỉ số ATK được tăng quay về ban đầu." },
     { "lord": "Có thể <@ba.kw>tấn công tầm xa</>, nhưng ATK giảm xuống còn 80%." },
     { "mercenary": "Có thể tiêu hao [[DP|DP]] để cường hóa khả năng chiến đấu." },
     { "primguard": "Chặn được 2 kẻ địch, và có thể gây <@ba.kw>sát thương nguyên tố</>" },
