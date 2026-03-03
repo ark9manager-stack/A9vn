@@ -14,7 +14,7 @@ import {
   normalizeCharId,
 } from "../../../../utils/operatorAvatar";
 
-import StatHover from "../../../StatHover";
+import StatHover, { renderAKText } from "../../../StatHover";
 
 const RECRUIT_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
@@ -110,93 +110,9 @@ function getHandbookText({ charId, key }) {
   );
 }
 
-function renderInlineItalic(str, keyPrefix = "t") {
-  const re = /<i>(.*?)<\/i>/gis;
-  const nodes = [];
-  let last = 0;
-  let m;
-
-  while ((m = re.exec(str)) !== null) {
-    const start = m.index;
-    const end = re.lastIndex;
-
-    if (start > last) nodes.push(str.slice(last, start));
-    nodes.push(<i key={`${keyPrefix}-i-${start}-${end}`}>{m[1]}</i>);
-    last = end;
-  }
-
-  if (last < str.length) nodes.push(str.slice(last));
-  return nodes;
-}
-
-function renderLineWithNotes(line, keyPrefix = "line") {
-  if (!line.includes("[[")) {
-    return renderInlineItalic(line, `${keyPrefix}-plain`);
-  }
-
-  const out = [];
-  let i = 0;
-
-  while (true) {
-    const start = line.indexOf("[[", i);
-    if (start === -1) break;
-    if (start > i) {
-      const chunk = line.slice(i, start);
-      out.push(...renderInlineItalic(chunk, `${keyPrefix}-t-${i}`));
-    }
-
-    const end = line.indexOf("]]", start + 2);
-    if (end === -1) {
-      const tail = line.slice(start);
-      out.push(...renderInlineItalic(tail, `${keyPrefix}-broken-${start}`));
-      i = line.length;
-      break;
-    }
-
-    const inner = line.slice(start + 2, end);
-    const pipe = inner.indexOf("|");
-
-    if (pipe === -1) {
-      out.push(
-        ...renderInlineItalic(
-          line.slice(start, end + 2),
-          `${keyPrefix}-raw-${start}`,
-        ),
-      );
-    } else {
-      const label = inner.slice(0, pipe);
-      const noteKey = inner.slice(pipe + 1);
-
-      out.push(
-        <StatHover
-          key={`${keyPrefix}-note-${start}-${end}-${noteKey}`}
-          label={label}
-          noteKey={noteKey}
-        />,
-      );
-    }
-
-    i = end + 2;
-  }
-
-  if (i < line.length) {
-    out.push(...renderInlineItalic(line.slice(i), `${keyPrefix}-tail-${i}`));
-  }
-
-  return out;
-}
-
-function renderMultiline(text) {
+function renderMultiline(text, keyPrefix = "ml") {
   if (!isNonEmptyString(text)) return null;
-
-  const parts = String(text).replace(/\r\n/g, "\n").split("\n");
-
-  return parts.map((line, idx) => (
-    <React.Fragment key={`line-${idx}`}>
-      {renderLineWithNotes(line, `line-${idx}`)}
-      {idx < parts.length - 1 ? <br /> : null}
-    </React.Fragment>
-  ));
+  return <>{renderAKText(String(text), keyPrefix, { preferNoteForDollar: true })}</>;
 }
 
 function rarityToRecruitBg(rarity) {

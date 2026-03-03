@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { ItalicText } from "../../../StatHover";
+import { renderAKText } from "../../../StatHover";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
 import charwordTableEn from "../../../../data/voiceline/charword_table_en.json";
@@ -459,10 +459,7 @@ const VoiceSection = ({ operator }) => {
 
               {/* Text (bigger) */}
               <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
-                <ItalicText
-                  text={text}
-                  keyPrefix={`voice-text-${v.charWordId}`}
-                />
+                {renderAKText(text, `voice-text-${v.charWordId}`, { preferNoteForDollar: true })}
               </div>
             </div>
           );

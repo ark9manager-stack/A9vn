@@ -7,16 +7,23 @@ import traitEN from "../../../../data/operators/trait_en.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
+
 import uniequipTable from "../../../../data/module/uniequip_table.json";
 import uniequipTableEN from "../../../../data/module/uniequip_table_en.json";
 import battleEquipTable from "../../../../data/module/battle_equip_table.json";
 import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.json";
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
-import statHoverVN from "../../../../data/stathover_vn.json";
-import StatHover, { renderInlineItalic } from "../../../StatHover";
+
+import StatHover, { renderAKText } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 
+// -------------------------
+// Image cache (in-memory)
+// -------------------------
+// Some sections (module image previews) pre-warm images using `new Image()`.
+// Without a cache, switching back and forth can cause repeated network revalidation.
+// This cache ensures each URL is only actively loaded once per session.
 const __IMG_STATUS__ = new Map();
 
 function preloadImageCached(url) {
@@ -24,7 +31,7 @@ function preloadImageCached(url) {
 
   const hit = __IMG_STATUS__.get(url);
   if (hit === "loaded") return Promise.resolve(url);
-  if (hit && typeof hit.then === "function") return hit;
+  if (hit && typeof hit.then === "function") return hit; // in-flight promise
 
   const p = new Promise((resolve, reject) => {
     const img = new Image();
@@ -86,17 +93,14 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-const SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS = new Set([
-  "uniequip_002_wscoot",
-  "uniequip_002_takila",
-  "uniequip_002_mlynar",
-  "uniequip_002_leizi2",
-]);
+
 function getBaseRangeIdE2(charData) {
+  // Modules are generally unlocked at E2, so we use Phase 2 range as base.
   const phases = charData?.phases;
   if (Array.isArray(phases) && phases.length > 0) {
     const e2 = phases?.[2]?.rangeId;
     if (isNonEmptyString(e2)) return String(e2);
+    // fallback: last phase that has rangeId
     for (let i = phases.length - 1; i >= 0; i -= 1) {
       const rid = phases?.[i]?.rangeId;
       if (isNonEmptyString(rid)) return String(rid);
@@ -190,12 +194,6 @@ function applyBlackboard(text, bbMap) {
     const direct = lookup(key0);
     if (direct !== undefined) return formatPlaceholderValue(direct, fmt);
 
-    if (key0.includes("@")) {
-      const tail = key0.split("@").pop()?.trim();
-      const v3 = lookup(tail);
-      if (v3 !== undefined) return formatPlaceholderValue(v3, fmt);
-    }
-
     if ((key0.startsWith("-") || key0.startsWith("+")) && key0.length > 1) {
       const k2 = key0.slice(1).trim();
       const v2 = lookup(k2);
@@ -207,19 +205,6 @@ function applyBlackboard(text, bbMap) {
         }
         return formatPlaceholderValue(v2, fmt);
       }
-
-      if (k2.includes("@")) {
-        const tail2 = k2.split("@").pop()?.trim();
-        const v4 = lookup(tail2);
-        if (v4 !== undefined) {
-          if (key0.startsWith("-")) {
-            const n = Number(v4);
-            const vv = Number.isFinite(n) ? -n : v4;
-            return formatPlaceholderValue(vv, fmt);
-          }
-          return formatPlaceholderValue(v4, fmt);
-        }
-      }
     }
 
     return m;
@@ -227,190 +212,9 @@ function applyBlackboard(text, bbMap) {
 }
 
 
-function formatNestedNoteTags(input) {
-  if (!isNonEmptyString(input)) return "";
-  let s = String(input);
-  s = s.replace(/<[@$][a-zA-Z0-9_.-]+>/g, "");
-  s = s.replace(/<\/>/g, "");
-  return s;
-}
-
-function matchCloseTagAt(str, i) {
-  if (typeof str !== "string") return 0;
-  if (str.startsWith("</>", i)) return 3;
-
-  if (str.startsWith("</ >", i)) return 4;
-
-  if (str[i] === "<" && str[i + 1] === "/") {
-    let j = i + 2;
-    while (j < str.length && /\s/.test(str[j])) j += 1;
-    if (str[j] === ">") return j - i + 1;
-  }
-
-  return 0;
-}
-
-function hasVNStatHover(noteKey) {
-  if (!isNonEmptyString(noteKey)) return false;
-
-  if (statHoverVN?.[noteKey]) return true;
-
-  const lower = String(noteKey).toLowerCase();
-  if (statHoverVN?.[lower]) return true;
-
-  const keys = Object.keys(statHoverVN || {});
-  return keys.some((k) => String(k).toLowerCase() === lower);
-}
-
-function parseMarkupSegment(
-  str,
-  keyPrefix,
-  noteKeyCtx = null,
-  startIndex = 0,
-  stopAtClose = false,
-  preferVNNoteForDollar = false
-) {
-  const nodes = [];
-  let i = startIndex;
-  let buf = "";
-
-  const flush = () => {
-    if (buf === "") return;
-    const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
-
-    if (isNonEmptyString(noteKeyCtx)) {
-      if (String(buf).trim() === "") {
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
-      }
-    } else {
-      if (String(buf).trim() === "") {
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(...renderInlineItalic(buf, kp));
-      }
-    }
-    buf = "";
-  };
-
-  while (i < str.length) {
-    const closeLen = matchCloseTagAt(str, i);
-    if (closeLen) {
-      flush();
-      i += closeLen;
-
-      if (stopAtClose) return { nodes, index: i };
-      continue;
-    }
-
-    if (str[i] === "\n") {
-      flush();
-      nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
-      i += 1;
-      continue;
-    }
-
-    if (str.startsWith("[[", i)) {
-      const close = str.indexOf("]]", i + 2);
-      if (close === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-
-      const inner = str.slice(i + 2, close);
-      const barIdx = inner.indexOf("|");
-      if (barIdx === -1) {
-        buf += str.slice(i, close + 2);
-        i = close + 2;
-        continue;
-      }
-
-      const rawLabel = inner.slice(0, barIdx);
-      const noteKey = inner.slice(barIdx + 1).trim();
-      const label = formatNestedNoteTags(rawLabel);
-
-      nodes.push(
-        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
-      );
-
-      i = close + 2;
-      continue;
-    }
-
-    // <@...> or <$...>
-    if (str[i] === "<" && (str[i + 1] === "@" || str[i + 1] === "$")) {
-      const gt = str.indexOf(">", i + 2);
-      if (gt === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-
-      const type = str[i + 1]; // '@' | '$'
-      const key = str.slice(i + 2, gt).trim();
-      const inner = parseMarkupSegment(
-        str,
-        `${keyPrefix}-in-${i}`,
-        type === "@" ? key : noteKeyCtx,
-        gt + 1,
-        true,
-        preferVNNoteForDollar
-      );
-
-      const innerNodes = inner.nodes;
-
-      if (type === "$") {
-        const useVNNote = preferVNNoteForDollar && hasVNStatHover(key);
-
-        if (useVNNote) {
-          nodes.push(
-            <StatHover key={`${keyPrefix}-term-${i}-${key}`} noteKey={key}>
-              {innerNodes}
-            </StatHover>
-          );
-        } else {
-          nodes.push(
-            <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
-              {innerNodes}
-            </StatHover>
-          );
-        }
-      } else {
-        nodes.push(
-          <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
-            {innerNodes}
-          </React.Fragment>
-        );
-      }
-
-      i = inner.index;
-      continue;
-    }
-
-    buf += str[i];
-    i += 1;
-  }
-
-  flush();
-  return { nodes, index: i };
-}
-
-function renderTextWithTermNotes(text, keyPrefix, preferVNNoteForDollar = false) {
+function renderTextWithTermNotes(text, keyPrefix, isEnglishUI = false) {
   if (!isNonEmptyString(text)) return null;
-
-  const normalized = String(text)
-    .split("\r\n").join("\n")
-    .split("\r").join("\n")
-    .split("\\n").join("\n");
-
-  const parsed = parseMarkupSegment(normalized, keyPrefix, null, 0, false, preferVNNoteForDollar);
-  return <>{parsed.nodes}</>;
+  return <>{renderAKText(String(text), keyPrefix, { preferNoteForDollar: !isEnglishUI })}</>;
 }
 
 function buildTraitMap(traitJson) {
@@ -454,6 +258,7 @@ const getItemIconUrl = (itemId, iconId) => {
   const key = String(raw).trim();
   if (!key) return "";
 
+  // Special case: module unlock token icon lives in acticon/
   if (key.toLowerCase() === "mod_unlock_token") {
     return `${ITEM_ICON_BASE}acticon/mod_unlock_token.png`;
   }
@@ -716,31 +521,6 @@ const phaseToEliteIndex = (phase) => {
   return 0;
 };
 
-function pickCharTraitCandidateAtPhase(charData, elitePhaseIdx, potRank) {
-  const cands = charData?.trait?.candidates;
-  if (!Array.isArray(cands) || cands.length === 0) return null;
-
-  const pRank = Number(potRank);
-  const pot = Number.isFinite(pRank) ? pRank : 0;
-
-  const req = (c) => {
-    const n = Number(c?.requiredPotentialRank);
-    return Number.isFinite(n) ? n : 0;
-  };
-
-  const ph = (c) => {
-    const idx = phaseToEliteIndex(c?.unlockCondition?.phase);
-    return Number.isFinite(idx) ? idx : 0;
-  };
-
-  const phaseEligible = cands.filter((c) => ph(c) <= elitePhaseIdx);
-  const phasePool = phaseEligible.length > 0 ? phaseEligible : cands;
-  const potEligible = phasePool.filter((c) => req(c) <= pot);
-  const pool = potEligible.length > 0 ? potEligible : phasePool;
-  const sorted = [...pool].sort((a, b) => ph(b) - ph(a) || req(b) - req(a));
-  return sorted[0] || null;
-}
-
 function modTypeLabel(typeName2) {
   const t = typeName2 == null ? null : String(typeName2);
   if (!t) return "Original";
@@ -831,9 +611,10 @@ function pickBestCandidateByPot(candidates, potRank) {
   };
 
   const priority = (c) => {
+    // lower = better
     const src = String(c?._src || "");
-    const srcScore = src === "talent" ? 0 : 1;
-    const hasText = isNonEmptyString(c?.upgradeDescription) ? 0 : 1;
+    const srcScore = src === "talent" ? 0 : 1; // prefer talent bundle
+    const hasText = isNonEmptyString(c?.upgradeDescription) ? 0 : 1; // prefer lines that actually render
     const hasName = isNonEmptyString(c?.name) ? 0 : 1;
     return hasText * 100 + srcScore * 10 + hasName;
   };
@@ -844,7 +625,7 @@ function pickBestCandidateByPot(candidates, potRank) {
   const pool = eligible.length > 0 ? eligible : withReq;
 
   pool.sort((a, b) => {
-    const dReq = b._req - a._req;
+    const dReq = b._req - a._req; // highest pot requirement first (<= potRank)
     if (dReq !== 0) return dReq;
     return priority(a) - priority(b);
   });
@@ -872,6 +653,7 @@ function collectUpgradeCandidatesForPot(phase) {
     const c1 = part?.addOrOverrideTalentDataBundle?.candidates;
     if (Array.isArray(c1)) {
       for (const c of c1) {
+        // Only keep upgrade lines (avoid TRAIT candidates that don't have upgradeDescription)
         if (isNonEmptyString(c?.upgradeDescription)) all.push({ ...c, _src: "talent" });
       }
     }
@@ -879,6 +661,7 @@ function collectUpgradeCandidatesForPot(phase) {
     const c2 = part?.overrideTraitDataBundle?.candidates;
     if (Array.isArray(c2)) {
       for (const c of c2) {
+        // Some modules store upgrade lines here; keep only if it has upgradeDescription
         if (isNonEmptyString(c?.upgradeDescription)) all.push({ ...c, _src: "trait" });
       }
     }
@@ -894,6 +677,11 @@ function trustToPercent(raw) {
   return Math.min(100, Math.round(n / 100));
 }
 
+/**
+ * Module panes (Mode B) for icon-heavy parts.
+ * These panes are mounted once per module id and then hidden via CSS when inactive.
+ * This prevents repeated image requests (Initiator: Other) when users spam-switch modules.
+ */
 function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, charKey }) {
   const id = module?.id;
   const selectedBattle = React.useMemo(() => {
@@ -1040,7 +828,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                             style={{ overflowWrap: "anywhere" }}
                           >
                             {isNonEmptyString(lv1DetailText) ? (
-                              renderTextWithTermNotes(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`, !isEnglishUI)
+                              renderTextWithTermNotes(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`, isEnglishUI)
                             ) : (
                               <span className="text-white/40 italic">-</span>
                             )}
@@ -1052,7 +840,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                           style={{ overflowWrap: "anywhere" }}
                         >
                           {isNonEmptyString(rightText) ? (
-                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`, !isEnglishUI)
+                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`, isEnglishUI)
                           ) : (
                             <span className="text-white/40 italic">-</span>
                           )}
@@ -1118,7 +906,7 @@ function ModuleMissionsPane({ module, isEnglishUI, charKey }) {
         {missionTexts.map((t, idx0) => (
           <div key={`mis-${id}-${idx0}`} className="text-white/95 leading-relaxed flex gap-2">
             <span className="shrink-0">•</span>
-            <div className="min-w-0">{renderTextWithTermNotes(t, `module-mission-${id}-${idx0}`, !isEnglishUI)}</div>
+            <div className="min-w-0">{renderTextWithTermNotes(t, `module-mission-${id}-${idx0}`, isEnglishUI)}</div>
           </div>
         ))}
       </div>
@@ -1266,6 +1054,7 @@ export default function ModuleSection(props) {
   const moduleIds = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return [];
 
+    // Prefer CN list as base order, but merge EN list to avoid missing modules
     const cnList = Array.isArray(uniequipTable?.charEquip?.[charKey]) ? uniequipTable.charEquip[charKey] : [];
     const enList = Array.isArray(uniequipTableEN?.charEquip?.[charKey]) ? uniequipTableEN.charEquip[charKey] : [];
 
@@ -1282,6 +1071,7 @@ export default function ModuleSection(props) {
       }
     };
 
+    // CN first to keep expected in-game ordering, then append EN-only ids.
     push(cnList);
     push(enList);
 
@@ -1298,9 +1088,11 @@ export default function ModuleSection(props) {
 
       const metaCharId = cnMeta?.charId || enMeta?.charId || meta?.charId || "";
       if (isNonEmptyString(metaCharId) && isNonEmptyString(charKey) && String(metaCharId) !== String(charKey)) {
+        // Defensive: avoid mixing module metadata between different operators
         continue;
       }
 
+      // Treat any uniequip_001_* as the ORIGINAL module
       const forcedOriginal = String(id).startsWith("uniequip_001_");
 
       const typeName2 = forcedOriginal
@@ -1333,6 +1125,9 @@ export default function ModuleSection(props) {
   const safeModuleIdx = clamp(activeModuleIdx, 0, Math.max(0, modules.length - 1));
   const selected = modules?.[safeModuleIdx] || null;
 
+
+// Mode B for module sub-panels (materials/level-board/missions):
+// keep previously selected module panes mounted so their icon <img> elements don't re-request when switching back.
 const [mountedModulePaneIds, setMountedModulePaneIds] = React.useState(() => {
   const s = new Set();
   if (selected?.id) s.add(String(selected.id));
@@ -1340,6 +1135,7 @@ const [mountedModulePaneIds, setMountedModulePaneIds] = React.useState(() => {
 });
 
 React.useEffect(() => {
+  // Reset when switching operator
   const s = new Set();
   if (selected?.id) s.add(String(selected.id));
   setMountedModulePaneIds(s);
@@ -1377,57 +1173,19 @@ React.useEffect(() => {
     return moduleVN?.[id] || null;
   }, [selected?.id]);
 
+
   const traitModMapVN = React.useMemo(() => {
     const arr = traitModVN?.overrideTraitDataBundle;
-
-    const generic = new Map();
-    const byUniEquip = new Map();
-
+    const m = new Map();
     if (Array.isArray(arr)) {
       for (const row of arr) {
-        const traitCN = row?.trait;
-        if (!isNonEmptyString(traitCN)) continue;
-        const t = String(traitCN);
-
-        if (isNonEmptyString(row?.trait_vn)) {
-          generic.set(t, String(row.trait_vn));
-        }
-
-        for (const [k, v] of Object.entries(row || {})) {
-          if (k === "trait" || k === "trait_vn") continue;
-          if (!String(k).startsWith("uniequip_")) continue;
-          if (!isNonEmptyString(v)) continue;
-
-          const uniequipId = String(k);
-          let m = byUniEquip.get(uniequipId);
-          if (!m) {
-            m = new Map();
-            byUniEquip.set(uniequipId, m);
-          }
-          m.set(t, String(v));
-        }
+        const k = row?.trait;
+        const v = row?.trait_vn;
+        if (isNonEmptyString(k) && isNonEmptyString(v)) m.set(String(k), String(v));
       }
     }
-
-    return { generic, byUniEquip };
-  }, [traitModVN]);
-
-  const resolveTraitModVN = React.useCallback(
-    (rawCN) => {
-      if (!isNonEmptyString(rawCN)) return rawCN;
-      const t = String(rawCN);
-
-      const uniequipId = String(selected?.id || "");
-      const per = traitModMapVN?.byUniEquip?.get(uniequipId)?.get(t);
-      if (isNonEmptyString(per)) return String(per);
-
-      const gen = traitModMapVN?.generic?.get(t);
-      if (isNonEmptyString(gen)) return String(gen);
-
-      return rawCN;
-    },
-    [selected?.id, traitModMapVN]
-  );
+    return m;
+  }, []);
 
   const phasesByLevel = React.useMemo(() => {
     const entry = selectedBattle || selectedBattleFallbackCN;
@@ -1470,6 +1228,10 @@ React.useEffect(() => {
   const showPotPicker = availablePotRanks.length > 1;
 const ALL_POT_RANKS = [0, 1, 2, 3, 4, 5];
 const availSet = new Set(availablePotRanks);
+
+// Keep POT icon <img> mounted to avoid repeated requests when switching modules.
+// We render ALL ranks, but ranks not available for the current module are moved offscreen
+// (not display:none) so they don't affect layout but remain mounted.
 const potPicker = (
   <div className="flex items-center gap-1 relative">
     {ALL_POT_RANKS.map((idx0) => {
@@ -1529,14 +1291,6 @@ const isDefaultModule = React.useMemo(() => {
     );
   }, [selected?.id, selected?.uniEquipIcon, selected?.typeIcon, selected?.typeName2]);
 
-  const baseTraitCandidateE2 = React.useMemo(() => {
-    return pickCharTraitCandidateAtPhase(charData, 2, potRank);
-  }, [charData, potRank]);
-
-  const baseTraitBBMapE2 = React.useMemo(() => {
-    return buildBlackboardMap(baseTraitCandidateE2?.blackboard);
-  }, [baseTraitCandidateE2]);
-
   const baseTraitText = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
     const rarity = charData?.rarity ?? operator?.rarity;
@@ -1545,11 +1299,10 @@ const isDefaultModule = React.useMemo(() => {
     const baseDescEN = charDataEN?.description ?? "";
     const baseDesc = isEnglishUI ? baseDescEN || baseDescCN : baseDescCN;
 
-    const raw = resolveTraitTexts({ subProfessionId, rarity, description: baseDesc }, traitMap).mainText;
+    return resolveTraitTexts({ subProfessionId, rarity, description: baseDesc }, traitMap).mainText;
+  }, [charData, charDataEN, operator, isEnglishUI, traitMap]);
 
-    return applyBlackboard(raw, baseTraitBBMapE2);
-  }, [charData, charDataEN, operator, isEnglishUI, traitMap, baseTraitBBMapE2]);
-
+  // Trait candidate depends on potRank (to match Talent-like behavior)
   const traitCandidate = React.useMemo(() => {
     const ph1 = phasesByLevel.get(1) || null;
     if (!ph1) return null;
@@ -1558,19 +1311,13 @@ const isDefaultModule = React.useMemo(() => {
 
   const traitBBMap = React.useMemo(() => buildBlackboardMap(traitCandidate?.blackboard), [traitCandidate]);
 
-  
-
-  const suppressTraitOverride = React.useMemo(() => {
-    const mid = String(selected?.id || "");
-    return SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS.has(mid);
-  }, [selected?.id]);
-
   const traitOverrideText = React.useMemo(() => {
-    if (suppressTraitOverride) return "";
     let raw = traitCandidate?.overrideDescripton || "";
-    if (!isEnglishUI) raw = resolveTraitModVN(raw);
+    if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
+      raw = traitModMapVN.get(raw);
+    }
     return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, traitBBMap, isEnglishUI, resolveTraitModVN, suppressTraitOverride]);
+  }, [traitCandidate, traitBBMap, isEnglishUI, traitModMapVN]);
 
   const traitAdditionalText = React.useMemo(() => {
     let raw = "";
@@ -1578,10 +1325,12 @@ const isDefaultModule = React.useMemo(() => {
       raw = String(vnOverride.Trait);
     } else {
       raw = traitCandidate?.additionalDescription || "";
-      if (!isEnglishUI) raw = resolveTraitModVN(raw);
+      if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
+        raw = traitModMapVN.get(raw);
+      }
     }
     return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, resolveTraitModVN]);
+  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, traitModMapVN]);
 
   const displayModuleName = React.useMemo(() => {
     if (!selected) return "";
@@ -1619,6 +1368,12 @@ const isDefaultModule = React.useMemo(() => {
 
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
 
+/**
+ * Mode B (DOM image cache):
+ * - Keep previously loaded module images mounted so toggling back/forth doesn't re-request them,
+ *   even when spamming the selector.
+ * - Hide the previous image immediately when switching to a new one (aesthetic).
+ */
 const moduleImgLoadedSetRef = React.useRef(new Set());
 const moduleImgPendingUrlRef = React.useRef("");
 const [mountedModuleImgUrls, setMountedModuleImgUrls] = React.useState(() => new Set());
@@ -1626,6 +1381,7 @@ const [displayModuleImageUrl, setDisplayModuleImageUrl] = React.useState("");
 const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
 
 React.useEffect(() => {
+  // When switching module, reset the visible image state.
   setModuleImgIdx(0);
   setDisplayModuleImageUrl("");
   setModuleImgLoaded(false);
@@ -1633,6 +1389,7 @@ React.useEffect(() => {
 
 const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
+// Hide old image immediately when switching, but show instantly if the target URL was already loaded.
 React.useEffect(() => {
   const url = activeModuleImageUrl;
   moduleImgPendingUrlRef.current = url;
@@ -1654,11 +1411,13 @@ React.useEffect(() => {
     setDisplayModuleImageUrl(url);
     setModuleImgLoaded(true);
   } else {
+    // Aesthetic: don't show the old image while the new one is loading
     setDisplayModuleImageUrl("");
     setModuleImgLoaded(false);
   }
 }, [activeModuleImageUrl]);
 
+// Warm cache for module images to avoid long stalls (especially when switching or falling back)
 React.useEffect(() => {
   const urls = Array.isArray(moduleImageCandidates) ? moduleImageCandidates : [];
   const warm = [...new Set([`${MODULE_IMG_BASE}default.png`, ...urls.slice(0, 2)])];
@@ -1668,6 +1427,7 @@ React.useEffect(() => {
   });
 }, [moduleImageCandidates]);
 
+// If the current image stalls (no load/error), advance to the next candidate quickly
 React.useEffect(() => {
   const len = moduleImageCandidates?.length || 0;
   if (!activeModuleImageUrl || len <= 1) return;
@@ -1782,6 +1542,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                     }
                   }}
                   onError={() => {
+                    // If this URL is the currently requested one, fallback fast to the next candidate.
                     if (moduleImgPendingUrlRef.current === url) {
                       setModuleImgLoaded(false);
                       setDisplayModuleImageUrl("");
@@ -1823,7 +1584,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                 style={{ overflowWrap: "anywhere" }}
               >
                 {isNonEmptyString(baseTraitText) ? (
-                  renderTextWithTermNotes(baseTraitText, `module-trait-base-${charKey}-${selected.id}`, !isEnglishUI)
+                  renderTextWithTermNotes(baseTraitText, `module-trait-base-${charKey}-${selected.id}`, isEnglishUI)
                 ) : (
                   <span className="text-white/40 italic">-</span>
                 )}
@@ -1839,7 +1600,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                     <span className="inline-flex items-center rounded-md bg-amber-500/20 text-amber-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Improve Trait" : "Cải thiện đặc tính"}
                     </span>
-                    {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`, !isEnglishUI)}
+                    {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`, isEnglishUI)}
                     {isNonEmptyString(traitAdditionalText) ? <br /> : null}
                   </>
                 ) : null}
@@ -1848,13 +1609,13 @@ if (!isNonEmptyString(charKey) || !charData) {
                 {isNonEmptyString(traitAdditionalText) ? (
                   <>
                     {isNonEmptyString(baseTraitText)
-                      ? renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`, !isEnglishUI)
+                      ? renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`, isEnglishUI)
                       : null}
                     {isNonEmptyString(baseTraitText) ? <br /> : null}
                     <span className="inline-flex items-center rounded-md bg-sky-500/20 text-sky-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Additional Trait" : "Thêm đặc tính"}
                     </span>
-                    {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`, !isEnglishUI)}
+                    {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`, isEnglishUI)}
                   </>
                 ) : null}
               </div>
@@ -1979,7 +1740,7 @@ if (!isNonEmptyString(charKey) || !charData) {
       <InfoTable title={isEnglishUI ? "Story" : "Cốt truyện"}>
         {isNonEmptyString(displayStoryText) ? (
           <div className="text-white/95 leading-relaxed" style={{ overflowWrap: "anywhere" }}>
-            {renderTextWithTermNotes(displayStoryText, `module-story-${selected?.id}`, !isEnglishUI)}
+            {renderTextWithTermNotes(displayStoryText, `module-story-${selected?.id}`, isEnglishUI)}
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>

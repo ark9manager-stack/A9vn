@@ -14,7 +14,7 @@ import buildingData from "../../../../data/operators/building_data.json";
 import buildingDataEN from "../../../../data/operators/building_data_en.json";
 import buildingVN from "../../../../data/operators/building_vn.json";
 import itemTable from "../../../../data/operators/item_table.json";
-import StatHover, { renderInlineItalic } from "../../../StatHover";
+import StatHover, { renderAKText } from "../../../StatHover";
 
 /** Icons (Elite) */
 const ELITE_ICON_BASE =
@@ -66,298 +66,10 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-function formatNestedNoteTags(input) {
-  if (!isNonEmptyString(input)) return "";
-  let s = String(input);
-  s = s.replace(/<[@$][a-zA-Z0-9_.-]+>/g, "");
-  s = s.replace(/<\/>/g, "");
-  return s;
-}
-
-function matchCloseTagAt(str, i) {
-  if (typeof str !== "string") return 0;
-  if (str.startsWith("</>", i)) return 3;
-
-  if (str.startsWith("</ >", i)) return 4;
-
-  if (str[i] === "<" && str[i + 1] === "/") {
-    let j = i + 2;
-    while (j < str.length && /\s/.test(str[j])) j += 1;
-    if (str[j] === ">") return j - i + 1;
-  }
-
-  return 0;
-}
-
-function parseMarkupSegment(
-  str,
-  keyPrefix,
-  noteKeyCtx = null,
-  startIndex = 0,
-  stopAtClose = false
-) {
-  const nodes = [];
-  let i = startIndex;
-  let buf = "";
-
-  const flush = () => {
-    if (buf === "") return;
-    const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
-
-    if (isNonEmptyString(noteKeyCtx)) {
-      if (String(buf).trim() === "") {
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
-      }
-    } else {
-      if (String(buf).trim() === "") {
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(...renderInlineItalic(buf, kp));
-      }
-    }
-    buf = "";
-  };
-
-  while (i < str.length) {
-    const closeLen = matchCloseTagAt(str, i);
-    if (closeLen) {
-      flush();
-      i += closeLen;
-
-      if (stopAtClose) return { nodes, index: i };
-      continue;
-    }
-
-    if (str[i] === "\n") {
-      flush();
-      nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
-      i += 1;
-      continue;
-    }
-
-    // [[label|noteKey]]
-    if (str.startsWith("[[", i)) {
-      const close = str.indexOf("]]", i + 2);
-      if (close === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-
-      const inner = str.slice(i + 2, close);
-      const barIdx = inner.indexOf("|");
-      if (barIdx === -1) {
-        buf += str.slice(i, close + 2);
-
-      i = close + 2;
-        continue;
-      }
-
-      const rawLabel = inner.slice(0, barIdx);
-      const noteKey = inner.slice(barIdx + 1).trim();
-      const label = formatNestedNoteTags(rawLabel);
-
-      nodes.push(
-        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
-      );
-
-      i = close + 2;
-      continue;
-    }
-
-    // <@...> or <$...>
-    if (str[i] === "<" && (str[i + 1] === "@" || str[i + 1] === "$")) {
-      const gt = str.indexOf(">", i + 2);
-      if (gt === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-
-      const type = str[i + 1];
-      const key = str.slice(i + 2, gt).trim();
-      const inner = parseMarkupSegment(
-        str,
-        `${keyPrefix}-in-${i}`,
-        type === "@" ? key : noteKeyCtx,
-        gt + 1,
-        true
-      );
-
-      const innerNodes = inner.nodes;
-
-      if (type === "$") {
-        nodes.push(
-          <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
-            {innerNodes}
-          </StatHover>
-        );
-      } else {
-        nodes.push(
-          <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
-            {innerNodes}
-          </React.Fragment>
-        );
-      }
-
-      i = inner.index;
-      continue;
-    }
-
-    buf += str[i];
-    i += 1;
-  }
-
-  flush();
-  return { nodes, index: i };
-}
-
-function parseMarkupHovers(
-  str,
-  keyPrefix,
-  noteKeyCtx = null,
-  startIndex = 0,
-  stopAtClose = false
-) {
-  const nodes = [];
-  let i = startIndex;
-  let buf = "";
-
-  const flush = () => {
-    if (buf === "") return;
-    const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
-
-    if (isNonEmptyString(noteKeyCtx)) {
-      if (String(buf).trim() === "") {
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
-      }
-    } else {
-      if (String(buf).trim() === "") {
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(...renderInlineItalic(buf, kp));
-      }
-    }
-    buf = "";
-  };
-
-  while (i < str.length) {
-    const closeLen = matchCloseTagAt(str, i);
-    if (closeLen) {
-      flush();
-      i += closeLen;
-      if (stopAtClose) return { nodes, index: i };
-      continue;
-    }
-
-    if (str[i] === "\n") {
-      flush();
-      nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
-      i += 1;
-      continue;
-    }
-
-    // [[label|noteKey]]
-    if (str.startsWith("[[", i)) {
-      const close = str.indexOf("]]", i + 2);
-      if (close === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-      const inner = str.slice(i + 2, close);
-      const barIdx = inner.indexOf("|");
-      if (barIdx === -1) {
-        buf += str.slice(i, close + 2);
-
-      i = close + 2;
-        continue;
-      }
-
-      const rawLabel = inner.slice(0, barIdx);
-      const noteKey = inner.slice(barIdx + 1).trim();
-      const label = formatNestedNoteTags(rawLabel);
-
-      nodes.push(
-        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
-      );
-
-      i = close + 2;
-      continue;
-    }
-
-    // <@...> or <$...>
-    if (str[i] === "<" && (str[i + 1] === "@" || str[i + 1] === "$")) {
-      const gt = str.indexOf(">", i + 2);
-      if (gt === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      const type = str[i + 1];
-      const key = str.slice(i + 2, gt).trim();
-
-      flush();
-
-      const innerKeyPrefix = `${keyPrefix}-${type}${key}-${i}`;
-      const inner = parseMarkupHovers(
-        str,
-        innerKeyPrefix,
-        type === "@" ? key : noteKeyCtx,
-        gt + 1,
-        true
-      );
-      if (type === "$") {
-        nodes.push(
-          <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
-            {inner.nodes}
-          </StatHover>
-        );
-      } else {
-        nodes.push(
-          <React.Fragment key={`${keyPrefix}-${type}-${i}-${key}`}>{inner.nodes}</React.Fragment>
-        );
-      }
-
-      i = inner.index;
-      continue;
-    }
-
-    buf += str[i];
-    i += 1;
-  }
-
-  flush();
-  return { nodes, index: i };
-}
-
-
-function renderTextWithTermNotes(text, keyPrefix) {
+function renderTextWithHovers(text, keyPrefix = "txt", isEnglishUI = false) {
   if (!isNonEmptyString(text)) return null;
-
-  // Normalize line breaks without regex literals
-  const normalized = String(text)
-    .split("\r\n").join("\n")
-    .split("\r").join("\n")
-    // Some localized strings contain literal "\\n"
-    .split("\\n").join("\n");
-
-  const parsed = parseMarkupSegment(normalized, keyPrefix);
-  return <>{parsed.nodes}</>;
+  return <>{renderAKText(String(text), keyPrefix, { preferNoteForDollar: !isEnglishUI })}</>;
 }
-
-
 
 function buildTraitMap(traitJson) {
   const list = traitJson?.traitDescription;
@@ -1040,68 +752,6 @@ function pickVariantByHeaderOption(variants, opt) {
   return lePhase || variants[variants.length - 1];
 }
 
-function renderLineWithHovers(line, keyPrefix) {
-  if (!isNonEmptyString(line)) return null;
-
-  // [[label|noteKey]] OR <@noteKey>label</> OR <$noteKey>label</>
-  const re = /\[\[([\s\S]*?)\|([\s\S]*?)\]\]|<([@$])([a-zA-Z0-9_.-]+)>([\s\S]*?)<\/>/g;
-
-  const nodes = [];
-  let last = 0;
-  let m;
-
-  const pushInline = (txt, kp) => {
-    if (!isNonEmptyString(txt)) return;
-    nodes.push(...renderInlineItalic(txt, kp));
-  };
-
-  while ((m = re.exec(line)) !== null) {
-    const start = m.index;
-    const end = re.lastIndex;
-
-    if (start > last) pushInline(line.slice(last, start), `${keyPrefix}-t-${last}`);
-
-    // [[label|noteKey]]
-    if (typeof m[1] === "string" && typeof m[2] === "string") {
-      const label = formatNestedNoteTags(m[1]);
-      const noteKey = m[2].trim();
-
-      nodes.push(
-        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
-      );last = end;
-      continue;
-    }
-
-    // <@noteKey>label</> or <$noteKey>label</>
-    if (typeof m[4] === "string" && typeof m[5] === "string") {
-      const noteKey = m[4].trim();
-      const label = formatNestedNoteTags(m[5]);
-      nodes.push(<StatHover key={`${keyPrefix}-h-${start}`} label={label} noteKey={noteKey} />);
-      last = end;
-      continue;
-    }
-
-    // Fallback
-    pushInline(line.slice(start, end), `${keyPrefix}-u-${start}`);
-    last = end;
-  }
-
-  if (last < line.length) pushInline(line.slice(last), `${keyPrefix}-t-${last}`);
-
-  return nodes;
-}
-
-function renderTextWithHovers(text, keyPrefix = "txt") {
-  if (!isNonEmptyString(text)) return null;
-
-  const normalized = String(text)
-    .split("\r\n").join("\n")
-    .split("\r").join("\n")
-    .split("\\n").join("\n");
-
-  const parsed = parseMarkupHovers(normalized, keyPrefix);
-  return <>{parsed.nodes}</>;
-}
 
 function RangeGrid({ rangeId }) {
   const grids = rangeId ? rangeTable?.[rangeId]?.grids : null;
@@ -1369,6 +1019,7 @@ export default function SkillsSection(props) {
     const candidatesEN = getTraitCandidates(charDataEN);
     const candEnByPhase = new Map(candidatesEN.map((x) => [x.phaseIndex, x.cand]));
 
+    // No per-phase trait data → just render the base (translated) trait text.
     if (candidates.length === 0) {
       const { mainText, extraText } = resolveTraitTexts(
         { subProfessionId, rarity, description: baseDesc },
@@ -1398,6 +1049,7 @@ export default function SkillsSection(props) {
     const uniq = new Set(variants.map((v) => `${v.text}||${v.extraText || ""}`));
     const showElite = variants.length > 1 && uniq.size > 1;
 
+    // If all phases render the same text → use ONE (pick highest phase) and hide Elite buttons.
     if (!showElite) {
       return { variants: [variants[variants.length - 1]], showElite: false };
     }
@@ -1451,10 +1103,14 @@ export default function SkillsSection(props) {
     </div>
   ) : null;
 
+  /** -----------------------------
+ * Talents
+ * ----------------------------- */
 const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
 const talentBlocks = React.useMemo(() => {
   const raw = charData?.talents;
   if (!Array.isArray(raw)) return [];
+  // Filter out hidden/placeholder talent blocks (e.g. isHideTalent=true with empty name/description)
   return raw.filter(isValidTalentBlock);
 }, [charData]);
 
@@ -1464,6 +1120,7 @@ const talentBlocksEN = React.useMemo(() => {
   return raw.filter(isValidTalentBlock);
 }, [charDataEN]);
 
+// Potential ranks that actually exist in this operator's talent candidates
 const availablePotRanks = React.useMemo(() => {
   const set = new Set([0]); // Pot 1 always
   for (const tb of talentBlocks) {
@@ -1477,11 +1134,13 @@ const availablePotRanks = React.useMemo(() => {
   return [...set].filter((n) => n >= 0 && n <= 5).sort((a, b) => a - b);
 }, [talentBlocks]);
 
-const [potRank, setPotRank] = React.useState(0);
+const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
 React.useEffect(() => {
+  // Reset and clamp
   setPotRank(0);
 }, [charKey]);
 
+// Elite header options: phase + optional Lv variants (e.g. E1, E1 Lv55)
 const talentHeaderOptions = React.useMemo(
   () => collectTalentHeaderOptions(talentBlocks),
   [talentBlocks]
@@ -1588,6 +1247,7 @@ const potPicker = showPotPicker ? (
   </div>
 ) : null;
 
+// Hide Talent 2 when it only exists at E2+ and user is viewing E0/E1
 const shouldHideTalent2 =
   (talent2Resolved?.variants?.length || 0) > 0 &&
   (talent2Resolved?.minPhaseIndex ?? 0) >= 2 &&
@@ -1607,6 +1267,8 @@ const renderTalentCard = (talentIdx, resolved) => {
     pickVariantByHeaderOption(variants, activeTalentHeaderOpt) ||
     variants[variants.length - 1];
 
+  // Title handling: some operators change Talent 1 name at Elite 2 (PHASE_2).
+  // If TitleTalent1_2 is not provided yet, avoid showing the E1 title at E2 when the in-game name actually changed.
   let titleName = "";
   const phaseIndexForTitle = Number(v?.phaseIndex ?? 0);
 
@@ -1626,6 +1288,7 @@ const renderTalentCard = (talentIdx, resolved) => {
         ? String(vnTalentEntry.TitleTalent1)
         : "";
 
+      // Compare against the best non-E2 variant name (usually E1) to detect name changes.
       const ref = [...variants]
         .filter((x) => Number(x?.phaseIndex ?? 0) < 2)
         .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level))
@@ -1634,6 +1297,7 @@ const renderTalentCard = (talentIdx, resolved) => {
       const currentName = v?.name || "";
 
       if (isNonEmptyString(currentName) && isNonEmptyString(refName) && currentName !== refName) {
+        // Name changed at E2 -> show the in-game name until TitleTalent1_2 is provided.
         titleName = currentName;
       } else {
         titleName = vnTitleBase || currentName;
@@ -1674,8 +1338,7 @@ const renderTalentCard = (talentIdx, resolved) => {
             {isNonEmptyString(v?.text) ? (
               renderTextWithHovers(
                 v.text,
-                `talent-${charKey || "unknown"}-${talentIdx}-e${v.phaseIndex}-lv${v.level}-pot${potRank}`
-              )
+                `talent-${charKey || "unknown"}-${talentIdx}-e${v.phaseIndex}-lv${v.level}-pot${potRank}`, isEnglishUI)
             ) : (
               <span className="text-white/40 italic">-</span>
             )}
@@ -1713,6 +1376,7 @@ const renderTalentCard = (talentIdx, resolved) => {
 
   const skillCnEntry = selectedSkillId ? skillTable?.[selectedSkillId] : null;
   const skillEnEntry = selectedSkillId ? skillTableEN?.[selectedSkillId] : null;
+  // Skill icon (Mode B): keep previously loaded icons mounted to avoid repeated requests when toggling.
   const selectedSkillIconUrl = getSkillIconUrl(
     selectedSkillId,
     skillCnEntry?.iconId || skillEnEntry?.iconId
@@ -1744,9 +1408,11 @@ const renderTalentCard = (talentIdx, resolved) => {
     });
 
     if (skillIconLoadedSetRef.current.has(url)) {
+      // Instantly show if already loaded
       setDisplaySkillIconUrl(url);
       setIsSkillIconLoading(false);
     } else {
+      // Aesthetic: hide old icon while loading the new one
       setDisplaySkillIconUrl("");
       setIsSkillIconLoading(true);
     }
@@ -1838,8 +1504,10 @@ const renderTalentCard = (talentIdx, resolved) => {
   const selectedUpgradeInfo = React.useMemo(() => {
     const lv = safeSkillLevelIdx + 1;
 
+    // Lv 1 has no upgrade cost
     if (lv <= 1) return null;
 
+    // Lv 2-7
     if (lv <= 7) {
       const row = allSkillLvlup?.[lv - 2] || null;
       if (!row) return null;
@@ -1847,6 +1515,8 @@ const renderTalentCard = (talentIdx, resolved) => {
       const costs = Array.isArray(row?.lvlUpCost) ? row.lvlUpCost : [];
       const unlockCond = row?.unlockCond || null;
 
+      // Some operators do not have global skill upgrade cost data.
+      // Hide the whole section in that case.
       if (!unlockCond && costs.length === 0) return null;
 
       return {
@@ -1857,6 +1527,7 @@ const renderTalentCard = (talentIdx, resolved) => {
       };
     }
 
+    // Lv 7 Mastery 1-3 (mapped from Lv 8-10)
     const m = lv - 7;
     const row = masteryConds?.[m - 1] || null;
     if (!row) return null;
@@ -1944,6 +1615,8 @@ const renderTalentCard = (talentIdx, resolved) => {
     </div>
   ) : null;
 
+  // Build building-skill cards for EACH header option (Mode B):
+// keep previously opened header options mounted so their icons don't re-request when switching back.
 const computeBuildingBuffCardsForOpt = (buffChar, opt) => {
   if (!Array.isArray(buffChar)) return [];
 
@@ -2002,6 +1675,7 @@ const [mountedBuildingHeaderIdxs, setMountedBuildingHeaderIdxs] = React.useState
 );
 
 React.useEffect(() => {
+  // Reset cache when switching operator
   setMountedBuildingHeaderIdxs(new Set([safeBuildingHeaderOptIdx]));
 }, [charKey, safeBuildingHeaderOptIdx]);
 
@@ -2046,8 +1720,7 @@ return (
               currentTraitText,
               `trait-${charKey || "unknown"}-p${
                 traitResolved?.variants?.[safeTraitVariantIdx]?.phaseIndex ?? 0
-              }`
-            )}
+              }`, isEnglishUI)}
 
             {isNonEmptyString(currentTraitExtraText) ? (
               <>
@@ -2063,8 +1736,7 @@ return (
                       currentTraitExtraText,
                       `trait-extra-${charKey || "unknown"}-p${
                         traitResolved?.variants?.[safeTraitVariantIdx]?.phaseIndex ?? 0
-                      }`
-                    )}
+                      }`, isEnglishUI)}
                   </div>
                 </details>
               </>
@@ -2311,8 +1983,7 @@ return (
                       {isNonEmptyString(skillDesc) ? (
                         renderTextWithHovers(
                           skillDesc,
-                          `skill-${charKey || "unknown"}-${selectedSkillId}-lv${safeSkillLevelIdx + 1}`
-                        )
+                          `skill-${charKey || "unknown"}-${selectedSkillId}-lv${safeSkillLevelIdx + 1}`, isEnglishUI)
                       ) : (
                         <span className="text-white/40 italic">-</span>
                       )}
@@ -2423,7 +2094,7 @@ return (
               const tc = def?.textColor || "#000000";
               const bdescKeyPrefix = `bskill-${charKey || "unknown"}-${buffId || "unknown"}`;
               const descRender = isNonEmptyString(desc)
-                ? renderTextWithHovers(desc, bdescKeyPrefix)
+                ? renderTextWithHovers(desc, bdescKeyPrefix, isEnglishUI)
                 : null;
 
               return (

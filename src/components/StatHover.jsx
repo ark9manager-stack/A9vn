@@ -285,47 +285,46 @@ function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
       continue;
     }
 
-    // [[label|key]]
-    if (str.startsWith("[[", state.i)) {
-      const end = str.indexOf("]]", state.i + 2);
-      if (end !== -1) {
-        const inside = str.slice(state.i + 2, end);
-        const bar = inside.indexOf("|");
-        if (bar !== -1) {
-          flushBuf();
-          const labelPart = inside.slice(0, bar);
-          const keyPart = inside.slice(bar + 1);
+    // [[label|key]] (treat key as noteKey; consistent with section renderers)
+if (str.startsWith("[[", state.i)) {
+  const end = str.indexOf("]]", state.i + 2);
+  if (end !== -1) {
+    const inside = str.slice(state.i + 2, end);
+    const bar = inside.indexOf("|");
+    if (bar !== -1) {
+      flushBuf();
+      const labelPart = inside.slice(0, bar);
+      const keyPart = inside.slice(bar + 1).trim();
 
-          const subState = { i: 0, k: 0 };
-          const labelNodes = parseRichNodes(labelPart, subState, `${keyPrefix}-wl-${state.k++}`, { allowNewlines: false }, false);
+      const subState = { i: 0, k: 0 };
+      const labelNodes = parseRichNodes(
+        labelPart,
+        subState,
+        `${keyPrefix}-wl-${state.k++}`,
+        { ...opts, allowNewlines: false },
+        false
+      );
 
-          const target = resolveHoverTarget(keyPart);
-          const compKey = `${keyPrefix}-hv-${state.k++}-${state.i}-${end}`;
+      const compKey = `${keyPrefix}-hv-${state.k++}-${state.i}-${end}`;
 
-          if (target.kind === "term") {
-            nodes.push(
-              <StatHover key={compKey} termId={target.key}>
-                {labelNodes}
-              </StatHover>
-            );
-          } else if (target.kind === "note") {
-            nodes.push(
-              <StatHover key={compKey} noteKey={target.key}>
-                {labelNodes}
-              </StatHover>
-            );
-          } else {
-            nodes.push(labelNodes);
-          }
-
-          state.i = end + 2;
-          continue;
-        }
+      if (isNonEmptyString(keyPart)) {
+        nodes.push(
+          <StatHover key={compKey} noteKey={keyPart}>
+            {labelNodes}
+          </StatHover>
+        );
+      } else {
+        nodes.push(labelNodes);
       }
-      // Not a valid pattern => treat as text
-    }
 
-    // <@noteKey>...</> or <$termId>...</>
+      state.i = end + 2;
+      continue;
+    }
+  }
+  // Not a valid pattern => treat as text
+}
+
+// <@noteKey>...</> or <$termId>...</>
     if (str[state.i] === "<" && (str[state.i + 1] === "@" || str[state.i + 1] === "$")) {
       // parse key until '>'
       const sigil = str[state.i + 1];
@@ -340,14 +339,24 @@ function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
 
         if (sigil === "@") {
           nodes.push(applyNoteKeyStyle(inner, key, wrapKey));
-        } else {
-          // term hover
-          nodes.push(
-            <StatHover key={wrapKey} termId={key}>
-              {inner}
-            </StatHover>
-          );
-        }
+} else {
+  // '$' hover: by default shows term from gamedata_const(_en).
+  // If preferNoteForDollar is enabled (VN UI), and a VN note exists, use note instead.
+  const preferNote = !!opts?.preferNoteForDollar;
+  const vnNote = preferNote ? getNote(key) : null;
+
+  nodes.push(
+    vnNote ? (
+      <StatHover key={wrapKey} noteKey={key}>
+        {inner}
+      </StatHover>
+    ) : (
+      <StatHover key={wrapKey} termId={key}>
+        {inner}
+      </StatHover>
+    )
+  );
+}
         continue;
       }
     }
@@ -361,16 +370,23 @@ function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
   return nodes;
 }
 
-function renderRich(text, keyPrefix, opts = {}) {
+export function renderRich(text, keyPrefix, opts = {}) {
   const normalized = normalizeNewlines(text);
   const state = { i: 0, k: 0 };
   return parseRichNodes(normalized, state, keyPrefix, { allowNewlines: true, ...opts }, false);
 }
 
-function renderRichInline(text, keyPrefix) {
+export function renderRichInline(text, keyPrefix, opts = {}) {
   const normalized = normalizeNewlines(text).split("\n").join(" ");
   const state = { i: 0, k: 0 };
-  return parseRichNodes(normalized, state, keyPrefix, { allowNewlines: false }, false);
+  return parseRichNodes(normalized, state, keyPrefix, { ...opts, allowNewlines: false }, false);
+}
+
+export function renderAKText(text, keyPrefix = "ak", options = {}) {
+  const { inline = false, preferNoteForDollar = false } = options || {};
+  return inline
+    ? renderRichInline(text, keyPrefix, { preferNoteForDollar })
+    : renderRich(text, keyPrefix, { preferNoteForDollar });
 }
 
 export default function StatHover({ label, noteKey, termId, children }) {
