@@ -131,7 +131,6 @@ function resolveTraitTexts({ subProfessionId, rarity, description }, traitMap) {
   const isTier1 = String(rarity || "") === "TIER_1";
   const keyCandidates = isTier1 ? [`${base}1`, base] : [base];
 
-  // Main text
   let usedKey = null;
   let mainText = "";
   for (const key of keyCandidates) {
@@ -145,14 +144,12 @@ function resolveTraitTexts({ subProfessionId, rarity, description }, traitMap) {
   }
   if (!isNonEmptyString(mainText)) mainText = isNonEmptyString(description) ? description : "";
 
-  // Extra text ("*_2")
   const extraKeyCandidates = [];
   if (isNonEmptyString(usedKey)) extraKeyCandidates.push(`${usedKey}_2`);
   for (const key of keyCandidates) {
     if (!isNonEmptyString(key)) continue;
     extraKeyCandidates.push(`${key}_2`);
   }
-  // De-dup
   const seen = new Set();
   let extraText = "";
   for (const k of extraKeyCandidates) {
@@ -169,7 +166,6 @@ function resolveTraitTexts({ subProfessionId, rarity, description }, traitMap) {
 }
 
 function phaseToIndex(phase) {
-  // e.g. "PHASE_0"
   const m = /PHASE_(\d+)/.exec(String(phase || ""));
   if (m) return Number(m[1]);
   const n = Number(phase);
@@ -455,7 +451,7 @@ function getTalentTitle(vnEntry, talentIdx, phaseIndex, level, requiredPotential
 function getTalentBaseKeyCandidates(talentIdx, phaseIndex) {
   if (talentIdx === 0) {
     if (phaseIndex === 2) return ["Talent1_2"];
-    return [`Talent${phaseIndex}`]; // Talent0 / Talent1
+    return [`Talent${phaseIndex}`];
   }
 
   return [`Talent2_${phaseIndex}`, "Talent2"];
@@ -551,7 +547,6 @@ function findMatchingTalentCandidate(talentBlock, phaseIndex, level, requiredPot
   const l = Number(level ?? 1);
   const r = Number(requiredPotentialRank ?? 0);
 
-  // Exact match first (phase + level + requiredPotentialRank)
   for (const c of raw) {
     const cp = phaseToIndex(c?.unlockCondition?.phase);
     const cl = Number(c?.unlockCondition?.level || 1);
@@ -559,7 +554,6 @@ function findMatchingTalentCandidate(talentBlock, phaseIndex, level, requiredPot
     if (cp === p && cl === l && cr === r) return c;
   }
 
-  // Fallback: best <= r at same phase+level
   let best = null;
   let bestReq = -1;
   for (const c of raw) {
@@ -968,7 +962,6 @@ export default function SkillsSection(props) {
   const traitMap = React.useMemo(() => buildTraitMap(isEnglishUI ? traitEN : traitVN), [isEnglishUI]);
   const tagMap = React.useMemo(() => buildTagMap(tagVN), []);
 
-  // Be tolerant with whatever the parent passes in.
   const operator = props?.operator || props?.data || null;
   const rawCharId =
     props?.charId ||
@@ -1019,7 +1012,6 @@ export default function SkillsSection(props) {
     const candidatesEN = getTraitCandidates(charDataEN);
     const candEnByPhase = new Map(candidatesEN.map((x) => [x.phaseIndex, x.cand]));
 
-    // No per-phase trait data → just render the base (translated) trait text.
     if (candidates.length === 0) {
       const { mainText, extraText } = resolveTraitTexts(
         { subProfessionId, rarity, description: baseDesc },
@@ -1049,7 +1041,6 @@ export default function SkillsSection(props) {
     const uniq = new Set(variants.map((v) => `${v.text}||${v.extraText || ""}`));
     const showElite = variants.length > 1 && uniq.size > 1;
 
-    // If all phases render the same text → use ONE (pick highest phase) and hide Elite buttons.
     if (!showElite) {
       return { variants: [variants[variants.length - 1]], showElite: false };
     }
@@ -1103,14 +1094,10 @@ export default function SkillsSection(props) {
     </div>
   ) : null;
 
-  /** -----------------------------
- * Talents
- * ----------------------------- */
 const vnTalentEntry = React.useMemo(() => getTalentVnEntry(charKey), [charKey]);
 const talentBlocks = React.useMemo(() => {
   const raw = charData?.talents;
   if (!Array.isArray(raw)) return [];
-  // Filter out hidden/placeholder talent blocks (e.g. isHideTalent=true with empty name/description)
   return raw.filter(isValidTalentBlock);
 }, [charData]);
 
@@ -1120,9 +1107,8 @@ const talentBlocksEN = React.useMemo(() => {
   return raw.filter(isValidTalentBlock);
 }, [charDataEN]);
 
-// Potential ranks that actually exist in this operator's talent candidates
 const availablePotRanks = React.useMemo(() => {
-  const set = new Set([0]); // Pot 1 always
+  const set = new Set([0]);
   for (const tb of talentBlocks) {
     const cands = getVisibleTalentCandidates(tb);
     if (!Array.isArray(cands) || cands.length === 0) continue;
@@ -1134,13 +1120,12 @@ const availablePotRanks = React.useMemo(() => {
   return [...set].filter((n) => n >= 0 && n <= 5).sort((a, b) => a - b);
 }, [talentBlocks]);
 
-const [potRank, setPotRank] = React.useState(0); // 0..5 (UI shows 1..6)
+const [potRank, setPotRank] = React.useState(0);
 React.useEffect(() => {
-  // Reset and clamp
+
   setPotRank(0);
 }, [charKey]);
 
-// Elite header options: phase + optional Lv variants (e.g. E1, E1 Lv55)
 const talentHeaderOptions = React.useMemo(
   () => collectTalentHeaderOptions(talentBlocks),
   [talentBlocks]
@@ -1247,7 +1232,6 @@ const potPicker = showPotPicker ? (
   </div>
 ) : null;
 
-// Hide Talent 2 when it only exists at E2+ and user is viewing E0/E1
 const shouldHideTalent2 =
   (talent2Resolved?.variants?.length || 0) > 0 &&
   (talent2Resolved?.minPhaseIndex ?? 0) >= 2 &&
@@ -1267,8 +1251,6 @@ const renderTalentCard = (talentIdx, resolved) => {
     pickVariantByHeaderOption(variants, activeTalentHeaderOpt) ||
     variants[variants.length - 1];
 
-  // Title handling: some operators change Talent 1 name at Elite 2 (PHASE_2).
-  // If TitleTalent1_2 is not provided yet, avoid showing the E1 title at E2 when the in-game name actually changed.
   let titleName = "";
   const phaseIndexForTitle = Number(v?.phaseIndex ?? 0);
 
@@ -1288,7 +1270,6 @@ const renderTalentCard = (talentIdx, resolved) => {
         ? String(vnTalentEntry.TitleTalent1)
         : "";
 
-      // Compare against the best non-E2 variant name (usually E1) to detect name changes.
       const ref = [...variants]
         .filter((x) => Number(x?.phaseIndex ?? 0) < 2)
         .sort((a, b) => (a.phaseIndex - b.phaseIndex) || (a.level - b.level))
@@ -1297,7 +1278,6 @@ const renderTalentCard = (talentIdx, resolved) => {
       const currentName = v?.name || "";
 
       if (isNonEmptyString(currentName) && isNonEmptyString(refName) && currentName !== refName) {
-        // Name changed at E2 -> show the in-game name until TitleTalent1_2 is provided.
         titleName = currentName;
       } else {
         titleName = vnTitleBase || currentName;
@@ -1356,7 +1336,7 @@ const renderTalentCard = (talentIdx, resolved) => {
   );
 };
 
-  // ===== Skills (Kỹ năng) =====
+  // ===== Kỹ năng =====
 
   const skillsList = React.useMemo(() => {
     const raw = charData?.skills ?? operator?.skills ?? [];
@@ -1376,7 +1356,6 @@ const renderTalentCard = (talentIdx, resolved) => {
 
   const skillCnEntry = selectedSkillId ? skillTable?.[selectedSkillId] : null;
   const skillEnEntry = selectedSkillId ? skillTableEN?.[selectedSkillId] : null;
-  // Skill icon (Mode B): keep previously loaded icons mounted to avoid repeated requests when toggling.
   const selectedSkillIconUrl = getSkillIconUrl(
     selectedSkillId,
     skillCnEntry?.iconId || skillEnEntry?.iconId
@@ -1408,11 +1387,9 @@ const renderTalentCard = (talentIdx, resolved) => {
     });
 
     if (skillIconLoadedSetRef.current.has(url)) {
-      // Instantly show if already loaded
       setDisplaySkillIconUrl(url);
       setIsSkillIconLoading(false);
     } else {
-      // Aesthetic: hide old icon while loading the new one
       setDisplaySkillIconUrl("");
       setIsSkillIconLoading(true);
     }
@@ -1504,10 +1481,7 @@ const renderTalentCard = (talentIdx, resolved) => {
   const selectedUpgradeInfo = React.useMemo(() => {
     const lv = safeSkillLevelIdx + 1;
 
-    // Lv 1 has no upgrade cost
     if (lv <= 1) return null;
-
-    // Lv 2-7
     if (lv <= 7) {
       const row = allSkillLvlup?.[lv - 2] || null;
       if (!row) return null;
@@ -1515,8 +1489,6 @@ const renderTalentCard = (talentIdx, resolved) => {
       const costs = Array.isArray(row?.lvlUpCost) ? row.lvlUpCost : [];
       const unlockCond = row?.unlockCond || null;
 
-      // Some operators do not have global skill upgrade cost data.
-      // Hide the whole section in that case.
       if (!unlockCond && costs.length === 0) return null;
 
       return {
@@ -1527,7 +1499,6 @@ const renderTalentCard = (talentIdx, resolved) => {
       };
     }
 
-    // Lv 7 Mastery 1-3 (mapped from Lv 8-10)
     const m = lv - 7;
     const row = masteryConds?.[m - 1] || null;
     if (!row) return null;
@@ -1546,7 +1517,7 @@ const renderTalentCard = (talentIdx, resolved) => {
     };
   }, [safeSkillLevelIdx, allSkillLvlup, masteryConds]);
 
-  // ===== Building Skills (Kỹ năng hậu cầu) =====
+  // ===== Kỹ năng hậu cầu =====
   const buildingCharEntry = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
     return buildingData?.chars?.[charKey] || buildingDataEN?.chars?.[charKey] || null;
@@ -1615,8 +1586,6 @@ const renderTalentCard = (talentIdx, resolved) => {
     </div>
   ) : null;
 
-  // Build building-skill cards for EACH header option (Mode B):
-// keep previously opened header options mounted so their icons don't re-request when switching back.
 const computeBuildingBuffCardsForOpt = (buffChar, opt) => {
   if (!Array.isArray(buffChar)) return [];
 
@@ -1675,7 +1644,6 @@ const [mountedBuildingHeaderIdxs, setMountedBuildingHeaderIdxs] = React.useState
 );
 
 React.useEffect(() => {
-  // Reset cache when switching operator
   setMountedBuildingHeaderIdxs(new Set([safeBuildingHeaderOptIdx]));
 }, [charKey, safeBuildingHeaderOptIdx]);
 

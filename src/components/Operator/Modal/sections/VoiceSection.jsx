@@ -49,7 +49,7 @@ const VOICE_TITLE_VI = {
   "3星结束行动": "Hoàn thành nhiệm vụ 3*",
   非3星结束行动: "Hoàn thành nhiệm vụ 2*",
   行动失败: "Nhiệm vụ thất bại",
-  进驻设施: "Vào base",
+  进驻设施: "Vào căn cứ (base)",
   戳一下: "Chạm",
   信赖触摸: "Chạm (với độ tin tưởng cao)",
   标题: "Tiêu đề game (khi login)",
