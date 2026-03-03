@@ -20,7 +20,7 @@
     { "pioneer": "Chặn được 2 kẻ địch." },
     { "pioneer1": "Chặn được 2 kẻ địch, bản thân không bị ảnh hưởng bởi <@ba.kw>[[Giới hạn triển khai|DeployLimit]]</>, bù lại thời gian tái triển khai cực kỳ lâu." },
     { "agent": "<@ba.kw>Giảm</> thời gian tái triển khai và có thể tấn công tầm xa." },
-    { "charger": "Nhận 1 [[DP|DP]] sau khi đơn vị này hạ gục kẻ địch, và rút lui sẽ hoàn lại [[DP|DP]] gốc." },
+    { "charger": "Nhận 1 [[DP|DP]] sau khi đơn vị này hạ gục kẻ địch, và rút lui sẽ hoàn trả chi phí [[DP|DP]] gốc." },
     { "bearer": "Trong thời gian kích hoạt kỹ năng sẽ không thể chặn kẻ địch." },
     { "counsellor": "Chặn được 2 kẻ địch, có thể hỗ trợ đồng minh ở khu vực chờ triển khai." },
     { "tactician": "Có thể chỉ định 1 <@ba.kw>Ô chiến thuật</> trong phạm vi tấn công để gọi [[Viện binh|Reinforcement]]. Tăng ATK thành 150% khi tấn công kẻ địch đang bị viện binh chặn." },

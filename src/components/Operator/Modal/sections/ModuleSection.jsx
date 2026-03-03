@@ -7,14 +7,13 @@ import traitEN from "../../../../data/operators/trait_en.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
-
 import uniequipTable from "../../../../data/module/uniequip_table.json";
 import uniequipTableEN from "../../../../data/module/uniequip_table_en.json";
 import battleEquipTable from "../../../../data/module/battle_equip_table.json";
 import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.json";
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
-
+import statHoverVN from "../../../../data/stathover_vn.json";
 import StatHover, { renderInlineItalic } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 
@@ -251,12 +250,25 @@ function matchCloseTagAt(str, i) {
   return 0;
 }
 
+function hasVNStatHover(noteKey) {
+  if (!isNonEmptyString(noteKey)) return false;
+
+  if (statHoverVN?.[noteKey]) return true;
+
+  const lower = String(noteKey).toLowerCase();
+  if (statHoverVN?.[lower]) return true;
+
+  const keys = Object.keys(statHoverVN || {});
+  return keys.some((k) => String(k).toLowerCase() === lower);
+}
+
 function parseMarkupSegment(
   str,
   keyPrefix,
   noteKeyCtx = null,
   startIndex = 0,
-  stopAtClose = false
+  stopAtClose = false,
+  preferVNNoteForDollar = false
 ) {
   const nodes = [];
   let i = startIndex;
@@ -347,17 +359,28 @@ function parseMarkupSegment(
         `${keyPrefix}-in-${i}`,
         type === "@" ? key : noteKeyCtx,
         gt + 1,
-        true
+        true,
+        preferVNNoteForDollar
       );
 
       const innerNodes = inner.nodes;
 
       if (type === "$") {
-        nodes.push(
-          <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
-            {innerNodes}
-          </StatHover>
-        );
+        const useVNNote = preferVNNoteForDollar && hasVNStatHover(key);
+
+        if (useVNNote) {
+          nodes.push(
+            <StatHover key={`${keyPrefix}-term-${i}-${key}`} noteKey={key}>
+              {innerNodes}
+            </StatHover>
+          );
+        } else {
+          nodes.push(
+            <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
+              {innerNodes}
+            </StatHover>
+          );
+        }
       } else {
         nodes.push(
           <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
@@ -378,7 +401,7 @@ function parseMarkupSegment(
   return { nodes, index: i };
 }
 
-function renderTextWithTermNotes(text, keyPrefix) {
+function renderTextWithTermNotes(text, keyPrefix, preferVNNoteForDollar = false) {
   if (!isNonEmptyString(text)) return null;
 
   const normalized = String(text)
@@ -386,7 +409,7 @@ function renderTextWithTermNotes(text, keyPrefix) {
     .split("\r").join("\n")
     .split("\\n").join("\n");
 
-  const parsed = parseMarkupSegment(normalized, keyPrefix);
+  const parsed = parseMarkupSegment(normalized, keyPrefix, null, 0, false, preferVNNoteForDollar);
   return <>{parsed.nodes}</>;
 }
 
@@ -1017,7 +1040,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                             style={{ overflowWrap: "anywhere" }}
                           >
                             {isNonEmptyString(lv1DetailText) ? (
-                              renderTextWithTermNotes(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`)
+                              renderTextWithTermNotes(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`, !isEnglishUI)
                             ) : (
                               <span className="text-white/40 italic">-</span>
                             )}
@@ -1029,7 +1052,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                           style={{ overflowWrap: "anywhere" }}
                         >
                           {isNonEmptyString(rightText) ? (
-                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`)
+                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`, !isEnglishUI)
                           ) : (
                             <span className="text-white/40 italic">-</span>
                           )}
@@ -1095,7 +1118,7 @@ function ModuleMissionsPane({ module, isEnglishUI, charKey }) {
         {missionTexts.map((t, idx0) => (
           <div key={`mis-${id}-${idx0}`} className="text-white/95 leading-relaxed flex gap-2">
             <span className="shrink-0">•</span>
-            <div className="min-w-0">{renderTextWithTermNotes(t, `module-mission-${id}-${idx0}`)}</div>
+            <div className="min-w-0">{renderTextWithTermNotes(t, `module-mission-${id}-${idx0}`, !isEnglishUI)}</div>
           </div>
         ))}
       </div>
@@ -1800,7 +1823,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                 style={{ overflowWrap: "anywhere" }}
               >
                 {isNonEmptyString(baseTraitText) ? (
-                  renderTextWithTermNotes(baseTraitText, `module-trait-base-${charKey}-${selected.id}`)
+                  renderTextWithTermNotes(baseTraitText, `module-trait-base-${charKey}-${selected.id}`, !isEnglishUI)
                 ) : (
                   <span className="text-white/40 italic">-</span>
                 )}
@@ -1816,7 +1839,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                     <span className="inline-flex items-center rounded-md bg-amber-500/20 text-amber-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Improve Trait" : "Cải thiện đặc tính"}
                     </span>
-                    {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`)}
+                    {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`, !isEnglishUI)}
                     {isNonEmptyString(traitAdditionalText) ? <br /> : null}
                   </>
                 ) : null}
@@ -1825,13 +1848,13 @@ if (!isNonEmptyString(charKey) || !charData) {
                 {isNonEmptyString(traitAdditionalText) ? (
                   <>
                     {isNonEmptyString(baseTraitText)
-                      ? renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`)
+                      ? renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`, !isEnglishUI)
                       : null}
                     {isNonEmptyString(baseTraitText) ? <br /> : null}
                     <span className="inline-flex items-center rounded-md bg-sky-500/20 text-sky-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Additional Trait" : "Thêm đặc tính"}
                     </span>
-                    {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`)}
+                    {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`, !isEnglishUI)}
                   </>
                 ) : null}
               </div>
@@ -1956,7 +1979,7 @@ if (!isNonEmptyString(charKey) || !charData) {
       <InfoTable title={isEnglishUI ? "Story" : "Cốt truyện"}>
         {isNonEmptyString(displayStoryText) ? (
           <div className="text-white/95 leading-relaxed" style={{ overflowWrap: "anywhere" }}>
-            {renderTextWithTermNotes(displayStoryText, `module-story-${selected?.id}`)}
+            {renderTextWithTermNotes(displayStoryText, `module-story-${selected?.id}`, !isEnglishUI)}
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>
