@@ -464,7 +464,7 @@ export default function ProfileSection({ operator, charId }) {
       typeof activityPotentialItemIdRaw === "string" ? activityPotentialItemIdRaw : "";
     const hasActivityVoucher = isNonEmptyString(activityPotentialItemId);
 
-    const _tokenPanelTitle = hasActivityVoucher ? "Thư mục" : "Tín vật";
+    const _tokenPanelTitle = hasActivityVoucher ? "Tài liệu" : "Tín vật";
 
     const activityIconBase = hasActivityVoucher
       ? TOKEN_ICON_BASE_CLASSPOTENTIAL.replace(

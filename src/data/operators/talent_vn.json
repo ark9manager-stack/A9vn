@@ -239,8 +239,8 @@
   "char_1036_fang2": {
     "TitleTalent1": "Nước cờ linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "Phí triển khai ban đầu -2; Sau khi rút lui, cán viên tiếp theo có phí triển khai -1.",
-    "Talent1_2": "Phí triển khai ban đầu -3; Sau khi rút lui, cán viên tiếp theo có phí triển khai -1."
+    "Talent1": "DP ban đầu -2; Sau khi rút lui, cán viên tiếp theo -1 DP.",
+    "Talent1_2": "DP ban đầu -3; Sau khi rút lui, cán viên tiếp theo -1 DP."
   },
   "char_1038_whitw2": {
     "TitleTalent1": "",
@@ -415,8 +415,8 @@
   "char_115_headbr": {
     "TitleTalent1": "Thủ lĩnh tiên phong",
     "TitleTalent2": "",
-    "Talent1": "Phí triển khai -1.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】có phí triển khai -1."
+    "Talent1": "-1 DP",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】-1 DP."
   },
   "char_117_myrrh": {
     "TitleTalent1": "Bộ sơ cứu",
@@ -452,7 +452,7 @@
   "char_123_fang": {
     "TitleTalent1": "Linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "Phí triển khai -1."
+    "Talent1": "-1 DP"
   },
   "char_124_kroos": {
     "TitleTalent1": "Nhắm vào điểm yếu · Sơ cấp",
@@ -671,8 +671,8 @@
   },
   "char_159_peacok": {
     "TitleTalent1": "Đáp đất an toàn",
-    "Talent0": "Phí triển khai -2, Thời gian tái triển khai -8 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây.",
-    "Talent1_2": "Phí triển khai -4, Thời gian tái triển khai -15 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây."
+    "Talent0": "-2 DP, Thời gian tái triển khai -8 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây.",
+    "Talent1_2": "-4 DP, Thời gian tái triển khai -15 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây."
   },
   "char_163_hpsts": {
     "TitleTalent1": "",
@@ -1063,7 +1063,7 @@
     "Talent1_2": "ATK và DEF +10% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên."
   },
   "char_235_jesica": {
-    "TitleTalent1": "Thay đạn siêu tốc",
+    "TitleTalent1": "Nạp đạn siêu tốc",
     "Talent1": "ASPD +6",
     "Talent1_2": "ASPD +12"
   },
@@ -1078,9 +1078,9 @@
     "TitleTalent1": "Triển khai siêu tốc",
     "TitleTalent1_2": "Hỗ trợ nhóm nhỏ",
     "TitleTalent2": "",
-    "Talent1": "Phí triển khai -1.",
-    "Talent1_2": "Phí triển khai -1. Các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận +6% DEF.",
-    "Talent1_2_p4": "Phí triển khai -1. Các đơn vị đồng minh có phí triển khai từ 10 trở xuống nhận +8%<@ba.talpu>(+2%)</> DEF."
+    "Talent1": "-1 DP",
+    "Talent1_2": "-1 DP. Các đơn vị đồng minh từ 10 DP trở xuống nhận +6% DEF.",
+    "Talent1_2_p4": "-1 DP. Các đơn vị đồng minh từ 10 DP trở xuống nhận +8%<@ba.talpu>(+2%)</> DEF."
   },
   "char_240_wyvern": {
     "TitleTalent1": "Tăng ATK",
@@ -1137,8 +1137,8 @@
     "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
     "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
     "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】có phí triển khai -2, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm -1 phí triển khai.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】có phí triển khai -2, và cán viên【Rhine Lab】đầu tiên được triển khai sẽ giảm thêm -2<@ba.talpu>(+1)</> phí triển khai."
+    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】được -2 DP, và -1 DP thêm cho cán viên【Rhine Lab】đầu tiên được triển khai.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】được -2 DP, và -2<@ba.talpu>(+1)</> DP thêm cho cán viên【Rhine Lab】đầu tiên được triển khai."
   },
   "char_250_phatom": {
     "TitleTalent1": "",
@@ -1274,7 +1274,7 @@
   "char_282_catap": {
     "TitleTalent1": "Linh hoạt",
     "TitleTalent2": "",
-    "Talent1": "Phí triển khai -1."
+    "Talent1": "-1 DP"
   },
   "char_283_midn": {
     "TitleTalent1": "Nhắm vào điểm yếu · Sơ cấp",
@@ -1373,10 +1373,10 @@
   "char_298_susuro": {
     "TitleTalent1": "Phẫu thuật xâm lấn tối thiểu",
     "TitleTalent2": "",
-    "Talent1": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 10% hiệu quả hồi phục nhận vào.",
-    "Talent1_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 13%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào.",
-    "Talent1_2": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 20% hiệu quả hồi phục nhận vào.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh có phí triển khai từ 10 trở xuống tăng 23%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào."
+    "Talent1": "Khi có mặt trong đội hình, các đơn vị đồng minh từ 10 DP trở xuống tăng 10% hiệu quả hồi phục nhận vào.",
+    "Talent1_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh từ 10 DP trở xuống tăng 13%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào.",
+    "Talent1_2": "Khi có mặt trong đội hình, các đơn vị đồng minh từ 10 DP trở xuống tăng 20% hiệu quả hồi phục nhận vào.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh từ 10 DP trở xuống tăng 23%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào."
   },
   "char_300_phenxi": {
     "TitleTalent1": "",
@@ -1847,10 +1847,10 @@
   "char_401_elysm": {
     "TitleTalent1": "Tiếp viện xạ thủ",
     "TitleTalent2": "",
-    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +10 ASPD khi kỹ năng của Elysium đang hoạt động.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +13<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +20 ASPD khi kỹ năng của Elysium đang hoạt động.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có phí triển khai -2, và +23<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động."
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +10 ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +13<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +20 ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +23<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động."
   },
   "char_4023_rfalcn": {
     "TitleTalent1": "Đòn đánh thô bạo",
@@ -3189,7 +3189,7 @@
     "Talent1_p4": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 7<@ba.talpu>(+2)</> ASPD, và kẻ địch bị giảm 7<@ba.talpu>(+2)</> ASPD.",
     "Talent1_2": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ sẽ tăng 10 ASPD, và kẻ địch bị giảm 10 ASPD.",
     "Talent1_2_p4": "Khi triển khai sẽ cầm theo lá cờ; Các cán viên trong 8 ô xung quanh lá cờ ASPD +12<@ba.talpu>(+2)</>, và kẻ địch ASPD -12<@ba.talpu>(+2)</>.",
-    "Talent2": "Sau khi triển khai, phí triển khai -2 cho cán viên kế tiếp."
+    "Talent2": "Sau khi triển khai, -2 DP cho cán viên kế tiếp."
   },
   "char_484_robrta": {
     "TitleTalent1": "Hiệu chỉnh mô hình",
@@ -3274,8 +3274,8 @@
   "char_496_wildmn": {
     "TitleTalent1": "Đồng lòng tiến quân",
     "TitleTalent2": "",
-    "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên【Cận Vệ】chưa triển khai -1 phí triển khai.",
-    "Talent1_2": "Sau khi được triển khai, tất cả cán viên【Cận Vệ】chưa triển khai -1 phí triển khai (mỗi cán viên được tối đa -5 phí triển khai trước mỗi lần triển khai)."
+    "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên【Cận Vệ】chưa triển khai -1 DP.",
+    "Talent1_2": "Sau khi được triển khai, tất cả cán viên【Cận Vệ】chưa triển khai -1 DP (mỗi cán viên được tối đa -5 DP trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
     "TitleTalent1": "Ứng biến",

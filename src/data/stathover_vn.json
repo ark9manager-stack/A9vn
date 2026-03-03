@@ -147,9 +147,9 @@
     "title": "",
     "text": "0.1 giây"
   },
-  "Slowerskgoatp4": {
+  "SlowerModY": {
     "title": "",
-    "text": "0.13 giây"
+    "text": "1.2 giây"
   },
   "Barrier": {
     "title": "Lá chắn/Barrier",
@@ -167,6 +167,14 @@
     "title": "Kiên cường/Tenacity",
     "text": "Tăng chỉ số tỷ lệ thuận với lượng (HP)% đã mất, chỉ số đạt mức tối đa khi mất một ngưỡng (HP)% nhất định (Chỉ áp dụng mức cao nhất của mỗi loại)."
   },
+  "Enfeeble": {
+    "title": "Suy nhược/Enfeeble",
+    "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
+  },
+  "ba.weaken": {
+    "title": "Suy nhược/Enfeeble",
+    "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
+  },
   "ModYDeepcolor": {
     "title": "",
     "text": "-2 DP"
@@ -178,5 +186,9 @@
   "DeadeyeModX": {
     "title": "",
     "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n5.0%   6.2%   9.1%\n0.0%   2.1%   6.2%  10.8%\nSELF   0.0%   5.0%  10.0%  15.0%\n0.0%   2.1%   6.2%  10.8%\n5.0%   6.2%   9.1%"
+  },
+  "BlastModX": {
+    "title": "",
+    "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\nSELF   102.5%   105%  107.5%  110%  110%"
   }
 }

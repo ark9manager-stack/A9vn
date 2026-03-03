@@ -1,6 +1,6 @@
 {
   "uniequip_001_mgllan": {
-    "Name": "Magallan's Badge",
+    "Name": "Huy hiệu của Magallan",
     "description": "Operator Magallan has demonstrated a remarkable aptitude in combat with the deployment and control of her self-developed drones.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Supporter Operator during field operations to exercise Summoner responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_mgllan": {
@@ -21,7 +21,7 @@
     "TalentLv3_p4": ""
   },
   "uniequip_001_nights": {
-    "Name": "Haze's Badge",
+    "Name": "Huy hiệu của Haze",
     "description": "Operator Haze has demonstrated a remarkable aptitude for inflicting Arts casualties on the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Core Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_nights": {
@@ -41,14 +41,14 @@
     "TalentLv3_p4": "Đòn tấn công khiến RES của mục tiêu -30%<@ba.talpu>(+3%)</> trong 1 giây."
   },
   "uniequip_001_fmout": {
-    "Name": "Gitano's Badge",
+    "Name": "Huy hiệu của Gitano",
     "description": "Operator Gitano has demonstrated a remarkable aptitude for inflicting Arts casualties on multitudes of enemies.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Splash Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_fmout": {
     "Name": "Travel Kit for the Fortune-Teller",
     "description": "The moment she raises her crystal ball, Gitano foresees danger.\nThe squad is escorting a group of rescued Infected to Rhodes Island's transport. After the intense battle, everyone is visibly exhausted. She reminds her teammates to watch out for an ambush, but not a moment after she finishes—and before her teammates had time to react—the ambushers have already emerged from behind the boulders.\nThe very next moment, the fog that clouds the barrenland is immediately split asunder by the blinding flash of Originium Arts, forcing the ambushers to take a step back.\nIt seems casting the Arts was too much for Gitano to bear, giving her a spell of dizziness and a burning sensation at the source of her infection. 'You can't keep using your Originium Arts like that.' The advice she got from her tribespeople years ago echoes in her ear. 'Your body can't withstand it anymore. You'll fall ill if you keep casting them.'\nNonetheless, she has pushed herself to her limits in the tundra more times than she can count. With the responsibilities she shoulders, she's never been one to fear falling ill.\nSome time later, she faintly overhears two men talking in hushed voices.\n'Shh—It's okay. She fell asleep because she's tired. Her infection hasn't gotten worse. Don't worry.'\n'We have her to thank for reacting so quickly, otherwise we wouldn't have made it back in one piece.'\n'How did she foresee the ambush, though? If she's really able to peek into the future, wouldn't she also know that—'\n'Don't be stupid. She herself often says that destiny is something that can be changed.'\n'Will you really resist the guidance of fate itself?' All those years ago, her tribespeople implored her. 'We need to turn around. We don't want to leave our homeland, and we've already paid a dear price.'\nBut the young fortune teller kept leading them onward.\n\nThe Rhodes Island transport pulls out of the site with the team, after their successful rescue mission. The Elafia holds tightly onto her crystal ball as she sleeps on the stretcher. She dreams of the black forest back home and the bitter, salty snowdrops, as well as the silhouettes of the mountain chains peeking above the horizon. She's never turned around, nor can she ever go back.",
-    "Mission1": "Complete a total of 5 battles; You must deploy your own Gitano, and have Gitano defeat at least 8 enemies",
-    "Mission2": "Clear Main Theme 1-10 with a 3-star rating; You must deploy your own Gitano, and have Gitano defeat at least 10 enemies",
+    "Mission1": "Hoàn thành tổng cộng 5 trận; Bạn cần triển khai Gitano (không tính Support Units), và Gitano phải hạ ít nhất 8 kẻ địch",
+    "Mission2": "Hoàn thành Main Theme 1-10 đạt 3-sao; Bạn cần triển khai Gitano (không tính Support Units), và Gitano phải hạ ít nhất 10 kẻ địch",
     "TalentLv1VN": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +13%; ASPD +13; HP Tối đa +20%",
     "TalentLv1_p4VN": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +15%<@ba.talpu>(+2%)</>; ASPD +15<@ba.talpu>(+2%)</>; HP Tối đa +22%<@ba.talpu>(+2%)</>",
     "TalentLv1EN": "Obtains one of the following buffs permanently when deployed: ATK +13%, ASPD +13, or Max HP +20%",
@@ -59,5 +59,57 @@
     "TitleLv3": "Bói toán",
     "TalentLv3": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +18%; ASPD +18; HP Tối đa +28%",
     "TalentLv3_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +20%<@ba.talpu>(+2%)</>; ASPD +20<@ba.talpu>(+2%)</>; HP Tối đa +30%<@ba.talpu>(+2%)</>"
+  },
+  "uniequip_001_jesica": {
+    "Name": "Huy hiệu của Jessica",
+    "description": "Operator Jessica has demonstrated a remarkable aptitude for maintaining distance whilst conducting suppressive fire against the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Sniper Operator during field operations to exercise Marksman responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
+  },
+  "uniequip_002_jesica": {
+    "Name": "Jessica's Order",
+    "description": "Dear Sis,\n\nI've been looking forward to the day you wear the equipment I designed into the battlefield, ever since you became a mercenary at BSW with that giant smile on your face. Now my wish has finally come true. Do you know how happy that makes me?\nHere are some tactical gloves designed for Pioneer teams heading anywhere from Columbia to Sami, with insulating material, extra protection on the knuckles. They should do great for helping you resist the cold. I worried a lot about how they'd conduct Arts, but I don't really know much about controlling stuff as precisely as firing a gun, so maybe these gloves could interfere slightly? Whenever you reply, remember to fill me in on how they went in real combat. If you don't write me at least a full page, I'll tell Dad about how you've been ordering equipment from me on the down-low.\nYou mentioned how touching ice still makes you shake because of the brutally cold winter days you spent in Ursus, so none of the sugary stuff I'm buying you needs refrigerating. I hope this partner firm you're at now doesn't treat you too bad.\nYou always seem a little guilty about how you performed in your most recent op, like blaming yourself for not contributing enough. You might not be willing to tell me about what's happened in concrete, but I think if you're still standing on both feet at mission complete, nobody can ask you for anything more. You end up getting put through the wringer on campaigns as a merc, and even just listening to clients' stories tells me there's more than enough funny business out there. Even the most seasoned vets have some terrors carved into their memories forever, and some enemies they think they could never take down. I've even seen a guy start sobbing uncontrollably when something old came up at a meeting.\nIf you keep having all these nightmares, I just want you to know you're welcome back home anytime for some rest.\n—Take a step back, though. You chose to purchase new gear, and more etched ammo. Doesn't that say how brave you are?\n\nAlso, I'm not gonna jab at you about taking a break, but if you get hurt while wearing gear I designed, I'm gonna feel real bad about it. So get yourself in a good headspace before you run your next op, okay?",
+    "Mission1": "Trong trận chiến, Jessica sử dụng Smokescreen (Kỹ năng 2) tổng cộng 5 lần (tính cả Support Units)",
+    "Mission2": "Hoàn thành Under Tides SV-4 đạt 3-sao; Bạn cần triển khai Jessica (không tính Support Units), và sử dụng Smokescreen (Kỹ năng 2) ít nhất 1 lần",
+    "TalentLv1VN": "ASPD +12",
+    "TalentLv1EN": "ASPD +12",
+    "TitleLv2": "Nạp đạn siêu tốc",
+    "TalentLv2": "ASPD +14, ATK +3%",
+    "TitleLv3": "Nạp đạn siêu tốc",
+    "TalentLv3": "ASPD +16, ATK +6%"
+  },
+  "uniequip_001_shotst": {
+    "Name": "Huy hiệu của Meteor",
+    "description": "Operator Meteor has demonstrated a remarkable aptitude for maintaining distance whilst conducting suppressive fire against the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Sniper Operator during field operations to exercise Marksman responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
+  },
+  "uniequip_002_shotst": {
+    "Name": "Hunter's Knife",
+    "description": "Coming in at a clip through the dense forest hills, her heart pounds like it wants to leap from her chest. The prey at her knees thrashes relentlessly and still draws ragged gasps, kiln-hot breath met with the ice-cold forest air as it flares from its nostrils, giving rise to a fine white mist.\nStooping low, she leans to its ear, and speaks a few soft words of comfort.\n'Shh, it'll be fine soon. Calm down, calm down.'\nHeeding her warm caress, the prey's struggles slowly cease, and it stares at her with its deep black gaze. In the pool of its stagnant eye, its pupil still tremors and quakes, stirring a whirlpool in its sclera, tenaciously seeking to draw one last drop of mercy from the two eyes staring back.\nYet her voice is a ruthless gust that coils through dead leaves.\n'It'll all be over soon.'\nWith a draw of a hunter's knife from her rear hip, slitting the prey's throat is both quick and clean. Fresh blood gushes from the incision and stains the earth, leaving behind a thick iron stench which mixes with the rotting autumn leaves and lingers for a good while in her nose.\nThis month shows signs of spring, winter having only just thawed, and the ice-littered creeks chill her fingers to a deep red swell while the blood hardened on the knife washes and melts away in the current. Like red threads needling through the water, flowing with the creek to the forest's edge.\nBehind her, a full beastskin hangs on a branch, with a bonfire lit below to cook the moisture from it. The prey's carcass has been split, one half skewered above the fire, wafting an enticing aroma of grease as it roasts. The other half she's left by the creek, soon to be found by scavenging animals following the scent of blood, and dragged away in their mouths.\nDaytime follows in the departing footsteps of night, early morn filtering through the forest in slanted beams from the east. Perfectly pale light glances again and again off the creek's shimmering waves, stabbing at her undefended eyes still adjusted to the earlier darkness. Her hand quickly shields them as she waits for them to adapt to the sun's sting. Warmth takes to the fine veins in her eyelids, inviting her to open her eyes again and see the beautiful sight. Letting out a deep sigh, she experimentally opens her tightly curled fingers. Her eyelashes tremble, she opens her eyes, and that which filters through the cracks between her fingers is the faint green of a rich forest. Deep in the trees, a kyebeast wanders through the cover, chewing leisurely at the grass, unaware that it's already been trapped in that frigid forest, and of the keen arrow nocked in a bow aimed at the hollow of its throat.",
+    "Mission1": "Meteor hạ tổng cộng 30 kẻ địch (tính cả Support Units)",
+    "Mission2": "Hoàn thành Main Theme 2-7 đạt 3-sao; Bạn cần triển khai Meteor (không tính Support Units), và Meteor phải hạ ít nhất 2 Defender-4s",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
+    "TalentLv2": "",
+    "TitleLv3": "",
+    "TalentLv3": ""
+  },
+  "uniequip_001": {
+    "Name": "Huy hiệu của",
+    "description": ""
+  },
+  "uniequip_002": {
+    "Name": "",
+    "description": "",
+    "Mission1": "",
+    "Mission2": "",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
+    "TalentLv2": "",
+    "TitleLv3": "",
+    "TalentLv3": ""
   }
 }
