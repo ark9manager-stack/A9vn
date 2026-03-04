@@ -14,16 +14,14 @@ import {
   normalizeCharId,
 } from "../../../../utils/operatorAvatar";
 
+import {
+  buildRecruitBgUrl,
+  buildPotentialTokenIconUrl,
+  buildClassPotentialTokenIconUrl,
+  buildActivityVoucherIconUrl,
+} from "../../../../utils/IconArtUrl";
+
 import StatHover, { renderAKText } from "../../../StatHover";
-
-const RECRUIT_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
-
-const TOKEN_ICON_BASE_POTENTIAL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/potential/";
-
-const TOKEN_ICON_BASE_CLASSPOTENTIAL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/classpotential/";
 
 const UI_SCALE = {
   overlayDx: -4,
@@ -113,13 +111,6 @@ function getHandbookText({ charId, key }) {
 function renderMultiline(text, keyPrefix = "ml") {
   if (!isNonEmptyString(text)) return null;
   return <>{renderAKText(String(text), keyPrefix, { preferNoteForDollar: true })}</>;
-}
-
-function rarityToRecruitBg(rarity) {
-  const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
-  const n = m ? Number(m[1]) : 1;
-  const safe = Number.isFinite(n) && n >= 1 && n <= 6 ? n : 1;
-  return `${RECRUIT_BG_BASE}op_r${safe}.png`;
 }
 
 function getItemEntryById(id) {
@@ -337,7 +328,7 @@ export default function ProfileSection({ operator, charId }) {
       ? characterTable?.[resolvedCharId]
       : null;
     const charData = charDataEn || charDataBase;
-    const recruitBg = rarityToRecruitBg(charData?.rarity);
+    const recruitBg = buildRecruitBgUrl(charData?.rarity);
     const _avatarUrl = resolvedCharId ? buildCnAvatarUrl(resolvedCharId) : "";
 
     const potentialItemId =
@@ -353,12 +344,8 @@ export default function ProfileSection({ operator, charId }) {
       potentialItemId,
     );
 
-    const tokenUrlPrimary = isNonEmptyString(iconId)
-      ? `${TOKEN_ICON_BASE_POTENTIAL}${iconId}.png`
-      : "";
-    const tokenUrlFallback = isNonEmptyString(iconId)
-      ? `${TOKEN_ICON_BASE_CLASSPOTENTIAL}${iconId}.png`
-      : "";
+    const tokenUrlPrimary = buildPotentialTokenIconUrl(iconId);
+    const tokenUrlFallback = buildClassPotentialTokenIconUrl(iconId);
 
     const activityPotentialItemIdRaw = (() => {
       if (
@@ -382,17 +369,8 @@ export default function ProfileSection({ operator, charId }) {
 
     const _tokenPanelTitle = hasActivityVoucher ? "Tài liệu" : "Tín vật";
 
-    const activityIconBase = hasActivityVoucher
-      ? TOKEN_ICON_BASE_CLASSPOTENTIAL.replace(
-          "/classpotential/",
-          resolvedCharId === "char_4091_ulika" ||
-            activityPotentialItemId === "voucher_ulika"
-            ? "/acticon/"
-            : "/",
-        )
-      : "";
     const activityIconUrl = hasActivityVoucher
-      ? `${activityIconBase}${activityPotentialItemId}.png`
+      ? buildActivityVoucherIconUrl(activityPotentialItemId, resolvedCharId)
       : "";
 
     const finalTokenUrlPrimary = hasActivityVoucher

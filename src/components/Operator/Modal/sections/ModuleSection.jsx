@@ -15,71 +15,20 @@ import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
 import { renderAKText } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
+import {
+  RANGE_STAND,
+  RANGE_ATTACK,
+  RANGE_ATTACK_SKILL,
+  getItemBgUrl,
+  getItemIconUrlForModule,
+  getPotIcon,
+  preloadImageCached,
+  getModuleDirIconUrl,
+  getModuleLevelBoardUrl,
+  getModuleImageCandidates,
+  MODULE_IMG_BASE,
+} from "../../../../utils/IconArtUrl";
 
-const __IMG_STATUS__ = new Map();
-
-function preloadImageCached(url) {
-  if (!url) return Promise.reject(new Error("no-url"));
-
-  const hit = __IMG_STATUS__.get(url);
-  if (hit === "loaded") return Promise.resolve(url);
-  if (hit && typeof hit.then === "function") return hit;
-
-  const p = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.decoding = "async";
-    img.onload = () => {
-      __IMG_STATUS__.set(url, "loaded");
-      resolve(url);
-    };
-    img.onerror = (e) => {
-      __IMG_STATUS__.set(url, "error");
-      reject(e);
-    };
-    img.src = url;
-  });
-
-  __IMG_STATUS__.set(url, p);
-  return p;
-}
-
-/** Module icons */
-const MODULE_DIR_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequipdirection/";
-// Only for Original type icon
-const MODULE_DIR_ICON_ORIGINAL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequiptype/original.png";
-const MODULE_IMG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequipimg/";
-const MODULE_LEVEL_BOARD_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/uniequip/uniequip_level_board/";
-
-
-// Module image box size (inline style to ensure it really changes)
-const MODULE_IMG_BOX_SIZE = 224;
-
-/** Icons (Range + Potential) - EXACT like SkillsSection */
-const UI_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
-
-const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
-const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
-
-/** Icons (Skill Range) */
-const BATTLE_UI_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
-const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
-
-/** Materials - EXACT like SkillsSection */
-const ITEM_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
-const ITEM_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/";
-
-const POT_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/potential_hub/";
-
-const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
 
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
@@ -270,40 +219,12 @@ function clamp(n, min, max) {
   return Math.min(Math.max(x, min), max);
 }
 
-const rarityToR = (rarity) => {
-  const m = String(rarity || "").match(/TIER_(\d+)/);
-  const n = m ? Number(m[1]) : 1;
-  return Number.isFinite(n) ? n : 1;
-};
-
-const getItemMeta = (itemId) => {
-  const id = String(itemId || "");
-  return itemTable?.items?.[id] || null;
-};
-
-const getItemBgUrl = (rarity) => {
-  const r = clamp(rarityToR(rarity), 1, 6);
-  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
-};
-
-const getItemIconUrl = (itemId, iconId) => {
-  const raw = iconId || itemId || "";
-  const key = String(raw).trim();
-  if (!key) return "";
-
-  if (key.toLowerCase() === "mod_unlock_token") {
-    return `${ITEM_ICON_BASE}acticon/mod_unlock_token.png`;
-  }
-
-  return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
-};
-
 function MaterialIcon({ itemId, count }) {
   const meta = getItemMeta(itemId);
 
   const name = meta?.name || String(itemId || "Unknown");
   const bgUrl = getItemBgUrl(meta?.rarity);
-  const iconUrl = getItemIconUrl(itemId, meta?.iconId);
+  const iconUrl = getItemIconUrlForModule(itemId, meta?.iconId);
 
   const INNER = 44;
   const BG_SCALE = 1.42;
@@ -823,7 +744,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
             <div key={`row-${id}-${lv}`} className="grid grid-cols-5">
               <div className="col-span-1 bg-black/25 p-3 flex items-center justify-center border-r border-white/10">
                 <img
-                  src={`${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`}
+                  src={getModuleLevelBoardUrl(lv)}
                   alt={`lv-${lv}`}
                   className="h-10 w-auto object-contain"
                   draggable={false}
@@ -1438,20 +1359,7 @@ const isDefaultModule = React.useMemo(() => {
 
   const moduleImageCandidates = React.useMemo(() => {
     if (!selected) return [];
-    const id = String(selected?.id || "");
-    const icon = String(selected?.uniEquipIcon || "");
-
-    // uniequip_001_* (ORIGINAL) must use default.png
-    if (id.startsWith("uniequip_001_") || icon === "original") {
-      return [`${MODULE_IMG_BASE}default.png`];
-    }
-
-    const arr = [];
-    if (isNonEmptyString(icon)) arr.push(`${MODULE_IMG_BASE}${icon}.png`);
-    if (isNonEmptyString(id)) arr.push(`${MODULE_IMG_BASE}${id}.png`);
-    // Fallback: if icon/id image fails, use default.png
-    arr.push(`${MODULE_IMG_BASE}default.png`);
-    return [...new Set(arr)];
+    return getModuleImageCandidates(selected?.id, selected?.uniEquipIcon);
   }, [selected?.id, selected?.uniEquipIcon]);
 
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
@@ -1549,7 +1457,7 @@ if (!isNonEmptyString(charKey) || !charData) {
       {modules.map((m, idx0) => {
         const isActive = idx0 === safeModuleIdx;
         const iconKey = String(m?.typeIcon || "original").toLowerCase();
-        const iconUrl = iconKey === "original" ? MODULE_DIR_ICON_ORIGINAL : `${MODULE_DIR_ICON_BASE}${iconKey}.png`;
+        const iconUrl = getModuleDirIconUrl(iconKey);
         const label = modTypeLabel(m?.typeName2);
 
         return (

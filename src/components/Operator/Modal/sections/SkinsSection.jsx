@@ -2,74 +2,17 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
 
-const ART_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/characters";
-
-const ICON_MODEL_URL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_model.png";
-const ICON_DRAWER_URL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_drawer.png";
+import {
+  ICON_MODEL_URL,
+  ICON_DRAWER_URL,
+  preloadImageCached,
+  buildEliteArtUrl,
+  buildSkinArtUrl,
+  withSpSuffix,
+} from "../../../../utils/IconArtUrl";
 
 const SP_DYN_SKINS = skinTable?.spDynSkins || {};
 
-const __imgPreloadPromiseCache = new Map();
-
-function preloadImageCached(url) {
-  if (!url) return Promise.reject(new Error("Missing image URL"));
-  const cached = __imgPreloadPromiseCache.get(url);
-  if (cached) return cached;
-
-  const p = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(url);
-    img.onerror = (e) => reject(e);
-    img.src = url;
-  });
-
-  __imgPreloadPromiseCache.set(url, p);
-  return p;
-}
-
-function buildEliteUrl(charId, elite) {
-  if (!charId) return null;
-  if (elite === "E0") return `${ART_BASE}/${charId}/${charId}_1.png`;
-  if (elite === "E2") return `${ART_BASE}/${charId}/${charId}_2.png`;
-  if (elite === "E1") {
-    const filename = `${charId}_1+.png`.replace("+", "%2B");
-    return `${ART_BASE}/${charId}/${filename}`;
-  }
-  return `${ART_BASE}/${charId}/${charId}_1.png`;
-}
-
-
-function buildSkinUrl(charId, skinId, { forceLowerTheme = false } = {}) {
-  if (!charId || !skinId) return null;
-
-  // Most extra skins are: char_xxx@theme#n
-  if (typeof skinId === "string" && skinId.startsWith(`${charId}@`)) {
-    const rest = skinId.slice(`${charId}@`.length); // "ambienceSynesthesia#3"
-    const hashPos = rest.lastIndexOf("#");
-    const theme = hashPos >= 0 ? rest.slice(0, hashPos) : rest;
-    const ver = hashPos >= 0 ? rest.slice(hashPos + 1) : "";
-
-    const themeNorm = forceLowerTheme ? theme.toLowerCase() : theme;
-    const base = `${charId}_${themeNorm}${hashPos >= 0 ? `#${ver}` : ""}`;
-
-    return `${ART_BASE}/${charId}/${encodeURIComponent(base)}.png`;
-  }
-
-  // Fallback (should rarely be used for extra skins)
-  const file = String(skinId).replaceAll("#", "_");
-  const normalized = forceLowerTheme ? file.toLowerCase() : file;
-  return `${ART_BASE}/${charId}/${encodeURIComponent(normalized)}.png`;
-}
-
-function withSpSuffix(url) {
-  if (!url) return url;
-  // avoid double "_sp"
-  if (/_sp\.(png|webp|jpg|jpeg)$/i.test(url)) return url;
-  return url.replace(/\.(png|webp|jpg|jpeg)$/i, "_sp.$1");
-}
 
 
 function pickDisplaySkin(obj) {
@@ -140,8 +83,8 @@ export default function SkinsSection({ operator, className = "" }) {
         const display = pickDisplaySkin(s);
         const enEntry = skinsDictEn?.[s.skinId];
         const displayEn = pickDisplaySkin(enEntry);
-        const primaryUrl = buildSkinUrl(charId, s.skinId);
-        const fallbackUrl = buildSkinUrl(charId, s.skinId, {
+        const primaryUrl = buildSkinArtUrl(charId, s.skinId);
+        const fallbackUrl = buildSkinArtUrl(charId, s.skinId, {
           forceLowerTheme: true,
         });
 
@@ -168,7 +111,7 @@ export default function SkinsSection({ operator, className = "" }) {
       key: "E0",
       kind: "elite",
       label: "Elite 0",
-      url: buildEliteUrl(charId, "E0"),
+      url: buildEliteArtUrl(charId, "E0"),
       fallbackUrl: null,
       skinName: eliteMeta?.e0?.skinName ?? null,
       drawerList: eliteMeta?.e0?.drawerList ?? [],
@@ -183,7 +126,7 @@ export default function SkinsSection({ operator, className = "" }) {
         key: "E1",
         kind: "elite",
         label: "Elite 1",
-        url: buildEliteUrl(charId, "E1"),
+        url: buildEliteArtUrl(charId, "E1"),
         fallbackUrl: null,
         skinName: eliteMeta?.e1?.skinName ?? null,
         drawerList: eliteMeta?.e1?.drawerList ?? [],
@@ -199,7 +142,7 @@ export default function SkinsSection({ operator, className = "" }) {
         key: "E2",
         kind: "elite",
         label: "Elite 2",
-        url: buildEliteUrl(charId, "E2"),
+        url: buildEliteArtUrl(charId, "E2"),
         fallbackUrl: null,
         skinName: eliteMeta?.e2?.skinName ?? null,
         drawerList: eliteMeta?.e2?.drawerList ?? [],

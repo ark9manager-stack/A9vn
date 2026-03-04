@@ -15,52 +15,21 @@ import buildingDataEN from "../../../../data/operators/building_data_en.json";
 import buildingVN from "../../../../data/operators/building_vn.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import StatHover, { renderAKText } from "../../../StatHover";
+import {
+  RANGE_STAND,
+  RANGE_ATTACK,
+  RANGE_ATTACK_SKILL,
+  INIT_SP_ICON,
+  SP_COST_ICON,
+  getItemBgUrl,
+  getItemIconUrl,
+  getSkillIconUrl,
+  getSkillLevelIconUrl,
+  getPotIcon,
+  getEliteIconLarge,
+  getBuildingSkillIconUrl,
+} from "../../../../utils/IconArtUrl";
 
-/** Icons (Elite) */
-const ELITE_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/elite_hub/";
-
-/** Icons (Range + Potential) */
-const UI_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
-
-const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
-const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
-/** Icons (Skill Range) */
-const BATTLE_UI_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
-const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
-
-/** Icons (Skills) */
-const SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/skill_icon_";
-
-/** Icons (Skill SP) */
-const INIT_SP_ICON =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
-const SP_COST_ICON =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
-
-/** Icons (Skill Level) */
-const LEVEL_SOLID_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/number_hub/solid_";
-const LEVEL_SPECIALIZED_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/specialized_hub/specialized_";
-
-/** Icons (Building Skills) */
-const BUILDING_SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/building/skills/";
-
-/** Materials */
-const ITEM_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
-const ITEM_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/";
-
-const POT_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/potential_hub/";
-
-const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
 
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
@@ -307,44 +276,6 @@ function clamp(n, min, max) {
   return Math.min(Math.max(x, min), max);
 }
 
-
-const rarityToR = (rarity) => {
-  const m = String(rarity || "").match(/TIER_(\d+)/);
-  const n = m ? Number(m[1]) : 1;
-  return Number.isFinite(n) ? n : 1;
-};
-
-const getItemMeta = (itemId) => {
-  const id = String(itemId || "");
-  return itemTable?.items?.[id] || null;
-};
-
-const getItemBgUrl = (rarity) => {
-  const r = clamp(rarityToR(rarity), 1, 6);
-  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
-};
-
-const getItemIconUrl = (iconId) => {
-  const key = String(iconId || "").trim();
-  if (!key) return "";
-  return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
-};
-
-const getSkillIconUrl = (skillId, iconId) => {
-  const iconKey = String(iconId || "").trim();
-  if (iconKey) return `${SKILL_ICON_BASE}${iconKey}.png`;
-  const key = String(skillId || "").trim();
-  if (!key) return "";
-  return `${SKILL_ICON_BASE}${key}.png`;
-};
-
-const getSkillLevelIconUrl = (levelNum) => {
-  const n = Number(levelNum);
-  if (!Number.isFinite(n) || n <= 0) return "";
-  if (n <= 7) return `${LEVEL_SOLID_BASE}${n}.png`;
-  if (n <= 10) return `${LEVEL_SPECIALIZED_BASE}${n - 7}.png`;
-  return "";
-};
 
 const phaseToEliteIndex = (phase) => {
   const p = String(phase || "");
@@ -1070,7 +1001,7 @@ export default function SkillsSection(props) {
     <div className="flex items-center gap-2">
       {traitResolved.variants.map((v, idx) => {
         const active = idx === safeTraitVariantIdx;
-        const src = `${ELITE_ICON_BASE}elite_${v.phaseIndex}_large.png`;
+        const src = getEliteIconLarge(v.phaseIndex);
 
         return (
           <button
@@ -1176,7 +1107,7 @@ const talentHeaderElite = showTalentHeaderElite ? (
   <div className="flex items-center gap-2">
     {talentHeaderOptions.map((opt, idx) => {
       const active = idx === talentHeaderOptIdx;
-      const src = `${ELITE_ICON_BASE}elite_${opt.phaseIndex}_large.png`;
+      const src = getEliteIconLarge(opt.phaseIndex);
       return (
         <button
           key={`talent-header-opt-${opt.phaseIndex}-${opt.level}-${idx}`}
@@ -1553,7 +1484,7 @@ const renderTalentCard = (talentIdx, resolved) => {
     <div className="flex items-center gap-2">
       {buildingHeaderOptions.map((opt, idx) => {
         const active = idx === buildingHeaderOptIdx;
-        const src = `${ELITE_ICON_BASE}elite_${opt.phaseIndex}_large.png`;
+        const src = getEliteIconLarge(opt.phaseIndex);
 
         return (
           <button
@@ -2054,9 +1985,7 @@ return (
                 : ((isNonEmptyString(vn?.description) ? String(vn.description) : "") || def?.description || "");
 
               const iconKey = def?.skillIcon || "";
-              const iconUrl = isNonEmptyString(iconKey)
-                ? `${BUILDING_SKILL_ICON_BASE}${String(iconKey).trim().toLowerCase()}.png`
-                : "";
+              const iconUrl = getBuildingSkillIconUrl(iconKey);
 
               const bg = def?.buffColor || "#FFFFFF";
               const tc = def?.textColor || "#000000";

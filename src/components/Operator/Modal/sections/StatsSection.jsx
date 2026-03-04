@@ -8,38 +8,17 @@ import potVN from "../../../../data/operators/pot_vn.json";
 import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
-
-/** Icons */
-const UI_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
-
-const STAT_ICON = {
-  maxHp: `${UI_ICON_BASE}icon_hp.png`,
-  atk: `${UI_ICON_BASE}icon_atk.png`,
-  def: `${UI_ICON_BASE}icon_def.png`,
-  magicResistance: `${UI_ICON_BASE}icon_res.png`,
-  respawnTime: `${UI_ICON_BASE}icon_time.png`,
-  cost: `${UI_ICON_BASE}icon_cost.png`,
-  blockCnt: `${UI_ICON_BASE}icon_block.png`,
-  baseAttackTime: `${UI_ICON_BASE}icon_attack_speed.png`,
-};
-
-const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
-const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
-
-const ELITE_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/elite_hub/";
-
-const POT_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/potential_hub/";
-
-const getPotIcon = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
-
-/** Materials (Promotion Requirements) */
-const ITEM_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
-const ITEM_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/";
+import {
+  STAT_ICON,
+  RANGE_STAND,
+  RANGE_ATTACK,
+  getEliteIconLarge,
+  getPotIconSmall,
+  getItemBgUrl,
+  getItemIconUrl,
+  getSummonAvatarUrl,
+  getSummonSkillIconUrl,
+} from "../../../../utils/IconArtUrl";
 
 const GOLD_ITEM_ID = "4001";
 
@@ -60,61 +39,6 @@ const getGoldCostForPromotion = (rarity, fromElite, toElite) => {
 const getItemMeta = (itemId) => {
   const id = String(itemId || "");
   return itemTable?.items?.[id] || null;
-};
-
-const rarityToR = (rarity) => {
-  const m = String(rarity || "").match(/TIER_(\d+)/);
-  const n = m ? Number(m[1]) : 1;
-  return Number.isFinite(n) ? n : 1;
-};
-
-const getItemBgUrl = (rarity) => {
-  const r = clamp(rarityToR(rarity), 1, 6);
-  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
-};
-
-const getItemIconUrl = (iconId) => {
-  const key = String(iconId || "").trim();
-  if (!key) return "";
-  return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
-};
-
-/* Summon/Token */
-const CHARAVATAR_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/charavatars/";
-const SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/";
-
-const SUMMON_AVATAR_OVERRIDE = {
-  token_10012_rosmon_shield: `${SKILL_ICON_BASE}skill_icon_sktok_rosmon.png`,
-};
-
-const SUMMON_SKILL_ICON_OVERRIDE = {
-  token_10005_mgllan_drone1: "skill_icon_skchr_mgllan_1",
-  token_10005_mgllan_drone2: "skill_icon_skchr_mgllan_2",
-  token_10005_mgllan_drone3: "skill_icon_skchr_mgllan_3",
-};
-
-const tokenToSkillIconKey = (tokenId) => {
-  const t = String(tokenId || "");
-  if (!t.startsWith("token_")) return null;
-
-  if (SUMMON_SKILL_ICON_OVERRIDE[t]) return SUMMON_SKILL_ICON_OVERRIDE[t];
-
-  return `skill_icon_sktok_${t.replace(/^token_\d+_/, "")}`;
-};
-
-const getSummonAvatarUrl = (tokenId) => {
-  const tid = String(tokenId || "");
-  if (!tid) return "";
-  if (SUMMON_AVATAR_OVERRIDE[tid]) return SUMMON_AVATAR_OVERRIDE[tid];
-  return `${CHARAVATAR_BASE}${tid}.png`;
-};
-
-const getSummonSkillIconUrl = (tokenId) => {
-  const key = tokenToSkillIconKey(tokenId);
-  if (!key) return "";
-  return `${SKILL_ICON_BASE}${key}.png`;
 };
 
 const POSITION_VN = {
@@ -1004,7 +928,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           <div className="flex items-center justify-center gap-2 mb-4">
             {eliteButtons.map((i) => {
               const active = i === phaseIndex;
-              const src = `${ELITE_ICON_BASE}elite_${i}_large.png`;
+              const src = getEliteIconLarge(i);
               return (
                 <button
                   key={i}
@@ -1199,7 +1123,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   >
                     {idx < 5 ? (
                       <img
-                        src={getPotIcon(idx + 1)}
+                        src={getPotIconSmall(idx + 1)}
                         alt={`pot-${idx + 1}`}
                         className="w-5 h-5 mt-[1px] object-contain shrink-0"
                         draggable={false}
@@ -1468,8 +1392,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
             {promotionReqs.map((req) => {
               const fromLabel = `E${req.from}`;
               const toLabel = `E${req.to}`;
-              const fromIcon = `${ELITE_ICON_BASE}elite_${req.from}_large.png`;
-              const toIcon = `${ELITE_ICON_BASE}elite_${req.to}_large.png`;
+              const fromIcon = getEliteIconLarge(req.from);
+              const toIcon = getEliteIconLarge(req.to);
 
               return (
                 <div
