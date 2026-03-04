@@ -4,35 +4,31 @@ import characterTable from "../../../../data/operators/character_table.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import traitEN from "../../../../data/operators/trait_en.json";
+import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
-import statHoverVN from "../../../../data/stathover_vn.json";
-
 import uniequipTable from "../../../../data/module/uniequip_table.json";
 import uniequipTableEN from "../../../../data/module/uniequip_table_en.json";
 import battleEquipTable from "../../../../data/module/battle_equip_table.json";
 import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.json";
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
-
-import StatHover, { renderInlineItalic } from "../../../StatHover";
+import { renderAKText } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
-
 import {
   preloadImageCached,
   RANGE_STAND,
   RANGE_ATTACK,
   RANGE_ATTACK_SKILL,
   getItemBgUrl,
-  getItemIconUrlForModule as getItemIconUrl,
+  getItemIconUrlForModule,
   getPotIcon,
   getModuleDirIconUrl,
   getModuleImageCandidates,
   getModuleLevelBoardUrl,
-  getModuleWarmPreloadUrls,
-  imgOnErrorHideVisibility,
-  makeModuleCandidateOnError,
 } from "../../../../utils/IconArtUrl";
+
+
 // Module image box size (inline style to ensure it really changes)
 const MODULE_IMG_BOX_SIZE = 224;
 
@@ -40,27 +36,17 @@ function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-const __STAT_HOVER_VN_KEYS_LOWER__ = new Set(
-  Object.keys(statHoverVN || {}).map((k) => String(k).toLowerCase())
-);
-
-function hasVnNote(noteKey) {
-  const key = String(noteKey || "").trim();
-  if (!key) return false;
-  if (statHoverVN?.[key]) return true;
-  const lower = key.toLowerCase();
-  if (statHoverVN?.[lower]) return true;
-  return __STAT_HOVER_VN_KEYS_LOWER__.has(lower);
-}
-
-
+const SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS = new Set([
+  "uniequip_002_wscoot",
+  "uniequip_002_takila",
+  "uniequip_002_mlynar",
+  "uniequip_002_leizi2",
+]);
 function getBaseRangeIdE2(charData) {
-  // Modules are generally unlocked at E2, so we use Phase 2 range as base.
   const phases = charData?.phases;
   if (Array.isArray(phases) && phases.length > 0) {
     const e2 = phases?.[2]?.rangeId;
     if (isNonEmptyString(e2)) return String(e2);
-    // fallback: last phase that has rangeId
     for (let i = phases.length - 1; i >= 0; i -= 1) {
       const rid = phases?.[i]?.rangeId;
       if (isNonEmptyString(rid)) return String(rid);
@@ -154,6 +140,12 @@ function applyBlackboard(text, bbMap) {
     const direct = lookup(key0);
     if (direct !== undefined) return formatPlaceholderValue(direct, fmt);
 
+    if (key0.includes("@")) {
+      const tail = key0.split("@").pop()?.trim();
+      const v3 = lookup(tail);
+      if (v3 !== undefined) return formatPlaceholderValue(v3, fmt);
+    }
+
     if ((key0.startsWith("-") || key0.startsWith("+")) && key0.length > 1) {
       const k2 = key0.slice(1).trim();
       const v2 = lookup(k2);
@@ -164,6 +156,19 @@ function applyBlackboard(text, bbMap) {
           return formatPlaceholderValue(vv, fmt);
         }
         return formatPlaceholderValue(v2, fmt);
+      }
+
+      if (k2.includes("@")) {
+        const tail2 = k2.split("@").pop()?.trim();
+        const v4 = lookup(tail2);
+        if (v4 !== undefined) {
+          if (key0.startsWith("-")) {
+            const n = Number(v4);
+            const vv = Number.isFinite(n) ? -n : v4;
+            return formatPlaceholderValue(vv, fmt);
+          }
+          return formatPlaceholderValue(v4, fmt);
+        }
       }
     }
 
@@ -195,158 +200,6 @@ function matchCloseTagAt(str, i) {
   return 0;
 }
 
-function parseMarkupSegment(
-  str,
-  keyPrefix,
-  noteKeyCtx = null,
-  startIndex = 0,
-  stopAtClose = false,
-  opts = {}
-) {
-  const nodes = [];
-  let i = startIndex;
-  let buf = "";
-
-  const flush = () => {
-    if (buf === "") return;
-    const kp = `${keyPrefix}-t-${i}-${nodes.length}`;
-
-    if (isNonEmptyString(noteKeyCtx)) {
-      if (String(buf).trim() === "") {
-        // Preserve pure whitespace between markup tokens
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(<StatHover key={kp} label={buf} noteKey={noteKeyCtx} />);
-      }
-    } else {
-      if (String(buf).trim() === "") {
-        // IMPORTANT: don't drop whitespace-only chunks, or words will stick together
-        nodes.push(<React.Fragment key={kp}>{buf}</React.Fragment>);
-      } else {
-        nodes.push(...renderInlineItalic(buf, kp));
-      }
-    }
-    buf = "";
-  };
-
-  while (i < str.length) {
-    const closeLen = matchCloseTagAt(str, i);
-    if (closeLen) {
-      flush();
-      i += closeLen;
-
-      if (stopAtClose) return { nodes, index: i };
-      continue;
-    }
-
-    if (str[i] === "\n") {
-      flush();
-      nodes.push(<br key={`${keyPrefix}-br-${i}-${nodes.length}`} />);
-      i += 1;
-      continue;
-    }
-
-    // [[label|noteKey]]
-    if (str.startsWith("[[", i)) {
-      const close = str.indexOf("]]", i + 2);
-      if (close === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-
-      const inner = str.slice(i + 2, close);
-      const barIdx = inner.indexOf("|");
-      if (barIdx === -1) {
-        buf += str.slice(i, close + 2);
-        i = close + 2;
-        continue;
-      }
-
-      const rawLabel = inner.slice(0, barIdx);
-      const noteKey = inner.slice(barIdx + 1).trim();
-      const label = formatNestedNoteTags(rawLabel);
-
-      nodes.push(
-        <StatHover key={`${keyPrefix}-h-${i}`} label={label} noteKey={noteKey} />
-      );
-
-      i = close + 2;
-      continue;
-    }
-
-    // <@...> or <$...>
-    if (str[i] === "<" && (str[i + 1] === "@" || str[i + 1] === "$")) {
-      const gt = str.indexOf(">", i + 2);
-      if (gt === -1) {
-        buf += str[i];
-        i += 1;
-        continue;
-      }
-
-      flush();
-
-      const type = str[i + 1]; // '@' | '$'
-      const key = str.slice(i + 2, gt).trim();
-      const inner = parseMarkupSegment(
-        str,
-        `${keyPrefix}-in-${i}`,
-        type === "@" ? key : noteKeyCtx,
-        gt + 1,
-        true,
-        opts
-      );
-
-      const innerNodes = inner.nodes;
-
-      if (type === "$") {
-        const preferNote = !!opts?.preferNoteForDollar;
-        const useNote = preferNote && hasVnNote(key);
-        nodes.push(
-          useNote ? (
-            <StatHover key={`${keyPrefix}-term-${i}-${key}`} noteKey={key}>
-              {innerNodes}
-            </StatHover>
-          ) : (
-            <StatHover key={`${keyPrefix}-term-${i}-${key}`} termId={key}>
-              {innerNodes}
-            </StatHover>
-          )
-        );
-      } else {
-        // '@' tag: styling applied via noteKeyCtx inside recursion
-        nodes.push(
-          <React.Fragment key={`${keyPrefix}-at-${i}-${key}`}>
-            {innerNodes}
-          </React.Fragment>
-        );
-      }
-
-      i = inner.index;
-      continue;
-    }
-
-    buf += str[i];
-    i += 1;
-  }
-
-  flush();
-  return { nodes, index: i };
-}
-
-function renderTextWithTermNotes(text, keyPrefix, options = {}) {
-  if (!isNonEmptyString(text)) return null;
-
-  const normalized = String(text)
-    .split("\r\n").join("\n")
-    .split("\r").join("\n")
-    .split("\\n").join("\n");
-
-  const parsed = parseMarkupSegment(normalized, keyPrefix, null, 0, false, options);
-  return <>{parsed.nodes}</>;
-}
 
 function buildTraitMap(traitJson) {
   const list = traitJson?.traitDescription;
@@ -368,17 +221,20 @@ function clamp(n, min, max) {
   return Math.min(Math.max(x, min), max);
 }
 
+
 const getItemMeta = (itemId) => {
   const id = String(itemId || "");
   return itemTable?.items?.[id] || null;
 };
+
+
 
 function MaterialIcon({ itemId, count }) {
   const meta = getItemMeta(itemId);
 
   const name = meta?.name || String(itemId || "Unknown");
   const bgUrl = getItemBgUrl(meta?.rarity);
-  const iconUrl = getItemIconUrl(itemId, meta?.iconId);
+  const iconUrl = getItemIconUrlForModule(itemId, meta?.iconId);
 
   const INNER = 44;
   const BG_SCALE = 1.42;
@@ -412,7 +268,9 @@ function MaterialIcon({ itemId, count }) {
               style={{ transform: `scale(${ICON_SCALE})` }}
               draggable={false}
               loading="lazy"
-              onError={imgOnErrorHideVisibility}
+              onError={(e) => {
+                e.currentTarget.style.visibility = "hidden";
+              }}
             />
           ) : null}
         </div>
@@ -626,6 +484,31 @@ const phaseToEliteIndex = (phase) => {
   return 0;
 };
 
+function pickCharTraitCandidateAtPhase(charData, elitePhaseIdx, potRank) {
+  const cands = charData?.trait?.candidates;
+  if (!Array.isArray(cands) || cands.length === 0) return null;
+
+  const pRank = Number(potRank);
+  const pot = Number.isFinite(pRank) ? pRank : 0;
+
+  const req = (c) => {
+    const n = Number(c?.requiredPotentialRank);
+    return Number.isFinite(n) ? n : 0;
+  };
+
+  const ph = (c) => {
+    const idx = phaseToEliteIndex(c?.unlockCondition?.phase);
+    return Number.isFinite(idx) ? idx : 0;
+  };
+
+  const phaseEligible = cands.filter((c) => ph(c) <= elitePhaseIdx);
+  const phasePool = phaseEligible.length > 0 ? phaseEligible : cands;
+  const potEligible = phasePool.filter((c) => req(c) <= pot);
+  const pool = potEligible.length > 0 ? potEligible : phasePool;
+  const sorted = [...pool].sort((a, b) => ph(b) - ph(a) || req(b) - req(a));
+  return sorted[0] || null;
+}
+
 function modTypeLabel(typeName2) {
   const t = typeName2 == null ? null : String(typeName2);
   if (!t) return "Original";
@@ -716,10 +599,9 @@ function pickBestCandidateByPot(candidates, potRank) {
   };
 
   const priority = (c) => {
-    // lower = better
     const src = String(c?._src || "");
-    const srcScore = src === "talent" ? 0 : 1; // prefer talent bundle
-    const hasText = isNonEmptyString(c?.upgradeDescription) ? 0 : 1; // prefer lines that actually render
+    const srcScore = src === "talent" ? 0 : 1;
+    const hasText = isNonEmptyString(c?.upgradeDescription) ? 0 : 1;
     const hasName = isNonEmptyString(c?.name) ? 0 : 1;
     return hasText * 100 + srcScore * 10 + hasName;
   };
@@ -730,7 +612,7 @@ function pickBestCandidateByPot(candidates, potRank) {
   const pool = eligible.length > 0 ? eligible : withReq;
 
   pool.sort((a, b) => {
-    const dReq = b._req - a._req; // highest pot requirement first (<= potRank)
+    const dReq = b._req - a._req;
     if (dReq !== 0) return dReq;
     return priority(a) - priority(b);
   });
@@ -758,7 +640,6 @@ function collectUpgradeCandidatesForPot(phase) {
     const c1 = part?.addOrOverrideTalentDataBundle?.candidates;
     if (Array.isArray(c1)) {
       for (const c of c1) {
-        // Only keep upgrade lines (avoid TRAIT candidates that don't have upgradeDescription)
         if (isNonEmptyString(c?.upgradeDescription)) all.push({ ...c, _src: "talent" });
       }
     }
@@ -766,7 +647,6 @@ function collectUpgradeCandidatesForPot(phase) {
     const c2 = part?.overrideTraitDataBundle?.candidates;
     if (Array.isArray(c2)) {
       for (const c of c2) {
-        // Some modules store upgrade lines here; keep only if it has upgradeDescription
         if (isNonEmptyString(c?.upgradeDescription)) all.push({ ...c, _src: "trait" });
       }
     }
@@ -782,11 +662,6 @@ function trustToPercent(raw) {
   return Math.min(100, Math.round(n / 100));
 }
 
-/**
- * Module panes (Mode B) for icon-heavy parts.
- * These panes are mounted once per module id and then hidden via CSS when inactive.
- * This prevents repeated image requests (Initiator: Other) when users spam-switch modules.
- */
 function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, charKey }) {
   const id = module?.id;
   const selectedBattle = React.useMemo(() => {
@@ -884,7 +759,9 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                   className="h-10 w-auto object-contain"
                   draggable={false}
                   loading="lazy"
-                  onError={imgOnErrorHideVisibility}
+                  onError={(e) => {
+                    e.currentTarget.style.visibility = "hidden";
+                  }}
                 />
               </div>
 
@@ -931,7 +808,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                             style={{ overflowWrap: "anywhere" }}
                           >
                             {isNonEmptyString(lv1DetailText) ? (
-                              renderTextWithTermNotes(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })
+                              renderAKText(lv1DetailText, `module-up-${charKey}-${id}-lv1-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })
                             ) : (
                               <span className="text-white/40 italic">-</span>
                             )}
@@ -943,7 +820,7 @@ function ModuleLevelBoardPane({ module, isEnglishUI, potRank, baseRangeIdE2, cha
                           style={{ overflowWrap: "anywhere" }}
                         >
                           {isNonEmptyString(rightText) ? (
-                            renderTextWithTermNotes(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })
+                            renderAKText(rightText, `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })
                           ) : (
                             <span className="text-white/40 italic">-</span>
                           )}
@@ -1009,7 +886,7 @@ function ModuleMissionsPane({ module, isEnglishUI, charKey }) {
         {missionTexts.map((t, idx0) => (
           <div key={`mis-${id}-${idx0}`} className="text-white/95 leading-relaxed flex gap-2">
             <span className="shrink-0">•</span>
-            <div className="min-w-0">{renderTextWithTermNotes(t, `module-mission-${id}-${idx0}`, { preferNoteForDollar: !isEnglishUI })}</div>
+            <div className="min-w-0">{renderAKText(t, `module-mission-${id}-${idx0}`, { preferNoteForDollar: !isEnglishUI })}</div>
           </div>
         ))}
       </div>
@@ -1157,7 +1034,6 @@ export default function ModuleSection(props) {
   const moduleIds = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return [];
 
-    // Prefer CN list as base order, but merge EN list to avoid missing modules
     const cnList = Array.isArray(uniequipTable?.charEquip?.[charKey]) ? uniequipTable.charEquip[charKey] : [];
     const enList = Array.isArray(uniequipTableEN?.charEquip?.[charKey]) ? uniequipTableEN.charEquip[charKey] : [];
 
@@ -1174,7 +1050,6 @@ export default function ModuleSection(props) {
       }
     };
 
-    // CN first to keep expected in-game ordering, then append EN-only ids.
     push(cnList);
     push(enList);
 
@@ -1191,11 +1066,9 @@ export default function ModuleSection(props) {
 
       const metaCharId = cnMeta?.charId || enMeta?.charId || meta?.charId || "";
       if (isNonEmptyString(metaCharId) && isNonEmptyString(charKey) && String(metaCharId) !== String(charKey)) {
-        // Defensive: avoid mixing module metadata between different operators
         continue;
       }
 
-      // Treat any uniequip_001_* as the ORIGINAL module
       const forcedOriginal = String(id).startsWith("uniequip_001_");
 
       const typeName2 = forcedOriginal
@@ -1228,9 +1101,6 @@ export default function ModuleSection(props) {
   const safeModuleIdx = clamp(activeModuleIdx, 0, Math.max(0, modules.length - 1));
   const selected = modules?.[safeModuleIdx] || null;
 
-
-// Mode B for module sub-panels (materials/level-board/missions):
-// keep previously selected module panes mounted so their icon <img> elements don't re-request when switching back.
 const [mountedModulePaneIds, setMountedModulePaneIds] = React.useState(() => {
   const s = new Set();
   if (selected?.id) s.add(String(selected.id));
@@ -1238,7 +1108,6 @@ const [mountedModulePaneIds, setMountedModulePaneIds] = React.useState(() => {
 });
 
 React.useEffect(() => {
-  // Reset when switching operator
   const s = new Set();
   if (selected?.id) s.add(String(selected.id));
   setMountedModulePaneIds(s);
@@ -1276,19 +1145,57 @@ React.useEffect(() => {
     return moduleVN?.[id] || null;
   }, [selected?.id]);
 
-
   const traitModMapVN = React.useMemo(() => {
     const arr = traitModVN?.overrideTraitDataBundle;
-    const m = new Map();
+
+    const generic = new Map();
+    const byUniEquip = new Map();
+
     if (Array.isArray(arr)) {
       for (const row of arr) {
-        const k = row?.trait;
-        const v = row?.trait_vn;
-        if (isNonEmptyString(k) && isNonEmptyString(v)) m.set(String(k), String(v));
+        const traitCN = row?.trait;
+        if (!isNonEmptyString(traitCN)) continue;
+        const t = String(traitCN);
+
+        if (isNonEmptyString(row?.trait_vn)) {
+          generic.set(t, String(row.trait_vn));
+        }
+
+        for (const [k, v] of Object.entries(row || {})) {
+          if (k === "trait" || k === "trait_vn") continue;
+          if (!String(k).startsWith("uniequip_")) continue;
+          if (!isNonEmptyString(v)) continue;
+
+          const uniequipId = String(k);
+          let m = byUniEquip.get(uniequipId);
+          if (!m) {
+            m = new Map();
+            byUniEquip.set(uniequipId, m);
+          }
+          m.set(t, String(v));
+        }
       }
     }
-    return m;
-  }, []);
+
+    return { generic, byUniEquip };
+  }, [traitModVN]);
+
+  const resolveTraitModVN = React.useCallback(
+    (rawCN) => {
+      if (!isNonEmptyString(rawCN)) return rawCN;
+      const t = String(rawCN);
+
+      const uniequipId = String(selected?.id || "");
+      const per = traitModMapVN?.byUniEquip?.get(uniequipId)?.get(t);
+      if (isNonEmptyString(per)) return String(per);
+
+      const gen = traitModMapVN?.generic?.get(t);
+      if (isNonEmptyString(gen)) return String(gen);
+
+      return rawCN;
+    },
+    [selected?.id, traitModMapVN]
+  );
 
   const phasesByLevel = React.useMemo(() => {
     const entry = selectedBattle || selectedBattleFallbackCN;
@@ -1331,10 +1238,6 @@ React.useEffect(() => {
   const showPotPicker = availablePotRanks.length > 1;
 const ALL_POT_RANKS = [0, 1, 2, 3, 4, 5];
 const availSet = new Set(availablePotRanks);
-
-// Keep POT icon <img> mounted to avoid repeated requests when switching modules.
-// We render ALL ranks, but ranks not available for the current module are moved offscreen
-// (not display:none) so they don't affect layout but remain mounted.
 const potPicker = (
   <div className="flex items-center gap-1 relative">
     {ALL_POT_RANKS.map((idx0) => {
@@ -1394,6 +1297,14 @@ const isDefaultModule = React.useMemo(() => {
     );
   }, [selected?.id, selected?.uniEquipIcon, selected?.typeIcon, selected?.typeName2]);
 
+  const baseTraitCandidateE2 = React.useMemo(() => {
+    return pickCharTraitCandidateAtPhase(charData, 2, potRank);
+  }, [charData, potRank]);
+
+  const baseTraitBBMapE2 = React.useMemo(() => {
+    return buildBlackboardMap(baseTraitCandidateE2?.blackboard);
+  }, [baseTraitCandidateE2]);
+
   const baseTraitText = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
     const rarity = charData?.rarity ?? operator?.rarity;
@@ -1402,10 +1313,11 @@ const isDefaultModule = React.useMemo(() => {
     const baseDescEN = charDataEN?.description ?? "";
     const baseDesc = isEnglishUI ? baseDescEN || baseDescCN : baseDescCN;
 
-    return resolveTraitTexts({ subProfessionId, rarity, description: baseDesc }, traitMap).mainText;
-  }, [charData, charDataEN, operator, isEnglishUI, traitMap]);
+    const raw = resolveTraitTexts({ subProfessionId, rarity, description: baseDesc }, traitMap).mainText;
 
-  // Trait candidate depends on potRank (to match Talent-like behavior)
+    return applyBlackboard(raw, baseTraitBBMapE2);
+  }, [charData, charDataEN, operator, isEnglishUI, traitMap, baseTraitBBMapE2]);
+
   const traitCandidate = React.useMemo(() => {
     const ph1 = phasesByLevel.get(1) || null;
     if (!ph1) return null;
@@ -1414,13 +1326,19 @@ const isDefaultModule = React.useMemo(() => {
 
   const traitBBMap = React.useMemo(() => buildBlackboardMap(traitCandidate?.blackboard), [traitCandidate]);
 
+  
+
+  const suppressTraitOverride = React.useMemo(() => {
+    const mid = String(selected?.id || "");
+    return SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS.has(mid);
+  }, [selected?.id]);
+
   const traitOverrideText = React.useMemo(() => {
+    if (suppressTraitOverride) return "";
     let raw = traitCandidate?.overrideDescripton || "";
-    if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
-      raw = traitModMapVN.get(raw);
-    }
+    if (!isEnglishUI) raw = resolveTraitModVN(raw);
     return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, traitBBMap, isEnglishUI, traitModMapVN]);
+  }, [traitCandidate, traitBBMap, isEnglishUI, resolveTraitModVN, suppressTraitOverride]);
 
   const traitAdditionalText = React.useMemo(() => {
     let raw = "";
@@ -1428,12 +1346,10 @@ const isDefaultModule = React.useMemo(() => {
       raw = String(vnOverride.Trait);
     } else {
       raw = traitCandidate?.additionalDescription || "";
-      if (!isEnglishUI && isNonEmptyString(raw) && traitModMapVN?.has(raw)) {
-        raw = traitModMapVN.get(raw);
-      }
+      if (!isEnglishUI) raw = resolveTraitModVN(raw);
     }
     return applyBlackboard(raw, traitBBMap);
-  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, traitModMapVN]);
+  }, [traitCandidate, vnOverride, isEnglishUI, traitBBMap, resolveTraitModVN]);
 
   const displayModuleName = React.useMemo(() => {
     if (!selected) return "";
@@ -1453,17 +1369,13 @@ const isDefaultModule = React.useMemo(() => {
 
   const moduleImageCandidates = React.useMemo(() => {
     if (!selected) return [];
-    return getModuleImageCandidates(selected?.id, selected?.uniEquipIcon);
+    const id = String(selected?.id || "");
+    const icon = String(selected?.uniEquipIcon || "");
+    return getModuleImageCandidates(id, icon);
   }, [selected?.id, selected?.uniEquipIcon]);
 
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
 
-/**
- * Mode B (DOM image cache):
- * - Keep previously loaded module images mounted so toggling back/forth doesn't re-request them,
- *   even when spamming the selector.
- * - Hide the previous image immediately when switching to a new one (aesthetic).
- */
 const moduleImgLoadedSetRef = React.useRef(new Set());
 const moduleImgPendingUrlRef = React.useRef("");
 const [mountedModuleImgUrls, setMountedModuleImgUrls] = React.useState(() => new Set());
@@ -1471,7 +1383,6 @@ const [displayModuleImageUrl, setDisplayModuleImageUrl] = React.useState("");
 const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
 
 React.useEffect(() => {
-  // When switching module, reset the visible image state.
   setModuleImgIdx(0);
   setDisplayModuleImageUrl("");
   setModuleImgLoaded(false);
@@ -1479,7 +1390,6 @@ React.useEffect(() => {
 
 const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
-// Hide old image immediately when switching, but show instantly if the target URL was already loaded.
 React.useEffect(() => {
   const url = activeModuleImageUrl;
   moduleImgPendingUrlRef.current = url;
@@ -1501,23 +1411,20 @@ React.useEffect(() => {
     setDisplayModuleImageUrl(url);
     setModuleImgLoaded(true);
   } else {
-    // Aesthetic: don't show the old image while the new one is loading
     setDisplayModuleImageUrl("");
     setModuleImgLoaded(false);
   }
 }, [activeModuleImageUrl]);
 
-// Warm cache for module images to avoid long stalls (especially when switching or falling back)
 React.useEffect(() => {
   const urls = Array.isArray(moduleImageCandidates) ? moduleImageCandidates : [];
-  const warm = getModuleWarmPreloadUrls(urls);
+  const warm = [...new Set([...(urls.slice(0, 2)), ...(urls.length ? [urls[urls.length - 1]] : [])])];
   warm.forEach((u) => {
     if (!u) return;
     preloadImageCached(u).catch(() => {});
   });
 }, [moduleImageCandidates]);
 
-// If the current image stalls (no load/error), advance to the next candidate quickly
 React.useEffect(() => {
   const len = moduleImageCandidates?.length || 0;
   if (!activeModuleImageUrl || len <= 1) return;
@@ -1587,7 +1494,9 @@ if (!isNonEmptyString(charKey) || !charData) {
                 }
                 draggable={false}
                 loading="lazy"
-                onError={imgOnErrorHideVisibility}
+                onError={(e) => {
+                  e.currentTarget.style.visibility = "hidden";
+                }}
               />
             </button>
             <div className="text-xs font-semibold text-white/80">{label}</div>
@@ -1629,14 +1538,17 @@ if (!isNonEmptyString(charKey) || !charData) {
                       setModuleImgLoaded(true);
                     }
                   }}
-                  onError={makeModuleCandidateOnError({
-                    url,
-                    pendingUrlRef: moduleImgPendingUrlRef,
-                    setLoaded: setModuleImgLoaded,
-                    setDisplayUrl: setDisplayModuleImageUrl,
-                    setIndex: setModuleImgIdx,
-                    getCandidatesLength: () => (moduleImageCandidates?.length || 0),
-                  })}
+                  onError={() => {
+                    if (moduleImgPendingUrlRef.current === url) {
+                      setModuleImgLoaded(false);
+                      setDisplayModuleImageUrl("");
+                      setModuleImgIdx((prev) => {
+                        const len = moduleImageCandidates?.length || 0;
+                        const next = prev + 1;
+                        return next < len ? next : prev;
+                      });
+                    }
+                  }}
                 />
               ))}{moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
                 <img
@@ -1645,7 +1557,9 @@ if (!isNonEmptyString(charKey) || !charData) {
                   className="absolute inset-0 m-auto w-[44px] h-[44px] object-contain"
                   draggable={false}
                   loading="lazy"
-                  onError={imgOnErrorHideVisibility}
+                  onError={(e) => {
+                    e.currentTarget.style.visibility = "hidden";
+                  }}
                 />
               ) : null}
             </div>
@@ -1666,7 +1580,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                 style={{ overflowWrap: "anywhere" }}
               >
                 {isNonEmptyString(baseTraitText) ? (
-                  renderTextWithTermNotes(baseTraitText, `module-trait-base-${charKey}-${selected.id}`, { preferNoteForDollar: !isEnglishUI })
+                  renderAKText(baseTraitText, `module-trait-base-${charKey}-${selected.id}`, { preferNoteForDollar: !isEnglishUI })
                 ) : (
                   <span className="text-white/40 italic">-</span>
                 )}
@@ -1682,7 +1596,7 @@ if (!isNonEmptyString(charKey) || !charData) {
                     <span className="inline-flex items-center rounded-md bg-amber-500/20 text-amber-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Improve Trait" : "Cải thiện đặc tính"}
                     </span>
-                    {renderTextWithTermNotes(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })}
+                    {renderAKText(traitOverrideText, `module-trait-override-${selected.id}-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })}
                     {isNonEmptyString(traitAdditionalText) ? <br /> : null}
                   </>
                 ) : null}
@@ -1691,13 +1605,13 @@ if (!isNonEmptyString(charKey) || !charData) {
                 {isNonEmptyString(traitAdditionalText) ? (
                   <>
                     {isNonEmptyString(baseTraitText)
-                      ? renderTextWithTermNotes(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`, { preferNoteForDollar: !isEnglishUI })
+                      ? renderAKText(baseTraitText, `module-trait-base2-${charKey}-${selected.id}`, { preferNoteForDollar: !isEnglishUI })
                       : null}
                     {isNonEmptyString(baseTraitText) ? <br /> : null}
                     <span className="inline-flex items-center rounded-md bg-sky-500/20 text-sky-200 px-2 py-1 text-xs font-semibold mr-2">
                       {isEnglishUI ? "Additional Trait" : "Thêm đặc tính"}
                     </span>
-                    {renderTextWithTermNotes(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })}
+                    {renderAKText(traitAdditionalText, `module-trait-add-${selected.id}-pot${potRank}`, { preferNoteForDollar: !isEnglishUI })}
                   </>
                 ) : null}
               </div>
@@ -1822,7 +1736,7 @@ if (!isNonEmptyString(charKey) || !charData) {
       <InfoTable title={isEnglishUI ? "Story" : "Cốt truyện"}>
         {isNonEmptyString(displayStoryText) ? (
           <div className="text-white/95 leading-relaxed" style={{ overflowWrap: "anywhere" }}>
-            {renderTextWithTermNotes(displayStoryText, `module-story-${selected?.id}`, { preferNoteForDollar: !isEnglishUI })}
+            {renderAKText(displayStoryText, `module-story-${selected?.id}`, { preferNoteForDollar: !isEnglishUI })}
           </div>
         ) : (
           <span className="text-white/40 italic">-</span>
