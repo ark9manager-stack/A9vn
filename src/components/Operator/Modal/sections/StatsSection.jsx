@@ -8,6 +8,7 @@ import potVN from "../../../../data/operators/pot_vn.json";
 import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
+
 import {
   STAT_ICON,
   RANGE_STAND,
@@ -18,6 +19,8 @@ import {
   getItemIconUrl,
   getSummonAvatarUrl,
   getSummonSkillIconUrl,
+  makeSummonSkillIconOnError,
+  imgOnErrorHideDisplay,
 } from "../../../../utils/IconArtUrl";
 
 const GOLD_ITEM_ID = "4001";
@@ -40,6 +43,8 @@ const getItemMeta = (itemId) => {
   const id = String(itemId || "");
   return itemTable?.items?.[id] || null;
 };
+
+// image URL logic moved to utils/IconArtUrl.js
 
 const POSITION_VN = {
   ALL: "Toàn bộ",
@@ -341,9 +346,7 @@ function MaterialIcon({ itemId, count }) {
               style={{ transform: `scale(${ICON_SCALE})` }}
               draggable={false}
               loading="lazy"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
+              onError={imgOnErrorHideDisplay}
             />
           ) : null}
         </div>
@@ -1192,12 +1195,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                         className="w-7 h-7 object-contain shrink-0"
                         draggable={false}
                         loading="lazy"
-                        onError={(e) => {
-                          const img = e.currentTarget;
-                          if (img?.dataset?.fallback === "1") return;
-                          img.dataset.fallback = "1";
-                          img.src = getSummonAvatarUrl(opt.tokenId);
-                        }}
+                        onError={makeSummonSkillIconOnError(opt.tokenId)}
                       />
                       <span className="text-xs text-white/90 whitespace-nowrap">
                         {skillLabel}

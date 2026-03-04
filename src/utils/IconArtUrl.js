@@ -1,8 +1,11 @@
 // src/utils/IconArtUrl.js
-// Centralized image/icon URL builders used across Operator modal sections.
-// NOTE: This module should contain ONLY image-related URL logic (no UI logic).
+// Centralized image/icon URL logic + shared image fallback handlers.
+// IMPORTANT: This module should contain ONLY image-related logic.
 
-/** Shared image preloader cache (cross-section) */
+/* =========================
+ * Shared image preload cache
+ * ========================= */
+
 const __IMG_STATUS__ = new Map();
 
 /**
@@ -33,6 +36,71 @@ export function preloadImageCached(url) {
 
   __IMG_STATUS__.set(url, p);
   return p;
+}
+
+/* =========================
+ * Generic <img> onError handlers
+ * ========================= */
+
+export function imgOnErrorHideVisibility(e) {
+  try {
+    e?.currentTarget && (e.currentTarget.style.visibility = "hidden");
+  } catch {}
+}
+
+export function imgOnErrorHideDisplay(e) {
+  try {
+    e?.currentTarget && (e.currentTarget.style.display = "none");
+  } catch {}
+}
+
+/**
+ * Fallback to a new src exactly once.
+ * Prevents infinite loop if fallback also fails.
+ */
+export function makeImgFallbackOnceHandler(getFallbackSrc, {
+  flagAttr = "data-fallback",
+} = {}) {
+  return (e) => {
+    const img = e?.currentTarget;
+    if (!img) return;
+
+    if (img?.dataset?.fallback === "1" || img?.getAttribute?.(flagAttr) === "1") return;
+    try {
+      if (img.dataset) img.dataset.fallback = "1";
+      img.setAttribute?.(flagAttr, "1");
+    } catch {}
+
+    const next = typeof getFallbackSrc === "function" ? getFallbackSrc(img) : "";
+    if (typeof next === "string" && next.trim()) {
+      img.src = next;
+    }
+  };
+}
+
+/**
+ * Stateful fallback handler for components that keep `src` in React state.
+ * - First error: swap to fallbackImgUrl (if any)
+ * - Second error: clear src
+ */
+export function makeStatefulImgFallbackHandler({
+  usedFallback,
+  fallbackImgUrl,
+  setUsedFallback,
+  setSrc,
+} = {}) {
+  return () => {
+    try {
+      if (!usedFallback && typeof fallbackImgUrl === "string" && fallbackImgUrl.trim()) {
+        setUsedFallback?.(true);
+        setSrc?.(fallbackImgUrl);
+        return;
+      }
+      setSrc?.("");
+    } catch {
+      // no-op
+    }
+  };
 }
 
 /* =========================
@@ -76,14 +144,56 @@ export function getEliteIconLarge(phaseIndex) {
 export const POT_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/potential_hub/";
 
-// Used by SkillsSection / ModuleSection
+// Skills/Module use idx0 (0..5)
 export const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
-// Used by StatsSection
-export const getPotIconSmall = (idx1) =>
-  `${POT_ICON_BASE}potential_${idx1}_small.png`;
+// Stats uses idx1 (1..6)
+export const getPotIconSmall = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
 
 /* =========================
- * Items (material icons + backgrounds)
+ * Skills icons
+ * ========================= */
+
+export const SKILL_ICON_DIR =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/";
+export const SKILL_ICON_BASE = `${SKILL_ICON_DIR}skill_icon_`;
+
+export function getSkillIconUrl(skillId, iconId) {
+  const iconKey = String(iconId || "").trim();
+  if (iconKey) return `${SKILL_ICON_BASE}${iconKey}.png`;
+  const key = String(skillId || "").trim();
+  if (!key) return "";
+  return `${SKILL_ICON_BASE}${key}.png`;
+}
+
+export const INIT_SP_ICON =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
+export const SP_COST_ICON =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
+
+export const LEVEL_SOLID_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/number_hub/solid_";
+export const LEVEL_SPECIALIZED_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/specialized_hub/specialized_";
+
+export function getSkillLevelIconUrl(levelNum) {
+  const n = Number(levelNum);
+  if (!Number.isFinite(n) || n <= 0) return "";
+  if (n <= 7) return `${LEVEL_SOLID_BASE}${n}.png`;
+  if (n <= 10) return `${LEVEL_SPECIALIZED_BASE}${n - 7}.png`;
+  return "";
+}
+
+export const BUILDING_SKILL_ICON_BASE =
+  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/building/skills/";
+
+export function getBuildingSkillIconUrl(iconKey) {
+  const key = String(iconKey || "").trim();
+  if (!key) return "";
+  return `${BUILDING_SKILL_ICON_BASE}${key.toLowerCase()}.png`;
+}
+
+/* =========================
+ * Materials / items
  * ========================= */
 
 export const ITEM_BG_BASE =
@@ -103,20 +213,18 @@ function rarityToR(rarity) {
   return Number.isFinite(n) ? n : 1;
 }
 
-// Used by SkillsSection / ModuleSection / StatsSection
 export function getItemBgUrl(rarity) {
   const r = clamp(rarityToR(rarity), 1, 6);
   return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
 }
 
-// Used by SkillsSection / StatsSection
 export function getItemIconUrl(iconId) {
   const key = String(iconId || "").trim();
   if (!key) return "";
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 }
 
-// Used by ModuleSection (keeps existing special-case logic)
+// ModuleSection keeps its special-case behavior
 export function getItemIconUrlForModule(itemId, iconId) {
   const raw = iconId || itemId || "";
   const key = String(raw).trim();
@@ -125,65 +233,17 @@ export function getItemIconUrlForModule(itemId, iconId) {
   if (key.toLowerCase() === "mod_unlock_token") {
     return `${ITEM_ICON_BASE}acticon/mod_unlock_token.png`;
   }
-
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 }
 
 /* =========================
- * Skills icons (operator skills + token skills)
- * ========================= */
-
-// Directory (note: NOT the prefix)
-export const SKILL_ICON_DIR =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/";
-
-// Used by SkillsSection (skillId, iconId) and StatsSection (full key)
-export function getSkillIconUrl(skillIdOrKey, iconId) {
-  const raw = String(iconId || skillIdOrKey || "").trim();
-  if (!raw) return "";
-  const key = raw.startsWith("skill_icon_") ? raw : `skill_icon_${raw}`;
-  return `${SKILL_ICON_DIR}${key}.png`;
-}
-
-/** Icons (Skill SP) */
-export const INIT_SP_ICON =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
-export const SP_COST_ICON =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
-
-/** Icons (Skill Level) */
-export const LEVEL_SOLID_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/number_hub/solid_";
-export const LEVEL_SPECIALIZED_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/specialized_hub/specialized_";
-
-export function getSkillLevelIconUrl(levelNum) {
-  const n = Number(levelNum);
-  if (!Number.isFinite(n) || n <= 0) return "";
-  if (n <= 7) return `${LEVEL_SOLID_BASE}${n}.png`;
-  if (n <= 10) return `${LEVEL_SPECIALIZED_BASE}${n - 7}.png`;
-  return "";
-}
-
-/** Icons (Building Skills) */
-export const BUILDING_SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/building/skills/";
-
-export function getBuildingSkillIconUrl(iconKey) {
-  const key = String(iconKey || "").trim();
-  if (!key) return "";
-  return `${BUILDING_SKILL_ICON_BASE}${key.toLowerCase()}.png`;
-}
-
-/* =========================
- * Profile Section: recruit bg + token icons
+ * Profile section: recruit bg + token icons
  * ========================= */
 
 export function buildRecruitBgUrl(rarity) {
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
   const n = m ? Number(m[1]) : 1;
   const safe = Number.isFinite(n) && n >= 1 && n <= 6 ? n : 1;
-  // ProfileSection uses op_r{n}.png (not sprite_item_r)
   return `${ITEM_BG_BASE}op_r${safe}.png`;
 }
 
@@ -206,19 +266,16 @@ export function buildActivityVoucherIconUrl(activityPotentialItemId, resolvedCha
   const id = String(activityPotentialItemId || "").trim();
   if (!id) return "";
 
-  const useActicon =
-    resolvedCharId === "char_4091_ulika" || id === "voucher_ulika";
-
+  const useActicon = resolvedCharId === "char_4091_ulika" || id === "voucher_ulika";
   const base = TOKEN_ICON_BASE_CLASSPOTENTIAL.replace(
     "/classpotential/",
     useActicon ? "/acticon/" : "/",
   );
-
   return `${base}${id}.png`;
 }
 
 /* =========================
- * Module Section: module icons + images
+ * Module section: module icons + images
  * ========================= */
 
 export const MODULE_DIR_ICON_BASE =
@@ -243,24 +300,61 @@ export function getModuleLevelBoardUrl(level) {
   return `${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`;
 }
 
+export function getDefaultModuleImgUrl() {
+  return `${MODULE_IMG_BASE}default.png`;
+}
+
 export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
   const id = String(uniequipId || "");
   const icon = String(uniEquipIcon || "");
 
-  // uniequip_001_* (ORIGINAL) must use default.png
   if (id.startsWith("uniequip_001_") || icon === "original") {
-    return [`${MODULE_IMG_BASE}default.png`];
+    return [getDefaultModuleImgUrl()];
   }
 
   const arr = [];
   if (icon) arr.push(`${MODULE_IMG_BASE}${icon}.png`);
   if (id) arr.push(`${MODULE_IMG_BASE}${id}.png`);
-  arr.push(`${MODULE_IMG_BASE}default.png`);
+  arr.push(getDefaultModuleImgUrl());
   return [...new Set(arr)];
 }
 
+export function getModuleWarmPreloadUrls(candidates) {
+  const urls = Array.isArray(candidates) ? candidates.filter(Boolean) : [];
+  const warm = [getDefaultModuleImgUrl(), ...urls.slice(0, 2)];
+  return [...new Set(warm)].filter(Boolean);
+}
+
+/**
+ * Module image candidate: onError handler to step to next candidate.
+ * Keeps EXACT behavior in ModuleSection (advance index once).
+ */
+export function makeModuleCandidateOnError({
+  url,
+  pendingUrlRef,
+  setLoaded,
+  setDisplayUrl,
+  setIndex,
+  getCandidatesLength,
+} = {}) {
+  return () => {
+    try {
+      const pending = pendingUrlRef?.current;
+      if (pending !== url) return;
+      setLoaded?.(false);
+      setDisplayUrl?.("");
+
+      const len = typeof getCandidatesLength === "function" ? Number(getCandidatesLength()) : 0;
+      setIndex?.((prev) => {
+        const next = prev + 1;
+        return next < len ? next : prev;
+      });
+    } catch {}
+  };
+}
+
 /* =========================
- * Skins Section: character arts
+ * Skins section: character arts
  * ========================= */
 
 export const SKIN_ART_BASE =
@@ -309,7 +403,7 @@ export function withSpSuffix(url) {
 }
 
 /* =========================
- * Stats Section: summon/token arts
+ * Stats section: summon/token arts
  * ========================= */
 
 export const CHARAVATAR_BASE =
@@ -342,5 +436,31 @@ export function getSummonAvatarUrl(tokenId) {
 export function getSummonSkillIconUrl(tokenId) {
   const key = tokenToSkillIconKey(tokenId);
   if (!key) return "";
-  return getSkillIconUrl(key);
+  return `${SKILL_ICON_DIR}${key}.png`;
+}
+
+export function makeSummonSkillIconOnError(tokenId) {
+  return makeImgFallbackOnceHandler(() => getSummonAvatarUrl(tokenId));
+}
+
+/* =========================
+ * SkillsSection: skill header icon onError handler
+ * ========================= */
+
+export function makeSkillHeaderIconOnError({
+  url,
+  pendingUrlRef,
+  setIsLoading,
+  setSkillIconError,
+  setDisplayUrl,
+} = {}) {
+  return (e) => {
+    imgOnErrorHideVisibility(e);
+    try {
+      if (pendingUrlRef?.current !== url) return;
+      setIsLoading?.(false);
+      setSkillIconError?.(true);
+      setDisplayUrl?.("");
+    } catch {}
+  };
 }

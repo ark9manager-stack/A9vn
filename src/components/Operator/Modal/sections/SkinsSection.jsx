@@ -6,13 +6,14 @@ import {
   ICON_MODEL_URL,
   ICON_DRAWER_URL,
   preloadImageCached,
-  buildEliteArtUrl,
-  buildSkinArtUrl,
+  buildEliteArtUrl as buildEliteUrl,
+  buildSkinArtUrl as buildSkinUrl,
   withSpSuffix,
 } from "../../../../utils/IconArtUrl";
 
 const SP_DYN_SKINS = skinTable?.spDynSkins || {};
 
+// image URL logic moved to utils/IconArtUrl.js
 
 
 function pickDisplaySkin(obj) {
@@ -83,8 +84,8 @@ export default function SkinsSection({ operator, className = "" }) {
         const display = pickDisplaySkin(s);
         const enEntry = skinsDictEn?.[s.skinId];
         const displayEn = pickDisplaySkin(enEntry);
-        const primaryUrl = buildSkinArtUrl(charId, s.skinId);
-        const fallbackUrl = buildSkinArtUrl(charId, s.skinId, {
+        const primaryUrl = buildSkinUrl(charId, s.skinId);
+        const fallbackUrl = buildSkinUrl(charId, s.skinId, {
           forceLowerTheme: true,
         });
 
@@ -111,7 +112,7 @@ export default function SkinsSection({ operator, className = "" }) {
       key: "E0",
       kind: "elite",
       label: "Elite 0",
-      url: buildEliteArtUrl(charId, "E0"),
+      url: buildEliteUrl(charId, "E0"),
       fallbackUrl: null,
       skinName: eliteMeta?.e0?.skinName ?? null,
       drawerList: eliteMeta?.e0?.drawerList ?? [],
@@ -126,7 +127,7 @@ export default function SkinsSection({ operator, className = "" }) {
         key: "E1",
         kind: "elite",
         label: "Elite 1",
-        url: buildEliteArtUrl(charId, "E1"),
+        url: buildEliteUrl(charId, "E1"),
         fallbackUrl: null,
         skinName: eliteMeta?.e1?.skinName ?? null,
         drawerList: eliteMeta?.e1?.drawerList ?? [],
@@ -142,7 +143,7 @@ export default function SkinsSection({ operator, className = "" }) {
         key: "E2",
         kind: "elite",
         label: "Elite 2",
-        url: buildEliteArtUrl(charId, "E2"),
+        url: buildEliteUrl(charId, "E2"),
         fallbackUrl: null,
         skinName: eliteMeta?.e2?.skinName ?? null,
         drawerList: eliteMeta?.e2?.drawerList ?? [],
