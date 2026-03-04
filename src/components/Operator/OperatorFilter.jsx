@@ -51,7 +51,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
   const handleApply = () => {
     onFilterChange({
       class: activeClass,
-      subclass: activeSubClass,
+      subclasses: activeSubClass ? [activeSubClass] : [],
       rarity,
       position,
       search,
