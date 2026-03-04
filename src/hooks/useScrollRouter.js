@@ -7,8 +7,10 @@ function normalizePath(pathname) {
   if (p === "/" || /^\/home\/?$/i.test(p)) return "/Home";
   if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "/Music";
 
-  if (/^\/operator=.+$/i.test(p) || /^\/Operator=.+$/i.test(p)) return "/Operator";
-  if (/^\/operator\/?$/i.test(p) || /^\/Operator\/?$/i.test(p)) return "/Operator";
+  if (/^\/operator=.+$/i.test(p) || /^\/Operator=.+$/i.test(p))
+    return "/Operator";
+  if (/^\/operator\/?$/i.test(p) || /^\/Operator\/?$/i.test(p))
+    return "/Operator";
 
   if (/^\/Home\/?$/i.test(p)) return "/Home";
   if (/^\/Music\/?$/i.test(p)) return "/Music";
@@ -17,7 +19,11 @@ function normalizePath(pathname) {
   return p;
 }
 
-export default function useScrollRouter(sections, scrollContainerRef, suppressRef) {
+export default function useScrollRouter(
+  sections,
+  scrollContainerRef,
+  suppressRef,
+) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -43,7 +49,9 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
     const root = scrollContainerRef?.current;
     if (!root) return;
 
-    const els = sections.map((s) => document.getElementById(s.id)).filter(Boolean);
+    const els = sections
+      .map((s) => document.getElementById(s.id))
+      .filter(Boolean);
     if (els.length === 0) return;
 
     const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
@@ -98,5 +106,13 @@ export default function useScrollRouter(sections, scrollContainerRef, suppressRe
       if (raf) cancelAnimationFrame(raf);
       io.disconnect();
     };
-  }, [navigate, location.pathname, sections, sectionById, scrollContainerRef, suppressRef, isOperatorModalPath]);
+  }, [
+    navigate,
+    location.pathname,
+    sections,
+    sectionById,
+    scrollContainerRef,
+    suppressRef,
+    isOperatorModalPath,
+  ]);
 }

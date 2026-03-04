@@ -7,34 +7,21 @@ import OperatorModal from "../components/Operator/OperatorModal";
 import ScrollLockContainer from "../components/UI/ScrollLockContainer";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
-import { CLASSES } from "../config/operatorConfig";
-import { professionIconUrl } from "../utils/operatorUtils";
+import OperatorFilter from "../components/Operator/OperatorFilter";
 
 const Operator = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
-  const { operators, selectedOperator, setSelectedOperator } = useOperators();
-  const [activeClass, setActiveClass] = useState(null);
-  const [activeSubClass, setActiveSubClass] = useState(null);
-  const [showClassFilter, setShowClassFilter] = useState(false);
-
-  const { availableSubclasses, filteredOperators } = useOperatorFilter({
-    operators,
-    activeClass,
-    activeSubClass,
+  const [appliedFilter, setAppliedFilter] = useState({
+    class: null,
+    subclasses: [],
   });
-
-  const handleToggleClass = (value) => {
-    if (activeClass === value) {
-      setActiveClass(null);
-      setActiveSubClass(null);
-    } else {
-      setActiveClass(value);
-      setActiveSubClass(null);
-    }
-  };
-
+  const { operators, selectedOperator, setSelectedOperator } = useOperators();
+  const { filteredOperators } = useOperatorFilter({
+    operators,
+    activeClass: appliedFilter.class,
+    activeSubClass: appliedFilter.subclasses?.[0] ?? null,
+  });
   const operatorIdFromUrl = useMemo(() => {
     const p = String(location.pathname || "");
     const m = p.match(/^\/operator=([^/]+)$/i);
@@ -87,89 +74,17 @@ const Operator = () => {
       <div className="w-full h-full">
         <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
           <div className="w-full flex items-center mb-0 gap-4 pt-12">
-            <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r hidden md:block from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
             </h1>
 
-            <button
-              className="md:hidden p-2 bg-green-600 rounded-full text-white shadow-lg hover:bg-green-700"
-              onClick={() => setShowClassFilter(!showClassFilter)}
-              type="button"
-            >
-              <FaFilter size={15} />
-            </button>
-
-            <div
-              className={`flex flex-wrap gap-2 ml-auto pt-4 transition-all duration-300 overflow-hidden 
-                ${showClassFilter ? "max-h-96" : "max-h-0"} md:max-h-full`}
-            >
-              {CLASSES.map((cls) => (
-                <button
-                  key={cls.value}
-                  onClick={() => handleToggleClass(cls.value)}
-                  className={`p-1 md:p-2 rounded-md w-16 md:w-20 flex flex-col items-center transition
-                    ${
-                      activeClass === cls.value
-                        ? "bg-green-600"
-                        : "bg-[#242424] bg-opacity-50 hover:bg-opacity-70"
-                    }
-                  `}
-                  type="button"
-                >
-                  <img
-                    src={professionIconUrl(cls.value)}
-                    alt={cls.label}
-                    className="w-6 h-6 md:w-8 md:h-8 object-contain"
-                  />
-                  <span className="text-[10px] md:text-xs text-gray-300 mt-1">
-                    {cls.label}
-                  </span>
-                </button>
-              ))}
-            </div>
+            <OperatorFilter
+              operators={operators}
+              onFilterChange={(filterData) => {
+                setAppliedFilter(filterData);
+              }}
+            />
           </div>
-
-          {activeClass && (availableSubclasses?.length ?? 0) > 0 && (
-            <div className="w-full mb-2">
-              <div className="flex flex-wrap gap-2 justify-end">
-                {availableSubclasses.map((sub) => (
-                  <button
-                    key={sub.id}
-                    onClick={() =>
-                      setActiveSubClass(
-                        activeSubClass === sub.id ? null : sub.id,
-                      )
-                    }
-                    className={`p-2 rounded-lg w-24 flex flex-col items-center transition
-                      ${
-                        activeSubClass === sub.id
-                          ? "bg-emerald-600"
-                          : "bg-[#242424] bg-opacity-40 hover:bg-opacity-70"
-                      }
-                    `}
-                    type="button"
-                    title={sub.label}
-                  >
-                    <div className="h-[44px] w-full flex items-center justify-center">
-                      <img
-                        src={sub.icon}
-                        alt={sub.label}
-                        className="max-h-[44px] max-w-[56px] w-auto h-auto object-contain"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
-                      />
-                    </div>
-
-                    <span className="mt-1 text-[11px] leading-tight text-gray-200 truncate w-full text-center">
-                      {sub.label}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
           <div className="w-full border-t border-gray-600 my-4" />
 

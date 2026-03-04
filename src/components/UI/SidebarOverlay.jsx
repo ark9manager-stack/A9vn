@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SidebarOverlay = ({ isOpen, onClose }) => {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div
@@ -9,8 +9,7 @@ const SidebarOverlay = ({ isOpen, onClose }) => {
       onClick={onClose}
       aria-label="close sidebar"
     />
-  )
-}
+  );
+};
 
-export default SidebarOverlay
-
+export default SidebarOverlay;

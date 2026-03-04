@@ -25,6 +25,7 @@ export function useOperators() {
         skills: op.skills,
         talents: op.talents,
         stats: op.phases?.[0]?.attributesKeyFrames?.[0]?.data,
+        position: op.position,
       }));
 
     setList(parsed);
