@@ -26,7 +26,8 @@
     { "trait": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位", "trait_vn": "Tấn công <@ba.kw>tất cả kẻ địch</> đang bị chặn; khi chặn từ 2 kẻ địch trở lên, Lực đẩy +1 cấp\\nCó thể triển khai trên ô tầm xa." },
     { "trait": "攻击造成<@ba.kw>法术伤害</>，并对敌人造成<@ba.kw>较长</>的<$ba.sluggish>停顿</>", "trait_vn": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và gây hiệu ứng <$ba.sluggish>Làm chậm</> thêm [[một khoảng thời gian|SlowerModY]]." },
     { "trait": "召唤物持有上限<@ba.kw>+{cnt}</>，召唤物部署费用<@ba.kw>减少</>", "uniequip_002_deepcl": "Giới hạn vật triệu hồi được mang theo và triển khai cùng lúc <@ba.kw>+{cnt}</>, đồng thời <@ba.kw>[[giảm|ModYDeepcolor]]</></> DP của vật triệu hồi" },
-    { "trait": "<支援装置>的持有上限<@ba.kw>+{cnt}</>且部署费用<@ba.kw>减少</>", "char_484_robrta": "Giới hạn mang theo <Thiết bị hỗ trợ> <@ba.kw>+{cnt}</> và <@ba.kw>[[giảm|ModXrobrta]]</> DP của chúng" },
+    { "trait": "<支援装置>的持有上限<@ba.kw>+{cnt}</>且部署费用<@ba.kw>减少</>", "uniequip_002_robrta": "Giới hạn mang theo <Thiết bị hỗ trợ> <@ba.kw>+{cnt}</> và <@ba.kw>[[giảm|ModXrobrta]]</> DP của chúng" },
+    { "trait": "<支援装置>的持有上限<@ba.kw>+{cnt}</>且部署费用<@ba.kw>减少</>", "uniequip_002_windft": "Giới hạn mang theo <Thiết bị hỗ trợ> <@ba.kw>+{cnt}</> và <@ba.kw>[[giảm|ModXrobrta]]</> DP của chúng" },
     { "trait": "攻击造成<@ba.kw>法术伤害</>，在找不到攻击目标时可以将攻击能量<@ba.kw>储存</>起来之后一齐发射（最多4个）", "trait_vn": "Đòn tấn công gây <@ba.kw>sát thương phép</>, khi không có mục tiêu tấn công sẽ <@ba.kw>tích trữ</> đòn đánh và bắn ra cùng lúc sau đó (tối đa 4 lần tích trữ)." },
     { "trait": "可以在攻击范围内选择一次<@ba.kw>战术点</>来召唤援军，援军阻挡的敌人更容易受到我方的攻击，自身攻击援军阻挡的敌人时攻击力提升至165%", "trait_vn": "Có thể chỉ định 1 <@ba.kw>Ô chiến thuật</> trong phạm vi tấn công để gọi [[Viện binh|Reinforcement]]. Tăng ATK thành 165% khi tấn công kẻ địch đang bị viện binh chặn." },
     { "trait": "攻击范围内的<@ba.kw>所有敌人</>，对自己前方一横排的敌人攻击力提升至<@ba.kw>160%</>", "trait_vn": "Tấn công <@ba.kw>tất cả kẻ địch</> trong phạm vi, ATK tăng thành 160% khi tấn công kẻ địch ở 3 ô hàng ngang ngay phía trước bản thân." },
@@ -60,7 +61,6 @@
     { "trait": "攻击的敌人未被击倒时自身额外获得<@ba.kw>{sp}</>点技力", "trait_vn": "Nếu đòn tấn công không hạ gục kẻ địch, bản thân nhận thêm <@ba.kw>{sp}</> SP." },
     { "trait": "并对目标造成10％<$ba.weaken>虚弱</>效果，持续2秒", "trait_vn": "Đồng thời gây hiệu ứng <$ba.weaken>Suy nhược</> lên mục tiêu trong 2 giây" },
     { "trait": "攻击范围内存在2名及以上其他干员时，攻击力<@ba.kw>+8%</>（不受技能影响）", "trait_vn": "ATK +8% khi trong phạm vi tấn công có từ 2 đồng minh khác trở lên (không bị ảnh hưởng bởi kỹ năng)" },
-    { "trait": "能够阻挡四个敌人", "trait_vn": "Chặn được 4 kẻ địch." },
     { "trait": "击杀敌人后获得<@ba.vup>{cost:0}</>点部署费用，撤退时返还<@ba.kw>该次</>部署费用", "trait_vn": "Nhận <@ba.vup>{cost:0}</> DP sau khi đơn vị này hạ gục kẻ địch, và rút lui sẽ hoàn trả chi phí DP <@ba.kw>hiện tại</>" },
     { "trait": "可以攻击到<@ba.kw>较远敌人</>，攻击自身未阻挡的敌人时攻击力提升至<@ba.kw>{atk_scale:0%}</>", "trait_vn": "Có thể tấn công kẻ địch ở vị trí <@ba.kw>tầm xa</>, tăng ATK lên <@ba.kw>{atk_scale:0%}</> khi tấn công kẻ địch không bị bản thân chặn." },
     { "trait": "自身阻挡的敌人受到<@ba.kw>10%</>的<$ba.magicfragile>法术脆弱</>效果", "trait_vn": "Kẻ địch bị bản thân chặn chịu <@ba.kw>10%</> <$ba.magicfragile>Arts Fragility</>" },
@@ -71,6 +71,13 @@
     { "trait": "攻击被阻挡的敌人时攻击力提升至<@ba.kw>{atk_scale:0%}</>", "trait_vn": "ATK tăng lên <@ba.kw>{atk_scale:0%}</> khi tấn công kẻ địch đang bị chặn" },
     { "trait": "攻击造成<@ba.kw>法术伤害</>，技能开启后改为治疗友方单位（治疗量相当于<@ba.kw>{heal_scale:0%}</>攻击力）", "trait_vn": "Đòn tấn công gây <@ba.kw>sát thương phép</>. Khi kỹ năng đang kích hoạt, đòn tấn công chuyển thành hồi HP cho đồng minh (lượng hồi bằng <@ba.kw>{heal_scale:0%}</> ATK)." },
     { "trait": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>", "trait_vn": "Bình thường sẽ <@ba.kw>không tấn công</>, bù lại <@ba.kw>tăng thêm đáng kể</> [[DEF|PhalanxModXDEF]] và [[RES|PhalanxModXRES]]. Khi kích hoạt kỹ năng, giữ lại [[một phần hiệu ứng|PhalanxModXBonus]] trên và đòn tấn công gây <@ba.kw>sát thương phép diện rộng</>." },
+    { "trait": "有20%概率部署造成2倍伤害的陷阱", "trait_vn": "Có 20% tỷ lệ đặt một bẫy gây sát thương gấp đôi" },
+    { "trait": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度", "trait_vn": "Có thể hồi SP như bình thường khi đang chặn kẻ địch, nếu không thì lượng SP hồi bị [[giảm|DuelistModX]]" },
+    { "trait": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半", "trait_vn": "Tấn công <@ba.kw>tất cả kẻ địch</> đang bị chặn.\\nCó thể triển khai trên ô tầm xa, và hoàn trả một nửa chi phí DP hiện tại" },
+    { "trait": "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0但攻击力<@ba.kw>提升</>），持续20秒后自身再次替换<替身>", "trait_vn": "Khi nhận sát thương chí tử sẽ không rút lui, mà chuyển sang <Thế thân> chiến đấu (<Thế thân> có số lượng chặn là 0, bù lại <@ba.kw>tăng</> ATK). Sau 20 giây sẽ đổi trở lại bản thể ban đầu." },
+    { "trait": "能够阻挡四个敌人", "trait_vn": "Chặn được 4 kẻ địch." },
+    { "trait": "操作<@ba.kw>浮游单元</>造成<@ba.kw>法术伤害</>\\n单元攻击同一敌人伤害提升（单元初始伤害提高，最高造成干员110%攻击力的伤害）", "trait_vn": "Điều khiển <@ba.kw>Drone</> để tấn công và gây <@ba.kw>sát thương phép</> lên kẻ địch.\nATK của <@ba.kw>Drone</> sẽ tăng dần khi <@ba.kw>Drone</> liên tục tấn công cùng một kẻ địch (ATK cơ bản của Drone [[tăng|FunnelModX]], tối đa tới 110% ATK của Operator)." },
+    { "trait": "攻击造成<@ba.kw>法术伤害</>，攻击敌人时为攻击范围内一名友方干员治疗相当于<@ba.kw>{scale:0%}</>伤害的生命值", "trait_vn": "Đòn tấn công gây <@ba.kw>sát thương phép</> và hồi HP cho 1 đồng minh trong phạm vi tấn công bằng <@ba.kw>{scale:0%}</> sát thương gây ra." },
     { "trait": "阻挡敌人时防御力<@ba.kw>+20%</>", "trait_vn": "DEF <@ba.kw>+20%</> khi chặn kẻ địch" }
   ]
 }

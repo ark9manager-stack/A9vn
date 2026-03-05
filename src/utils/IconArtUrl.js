@@ -1,18 +1,5 @@
-// src/utils/IconArtUrl.js
-// Centralized image/icon URL logic + shared image fallback handlers.
-// IMPORTANT: This module should contain ONLY image-related logic.
-
-/* =========================
- * Shared image preload cache
- * ========================= */
-
 const __IMG_STATUS__ = new Map();
 
-/**
- * Preload an image once per URL (shared across sections).
- * - If already loaded: resolves immediately.
- * - If in-flight: returns the same promise.
- */
 export function preloadImageCached(url) {
   if (!url) return Promise.reject(new Error("no-url"));
 
@@ -38,10 +25,6 @@ export function preloadImageCached(url) {
   return p;
 }
 
-/* =========================
- * Generic <img> onError handlers
- * ========================= */
-
 export function imgOnErrorHideVisibility(e) {
   try {
     e?.currentTarget && (e.currentTarget.style.visibility = "hidden");
@@ -54,10 +37,6 @@ export function imgOnErrorHideDisplay(e) {
   } catch {}
 }
 
-/**
- * Fallback to a new src exactly once.
- * Prevents infinite loop if fallback also fails.
- */
 export function makeImgFallbackOnceHandler(getFallbackSrc, {
   flagAttr = "data-fallback",
 } = {}) {
@@ -78,11 +57,6 @@ export function makeImgFallbackOnceHandler(getFallbackSrc, {
   };
 }
 
-/**
- * Stateful fallback handler for components that keep `src` in React state.
- * - First error: swap to fallbackImgUrl (if any)
- * - Second error: clear src
- */
 export function makeStatefulImgFallbackHandler({
   usedFallback,
   fallbackImgUrl,
@@ -102,10 +76,6 @@ export function makeStatefulImgFallbackHandler({
     }
   };
 }
-
-/* =========================
- * Common UI icons (Range / Stats)
- * ========================= */
 
 export const UI_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
@@ -128,10 +98,6 @@ export const BATTLE_UI_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
 export const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
 
-/* =========================
- * Elite / Potential icons
- * ========================= */
-
 export const ELITE_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/elite_hub/";
 
@@ -144,14 +110,8 @@ export function getEliteIconLarge(phaseIndex) {
 export const POT_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/potential_hub/";
 
-// Skills/Module use idx0 (0..5)
 export const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
-// Stats uses idx1 (1..6)
 export const getPotIconSmall = (idx1) => `${POT_ICON_BASE}potential_${idx1}_small.png`;
-
-/* =========================
- * Skills icons
- * ========================= */
 
 export const SKILL_ICON_DIR =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/";
@@ -192,10 +152,6 @@ export function getBuildingSkillIconUrl(iconKey) {
   return `${BUILDING_SKILL_ICON_BASE}${key.toLowerCase()}.png`;
 }
 
-/* =========================
- * Materials / items
- * ========================= */
-
 export const ITEM_BG_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
 export const ITEM_ICON_BASE =
@@ -224,7 +180,6 @@ export function getItemIconUrl(iconId) {
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 }
 
-// ModuleSection keeps its special-case behavior
 export function getItemIconUrlForModule(itemId, iconId) {
   const raw = iconId || itemId || "";
   const key = String(raw).trim();
@@ -235,10 +190,6 @@ export function getItemIconUrlForModule(itemId, iconId) {
   }
   return `${ITEM_ICON_BASE}${key.toLowerCase()}.png`;
 }
-
-/* =========================
- * Profile section: recruit bg + token icons
- * ========================= */
 
 export function buildRecruitBgUrl(rarity) {
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
@@ -273,10 +224,6 @@ export function buildActivityVoucherIconUrl(activityPotentialItemId, resolvedCha
   );
   return `${base}${id}.png`;
 }
-
-/* =========================
- * Module section: module icons + images
- * ========================= */
 
 export const MODULE_DIR_ICON_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequipdirection/";
@@ -325,10 +272,6 @@ export function getModuleWarmPreloadUrls(candidates) {
   return [...new Set(warm)].filter(Boolean);
 }
 
-/**
- * Module image candidate: onError handler to step to next candidate.
- * Keeps EXACT behavior in ModuleSection (advance index once).
- */
 export function makeModuleCandidateOnError({
   url,
   pendingUrlRef,
@@ -352,10 +295,6 @@ export function makeModuleCandidateOnError({
     } catch {}
   };
 }
-
-/* =========================
- * Skins section: character arts
- * ========================= */
 
 export const SKIN_ART_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/characters";
@@ -402,10 +341,6 @@ export function withSpSuffix(url) {
   return url.replace(/\.(png|webp|jpg|jpeg)$/i, "_sp.$1");
 }
 
-/* =========================
- * Stats section: summon/token arts
- * ========================= */
-
 export const CHARAVATAR_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/charavatars/";
 
@@ -442,10 +377,6 @@ export function getSummonSkillIconUrl(tokenId) {
 export function makeSummonSkillIconOnError(tokenId) {
   return makeImgFallbackOnceHandler(() => getSummonAvatarUrl(tokenId));
 }
-
-/* =========================
- * SkillsSection: skill header icon onError handler
- * ========================= */
 
 export function makeSkillHeaderIconOnError({
   url,

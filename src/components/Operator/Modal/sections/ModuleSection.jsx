@@ -4,7 +4,6 @@ import characterTable from "../../../../data/operators/character_table.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import traitEN from "../../../../data/operators/trait_en.json";
-import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import uniequipTable from "../../../../data/module/uniequip_table.json";
@@ -28,8 +27,6 @@ import {
   getModuleLevelBoardUrl,
 } from "../../../../utils/IconArtUrl";
 
-
-// Module image box size (inline style to ensure it really changes)
 const MODULE_IMG_BOX_SIZE = 224;
 
 function isNonEmptyString(v) {
@@ -42,6 +39,22 @@ const SUPPRESS_TRAIT_OVERRIDE_UNIEQUIP_IDS = new Set([
   "uniequip_002_mlynar",
   "uniequip_002_leizi2",
 ]);
+
+const UNIEQUIP_ICON_OVERRIDE_BY_CHARID = {
+  char_476_blkngt: {
+    uniequip_002_blkngt: "uniequip_002_blkngt",
+  },
+  char_452_bstalk: {
+    uniequip_002_bstalk: "uniequip_002_bstalk",
+  },
+};
+
+function resolveUniEquipIconForChar({ charKey, moduleId, forcedOriginal, fallbackIcon }) {
+  if (forcedOriginal) return "original";
+  const byChar = UNIEQUIP_ICON_OVERRIDE_BY_CHARID?.[String(charKey)] || null;
+  const ov = byChar?.[String(moduleId)] || null;
+  return (typeof ov === "string" && ov.trim()) ? ov : fallbackIcon;
+}
 function getBaseRangeIdE2(charData) {
   const phases = charData?.phases;
   if (Array.isArray(phases) && phases.length > 0) {
@@ -1072,8 +1085,12 @@ export default function ModuleSection(props) {
       const forcedOriginal = String(id).startsWith("uniequip_001_");
 
       const typeName2 = forcedOriginal
+      
         ? null
         : meta?.typeName2 ?? cnMeta?.typeName2 ?? enMeta?.typeName2 ?? null;
+
+      const fallbackIcon =
+        meta?.uniEquipIcon || cnMeta?.uniEquipIcon || enMeta?.uniEquipIcon || String(id);
 
       out.push({
         id,
@@ -1082,9 +1099,12 @@ export default function ModuleSection(props) {
         meta,
         typeIcon: String(forcedOriginal ? "original" : meta?.typeIcon || cnMeta?.typeIcon || enMeta?.typeIcon || "original").toLowerCase(),
         typeName2,
-        uniEquipIcon: forcedOriginal
-          ? "original"
-          : meta?.uniEquipIcon || cnMeta?.uniEquipIcon || enMeta?.uniEquipIcon || String(id),
+        uniEquipIcon: resolveUniEquipIconForChar({
+          charKey,
+          moduleId: id,
+          forcedOriginal,
+          fallbackIcon,
+        }),
         sortKey: modSortKey(typeName2),
         equipOrder: Number(meta?.charEquipOrder ?? cnMeta?.charEquipOrder ?? enMeta?.charEquipOrder ?? 999),
       });

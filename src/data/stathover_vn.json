@@ -167,6 +167,14 @@
     "title": "",
     "text": "+100% DEF và +10 RES"
   },
+  "DuelistModX": {
+    "title": "",
+    "text": "-80%"
+  },
+  "FunnelModX": {
+    "title": "",
+    "text": "ATK của Drone = 35% ATK của OP"
+  },
   "Slowerskgoat": {
     "title": "",
     "text": "0.1 giây"
