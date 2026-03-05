@@ -23,7 +23,7 @@
     { "charger": "Nhận 1 [[DP|DP]] sau khi đơn vị này hạ gục kẻ địch, và rút lui sẽ hoàn trả chi phí [[DP|DP]] gốc." },
     { "bearer": "Trong thời gian kích hoạt kỹ năng sẽ không thể chặn kẻ địch." },
     { "counsellor": "Chặn được 2 kẻ địch, có thể hỗ trợ đồng minh ở khu vực chờ triển khai." },
-    { "tactician": "Có thể chỉ định 1 <@ba.kw>Ô chiến thuật</> trong phạm vi tấn công để gọi [[Viện binh|Reinforcement]]. Tăng ATK thành 150% khi tấn công kẻ địch đang bị viện binh chặn." },
+    { "tactician": "Có thể chỉ định 1 <@ba.kw>Ô chiến thuật</> trong phạm vi tấn công để gọi [[Viện binh|Reinforcement]]. Tăng ATK lên 150% khi tấn công kẻ địch đang bị viện binh chặn." },
     { "artsfghter": "Đòn tấn công gây <@ba.kw>sát thương phép</>." },
     { "centurion": "Tấn công <@ba.kw>tất cả kẻ địch</> đang bị chặn." },
     { "crusher": "Tấn công <@ba.kw>tất cả kẻ địch</> đang bị chặn." },
