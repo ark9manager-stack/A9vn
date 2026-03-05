@@ -143,6 +143,30 @@
     "title": "",
     "text": "0.8 giây"
   },
+  "ChainTrait": {
+    "title": "",
+    "text": "0.5 giây"
+  },
+  "PhalanxTraitDEF": {
+    "title": "",
+    "text": "+200%"
+  },
+  "PhalanxModXDEF": {
+    "title": "",
+    "text": "+215%"
+  },
+  "PhalanxTraitRES": {
+    "title": "",
+    "text": "+20"
+  },
+  "PhalanxModXRES": {
+    "title": "",
+    "text": "+25"
+  },
+  "PhalanxModXBonus": {
+    "title": "",
+    "text": "+100% DEF và +10 RES"
+  },
   "Slowerskgoat": {
     "title": "",
     "text": "0.1 giây"
@@ -174,6 +198,10 @@
   "ba.weaken": {
     "title": "Suy nhược/Enfeeble",
     "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
+  },
+  "ba.magicfragile": {
+    "title": "Arts Fragility",
+    "text": "Mục tiêu chịu thêm sát thương phép theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
   },
   "ModYDeepcolor": {
     "title": "",
