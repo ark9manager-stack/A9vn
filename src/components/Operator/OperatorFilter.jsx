@@ -1,0 +1,191 @@
+import React, { useState } from "react";
+import { FaFilter } from "react-icons/fa";
+import { CLASSES } from "../../config/operatorConfig";
+import { useOperatorFilter } from "../../hooks/useOperatorFilter";
+import { professionIconUrl } from "../../utils/operatorUtils";
+
+const OperatorFilter = ({ onFilterChange, operators }) => {
+  const [activeClass, setActiveClass] = useState(null);
+  const [activeSubClass, setActiveSubClass] = useState(null);
+  const [rarity, setRarity] = useState(null);
+  const [position, setPosition] = useState(null);
+  const [search, setSearch] = useState("");
+  const [showFilter, setShowFilter] = useState(false);
+
+  const { availableSubclasses } = useOperatorFilter({
+    operators,
+    activeClass,
+    activeSubClass,
+  });
+
+  const handleClassClick = (cls) => {
+    if (activeClass === cls) {
+      setActiveClass(null);
+      setActiveSubClass(null);
+    } else {
+      setActiveClass(cls);
+      setActiveSubClass(null);
+    }
+  };
+
+  const handleSubclassClick = (subclass) => {
+    setActiveSubClass((prev) => (prev === subclass ? null : subclass));
+  };
+
+  const handleReset = () => {
+    setActiveClass(null);
+    setActiveSubClass(null);
+    setRarity(null);
+    setPosition(null);
+    setSearch("");
+
+    onFilterChange({
+      class: null,
+      subclass: null,
+      rarity: null,
+      position: null,
+      search: "",
+    });
+  };
+
+  const handleApply = () => {
+    onFilterChange({
+      class: activeClass,
+      subclasses: activeSubClass ? [activeSubClass] : [],
+      rarity,
+      position,
+      search,
+    });
+
+    setShowFilter(false);
+  };
+
+  return (
+    <div className="relative w-full">
+      {/* Filter Button */}
+      <button
+        className="p-2 bg-emerald-500/20 rounded-full shadow-lg hover:bg-emerald-600 transition"
+        onClick={() => setShowFilter(!showFilter)}
+      >
+        <FaFilter size={15} />
+      </button>
+
+      {showFilter && (
+        <div className="absolute top-full inset-x-0 bg-black/90 backdrop-blur-md p-4 mt-2 rounded-lg shadow-xl z-50">
+          {/* ===== MAIN CLASS ===== */}
+          <div className="flex flex-nowrap gap-2 mb-4 overflow-x-auto">
+            {CLASSES.map((cls) => (
+              <button
+                key={cls.value}
+                onClick={() => handleClassClick(cls.value)}
+                className={`p-2 rounded-md w-16 flex flex-col items-center transition
+                  ${
+                    activeClass === cls.value
+                      ? "bg-green-600"
+                      : "bg-[#242424] hover:bg-opacity-70"
+                  }
+                `}
+              >
+                <img
+                  src={professionIconUrl(cls.value)}
+                  alt={cls.label}
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="text-xs text-gray-300 mt-1">{cls.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* ===== SUBCLASS ===== */}
+          {activeClass && (availableSubclasses?.length ?? 0) > 0 && (
+            <div className="flex flex-nowrap gap-2 mb-4 overflow-x-auto">
+              {availableSubclasses.map((sub) => (
+                <button
+                  key={sub.id}
+                  onClick={() => handleSubclassClick(sub.id)}
+                  className={`p-2 rounded-md w-16 flex flex-col items-center transition
+                    ${
+                      activeSubClass === sub.id
+                        ? "bg-emerald-600"
+                        : "bg-[#242424] hover:bg-opacity-70"
+                    }
+                  `}
+                >
+                  <img
+                    src={sub.icon}
+                    alt={sub.label}
+                    className="w-8 h-8 object-contain"
+                  />
+                  <span className="text-xs text-gray-300 mt-1">
+                    {sub.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* ===== SEARCH ===== */}
+          <div className="mb-4">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search operator name..."
+              className="w-full p-2 rounded-md bg-[#242424] text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+
+          {/* ===== RARITY ===== */}
+          <div className="flex gap-2 mb-4">
+            {[0, 1, 2, 3, 4, 5].map((r) => (
+              <button
+                key={r}
+                onClick={() => setRarity((prev) => (prev === r ? null : r))}
+                className={`px-2 py-1 rounded
+                  ${rarity === r ? "bg-yellow-500" : "bg-[#242424]"}
+                `}
+              >
+                {"★".repeat(r + 1)}
+              </button>
+            ))}
+          </div>
+
+          {/* ===== POSITION ===== */}
+          <div className="flex gap-2 mb-4">
+            {["MELEE", "RANGED"].map((pos) => (
+              <button
+                key={pos}
+                onClick={() =>
+                  setPosition((prev) => (prev === pos ? null : pos))
+                }
+                className={`px-3 py-1 rounded
+                  ${position === pos ? "bg-blue-500" : "bg-[#242424]"}
+                `}
+              >
+                {pos}
+              </button>
+            ))}
+          </div>
+
+          {/* ===== ACTIONS ===== */}
+          <div className="flex justify-end gap-2">
+            <button
+              onClick={handleReset}
+              className="px-3 py-1 bg-gray-600 rounded"
+            >
+              Reset
+            </button>
+            <button
+              onClick={handleApply}
+              className="px-3 py-1 bg-green-600 rounded"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default OperatorFilter;

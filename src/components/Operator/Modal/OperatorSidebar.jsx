@@ -94,11 +94,7 @@ const OperatorSidebar = ({
   };
 
   return (
-    <div
-      className="w-[300px] bg-[#1a1a1a] border-r border-white/10
-      flex flex-col p-4 text-white
-    "
-    >
+    <div className="w-[300px] bg-[#1a1a1a] border-r border-white/10 flex flex-col p-4 text-white ">
       {/* Avatar */}
       {avatarSrc ? (
         <img
@@ -124,7 +120,7 @@ const OperatorSidebar = ({
         {displayNumber ? ` | ${displayNumber}` : ""}
       </div>
 
-      <div className="mt-3 flex items-start justify-between gap-4 w-full">
+      <div className="mt-3 flex items-start justify-between gap-4 w-full ">
         {/* Main class */}
         <div className="w-[124px] text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {profIcon ? (
