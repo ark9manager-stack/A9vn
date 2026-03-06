@@ -21,11 +21,27 @@
   },
   "EleInjury": {
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
-    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ kích hoạt thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
+    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
   },
   "ba.dt.element": {
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
-    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ kích hoạt thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
+    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
+  },
+  "ba.dt.apoptosis2": {
+    "title": "Necrosis - nguồn từ đồng minh",
+    "text": "Khi tích đầy sẽ nổ (1000 với kẻ địch thường/Elite, 2000 với Leader), khiến mục tiêu chịu 50% <$ba.weaken>Suy nhược</> giảm dần theo thời gian bộc phát; đồng thời mục tiêu chịu 800 sát thương nguyên tố mỗi giây. Hồi chiêu 15 giây.\nSát thương nguyên tố từ Necrosis được tính là sát thương theo thời gian."
+  },
+  "ba.dt.burning2": {
+    "title": "Burn - nguồn từ đồng minh",
+    "text": "Khi tích đầy sẽ nổ (1000 với kẻ địch thường/Elite, 2000 với Leader), khiến mục tiêu lập tức chịu 7000 sát thương nguyên tố, đồng thời -20 RES trong thời gian bộc phát. Hồi chiêu 10 giây."
+  },
+  "ba.dt.neural2": {
+    "title": "Nervous Impairment - nguồn từ đồng minh",
+    "text": "Khi tích đầy sẽ nổ (1000 với kẻ địch thường/Elite, 2000 với Leader), khiến mục tiêu lập tức chịu 6000 sát thương nguyên tố, đồng thời nhận 3 tầng <$ba.palsy>Tê liệt</>. Hồi chiêu 10 giây."
+  },
+  "ba.palsy": {
+    "title": "Tê liệt/Paralysis",
+    "text": "• Mỗi tầng Tê liệt có thể gián đoạn đòn đánh thường của kẻ địch, tối đa 3 tầng\n• Nếu Tê Liệt không bị tiêu hao, hiệu ứng sẽ tồn tại vô hạn. Các kẻ địch có kháng Tê liệt sẽ mất một tầng Tê liệt mỗi 5 giây.\n\nKẻ địch đang chịu hiệu ứng này sẽ bị gián đoạn trong lúc thực hiện đòn đánh thường: bị ngắt ngay khoảnh khắc sắp ra đòn, hoặc muộn nhất là sau 2 giây kể từ khi bắt đầu động tác tấn công. Sau đó, kẻ địch bị giật điện khoảng 0.5 giây do hiệu ứng Tê liệt (model sẽ có hiệu ứng rung).\nTrên đầu model của kẻ địch sẽ hiện biểu tượng tia sét; phần bên trong biểu tượng cho biết số tầng còn lại."
   },
   "DP": {
     "title": "Điểm triển khai/Deployment Point",
@@ -175,6 +191,10 @@
     "title": "",
     "text": "-80%"
   },
+  "DuelistModY": {
+    "title": "",
+    "text": "mức hồi SP giảm 99.9%"
+  },
   "FunnelModX": {
     "title": "",
     "text": "ATK của Drone = 35% ATK của OP"
@@ -215,6 +235,14 @@
     "title": "Arts Fragility",
     "text": "Mục tiêu chịu thêm sát thương phép theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
   },
+  "ba.fragile": {
+    "title": "Fragility",
+    "text": "Mục tiêu chịu thêm sát thương vật lý, sát thương phép, sát thương chuẩn theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+  },
+  "ba.elementfragile": {
+    "title": "Elemental Fragility",
+    "text": "Mục tiêu chịu thêm sát thương nguyên tố theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+  },
   "ModYDeepcolor": {
     "title": "",
     "text": "-2 DP"
@@ -233,6 +261,6 @@
   },
   "SiegeModY": {
     "title": "",
-    "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n                6.3%    8.9%\n                4.2%    7.4%   10.7%\nSELF            3.4%    6.9%   10.3%\n                4.2%    7.4%   10.7%\n                6.3%    8.9%"
+    "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n                  6.3%    8.9%\n                  4.2%    7.4%   10.7%\nSELF         3.4%    6.9%   10.3%\n                  4.2%    7.4%   10.7%\n                  6.3%    8.9%"
   }
 }
