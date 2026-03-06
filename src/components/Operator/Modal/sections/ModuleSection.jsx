@@ -1421,24 +1421,56 @@ const isDefaultModule = React.useMemo(() => {
   }, [selected?.id, selected?.uniEquipIcon]);
 
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
-  const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
+  const moduleImgLoadedSetRef = React.useRef(new Set());
+  const moduleImgPendingUrlRef = React.useRef("");
+  const [mountedModuleImageUrls, setMountedModuleImageUrls] = React.useState(() => new Set());
+  const [displayModuleImageUrl, setDisplayModuleImageUrl] = React.useState("");
+  const [isModuleImgLoading, setIsModuleImgLoading] = React.useState(false);
+  const [moduleImgError, setModuleImgError] = React.useState(false);
 
   React.useEffect(() => {
     setModuleImgIdx(0);
+    moduleImgPendingUrlRef.current = "";
+    setModuleImgError(false);
   }, [selected?.id, selected?.uniEquipIcon]);
+
+  React.useEffect(() => {
+    moduleImgLoadedSetRef.current = new Set();
+    moduleImgPendingUrlRef.current = "";
+    setMountedModuleImageUrls(new Set());
+    setDisplayModuleImageUrl("");
+    setIsModuleImgLoading(false);
+    setModuleImgError(false);
+  }, [charKey]);
 
   const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
   React.useEffect(() => {
-    setModuleImgLoaded(false);
+    const url = activeModuleImageUrl;
+    moduleImgPendingUrlRef.current = url;
+    setModuleImgError(false);
+
+    if (!url) {
+      setDisplayModuleImageUrl("");
+      setIsModuleImgLoading(false);
+      return;
+    }
+
+    setMountedModuleImageUrls((prev) => {
+      if (prev.has(url)) return prev;
+      const next = new Set(prev);
+      next.add(url);
+      return next;
+    });
+
+    if (moduleImgLoadedSetRef.current.has(url)) {
+      setDisplayModuleImageUrl(url);
+      setIsModuleImgLoading(false);
+      return;
+    }
+
+    setIsModuleImgLoading(true);
   }, [activeModuleImageUrl]);
-
-  // Chỉ render 1 <img> cho candidate hiện tại.
-  // Không preload thêm bằng JS, không giữ các URL cũ đã mount,
-  // không ép eager/high priority cho ảnh ẩn.
-  // Khi onError thật sự xảy ra mới chuyển sang candidate kế tiếp.
-
-
 
 const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -1509,35 +1541,52 @@ if (!isNonEmptyString(charKey) || !charData) {
         <div className="shrink-0">
           {isNonEmptyString(activeModuleImageUrl) ? (
             <div className="relative rounded-2xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center" style={{ width: MODULE_IMG_BOX_SIZE, height: MODULE_IMG_BOX_SIZE }}>
-              {!moduleImgLoaded ? (
+              {!isNonEmptyString(displayModuleImageUrl) && isModuleImgLoading ? (
                 <div className="absolute inset-0 bg-white/5 animate-pulse" />
               ) : null}
 
-              <img
-                key={activeModuleImageUrl}
-                src={activeModuleImageUrl}
-                alt="module"
-                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-150"
-                style={{
-                  opacity: moduleImgLoaded ? 1 : 0,
-                  visibility: moduleImgLoaded ? "visible" : "hidden",
-                }}
-                draggable={false}
-                loading="lazy"
-                decoding="async"
-                onLoad={() => {
-                  setModuleImgLoaded(true);
-                }}
-                onError={() => {
-                  setModuleImgLoaded(false);
-                  setModuleImgIdx((prev) => {
+              {Array.from(mountedModuleImageUrls).map((url) => (
+                <img
+                  key={url}
+                  src={url}
+                  alt="module"
+                  className="absolute inset-0 w-full h-full object-contain transition-opacity duration-150"
+                  style={{
+                    opacity: !moduleImgError && displayModuleImageUrl === url ? 1 : 0,
+                    visibility: !moduleImgError && displayModuleImageUrl === url ? "visible" : "hidden",
+                  }}
+                  draggable={false}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={() => {
+                    moduleImgLoadedSetRef.current.add(url);
+                    if (moduleImgPendingUrlRef.current === url) {
+                      setDisplayModuleImageUrl(url);
+                      setIsModuleImgLoading(false);
+                    }
+                  }}
+                  onError={(e) => {
+                    e.currentTarget.style.visibility = "hidden";
+                    if (moduleImgPendingUrlRef.current !== url) return;
+
+                    setIsModuleImgLoading(false);
+                    setModuleImgError(true);
+
                     const len = moduleImageCandidates?.length || 0;
-                    const next = prev + 1;
-                    return next < len ? next : prev;
-                  });
-                }}
-              />
-              {moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
+                    const nextIdx = moduleImgIdx + 1;
+                    if (nextIdx < len) {
+                      setModuleImgIdx(nextIdx);
+                    } else {
+                      setDisplayModuleImageUrl("");
+                    }
+                  }}
+                />
+              ))}
+              {!isModuleImgLoading &&
+              !moduleImgError &&
+              displayModuleImageUrl === activeModuleImageUrl &&
+              isDefaultModule &&
+              isNonEmptyString(subProfIcon) ? (
                 <img
                   src={subProfIcon}
                   alt="overlay"

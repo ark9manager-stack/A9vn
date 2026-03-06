@@ -1,28 +1,166 @@
 const __IMG_STATUS__ = new Map();
+const __IMG_QUEUE__ = [];
+let __IMG_ACTIVE__ = 0;
 
-export function preloadImageCached(url) {
-  if (!url) return Promise.reject(new Error("no-url"));
+const IMG_PRELOAD_CONCURRENCY = 4;
+const IMG_ERROR_RETRY_COOLDOWN_MS = 15000;
 
-  const hit = __IMG_STATUS__.get(url);
-  if (hit === "loaded") return Promise.resolve(url);
-  if (hit && typeof hit.then === "function") return hit;
+function normalizeImgUrl(url) {
+  return typeof url === "string" ? url.trim() : "";
+}
 
-  const p = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.decoding = "async";
-    img.onload = () => {
-      __IMG_STATUS__.set(url, "loaded");
-      resolve(url);
-    };
-    img.onerror = (e) => {
-      __IMG_STATUS__.set(url, "error");
-      reject(e);
-    };
-    img.src = url;
+function createImgCacheEntry(url) {
+  return {
+    url,
+    status: "idle", // idle | loading | loaded | error
+    promise: null,
+    error: null,
+    errorAt: 0,
+    touchedAt: Date.now(),
+  };
+}
+
+function getImgCacheEntry(url) {
+  const key = normalizeImgUrl(url);
+  if (!key) return null;
+  let entry = __IMG_STATUS__.get(key);
+  if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
+    entry = createImgCacheEntry(key);
+    __IMG_STATUS__.set(key, entry);
+  }
+  entry.touchedAt = Date.now();
+  return entry;
+}
+
+function flushImgQueue() {
+  while (__IMG_ACTIVE__ < IMG_PRELOAD_CONCURRENCY && __IMG_QUEUE__.length > 0) {
+    const job = __IMG_QUEUE__.shift();
+    if (!job || typeof job.run !== "function") continue;
+    __IMG_ACTIVE__ += 1;
+    Promise.resolve()
+      .then(job.run)
+      .finally(() => {
+        __IMG_ACTIVE__ = Math.max(0, __IMG_ACTIVE__ - 1);
+        flushImgQueue();
+      });
+  }
+}
+
+function enqueueImgJob(run) {
+  return new Promise((resolve, reject) => {
+    __IMG_QUEUE__.push({
+      run: () => Promise.resolve(run()).then(resolve, reject),
+    });
+    flushImgQueue();
   });
+}
 
-  __IMG_STATUS__.set(url, p);
-  return p;
+export function getImageCacheStatus(url) {
+  const entry = getImgCacheEntry(url);
+  return entry?.status || "idle";
+}
+
+export function isImageLoadedCached(url) {
+  return getImageCacheStatus(url) === "loaded";
+}
+
+export function markImageLoaded(url) {
+  const entry = getImgCacheEntry(url);
+  if (!entry) return;
+  entry.status = "loaded";
+  entry.promise = null;
+  entry.error = null;
+  entry.errorAt = 0;
+  entry.touchedAt = Date.now();
+}
+
+export function markImageError(url, error) {
+  const entry = getImgCacheEntry(url);
+  if (!entry) return;
+  entry.status = "error";
+  entry.promise = null;
+  entry.error = error || new Error("image-error");
+  entry.errorAt = Date.now();
+  entry.touchedAt = Date.now();
+}
+
+export function clearImageCache(url) {
+  const key = normalizeImgUrl(url);
+  if (key) {
+    __IMG_STATUS__.delete(key);
+    return;
+  }
+  __IMG_STATUS__.clear();
+}
+
+export function preloadImageCached(url, {
+  retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS,
+  decode = true,
+} = {}) {
+  const key = normalizeImgUrl(url);
+  if (!key) return Promise.reject(new Error("no-url"));
+
+  const entry = getImgCacheEntry(key);
+  if (!entry) return Promise.reject(new Error("no-url"));
+
+  if (entry.status === "loaded") {
+    return Promise.resolve(key);
+  }
+
+  if (entry.status === "loading" && entry.promise) {
+    return entry.promise;
+  }
+
+  if (
+    entry.status === "error" &&
+    Number.isFinite(retryAfterMs) &&
+    retryAfterMs > 0 &&
+    Date.now() - (entry.errorAt || 0) < retryAfterMs
+  ) {
+    return Promise.reject(entry.error || new Error("cached-image-error"));
+  }
+
+  entry.status = "loading";
+  entry.error = null;
+  entry.errorAt = 0;
+
+  entry.promise = enqueueImgJob(() => new Promise((resolve, reject) => {
+    const img = new Image();
+    if (decode) img.decoding = "async";
+
+    const done = (ok, payload) => {
+      img.onload = null;
+      img.onerror = null;
+      if (ok) {
+        markImageLoaded(key);
+        resolve(key);
+      } else {
+        markImageError(key, payload);
+        reject(payload);
+      }
+    };
+
+    img.onload = () => done(true, key);
+    img.onerror = (e) => done(false, e || new Error(`image-load-failed: ${key}`));
+    img.src = key;
+
+    if (img.complete && img.naturalWidth > 0) {
+      done(true, key);
+    }
+  }));
+
+  return entry.promise;
+}
+
+export function warmPreloadImageUrls(urls, {
+  limit = 2,
+  retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS,
+} = {}) {
+  const list = [...new Set((Array.isArray(urls) ? urls : []).map(normalizeImgUrl).filter(Boolean))];
+  const picked = list.slice(0, Math.max(0, Number(limit) || 0));
+  return Promise.allSettled(
+    picked.map((url) => preloadImageCached(url, { retryAfterMs }))
+  );
 }
 
 export function imgOnErrorHideVisibility(e) {
@@ -267,9 +405,10 @@ export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
   return deduped.length > 0 ? deduped : [getDefaultModuleImgUrl()];
 }
 
-export function getModuleWarmPreloadUrls(candidates) {
+export function getModuleWarmPreloadUrls(candidates, limit = 1) {
   const urls = Array.isArray(candidates) ? candidates.filter(Boolean) : [];
-  return [...new Set(urls.slice(0, 2))].filter(Boolean);
+  const safeLimit = Math.max(0, Number(limit) || 0);
+  return [...new Set(urls.slice(0, safeLimit))].filter(Boolean);
 }
 
 export function makeModuleCandidateOnError({

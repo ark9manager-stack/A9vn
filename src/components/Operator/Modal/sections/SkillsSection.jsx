@@ -1309,6 +1309,15 @@ const renderTalentCard = (talentIdx, resolved) => {
   const [skillIconError, setSkillIconError] = React.useState(false);
 
   React.useEffect(() => {
+    skillIconLoadedSetRef.current = new Set();
+    skillIconPendingUrlRef.current = "";
+    setMountedSkillIconUrls(new Set());
+    setDisplaySkillIconUrl("");
+    setIsSkillIconLoading(false);
+    setSkillIconError(false);
+  }, [charKey]);
+
+  React.useEffect(() => {
     const url = selectedSkillIconUrl;
     skillIconPendingUrlRef.current = url;
     setSkillIconError(false);
@@ -1329,11 +1338,11 @@ const renderTalentCard = (talentIdx, resolved) => {
     if (skillIconLoadedSetRef.current.has(url)) {
       setDisplaySkillIconUrl(url);
       setIsSkillIconLoading(false);
-    } else {
-      setDisplaySkillIconUrl("");
-      setIsSkillIconLoading(true);
+      return;
     }
-  }, [selectedSkillIconUrl]);
+
+    setIsSkillIconLoading(true);
+  }, [selectedSkillIconUrl, charKey]);
 
 
   const skillLevels = React.useMemo(() => {
@@ -1707,13 +1716,11 @@ return (
                           height: 96,
                           minWidth: 96,
                           opacity:
-                            !isSkillIconLoading &&
                             !skillIconError &&
                             displaySkillIconUrl === url
                               ? 1
                               : 0,
                           visibility:
-                            !isSkillIconLoading &&
                             !skillIconError &&
                             displaySkillIconUrl === url
                               ? "visible"
