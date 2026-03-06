@@ -262,14 +262,14 @@ export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
   const arr = [];
   if (icon) arr.push(`${MODULE_IMG_BASE}${icon}.png`);
   if (id) arr.push(`${MODULE_IMG_BASE}${id}.png`);
-  arr.push(getDefaultModuleImgUrl());
-  return [...new Set(arr)];
+
+  const deduped = [...new Set(arr)].filter(Boolean);
+  return deduped.length > 0 ? deduped : [getDefaultModuleImgUrl()];
 }
 
 export function getModuleWarmPreloadUrls(candidates) {
   const urls = Array.isArray(candidates) ? candidates.filter(Boolean) : [];
-  const warm = [getDefaultModuleImgUrl(), ...urls.slice(0, 2)];
-  return [...new Set(warm)].filter(Boolean);
+  return [...new Set(urls.slice(0, 2))].filter(Boolean);
 }
 
 export function makeModuleCandidateOnError({

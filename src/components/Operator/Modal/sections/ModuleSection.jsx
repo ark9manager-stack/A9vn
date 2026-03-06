@@ -47,6 +47,33 @@ const UNIEQUIP_ICON_OVERRIDE_BY_CHARID = {
   char_452_bstalk: {
     uniequip_002_bstalk: "uniequip_002_bstalk",
   },
+  char_608_acpion: {
+    uniequip_002_acpion: "default",
+  },
+  char_613_acmedc: {
+    uniequip_002_acmedc: "default",
+  },
+  char_617_sharp2: {
+    uniequip_002_sharp2: "default",
+  },
+  char_614_acsupo: {
+    uniequip_002_acsupo: "default",
+  },
+  char_612_accast: {
+    uniequip_002_accast: "default",
+  },
+  char_615_acspec: {
+    uniequip_002_acspec: "default",
+  },
+  char_610_acfend: {
+    uniequip_002_acfend: "default",
+  },
+  char_609_acguad: {
+    uniequip_002_acguad: "default",
+  },
+  char_611_acnipe: {
+    uniequip_002_acnipe: "default",
+  },
 };
 
 function resolveUniEquipIconForChar({ charKey, moduleId, forcedOriginal, fallbackIcon }) {
@@ -1444,24 +1471,6 @@ React.useEffect(() => {
     preloadImageCached(u).catch(() => {});
   });
 }, [moduleImageCandidates]);
-
-React.useEffect(() => {
-  const len = moduleImageCandidates?.length || 0;
-  if (!activeModuleImageUrl || len <= 1) return;
-  if (moduleImgLoaded) return;
-  if (moduleImgIdx >= len - 1) return;
-
-  const t = setTimeout(() => {
-    setModuleImgIdx((prev) => {
-      const next = prev + 1;
-      return next < len ? next : prev;
-    });
-  }, 2500);
-
-  return () => clearTimeout(t);
-}, [activeModuleImageUrl, moduleImgIdx, moduleImgLoaded, moduleImageCandidates]);
-
-
 
 const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
