@@ -101,11 +101,19 @@
   },
   "Cold": {
     "title": "Lạnh/Cold",
-    "text": "Giảm 30 ASPD, nếu hiệu ứng này cộng dồn 2 lần thì sẽ trở thành【Đóng băng】.\n• Đối với các đơn vị miễn nhiễm【Đóng băng】thì không cộng dồn hiệu ứng【Lạnh】nữa."
+    "text": "Giảm 30 ASPD, nếu hiệu ứng này cộng dồn 2 lần thì sẽ trở thành <$ba.frozen>Đóng băng</>.\n• Đối với các đơn vị miễn nhiễm <$ba.frozen>Đóng băng</> thì không cộng dồn hiệu ứng【Lạnh】nữa."
+  },
+  "ba.cold": {
+    "title": "Lạnh/Cold",
+    "text": "Giảm 30 ASPD, nếu hiệu ứng này cộng dồn 2 lần thì sẽ trở thành <$ba.frozen>Đóng băng</>.\n• Đối với các đơn vị miễn nhiễm <$ba.frozen>Đóng băng</> thì không cộng dồn hiệu ứng【Lạnh】nữa."
   },
   "Frozen": {
     "title": "Đóng băng/Frozen",
-    "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng(kích hoạt thông qua【Lạnh】). Đồng thời giảm 15 RES khi bị【Đóng băng】."
+    "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng (kích hoạt thông qua <$ba.cold>Lạnh</>). Đồng thời giảm 15 RES khi bị【Đóng băng】."
+  },
+  "ba.frozen": {
+    "title": "Đóng băng/Frozen",
+    "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng (kích hoạt thông qua <$ba.cold>Lạnh</>). Đồng thời giảm 15 RES khi bị【Đóng băng】."
   },
   "Frighten": {
     "title": "Giải giới/Frighten",
