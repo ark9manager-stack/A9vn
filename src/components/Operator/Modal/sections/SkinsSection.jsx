@@ -235,6 +235,56 @@ export default function SkinsSection({ operator, className = "" }) {
     return selectedHasSp && spMode ? withSpSuffix(u) : u;
   }, [selectedOption, selectedHasSp, spMode]);
 
+
+  useEffect(() => {
+    if (!charId || !options.length) return;
+
+    let cancelled = false;
+
+    const preloadUrls = [
+      ...new Set(
+        options
+          .flatMap((opt) => {
+            const list = [opt?.url || null, opt?.fallbackUrl || null];
+            if (opt?.hasSp) {
+              if (opt?.url) list.push(withSpSuffix(opt.url));
+              if (opt?.fallbackUrl) list.push(withSpSuffix(opt.fallbackUrl));
+            }
+            return list;
+          })
+          .filter(Boolean)
+      ),
+    ];
+
+    if (preloadUrls.length === 0) return;
+
+    Promise.allSettled(
+      preloadUrls.map((url) => preloadImageCached(url).then(() => url))
+    ).then((results) => {
+      if (cancelled) return;
+      const loaded = results
+        .filter((r) => r.status === "fulfilled" && typeof r.value === "string" && r.value)
+        .map((r) => r.value);
+
+      if (loaded.length === 0) return;
+      setLoadedUrls((prev) => {
+        const next = new Set(prev);
+        let changed = false;
+        for (const url of loaded) {
+          if (!next.has(url)) {
+            next.add(url);
+            changed = true;
+          }
+        }
+        return changed ? next : prev;
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [charId, options]);
+
   useEffect(() => {
     let cancelled = false;
 

@@ -666,7 +666,6 @@ function pickVariantByHeaderOption(variants, opt) {
   const desiredPhase = Number(opt.phaseIndex);
   const desiredLevel = Number(opt.level);
 
-  // Exact phase + level
   const exact = variants.find(
     (v) => v.phaseIndex === desiredPhase && v.level === desiredLevel
   );
@@ -1276,7 +1275,7 @@ const renderTalentCard = (talentIdx, resolved) => {
   );
 };
 
-  // ===== Kỹ năng =====
+  //Skill
 
   const skillsList = React.useMemo(() => {
     const raw = charData?.skills ?? operator?.skills ?? [];
@@ -1341,6 +1340,7 @@ const renderTalentCard = (talentIdx, resolved) => {
       return;
     }
 
+    setDisplaySkillIconUrl("");
     setIsSkillIconLoading(true);
   }, [selectedSkillIconUrl, charKey]);
 
@@ -1466,7 +1466,7 @@ const renderTalentCard = (talentIdx, resolved) => {
     };
   }, [safeSkillLevelIdx, allSkillLvlup, masteryConds]);
 
-  // ===== Kỹ năng hậu cầu =====
+  //Kỹ năng hậu cầu
   const buildingCharEntry = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
     return buildingData?.chars?.[charKey] || buildingDataEN?.chars?.[charKey] || null;

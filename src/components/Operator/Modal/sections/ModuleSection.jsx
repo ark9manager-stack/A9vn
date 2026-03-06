@@ -1468,7 +1468,8 @@ const isDefaultModule = React.useMemo(() => {
       setIsModuleImgLoading(false);
       return;
     }
-
+    
+    setDisplayModuleImageUrl("");
     setIsModuleImgLoading(true);
   }, [activeModuleImageUrl]);
 
