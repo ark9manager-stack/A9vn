@@ -15,7 +15,6 @@ import traitModVN from "../../../../data/module/TraitMod_vn.json";
 import { renderAKText } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 import {
-  preloadImageCached,
   RANGE_STAND,
   RANGE_ATTACK,
   RANGE_ATTACK_SKILL,
@@ -1422,55 +1421,24 @@ const isDefaultModule = React.useMemo(() => {
   }, [selected?.id, selected?.uniEquipIcon]);
 
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
+  const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
 
-const moduleImgLoadedSetRef = React.useRef(new Set());
-const moduleImgPendingUrlRef = React.useRef("");
-const [mountedModuleImgUrls, setMountedModuleImgUrls] = React.useState(() => new Set());
-const [displayModuleImageUrl, setDisplayModuleImageUrl] = React.useState("");
-const [moduleImgLoaded, setModuleImgLoaded] = React.useState(false);
+  React.useEffect(() => {
+    setModuleImgIdx(0);
+  }, [selected?.id, selected?.uniEquipIcon]);
 
-React.useEffect(() => {
-  setModuleImgIdx(0);
-  setDisplayModuleImageUrl("");
-  setModuleImgLoaded(false);
-}, [selected?.id, selected?.uniEquipIcon]);
+  const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
-const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
-
-React.useEffect(() => {
-  const url = activeModuleImageUrl;
-  moduleImgPendingUrlRef.current = url;
-
-  if (!url) {
-    setDisplayModuleImageUrl("");
+  React.useEffect(() => {
     setModuleImgLoaded(false);
-    return;
-  }
+  }, [activeModuleImageUrl]);
 
-  setMountedModuleImgUrls((prev) => {
-    if (prev.has(url)) return prev;
-    const next = new Set(prev);
-    next.add(url);
-    return next;
-  });
+  // Chỉ render 1 <img> cho candidate hiện tại.
+  // Không preload thêm bằng JS, không giữ các URL cũ đã mount,
+  // không ép eager/high priority cho ảnh ẩn.
+  // Khi onError thật sự xảy ra mới chuyển sang candidate kế tiếp.
 
-  if (moduleImgLoadedSetRef.current.has(url)) {
-    setDisplayModuleImageUrl(url);
-    setModuleImgLoaded(true);
-  } else {
-    setDisplayModuleImageUrl("");
-    setModuleImgLoaded(false);
-  }
-}, [activeModuleImageUrl]);
 
-React.useEffect(() => {
-  const urls = Array.isArray(moduleImageCandidates) ? moduleImageCandidates : [];
-  const warm = [...new Set([...(urls.slice(0, 2)), ...(urls.length ? [urls[urls.length - 1]] : [])])];
-  warm.forEach((u) => {
-    if (!u) return;
-    preloadImageCached(u).catch(() => {});
-  });
-}, [moduleImageCandidates]);
 
 const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -1545,41 +1513,31 @@ if (!isNonEmptyString(charKey) || !charData) {
                 <div className="absolute inset-0 bg-white/5 animate-pulse" />
               ) : null}
 
-              {Array.from(mountedModuleImgUrls).map((url) => (
-                <img
-                  key={url}
-                  src={url}
-                  alt="module"
-                  className="absolute inset-0 w-full h-full object-contain transition-opacity duration-150"
-                  style={{
-                    opacity: displayModuleImageUrl === url && moduleImgLoaded ? 1 : 0,
-                    visibility:
-                      displayModuleImageUrl === url && moduleImgLoaded ? "visible" : "hidden",
-                  }}
-                  draggable={false}
-                  loading="eager"
-                  decoding="async"
-                  fetchPriority="high"
-                  onLoad={() => {
-                    moduleImgLoadedSetRef.current.add(url);
-                    if (moduleImgPendingUrlRef.current === url) {
-                      setDisplayModuleImageUrl(url);
-                      setModuleImgLoaded(true);
-                    }
-                  }}
-                  onError={() => {
-                    if (moduleImgPendingUrlRef.current === url) {
-                      setModuleImgLoaded(false);
-                      setDisplayModuleImageUrl("");
-                      setModuleImgIdx((prev) => {
-                        const len = moduleImageCandidates?.length || 0;
-                        const next = prev + 1;
-                        return next < len ? next : prev;
-                      });
-                    }
-                  }}
-                />
-              ))}{moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
+              <img
+                key={activeModuleImageUrl}
+                src={activeModuleImageUrl}
+                alt="module"
+                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-150"
+                style={{
+                  opacity: moduleImgLoaded ? 1 : 0,
+                  visibility: moduleImgLoaded ? "visible" : "hidden",
+                }}
+                draggable={false}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => {
+                  setModuleImgLoaded(true);
+                }}
+                onError={() => {
+                  setModuleImgLoaded(false);
+                  setModuleImgIdx((prev) => {
+                    const len = moduleImageCandidates?.length || 0;
+                    const next = prev + 1;
+                    return next < len ? next : prev;
+                  });
+                }}
+              />
+              {moduleImgLoaded && isDefaultModule && isNonEmptyString(subProfIcon) ? (
                 <img
                   src={subProfIcon}
                   alt="overlay"
