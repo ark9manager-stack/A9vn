@@ -47,13 +47,11 @@ function isNonEmptyString(v) {
 }
 
 function normalizeNewlines(text) {
-  // Avoid regex literals here to prevent CR/LF copy issues in some editors.
   return String(text ?? "")
     .split("\r\n")
     .join("\n")
     .split("\r")
     .join("\n")
-    // Some localized strings contain literal "\n"
     .split("\\n")
     .join("\n");
 }
@@ -228,19 +226,9 @@ function resolveHoverTarget(keyRaw) {
   if (term) return { kind: "term", key };
   const note = getNote(key);
   if (note) return { kind: "note", key };
-  // Unknown: treat as noteKey (StatHover will render plain children if no tooltip)
   return { kind: "note", key };
 }
 
-/**
- * Parse text with:
- * - [[label|hoverKey]]  -> creates StatHover (noteKey or termId)
- * - <@noteKey>...</>    -> apply highlight style from NOTEKEY_LABEL_TEMPLATES
- * - <$termId>...</>     -> creates StatHover for termId
- * Also preserves stray </> by consuming it (never printing it).
- *
- * This parser intentionally does NOT rely on regex for nested tags.
- */
 function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
   const nodes = [];
   let buf = "";
@@ -250,7 +238,6 @@ function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
     const cur = buf;
     buf = "";
 
-    // Preserve whitespace-only segments (important to avoid "Steals70" issues)
     if (cur.trim().length === 0) {
       nodes.push(cur);
       return;
@@ -265,19 +252,16 @@ function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
   };
 
   while (state.i < str.length) {
-    // Close tag </> (for @/$ blocks)
     if (str.startsWith("</>", state.i)) {
       if (stopAtClose) {
         flushBuf();
         state.i += 3;
         return nodes;
       }
-      // stray close => swallow
       state.i += 3;
       continue;
     }
 
-    // Newline
     if (opts.allowNewlines && str[state.i] === "\n") {
       flushBuf();
       state.i += 1;
@@ -285,7 +269,6 @@ function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
       continue;
     }
 
-    // [[label|key]] (treat key as noteKey; consistent with section renderers)
 if (str.startsWith("[[", state.i)) {
   const end = str.indexOf("]]", state.i + 2);
   if (end !== -1) {
@@ -321,12 +304,9 @@ if (str.startsWith("[[", state.i)) {
       continue;
     }
   }
-  // Not a valid pattern => treat as text
 }
 
-// <@noteKey>...</> or <$termId>...</>
     if (str[state.i] === "<" && (str[state.i + 1] === "@" || str[state.i + 1] === "$")) {
-      // parse key until '>'
       const sigil = str[state.i + 1];
       const gt = str.indexOf(">", state.i + 2);
       if (gt !== -1) {
@@ -340,8 +320,6 @@ if (str.startsWith("[[", state.i)) {
         if (sigil === "@") {
           nodes.push(applyNoteKeyStyle(inner, key, wrapKey));
 } else {
-  // '$' hover: by default shows term from gamedata_const(_en).
-  // If preferNoteForDollar is enabled (VN UI), and a VN note exists, use note instead.
   const preferNote = !!opts?.preferNoteForDollar;
   const vnNote = preferNote ? getNote(key) : null;
 
@@ -361,7 +339,6 @@ if (str.startsWith("[[", state.i)) {
       }
     }
 
-    // Otherwise, append char
     buf += str[state.i];
     state.i += 1;
   }
@@ -398,14 +375,12 @@ export default function StatHover({ label, noteKey, termId, children }) {
   const [pinned, setPinned] = React.useState(false);
   const [pos, setPos] = React.useState({ top: 0, left: 0, place: "bottom" });
 
-  // Desktop uses hover; mobile uses tap/click (no hover).
   const [canHover, setCanHover] = React.useState(true);
   React.useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
     try {
       setCanHover(window.matchMedia("(hover: hover)").matches);
     } catch {
-      // ignore
     }
   }, []);
 
@@ -420,13 +395,8 @@ export default function StatHover({ label, noteKey, termId, children }) {
 
   const hasChildren = children !== undefined && children !== null;
 
-  // If we have no children and no label text, nothing to render
   if (!hasChildren && !isNonEmptyString(label)) return null;
 
-  // Build anchor content:
-  // - If children are provided, render them as-is.
-  // - If label is provided:
-  //    - parse shared tags ([[|]], <@>, <$>) and apply NOTEKEY template style if noteKey matches a template.
   let anchorContent = null;
 
   if (hasChildren) {
@@ -437,7 +407,6 @@ export default function StatHover({ label, noteKey, termId, children }) {
     anchorContent = tpl ? applyNoteKeyStyle(parsed, noteKey, "sh-lblwrap") : parsed;
   }
 
-  // If there is no tooltip data, just render label/children without underline or handlers.
   if (!hasTooltip) {
     return <>{anchorContent}</>;
   }
@@ -507,7 +476,6 @@ export default function StatHover({ label, noteKey, termId, children }) {
   };
 
   const onClick = (e) => {
-    // Only enable click-to-pin on devices without hover (mobile/tablet).
     if (canHover) return;
     e.stopPropagation();
     if (!hasTooltip) return;
@@ -526,7 +494,6 @@ export default function StatHover({ label, noteKey, termId, children }) {
     }
   };
 
-  // Close pinned tooltip when clicking/tapping outside (mobile-friendly)
   React.useEffect(() => {
     if (!pinned) return;
 
@@ -556,7 +523,10 @@ export default function StatHover({ label, noteKey, termId, children }) {
     >
       {isNonEmptyString(title) ? (
         <div className="text-center text-white font-semibold">
-          {renderRich(title, "sh-ttl", { allowNewlines: true })}
+          {renderRich(title, "sh-ttl", {
+            allowNewlines: true,
+            preferNoteForDollar: !!note,
+          })}
         </div>
       ) : null}
 
@@ -566,7 +536,10 @@ export default function StatHover({ label, noteKey, termId, children }) {
 
       {isNonEmptyString(text) ? (
         <div className="text-white/90 whitespace-pre-wrap break-words leading-relaxed">
-          {renderRich(text, "sh-txt", { allowNewlines: true })}
+          {renderRich(text, "sh-txt", {
+            allowNewlines: true,
+            preferNoteForDollar: !!note,
+          })}
         </div>
       ) : null}
     </div>
