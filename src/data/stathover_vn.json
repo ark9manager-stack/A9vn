@@ -255,6 +255,14 @@
     "title": "",
     "text": "-2 DP"
   },
+  "ModYmgllan": {
+    "title": "",
+    "text": "Skill 1: -1 DP\nSkill 2 và Skill 3: -3 DP"
+  },
+  "ModYling": {
+    "title": "",
+    "text": "Skill 1 và Skill 2: -3 DP\nSkill 3: -5 DP"
+  },
   "ModAZumama": {
     "title": "",
     "text": "Bán kính 5 ô"
@@ -263,9 +271,17 @@
     "title": "",
     "text": "-90%"
   },
-  "ModXrobrta": {
+  "ModXcraftsman": {
     "title": "",
     "text": "-2 DP"
+  },
+  "ModXironmn": {
+    "title": "",
+    "text": "Skill 1 và Skill 2: -1 DP\nSkill 3: -4 DP"
+  },
+  "ModXnasti": {
+    "title": "",
+    "text": "Skill 1 và Skill 2: -2 DP\nSkill 3: -3 DP"
   },
   "ModXtraper": {
     "title": "",
