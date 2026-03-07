@@ -30,15 +30,33 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
 
   const renderSection = useCallback(
     (id) => {
-      if (id === "skins") return <SkinsSection operator={operator} lang={lang} />;
-      if (id === "profile") return <ProfileSection operator={operator} lang={lang} />;
+      if (id === "skins") return <SkinsSection operator={operator} charId={charId} lang={lang} />;
+      if (id === "profile") return <ProfileSection operator={operator} charId={charId} lang={lang} />;
       if (id === "stats") return <StatsSection operator={operator} charId={charId} lang={lang} />;
-      if (id === "skills") return <SkillsSection operator={operator} lang={lang} isActiveTab={activeTab === "skills"} />;
-      if (id === "modules") return <ModuleSection operator={operator} lang={lang} isActiveTab={activeTab === "modules"} />;
-      if (id === "voice") return <VoiceSection operator={operator} lang={lang} />;
+      if (id === "skills") {
+        return (
+          <SkillsSection
+            operator={operator}
+            charId={charId}
+            lang={lang}
+            isTabActive={activeTab === "skills"}
+          />
+        );
+      }
+      if (id === "modules") {
+        return (
+          <ModuleSection
+            operator={operator}
+            charId={charId}
+            lang={lang}
+            isTabActive={activeTab === "modules"}
+          />
+        );
+      }
+      if (id === "voice") return <VoiceSection operator={operator} charId={charId} lang={lang} />;
       return null;
     },
-    [operator, charId, lang]
+    [activeTab, operator, charId, lang]
   );
 
   return (
@@ -48,10 +66,7 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
         const shouldMount = isActive || mountedTabs.has(id);
 
         return (
-          <div
-            key={id}
-            className={isActive ? "block h-full" : "hidden h-full"}
-          >
+          <div key={id} className={isActive ? "block h-full" : "hidden h-full"}>
             {shouldMount ? renderSection(id) : null}
           </div>
         );
