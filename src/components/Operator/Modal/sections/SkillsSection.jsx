@@ -28,6 +28,8 @@ import {
   getSkillIconUrl,
   getSkillLevelIconUrl,
   getBuildingSkillIconUrl,
+  preloadImageCached,
+  isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
 function isNonEmptyString(v) {
@@ -899,7 +901,6 @@ export default function SkillsSection(props) {
     props?.english === true;
 
   const traitMap = React.useMemo(() => buildTraitMap(isEnglishUI ? traitEN : traitVN), [isEnglishUI]);
-  const isTabActive = props?.isActiveTab === true || props?.isActive === true;
   const tagMap = React.useMemo(() => buildTagMap(tagVN), []);
 
   const operator = props?.operator || props?.data || null;
@@ -1338,15 +1339,41 @@ const renderTalentCard = (talentIdx, resolved) => {
   }, [charKey]);
 
   React.useEffect(() => {
+    if (!isNonEmptyString(charKey) || allSkillIconUrls.length === 0) return;
+    let cancelled = false;
+
+    Promise.allSettled(
+      allSkillIconUrls.map((url) => preloadImageCached(url).then(() => url))
+    ).then((results) => {
+      if (cancelled) return;
+      const loaded = results
+        .filter((r) => r.status === "fulfilled" && typeof r.value === "string" && r.value)
+        .map((r) => r.value);
+      if (loaded.length === 0) return;
+
+      setMountedSkillIconUrls((prev) => {
+        const next = new Set(prev);
+        let changed = false;
+        for (const url of loaded) {
+          skillIconLoadedSetRef.current.add(url);
+          if (!next.has(url)) {
+            next.add(url);
+            changed = true;
+          }
+        }
+        return changed ? next : prev;
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [charKey, allSkillIconUrls]);
+
+  React.useEffect(() => {
     const url = selectedSkillIconUrl;
     skillIconPendingUrlRef.current = url;
     setSkillIconError(false);
-
-    if (!isTabActive) {
-      setDisplaySkillIconUrl("");
-      setIsSkillIconLoading(false);
-      return;
-    }
 
     if (!url) {
       setDisplaySkillIconUrl("");
@@ -1361,33 +1388,43 @@ const renderTalentCard = (talentIdx, resolved) => {
       return next;
     });
 
-    if (skillIconLoadedSetRef.current.has(url)) {
+    if (skillIconLoadedSetRef.current.has(url) || isImageLoadedCached(url)) {
+      skillIconLoadedSetRef.current.add(url);
       setDisplaySkillIconUrl(url);
       setIsSkillIconLoading(false);
       return;
     }
 
+    let cancelled = false;
     setDisplaySkillIconUrl("");
     setIsSkillIconLoading(true);
-  }, [selectedSkillIconUrl, charKey, isTabActive]);
 
-  React.useEffect(() => {
-    if (!isTabActive || !isNonEmptyString(charKey) || allSkillIconUrls.length === 0) return;
-
-    setMountedSkillIconUrls((prev) => {
-      let changed = false;
-      const next = new Set(prev);
-
-      for (const url of allSkillIconUrls) {
-        if (!next.has(url)) {
+    preloadImageCached(url)
+      .then(() => {
+        if (cancelled) return;
+        if (skillIconPendingUrlRef.current !== url) return;
+        skillIconLoadedSetRef.current.add(url);
+        setMountedSkillIconUrls((prev) => {
+          if (prev.has(url)) return prev;
+          const next = new Set(prev);
           next.add(url);
-          changed = true;
-        }
-      }
+          return next;
+        });
+        setDisplaySkillIconUrl(url);
+        setIsSkillIconLoading(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        if (skillIconPendingUrlRef.current !== url) return;
+        setIsSkillIconLoading(false);
+        setSkillIconError(true);
+        setDisplaySkillIconUrl("");
+      });
 
-      return changed ? next : prev;
-    });
-  }, [allSkillIconUrls, charKey, isTabActive]);
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedSkillIconUrl, charKey]);
 
 
   const skillLevels = React.useMemo(() => {
@@ -1772,7 +1809,6 @@ return (
                               : "hidden",
                         }}
                         draggable={false}
-                        loading="lazy"
                         onLoad={() => {
                           skillIconLoadedSetRef.current.add(url);
                           if (skillIconPendingUrlRef.current === url) {
@@ -1859,8 +1895,7 @@ return (
                             alt="init-sp"
                             className="w-full h-full object-contain"
                             draggable={false}
-                            loading="lazy"
-                          />
+                              />
                           <span className="absolute right-[7px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
                             {Number(currentInitSp) || 0}
                           </span>
@@ -1877,8 +1912,7 @@ return (
                             alt="sp-cost"
                             className="w-full h-full object-contain"
                             draggable={false}
-                            loading="lazy"
-                          />
+                              />
                           <span className="absolute right-[7px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
                             {Number(currentSpCost) || 0}
                           </span>
@@ -1925,8 +1959,7 @@ return (
                               alt={`lv-${lv}`}
                               className="w-7 h-7 object-contain"
                               draggable={false}
-                              loading="lazy"
-                            />
+                                  />
                           ) : (
                             <span className="text-sm font-semibold tabular-nums">{lv}</span>
                           )}
@@ -2066,7 +2099,6 @@ return (
                         alt={String(buffId || "")}
                         className="w-12 h-12 object-contain shrink-0"
                         draggable={false}
-                        loading="lazy"
                         onError={(e) => {
                           e.currentTarget.style.visibility = "hidden";
                         }}

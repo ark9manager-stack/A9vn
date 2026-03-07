@@ -24,6 +24,8 @@ import {
   getModuleDirIconUrl,
   getModuleImageCandidates,
   getModuleLevelBoardUrl,
+  preloadImageCached,
+  isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
 const MODULE_IMG_BOX_SIZE = 224;
@@ -1050,7 +1052,6 @@ export default function ModuleSection(props) {
     props?.english === true;
 
   const traitMap = React.useMemo(() => buildTraitMap(isEnglishUI ? traitEN : traitVN), [isEnglishUI]);
-  const isTabActive = props?.isActiveTab === true || props?.isActive === true;
 
   const operator = props?.operator || props?.data || null;
   const rawCharId =
@@ -1467,15 +1468,41 @@ const isDefaultModule = React.useMemo(() => {
   const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
   React.useEffect(() => {
+    if (!isNonEmptyString(charKey) || allModuleImageUrls.length === 0) return;
+    let cancelled = false;
+
+    Promise.allSettled(
+      allModuleImageUrls.map((url) => preloadImageCached(url).then(() => url))
+    ).then((results) => {
+      if (cancelled) return;
+      const loaded = results
+        .filter((r) => r.status === "fulfilled" && typeof r.value === "string" && r.value)
+        .map((r) => r.value);
+      if (loaded.length === 0) return;
+
+      setMountedModuleImageUrls((prev) => {
+        const next = new Set(prev);
+        let changed = false;
+        for (const url of loaded) {
+          moduleImgLoadedSetRef.current.add(url);
+          if (!next.has(url)) {
+            next.add(url);
+            changed = true;
+          }
+        }
+        return changed ? next : prev;
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [charKey, allModuleImageUrls]);
+
+  React.useEffect(() => {
     const url = activeModuleImageUrl;
     moduleImgPendingUrlRef.current = url;
     setModuleImgError(false);
-
-    if (!isTabActive) {
-      setDisplayModuleImageUrl("");
-      setIsModuleImgLoading(false);
-      return;
-    }
 
     if (!url) {
       setDisplayModuleImageUrl("");
@@ -1490,33 +1517,49 @@ const isDefaultModule = React.useMemo(() => {
       return next;
     });
 
-    if (moduleImgLoadedSetRef.current.has(url)) {
+    if (moduleImgLoadedSetRef.current.has(url) || isImageLoadedCached(url)) {
+      moduleImgLoadedSetRef.current.add(url);
       setDisplayModuleImageUrl(url);
       setIsModuleImgLoading(false);
       return;
     }
 
+    let cancelled = false;
     setDisplayModuleImageUrl("");
     setIsModuleImgLoading(true);
-  }, [activeModuleImageUrl, isTabActive]);
 
-  React.useEffect(() => {
-    if (!isTabActive || !isNonEmptyString(charKey) || allModuleImageUrls.length === 0) return;
-
-    setMountedModuleImageUrls((prev) => {
-      let changed = false;
-      const next = new Set(prev);
-
-      for (const url of allModuleImageUrls) {
-        if (!next.has(url)) {
+    preloadImageCached(url)
+      .then(() => {
+        if (cancelled) return;
+        if (moduleImgPendingUrlRef.current !== url) return;
+        moduleImgLoadedSetRef.current.add(url);
+        setMountedModuleImageUrls((prev) => {
+          if (prev.has(url)) return prev;
+          const next = new Set(prev);
           next.add(url);
-          changed = true;
+          return next;
+        });
+        setDisplayModuleImageUrl(url);
+        setIsModuleImgLoading(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        if (moduleImgPendingUrlRef.current !== url) return;
+        setIsModuleImgLoading(false);
+        const len = moduleImageCandidates?.length || 0;
+        const nextIdx = moduleImgIdx + 1;
+        if (nextIdx < len) {
+          setModuleImgIdx(nextIdx);
+        } else {
+          setModuleImgError(true);
+          setDisplayModuleImageUrl("");
         }
-      }
+      });
 
-      return changed ? next : prev;
-    });
-  }, [allModuleImageUrls, charKey, isTabActive]);
+    return () => {
+      cancelled = true;
+    };
+  }, [activeModuleImageUrl, moduleImageCandidates, moduleImgIdx]);
 
 const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
@@ -1602,7 +1645,6 @@ if (!isNonEmptyString(charKey) || !charData) {
                     visibility: !moduleImgError && displayModuleImageUrl === url ? "visible" : "hidden",
                   }}
                   draggable={false}
-                  loading="lazy"
                   decoding="async"
                   onLoad={() => {
                     moduleImgLoadedSetRef.current.add(url);

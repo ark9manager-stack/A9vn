@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import SkinsSection from "./sections/SkinsSection";
 import ProfileSection from "./sections/ProfileSection";
 import SkillsSection from "./sections/SkillsSection";
@@ -7,26 +7,7 @@ import StatsSection from "./sections/StatsSection";
 import ModuleSection from "./sections/ModuleSection";
 
 const OperatorContent = ({ activeTab, operator, charId, lang }) => {
-  const tabIds = useMemo(
-    () => ["skins", "profile", "stats", "skills", "modules", "voice"],
-    []
-  );
-
-  const [mountedTabs, setMountedTabs] = useState(() => {
-    const s = new Set();
-    if (activeTab) s.add(activeTab);
-    return s;
-  });
-
-  useEffect(() => {
-    if (!activeTab) return;
-    setMountedTabs((prev) => {
-      if (prev.has(activeTab)) return prev;
-      const next = new Set(prev);
-      next.add(activeTab);
-      return next;
-    });
-  }, [activeTab]);
+  const tabIds = ["skins", "profile", "stats", "skills", "modules", "voice"];
 
   const renderSection = useCallback(
     (id) => {
@@ -35,21 +16,13 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
       if (id === "stats") return <StatsSection operator={operator} charId={charId} lang={lang} />;
       if (id === "skills") {
         return (
-          <SkillsSection
-            operator={operator}
-            charId={charId}
-            lang={lang}
-            isTabActive={activeTab === "skills"}
+          <SkillsSection operator={operator} charId={charId} lang={lang} isTabActive={activeTab === "skills"}
           />
         );
       }
       if (id === "modules") {
         return (
-          <ModuleSection
-            operator={operator}
-            charId={charId}
-            lang={lang}
-            isTabActive={activeTab === "modules"}
+          <ModuleSection operator={operator} charId={charId} lang={lang} isTabActive={activeTab === "modules"}
           />
         );
       }
@@ -63,11 +36,9 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
     <div className="flex-1 h-full min-h-0 overflow-y-auto p-6">
       {tabIds.map((id) => {
         const isActive = activeTab === id;
-        const shouldMount = isActive || mountedTabs.has(id);
-
         return (
           <div key={id} className={isActive ? "block h-full" : "hidden h-full"}>
-            {shouldMount ? renderSection(id) : null}
+            {renderSection(id)}
           </div>
         );
       })}
