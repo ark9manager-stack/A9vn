@@ -899,6 +899,7 @@ export default function SkillsSection(props) {
     props?.english === true;
 
   const traitMap = React.useMemo(() => buildTraitMap(isEnglishUI ? traitEN : traitVN), [isEnglishUI]);
+  const isTabActive = props?.isActiveTab === true || props?.isActive === true;
   const tagMap = React.useMemo(() => buildTagMap(tagVN), []);
 
   const operator = props?.operator || props?.data || null;
@@ -1300,6 +1301,26 @@ const renderTalentCard = (talentIdx, resolved) => {
     skillCnEntry?.iconId || skillEnEntry?.iconId
   );
 
+  const allSkillIconUrls = React.useMemo(() => {
+    const seen = new Set();
+    const out = [];
+
+    for (const s of skillsList) {
+      const sid = String(s?.skillId || "").trim();
+      if (!sid) continue;
+
+      const cn = skillTable?.[sid] || null;
+      const en = skillTableEN?.[sid] || null;
+      const url = getSkillIconUrl(sid, cn?.iconId || en?.iconId);
+      if (!isNonEmptyString(url) || seen.has(url)) continue;
+
+      seen.add(url);
+      out.push(url);
+    }
+
+    return out;
+  }, [skillsList]);
+
   const skillIconLoadedSetRef = React.useRef(new Set());
   const skillIconPendingUrlRef = React.useRef("");
   const [mountedSkillIconUrls, setMountedSkillIconUrls] = React.useState(() => new Set());
@@ -1320,6 +1341,12 @@ const renderTalentCard = (talentIdx, resolved) => {
     const url = selectedSkillIconUrl;
     skillIconPendingUrlRef.current = url;
     setSkillIconError(false);
+
+    if (!isTabActive) {
+      setDisplaySkillIconUrl("");
+      setIsSkillIconLoading(false);
+      return;
+    }
 
     if (!url) {
       setDisplaySkillIconUrl("");
@@ -1342,7 +1369,25 @@ const renderTalentCard = (talentIdx, resolved) => {
 
     setDisplaySkillIconUrl("");
     setIsSkillIconLoading(true);
-  }, [selectedSkillIconUrl, charKey]);
+  }, [selectedSkillIconUrl, charKey, isTabActive]);
+
+  React.useEffect(() => {
+    if (!isTabActive || !isNonEmptyString(charKey) || allSkillIconUrls.length === 0) return;
+
+    setMountedSkillIconUrls((prev) => {
+      let changed = false;
+      const next = new Set(prev);
+
+      for (const url of allSkillIconUrls) {
+        if (!next.has(url)) {
+          next.add(url);
+          changed = true;
+        }
+      }
+
+      return changed ? next : prev;
+    });
+  }, [allSkillIconUrls, charKey, isTabActive]);
 
 
   const skillLevels = React.useMemo(() => {

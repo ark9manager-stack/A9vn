@@ -33,8 +33,8 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
       if (id === "skins") return <SkinsSection operator={operator} lang={lang} />;
       if (id === "profile") return <ProfileSection operator={operator} lang={lang} />;
       if (id === "stats") return <StatsSection operator={operator} charId={charId} lang={lang} />;
-      if (id === "skills") return <SkillsSection operator={operator} lang={lang} />;
-      if (id === "modules") return <ModuleSection operator={operator} lang={lang} />;
+      if (id === "skills") return <SkillsSection operator={operator} lang={lang} isActiveTab={activeTab === "skills"} />;
+      if (id === "modules") return <ModuleSection operator={operator} lang={lang} isActiveTab={activeTab === "modules"} />;
       if (id === "voice") return <VoiceSection operator={operator} lang={lang} />;
       return null;
     },

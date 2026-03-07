@@ -1050,6 +1050,7 @@ export default function ModuleSection(props) {
     props?.english === true;
 
   const traitMap = React.useMemo(() => buildTraitMap(isEnglishUI ? traitEN : traitVN), [isEnglishUI]);
+  const isTabActive = props?.isActiveTab === true || props?.isActive === true;
 
   const operator = props?.operator || props?.data || null;
   const rawCharId =
@@ -1420,6 +1421,26 @@ const isDefaultModule = React.useMemo(() => {
     return getModuleImageCandidates(id, icon);
   }, [selected?.id, selected?.uniEquipIcon]);
 
+  const allModuleImageUrls = React.useMemo(() => {
+    const seen = new Set();
+    const out = [];
+
+    for (const m of modules) {
+      const urls = getModuleImageCandidates(
+        String(m?.id || ""),
+        String(m?.uniEquipIcon || "")
+      );
+
+      for (const url of urls) {
+        if (!isNonEmptyString(url) || seen.has(url)) continue;
+        seen.add(url);
+        out.push(url);
+      }
+    }
+
+    return out;
+  }, [modules]);
+
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
   const moduleImgLoadedSetRef = React.useRef(new Set());
   const moduleImgPendingUrlRef = React.useRef("");
@@ -1450,6 +1471,12 @@ const isDefaultModule = React.useMemo(() => {
     moduleImgPendingUrlRef.current = url;
     setModuleImgError(false);
 
+    if (!isTabActive) {
+      setDisplayModuleImageUrl("");
+      setIsModuleImgLoading(false);
+      return;
+    }
+
     if (!url) {
       setDisplayModuleImageUrl("");
       setIsModuleImgLoading(false);
@@ -1468,10 +1495,28 @@ const isDefaultModule = React.useMemo(() => {
       setIsModuleImgLoading(false);
       return;
     }
-    
+
     setDisplayModuleImageUrl("");
     setIsModuleImgLoading(true);
-  }, [activeModuleImageUrl]);
+  }, [activeModuleImageUrl, isTabActive]);
+
+  React.useEffect(() => {
+    if (!isTabActive || !isNonEmptyString(charKey) || allModuleImageUrls.length === 0) return;
+
+    setMountedModuleImageUrls((prev) => {
+      let changed = false;
+      const next = new Set(prev);
+
+      for (const url of allModuleImageUrls) {
+        if (!next.has(url)) {
+          next.add(url);
+          changed = true;
+        }
+      }
+
+      return changed ? next : prev;
+    });
+  }, [allModuleImageUrls, charKey, isTabActive]);
 
 const subProfIcon = React.useMemo(() => {
     const subProfessionId = charData?.subProfessionId ?? operator?.subProfessionId;
