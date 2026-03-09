@@ -661,9 +661,32 @@ function collectBuildingHeaderOptions(buffChar) {
 
   return options;
 }
+
+function hasUnlockedTalentVariantAtHeader(variants, opt) {
+  if (!Array.isArray(variants) || variants.length === 0) return false;
+  if (!opt) return true;
+
+  const desiredPhase = Number(opt.phaseIndex);
+  const desiredLevel = Number(opt.level);
+
+  return variants.some((v) => {
+    const vp = Number(v?.phaseIndex ?? -1);
+    const vl = Number(v?.level ?? 1);
+
+    if (!Number.isFinite(vp) || !Number.isFinite(vl)) return false;
+    if (vp < desiredPhase) return true;
+    if (vp === desiredPhase && vl <= desiredLevel) return true;
+    return false;
+  });
+}
+
 function pickVariantByHeaderOption(variants, opt) {
   if (!Array.isArray(variants) || variants.length === 0) return null;
   if (!opt) return variants[variants.length - 1];
+
+  if (!hasUnlockedTalentVariantAtHeader(variants, opt)) {
+    return null;
+  }
 
   const desiredPhase = Number(opt.phaseIndex);
   const desiredLevel = Number(opt.level);
@@ -672,21 +695,25 @@ function pickVariantByHeaderOption(variants, opt) {
     (v) => v.phaseIndex === desiredPhase && v.level === desiredLevel
   );
   if (exact) return exact;
+
   const samePhase = variants.filter((v) => v.phaseIndex === desiredPhase);
   if (samePhase.length > 0) {
     const le = samePhase
       .filter((v) => v.level <= desiredLevel)
       .sort((a, b) => b.level - a.level)[0];
-    return le || samePhase.sort((a, b) => a.level - b.level)[0];
+    if (le) return le;
   }
 
   const lePhase = variants
-    .filter((v) => v.phaseIndex <= desiredPhase)
+    .filter((v) => {
+      if (v.phaseIndex < desiredPhase) return true;
+      if (v.phaseIndex === desiredPhase && v.level <= desiredLevel) return true;
+      return false;
+    })
     .sort((a, b) => (b.phaseIndex - a.phaseIndex) || (b.level - a.level))[0];
 
-  return lePhase || variants[variants.length - 1];
+  return lePhase || null;
 }
-
 
 function RangeGrid({ rangeId }) {
   const grids = rangeId ? rangeTable?.[rangeId]?.grids : null;
@@ -1175,8 +1202,7 @@ const potPicker = showPotPicker ? (
 
 const shouldHideTalent2 =
   (talent2Resolved?.variants?.length || 0) > 0 &&
-  (talent2Resolved?.minPhaseIndex ?? 0) >= 2 &&
-  Number(activeTalentHeaderOpt?.phaseIndex ?? 0) < (talent2Resolved?.minPhaseIndex ?? 2);
+  !hasUnlockedTalentVariantAtHeader(talent2Resolved?.variants, activeTalentHeaderOpt);
 
 const renderTalentCard = (talentIdx, resolved) => {
   const variants = resolved?.variants || [];
@@ -1188,9 +1214,9 @@ const renderTalentCard = (talentIdx, resolved) => {
     );
   }
 
-  const v =
-    pickVariantByHeaderOption(variants, activeTalentHeaderOpt) ||
-    variants[variants.length - 1];
+  const v = pickVariantByHeaderOption(variants, activeTalentHeaderOpt);
+
+  if (!v) return null;
 
   let titleName = "";
   const phaseIndexForTitle = Number(v?.phaseIndex ?? 0);
