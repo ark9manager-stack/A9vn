@@ -3439,11 +3439,11 @@
   "char_610_acfend": {
     "TitleTalent1": "Vật liệu tinh luyện",
     "TitleTalent2": "Giáp phản lực",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_2": ""
+    "Talent0": "DEF +3%, và thêm +3% nữa khi HP dưới 50%",
+    "Talent1": "DEF +6%, và thêm +6% nữa khi HP dưới 50%",
+    "Talent1_2": "DEF +10%, và thêm +10% nữa khi HP dưới 50%",
+    "Talent2": "Kẻ địch bị bản thân chặn có ASPD -5",
+    "Talent2_2": "Kẻ địch bị bản thân chặn có ASPD -7"
   },
   "char_611_acnipe": {
     "TitleTalent1": "Trời độ",
