@@ -16,24 +16,32 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
       if (id === "stats") return <StatsSection operator={operator} charId={charId} lang={lang} />;
       if (id === "skills") {
         return (
-          <SkillsSection operator={operator} charId={charId} lang={lang} isTabActive={activeTab === "skills"}
+          <SkillsSection
+            operator={operator}
+            charId={charId}
+            lang={lang}
+            isTabActive={activeTab === "skills"}
           />
         );
       }
       if (id === "modules") {
         return (
-          <ModuleSection operator={operator} charId={charId} lang={lang} isTabActive={activeTab === "modules"}
+          <ModuleSection
+            operator={operator}
+            charId={charId}
+            lang={lang}
+            isTabActive={activeTab === "modules"}
           />
         );
       }
       if (id === "voice") return <VoiceSection operator={operator} charId={charId} lang={lang} />;
       return null;
     },
-    [activeTab, operator, charId, lang]
+    [activeTab, operator, charId, lang],
   );
 
   return (
-    <div className="flex-1 h-full min-h-0 overflow-y-auto p-6">
+    <div className="flex-1 h-full min-h-0 overflow-y-auto px-4 pb-4 pt-16 md:p-6">
       {tabIds.map((id) => {
         const isActive = activeTab === id;
         return (
