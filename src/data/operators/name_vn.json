@@ -5539,5 +5539,15 @@
     "idweb": 407,
     "name": "望",
     "name_vn": "Wang"
+  },
+  "char_4031_liesel": {
+    "idweb": 408,
+    "name": "复奏",
+    "name_vn": "Ripresa"
+  },
+  "char_4037_demetr": {
+    "idweb": 409,
+    "name": "贝洛内",
+    "name_vn": "Bellone"
   }
 }
