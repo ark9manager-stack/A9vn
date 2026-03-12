@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, lazy, Suspense } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
-import LoadingScreen from "../components/UI/Loadingscreen";
+import LoadingScreen from "../components/UI/LoadingScreen";
 import useScrollRouter from "../hooks/useScrollRouter";
 import useInViewLazy from "../hooks/useInViewLazy";
 
