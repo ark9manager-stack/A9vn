@@ -71,7 +71,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
       </button>
 
       {showFilter && (
-        <div className="absolute top-full inset-x-0 bg-black/90 backdrop-blur-md p-4 mt-2 rounded-lg shadow-xl z-50">
+        <div className="absolute top-full inset-x-0 bg-black/80 backdrop-blur-md p-4 mt-2 rounded-lg shadow-xl z-50">
           {/* ===== MAIN CLASS ===== */}
           <div className="flex flex-nowrap gap-2 mb-4 overflow-x-auto">
             {CLASSES.map((cls) => (

@@ -24,7 +24,7 @@
 
 /* Full page scroll styles - Fixed */
 .fullpage-container {
-  height: 100dvh;
+  height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
@@ -32,7 +32,7 @@
 }
 
 .fullpage-section {
-  min-height: 100dvh;
+  min-height: 100vh;
   height: auto;
   width: 100%;
   scroll-snap-align: start;

@@ -25,9 +25,11 @@ const Music = () => {
 
   // selected album -> songs
   const [selectedAlbum, setSelectedAlbum] = useState(null);
-  const { songs: rawSongs, loading: loadingSongs, error: errorSongs } = useMusic(
-    selectedAlbum?.id
-  );
+  const {
+    songs: rawSongs,
+    loading: loadingSongs,
+    error: errorSongs,
+  } = useMusic(selectedAlbum?.id);
 
   // UI state
   const [searchTerm, setSearchTerm] = useState("");
@@ -54,10 +56,7 @@ const Music = () => {
         const albumAliases = json?.albumAliases || {};
         for (const [albumId, aliases] of Object.entries(albumAliases)) {
           const arr = Array.isArray(aliases) ? aliases : [];
-          map.set(
-            Number(albumId),
-            arr.map((x) => norm(x)).filter(Boolean)
-          );
+          map.set(Number(albumId), arr.map((x) => norm(x)).filter(Boolean));
         }
         if (!ignore) setAliasMap(map);
       } catch {
@@ -344,7 +343,8 @@ const Music = () => {
         {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
           <div className="text-center text-gray-400 text-sm mb-4">
             Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
-            {Math.min(endIndex, filteredAlbums.length)} / {filteredAlbums.length} album
+            {Math.min(endIndex, filteredAlbums.length)} /{" "}
+            {filteredAlbums.length} album
           </div>
         )}
       </div>

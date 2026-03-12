@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { FaFilter } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";

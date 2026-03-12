@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, lazy, Suspense } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
-
-import Home from "./Home";
-import Operator from "./Operator";
-import Music from "./Music";
+import LoadingScreen from "../components/UI/Loadingscreen";
 import useScrollRouter from "../hooks/useScrollRouter";
+import useInViewLazy from "../hooks/useInViewLazy";
+
+const Home = lazy(() => import("./Home"));
+const Operator = lazy(() => import("./Operator"));
+const Music = lazy(() => import("./Music"));
 
 const sections = [
   { id: "home", path: "/Home" },
@@ -14,12 +16,11 @@ const sections = [
 
 function pathToSectionId(pathname) {
   const p = String(pathname || "/");
+
   if (p === "/" || /^\/home\/?$/i.test(p)) return "home";
-  if (/^\/operator=.+$/i.test(p) || /^\/operator\/?$/i.test(p))
-    return "operator";
-  if (/^\/music\/?$/i.test(p) || /^\/Music\/?$/i.test(p)) return "music";
-  if (/^\/Home\/?$/i.test(p)) return "home";
-  if (/^\/Operator(=.+)?\/?$/i.test(p)) return "operator";
+  if (/^\/operator(=.+)?\/?$/i.test(p)) return "operator";
+  if (/^\/music\/?$/i.test(p)) return "music";
+
   return "home";
 }
 
@@ -32,6 +33,9 @@ const Display = () => {
 
   useScrollRouter(sections, containerRef, suppressRef);
 
+  const [operatorRef, showOperator] = useInViewLazy();
+  const [musicRef, showMusic] = useInViewLazy();
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -42,36 +46,14 @@ const Display = () => {
 
     suppressRef.current = true;
 
-    const reduceMotion =
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    const behavior = reduceMotion ? "auto" : "smooth";
-
+    const behavior = "smooth";
     el.scrollIntoView({ behavior, block: "start" });
 
-    let idleTimer = null;
-    const IDLE_MS = 180;
-    const MAX_MS = 2000;
-
-    const release = () => {
-      if (idleTimer) clearTimeout(idleTimer);
-      container.removeEventListener("scroll", onScroll);
+    const timer = setTimeout(() => {
       suppressRef.current = false;
-    };
+    }, 400);
 
-    const onScroll = () => {
-      if (idleTimer) clearTimeout(idleTimer);
-      idleTimer = setTimeout(release, IDLE_MS);
-    };
-
-    container.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    const maxTimer = setTimeout(release, MAX_MS);
-
-    return () => {
-      clearTimeout(maxTimer);
-      release();
-    };
+    return () => clearTimeout(timer);
   }, [location.pathname, navType]);
 
   return (
@@ -80,9 +62,26 @@ const Display = () => {
         ref={containerRef}
         className="fullpage-container scrollbar-hide h-full"
       >
-        <Home />
-        <Operator />
-        <Music />
+        {/* HOME */}
+        <section id="home" className="fullpage-section">
+          <Suspense fallback={<LoadingScreen />}>
+            <Home />
+          </Suspense>
+        </section>
+
+        {/* OPERATOR */}
+        <section id="operator" ref={operatorRef} className="fullpage-section">
+          <Suspense fallback={<LoadingScreen />}>
+            {showOperator && <Operator />}
+          </Suspense>
+        </section>
+
+        {/* MUSIC */}
+        <section id="music" ref={musicRef} className="fullpage-section">
+          <Suspense fallback={<LoadingScreen />}>
+            {showMusic && <Music />}
+          </Suspense>
+        </section>
       </div>
     </div>
   );
