@@ -1,11 +1,10 @@
 {
   "char_002_amiya": {
     "TitleTalent1": "？？？",
-    "TitleTalent1_2": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1_2": "",
-    "Talent1_2_p5": ""
+    "TitleTalent1_2": "Hấp thụ cảm xúc",
+    "Talent0": "？？？？？",
+    "Talent1_2": "Hồi 2 SP khi tấn công kẻ địch, và nhận thêm 8 SP khi hạ được kẻ địch.",
+    "Talent1_2_p5": "Hồi 3<@ba.talpu>(+1)</> SP khi tấn công kẻ địch, và nhận thêm 10<@ba.talpu>(+2)</> SP khi hạ gục kẻ địch."
   },
   "char_003_kalts": {
     "TitleTalent1": "Mon3tr",
@@ -362,10 +361,9 @@
     "Talent2_p4": ""
   },
   "char_106_franka": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Lưỡi kiếm Thermite",
+    "Talent1": "Khi tấn công, có 10% tỷ lệ bỏ qua DEF của mục tiêu",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ bỏ qua DEF của mục tiêu"
   },
   "char_107_liskam": {
     "TitleTalent1": "",
@@ -375,12 +373,11 @@
     "Talent2_p4": ""
   },
   "char_108_silent": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Liều tăng cường",
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Bác sĩ】nhận +6 ASPD.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Bác sĩ】nhận +8<@ba.talpu>(+2)</> ASPD.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Bác sĩ】nhận +12 ASPD.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Bác sĩ】nhận +14<@ba.talpu>(+2)</> ASPD."
   },
   "char_109_fmout": {
     "TitleTalent1": "Bói toán",
@@ -414,7 +411,6 @@
   },
   "char_115_headbr": {
     "TitleTalent1": "Thủ lĩnh tiên phong",
-    "TitleTalent2": "",
     "Talent1": "-1 DP",
     "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】-1 DP."
   },
@@ -431,13 +427,11 @@
   },
   "char_120_hibisc": {
     "TitleTalent1": "Tăng hồi phục",
-    "TitleTalent2": "",
     "Talent1": "ATK +4%",
     "Talent1_lv55": "ATK +8%"
   },
   "char_121_lava": {
     "TitleTalent1": "Xuất chiêu tức thì",
-    "TitleTalent2": "",
     "Talent1": "Ngay lập tức nhận 15 SP sau khi triển khai.",
     "Talent1_p4": "Ngay lập tức nhận 20<@ba.talpu>(+5)</> SP sau khi triển khai.",
     "Talent1_lv55": "Ngay lập tức nhận 30 SP sau khi triển khai.",
@@ -445,18 +439,15 @@
   },
   "char_122_beagle": {
     "TitleTalent1": "Tăng DEF",
-    "TitleTalent2": "",
     "Talent1": "DEF +5%",
     "Talent1_lv55": "DEF +10%"
   },
   "char_123_fang": {
     "TitleTalent1": "Linh hoạt",
-    "TitleTalent2": "",
     "Talent1": "-1 DP"
   },
   "char_124_kroos": {
     "TitleTalent1": "Nhắm vào điểm yếu · Sơ cấp",
-    "TitleTalent2": "",
     "Talent1": "Khi tấn công, có 10% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
     "Talent1_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</>.",
     "Talent1_lv55": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
@@ -471,25 +462,22 @@
   },
   "char_127_estell": {
     "TitleTalent1": "Tự hồi phục",
-    "TitleTalent2": "",
     "Talent1": "Hồi 7% HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
     "Talent1_p4": "Hồi 9%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
     "Talent1_2": "Hồi 12% HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân.",
     "Talent1_2_p4": "Hồi 14%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân."
   },
   "char_128_plosis": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Năng lượng lan tỏa",
+    "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ đồng minh +0.15/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này)",
+    "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ đồng minh +0.3/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này)"
   },
   "char_129_bluep": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Chất độc thần kinh",
+    "Talent1": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 30 sát thương phép trong vòng 3 giây.",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 40<@ba.talpu>(+10)</> sát thương phép trong vòng 3 giây.",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 75 sát thương phép trong vòng 3 giây.",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 85<@ba.talpu>(+10)</> sát thương phép trong vòng 3 giây."
   },
   "char_130_doberm": {
     "TitleTalent1": "Giáo quan tân binh",
@@ -542,19 +530,18 @@
     "Talent2_p5": ""
   },
   "char_137_brownb": {
-    "TitleTalent1": "Tập trung thi đấu ",
+    "TitleTalent1": "Tập trung thi đấu",
     "Talent1": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 3% ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn.",
     "Talent1_p4": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 4%<@ba.talpu>(+1%)</> ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn.",
     "Talent1_2": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 5% ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn.",
     "Talent1_2_p4": "Mỗi đòn đánh liên tiếp lên cùng một mục tiêu tăng 6%<@ba.talpu>(+1%)</> ATK cho bản thân, cộng dồn tối đa 5 lần. Đổi mục tiêu sẽ mất toàn bộ cộng dồn."
   },
   "char_140_whitew": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Hủy diệt tinh thần",
+    "Talent1": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 1 giây.",
+    "Talent1_p4": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 2<@ba.talpu>(+1)</> giây.",
+    "Talent1_2": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 5 giây.",
+    "Talent1_2_p4": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 6<@ba.talpu>(+1)</> giây."
   },
   "char_141_nights": {
     "TitleTalent1": "Màn sương đen",
@@ -564,9 +551,8 @@
     "Talent1_2_p4": "Đòn tấn công khiến RES của mục tiêu -23%<@ba.talpu>(+3%)</> trong 1 giây."
   },
   "char_143_ghost": {
-    "TitleTalent1": "",
-    "TitleTalent1_2": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tăng cường thể lực",
+    "TitleTalent1_2": "Sinh lực biển sâu",
     "Talent1": "HP tối đa +10%.",
     "Talent1_p4": "HP tối đa +12%<@ba.talpu>(+2%)</>.",
     "Talent1_2": "HP tối đa +10%, hồi 2% HP tối đa mỗi giây.",
@@ -601,12 +587,11 @@
     "Talent2_p2": ""
   },
   "char_148_nearl": {
-    "TitleTalent1": "",
-    "TitleTalent1_2": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
+    "TitleTalent1": "Tăng cường hồi phục",
+    "TitleTalent1_2": "Hào quang thiên mã",
+    "Talent1": "Hiệu quả hồi phục của bản thân tăng 10%",
+    "Talent1_p4": "Hiệu quả hồi phục của bản thân tăng 12%<@ba.talpu>(+2%)</>",
+    "Talent1_2": "Khi có mặt trên sân, toàn bộ đồng minh nhận 10% hiệu quả hồi phục.",
     "Talent1_2_p4": ""
   },
   "char_149_scave": {
@@ -647,12 +632,11 @@
     "Talent2": ""
   },
   "char_155_tiger": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Hổ quyền thần tốc",
+    "Talent1": "Có 15% tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân.",
+    "Talent1_p4": "Có 18%<@ba.talpu>(+3%)</> tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân.",
+    "Talent1_2": "Có 30% tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân.",
+    "Talent1_2_p4": "Có 33%<@ba.talpu>(+3%)</> tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân."
   },
   "char_157_dagda": {
     "TitleTalent1": "",
@@ -691,18 +675,16 @@
     "Talent1_2_p4": ""
   },
   "char_166_skfire": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Xạ thủ ma pháp",
+    "Talent1": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 7% sát thương phép.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 10%<@ba.talpu>(+3%)</> sát thương phép.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 15% sát thương phép.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 18%<@ba.talpu>(+3%)</> sát thương phép."
   },
   "char_171_bldsk": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Thu hồi mẫu máu",
+    "Talent1": "Khi có kẻ địch bị hạ trong phạm vi tấn công, hồi 1 SP cho bản thân và 1 đồng minh ngẫu nhiên trong phạm vi.",
+    "Talent1_2": "Khi có kẻ địch bị hạ trong phạm vi tấn công, hồi 2 SP cho bản thân và 1 đồng minh ngẫu nhiên trong phạm vi."
   },
   "char_172_svrash": {
     "TitleTalent1": "",
@@ -937,12 +919,11 @@
     "Talent2": ""
   },
   "char_204_platnm": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Dồn toàn lực",
+    "Talent1": "Khoảng thời gian tấn công càng lâu, ATK cho đòn tiếp theo càng cao (đạt tối đa 2.5 giây và ATK tăng lên 140%)",
+    "Talent1_p4": "Khoảng thời gian tấn công càng lâu, ATK cho đòn tiếp theo càng cao (đạt tối đa 2.5 giây và ATK tăng lên 150%<@ba.talpu>(+10%)</>)",
+    "Talent1_2": "Khoảng thời gian tấn công càng lâu, ATK cho đòn tiếp theo càng cao (đạt tối đa 2.5 giây và ATK tăng lên 180%)",
+    "Talent1_2_p4": "Khoảng thời gian tấn công càng lâu, ATK cho đòn tiếp theo càng cao (đạt tối đa 2.5 giây và ATK tăng lên 190%<@ba.talpu>(+10%)</>)"
   },
   "char_206_gnosis": {
     "TitleTalent1": "",
@@ -1016,10 +997,9 @@
     "Talent1_2_p4": ""
   },
   "char_219_meteo": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Cải tiến đầu đạn nổ",
+    "Talent1": "Khi đánh thường hoặc tung kỹ năng, có 15% tỷ lệ giúp tăng 60% ATK của đòn tấn công đó.",
+    "Talent1_2": "Khi đánh thường hoặc tung kỹ năng, có 30% tỷ lệ giúp tăng 60% ATK của đòn tấn công đó."
   },
   "char_220_grani": {
     "TitleTalent1": "Cảnh sát kỵ binh",
@@ -1097,11 +1077,10 @@
     "Talent1_2_p4": ""
   },
   "char_242_otter": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "TitleTalent1": "Rái cá máy",
+    "Talent0": "Có thể sử dụng 3 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -10 ASPD.",
+    "Talent1": "Có thể sử dụng 4 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD.",
+    "Talent1_2": "Có thể sử dụng 5 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD."
   },
   "char_243_waaifu": {
     "TitleTalent1": "",
@@ -1132,8 +1111,8 @@
     "Talent2_2_p4": ""
   },
   "char_249_mlyss": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nước sạch chính là sự sống",
+    "TitleTalent2": "Tối ưu nguồn lực",
     "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
     "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
     "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
@@ -1568,7 +1547,7 @@
     "TitleTalent2": "",
     "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +7%.",
     "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +9%<@ba.talpu>(+2%)</>.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】dược giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +11%.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +11%.",
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_350_surtr": {
@@ -1831,7 +1810,6 @@
   },
   "char_4017_puzzle": {
     "TitleTalent1": "Trình Tự",
-    "TitleTalent2": "",
     "Talent1": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 110% và hồi thêm 1 SP.",
     "Talent1_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 115%<@ba.talpu>(+5%)</> và hồi thêm 1 SP.",
     "Talent1_2": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 120% và hồi thêm 1 SP.",
@@ -1846,7 +1824,6 @@
   },
   "char_401_elysm": {
     "TitleTalent1": "Tiếp viện xạ thủ",
-    "TitleTalent2": "",
     "Talent1": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +10 ASPD khi kỹ năng của Elysium đang hoạt động.",
     "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +13<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động.",
     "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】-2 DP, và +20 ASPD khi kỹ năng của Elysium đang hoạt động.",
@@ -1873,8 +1850,8 @@
   "char_4026_vulpis": {
     "TitleTalent1": "Truy sát",
     "TitleTalent2": "Thế trận dâng cao",
-    "Talent1": "Sau khi gây sát thương lần đầu lên kẻ địch, trong 10 giây tiếp theo, mỗi khi Vulpisfoglia gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 20% ATK.",
-    "Talent1_2": "Sau khi gây sát thương lần đầu lên kẻ địch, trong 10 giây tiếp theo, mỗi khi Vulpisfoglia gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 30% ATK.",
+    "Talent1": "Kẻ địch lần đầu chịu sát thương từ Vulpisfoglia sẽ bị đánh dấu trong 10 giây tiếp theo, mỗi khi cô gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 20% ATK.",
+    "Talent1_2": "Kẻ địch lần đầu chịu sát thương từ Vulpisfoglia sẽ bị đánh dấu trong 10 giây tiếp theo, mỗi khi cô gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 30% ATK.",
     "Talent2": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 4% HP tối đa mỗi giây.",
     "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
@@ -2331,8 +2308,7 @@
     "Talent2_p4": ""
   },
   "char_4119_wanqin": {
-    "TitleTalent1": "Am hiểu thiên thời",
-    "TitleTalent2": "",
+    "TitleTalent1": "Am hiểu thời tiết",
     "Talent1": "+3% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +5% nếu triển khai cùng hướng với Wanqing.",
     "Talent1_p4": "+4%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +6%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing.",
     "Talent1_2": "+5% HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +9% nếu triển khai cùng hướng với Wanqing.",
@@ -2545,8 +2521,7 @@
     "Talent2_p4": ""
   },
   "char_4147_mitm": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chiến xa phế liệu",
     "Talent0": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 20 giây.",
     "Talent1": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 17 giây.",
     "Talent1_2": "Có thể triệu hồi 'Cherry-3' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cherry-3' bị hạ, sẽ rơi phế liệu ở 4 ô xung quanh và tự động hồi sinh sau 15 giây."
@@ -2887,8 +2862,8 @@
   "char_420_flamtl": {
     "TitleTalent1": "Kiếm thuật tiên phong",
     "TitleTalent2": "Thủ lĩnh Pinus Sylvestris",
-    "Talent1": "Mỗi khi né đòn, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp.",
-    "Talent1_2": "Mỗi khi né đòn, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp lên toàn bộ kẻ địch đang bị chặn.",
+    "Talent1": "Mỗi khi né thành công, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp.",
+    "Talent1_2": "Mỗi khi né thành công, đòn đánh kế tiếp sẽ vung 2 nhát liên tiếp lên toàn bộ kẻ địch đang bị chặn.",
     "Talent2": "Khi có mặt trên sân, tất cả cán viên【Kazimierz】nhận 22% tỷ lệ né sát thương vật lý.",
     "Talent2_p4": "Khi có mặt trên sân, tất cả cán viên【Kazimierz】nhận 25%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
@@ -6839,5 +6814,14 @@
     "TitleTalent1": "",
     "TitleTalent2": "",
     "Talent0": ""
+  },
+  "char_4037_demetr": {
+    "TitleTalent1": "",
+    "TitleTalent2": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
   }
 }

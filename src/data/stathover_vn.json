@@ -163,6 +163,10 @@
     "title": "Làm chậm/Slow",
     "text": "Giảm 80% tốc độ di chuyển."
   },
+  "Silence": {
+    "title": "Câm lặng/Silence",
+    "text": "Vô hiệu hóa kỹ năng đặc biệt của mục tiêu"
+  },
   "SlowerTrait": {
     "title": "",
     "text": "0.8 giây"
@@ -251,6 +255,10 @@
     "title": "Elemental Fragility",
     "text": "Mục tiêu chịu thêm sát thương nguyên tố theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
   },
+  "ba.addash": {
+    "title": "Di chuyển/Move",
+    "text": "Không thể rời khỏi sân; và được triển khai đến vị trí của mục tiêu với lượng HP hiện tại."
+  },
   "ModYDeepcolor": {
     "title": "",
     "text": "-2 DP"
@@ -302,5 +310,9 @@
   "SiegeModY": {
     "title": "",
     "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n                  6.3%    8.9%\n                  4.2%    7.4%   10.7%\nSELF         3.4%    6.9%   10.3%\n                  4.2%    7.4%   10.7%\n                  6.3%    8.9%"
+  },
+  "platnmTalent": {
+    "title": "",
+    "text": "[Sát thương tăng tuyến tính theo thời gian]\nTối thiểu 1 giây\nTối đa 2.5 giây"
   }
 }
