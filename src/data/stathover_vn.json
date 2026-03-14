@@ -299,6 +299,18 @@
     "title": "",
     "text": "-1 DP"
   },
+  "IntervalVeryMinor": {
+    "title": "",
+    "text": "-0.05"
+  },
+  "IntervalMinor": {
+    "title": "",
+    "text": "-0.08"
+  },
+  "IntervalSlight": {
+    "title": "",
+    "text": "-0.11"
+  },
   "DeadeyeModX": {
     "title": "",
     "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n5.0%   6.2%   9.1%\n0.0%   2.1%   6.2%  10.8%\nSELF   0.0%   5.0%  10.0%  15.0%\n0.0%   2.1%   6.2%  10.8%\n5.0%   6.2%   9.1%"

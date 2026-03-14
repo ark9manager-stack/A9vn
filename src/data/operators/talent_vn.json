@@ -265,14 +265,14 @@
     "Talent2": ""
   },
   "char_103_angel": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p5": ""
+    "TitleTalent1": "Nạp đạn siêu tốc",
+    "TitleTalent2": "Lời chúc phúc của thiên sứ",
+    "Talent1": "ASPD +6",
+    "Talent1_p2": "ASPD +9<@ba.talpu>(+3)</>",
+    "Talent1_2": "ASPD +12",
+    "Talent1_2_p2": "ASPD +15<@ba.talpu>(+3)</>",
+    "Talent2": "ATK +6%, HP tối đa +10%; Khi có mặt trên sân, hiệu ứng này cũng sẽ ban cho 1 đồng minh ngẫu nhiên.",
+    "Talent2_p5": "ATK +8%<@ba.talpu>(+2%)</>, HP tối đa +13%<@ba.talpu>(+3%)</>; Khi có mặt trên sân, hiệu ứng này cũng sẽ ban cho 1 đồng minh ngẫu nhiên."
   },
   "char_1040_blaze2": {
     "TitleTalent1": "",
