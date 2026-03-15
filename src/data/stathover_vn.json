@@ -115,6 +115,10 @@
     "title": "Đóng băng/Frozen",
     "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng (kích hoạt thông qua <$ba.cold>Lạnh</>). Đồng thời giảm 15 RES khi bị【Đóng băng】."
   },
+  "ba.weightless": {
+    "title": "Không trọng lượng/Weightless",
+    "text": "Trọng lượng giảm 1 cấp (Hiệu ứng cùng tên sẽ không cộng dồn)."
+  },
   "Frighten": {
     "title": "Giải giới/Frighten",
     "text": "Không thể đánh thường sau khi bị chặn.\n• Có thể chặn được các kỹ năng cần kích bằng đòn đánh.\n• Có thể gián đoạn đòn đánh của kẻ địch bị chặn khi chịu hiệu ứng này."
@@ -301,15 +305,27 @@
   },
   "IntervalVeryMinor": {
     "title": "",
-    "text": "-0.05"
+    "text": "-0.05 giây"
   },
   "IntervalMinor": {
     "title": "",
-    "text": "-0.08"
+    "text": "-0.08 giây"
   },
   "IntervalSlight": {
     "title": "",
-    "text": "-0.11"
+    "text": "-0.11 giây"
+  },
+  "IntervalSiege": {
+    "title": "",
+    "text": "+1 giây"
+  },
+  "IntervalEyjafjalla": {
+    "title": "",
+    "text": "-1.1 giây"
+  },
+  "IntervalAngelina": {
+    "title": "",
+    "text": "Giảm còn 0.285 giây"
   },
   "DeadeyeModX": {
     "title": "",

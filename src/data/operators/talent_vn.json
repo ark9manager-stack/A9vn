@@ -502,16 +502,16 @@
     "Talent1_2_p4": "ATK +8%<@ba.talpu>(+1%)</>, ASPD +8<@ba.talpu>(+1%)</>"
   },
   "char_134_ifrit": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p2": "",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p5": ""
+    "TitleTalent1": "Bào mòn tinh thần",
+    "TitleTalent2": "Chu trình Rhine",
+    "Talent0": "-15% RES của kẻ địch trong phạm vi tấn công.",
+    "Talent0_p2": "-19%<@ba.talpu>(+4%)</> RES của kẻ địch trong phạm vi tấn công.",
+    "Talent1": "-27% RES của kẻ địch trong phạm vi tấn công.",
+    "Talent1_p2": "-31%<@ba.talpu>(+4%)</> RES của kẻ địch trong phạm vi tấn công.",
+    "Talent1_2": "-40% RES của kẻ địch trong phạm vi tấn công.",
+    "Talent1_2_p2": "-44%<@ba.talpu>(+4%)</> RES của kẻ địch trong phạm vi tấn công.",
+    "Talent2": "Cứ mỗi 6 giây sẽ hồi thêm 2 SP.",
+    "Talent2_p5": "Cứ mỗi 5.5<@ba.talpu>(-0.5)</> giây sẽ hồi thêm 2 SP."
   },
   "char_135_halo": {
     "TitleTalent1": "",
@@ -575,16 +575,16 @@
     "Talent1_2_p4": ""
   },
   "char_147_shining": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p5": "",
-    "Talent1": "",
-    "Talent1_p5": "",
-    "Talent1_2": "",
-    "Talent1_2_p5": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "TitleTalent1": "Ác ma bảo hộ",
+    "TitleTalent2": "Bộ luật",
+    "Talent0": "+20 DEF cho các đồng minh trong phạm vi.",
+    "Talent0_p5": "+25<@ba.talpu>(+5)</> DEF cho các đồng minh trong phạm vi.",
+    "Talent1": "+40 DEF cho các đồng minh trong phạm vi.",
+    "Talent1_p5": "+45<@ba.talpu>(+5)</> DEF cho các đồng minh trong phạm vi.",
+    "Talent1_2": "+60 DEF cho các đồng minh trong phạm vi.",
+    "Talent1_2_p5": "+65<@ba.talpu>(+5)</> DEF cho các đồng minh trong phạm vi.",
+    "Talent2": "ASPD +10",
+    "Talent2_p2": "ASPD +13<@ba.talpu>(+3)</>"
   },
   "char_148_nearl": {
     "TitleTalent1": "Tăng cường hồi phục",
@@ -724,14 +724,14 @@
     "Talent2": ""
   },
   "char_180_amgoat": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p5": "",
-    "Talent1_2": "",
-    "Talent1_2_p5": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "TitleTalent1": "Hỏa tức",
+    "TitleTalent2": "Ngọn lửa hỗn loạn",
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +7% ATK.",
+    "Talent1_p5": "Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +9%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +14% ATK.",
+    "Talent1_2_p5": "Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +16%<@ba.talpu>(+2%)</> ATK.",
+    "Talent2": "Sau khi triển khai, nhận ngẫu nhiên 7~15 SP",
+    "Talent2_p2": "Sau khi triển khai, nhận ngẫu nhiên 10<@ba.talpu>(+3)</>~19<@ba.talpu>(+4)</> SP"
   },
   "char_181_flower": {
     "TitleTalent1": "Hoa oải hương",
@@ -1314,14 +1314,14 @@
     "Talent1_2_p4": "Khi tấn công, có 10% tỷ lệ khiến ATK đòn tấn công đó tăng thêm 110%<@ba.talpu>(+10%)</>. tỷ lệ này tăng lên thành 30% nếu Vigna đang kích hoạt kỹ năng."
   },
   "char_291_aglina": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p5": "",
-    "Talent1_2": "",
-    "Talent1_2_p5": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "TitleTalent1": "Trường lực gia tốc",
+    "TitleTalent2": "Việc làm thêm",
+    "Talent1": "Toàn bộ đồng minh được +3 ASPD.",
+    "Talent1_p5": "Toàn bộ đồng minh được +4<@ba.talpu>(+1)</> ASPD.",
+    "Talent1_2": "Toàn bộ đồng minh được +7 ASPD.",
+    "Talent1_2_p5": "Toàn bộ đồng minh được +8<@ba.talpu>(+1)</> ASPD.",
+    "Talent2": "Hồi 20 HP mỗi giây cho toàn bộ đồng minh khi kỹ năng chưa kích hoạt.",
+    "Talent2_p2": "Hồi 25<@ba.talpu>(+5)</> HP mỗi giây cho toàn bộ đồng minh khi kỹ năng chưa kích hoạt."
   },
   "char_293_thorns": {
     "TitleTalent1": "",
