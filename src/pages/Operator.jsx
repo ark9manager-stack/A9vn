@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";
 import OperatorModal from "../components/Operator/OperatorModal";
-import ScrollLockContainer from "../components/UI/ScrollLockContainer";
+import ScrollArea from "../components/UI/ScrollArea";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
@@ -21,22 +21,14 @@ const Operator = () => {
     activeClass: appliedFilter.class,
     activeSubClass: appliedFilter.subclasses?.[0] ?? null,
   });
-  const operatorIdFromUrl = useMemo(() => {
-    const p = String(location.pathname || "");
-    const m = p.match(/^\/operator=([^/]+)$/i);
-    if (!m) return null;
-    try {
-      return decodeURIComponent(m[1]);
-    } catch {
-      return m[1];
-    }
-  }, [location.pathname]);
+
+  const { id: operatorIdFromUrl } = useParams();
 
   useEffect(() => {
-    if (!operators || operators.length === 0) return;
+    if (!operators?.length) return;
 
     if (!operatorIdFromUrl) {
-      if (selectedOperator) setSelectedOperator(null);
+      setSelectedOperator(null);
       return;
     }
 
@@ -44,13 +36,15 @@ const Operator = () => {
       (op) =>
         op.id === operatorIdFromUrl || String(op.idweb) === operatorIdFromUrl,
     );
+
     if (found) setSelectedOperator(found);
-  }, [operatorIdFromUrl, operators, selectedOperator, setSelectedOperator]);
+  }, [operatorIdFromUrl, operators]);
 
   const openOperator = (op) => {
     setSelectedOperator(op);
-    navigate(`/Operator=${encodeURIComponent(op.id)}`, {
-      state: { background: location.state?.background ?? location },
+
+    navigate(`/operator/${encodeURIComponent(op.id)}`, {
+      state: { background: location },
     });
   };
 
@@ -87,17 +81,19 @@ const Operator = () => {
 
           <div className="w-full border-t border-gray-600 my-4" />
 
-          <ScrollLockContainer className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
-              {filteredOperators.map((op) => (
-                <OperatorCard
-                  key={op.id}
-                  operator={op}
-                  onClick={() => openOperator(op)}
-                />
-              ))}
+          <div className="fullpage-section">
+            <div className=" w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
+                {filteredOperators.map((op) => (
+                  <OperatorCard
+                    key={op.id}
+                    operator={op}
+                    onClick={() => openOperator(op)}
+                  />
+                ))}
+              </div>
             </div>
-          </ScrollLockContainer>
+          </div>
         </div>
       </div>
 
