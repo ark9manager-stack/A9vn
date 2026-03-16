@@ -520,14 +520,14 @@
     "Talent1_2": ""
   },
   "char_136_hsguma": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p5": ""
+    "TitleTalent1": "Áo chống đạn",
+    "TitleTalent2": "Chiến lược 'Chiến tranh đặc biệt'",
+    "Talent1": "Có 12% tỷ lệ chặn một đòn tấn công.",
+    "Talent1_p2": "Có 15%<@ba.talpu>(+3%)</> tỷ lệ chặn một đòn tấn công.",
+    "Talent1_2": "Có 25% tỷ lệ chặn một đòn tấn công.",
+    "Talent1_2_p2": "Có 28%<@ba.talpu>(+3%)</> tỷ lệ chặn một đòn tấn công.",
+    "Talent2": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +6% DEF.",
+    "Talent2_p5": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +8%<@ba.talpu>(+2%)</> DEF."
   },
   "char_137_brownb": {
     "TitleTalent1": "Tập trung thi đấu",
@@ -575,7 +575,7 @@
     "Talent1_2_p4": ""
   },
   "char_147_shining": {
-    "TitleTalent1": "Ác ma bảo hộ",
+    "TitleTalent1": "Hắc ma bảo hộ",
     "TitleTalent2": "Bộ luật",
     "Talent0": "+20 DEF cho các đồng minh trong phạm vi.",
     "Talent0_p5": "+25<@ba.talpu>(+5)</> DEF cho các đồng minh trong phạm vi.",
@@ -687,13 +687,13 @@
     "Talent1_2": "Khi có kẻ địch bị hạ trong phạm vi tấn công, hồi 2 SP cho bản thân và 1 đồng minh ngẫu nhiên trong phạm vi."
   },
   "char_172_svrash": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Thủ lĩnh",
+    "TitleTalent2": "Ưng nhãn",
+    "Talent1": "ATK +5%; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -5%",
+    "Talent1_p4": "ATK +7%<@ba.talpu>(+2%)</>; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -7%<@ba.talpu>(+2%)</>",
+    "Talent1_2": "ATK +10%; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -10%",
+    "Talent1_2_p4": "ATK +12%<@ba.talpu>(+2%)</>; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -12%<@ba.talpu>(+2%)</>",
+    "Talent2": "Vô hiệu hóa <$ba.invisible>tàng hình</> của kẻ địch đứng trong phạm vi tấn công"
   },
   "char_173_slchan": {
     "TitleTalent1": "",
@@ -713,15 +713,15 @@
     "Talent2": ""
   },
   "char_179_cgbird": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Bạch ma bảo hộ",
+    "TitleTalent2": "Hư ảnh",
+    "Talent0": "+5 RES cho các đồng minh trong phạm vi.",
+    "Talent0_p4": "+7<@ba.talpu>(+2)</> RES cho các đồng minh trong phạm vi.",
+    "Talent1": "+10 RES cho các đồng minh trong phạm vi.",
+    "Talent1_p4": "+12<@ba.talpu>(+2)</> RES cho các đồng minh trong phạm vi.",
+    "Talent1_2": "+15 RES cho các đồng minh trong phạm vi.",
+    "Talent1_2_p4": "+17<@ba.talpu>(+2)</> RES cho các đồng minh trong phạm vi.",
+    "Talent2": "Có thể triển khai 'Ảo ảnh'. 'Ảo ảnh' không thể tấn công hay chặn kẻ địch, nhưng có 75 RES và 30% né sát thương vật lý, đồng thời ưu tiên bị nhắm làm mục tiêu hơn. 'Ảo ảnh' mất 3% HP tối đa mỗi giây"
   },
   "char_180_amgoat": {
     "TitleTalent1": "Hỏa tức",
@@ -910,13 +910,13 @@
     "Talent2_p4": ""
   },
   "char_202_demkni": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Giáp năng lượng Rhine",
+    "TitleTalent2": "Hồi phục tinh thần",
+    "Talent1": "Cứ mỗi 20 giây có mặt trên sân, ATK +2% và DEF +2%, cộng dồn tối đa 5 tầng.",
+    "Talent1_p4": "Cứ mỗi 20 giây có mặt trên sân, ATK +3%<@ba.talpu>(+1%)</> và DEF +3%<@ba.talpu>(+1%)</>, cộng dồn tối đa 5 tầng.",
+    "Talent1_2": "Cứ mỗi 20 giây có mặt trên sân, ATK +5% và DEF +4%, cộng dồn tối đa 5 tầng.",
+    "Talent1_2_p4": "Cứ mỗi 20 giây có mặt trên sân, ATK +6%<@ba.talpu>(+1%)</> và DEF +5%<@ba.talpu>(+1%)</>, cộng dồn tối đa 5 tầng.",
+    "Talent2": "Đồng minh được Saria hồi phục nhận thêm 1 SP."
   },
   "char_204_platnm": {
     "TitleTalent1": "Dồn toàn lực",
