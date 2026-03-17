@@ -103,7 +103,7 @@ const OperatorCard = ({ operator, onClick }) => {
     >
       {/* Avatar */}
       <div
-        className={`relative rounded-lg overflow-hidden border-2 ${rarityClass} aspect-square`}
+        className={`relative rounded-[0.5rem] overflow-hidden border-2 ${rarityClass} aspect-square`}
       >
         {imgSrc ? (
           <img
@@ -111,8 +111,11 @@ const OperatorCard = ({ operator, onClick }) => {
             alt={operator?.name || String(charId || "")}
             className="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
             draggable={false}
             onError={handleImgError}
+            width={150} // kích thước thực tế card
+            height={150}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-400 bg-black/30">
@@ -123,7 +126,7 @@ const OperatorCard = ({ operator, onClick }) => {
 
       {/* Info */}
       <div
-        className="hidden md:block mt-2 text-center rounded-lg  px-2 py-2"
+        className="hidden md:block mt-2 text-center rounded-[0.5rem]  px-2 py-2"
         style={{ background: infoBg }}
       >
         <div className="text-white font-semibold truncate">
@@ -134,4 +137,4 @@ const OperatorCard = ({ operator, onClick }) => {
   );
 };
 
-export default OperatorCard;
+export default React.memo(OperatorCard);

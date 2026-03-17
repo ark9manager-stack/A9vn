@@ -33,7 +33,7 @@ export default function Index() {
     <div className="fullpage-section px-4 py-12 bg-gradient-to-br from-purple-900 via-black to-pink-900">
       <div className="text-center mb-16 animate-fade-in">
         <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4 tracking-tight">
-          ARK<span className="text-primary">NIGHTS</span>
+          ARK<span className="text-primary  ">NIGHTS</span>
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-xl mx-auto">
@@ -49,7 +49,7 @@ export default function Index() {
             <Link
               key={s.to}
               to={s.to}
-              className="ark-card p-6 flex flex-col items-center text-center group hover:scale-[1.03] "
+              className="ark-card p-6 flex flex-col items-center text-center group "
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

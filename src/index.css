@@ -2,6 +2,170 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 195 85% 50%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 35 90% 55%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 195 85% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 195 85% 50%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 195 85% 50%;
+
+    /* Custom tokens */
+    --glow-primary: 0 0 20px hsl(195 85% 50% / 0.3);
+    --glow-accent: 0 0 20px hsl(35 90% 55% / 0.3);
+    --gradient-dark: linear-gradient(
+      180deg,
+      hsl(220 20% 7%) 0%,
+      hsl(220 25% 5%) 100%
+    );
+    --gradient-card: linear-gradient(
+      135deg,
+      hsl(220 18% 12%) 0%,
+      hsl(220 18% 8%) 100%
+    );
+
+    /* Tier colors */
+    --tier1: 0 0% 70%;
+    --tier2: 120 40% 55%;
+    --tier3: 195 85% 50%;
+    --tier4: 270 60% 60%;
+    --tier5: 35 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background: linear-gradient(
+      180deg,
+      hsl(220 20% 7%) 0%,
+      hsl(220 25% 4%) 100%
+    );
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .ark-card {
+    @apply border border-border rounded-lg overflow-hidden transition-all duration-300;
+
+    /* trong suốt hoàn toàn */
+    background: transparent;
+
+    /* vẫn giữ blur nhẹ nếu muốn */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .ark-card:hover {
+    @apply border-primary/40;
+
+    /* hover mới có nền nhẹ */
+    background: hsl(220 18% 12% / 0.25);
+
+    box-shadow:
+      0 0 20px hsl(195 85% 50% / 0.2),
+      0 8px 32px hsl(0 0% 0% / 0.4);
+
+    transform: translateY(-2px);
+  }
+
+  .ark-glow {
+    box-shadow: 0 0 20px hsl(195 85% 50% / 0.2);
+  }
+
+  .ark-btn-primary {
+    @apply bg-primary text-primary-foreground font-heading font-semibold px-6 py-2 rounded-md transition-all duration-200;
+  }
+
+  .ark-btn-primary:hover {
+    box-shadow: 0 0 20px hsl(195 85% 50% / 0.4);
+    @apply brightness-110;
+  }
+
+  .tier-1 {
+    @apply text-[hsl(var(--tier1))] border-[hsl(var(--tier1))];
+  }
+  .tier-2 {
+    @apply text-[hsl(var(--tier2))] border-[hsl(var(--tier2))];
+  }
+  .tier-3 {
+    @apply text-[hsl(var(--tier3))] border-[hsl(var(--tier3))];
+  }
+  .tier-4 {
+    @apply text-[hsl(var(--tier4))] border-[hsl(var(--tier4))];
+  }
+  .tier-5 {
+    @apply text-[hsl(var(--tier5))] border-[hsl(var(--tier5))];
+  }
+
+  .tier-1-bg {
+    background-color: hsl(var(--tier1) / 0.15);
+  }
+  .tier-2-bg {
+    background-color: hsl(var(--tier2) / 0.15);
+  }
+  .tier-3-bg {
+    background-color: hsl(var(--tier3) / 0.15);
+  }
+  .tier-4-bg {
+    background-color: hsl(var(--tier4) / 0.15);
+  }
+  .tier-5-bg {
+    background-color: hsl(var(--tier5) / 0.15);
+  }
+
+  .skeleton-shimmer {
+    @apply animate-pulse bg-muted rounded;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: "Rajdhani", sans-serif;
+  }
+  .font-body {
+    font-family: "Inter", sans-serif;
+  }
+}
+
 /* Hide scrollbar for all elements */
 .scrollbar-hide {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -755,4 +919,34 @@ line {
 
 .neo-toggle-small .neo-toggle-input:checked + .neo-toggle .neo-thumb {
   transform: translateX(calc(var(--toggle-width) - 26px));
+}
+
+@layer components {
+  .ark-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden transition-all duration-300;
+    background: linear-gradient(
+      135deg,
+      hsl(220 18% 12%) 0%,
+      hsl(220 18% 8%) 100%
+    );
+  }
+  .ark-card:hover {
+    @apply border-primary/40;
+    box-shadow:
+      0 0 20px hsl(195 85% 50% / 0.15),
+      0 8px 32px hsl(0 0% 0% / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .ark-glow {
+    box-shadow: 0 0 20px hsl(195 85% 50% / 0.2);
+  }
+
+  .ark-btn-primary {
+    @apply bg-primary text-primary-foreground font-heading font-semibold px-6 py-2 rounded-md transition-all duration-200;
+  }
+  .ark-btn-primary:hover {
+    box-shadow: 0 0 20px hsl(195 85% 50% / 0.4);
+    @apply brightness-110;
+  }
 }

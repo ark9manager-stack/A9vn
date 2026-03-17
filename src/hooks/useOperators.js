@@ -20,12 +20,12 @@ export function useOperators() {
         rarity: op.rarity,
         profession: op.profession,
         subProfession: op.subProfessionId,
+        position: op.position,
         description: op.description,
         phases: op.phases,
         skills: op.skills,
         talents: op.talents,
         stats: op.phases?.[0]?.attributesKeyFrames?.[0]?.data,
-        position: op.position,
       }));
 
     setList(parsed);
