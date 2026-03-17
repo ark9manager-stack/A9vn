@@ -1455,9 +1455,9 @@
     "S3_7M3": "<@ba.vdown>[[Tăng|IntervalSiege]]</> khoảng thời gian tấn công. Khi tấn công, ATK tăng lên <@ba.vup>{attack@atk_scale:0%}</> và có <@ba.vup>{attack@buff_prob:0%}</> tỷ lệ <$ba.stun>choáng</> mục tiêu trong <@ba.vup>{attack@stun:0.0}</> giây."
   },
   "char_113_cqbw": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Lá K Cơ",
+    "Title_S2": "Hộp hù dọa",
+    "Title_S3": "D12",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5882,9 +5882,9 @@
     "S3_7M3": ""
   },
   "char_400_weedy": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Quật nòng pháo",
+    "Title_S2": "Chế độ thủy lực",
+    "Title_S3": "Pháo nitơ lỏng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
