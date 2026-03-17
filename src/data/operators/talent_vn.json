@@ -20,16 +20,16 @@
     "Talent0_lv30": "Có 50% né sát thương vật lý."
   },
   "char_010_chen": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khiển trách",
+    "TitleTalent2": "Kiếm thuật tác chiến",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_017_huang": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khử rung tim khẩn cấp",
+    "TitleTalent2": "Rèn luyện khắc nghiệt",
     "Talent1": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 3 giây.",
     "Talent1_p2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 4<@ba.talpu>(+1)</> giây.",
     "Talent1_2": "Khi HP giảm xuống dưới 25%，hồi lại 50% HP (chỉ 1 lần duy nhất) và HP không thể giảm xuống dưới 50% trong vòng 6 giây.",
@@ -468,7 +468,7 @@
     "Talent1_2_p4": "Hồi 14%<@ba.talpu>(+2%)</> HP tối đa khi có kẻ địch bị hạ trong 8 ô xung quanh bản thân."
   },
   "char_128_plosis": {
-    "TitleTalent1": "Năng lượng lan tỏa",
+    "TitleTalent1": "Năng lượng dâng trào",
     "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ đồng minh +0.15/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này)",
     "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ đồng minh +0.3/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này)"
   },
@@ -693,7 +693,7 @@
     "Talent1_p4": "ATK +7%<@ba.talpu>(+2%)</>; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -7%<@ba.talpu>(+2%)</>",
     "Talent1_2": "ATK +10%; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -10%",
     "Talent1_2_p4": "ATK +12%<@ba.talpu>(+2%)</>; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -12%<@ba.talpu>(+2%)</>",
-    "Talent2": "Vô hiệu hóa <$ba.invisible>tàng hình</> của kẻ địch đứng trong phạm vi tấn công"
+    "Talent2": "Vô hiệu hóa <$ba.invisible>tàng hình</> của kẻ địch đang đứng trong phạm vi."
   },
   "char_173_slchan": {
     "TitleTalent1": "",
@@ -761,8 +761,8 @@
     "Talent1_2_p4": "Sau khi triển khai, tất cả cán viên【Y tế】nhận ATK +12%<@ba.talpu>(+2%)</> và DEF +120<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây."
   },
   "char_188_helage": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trăng khuất",
+    "TitleTalent2": "Mưu lược lão luyện",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -836,8 +836,8 @@
     "Talent2_p4": ""
   },
   "char_2013_cerber": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bóc vỏ",
+    "TitleTalent2": "Đi chơi một mình",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -845,8 +845,8 @@
     "Talent2": ""
   },
   "char_2014_nian": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Giáp chất như núi",
+    "TitleTalent2": "Khiên hộ thân",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -963,8 +963,8 @@
     "Talent1_lv55_p4": "Có 18%<@ba.talpu>(+3%)</> tỷ lệ hồi phục thêm 1 đồng minh."
   },
   "char_213_mostma": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Năng lượng dâng trào: Thuật sư",
+    "TitleTalent2": "Giãn nở thời gian",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -1020,8 +1020,8 @@
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Tiên Phong】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
   },
   "char_225_haak": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đạn dược hỗn hợp",
+    "TitleTalent2": "Hấp thu dược chất",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1100,8 +1100,8 @@
     "Talent2_p4": ""
   },
   "char_248_mgllan": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Drone yểm trợ - Long Đằng",
+    "TitleTalent2": "Thiết bị khúc xạ quang học",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1120,8 +1120,8 @@
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Rhine Lab】được -2 DP, và -2<@ba.talpu>(+1)</> DP thêm cho cán viên【Rhine Lab】đầu tiên được triển khai."
   },
   "char_250_phatom": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bóng ma trong gương",
+    "TitleTalent2": "Đạo diễn bóng ma",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
@@ -1482,8 +1482,8 @@
     "Talent1_2_p4": ""
   },
   "char_340_shwaz": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tên xuyên thấu",
+    "TitleTalent2": "Hỏa lực chéo",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",

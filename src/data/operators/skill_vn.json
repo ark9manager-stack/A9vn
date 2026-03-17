@@ -69,9 +69,9 @@
     "S1_7": ""
   },
   "char_010_chen": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Đòn vỏ kiếm",
+    "Title_S2": "Chi Xiao - Tuốt kiếm",
+    "Title_S3": "Chi Xiao - Tuyệt ảnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -104,9 +104,9 @@
     "S3_7M3": ""
   },
   "char_017_huang": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Cường kích · loại γ",
+    "Title_S2": "Mô-đun khuếch đại máy cưa",
+    "Title_S3": "Nhiệt độ bùng phát",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2400,7 +2400,7 @@
     "S2_7M3": ""
   },
   "char_172_svrash": {
-    "Title_S1": "Cường kích · Loại γ",
+    "Title_S1": "Cường kích · loại γ",
     "Title_S2": "Luật sinh tồn",
     "Title_S3": "Ánh ngân trảm",
     "S1_1": "Đòn tấn công kế tiếp gây sát thương bằng <@ba.vup>{atk_scale:0%}</> ATK.",
@@ -2649,9 +2649,9 @@
     "S2_7M3": ""
   },
   "char_188_helage": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Trăng non",
+    "Title_S2": "Trăng khuyết",
+    "Title_S3": "Trăng tròn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2932,9 +2932,9 @@
     "S3_7M3": ""
   },
   "char_2013_cerber": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "'Cây rìu lạnh ơi là lạnh'",
+    "Title_S2": "'Hàng nóng nè'",
+    "Title_S3": "'Cây thương nặng quá trời'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2967,9 +2967,9 @@
     "S3_7M3": ""
   },
   "char_2014_nian": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Nung thiếc",
+    "Title_S2": "Dấu đồng",
+    "Title_S3": "Tường sắt",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3380,9 +3380,9 @@
     "S1_7": ""
   },
   "char_213_mostma": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Khóa dòng thời gian",
+    "Title_S3": "Chìa khóa của dòng thời gian",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3570,9 +3570,9 @@
     "S3_7M3": ""
   },
   "char_225_haak": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Bắn liên thanh",
+    "Title_S2": "Thuốc kích thích - loại γ",
+    "Title_S3": "Thuốc kích thích - Vị sầu riêng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3842,9 +3842,9 @@
     "S3_7M3": ""
   },
   "char_248_mgllan": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Mô-đun - Cấp đông siêu tốc",
+    "Title_S2": "Mô-đun - Khai thoáng Laser",
+    "Title_S3": "Mô-đun - tác chiến vũ trang",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3912,9 +3912,9 @@
     "S3_7M3": ""
   },
   "char_250_phatom": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Bóng ma trong đêm",
+    "Title_S2": "Khúc nhạc nhuốm máu",
+    "Title_S3": "Tập kích màn đêm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4091,9 +4091,9 @@
     "S2_7M3": ""
   },
   "char_263_skadi": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Ra đòn nhanh · loại γ",
+    "Title_S2": "Nhát chém rẽ sóng",
+    "Title_S3": "Khúc bi ca triều dâng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4104,26 +4104,26 @@
     "S1_7M1": "",
     "S1_7M2": "",
     "S1_7M3": "",
-    "S2_1": "",
-    "S2_2": "",
-    "S2_3": "",
-    "S2_4": "",
-    "S2_5": "",
-    "S2_6": "",
-    "S2_7": "",
-    "S2_7M1": "",
-    "S2_7M2": "",
-    "S2_7M3": "",
-    "S3_1": "",
-    "S3_2": "",
-    "S3_3": "",
-    "S3_4": "",
-    "S3_5": "",
-    "S3_6": "",
-    "S3_7": "",
-    "S3_7M1": "",
-    "S3_7M2": "",
-    "S3_7M3": ""
+    "S2_1": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_2": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_3": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_4": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_5": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_6": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_7": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_7M1": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_7M2": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S2_7M3": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> trong vòng <@ba.vup>{duration}</> giây.",
+    "S3_1": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_2": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_3": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_4": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_5": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_6": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_7": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_7M1": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_7M2": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>",
+    "S3_7M3": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>"
   },
   "char_264_f12yin": {
     "Title_S1": "",
@@ -5017,9 +5017,9 @@
     "S2_7M3": ""
   },
   "char_340_shwaz": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Nỏ công phá",
+    "Title_S2": "Tinh mắt",
+    "Title_S3": "Đòn kết thúc",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
