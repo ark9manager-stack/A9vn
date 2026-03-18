@@ -806,8 +806,8 @@
     "Talent1_2_p4": "Khi tấn công, có 18%<@ba.talpu>(+3%)</> tỷ lệ giúp đòn tấn công đó gây 200% ATK và <$ba.stun>Choáng</> mục tiêu trong 1 giây."
   },
   "char_197_poca": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thấm tận xương tủy",
+    "TitleTalent2": "Học sinh gương mẫu",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -854,8 +854,8 @@
     "Talent2": ""
   },
   "char_2015_dusk": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tích mặc",
+    "TitleTalent2": "Chấm bút thành thần ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1178,8 +1178,8 @@
     "Talent2": ""
   },
   "char_264_f12yin": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nắm đấm uy lực",
+    "TitleTalent2": "Thân thể cường tráng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1324,8 +1324,8 @@
     "Talent2_p2": "Hồi 25<@ba.talpu>(+5)</> HP mỗi giây cho toàn bộ đồng minh khi kỹ năng chưa kích hoạt."
   },
   "char_293_thorns": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ăn mòn thần kinh",
+    "TitleTalent2": "Dòng chảy cố hương",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1406,8 +1406,8 @@
     "Talent1_2_p4": ""
   },
   "char_311_mudrok": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phù sa hộ thể",
+    "TitleTalent2": "Tình nghĩa đồng loại",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -1447,8 +1447,8 @@
     "Talent1_2": "Click và Drones của cô nhận +12 ASPD"
   },
   "char_332_archet": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chiến thuật Landen",
+    "TitleTalent2": "Dây cung thép",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -1544,15 +1544,14 @@
   },
   "char_349_chiave": {
     "TitleTalent1": "Chuyên môn kỹ thuật",
-    "TitleTalent2": "",
     "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +7%.",
     "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +9%<@ba.talpu>(+2%)</>.",
     "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +11%.",
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_350_surtr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nung chảy",
+    "TitleTalent2": "Tro tàn",
     "Talent1": "Đòn đánh bỏ qua 12 RES của mục tiêu.",
     "Talent1_p4": "Đòn đánh bỏ qua 14<@ba.talpu>(+2)</> RES của mục tiêu.",
     "Talent1_2": "Đòn đánh bỏ qua 20 RES của mục tiêu.",
@@ -1576,12 +1575,12 @@
     "Talent1_2_p4": "ATK và DEF +14%<@ba.talpu>(+2%)</> khi chặn từ 2 kẻ địch trở lên."
   },
   "char_358_lisa": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Năng lượng dâng trào: Hỗ trợ",
+    "TitleTalent2": "Vùng giam cầm",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
-    "Talent2_p4": "造成致命伤害时使敌人保留1点生命并使其<$ba.dying>重伤</>（击杀者技力+2）；罗小黑不攻击<$ba.dying>重伤</>单位"
+    "Talent2_p4": ""
   },
   "char_362_saga": {
     "TitleTalent1": "Thuyết Pháp",
@@ -1699,8 +1698,8 @@
     "Talent1_2_p4": ""
   },
   "char_391_rosmon": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vũ khí hủy diệt",
+    "TitleTalent2": "Cảm giác ổn định",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2608,8 +2607,8 @@
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân."
   },
   "char_416_zumama": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khí phách vô song",
+    "TitleTalent2": "Càng đánh càng hăng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2915,8 +2914,8 @@
     "Talent1_2_p4": ""
   },
   "char_423_blemsh": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thanh kiếm và tấm khiên của Kỵ sĩ",
+    "TitleTalent2": "Nhân từ",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": "",
@@ -3051,8 +3050,8 @@
     "Talent1_2_p4": ""
   },
   "char_456_ash": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Lựu đạn gây choáng",
+    "TitleTalent2": "Tay đột kích",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",

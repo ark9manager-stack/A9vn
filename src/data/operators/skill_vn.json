@@ -104,7 +104,7 @@
     "S3_7M3": ""
   },
   "char_017_huang": {
-    "Title_S1": "Cường kích · loại γ",
+    "Title_S1": "Công kích · loại γ",
     "Title_S2": "Mô-đun khuếch đại máy cưa",
     "Title_S3": "Nhiệt độ bùng phát",
     "S1_1": "",
@@ -2400,7 +2400,7 @@
     "S2_7M3": ""
   },
   "char_172_svrash": {
-    "Title_S1": "Cường kích · loại γ",
+    "Title_S1": "Công kích · loại γ",
     "Title_S2": "Luật sinh tồn",
     "Title_S3": "Ánh ngân trảm",
     "S1_1": "Đòn tấn công kế tiếp gây sát thương bằng <@ba.vup>{atk_scale:0%}</> ATK.",
@@ -2814,9 +2814,9 @@
     "S2_7M3": ""
   },
   "char_197_poca": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tăng công · loại γ",
+    "Title_S2": "Phân đôi đường bắn",
+    "Title_S3": "Kẻ phá băng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3002,9 +3002,9 @@
     "S3_7M3": ""
   },
   "char_2015_dusk": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Nét bút nhập hồn",
+    "Title_S2": "Mực chảy thành dòng",
+    "Title_S3": "Dụng ý thành hình",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4126,9 +4126,9 @@
     "S3_7M3": "ATK, DEF và HP tối đa <@ba.vup>+{atk:0%}</>"
   },
   "char_264_f12yin": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Cú móc trái",
+    "Title_S2": "Thế mãnh hổ",
+    "Title_S3": "Đòn đại địa chấn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4482,9 +4482,9 @@
     "S3_7M3": "Toàn bộ kẻ địch trên sân chịu hiệu ứng <$ba.weightless>không trọng lượng</>, <@ba.vup>mở rộng</> phạm vi tấn công, ATK <@ba.vup>+{atk:0%}</>, Đồng thời có thể tấn công tối đa <@ba.vup>{attack@max_target}</> kẻ địch.\\n<@ba.rem>Bản thân không thể tấn công khi kỹ năng chưa kích hoạt</>"
   },
   "char_293_thorns": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Phòng vệ bằng gai",
+    "Title_S3": "Kiếm thuật tối thượng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4744,9 +4744,9 @@
     "S2_7M3": ""
   },
   "char_311_mudrok": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tăng thủ · loại γ",
+    "Title_S2": "Búa địa chấn",
+    "Title_S3": "Uế thổ huyết mạch",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4886,9 +4886,9 @@
     "S2_7M3": ""
   },
   "char_332_archet": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tán xạ tiễn",
+    "Title_S2": "Truy liệp tiễn",
+    "Title_S3": "Lôi minh tiễn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5245,8 +5245,8 @@
   },
   "char_350_surtr": {
     "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S2": "Khổng lồ nhiệt hạch",
+    "Title_S3": "Ánh hoàng hôn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5327,9 +5327,9 @@
     "S2_7M3": ""
   },
   "char_358_lisa": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Em sẽ cố hết sức",
+    "Title_S2": "Niềm vui tuổi thơ",
+    "Title_S3": "Hồ hỏa miểu nhiên",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5362,9 +5362,9 @@
     "S3_7M3": ""
   },
   "char_362_saga": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại γ",
+    "Title_S2": "Loại bỏ cái ác",
+    "Title_S3": "Ánh mặt thịnh nộ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5730,9 +5730,9 @@
     "S2_7M3": ""
   },
   "char_391_rosmon": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tư duy mở rộng",
+    "Title_S2": "Ức chế thụ cảm đau",
+    "Title_S3": "'Theo ý người'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8519,9 +8519,9 @@
     "S2_7M3": ""
   },
   "char_416_zumama": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Rìu nhỏ gọn",
+    "Title_S2": "Đòn uy hiếp",
+    "Title_S3": "Ý chí sắt",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9455,9 +9455,9 @@
     "S2_7M3": ""
   },
   "char_423_blemsh": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Hào quang rực rỡ",
+    "Title_S2": "Hào quang áp chế",
+    "Title_S3": "Hào quang hiển linh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9905,9 +9905,9 @@
     "S2_7M3": ""
   },
   "char_456_ash": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Hỏa lực yểm trợ",
+    "Title_S2": "Chiến thuật đột kích",
+    "Title_S3": "Đạn công phá",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
