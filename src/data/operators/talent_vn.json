@@ -8,7 +8,7 @@
   },
   "char_003_kalts": {
     "TitleTalent1": "Mon3tr",
-    "TitleTalent2": "",
+    "TitleTalent2": "Tái cấu trúc bất hoại",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -46,16 +46,16 @@
     "Talent1_2_p4": ""
   },
   "char_1012_skadi2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Dòng máu cổ xưa",
+    "TitleTalent2": "Tập tính săn mồi",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1013_chen2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tính tiết kiếm",
+    "TitleTalent2": "Dư âm kỳ nghỉ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -855,7 +855,7 @@
   },
   "char_2015_dusk": {
     "TitleTalent1": "Tích mặc",
-    "TitleTalent2": "Chấm bút thành thần ",
+    "TitleTalent2": "Chấm bút thành thần",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2923,8 +2923,8 @@
     "Talent2_2_p4": ""
   },
   "char_426_billro": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bữa ăn sinh mệnh",
+    "TitleTalent2": "Chuẩn bị tung đòn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2976,8 +2976,8 @@
     "Talent1_2_p4": ""
   },
   "char_437_mizuki": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cơn Hysteria chấn thương",
+    "TitleTalent2": "Phản chuyển di",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3109,8 +3109,8 @@
     "Talent1_2_p4": "Khi tấn công, có 20%<@ba.talpu>(+2%)</> tỷ lệ <$ba.root>Trói chân</> mục tiêu trong 4 giây. Bản thân không tấn công mục tiêu <$ba.root>Trói chân</>."
   },
   "char_472_pasngr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phân tích nguyên lý",
+    "TitleTalent2": "Người lính cô đơn",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -3127,8 +3127,8 @@
     "Talent1_2_p4": ""
   },
   "char_474_glady": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Làn sóng triều từ Ægir",
+    "TitleTalent2": "Luật của kẻ săn mồi",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -3143,7 +3143,6 @@
   },
   "char_476_blkngt": {
     "TitleTalent1": "Mộng du",
-    "TitleTalent2": "",
     "Talent0": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 20 giây.",
     "Talent1": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 17 giây.",
     "Talent1_2": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 15 giây."
@@ -3175,8 +3174,8 @@
     "Talent1_2_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +33%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn)."
   },
   "char_485_pallas": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Anh hùng xuất thế",
+    "TitleTalent2": "Sự khích lệ của nữ thần",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -3200,7 +3199,6 @@
   },
   "char_488_buildr": {
     "TitleTalent1": "Quy tắc của đội phá dỡ",
-    "TitleTalent2": "",
     "Talent1": "Sau khi được triển khai được 30 giây, HP tối đa +8%.",
     "Talent1_p4": "Sau khi được triển khai được 30 giây, HP tối đa +11%<@ba.talpu>(+3%)</>.",
     "Talent1_2": "Sau khi được triển khai được 30 giây, HP tối đa +15%.",
@@ -3247,13 +3245,11 @@
   },
   "char_496_wildmn": {
     "TitleTalent1": "Đồng lòng tiến quân",
-    "TitleTalent2": "",
     "Talent1": "Sau lần triển khai đầu tiên, tất cả cán viên【Cận Vệ】chưa triển khai -1 DP.",
     "Talent1_2": "Sau khi được triển khai, tất cả cán viên【Cận Vệ】chưa triển khai -1 DP (mỗi cán viên được tối đa -5 DP trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
     "TitleTalent1": "Ứng biến",
-    "TitleTalent2": "",
     "Talent1": "ASPD +6 khi không chặn kẻ địch, ATK +6% khi đang chặn kẻ địch.",
     "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +8%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch.",
     "Talent1_2": "ASPD +12 khi không chặn kẻ địch, ATK +12% khi đang chặn kẻ địch.",
@@ -3279,12 +3275,10 @@
   },
   "char_501_durin": {
     "TitleTalent1": "Cô nhóc may mắn",
-    "TitleTalent2": "",
     "Talent0_lv30": "Có 50% né sát thương phép."
   },
   "char_502_nblade": {
     "TitleTalent1": "Tái triển khai siêu tốc",
-    "TitleTalent2": "",
     "Talent0_lv30": "Thời gian tái triển khai -30 giây."
   },
   "char_503_rang": {
@@ -3319,13 +3313,11 @@
   },
   "char_510_amedic": {
     "TitleTalent1": "Thúc đẩy",
-    "TitleTalent2": "",
     "Talent1": "Đồng minh nhận 2 SP khi được hồi phục bởi Touch",
     "Talent1_2": "Đồng minh nhận 3 SP khi được hồi phục bởi Touch"
   },
   "char_511_asnipe": {
     "TitleTalent1": "Trời độ",
-    "TitleTalent2": "",
     "Talent1": "Có 15% tỷ lệ giúp tăng ATK lên 200%",
     "Talent1_2": "Có 25% tỷ lệ giúp tăng ATK lên 200%"
   },
@@ -3338,7 +3330,6 @@
   },
   "char_513_apionr": {
     "TitleTalent1": "Tấm lòng vô tận",
-    "TitleTalent2": "",
     "Talent1": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,6/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
     "Talent1_2": "Sau khi triển khai, tốc độ hồi SP tự nhiên +1/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2."
   },
@@ -3348,7 +3339,6 @@
   },
   "char_600_cpione": {
     "TitleTalent1": "Tăng ATK",
-    "TitleTalent2": "",
     "Talent1": "ATK +4%",
     "Talent1_2": "ATK +8%"
   },
@@ -3372,25 +3362,21 @@
   },
   "char_604_ccast": {
     "TitleTalent1": "Tăng tốc thi triển",
-    "TitleTalent2": "",
     "Talent1": "ASPD +5",
     "Talent1_2": "ASPD +9"
   },
   "char_605_cmedic": {
     "TitleTalent1": "Tăng ATK",
-    "TitleTalent2": "",
     "Talent1": "ATK +4%",
     "Talent1_2": "ATK +8%"
   },
   "char_606_csuppo": {
     "TitleTalent1": "Tăng tốc thi triển",
-    "TitleTalent2": "",
     "Talent1": "ASPD +5",
     "Talent1_2": "ASPD +9"
   },
   "char_607_cspec": {
     "TitleTalent1": "Tăng ATK",
-    "TitleTalent2": "",
     "Talent1": "ATK +4%",
     "Talent1_2": "ATK +8%"
   },
