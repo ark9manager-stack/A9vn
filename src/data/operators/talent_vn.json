@@ -63,8 +63,8 @@
     "Talent2": ""
   },
   "char_1014_nearl2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đương đầu với bóng tối",
+    "TitleTalent2": "Ánh bình minh",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -121,8 +121,8 @@
     "Talent1_2_p4": ""
   },
   "char_1023_ghost2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chấp nhận bản thân",
+    "TitleTalent2": "Vực sâu của Ægir",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -138,8 +138,8 @@
     "Talent1_2_p4": ""
   },
   "char_1026_gvial2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chiến phủ",
+    "TitleTalent2": "Nền tảng y học",
     "Talent1": "ATK và DEF +5%, tăng thêm 3% cho mỗi kẻ địch bị chặn.",
     "Talent1_p2": "ATK và DEF +7%<@ba.talpu>(+2%)</>, tăng thêm 4%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
     "Talent1_2": "ATK và DEF +10%, tăng thêm 4% cho mỗi kẻ địch bị chặn.",
@@ -154,8 +154,8 @@
     "Talent1_2": ""
   },
   "char_1028_texas2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phong cách của Texas",
+    "TitleTalent2": "Kiếm pháp của Texas",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -871,8 +871,8 @@
     "Talent1_2_p4": ""
   },
   "char_2023_ling": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thắp đèn, hỏi mộng",
+    "TitleTalent2": "Mượn rượu làm thơ",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -926,8 +926,8 @@
     "Talent1_2_p4": "Khoảng thời gian tấn công càng lâu, ATK cho đòn tiếp theo càng cao (đạt tối đa 2.5 giây và ATK tăng lên 190%<@ba.talpu>(+10%)</>)"
   },
   "char_206_gnosis": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đông cứng",
+    "TitleTalent2": "Khác đường, chung đích",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1358,8 +1358,8 @@
     "Talent1_2_p4": "Khi có mặt trong đội hình, các đơn vị đồng minh từ 10 DP trở xuống tăng 23%<@ba.talpu>(+3%)</> hiệu quả hồi phục nhận vào."
   },
   "char_300_phenxi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Người mang khổ nạn",
+    "TitleTalent2": "Tuyên bố hồi kết",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1417,8 +1417,8 @@
     "Talent2": ""
   },
   "char_322_lmlee": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hòa khí sinh tài",
+    "TitleTalent2": "Phòng ngừa tai họa",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1648,8 +1648,8 @@
     "Talent0_p5": ""
   },
   "char_377_gdglow": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tín hiệu bùng nổ",
+    "TitleTalent2": "Điều hướng chính xác",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -1743,8 +1743,8 @@
     "Talent1_2_p4": ""
   },
   "char_4009_irene": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ngọn lửa phán xét",
+    "TitleTalent2": "Kiếm thanh tẩy",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -1888,8 +1888,8 @@
     "Talent1_2_p4": ""
   },
   "char_4039_horn": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Pháo đài quân sự",
+    "TitleTalent2": "Tắm máu",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -1913,8 +1913,8 @@
     "Talent1_2_p4": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 23%<@ba.talpu>(+3%)</> khi hồi phục cho đồng minh trên ô cận chiến."
   },
   "char_4042_lumen": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ước nguyện của phàm nhân",
+    "TitleTalent2": "Ứng cứu khẩn cấp",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -1937,8 +1937,8 @@
     "Talent2": ""
   },
   "char_4046_ebnhlz": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cường độ âm thanh",
+    "TitleTalent2": "Nốt hoa mỹ",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -1953,8 +1953,8 @@
     "Talent1_2_p4": ""
   },
   "char_4048_doroth": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bộ cộng hưởng",
+    "TitleTalent2": "Người mơ mộng",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -1987,8 +1987,8 @@
     "Talent1_2_p4": ""
   },
   "char_4055_bgsnow": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Máy đánh chữ tự động",
+    "TitleTalent2": "Ghi chép nhược điểm",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2040,8 +2040,8 @@
     "Talent1_2_p4": "HP +9%<@ba.talpu>(+1%)</>, ATK +9%<@ba.talpu>(+1%)</>."
   },
   "char_4064_mlynar": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kỵ sĩ phiêu bạt",
+    "TitleTalent2": "Mặc kệ mọi chuyện",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2050,8 +2050,8 @@
     "Talent2_p4": ""
   },
   "char_4065_judge": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Người canh giữ luật pháp",
+    "TitleTalent2": "Chông gai bao quanh",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2085,8 +2085,8 @@
     "Talent1_2_p4": ""
   },
   "char_4072_ironmn": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kỹ sư tiền tuyến",
+    "TitleTalent2": "Cắt giảm chi phí",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2933,7 +2933,7 @@
   },
   "char_427_vigil": {
     "TitleTalent1": "Thủ lĩnh bầy sói",
-    "TitleTalent2": "Sói hoang dã",
+    "TitleTalent2": "Bản tính bầy sói",
     "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
     "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
     "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
