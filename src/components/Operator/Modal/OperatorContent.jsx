@@ -1,41 +1,53 @@
-import React, { useCallback } from "react";
-import SkinsSection from "./sections/SkinsSection";
-import ProfileSection from "./sections/ProfileSection";
-import SkillsSection from "./sections/SkillsSection";
-import VoiceSection from "./sections/VoiceSection";
-import StatsSection from "./sections/StatsSection";
-import ModuleSection from "./sections/ModuleSection";
+import React, { useCallback, Suspense, lazy } from "react";
+
+// Lazy load các sections
+const SkinsSection = lazy(() => import("./sections/SkinsSection"));
+const ProfileSection = lazy(() => import("./sections/ProfileSection"));
+const SkillsSection = lazy(() => import("./sections/SkillsSection"));
+const VoiceSection = lazy(() => import("./sections/VoiceSection"));
+const StatsSection = lazy(() => import("./sections/StatsSection"));
+const ModuleSection = lazy(() => import("./sections/ModuleSection"));
+
+// Component fallback cho loading
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center h-full">
+    <div className="text-white/70">Loading...</div>
+  </div>
+);
 
 const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   const tabIds = ["skins", "profile", "stats", "skills", "modules", "voice"];
 
   const renderSection = useCallback(
     (id) => {
-      if (id === "skins") return <SkinsSection operator={operator} charId={charId} lang={lang} />;
-      if (id === "profile") return <ProfileSection operator={operator} charId={charId} lang={lang} />;
-      if (id === "stats") return <StatsSection operator={operator} charId={charId} lang={lang} />;
-      if (id === "skills") {
-        return (
-          <SkillsSection
-            operator={operator}
-            charId={charId}
-            lang={lang}
-            isTabActive={activeTab === "skills"}
-          />
-        );
-      }
-      if (id === "modules") {
-        return (
-          <ModuleSection
-            operator={operator}
-            charId={charId}
-            lang={lang}
-            isTabActive={activeTab === "modules"}
-          />
-        );
-      }
-      if (id === "voice") return <VoiceSection operator={operator} charId={charId} lang={lang} />;
-      return null;
+      const sectionProps = { operator, charId, lang };
+      const section = (() => {
+        if (id === "skins") return <SkinsSection {...sectionProps} />;
+        if (id === "profile") return <ProfileSection {...sectionProps} />;
+        if (id === "stats") return <StatsSection {...sectionProps} />;
+        if (id === "skills") {
+          return (
+            <SkillsSection
+              {...sectionProps}
+              isTabActive={activeTab === "skills"}
+            />
+          );
+        }
+        if (id === "modules") {
+          return (
+            <ModuleSection
+              {...sectionProps}
+              isTabActive={activeTab === "modules"}
+            />
+          );
+        }
+        if (id === "voice") return <VoiceSection {...sectionProps} />;
+        return null;
+      })();
+
+      return section ? (
+        <Suspense fallback={<LoadingFallback />}>{section}</Suspense>
+      ) : null;
     },
     [activeTab, operator, charId, lang],
   );

@@ -175,7 +175,8 @@ function getLangLabel(vnObj, skinPrefix, langType, variantKey, charId) {
     langType,
   );
   if (normalizeCvNames(baseCvNames).length)
-    return buildLangCvLabel(langType, baseCvNames);s
+    return buildLangCvLabel(langType, baseCvNames);
+  s;
 
   return langType;
 }
@@ -397,7 +398,13 @@ const VoiceSection = ({ operator }) => {
           >
             {availableLangTypes.map((lt) => (
               <option key={lt} value={lt}>
-                {getLangLabel(vnObj, skinPrefix, lt, selectedVariantKey, charId)}
+                {getLangLabel(
+                  vnObj,
+                  skinPrefix,
+                  lt,
+                  selectedVariantKey,
+                  charId,
+                )}
               </option>
             ))}
           </select>
@@ -415,7 +422,9 @@ const VoiceSection = ({ operator }) => {
           );
           const enText = charwordTableEn?.charWords?.[v.charWordId]?.voiceText;
           const fallbackText =
-            typeof enText === "string" && enText.trim() !== "" && enText.trim() !== "/"
+            typeof enText === "string" &&
+            enText.trim() !== "" &&
+            enText.trim() !== "/"
               ? enText
               : v.voiceText;
 
@@ -459,7 +468,9 @@ const VoiceSection = ({ operator }) => {
 
               {/* Text (bigger) */}
               <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
-                {renderAKText(text, `voice-text-${v.charWordId}`, { preferNoteForDollar: true })}
+                {renderAKText(text, `voice-text-${v.charWordId}`, {
+                  preferNoteForDollar: true,
+                })}
               </div>
             </div>
           );
