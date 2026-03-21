@@ -71,8 +71,8 @@
     "Talent2_p4": ""
   },
   "char_1016_agoat2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Màn sương tái tạo",
+    "TitleTalent2": "Trị liệu bằng tro núi lửa",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -95,8 +95,8 @@
     "Talent1_2": ""
   },
   "char_1020_reed2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vết bỏng",
+    "TitleTalent2": "Rạng rỡ",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -162,8 +162,8 @@
     "Talent2_p4": ""
   },
   "char_1029_yato2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Song đao Kirin",
+    "TitleTalent2": "Quỷ nhân cường hóa",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -187,16 +187,16 @@
     "Talent2_2": ""
   },
   "char_1031_slent2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trụ cột thầm lặng",
+    "TitleTalent2": "Đủ lông đủ cánh",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_1032_excu2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Người được chọn",
+    "TitleTalent2": "Thấu cảm bằng đạn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -204,8 +204,8 @@
     "Talent2": ""
   },
   "char_1033_swire2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khách sộp",
+    "TitleTalent2": "Của đi thay người",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -215,8 +215,8 @@
     "Talent2_p2": ""
   },
   "char_1034_jesca2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tùy cơ ứng biến",
+    "TitleTalent2": "Tích tụ và giải phóng",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -227,7 +227,7 @@
     "Talent2_p4": ""
   },
   "char_1035_wisdel": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Món quà lưu niệm",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -828,8 +828,8 @@
     "Talent1_2": "RES +15"
   },
   "char_2012_typhon": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sắc như nanh thú",
+    "TitleTalent2": "Nặng tựa đầm lầy",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -882,8 +882,8 @@
     "Talent2_2_p4": ""
   },
   "char_2024_chyue": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ngừng chiến",
+    "TitleTalent2": "Vạn vật đều là khách",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -891,8 +891,8 @@
     "Talent2": ""
   },
   "char_2025_shu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Mùa màng mãi xanh tươi",
+    "TitleTalent2": "Trời có bốn mùa",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1091,8 +1091,8 @@
     "Talent1_2_p4": ""
   },
   "char_245_cello": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khúc bi ca không lời",
+    "TitleTalent2": "Bẻ ngược tư duy",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1111,7 +1111,7 @@
     "Talent2_2_p4": ""
   },
   "char_249_mlyss": {
-    "TitleTalent1": "Nước sạch chính là sự sống",
+    "TitleTalent1": "Sinh mệnh sinh ra từ nước",
     "TitleTalent2": "Tối ưu nguồn lực",
     "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
     "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
@@ -1271,12 +1271,12 @@
     "Talent1_lv55_p4": "Hồi phục cho đồng minh sẽ cung cấp thêm cho họ 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý trong 3 giây."
   },
   "char_285_medic2": {
-    "TitleTalent1": "Phun sương y tế·I",
-    "TitleTalent1_p1": "Phun sương y tế·II",
-    "TitleTalent1_p2": "Phun sương y tế·III",
-    "TitleTalent1_p3": "Phun sương y tế·IV",
-    "TitleTalent1_p4": "Phun sương y tế·V",
-    "TitleTalent1_p5": "Phun sương y tế·VI",
+    "TitleTalent1": "Phun sương y tế I",
+    "TitleTalent1_p1": "Phun sương y tế II",
+    "TitleTalent1_p2": "Phun sương y tế III",
+    "TitleTalent1_p3": "Phun sương y tế IV",
+    "TitleTalent1_p4": "Phun sương y tế V",
+    "TitleTalent1_p5": "Phun sương y tế VI",
     "TitleTalent2": "",
     "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
     "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
@@ -1286,12 +1286,12 @@
     "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi 500<@ba.talpu>(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
   },
   "char_286_cast3": {
-    "TitleTalent1": "Điều phối chiến thuật·I",
-    "TitleTalent1_p1": "Điều phối chiến thuật·II",
-    "TitleTalent1_p2": "Điều phối chiến thuật·III",
-    "TitleTalent1_p3": "Điều phối chiến thuật·IV",
-    "TitleTalent1_p4": "Điều phối chiến thuật·V",
-    "TitleTalent1_p5": "Điều phối chiến thuật·VI",
+    "TitleTalent1": "Điều phối chiến thuật I",
+    "TitleTalent1_p1": "Điều phối chiến thuật II",
+    "TitleTalent1_p2": "Điều phối chiến thuật III",
+    "TitleTalent1_p3": "Điều phối chiến thuật IV",
+    "TitleTalent1_p4": "Điều phối chiến thuật V",
+    "TitleTalent1_p5": "Điều phối chiến thuật VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1633,12 +1633,12 @@
     "Talent1_2_p4": ""
   },
   "char_376_therex": {
-    "TitleTalent1": "Bom hẹn giờ·I",
-    "TitleTalent1_p1": "Bom hẹn giờ·II",
-    "TitleTalent1_p2": "Bom hẹn giờ·III",
-    "TitleTalent1_p3": "Bom hẹn giờ·IV",
-    "TitleTalent1_p4": "Bom hẹn giờ·V",
-    "TitleTalent1_p5": "Bom hẹn giờ·VI",
+    "TitleTalent1": "Bom hẹn giờ I",
+    "TitleTalent1_p1": "Bom hẹn giờ II",
+    "TitleTalent1_p2": "Bom hẹn giờ III",
+    "TitleTalent1_p3": "Bom hẹn giờ IV",
+    "TitleTalent1_p4": "Bom hẹn giờ V",
+    "TitleTalent1_p5": "Bom hẹn giờ VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1715,12 +1715,12 @@
     "Talent1_2_p4": ""
   },
   "char_4000_jnight": {
-    "TitleTalent1": "Trợ lực công lý·I",
-    "TitleTalent1_p1": "Trợ lực công lý·II",
-    "TitleTalent1_p2": "Trợ lực công lý·III",
-    "TitleTalent1_p3": "Trợ lực công lý·IV",
-    "TitleTalent1_p4": "Trợ lực công lý·V",
-    "TitleTalent1_p5": "Trợ lực công lý·VI",
+    "TitleTalent1": "Trợ lực công lý I",
+    "TitleTalent1_p1": "Trợ lực công lý II",
+    "TitleTalent1_p2": "Trợ lực công lý III",
+    "TitleTalent1_p3": "Trợ lực công lý IV",
+    "TitleTalent1_p4": "Trợ lực công lý V",
+    "TitleTalent1_p5": "Trợ lực công lý VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -1769,8 +1769,8 @@
     "Talent3": ""
   },
   "char_4011_lessng": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chịu đựng cơn đau",
+    "TitleTalent2": "Mài sắc bằng nỗi đau",
     "Talent1": "Khi đang chặn kẻ địch giảm 20% sát thương vật lý và phép nhận vào từ các kẻ địch không bị bản thân chặn.",
     "Talent1_2": "Khi đang chặn kẻ địch giảm 35% sát thương vật lý và phép nhận vào từ các kẻ địch không bị bản thân chặn.",
     "Talent2": "",
@@ -1855,8 +1855,8 @@
     "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
   "char_4027_heyak": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Di sản cuối cùng",
+    "TitleTalent2": "Tước bỏ đôi cánh",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2094,12 +2094,12 @@
     "Talent2_p4": ""
   },
   "char_4077_palico": {
-    "TitleTalent1": "Bom nhân phẩm của Felyne·I",
-    "TitleTalent1_p1": "Bom nhân phẩm của Felyne·II",
-    "TitleTalent1_p2": "Bom nhân phẩm của Felyne·III",
-    "TitleTalent1_p3": "Bom nhân phẩm của Felyne·IV",
-    "TitleTalent1_p4": "Bom nhân phẩm của Felyne·V",
-    "TitleTalent1_p5": "Bom nhân phẩm của Felyne·VI",
+    "TitleTalent1": "Bom nhân phẩm của Felyne I",
+    "TitleTalent1_p1": "Bom nhân phẩm của Felyne II",
+    "TitleTalent1_p2": "Bom nhân phẩm của Felyne III",
+    "TitleTalent1_p3": "Bom nhân phẩm của Felyne IV",
+    "TitleTalent1_p4": "Bom nhân phẩm của Felyne V",
+    "TitleTalent1_p5": "Bom nhân phẩm của Felyne VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2125,8 +2125,8 @@
     "Talent1_2_p4": ""
   },
   "char_4080_lin": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kế sách hoàn hảo",
+    "TitleTalent2": "Giấu nghề",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2143,8 +2143,8 @@
     "Talent1_2_p4": ""
   },
   "char_4082_qiubai": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tìm kẽ hở",
+    "TitleTalent2": "Cánh hoa rơi",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2170,20 +2170,20 @@
     "Talent2": "Kẻ địch trong phạm vi tấn công bị vô hiệu hoá [[Tàng hình|Invisible]] và giảm 30% tốc độ di chuyển. Sau khi rút lui, Ines để lại một 'Ảnh Vệ' với cùng hiệu ứng trên (tối đa 1)."
   },
   "char_4088_hodrer": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thừa thắng xông lên",
+    "TitleTalent2": "Tàn lửa từ chiếc áo choàng",
     "Talent1": "ATK tăng lên 105% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 125%.",
     "Talent1_2": "ATK tăng lên 110% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 140%.",
     "Talent2": "Bản thân và đồng minh ở ngay đằng sau nhận 18% [[Bảo hộ|Sanctuary]].",
     "Talent2_p4": "Bản thân và đồng minh ở ngay đằng sau nhận 21%<@ba.talpu>(+3%)</> [[Bảo hộ|Sanctuary]]."
   },
   "char_4091_ulika": {
-    "TitleTalent1": "Thiên tài chập mạch·I",
-    "TitleTalent1_p1": "Thiên tài chập mạch·II",
-    "TitleTalent1_p2": "Thiên tài chập mạch·III",
-    "TitleTalent1_p3": "Thiên tài chập mạch·IV",
-    "TitleTalent1_p4": "Thiên tài chập mạch·V",
-    "TitleTalent1_p5": "Thiên tài chập mạch·VI",
+    "TitleTalent1": "Thiên tài chập mạch I",
+    "TitleTalent1_p1": "Thiên tài chập mạch II",
+    "TitleTalent1_p2": "Thiên tài chập mạch III",
+    "TitleTalent1_p3": "Thiên tài chập mạch IV",
+    "TitleTalent1_p4": "Thiên tài chập mạch V",
+    "TitleTalent1_p5": "Thiên tài chập mạch VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2193,12 +2193,12 @@
     "Talent0_p5": ""
   },
   "char_4093_frston": {
-    "TitleTalent1": "Trường tồn·I",
-    "TitleTalent1_p1": "Trường tồn·II",
-    "TitleTalent1_p2": "Trường tồn·III",
-    "TitleTalent1_p3": "Trường tồn·IV",
-    "TitleTalent1_p4": "Trường tồn·V",
-    "TitleTalent1_p5": "Trường tồn·VI",
+    "TitleTalent1": "Trường tồn I",
+    "TitleTalent1_p1": "Trường tồn II",
+    "TitleTalent1_p2": "Trường tồn III",
+    "TitleTalent1_p3": "Trường tồn IV",
+    "TitleTalent1_p4": "Trường tồn V",
+    "TitleTalent1_p5": "Trường tồn VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2208,8 +2208,8 @@
     "Talent0_p5": ""
   },
   "char_4098_vvana": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ánh nến dẫn lối",
+    "TitleTalent2": "Tân tinh",
     "Talent1": "Sát thương phép gây ra +5%, đồng thời sát thương vật lý và sát thương phép nhận vào -5%. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
     "Talent1_p4": "Sát thương phép gây ra +6%<@ba.talpu>(+1%)</>, đồng thời sát thương vật lý và sát thương phép nhận vào -6%<@ba.talpu>(-1%)</>. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
     "Talent1_2": "Sát thương phép gây ra +8%, đồng thời sát thương vật lý và sát thương phép nhận vào -8%. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch là bậc Tinh Anh hoặc Thủ Lĩnh.",
@@ -2289,8 +2289,8 @@
     "Talent1_2_p4": ""
   },
   "char_4116_blkkgt": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chiến binh thiên bẩm",
+    "TitleTalent2": "Huyền thoại sống",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2299,8 +2299,8 @@
     "Talent2_p4": ""
   },
   "char_4117_ray": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cộng sự trinh sát",
+    "TitleTalent2": "Tập trung cực độ",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -2324,8 +2324,8 @@
     "Talent1_2_p4": ""
   },
   "char_4121_zuole": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phản chiếu bóng",
+    "TitleTalent2": "Giữ mình ngay thẳng",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2341,8 +2341,8 @@
     "Talent1_2_p4": ""
   },
   "char_4123_ela": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Mìn GRZMOT",
+    "TitleTalent2": "'Trúng đích'",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2398,8 +2398,8 @@
     "Talent1_2_p4": ""
   },
   "char_4132_ascln": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thẩm vấn đến chết",
+    "TitleTalent2": "Mượn bóng ẩn mình",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2407,8 +2407,8 @@
     "Talent2_p4": ""
   },
   "char_4133_logos": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tiến hóa vốn từ",
+    "TitleTalent2": "Chú ngôn rạch hồn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2417,20 +2417,20 @@
     "Talent2_p2": ""
   },
   "char_4134_cetsyr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tàn dư của quá khứ",
+    "TitleTalent2": "Tiếng vọng của ma vương",
     "Talent0": "",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4136_phonor": {
-    "TitleTalent1": "Khúc đồng ca từ thung lũng xa xôi·I",
-    "TitleTalent1_p1": "Khúc đồng ca từ thung lũng xa xôi·II",
-    "TitleTalent1_p2": "Khúc đồng ca từ thung lũng xa xôi·III",
-    "TitleTalent1_p3": "Khúc đồng ca từ thung lũng xa xôi·IV",
-    "TitleTalent1_p4": "Khúc đồng ca từ thung lũng xa xôi·V",
-    "TitleTalent1_p5": "Khúc đồng ca từ thung lũng xa xôi·VI",
+    "TitleTalent1": "Khúc đồng ca từ thung lũng xa xôi I",
+    "TitleTalent1_p1": "Khúc đồng ca từ thung lũng xa xôi II",
+    "TitleTalent1_p2": "Khúc đồng ca từ thung lũng xa xôi III",
+    "TitleTalent1_p3": "Khúc đồng ca từ thung lũng xa xôi IV",
+    "TitleTalent1_p4": "Khúc đồng ca từ thung lũng xa xôi V",
+    "TitleTalent1_p5": "Khúc đồng ca từ thung lũng xa xôi VI",
     "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
@@ -2745,12 +2745,12 @@
     "Talent1_2_p4": ""
   },
   "char_4188_confes": {
-    "TitleTalent1": "Thanh toán trước, Xưng tội sau·I",
-    "TitleTalent1_p1": "Thanh toán trước, Xưng tội sau·II",
-    "TitleTalent1_p2": "Thanh toán trước, Xưng tội sau·III",
-    "TitleTalent1_p3": "Thanh toán trước, Xưng tội sau·IV",
-    "TitleTalent1_p4": "Thanh toán trước, Xưng tội sau·V",
-    "TitleTalent1_p5": "Thanh toán trước, Xưng tội sau·VI",
+    "TitleTalent1": "Thanh toán trước, Xưng tội sau I",
+    "TitleTalent1_p1": "Thanh toán trước, Xưng tội sau II",
+    "TitleTalent1_p2": "Thanh toán trước, Xưng tội sau III",
+    "TitleTalent1_p3": "Thanh toán trước, Xưng tội sau IV",
+    "TitleTalent1_p4": "Thanh toán trước, Xưng tội sau V",
+    "TitleTalent1_p5": "Thanh toán trước, Xưng tội sau VI",
     "TitleTalent2": "",
     "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 5 giây.",
     "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
