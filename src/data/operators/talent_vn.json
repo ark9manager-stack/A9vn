@@ -79,8 +79,8 @@
     "Talent2_p4": ""
   },
   "char_1019_siege2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nỗi lòng quân vương",
+    "TitleTalent2": "Rút kiếm ra",
     "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, Vina được +3% ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, Vina được +4%<@ba.talpu>(+1%)</> ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_2": "Vina và đồng minh trong 8 ô xung quanh cô giảm 20% sát thương vật lý nhận vào. Đồng thời, Vina được +5% ATK cho mỗi đồng minh đứng trong phạm vi này.",
@@ -228,7 +228,7 @@
   },
   "char_1035_wisdel": {
     "TitleTalent1": "Món quà lưu niệm",
-    "TitleTalent2": "",
+    "TitleTalent2": "Vong hồn vang vọng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -603,8 +603,8 @@
     "Talent1_2_p4": "Khi không có đồng minh nào khác ở 4 ô xung quanh, ATK và DEF +13%<@ba.talpu>(+2%)</>."
   },
   "char_1502_crosly": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nuốt trọn khổ đau",
+    "TitleTalent2": "Tiếng tăm của Crownslayer",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -2006,8 +2006,8 @@
     "Talent2_p5": ""
   },
   "char_4058_pepe": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kế thừa di sản",
+    "TitleTalent2": "Hương sen lan tỏa",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2408,7 +2408,7 @@
   },
   "char_4133_logos": {
     "TitleTalent1": "Tiến hóa vốn từ",
-    "TitleTalent2": "Chú ngôn rạch hồn",
+    "TitleTalent2": "Chú ngữ rạch hồn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2448,8 +2448,8 @@
     "Talent1_2_p4": ""
   },
   "char_4138_narant": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "'Thấy là bỏ túi'",
+    "TitleTalent2": "Bóng ma lả lướt",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2475,8 +2475,8 @@
     "Talent1_2": ""
   },
   "char_4141_marcil": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Học sinh xuất sắc nhất trong lịch sử của trường ma thuật",
+    "TitleTalent2": "Đồng đội đáng tin cậy",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2504,16 +2504,16 @@
     "Talent1_2_p4": "Sau khi triển khai, bản thân và đồng minh trong phạm vi tấn công sẽ không nhận sát thương từ hiệu ứng môi trường và [[Hiệu ứng nguyên tố|EleInjury]] trong 50<@ba.talpu>(+5)</> giây."
   },
   "char_4145_ulpia": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bản tính kiên định",
+    "TitleTalent2": "Nuôi dưỡng dòng máu",
     "Talent1": "Hồi 80 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 120 HP.",
     "Talent1_2": "Hồi 100 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 160 HP.",
     "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên.",
     "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên."
   },
   "char_4146_nymph": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đoạt hồn",
+    "TitleTalent2": "Chìa nhìn thấu tâm hồn",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
