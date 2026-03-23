@@ -880,9 +880,9 @@
     "S2_7M3": ""
   },
   "char_1038_whitw2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Kẻ lười than vãn",
+    "Title_S2": "Cuộc săn cuồng bạo",
+    "Title_S3": "Hồi kết: Thảm họa",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -915,9 +915,9 @@
     "S3_7M3": ""
   },
   "char_1039_thorn2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Đo lường sóng gió",
+    "Title_S2": "Phân rã dòng triều",
+    "Title_S3": "'Lãnh hải của ta'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -985,9 +985,9 @@
     "S3_7M3": "Bắn <@ba.vup>{attack@times}</> phát liên tiếp, và khoảng thời gian tấn công được <@ba.vup>[[giảm một mức nhất định|IntervalSlight]]</>; ATK <@ba.vup>tăng lên {attack@atk_scale:0%}</>\n<@ba.rem>Kỹ năng tự kích hoạt</>"
   },
   "char_1040_blaze2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Cứu trợ nhiệt tình",
+    "Title_S2": "Máu lửa sôi trào",
+    "Title_S3": "Lò thiêu tội ác",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1020,9 +1020,9 @@
     "S3_7M3": ""
   },
   "char_1041_angel2": {
-    "Title_S1": "Quét Sạch Bầu Trời",
-    "Title_S2": "Cuồng Xạ",
-    "Title_S3": "Hoàn Thành Sứ Mệnh!",
+    "Title_S1": "Quét sạch bầu trời",
+    "Title_S2": "Cuồng xạ",
+    "Title_S3": "Hoàn thành sứ mệnh!",
     "S1_1": "Mỗi lần tấn công gây sát thương Vật lý bằng <@ba.vup>{attack@atk_scale:0%}</> ATK, ưu tiên tấn công mục tiêu trên không; khi chủ động tắt kỹ năng, sẽ xả toàn bộ đạn còn lại vào kẻ địch ngẫu nhiên trong phạm vi tấn công.\n<@ba.rem>Kích hoạt kỹ năng sẽ nhận {attack@trigger_time} viên đạn, và bắn hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>.",
     "S1_2": "Mỗi lần tấn công gây sát thương Vật lý bằng <@ba.vup>{attack@atk_scale:0%}</> ATK, ưu tiên tấn công mục tiêu trên không; khi chủ động tắt kỹ năng, sẽ xả toàn bộ đạn còn lại vào kẻ địch ngẫu nhiên trong phạm vi tấn công.\n<@ba.rem>Kích hoạt kỹ năng sẽ nhận {attack@trigger_time} viên đạn, và bắn hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>.",
     "S1_3": "Mỗi lần tấn công gây sát thương Vật lý bằng <@ba.vup>{attack@atk_scale:0%}</> ATK, ưu tiên tấn công mục tiêu trên không; khi chủ động tắt kỹ năng, sẽ xả toàn bộ đạn còn lại vào kẻ địch ngẫu nhiên trong phạm vi tấn công.\n<@ba.rem>Kích hoạt kỹ năng sẽ nhận {attack@trigger_time} viên đạn, và bắn hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>.",
@@ -1055,9 +1055,9 @@
     "S3_7M3": "ATK <@ba.vup>+{atk:0%}</>, mỗi đòn tấn công bắn <@ba.vup>5</> lần liên tiếp, mỗi phát bắn gây sát thương bằng <@ba.vup>{attack@atk_scale:0%}</> ATK; nếu trên sân có Tọa Độ Giao Hàng, lập tức gây một lần sát thương vật lý diện rộng tại vị trí đó bằng <@ba.vup>{attack@cannon_atk_scale:0%}</> ATK và triển khai cán viên cận chiến đang có thời gian tái triển khai lâu nhất, giúp cán viên đó nhận <@ba.vup>{attack@sp}</> SP.\n<@ba.rem>Sau khi triển khai sẽ nhận Tọa Độ Giao Hàng, khi kích hoạt kỹ năng nhận {attack@trigger_time} viên đạn, mỗi đòn tấn công tiêu hao 5 viên, và bắn hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>."
   },
   "char_1042_phatm2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Vang vọng trong đêm",
+    "Title_S2": "Mê sảng tập thể",
+    "Title_S3": "Sân khấu hư không",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1090,9 +1090,9 @@
     "S3_7M3": ""
   },
   "char_1043_leizi2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Khí phách trường tồn",
+    "Title_S2": "Lôi động cửu tiêu",
+    "Title_S3": "Thiên địa đồng minh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1125,9 +1125,9 @@
     "S3_7M3": ""
   },
   "char_1044_hsgma2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Gieo gió gặt bão",
+    "Title_S2": "Vô thủy vô minh",
+    "Title_S3": "Địa ngục trần gian",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3166,9 +3166,9 @@
     "S3_7M3": ""
   },
   "char_2026_yu": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Hôm nay tôi khao",
+    "Title_S2": "Trọng lễ đón thượng khách quý",
+    "Title_S3": "Tinh hoa gói trọn trong gian bếp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5917,9 +5917,9 @@
     "S3_7M3": ""
   },
   "char_4010_etlchi": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Đóa hồng truy vết",
+    "Title_S2": "Giao thoa huyết sắc",
+    "Title_S3": "Hồn xác chia ly",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6203,9 +6203,9 @@
     "S2_7M3": ""
   },
   "char_4026_vulpis": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Kỷ luật nhẹ",
+    "Title_S2": "Thẩm vấn bằng vũ lực",
+    "Title_S3": "Hồ ẩn thuật",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8674,9 +8674,9 @@
     "S2_7M3": ""
   },
   "char_4179_monstr": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Phương án: Siêu áp liên kết",
+    "Title_S2": "Phương án: Quá tải",
+    "Title_S3": "Phương ánL Hủy diệt",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8709,9 +8709,9 @@
     "S3_7M3": ""
   },
   "char_4182_oblvns": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Tân nguyệt thức tỉnh",
+    "Title_S2": "Mãn nguyệt dạ hội",
+    "Title_S3": "Khuyết nguyệt vang dội",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8898,9 +8898,9 @@
     "S2_7M3": ""
   },
   "char_4193_lemuen": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Lời chào khi gặp lại",
+    "Title_S2": "Lời hẹn cố hương",
+    "Title_S3": "Pháo lễ: Cưỡng chế tưởng niệm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8933,9 +8933,9 @@
     "S3_7M3": ""
   },
   "char_4194_rmixer": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Kỵ sĩ-súng khảo hạch",
+    "Title_S2": "Tám tay cưa máy",
+    "Title_S3": "Thuyết pháp trước ngày nghỉ hưu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8968,9 +8968,9 @@
     "S3_7M3": ""
   },
   "char_4195_radian": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Đường nét nhịp nhàng",
+    "Title_S2": "Vòng vây cá",
+    "Title_S3": "Tay trong tay",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9075,9 +9075,9 @@
     "S2_7M3": ""
   },
   "char_4202_haruka": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Dạ khúc lông vũ",
+    "Title_S2": "Rừng đom đóm",
+    "Title_S3": "Cá lội ngày hè",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9798,9 +9798,9 @@
     "S2_7M3": ""
   },
   "char_450_necras": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Ác nguyện",
+    "Title_S2": "Bẻ nát hơi tàn",
+    "Title_S3": "Vương miện cõi âm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",

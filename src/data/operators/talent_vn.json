@@ -79,7 +79,7 @@
     "Talent2_p4": ""
   },
   "char_1019_siege2": {
-    "TitleTalent1": "Nỗi lòng quân vương",
+    "TitleTalent1": "Tiếng thở dài của nhà vua",
     "TitleTalent2": "Rút kiếm ra",
     "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, Vina được +3% ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, Vina được +4%<@ba.talpu>(+1%)</> ATK cho mỗi đồng minh đứng trong phạm vi này.",
@@ -242,8 +242,8 @@
     "Talent1_2": "DP ban đầu -3; Sau khi rút lui, cán viên tiếp theo -1 DP."
   },
   "char_1038_whitw2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sói đầu đàn",
+    "TitleTalent2": "Danh dự của Siracusa",
     "Talent1": "",
     "Talent1_p5": "",
     "Talent1_2": "",
@@ -254,8 +254,8 @@
     "Talent4": ""
   },
   "char_1039_thorn2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tâm sinh tướng",
+    "TitleTalent2": "Tầm nhìn vươn tới",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -275,8 +275,8 @@
     "Talent2_p5": "ATK +8%<@ba.talpu>(+2%)</>, HP tối đa +13%<@ba.talpu>(+3%)</>; Khi có mặt trên sân, hiệu ứng này cũng sẽ ban cho 1 đồng minh ngẫu nhiên."
   },
   "char_1040_blaze2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nhiệt độ nóng chảy",
+    "TitleTalent2": "Trỗi dậy từ đống tro tàn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -287,8 +287,8 @@
     "Talent4": ""
   },
   "char_1041_angel2": {
-    "TitleTalent1": "Hỏa Lực FM",
-    "TitleTalent2": "Tân Ước Đạn Dược",
+    "TitleTalent1": "Hỏa lực FM",
+    "TitleTalent2": "Tân ước đạn dược",
     "Talent0": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 105% ATK của bản thân.",
     "Talent0_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
     "Talent1": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
@@ -297,8 +297,8 @@
     "Talent2_p2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano]."
   },
   "char_1042_phatm2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ý chí vượt qua thể xác",
+    "TitleTalent2": "Sa vào giấc mộng",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -309,8 +309,8 @@
     "Talent2_p4": ""
   },
   "char_1043_leizi2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sáng suốt",
+    "TitleTalent2": "Truy cứu trách nhiệm",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -322,8 +322,8 @@
     "Talent3": ""
   },
   "char_1044_hsgma2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nghiệp hỏa",
+    "TitleTalent2": "Thế đánh của quỷ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -900,8 +900,8 @@
     "Talent2": ""
   },
   "char_2026_yu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Có qua có lại",
+    "TitleTalent2": "Hòa mình giữa chốn đô hội",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -1758,8 +1758,8 @@
     "Talent2": ""
   },
   "char_4010_etlchi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kho máu",
+    "TitleTalent2": "Dự trù",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2660,8 +2660,8 @@
     "Talent1_2_p4": ""
   },
   "char_4179_monstr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tự vá",
+    "TitleTalent2": "Phối hợp tác chiến",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2674,8 +2674,8 @@
     "Talent2_2_p5": ""
   },
   "char_4182_oblvns": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nốt nhạc hoan ca",
+    "TitleTalent2": "Chớ sợ lãng quên",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2687,7 +2687,7 @@
   },
   "char_4183_mortis": {
     "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent2": "Chớ sợ cái chết",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2700,7 +2700,7 @@
   },
   "char_4184_dolris": {
     "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent2": "Chớ sợ bi thương",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2713,7 +2713,7 @@
   },
   "char_4185_amoris": {
     "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent2": "Chớ sợ yêu thương",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2727,7 +2727,7 @@
   },
   "char_4186_tmoris": {
     "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent2": "Chớ ngại nỗi sợ",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2768,8 +2768,8 @@
     "Talent1_2_p4": ""
   },
   "char_4193_lemuen": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Lệnh truy bắt xuyên biên giới",
+    "TitleTalent2": "Thủ tục bàn giao tội phạm vượt ngục",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2777,16 +2777,16 @@
     "Talent2": ""
   },
   "char_4194_rmixer": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nghi thức xả đạn đón khách",
+    "TitleTalent2": "Nghi thức dựng khiên tiễn khách",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4195_radian": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cảm những từ những thước băng",
+    "TitleTalent2": "Cố lên nào~",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -2818,8 +2818,8 @@
     "Talent1_2_p4": "Sau khi triển khai được 30 giây, tăng 12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bọt nước mây bay",
+    "TitleTalent2": "Bắn pháo hoa",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3015,8 +3015,8 @@
     "Talent1_2_p4": ""
   },
   "char_450_necras": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trỗi dậy",
+    "TitleTalent2": "Đau đớn cuối đời",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
