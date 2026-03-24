@@ -119,7 +119,7 @@ const OperatorCard = ({ operator, onClick }) => {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-400 bg-black/30">
-            No Image
+            Signal Lost
           </div>
         )}
       </div>
