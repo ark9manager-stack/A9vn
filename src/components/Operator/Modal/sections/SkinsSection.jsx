@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
+import LoadingOp from "../../../UI/LoadingOp";
 
 import {
   ICON_MODEL_URL,
@@ -14,7 +15,6 @@ import {
 const SP_DYN_SKINS = skinTable?.spDynSkins || {};
 
 // image URL logic moved to utils/IconArtUrl.js
-
 
 function pickDisplaySkin(obj) {
   return obj?.displaySkin || obj?.skin || obj || null;
@@ -56,9 +56,15 @@ export default function SkinsSection({ operator, className = "" }) {
     const d2En = pickDisplaySkin(e2En);
 
     return {
-      e0: d0 ? { ...d0, skinName: d0En?.skinName ?? d0?.skinName ?? null } : null,
-      e1: d1 ? { ...d1, skinName: d1En?.skinName ?? d1?.skinName ?? null } : null,
-      e2: d2 ? { ...d2, skinName: d2En?.skinName ?? d2?.skinName ?? null } : null,
+      e0: d0
+        ? { ...d0, skinName: d0En?.skinName ?? d0?.skinName ?? null }
+        : null,
+      e1: d1
+        ? { ...d1, skinName: d1En?.skinName ?? d1?.skinName ?? null }
+        : null,
+      e2: d2
+        ? { ...d2, skinName: d2En?.skinName ?? d2?.skinName ?? null }
+        : null,
       hasE1: !!e1,
       hasE2: !!e2,
     };
@@ -235,7 +241,6 @@ export default function SkinsSection({ operator, className = "" }) {
     return selectedHasSp && spMode ? withSpSuffix(u) : u;
   }, [selectedOption, selectedHasSp, spMode]);
 
-
   useEffect(() => {
     if (!charId || !options.length) return;
 
@@ -252,18 +257,21 @@ export default function SkinsSection({ operator, className = "" }) {
             }
             return list;
           })
-          .filter(Boolean)
+          .filter(Boolean),
       ),
     ];
 
     if (preloadUrls.length === 0) return;
 
     Promise.allSettled(
-      preloadUrls.map((url) => preloadImageCached(url).then(() => url))
+      preloadUrls.map((url) => preloadImageCached(url).then(() => url)),
     ).then((results) => {
       if (cancelled) return;
       const loaded = results
-        .filter((r) => r.status === "fulfilled" && typeof r.value === "string" && r.value)
+        .filter(
+          (r) =>
+            r.status === "fulfilled" && typeof r.value === "string" && r.value,
+        )
         .map((r) => r.value);
 
       if (loaded.length === 0) return;
@@ -358,7 +366,6 @@ export default function SkinsSection({ operator, className = "" }) {
     return arr.length ? arr.join(", ") : "-";
   }, [selectedOption]);
 
-
   const displayDesigner = useMemo(() => {
     const list = selectedOption?.designerList;
     const arr = Array.isArray(list) ? list.filter(Boolean) : [];
@@ -374,11 +381,7 @@ export default function SkinsSection({ operator, className = "" }) {
       <div className="relative h-full w-full">
         {/* Art */}
         <div className="absolute inset-0 flex items-center justify-center">
-          {isLoadingImg && (
-            <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
-              Loading...
-            </div>
-          )}
+          {isLoadingImg && <LoadingOp />}
 
           {!isLoadingImg && imgError && (
             <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
@@ -424,7 +427,7 @@ export default function SkinsSection({ operator, className = "" }) {
               draggable={false}
             />
             <div className="min-w-0 text-xs text-white/85 leading-snug whitespace-normal break-words">
-              <span className="whitespace-nowrap">Họa sĩ:</span>{" "}{displayDrawer}
+              <span className="whitespace-nowrap">Họa sĩ:</span> {displayDrawer}
             </div>
 
             {/* Row 3: designer */}
@@ -432,7 +435,8 @@ export default function SkinsSection({ operator, className = "" }) {
               <>
                 <div className="h-4 w-6" />
                 <div className="min-w-0 text-xs text-white/85 leading-snug whitespace-normal break-words">
-                  <span className="whitespace-nowrap">Thiết kế:</span>{" "}{displayDesigner}
+                  <span className="whitespace-nowrap">Thiết kế:</span>{" "}
+                  {displayDesigner}
                 </div>
               </>
             ) : null}
@@ -443,7 +447,6 @@ export default function SkinsSection({ operator, className = "" }) {
         {options.length > 1 && (
           <div className="absolute right-3 bottom-3 z-20 w-[160px] rounded-xl bg-black/55 p-2 text-white backdrop-blur">
             <div className="flex flex-col gap-1">
-
               {options.map((opt) => {
                 const active = selectedKey === opt.key;
                 const canToggleSp = !!opt.hasSp;
@@ -489,7 +492,6 @@ export default function SkinsSection({ operator, className = "" }) {
                       </button>
                     ) : null}
                   </div>
-
                 );
               })}
             </div>

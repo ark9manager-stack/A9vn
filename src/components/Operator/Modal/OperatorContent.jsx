@@ -1,5 +1,5 @@
 import React, { useCallback, Suspense, lazy } from "react";
-
+import LoadingOp from "../../UI/LoadingOp";
 // Lazy load các sections
 const SkinsSection = lazy(() => import("./sections/SkinsSection"));
 const ProfileSection = lazy(() => import("./sections/ProfileSection"));
@@ -11,7 +11,7 @@ const ModuleSection = lazy(() => import("./sections/ModuleSection"));
 // Component fallback cho loading
 const LoadingFallback = () => (
   <div className="flex items-center justify-center h-full">
-    <div className="text-white/70">Loading...</div>
+    <LoadingOp />
   </div>
 );
 

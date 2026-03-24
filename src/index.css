@@ -157,6 +157,74 @@
   }
 }
 
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -20px);
+  }
+}
+
+@keyframes glitch-bar {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  12% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  52% {
+    opacity: 0.2;
+  }
+  54% {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.7;
+  }
+  94% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.8;
+  }
+  97% {
+    opacity: 1;
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 4px;
+    opacity: 0.3;
+  }
+  50% {
+    height: 20px;
+    opacity: 0.7;
+  }
+}
+
 @layer utilities {
   .font-heading {
     font-family: "Rajdhani", sans-serif;
