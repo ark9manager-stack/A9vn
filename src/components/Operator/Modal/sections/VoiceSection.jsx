@@ -478,7 +478,7 @@ const VoiceSection = ({ operator }) => {
 
         {!voiceLines.length ? (
           <div className="text-base text-gray-300">
-            No voice lines for this operator.
+            No voice lines for this Operator.
           </div>
         ) : null}
       </div>
