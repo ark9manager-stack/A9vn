@@ -1,7 +1,8 @@
 {
   "char_002_amiya": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Niệm chú tác chiến · loại γ",
+    "Title_S2": "Bộc phát tinh thần",
+    "Title_S3": "Chimera",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -235,7 +236,7 @@
   "char_1014_nearl2": {
     "Title_S1": "Lưỡi đao rực cháy",
     "Title_S2": "Xé toạt màn đêm",
-    "Title_S3": "Thái dương chứng nhận",
+    "Title_S3": "Thái dương chứng giám",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -338,8 +339,8 @@
     "S3_7M3": ""
   },
   "char_101_sora": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Khúc hát ru",
+    "Title_S2": "Khúc hát hào hùng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -633,8 +634,8 @@
     "S3_7M3": ""
   },
   "char_102_texas": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại γ",
+    "Title_S2": "Mưa kiếm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1160,9 +1161,9 @@
     "S3_7M3": ""
   },
   "char_1045_svash2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Mưu lược xoay chuyển",
+    "Title_S2": "Tiên phong chống địch",
+    "Title_S3": "Khai mở kỷ nguyên mới",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1195,9 +1196,9 @@
     "S3_7M3": ""
   },
   "char_1046_sbell2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Chuông ngân tuyết phủ",
+    "Title_S2": "Sương băng bao phủ",
+    "Title_S3": "Vạn sơn quy phục",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1230,9 +1231,9 @@
     "S3_7M3": ""
   },
   "char_1047_halo2": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Bản đồ sao lung linh",
+    "Title_S2": "Lực hút tinh tú",
+    "Title_S3": "Chuỗi liên kết song hành",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1265,9 +1266,9 @@
     "S3_7M3": ""
   },
   "char_1050_chen3": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Chi Xiao - Bôn dạ",
+    "Title_S2": "Chi Xiao - Tuyệt ảnh phi trì",
+    "Title_S3": "Chi Xiao - Thiên thán",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1300,8 +1301,8 @@
     "S3_7M3": ""
   },
   "char_106_franka": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Ra đòn nhanh · loại γ",
+    "Title_S2": "Lưỡi kiếm sắc bén",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1324,8 +1325,8 @@
     "S2_7M3": ""
   },
   "char_107_liskam": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Khiên tích năng lượng",
+    "Title_S2": "Khiên điện phản kích",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1348,8 +1349,8 @@
     "S2_7M3": ""
   },
   "char_108_silent": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng cường hồi phục · loại γ",
+    "Title_S2": "Drone y tế",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1490,8 +1491,8 @@
     "S3_7M3": ""
   },
   "char_115_headbr": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại γ",
+    "Title_S2": "Tiếng gầm của Ursus",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1660,7 +1661,7 @@
     "S2_7M3": ""
   },
   "char_128_plosis": {
-    "Title_S1": "",
+    "Title_S1": "Tăng cường hồi phục · loại γ",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -1684,8 +1685,8 @@
     "S2_7M3": ""
   },
   "char_129_bluep": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Bắn hai phát",
+    "Title_S2": "Phát tán nọc độc",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1708,8 +1709,8 @@
     "S2_7M3": ""
   },
   "char_130_doberm": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Công kích · loại β",
+    "Title_S2": "Động lực",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1898,8 +1899,8 @@
     "S2_7M3": ""
   },
   "char_140_whitew": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đồng hồ mặt trời",
+    "Title_S2": "Bản năng của sói",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1946,8 +1947,8 @@
     "S2_7M3": ""
   },
   "char_143_ghost": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Thịt nát xương tan",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1970,8 +1971,8 @@
     "S2_7M3": ""
   },
   "char_144_red": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chế độ hành hình",
+    "Title_S2": "Đàn sói",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1994,8 +1995,8 @@
     "S2_7M3": ""
   },
   "char_145_prove": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Mắt sói",
+    "Title_S2": "Khứu giác săn mồi",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2053,8 +2054,8 @@
     "S3_7M3": "ATK <@ba.vup>+{atk:0%}</>\n<@ba.vup>+{def:0%}</> DEF cho toàn bộ đồng minh trong phạm vi."
   },
   "char_148_nearl": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Sơ cứu",
+    "Title_S2": "Chế độ sơ cứu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2208,8 +2209,8 @@
     "S2_7M3": ""
   },
   "char_155_tiger": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Quyền xuyên phá",
+    "Title_S2": "Xé toạc linh hồn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2256,8 +2257,8 @@
     "S2_7M3": ""
   },
   "char_158_milu": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hòa vào môi trường",
+    "Title_S2": "Bộ đàm tác chiến",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2304,8 +2305,8 @@
     "S2_7M3": ""
   },
   "char_163_hpsts": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chế độ bảo vệ",
+    "Title_S2": "Chế độ chiến đấu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2328,8 +2329,8 @@
     "S2_7M3": ""
   },
   "char_164_nightm": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Rút cạn linh hồn",
+    "Title_S2": "Ác mộng màn đêm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2352,8 +2353,8 @@
     "S2_7M3": ""
   },
   "char_166_skfire": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Mưa thiên thạch",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2376,8 +2377,8 @@
     "S2_7M3": ""
   },
   "char_171_bldsk": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Kỹ thuật băng bó",
+    "Title_S2": "Huyết tương bất ổn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2435,8 +2436,8 @@
     "S3_7M3": "DEF <@ba.vdown>-{-def:0%}</>, ATK <@ba.vup>+{atk:0%}</>, <@ba.vup>mở rộng</> phạm vi tấn công, đồng thời tấn công tối đa <@ba.vup>{attack@max_target}</> kẻ địch (đòn tấn công được coi là cận chiến)."
   },
   "char_173_slchan": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Móc xích",
+    "Title_S2": "Xiềng xích trói buộc",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2459,8 +2460,8 @@
     "S2_7M3": ""
   },
   "char_174_slbell": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Định vị tiếng vang",
+    "Title_S2": "Trở ngại thiên nhiên",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2601,8 +2602,8 @@
     "S2_7M3": ""
   },
   "char_185_frncat": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Cào",
+    "Title_S2": "Cơn thịnh nộ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2766,8 +2767,8 @@
     "S2_7M3": ""
   },
   "char_195_glassb": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tập trung cao độ",
+    "Title_S2": "Bão tri thức",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2814,7 +2815,7 @@
     "S2_7M3": ""
   },
   "char_197_poca": {
-    "Title_S1": "Tăng công · loại γ",
+    "Title_S1": "Tăng ATK · loại γ",
     "Title_S2": "Phân đôi đường bắn",
     "Title_S3": "Kẻ phá băng",
     "S1_1": "",
@@ -2899,7 +2900,7 @@
   "char_2012_typhon": {
     "Title_S1": "Ra đòn nhanh · loại γ",
     "Title_S2": "Trật tự của vùng băng giá",
-    "Title_S3": "Cuộc săn vĩnh hằng",
+    "Title_S3": "Chuyến săn vĩnh cửu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3037,8 +3038,8 @@
     "S3_7M3": ""
   },
   "char_201_moeshd": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tự phòng ngự",
+    "Title_S2": "Chùy điện từ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3201,9 +3202,9 @@
     "S3_7M3": ""
   },
   "char_2027_wang": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Chiếm thế chủ động",
+    "Title_S2": "Liên tinh",
+    "Title_S3": "Ván cờ định mệnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3271,8 +3272,8 @@
     "S3_7M3": "Tất cả đồng minh trong phạm được hồi HP bằng <@ba.vup>{attack@heal_scale:0%}</> ATK của Saria mỗi giây.\\nTất cả kẻ địch trong phạm vi sẽ chịu <@ba.vup>+{fake.b:0%}</> sát thương phép nhận vào và <@ba.vup>-{-demkni_s_3.move_speed:0%}</> tốc độ di chuyển."
   },
   "char_204_platnm": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Tầm nhìn của thiên mã",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3381,8 +3382,8 @@
   },
   "char_213_mostma": {
     "Title_S1": "Tăng ATK · loại γ",
-    "Title_S2": "Khóa dòng thời gian",
-    "Title_S3": "Chìa khóa của dòng thời gian",
+    "Title_S2": "Ổ khóa thời gian",
+    "Title_S3": "Chìa khóa thời không",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3439,8 +3440,8 @@
     "S2_7M3": ""
   },
   "char_215_mantic": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Nọc độc bọ cạp",
+    "Title_S2": "Đuôi tẩm độc",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3487,8 +3488,8 @@
     "S2_7M3": ""
   },
   "char_219_meteo": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đạn hoa cải",
+    "Title_S2": "Đạn xe tăng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3511,8 +3512,8 @@
     "S2_7M3": ""
   },
   "char_220_grani": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng DEF · loại γ",
+    "Title_S2": "Thừa thắng xông lên!",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3629,8 +3630,8 @@
     "S2_7M3": ""
   },
   "char_230_savage": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Công kích · loại β",
+    "Title_S2": "Kích nổ địa chấn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3653,8 +3654,8 @@
     "S2_7M3": ""
   },
   "char_235_jesica": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Công kích · loại β",
+    "Title_S2": "Hỏa mù",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3735,8 +3736,8 @@
     "S1_7": ""
   },
   "char_241_panda": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Thiết ý lục hợp",
+    "Title_S2": "Thiết quyền băng thức",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3759,8 +3760,8 @@
     "S2_7M3": ""
   },
   "char_242_otter": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Thiết bị gây nhiễu",
+    "Title_S2": "Kích nổ và thu hồi",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4233,8 +4234,8 @@
     "S2_7M3": ""
   },
   "char_274_astesi": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hộ mệnh tinh tú",
+    "Title_S2": "Thanh kiếm tinh tú",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4720,8 +4721,8 @@
     "S2_7M3": ""
   },
   "char_308_swire": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tổng chỉ huy",
+    "Title_S2": "Hợp lực tác chiến",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4838,8 +4839,8 @@
     "S2_7M3": ""
   },
   "char_326_glacus": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đạn song tuyến",
+    "Title_S2": "Chống xung điện từ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4888,7 +4889,7 @@
   "char_332_archet": {
     "Title_S1": "Tán xạ tiễn",
     "Title_S2": "Truy liệp tiễn",
-    "Title_S3": "Lôi minh tiễn",
+    "Title_S3": "Lôi quang tiễn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5553,7 +5554,7 @@
   "char_377_gdglow": {
     "Title_S1": "Tia lửa tán loạn",
     "Title_S2": "Dòng điện dâng trào",
-    "Title_S3": "Pha lê lấp lánh",
+    "Title_S3": "Tinh thể lấp lánh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6712,9 +6713,9 @@
     "S3_7M3": ""
   },
   "char_4056_titi": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Kìm hãm ăn mòn",
+    "Title_S2": "Niêm phong",
+    "Title_S3": "Quá khứ nở rộ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9134,9 +9135,9 @@
     "S2_7M3": ""
   },
   "char_4204_mantra": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Cộng hưởng sụp đổ",
+    "Title_S2": "Liên kết ý thức",
+    "Title_S3": "Chân lý không lời",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9276,9 +9277,9 @@
     "S2_7M3": ""
   },
   "char_4212_nasti": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "'Túc trực'",
+    "Title_S2": "'Triển khai'",
+    "Title_S3": "Sàn thao tác",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10736,7 +10737,7 @@
     "S2_7M3": ""
   },
   "char_509_acast": {
-    "Title_S1": "",
+    "Title_S1": "'Những thứ ta làm'",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -11093,8 +11094,8 @@
     "S3_7M3": ""
   },
   "char_609_acguad": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Lưỡi đao chớp nhoáng",
+    "Title_S2": "Rút kiếm",
     "Title_S3": "",
     "S1_1": "",
     "S1_2": "",
@@ -11128,9 +11129,9 @@
     "S3_7M3": ""
   },
   "char_610_acfend": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Ổn định kết cấu",
+    "Title_S2": "Nguyên lý bất biến",
+    "Title_S3": "Đảo chiều ứng suất",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11198,9 +11199,9 @@
     "S3_7M3": ""
   },
   "char_612_accast": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "'Những thứ ta viết'",
+    "Title_S2": "'Những thứ ta làm'",
+    "Title_S3": "'Những thứ ta lệnh'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11268,9 +11269,9 @@
     "S3_7M3": ""
   },
   "char_614_acsupo": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Hai luồng tín hiệu",
+    "Title_S2": "Tam thức",
+    "Title_S3": "Tín hiệu xung động",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11303,9 +11304,9 @@
     "S3_7M3": ""
   },
   "char_615_acspec": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Thao túng vật lý",
+    "Title_S2": "Thao túng chiến tranh",
+    "Title_S3": "Thao túng không gian",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
