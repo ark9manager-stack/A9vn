@@ -89,8 +89,7 @@
     "Talent2_p2": "Đòn đánh đầu tiên lên mỗi kẻ địch khiến mục tiêu chịu hiệu ứng [[Giải giới|Frighten]] trong 5<@ba.talpu>(+1)</> giây."
   },
   "char_101_sora": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Encore",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -171,8 +170,7 @@
     "Talent2_p4": ""
   },
   "char_102_texas": {
-    "TitleTalent1": "Chiến thuật chuyển phát",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tiếp tế chuyến thuật",
     "Talent1": "Khi có mặt trong đội hình, nhận 1 DP khởi đầu.",
     "Talent1_2": "Khi có mặt trong đội hình, nhận 2 DP khởi đầu."
   },
@@ -341,8 +339,8 @@
     "Talent2_p4": "Khi có mặt trên sân, các cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], nhận DEF +80<@ba.talpu>(+20)</> và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
   },
   "char_1046_sbell2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cảnh tuyết vô tận",
+    "TitleTalent2": "Phúc lành thánh sơn",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -353,12 +351,22 @@
     "Talent2_p2": ""
   },
   "char_1047_halo2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Mô hình hóa dữ liệu",
+    "TitleTalent2": "Giải tích năng lượng",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
+  },
+  "char_1050_chen3": {
+    "TitleTalent1": "Soi xét tường tận",
+    "TitleTalent2": "Trực giác chiến đấu",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": "",
+    "Talent2_p2": ""
   },
   "char_106_franka": {
     "TitleTalent1": "Lưỡi kiếm Thermite",
@@ -366,8 +374,8 @@
     "Talent1_2": "Khi tấn công, có 20% tỷ lệ bỏ qua DEF của mục tiêu"
   },
   "char_107_liskam": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chiến thuật phòng ngự",
+    "TitleTalent2": "Kháng lôi",
     "Talent1": "",
     "Talent2": "",
     "Talent2_p4": ""
@@ -559,16 +567,14 @@
     "Talent1_2_p4": "HP tối đa +12%<@ba.talpu>(+2%)</>, hồi 2.5%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
   "char_144_red": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thấu xương",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_145_prove": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tên săn mồi",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -632,7 +638,7 @@
     "Talent2": ""
   },
   "char_155_tiger": {
-    "TitleTalent1": "Hổ quyền thần tốc",
+    "TitleTalent1": "Hổ quyền chớp nhoáng",
     "Talent1": "Có 15% tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân.",
     "Talent1_p4": "Có 18%<@ba.talpu>(+3%)</> tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân.",
     "Talent1_2": "Có 30% tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân.",
@@ -646,8 +652,7 @@
     "Talent2": ""
   },
   "char_158_milu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sát thủ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -659,16 +664,14 @@
     "Talent1_2": "-4 DP, Thời gian tái triển khai -15 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây."
   },
   "char_163_hpsts": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tự vệ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_164_nightm": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đa nhân cách",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -696,16 +699,15 @@
     "Talent2": "Vô hiệu hóa <$ba.invisible>tàng hình</> của kẻ địch đang đứng trong phạm vi."
   },
   "char_173_slchan": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thợ săn Karlan",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_174_slbell": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Suy yếu",
+    "TitleTalent2": "Chuông ngân vang đôi",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -793,8 +795,7 @@
     "Talent1_2_p4": ""
   },
   "char_195_glassb": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thăm dò",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
@@ -863,8 +864,7 @@
     "Talent2": ""
   },
   "char_201_moeshd": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khu vực kỳ diệu",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -902,6 +902,18 @@
   "char_2026_yu": {
     "TitleTalent1": "Có qua có lại",
     "TitleTalent2": "Hòa mình giữa chốn đô hội",
+    "Talent1": "",
+    "Talent1_p2": "",
+    "Talent1_2": "",
+    "Talent1_2_p2": "",
+    "Talent2": "",
+    "Talent2_p4": ""
+  },
+  "char_2027_wang": {
+    "TitleTalent1": "Đúc nên thế cờ",
+    "TitleTalent2": "Nhìn thấu nước cờ",
+    "Talent0": "",
+    "Talent0_p2": "",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -980,8 +992,8 @@
     "Talent1_2_p4": ""
   },
   "char_215_mantic": {
-    "TitleTalent1": "",
-    "TitleTalent1_2": "",
+    "TitleTalent1": "Sát thủ vô hình - Trung cấp",
+    "TitleTalent1_2": "Sát thủ vô hình - Tinh anh",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1037,8 +1049,7 @@
     "Talent1_2_p4": ""
   },
   "char_230_savage": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thung lũng",
     "Talent1": "ATK và DEF +5% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên.",
     "Talent1_2": "ATK và DEF +10% khi trong 4 ô xung quanh có từ 2 ô địa hình tầm xa (ranged tiles) trở lên."
   },
@@ -1070,7 +1081,6 @@
   },
   "char_241_panda": {
     "TitleTalent1": "Kung Fu",
-    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1212,8 +1222,7 @@
     "Talent1_2_p4": "Tăng ATK lên 150%<@ba.talpu>(+5%)</> khi tấn công【Infected Creatures】"
   },
   "char_274_astesi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thiên cầu",
     "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +3(cộng dồn tối đa 5 lần).",
     "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +5(cộng dồn tối đa 5 lần)."
   },
@@ -1396,8 +1405,7 @@
     "Talent1_2_p4": ""
   },
   "char_308_swire": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chỉ đạo cận chiến",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -1434,8 +1442,7 @@
     "Talent1_2_p4": ""
   },
   "char_326_glacus": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thiết bị đối phó",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1996,8 +2003,8 @@
     "Talent2_p4": ""
   },
   "char_4056_titi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ngưng đọng thời gian",
+    "TitleTalent2": "Phần thưởng cho lòng dũng cảm",
     "Talent1": "",
     "Talent1_p2": "",
     "Talent1_2": "",
@@ -2785,7 +2792,7 @@
     "Talent2_p4": ""
   },
   "char_4195_radian": {
-    "TitleTalent1": "Cảm những từ những thước băng",
+    "TitleTalent1": "Cảm hứng từ những thước băng",
     "TitleTalent2": "Cố lên nào~",
     "Talent0": "",
     "Talent1": "",
@@ -2835,8 +2842,8 @@
     "Talent1_2_p4": ""
   },
   "char_4204_mantra": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vùng tĩnh lặng",
+    "TitleTalent2": "Nắm trọn toàn cục",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2875,8 +2882,8 @@
     "Talent1_2_p4": ""
   },
   "char_4212_nasti": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khu vực đang thi công",
+    "TitleTalent2": "An toàn là trên hết",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -3438,7 +3445,7 @@
     "Talent2": "Kẻ địch trong phạm vi tấn công của bản thân -10% tỷ lệ trúng đòn vật lý và phép"
   },
   "char_615_acspec": {
-    "TitleTalent1": "Thí nghiệm chém đôi",
+    "TitleTalent1": "Song tượng tận mệnh",
     "TitleTalent2": "Phân tách bốn chiều",
     "Talent0": "Khi tấn công, có 5% tỷ lệ gây sát thương 2 lần liên tiếp.",
     "Talent1": "Khi tấn công, có 8% tỷ lệ gây sát thương 2 lần liên tiếp.",
@@ -6801,8 +6808,8 @@
     "Talent0": ""
   },
   "char_4037_demetr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thủ đoạn gia tộc",
+    "TitleTalent2": "Trực giác đường phố",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
