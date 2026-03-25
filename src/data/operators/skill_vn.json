@@ -3513,7 +3513,7 @@
   },
   "char_220_grani": {
     "Title_S1": "Tăng DEF · loại γ",
-    "Title_S2": "Quyết không lùi bước!",
+    "Title_S2": "Thừa thắng xông lên!",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10737,7 +10737,7 @@
     "S2_7M3": ""
   },
   "char_509_acast": {
-    "Title_S1": "",
+    "Title_S1": "'Những thứ ta làm'",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -11094,8 +11094,8 @@
     "S3_7M3": ""
   },
   "char_609_acguad": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Lưỡi đao chớp nhoáng",
+    "Title_S2": "Rút kiếm",
     "Title_S3": "",
     "S1_1": "",
     "S1_2": "",
@@ -11129,9 +11129,9 @@
     "S3_7M3": ""
   },
   "char_610_acfend": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Ổn định kết cấu",
+    "Title_S2": "Nguyên lý bất biến",
+    "Title_S3": "Đảo chiều ứng suất",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11199,9 +11199,9 @@
     "S3_7M3": ""
   },
   "char_612_accast": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "'Những thứ ta viết'",
+    "Title_S2": "'Những thứ ta làm'",
+    "Title_S3": "'Những thứ ta lệnh'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11269,9 +11269,9 @@
     "S3_7M3": ""
   },
   "char_614_acsupo": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Hai luồng tín hiệu",
+    "Title_S2": "Tam thức",
+    "Title_S3": "Tín hiệu xung động",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11304,9 +11304,9 @@
     "S3_7M3": ""
   },
   "char_615_acspec": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Thao túng vật lý",
+    "Title_S2": "Thao túng chiến tranh",
+    "Title_S3": "Thao túng không gian",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",

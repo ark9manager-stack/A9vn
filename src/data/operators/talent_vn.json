@@ -3314,7 +3314,7 @@
     "Talent1_2": "ATK +15%; Nhận 30% né sát thương vật lý"
   },
   "char_509_acast": {
-    "TitleTalent1": "'Thấy điều ta thấy'",
+    "TitleTalent1": "'Những thứ ta thấy'",
     "Talent1": "Đòn đánh bỏ qua 15 RES của mục tiêu.",
     "Talent1_2": "Đòn đánh bỏ qua 20 RES của mục tiêu."
   },
@@ -3421,8 +3421,8 @@
     "Talent2": "Tốc độ hồi SP +0.2/giây khi không tấn công"
   },
   "char_612_accast": {
-    "TitleTalent1": "'Thấy điều ta thấy'",
-    "TitleTalent2": "'Dạy điều ta dạy'",
+    "TitleTalent1": "'Những thứ ta thấy'",
+    "TitleTalent2": "'Những thứ ta dạy'",
     "Talent0": "Đòn đánh bỏ qua 6 RES của mục tiêu.",
     "Talent1": "Đòn đánh bỏ qua 9 RES của mục tiêu.",
     "Talent1_2": "Đòn đánh bỏ qua 12 RES của mục tiêu.",
@@ -3437,7 +3437,7 @@
     "Talent2": "Nhận 5 SP khi có đồng minh bị hạ trong phạm vi tấn công"
   },
   "char_614_acsupo": {
-    "TitleTalent1": "Đồng điệu",
+    "TitleTalent1": "Đồng pha",
     "TitleTalent2": "Dẫn dụ",
     "Talent0": "ASPD +5, và đồng minh ở ô kề bên có ASPD +3",
     "Talent1": "ASPD +10, và đồng minh ở ô kề bên có ASPD +5",
