@@ -80,7 +80,7 @@
   },
   "char_1019_siege2": {
     "TitleTalent1": "Tiếng thở dài của nhà vua",
-    "TitleTalent2": "Rút kiếm ra",
+    "TitleTalent2": "Uy thế bộc lộ",
     "Talent1": "Vina và đồng minh trong 8 ô xung quanh cô giảm 12% sát thương vật lý nhận vào. Đồng thời, Vina được +3% ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_p4": "Vina và đồng minh trong 8 ô xung quanh cô giảm 14%<@ba.talpu>(+2%)</> sát thương vật lý nhận vào. Đồng thời, Vina được +4%<@ba.talpu>(+1%)</> ATK cho mỗi đồng minh đứng trong phạm vi này.",
     "Talent1_2": "Vina và đồng minh trong 8 ô xung quanh cô giảm 20% sát thương vật lý nhận vào. Đồng thời, Vina được +5% ATK cho mỗi đồng minh đứng trong phạm vi này.",
@@ -2177,7 +2177,7 @@
     "Talent2": "Kẻ địch trong phạm vi tấn công bị vô hiệu hoá [[Tàng hình|Invisible]] và giảm 30% tốc độ di chuyển. Sau khi rút lui, Ines để lại một 'Ảnh Vệ' với cùng hiệu ứng trên (tối đa 1)."
   },
   "char_4088_hodrer": {
-    "TitleTalent1": "Thừa thắng xông lên",
+    "TitleTalent1": "Thời cơ ra tay",
     "TitleTalent2": "Tàn lửa từ chiếc áo choàng",
     "Talent1": "ATK tăng lên 105% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 125%.",
     "Talent1_2": "ATK tăng lên 110% khi tấn công kẻ địch, nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK tăng thành 140%.",

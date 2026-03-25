@@ -10713,7 +10713,7 @@
     "S1_7": ""
   },
   "char_508_aguard": {
-    "Title_S1": "",
+    "Title_S1": "Rút kiếm",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -10761,7 +10761,7 @@
     "S2_7M3": ""
   },
   "char_510_amedic": {
-    "Title_S1": "",
+    "Title_S1": "Ân quang giáng lâm",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -10785,7 +10785,7 @@
     "S2_7M3": ""
   },
   "char_511_asnipe": {
-    "Title_S1": "",
+    "Title_S1": "Xoay sấp cẳng tay",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -10833,7 +10833,7 @@
     "S2_7M3": ""
   },
   "char_513_apionr": {
-    "Title_S1": "",
+    "Title_S1": "Dư hương",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -11059,9 +11059,9 @@
     "S2_7M3": ""
   },
   "char_608_acpion": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Xuyên tâm",
+    "Title_S2": "Nhanh như cắt",
+    "Title_S3": "Dư hương",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11096,7 +11096,7 @@
   "char_609_acguad": {
     "Title_S1": "Lưỡi đao chớp nhoáng",
     "Title_S2": "Rút kiếm",
-    "Title_S3": "",
+    "Title_S3": "Quyết chiến đến cùng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11164,9 +11164,9 @@
     "S3_7M3": ""
   },
   "char_611_acnipe": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Xé gió",
+    "Title_S2": "Người-Cung hợp nhất",
+    "Title_S3": "Xoay sấp cẳng tay",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11234,9 +11234,9 @@
     "S3_7M3": ""
   },
   "char_613_acmedc": {
-    "Title_S1": "",
-    "Title_S2": "",
-    "Title_S3": "",
+    "Title_S1": "Quà tặng hào phóng",
+    "Title_S2": "Ân quang giáng lâm",
+    "Title_S3": "Phúc âm chân thành",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
