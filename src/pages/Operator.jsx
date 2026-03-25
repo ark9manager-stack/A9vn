@@ -14,12 +14,18 @@ const Operator = () => {
   const [appliedFilter, setAppliedFilter] = useState({
     class: null,
     subclasses: [],
+    tags: [],
+    position: null,
+    search: "",
   });
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
   const { filteredOperators } = useOperatorFilter({
     operators,
     activeClass: appliedFilter.class,
-    activeSubClass: appliedFilter.subclasses?.[0] ?? null,
+    activeSubClass: appliedFilter.subclasses,
+    tags: appliedFilter.tags,
+    position: appliedFilter.position,
+    search: appliedFilter.search,
   });
 
   const { id: operatorIdFromUrl } = useParams();
@@ -83,15 +89,21 @@ const Operator = () => {
 
           <div className="fullpage-section">
             <div className=" w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
-                {filteredOperators.map((op) => (
-                  <OperatorCard
-                    key={op.id}
-                    operator={op}
-                    onClick={() => openOperator(op)}
-                  />
-                ))}
-              </div>
+              {filteredOperators.length === 0 ? (
+                <div className="w-full text-center text-gray-300 py-20">
+                  No operator found
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
+                  {filteredOperators.map((op) => (
+                    <OperatorCard
+                      key={op.id}
+                      operator={op}
+                      onClick={() => openOperator(op)}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

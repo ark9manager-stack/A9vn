@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { FaFilter } from "react-icons/fa";
 import { CLASSES } from "../../config/operatorConfig";
 import { useOperatorFilter } from "../../hooks/useOperatorFilter";
@@ -7,7 +7,7 @@ import { professionIconUrl } from "../../utils/operatorUtils";
 const OperatorFilter = ({ onFilterChange, operators }) => {
   const [activeClass, setActiveClass] = useState(null);
   const [activeSubClass, setActiveSubClass] = useState(null);
-  const [rarity, setRarity] = useState(null);
+  const [tags, setTags] = useState([]);
   const [position, setPosition] = useState(null);
   const [search, setSearch] = useState("");
   const [showFilter, setShowFilter] = useState(false);
@@ -16,7 +16,21 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
     operators,
     activeClass,
     activeSubClass,
+    tags,
+    position,
+    search,
   });
+
+  const availableTags = useMemo(() => {
+    const set = new Set();
+    operators?.forEach((op) => {
+      if (!Array.isArray(op.tagList)) return;
+      op.tagList.forEach((tag) => {
+        if (tag) set.add(tag);
+      });
+    });
+    return [...set].sort((a, b) => String(a).localeCompare(String(b)));
+  }, [operators]);
 
   const handleClassClick = (cls) => {
     if (activeClass === cls) {
@@ -32,17 +46,23 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
     setActiveSubClass((prev) => (prev === subclass ? null : subclass));
   };
 
+  const handleTagClick = (tag) => {
+    setTags((prev) =>
+      prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag],
+    );
+  };
+
   const handleReset = () => {
     setActiveClass(null);
     setActiveSubClass(null);
-    setRarity(null);
+    setTags([]);
     setPosition(null);
     setSearch("");
 
     onFilterChange({
       class: null,
-      subclass: null,
-      rarity: null,
+      subclasses: [],
+      tags: [],
       position: null,
       search: "",
     });
@@ -52,7 +72,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
     onFilterChange({
       class: activeClass,
       subclasses: activeSubClass ? [activeSubClass] : [],
-      rarity,
+      tags,
       position,
       search,
     });
@@ -135,17 +155,17 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
             />
           </div>
 
-          {/* ===== RARITY ===== */}
-          <div className="flex gap-2 mb-4">
-            {[0, 1, 2, 3, 4, 5].map((r) => (
+          {/* ===== TAGS ===== */}
+          <div className="flex flex-wrap gap-2 mb-4 max-h-48 overflow-y-auto">
+            {availableTags.map((tag) => (
               <button
-                key={r}
-                onClick={() => setRarity((prev) => (prev === r ? null : r))}
-                className={`px-2 py-1 rounded
-                  ${rarity === r ? "bg-yellow-500" : "bg-[#242424]"}
+                key={tag}
+                onClick={() => handleTagClick(tag)}
+                className={`px-2 py-1 rounded border border-white/20 text-xs break-words max-w-[180px]
+                  ${tags.includes(tag) ? "bg-yellow-500 text-black" : "bg-[#242424] text-gray-200"}
                 `}
               >
-                {"★".repeat(r + 1)}
+                {tag}
               </button>
             ))}
           </div>
