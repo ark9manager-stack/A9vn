@@ -1,4 +1,3 @@
-// src/hooks/useOperatorFilter.js
 import { useMemo } from "react";
 import {
   getRarityTier,
@@ -8,15 +7,33 @@ import {
   subProfLabel,
 } from "../utils/operatorUtils";
 
-export function useOperatorFilter({ operators, activeClass, activeSubClass }) {
+export function useOperatorFilter({
+  operators,
+  activeClass,
+  activeSubClass,
+  tags,
+  position,
+  search,
+}) {
+  const activeClasses = Array.isArray(activeClass)
+    ? activeClass
+    : activeClass
+      ? [activeClass]
+      : [];
+  const activeSubclasses = Array.isArray(activeSubClass)
+    ? activeSubClass
+    : activeSubClass
+      ? [activeSubClass]
+      : [];
+
   const availableSubclasses = useMemo(() => {
-    if (!activeClass) return [];
+    if (activeClasses.length === 0) return [];
 
     const set = new Set();
 
     operators.forEach((op) => {
       if (op.profession === "TRAP" || op.profession === "TOKEN") return;
-      if (op.profession !== activeClass) return;
+      if (!activeClasses.includes(op.profession)) return;
       if (op.subProfession) set.add(op.subProfession);
     });
 
@@ -29,13 +46,36 @@ export function useOperatorFilter({ operators, activeClass, activeSubClass }) {
       .sort((a, b) => a.label.localeCompare(b.label));
   }, [operators, activeClass]);
 
+  const searchTerm = search?.trim().toLowerCase();
+
   const filteredOperators = useMemo(() => {
     return operators
       .filter((op) => !["TRAP", "TOKEN"].includes(op.profession))
       .filter((op) => (activeClass ? op.profession === activeClass : true))
       .filter((op) =>
-        activeSubClass ? op.subProfession === activeSubClass : true,
+        activeSubclasses.length > 0
+          ? activeSubclasses.includes(op.subProfession)
+          : true,
       )
+      .filter((op) => {
+        if (!Array.isArray(tags) || tags.length === 0) return true;
+        const opTags = Array.isArray(op.tagList) ? op.tagList : [];
+        return tags.some((t) => opTags.includes(t));
+      })
+      .filter((op) => (position ? op.position === position : true))
+      .filter((op) => {
+        if (!searchTerm) return true;
+        const nameMatch = String(op.name || "")
+          .toLowerCase()
+          .includes(searchTerm);
+        const rawNameMatch = String(op.nameRaw || "")
+          .toLowerCase()
+          .includes(searchTerm);
+        const idMatch = String(op.id || "")
+          .toLowerCase()
+          .includes(searchTerm);
+        return nameMatch || rawNameMatch || idMatch;
+      })
       .sort((a, b) => {
         const ra = rarityRank(getRarityTier(a.rarity));
         const rb = rarityRank(getRarityTier(b.rarity));
@@ -49,7 +89,7 @@ export function useOperatorFilter({ operators, activeClass, activeSubClass }) {
 
         return String(a.name).localeCompare(String(b.name));
       });
-  }, [operators, activeClass, activeSubClass]);
+  }, [operators, activeClasses, activeSubclasses, tags, position, searchTerm]);
 
   return { availableSubclasses, filteredOperators };
 }
