@@ -495,8 +495,7 @@
     "Talent1_2_p4": "Khi triển khai, tất cả cán viên 3-sao nhận +11%<@ba.talpu>(+1%)</> ATK."
   },
   "char_131_flameb": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Huyết sát",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1001,8 +1000,7 @@
     "Talent1_2_p4": ""
   },
   "char_218_cuttle": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trực giác vực thẳm",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1041,8 +1039,7 @@
     "Talent2_p4": ""
   },
   "char_226_hmau": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trấn cửa",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1093,8 +1090,7 @@
     "Talent1_2": "Có thể sử dụng 5 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD."
   },
   "char_243_waaifu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hong Mei Vịnh Xuân Quyền",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1137,8 +1133,7 @@
     "Talent2": ""
   },
   "char_252_bibeak": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hút hồn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1150,8 +1145,7 @@
     "Talent1_2": "Khi tấn công, gây hiệu ứng <$ba.sluggish>Làm chậm</> lên mục tiêu trong 0.6 giây."
   },
   "char_254_vodfox": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Lời nguyền bại trận",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -1179,8 +1173,8 @@
     "Talent1_2": "RES +20"
   },
   "char_263_skadi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thợ săn mồi vực thẳm",
+    "TitleTalent2": "Hành động nhanh chóng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1197,8 +1191,7 @@
     "Talent2": ""
   },
   "char_265_sophia": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Quở trách",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -1227,8 +1220,7 @@
     "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +5(cộng dồn tối đa 5 lần)."
   },
   "char_275_breeze": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bảo hộ của tổ y tế",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -1244,8 +1236,7 @@
     "Talent1_lv55": "ASPD +9"
   },
   "char_279_excu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nâng cấp dứt điểm",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1343,8 +1334,7 @@
     "Talent2_p2": ""
   },
   "char_294_ayer": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hỗ trợ trinh sát",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1397,8 +1387,7 @@
     "Talent1_2_p4": ""
   },
   "char_306_leizi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Lưu thông dòng chảy",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1434,8 +1423,7 @@
     "Talent2": ""
   },
   "char_325_bison": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bảo vệ lẫn nhau",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1462,14 +1450,12 @@
     "Talent2_p4": ""
   },
   "char_333_sidero": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ý chí của lính đánh thuê",
     "Talent1_2": "Sau khi hạ được 7 kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và +15 ASPD.",
     "Talent1_2_p4": "Sau khi hạ được 5<@ba.talpu>(-2)</> kẻ địch, sẽ nhận [[Kháng hiệu ứng|StatusRes]] và +15 ASPD."
   },
   "char_336_folivo": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đội nhiếp ảnh",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -1514,21 +1500,18 @@
     "Talent1_2_p4": ""
   },
   "char_344_beewax": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sa mạc phù hộ",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_345_folnic": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kỹ thuật ngăn thuốc hấp thụ",
     "Talent1": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_346_aosta": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đinh nhọn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1573,8 +1556,7 @@
     "Talent1_2": "Khi tấn công, có 25% tỷ lệ <$ba.root>Trói chân</> mục tiêu trong vòng 3 giây."
   },
   "char_356_broca": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cường hóa mũi khoan",
     "Talent1": "ATK và DEF +6% khi chặn từ 2 kẻ địch trở lên.",
     "Talent1_p4": "ATK và DEF +8%<@ba.talpu>(+2%)</> khi chặn từ 2 kẻ địch trở lên.",
     "Talent1_2": "ATK và DEF +12% khi chặn từ 2 kẻ địch trở lên.",
@@ -1605,8 +1587,7 @@
     "Talent1_2_p4": ""
   },
   "char_365_aprl": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thợ săn lão luyện",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -1616,8 +1597,7 @@
     "Talent1_2": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 25% ATK của bản thân (tăng lên 40% ATK nếu kẻ địch ở trong 2 ô trước mặt)."
   },
   "char_367_swllow": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Xuôi gió",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -1631,8 +1611,7 @@
     "Talent1_2_p4": ""
   },
   "char_373_lionhd": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Mảnh vỡ chết người",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1664,14 +1643,12 @@
     "Talent2_p5": ""
   },
   "char_378_asbest": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Làn da ẩm ướt",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_379_sesa": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phân tích nhược điểm",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1683,8 +1660,7 @@
     "Talent1_2": "Kẻ địch tấn công Bubble sẽ bị giảm 8% ATK trong 5 giây."
   },
   "char_383_snsant": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chuyên gia bắt côn trùng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1696,8 +1672,7 @@
     "Talent1_2": "Mục tiêu được Purestream hồi phục sẽ nhận <$ba.buffres>Kháng hiệu ứng</> trong 4 giây."
   },
   "char_388_mint": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nhà địa chất",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2022,8 +1997,7 @@
     "Talent2_p2": ""
   },
   "char_405_absin": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thực thi pháp luật",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2306,7 +2280,7 @@
   },
   "char_4117_ray": {
     "TitleTalent1": "Cộng sự trinh sát",
-    "TitleTalent2": "Tập trung cực độ",
+    "TitleTalent2": "Tập trung cao độ",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
@@ -2320,8 +2294,7 @@
     "Talent1_2_p4": "+6%<@ba.talpu>(+1%)</> HP tối đa cho các cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
   },
   "char_411_tomimi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phép thuật hoang dã",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2559,8 +2532,7 @@
     "Talent1_2_p4": ""
   },
   "char_415_flint": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Outboxer",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2974,8 +2946,7 @@
     "Talent1_2_p4": ""
   },
   "char_436_whispr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tháp sinh mệnh",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3032,8 +3003,7 @@
     "Talent4": ""
   },
   "char_451_robin": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chuyên gia bẫy 'Kẹp'",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",

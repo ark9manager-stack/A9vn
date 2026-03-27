@@ -1563,7 +1563,7 @@
     "S2_7M3": ""
   },
   "char_120_hibisc": {
-    "Title_S1": "",
+    "Title_S1": "Tăng cường hồi phục · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1573,7 +1573,7 @@
     "S1_7": ""
   },
   "char_121_lava": {
-    "Title_S1": "",
+    "Title_S1": "Niệm chú tác chiến · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1583,7 +1583,7 @@
     "S1_7": ""
   },
   "char_122_beagle": {
-    "Title_S1": "",
+    "Title_S1": "Tăng DEF · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1603,7 +1603,7 @@
     "S1_7": "Lập tức nhận <@ba.vup>{cost}</> DP."
   },
   "char_124_kroos": {
-    "Title_S1": "",
+    "Title_S1": "Bắn liên xạ - Tự động",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1733,8 +1733,8 @@
     "S2_7M3": ""
   },
   "char_131_flameb": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Khế ước máu",
+    "Title_S2": "Quỷ kiếm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2709,7 +2709,7 @@
     "S2_7M3": ""
   },
   "char_192_falco": {
-    "Title_S1": "",
+    "Title_S1": "Ra đòn nhanh · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3331,7 +3331,7 @@
     "S3_7M3": ""
   },
   "char_208_melan": {
-    "Title_S1": "",
+    "Title_S1": "Tăng ATK · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3341,7 +3341,7 @@
     "S1_7": ""
   },
   "char_209_ardign": {
-    "Title_S1": "",
+    "Title_S1": "Hồi phục sinh lực · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3351,7 +3351,7 @@
     "S1_7": ""
   },
   "char_210_stward": {
-    "Title_S1": "",
+    "Title_S1": "Công kích · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3361,7 +3361,7 @@
     "S1_7": ""
   },
   "char_211_adnach": {
-    "Title_S1": "",
+    "Title_S1": "Tăng ATK · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3371,7 +3371,7 @@
     "S1_7": ""
   },
   "char_212_ansel": {
-    "Title_S1": "",
+    "Title_S1": "Hồi phục diện rộng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3464,8 +3464,8 @@
     "S2_7M3": ""
   },
   "char_218_cuttle": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Chiến thuật cầm chân",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3606,8 +3606,8 @@
     "S3_7M3": ""
   },
   "char_226_hmau": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Biện pháp ứng cứu",
+    "Title_S2": "Chế độ ứng cứu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3784,8 +3784,8 @@
     "S2_7M3": ""
   },
   "char_243_waaifu": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Nhất thốn quyền",
+    "Title_S2": "Bảy thức phá trận",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3948,8 +3948,8 @@
     "S3_7M3": ""
   },
   "char_252_bibeak": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Vũ kiếm phi châm",
+    "Title_S2": "Hoán trảm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3996,8 +3996,8 @@
     "S2_7M3": ""
   },
   "char_254_vodfox": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Vô phương cứu chữa",
+    "Title_S2": "Búp bê nguyền rủa",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4068,8 +4068,8 @@
     "S2_7M3": ""
   },
   "char_261_sddrag": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Ra đòn nhanh · loại γ",
+    "Title_S2": "Tia lửa sinh mệnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4162,8 +4162,8 @@
     "S3_7M3": ""
   },
   "char_265_sophia": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Nghệ thuật cổ vũ",
+    "Title_S2": "Kiếm roi",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4258,8 +4258,8 @@
     "S2_7M3": ""
   },
   "char_275_breeze": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tập trung hồi phục",
+    "Title_S2": "Khuếch tán hồi phục",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4306,7 +4306,7 @@
     "S2_7M3": ""
   },
   "char_278_orchid": {
-    "Title_S1": "",
+    "Title_S1": "Ra đòn nhanh · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4316,8 +4316,8 @@
     "S1_7": ""
   },
   "char_279_excu": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Siết đầu nòng súng",
+    "Title_S2": "Hành trình cuối cùng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4340,7 +4340,7 @@
     "S2_7M3": ""
   },
   "char_281_popka": {
-    "Title_S1": "",
+    "Title_S1": "Tăng ATK · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4350,7 +4350,7 @@
     "S1_7": ""
   },
   "char_282_catap": {
-    "Title_S1": "",
+    "Title_S1": "Công phá diện rộng · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4360,7 +4360,7 @@
     "S1_7": ""
   },
   "char_283_midn": {
-    "Title_S1": "",
+    "Title_S1": "Phù phép vũ khí · loại α",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4370,7 +4370,7 @@
     "S1_7": ""
   },
   "char_284_spot": {
-    "Title_S1": "",
+    "Title_S1": "Chế độ điều trị thứ cấp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4518,8 +4518,8 @@
     "S3_7M3": ""
   },
   "char_294_ayer": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đạn tán xạ",
+    "Title_S2": "Kích hoạt phi kiếm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4697,8 +4697,8 @@
     "S2_7M3": ""
   },
   "char_306_leizi": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Tiếng sấm đầu mùa",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4815,8 +4815,8 @@
     "S3_7M3": ""
   },
   "char_325_bison": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng DEF · loại γ",
+    "Title_S2": "Củng cố phòng tuyến",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4922,8 +4922,8 @@
     "S3_7M3": ""
   },
   "char_333_sidero": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hồi phục sinh lực · loại γ",
+    "Title_S2": "Dâng trào sinh lực",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4946,8 +4946,8 @@
     "S2_7M3": ""
   },
   "char_336_folivo": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Ngụy trang bảo hộ",
+    "Title_S2": "Quay chụp toàn cảnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5101,8 +5101,8 @@
     "S2_7M3": ""
   },
   "char_344_beewax": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Bão cát lan rộng",
+    "Title_S2": "Triệu hồi Obelisk",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5125,8 +5125,8 @@
     "S2_7M3": ""
   },
   "char_345_folnic": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Liều thuốc tối đa",
+    "Title_S2": "Vỏ thuốc hỗn hợp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5149,8 +5149,8 @@
     "S2_7M3": ""
   },
   "char_346_aosta": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Ra đòn nhanh · loại γ",
+    "Title_S2": "Ảnh đinh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5221,8 +5221,8 @@
     "S2_7M3": ""
   },
   "char_349_chiave": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại γ",
+    "Title_S2": "Bốc tách nộ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5304,8 +5304,8 @@
     "S2_7M3": ""
   },
   "char_356_broca": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Cấp điện",
+    "Title_S2": "Dòng điện cao áp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5422,8 +5422,8 @@
     "S2_7M3": ""
   },
   "char_365_aprl": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Phát bắn chuẩn xác",
+    "Title_S2": "Ngụy trang linh hoạt",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5470,8 +5470,8 @@
     "S2_7M3": ""
   },
   "char_367_swllow": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Vũ phi",
+    "Title_S2": "Vũ bão",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5518,8 +5518,8 @@
     "S2_7M3": ""
   },
   "char_373_lionhd": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Phân tách và kích nổ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5587,8 +5587,8 @@
     "S3_7M3": ""
   },
   "char_378_asbest": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chế độ cố thủ",
+    "Title_S2": "Chế độ nhiệt điện",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5611,8 +5611,8 @@
     "S2_7M3": ""
   },
   "char_379_sesa": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại γ",
+    "Title_S2": "Bộ kích nổ hẹn giờ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5659,8 +5659,8 @@
     "S2_7M3": ""
   },
   "char_383_snsant": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Móc kéo có ngạnh",
+    "Title_S2": "Móc phóng lưới điện",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5707,8 +5707,8 @@
     "S2_7M3": ""
   },
   "char_388_mint": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tiếng gió thì thầm",
+    "Title_S2": "Vòng xoáy hội tụ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6132,8 +6132,8 @@
     "S2_7M3": ""
   },
   "char_401_elysm": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chi viện · loại γ",
+    "Title_S2": "Bắt tín hiệu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6241,7 +6241,7 @@
   "char_4027_heyak": {
     "Title_S1": "Chỉ để tìm tòi",
     "Title_S2": "Ngàn sao lưu chuyển",
-    "Title_S3": "Lời ngông cuồng của bác học",
+    "Title_S3": "Bác học chém gió",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6783,8 +6783,8 @@
     "S3_7M3": ""
   },
   "char_405_absin": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Trạng thái thi hành",
+    "Title_S2": "Tối hậu thư",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -7333,8 +7333,8 @@
     "S3_7M3": ""
   },
   "char_4100_caper": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Công kích · loại β",
+    "Title_S2": "Gấp đôi niềm vui",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -7643,8 +7643,8 @@
     "S2_7M3": ""
   },
   "char_411_tomimi": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Bí kỹ bộ lạc",
+    "Title_S2": "Kế hoạch bảo vệ Gavial",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8376,8 +8376,8 @@
     "S2_7M3": ""
   },
   "char_415_flint": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đấm thẳng vào bụng",
+    "Title_S2": "Thể hiện tài năng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9644,8 +9644,8 @@
     "S2_7M3": ""
   },
   "char_436_whispr": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Định hướng chẩn đoán",
+    "Title_S2": "Thuốc giảm đau",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9834,8 +9834,8 @@
     "S3_7M3": ""
   },
   "char_451_robin": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Bẫy 'Kẹp' trói chân",
+    "Title_S2": "Bẫy 'Kẹp' hất văng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
