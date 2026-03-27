@@ -3320,15 +3320,13 @@
   },
   "char_601_cguard": {
     "TitleTalent1": "Tăng ATK",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ATK +4%",
+    "Talent1_2": "ATK +8%"
   },
   "char_602_cdfend": {
     "TitleTalent1": "Tăng DEF",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "DEF +5%",
+    "Talent1_2": "DEF +10%"
   },
   "char_603_csnipe": {
     "TitleTalent1": "Tăng ATK",

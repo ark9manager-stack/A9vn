@@ -1373,8 +1373,8 @@
     "S2_7M3": ""
   },
   "char_109_fmout": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Niệm chú tác chiến · loại β",
+    "Title_S2": "Định mệnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1515,8 +1515,8 @@
     "S2_7M3": ""
   },
   "char_117_myrrh": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Trị liệu đôi",
+    "Title_S2": "Vùng hồi phục",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1540,7 +1540,7 @@
   },
   "char_118_yuki": {
     "Title_S1": "",
-    "Title_S2": "",
+    "Title_S2": "Shuriken tử thần",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1613,8 +1613,8 @@
     "S1_7": ""
   },
   "char_126_shotst": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Xuyên phá",
+    "Title_S2": "Xuyên phá - Khuếch Tán",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1637,8 +1637,8 @@
     "S2_7M3": ""
   },
   "char_127_estell": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Liều mạng tấn công",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1923,8 +1923,8 @@
     "S2_7M3": ""
   },
   "char_141_nights": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Ánh mắt đỏ thẫm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2078,8 +2078,8 @@
     "S2_7M3": ""
   },
   "char_149_scave": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại β",
+    "Title_S2": "Hiệu lệnh xung phong · tấn công",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2137,8 +2137,8 @@
     "S3_7M3": ""
   },
   "char_150_snakek": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng DEF · loại β",
+    "Title_S2": "Rút vào mai rùa",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2554,8 +2554,8 @@
     "S3_7M3": "ATK <@ba.vup>+{atk:0%}</>, <@ba.vup>mở rộng</> phạm vi tấn công, <@ba.vup>[[giảm mạnh|IntervalEyjafjalla]]</> khoảng thời gian tấn công; Khi tấn công sẽ ngẫu nhiên phóng dung nham vào tối đa <@ba.vup>{attack@max_target}</> kẻ địch trong phạm vi."
   },
   "char_181_flower": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng cường hồi phục · loại β",
+    "Title_S2": "Điều hương tinh xảo",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2626,8 +2626,8 @@
     "S2_7M3": ""
   },
   "char_187_ccheal": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tiếp sinh lực",
+    "Title_S2": "Tiếp sinh lực - Diện rộng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2719,8 +2719,8 @@
     "S1_7": ""
   },
   "char_193_frostl": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chiến phủ băng sương",
+    "Title_S2": "Chiến phủ hàn băng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2791,8 +2791,8 @@
     "S2_7M3": ""
   },
   "char_196_sunbr": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Thức ăn dự trữ",
+    "Title_S2": "Chế biến lương thực",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2850,8 +2850,8 @@
     "S3_7M3": ""
   },
   "char_198_blackd": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại β",
+    "Title_S2": "Hiệu lệnh xung phong · phòng thủ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2874,8 +2874,8 @@
     "S2_7M3": ""
   },
   "char_199_yak": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng cường thể lực",
+    "Title_S2": "Thể chất chịu lạnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3678,8 +3678,8 @@
     "S2_7M3": ""
   },
   "char_236_rope": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Phóng dây móc",
+    "Title_S2": "Phóng móc kép",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3702,8 +3702,8 @@
     "S2_7M3": ""
   },
   "char_237_gravel": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tập kích bất ngờ",
+    "Title_S2": "Bầy chuột",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3726,7 +3726,7 @@
     "S2_7M3": ""
   },
   "char_240_wyvern": {
-    "Title_S1": "",
+    "Title_S1": "Hiệu lệnh xung phong · Viện trợ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4400,8 +4400,8 @@
     "S1_7": ""
   },
   "char_289_gyuki": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hồi phục sinh lực · loại β",
+    "Title_S2": "Sức mạnh của quỷ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4424,7 +4424,7 @@
     "S2_7M3": ""
   },
   "char_290_vigna": {
-    "Title_S1": "",
+    "Title_S1": "Tăng ATK · loại β",
     "Title_S2": "",
     "S1_1": "",
     "S1_2": "",
@@ -10867,8 +10867,9 @@
     "S1_7": ""
   },
   "char_600_cpione": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hiệu lệnh xung phong · loại α",
+    "Title_S2": "Hiệu lệnh xung phong · loại β",
+    "Title_S3": "Hiệu lệnh xung phong · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10891,8 +10892,9 @@
     "S2_7M3": ""
   },
   "char_601_cguard": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại α",
+    "Title_S2": "Tăng ATK · loại β",
+    "Title_S3": "Tăng ATK · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10915,8 +10917,9 @@
     "S2_7M3": ""
   },
   "char_602_cdfend": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng DEF · loại α",
+    "Title_S2": "Tăng DEF · loại β",
+    "Title_S3": "Tăng DEF · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10939,8 +10942,9 @@
     "S2_7M3": ""
   },
   "char_603_csnipe": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại α",
+    "Title_S2": "Tăng ATK · loại β",
+    "Title_S3": "Tăng ATK · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10963,8 +10967,9 @@
     "S2_7M3": ""
   },
   "char_604_ccast": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Niệm chú tác chiến · loại α",
+    "Title_S2": "Niệm chú tác chiến · loại β",
+    "Title_S3": "Niệm chú tác chiến · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10987,8 +10992,9 @@
     "S2_7M3": ""
   },
   "char_605_cmedic": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng cường hồi phục · loại α",
+    "Title_S2": "Tăng cường hồi phục · loại β",
+    "Title_S3": "Tăng cường hồi phục · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11011,8 +11017,9 @@
     "S2_7M3": ""
   },
   "char_606_csuppo": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Niệm chú tác chiến · loại α",
+    "Title_S2": "Niệm chú tác chiến · loại β",
+    "Title_S3": "Niệm chú tác chiến · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -11035,8 +11042,9 @@
     "S2_7M3": ""
   },
   "char_607_cspec": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chiến thuật thả diều · loại α",
+    "Title_S2": "Chiến thuật thả diều · loại β",
+    "Title_S3": "Chiến thuật thả diều · loại γ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
