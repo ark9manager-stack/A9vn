@@ -1397,8 +1397,8 @@
     "S2_7M3": ""
   },
   "char_110_deepcl": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Nét cọ sáng tối",
+    "Title_S2": "Đánh lừa thị giác",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1685,7 +1685,7 @@
     "S2_7M3": ""
   },
   "char_129_bluep": {
-    "Title_S1": "Bắn hai phát",
+    "Title_S1": "Hai luồng đạn",
     "Title_S2": "Phát tán nọc độc",
     "S1_1": "",
     "S1_2": "",
@@ -1757,8 +1757,8 @@
     "S2_7M3": ""
   },
   "char_133_mm": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đạn gây tê",
+    "Title_S2": "Đạn gây choáng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -1875,8 +1875,8 @@
     "S3_7M3": "ATK <@ba.vup>+{atk:0%}</>，DEF <@ba.vup>+{def:0%}</>, dùng khiên cắt tất cả kẻ địch ở ô phía trước."
   },
   "char_137_brownb": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tính linh hoạt",
+    "Title_S2": "Đấm móc lên",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2161,8 +2161,8 @@
     "S2_7M3": ""
   },
   "char_151_myrtle": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Chi viện · loại β",
+    "Title_S2": "Đôi cánh chữa lành",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2281,8 +2281,8 @@
     "S2_7M3": ""
   },
   "char_159_peacok": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Phán quyết",
+    "Title_S2": "Sáng thế",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2578,8 +2578,8 @@
     "S2_7M3": ""
   },
   "char_183_skgoat": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Hóa thành cát lún",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -2685,8 +2685,8 @@
     "S3_7M3": ""
   },
   "char_190_clour": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Bắn hai phát",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -3972,8 +3972,8 @@
     "S2_7M3": ""
   },
   "char_253_greyy": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Phù phép vũ khí · loại β",
+    "Title_S2": "Phóng tĩnh điện",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4020,8 +4020,8 @@
     "S2_7M3": ""
   },
   "char_258_podego": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Liệu pháp hương hoa",
+    "Title_S2": "Phát tán bào tử",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4044,8 +4044,8 @@
     "S2_7M3": ""
   },
   "char_260_durnar": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Bật khiên phản công",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4186,8 +4186,8 @@
     "S2_7M3": ""
   },
   "char_271_spikes": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Giỡn giỡn",
+    "Title_S2": "Trò đùa chết người",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4210,8 +4210,8 @@
     "S2_7M3": ""
   },
   "char_272_strong": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Cắt càng",
+    "Title_S2": "Sashimi tổng hợp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4282,8 +4282,8 @@
     "S2_7M3": ""
   },
   "char_277_sqrrel": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Máy bơm hơi nước",
+    "Title_S2": "Vòi rồng cao áp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4566,8 +4566,8 @@
     "S2_7M3": ""
   },
   "char_298_susuro": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng cường hồi phục · loại β",
+    "Title_S2": "Hồi phục sâu",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4625,8 +4625,8 @@
     "S3_7M3": ""
   },
   "char_301_cutter": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Dịch chuyển đỏ",
+    "Title_S2": "Lưỡi dao đỏ thẫm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4649,8 +4649,8 @@
     "S2_7M3": ""
   },
   "char_302_glaze": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đạn cản đường",
+    "Title_S2": "Quét Radar",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4863,8 +4863,8 @@
     "S2_7M3": ""
   },
   "char_328_cammou": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Tấn công đồng bộ",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -4970,8 +4970,8 @@
     "S2_7M3": ""
   },
   "char_337_utage": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Thả hồn",
+    "Title_S2": "Nhát không kích - Đột phá",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5077,8 +5077,8 @@
     "S2_7M3": ""
   },
   "char_343_tknogi": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Xóa sạch dấu vết",
+    "Title_S2": "Khu rừng che chở",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5173,8 +5173,8 @@
     "S2_7M3": ""
   },
   "char_347_jaksel": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Múc vào họng!",
+    "Title_S2": "Tập trung cao độ!",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5280,8 +5280,8 @@
     "S3_7M3": ""
   },
   "char_355_ethan": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Hoa thức xoay chuyển",
+    "Title_S2": "Thâp tự chéo",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5446,8 +5446,8 @@
     "S2_7M3": ""
   },
   "char_366_acdrop": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Phát bắn điệu nghệ",
+    "Title_S2": "Thời khắc bóp cò",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5635,8 +5635,8 @@
     "S2_7M3": ""
   },
   "char_381_bubble": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng DEF · loại β",
+    "Title_S2": "'Nhào vô đây!'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5683,8 +5683,8 @@
     "S2_7M3": ""
   },
   "char_385_finlpp": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Làn sóng chữa lành",
+    "Title_S2": "Suối nguồn sinh mệnh",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5800,8 +5800,8 @@
     "S1_7": ""
   },
   "char_4004_pudd": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Niệm chú tác chiến · loại β",
+    "Title_S2": "Lan tỏa dòng điện",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6405,8 +6405,8 @@
     "S2_7M3": ""
   },
   "char_4041_chnut": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Góp từng chút một",
+    "Title_S2": "Mạch đất trỗi dậy",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6606,8 +6606,8 @@
     "S3_7M3": ""
   },
   "char_4051_akkord": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Nghịch phách",
+    "Title_S2": "Cộng hưởng xung chấn",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6807,8 +6807,8 @@
     "S2_7M3": ""
   },
   "char_4062_totter": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Một phát xuyên trời",
+    "Title_S2": "Bắn tan quầng trời",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6831,8 +6831,8 @@
     "S2_7M3": ""
   },
   "char_4063_quartz": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Tăng ATK · loại β",
+    "Title_S2": "Vung toàn lực",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -6949,8 +6949,8 @@
     "S2_7M3": ""
   },
   "char_4067_lolxh": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Lược quang vĩ ảnh",
+    "Title_S2": "Tàn kiếm",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -7453,8 +7453,8 @@
     "S2_7M3": ""
   },
   "char_4107_vrdant": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Lá chắn xanh tươi",
+    "Title_S2": "Cây thường xuân độc hai lưỡi",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -7833,8 +7833,8 @@
     "S2_7M3": ""
   },
   "char_4130_luton": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Công kích · loại β",
+    "Title_S2": "Khiên từ trường",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -8472,8 +8472,8 @@
     "S2_7M3": ""
   },
   "char_4165_ctrail": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Cất cánh khẩn cấp",
+    "Title_S2": "Sải cánh xuất kích",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9194,8 +9194,8 @@
     "S2_7M3": ""
   },
   "char_4208_wintim": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Phân tích dữ liệu",
+    "Title_S2": "Lý giải nguyên nhân",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9703,8 +9703,8 @@
     "S3_7M3": ""
   },
   "char_440_pinecn": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Đinh RMA",
+    "Title_S2": "Quá tải điện năng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9727,8 +9727,8 @@
     "S2_7M3": ""
   },
   "char_445_wscoot": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Lấy công làm thủ",
+    "Title_S2": "Bách phát bách trúng",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -9858,8 +9858,8 @@
     "S2_7M3": ""
   },
   "char_452_bstalk": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Lệnh xuất động",
+    "Title_S2": "'Cả đám cùng lên!'",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10061,8 +10061,8 @@
     "S2_7M3": ""
   },
   "char_469_indigo": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Canh giữ hải đăng",
+    "Title_S2": "Mê cung quang ám",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10286,8 +10286,8 @@
     "S3_7M3": ""
   },
   "char_484_robrta": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Trang điểm phong cách Siracusa",
+    "Title_S2": "Máy tạo kiểu tự động",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -10441,8 +10441,8 @@
     "S2_7M3": ""
   },
   "char_491_humus": {
-    "Title_S1": "",
-    "Title_S2": "",
+    "Title_S1": "Xử lý phế thải",
+    "Title_S2": "Xử lý năng suất",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
