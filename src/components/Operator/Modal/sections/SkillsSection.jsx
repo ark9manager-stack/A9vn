@@ -1382,7 +1382,7 @@ export default function SkillsSection(props) {
 
     return (
       <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-        <div className="flex flex-col md:flex-row gap-3 md:items-start">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
           <div className="min-w-0 flex-1">
             <div className="flex items-start gap-3 min-w-0">
               <span
@@ -1410,7 +1410,7 @@ export default function SkillsSection(props) {
           </div>
 
           {hasRange ? (
-            <div className="w-full md:w-auto shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
+            <div className="shrink-0 self-center sm:self-start rounded-xl border border-white/10 bg-black/30 p-3">
               <div className="text-sm font-semibold text-white text-center mb-2">
                 Phạm vi
               </div>
