@@ -982,8 +982,7 @@
     "Talent2_p4": ""
   },
   "char_214_kafka": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đánh lạc hướng",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1467,8 +1466,7 @@
     "Talent1_2": "Khi có mặt trên sân, bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +100 ASPD (đạt mức tăng tối đa khi mất 70% HP)"
   },
   "char_338_iris": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phong ấn kho báu",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1844,8 +1842,7 @@
     "Talent2": ""
   },
   "char_402_tuye": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trữ nước",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
