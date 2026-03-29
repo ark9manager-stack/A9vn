@@ -38,8 +38,7 @@
     "Talent2_p4": "Sau khi triển khai được 12<@ba.talpu>(-3)</> giây, nhận [[Kháng hiệu ứng|StatusRes]]."
   },
   "char_1011_lava2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phòng tuyến ma thuật",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3014,8 +3013,7 @@
     "Talent1_2": "Có thể triệu hồi 'Cua Sắt' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Cua Sắt' bị hạ, sẽ tự động hồi sinh sau 15 giây."
   },
   "char_455_nothin": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đánh úp bất ngờ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3049,8 +3047,7 @@
     "Talent1_2_p4": ""
   },
   "char_459_tachak": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hỏa lực hạng nặng",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -3107,8 +3104,7 @@
     "Talent2_p4": ""
   },
   "char_475_akafyu": {
-    "TitleTalent1": "Nobukage-ryu - Hatobu",
-    "TitleTalent2": "",
+    "TitleTalent1": "",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
