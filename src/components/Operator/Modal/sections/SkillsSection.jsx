@@ -928,22 +928,52 @@ function MaterialIcon({ itemId, count }) {
   );
 }
 
-function InfoTable({ title, titleInline, titleRight, children }) {
+function InfoTable({ title, titleInline, titleRight, children, mobileStackHeaderControls = false, }) {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
-          <h3 className="text-[1.375rem] font-semibold leading-snug">
-            {title}
-          </h3>
-          {titleInline ? <div className="shrink-0">{titleInline}</div> : null}
+      {mobileStackHeaderControls ? (
+        <>
+          <div className="md:hidden">
+            <div className="flex items-center gap-3 min-w-0">
+              <h3 className="text-[1.375rem] font-semibold leading-snug">
+                {title}
+              </h3>
+            </div>
+
+            {titleInline || titleRight ? (
+              <div className="mt-3 flex items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  {titleInline}
+                </div>
+                {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
+              </div>
+            ) : null}
+          </div>
+
+          <div className="hidden md:flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <h3 className="text-[1.375rem] font-semibold leading-snug">
+                {title}
+              </h3>
+              {titleInline ? <div className="shrink-0">{titleInline}</div> : null}
+            </div>
+            {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
+          </div>
+        </>
+      ) : (
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <h3 className="text-[1.375rem] font-semibold leading-snug">
+              {title}
+            </h3>
+            {titleInline ? <div className="shrink-0">{titleInline}</div> : null}
+          </div>
+          {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
         </div>
-        {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
-      </div>
+      )}
 
       <div className="h-px bg-white/10 my-3" />
 
-      {/* Text */}
       <div className="text-[1.025rem] text-gray-300 leading-relaxed break-words">
         {children}
       </div>
@@ -1207,7 +1237,7 @@ export default function SkillsSection(props) {
   const showTalentHeaderElite = talentHeaderOptions.length > 1;
 
   const talentHeaderElite = showTalentHeaderElite ? (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap md:flex-nowrap items-center gap-2">
       {talentHeaderOptions.map((opt, idx) => {
         const active = idx === talentHeaderOptIdx;
         const src = getEliteIconLarge(opt.phaseIndex);
@@ -1245,7 +1275,7 @@ export default function SkillsSection(props) {
   const showPotPicker = availablePotRanks.length > 1;
 
   const potPicker = showPotPicker ? (
-    <div className="flex items-center gap-1">
+    <div className="flex flex-wrap md:flex-nowrap items-center gap-1">
       {availablePotRanks.map((idx0) => {
         const active = idx0 === potRank;
         return (
@@ -1352,11 +1382,14 @@ export default function SkillsSection(props) {
 
     return (
       <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-        <div className="flex items-start gap-3">
+        <div className="flex flex-col md:flex-row gap-3 md:items-start">
           <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-3 min-w-0">
-              <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-black font-semibold text-sm max-w-full">
-                <span className="truncate">{badgeText}</span>
+            <div className="flex items-start gap-3 min-w-0">
+              <span
+                className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
+                title={badgeText}
+              >
+                {badgeText}
               </span>
             </div>
 
@@ -1377,7 +1410,7 @@ export default function SkillsSection(props) {
           </div>
 
           {hasRange ? (
-            <div className="shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
+            <div className="w-full md:w-auto shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
               <div className="text-sm font-semibold text-white text-center mb-2">
                 Phạm vi
               </div>
@@ -1902,6 +1935,7 @@ export default function SkillsSection(props) {
         title="Thiên phú/Talent"
         titleInline={talentHeaderElite}
         titleRight={potPicker}
+        mobileStackHeaderControls
       >
         {talentBlocks.length > 0 ? (
           <div className="space-y-3">
