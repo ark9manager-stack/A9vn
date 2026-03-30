@@ -144,8 +144,7 @@
     "Talent2_p4": "Hiệu quả hồi phục nhận vào +25%<@ba.talpu>(+5%)</>, tăng thành +45%<@ba.talpu>(+5%)</> khi HP dưới 50%."
   },
   "char_1027_greyy2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Xích ánh sáng",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -172,8 +171,8 @@
     "Talent1_2": "Khi có mặt trong đội hình, nhận 2 DP khởi đầu."
   },
   "char_1030_noirc2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bền bỉ",
+    "TitleTalent2": "Luyện khí",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -518,7 +517,7 @@
     "Talent2_p5": "Cứ mỗi 5.5<@ba.talpu>(-0.5)</> giây sẽ hồi thêm 2 SP."
   },
   "char_135_halo": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Say mê nghiên cứu",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -624,8 +623,8 @@
     "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Tiên Phong】hồi 28<@ba.talpu>(+3)</> HP mỗi giây."
   },
   "char_154_morgan": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tiên phong nóng tính",
+    "TitleTalent2": "Lợi thế sân nhà",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -640,8 +639,8 @@
     "Talent1_2_p4": "Có 33%<@ba.talpu>(+3%)</> tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân."
   },
   "char_157_dagda": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tinh thần băng nhóm",
+    "TitleTalent2": "Tinh thần hiệp sĩ",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
@@ -1336,8 +1335,7 @@
     "Talent1_2_p4": ""
   },
   "char_297_hamoni": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vị khách bất ngờ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1477,8 +1475,7 @@
     "Talent2_p5": ""
   },
   "char_341_sntlla": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đứa con của vùng băng giá",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1706,8 +1703,7 @@
     "Talent1_2": "ATK +10%"
   },
   "char_4006_melnte": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tinh chỉnh thông số",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1755,14 +1751,12 @@
     "Talent1_2_p4": ""
   },
   "char_4014_lunacu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bản năng hoang dã",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4015_spuria": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thử nghiệm đối chiếu hiệu năng đạn dược",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -1777,7 +1771,7 @@
     "Talent1_2_p4": ""
   },
   "char_4017_puzzle": {
-    "TitleTalent1": "Trình Tự",
+    "TitleTalent1": "Trật tự",
     "Talent1": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 110% và hồi thêm 1 SP.",
     "Talent1_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 115%<@ba.talpu>(+5%)</> và hồi thêm 1 SP.",
     "Talent1_2": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 120% và hồi thêm 1 SP.",
@@ -1839,8 +1833,7 @@
     "Talent1_2_p4": ""
   },
   "char_4032_provs": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chuyên môn pháp lý Kazimierz",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1942,8 +1935,7 @@
     "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có cán viên khác sẽ nhận 3<@ba.talpu>(+1)</> DP."
   },
   "char_4054_malist": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nảy ra ý tưởng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2024,8 +2016,8 @@
     "Talent2_p4": ""
   },
   "char_4066_highmo": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bắt mồi, tiêu hóa",
+    "TitleTalent2": "Nhiễm bệnh, thấm dần",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2039,8 +2031,7 @@
     "Talent1_2": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +2 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>."
   },
   "char_4071_peper": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ưu tiên chăm sóc",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2071,8 +2062,7 @@
     "Talent0_p5": ""
   },
   "char_4078_bdhkgt": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khởi đầu nơi hoang dã",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2115,8 +2105,7 @@
     "Talent2_p2": ""
   },
   "char_4083_chimes": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Quen bước đường núi",
     "Talent1": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +15%.",
     "Talent1_p4": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +17%<@ba.talpu>(+2%)</>.",
     "Talent1_2": "HP tối đa +5%; khi HP trên 50% sẽ nhận hiệu ứng [[Sung sức|Vigor]] với ATK +20%.",
@@ -2187,32 +2176,29 @@
     "Talent1_2_p4": "Khi tấn công, có 25% tỷ lệ tăng ATK của đòn tấn công đó lên 160%<@ba.talpu>(+10%)</>."
   },
   "char_4102_threye": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tiên tri",
+    "TitleTalent2": "Ẩn dật",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": "",
     "Talent2_p4": ""
   },
   "char_4104_coldst": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chẳng chịu thua ai",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_4105_almond": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ba lô kỹ sư",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_4106_bryota": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phán đoán tình hình",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2234,8 +2220,8 @@
     "Talent1_2": ""
   },
   "char_4110_delphn": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Gột rửa lưỡi kiếm",
+    "TitleTalent2": "Quyết tâm phục thù",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3036,16 +3022,14 @@
     "Talent1_2_p4": ""
   },
   "char_464_cement": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kiểm tra bản vẽ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_466_qanik": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sinh tồn vùng đồng băng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3172,16 +3156,14 @@
     "Talent1_2_p4": ""
   },
   "char_493_firwhl": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Công thủ linh hoạt",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_494_vendla": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cải tạo đất trồng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3200,14 +3182,12 @@
     "Talent1_2_p4": "ASPD +14<@ba.talpu>(+2)</> khi không chặn kẻ địch, ATK +14%<@ba.talpu>(+2%)</> khi đang chặn kẻ địch."
   },
   "char_498_inside": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Yểm trợ hỏa lực",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_499_kaitou": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thư báo trước",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
