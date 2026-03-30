@@ -103,8 +103,7 @@
     "Talent2_p5": ""
   },
   "char_1021_kroos2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Trúng đích",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -128,8 +127,7 @@
     "Talent2_p4": ""
   },
   "char_1024_hbisc2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sớm nở chiều tàn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -521,7 +519,6 @@
   },
   "char_135_halo": {
     "TitleTalent1": "",
-    "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": ""
   },
@@ -1377,8 +1374,7 @@
     "Talent1_2_p4": "Khi tấn công mục tiêu ngoài phạm vi tấn công gốc, có 28%<@ba.talpu>(+3%)</> tỷ lệ khiến mục tiêu đó bị <$ba.stun>Choáng</> trong 2 giây."
   },
   "char_304_zebra": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Họa tiết ngụy trang",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1575,8 +1571,7 @@
     "Talent2_p4": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 6%<@ba.talpu>(+1%)</> HP tối đa mỗi giây, kéo dài 17<@ba.talpu>(+2)</> giây. Hiệu ứng này chỉ kích hoạt một lần."
   },
   "char_363_toddi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Linh cảm rực cháy",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1598,8 +1593,7 @@
     "Talent1_2": ""
   },
   "char_369_bena": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thước đo góc của Bena",
     "Talent0": "",
     "Talent1": "",
     "Talent1_p4": "",
@@ -1754,8 +1748,7 @@
     "Talent2_p4": ""
   },
   "char_4013_kjera": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khiêm nhường",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1775,8 +1768,7 @@
     "Talent1_2": ""
   },
   "char_4016_kazema": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thổi hồn vào giấy",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -1792,8 +1784,7 @@
     "Talent1_2_p4": "Khi tấn công trúng kẻ địch đang đầy HP, ATK tăng lên 125%<@ba.talpu>(+5%)</> và hồi thêm 2 SP."
   },
   "char_4019_ncdeer": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đám mây huyền ảo",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -1815,8 +1806,8 @@
     "Talent2": "Trong chế độ【Tales Within the Sand】(RA mode), mỗi khi kích hoạt kỹ năng, toàn bộ tài nguyên đang mang sẽ được chuyển vào túi đồ."
   },
   "char_4025_aprot2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chốn hoài niệm",
+    "TitleTalent2": "Điềm báo tai ương",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": "",
@@ -1856,8 +1847,7 @@
     "Talent1_2_p4": ""
   },
   "char_4036_forcer": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kỹ thuật ngắm",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1874,15 +1864,14 @@
     "Talent2_p4": ""
   },
   "char_4040_rockr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vững như bàn thạch",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_4041_chnut": {
-    "TitleTalent1": "Vững như bàn thạch",
+    "TitleTalent1": "Vững vàng trên đất",
     "Talent1": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 10% khi hồi phục cho đồng minh trên ô cận chiến.",
     "Talent1_p4": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 13%<@ba.talpu>(+3%)</> khi hồi phục cho đồng minh trên ô cận chiến.",
     "Talent1_2": "Lượng hồi phục thanh <$ba.dt.element>Hiệu ứng nguyên tố</> tăng 20% khi hồi phục cho đồng minh trên ô cận chiến.",
@@ -1897,15 +1886,14 @@
     "Talent2_p4": ""
   },
   "char_4043_erato": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khúc đàn ru ngủ",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_4045_heidi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Kẻ nổi loạn tinh anh",
+    "TitleTalent2": "Liên lạc viên mật",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1921,8 +1909,7 @@
     "Talent2_p4": ""
   },
   "char_4047_pianst": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hồi âm",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2316,7 +2303,7 @@
   },
   "char_4123_ela": {
     "TitleTalent1": "Mìn GRZMOT",
-    "TitleTalent2": "'Trúng đích'",
+    "TitleTalent2": "'Ngay giữa hồng tâm'",
     "Talent0": "",
     "Talent0_p2": "",
     "Talent1": "",
@@ -2872,15 +2859,13 @@
     "Talent1_2_p4": ""
   },
   "char_421_crow": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vào guồng",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
   },
   "char_422_aurora": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Nghỉ đông",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2923,16 +2908,14 @@
     "Talent2": ""
   },
   "char_431_ashlok": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Huấn luyện phóng bom",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_433_windft": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Sát cánh cùng nhau",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2979,8 +2962,7 @@
     "Talent1_2_p4": ""
   },
   "char_449_glider": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tinh thần cộng đồng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3028,8 +3010,8 @@
     "Talent2_p4": ""
   },
   "char_457_blitz": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cầm khiên nổ súng",
+    "TitleTalent2": "Nơi trú ẩn an toàn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3037,8 +3019,7 @@
     "Talent2": ""
   },
   "char_458_rfrost": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Welcome Mat",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -3088,8 +3069,7 @@
     "Talent2_p2": ""
   },
   "char_473_mberry": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Phụ tá",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3104,7 +3084,7 @@
     "Talent2_p4": ""
   },
   "char_475_akafyu": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Kiếm phái Nobukage - Hatobu",
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
@@ -3116,8 +3096,7 @@
     "Talent1_2": "Có thể triệu hồi 'Thú Ru Ngủ' tại Ô chiến thuật để hỗ trợ chiến đấu; Sau khi 'Thú Ru Ngủ' bị hạ, sẽ tự động hồi sinh sau 15 giây."
   },
   "char_478_kirara": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chơi solo",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3150,8 +3129,7 @@
     "Talent2_p4": ""
   },
   "char_486_takila": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Chờ đợi hành động",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3173,8 +3151,7 @@
     "Talent1_2_p4": "Sau khi được triển khai được 30 giây, HP tối đa +18%<@ba.talpu>(+3%)</>."
   },
   "char_489_serum": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Điều chỉnh chiến thuật",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -3188,8 +3165,7 @@
     "Talent1_2_p4": "Lượng HP hồi vượt mức HP tối đa sẽ được chuyển hóa thành <$ba.barrier>Lá chắn</>; và lượng <$ba.barrier>Lá chắn</> này không vượt quá 104%<@ba.talpu>(+4%)</> HP tối đa của bản thân."
   },
   "char_492_quercu": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Rừng xanh che chở",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
