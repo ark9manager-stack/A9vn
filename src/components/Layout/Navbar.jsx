@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-14 px-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-12 px-4">
         {/* Logo */}
         <NavLink
           to="/"
@@ -50,20 +50,15 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-700 bg-black/95">
+        <div className="md:hidden border-t border-gray-700 bg-black/60 backdrop-blur-xl">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               end={item.to === "/"}
               onClick={() => setMobileOpen(false)}
-              className={({ isActive }) =>
-                `block px-6 py-3 text-sm transition ${
-                  isActive
-                    ? "text-green-400 bg-[#242424]"
-                    : "text-gray-300 hover:text-white hover:bg-[#242424]"
-                }`
-              }
+              className="block px-6 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              activeClassName="text-primary bg-secondary"
             >
               {item.label}
             </NavLink>

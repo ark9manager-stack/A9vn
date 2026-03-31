@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Shield, Music, BookOpen, Database } from "lucide-react";
+import { User, Music, BookOpen, Database } from "lucide-react";
 
 const sections = [
   {
     to: "/operator",
-    icon: Shield,
+    icon: User,
     title: "Operators",
     desc: "Browse all operators, filter by class, rarity, and faction.",
   },
@@ -28,7 +28,7 @@ const sections = [
   },
 ];
 
-export default function Index() {
+export default function Home() {
   return (
     <div className="fullpage-section px-4 py-12 bg-gradient-to-br from-purple-900 via-black to-pink-900">
       <div className="text-center mb-16 animate-fade-in">
