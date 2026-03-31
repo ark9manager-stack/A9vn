@@ -110,8 +110,7 @@
     "Talent1_2_p4": ""
   },
   "char_1022_flwr2": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Bách lý hương",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1674,8 +1673,7 @@
     "Talent2": ""
   },
   "char_394_hadiya": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Hậu duệ vùng hoang dã",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -1884,7 +1882,7 @@
     "Talent1_2": ""
   },
   "char_4045_heidi": {
-    "TitleTalent1": "Kẻ nổi loạn tinh anh",
+    "TitleTalent1": "Kẻ nổi loạn tinh ranh",
     "TitleTalent2": "Liên lạc viên mật",
     "Talent1": "",
     "Talent1_p4": "",
@@ -2522,7 +2520,6 @@
   },
   "char_4166_varkis": {
     "TitleTalent1": "Khắc cốt ghi tâm",
-    "TitleTalent2": "",
     "Talent1": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 107% khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
     "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 109%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
     "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 110% khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
@@ -2538,8 +2535,7 @@
     "Talent2": ""
   },
   "char_4171_wulfen": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Đồ nghề thám hiểm",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2555,24 +2551,21 @@
     "Talent1_2_p4": ""
   },
   "char_4173_nowell": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cắt kính hoàn hảo",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_4177_brigid": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Khéo tay buộc dây",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_4178_alanna": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Độ máy tạm thời",
     "Talent0": "",
     "Talent0_p4": "",
     "Talent1": "",
@@ -2607,7 +2600,7 @@
     "Talent2_2_p4": ""
   },
   "char_4183_mortis": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Một 'cô nàng' khác",
     "TitleTalent2": "Chớ sợ cái chết",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2620,7 +2613,7 @@
     "Talent2_2": ""
   },
   "char_4184_dolris": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Mặt nạ dối trá",
     "TitleTalent2": "Chớ sợ bi thương",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2633,7 +2626,7 @@
     "Talent2_2": ""
   },
   "char_4185_amoris": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Thuận cả hai tay",
     "TitleTalent2": "Chớ sợ yêu thương",
     "Talent0": "",
     "Talent1": "",
@@ -2647,7 +2640,7 @@
     "Talent3": ""
   },
   "char_4186_tmoris": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Dân chuyên làm việc",
     "TitleTalent2": "Chớ ngại nỗi sợ",
     "Talent0": "",
     "Talent1": "",
@@ -2658,8 +2651,7 @@
     "Talent2_2_p4": ""
   },
   "char_4187_graceb": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Ơn huệ đúng lúc",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2672,7 +2664,6 @@
     "TitleTalent1_p3": "Thanh toán trước, Xưng tội sau IV",
     "TitleTalent1_p4": "Thanh toán trước, Xưng tội sau V",
     "TitleTalent1_p5": "Thanh toán trước, Xưng tội sau VI",
-    "TitleTalent2": "",
     "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 5 giây.",
     "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
     "Talent0_p2": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
@@ -2681,8 +2672,7 @@
     "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
   },
   "char_4191_tippi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Cẩm nang làm việc ở trường quay",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2715,16 +2705,14 @@
     "Talent2_p4": ""
   },
   "char_4196_reckpr": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Tích lũy tri thức",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
     "Talent1_2_p4": ""
   },
   "char_4198_christ": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Mỹ vị quyến rũ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2732,7 +2720,6 @@
   },
   "char_4199_makiri": {
     "TitleTalent1": "Chậm mà chắc",
-    "TitleTalent2": "",
     "Talent1": "Sau khi triển khai được 30 giây, tăng 5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
     "Talent1_p4": "Sau khi triển khai được 30 giây, tăng 7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
     "Talent1_2": "Sau khi triển khai được 30 giây, tăng 10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
@@ -2748,8 +2735,7 @@
     "Talent2_p4": ""
   },
   "char_4203_kichi": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vận may dồn dập!",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2765,8 +2751,7 @@
     "Talent2": ""
   },
   "char_4207_branch": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Băng bó cơ bản",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2788,8 +2773,7 @@
     "Talent2_p4": "Khi có mặt trên sân, tất cả cán viên【Kazimierz】nhận 25%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
   "char_4211_snhunt": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Vân thú vồ mồi",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2805,15 +2789,14 @@
     "Talent2_p4": ""
   },
   "char_4213_skybx": {
-    "TitleTalent1": "",
+    "TitleTalent1": "Mở cửa! Cục quản lý đây.",
     "TitleTalent2": "",
     "Talent1": "",
     "Talent1_2": "",
     "Talent2": ""
   },
   "char_4214_cairn": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
+    "TitleTalent1": "Thuyết minh quá độ",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2824,6 +2807,20 @@
     "Talent0": "",
     "Talent1": "",
     "Talent1_2": ""
+  },
+  "char_4221_ju": {
+    "TitleTalent1": "Phép tắc",
+    "Talent0": "",
+    "Talent1_2": ""
+  },
+  "char_4222_taraxa": {
+    "TitleTalent1": "Phép tắc",
+    "Talent0": "",
+    "Talent0_p4": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": ""
   },
   "char_422_aurora": {
     "TitleTalent1": "Nghỉ đông",
@@ -6698,6 +6695,14 @@
   "char_4037_demetr": {
     "TitleTalent1": "Thủ đoạn gia tộc",
     "TitleTalent2": "Trực giác đường phố",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4031_liesel": {
+    "TitleTalent1": "Tố chất nhạc trưởng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
