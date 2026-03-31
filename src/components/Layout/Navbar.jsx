@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-14 px-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-12 px-4">
         {/* Logo */}
         <NavLink
           to="/"
