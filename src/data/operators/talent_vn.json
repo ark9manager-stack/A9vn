@@ -21,11 +21,11 @@
   },
   "char_010_chen": {
     "TitleTalent1": "Khiển trách",
-    "TitleTalent2": "Kiếm thuật tác chiến",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "TitleTalent2": "Kiếm thuật",
+    "Talent1": "Khi có mặt trên sân, cứ mỗi 5 giây sẽ hồi 1 SP cho tất cả đồng minh có cơ chế kỹ năng hồi theo đòn đánh hoặc hồi khi chịu đòn.",
+    "Talent1_2": "Khi có mặt trên sân, cứ mỗi 4 giây sẽ hồi 1 SP cho tất cả đồng minh có cơ chế kỹ năng hồi theo đòn đánh hoặc hồi khi chịu đòn.",
+    "Talent2": "ATK +5%, DEF +5%, tỷ lệ né sát thương vật lý +10%.",
+    "Talent2_p4": "ATK +6%<@ba.talpu>(+1%)</>, DEF +6%<@ba.talpu>(+1%)</>, tỷ lệ né sát thương vật lý +13%<@ba.talpu>(+3%)</>."
   },
   "char_017_huang": {
     "TitleTalent1": "Khử rung tim khẩn cấp",
@@ -1167,11 +1167,11 @@
   "char_263_skadi": {
     "TitleTalent1": "Thợ săn mồi vực thẳm",
     "TitleTalent2": "Hành động nhanh chóng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +7% ATK.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +9%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +14% ATK.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +16%<@ba.talpu>(+2%)</> ATK.",
+    "Talent2": "Thời gian tái triển khai -10 giây."
   },
   "char_264_f12yin": {
     "TitleTalent1": "Nắm đấm uy lực",
@@ -1466,11 +1466,11 @@
   "char_340_shwaz": {
     "TitleTalent1": "Tên xuyên thấu",
     "TitleTalent2": "Hỏa lực chéo",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p5": ""
+    "Talent0": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 130%.",
+    "Talent1": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 130% và khiến DEF của mục tiêu -10% trong 5 giây.",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160% và khiến DEF của mục tiêu -20% trong 5 giây.",
+    "Talent2": "Khi Schwarz và có ít nhất 1 cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả cán viên【Xạ thủ】nhận +8% ATK.",
+    "Talent2_p5": "Khi Schwarz và có ít nhất 1 cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả cán viên【Xạ thủ】nhận +10%<@ba.talpu>(+2%)</> ATK."
   },
   "char_341_sntlla": {
     "TitleTalent1": "Đứa con của vùng băng giá",

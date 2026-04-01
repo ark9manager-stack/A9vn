@@ -327,6 +327,14 @@
     "title": "",
     "text": "Giảm còn 0.285 giây"
   },
+  "blackdS2": {
+    "title": "",
+    "text": "1.87 giây/1 DP"
+  },
+  "vignaS2": {
+    "title": "",
+    "text": "+0.5 giây"
+  },
   "DeadeyeModX": {
     "title": "",
     "text": "Sát thương tăng tuyến tính theo phạm vi tấn công:\n5.0%   6.2%   9.1%\n0.0%   2.1%   6.2%  10.8%\nSELF   0.0%   5.0%  10.0%  15.0%\n0.0%   2.1%   6.2%  10.8%\n5.0%   6.2%   9.1%"
