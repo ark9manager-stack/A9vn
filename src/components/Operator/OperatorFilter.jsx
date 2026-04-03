@@ -84,11 +84,15 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
     <div className="w-full">
       {/* ===== TOP BAR ===== */}
       <div className="flex items-center gap-2 mb-3">
-        {/* Search */}
         <div className="relative flex-1 max-w-sm">
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleApply();
+              }
+            }}
             placeholder="Search operators..."
             className="w-full pl-3 pr-3 py-2 rounded-md bg-white/5 border border-white/10 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400"
           />
