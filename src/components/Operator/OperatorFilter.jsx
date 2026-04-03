@@ -81,123 +81,162 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
   };
 
   return (
-    <div className="relative w-full">
-      {/* Filter Button */}
-      <button
-        className="p-2 bg-emerald-500/20 rounded-full shadow-lg hover:bg-emerald-600 transition"
-        onClick={() => setShowFilter(!showFilter)}
-      >
-        <FaFilter size={15} />
-      </button>
+    <div className="w-full">
+      {/* ===== TOP BAR ===== */}
+      <div className="flex items-center gap-2 mb-3">
+        {/* Search */}
+        <div className="relative flex-1 max-w-sm">
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search operators..."
+            className="w-full pl-3 pr-3 py-2 rounded-md bg-white/5 border border-white/10 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400"
+          />
+        </div>
 
+        {/* Toggle Filter */}
+        <button
+          onClick={() => setShowFilter(!showFilter)}
+          className={`p-2 rounded-md border transition
+          ${
+            showFilter
+              ? "bg-emerald-500/30 border-emerald-400"
+              : "bg-white/5 border-white/10 hover:bg-white/10"
+          }
+        `}
+        >
+          <FaFilter size={14} />
+        </button>
+
+        {/* Reset */}
+        {(activeClass ||
+          activeSubClass ||
+          tags.length ||
+          position ||
+          search) && (
+          <button
+            onClick={handleReset}
+            className="text-xs px-2 py-1 rounded bg-white/5 border border-white/10 hover:bg-white/10"
+          >
+            Clear
+          </button>
+        )}
+      </div>
+
+      {/* ===== FILTER PANEL ===== */}
       {showFilter && (
-        <div className="absolute top-full inset-x-0 bg-black/80 backdrop-blur-md p-4 mt-2 rounded-lg shadow-xl z-50">
-          {/* ===== MAIN CLASS ===== */}
-          <div className="flex flex-nowrap gap-2 mb-4 overflow-x-auto">
-            {CLASSES.map((cls) => (
-              <button
-                key={cls.value}
-                onClick={() => handleClassClick(cls.value)}
-                className={`p-2 rounded-md w-16 flex flex-col items-center transition
+        <div className="p-4 rounded-lg border border-white/10 bg-white/5 backdrop-blur-md space-y-4 animate-fade-in">
+          {/* ===== CLASS ===== */}
+          <div>
+            <p className="text-xs text-gray-400 mb-2">Class</p>
+            <div className="flex flex-wrap gap-2">
+              {CLASSES.map((cls) => (
+                <button
+                  key={cls.value}
+                  onClick={() => handleClassClick(cls.value)}
+                  className={`p-2 rounded-md w-19 flex items-center text-xs border transition
                   ${
                     activeClass === cls.value
-                      ? "bg-green-600"
-                      : "bg-[#242424] hover:bg-opacity-70"
+                      ? "bg-emerald-500/30 border-emerald-400 text-white gap-1"
+                      : "bg-white/5 border-white/10 hover:bg-white/10 gap-1"
                   }
                 `}
-              >
-                <img
-                  src={professionIconUrl(cls.value)}
-                  alt={cls.label}
-                  className="w-8 h-8 object-contain"
-                />
-                <span className="text-xs text-gray-300 mt-1">{cls.label}</span>
-              </button>
-            ))}
-          </div>
-
-          {/* ===== SUBCLASS ===== */}
-          {activeClass && (availableSubclasses?.length ?? 0) > 0 && (
-            <div className="flex flex-nowrap gap-2 mb-4 overflow-x-auto">
-              {availableSubclasses.map((sub) => (
-                <button
-                  key={sub.id}
-                  onClick={() => handleSubclassClick(sub.id)}
-                  className={`p-2 rounded-md w-16 flex flex-col items-center transition
-                    ${
-                      activeSubClass === sub.id
-                        ? "bg-emerald-600"
-                        : "bg-[#242424] hover:bg-opacity-70"
-                    }
-                  `}
                 >
                   <img
-                    src={sub.icon}
-                    alt={sub.label}
-                    className="w-8 h-8 object-contain"
+                    src={professionIconUrl(cls.value)}
+                    alt={cls.label}
+                    className="w-6 h-6 object-contain"
                   />
                   <span className="text-xs text-gray-300 mt-1">
-                    {sub.label}
+                    {cls.label}
                   </span>
                 </button>
               ))}
             </div>
-          )}
-
-          {/* ===== SEARCH ===== */}
-          <div className="mb-4">
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search operator name..."
-              className="w-full p-2 rounded-md bg-[#242424] text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
           </div>
 
+          {/* ===== SUBCLASS ===== */}
+          {activeClass && (availableSubclasses?.length ?? 0) > 0 && (
+            <div>
+              <p className="text-xs text-gray-400 mb-2">Subclass</p>
+              <div className="flex flex-wrap gap-2">
+                {availableSubclasses.map((sub) => (
+                  <button
+                    key={sub.id}
+                    onClick={() => handleSubclassClick(sub.id)}
+                    className={`p-2 rounded-md w-19 flex items-center text-xs border transition
+                    ${
+                      activeSubClass === sub.id
+                        ? "bg-emerald-500/30 border-emerald-400 gap-1"
+                        : "bg-white/5 border-white/10 hover:bg-white/10 gap-1"
+                    }
+                  `}
+                  >
+                    <img
+                      src={sub.icon}
+                      alt={sub.label}
+                      className="w-6 h-6 object-contain"
+                    />
+                    <span className="text-xs text-gray-300 mt-1">
+                      {sub.label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* ===== TAGS ===== */}
-          <div className="flex flex-wrap gap-2 mb-4 max-h-48 overflow-y-auto">
-            {availableTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => handleTagClick(tag)}
-                className={`px-2 py-1 rounded border border-white/20 text-xs break-words max-w-[180px]
-                  ${tags.includes(tag) ? "bg-yellow-500 text-black" : "bg-[#242424] text-gray-200"}
+          <div>
+            <p className="text-xs text-gray-400 mb-2">Tags</p>
+            <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto">
+              {availableTags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => handleTagClick(tag)}
+                  className={`px-2 py-1 text-xs rounded-md border transition
+                  ${
+                    tags.includes(tag)
+                      ? "bg-yellow-400 text-black border-yellow-300 gap-1"
+                      : "bg-white/5 border-white/10 hover:bg-white/10 gap-1"
+                  }
                 `}
-              >
-                {tag}
-              </button>
-            ))}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* ===== POSITION ===== */}
-          <div className="flex gap-2 mb-4">
-            {["MELEE", "RANGED"].map((pos) => (
-              <button
-                key={pos}
-                onClick={() =>
-                  setPosition((prev) => (prev === pos ? null : pos))
-                }
-                className={`px-3 py-1 rounded
-                  ${position === pos ? "bg-blue-500" : "bg-[#242424]"}
+          <div>
+            <p className="text-xs text-gray-400 mb-2">Position</p>
+            <div className="flex gap-2">
+              {["MELEE", "RANGED"].map((pos) => (
+                <button
+                  key={pos}
+                  onClick={() =>
+                    setPosition((prev) => (prev === pos ? null : pos))
+                  }
+                  className={`px-3 py-1 rounded-md text-xs border transition
+                  ${
+                    position === pos
+                      ? "bg-blue-500/30 border-blue-400"
+                      : "bg-white/5 border-white/10 hover:bg-white/10"
+                  }
                 `}
-              >
-                {pos}
-              </button>
-            ))}
+                >
+                  {pos}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* ===== ACTIONS ===== */}
-          <div className="flex justify-end gap-2">
-            <button
-              onClick={handleReset}
-              className="px-3 py-1 bg-gray-600 rounded"
-            >
-              Reset
-            </button>
+          {/* ===== ACTION ===== */}
+          <div className="flex justify-end gap-2 pt-2 border-t border-white/10">
             <button
               onClick={handleApply}
-              className="px-3 py-1 bg-green-600 rounded"
+              className="px-3 py-1 text-sm rounded bg-emerald-500/80 hover:bg-emerald-500"
             >
               Apply
             </button>

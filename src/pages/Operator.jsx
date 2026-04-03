@@ -3,7 +3,6 @@ import { useLocation, useParams, useNavigate } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";
 import OperatorModal from "../components/Operator/OperatorModal";
-import ScrollArea from "../components/UI/ScrollArea";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
@@ -76,14 +75,13 @@ const Operator = () => {
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
             </h1>
-
-            <OperatorFilter
-              operators={operators}
-              onFilterChange={(filterData) => {
-                setAppliedFilter(filterData);
-              }}
-            />
           </div>
+          <OperatorFilter
+            operators={operators}
+            onFilterChange={(filterData) => {
+              setAppliedFilter(filterData);
+            }}
+          />
 
           <div className="w-full border-t border-gray-600 my-4" />
 
