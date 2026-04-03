@@ -39,7 +39,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <div className="w-full h-screen bg-[#121212] text-white overflow-hidden">
         <div className="h-full">
-          <div className="flex bg-black h-screen">
+          <div className="flex h-screen">
             <main className="flex-1 overflow-y-auto overflow-x-hidden">
               <Suspense fallback={<LoadingScreen />}>
                 <Routes location={location}>

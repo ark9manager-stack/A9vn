@@ -6,15 +6,16 @@ import OperatorModal from "../components/Operator/OperatorModal";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
+import operatorBackground from "../assets/background_dark.jpg";
 
 const Operator = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [appliedFilter, setAppliedFilter] = useState({
-    class: null,
+    class: [],
     subclasses: [],
     tags: [],
-    position: null,
+    position: [],
     search: "",
   });
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
@@ -43,7 +44,7 @@ const Operator = () => {
     );
 
     if (found) setSelectedOperator(found);
-  }, [operatorIdFromUrl, operators]);
+  }, [operatorIdFromUrl, operators, setSelectedOperator]);
 
   const openOperator = (op) => {
     setSelectedOperator(op);
@@ -67,7 +68,13 @@ const Operator = () => {
   return (
     <div
       id="operator"
-      className="fullpage-section bg-gradient-to-br from-green-900 via-black to-green-900"
+      className="fullpage-section"
+      style={{
+        backgroundImage: `url(${operatorBackground})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <div className="w-full h-full">
         <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
@@ -92,7 +99,7 @@ const Operator = () => {
                   No operator found
                 </div>
               ) : (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0">
                   {filteredOperators.map((op) => (
                     <OperatorCard
                       key={op.id}

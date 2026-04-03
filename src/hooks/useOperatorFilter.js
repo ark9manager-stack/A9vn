@@ -15,16 +15,30 @@ export function useOperatorFilter({
   position,
   search,
 }) {
-  const activeClasses = Array.isArray(activeClass)
-    ? activeClass
-    : activeClass
-      ? [activeClass]
-      : [];
-  const activeSubclasses = Array.isArray(activeSubClass)
-    ? activeSubClass
-    : activeSubClass
-      ? [activeSubClass]
-      : [];
+  const activeClasses = useMemo(
+    () =>
+      Array.isArray(activeClass)
+        ? activeClass
+        : activeClass
+          ? [activeClass]
+          : [],
+    [activeClass],
+  );
+
+  const activeSubclasses = useMemo(
+    () =>
+      Array.isArray(activeSubClass)
+        ? activeSubClass
+        : activeSubClass
+          ? [activeSubClass]
+          : [],
+    [activeSubClass],
+  );
+
+  const activePositions = useMemo(
+    () => (Array.isArray(position) ? position : position ? [position] : []),
+    [position],
+  );
 
   const availableSubclasses = useMemo(() => {
     if (activeClasses.length === 0) return [];
@@ -44,14 +58,16 @@ export function useOperatorFilter({
         label: subProfLabel(id),
       }))
       .sort((a, b) => a.label.localeCompare(b.label));
-  }, [operators, activeClass]);
+  }, [operators, activeClasses]);
 
   const searchTerm = search?.trim().toLowerCase();
 
   const filteredOperators = useMemo(() => {
     return operators
       .filter((op) => !["TRAP", "TOKEN"].includes(op.profession))
-      .filter((op) => (activeClass ? op.profession === activeClass : true))
+      .filter((op) =>
+        activeClasses.length > 0 ? activeClasses.includes(op.profession) : true,
+      )
       .filter((op) =>
         activeSubclasses.length > 0
           ? activeSubclasses.includes(op.subProfession)
@@ -62,7 +78,11 @@ export function useOperatorFilter({
         const opTags = Array.isArray(op.tagList) ? op.tagList : [];
         return tags.some((t) => opTags.includes(t));
       })
-      .filter((op) => (position ? op.position === position : true))
+      .filter((op) =>
+        activePositions.length > 0
+          ? activePositions.includes(op.position)
+          : true,
+      )
       .filter((op) => {
         if (!searchTerm) return true;
         const nameMatch = String(op.name || "")
@@ -89,7 +109,14 @@ export function useOperatorFilter({
 
         return String(a.name).localeCompare(String(b.name));
       });
-  }, [operators, activeClasses, activeSubclasses, tags, position, searchTerm]);
+  }, [
+    operators,
+    activeClasses,
+    activeSubclasses,
+    activePositions,
+    tags,
+    searchTerm,
+  ]);
 
   return { availableSubclasses, filteredOperators };
 }

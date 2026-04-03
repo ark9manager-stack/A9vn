@@ -3,6 +3,11 @@ import {
   buildCnAvatarUrl,
   getOperatorCharId,
 } from "../../utils/operatorAvatar";
+import {
+  professionLabel,
+  subProfIconUrl,
+  subProfLabel,
+} from "../../utils/operatorUtils";
 
 const rarityBorderMap = {
   5: "border-orange-500 shadow-orange-500/40", // 6★
@@ -35,25 +40,6 @@ function normalizeRarityIndex(rarity) {
   return idx;
 }
 
-function getInfoGradient(tier) {
-  switch (tier) {
-    case 6:
-      return "linear-gradient(to top, rgba(255,200,0,1), rgba(255,200,0,0))";
-    case 5:
-      return "linear-gradient(to top, rgba(255,255,169,1), rgba(255,255,169,0))";
-    case 4:
-      return "linear-gradient(to top, rgba(214,197,214,1), rgba(214,197,214,0))";
-    case 3:
-      return "linear-gradient(to top, rgba(0,170,238,1), rgba(0,170,238,0))";
-    case 2:
-      return "linear-gradient(to top, rgba(220,220,0,1), rgba(220,220,0,0))";
-    case 1:
-      return "linear-gradient(to top, rgba(160,160,160,1), rgba(160,160,160,0))";
-    default:
-      return "transparent";
-  }
-}
-
 const OperatorCard = ({ operator, onClick }) => {
   const rarityIdx = useMemo(
     () => normalizeRarityIndex(operator?.rarity),
@@ -78,10 +64,12 @@ const OperatorCard = ({ operator, onClick }) => {
 
   const [avatarIdx, setAvatarIdx] = useState(0);
 
+  const avatarCandidatesKey = avatarCandidates.join("|");
+
   // reset khi operator / candidates đổi
   useEffect(() => {
     setAvatarIdx(0);
-  }, [avatarCandidates.join("|")]);
+  }, [avatarCandidatesKey]);
 
   const imgSrc = avatarCandidates[avatarIdx] || "";
 
@@ -94,44 +82,58 @@ const OperatorCard = ({ operator, onClick }) => {
     }
   };
 
-  const infoBg = useMemo(() => getInfoGradient(tier), [tier]);
-
   return (
     <div
       onClick={() => onClick?.(operator)}
-      className="cursor-pointer rounded-xl bg-[#1b1b1b] p-1 sm:p-2 transition hover:scale-[1.03]"
+      className="group cursor-pointer p-1 sm:p-2 transition hover:scale-[1.05]"
     >
-      {/* Avatar */}
-      <div
-        className={`relative rounded-[0.5rem] overflow-hidden border-2 ${rarityClass} aspect-square`}
-      >
-        {imgSrc ? (
-          <img
-            src={imgSrc}
-            alt={operator?.name || String(charId || "")}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-            draggable={false}
-            onError={handleImgError}
-            width={150} // kích thước thực tế card
-            height={150}
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-400 bg-black/30">
-            Signal Lost
-          </div>
-        )}
-      </div>
+      {/* ===== CARD ===== */}
+      <div className="ark-card p-2 text-center">
+        {/* ===== AVATAR ===== */}
+        <div
+          className={`relative mx-auto mb-2 rounded-md overflow-hidden border ${rarityClass} w-18 h-18 sm:w-20 sm:h-20`}
+        >
+          {imgSrc ? (
+            <img
+              src={imgSrc}
+              alt={operator?.name || ""}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
+              onError={handleImgError}
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-[10px] text-gray-400 bg-black/30">
+              Lost
+            </div>
+          )}
 
-      {/* Info */}
-      <div
-        className="hidden md:block mt-2 text-center rounded-[0.5rem]  px-2 py-2"
-        style={{ background: infoBg }}
-      >
-        <div className="text-white font-semibold truncate">
-          {operator?.name || String(charId || "")}
+          {/* Subclass icon overlay + main class text */}
+          <div className="absolute bottom-0 right-0 flex items-center gap-1 bg-black/70 px-1 py-0.5 rounded-tl">
+            {operator?.subProfession ? (
+              <img
+                src={subProfIconUrl(operator.subProfession)}
+                alt={subProfLabel(operator.subProfession)}
+                className="w-4 h-4 object-contain"
+                loading="lazy"
+              />
+            ) : (
+              <span className="w-4 h-4 text-[10px] text-gray-300">?</span>
+            )}
+          </div>
         </div>
+
+        {/* ===== NAME ===== */}
+        <h3 className="text-xs font-semibold text-white truncate">
+          {operator?.name}
+        </h3>
+
+        {/* ===== RARITY ===== */}
+        <p className="text-[10px] text-yellow-400">{"★".repeat(tier)}</p>
+
+        {/* ===== CLASS TEXT ===== */}
+        <p className="text-[10px] text-gray-400">
+          {professionLabel(operator?.profession)}
+        </p>
       </div>
     </div>
   );
