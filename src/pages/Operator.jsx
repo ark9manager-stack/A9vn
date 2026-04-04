@@ -6,7 +6,7 @@ import OperatorModal from "../components/Operator/OperatorModal";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
-import operatorBackground from "../assets/background_dark.jpg";
+import operatorBackground from "../assets/img_entry_anim_bg.png";
 
 const Operator = () => {
   const location = useLocation();
