@@ -1,4 +1,25 @@
 const __IMG_STATUS__ = new Map();
+const __LOCAL_ASSET_MODULES__ = import.meta.glob("../assets/assets_op/*", {
+  eager: true,
+  import: "default",
+});
+
+const __LOCAL_ASSET_BY_NAME__ = Object.fromEntries(
+  Object.entries(__LOCAL_ASSET_MODULES__).map(([path, url]) => {
+    const fileName = path.split("/").pop()?.toLowerCase?.() || "";
+    return [fileName, url];
+  }),
+);
+
+function getLocalAssetUrl(fileName) {
+  const key = String(fileName || "").trim().toLowerCase();
+  return key ? __LOCAL_ASSET_BY_NAME__[key] || "" : "";
+}
+
+function preferLocalAsset(fileName, remoteUrl) {
+  return getLocalAssetUrl(fileName) || remoteUrl;
+}
+
 const __IMG_QUEUE__ = [];
 let __IMG_ACTIVE__ = 0;
 
@@ -230,42 +251,31 @@ export function makeStatefulImgFallbackHandler({
   };
 }
 
-export const UI_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
-
-export const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
-export const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
+export const RANGE_STAND = getLocalAssetUrl("attack_range_stand.png");
+export const RANGE_ATTACK = getLocalAssetUrl("attack_range_attack.png");
 
 export const STAT_ICON = {
-  maxHp: `${UI_ICON_BASE}icon_hp.png`,
-  atk: `${UI_ICON_BASE}icon_atk.png`,
-  def: `${UI_ICON_BASE}icon_def.png`,
-  magicResistance: `${UI_ICON_BASE}icon_res.png`,
-  respawnTime: `${UI_ICON_BASE}icon_time.png`,
-  cost: `${UI_ICON_BASE}icon_cost.png`,
-  blockCnt: `${UI_ICON_BASE}icon_block.png`,
-  baseAttackTime: `${UI_ICON_BASE}icon_attack_speed.png`,
+  maxHp: getLocalAssetUrl("icon_hp.png"),
+  atk: getLocalAssetUrl("icon_atk.png"),
+  def: getLocalAssetUrl("icon_def.png"),
+  magicResistance: getLocalAssetUrl("icon_res.png"),
+  respawnTime: getLocalAssetUrl("icon_time.png"),
+  cost: getLocalAssetUrl("icon_cost.png"),
+  blockCnt: getLocalAssetUrl("icon_block.png"),
+  baseAttackTime: getLocalAssetUrl("icon_attack_speed.png"),
 };
 
-export const BATTLE_UI_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
-export const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
-
-export const ELITE_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/elite_hub/";
+export const RANGE_ATTACK_SKILL = getLocalAssetUrl("attack_range_attack_2.png");
 
 export function getEliteIconLarge(phaseIndex) {
   const i = Number(phaseIndex);
   if (!Number.isFinite(i) || i < 0) return "";
-  return `${ELITE_ICON_BASE}elite_${i}_large.png`;
+  return getLocalAssetUrl(`elite_${i}_large.png`);
 }
 
-export const POT_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/potential_hub/";
-
-export const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
+export const getPotIcon = (idx0) => getLocalAssetUrl(`potential_${idx0}.png`);
 export const getPotIconSmall = (idx1) =>
-  `${POT_ICON_BASE}potential_${idx1}_small.png`;
+  getLocalAssetUrl(`potential_${idx1}_small.png`);
 
 export const SKILL_ICON_DIR =
   "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/skills/";
@@ -279,21 +289,14 @@ export function getSkillIconUrl(skillId, iconId) {
   return `${SKILL_ICON_BASE}${key}.png`;
 }
 
-export const INIT_SP_ICON =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
-export const SP_COST_ICON =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
-
-export const LEVEL_SOLID_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/number_hub/solid_";
-export const LEVEL_SPECIALIZED_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/specialized_hub/specialized_";
+export const INIT_SP_ICON = getLocalAssetUrl("init_sp.png");
+export const SP_COST_ICON = getLocalAssetUrl("image_sp_cost_bkg.png");
 
 export function getSkillLevelIconUrl(levelNum) {
   const n = Number(levelNum);
   if (!Number.isFinite(n) || n <= 0) return "";
-  if (n <= 7) return `${LEVEL_SOLID_BASE}${n}.png`;
-  if (n <= 10) return `${LEVEL_SPECIALIZED_BASE}${n - 7}.png`;
+  if (n <= 7) return getLocalAssetUrl(`solid_${n}.png`);
+  if (n <= 10) return getLocalAssetUrl(`specialized_${n - 7}.png`);
   return "";
 }
 
@@ -325,7 +328,7 @@ function rarityToR(rarity) {
 
 export function getItemBgUrl(rarity) {
   const r = clamp(rarityToR(rarity), 1, 6);
-  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
+  return preferLocalAsset(`sprite_item_r${r}.png`, `${ITEM_BG_BASE}sprite_item_r${r}.png`);
 }
 
 export function getItemIconUrl(iconId) {
@@ -349,7 +352,7 @@ export function buildRecruitBgUrl(rarity) {
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
   const n = m ? Number(m[1]) : 1;
   const safe = Number.isFinite(n) && n >= 1 && n <= 6 ? n : 1;
-  return `${ITEM_BG_BASE}op_r${safe}.png`;
+  return preferLocalAsset(`op_r${safe}.png`, `${ITEM_BG_BASE}op_r${safe}.png`);
 }
 
 export const TOKEN_ICON_BASE_POTENTIAL =
@@ -385,8 +388,7 @@ export function buildActivityVoucherIconUrl(
 
 export const MODULE_DIR_ICON_BASE =
   "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequipdirection/";
-export const MODULE_DIR_ICON_ORIGINAL =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequiptype/original.png";
+export const MODULE_DIR_ICON_ORIGINAL = getLocalAssetUrl("original.png");
 export const MODULE_IMG_BASE =
   "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequipimg/";
 export const MODULE_LEVEL_BOARD_BASE =
@@ -396,17 +398,17 @@ export function getModuleDirIconUrl(iconKey) {
   const key = String(iconKey || "original").toLowerCase();
   return key === "original"
     ? MODULE_DIR_ICON_ORIGINAL
-    : `${MODULE_DIR_ICON_BASE}${key}.png`;
+    : preferLocalAsset(`${key}.png`, `${MODULE_DIR_ICON_BASE}${key}.png`);
 }
 
 export function getModuleLevelBoardUrl(level) {
   const lv = Number(level);
   if (!Number.isFinite(lv) || lv <= 0) return "";
-  return `${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`;
+  return preferLocalAsset(`img_stg${lv}.png`, `${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`);
 }
 
 export function getDefaultModuleImgUrl() {
-  return `${MODULE_IMG_BASE}default.png`;
+  return preferLocalAsset("default.png", `${MODULE_IMG_BASE}default.png`);
 }
 
 export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
@@ -418,8 +420,8 @@ export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
   }
 
   const arr = [];
-  if (icon) arr.push(`${MODULE_IMG_BASE}${icon}.png`);
-  if (id) arr.push(`${MODULE_IMG_BASE}${id}.png`);
+  if (icon) arr.push(preferLocalAsset(`${icon}.png`, `${MODULE_IMG_BASE}${icon}.png`));
+  if (id) arr.push(preferLocalAsset(`${id}.png`, `${MODULE_IMG_BASE}${id}.png`));
 
   const deduped = [...new Set(arr)].filter(Boolean);
   return deduped.length > 0 ? deduped : [getDefaultModuleImgUrl()];
@@ -461,10 +463,8 @@ export function makeModuleCandidateOnError({
 export const SKIN_ART_BASE =
   "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/characters";
 
-export const ICON_MODEL_URL =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_model.png";
-export const ICON_DRAWER_URL =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_drawer.png";
+export const ICON_MODEL_URL = getLocalAssetUrl("icon_model.png");
+export const ICON_DRAWER_URL = getLocalAssetUrl("icon_drawer.png");
 
 export function buildEliteArtUrl(charId, elite) {
   if (!charId) return null;
