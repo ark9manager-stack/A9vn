@@ -90,7 +90,7 @@ const Operator = () => {
             }}
           />
 
-          <div className="w-full border-t border-gray-600 my-4" />
+          <div className="w-full border-t border-gray-600 my-1" />
 
           <div className="fullpage-section">
             <div className=" w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
