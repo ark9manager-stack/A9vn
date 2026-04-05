@@ -143,7 +143,6 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
                 >
                   <img
                     src={professionIconUrl(cls.value)}
-                    alt={cls.label}
                     className="w-6 h-6 object-contain"
                   />
                   <span className="text-xs text-gray-300 mt-1">
