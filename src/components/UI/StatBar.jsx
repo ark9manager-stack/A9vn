@@ -13,7 +13,9 @@ const StatBar = ({ label, value, max, displayValue }) => {
 
   const resolvedMax = useMemo(() => {
     if (Number.isFinite(Number(max)) && Number(max) > 0) return Number(max);
-    const key = String(label || "").toUpperCase().trim();
+    const key = String(label || "")
+      .toUpperCase()
+      .trim();
     return DEFAULT_MAX_BY_LABEL[key] ?? 100;
   }, [label, max]);
 

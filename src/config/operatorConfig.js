@@ -15,14 +15,14 @@ export const CLASSES = [
 export const RARITY_ORDER = [6, 5, 4, 3, 2, 1];
 
 export const PROFESSION_ICON_MAP = {
-  PIONEER: "arts/icon/professionlarge/hub/icon_profession_pioneer.png", 
-  WARRIOR: "arts/icon/professionlarge/hub/icon_profession_warrior.png", 
-  TANK: "arts/icon/professionlarge/hub/icon_profession_tank.png", 
-  SNIPER: "arts/icon/professionlarge/hub/icon_profession_sniper.png", 
-  CASTER: "arts/icon/professionlarge/hub/icon_profession_caster.png", 
-  MEDIC: "arts/icon/professionlarge/hub/icon_profession_medic.png", 
-  SUPPORT: "prefabs/depotbuff/depot_buff_item/icon_profession_support.png", 
-  SPECIAL: "arts/icon/professionlarge/hub/icon_profession_special.png", 
+  PIONEER: "arts/icon/professionlarge/hub/icon_profession_pioneer.png",
+  WARRIOR: "arts/icon/professionlarge/hub/icon_profession_warrior.png",
+  TANK: "arts/icon/professionlarge/hub/icon_profession_tank.png",
+  SNIPER: "arts/icon/professionlarge/hub/icon_profession_sniper.png",
+  CASTER: "arts/icon/professionlarge/hub/icon_profession_caster.png",
+  MEDIC: "arts/icon/professionlarge/hub/icon_profession_medic.png",
+  SUPPORT: "prefabs/depotbuff/depot_buff_item/icon_profession_support.png",
+  SPECIAL: "arts/icon/professionlarge/hub/icon_profession_special.png",
 };
 
 export const SUBPROF_LABELS = {

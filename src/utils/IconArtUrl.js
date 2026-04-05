@@ -1,25 +1,4 @@
 const __IMG_STATUS__ = new Map();
-const __LOCAL_ASSET_MODULES__ = import.meta.glob("../assets/assets_op/*", {
-  eager: true,
-  import: "default",
-});
-
-const __LOCAL_ASSET_BY_NAME__ = Object.fromEntries(
-  Object.entries(__LOCAL_ASSET_MODULES__).map(([path, url]) => {
-    const fileName = path.split("/").pop()?.toLowerCase?.() || "";
-    return [fileName, url];
-  }),
-);
-
-function getLocalAssetUrl(fileName) {
-  const key = String(fileName || "").trim().toLowerCase();
-  return key ? __LOCAL_ASSET_BY_NAME__[key] || "" : "";
-}
-
-function preferLocalAsset(fileName, remoteUrl) {
-  return getLocalAssetUrl(fileName) || remoteUrl;
-}
-
 const __IMG_QUEUE__ = [];
 let __IMG_ACTIVE__ = 0;
 
@@ -33,7 +12,7 @@ function normalizeImgUrl(url) {
 function createImgCacheEntry(url) {
   return {
     url,
-    status: "idle",
+    status: "idle", // idle | loading | loaded | error
     promise: null,
     error: null,
     errorAt: 0,
@@ -164,7 +143,8 @@ export function preloadImageCached(
         };
 
         img.onload = () => done(true, key);
-        img.onerror = (e) => done(false, e || new Error(`image-load-failed: ${key}`));
+        img.onerror = (e) =>
+          done(false, e || new Error(`image-load-failed: ${key}`));
         img.src = key;
 
         if (img.complete && img.naturalWidth > 0) {
@@ -180,9 +160,15 @@ export function warmPreloadImageUrls(
   urls,
   { limit = 2, retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS } = {},
 ) {
-  const list = [...new Set((Array.isArray(urls) ? urls : []).map(normalizeImgUrl).filter(Boolean))];
+  const list = [
+    ...new Set(
+      (Array.isArray(urls) ? urls : []).map(normalizeImgUrl).filter(Boolean),
+    ),
+  ];
   const picked = list.slice(0, Math.max(0, Number(limit) || 0));
-  return Promise.allSettled(picked.map((url) => preloadImageCached(url, { retryAfterMs })));
+  return Promise.allSettled(
+    picked.map((url) => preloadImageCached(url, { retryAfterMs })),
+  );
 }
 
 export function imgOnErrorHideVisibility(e) {
@@ -197,18 +183,23 @@ export function imgOnErrorHideDisplay(e) {
   } catch {}
 }
 
-export function makeImgFallbackOnceHandler(getFallbackSrc, { flagAttr = "data-fallback" } = {}) {
+export function makeImgFallbackOnceHandler(
+  getFallbackSrc,
+  { flagAttr = "data-fallback" } = {},
+) {
   return (e) => {
     const img = e?.currentTarget;
     if (!img) return;
 
-    if (img?.dataset?.fallback === "1" || img?.getAttribute?.(flagAttr) === "1") return;
+    if (img?.dataset?.fallback === "1" || img?.getAttribute?.(flagAttr) === "1")
+      return;
     try {
       if (img.dataset) img.dataset.fallback = "1";
       img.setAttribute?.(flagAttr, "1");
     } catch {}
 
-    const next = typeof getFallbackSrc === "function" ? getFallbackSrc(img) : "";
+    const next =
+      typeof getFallbackSrc === "function" ? getFallbackSrc(img) : "";
     if (typeof next === "string" && next.trim()) {
       img.src = next;
     }
@@ -223,43 +214,61 @@ export function makeStatefulImgFallbackHandler({
 } = {}) {
   return () => {
     try {
-      if (!usedFallback && typeof fallbackImgUrl === "string" && fallbackImgUrl.trim()) {
+      if (
+        !usedFallback &&
+        typeof fallbackImgUrl === "string" &&
+        fallbackImgUrl.trim()
+      ) {
         setUsedFallback?.(true);
         setSrc?.(fallbackImgUrl);
         return;
       }
       setSrc?.("");
-    } catch {}
+    } catch {
+      // no-op
+    }
   };
 }
 
-export const RANGE_STAND = getLocalAssetUrl("attack_range_stand.png");
-export const RANGE_ATTACK = getLocalAssetUrl("attack_range_attack.png");
+export const UI_ICON_BASE =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/[uc]common/charattrdetail/";
+
+export const RANGE_STAND = `${UI_ICON_BASE}attack_range_stand.png`;
+export const RANGE_ATTACK = `${UI_ICON_BASE}attack_range_attack.png`;
 
 export const STAT_ICON = {
-  maxHp: getLocalAssetUrl("icon_hp.png"),
-  atk: getLocalAssetUrl("icon_atk.png"),
-  def: getLocalAssetUrl("icon_def.png"),
-  magicResistance: getLocalAssetUrl("icon_res.png"),
-  respawnTime: getLocalAssetUrl("icon_time.png"),
-  cost: getLocalAssetUrl("icon_cost.png"),
-  blockCnt: getLocalAssetUrl("icon_block.png"),
-  baseAttackTime: getLocalAssetUrl("icon_attack_speed.png"),
+  maxHp: `${UI_ICON_BASE}icon_hp.png`,
+  atk: `${UI_ICON_BASE}icon_atk.png`,
+  def: `${UI_ICON_BASE}icon_def.png`,
+  magicResistance: `${UI_ICON_BASE}icon_res.png`,
+  respawnTime: `${UI_ICON_BASE}icon_time.png`,
+  cost: `${UI_ICON_BASE}icon_cost.png`,
+  blockCnt: `${UI_ICON_BASE}icon_block.png`,
+  baseAttackTime: `${UI_ICON_BASE}icon_attack_speed.png`,
 };
 
-export const RANGE_ATTACK_SKILL = getLocalAssetUrl("attack_range_attack_2.png");
+export const BATTLE_UI_ICON_BASE =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/[uc]battlecommon/ui_battle_new/";
+export const RANGE_ATTACK_SKILL = `${BATTLE_UI_ICON_BASE}attack_range_attack.png`;
+
+export const ELITE_ICON_BASE =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/elite_hub/";
 
 export function getEliteIconLarge(phaseIndex) {
   const i = Number(phaseIndex);
   if (!Number.isFinite(i) || i < 0) return "";
-  return getLocalAssetUrl(`elite_${i}_large.png`);
+  return `${ELITE_ICON_BASE}elite_${i}_large.png`;
 }
 
-export const getPotIcon = (idx0) => getLocalAssetUrl(`potential_${idx0}.png`);
-export const getPotIconSmall = (idx1) => getLocalAssetUrl(`potential_${idx1}_small.png`);
+export const POT_ICON_BASE =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/potential_hub/";
+
+export const getPotIcon = (idx0) => `${POT_ICON_BASE}potential_${idx0}.png`;
+export const getPotIconSmall = (idx1) =>
+  `${POT_ICON_BASE}potential_${idx1}_small.png`;
 
 export const SKILL_ICON_DIR =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/skills/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/skills/";
 export const SKILL_ICON_BASE = `${SKILL_ICON_DIR}skill_icon_`;
 
 export function getSkillIconUrl(skillId, iconId) {
@@ -270,19 +279,26 @@ export function getSkillIconUrl(skillId, iconId) {
   return `${SKILL_ICON_BASE}${key}.png`;
 }
 
-export const INIT_SP_ICON = getLocalAssetUrl("init_sp.png");
-export const SP_COST_ICON = getLocalAssetUrl("image_sp_cost_bkg.png");
+export const INIT_SP_ICON =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/init_sp.png";
+export const SP_COST_ICON =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/[uc]itemrepo/page/item_repo_page/image_sp_cost_bkg.png";
+
+export const LEVEL_SOLID_BASE =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/number_hub/solid_";
+export const LEVEL_SPECIALIZED_BASE =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/specialized_hub/specialized_";
 
 export function getSkillLevelIconUrl(levelNum) {
   const n = Number(levelNum);
   if (!Number.isFinite(n) || n <= 0) return "";
-  if (n <= 7) return getLocalAssetUrl(`solid_${n}.png`);
-  if (n <= 10) return getLocalAssetUrl(`specialized_${n - 7}.png`);
+  if (n <= 7) return `${LEVEL_SOLID_BASE}${n}.png`;
+  if (n <= 10) return `${LEVEL_SPECIALIZED_BASE}${n - 7}.png`;
   return "";
 }
 
 export const BUILDING_SKILL_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/building/skills/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/building/skills/";
 
 export function getBuildingSkillIconUrl(iconKey) {
   const key = String(iconKey || "").trim();
@@ -291,9 +307,9 @@ export function getBuildingSkillIconUrl(iconKey) {
 }
 
 export const ITEM_BG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
 export const ITEM_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/items/icons/";
 
 function clamp(n, min, max) {
   const x = Number(n);
@@ -309,7 +325,7 @@ function rarityToR(rarity) {
 
 export function getItemBgUrl(rarity) {
   const r = clamp(rarityToR(rarity), 1, 6);
-  return preferLocalAsset(`sprite_item_r${r}.png`, `${ITEM_BG_BASE}sprite_item_r${r}.png`);
+  return `${ITEM_BG_BASE}sprite_item_r${r}.png`;
 }
 
 export function getItemIconUrl(iconId) {
@@ -333,13 +349,13 @@ export function buildRecruitBgUrl(rarity) {
   const m = typeof rarity === "string" ? rarity.match(/TIER_(\d+)/) : null;
   const n = m ? Number(m[1]) : 1;
   const safe = Number.isFinite(n) && n >= 1 && n <= 6 ? n : 1;
-  return preferLocalAsset(`op_r${safe}.png`, `${ITEM_BG_BASE}op_r${safe}.png`);
+  return `${ITEM_BG_BASE}op_r${safe}.png`;
 }
 
 export const TOKEN_ICON_BASE_POTENTIAL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/potential/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/items/icons/potential/";
 export const TOKEN_ICON_BASE_CLASSPOTENTIAL =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/items/icons/classpotential/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/items/icons/classpotential/";
 
 export function buildPotentialTokenIconUrl(iconId) {
   const key = String(iconId || "").trim();
@@ -351,11 +367,15 @@ export function buildClassPotentialTokenIconUrl(iconId) {
   return key ? `${TOKEN_ICON_BASE_CLASSPOTENTIAL}${key}.png` : "";
 }
 
-export function buildActivityVoucherIconUrl(activityPotentialItemId, resolvedCharId) {
+export function buildActivityVoucherIconUrl(
+  activityPotentialItemId,
+  resolvedCharId,
+) {
   const id = String(activityPotentialItemId || "").trim();
   if (!id) return "";
 
-  const useActicon = resolvedCharId === "char_4091_ulika" || id === "voucher_ulika";
+  const useActicon =
+    resolvedCharId === "char_4091_ulika" || id === "voucher_ulika";
   const base = TOKEN_ICON_BASE_CLASSPOTENTIAL.replace(
     "/classpotential/",
     useActicon ? "/acticon/" : "/",
@@ -364,28 +384,29 @@ export function buildActivityVoucherIconUrl(activityPotentialItemId, resolvedCha
 }
 
 export const MODULE_DIR_ICON_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequipdirection/";
-export const MODULE_DIR_ICON_ORIGINAL = getLocalAssetUrl("original.png");
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequipdirection/";
+export const MODULE_DIR_ICON_ORIGINAL =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequiptype/original.png";
 export const MODULE_IMG_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/ui/uniequipimg/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequipimg/";
 export const MODULE_LEVEL_BOARD_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/ui/uniequip/uniequip_level_board/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/uniequip/uniequip_level_board/";
 
 export function getModuleDirIconUrl(iconKey) {
   const key = String(iconKey || "original").toLowerCase();
   return key === "original"
     ? MODULE_DIR_ICON_ORIGINAL
-    : preferLocalAsset(`${key}.png`, `${MODULE_DIR_ICON_BASE}${key}.png`);
+    : `${MODULE_DIR_ICON_BASE}${key}.png`;
 }
 
 export function getModuleLevelBoardUrl(level) {
   const lv = Number(level);
   if (!Number.isFinite(lv) || lv <= 0) return "";
-  return preferLocalAsset(`img_stg${lv}.png`, `${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`);
+  return `${MODULE_LEVEL_BOARD_BASE}img_stg${lv}.png`;
 }
 
 export function getDefaultModuleImgUrl() {
-  return preferLocalAsset("default.png", `${MODULE_IMG_BASE}default.png`);
+  return `${MODULE_IMG_BASE}default.png`;
 }
 
 export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
@@ -397,8 +418,8 @@ export function getModuleImageCandidates(uniequipId, uniEquipIcon) {
   }
 
   const arr = [];
-  if (icon) arr.push(preferLocalAsset(`${icon}.png`, `${MODULE_IMG_BASE}${icon}.png`));
-  if (id) arr.push(preferLocalAsset(`${id}.png`, `${MODULE_IMG_BASE}${id}.png`));
+  if (icon) arr.push(`${MODULE_IMG_BASE}${icon}.png`);
+  if (id) arr.push(`${MODULE_IMG_BASE}${id}.png`);
 
   const deduped = [...new Set(arr)].filter(Boolean);
   return deduped.length > 0 ? deduped : [getDefaultModuleImgUrl()];
@@ -426,8 +447,9 @@ export function makeModuleCandidateOnError({
       setDisplayUrl?.("");
 
       const len =
-        typeof getCandidatesLength === "function" ? Number(getCandidatesLength()) : 0;
-
+        typeof getCandidatesLength === "function"
+          ? Number(getCandidatesLength())
+          : 0;
       setIndex?.((prev) => {
         const next = prev + 1;
         return next < len ? next : prev;
@@ -437,10 +459,12 @@ export function makeModuleCandidateOnError({
 }
 
 export const SKIN_ART_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/characters";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/characters";
 
-export const ICON_MODEL_URL = getLocalAssetUrl("icon_model.png");
-export const ICON_DRAWER_URL = getLocalAssetUrl("icon_drawer.png");
+export const ICON_MODEL_URL =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_model.png";
+export const ICON_DRAWER_URL =
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/%5Bpack%5Dskinres/icon_drawer.png";
 
 export function buildEliteArtUrl(charId, elite) {
   if (!charId) return null;
@@ -453,7 +477,11 @@ export function buildEliteArtUrl(charId, elite) {
   return `${SKIN_ART_BASE}/${charId}/${charId}_1.png`;
 }
 
-export function buildSkinArtUrl(charId, skinId, { forceLowerTheme = false } = {}) {
+export function buildSkinArtUrl(
+  charId,
+  skinId,
+  { forceLowerTheme = false } = {},
+) {
   if (!charId || !skinId) return null;
 
   if (typeof skinId === "string" && skinId.startsWith(`${charId}@`)) {
@@ -480,7 +508,7 @@ export function withSpSuffix(url) {
 }
 
 export const CHARAVATAR_BASE =
-  "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/cn/assets/dyn/arts/charavatars/";
+  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/charavatars/";
 
 const SUMMON_AVATAR_OVERRIDE = {
   token_10012_rosmon_shield: `${SKILL_ICON_DIR}skill_icon_sktok_rosmon.png`,
@@ -496,17 +524,40 @@ function tokenToSkillIconKey(tokenId) {
   const t = String(tokenId || "");
   if (!t.startsWith("token_")) return null;
   if (SUMMON_SKILL_ICON_OVERRIDE[t]) return SUMMON_SKILL_ICON_OVERRIDE[t];
-  return null;
+  return `skill_icon_sktok_${t.replace(/^token_\d+_/, "")}`;
 }
 
-export function buildSummonAvatarUrl(tokenId) {
-  const key = String(tokenId || "").trim();
+export function getSummonAvatarUrl(tokenId) {
+  const tid = String(tokenId || "");
+  if (!tid) return "";
+  if (SUMMON_AVATAR_OVERRIDE[tid]) return SUMMON_AVATAR_OVERRIDE[tid];
+  return `${CHARAVATAR_BASE}${tid}.png`;
+}
+
+export function getSummonSkillIconUrl(tokenId) {
+  const key = tokenToSkillIconKey(tokenId);
   if (!key) return "";
-  if (SUMMON_AVATAR_OVERRIDE[key]) return SUMMON_AVATAR_OVERRIDE[key];
-  return `${CHARAVATAR_BASE}${key}.png`;
+  return `${SKILL_ICON_DIR}${key}.png`;
 }
 
-export function buildSummonSkillIconUrl(tokenId) {
-  const skillKey = tokenToSkillIconKey(tokenId);
-  return skillKey ? `${SKILL_ICON_DIR}${skillKey}.png` : "";
+export function makeSummonSkillIconOnError(tokenId) {
+  return makeImgFallbackOnceHandler(() => getSummonAvatarUrl(tokenId));
+}
+
+export function makeSkillHeaderIconOnError({
+  url,
+  pendingUrlRef,
+  setIsLoading,
+  setSkillIconError,
+  setDisplayUrl,
+} = {}) {
+  return (e) => {
+    imgOnErrorHideVisibility(e);
+    try {
+      if (pendingUrlRef?.current !== url) return;
+      setIsLoading?.(false);
+      setSkillIconError?.(true);
+      setDisplayUrl?.("");
+    } catch {}
+  };
 }
