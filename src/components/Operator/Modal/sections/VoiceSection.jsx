@@ -394,7 +394,7 @@ const VoiceSection = ({ operator }) => {
               stopAllAudios();
               setSelectedLangType(e.target.value);
             }}
-            className="rounded-lg border border-gray-700 bg-[#111] px-3 py-2 text-base text-white outline-none"
+            className="rounded-lg border border-gray-700 bg-[#1a1a1a] px-3 py-1 text-sm text-white max-w-[220px] truncate"
           >
             {availableLangTypes.map((lt) => (
               <option key={lt} value={lt}>

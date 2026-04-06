@@ -928,7 +928,13 @@ function MaterialIcon({ itemId, count }) {
   );
 }
 
-function InfoTable({ title, titleInline, titleRight, children, mobileStackHeaderControls = false, }) {
+function InfoTable({
+  title,
+  titleInline,
+  titleRight,
+  children,
+  mobileStackHeaderControls = false,
+}) {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
       {mobileStackHeaderControls ? (
@@ -942,10 +948,10 @@ function InfoTable({ title, titleInline, titleRight, children, mobileStackHeader
 
             {titleInline || titleRight ? (
               <div className="mt-3 flex items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  {titleInline}
-                </div>
-                {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
+                <div className="min-w-0 flex-1">{titleInline}</div>
+                {titleRight ? (
+                  <div className="shrink-0">{titleRight}</div>
+                ) : null}
               </div>
             ) : null}
           </div>
@@ -955,7 +961,9 @@ function InfoTable({ title, titleInline, titleRight, children, mobileStackHeader
               <h3 className="text-[1.375rem] font-semibold leading-snug">
                 {title}
               </h3>
-              {titleInline ? <div className="shrink-0">{titleInline}</div> : null}
+              {titleInline ? (
+                <div className="shrink-0">{titleInline}</div>
+              ) : null}
             </div>
             {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
           </div>
@@ -1718,7 +1726,7 @@ export default function SkillsSection(props) {
     };
   }, [safeSkillLevelIdx, allSkillLvlup, masteryConds]);
 
-  //Kỹ năng hậu cầu
+  //Kỹ năng hậu cần
   const buildingCharEntry = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
     return (
@@ -2089,14 +2097,14 @@ export default function SkillsSection(props) {
                           <span className="text-xs text-white/70">
                             {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
                           </span>
-                          <div className="relative w-[52px] h-[28px] shrink-0">
+                          <div className="relative w-[52px] h-[38px] shrink-0">
                             <img
                               src={INIT_SP_ICON}
                               alt="init-sp"
                               className="w-full h-full object-contain"
                               draggable={false}
                             />
-                            <span className="absolute right-[7px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                            <span className="absolute right-[12px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
                               {Number(currentInitSp) || 0}
                             </span>
                           </div>
@@ -2113,7 +2121,7 @@ export default function SkillsSection(props) {
                               className="w-full h-full object-contain"
                               draggable={false}
                             />
-                            <span className="absolute right-[7px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                            <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
                               {Number(currentSpCost) || 0}
                             </span>
                           </div>
@@ -2264,7 +2272,7 @@ export default function SkillsSection(props) {
 
       {Array.isArray(activeBuildingBuffCards) &&
       activeBuildingBuffCards.length > 0 ? (
-        <InfoTable title="Kỹ năng hậu cầu" titleInline={buildingHeaderElite}>
+        <InfoTable title="Kỹ năng hậu cần" titleInline={buildingHeaderElite}>
           {/* Mode B: keep previously opened header options mounted (hidden) */}
           {buildingHeaderOptions.map((opt, optIdx) => {
             const isActive = optIdx === safeBuildingHeaderOptIdx;

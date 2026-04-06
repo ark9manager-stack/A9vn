@@ -53,7 +53,7 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   );
 
   return (
-    <div className="flex-1 h-full min-h-0 overflow-y-auto px-4 pb-4 pt-16 md:p-6">
+    <div className="flex-1 h-full min-h-0 overflow-y-auto px-4 pb-4 pt-6 md:p-6">
       {tabIds.map((id) => {
         const isActive = activeTab === id;
         return (
