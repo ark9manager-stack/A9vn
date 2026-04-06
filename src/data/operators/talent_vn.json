@@ -1117,9 +1117,9 @@
   "char_250_phatom": {
     "TitleTalent1": "Bóng ma trong gương",
     "TitleTalent2": "Đạo diễn bóng ma",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": ""
+    "Talent1": "Có thể triển khai được một bóng ma, bóng ma sở hữu các kỹ năng giống hệt Phantom và có thời gian tái triển khai độc lập.",
+    "Talent1_2": "Có thể triển khai được một bóng ma mạnh hơn, bóng ma sở hữu các kỹ năng giống hệt Phantom và có thời gian tái triển khai độc lập.",
+    "Talent2": "Thời gian tái triển khai của bóng ma -10 giây."
   },
   "char_252_bibeak": {
     "TitleTalent1": "Hút hồn",
@@ -6692,11 +6692,11 @@
   "char_4037_demetr": {
     "TitleTalent1": "Thủ đoạn gia tộc",
     "TitleTalent2": "Trực giác đường phố",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Đòn tấn công khiến mục tiêu giảm 5% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 120% sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128% sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 136%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
+    "Talent2": "Nhận 40% tỷ lệ né sát thương vật lý và phép; Sau khi triển khai, hiệu ứng này tăng lên 80% và giảm dần trong 20 giây."
   },
   "char_4031_liesel": {
     "TitleTalent1": "Tố chất nhạc trưởng",
