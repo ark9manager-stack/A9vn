@@ -99,7 +99,7 @@ const Operator = () => {
                   No operator found
                 </div>
               ) : (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-0">
                   {filteredOperators.map((op) => (
                     <OperatorCard
                       key={op.id}
