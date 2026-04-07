@@ -127,6 +127,10 @@
     "title": "Giải giới/Frighten",
     "text": "Không thể đánh thường sau khi bị chặn.\n• Có thể chặn được các kỹ năng cần kích bằng đòn đánh.\n• Có thể gián đoạn đòn đánh của kẻ địch bị chặn khi chịu hiệu ứng này."
   },
+  "ba.weaknessatk": {
+    "title": "Công kích điểm yếu/Weakpoint damage",
+    "text": "Khi gây sát thương vật lý hoặc phép, loại sát thương sẽ được chuyển đổi dựa trên DEF và RES của mục tiêu.\n• Khi bắt đầu gây sát thương, hệ thống sẽ tạm tính riêng lý thuyết của cả 2 loại sát thương dựa trên DEF và RES của mục tiêu; Trong quá trình tính chỉ xét tới ATK, ATK từ kỹ năng, ATK cộng thêm, xuyên DEF/RES, và chỉ số DEF/RES của mục tiêu, toàn bộ dữ liệu và hiệu ứng ngoài các điều kiện nêu trên đều không được tính vào.\n• Sau khi tính xong hai giá trị chênh lệch, sẽ gây loại sát thương có giá trị cao hơn (Nếu xấp xỉ bằng nhau thì sẽ không thay đổi loại sát thương đã gây ra)."
+  },
   "Shield": {
     "title": "Khiên/Shield",
     "text": "Mỗi lớp khiên có thể giúp chặn 1 lần sát thương.\n• Trừ khi có mô tả quy tắc riêng thì khiên có thể chặn được toàn bộ loại sát thương."

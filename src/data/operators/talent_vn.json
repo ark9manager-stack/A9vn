@@ -356,12 +356,12 @@
   "char_1050_chen3": {
     "TitleTalent1": "Soi xét tường tận",
     "TitleTalent2": "Trực giác chiến đấu",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "Talent1": "ATK +8%, ASPD +8, đòn tấn công chuyển thành <$ba.weaknessatk>công kích điểm yếu</>.",
+    "Talent1_p4": "ATK +11%<@ba.talpu>(+3%)</>, ASPD +11<@ba.talpu>(+3)</>, đòn tấn công chuyển thành <$ba.weaknessatk>công kích điểm yếu</>.",
+    "Talent1_2": "ATK +13%, ASPD +13, đòn tấn công chuyển thành <$ba.weaknessatk>công kích điểm yếu</>.",
+    "Talent1_2_p4": "ATK +16%<@ba.talpu>(+3%)</>, ASPD +16<@ba.talpu>(+3)</>, đòn tấn công chuyển thành <$ba.weaknessatk>công kích điểm yếu</>.",
+    "Talent2": "Khi không nhận sát thương, cứ mỗi 7 giây sẽ hồi cho bản thân một lượng HP ngẫu nhiên (bằng 30%~160% ATK), và né được đòn tấn công vật lý hoặc phép kế tiếp từ kẻ địch.",
+    "Talent2_p2": "Khi không nhận sát thương, cứ mỗi 7 giây sẽ hồi cho bản thân một lượng HP ngẫu nhiên (bằng 35%<@ba.talpu>(+5%)</>~165%<@ba.talpu>(+5%)</> ATK), và né được đòn tấn công vật lý hoặc phép kế tiếp từ kẻ địch."
   },
   "char_106_franka": {
     "TitleTalent1": "Lưỡi kiếm Thermite",
@@ -901,12 +901,12 @@
   "char_2027_wang": {
     "TitleTalent1": "Đúc nên thế cờ",
     "TitleTalent2": "Nhìn thấu nước cờ",
-    "Talent0": "Có thể sử dụng 4 quân cờ (Có thể giữ tối đa 5 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
-    "Talent0_p2": "Có thể sử dụng 5<@ba.talpu>(+1)</> quân cờ (Có thể giữ tối đa 6<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
-    "Talent1": "Có thể sử dụng 5 quân cờ (Có thể giữ tối đa 6 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 8 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
-    "Talent1_p2": "Có thể sử dụng 6<@ba.talpu>(+1)</> quân cờ (Có thể giữ tối đa 7<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
-    "Talent1_2": "Có thể sử dụng 6 quân cờ (Có thể giữ tối đa 7 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
-    "Talent1_2_p2": "Có thể sử dụng 7<@ba.talpu>(+1)</> quân cờ (Có thể giữ tối đa 8<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 10<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent0": "Có thể sử dụng 4 quân cờ (Giữ tối đa 5 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
+    "Talent0_p2": "Có thể sử dụng 5<@ba.talpu>(+1)</> quân cờ (Giữ tối đa 6<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
+    "Talent1": "Có thể sử dụng 5 quân cờ (Giữ tối đa 6 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 8 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent1_p2": "Có thể sử dụng 6<@ba.talpu>(+1)</> quân cờ (Giữ tối đa 7<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent1_2": "Có thể sử dụng 6 quân cờ (Giữ tối đa 7 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent1_2_p2": "Có thể sử dụng 7<@ba.talpu>(+1)</> quân cờ (Giữ tối đa 8<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi triển khai thủ công quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 10<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
     "Talent2": "Khi quân cờ bắt đầu hoạt động, với mỗi quân cờ nằm trên đường thẳng liền mạch với nhau sẽ giúp tất cả quân cờ cùng hàng gây thêm 10% sát thương và bỏ qua 9 RES của kẻ địch (cộng dồn tối đa 3 lần).",
     "Talent2_p4": "Khi quân cờ bắt đầu hoạt động, với mỗi quân cờ nằm trên đường thẳng liền mạch với nhau sẽ giúp tất cả quân cờ cùng hàng gây thêm 12%<@ba.talpu>(+2%)</> sát thương và bỏ qua 10<@ba.talpu>(+1)</> RES của kẻ địch (cộng dồn tối đa 3 lần)."
   },
@@ -1466,8 +1466,8 @@
     "Talent0": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 130%.",
     "Talent1": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 130% và khiến DEF của mục tiêu -10% trong 5 giây.",
     "Talent1_2": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160% và khiến DEF của mục tiêu -20% trong 5 giây.",
-    "Talent2": "Khi Schwarz và có ít nhất 1 cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả cán viên【Xạ thủ】nhận +8% ATK.",
-    "Talent2_p5": "Khi Schwarz và có ít nhất 1 cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả cán viên【Xạ thủ】nhận +10%<@ba.talpu>(+2%)</> ATK."
+    "Talent2": "Khi Schwarz và 1 cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả cán viên【Xạ thủ】nhận ATK +8%.",
+    "Talent2_p5": "Khi Schwarz và 1 cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả cán viên【Xạ thủ】nhận ATK +10%<@ba.talpu>(+2%)</>."
   },
   "char_341_sntlla": {
     "TitleTalent1": "Đứa con của vùng băng giá",
@@ -6705,5 +6705,31 @@
     "Talent1_2": "",
     "Talent1_2_p4": "",
     "Talent2": ""
+  },
+  "char_4223_botany": {
+    "TitleTalent1": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_4224_turdus": {
+    "TitleTalent1": "",
+    "Talent1": "",
+    "Talent1_p4": "",
+    "Talent1_2": "",
+    "Talent1_2_p4": "",
+    "Talent2": ""
+  },
+  "char_1051_headb2": {
+    "TitleTalent1": "Cơn giận cuộn trào",
+    "TitleTalent2": "Làn sóng dâng trào",
+    "Talent1": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
+    "Talent1_p4": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
+    "Talent1_2": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>làm chậm</> chúng 0.5 giây.",
+    "Talent1_2_p4": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>làm chậm</> chúng 0.5 giây.",
+    "Talent2": "Trong thời gian kỹ năng hoạt động, tất cả cán viên trên sân nhận ATK và DEF +14%, nhận gấp đôi nếu cán viên thuộc【Ursus Student Self-Governing Group】",
+    "Talent2_p2": "Trong thời gian kỹ năng hoạt động, tất cả cán viên trên sân nhận ATK và DEF +18%<@ba.talpu>(+4%)</>, nhận gấp đôi nếu cán viên thuộc【Ursus Student Self-Governing Group】"
   }
 }
