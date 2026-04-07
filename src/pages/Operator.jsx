@@ -77,7 +77,7 @@ const Operator = () => {
       }}
     >
       <div className="w-full h-full">
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
           <div className="w-full flex items-center mb-0 gap-4 pt-12">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Operator
@@ -99,7 +99,7 @@ const Operator = () => {
                   No operator found
                 </div>
               ) : (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-0">
                   {filteredOperators.map((op) => (
                     <OperatorCard
                       key={op.id}
