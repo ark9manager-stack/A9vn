@@ -5549,5 +5549,20 @@
     "idweb": 409,
     "name": "贝洛内",
     "name_vn": "Bellone"
+  },
+  "char_4223_botany": {
+    "idweb": 410,
+    "name": "伯塔尼",
+    "name_vn": "Botany"
+  },
+  "char_4224_turdus": {
+    "idweb": 411,
+    "name": "乌啾",
+    "name_vn": "Ukusik"
+  },
+  "char_1051_headb2": {
+    "idweb": 412,
+    "name": "怒潮凛冬",
+    "name_vn": "Zima the Raging Tide"
   }
 }
