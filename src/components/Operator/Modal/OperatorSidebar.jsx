@@ -62,7 +62,9 @@ const SidebarPanel = ({
       )}
 
       {/* Name */}
-      <h2 className={`${isMobile ? "text-lg" : "text-xl"} font-bold text-center`}>
+      <h2
+        className={`${isMobile ? "text-lg" : "text-xl"} font-bold text-center`}
+      >
         {operator?.name}
       </h2>
 
@@ -72,7 +74,9 @@ const SidebarPanel = ({
         {displayNumber ? ` | ${displayNumber}` : ""}
       </div>
 
-      <div className={`mt-3 grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 gap-4"} w-full`}>
+      <div
+        className={`mt-3 grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 gap-4"} w-full`}
+      >
         {/* Main class */}
         <div className="text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
           {profIcon ? (
@@ -287,11 +291,15 @@ const OperatorSidebar = ({
       <div className="md:hidden">
         <button
           type="button"
-          aria-label={mobileOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"}
+          aria-label={
+            mobileOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"
+          }
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((prev) => !prev)}
           className={`fixed left-3 top-3 z-[60] flex items-center gap-2 rounded-full border border-white/10 bg-[#171717]/95 px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 ${
-            mobileOpen ? "translate-x-0 opacity-100" : "translate-x-0 opacity-100"
+            mobileOpen
+              ? "translate-x-0 opacity-100"
+              : "translate-x-0 opacity-100"
           }`}
         >
           <span className="flex flex-col gap-[3px]">

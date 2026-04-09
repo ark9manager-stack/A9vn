@@ -16,6 +16,27 @@ const OperatorModal = ({ operator, onClose }) => {
         bg-[#121212] rounded-2xl shadow-2xl overflow-hidden flex
       "
       >
+        {/* Close button for mobile */}
+        <button
+          className="absolute top-4 right-4 text-white md:hidden z-10"
+          onClick={onClose}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
         {/* LEFT */}
         <OperatorSidebar
           operator={operator}
