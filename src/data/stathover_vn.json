@@ -127,9 +127,13 @@
     "title": "Giải giới/Frighten",
     "text": "Không thể đánh thường sau khi bị chặn.\n• Có thể chặn được các kỹ năng cần kích bằng đòn đánh.\n• Có thể gián đoạn đòn đánh của kẻ địch bị chặn khi chịu hiệu ứng này."
   },
+  "ba.tremble": {
+    "title": "Giải giới/Frighten",
+    "text": "Không thể đánh thường sau khi bị chặn.\n• Có thể chặn được các kỹ năng cần kích bằng đòn đánh.\n• Có thể gián đoạn đòn đánh của kẻ địch bị chặn khi chịu hiệu ứng này."
+  },
   "ba.weaknessatk": {
     "title": "Công kích điểm yếu/Weakpoint damage",
-    "text": "Khi gây sát thương vật lý hoặc phép, loại sát thương sẽ được chuyển đổi dựa trên DEF và RES của mục tiêu.\n• Khi bắt đầu gây sát thương, hệ thống sẽ tạm tính riêng lý thuyết của cả 2 loại sát thương dựa trên DEF và RES của mục tiêu; Trong quá trình tính chỉ xét tới ATK, ATK từ kỹ năng, ATK cộng thêm, xuyên DEF/RES, và chỉ số DEF/RES của mục tiêu, toàn bộ dữ liệu và hiệu ứng ngoài các điều kiện nêu trên đều không được tính vào.\n• Sau khi tính xong hai giá trị chênh lệch, sẽ gây loại sát thương có giá trị cao hơn (Nếu xấp xỉ bằng nhau thì sẽ không thay đổi loại sát thương đã gây ra)."
+    "text": "Khi gây sát thương vật lý hoặc phép, loại sát thương sẽ được chuyển đổi dựa trên DEF và RES của mục tiêu.\n• Khi bắt đầu gây sát thương, hệ thống sẽ tạm tính riêng lý thuyết của cả 2 loại sát thương dựa trên DEF và RES của mục tiêu; Trong quá trình tính chỉ xét tới ATK, hệ số ATK, ATK cộng thêm, xuyên DEF/RES, và chỉ số DEF/RES của mục tiêu, toàn bộ dữ liệu và hiệu ứng ngoài các điều kiện nêu trên đều không được tính vào.\n• Sau khi tính xong hai giá trị chênh lệch, sẽ gây loại sát thương có giá trị cao hơn (Nếu xấp xỉ bằng nhau thì sẽ không thay đổi loại sát thương đã gây ra)."
   },
   "Shield": {
     "title": "Khiên/Shield",
@@ -163,6 +167,18 @@
     "title": "Bảo hộ/Sanctuary",
     "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
+  "ba.permanentatk": {
+    "title": "Liên tục tấn công/Continuously Attack",
+    "text": "Thực hiện đòn tấn công bất kể trong phạm vi tấn công có kẻ địch hay không."
+  },
+  "ba.mujica": {
+    "title": "Ave Mujica",
+    "text": "Bao gồm: Sakiko Togawa, Umiri Yahata, Uika Misumi, Nyamu Yūtenji, Mutsumi Wakaba"
+  },
+  "ba.fever": {
+    "title": "Fever",
+    "text": "Khi Fever đạt 450 điểm, bất kỳ thành viên <$ba.mujica>Ave Mujica</> nào chủ động kích hoạt kỹ năng (không tính các kỹ năng tự động kích hoạt), toàn bộ thành viên <$ba.mujica>Ave Mujica</> trên sân sẽ liên tục tung kỹ năng trong 20 giây."
+  },
   "Vigor": {
     "title": "Sung sức/Vigor",
     "text": "Khi lượng máu cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
@@ -178,6 +194,18 @@
   "Silence": {
     "title": "Câm lặng/Silence",
     "text": "Vô hiệu hóa kỹ năng đặc biệt của mục tiêu"
+  },
+  "NecrassTalent1E0": {
+    "title": "",
+    "text": "+50% HP và ATK, +20% DEF"
+  },
+  "NecrassTalent1E1": {
+    "title": "",
+    "text": "+1 chặn, +50% HP và ATK, +20% DEF"
+  },
+  "NecrassTalent1E2": {
+    "title": "",
+    "text": "+1 chặn, +100% HP và ATK, +40% DEF"
   },
   "SlowerTrait": {
     "title": "",

@@ -247,7 +247,7 @@
     "Talent4": ""
   },
   "char_1039_thorn2": {
-    "TitleTalent1": "Tâm sinh tướng",
+    "TitleTalent1": "Bản chất tâm hồn",
     "TitleTalent2": "Tầm nhìn vươn tới",
     "Talent0": "",
     "Talent0_p4": "",
@@ -269,7 +269,7 @@
   },
   "char_1040_blaze2": {
     "TitleTalent1": "Nhiệt độ nóng chảy",
-    "TitleTalent2": "Trỗi dậy từ đống tro tàn",
+    "TitleTalent2": "Vươn lên từ đống tro tàn",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -286,43 +286,41 @@
     "Talent0_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
     "Talent1": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
     "Talent1_p4": "Khi có mặt trên sân, mỗi khi có cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của cán viên đó, gây sát thương vật lý diện rộng bằng 165%<@ba.talpu>(+15%)</> ATK của bản thân.",
-    "Talent2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +9% ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano].",
-    "Talent2_p2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với cán viên [Laterano]."
+    "Talent2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +9% ATK; hiệu ứng tăng gấp đôi đối với cán viên【Laterano】",
+    "Talent2_p2": "Khi có mặt trên sân, cán viên có kỹ năng sử dụng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với cán viên【Laterano】"
   },
   "char_1042_phatm2": {
     "TitleTalent1": "Ý chí vượt qua thể xác",
     "TitleTalent2": "Sa vào giấc mộng",
-    "Talent0": "",
-    "Talent0_p2": "",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> bằng 20% ATK, và kẻ địch xung quanh cũng sẽ chịu <$ba.dt.neural2>Nervous Impairment</> bằng 10% ATK.",
+    "Talent0_p2": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> bằng 23% ATK<@ba.talpu>(+3%)</>, và kẻ địch xung quanh cũng sẽ chịu <$ba.dt.neural2>Nervous Impairment</> bằng 13%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> bằng 25% ATK, và kẻ địch xung quanh cũng sẽ chịu <$ba.dt.neural2>Nervous Impairment</> bằng 15% ATK.",
+    "Talent1_p2": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> bằng 28% ATK<@ba.talpu>(+3%)</>, và kẻ địch xung quanh cũng sẽ chịu <$ba.dt.neural2>Nervous Impairment</> bằng 18%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1_2": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> bằng 30% ATK, và kẻ địch xung quanh cũng sẽ chịu <$ba.dt.neural2>Nervous Impairment</> bằng 20% ATK.",
+    "Talent1_2_p2": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> bằng 33% ATK<@ba.talpu>(+3%)</>, và kẻ địch xung quanh cũng sẽ chịu <$ba.dt.neural2>Nervous Impairment</> bằng 23%<@ba.talpu>(+3%)</> ATK.",
+    "Talent2": "Khi có mặt trên sân, ASPD -12 cho kẻ địch trên sân đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>; Kẻ địch trong phạm vi tấn công khi thực hiện đòn tấn công sẽ nhận 70 điểm <$ba.dt.neural2>Nervous Impairment</>.",
+    "Talent2_p4": "Khi có mặt trên sân, ASPD -16<@ba.talpu>(+4)</> cho kẻ địch trên sân đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>; Kẻ địch trong phạm vi tấn công khi thực hiện đòn tấn công sẽ nhận 70 điểm <$ba.dt.neural2>Nervous Impairment</>."
   },
   "char_1043_leizi2": {
     "TitleTalent1": "Sáng suốt",
     "TitleTalent2": "Truy cứu trách nhiệm",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": "",
-    "Talent3": ""
+    "Talent0": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 50% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt.",
+    "Talent0_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 50% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt.",
+    "Talent1": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 80% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 104% khi kích hoạt kỹ năng.",
+    "Talent1_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 80% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 108%<@ba.talpu>(+4%)</> khi kích hoạt kỹ năng.",
+    "Talent1_2": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 100% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 107% khi kích hoạt kỹ năng.",
+    "Talent1_2_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 100% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 111%<@ba.talpu>(+4%)</> khi kích hoạt kỹ năng.",
+    "Talent2": "Khi kích hoạt kỹ năng, ngay lập tức gọi sét đánh lên tất cả ô trong phạm vi tấn công, gây sát thương phép bằng 100% ATK và áp hiệu ứng <$ba.tremble>giải giới</> lên tất cả kẻ địch trong 2 giây.",
+    "Talent2_p2": "Khi kích hoạt kỹ năng, ngay lập tức gọi sét đánh lên tất cả ô trong phạm vi tấn công, gây sát thương phép bằng 100% ATK và áp hiệu ứng <$ba.tremble>giải giới</> lên tất cả kẻ địch trong 3<@ba.talpu>(+1)</> giây."
   },
   "char_1044_hsgma2": {
     "TitleTalent1": "Nghiệp hỏa",
     "TitleTalent2": "Thế đánh của quỷ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent3": ""
+    "Talent1": "Khi HP giảm về 0, tiến vào trạng thái 'Ngã chấp': Trong thời gian này, không thể nhận hồi phục từ đồng minh, sát thương nhận vào vẫn tiếp tục được tích lũy; Cô sẽ bị hạ khi lượng sát thương tích lũy đạt 100% HP tối đa. Sau 4<@ba.talpu>(-1)</> giây không nhận sát thương, sẽ hồi 5% HP mỗi giây; Khi HP lớn hơn 0, thoát khỏi trạng thái 'Ngã chấp'.",
+    "Talent1_p4": "Khi HP giảm về 0, tiến vào trạng thái 'Ngã chấp': Trong thời gian này, không thể nhận hồi phục từ đồng minh, sát thương nhận vào vẫn tiếp tục được tích lũy; Cô sẽ bị hạ khi lượng sát thương tích lũy đạt 100% HP tối đa. Sau 4<@ba.talpu>(-1)</> giây không nhận sát thương, sẽ hồi 5% HP mỗi giây; Khi HP lớn hơn 0, thoát khỏi trạng thái 'Ngã chấp'.",
+    "Talent1_2": "Khi HP giảm về 0, tiến vào trạng thái 'Ngã chấp': Trong thời gian này, không thể nhận hồi phục từ đồng minh, sát thương nhận vào vẫn tiếp tục được tích lũy; Cô sẽ bị hạ khi lượng sát thương tích lũy đạt 200% HP tối đa. Sau 5 giây không nhận sát thương, sẽ hồi 5% HP mỗi giây; Khi HP lớn hơn 0, thoát khỏi trạng thái 'Ngã chấp'.",
+    "Talent1_2_p4": "Khi HP giảm về 0, tiến vào trạng thái 'Ngã chấp': Trong thời gian này, không thể nhận hồi phục từ đồng minh, sát thương nhận vào vẫn tiếp tục được tích lũy; Cô sẽ bị hạ khi lượng sát thương tích lũy đạt 200% HP tối đa. Sau 4<@ba.talpu>(-1)</> giây không nhận sát thương, sẽ hồi 5% HP mỗi giây; Khi HP lớn hơn 0, thoát khỏi trạng thái 'Ngã chấp'.",
+    "Talent2": "Bản thân nhận hiệu ứng <$ba.berserk>kiên cường</> giúp tăng tối đa tới +50 RES và 35% ATK (đạt mức tối đa khi mất 70% HP)."
   },
   "char_1045_svash2": {
     "TitleTalent1": "Thế cờ mở",
@@ -350,8 +348,8 @@
     "TitleTalent2": "Giải tích năng lượng",
     "Talent1": "Mỗi khi gây hiệu ứng <$ba.sluggish>làm chậm</> lên kẻ địch, ASPD +1, cộng dồn tối đa 12 tầng.",
     "Talent1_2": "Mỗi khi gây hiệu ứng <$ba.sluggish>làm chậm</> lên kẻ địch, ASPD +1, cộng dồn tối đa 18 tầng.",
-    "Talent2": "Kẻ địch trong phạm vi tấn công nhận 10% <$ba.fragile>Fragile</>, hiệu ứng này tăng lên 14% nếu kẻ địch đứng trong phạm vi tấn công của bản thân quá 7 giây.",
-    "Talent2_p4": "Kẻ địch trong phạm vi tấn công nhận 12%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>, hiệu ứng này tăng lên 16%<@ba.talpu>(+2%)</> nếu kẻ địch đứng trong phạm vi tấn công của bản thân quá 7 giây."
+    "Talent2": "Kẻ địch trong phạm vi tấn công nhận 10% <$ba.fragile>Fragile</>, tăng lên 14% <$ba.fragile>Fragile</> nếu kẻ địch đứng trong phạm vi tấn công của bản thân quá 7 giây.",
+    "Talent2_p4": "Kẻ địch trong phạm vi tấn công nhận 12%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>, tăng lên 16%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</> nếu kẻ địch đứng trong phạm vi tấn công của bản thân quá 7 giây."
   },
   "char_1050_chen3": {
     "TitleTalent1": "Soi xét tường tận",
@@ -1529,10 +1527,10 @@
     "Talent1_p4": "Đòn đánh bỏ qua 14<@ba.talpu>(+2)</> RES của mục tiêu.",
     "Talent1_2": "Đòn đánh bỏ qua 20 RES của mục tiêu.",
     "Talent1_2_p4": "Đòn đánh bỏ qua 22<@ba.talpu>(+2)</> RES của mục tiêu.",
-    "Talent2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 4 giây sẽ bị cưỡng chế rút lui khỏi sân.",
-    "Talent2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 5<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút lui khỏi sân.",
-    "Talent2_2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 8 giây sẽ bị cưỡng chế rút lui khỏi sân.",
-    "Talent2_2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 9<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút lui khỏi sân."
+    "Talent2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 4 giây sẽ bị cưỡng chế rút khỏi sân.",
+    "Talent2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 5<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút khỏi sân.",
+    "Talent2_2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 8 giây sẽ bị cưỡng chế rút khỏi sân.",
+    "Talent2_2_p2": "Khi nhận sát thương chí tử, sẽ không bị hạ mà duy trì lượng HP không thấp hơn 1. Sau 9<@ba.talpu>(+1)</> giây sẽ bị cưỡng chế rút khỏi sân."
   },
   "char_355_ethan": {
     "TitleTalent1": "Trói buộc",
@@ -2573,31 +2571,31 @@
   "char_4179_monstr": {
     "TitleTalent1": "Tự vá",
     "TitleTalent2": "Phối hợp tác chiến",
-    "Talent0": "",
-    "Talent0_p2": "",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p5": "",
-    "Talent2_2": "",
-    "Talent2_2_p5": ""
+    "Talent0": "Có thể triển khai 1 'Khối tái cấu trúc' trên ô mặt đất trong phạm vi tấn công, và chỉ nhận hồi phục từ Mon3tr; Đồng minh xung quanh 'Khối tái cấu trúc' nhận ATK +3%. Khi 'Khối tái cấu trúc' nhận hồi phục từ bản thân hoặc Mon3tr, nó sẽ nảy thêm 1 lần hồi phục và không bị ảnh hưởng bởi đặc tính.",
+    "Talent0_p2": "Có thể triển khai 1 'Khối tái cấu trúc' trên ô mặt đất trong phạm vi tấn công, và chỉ nhận hồi phục từ Mon3tr; Đồng minh xung quanh 'Khối tái cấu trúc' nhận ATK +8%<@ba.talpu>(+5%)</>. Khi 'Khối tái cấu trúc' nhận hồi phục từ bản thân hoặc Mon3tr, nó sẽ nảy thêm 1 lần hồi phục và không bị ảnh hưởng bởi đặc tính.",
+    "Talent1": "Có thể triển khai 1 'Khối tái cấu trúc' trên ô mặt đất trong phạm vi tấn công, và chỉ nhận hồi phục từ Mon3tr; Đồng minh xung quanh 'Khối tái cấu trúc' nhận ATK +5%. Khi 'Khối tái cấu trúc' nhận hồi phục từ bản thân hoặc Mon3tr, nó sẽ nảy thêm 1 lần hồi phục và không bị ảnh hưởng bởi đặc tính.",
+    "Talent1_p2": "Có thể triển khai 1 'Khối tái cấu trúc' trên ô mặt đất trong phạm vi tấn công, và chỉ nhận hồi phục từ Mon3tr; Đồng minh xung quanh 'Khối tái cấu trúc' nhận ATK +10%<@ba.talpu>(+5%)</>. Khi 'Khối tái cấu trúc' nhận hồi phục từ bản thân hoặc Mon3tr, nó sẽ nảy thêm 1 lần hồi phục và không bị ảnh hưởng bởi đặc tính.",
+    "Talent1_2": "Có thể triển khai 1 'Khối tái cấu trúc' trên ô mặt đất trong phạm vi tấn công, và chỉ nhận hồi phục từ Mon3tr; Đồng minh xung quanh 'Khối tái cấu trúc' nhận ATK +15%. Khi 'Khối tái cấu trúc' nhận hồi phục từ bản thân hoặc Mon3tr, nó sẽ nảy thêm 1 lần hồi phục và không bị ảnh hưởng bởi đặc tính.",
+    "Talent1_2_p2": "Có thể triển khai 1 'Khối tái cấu trúc' trên ô mặt đất trong phạm vi tấn công, và chỉ nhận hồi phục từ Mon3tr; Đồng minh xung quanh 'Khối tái cấu trúc' nhận ATK +20%<@ba.talpu>(+5%)</>. Khi 'Khối tái cấu trúc' nhận hồi phục từ bản thân hoặc Mon3tr, nó sẽ nảy thêm 1 lần hồi phục và không bị ảnh hưởng bởi đặc tính.",
+    "Talent2": "Khi Mon3tr hoặc 'Khối tái cấu trúc' hồi phục cho mục tiêu, mục tiêu được hồi phục và Mon3tr nhận ASPD +10 trong 10 giây (không cộng dồn).",
+    "Talent2_p5": "Khi Mon3tr hoặc 'Khối tái cấu trúc' hồi phục cho mục tiêu, mục tiêu được hồi phục và Mon3tr nhận ASPD +12<@ba.talpu>(+2)</> trong 10 giây (không cộng dồn).",
+    "Talent2_2": "Khi Mon3tr hoặc 'Khối tái cấu trúc' hồi phục cho mục tiêu, mục tiêu được hồi phục và Mon3tr nhận ASPD +20 trong 10 giây (không cộng dồn).",
+    "Talent2_2_p5": "Khi Mon3tr hoặc 'Khối tái cấu trúc' hồi phục cho mục tiêu, mục tiêu được hồi phục và Mon3tr nhận ASPD +22<@ba.talpu>(+2)</> trong 10 giây (không cộng dồn)."
   },
   "char_4182_oblvns": {
-    "TitleTalent1": "Nốt nhạc hoan ca",
+    "TitleTalent1": "Nốt hoan ca",
     "TitleTalent2": "Chớ sợ lãng quên",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_1": "",
-    "Talent2_1_p4": "",
-    "Talent2_2": "",
-    "Talent2_2_p4": ""
+    "Talent0": "Togawa Sakiko có thể <$ba.permanentatk>liên tục tấn công</>; Các đòn tấn công sẽ diễn tấu ra những nốt nhạc truy đuổi kẻ địch và biến mất sau khi rời khỏi phạm vi tấn công của bản thân 1 giây.",
+    "Talent1": "Togawa Sakiko có thể <$ba.permanentatk>liên tục tấn công</>; Các đòn tấn công sẽ diễn tấu ra những nốt nhạc truy đuổi kẻ địch và biến mất sau khi rời khỏi phạm vi tấn công của bản thân 1 giây. Mỗi nốt nhạc tồn tại trên sân giúp các thành viên <$ba.mujica>Ave Mujica</> bỏ qua 2.5% DEF và 1.5% RES của kẻ địch (cộng dồn tối đa 10 lần).",
+    "Talent1_2": "Togawa Sakiko có thể <$ba.permanentatk>liên tục tấn công</>; Các đòn tấn công sẽ diễn tấu ra những nốt nhạc truy đuổi kẻ địch và biến mất sau khi rời khỏi phạm vi tấn công của bản thân 1 giây. Mỗi nốt nhạc tồn tại trên sân giúp các thành viên <$ba.mujica>Ave Mujica</> bỏ qua 3% DEF và 2% RES của kẻ địch (cộng dồn tối đa 10 lần).",
+    "Talent2": "<$ba.fever>Fever</> +1 khi gây sát thương cho kẻ địch.",
+    "Talent2_1": "<$ba.fever>Fever</> +2 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +5.",
+    "Talent2_1_p4": "<$ba.fever>Fever</> +2 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +9<@ba.talpu>(+4)</>.",
+    "Talent2_2": "<$ba.fever>Fever</> +3 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +12.",
+    "Talent2_2_p4": "<$ba.fever>Fever</> +3 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +16<@ba.talpu>(+4)</>."
   },
   "char_4183_mortis": {
-    "TitleTalent1": "Một 'cô nàng' khác",
+    "TitleTalent1": "'Cô nàng' khác",
     "TitleTalent2": "Chớ sợ cái chết",
     "Talent0": "",
     "Talent0_p4": "",
@@ -2678,28 +2676,28 @@
   "char_4193_lemuen": {
     "TitleTalent1": "Lệnh truy bắt xuyên biên giới",
     "TitleTalent2": "Thủ tục bàn giao tội phạm vượt ngục",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của cán viên Laterano quá 10 giây sẽ bị gán Truy nã. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1_p4": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của cán viên Laterano quá 8<@ba.talpu>(-2)</> giây sẽ bị gán Truy nã. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1_2": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của cán viên Laterano quá 8 giây sẽ bị gán Truy nã; Kẻ địch mang ấn Truy nã sẽ phải chịu thêm 15% sát thương từ cán viên Laterano. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1_2_p4": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của cán viên Laterano quá 6<@ba.talpu>(-2)</> giây sẽ bị gán Truy nã; Kẻ địch mang ấn Truy nã sẽ phải chịu thêm 18%<@ba.talpu>(+3%)</> sát thương từ cán viên Laterano. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent2": "Sau khi có mặt trên sân 20 giây, ATK +10%, kỹ năng sử dụng đạn của Lemuen +1 giới hạn đạn."
   },
   "char_4194_rmixer": {
     "TitleTalent1": "Nghi thức xả đạn đón khách",
     "TitleTalent2": "Nghi thức dựng khiên tiễn khách",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Khi gây sát thương, bản thân nhận ATK +20 và ASPD +2 trong 10 giây, cộng dồn tối đa 3 tầng.",
+    "Talent1_2": "Khi gây sát thương, bản thân nhận ATK +30 và ASPD +3 trong 10 giây, cộng dồn tối đa 3 tầng.",
+    "Talent2": "Nếu bản thân không tấn công trong 8 giây, nhận <$ba.barrier>lá chắn</> bằng 15% HP tối đa; Sau khi mất <$ba.barrier>lá chắn</> sẽ bắt đầu tính hồi chiêu.",
+    "Talent2_p4": "Nếu bản thân không tấn công trong 8 giây, nhận <$ba.barrier>lá chắn</> bằng 18%<@ba.talpu>(+3％)</> HP tối đa; Sau khi mất <$ba.barrier>lá chắn</> sẽ bắt đầu tính hồi chiêu."
   },
   "char_4195_radian": {
     "TitleTalent1": "Cảm hứng từ những thước băng",
     "TitleTalent2": "Cố lên nào~",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Có thể sử dụng 3 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1": "Có thể sử dụng 4 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1_2": "Có thể sử dụng 5 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent2": "Vật triệu hồi của Raidian nhận hiệu ứng <$ba.inspire>khích lệ</> bằng 12％ ATK, DEF và HP của cô.",
+    "Talent2_p4": "Vật triệu hồi của Raidian nhận hiệu ứng <$ba.inspire>khích lệ</> bằng 15％<@ba.talpu>(+3％)</> ATK, DEF và HP của cô."
   },
   "char_4196_reckpr": {
     "TitleTalent1": "Tích lũy tri thức",
@@ -2717,19 +2715,19 @@
   },
   "char_4199_makiri": {
     "TitleTalent1": "Chậm mà chắc",
-    "Talent1": "Sau khi triển khai được 30 giây, tăng 5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_p4": "Sau khi triển khai được 30 giây, tăng 7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2": "Sau khi triển khai được 30 giây, tăng 10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2_p4": "Sau khi triển khai được 30 giây, tăng 12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai(Hiệu ứng này chỉ kích hoạt 1 lần)."
+    "Talent1": "Sau khi triển khai được 30 giây, tăng 5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_p4": "Sau khi triển khai được 30 giây, tăng 7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2": "Sau khi triển khai được 30 giây, tăng 10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2_p4": "Sau khi triển khai được 30 giây, tăng 12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
     "TitleTalent1": "Bọt nước mây bay",
     "TitleTalent2": "Bắn pháo hoa",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 10%<$ba.protect>bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
+    "Talent1": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 20%<$ba.protect>bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
+    "Talent1_2": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 30%<$ba.protect>bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
+    "Talent2": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi máu cho họ bằng 25% ATK của Haruka.",
+    "Talent2_p4": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi máu cho họ bằng 28%<@ba.talpu>(+3%)</> ATK của Haruka."
   },
   "char_4203_kichi": {
     "TitleTalent1": "Vận may dồn dập!",
@@ -2741,11 +2739,11 @@
   "char_4204_mantra": {
     "TitleTalent1": "Vùng tĩnh lặng",
     "TitleTalent2": "Nắm trọn toàn cục",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Khi kẻ địch kích hiệu ứng <$ba.palsy>tê liệt</> sẽ nhận sát thương nguyên tố bằng 100% ATK của Mantra; Khi hiệu ứng <$ba.palsy>tê liệt</> được kích hoạt, sẽ có 8% tỷ lệ không tiêu hao tầng <$ba.palsy>tê liệt</>.",
+    "Talent1_p4": "Khi kẻ địch kích hiệu ứng <$ba.palsy>tê liệt</> sẽ nhận sát thương nguyên tố bằng 110%<@ba.talpu>(+10%)</> ATK của Mantra; Khi hiệu ứng <$ba.palsy>tê liệt</> được kích hoạt, sẽ có 11%<@ba.talpu>(+3%)</> tỷ lệ không tiêu hao tầng <$ba.palsy>tê liệt</>.",
+    "Talent1_2": "Khi kẻ địch kích hiệu ứng <$ba.palsy>tê liệt</> sẽ nhận sát thương nguyên tố bằng 135% ATK của Mantra; Khi hiệu ứng <$ba.palsy>tê liệt</> được kích hoạt, sẽ có 10% tỷ lệ không tiêu hao tầng <$ba.palsy>tê liệt</>.",
+    "Talent1_2_p4": "Khi kẻ địch kích hiệu ứng <$ba.palsy>tê liệt</> sẽ nhận sát thương nguyên tố bằng 145%<@ba.talpu>(+10%)</> ATK của Mantra; Khi hiệu ứng <$ba.palsy>tê liệt</> được kích hoạt, sẽ có 13%<@ba.talpu>(+3%)</> tỷ lệ không tiêu hao tầng <$ba.palsy>tê liệt</>.",
+    "Talent2": "Kẻ địch xuất hiện từ Điểm xâm nhập (Red Box) gần Mantra nhất sẽ nhận ngay 1 tầng <$ba.palsy>tê liệt</>."
   },
   "char_4207_branch": {
     "TitleTalent1": "Băng bó cơ bản",
@@ -2925,13 +2923,11 @@
   "char_450_necras": {
     "TitleTalent1": "Trỗi dậy",
     "TitleTalent2": "Đau đớn cuối đời",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p2": "",
-    "Talent3": "",
-    "Talent4": ""
+    "Talent0": "Khi kẻ địch bị hạ trong phạm vi tấn công, triệu hồi 1 'Hầu cận sầu thảm' (tối đa 3). Nếu không thể triệu hồi thêm, 1 'Hầu cận sầu thảm' sẽ được cường hóa ([[tăng HP|NecrassTalent1E0]], ATK và DEF).",
+    "Talent1": "Khi kẻ địch bị hạ trong phạm vi tấn công, triệu hồi 1 'Hầu cận sầu thảm' (tối đa 3). Nếu không thể triệu hồi thêm, 1 'Hầu cận sầu thảm' sẽ được cường hóa ([[tăng HP|NecrassTalent1E1]] số lượng chặn, HP, ATK và DEF).",
+    "Talent1_2": "Khi kẻ địch bị hạ trong phạm vi tấn công, triệu hồi 1 'Hầu cận sầu thảm' (tối đa 3). Nếu không thể triệu hồi thêm, 1 'Hầu cận sầu thảm' sẽ được cường hóa ([[tăng HP|NecrassTalent1E2]] số lượng chặn cùng lượng HP, ATK và DEF lớn hơn).",
+    "Talent2": "ATK tăng lên 140% khi bản thân hoặc vật triệu hồi tấn công kẻ địch dưới 50% HP.",
+    "Talent2_p2": "ATK tăng lên 145%<@ba.talpu>(+5%)</> khi bản thân hoặc vật triệu hồi tấn công kẻ địch dưới 60%<@ba.talpu>(+10%)</> HP."
   },
   "char_451_robin": {
     "TitleTalent1": "Chuyên gia bẫy 'Kẹp'",
