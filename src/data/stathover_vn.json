@@ -85,11 +85,15 @@
   },
   "Invisible": {
     "title": "Tàng hình/Invisible",
-    "text": "Khi không bị chặn sẽ không bị chọn làm mục tiêu tấn công.\n• Đối với kẻ địch sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Ngụy trang/Camouflage."
+    "text": "Khi không chặn mục tiêu, sẽ không trở thành mục tiêu tấn công của kẻ địch.\n• Đối với kẻ địch, hiệu ứng này sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Ngụy trang/Camouflage."
   },
   "ba.invisible": {
     "title": "Tàng hình/Invisible",
-    "text": "Khi không bị chặn sẽ không bị chọn làm mục tiêu tấn công.\n• Đối với kẻ địch sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Ngụy trang/Camouflage."
+    "text": "Khi không chặn mục tiêu, sẽ không trở thành mục tiêu tấn công của kẻ địch.\n• Đối với kẻ địch, hiệu ứng này sẽ mất hiệu ứng này khi bị chặn, nếu không chặn thì trong 3 giây kẻ địch sẽ khôi phục tàng hình.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Ngụy trang/Camouflage."
+  },
+  "ba.camou": {
+    "title": "Ngụy trang/Camouflage",
+    "text": "Khi không chặn mục tiêu, đòn đánh thường từ kẻ địch sẽ không nhắm vào đơn vị này (nhưng vẫn chịu sát thương diện rộng).\n• Chỉ phe ta mới có hiệu ứng Ngụy trang.\n• Hiệu ứng này bị khắc chế nếu đồng minh hoặc kẻ địch có kỹ năng xóa tàng hình.\n• Hiệu ứng này khác với Tàng hình/Invisible."
   },
   "Wounded": {
     "title": "Trọng thương/Critically Wounded",
@@ -175,6 +179,10 @@
     "title": "Ave Mujica",
     "text": "Bao gồm: Sakiko Togawa, Umiri Yahata, Uika Misumi, Nyamu Yūtenji, Mutsumi Wakaba"
   },
+  "ba.laiosteam": {
+    "title": "Tổ đội của Laios",
+    "text": "Bao gồm: Marcille, Senshi, Laios, and Chilchuck"
+  },
   "ba.fever": {
     "title": "Fever",
     "text": "Khi Fever đạt 450 điểm, bất kỳ thành viên <$ba.mujica>Ave Mujica</> nào chủ động kích hoạt kỹ năng (không tính các kỹ năng tự động kích hoạt), toàn bộ thành viên <$ba.mujica>Ave Mujica</> trên sân sẽ liên tục tung kỹ năng trong 20 giây."
@@ -194,6 +202,10 @@
   "Silence": {
     "title": "Câm lặng/Silence",
     "text": "Vô hiệu hóa kỹ năng đặc biệt của mục tiêu"
+  },
+  "ba.magicpoint": {
+    "title": "Ma lực/Mana",
+    "text": "Một dạng SP đặc biệt tồn tại xuyên suốt trận chiến."
   },
   "NecrassTalent1E0": {
     "title": "",
