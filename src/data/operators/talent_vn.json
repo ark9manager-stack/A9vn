@@ -222,11 +222,11 @@
   "char_1035_wisdel": {
     "TitleTalent1": "Món quà lưu niệm",
     "TitleTalent2": "Vong hồn vang vọng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Các đòn tấn công khắc ấn 'Dư ảnh' lên mục tiêu. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 120% ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>choáng</> 0.5 giây.",
+    "Talent1_p4": "Các đòn tấn công khắc ấn 'Dư ảnh' lên mục tiêu. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 130%<@ba.talpu>(+10%)</> ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>choáng</> 0.5 giây.",
+    "Talent1_2": "Các đòn tấn công gây sát thương lên mục tiêu chính bằng 115% ATK và khắc ấn 'Dư ảnh' lên mục tiêu đó. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 150% ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>choáng</> 1 giây.",
+    "Talent1_2_p4": "Các đòn tấn công gây sát thương lên mục tiêu chính bằng 115% ATK và khắc ấn 'Dư ảnh' lên mục tiêu đó. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 160%<@ba.talpu>(+10%)</> ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>choáng</> 1 giây.",
+    "Talent2": "Sau khi triển khai, triệu hồi 1 'Hồn ảnh' trong phạm vi tấn công; Nhận hiệu ứng <$ba.camou>Ngụy trang</> khi bản thân đứng kế 'Hồn ảnh'."
   },
   "char_1036_fang2": {
     "TitleTalent1": "Nước đi linh hoạt",
@@ -2331,12 +2331,12 @@
   "char_4133_logos": {
     "TitleTalent1": "Tiến hóa vốn từ",
     "TitleTalent2": "Chú ngữ rạch hồn",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "Talent1": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 40% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
+    "Talent1_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 45%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
+    "Talent1_2": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 60% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>làm chậm</> trong 0.8 giây.",
+    "Talent1_2_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 65%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>làm chậm</> trong 0.8 giây.",
+    "Talent2": "Đòn tấn công khiến mục tiêu -10 RES và chịu thêm +150 sát thương phép trong 5 giây.",
+    "Talent2_p2": "Đòn tấn công khiến mục tiêu -10 RES và chịu thêm +165<@ba.talpu>(+15)</> sát thương phép trong 5 giây."
   },
   "char_4134_cetsyr": {
     "TitleTalent1": "Tàn dư của quá khứ",
