@@ -9,11 +9,11 @@
   "char_003_kalts": {
     "TitleTalent1": "Mon3tr",
     "TitleTalent2": "Tái cấu trúc bất hoại",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Có thể triển khai và hồi phục cho Mon3tr, Mon3tr có thời gian tái triển khai là 35 giây. Kal'tsit sẽ ưu tiên hồi phục cho cô và Mon3tr; DEF của Mon3tr giảm về 0 nếu đứng ở ngoài phạm vi tấn công của Kal'tsit.",
+    "Talent1": "Có thể triển khai và hồi phục cho Mon3tr, Mon3tr có thời gian tái triển khai là 30 giây. Kal'tsit sẽ ưu tiên hồi phục cho cô và Mon3tr; DEF của Mon3tr giảm về 0 nếu đứng ở ngoài phạm vi tấn công của Kal'tsit.",
+    "Talent1_2": "Có thể triển khai và hồi phục cho Mon3tr, Mon3tr có thời gian tái triển khai là 25 giây. Kal'tsit sẽ ưu tiên hồi phục cho cô và Mon3tr; DEF của Mon3tr giảm về 0 nếu đứng ở ngoài phạm vi tấn công của Kal'tsit.",
+    "Talent2": "Khi Mon3tr bị hạ gục (không tính rút lui), khiến tất cả kẻ địch trong 8 ô xung quanh chịu 1200 sát thương chuẩn và bị <$ba.stun>Choáng</> trong 3 giây.",
+    "Talent2_p4": "Khi Mon3tr bị hạ gục (không tính rút lui), khiến tất cả kẻ địch trong 8 ô xung quanh chịu 1400<@ba.talpu>(+200)</> sát thương chuẩn và bị <$ba.stun>Choáng</> trong 3.5<@ba.talpu>(+0.5%)</> giây."
   },
   "char_009_12fce": {
     "TitleTalent1": "Tăng cường tránh né",
@@ -2420,7 +2420,7 @@
   },
   "char_4146_nymph": {
     "TitleTalent1": "Đoạt hồn",
-    "TitleTalent2": "Chìa nhìn thấu tâm hồn",
+    "TitleTalent2": "Mở khóa tâm hồn",
     "Talent1": "Khi tấn công kẻ địch đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, sẽ khiến mục tiêu mỗi giây nhận sát thương nguyên tố bằng 30% ATK của bản thân, kéo dài cho đến khi giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</> kết thúc.",
     "Talent1_2": "Khi tấn công kẻ địch đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, sẽ khiến mục tiêu mỗi giây nhận sát thương nguyên tố bằng 40% ATK của bản thân, kéo dài cho đến khi giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</> kết thúc.",
     "Talent2": "ATK +2% mỗi khi có kẻ địch nổ thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Nymph (cộng dồn tối đa 10 lần).",
@@ -2818,11 +2818,11 @@
   "char_426_billro": {
     "TitleTalent1": "Bữa ăn sinh mệnh",
     "TitleTalent2": "Chuẩn bị tung đòn",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Khi kích hoạt kỹ năng, lập tức hồi 30% HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
+    "Talent1_p4": "Khi kích hoạt kỹ năng, lập tức hồi 35%<@ba.talpu>(+5%)</> HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, lập tức hồi 40% HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
+    "Talent1_2_p4": "Khi kích hoạt kỹ năng, lập tức hồi 45%<@ba.talpu>(+5%)</> HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
+    "Talent2": "Tốc độ hồi SP +0.6/giây khi SP đã hồi vượt quá giới hạn tối đa."
   },
   "char_427_vigil": {
     "TitleTalent1": "Thủ lĩnh bầy sói",
@@ -2936,10 +2936,10 @@
   "char_456_ash": {
     "TitleTalent1": "Lựu đạn gây choáng",
     "TitleTalent2": "Tay đột kích",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Sau khi triển khai, lập tức ném Bom Choáng vào 1 kẻ địch trong phạm vi tấn công, khiến mục tiêu đó và kẻ địch xung quanh bị <$ba.stun>Choáng</> trong 3 giây.",
+    "Talent1_2": "Sau khi triển khai, lập tức ném Bom Choáng vào 1 kẻ địch trong phạm vi tấn công, khiến mục tiêu đó và kẻ địch xung quanh bị <$ba.stun>Choáng</> trong 4 giây.",
+    "Talent2": "Lần triển khai đầu tiên -3 DP và nhận ngay 17 SP.",
+    "Talent2_p4": "Lần triển khai đầu tiên -3 DP và nhận ngay 20<@ba.talpu>(+3)</> SP."
   },
   "char_457_blitz": {
     "TitleTalent1": "Cầm khiên nổ súng",
@@ -2991,12 +2991,12 @@
   "char_472_pasngr": {
     "TitleTalent1": "Phân tích nguyên lý",
     "TitleTalent2": "Người lính cô đơn",
-    "Talent1": "",
-    "Talent1_p5": "",
-    "Talent1_2": "",
-    "Talent1_2_p5": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "Talent1": "Khi tấn công kẻ địch trên 80% HP, Kẻ địch đó sẽ chịu thêm 10% sát thương từ Passenger trong 3 giây.",
+    "Talent1_p5": "Khi tấn công kẻ địch trên 80% HP, Kẻ địch đó sẽ chịu thêm 15%<@ba.talpu>(+5%)</> sát thương từ Passenger trong 3 giây.",
+    "Talent1_2": "Khi tấn công kẻ địch trên 80% HP, Kẻ địch đó sẽ chịu thêm 20% sát thương từ Passenger trong 3 giây.",
+    "Talent1_2_p5": "Khi tấn công kẻ địch trên 80% HP, Kẻ địch đó sẽ chịu thêm 25%<@ba.talpu>(+5%)</> sát thương từ Passenger trong 3 giây.",
+    "Talent2": "Khi không có kẻ địch nào trong 4 ô xung quanh, ATK +8%.",
+    "Talent2_p2": "Khi không có kẻ địch nào trong 4 ô xung quanh, ATK +10%<@ba.talpu>(+2%)</>."
   },
   "char_473_mberry": {
     "TitleTalent1": "Phụ tá",
@@ -3008,10 +3008,10 @@
   "char_474_glady": {
     "TitleTalent1": "Làn sóng triều từ Ægir",
     "TitleTalent2": "Luật của kẻ săn mồi",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Khi có mặt trên trên sân, tất cả cán viên【Thợ săn vực thẳm】hồi 1.5% HP tối đa mỗi giây, và giảm 15% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
+    "Talent1_2": "Khi có mặt trên trên sân, tất cả cán viên【Thợ săn vực thẳm】hồi 2.5% HP tối đa mỗi giây, và giảm 25% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
+    "Talent2": "ATK tăng lên 130% khi tấn công kẻ địch có trọng lượng từ cấp 3 trở xuống.",
+    "Talent2_p4": "ATK tăng lên 136%<@ba.talpu>(+6%)</> khi tấn công kẻ địch có trọng lượng từ cấp 3 trở xuống."
   },
   "char_475_akafyu": {
     "TitleTalent1": "Kiếm phái Nobukage - Hatobu",

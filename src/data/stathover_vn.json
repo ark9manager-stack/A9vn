@@ -207,6 +207,10 @@
     "title": "Câm lặng/Silence",
     "text": "Vô hiệu hóa kỹ năng đặc biệt của mục tiêu"
   },
+  "ba.charged": {
+    "title": "Nạp tràn/Charged",
+    "text": "SP đã đầy vẫn tiếp tục hồi; Khi đạt gấp đôi giới hạn SP sẽ tiến vào trạng thái 'Nạp tràn'. Trong trạng thái này, kích hoạt kỹ năng sẽ nhận thêm hiệu ứng bổ sung (Khi kỹ năng kích hoạt sẽ tiêu hao toàn bộ SP).\n• Khi vào trạng thái 'Nạp tràn', dấu hiệu kích hoạt phía trên đầu nhân vật sẽ đổi từ vàng sang đỏ.\n• Về mặt cơ chế, đây là biến thể của kỹ năng có thể tích thêm SP."
+  },
   "ba.magicpoint": {
     "title": "Ma lực/Mana",
     "text": "Một dạng SP đặc biệt tồn tại xuyên suốt trận chiến."
