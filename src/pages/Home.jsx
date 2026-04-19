@@ -15,42 +15,42 @@ const modules = [
   {
     icon: "⚔️",
     title: "OPERATORS",
-    desc: "Full profiles, stats, skills, lore, and voice lines for every operator in the roster.",
+    desc: "Hồ sơ đầy đủ, số liệu thống kê, kỹ năng, và lời thoại của operators trong danh sách.",
     count: "250+ RECORDS",
     to: "/operators",
   },
   {
     icon: "💀",
     title: "ENEMIES",
-    desc: "Intel on every enemy, boss, and elite unit. Resistances, abilities, and drop data.",
+    desc: "Thông tin về kẻ thù, bosses và đơn vị tinh nhuệ. Kháng chiến, khả năng và dữ liệu.",
     count: "180+ TARGETS",
     to: "/database/bosses",
   },
   {
     icon: "🎵",
     title: "MUSIC",
-    desc: "BGM archive across all chapters, events, and operator themes. Full track listings.",
+    desc: "Lưu trữ BGM trên tất cả các chương, sự kiện và chủ đề của nhà điều hành. Danh sách theo dõi đầy đủ",
     count: "400+ TRACKS",
     to: "/music",
   },
   {
     icon: "📖",
     title: "STORY",
-    desc: "Chapter summaries, event lore, character arcs, and world-building records.",
+    desc: "Tóm tắt các chương, truyền thuyết sự kiện, cốt truyện nhân vật và các kỷ lục xây dựng thế giới.",
     count: "13 CHAPTERS",
     to: "/guide-story",
   },
   {
     icon: "🗺️",
     title: "MATERIALS",
-    desc: "Tier 1–5 materials, drop stages, and operator promotion planning.",
+    desc: "Các nguyên liệu Tier 1–5, map farm và lập kế hoạch thăng cấp operators.",
     count: "150+ ITEMS",
     to: "/database/materials",
   },
   {
     icon: "📡",
     title: "DATABASE",
-    desc: "Central index — bosses, materials, planner and reference tools.",
+    desc: "Chỉ mục trung tâm — bosses, tài liệu, công cụ lập kế hoạch và tham khảo..",
     count: "LIVE UPDATES",
     to: "/database",
   },
@@ -87,7 +87,7 @@ export default function Home() {
               RHODES ISLAND DATABASE — A9VN
             </div>
             <h1 className="font-heading text-5xl md:text-7xl font-bold leading-none tracking-wider mb-2">
-              <span className="block text-foreground">COMMANDER,</span>
+              <span className="block text-foreground">DOCTER,</span>
               <span
                 className="block bg-clip-text text-transparent"
                 style={{
@@ -99,9 +99,9 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-md mt-5 mb-9 border-l-2 border-primary/20 pl-4">
-              Your intelligence terminal for Arknights. Browse operator
-              profiles, enemy intel, music archives, and story records — all in
-              one secure database.
+              Thiết bị đầu cuối tình báo của bạn cho Arknights. Duyệt hồ sơ
+              người điều hành, thông tin về kẻ thù, kho lưu trữ nhạc và bản ghi
+              câu chuyện — tất cả trong một cơ sở dữ liệu bảo mật.
             </p>
             <div className="flex gap-4 items-center flex-wrap">
               <Link
@@ -114,13 +114,13 @@ export default function Home() {
                     "polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)",
                 }}
               >
-                Enter Database
+                Truy cập Database
               </Link>
               <Link
                 to="/operator"
                 className="font-heading font-semibold text-sm tracking-[2px] uppercase px-7 py-3 bg-transparent border border-primary/20 text-foreground hover:border-primary hover:text-primary transition-colors"
               >
-                View Operators
+                Xem Operators
               </Link>
             </div>
 
