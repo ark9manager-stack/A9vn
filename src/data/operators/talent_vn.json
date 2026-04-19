@@ -400,10 +400,10 @@
   "char_113_cqbw": {
     "TitleTalent1": "Mai phục",
     "TitleTalent2": "Thêm dầu vào lửa",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Sau khi có mặt trên sân được 10 giây, nhận 40% tỷ lệ né sát thương vật lý và phép, đồng thời hạn chế bị chọn làm mục tiêu hơn.",
+    "Talent1_2": "Sau khi có mặt trên sân được 10 giây, nhận 60% tỷ lệ né sát thương vật lý và phép, đồng thời hạn chế bị chọn làm mục tiêu hơn.",
+    "Talent2": "Kẻ địch bị <$ba.stun>Choáng</> trong phạm vi tấn công sẽ chịu thêm 18% sát thương vật lý.",
+    "Talent2_p4": "Kẻ địch bị <$ba.stun>Choáng</> trong phạm vi tấn công sẽ chịu thêm 21%<@ba.talpu>(+3%)</> sát thương vật lý."
   },
   "char_115_headbr": {
     "TitleTalent1": "Thủ lĩnh tiên phong",
@@ -790,10 +790,10 @@
   "char_197_poca": {
     "TitleTalent1": "Thấm tận xương tủy",
     "TitleTalent2": "Học sinh gương mẫu",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Khi tấn công kẻ địch có trọng lượng lớn, bỏ qua 40% DEF của mục tiêu đó (có trọng lượng từ cấp 3 trở lên).",
+    "Talent1_2": "Khi tấn công kẻ địch có trọng lượng lớn, bỏ qua 60% DEF của mục tiêu đó (có trọng lượng từ cấp 3 trở lên).",
+    "Talent2": "Khi có mặt trong đội hình, tất cả cán viên【Ursus Student Self-Governing Group】nhận +8% ATK.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Ursus Student Self-Governing Group】nhận +10%<@ba.talpu>(+2%)</> ATK."
   },
   "char_198_blackd": {
     "TitleTalent1": "Tuần cảnh Karlan",
@@ -836,11 +836,11 @@
   "char_2015_dusk": {
     "TitleTalent1": "Tích mặc",
     "TitleTalent2": "Chấm bút thành thần",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "+2% ATK khi Dusk hạ gục 1 kẻ địch, cộng dồn tối đa 10 tầng.",
+    "Talent1_p4": "+2% ATK khi Dusk hạ gục 1 kẻ địch, cộng dồn tối đa 13<@ba.talpu>(+3)</> tầng.",
+    "Talent1_2": "Khi Dusk hoặc 'Freeling' hạ gục 1 kẻ địch, Dusk +2% ATK, cộng dồn tối đa 15 tầng.",
+    "Talent1_2_p4": "Khi Dusk hoặc 'Freeling' hạ gục 1 kẻ địch, Dusk +2% ATK, cộng dồn tối đa 18<@ba.talpu>(+3)</> tầng.",
+    "Talent2": "Khi Dusk lần đầu tấn công kẻ địch sẽ triệu hồi ra 1 'Freeling' tại vị trí đó (trên ô mặt đất có thể triển khai), tồn tại 25 giây."
   },
   "char_201_moeshd": {
     "TitleTalent1": "Khu vực kỳ diệu",
@@ -1159,11 +1159,11 @@
   "char_264_f12yin": {
     "TitleTalent1": "Nắm đấm uy lực",
     "TitleTalent2": "Thân thể cường tráng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Khi tấn công, có 20% tỷ lệ tăng ATK lên 140%, và khiến mục tiêu giảm 10% ATK trong 3 giây (không cộng dồn).",
+    "Talent1_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK lên 145%<@ba.talpu>(+5%)</>, và khiến mục tiêu giảm 10% ATK trong 3 giây (không cộng dồn).",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ tăng ATK lên 160%, và khiến mục tiêu giảm 15% ATK trong 3 giây (không cộng dồn).",
+    "Talent1_2_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK lên 165%<@ba.talpu>(+5%)</>, và khiến mục tiêu giảm 15% ATK trong 3 giây (không cộng dồn).",
+    "Talent2": "DEF +10%; có 15% tỷ lệ né sát thương vật lý."
   },
   "char_265_sophia": {
     "TitleTalent1": "Quở trách",
@@ -1298,12 +1298,12 @@
   "char_293_thorns": {
     "TitleTalent1": "Ăn mòn thần kinh",
     "TitleTalent2": "Dòng chảy cố hương",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_p2": ""
+    "Talent1": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 65 sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 80<@ba.talpu>(+15)</> sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 125 sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 140<@ba.talpu>(+15)</> sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent2": "Nếu bản thân không tấn công trong 2 giây, hồi 3.5% HP tối đa mỗi giây.",
+    "Talent2_p2": "Nếu bản thân không tấn công trong 2 giây, hồi 4%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
   "char_294_ayer": {
     "TitleTalent1": "Hỗ trợ trinh sát",
@@ -1373,13 +1373,13 @@
   "char_311_mudrok": {
     "TitleTalent1": "Phù sa hộ thể",
     "TitleTalent2": "Tình nghĩa đồng loại",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent0": "Cứ mỗi 9 giây, nhận 1 lớp <$ba.shield>Khiên</> (tối đa 2 lớp, nhận ngay 1 lớp sau khi triển khai). Khi 1 lớp Khiên bị phá sẽ hồi 15% HP tối đa cho bản thân.",
+    "Talent0_p4": "Cứ mỗi 9 giây, nhận 1 lớp <$ba.shield>Khiên</> (tối đa 2 lớp, nhận ngay 1 lớp sau khi triển khai). Khi 1 lớp Khiên bị phá sẽ hồi 17%<@ba.talpu>(+2%)</> HP tối đa cho bản thân.",
+    "Talent1": "Cứ mỗi 9 giây, nhận 1 lớp <$ba.shield>Khiên</> (tối đa 2 lớp, nhận ngay 1 lớp sau khi triển khai). Khi 1 lớp Khiên bị phá sẽ hồi 20% HP tối đa cho bản thân.",
+    "Talent1_p4": "Cứ mỗi 9 giây, nhận 1 lớp <$ba.shield>Khiên</> (tối đa 2 lớp, nhận ngay 1 lớp sau khi triển khai). Khi 1 lớp Khiên bị phá sẽ hồi 22%<@ba.talpu>(+2%)</> HP tối đa cho bản thân.",
+    "Talent1_2": "Cứ mỗi 9 giây, nhận 1 lớp <$ba.shield>Khiên</> (tối đa 3 lớp, nhận ngay 1 lớp sau khi triển khai). Khi 1 lớp Khiên bị phá sẽ hồi 20% HP tối đa cho bản thân.",
+    "Talent1_2_p4": "Cứ mỗi 9 giây, nhận 1 lớp <$ba.shield>Khiên</> (tối đa 3 lớp, nhận ngay 1 lớp sau khi triển khai). Khi 1 lớp Khiên bị phá sẽ hồi 22%<@ba.talpu>(+2%)</> HP tối đa cho bản thân.",
+    "Talent2": "Giảm 30% sát thương phải chịu từ kẻ địch【Sarkaz】."
   },
   "char_322_lmlee": {
     "TitleTalent1": "Hòa khí sinh tài",
@@ -1412,10 +1412,10 @@
   "char_332_archet": {
     "TitleTalent1": "Chiến thuật Landen",
     "TitleTalent2": "Dây cung thép",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có kỹ năng 'Hồi theo đòn đánh' sẽ hồi 1 SP mỗi 3 giây.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Xạ thủ】có kỹ năng 'Hồi theo đòn đánh' sẽ hồi 1 SP mỗi 2.5 giây.",
+    "Talent2": "Sau khi triển khai, lập tức nhận 1 lớp <$ba.shield>Khiên</>; khi Khiên bị phá, nhận 7 SP.",
+    "Talent2_p4": "Sau khi triển khai, lập tức nhận 1 lớp <$ba.shield>Khiên</>; khi Khiên bị phá, nhận 9<@ba.talpu>(+2)</> SP."
   },
   "char_333_sidero": {
     "TitleTalent1": "Ý chí của lính đánh thuê",
@@ -1530,14 +1530,14 @@
   "char_358_lisa": {
     "TitleTalent1": "Năng lượng dâng trào: Hỗ trợ",
     "TitleTalent2": "Vùng giam cầm",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ cán viên【Hỗ trợ】+0.2/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
+    "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ cán viên【Hỗ trợ】+0.4/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
+    "Talent2": "Kẻ địch bị <$ba.sluggish>Làm chậm</> trong phạm vi tấn công sẽ nhận 20% <$ba.fragile>Fragile</>, duy trì trong cùng khoảng thời gian.",
+    "Talent2_p4": "Kẻ địch bị <$ba.sluggish>Làm chậm</> trong phạm vi tấn công sẽ nhận 23%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile</>, duy trì trong cùng khoảng thời gian."
   },
   "char_362_saga": {
-    "TitleTalent1": "Thuyết Pháp",
-    "TitleTalent2": "Tĩnh Tâm",
+    "TitleTalent1": "Thuyết pháp",
+    "TitleTalent2": "Tĩnh tâm",
     "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +1 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>.",
     "Talent1": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +2 SP); Saga không tấn công mục tiêu <$ba.dying>Trọng thương</>.",
     "Talent2": "Khi HP xuống dưới 40%, nhận 70% tỷ lệ né sát thương vật lý và hồi 5% HP tối đa mỗi giây, kéo dài 15 giây. Hiệu ứng này chỉ kích hoạt một lần.",
@@ -1644,11 +1644,11 @@
   "char_391_rosmon": {
     "TitleTalent1": "Vũ khí hủy diệt",
     "TitleTalent2": "Cảm giác ổn định",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Đòn tấn công bỏ qua 90 DEF của mục tiêu.",
+    "Talent1_p4": "Đòn tấn công bỏ qua 105<@ba.talpu>(+15)</> DEF của mục tiêu.",
+    "Talent1_2": "Đòn tấn công bỏ qua 160 DEF của mục tiêu.",
+    "Talent1_2_p4": "Đòn tấn công bỏ qua 175<@ba.talpu>(+15)</> DEF của mục tiêu.",
+    "Talent2": "Sau khi triển khai, bản thân và 1【Thuật sư】ngẫu nhiên đang có mặt trên sân nhận +8% ATK."
   },
   "char_394_hadiya": {
     "TitleTalent1": "Hậu duệ vùng hoang dã",
@@ -1695,9 +1695,9 @@
   "char_400_weedy": {
     "TitleTalent1": "Vòi rồng công nghiệp",
     "TitleTalent2": "Vòi rồng cải tiến",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": ""
+    "Talent1": "Có thể triển khai 1 khẩu pháo 'Vòi rồng cao áp' tồn tại 15 giây, tấn công 1 mục tiêu và đẩy lùi nhẹ mục tiêu đó.",
+    "Talent1_2": "Có thể triển khai 1 khẩu pháo 'Vòi rồng cao áp' tồn tại 20 giây, tấn công 1 mục tiêu và đẩy lùi nhẹ mục tiêu đó.",
+    "Talent2": "Lực đẩy từ đòn tấn công và kỹ năng của 'Vòi rồng cao áp' tăng 1 cấp; khi 'Vòi rồng cao áp' đứng ở 4 ô xung quanh Weedy, cô sẽ nhận 1 SP mỗi 3 giây."
   },
   "char_4010_etlchi": {
     "TitleTalent1": "Kho máu",
@@ -2505,11 +2505,11 @@
   "char_416_zumama": {
     "TitleTalent1": "Khí phách vô song",
     "TitleTalent2": "Càng đánh càng hăng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Đòn tấn công gây 108% sát thương khi HP trên 50%; Nhận 10% <$ba.protect>Bảo hộ</> khi HP dưới 50%.",
+    "Talent1_p4": "Đòn tấn công gây 110%<@ba.talpu>(+2%)</> sát thương khi HP trên 50%; Nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</> khi HP dưới 50%.",
+    "Talent1_2": "Đòn tấn công gây 115% sát thương khi HP trên 50%; Nhận 20% <$ba.protect>Bảo hộ</> khi HP dưới 50%.",
+    "Talent1_2_p4": "Đòn tấn công gây 117%<@ba.talpu>(+2%)</> sát thương khi HP trên 50%; Nhận 22%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</> khi HP dưới 50%.",
+    "Talent2": "Tốc độ hồi SP +0.2/giây khi đang chặn kẻ địch."
   },
   "char_4171_wulfen": {
     "TitleTalent1": "Đồ nghề thám hiểm",
@@ -2761,9 +2761,9 @@
     "TitleTalent2": "An toàn là trên hết",
     "Talent0": "Có thể mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 1 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent1": "Có thể mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent2": "Nhận 10% <$ba.protect>Bảo hộ</>; Khi có kẻ địch tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các cán viên đang đứng trên ô cao nhận 15% <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP.",
-    "Talent2_p4": "Nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>; Khi có kẻ địch tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các cán viên đang đứng trên ô cao nhận 18%<@ba.talpu>(+3%)</> <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP."
+    "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.", 
+    "Talent2": "Nhận 10% <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các cán viên đang đứng trên ô cao nhận 15% <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP.",
+    "Talent2_p4": "Nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các cán viên đang đứng trên ô cao nhận 18%<@ba.talpu>(+3%)</> <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP."
   },
   "char_4213_skybx": {
     "TitleTalent1": "Mở cửa! Cục quản lý đây",
@@ -2809,11 +2809,11 @@
   "char_423_blemsh": {
     "TitleTalent1": "Thanh kiếm và tấm khiên của Kỵ sĩ",
     "TitleTalent2": "Nhân từ",
-    "Talent1": "",
-    "Talent2": "",
-    "Talent2_p4": "",
-    "Talent2_2": "",
-    "Talent2_2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tất cả đồng minh có kỹ năng 'Hồi khi chịu đòn' cũng sẽ nhận 1 SP khi họ tấn công.",
+    "Talent2": "Bản thân sẽ ưu tiên và có thể tấn công mục tiêu đang <$ba.sleep>Ngủ</>; ATK tăng lên 120% khi tấn công mục tiêu đang <$ba.sleep>Ngủ</>.",
+    "Talent2_p4": "Bản thân sẽ ưu tiên và có thể tấn công mục tiêu đang <$ba.sleep>Ngủ</>; ATK tăng lên 124%<@ba.talpu>(+4%)</> khi tấn công mục tiêu đang <$ba.sleep>Ngủ</>.",
+    "Talent2_2": "Bản thân sẽ ưu tiên và có thể tấn công mục tiêu đang <$ba.sleep>Ngủ</>; ATK tăng lên 140% khi tấn công mục tiêu đang <$ba.sleep>Ngủ</>.",
+    "Talent2_2_p4": "Bản thân sẽ ưu tiên và có thể tấn công mục tiêu đang <$ba.sleep>Ngủ</>; ATK tăng lên 144%<@ba.talpu>(+4%)</> khi tấn công mục tiêu đang <$ba.sleep>Ngủ</>."
   },
   "char_426_billro": {
     "TitleTalent1": "Bữa ăn sinh mệnh",
