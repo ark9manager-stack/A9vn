@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -73,37 +75,61 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background: linear-gradient(
-      180deg,
-      hsl(220 20% 7%) 0%,
-      hsl(220 25% 4%) 100%
-    );
+    background: #050810;
     min-height: 100vh;
+    position: relative;
+  }
+
+  /* Global grid overlay (PRTS terminal vibe) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* Global scanlines */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Ensure app content sits above overlays */
+  #root {
+    position: relative;
+    z-index: 2;
   }
 }
 
 @layer components {
   .ark-card {
-    @apply border border-border rounded-lg overflow-hidden transition-all duration-300;
-
-    /* trong suốt hoàn toàn */
-    background: transparent;
-
-    /* vẫn giữ blur nhẹ nếu muốn */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    @apply bg-card border border-border rounded-lg overflow-hidden transition-all duration-300;
+    background: linear-gradient(
+      135deg,
+      hsl(220 18% 12%) 0%,
+      hsl(220 18% 8%) 100%
+    );
   }
-
   .ark-card:hover {
     @apply border-primary/40;
-
-    /* hover mới có nền nhẹ */
-    background: hsl(220 18% 12% / 0.25);
-
     box-shadow:
-      0 0 20px hsl(195 85% 50% / 0.2),
-      0 8px 32px hsl(0 0% 0% / 0.4);
-
+      0 0 20px hsl(195 85% 50% / 0.15),
+      0 8px 32px hsl(0 0% 0% / 0.3);
     transform: translateY(-2px);
   }
 
@@ -114,7 +140,6 @@
   .ark-btn-primary {
     @apply bg-primary text-primary-foreground font-heading font-semibold px-6 py-2 rounded-md transition-all duration-200;
   }
-
   .ark-btn-primary:hover {
     box-shadow: 0 0 20px hsl(195 85% 50% / 0.4);
     @apply brightness-110;
@@ -230,111 +255,36 @@
     font-family: "Rajdhani", sans-serif;
   }
   .font-body {
-    font-family: "Inter", sans-serif;
+    font-family: "Exo 2", sans-serif;
+  }
+  .font-mono-tech {
+    font-family: "Share Tech Mono", monospace;
   }
 }
 
-/* Hide scrollbar for all elements */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-ticker {
+  animation: ticker 30s linear infinite;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+@keyframes hero-pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
-
-/* Hide scrollbar globally */
-* {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-*::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-
-/* Full page scroll styles - Fixed */
-.fullpage-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
-}
-
-.fullpage-section {
-  min-height: 100vh;
-  height: auto;
-  width: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-/* Ensure sections don't overlap */
-.fullpage-section:not(:last-child) {
-  margin-bottom: 0;
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust for fixed navbar height */
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  overflow: hidden;
-}
-
-/* Section transitions */
-.section-transition {
-  transition: all 0.5s ease-in-out;
-}
-
-/* Active section indicator */
-.section-indicator {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Fix for content overflow */
-.fullpage-section > div {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Ensure proper spacing */
-.fullpage-section .w-full {
-  width: 100% !important;
-}
-
-/* Fix for flex container */
-.fullpage-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.fullpage-section {
-  flex: 0 0 100dvh;
+.animate-pulse-dot {
+  animation: hero-pulse-dot 1.5s infinite;
 }
 
 /* Music grid specific styles - Monster Siren exact sizing */
@@ -379,7 +329,6 @@ body {
     gap: 1rem;
     padding: 0 1rem;
   }
-
   .music-card img {
     height: 150px;
   }
@@ -395,109 +344,6 @@ body {
   .music-card img {
     height: 120px;
   }
-}
-
-/* AnimatedContent Animation Styles */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-in {
-  animation: slideInUp 0.7s ease-out forwards;
-}
-
-.animate-in.fade {
-  animation: fadeIn 0.7s ease-out forwards;
-}
-
-.animate-in.scale {
-  animation: scaleIn 0.7s ease-out forwards;
-}
-
-/* Stagger animation delays */
-.animate-in:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.animate-in:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.animate-in:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.animate-in:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.animate-in:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.animate-in:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.animate-in:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.animate-in:nth-child(8) {
-  animation-delay: 0.8s;
-}
-.animate-in:nth-child(9) {
-  animation-delay: 0.9s;
-}
-.animate-in:nth-child(10) {
-  animation-delay: 1s;
-}
-
-line {
-  transition: all 0.3s ease-in-out;
-}
-
-.open .hamburger-top {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.open .hamburger-middle {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.open .hamburger-bottom {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-.no-spin::-webkit-outer-spin-button,
-.no-spin::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.no-spin {
-  -moz-appearance: textfield;
 }
 
 /* Level slider (StatsSection) */
@@ -987,34 +833,4 @@ line {
 
 .neo-toggle-small .neo-toggle-input:checked + .neo-toggle .neo-thumb {
   transform: translateX(calc(var(--toggle-width) - 26px));
-}
-
-@layer components {
-  .ark-card {
-    @apply bg-card border border-border rounded-lg overflow-hidden transition-all duration-300;
-    background: linear-gradient(
-      135deg,
-      hsl(220 18% 12%) 0%,
-      hsl(220 18% 8%) 100%
-    );
-  }
-  .ark-card:hover {
-    @apply border-primary/40;
-    box-shadow:
-      0 0 20px hsl(195 85% 50% / 0.15),
-      0 8px 32px hsl(0 0% 0% / 0.3);
-    transform: translateY(-2px);
-  }
-
-  .ark-glow {
-    box-shadow: 0 0 20px hsl(195 85% 50% / 0.2);
-  }
-
-  .ark-btn-primary {
-    @apply bg-primary text-primary-foreground font-heading font-semibold px-6 py-2 rounded-md transition-all duration-200;
-  }
-  .ark-btn-primary:hover {
-    box-shadow: 0 0 20px hsl(195 85% 50% / 0.4);
-    @apply brightness-110;
-  }
 }

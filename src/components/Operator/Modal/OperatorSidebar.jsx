@@ -296,7 +296,7 @@ const OperatorSidebar = ({
           }
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((prev) => !prev)}
-          className={`fixed left-3 top-3 z-[60] flex items-center gap-2 rounded-full border border-white/10 bg-[#171717]/95 px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 ${
+          className={`fixed left-5 top-11 z-[60] flex items-center gap-2 rounded-full border border-white/10 bg-[#171717]/95 px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 ${
             mobileOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-0 opacity-100"

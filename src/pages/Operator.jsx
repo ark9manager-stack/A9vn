@@ -6,7 +6,6 @@ import OperatorModal from "../components/Operator/OperatorModal";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
-import operatorBackground from "../assets/img_entry_anim_bg.png";
 
 const Operator = () => {
   const location = useLocation();
@@ -66,20 +65,11 @@ const Operator = () => {
   };
 
   return (
-    <div
-      id="operator"
-      className="fullpage-section"
-      style={{
-        backgroundImage: `url(${operatorBackground})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div id="operator" className="fullpage-section">
       <div className="w-full h-full">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
-          <div className="w-full flex items-center mb-0 gap-4 pt-12">
-            <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+          <div className="w-full flex items-center mb-0 gap-4">
+            <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
               Operator
             </h1>
           </div>

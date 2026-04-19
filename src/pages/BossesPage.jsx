@@ -24,7 +24,7 @@ export default function BossesPage() {
   }, [search, filters]);
 
   return (
-    <div className="container mx-auto px-4 py-8 pt-14">
+    <div className="container mx-auto px-4 py-8 pt-8">
       <h1 className="font-heading text-4xl font-bold text-foreground mb-6">
         Boss Encyclopedia
       </h1>

@@ -295,87 +295,90 @@ const Music = () => {
   };
 
   return (
-    <div
-      id="music"
-      className="fullpage-section bg-gradient-to-br from-blue-900 via-black to-cyan-900"
-    >
-      <div className="w-full h-full flex flex-col justify-center px-6">
-        {loadingAlbums && (
-          <p className="text-center text-gray-300 mt-10">Đang tải album...</p>
-        )}
-        {errorAlbums && (
-          <p className="text-center text-red-400 mt-10">
-            Lỗi khi tải album: {errorAlbums}
-          </p>
-        )}
+    <div id="music">
+      <div className="w-full h-full">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
+          <div className="w-full h-full flex flex-col justify-center px-6">
+            {loadingAlbums && (
+              <p className="text-center text-gray-300 mt-10">
+                Đang tải album...
+              </p>
+            )}
+            {errorAlbums && (
+              <p className="text-center text-red-400 mt-10">
+                Lỗi khi tải album: {errorAlbums}
+              </p>
+            )}
 
-        {!loadingAlbums && (
-          <MusicSearchBar
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            setCurrentPage={setCurrentPage}
-          />
-        )}
+            {!loadingAlbums && (
+              <MusicSearchBar
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
 
-        {/* chỉ báo remote search theo tên bài (khi cần) */}
-        {!loadingAlbums && qNorm.length >= 2 && remoteSearching && (
-          <div className="text-center text-gray-300 text-sm mb-3">
-            Đang tìm theo tên bài hát...
+            {/* chỉ báo remote search theo tên bài (khi cần) */}
+            {!loadingAlbums && qNorm.length >= 2 && remoteSearching && (
+              <div className="text-center text-gray-300 text-sm mb-3">
+                Đang tìm theo tên bài hát...
+              </div>
+            )}
+
+            {!loadingAlbums && (
+              <MusicGrid
+                songs={currentAlbums}
+                startIndex={startIndex}
+                onSelectMusic={handleSelectAlbum}
+              />
+            )}
+
+            {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
+              <Pagination
+                totalPages={totalPages}
+                currentPage={currentPage}
+                handlePageChange={handlePageChange}
+              />
+            )}
+
+            {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
+              <div className="text-center text-gray-400 text-sm mb-4">
+                Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
+                {Math.min(endIndex, filteredAlbums.length)} /{" "}
+                {filteredAlbums.length} album
+              </div>
+            )}
           </div>
-        )}
 
-        {!loadingAlbums && (
-          <MusicGrid
-            songs={currentAlbums}
-            startIndex={startIndex}
-            onSelectMusic={handleSelectAlbum}
+          <MusicDetailModal
+            open={!!selectedMusic}
+            music={
+              selectedMusic
+                ? {
+                    title: selectedMusic.name,
+                    cover: selectedMusic.image,
+                    audio: selectedMusic.audio,
+                    lyrics: selectedMusic.lyrics,
+                  }
+                : null
+            }
+            onClose={() => setSelectedMusic(null)}
+            onOpenPlaylist={() => setRightbarOpen((v) => !v)}
+            isPlaylistOpen={rightbarOpen}
           />
-        )}
 
-        {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
-          <Pagination
-            totalPages={totalPages}
-            currentPage={currentPage}
-            handlePageChange={handlePageChange}
+          <Rightbar
+            open={rightbarOpen}
+            albumName={selectedAlbum?.name || "PLAYLIST"}
+            playlist={playlistItems}
+            currentIndex={currentSongIndex}
+            onSelectSong={(song, idx) => openSongModalFromPlaylist(song, idx)}
+            onClose={closePlaylist}
+            loading={loadingSongs}
+            error={errorSongs}
           />
-        )}
-
-        {!loadingAlbums && filteredAlbums.length > 0 && totalPages > 1 && (
-          <div className="text-center text-gray-400 text-sm mb-4">
-            Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
-            {Math.min(endIndex, filteredAlbums.length)} /{" "}
-            {filteredAlbums.length} album
-          </div>
-        )}
+        </div>
       </div>
-
-      <MusicDetailModal
-        open={!!selectedMusic}
-        music={
-          selectedMusic
-            ? {
-                title: selectedMusic.name,
-                cover: selectedMusic.image,
-                audio: selectedMusic.audio,
-                lyrics: selectedMusic.lyrics,
-              }
-            : null
-        }
-        onClose={() => setSelectedMusic(null)}
-        onOpenPlaylist={() => setRightbarOpen((v) => !v)}
-        isPlaylistOpen={rightbarOpen}
-      />
-
-      <Rightbar
-        open={rightbarOpen}
-        albumName={selectedAlbum?.name || "PLAYLIST"}
-        playlist={playlistItems}
-        currentIndex={currentSongIndex}
-        onSelectSong={(song, idx) => openSongModalFromPlaylist(song, idx)}
-        onClose={closePlaylist}
-        loading={loadingSongs}
-        error={errorSongs}
-      />
     </div>
   );
 };

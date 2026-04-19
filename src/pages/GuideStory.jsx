@@ -3,8 +3,8 @@ import { BookOpen, Scroll } from "lucide-react";
 
 const GuideStory = () => {
   return (
-    <div className="min-h-[calc(100vh-3.5rem)] bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-[calc(100vh-3.5rem)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">
           Guide & Story
         </h1>
