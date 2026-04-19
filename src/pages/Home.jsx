@@ -117,7 +117,7 @@ export default function Home() {
                 Enter Database
               </Link>
               <Link
-                to="/operators"
+                to="/operator"
                 className="font-heading font-semibold text-sm tracking-[2px] uppercase px-7 py-3 bg-transparent border border-primary/20 text-foreground hover:border-primary hover:text-primary transition-colors"
               >
                 View Operators
