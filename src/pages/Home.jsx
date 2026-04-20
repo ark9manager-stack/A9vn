@@ -17,7 +17,7 @@ const modules = [
     title: "OPERATORS",
     desc: "Hồ sơ đầy đủ, số liệu thống kê, kỹ năng, và lời thoại của operators trong danh sách.",
     count: "250+ RECORDS",
-    to: "/operators",
+    to: "/operator",
   },
   {
     icon: "💀",

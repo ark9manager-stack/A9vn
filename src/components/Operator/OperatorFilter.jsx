@@ -102,7 +102,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
               }
             }}
             placeholder="Search operators..."
-            className="w-full pl-3 pr-3 py-2 rounded-md bg-black/50 border border-white/10 text-sm text-white placeholder-gray-100 focus:outline-none focus:border-emerald-400"
+            className="w-full pl-3 pr-3 py-2 rounded-md bg-black/50 border border-white/10 text-sm text-white placeholder-gray-100 focus:outline-none focus:border-blue-400"
           />
         </div>
 
@@ -112,7 +112,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
           className={`p-2.5 rounded-md border transition
           ${
             showFilter
-              ? "bg-emerald-500/30 border-emerald-400"
+              ? "bg-blue-500/30 border-blue-400"
               : "bg-black/50 border-white/10 hover:bg-white/10"
           }
         `}
@@ -156,7 +156,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
                     className={`p-2 rounded-md w-19 flex items-center text-xs border transition
                   ${
                     activeClasses.includes(cls.value)
-                      ? "bg-emerald-500/30 border-emerald-400 text-white gap-1"
+                      ? "bg-blue-500/30 border-blue-400 text-white gap-1"
                       : "bg-white/5 border-white/10 hover:bg-white/10 gap-1"
                   }
                 `}
@@ -186,7 +186,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
                         className={`p-2 rounded-md w-19 flex items-center text-xs border transition
                     ${
                       activeSubclasses.includes(sub.id)
-                        ? "bg-emerald-500/30 border-emerald-400 gap-1"
+                        ? "bg-blue-500/30 border-blue-400 gap-1"
                         : "bg-white/5 border-white/10 hover:bg-white/10 gap-1"
                     }
                   `}
@@ -237,7 +237,7 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
             <div className="flex justify-end gap-2 pt-2 border-t border-white/10">
               <button
                 onClick={handleApply}
-                className="px-3 py-1 text-sm rounded bg-emerald-500/80 hover:bg-emerald-500"
+                className="px-3 py-1 text-sm rounded bg-blue-500/80 hover:bg-blue-500"
               >
                 Apply
               </button>

@@ -65,7 +65,7 @@ const Operator = () => {
   };
 
   return (
-    <div id="operator" className="fullpage-section">
+    <div id="operator">
       <div className="w-full h-full">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
           <div className="w-full flex items-center mb-0 gap-4">
