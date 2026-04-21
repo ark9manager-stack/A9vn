@@ -296,9 +296,9 @@ const Music = () => {
 
   return (
     <div id="music">
-      <div className="w-full flex flex-col">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex flex-col">
-          <div className="w-full flex flex-col px-6">
+      <div className="w-full h-full">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
+          <div className="w-full h-full flex flex-col justify-center px-6">
             {loadingAlbums && (
               <p className="text-center text-gray-300 mt-10">
                 Đang tải album...
