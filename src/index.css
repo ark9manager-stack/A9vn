@@ -834,3 +834,23 @@
 .neo-toggle-small .neo-toggle-input:checked + .neo-toggle .neo-thumb {
   transform: translateX(calc(var(--toggle-width) - 26px));
 }
+
+/* Hide scrollbar for all elements */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Hide scrollbar globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
