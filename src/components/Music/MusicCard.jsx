@@ -7,11 +7,13 @@ const MusicCard = ({ item, onClick }) => {
       onClick={onClick}
     >
       {/* Album Cover */}
-      <div className="relative w-full">
+      <div className="relative w-full h-48 bg-[#1a1a1e] flex items-center justify-center">
+        <span className="text-4xl text-white/10">♪</span>
         <img
           src={item.image}
           alt={item.name}
-          className="w-full h-48 object-cover rounded-lg shadow-lg"
+          className="absolute inset-0 w-full h-48 object-cover rounded-lg shadow-lg"
+          onError={(e) => (e.currentTarget.style.display = "none")}
         />
       </div>
       {/* Album Title - Only show on hover */}
