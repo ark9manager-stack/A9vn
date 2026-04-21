@@ -1,5 +1,4 @@
 import React from "react";
-import AnimatedContent from "../UI/AnimatedContent";
 import MusicCard from "./MusicCard";
 
 const MusicGrid = ({ songs, startIndex, onSelectMusic }) => {

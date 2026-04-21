@@ -1,5 +1,4 @@
 import React from "react";
-import AnimatedContent from "../UI/AnimatedContent";
 
 const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
   return (
