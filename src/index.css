@@ -68,54 +68,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-body antialiased;
-    background: #050810;
-    min-height: 100vh;
-    position: relative;
-  }
-
-  /* Global grid overlay (PRTS terminal vibe) */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background-image:
-      linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-  }
-
-  /* Global scanlines */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.08) 2px,
-      rgba(0, 0, 0, 0.08) 4px
-    );
-    pointer-events: none;
-  }
-
-  /* Ensure app content sits above overlays */
-  #root {
-    position: relative;
-    z-index: 2;
-  }
-}
-
 @layer components {
   .ark-card {
     @apply bg-card border border-border rounded-lg overflow-hidden transition-all duration-300;
