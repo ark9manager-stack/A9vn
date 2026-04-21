@@ -3,12 +3,12 @@ import AnimatedContent from "../UI/AnimatedContent";
 
 const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
   return (
-    <AnimatedContent className="mb-8">
+    <div className="mb-8">
       <div className="max-w-md mx-auto">
         <div className="relative">
           <input
             type="text"
-            placeholder='Tìm album hoặc bài hát'
+            placeholder="Tìm album hoặc bài hát"
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
@@ -40,7 +40,7 @@ const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
           </div>
         </div>
       </div>
-    </AnimatedContent>
+    </div>
   );
 };
 
