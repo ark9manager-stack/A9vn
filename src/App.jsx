@@ -37,49 +37,64 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className="flex-1 overflow-y-auto overflow-x-hidden">
-        <Suspense fallback={<LoadingScreen />}>
-          <Routes location={location}>
-            <Route element={<Layout />}>
-              {/* Home */}
-              <Route path="/" element={<Home />} />
+      <div className="w-full h-screen bg-[#121212] text-white overflow-hidden">
+        <div className="h-full">
+          <div className="flex h-screen">
+            <main className="flex-1 overflow-y-auto overflow-x-hidden">
+              <Suspense fallback={<LoadingScreen />}>
+                <Routes location={location}>
+                  <Route element={<Layout />}>
+                    {/* Home */}
+                    <Route path="/" element={<Home />} />
 
-              {/* Operators */}
-              <Route path="/operator" element={<Operator />} />
-              <Route path="/operator/:id" element={<Operator />} />
-              {/* Music */}
-              <Route path="/music" element={<Music />} />
+                    {/* Operators */}
+                    <Route path="/operator" element={<Operator />} />
+                    <Route path="/operator/:id" element={<Operator />} />
+                    {/* Music */}
+                    <Route path="/music" element={<Music />} />
 
-              {/* Guide */}
-              <Route path="/guide-story" element={<GuideStory />} />
-              <Route path="/guide/:id" element={<GuideDetail />} />
+                    {/* Guide */}
+                    <Route path="/guide-story" element={<GuideStory />} />
+                    <Route path="/guide/:id" element={<GuideDetail />} />
 
-              {/* Story */}
-              <Route path="/story/:id" element={<StoryDetail />} />
+                    {/* Story */}
+                    <Route path="/story/:id" element={<StoryDetail />} />
 
-              {/* Database */}
-              <Route path="/database" element={<DatabasePage />} />
+                    {/* Database */}
+                    <Route path="/database" element={<DatabasePage />} />
 
-              {/* Materials */}
-              <Route path="/database/materials" element={<MaterialsPage />} />
-              <Route
-                path="/database/materials/:id"
-                element={<MaterialDetail />}
-              />
+                    {/* Materials */}
+                    <Route
+                      path="/database/materials"
+                      element={<MaterialsPage />}
+                    />
+                    <Route
+                      path="/database/materials/:id"
+                      element={<MaterialDetail />}
+                    />
 
-              {/* Planner */}
-              <Route path="/database/planner" element={<MaterialPlanner />} />
+                    {/* Planner */}
+                    <Route
+                      path="/database/planner"
+                      element={<MaterialPlanner />}
+                    />
 
-              {/* Boss */}
-              <Route path="/database/bosses" element={<BossesPage />} />
-              <Route path="/database/bosses/:id" element={<BossDetail />} />
+                    {/* Boss */}
+                    <Route path="/database/bosses" element={<BossesPage />} />
+                    <Route
+                      path="/database/bosses/:id"
+                      element={<BossDetail />}
+                    />
 
-              {/* 404 */}
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </main>
+                    {/* 404 */}
+                    <Route path="*" element={<NotFound />} />
+                  </Route>
+                </Routes>
+              </Suspense>
+            </main>
+          </div>
+        </div>
+      </div>
     </QueryClientProvider>
   );
 };
