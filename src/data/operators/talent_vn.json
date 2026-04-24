@@ -111,10 +111,10 @@
   },
   "char_1022_flwr2": {
     "TitleTalent1": "Bách lý hương",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Perfumer the Distilled giúp các đồng minh trong phạm vi tấn công nhận 8% <$ba.protect>Bảo hộ</> (trừ bản thân) nếu %HP hiện tại của họ thấp hơn %HP hiện tại của cô.",
+    "Talent1_p4": "Perfumer the Distilled giúp các đồng minh trong phạm vi tấn công nhận 10%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</> (trừ bản thân) nếu %HP hiện tại của họ thấp hơn %HP hiện tại của cô.",
+    "Talent1_2": "Perfumer the Distilled giúp các đồng minh trong phạm vi tấn công nhận 14% <$ba.protect>Bảo hộ</> (trừ bản thân) nếu %HP hiện tại của họ thấp hơn %HP hiện tại của cô.",
+    "Talent1_2_p4": "Perfumer the Distilled giúp các đồng minh trong phạm vi tấn công nhận 16%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</> (trừ bản thân) nếu %HP hiện tại của họ thấp hơn %HP hiện tại của cô."
   },
   "char_1023_ghost2": {
     "TitleTalent1": "Chấp nhận bản thân",
@@ -957,8 +957,8 @@
     "TitleTalent2": "Giãn nở thời gian",
     "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ cán viên【Thuật sư】+0.2/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
     "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ cán viên【Thuật sư】+0.4/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
-    "Talent2": "Kẻ địch trong phạm vi tấn công của bản thân bị -15% tốc độ di chuyển.",
-    "Talent2_p4": "Kẻ địch trong phạm vi tấn công của bản thân bị -18%<@ba.talpu>(+3%)</> tốc độ di chuyển."
+    "Talent2": "-15% tốc độ di chuyển của kẻ địch trong phạm vi tấn công.",
+    "Talent2_p4": "-18%<@ba.talpu>(+3%)</> tốc độ di chuyển của kẻ địch trong phạm vi tấn công."
   },
   "char_214_kafka": {
     "TitleTalent1": "Đánh lạc hướng",
@@ -1652,10 +1652,10 @@
   },
   "char_394_hadiya": {
     "TitleTalent1": "Hậu duệ vùng hoang dã",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +2% ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 3 tầng).",
+    "Talent1_p4": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +3%<@ba.talpu>(+1%)</> ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 3 tầng).",
+    "Talent1_2": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +4% ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 5 tầng).",
+    "Talent1_2_p4": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +5%<@ba.talpu>(+1%)</> ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 5 tầng)."
   },
   "char_4000_jnight": {
     "TitleTalent1": "Trợ lực công lý I",
@@ -2423,8 +2423,8 @@
     "TitleTalent2": "Mở khóa tâm hồn",
     "Talent1": "Khi tấn công kẻ địch đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, sẽ khiến mục tiêu mỗi giây nhận sát thương nguyên tố bằng 30% ATK của bản thân, kéo dài cho đến khi giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</> kết thúc.",
     "Talent1_2": "Khi tấn công kẻ địch đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, sẽ khiến mục tiêu mỗi giây nhận sát thương nguyên tố bằng 40% ATK của bản thân, kéo dài cho đến khi giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</> kết thúc.",
-    "Talent2": "ATK +2% mỗi khi có kẻ địch nổ thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Nymph (cộng dồn tối đa 10 lần).",
-    "Talent2_p4": "ATK +2% mỗi khi có kẻ địch nổ thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Nymph (cộng dồn tối đa 12<@ba.talpu>(+2)</> lần)."
+    "Talent2": "ATK +2% mỗi khi có kẻ địch nổ thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Nymph (cộng dồn tối đa 10 tầng).",
+    "Talent2_p4": "ATK +2% mỗi khi có kẻ địch nổ thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Nymph (cộng dồn tối đa 12<@ba.talpu>(+2)</> tầng)."
   },
   "char_4147_mitm": {
     "TitleTalent1": "Chiến xa phế liệu",
@@ -2497,10 +2497,10 @@
   },
   "char_4166_varkis": {
     "TitleTalent1": "Khắc cốt ghi tâm",
-    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 107% khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 109%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 110% khi tấn công kẻ địch có (HP)% thấp hơn bản thân.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có (HP)% thấp hơn bản thân."
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 107% khi tấn công kẻ địch có %HP thấp hơn bản thân.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 109%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có %HP thấp hơn bản thân.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 110% khi tấn công kẻ địch có %HP thấp hơn bản thân.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có %HP thấp hơn bản thân."
   },
   "char_416_zumama": {
     "TitleTalent1": "Khí phách vô song",
@@ -2579,42 +2579,41 @@
   "char_4183_mortis": {
     "TitleTalent1": "'Cô nàng' khác",
     "TitleTalent2": "Chớ sợ cái chết",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_1": "",
-    "Talent2_2": ""
+    "Talent0": "Wakaba Mutsumi và <Thế thân> giảm 30% sát thương vật lý và phép gánh chịu và chuyển 1 nửa lượng sát thương đó thành <$ba.dt.apoptosis>Necrosis</>; <Thế thân> +5% DEF nhưng không thể tấn công.",
+    "Talent0_p4": "Wakaba Mutsumi và <Thế thân> giảm 30% sát thương vật lý và phép gánh chịu và chuyển 1 nửa lượng sát thương đó thành <$ba.dt.apoptosis>Necrosis</>; <Thế thân> +9%<@ba.talpu>(+4%)</> DEF nhưng không thể tấn công.",
+    "Talent1": "Wakaba Mutsumi và <Thế thân> giảm 30% sát thương vật lý và phép gánh chịu và chuyển 1 nửa lượng sát thương đó thành <$ba.dt.apoptosis>Necrosis</>; <Thế thân> +10% DEF nhưng không thể tấn công; Khi có thành viên <$ba.mujica>Ave Mujica</> tấn công, có 10% tỷ lệ rút ngắn thời gian tồn tại của <Thế thân> 1 giây.",
+    "Talent1_p4": "Wakaba Mutsumi và <Thế thân> giảm 30% sát thương vật lý và phép gánh chịu và chuyển 1 nửa lượng sát thương đó thành <$ba.dt.apoptosis>Necrosis</>; <Thế thân> +14%<@ba.talpu>(+4%)</> DEF nhưng không thể tấn công; Khi có thành viên <$ba.mujica>Ave Mujica</> tấn công, có 10% tỷ lệ rút ngắn thời gian tồn tại của <Thế thân> 1 giây.",
+    "Talent1_2": "Wakaba Mutsumi và <Thế thân> giảm 30% sát thương vật lý và phép gánh chịu và chuyển 1 nửa lượng sát thương đó thành <$ba.dt.apoptosis>Necrosis</>; <Thế thân> +20% DEF nhưng không thể tấn công; Khi có thành viên <$ba.mujica>Ave Mujica</> tấn công, có 20% tỷ lệ rút ngắn thời gian tồn tại của <Thế thân> 1 giây.",
+    "Talent1_2_p4": "Wakaba Mutsumi và <Thế thân> giảm 30% sát thương vật lý và phép gánh chịu và chuyển 1 nửa lượng sát thương đó thành <$ba.dt.apoptosis>Necrosis</>; <Thế thân> +24%<@ba.talpu>(+4%)</> DEF nhưng không thể tấn công; Khi có thành viên <$ba.mujica>Ave Mujica</> tấn công, có 20% tỷ lệ rút ngắn thời gian tồn tại của <Thế thân> 1 giây.",
+    "Talent2": "<$ba.fever>Fever</> +1 mỗi khi bản thân nhận sát thương hoặc Hiệu ứng nguyên tố.",
+    "Talent2_1": "<$ba.fever>Fever</> +2 mỗi khi bản thân nhận sát thương hoặc Hiệu ứng nguyên tố; Khi có mặt trên sân, tất cả thành viên <$ba.mujica>Ave Mujica</> +5% HP tối đa.",
+    "Talent2_2": "<$ba.fever>Fever</> +3 mỗi khi bản thân nhận sát thương hoặc Hiệu ứng nguyên tố; Khi có mặt trên sân, tất cả thành viên <$ba.mujica>Ave Mujica</> +10% HP tối đa."
   },
   "char_4184_dolris": {
     "TitleTalent1": "Mặt nạ dối trá",
     "TitleTalent2": "Chớ sợ bi thương",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_1": "",
-    "Talent2_2": ""
+    "Talent0": "Khi chưa kích hoạt kỹ năng, mỗi 5 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 15% ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
+    "Talent0_p4": "Khi chưa kích hoạt kỹ năng, mỗi 5 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 20%<@ba.talpu>(+5%)</> ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
+    "Talent1": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 20% ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
+    "Talent1_p4": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 25%<@ba.talpu>(+5%)</> ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
+    "Talent1_2": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 30% ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
+    "Talent1_2_p4": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 35%<@ba.talpu>(+5%)</> ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
+    "Talent2": "<$ba.fever>Fever</> +2 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>.",
+    "Talent2_1": "<$ba.fever>Fever</> +3 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 15% ATK của Misumi Uika nếu họ đứng trong phạm vi tấn công của cô.",
+    "Talent2_2": "<$ba.fever>Fever</> +5 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 30% ATK của Misumi Uika nếu họ đứng trong phạm vi tấn công của cô."
   },
   "char_4185_amoris": {
     "TitleTalent1": "Thuận cả hai tay",
     "TitleTalent2": "Chớ sợ yêu thương",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": "",
-    "Talent2_1": "",
-    "Talent2_1_p4": "",
-    "Talent2_2": "",
-    "Talent2_2_p4": "",
-    "Talent3": ""
+    "Talent0": "Yūtenji Nyamu có thể <$ba.permanentatk>Liên tục tấn công</>; Khi tấn công, có 10% tỷ lệ khiến mục tiêu nhận 3% <$ba.fragile>Fragile</> trong 1.2 giây.",
+    "Talent1": "Yūtenji Nyamu có thể <$ba.permanentatk>Liên tục tấn công</>; Khi tấn công, có 10% tỷ lệ khiến mục tiêu nhận 6% <$ba.fragile>Fragile</> trong 1.5 giây.",
+    "Talent1_2": "Yūtenji Nyamu có thể <$ba.permanentatk>Liên tục tấn công</>; Khi tấn công, có 10% tỷ lệ khiến mục tiêu nhận 8% <$ba.fragile>Fragile</> trong 2 giây.",
+    "Talent2": "Khi có mặt trên sân, <$ba.fever>Fever</> +3 mỗi giây",
+    "Talent2_p4": "Khi có mặt trên sân, <$ba.fever>Fever</> +3 mỗi giây.",
+    "Talent2_1": "Khi có mặt trên sân, <$ba.fever>Fever</> +3 mỗi giây; thành viên <$ba.mujica>Ave Mujica</> nhận +3% ATK.",
+    "Talent2_1_p4": "Khi có mặt trên sân, <$ba.fever>Fever</> +3 mỗi giây; thành viên <$ba.mujica>Ave Mujica</> nhận +4%<@ba.talpu>(+1%)</> ATK.",
+    "Talent2_2": "Khi có mặt trên sân, <$ba.fever>Fever</> +3 mỗi giây; thành viên <$ba.mujica>Ave Mujica</> nhận +8% ATK.",
+    "Talent2_2_p4": "Khi có mặt trên sân, <$ba.fever>Fever</> +3 mỗi giây; thành viên <$ba.mujica>Ave Mujica</> nhận +9%<@ba.talpu>(+1%)</> ATK."
   },
   "char_4186_tmoris": {
     "TitleTalent1": "Dân chuyên làm việc",
@@ -2649,7 +2648,7 @@
     "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
   },
   "char_4191_tippi": {
-    "TitleTalent1": "Cẩm nang làm việc ở trường quay",
+    "TitleTalent1": "Cẩm nang làm việc tại trường quay",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
@@ -2729,10 +2728,10 @@
   },
   "char_4207_branch": {
     "TitleTalent1": "Băng bó cơ bản",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi kỹ năng kết thúc, hồi 40% HP tối đa cho bản thân.",
+    "Talent1_p4": "Khi kỹ năng kết thúc, hồi 50%<@ba.talpu>(+10%)</> HP tối đa cho bản thân.",
+    "Talent1_2": "Khi kỹ năng kết thúc, hồi 50% HP tối đa cho bản thân.",
+    "Talent1_2_p4": "Khi kỹ năng kết thúc, hồi 60%<@ba.talpu>(+10%)</> HP tối đa cho bản thân."
   },
   "char_4208_wintim": {
     "TitleTalent1": "Ghi chép nhanh",
@@ -2751,10 +2750,10 @@
   },
   "char_4211_snhunt": {
     "TitleTalent1": "Vân thú vồ mồi",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi kích hoạt kỹ năng, triệu hồi 'Liệt vân thú' tấn công kẻ địch, gây sát thương vật lý bằng 150% ATK và kèm hiệu ứng <$ba.cold>Lạnh</> trong 2 giây.",
+    "Talent1_p4": "Khi kích hoạt kỹ năng, triệu hồi 'Liệt vân thú' tấn công kẻ địch, gây sát thương vật lý bằng 155%<@ba.talpu>(+5%)</> ATK và kèm hiệu ứng <$ba.cold>Lạnh</> trong 2 giây.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, triệu hồi 'Liệt vân thú' tấn công kẻ địch, gây sát thương vật lý bằng 180% ATK và kèm hiệu ứng <$ba.cold>Lạnh</> trong 3 giây.",
+    "Talent1_2_p4": "Khi kích hoạt kỹ năng, triệu hồi 'Liệt vân thú' tấn công kẻ địch, gây sát thương vật lý bằng 185%<@ba.talpu>(+5%)</> ATK và kèm hiệu ứng <$ba.cold>Lạnh</> trong 3 giây."
   },
   "char_4212_nasti": {
     "TitleTalent1": "Khu vực đang thi công",
@@ -2767,17 +2766,15 @@
   },
   "char_4213_skybx": {
     "TitleTalent1": "Mở cửa! Cục quản lý đây",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": ""
+    "Talent1": "Kẻ địch lần đầu chịu sát thương từ Skybox sẽ bị câm lặng trong 4 giây.",
+    "Talent1_2": "Kẻ địch lần đầu chịu sát thương từ Skybox sẽ bị câm lặng trong 7 giây."
   },
   "char_4214_cairn": {
     "TitleTalent1": "Thuyết minh quá độ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Mỗi giây gây <$ba.dt.neural2>Nervous Impairment</> bằng 4% ATK lên kẻ địch đang bị bản thân chặn.",
+    "Talent1_p4": "Mỗi giây gây <$ba.dt.neural2>Nervous Impairment</> bằng 5%<@ba.talpu>(+1%)</> ATK lên kẻ địch đang bị bản thân chặn.",
+    "Talent1_2": "Mỗi giây gây <$ba.dt.neural2>Nervous Impairment</> bằng 9% ATK lên kẻ địch đang bị bản thân chặn.",
+    "Talent1_2_p4": "Mỗi giây gây <$ba.dt.neural2>Nervous Impairment</> bằng 10%<@ba.talpu>(+1%)</> ATK lên kẻ địch đang bị bản thân chặn."
   },
   "char_421_crow": {
     "TitleTalent1": "Vào guồng",
@@ -2787,17 +2784,17 @@
   },
   "char_4221_ju": {
     "TitleTalent1": "Phép tắc",
-    "Talent0": "",
-    "Talent1_2": ""
+    "Talent0": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +1 SP); Ju không tấn công mục tiêu <$ba.dying>Trọng thương</>.",
+    "Talent1_2": "Khi gây sát thương chí tử, sẽ khiến kẻ địch còn 1 HP và rơi vào trạng thái <$ba.dying>Trọng thương</> (người hạ gục nhận +2 SP); Ju không tấn công mục tiêu <$ba.dying>Trọng thương</>."
   },
   "char_4222_taraxa": {
     "TitleTalent1": "Giữ cánh giữa trời",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Các đồng minh đang <$ba.liftoff>Cất cánh</> trong phạm vi tấn công nhận 3% <$ba.protect>Bảo hộ</>, và Chặn +1.",
+    "Talent0_p4": "Các đồng minh đang <$ba.liftoff>Cất cánh</> trong phạm vi tấn công nhận 5%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>, và Chặn +1.",
+    "Talent1": "Các đồng minh đang <$ba.liftoff>Cất cánh</> trong phạm vi tấn công nhận 7% <$ba.protect>Bảo hộ</>, và Chặn +1.",
+    "Talent1_p4": "Các đồng minh đang <$ba.liftoff>Cất cánh</> trong phạm vi tấn công nhận 9%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>, và Chặn +1.",
+    "Talent1_2": "Các đồng minh đang <$ba.liftoff>Cất cánh</> trong phạm vi tấn công nhận 10% <$ba.protect>Bảo hộ</>, và Chặn +1.",
+    "Talent1_2_p4": "Các đồng minh đang <$ba.liftoff>Cất cánh</> trong phạm vi tấn công nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>, và Chặn +1."
   },
   "char_422_aurora": {
     "TitleTalent1": "Nghỉ đông",
@@ -6678,36 +6675,33 @@
   },
   "char_4031_liesel": {
     "TitleTalent1": "Tố chất nhạc trưởng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Khi có ít nhất 3 kẻ địch trong vùng sát thương diện rộng, sát thương của đòn tấn công đó tăng lên 110%.",
+    "Talent1_p4": "Khi có ít nhất 3 kẻ địch trong vùng sát thương diện rộng, sát thương của đòn tấn công đó tăng lên 115%<@ba.talpu>(+5%)</>.",
+    "Talent1_2": "Khi có ít nhất 3 kẻ địch trong vùng sát thương diện rộng, sát thương của đòn tấn công đó tăng lên 120%.",
+    "Talent1_2_p4": "Khi có ít nhất 3 kẻ địch trong vùng sát thương diện rộng, sát thương của đòn tấn công đó tăng lên 125%<@ba.talpu>(+5%)</>."
   },
   "char_4223_botany": {
-    "TitleTalent1": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Phá vỡ im lặng",
+    "Talent1": "ASPD +4 mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
+    "Talent1_p4": "ASPD +5<@ba.talpu>(+1)</> mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
+    "Talent1_2": "ASPD +6 mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
+    "Talent1_2_p4": "ASPD +7<@ba.talpu>(+1)</> mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng)."
   },
   "char_4224_turdus": {
-    "TitleTalent1": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "TitleTalent1": "Trăm bệnh hóa lương y",
+    "Talent1": "Khi Ukusik nhận chuỗi hồi phục từ chính bản thân, lượng hồi tăng lên 110% và phát sinh thêm 1 lần nảy không bị giảm hồi phục của Đặc tính.",
+    "Talent1_p4": "Khi Ukusik nhận chuỗi hồi phục từ chính bản thân, lượng hồi tăng lên 115%<@ba.talpu>(+5%)</> và phát sinh thêm 1 lần nảy không bị giảm hồi phục của Đặc tính.",
+    "Talent1_2": "Khi Ukusik nhận chuỗi hồi phục từ chính bản thân, lượng hồi tăng lên 120% và phát sinh thêm 1 lần nảy không bị giảm hồi phục của Đặc tính.",
+    "Talent1_2_p4": "Khi Ukusik nhận chuỗi hồi phục từ chính bản thân, lượng hồi tăng lên 125%<@ba.talpu>(+5%)</> và phát sinh thêm 1 lần nảy không bị giảm hồi phục của Đặc tính."
   },
   "char_1051_headb2": {
     "TitleTalent1": "Cơn giận cuộn trào",
     "TitleTalent2": "Biển người hợp lực",
-    "Talent1": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
-    "Talent1_p4": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
-    "Talent1_2": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>Làm chậm</> chúng 0.5 giây.",
-    "Talent1_2_p4": "Sát thương vật lý diện rộng từ đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>Làm chậm</> chúng 0.5 giây.",
-    "Talent2": "Trong thời gian kỹ năng hoạt động, tất cả cán viên trên sân nhận ATK và DEF +14%, nhận gấp đôi nếu cán viên thuộc【Ursus Student Self-Governing Group】",
-    "Talent2_p2": "Trong thời gian kỹ năng hoạt động, tất cả cán viên trên sân nhận ATK và DEF +18%<@ba.talpu>(+4%)</>, nhận gấp đôi nếu cán viên thuộc【Ursus Student Self-Governing Group】"
+    "Talent1": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
+    "Talent1_p4": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
+    "Talent1_2": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>Làm chậm</> chúng 0.5 giây.",
+    "Talent1_2_p4": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>Làm chậm</> chúng 0.5 giây.",
+    "Talent2": "Khi kỹ năng hoạt động, tất cả cán viên trên sân nhận ATK và DEF +14%, nhận gấp đôi nếu cán viên thuộc【Ursus Student Self-Governing Group】",
+    "Talent2_p2": "Khi kỹ năng hoạt động, tất cả cán viên trên sân nhận ATK và DEF +18%<@ba.talpu>(+4%)</>, nhận gấp đôi nếu cán viên thuộc【Ursus Student Self-Governing Group】"
   }
 }

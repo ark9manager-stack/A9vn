@@ -27,6 +27,10 @@
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
     "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
   },
+  "ba.dt.apoptosis": {
+    "title": "Necrosis",
+    "text": "Necrosis sẽ nổ khi đạt 1000, đơn vị bị ảnh hưởng không thể sử dụng kỹ năng trong 15 giây; mất 1 SP mỗi giây và chịu 100 sát thương phép."
+  },
   "ba.dt.apoptosis2": {
     "title": "Necrosis - nguồn từ đồng minh",
     "text": "Khi tích đầy sẽ nổ (1000 với kẻ địch thường/Elite, 2000 với Leader), khiến mục tiêu chịu 50% <$ba.weaken>Suy nhược</> giảm dần theo thời gian bộc phát; đồng thời mục tiêu chịu 800 sát thương nguyên tố mỗi giây. Hồi chiêu 15 giây.\nSát thương nguyên tố từ Necrosis được tính là sát thương theo thời gian."
@@ -34,6 +38,10 @@
   "ba.dt.burning2": {
     "title": "Burn - nguồn từ đồng minh",
     "text": "Khi tích đầy sẽ nổ (1000 với kẻ địch thường/Elite, 2000 với Leader), khiến mục tiêu lập tức chịu 7000 sát thương nguyên tố, đồng thời -20 RES trong thời gian bộc phát. Hồi chiêu 10 giây."
+  },
+  "ba.dt.erosion2": {
+    "title": "Corrosion - nguồn từ đồng minh",
+    "text": "Khi tích đầy sẽ nổ (1000 với kẻ địch thường/Elite, 2000 với Leader), khiến mục tiêu lập tức chịu 5000 sát thương nguyên tố, đồng thời giảm vĩnh viễn 120 DEF (có thể cộng dồn). Hồi chiêu 8 giây."
   },
   "ba.dt.neural2": {
     "title": "Nervous Impairment - nguồn từ đồng minh",
@@ -122,6 +130,10 @@
   "ba.frozen": {
     "title": "Đóng băng/Frozen",
     "text": "Không thể di chuyển, tấn công hoặc sử dụng kỹ năng (kích hoạt thông qua <$ba.cold>Lạnh</>). Đồng thời giảm 15 RES khi bị【Đóng băng】."
+  },
+  "ba.alter": {
+    "title": "Trang bị ứng biến/Equipment Alteration",
+    "text": "Nhận thêm hiệu ứng theo mô tả kỹ năng khi cán viên đó đủ điều kiện để kích hoạt. Khi mang kỹ năng khác nhau Trang bị ứng biến cũng sẽ có điều kiện khác nhau."
   },
   "ba.weightless": {
     "title": "Không trọng lượng/Weightless",
