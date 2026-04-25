@@ -1,10 +1,10 @@
-import React, { Suspense, lazy, useEffect } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import React, { Suspense, lazy, useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Layout from "./components/Layout";
 import LoadingScreen from "./components/UI/LoadingScreen";
-
+import PRTSIntro from "./components/PRTSIntro";
 // lazy load pages
 const Home = lazy(() => import("./pages/Home"));
 const Music = lazy(() => import("./pages/Music"));
@@ -26,9 +26,27 @@ const BossDetail = lazy(() => import("./pages/BossDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
+const INTRO_KEY = "prts_intro_shown_v1";
 
 const App = () => {
   const location = useLocation();
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      return sessionStorage.getItem(INTRO_KEY) !== "1";
+    } catch {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    if (!showIntro) return;
+    try {
+      sessionStorage.setItem(INTRO_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+  }, [showIntro]);
 
   useEffect(() => {
     // reset scroll when page changes
@@ -37,6 +55,7 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
+      {showIntro && <PRTSIntro onComplete={() => setShowIntro(false)} />}
       <main className="flex-1 overflow-y-auto overflow-x-hidden">
         <Suspense fallback={<LoadingScreen />}>
           <Routes location={location}>

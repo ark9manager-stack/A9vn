@@ -109,7 +109,7 @@ export default function Home() {
                 className="font-heading font-bold text-sm tracking-[3px] uppercase px-8 py-3.5 text-primary-foreground transition-transform hover:-translate-y-0.5"
                 style={{
                   background:
-                    "linear-gradient(90deg, hsl(var(--primary)), hsl(35 90% 55%))",
+                    "linear-gradient(90deg, hsl(var(--primary)), hsl(36, 6%, 83%))",
                   clipPath:
                     "polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)",
                 }}

@@ -73,46 +73,134 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-body antialiased;
-    background: #050810;
-    min-height: 100vh;
-    position: relative;
+  html {
+    min-height: 100%;
+    background: #020304;
   }
 
-  /* Global grid overlay (PRTS terminal vibe) */
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(105, 111, 120, 0.16),
+        transparent 34%
+      ),
+      linear-gradient(
+        135deg,
+        #020304 0%,
+        #0a0d11 42%,
+        #171b20 72%,
+        #2a3038 100%
+      );
+    background-attachment: fixed;
+  }
+
+  /* Global PRTS network background */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: 0;
-    background-image:
-      linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
     pointer-events: none;
+    opacity: 0.34;
+    background:
+      radial-gradient(
+        circle at 14% 22%,
+        rgba(255, 255, 255, 0.65) 0 1px,
+        transparent 2px
+      ),
+      radial-gradient(
+        circle at 72% 18%,
+        rgba(255, 255, 255, 0.55) 0 1px,
+        transparent 2px
+      ),
+      radial-gradient(
+        circle at 22% 72%,
+        rgba(255, 255, 255, 0.55) 0 1px,
+        transparent 2px
+      ),
+      radial-gradient(
+        circle at 88% 74%,
+        rgba(255, 255, 255, 0.65) 0 1px,
+        transparent 2px
+      ),
+      linear-gradient(
+        118deg,
+        transparent 49.4%,
+        rgba(255, 255, 255, 0.09) 49.7%,
+        transparent 50%
+      ),
+      linear-gradient(
+        54deg,
+        transparent 49.4%,
+        rgba(255, 255, 255, 0.08) 49.7%,
+        transparent 50%
+      ),
+      linear-gradient(
+        12deg,
+        transparent 49.4%,
+        rgba(255, 255, 255, 0.06) 49.7%,
+        transparent 50%
+      );
+    background-size:
+      240px 180px,
+      280px 210px,
+      260px 220px,
+      300px 200px,
+      220px 180px,
+      260px 220px,
+      300px 260px;
+    filter: blur(0.2px);
+    animation: global-prts-mesh-float 8s ease-in-out infinite alternate;
   }
 
-  /* Global scanlines */
+  /* Global PRTS glow + scanline layer */
   body::after {
     content: "";
     position: fixed;
     inset: 0;
     z-index: 1;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.08) 2px,
-      rgba(0, 0, 0, 0.08) 4px
-    );
     pointer-events: none;
+    background:
+      radial-gradient(
+        circle at 18% 32%,
+        rgba(255, 255, 255, 0.16),
+        transparent 10%
+      ),
+      radial-gradient(
+        circle at 58% 22%,
+        rgba(255, 255, 255, 0.14),
+        transparent 12%
+      ),
+      radial-gradient(
+        circle at 82% 70%,
+        rgba(255, 255, 255, 0.13),
+        transparent 10%
+      ),
+      radial-gradient(
+        circle at 30% 82%,
+        rgba(255, 255, 255, 0.1),
+        transparent 10%
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+      );
+    opacity: 0.72;
   }
 
-  /* Ensure app content sits above overlays */
+  /* Ensure app content sits above the global PRTS background */
   #root {
     position: relative;
     z-index: 2;
+    min-height: 100vh;
   }
 }
 
