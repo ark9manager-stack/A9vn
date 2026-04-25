@@ -364,9 +364,9 @@
   "char_107_liskam": {
     "TitleTalent1": "Chiến thuật phòng ngự",
     "TitleTalent2": "Kháng lôi",
-    "Talent1": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Khi bị tấn công, hồi 1 SP cho bản thân và 1 đồng minh ngẫu nhiên trong 4 ô xung quanh.",
+    "Talent2": "RES +10",
+    "Talent2_p4": "RES +13<@ba.talpu>(+3)</>"
   },
   "char_108_silent": {
     "TitleTalent1": "Liều tăng cường",
@@ -554,10 +554,10 @@
   },
   "char_144_red": {
     "TitleTalent1": "Thấu xương",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 20% ATK của bản thân.",
+    "Talent1_p4": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 23%<@ba.talpu>(+3%)</> ATK của bản thân.",
+    "Talent1_2": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 30% ATK của bản thân.",
+    "Talent1_2_p4": "Mỗi đòn tấn công gây sát thương tối thiểu bằng 33%<@ba.talpu>(+3%)</> ATK của bản thân."
   },
   "char_145_prove": {
     "TitleTalent1": "Tên săn mồi",
@@ -2259,12 +2259,12 @@
   "char_4123_ela": {
     "TitleTalent1": "Mìn GRZMOT",
     "TitleTalent2": "'Ngay giữa hồng tâm'",
-    "Talent0": "Có thể sử dụng 1 Mìn GRZMOT (Tích trữ tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent0_p2": "Có thể sử dụng 2<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1": "Có thể sử dụng 2 Mìn GRZMOT (Tích trữ tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1_p2": "Có thể sử dụng 3<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1_2": "Có thể sử dụng 3 Mìn GRZMOT (Tích trữ tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1_2_p2": "Có thể sử dụng 4<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent0": "Có thể sử dụng 1 Mìn GRZMOT (Tích trữ và triển khai tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent0_p2": "Có thể sử dụng 2<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ và triển khai tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1": "Có thể sử dụng 2 Mìn GRZMOT (Tích trữ và triển khai tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1_p2": "Có thể sử dụng 3<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ và triển khai tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1_2": "Có thể sử dụng 3 Mìn GRZMOT (Tích trữ và triển khai tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1_2_p2": "Có thể sử dụng 4<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ và triển khai tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
     "Talent2": "Đòn tấn công có 30% tỷ lệ gây sát thương vật lý bằng 150% ATK. Tỷ lệ tăng lên 100% khi tấn công mục tiêu đang chịu ảnh hưởng từ hiệu ứng của Mìn GRZMOT.",
     "Talent2_p4": "Đòn tấn công có 30% tỷ lệ gây sát thương vật lý bằng 160%<@ba.talpu>(+10%)</> ATK. Tỷ lệ tăng lên 100% khi tấn công mục tiêu đang chịu ảnh hưởng từ hiệu ứng của Mìn GRZMOT."
   },
@@ -2513,12 +2513,12 @@
   },
   "char_4171_wulfen": {
     "TitleTalent1": "Đồ nghề thám hiểm",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Có thể sử dụng 1 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 2 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent0_p4": "Có thể sử dụng 2<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 2 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1": "Có thể sử dụng 2 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 3 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1_p4": "Có thể sử dụng 3<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 3 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1_2": "Có thể sử dụng 3 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 4 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1_2_p4": "Có thể sử dụng 4<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 4 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công."
   },
   "char_4172_xingzh": {
     "TitleTalent1": "Tình bạn đồng hành",
@@ -2536,19 +2536,19 @@
   },
   "char_4177_brigid": {
     "TitleTalent1": "Khéo tay buộc dây",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Sau khi gây sát thương 20 lần, nhận 15% tỷ lệ né sát thương vật lý.",
+    "Talent1_p4": "Sau khi gây sát thương 20 lần, nhận 18%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý.",
+    "Talent1_2": "Sau khi gây sát thương 20 lần, nhận 35% tỷ lệ né sát thương vật lý.",
+    "Talent1_2_p4": "Sau khi gây sát thương 20 lần, nhận 38%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
   "char_4178_alanna": {
     "TitleTalent1": "Độ máy tạm thời",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 40 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent0_p4": "Mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 50<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 60 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_p4": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 70<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_2": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 80 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_2_p4": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 90<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn."
   },
   "char_4179_monstr": {
     "TitleTalent1": "Tự vá",
@@ -2599,8 +2599,8 @@
     "Talent1_2": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 30% ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
     "Talent1_2_p4": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 35%<@ba.talpu>(+5%)</> ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
     "Talent2": "<$ba.fever>Fever</> +2 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>.",
-    "Talent2_1": "<$ba.fever>Fever</> +3 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 15% ATK của Misumi Uika nếu họ đứng trong phạm vi tấn công của cô.",
-    "Talent2_2": "<$ba.fever>Fever</> +5 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 30% ATK của Misumi Uika nếu họ đứng trong phạm vi tấn công của cô."
+    "Talent2_1": "<$ba.fever>Fever</> +3 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 15% ATK của Misumi Uika lên kẻ địch, nếu họ đứng trong phạm vi tấn công của cô.",
+    "Talent2_2": "<$ba.fever>Fever</> +5 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 30% ATK của Misumi Uika lên kẻ địch, nếu họ đứng trong phạm vi tấn công của cô."
   },
   "char_4185_amoris": {
     "TitleTalent1": "Thuận cả hai tay",
@@ -2618,20 +2618,20 @@
   "char_4186_tmoris": {
     "TitleTalent1": "Dân chuyên làm việc",
     "TitleTalent2": "Chớ ngại nỗi sợ",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": "",
-    "Talent2_2": "",
-    "Talent2_2_p4": ""
+    "Talent0": "Kẻ địch bị Yahata Umiri gây sát thương có 15% tỷ lệ bị <$ba.sluggish>Làm chậm</> trong 3 giây.",
+    "Talent1": "Kẻ địch bị Yahata Umiri gây sát thương có 18% tỷ lệ bị <$ba.sluggish>Làm chậm</> trong 3 giây.",
+    "Talent1_2": "Kẻ địch bị Yahata Umiri gây sát thương có 21% tỷ lệ bị <$ba.sluggish>Làm chậm</> trong 3 giây; Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công.",
+    "Talent2": "<$ba.fever>Fever</>+2 khi gây hiệu ứng <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>;\\nKhi có mặt trên sân, thành viên <$ba.mujica>Ave Mujica</> gây thêm 3% sát thương lên kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>.",
+    "Talent2_p4": "<$ba.fever>Fever</>+2 khi gây hiệu ứng <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>;\\nKhi có mặt trên sân, thành viên <$ba.mujica>Ave Mujica</> gây thêm 8%<@ba.talpu>(+5%)</> sát thương lên kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>.",
+    "Talent2_2": "<$ba.fever>Fever</>+2 khi gây hiệu ứng <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>;\\nKhi có mặt trên sân, thành viên <$ba.mujica>Ave Mujica</> gây thêm 10% sát thương lên kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>.",
+    "Talent2_2_p4": "<$ba.fever>Fever</>+2 khi gây hiệu ứng <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>;\\nKhi có mặt trên sân, thành viên <$ba.mujica>Ave Mujica</> gây thêm 15%<@ba.talpu>(+5%)</> sát thương lên kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.fear>Hoảng sợ</>."
   },
   "char_4187_graceb": {
     "TitleTalent1": "Ơn huệ đúng lúc",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ATK +5%; Hiệu ứng đổi thành ATK +10% sau khi hạ gục kẻ địch đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>.",
+    "Talent1_p4": "ATK +8%<@ba.talpu>(+3%)</>; Hiệu ứng đổi thành ATK +13%<@ba.talpu>(+3%)</> sau khi hạ gục kẻ địch đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>.",
+    "Talent1_2": "ATK +10%; Hiệu ứng đổi thành ATK +15% sau khi hạ gục kẻ địch đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>.",
+    "Talent1_2_p4": "ATK +13%<@ba.talpu>(+3%)</>; Hiệu ứng đổi thành ATK +18%<@ba.talpu>(+3%)</> sau khi hạ gục kẻ địch đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>."
   },
   "char_4188_confes": {
     "TitleTalent1": "Thanh toán trước, Xưng tội sau I",
@@ -2649,10 +2649,10 @@
   },
   "char_4191_tippi": {
     "TitleTalent1": "Cẩm nang làm việc tại trường quay",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nếu không bị tấn công trong vòng 13 giây, né đòn tấn công vật lý hoặc phép kế tiếp từ kẻ địch.",
+    "Talent1_p4": "Nếu không bị tấn công trong vòng 12<@ba.talpu>(-1)</> giây, né đòn tấn công vật lý hoặc phép kế tiếp từ kẻ địch.",
+    "Talent1_2": "Nếu không bị tấn công trong vòng 9 giây, né đòn tấn công vật lý hoặc phép kế tiếp từ kẻ địch.",
+    "Talent1_2_p4": "Nếu không bị tấn công trong vòng 8<@ba.talpu>(-1)</> giây, né đòn tấn công vật lý hoặc phép kế tiếp từ kẻ địch."
   },
   "char_4193_lemuen": {
     "TitleTalent1": "Lệnh truy bắt xuyên biên giới",
@@ -2682,24 +2682,24 @@
   },
   "char_4196_reckpr": {
     "TitleTalent1": "Tích lũy tri thức",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi đồng minh trong phạm vi tấn công kích hoạt kỹ năng, bản thân hồi 1 SP và +8 ASPD trong 8 giây.",
+    "Talent1_p4": "Khi đồng minh trong phạm vi tấn công kích hoạt kỹ năng, bản thân hồi 1 SP và +8 ASPD trong 10<@ba.talpu>(+2)</> giây.",
+    "Talent1_2": "Khi đồng minh trong phạm vi tấn công kích hoạt kỹ năng, bản thân hồi 1 SP và +16 ASPD trong 8 giây.",
+    "Talent1_2_p4": "Khi đồng minh trong phạm vi tấn công kích hoạt kỹ năng, bản thân hồi 1 SP và +16 ASPD trong 10<@ba.talpu>(+2)</> giây."
   },
   "char_4198_christ": {
-    "TitleTalent1": "Mỹ vị quyến rũ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Món ăn quyến rũ",
+    "Talent1": "Khi kẻ địch trong phạm vi tấn công kích hoạt hiệu ứng <$ba.palsy>Tê liệt</>, lập tức chịu sát thương nguyên tố bằng 80% ATK.",
+    "Talent1_p4": "Khi kẻ địch trong phạm vi tấn công kích hoạt hiệu ứng <$ba.palsy>Tê liệt</>, lập tức chịu sát thương nguyên tố bằng 90%<@ba.talpu>(+10％)</> ATK.",
+    "Talent1_2": "Khi kẻ địch trong phạm vi tấn công kích hoạt hiệu ứng <$ba.palsy>Tê liệt</>, lập tức chịu sát thương nguyên tố bằng 120% ATK.",
+    "Talent1_2_p4": "Khi kẻ địch trong phạm vi tấn công kích hoạt hiệu ứng <$ba.palsy>Tê liệt</>, lập tức chịu sát thương nguyên tố bằng 130%<@ba.talpu>(+10％)</> ATK."
   },
   "char_4199_makiri": {
     "TitleTalent1": "Chậm mà chắc",
-    "Talent1": "Sau khi triển khai được 30 giây, tăng 5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_p4": "Sau khi triển khai được 30 giây, tăng 7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2": "Sau khi triển khai được 30 giây, tăng 10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2_p4": "Sau khi triển khai được 30 giây, tăng 12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần)."
+    "Talent1": "Sau khi triển khai được 30 giây, +5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_p4": "Sau khi triển khai được 30 giây, +7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2": "Sau khi triển khai được 30 giây, +10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2_p4": "Sau khi triển khai được 30 giây, +12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
     "TitleTalent1": "Bọt nước mây bay",
@@ -2712,10 +2712,10 @@
   },
   "char_4203_kichi": {
     "TitleTalent1": "Vận may dồn dập!",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Với mỗi loại địch khác nhau bị Kichisei hạ gục, sát thương bản thân gây ra +6% (cộng dồn tối đa 2 lần).",
+    "Talent1_p4": "Với mỗi loại địch khác nhau bị Kichisei hạ gục, sát thương bản thân gây ra +7%<@ba.talpu>(+1%)</> (cộng dồn tối đa 2 lần).",
+    "Talent1_2": "Với mỗi loại địch khác nhau bị Kichisei hạ gục, sát thương bản thân gây ra +6% (cộng dồn tối đa 3 lần).",
+    "Talent1_2_p4": "Với mỗi loại địch khác nhau bị Kichisei hạ gục, sát thương bản thân gây ra +7%<@ba.talpu>(+1%)</> (cộng dồn tối đa 3 lần)."
   },
   "char_4204_mantra": {
     "TitleTalent1": "Vùng tĩnh lặng",
