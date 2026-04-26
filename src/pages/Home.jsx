@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { User, Music, BookOpen, Database } from "lucide-react";
+import HomeModules from "../components/Home/HomeModules";
 
 const tickerItems = [
   { text: "// WELCOME COMMANDER ▸" },
@@ -11,50 +11,6 @@ const tickerItems = [
   { text: "// COMMANDER ACCESS GRANTED" },
 ];
 
-const modules = [
-  {
-    icon: "⚔️",
-    title: "OPERATORS",
-    desc: "Hồ sơ đầy đủ, số liệu thống kê, kỹ năng, và lời thoại của operators trong danh sách.",
-    count: "250+ RECORDS",
-    to: "/operator",
-  },
-  {
-    icon: "💀",
-    title: "ENEMIES",
-    desc: "Thông tin về kẻ thù, bosses và đơn vị tinh nhuệ. Kháng chiến, khả năng và dữ liệu.",
-    count: "180+ TARGETS",
-    to: "/database/bosses",
-  },
-  {
-    icon: "🎵",
-    title: "MUSIC",
-    desc: "Lưu trữ BGM trên tất cả các chương, sự kiện và chủ đề của nhà điều hành. Danh sách theo dõi đầy đủ",
-    count: "400+ TRACKS",
-    to: "/music",
-  },
-  {
-    icon: "📖",
-    title: "STORY",
-    desc: "Tóm tắt các chương, truyền thuyết sự kiện, cốt truyện nhân vật và các kỷ lục xây dựng thế giới.",
-    count: "13 CHAPTERS",
-    to: "/guide-story",
-  },
-  {
-    icon: "🗺️",
-    title: "MATERIALS",
-    desc: "Các nguyên liệu Tier 1–5, map farm và lập kế hoạch thăng cấp operators.",
-    count: "150+ ITEMS",
-    to: "/database/materials",
-  },
-  {
-    icon: "📡",
-    title: "DATABASE",
-    desc: "Chỉ mục trung tâm — bosses, tài liệu, công cụ lập kế hoạch và tham khảo..",
-    count: "LIVE UPDATES",
-    to: "/database",
-  },
-];
 export default function Home() {
   return (
     <div className="relative">
@@ -155,40 +111,7 @@ export default function Home() {
       </section>
 
       {/* MODULES */}
-      <section className="relative z-[2] max-w-[1400px] mx-auto px-6 md:px-10 py-20">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="font-mono-tech text-[0.7rem] text-primary tracking-[3px]">
-            // NAVIGATION_MODULES
-          </span>
-          <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
-          <span className="font-mono-tech text-[0.65rem] text-muted-foreground">
-            06 MODULES
-          </span>
-        </div>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-[2px]">
-          {modules.map((m) => (
-            <Link
-              key={m.title}
-              to={m.to}
-              className="group relative bg-card/85 border border-primary/20 px-6 py-7 flex flex-col gap-3 overflow-hidden transition-all hover:border-primary/50 hover:-translate-y-1"
-            >
-              <span className="absolute top-0 left-0 w-[2px] h-full bg-primary scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform" />
-              <div className="w-10 h-10 border border-primary/20 flex items-center justify-center text-lg bg-primary/5">
-                {m.icon}
-              </div>
-              <div className="font-heading text-lg font-bold text-foreground tracking-wide">
-                {m.title}
-              </div>
-              <div className="text-sm text-muted-foreground leading-relaxed">
-                {m.desc}
-              </div>
-              <div className="font-mono-tech text-[0.65rem] text-primary mt-auto">
-                {m.count}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <HomeModules />
     </div>
   );
 }
