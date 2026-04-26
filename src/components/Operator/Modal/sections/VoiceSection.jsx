@@ -335,9 +335,9 @@ const VoiceSection = ({ operator }) => {
   const defaultAvatarUrl = useMemo(() => buildCnAvatarUrl(charId), [charId]);
 
   return (
-    <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
+    <div className="ak-steel-card rounded-xl p-4 text-white">
       {transText ? (
-        <div className="mb-4 rounded-lg border border-gray-700 bg-[#111] px-3 py-2 text-sm text-gray-200">
+        <div className="mb-4 rounded-lg ak-steel-subcard px-3 py-2 text-sm text-[#dce4ea]">
           {transText}
         </div>
       ) : null}
@@ -361,8 +361,8 @@ const VoiceSection = ({ operator }) => {
                 }}
                 className={`shrink-0 rounded-xl border transition ${
                   isSelected
-                    ? "border-white"
-                    : "border-gray-700 hover:border-gray-400"
+                    ? "border-[#d7e0e8] shadow-[0_0_16px_rgba(215,224,232,0.20)]"
+                    : "border-[#6f7b86]/35 hover:border-[#d7e0e8]/55"
                 }`}
                 style={{ padding: 0 }}
               >
@@ -375,13 +375,13 @@ const VoiceSection = ({ operator }) => {
                     draggable={false}
                   />
                 ) : (
-                  <div className="h-[68px] w-[68px] rounded-xl bg-[#2a2a2a]" />
+                  <div className="h-[68px] w-[68px] rounded-xl ak-steel-subcard" />
                 )}
               </button>
             );
           })}
           {!variants.length ? (
-            <div className="text-base text-gray-300">No voice data.</div>
+            <div className="text-base text-[#cdd6de]">No voice data.</div>
           ) : null}
         </div>
 
@@ -438,17 +438,17 @@ const VoiceSection = ({ operator }) => {
           return (
             <div
               key={v.charWordId}
-              className="overflow-hidden rounded-xl border border-gray-800"
+              className="ak-steel-card overflow-hidden rounded-xl"
             >
               {/* Title (bigger) */}
-              <div className="bg-black px-4 py-3 text-lg font-semibold">
-                <span className="text-gray-300">{v.voiceId}</span>
-                <span className="mx-2 text-gray-600">•</span>
+              <div className="ak-steel-voice-title px-4 py-3 text-lg font-semibold">
+                <span className="text-[#cdd6de]">{v.voiceId}</span>
+                <span className="mx-2 text-[#68737f]">•</span>
                 <span>{title}</span>
               </div>
 
               {/* Audio */}
-              <div className="bg-[#141414] px-4 py-3">
+              <div className="ak-steel-voice-audio px-4 py-3">
                 {audioUrl ? (
                   <audio
                     controls
@@ -462,12 +462,12 @@ const VoiceSection = ({ operator }) => {
                     onPlay={() => stopOtherAudios(v.charWordId)}
                   />
                 ) : (
-                  <div className="text-base text-gray-400">No audio.</div>
+                  <div className="text-base text-[#9faab6]">No audio.</div>
                 )}
               </div>
 
               {/* Text (bigger) */}
-              <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
+              <div className="ak-steel-voice-text px-4 py-4 text-base text-[#eef3f6] whitespace-pre-wrap">
                 {renderAKText(text, `voice-text-${v.charWordId}`, {
                   preferNoteForDollar: true,
                 })}
@@ -477,7 +477,7 @@ const VoiceSection = ({ operator }) => {
         })}
 
         {!voiceLines.length ? (
-          <div className="text-base text-gray-300">
+          <div className="text-base text-[#cdd6de]">
             No voice lines for this Operator.
           </div>
         ) : null}

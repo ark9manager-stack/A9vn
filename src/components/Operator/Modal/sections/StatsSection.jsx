@@ -938,7 +938,9 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                   type="button"
                   onClick={() => handleEliteChange(i)}
                   className={`rounded-lg p-1.5 transition ${
-                    active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+                    active
+                      ? "ak-steel-btn-active border-[#d7e0e8]/55"
+                      : "ak-steel-btn-idle"
                   }`}
                   title={`E${i}`}
                 >
@@ -1185,8 +1187,8 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                       title={skillLabel}
                       className={`flex items-center gap-2 rounded-lg px-2 py-1.5 transition ${
                         active
-                          ? "bg-emerald-600"
-                          : "bg-white/10 hover:bg-white/20"
+                          ? "ak-steel-btn-active border-[#d7e0e8]/55"
+                          : "ak-steel-btn-idle"
                       }`}
                     >
                       <img

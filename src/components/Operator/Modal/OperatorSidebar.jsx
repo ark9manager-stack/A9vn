@@ -150,15 +150,11 @@ const SidebarPanel = ({
               onTabChange(tab.id);
               onTabClick?.();
             }}
-            className={`px-4 ${isMobile ? "py-2.5 text-[14px]" : "py-2"} rounded-lg text-left transition-colors duration-200
-              ${
-                activeTab === tab.id
-                  ? "bg-emerald-600 text-white"
-                  : "bg-[#242424] text-gray-300 hover:bg-[#2e2e2e]"
-              }
-            `}
+            className={`tab-steel ${isMobile ? "py-2.5 text-[14px]" : "py-2"} px-4 rounded-[12px] text-left transition-all duration-300 ${
+              activeTab === tab.id ? "tab-steel-active" : "tab-steel-idle"
+            }`}
           >
-            {tab.label}
+            <span className="relative z-[2]">{tab.label}</span>
           </button>
         ))}
       </div>

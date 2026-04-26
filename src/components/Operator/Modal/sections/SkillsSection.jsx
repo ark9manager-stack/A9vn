@@ -1144,7 +1144,7 @@ export default function SkillsSection(props) {
             type="button"
             onClick={() => setTraitVariantIdx(idx)}
             className={`rounded-lg p-1.5 transition ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+              active ? "ak-steel-btn-active" : "ak-steel-btn-idle"
             }`}
             title={`E${v.phaseIndex}`}
           >
@@ -1255,7 +1255,7 @@ export default function SkillsSection(props) {
             type="button"
             onClick={() => setTalentHeaderOptIdx(idx)}
             className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+              active ? "ak-steel-btn-active" : "ak-steel-btn-idle"
             }`}
             title={
               opt.showLv
@@ -1292,7 +1292,7 @@ export default function SkillsSection(props) {
             type="button"
             onClick={() => setPotRank(idx0)}
             className={`rounded-lg px-2 py-1 transition flex items-center gap-1 ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+              active ? "ak-steel-btn-active" : "ak-steel-btn-idle"
             }`}
             title={`Pot ${idx0 + 1}`}
           >
@@ -1771,7 +1771,7 @@ export default function SkillsSection(props) {
             type="button"
             onClick={() => setBuildingHeaderOptIdx(idx)}
             className={`rounded-lg px-2 py-1.5 transition flex items-center gap-1.5 ${
-              active ? "bg-emerald-600" : "bg-white/10 hover:bg-white/20"
+              active ? "ak-steel-btn-active" : "ak-steel-btn-idle"
             }`}
             title={
               opt.showLv

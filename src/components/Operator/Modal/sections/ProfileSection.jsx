@@ -439,13 +439,19 @@ export default function ProfileSection({ operator, charId }) {
     const activityPotentialItemIdRaw = (() => {
       if (
         charDataBase &&
-        Object.prototype.hasOwnProperty.call(charDataBase, "activityPotentialItemId")
+        Object.prototype.hasOwnProperty.call(
+          charDataBase,
+          "activityPotentialItemId",
+        )
       ) {
         return charDataBase.activityPotentialItemId;
       }
       if (
         charDataEn &&
-        Object.prototype.hasOwnProperty.call(charDataEn, "activityPotentialItemId")
+        Object.prototype.hasOwnProperty.call(
+          charDataEn,
+          "activityPotentialItemId",
+        )
       ) {
         return charDataEn.activityPotentialItemId;
       }
@@ -453,7 +459,9 @@ export default function ProfileSection({ operator, charId }) {
     })();
 
     const activityPotentialItemId =
-      typeof activityPotentialItemIdRaw === "string" ? activityPotentialItemIdRaw : "";
+      typeof activityPotentialItemIdRaw === "string"
+        ? activityPotentialItemIdRaw
+        : "";
     const hasActivityVoucher = isNonEmptyString(activityPotentialItemId);
 
     const _tokenPanelTitle = hasActivityVoucher ? "Thư mục" : "Tín vật";

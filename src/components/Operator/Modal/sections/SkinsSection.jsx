@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
 import LoadingOp from "../../../UI/LoadingOp";
+import bgInform from "../../../../assets/bg_inform.webp";
 
 import {
   ICON_MODEL_URL,
@@ -13,7 +14,7 @@ import {
 } from "../../../../utils/IconArtUrl";
 
 const SP_DYN_SKINS = skinTable?.spDynSkins || {};
-
+const SKIN_BG_URL = bgInform;
 // image URL logic moved to utils/IconArtUrl.js
 
 function pickDisplaySkin(obj) {
@@ -376,11 +377,22 @@ export default function SkinsSection({ operator, className = "" }) {
 
   return (
     <div
-      className={`relative w-full h-full min-h-[520px] rounded-2xl overflow-hidden bg-black/20 ${className}`}
+      className={`relative w-full h-full min-h-[520px] rounded-2xl overflow-hidden bg-[#050709] ${className}`}
     >
       <div className="relative h-full w-full">
+        {/* Background image behind avatar/art */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src={SKIN_BG_URL}
+            alt=""
+            className="h-full w-full object-cover opacity-[0.42] select-none"
+            draggable={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/10 to-black/45" />
+        </div>
+
         {/* Art */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
           {isLoadingImg && <LoadingOp />}
 
           {!isLoadingImg && imgError && (
@@ -396,7 +408,7 @@ export default function SkinsSection({ operator, className = "" }) {
                 key={url}
                 src={url}
                 alt={operator?.name || charId}
-                className="max-h-full max-w-full object-contain"
+                className="max-h-full max-w-full object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
                 loading="eager"
                 draggable={false}
                 style={{ display: show ? "block" : "none" }}
@@ -459,8 +471,8 @@ export default function SkinsSection({ operator, className = "" }) {
                       className={`w-full text-left rounded-lg pl-2 pr-10 py-1.5 text-xs font-semibold transition
                         ${
                           active
-                            ? "bg-emerald-600 text-white"
-                            : "bg-white/10 hover:bg-white/20 text-white/90"
+                            ? "ak-steel-btn-active border-[#d7e0e8]/55"
+                            : "ak-steel-btn-idle"
                         }`}
                       title={opt.label}
                     >
