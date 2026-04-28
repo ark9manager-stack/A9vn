@@ -5126,7 +5126,7 @@
   },
   "char_345_folnic": {
     "Title_S1": "Liều thuốc tối đa",
-    "Title_S2": "Vỏ thuốc hỗn hợp",
+    "Title_S2": "Vỏ thuốc phức hợp",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5659,8 +5659,8 @@
     "S2_7M3": ""
   },
   "char_383_snsant": {
-    "Title_S1": "Móc kéo có ngạnh",
-    "Title_S2": "Móc phóng lưới điện",
+    "Title_S1": "Móc câu sắc bén",
+    "Title_S2": "Phóng lưới điện",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
@@ -5767,7 +5767,7 @@
   },
   "char_394_hadiya": {
     "Title_S1": "Cải biên chiến thuật",
-    "Title_S2": "Mũi giáo Swordhorn",
+    "Title_S2": "Mũi giáo Qarnsayf",
     "S1_1": "",
     "S1_2": "",
     "S1_3": "",
