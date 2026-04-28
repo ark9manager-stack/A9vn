@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { BookOpen, Database, Disc3, Map, Skull, Swords } from "lucide-react";
 
@@ -72,6 +73,61 @@ const modules = [
 ];
 
 export default function HomeModules() {
+  const moduleRefs = useRef([]);
+  const [activeModuleIndex, setActiveModuleIndex] = useState(null);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    let frameId = 0;
+
+    const updateActiveModule = () => {
+      frameId = 0;
+
+      if (!mobileQuery.matches) {
+        setActiveModuleIndex(null);
+        return;
+      }
+
+      const viewportCenter = window.innerHeight / 2;
+      let nextActiveIndex = null;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      moduleRefs.current.forEach((node, index) => {
+        if (!node) return;
+
+        const rect = node.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+        const moduleCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(moduleCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          nextActiveIndex = index;
+        }
+      });
+
+      setActiveModuleIndex(nextActiveIndex);
+    };
+
+    const requestUpdate = () => {
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(updateActiveModule);
+    };
+
+    updateActiveModule();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    mobileQuery.addEventListener?.("change", requestUpdate);
+
+    return () => {
+      if (frameId) window.cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      mobileQuery.removeEventListener?.("change", requestUpdate);
+    };
+  }, []);
+
   return (
     <section className="relative z-[2] max-w-[1400px] mx-auto px-6 md:px-10 py-20">
       <div className="mb-12 flex items-center gap-4">
@@ -87,9 +143,13 @@ export default function HomeModules() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {modules.map((module, index) => {
           const Icon = module.icon;
+          const isActiveOnMobile = activeModuleIndex === index;
 
           return (
             <Link
+              ref={(node) => {
+                moduleRefs.current[index] = node;
+              }}
               key={module.title}
               to={module.to}
               aria-label={`Open ${module.title}`}
@@ -110,12 +170,24 @@ export default function HomeModules() {
                   <img
                     src={module.image}
                     alt=""
-                    className={`absolute inset-0 h-full w-full select-none transition-all duration-500 ease-out ${module.imageClass} opacity-45 brightness-[0.38] contrast-125 grayscale-[0.45] saturate-[0.55] scale-[1.02] group-hover/module:opacity-95 group-hover/module:brightness-100 group-hover/module:contrast-110 group-hover/module:grayscale-0 group-hover/module:saturate-100 group-hover/module:scale-105`}
+                    className={`absolute inset-0 h-full w-full select-none transition-all duration-500 ease-out ${module.imageClass} ${
+                      isActiveOnMobile
+                        ? "opacity-95 brightness-100 contrast-110 grayscale-0 saturate-100 scale-105"
+                        : "opacity-45 brightness-[0.38] contrast-125 grayscale-[0.45] saturate-[0.55] scale-[1.02]"
+                    } group-hover/module:opacity-95 group-hover/module:brightness-100 group-hover/module:contrast-110 group-hover/module:grayscale-0 group-hover/module:saturate-100 group-hover/module:scale-105`}
                     draggable={false}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/70 transition-opacity duration-500 group-hover/module:opacity-55" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_0%,rgba(0,0,0,0.38)_72%)] transition-opacity duration-500 group-hover/module:opacity-35" />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/70 transition-opacity duration-500 ${
+                      isActiveOnMobile ? "opacity-55" : ""
+                    } group-hover/module:opacity-55`}
+                  />
+                  <div
+                    className={`absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_0%,rgba(0,0,0,0.38)_72%)] transition-opacity duration-500 ${
+                      isActiveOnMobile ? "opacity-35" : ""
+                    } group-hover/module:opacity-35`}
+                  />
                   <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-50" />
 
                   <div className="absolute left-3 top-3 font-mono-tech text-[0.62rem] tracking-[2px] text-white/45 transition-colors duration-300 group-hover/module:text-white/75">
