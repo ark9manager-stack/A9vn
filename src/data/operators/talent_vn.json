@@ -39,10 +39,10 @@
   },
   "char_1011_lava2": {
     "TitleTalent1": "Phòng tuyến ma thuật",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nhận ngay 15 SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả cán viên【Thuật sư】nhận +2 SP. Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +2 SP khởi đầu.",
+    "Talent1_p4": "Nhận ngay 20<@ba.talpu>(+5)</> SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả cán viên【Thuật sư】nhận +3<@ba.talpu>(+1)</> SP. Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +3<@ba.talpu>(+1)</> SP khởi đầu.",
+    "Talent1_2": "Nhận ngay 30 SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả cán viên【Thuật sư】nhận +4 SP. Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +4 SP khởi đầu.",
+    "Talent1_2_p4": "Nhận ngay 35<@ba.talpu>(+5)</> SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả cán viên【Thuật sư】nhận +5<@ba.talpu>(+1)</> SP. Khi có mặt trên sân, tất cả cán viên【Thuật sư】nhận +5<@ba.talpu>(+1)</> SP khởi đầu."
   },
   "char_1012_skadi2": {
     "TitleTalent1": "Dòng máu cổ xưa",
@@ -962,11 +962,11 @@
   },
   "char_214_kafka": {
     "TitleTalent1": "Đánh lạc hướng",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Trong thời gian nội tại có hiệu lực, chặn giảm còn 0 và nhận<$ba.camou>Ngụy trang</>.",
+    "Talent1": "Trong thời gian nội tại có hiệu lực, ATK +8%, chặn giảm còn 0 và nhận<$ba.camou>Ngụy trang</>.",
+    "Talent1_p4": "Trong thời gian nội tại có hiệu lực, ATK +11%<@ba.talpu>(+3%)</>, chặn giảm còn 0 và nhận<$ba.camou>Ngụy trang</>.",
+    "Talent1_2": "Trong thời gian nội tại có hiệu lực, ATK +15%, chặn giảm còn 0 và nhận<$ba.camou>Ngụy trang</>.",
+    "Talent1_2_p4": "Trong thời gian nội tại có hiệu lực, ATK +18%<@ba.talpu>(+3%)</>, chặn giảm còn 0 và nhận<$ba.camou>Ngụy trang</>."
   },
   "char_215_mantic": {
     "TitleTalent1": "Sát thủ vô hình - Trung cấp",
@@ -978,10 +978,10 @@
   },
   "char_218_cuttle": {
     "TitleTalent1": "Trực giác vực thẳm",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +6 ASPD.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +8<@ba.talpu>(+2)</> ASPD.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +12 ASPD.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả cán viên【Thợ săn vực thẳm】nhận +14<@ba.talpu>(+2)</> ASPD."
   },
   "char_219_meteo": {
     "TitleTalent1": "Cải tiến đầu đạn nổ",
@@ -1011,15 +1011,15 @@
     "Talent0": "Mỗi lần tấn công sẽ ngẫu nhiên kích hoạt 1 trong các hiệu ứng sau: hồi 13% HP cho bản thân; tăng ATK của đòn đánh đó lên 130%; kẻ địch bị <$ba.sluggish>Làm chậm</> trong 1 giây; kẻ địch bị <$ba.stun>Choáng</> trong 0.6 giây.",
     "Talent1": "Mỗi lần tấn công sẽ ngẫu nhiên kích hoạt 1 trong các hiệu ứng sau: hồi 14% HP cho bản thân; tăng ATK của đòn đánh đó lên 140%; kẻ địch bị <$ba.sluggish>Làm chậm</> trong 1.2 giây; kẻ địch bị <$ba.stun>Choáng</> trong 0.8 giây.",
     "Talent1_2": "Mỗi lần tấn công sẽ ngẫu nhiên kích hoạt 1 trong các hiệu ứng sau: hồi 15% HP cho bản thân; tăng ATK của đòn đánh đó lên 150%; kẻ địch bị <$ba.sluggish>Làm chậm</> trong 1.4 giây; kẻ địch bị <$ba.stun>Choáng</> trong 1 giây.",
-    "Talent2": "Hiệu quả hồi phục +20%",
-    "Talent2_p4": "Hiệu quả hồi phục +25%<@ba.talpu>(+5%)</>"
+    "Talent2": "Hiệu quả hồi phục +20%.",
+    "Talent2_p4": "Hiệu quả hồi phục +25%<@ba.talpu>(+5%)</>."
   },
   "char_226_hmau": {
     "TitleTalent1": "Trấn cửa",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "DEF +6%.",
+    "Talent1_p4": "DEF +8%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "DEF +6%; Đồng minh đứng trên ô cao ngay phía sau Hung nhận +75% lượng hồi phục từ anh.",
+    "Talent1_2_p4": "DEF +8%<@ba.talpu>(+2%)</>; Đồng minh đứng trên ô cao ngay phía sau Hung nhận +85%<@ba.talpu>(+10%)</> lượng hồi phục từ anh."
   },
   "char_230_savage": {
     "TitleTalent1": "Thung lũng",
@@ -1066,17 +1066,17 @@
   },
   "char_243_waaifu": {
     "TitleTalent1": "Hong Mei Vịnh Xuân Quyền",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 125% và đẩy lùi nhẹ mục tiêu.",
+    "Talent1_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 135%<@ba.talpu>(+10%)</> và đẩy lùi nhẹ mục tiêu.",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 150% và đẩy lùi nhẹ mục tiêu.",
+    "Talent1_2_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</> và đẩy lùi nhẹ mục tiêu."
   },
   "char_245_cello": {
     "TitleTalent1": "Khúc bi ca không lời",
     "TitleTalent2": "Bẻ ngược tư duy",
     "Talent0": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 6% ATK.",
-    "Talent1": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 8% ATK và bị <$ba.sluggish>Làm chậm </> 0.2 giây.",
-    "Talent1_2": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 10% ATK và bị <$ba.sluggish>Làm chậm </> 0.2 giây.",
+    "Talent1": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 8% ATK và bị <$ba.sluggish>Làm chậm</> 0.2 giây.",
+    "Talent1_2": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 10% ATK và bị <$ba.sluggish>Làm chậm</> 0.2 giây.",
     "Talent2": "Kẻ địch trong phạm vi tấn công sẽ chịu thêm 20% <$ba.dt.apoptosis2>Necrosis</>.",
     "Talent2_p4": "Kẻ địch trong phạm vi tấn công sẽ chịu thêm 22%<@ba.talpu>(+2%)</> <$ba.dt.apoptosis2>Necrosis</>."
   },
@@ -1109,10 +1109,10 @@
   },
   "char_252_bibeak": {
     "TitleTalent1": "Hút hồn",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Mỗi khi hạ gục 1 kẻ địch, +4 ASPD (cộng dồn tối đa 5 lần).",
+    "Talent1_p4": "Mỗi khi hạ gục 1 kẻ địch, +4 ASPD (cộng dồn tối đa 6<@ba.talpu>(+1)</> lần).",
+    "Talent1_2": "Mỗi khi hạ gục 1 kẻ địch, +6 ASPD (cộng dồn tối đa 5 lần).",
+    "Talent1_2_p4": "Mỗi khi hạ gục 1 kẻ địch, +6 ASPD (cộng dồn tối đa 6<@ba.talpu>(+1)</> lần)."
   },
   "char_253_greyy": {
     "TitleTalent1": "Vùng tĩnh điện",
@@ -1121,12 +1121,12 @@
   },
   "char_254_vodfox": {
     "TitleTalent1": "Lời nguyền bại trận",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Kẻ địch trong phạm vi tấn công sẽ nhận 10% <$ba.fragile>Fragile/> nếu dưới 40% HP.",
+    "Talent0_p4": "Kẻ địch trong phạm vi tấn công sẽ nhận 13%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile/> nếu dưới 40% HP.",
+    "Talent1": "Kẻ địch trong phạm vi tấn công sẽ nhận 20% <$ba.fragile>Fragile/> nếu dưới 40% HP.",
+    "Talent1_p4": "Kẻ địch trong phạm vi tấn công sẽ nhận 23%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile/> nếu dưới 40% HP.",
+    "Talent1_2": "Kẻ địch trong phạm vi tấn công sẽ nhận 30% <$ba.fragile>Fragile/> nếu dưới 40% HP.",
+    "Talent1_2_p4": "Kẻ địch trong phạm vi tấn công sẽ nhận 33%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile/> nếu dưới 40% HP."
   },
   "char_258_podego": {
     "TitleTalent1": "Người chăm vườn hoa",
@@ -1166,12 +1166,12 @@
   },
   "char_265_sophia": {
     "TitleTalent1": "Quở trách",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Khi có mặt trên sân, đồng minh cận chiến có số lượng chặn từ 3 trở lên nhận +2 ASPD và +4% DEF.",
+    "Talent0_p4": "Khi có mặt trên sân, đồng minh cận chiến có số lượng chặn từ 3 trở lên nhận +4<@ba.talpu>(+2)</> ASPD và +6%<@ba.talpu>(+2%)</> DEF.",
+    "Talent1": "Khi có mặt trên sân, đồng minh cận chiến có số lượng chặn từ 3 trở lên nhận +4 ASPD và +8% DEF.",
+    "Talent1_p4": "Khi có mặt trên sân, đồng minh cận chiến có số lượng chặn từ 3 trở lên nhận +6<@ba.talpu>(+2)</> ASPD và +10%<@ba.talpu>(+2%)</> DEF.",
+    "Talent1_2": "Khi có mặt trên sân, đồng minh cận chiến có số lượng chặn từ 3 trở lên nhận +6 ASPD và +12% DEF.",
+    "Talent1_2_p4": "Khi có mặt trên sân, đồng minh cận chiến có số lượng chặn từ 3 trở lên nhận +8<@ba.talpu>(+2)</> ASPD và +14%<@ba.talpu>(+2%)</> DEF."
   },
   "char_271_spikes": {
     "TitleTalent1": "Phân rã cấu trúc",
@@ -1304,10 +1304,10 @@
   },
   "char_294_ayer": {
     "TitleTalent1": "Hỗ trợ trinh sát",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Bản thân và đồng minh trong 8 ô xung quanh nhận +4 ASPD.",
+    "Talent1_p4": "Bản thân và đồng minh trong 8 ô xung quanh nhận +6<@ba.talpu>(+2)</> ASPD.",
+    "Talent1_2": "Bản thân và đồng minh trong 8 ô xung quanh nhận +8 ASPD.",
+    "Talent1_2_p4": "Bản thân và đồng minh trong 8 ô xung quanh nhận +10<@ba.talpu>(+2)</> ASPD."
   },
   "char_297_hamoni": {
     "TitleTalent1": "Vị khách bất ngờ",
@@ -1353,10 +1353,10 @@
   },
   "char_306_leizi": {
     "TitleTalent1": "Lưu thông dòng chảy",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ATK tăng lên 110% khi tấn công kẻ địch chưa bị chặn.",
+    "Talent1_p4": "ATK tăng lên 113%<@ba.talpu>(+3%)</> khi tấn công kẻ địch chưa bị chặn.",
+    "Talent1_2": "ATK tăng lên 120% khi tấn công kẻ địch chưa bị chặn.",
+    "Talent1_2_p4": "ATK tăng lên 123%<@ba.talpu>(+3%)</> khi tấn công kẻ địch chưa bị chặn."
   },
   "char_308_swire": {
     "TitleTalent1": "Chỉ đạo cận chiến",
@@ -1421,9 +1421,9 @@
   },
   "char_336_folivo": {
     "TitleTalent1": "Đội nhiếp ảnh",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Có thể sử dụng 3 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>.",
+    "Talent1": "Có thể sử dụng 4 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>.",
+    "Talent1_2": "Có thể sử dụng 5 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>."
   },
   "char_337_utage": {
     "TitleTalent1": "Chế độ nghiêm túc",
@@ -1433,10 +1433,10 @@
   },
   "char_338_iris": {
     "TitleTalent1": "Phong ấn kho báu",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Sát thương từ đòn tích trữ tăng lên 115%.",
+    "Talent1_p4": "Sát thương từ đòn tích trữ tăng lên 119%<@ba.talpu>(+4%)</>.",
+    "Talent1_2": "Sát thương từ đòn tích trữ tăng lên 130%.",
+    "Talent1_2_p4": "Sát thương từ đòn tích trữ tăng lên 134%<@ba.talpu>(+4%)</>."
   },
   "char_340_shwaz": {
     "TitleTalent1": "Tên xuyên thấu",
@@ -1456,28 +1456,28 @@
   },
   "char_343_tknogi": {
     "TitleTalent1": "Ban phước",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đồng minh trong phạm vi tấn công sẽ nhận 12% <$ba.protect>Bảo hộ</> khi dưới 40% HP.",
+    "Talent1_p4": "Đồng minh trong phạm vi tấn công sẽ nhận 14%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</> khi dưới 40% HP.",
+    "Talent1_2": "Đồng minh trong phạm vi tấn công sẽ nhận 18% <$ba.protect>Bảo hộ</> khi dưới 40% HP.",
+    "Talent1_2_p4": "Đồng minh trong phạm vi tấn công sẽ nhận 20%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</> khi dưới 40% HP."
   },
   "char_344_beewax": {
     "TitleTalent1": "Sa mạc phù hộ",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Khi chưa kích hoạt kỹ năng, mỗi giây hồi 2.5% HP tối đa.",
+    "Talent1_2": "Khi chưa kích hoạt kỹ năng, mỗi giây hồi 4% HP tối đa."
   },
   "char_345_folnic": {
-    "TitleTalent1": "Kỹ thuật ngăn thuốc hấp thụ",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "TitleTalent1": "Kỹ thuật ức chế thuốc",
+    "Talent1": "Nhận <$ba.buffres>Kháng hiệu ứng</>.",
+    "Talent1_2": "Nhận <$ba.buffres>Kháng hiệu ứng</> và -40% sát thương từ môi trường.",
+    "Talent1_2_p4": "Nhận <$ba.buffres>Kháng hiệu ứng</> và -50%<@ba.talpu>(+10%)</> sát thương từ môi trường."
   },
   "char_346_aosta": {
     "TitleTalent1": "Đinh nhọn",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 12% ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 18% ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_347_jaksel": {
     "TitleTalent1": "Phản xạ cấp tốc",
@@ -1495,10 +1495,10 @@
   },
   "char_349_chiave": {
     "TitleTalent1": "Chuyên môn kỹ thuật",
-    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +7%.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +9%<@ba.talpu>(+2%)</>.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +11%.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】được giảm 75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận ATK và DEF +13%<@ba.talpu>(+2%)</>."
+    "Talent1": "Khi có mặt trên sân, tất cả cán viên【Robot】-75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +7% ATK và DEF.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】-75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +9%<@ba.talpu>(+2%)</> ATK và DEF.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Robot】-75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +11% ATK và DEF.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả cán viên【Robot】-75% thời gian tái triển khai; Mỗi cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +13%<@ba.talpu>(+2%)</> ATK và DEF."
   },
   "char_350_surtr": {
     "TitleTalent1": "Nung chảy",
@@ -1549,8 +1549,8 @@
   },
   "char_365_aprl": {
     "TitleTalent1": "Thợ săn lão luyện",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Thời gian tái triển khai -15 giây.",
+    "Talent1_2": "Thời gian tái triển khai -20 giây, DP -1."
   },
   "char_366_acdrop": {
     "TitleTalent1": "Kỹ thuật Slideshot",
@@ -1559,8 +1559,8 @@
   },
   "char_367_swllow": {
     "TitleTalent1": "Xuôi gió",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "ASPD +6.",
+    "Talent1_2": "ASPD +6; Khi tấn công, có 15% tỷ lệ tăng ATK của đòn đánh đó lên 150%."
   },
   "char_369_bena": {
     "TitleTalent1": "Thước đo góc của Bena",
@@ -1572,10 +1572,10 @@
   },
   "char_373_lionhd": {
     "TitleTalent1": "Mảnh vỡ chết người",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Mỗi kẻ địch trong phạm vi tấn công giúp bản thân +3% ATK (cộng dồn tối đa 5 tầng).",
+    "Talent1_p4": "Mỗi kẻ địch trong phạm vi tấn công giúp bản thân +3% ATK (cộng dồn tối đa 6<@ba.talpu>(+1)</> tầng).",
+    "Talent1_2": "Mỗi kẻ địch trong phạm vi tấn công giúp bản thân +4% ATK (cộng dồn tối đa 5 tầng).",
+    "Talent1_2_p4": "Mỗi kẻ địch trong phạm vi tấn công giúp bản thân +4% ATK (cộng dồn tối đa 6<@ba.talpu>(+1)</> tầng)."
   },
   "char_376_therex": {
     "TitleTalent1": "Bom hẹn giờ I",
@@ -1584,7 +1584,6 @@
     "TitleTalent1_p3": "Bom hẹn giờ IV",
     "TitleTalent1_p4": "Bom hẹn giờ V",
     "TitleTalent1_p5": "Bom hẹn giờ VI",
-    "TitleTalent2": "",
     "Talent0": "",
     "Talent0_p1": "",
     "Talent0_p2": "",
@@ -1604,15 +1603,15 @@
   },
   "char_378_asbest": {
     "TitleTalent1": "Làn da ẩm ướt",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "RES +5; Hồi 1 SP khi trúng đòn tấn công phép từ kẻ địch.",
+    "Talent1_2": "RES +10; Hồi 3 SP khi trúng đòn tấn công phép từ kẻ địch."
   },
   "char_379_sesa": {
     "TitleTalent1": "Phân tích nhược điểm",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ chịu thêm 7% sát thương vật lý.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ chịu thêm 9%<@ba.talpu>(+2%)</> sát thương vật lý.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ chịu thêm 14% sát thương vật lý.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ chịu thêm 16%<@ba.talpu>(+2%)</> sát thương vật lý."
   },
   "char_381_bubble": {
     "TitleTalent1": "Giáp gai",
@@ -1621,10 +1620,10 @@
   },
   "char_383_snsant": {
     "TitleTalent1": "Chuyên gia bắt côn trùng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi kéo trúng【Infected Creature】sẽ khiến chúng bị Câm lặng trong 4 giây.",
+    "Talent1_p4": "Khi kéo trúng【Infected Creature】sẽ khiến chúng bị Câm lặng trong 8<@ba.talpu>(+4)</> giây.",
+    "Talent1_2": "Lực kéo lên các mục tiêu【Infected Creature】sẽ tăng 1 cấp, và khiến chúng bị Câm lặng trong 4 giây.",
+    "Talent1_2_p4": "Lực kéo lên các mục tiêu【Infected Creature】sẽ tăng 1 cấp, và khiến chúng bị Câm lặng trong 8<@ba.talpu>(+4)</> giây."
   },
   "char_385_finlpp": {
     "TitleTalent1": "Hồi phục nhanh chóng",
@@ -1633,10 +1632,10 @@
   },
   "char_388_mint": {
     "TitleTalent1": "Nhà địa chất",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi chưa kích hoạt kỹ năng, đồng minh trong 4 ô xung quanh Mint nhận DEF +5%.",
+    "Talent1_p4": "Khi chưa kích hoạt kỹ năng, đồng minh trong 4 ô xung quanh Mint nhận DEF +7%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi chưa kích hoạt kỹ năng, đồng minh trong 4 ô xung quanh Mint nhận DEF +10%.\\nKhi kích hoạt kỹ năng, bản thân sẽ hạn chế bị chọn làm mục tiêu tấn công.",
+    "Talent1_2_p4": "Khi chưa kích hoạt kỹ năng, đồng minh trong 4 ô xung quanh Mint nhận DEF +12%<@ba.talpu>(+2%)</>.\\nKhi kích hoạt kỹ năng, bản thân sẽ hạn chế bị chọn làm mục tiêu tấn công."
   },
   "char_391_rosmon": {
     "TitleTalent1": "Vũ khí hủy diệt",
@@ -1798,10 +1797,10 @@
   },
   "char_402_tuye": {
     "TitleTalent1": "Trữ nước",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi không hồi phục cho bất kỳ ai trong 4 giây, lượng hồi phục tiếp theo sẽ hồi HP bằng 130% ATK.",
+    "Talent1_p4": "Khi không hồi phục cho bất kỳ ai trong 4 giây, lượng hồi phục tiếp theo sẽ hồi HP bằng 135%<@ba.talpu>(+5%)</> ATK.",
+    "Talent1_2": "Khi không hồi phục cho bất kỳ ai trong 4 giây, lượng hồi phục tiếp theo sẽ hồi HP bằng 150% ATK.",
+    "Talent1_2_p4": "Khi không hồi phục cho bất kỳ ai trong 4 giây, lượng hồi phục tiếp theo sẽ hồi HP bằng 155%<@ba.talpu>(+5%)</> ATK."
   },
   "char_4032_provs": {
     "TitleTalent1": "Chuyên môn pháp lý Kazimierz",
@@ -1943,10 +1942,10 @@
   },
   "char_405_absin": {
     "TitleTalent1": "Thực thi pháp luật",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Kẻ địch có HP dưới 40% sẽ chịu thêm 12% sát thương từ Absinthe.",
+    "Talent1_p4": "Kẻ địch có HP dưới 40% sẽ chịu thêm 18%<@ba.talpu>(+6%)</> sát thương từ Absinthe.",
+    "Talent1_2": "Kẻ địch có HP dưới 40% sẽ chịu thêm 24% sát thương từ Absinthe.",
+    "Talent1_2_p4": "Kẻ địch có HP dưới 40% sẽ chịu thêm 30%<@ba.talpu>(+6%)</> sát thương từ Absinthe."
   },
   "char_4062_totter": {
     "TitleTalent1": "Đôi mắt tinh tường",
@@ -2230,12 +2229,12 @@
   },
   "char_411_tomimi": {
     "TitleTalent1": "Phép thuật hoang dã",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +50%.",
+    "Talent0_p4": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +70%<@ba.talpu>(+20%)</>.",
+    "Talent1": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +75%.",
+    "Talent1_p4": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +95%<@ba.talpu>(+20%)</>.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +100%.",
+    "Talent1_2_p4": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +120%<@ba.talpu>(+20%)</>."
   },
   "char_4121_zuole": {
     "TitleTalent1": "Phản chiếu bóng",
@@ -2456,10 +2455,10 @@
   },
   "char_415_flint": {
     "TitleTalent1": "Outboxer",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Gây thêm 20% sát thương lên kẻ địch không bị bản thân chặn.",
+    "Talent1_p4": "Gây thêm 25%<@ba.talpu>(+5%)</> sát thương lên kẻ địch không bị bản thân chặn.",
+    "Talent1_2": "Gây thêm 40% sát thương lên kẻ địch không bị bản thân chặn.",
+    "Talent1_2_p4": "Gây thêm 45%<@ba.talpu>(+5%)</> sát thương lên kẻ địch không bị bản thân chặn."
   },
   "char_4162_cathy": {
     "TitleTalent1": "Tín hiệu hỗ trợ định hướng",
@@ -2637,12 +2636,12 @@
     "TitleTalent1_p3": "Thanh toán trước, Xưng tội sau IV",
     "TitleTalent1_p4": "Thanh toán trước, Xưng tội sau V",
     "TitleTalent1_p5": "Thanh toán trước, Xưng tội sau VI",
-    "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 5 giây.",
-    "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
-    "Talent0_p2": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
-    "Talent0_p3": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 7<@ba.talpu>(+2)</> giây.",
-    "Talent0_p4": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 7<@ba.talpu>(+2)</> giây.",
-    "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ say|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
+    "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 5 giây.",
+    "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
+    "Talent0_p2": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
+    "Talent0_p3": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 7<@ba.talpu>(+2)</> giây.",
+    "Talent0_p4": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 7<@ba.talpu>(+2)</> giây.",
+    "Talent0_p5": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 4<@ba.talpu>(+2)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 8<@ba.talpu>(+3)</> giây."
   },
   "char_4191_tippi": {
     "TitleTalent1": "Cẩm nang làm việc tại trường quay",
@@ -2854,10 +2853,10 @@
   },
   "char_436_whispr": {
     "TitleTalent1": "Tháp sinh mệnh",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 3% ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 4%<@ba.talpu>(+1%)</> ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 6% ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 7%<@ba.talpu>(+1%)</> ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_437_mizuki": {
     "TitleTalent1": "Cơn Hysteria chấn thương",
@@ -2907,12 +2906,12 @@
   },
   "char_451_robin": {
     "TitleTalent1": "Chuyên gia bẫy 'Kẹp'",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Có thể sử dụng 4 bẫy 'Kẹp' (Tích trữ và triển khai tối đa 6 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent0_p4": "Có thể sử dụng 6<@ba.talpu>(+2)</> bẫy 'Kẹp' (Tích trữ và triển khai tối đa 6 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1": "Có thể sử dụng 6 bẫy 'Kẹp' (Tích trữ và triển khai tối đa 8 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_p4": "Có thể sử dụng 8<@ba.talpu>(+2)</> bẫy 'Kẹp' (Tích trữ và triển khai tối đa 8 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_2": "Có thể sử dụng 8 bẫy 'Kẹp' (Tích trữ và triển khai tối đa 10 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_2_p4": "Có thể sử dụng 10<@ba.talpu>(+2)</> bẫy 'Kẹp' (Tích trữ và triển khai tối đa 10 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó."
   },
   "char_452_bstalk": {
     "TitleTalent1": "Chuyên gia nhân giống",
@@ -2922,10 +2921,10 @@
   },
   "char_455_nothin": {
     "TitleTalent1": "Đánh úp bất ngờ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Sau khi không tấn công trong vòng 4 giây, tăng ATK của đòn đánh kế tiếp lên 125% và <$ba.stun>Choáng</> mục tiêu trong 3 giây.",
+    "Talent1_p4": "Sau khi không tấn công trong vòng 4 giây, tăng ATK của đòn đánh kế tiếp lên 130%<@ba.talpu>(+5%)</> và <$ba.stun>Choáng</> mục tiêu trong 3 giây.",
+    "Talent1_2": "Sau khi không tấn công trong vòng 4 giây, tăng ATK của đòn đánh kế tiếp lên 150% và <$ba.stun>Choáng</> mục tiêu trong 4 giây.",
+    "Talent1_2_p4": "Sau khi không tấn công trong vòng 4 giây, tăng ATK của đòn đánh kế tiếp lên 155%<@ba.talpu>(+5%)</> và <$ba.stun>Choáng</> mục tiêu trong 4 giây."
   },
   "char_456_ash": {
     "TitleTalent1": "Lựu đạn gây choáng",
@@ -2955,11 +2954,11 @@
   },
   "char_459_tachak": {
     "TitleTalent1": "Hỏa lực hạng nặng",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Phạm vi tấn công +1, thời gian tái triển khai +20 giây.",
+    "Talent1": "Phạm vi tấn công +1, DEF +5%, thời gian tái triển khai +20 giây.",
+    "Talent1_p4": "Phạm vi tấn công +1, DEF +10%<@ba.talpu>(+5%)</>, thời gian tái triển khai +20 giây.",
+    "Talent1_2": "Phạm vi tấn công +2, DEF +10%, thời gian tái triển khai +20 giây.",
+    "Talent1_2_p4": "Phạm vi tấn công +2, DEF +15%<@ba.talpu>(+5%)</>, thời gian tái triển khai +20 giây."
   },
   "char_464_cement": {
     "TitleTalent1": "Kiểm tra bản vẽ",
@@ -2969,7 +2968,7 @@
     "Talent1_2_p4": ""
   },
   "char_466_qanik": {
-    "TitleTalent1": "Sinh tồn vùng đồng băng",
+    "TitleTalent1": "Sinh tồn vùng đất băng",
     "Talent1": "",
     "Talent1_p4": "",
     "Talent1_2": "",
