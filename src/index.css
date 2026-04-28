@@ -1378,3 +1378,21 @@
     ),
     linear-gradient(135deg, #141a20 0%, #252d36 54%, #10151a 100%);
 }
+
+/* Steel / smoke palette for Operator pages */
+.ak-steel-content-bg {
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 14% 12%,
+      rgba(210, 220, 228, 0.045) 0%,
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 84% 78%,
+      rgba(120, 134, 148, 0.055) 0%,
+      transparent 30%
+    ),
+    linear-gradient(180deg, #06080a 0%, #0b0e12 42%, #07090c 100%);
+  color: #eef3f6;
+}

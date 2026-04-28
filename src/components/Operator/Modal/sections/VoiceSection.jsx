@@ -335,7 +335,7 @@ const VoiceSection = ({ operator }) => {
   const defaultAvatarUrl = useMemo(() => buildCnAvatarUrl(charId), [charId]);
 
   return (
-    <div className="ak-steel-card rounded-xl p-4 text-white">
+    <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
       {transText ? (
         <div className="mb-4 rounded-lg ak-steel-subcard px-3 py-2 text-sm text-[#dce4ea]">
           {transText}
@@ -467,7 +467,7 @@ const VoiceSection = ({ operator }) => {
               </div>
 
               {/* Text (bigger) */}
-              <div className="ak-steel-voice-text px-4 py-4 text-base text-[#eef3f6] whitespace-pre-wrap">
+              <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
                 {renderAKText(text, `voice-text-${v.charWordId}`, {
                   preferNoteForDollar: true,
                 })}

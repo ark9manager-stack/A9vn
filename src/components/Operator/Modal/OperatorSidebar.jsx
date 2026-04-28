@@ -78,7 +78,7 @@ const SidebarPanel = ({
         className={`mt-3 grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 gap-4"} w-full`}
       >
         {/* Main class */}
-        <div className="text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
+        <div className="steel-box text-center rounded-[12px] p-2">
           {profIcon ? (
             <img
               src={profIcon}
@@ -104,7 +104,7 @@ const SidebarPanel = ({
         </div>
 
         {/* Sub class */}
-        <div className="text-center rounded-lg border border-gray-500/30 bg-black/20 p-2">
+        <div className="steel-box text-center rounded-[12px] p-2">
           {subIcon ? (
             <img
               src={subIcon}
@@ -263,7 +263,7 @@ const OperatorSidebar = ({
   return (
     <>
       {/* Desktop sidebar - keep original layout */}
-      <div className="hidden md:flex w-[300px] bg-[#1a1a1a] border-r border-white/10 flex-col p-4 text-white shrink-0">
+      <div className="hidden md:flex w-[300px] sidebar-steel-dark flex-col p-4 text-white shrink-0">
         <SidebarPanel
           operator={operator}
           activeTab={activeTab}

@@ -1799,7 +1799,7 @@ export default function ModuleSection(props) {
         <div className="shrink-0">
           {isNonEmptyString(activeModuleImageUrl) ? (
             <div
-              className="relative rounded-2xl border border-white/10 bg-black/30 overflow-hidden flex items-center justify-center"
+              className="relative rounded-2xl overflow-hidden flex items-center justify-center"
               style={{
                 width: MODULE_IMG_BOX_SIZE,
                 height: MODULE_IMG_BOX_SIZE,
