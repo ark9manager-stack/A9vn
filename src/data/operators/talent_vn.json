@@ -89,8 +89,8 @@
   },
   "char_101_sora": {
     "TitleTalent1": "Encore",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Sau khi kỹ năng kết thúc, có 50% tỷ lệ hồi lại ngay 25% SP tối đa.",
+    "Talent1_2": "Sau khi kỹ năng kết thúc, có 50% tỷ lệ hồi lại ngay 50% SP tối đa."
   },
   "char_1020_reed2": {
     "TitleTalent1": "Vết bỏng",
@@ -484,17 +484,17 @@
   },
   "char_131_flameb": {
     "TitleTalent1": "Huyết sát",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Mỗi khi hạ gục 1 kẻ địch sẽ tăng 20 HP tối đa (cộng dồn tối đa 30 lần).",
+    "Talent1_p4": "Mỗi khi hạ gục 1 kẻ địch sẽ tăng 30<@ba.talpu>(+10)</> HP tối đa (cộng dồn tối đa 30 lần).",
+    "Talent1_2": "Mỗi khi hạ gục 1 kẻ địch sẽ tăng 40 HP tối đa (cộng dồn tối đa 30 lần).",
+    "Talent1_2_p4": "Mỗi khi hạ gục 1 kẻ địch sẽ tăng 50<@ba.talpu>(+10)</> HP tối đa (cộng dồn tối đa 30 lần)."
   },
   "char_133_mm": {
     "TitleTalent1": "Thám tử Victoria",
     "Talent1": "ATK +4%, ASPD +4",
-    "Talent1_p4": "ATK +5%<@ba.talpu>(+1%)</>, ASPD +5<@ba.talpu>(+1%)</>",
+    "Talent1_p4": "ATK +5%<@ba.talpu>(+1%)</>, ASPD +5<@ba.talpu>(+1)</>",
     "Talent1_2": "ATK +7%, ASPD +7",
-    "Talent1_2_p4": "ATK +8%<@ba.talpu>(+1%)</>, ASPD +8<@ba.talpu>(+1%)</>"
+    "Talent1_2_p4": "ATK +8%<@ba.talpu>(+1%)</>, ASPD +8<@ba.talpu>(+1)</>"
   },
   "char_134_ifrit": {
     "TitleTalent1": "Bào mòn tinh thần",
@@ -516,10 +516,10 @@
   "char_136_hsguma": {
     "TitleTalent1": "Áo chống đạn",
     "TitleTalent2": "Chiến lược 'Chiến tranh đặc biệt'",
-    "Talent1": "Có 12% tỷ lệ chặn một đòn tấn công.",
-    "Talent1_p2": "Có 15%<@ba.talpu>(+3%)</> tỷ lệ chặn một đòn tấn công.",
-    "Talent1_2": "Có 25% tỷ lệ chặn một đòn tấn công.",
-    "Talent1_2_p2": "Có 28%<@ba.talpu>(+3%)</> tỷ lệ chặn một đòn tấn công.",
+    "Talent1": "Có 12% tỷ lệ chặn một lần sát thương.",
+    "Talent1_p2": "Có 15%<@ba.talpu>(+3%)</> tỷ lệ chặn một lần sát thương.",
+    "Talent1_2": "Có 25% tỷ lệ chặn một lần sát thương.",
+    "Talent1_2_p2": "Có 28%<@ba.talpu>(+3%)</> tỷ lệ chặn một lần sát thương.",
     "Talent2": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +6% DEF.",
     "Talent2_p5": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +8%<@ba.talpu>(+2%)</> DEF."
   },
@@ -561,10 +561,10 @@
   },
   "char_145_prove": {
     "TitleTalent1": "Tên săn mồi",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 140%; Khi mục tiêu ở 1 ô ngay phía trước, tỷ lệ này tăng lên 50%.",
+    "Talent1_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 150%<@ba.talpu>(+10%)</>; Khi mục tiêu ở 1 ô ngay phía trước, tỷ lệ này tăng lên 50%.",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 180%; Khi mục tiêu ở 1 ô ngay phía trước, tỷ lệ này tăng lên 50%.",
+    "Talent1_2_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 190%<@ba.talpu>(+10%)</>; Khi mục tiêu ở 1 ô ngay phía trước, tỷ lệ này tăng lên 50%."
   },
   "char_147_shining": {
     "TitleTalent1": "Hắc ma bảo hộ",
@@ -636,10 +636,10 @@
   },
   "char_158_milu": {
     "TitleTalent1": "Sát thủ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ATK tăng lên 120% khi tấn công kẻ địch đánh tầm xa.",
+    "Talent1_p4": "ATK tăng lên 125%<@ba.talpu>(+5%)</> khi tấn công kẻ địch đánh tầm xa.",
+    "Talent1_2": "ATK tăng lên 140% khi tấn công kẻ địch đánh tầm xa.",
+    "Talent1_2_p4": "ATK tăng lên 145%<@ba.talpu>(+5%)</> khi tấn công kẻ địch đánh tầm xa."
   },
   "char_159_peacok": {
     "TitleTalent1": "Đáp đất an toàn",
@@ -648,17 +648,17 @@
   },
   "char_163_hpsts": {
     "TitleTalent1": "Tự vệ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi kỹ năng đang hoạt động, mỗi giây hồi 4% HP tối đa.",
+    "Talent1_p4": "Khi kỹ năng đang hoạt động, mỗi giây hồi 5%<@ba.talpu>(+1%)</> HP tối đa.",
+    "Talent1_2": "Khi kỹ năng đang hoạt động, mỗi giây hồi 4% HP tối đa và nhận 25% tỷ lệ né sát thương vật lý cận chiến.",
+    "Talent1_2_p4": "Khi kỹ năng đang hoạt động, mỗi giây hồi 5%<@ba.talpu>(+1%)</> HP tối đa và nhận 30%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý cận chiến."
   },
   "char_164_nightm": {
     "TitleTalent1": "Đa nhân cách",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi mang Kỹ năng 1: nhận 20% tỷ lệ né sát thương vật lý và phép.\\nKhi mang Kỹ năng 2: nhận ATK +9%.",
+    "Talent1_p4": "Khi mang Kỹ năng 1: nhận 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý và phép.\\nKhi mang Kỹ năng 2: nhận ATK +12%<@ba.talpu>(+3%)</>.",
+    "Talent1_2": "Khi mang Kỹ năng 1: nhận 40% tỷ lệ né sát thương vật lý và phép.\\nKhi mang Kỹ năng 2: nhận ATK +15%.",
+    "Talent1_2_p4": "Khi mang Kỹ năng 1: nhận 45%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý và phép.\\nKhi mang Kỹ năng 2: nhận ATK +18%<@ba.talpu>(+3%)</>."
   },
   "char_166_skfire": {
     "TitleTalent1": "Xạ thủ ma pháp",
@@ -683,19 +683,19 @@
   },
   "char_173_slchan": {
     "TitleTalent1": "Thợ săn Karlan",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi không chặn kẻ địch, ATK và DEF +6%.",
+    "Talent1_p4": "Khi không chặn kẻ địch, ATK và DEF +8%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi không chặn kẻ địch, ATK và DEF +12%.",
+    "Talent1_2_p4": "Khi không chặn kẻ địch, ATK và DEF +14%<@ba.talpu>(+2%)</>."
   },
   "char_174_slbell": {
     "TitleTalent1": "Suy yếu",
     "TitleTalent2": "Chuông ngân vang đôi",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Kẻ địch trong phạm vi tấn công sẽ nhận 15% <$ba.fragile>Fragile</> nếu dưới 40% HP.",
+    "Talent1_p4": "Kẻ địch trong phạm vi tấn công sẽ nhận 18%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile</> nếu dưới 40% HP.",
+    "Talent1_2": "Kẻ địch trong phạm vi tấn công sẽ nhận 30% <$ba.fragile>Fragile</> nếu dưới 40% HP.",
+    "Talent1_2_p4": "Kẻ địch trong phạm vi tấn công sẽ nhận 33%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile</> nếu dưới 40% HP.",
+    "Talent2": "Tấn công được 2 mục tiêu cùng lúc."
   },
   "char_179_cgbird": {
     "TitleTalent1": "Bạch ma bảo hộ",
@@ -777,8 +777,8 @@
   },
   "char_195_glassb": {
     "TitleTalent1": "Thăm dò",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1_2": "DEF -35%; ASPD +18",
+    "Talent1_2_p4": "DEF -35%; ASPD +21<@ba.talpu>(+3)</>"
   },
   "char_196_sunbr": {
     "TitleTalent1": "Chuyên gia dùng chảo",
@@ -844,10 +844,10 @@
   },
   "char_201_moeshd": {
     "TitleTalent1": "Khu vực kỳ diệu",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Có 10% tỷ lệ chặn một lần sát thương vật lý hoặc phép; Đồng minh ở 4 ô xung quanh nhận một nửa hiệu ứng này.",
+    "Talent1_p4": "Có 13%<@ba.talpu>(+3%)</> tỷ lệ chặn một lần sát thương vật lý hoặc phép; Đồng minh ở 4 ô xung quanh nhận một nửa hiệu ứng này.",
+    "Talent1_2": "Có 20% tỷ lệ chặn một lần sát thương vật lý hoặc phép; Đồng minh ở 4 ô xung quanh nhận một nửa hiệu ứng này.",
+    "Talent1_2_p4": "Có 23%<@ba.talpu>(+3%)</> tỷ lệ chặn một lần sát thương vật lý hoặc phép; Đồng minh ở 4 ô xung quanh nhận một nửa hiệu ứng này."
   },
   "char_2023_ling": {
     "TitleTalent1": "Thắp đèn, hỏi mộng",
@@ -971,11 +971,10 @@
   "char_215_mantic": {
     "TitleTalent1": "Sát thủ vô hình - Trung cấp",
     "TitleTalent1_2": "Sát thủ vô hình - Tinh anh",
-    "TitleTalent2": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +25%. Sau khi ngừng tấn công 6 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>.",
+    "Talent1_p4": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +29%<@ba.talpu>(+4%)</>. Sau khi ngừng tấn công 6 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>.",
+    "Talent1_2": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +50%. Sau khi ngừng tấn công 5 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>.",
+    "Talent1_2_p4": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +54%<@ba.talpu>(+4%)</>. Sau khi ngừng tấn công 5 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>."
   },
   "char_218_cuttle": {
     "TitleTalent1": "Trực giác vực thẳm",
@@ -1054,10 +1053,10 @@
   },
   "char_241_panda": {
     "TitleTalent1": "Kung Fu",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nhận 20% tỷ lệ né sát thương vật lý.",
+    "Talent1_p4": "Nhận 23%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý.",
+    "Talent1_2": "Nhận 40% tỷ lệ né sát thương vật lý.",
+    "Talent1_2_p4": "Nhận 43%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
   "char_242_otter": {
     "TitleTalent1": "Rái cá máy",
@@ -1191,17 +1190,16 @@
   },
   "char_274_astesi": {
     "TitleTalent1": "Thiên cầu",
-    "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +3(cộng dồn tối đa 5 lần).",
-    "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +5(cộng dồn tối đa 5 lần)."
+    "Talent1": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +3 (cộng dồn tối đa 5 lần).",
+    "Talent1_2": "Cứ mỗi 20 giây Astesia ở trên sân, ASPD +5 (cộng dồn tối đa 5 lần)."
   },
   "char_275_breeze": {
     "TitleTalent1": "Bảo hộ của tổ y tế",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Khi kích hoạt kỹ năng, tất cả cán viên【Y tế】nhận <$ba.buffres>Kháng hiệu ứng</>.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, tất cả cán viên【Y tế】và【Hỗ trợ】nhận <$ba.buffres>Kháng hiệu ứng</>."
   },
   "char_277_sqrrel": {
     "TitleTalent1": "Bộ đồ chống cháy",
-    "TitleTalent2": "",
     "Talent1": "RES +7",
     "Talent1_2": "RES +15"
   },
@@ -1212,10 +1210,10 @@
   },
   "char_279_excu": {
     "TitleTalent1": "Nâng cấp dứt điểm",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đòn tấn công bỏ qua 80 DEF của mục tiêu.",
+    "Talent1_p4": "Đòn tấn công bỏ qua 95<@ba.talpu>(+15)</> DEF của mục tiêu.",
+    "Talent1_2": "Đòn tấn công bỏ qua 160 DEF của mục tiêu.",
+    "Talent1_2_p4": "Đòn tấn công bỏ qua 175<@ba.talpu>(+15)</> DEF của mục tiêu."
   },
   "char_281_popka": {
     "TitleTalent1": "Tăng HP",
@@ -1226,7 +1224,6 @@
   },
   "char_282_catap": {
     "TitleTalent1": "Linh hoạt",
-    "TitleTalent2": "",
     "Talent1": "-1 DP"
   },
   "char_283_midn": {
@@ -1363,12 +1360,12 @@
   },
   "char_308_swire": {
     "TitleTalent1": "Chỉ đạo cận chiến",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Khi có mặt trên sân, đồng minh cận chiến đứng trong 8 ô xung quanh Swire nhận +3% ATK.",
+    "Talent0_p4": "Khi có mặt trên sân, đồng minh cận chiến đứng trong 8 ô xung quanh Swire nhận +5%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1": "Khi có mặt trên sân, đồng minh cận chiến đứng trong 8 ô xung quanh Swire nhận +6% ATK.",
+    "Talent1_p4": "Khi có mặt trên sân, đồng minh cận chiến đứng trong 8 ô xung quanh Swire nhận +8%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trên sân, đồng minh cận chiến đứng trong 8 ô xung quanh Swire nhận +10% ATK.",
+    "Talent1_2_p4": "Khi có mặt trên sân, đồng minh cận chiến đứng trong 8 ô xung quanh Swire nhận +12%<@ba.talpu>(+2%)</> ATK."
   },
   "char_311_mudrok": {
     "TitleTalent1": "Phù sa hộ thể",
@@ -1392,17 +1389,17 @@
   },
   "char_325_bison": {
     "TitleTalent1": "Bảo vệ lẫn nhau",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Bản thân nhận +25 DEF; Nếu có đồng minh【Tiên phong】hoặc【Cận vệ】đứng ngay ô đằng sau Bison, đồng minh đó cũng nhận hiệu ứng trên.",
+    "Talent1_p4": "Bản thân nhận +45<@ba.talpu>(+20)</> DEF; Nếu có đồng minh【Tiên phong】hoặc【Cận vệ】đứng ngay ô đằng sau Bison, đồng minh đó cũng nhận hiệu ứng trên.",
+    "Talent1_2": "Bản thân nhận +50 DEF; Nếu có đồng minh【Tiên phong】hoặc【Cận vệ】đứng ngay ô đằng sau Bison, đồng minh đó cũng nhận hiệu ứng trên.",
+    "Talent1_2_p4": "Bản thân nhận +70<@ba.talpu>(+20)</> DEF; Nếu có đồng minh【Tiên phong】hoặc【Cận vệ】đứng ngay ô đằng sau Bison, đồng minh đó cũng nhận hiệu ứng trên."
   },
   "char_326_glacus": {
     "TitleTalent1": "Thiết bị đối phó",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Ưu tiên tấn công đơn vị【Drone】; ATK tăng lên 125% khi tấn công【Drone】.",
+    "Talent1_p4": "Ưu tiên tấn công đơn vị【Drone】; ATK tăng lên 130%<@ba.talpu>(+5%)</> khi tấn công【Drone】.",
+    "Talent1_2": "Ưu tiên tấn công đơn vị【Drone】; ATK tăng lên 150% khi tấn công【Drone】.",
+    "Talent1_2_p4": "Ưu tiên tấn công đơn vị【Drone】; ATK tăng lên 155%<@ba.talpu>(+5%)</> khi tấn công【Drone】."
   },
   "char_328_cammou": {
     "TitleTalent1": "Phối hợp ăn ý",
@@ -1491,10 +1488,10 @@
   },
   "char_348_ceylon": {
     "TitleTalent1": "Dạo bước bên hồ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ATK +3%; Khi trên sân có địa hình nước, đổi thành ATK +9%.",
+    "Talent1_p4": "ATK +4%<@ba.talpu>(+1%)</>; Khi trên sân có địa hình nước, đổi thành ATK +15%<@ba.talpu>(+6%)</>.",
+    "Talent1_2": "ATK +5%; Khi trên sân có địa hình nước, đổi thành ATK +18%.",
+    "Talent1_2_p4": "ATK +6%<@ba.talpu>(+1%)</>; Khi trên sân có địa hình nước, đổi thành ATK +24%<@ba.talpu>(+6%)</>."
   },
   "char_349_chiave": {
     "TitleTalent1": "Chuyên môn kỹ thuật",
