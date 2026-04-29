@@ -12,6 +12,7 @@ import {
   subProfIconUrl,
   subProfLabel,
 } from "../../../utils/operatorUtils";
+import { useScrollLock } from "../../../hooks/useScrollLock";
 
 const tabs = [
   { id: "skins", label: "Trang phục" },
@@ -218,28 +219,19 @@ const OperatorSidebar = ({
     ].filter(Boolean);
     return Array.from(new Set(arr));
   }, [charId, operator?.avatar, operator?.image]);
+  const avatarKey = useMemo(() => avatarCandidates.join("|"), [avatarCandidates]);
 
   const [avatarIdx, setAvatarIdx] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
+  useScrollLock(mobileOpen);
 
   useEffect(() => {
     setAvatarIdx(0);
-  }, [avatarCandidates.join("|")]);
+  }, [avatarKey]);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [charId]);
-
-  useEffect(() => {
-    if (typeof document === "undefined") return undefined;
-
-    const prevOverflow = document.body.style.overflow;
-    if (mobileOpen) document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen || typeof window === "undefined") return undefined;

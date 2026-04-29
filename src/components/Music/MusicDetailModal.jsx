@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLyrics } from "../../hooks/useLyrics";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 const MusicDetailModal = ({
   open,
@@ -13,6 +14,7 @@ const MusicDetailModal = ({
 
   const { entries, loading, error } = useLyrics(music?.lyrics);
   const [currentTime, setCurrentTime] = useState(0);
+  useScrollLock(open);
 
   useEffect(() => {
     if (!open) return;
@@ -26,7 +28,9 @@ const MusicDetailModal = ({
     if (audioRef.current) {
       try {
         audioRef.current.currentTime = 0;
-      } catch {}
+      } catch {
+        /* ignore */
+      }
     }
   }, [open, music?.audio, music?.lyrics]);
 

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import OperatorSidebar from "./Modal/OperatorSidebar";
 import OperatorContent from "./Modal/OperatorContent";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 const OperatorModal = ({ operator, onClose }) => {
   const [activeTab, setActiveTab] = useState("skins");
   const [lang, setLang] = useState("VN");
+  useScrollLock(!!operator);
+
   if (!operator) return null;
 
   return (

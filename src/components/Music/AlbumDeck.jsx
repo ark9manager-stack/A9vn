@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Disc3, Loader2, Music2, Play, X } from "lucide-react";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 function DeckReel() {
   return (
@@ -48,6 +49,7 @@ const AlbumDeck = ({
   error = null,
 }) => {
   const navigate = useNavigate();
+  useScrollLock(open);
 
   if (!open) return null;
 

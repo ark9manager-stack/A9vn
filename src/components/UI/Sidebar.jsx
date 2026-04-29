@@ -1,7 +1,10 @@
 import React from "react";
 import { assets } from "../../assets/icon-assets/assets";
+import { useScrollLock } from "../../hooks/useScrollLock";
 
 const Sidebar = ({ isOpen, onClose }) => {
+  useScrollLock(isOpen);
+
   return (
     <>
       {/* Backdrop (click để tắt) */}

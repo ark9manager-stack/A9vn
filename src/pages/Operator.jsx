@@ -61,7 +61,7 @@ const Operator = () => {
       return;
     }
 
-    navigate("/Operator", { replace: true });
+    navigate("/operator", { replace: true });
   };
 
   return (
