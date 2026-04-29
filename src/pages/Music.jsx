@@ -4,7 +4,6 @@ import { useMusicPage } from "../hooks/useMusicPages";
 import MusicSearchBar from "../components/Music/MusicSearchBar";
 import MusicGrid from "../components/Music/MusicGrid";
 import Pagination from "../components/Music/Pagination";
-import MusicDetailModal from "../components/Music/MusicDetailModal";
 import Rightbar from "../components/Music/Rightbar";
 
 // ── sub-components ────────────────────────────────────────────────
@@ -67,7 +66,6 @@ const Music = () => {
     handlePageChange,
 
     selectedAlbum,
-    selectedMusic,
     playlistItems,
     currentSongIndex,
 
@@ -75,9 +73,7 @@ const Music = () => {
 
     handleSelectAlbum,
     openSongModal,
-    closeModal,
     closePlaylist,
-    togglePlaylist,
   } = useMusicPage();
 
   const endIndex = startIndex + 10;
@@ -133,24 +129,6 @@ const Music = () => {
             />
           )}
         </div>
-
-        {/* ── song detail modal ── */}
-        <MusicDetailModal
-          open={!!selectedMusic}
-          music={
-            selectedMusic
-              ? {
-                  title: selectedMusic.name,
-                  cover: selectedMusic.image,
-                  audio: selectedMusic.audio,
-                  lyrics: selectedMusic.lyrics,
-                }
-              : null
-          }
-          onClose={closeModal}
-          onOpenPlaylist={togglePlaylist}
-          isPlaylistOpen={rightbarOpen}
-        />
 
         {/* ── playlist rightbar ── */}
         <Rightbar

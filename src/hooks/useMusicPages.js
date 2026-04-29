@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useAlbums } from "./useAlbums";
 import { useMusic } from "./useMusic";
+import { useMusicPlayer } from "../contexts/useMusicPlayer";
 
 // ── helpers ────────────────────────────────────────────────────────
 export function norm(str) {
@@ -23,6 +24,7 @@ export function useMusicPage() {
     loading: loadingSongs,
     error: errorSongs,
   } = useMusic(selectedAlbum?.id);
+  const { currentTrack, playQueue } = useMusicPlayer();
 
   // ── search ────────────────────────────────────────────────────
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,8 +36,6 @@ export function useMusicPage() {
 
   // ── ui state ──────────────────────────────────────────────────
   const [rightbarOpen, setRightbarOpen] = useState(false);
-  const [selectedMusic, setSelectedMusic] = useState(null);
-  const [currentSongIndex, setCurrentSongIndex] = useState(-1);
 
   // ── alias map (public/searchmusic.json) ───────────────────────
   const [aliasMap, setAliasMap] = useState(new Map());
@@ -233,13 +233,19 @@ export function useMusicPage() {
     }));
   }, [rawSongs, selectedAlbum]);
 
+  const currentSongIndex = useMemo(() => {
+    if (!currentTrack || playlistItems.length === 0) return -1;
+
+    return playlistItems.findIndex(
+      (song) => song.id === currentTrack.id || song.audio === currentTrack.audio,
+    );
+  }, [currentTrack, playlistItems]);
+
   // ── handlers ──────────────────────────────────────────────────
   const handleSelectAlbum = (item) => {
     const a = item._album ?? { id: item.id, name: item.name, url: item.image };
     setSelectedAlbum({ id: a.id, name: a.name, url: a.url ?? item.image });
     setRightbarOpen(true);
-    setSelectedMusic(null);
-    setCurrentSongIndex(-1);
   };
 
   const handlePageChange = (page) => {
@@ -248,16 +254,13 @@ export function useMusicPage() {
   };
 
   const openSongModal = (song, idx) => {
-    setCurrentSongIndex(idx);
-    setSelectedMusic({
-      name: song.name,
-      image: song.cover ?? selectedAlbum?.url ?? "",
-      audio: song.audio,
-      lyrics: song.lyrics,
+    playQueue(playlistItems, idx, {
+      id: selectedAlbum?.id,
+      name: selectedAlbum?.name ?? song.albumName ?? "PLAYLIST",
+      cover: selectedAlbum?.url ?? song.cover ?? "",
     });
   };
 
-  const closeModal = () => setSelectedMusic(null);
   const closePlaylist = () => setRightbarOpen(false);
   const togglePlaylist = () => setRightbarOpen((v) => !v);
 
@@ -287,7 +290,6 @@ export function useMusicPage() {
 
     // selection / playback
     selectedAlbum,
-    selectedMusic,
     playlistItems,
     currentSongIndex,
 
@@ -297,7 +299,6 @@ export function useMusicPage() {
     // handlers
     handleSelectAlbum,
     openSongModal,
-    closeModal,
     closePlaylist,
     togglePlaylist,
   };
