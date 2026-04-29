@@ -13,6 +13,7 @@ import {
   SkipForward,
   Volume2,
   VolumeX,
+  X,
 } from "lucide-react";
 
 import { useLyrics } from "../../hooks/useLyrics";
@@ -91,6 +92,7 @@ export default function CassettePlayer() {
     toggleShuffle,
     togglePlaybackScope,
     cyclePlaybackMode,
+    closePlayer,
     seekTo,
   } = useMusicPlayer();
 
@@ -174,10 +176,18 @@ export default function CassettePlayer() {
             : "translate-y-0 opacity-100"
         }`}
       >
+        <IconButton
+          label="Close player"
+          onClick={closePlayer}
+          className="absolute right-2 top-2 z-20 h-8 w-8 border-white/15 bg-black/45 text-white/65 hover:border-red-300/45 hover:bg-red-500/10 hover:text-red-100"
+        >
+          <X size={15} />
+        </IconButton>
+
         <div className="relative">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%),repeating-linear-gradient(90deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_9px)] opacity-70" />
-          <div className="relative p-3 md:p-4">
-            <div className="flex items-start gap-3 md:items-center md:gap-4">
+          <div className="relative p-3 pr-12 md:p-4 md:pr-14">
+            <div className="grid grid-cols-[56px,minmax(0,1fr)] gap-3 md:grid-cols-[76px,minmax(0,1fr)] md:items-center md:gap-4">
               <div className="relative h-14 w-14 overflow-hidden border border-white/15 bg-black md:h-[76px] md:w-[76px]">
                 {cover ? (
                   <img
@@ -192,7 +202,7 @@ export default function CassettePlayer() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
               </div>
 
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="font-mono-tech text-[0.58rem] uppercase tracking-[2px] text-primary">
                     SIDE A
@@ -241,16 +251,7 @@ export default function CassettePlayer() {
                 </div>
               </div>
 
-              <IconButton
-                label="Hide player"
-                onClick={() => setHidden(true)}
-                className="h-8 w-8 flex-none border-white/15 bg-black/45 text-white/65 hover:border-primary/45 hover:bg-primary/10 hover:text-primary md:h-9 md:w-9"
-              >
-                <EyeOff size={16} />
-              </IconButton>
-
               <div className="hidden">
-
                 <ControlGroup className="grid-cols-5 md:grid-cols-[36px_36px_36px_minmax(72px,1fr)_36px_36px]">
                   <IconButton
                     label={shuffle ? "Shuffle on" : "Shuffle off"}
@@ -372,6 +373,9 @@ export default function CassettePlayer() {
                   ) : (
                     <ChevronUp size={17} />
                   )}
+                </IconButton>
+                <IconButton label="Hide player" onClick={() => setHidden(true)}>
+                  <EyeOff size={16} />
                 </IconButton>
               </ControlGroup>
             </div>
