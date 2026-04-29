@@ -4,7 +4,7 @@ import { useMusicPage } from "../hooks/useMusicPages";
 import MusicSearchBar from "../components/Music/MusicSearchBar";
 import MusicGrid from "../components/Music/MusicGrid";
 import Pagination from "../components/Music/Pagination";
-import Rightbar from "../components/Music/Rightbar";
+import AlbumDeck from "../components/Music/AlbumDeck";
 
 // ── sub-components ────────────────────────────────────────────────
 
@@ -69,7 +69,7 @@ const Music = () => {
     playlistItems,
     currentSongIndex,
 
-    rightbarOpen,
+    playlistOpen,
 
     handleSelectAlbum,
     openSongModal,
@@ -130,10 +130,11 @@ const Music = () => {
           )}
         </div>
 
-        {/* ── playlist rightbar ── */}
-        <Rightbar
-          open={rightbarOpen}
+        {/* playlist deck */}
+        <AlbumDeck
+          open={playlistOpen}
           albumName={selectedAlbum?.name || "PLAYLIST"}
+          albumCover={selectedAlbum?.url || ""}
           playlist={playlistItems}
           currentIndex={currentSongIndex}
           onSelectSong={openSongModal}

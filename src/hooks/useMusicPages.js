@@ -35,7 +35,7 @@ export function useMusicPage() {
   const ITEMS_PER_PAGE = 10;
 
   // ── ui state ──────────────────────────────────────────────────
-  const [rightbarOpen, setRightbarOpen] = useState(false);
+  const [playlistOpen, setPlaylistOpen] = useState(false);
 
   // ── alias map (public/searchmusic.json) ───────────────────────
   const [aliasMap, setAliasMap] = useState(new Map());
@@ -245,7 +245,7 @@ export function useMusicPage() {
   const handleSelectAlbum = (item) => {
     const a = item._album ?? { id: item.id, name: item.name, url: item.image };
     setSelectedAlbum({ id: a.id, name: a.name, url: a.url ?? item.image });
-    setRightbarOpen(true);
+    setPlaylistOpen(true);
   };
 
   const handlePageChange = (page) => {
@@ -261,8 +261,7 @@ export function useMusicPage() {
     });
   };
 
-  const closePlaylist = () => setRightbarOpen(false);
-  const togglePlaylist = () => setRightbarOpen((v) => !v);
+  const closePlaylist = () => setPlaylistOpen(false);
 
   // ── exposed API ───────────────────────────────────────────────
   return {
@@ -293,13 +292,12 @@ export function useMusicPage() {
     playlistItems,
     currentSongIndex,
 
-    // rightbar
-    rightbarOpen,
+    // playlist panel
+    playlistOpen,
 
     // handlers
     handleSelectAlbum,
     openSongModal,
     closePlaylist,
-    togglePlaylist,
   };
 }
