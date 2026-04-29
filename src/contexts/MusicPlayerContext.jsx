@@ -90,6 +90,7 @@ export function MusicPlayerProvider({ children }) {
 
   const currentTrack = queue[currentIndex] ?? null;
   const currentTrackAudio = currentTrack?.audio;
+  const playbackMode = shuffle ? "shuffle" : playbackScope;
   const allQueueRef = useRef([]);
   const queueRef = useRef([]);
 
@@ -223,6 +224,29 @@ export function MusicPlayerProvider({ children }) {
       return nextValue;
     });
   }, []);
+
+  const cyclePlaybackMode = useCallback(() => {
+    const nextMode =
+      playbackMode === "album"
+        ? "all"
+        : playbackMode === "all"
+          ? "shuffle"
+          : "album";
+    const nextScope = nextMode === "album" ? "album" : "all";
+    const nextShuffle = nextMode === "shuffle";
+
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(PLAYBACK_SCOPE_KEY, nextScope);
+      window.localStorage.setItem(SHUFFLE_KEY, nextShuffle ? "1" : "0");
+    }
+
+    setShuffle(nextShuffle);
+    setPlaybackScopeState(nextScope);
+
+    if (nextScope === "album") {
+      activateScopeQueue("album");
+    }
+  }, [activateScopeQueue, playbackMode]);
 
   useEffect(() => {
     if (!currentTrackAudio || playbackScope !== "all") return;
@@ -393,6 +417,7 @@ export function MusicPlayerProvider({ children }) {
       isMuted,
       shuffle,
       playbackScope,
+      playbackMode,
       allQueueLoading,
       allQueueError,
       playQueue,
@@ -402,6 +427,7 @@ export function MusicPlayerProvider({ children }) {
       togglePlay,
       toggleShuffle,
       togglePlaybackScope,
+      cyclePlaybackMode,
       setVolume,
       toggleMute,
       closePlayer,
@@ -421,6 +447,7 @@ export function MusicPlayerProvider({ children }) {
       isMuted,
       shuffle,
       playbackScope,
+      playbackMode,
       allQueueLoading,
       allQueueError,
       playQueue,
@@ -430,6 +457,7 @@ export function MusicPlayerProvider({ children }) {
       togglePlay,
       toggleShuffle,
       togglePlaybackScope,
+      cyclePlaybackMode,
       setVolume,
       toggleMute,
       closePlayer,

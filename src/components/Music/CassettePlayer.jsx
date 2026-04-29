@@ -81,6 +81,7 @@ export default function CassettePlayer() {
     isMuted,
     shuffle,
     playbackScope,
+    playbackMode,
     allQueueLoading,
     togglePlay,
     nextTrack,
@@ -90,6 +91,7 @@ export default function CassettePlayer() {
     toggleMute,
     toggleShuffle,
     togglePlaybackScope,
+    cyclePlaybackMode,
     closePlayer,
     seekTo,
   } = useMusicPlayer();
@@ -132,6 +134,24 @@ export default function CassettePlayer() {
 
   const cover = currentTrack.cover || currentAlbum?.cover;
   const visibleVolume = isMuted ? 0 : volume;
+  const ModeIcon =
+    playbackMode === "shuffle"
+      ? Shuffle
+      : playbackMode === "all"
+        ? ArrowRight
+        : Repeat2;
+  const modeLabel =
+    playbackMode === "shuffle"
+      ? "Shuffle all tracks"
+      : playbackMode === "all"
+        ? "Next across all albums"
+        : "Repeat current album";
+  const modeButtonClass =
+    playbackMode === "shuffle"
+      ? "border-accent/50 bg-accent/15 text-accent"
+      : playbackMode === "all"
+        ? "border-primary/50 bg-primary/15 text-primary"
+        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]";
 
   const handleSeek = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -339,38 +359,13 @@ export default function CassettePlayer() {
 
                 <span className="mx-1 h-7 w-px bg-white/10" />
 
-                <div className="grid grid-cols-2 gap-1.5 rounded border border-white/10 bg-white/[0.035] p-1">
-                  <IconButton
-                    label={shuffle ? "Shuffle on" : "Shuffle off"}
-                    onClick={toggleShuffle}
-                    className={
-                      shuffle
-                        ? "border-accent/50 bg-accent/15 text-accent"
-                        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]"
-                    }
-                  >
-                    <Shuffle size={16} />
-                  </IconButton>
-                  <IconButton
-                    label={
-                      playbackScope === "album"
-                        ? "Next within album"
-                        : "Next across all albums"
-                    }
-                    onClick={togglePlaybackScope}
-                    className={
-                      playbackScope === "all"
-                        ? "border-primary/50 bg-primary/15 text-primary"
-                        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]"
-                    }
-                  >
-                    {playbackScope === "album" ? (
-                      <Repeat2 size={16} />
-                    ) : (
-                      <ArrowRight size={16} />
-                    )}
-                  </IconButton>
-                </div>
+                <IconButton
+                  label={modeLabel}
+                  onClick={cyclePlaybackMode}
+                  className={modeButtonClass}
+                >
+                  <ModeIcon size={16} />
+                </IconButton>
 
                 <span className="mx-1 h-7 w-px bg-white/10" />
 
