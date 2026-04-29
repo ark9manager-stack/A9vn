@@ -57,6 +57,16 @@ function IconButton({ label, children, className = "", ...props }) {
   );
 }
 
+function ControlGroup({ children, className = "" }) {
+  return (
+    <div
+      className={`grid items-center gap-2 rounded-md border border-white/10 bg-black/25 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function CassettePlayer() {
   const {
     queue,
@@ -108,7 +118,9 @@ export default function CassettePlayer() {
     if (!expanded || activeLyricIndex < 0) return;
 
     const container = lyricListRef.current;
-    const row = container?.querySelector(`[data-lyric-idx="${activeLyricIndex}"]`);
+    const row = container?.querySelector(
+      `[data-lyric-idx="${activeLyricIndex}"]`,
+    );
     row?.scrollIntoView({ block: "center", behavior: "smooth" });
   }, [expanded, activeLyricIndex]);
 
@@ -142,16 +154,24 @@ export default function CassettePlayer() {
       </button>
 
       <section
-        className={`pointer-events-auto overflow-hidden rounded-t-lg border border-white/15 bg-[#080a0d]/95 shadow-[0_-18px_60px_rgba(0,0,0,0.5),0_0_24px_hsl(var(--primary)/0.16)] backdrop-blur-xl transition-all duration-300 ease-out md:rounded-lg ${
+        className={`pointer-events-auto relative overflow-hidden rounded-t-lg border border-white/15 bg-[#080a0d]/95 shadow-[0_-18px_60px_rgba(0,0,0,0.5),0_0_24px_hsl(var(--primary)/0.16)] backdrop-blur-xl transition-all duration-300 ease-out md:rounded-lg ${
           hidden
             ? "translate-y-[calc(100%+24px)] opacity-0 pointer-events-none"
             : "translate-y-0 opacity-100"
         }`}
       >
+        <IconButton
+          label="Close player"
+          onClick={closePlayer}
+          className="absolute right-2 top-2 z-20 h-8 w-8 border-white/15 bg-black/45 text-white/65 hover:border-red-300/45 hover:bg-red-500/10 hover:text-red-100"
+        >
+          <X size={15} />
+        </IconButton>
+
         <div className="relative">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%),repeating-linear-gradient(90deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_9px)] opacity-70" />
-          <div className="relative p-3 md:p-4">
-            <div className="grid grid-cols-[56px,1fr] gap-3 md:grid-cols-[76px,1fr,auto] md:items-center md:gap-4">
+          <div className="relative p-3 pr-12 md:p-4 md:pr-14">
+            <div className="grid grid-cols-[56px,minmax(0,1fr)] gap-3 md:grid-cols-[76px,minmax(0,1fr),230px] md:items-center md:gap-4">
               <div className="relative h-14 w-14 overflow-hidden border border-white/15 bg-black md:h-[76px] md:w-[76px]">
                 {cover ? (
                   <img
@@ -215,8 +235,8 @@ export default function CassettePlayer() {
                 </div>
               </div>
 
-              <div className="col-span-2 flex flex-wrap items-center justify-between gap-3 md:col-span-1 md:flex-col md:items-end">
-                <div className="flex items-center gap-2">
+              <div className="col-span-2 flex flex-col gap-2 md:col-span-1 md:items-stretch">
+                <ControlGroup className="mx-auto grid-cols-3 md:mx-0">
                   <IconButton label="Previous track" onClick={prevTrack}>
                     <SkipBack size={17} />
                   </IconButton>
@@ -230,16 +250,16 @@ export default function CassettePlayer() {
                   <IconButton label="Next track" onClick={nextTrack}>
                     <SkipForward size={17} />
                   </IconButton>
-                </div>
+                </ControlGroup>
 
-                <div className="flex items-center gap-2">
+                <ControlGroup className="grid-cols-5 md:grid-cols-[36px_36px_36px_minmax(72px,1fr)_36px_36px]">
                   <IconButton
                     label={shuffle ? "Shuffle on" : "Shuffle off"}
                     onClick={toggleShuffle}
                     className={
                       shuffle
                         ? "border-accent/50 bg-accent/15 text-accent"
-                        : ""
+                        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]"
                     }
                   >
                     <Shuffle size={16} />
@@ -263,7 +283,10 @@ export default function CassettePlayer() {
                       <ArrowRight size={16} />
                     )}
                   </IconButton>
-                  <IconButton label={isMuted ? "Unmute" : "Mute"} onClick={toggleMute}>
+                  <IconButton
+                    label={isMuted ? "Unmute" : "Mute"}
+                    onClick={toggleMute}
+                  >
                     {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
                   </IconButton>
                   <input
@@ -273,21 +296,25 @@ export default function CassettePlayer() {
                     max="100"
                     value={visibleVolume}
                     onChange={(event) => setVolume(Number(event.target.value))}
-                    className="hidden w-24 accent-primary md:block"
+                    className="hidden min-w-0 accent-primary md:block"
                   />
                   <IconButton
                     label={expanded ? "Collapse player" : "Expand player"}
                     onClick={() => setExpanded((value) => !value)}
                   >
-                    {expanded ? <ChevronDown size={17} /> : <ChevronUp size={17} />}
+                    {expanded ? (
+                      <ChevronDown size={17} />
+                    ) : (
+                      <ChevronUp size={17} />
+                    )}
                   </IconButton>
-                  <IconButton label="Hide player" onClick={() => setHidden(true)}>
+                  <IconButton
+                    label="Hide player"
+                    onClick={() => setHidden(true)}
+                  >
                     <EyeOff size={16} />
                   </IconButton>
-                  <IconButton label="Close player" onClick={closePlayer}>
-                    <X size={16} />
-                  </IconButton>
-                </div>
+                </ControlGroup>
               </div>
             </div>
 
