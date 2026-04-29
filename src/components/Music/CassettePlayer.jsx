@@ -171,7 +171,7 @@ export default function CassettePlayer() {
         <div className="relative">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%),repeating-linear-gradient(90deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_9px)] opacity-70" />
           <div className="relative p-3 pr-12 md:p-4 md:pr-14">
-            <div className="grid grid-cols-[56px,minmax(0,1fr)] gap-3 md:grid-cols-[76px,minmax(0,1fr),230px] md:items-center md:gap-4">
+            <div className="grid grid-cols-[56px,minmax(0,1fr)] gap-3 md:grid-cols-[76px,minmax(0,1fr)] md:items-center md:gap-4">
               <div className="relative h-14 w-14 overflow-hidden border border-white/15 bg-black md:h-[76px] md:w-[76px]">
                 {cover ? (
                   <img
@@ -235,22 +235,7 @@ export default function CassettePlayer() {
                 </div>
               </div>
 
-              <div className="col-span-2 flex flex-col gap-2 md:col-span-1 md:items-stretch">
-                <ControlGroup className="mx-auto grid-cols-3 md:mx-0">
-                  <IconButton label="Previous track" onClick={prevTrack}>
-                    <SkipBack size={17} />
-                  </IconButton>
-                  <IconButton
-                    label={isPlaying ? "Pause" : "Play"}
-                    onClick={togglePlay}
-                    className="h-11 w-11 border-primary/35 bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
-                  >
-                    {isPlaying ? <Pause size={19} /> : <Play size={19} />}
-                  </IconButton>
-                  <IconButton label="Next track" onClick={nextTrack}>
-                    <SkipForward size={17} />
-                  </IconButton>
-                </ControlGroup>
+              <div className="hidden">
 
                 <ControlGroup className="grid-cols-5 md:grid-cols-[36px_36px_36px_minmax(72px,1fr)_36px_36px]">
                   <IconButton
@@ -316,6 +301,93 @@ export default function CassettePlayer() {
                   </IconButton>
                 </ControlGroup>
               </div>
+            </div>
+
+            <div className="mt-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <ControlGroup className="mx-auto w-max grid-flow-col auto-cols-max justify-center">
+                <IconButton label="Previous track" onClick={prevTrack}>
+                  <SkipBack size={17} />
+                </IconButton>
+                <IconButton
+                  label={isPlaying ? "Pause" : "Play"}
+                  onClick={togglePlay}
+                  className="h-11 w-11 border-primary/35 bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+                >
+                  {isPlaying ? <Pause size={19} /> : <Play size={19} />}
+                </IconButton>
+                <IconButton label="Next track" onClick={nextTrack}>
+                  <SkipForward size={17} />
+                </IconButton>
+
+                <span className="mx-1 h-7 w-px bg-white/10" />
+
+                <IconButton
+                  label={isMuted ? "Unmute" : "Mute"}
+                  onClick={toggleMute}
+                >
+                  {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                </IconButton>
+                <input
+                  aria-label="Volume"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={visibleVolume}
+                  onChange={(event) => setVolume(Number(event.target.value))}
+                  className="hidden w-24 accent-primary sm:block md:w-28"
+                />
+
+                <span className="mx-1 h-7 w-px bg-white/10" />
+
+                <div className="grid grid-cols-2 gap-1.5 rounded border border-white/10 bg-white/[0.035] p-1">
+                  <IconButton
+                    label={shuffle ? "Shuffle on" : "Shuffle off"}
+                    onClick={toggleShuffle}
+                    className={
+                      shuffle
+                        ? "border-accent/50 bg-accent/15 text-accent"
+                        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]"
+                    }
+                  >
+                    <Shuffle size={16} />
+                  </IconButton>
+                  <IconButton
+                    label={
+                      playbackScope === "album"
+                        ? "Next within album"
+                        : "Next across all albums"
+                    }
+                    onClick={togglePlaybackScope}
+                    className={
+                      playbackScope === "all"
+                        ? "border-primary/50 bg-primary/15 text-primary"
+                        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]"
+                    }
+                  >
+                    {playbackScope === "album" ? (
+                      <Repeat2 size={16} />
+                    ) : (
+                      <ArrowRight size={16} />
+                    )}
+                  </IconButton>
+                </div>
+
+                <span className="mx-1 h-7 w-px bg-white/10" />
+
+                <IconButton
+                  label={expanded ? "Collapse player" : "Expand player"}
+                  onClick={() => setExpanded((value) => !value)}
+                >
+                  {expanded ? (
+                    <ChevronDown size={17} />
+                  ) : (
+                    <ChevronUp size={17} />
+                  )}
+                </IconButton>
+                <IconButton label="Hide player" onClick={() => setHidden(true)}>
+                  <EyeOff size={16} />
+                </IconButton>
+              </ControlGroup>
             </div>
 
             <button
