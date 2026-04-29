@@ -8,6 +8,8 @@ import {
 import { MusicPlayerContext } from "./MusicPlayerStore";
 
 const VOLUME_KEY = "a9vn_music_volume";
+const SHUFFLE_KEY = "a9vn_music_shuffle";
+const PLAYBACK_SCOPE_KEY = "a9vn_music_playback_scope";
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
@@ -18,6 +20,38 @@ function getInitialVolume() {
 
   const stored = Number(window.localStorage.getItem(VOLUME_KEY));
   return Number.isFinite(stored) ? clamp(stored, 0, 100) : 80;
+}
+
+function getInitialShuffle() {
+  if (typeof window === "undefined") return false;
+  return window.localStorage.getItem(SHUFFLE_KEY) === "1";
+}
+
+function getInitialPlaybackScope() {
+  if (typeof window === "undefined") return "album";
+  return window.localStorage.getItem(PLAYBACK_SCOPE_KEY) === "all"
+    ? "all"
+    : "album";
+}
+
+function findTrackIndex(tracks, track) {
+  if (!track || !Array.isArray(tracks)) return -1;
+
+  return tracks.findIndex(
+    (item) => item.id === track.id || item.audio === track.audio,
+  );
+}
+
+function getAdjacentIndex(index, length, shuffle) {
+  if (length <= 0) return -1;
+  if (!shuffle || length === 1) return index < 0 ? 0 : (index + 1) % length;
+
+  let nextIndex = index;
+  while (nextIndex === index) {
+    nextIndex = Math.floor(Math.random() * length);
+  }
+
+  return nextIndex;
 }
 
 function normalizeTrack(track, index, album) {
@@ -32,6 +66,7 @@ function normalizeTrack(track, index, album) {
     audio: track?.audio ?? track?.url_song ?? track?.urlSong ?? "",
     lyrics: track?.lyrics ?? track?.url_lyric ?? track?.urlLyric ?? null,
     cover: track?.cover ?? track?.image ?? album?.cover ?? album?.url ?? "",
+    albumId: track?.albumId ?? track?.album_id ?? album?.id ?? null,
   };
 }
 
@@ -45,8 +80,26 @@ export function MusicPlayerProvider({ children }) {
   const [duration, setDuration] = useState(0);
   const [volume, setVolumeState] = useState(getInitialVolume);
   const [isMuted, setIsMuted] = useState(false);
+  const [shuffle, setShuffle] = useState(getInitialShuffle);
+  const [playbackScope, setPlaybackScopeState] = useState(
+    getInitialPlaybackScope,
+  );
+  const [allQueue, setAllQueue] = useState([]);
+  const [allQueueLoading, setAllQueueLoading] = useState(false);
+  const [allQueueError, setAllQueueError] = useState(null);
 
   const currentTrack = queue[currentIndex] ?? null;
+  const currentTrackAudio = currentTrack?.audio;
+  const allQueueRef = useRef([]);
+  const queueRef = useRef([]);
+
+  useEffect(() => {
+    allQueueRef.current = allQueue;
+  }, [allQueue]);
+
+  useEffect(() => {
+    queueRef.current = queue;
+  }, [queue]);
 
   const setVolume = useCallback((nextVolume) => {
     const safeVolume = clamp(Number(nextVolume) || 0, 0, 100);
@@ -86,6 +139,96 @@ export function MusicPlayerProvider({ children }) {
     setIsPlaying(true);
   }, []);
 
+  const loadAllQueue = useCallback(async () => {
+    if (allQueueRef.current.length > 0) return allQueueRef.current;
+
+    try {
+      setAllQueueLoading(true);
+      setAllQueueError(null);
+
+      const response = await fetch("/api/songs?scope=all");
+      if (!response.ok) {
+        throw new Error(`Fetch all songs failed: ${response.status}`);
+      }
+
+      const json = await response.json();
+      const tracks = (json?.songs ?? [])
+        .filter((track) => track?.audio)
+        .map((track, index) => normalizeTrack(track, index, null));
+
+      allQueueRef.current = tracks;
+      setAllQueue(tracks);
+      return tracks;
+    } catch (error) {
+      setAllQueueError(error?.message ?? "Fetch all songs failed");
+      return [];
+    } finally {
+      setAllQueueLoading(false);
+    }
+  }, []);
+
+  const activateScopeQueue = useCallback(
+    async (nextScope) => {
+      if (!currentTrack) return;
+
+      if (nextScope === "all") {
+        const tracks = await loadAllQueue();
+        const nextIndex = findTrackIndex(tracks, currentTrack);
+        if (tracks.length === 0 || nextIndex < 0) return;
+
+        setQueue(tracks);
+        setCurrentAlbum(null);
+        setCurrentIndex(nextIndex);
+        return;
+      }
+
+      const sourceQueue =
+        allQueueRef.current.length > 0 ? allQueueRef.current : queueRef.current;
+      const albumTracks = sourceQueue.filter(
+        (track) => String(track.albumId) === String(currentTrack.albumId),
+      );
+      const nextIndex = findTrackIndex(albumTracks, currentTrack);
+
+      if (albumTracks.length === 0 || nextIndex < 0) return;
+
+      setQueue(albumTracks);
+      setCurrentAlbum({
+        id: currentTrack.albumId,
+        name: currentTrack.albumName || currentTrack.artist || "PLAYLIST",
+        cover: currentTrack.cover || "",
+      });
+      setCurrentIndex(nextIndex);
+    },
+    [currentTrack, loadAllQueue],
+  );
+
+  const togglePlaybackScope = useCallback(() => {
+    const nextScope = playbackScope === "album" ? "all" : "album";
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(PLAYBACK_SCOPE_KEY, nextScope);
+    }
+
+    setPlaybackScopeState(nextScope);
+    if (nextScope === "album") {
+      activateScopeQueue(nextScope);
+    }
+  }, [activateScopeQueue, playbackScope]);
+
+  const toggleShuffle = useCallback(() => {
+    setShuffle((value) => {
+      const nextValue = !value;
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(SHUFFLE_KEY, nextValue ? "1" : "0");
+      }
+      return nextValue;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!currentTrackAudio || playbackScope !== "all") return;
+    activateScopeQueue("all");
+  }, [currentTrackAudio, playbackScope, activateScopeQueue]);
+
   const selectTrack = useCallback(
     (index, play = true) => {
       if (queue.length === 0) return;
@@ -102,12 +245,12 @@ export function MusicPlayerProvider({ children }) {
 
     setCurrentIndex((index) => {
       if (index < 0) return 0;
-      return (index + 1) % queue.length;
+      return getAdjacentIndex(index, queue.length, shuffle);
     });
     setCurrentTime(0);
     setDuration(0);
     setIsPlaying(true);
-  }, [queue.length]);
+  }, [queue.length, shuffle]);
 
   const prevTrack = useCallback(() => {
     const audio = audioRef.current;
@@ -154,6 +297,22 @@ export function MusicPlayerProvider({ children }) {
 
   const toggleMute = useCallback(() => {
     setIsMuted((value) => !value);
+  }, []);
+
+  const closePlayer = useCallback(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+    }
+
+    setQueue([]);
+    setCurrentIndex(-1);
+    setCurrentAlbum(null);
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
   }, []);
 
   useEffect(() => {
@@ -232,13 +391,20 @@ export function MusicPlayerProvider({ children }) {
       progress,
       volume,
       isMuted,
+      shuffle,
+      playbackScope,
+      allQueueLoading,
+      allQueueError,
       playQueue,
       selectTrack,
       nextTrack,
       prevTrack,
       togglePlay,
+      toggleShuffle,
+      togglePlaybackScope,
       setVolume,
       toggleMute,
+      closePlayer,
       seekTo,
       seekToTime,
     }),
@@ -253,13 +419,20 @@ export function MusicPlayerProvider({ children }) {
       progress,
       volume,
       isMuted,
+      shuffle,
+      playbackScope,
+      allQueueLoading,
+      allQueueError,
       playQueue,
       selectTrack,
       nextTrack,
       prevTrack,
       togglePlay,
+      toggleShuffle,
+      togglePlaybackScope,
       setVolume,
       toggleMute,
+      closePlayer,
       seekTo,
       seekToTime,
     ],

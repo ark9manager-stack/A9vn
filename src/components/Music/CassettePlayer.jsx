@@ -1,14 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  ArrowRight,
   ChevronDown,
   ChevronUp,
+  EyeOff,
   ListMusic,
   Pause,
   Play,
+  Repeat2,
+  Shuffle,
   SkipBack,
   SkipForward,
   Volume2,
   VolumeX,
+  X,
 } from "lucide-react";
 
 import { useLyrics } from "../../hooks/useLyrics";
@@ -64,16 +69,23 @@ export default function CassettePlayer() {
     progress,
     volume,
     isMuted,
+    shuffle,
+    playbackScope,
+    allQueueLoading,
     togglePlay,
     nextTrack,
     prevTrack,
     selectTrack,
     setVolume,
     toggleMute,
+    toggleShuffle,
+    togglePlaybackScope,
+    closePlayer,
     seekTo,
   } = useMusicPlayer();
 
   const [expanded, setExpanded] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const lyricListRef = useRef(null);
   const { entries, loading, error } = useLyrics(currentTrack?.lyrics);
 
@@ -100,6 +112,10 @@ export default function CassettePlayer() {
     row?.scrollIntoView({ block: "center", behavior: "smooth" });
   }, [expanded, activeLyricIndex]);
 
+  useEffect(() => {
+    setHidden(false);
+  }, [currentTrack?.id]);
+
   if (!currentTrack) return null;
 
   const cover = currentTrack.cover || currentAlbum?.cover;
@@ -113,7 +129,25 @@ export default function CassettePlayer() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-[45] px-3 pb-3 pointer-events-none md:inset-x-auto md:left-1/2 md:bottom-4 md:w-[min(980px,calc(100vw-48px))] md:-translate-x-1/2 md:px-0 md:pb-0">
-      <section className="pointer-events-auto overflow-hidden rounded-t-lg border border-white/15 bg-[#080a0d]/95 shadow-[0_-18px_60px_rgba(0,0,0,0.5),0_0_24px_hsl(var(--primary)/0.16)] backdrop-blur-xl md:rounded-lg">
+      <button
+        type="button"
+        onClick={() => setHidden(false)}
+        className={`pointer-events-auto absolute bottom-3 right-3 border border-primary/30 bg-[#080a0d]/95 px-3 py-2 font-mono-tech text-[0.62rem] uppercase tracking-[2px] text-primary shadow-[0_0_22px_hsl(var(--primary)/0.16)] backdrop-blur-xl transition-all duration-300 ease-out md:bottom-0 md:right-0 ${
+          hidden
+            ? "translate-y-0 opacity-100"
+            : "translate-y-3 opacity-0 pointer-events-none"
+        }`}
+      >
+        SHOW TAPE
+      </button>
+
+      <section
+        className={`pointer-events-auto overflow-hidden rounded-t-lg border border-white/15 bg-[#080a0d]/95 shadow-[0_-18px_60px_rgba(0,0,0,0.5),0_0_24px_hsl(var(--primary)/0.16)] backdrop-blur-xl transition-all duration-300 ease-out md:rounded-lg ${
+          hidden
+            ? "translate-y-[calc(100%+24px)] opacity-0 pointer-events-none"
+            : "translate-y-0 opacity-100"
+        }`}
+      >
         <div className="relative">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%),repeating-linear-gradient(90deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_9px)] opacity-70" />
           <div className="relative p-3 md:p-4">
@@ -155,7 +189,11 @@ export default function CassettePlayer() {
                     <CassetteReel active={isPlaying} />
                     <div className="min-w-0">
                       <div className="flex items-center justify-between gap-3 font-mono-tech text-[0.58rem] tracking-[2px] text-[#e2d7bc]/65">
-                        <span>TAPE POSITION</span>
+                        <span>
+                          {allQueueLoading
+                            ? "LOADING ALL TAPES"
+                            : "TAPE POSITION"}
+                        </span>
                         <span>
                           {formatTime(currentTime)} / {formatTime(duration)}
                         </span>
@@ -177,7 +215,7 @@ export default function CassettePlayer() {
                 </div>
               </div>
 
-              <div className="col-span-2 flex items-center justify-between gap-3 md:col-span-1 md:flex-col md:items-end">
+              <div className="col-span-2 flex flex-wrap items-center justify-between gap-3 md:col-span-1 md:flex-col md:items-end">
                 <div className="flex items-center gap-2">
                   <IconButton label="Previous track" onClick={prevTrack}>
                     <SkipBack size={17} />
@@ -195,6 +233,36 @@ export default function CassettePlayer() {
                 </div>
 
                 <div className="flex items-center gap-2">
+                  <IconButton
+                    label={shuffle ? "Shuffle on" : "Shuffle off"}
+                    onClick={toggleShuffle}
+                    className={
+                      shuffle
+                        ? "border-accent/50 bg-accent/15 text-accent"
+                        : ""
+                    }
+                  >
+                    <Shuffle size={16} />
+                  </IconButton>
+                  <IconButton
+                    label={
+                      playbackScope === "album"
+                        ? "Next trong album"
+                        : "Next toàn bộ album"
+                    }
+                    onClick={togglePlaybackScope}
+                    className={
+                      playbackScope === "all"
+                        ? "border-primary/50 bg-primary/15 text-primary"
+                        : "border-white/15 bg-white/[0.05] text-[#d7d0b8]"
+                    }
+                  >
+                    {playbackScope === "album" ? (
+                      <Repeat2 size={16} />
+                    ) : (
+                      <ArrowRight size={16} />
+                    )}
+                  </IconButton>
                   <IconButton label={isMuted ? "Unmute" : "Mute"} onClick={toggleMute}>
                     {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
                   </IconButton>
@@ -212,6 +280,12 @@ export default function CassettePlayer() {
                     onClick={() => setExpanded((value) => !value)}
                   >
                     {expanded ? <ChevronDown size={17} /> : <ChevronUp size={17} />}
+                  </IconButton>
+                  <IconButton label="Hide player" onClick={() => setHidden(true)}>
+                    <EyeOff size={16} />
+                  </IconButton>
+                  <IconButton label="Close player" onClick={closePlayer}>
+                    <X size={16} />
                   </IconButton>
                 </div>
               </div>
@@ -231,7 +305,9 @@ export default function CassettePlayer() {
 
             <div className="mt-1 flex justify-between font-mono-tech text-[0.58rem] tracking-[1.5px] text-white/40 md:hidden">
               <span>{formatTime(currentTime)}</span>
-              <span>{formatTime(duration)}</span>
+              <span>
+                {allQueueLoading ? "LOADING ALL" : formatTime(duration)}
+              </span>
             </div>
           </div>
         </div>
