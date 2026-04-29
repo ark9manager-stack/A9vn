@@ -1,0 +1,308 @@
+import React, { useEffect, useMemo, useRef } from "react";
+import { Link, useParams } from "react-router-dom";
+import {
+  ArrowLeft,
+  Disc3,
+  ListMusic,
+  Loader2,
+  Pause,
+  Play,
+  Radio,
+} from "lucide-react";
+
+import { useLyrics } from "../hooks/useLyrics";
+import { useSongDetail } from "../hooks/useSongDetail";
+import { useMusicPlayer } from "../contexts/useMusicPlayer";
+
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds <= 0) return "0:00";
+
+  const minutes = Math.floor(seconds / 60);
+  const rest = Math.floor(seconds % 60)
+    .toString()
+    .padStart(2, "0");
+
+  return `${minutes}:${rest}`;
+}
+
+function DetailState({ loading, error }) {
+  if (loading) {
+    return (
+      <div className="flex min-h-[420px] items-center justify-center gap-3 text-white/55">
+        <Loader2 size={18} className="animate-spin text-primary" />
+        Loading track...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="mx-auto max-w-3xl border border-red-300/20 bg-red-500/10 px-5 py-4 text-red-200">
+        {error}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-3xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white/55">
+      Track not found.
+    </div>
+  );
+}
+
+export default function MusicDetail() {
+  const { songId } = useParams();
+  const { song, albumTracks, loading, error } = useSongDetail(songId);
+  const lyricListRef = useRef(null);
+  const { entries, loading: lyricLoading, error: lyricError } = useLyrics(
+    song?.lyrics,
+  );
+  const {
+    currentTrack,
+    isPlaying,
+    currentTime,
+    duration,
+    progress,
+    playQueue,
+    togglePlay,
+  } = useMusicPlayer();
+
+  const isCurrentTrack =
+    !!song &&
+    !!currentTrack &&
+    (String(currentTrack.id) === String(song.id) ||
+      String(currentTrack.id_list) === String(song.id_list) ||
+      currentTrack.audio === song.audio);
+
+  const activeLyricIndex = useMemo(() => {
+    if (!isCurrentTrack || entries.length === 0) return -1;
+
+    let answer = -1;
+    for (let index = 0; index < entries.length; index += 1) {
+      if (entries[index].time <= currentTime + 0.05) answer = index;
+      else break;
+    }
+
+    return answer;
+  }, [currentTime, entries, isCurrentTrack]);
+
+  useEffect(() => {
+    if (activeLyricIndex < 0) return;
+
+    const row = lyricListRef.current?.querySelector(
+      `[data-lyric-index="${activeLyricIndex}"]`,
+    );
+    row?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [activeLyricIndex]);
+
+  const handlePlay = () => {
+    if (!song?.audio) return;
+
+    if (isCurrentTrack) {
+      togglePlay();
+      return;
+    }
+
+    const queue = albumTracks.length > 0 ? albumTracks : [song];
+    const startIndex = Math.max(
+      0,
+      queue.findIndex(
+        (track) =>
+          String(track.id) === String(song.id) ||
+          String(track.id_list) === String(song.id_list),
+      ),
+    );
+
+    playQueue(queue, startIndex, {
+      id: song.albumId,
+      name: song.albumName || "PLAYLIST",
+      cover: song.cover,
+    });
+  };
+
+  if (loading || error || !song) {
+    return (
+      <section className="min-h-[calc(100vh-48px)] bg-[#050607] px-4 py-8 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Link
+            to="/music"
+            className="inline-flex items-center gap-2 font-mono-tech text-[0.68rem] uppercase tracking-[2px] text-white/45 transition-colors hover:text-primary"
+          >
+            <ArrowLeft size={15} />
+            Music archive
+          </Link>
+          <div className="mt-10">
+            <DetailState loading={loading} error={error} />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const buttonLabel = isCurrentTrack && isPlaying ? "PAUSE" : "PLAY";
+
+  return (
+    <section className="min-h-[calc(100vh-48px)] bg-[#050607] px-4 py-7 text-white md:px-8 md:py-10">
+      <div className="mx-auto max-w-7xl">
+        <Link
+          to="/music"
+          className="inline-flex items-center gap-2 font-mono-tech text-[0.68rem] uppercase tracking-[2px] text-white/45 transition-colors hover:text-primary"
+        >
+          <ArrowLeft size={15} />
+          Music archive
+        </Link>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-[400px_minmax(0,1fr)] xl:grid-cols-[440px_minmax(0,1fr)]">
+          <aside className="min-w-0 border border-white/12 bg-[#0a0d10] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.4)] md:p-5">
+            <div className="aspect-square overflow-hidden border border-white/15 bg-black">
+              {song.cover ? (
+                <img
+                  src={song.cover}
+                  alt=""
+                  className="h-full w-full object-cover"
+                  draggable={false}
+                />
+              ) : (
+                <div className="h-full w-full bg-[linear-gradient(135deg,hsl(var(--primary)/0.32),rgba(255,255,255,0.05))]" />
+              )}
+            </div>
+
+            <div className="mt-5 border-t border-white/10 pt-4">
+              <div className="flex items-center gap-2 font-mono-tech text-[0.62rem] uppercase tracking-[2px] text-primary">
+                <Disc3 size={14} />
+                Track file
+              </div>
+              <div className="mt-3 grid grid-cols-[84px_minmax(0,1fr)] gap-y-2 font-mono-tech text-[0.68rem] uppercase tracking-[1.5px]">
+                <span className="text-white/32">Song ID</span>
+                <span className="truncate text-white/70">{song.id_list}</span>
+                <span className="text-white/32">Album</span>
+                <span className="truncate text-white/70">
+                  {song.albumName || "PLAYLIST"}
+                </span>
+              </div>
+            </div>
+          </aside>
+
+          <div className="min-w-0">
+            <div className="border border-white/12 bg-[#080a0d] p-5 md:p-6">
+              <div className="flex items-center gap-2 font-mono-tech text-[0.65rem] uppercase tracking-[2px] text-primary">
+                <Radio size={15} />
+                Monster Siren record
+              </div>
+              <h1 className="mt-4 font-heading text-4xl font-bold uppercase leading-none tracking-[1.4px] text-white md:text-6xl">
+                {song.title}
+              </h1>
+              <div className="mt-3 truncate font-mono-tech text-[0.72rem] uppercase tracking-[2px] text-white/42">
+                {song.albumName || "PLAYLIST"}
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onClick={handlePlay}
+                  disabled={!song.audio}
+                  className="inline-flex h-12 items-center gap-3 border border-primary/40 bg-primary px-5 font-heading text-sm font-bold uppercase tracking-[2px] text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-45"
+                >
+                  {isCurrentTrack && isPlaying ? (
+                    <Pause size={18} />
+                  ) : (
+                    <Play size={18} fill="currentColor" />
+                  )}
+                  {buttonLabel}
+                </button>
+
+                <div className="min-w-[220px] flex-1">
+                  <div className="h-2 border border-black/60 bg-black/70">
+                    <div
+                      className="h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
+                      style={{ width: `${isCurrentTrack ? progress : 0}%` }}
+                    />
+                  </div>
+                  <div className="mt-2 flex justify-between font-mono-tech text-[0.58rem] uppercase tracking-[1.5px] text-white/35">
+                    <span>{isCurrentTrack ? formatTime(currentTime) : "0:00"}</span>
+                    <span>{isCurrentTrack ? formatTime(duration) : "--:--"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+              <section className="min-w-0 border border-white/12 bg-[#080a0d]">
+                <header className="border-b border-white/10 px-4 py-3 font-mono-tech text-[0.65rem] uppercase tracking-[2px] text-white/55">
+                  Lyrics
+                </header>
+                <div
+                  ref={lyricListRef}
+                  className="h-[420px] overflow-y-auto p-4 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]"
+                >
+                  {lyricLoading && (
+                    <div className="flex items-center gap-3 text-sm text-white/45">
+                      <Loader2 size={16} className="animate-spin text-primary" />
+                      Loading lyrics...
+                    </div>
+                  )}
+                  {lyricError && (
+                    <div className="text-sm text-red-300">
+                      Lyric error: {lyricError}
+                    </div>
+                  )}
+                  {!lyricLoading && !lyricError && entries.length === 0 && (
+                    <div className="text-sm text-white/35">NO LYRIC DATA</div>
+                  )}
+                  {!lyricLoading &&
+                    !lyricError &&
+                    entries.map((entry, index) => (
+                      <div
+                        key={`${entry.time}-${index}`}
+                        data-lyric-index={index}
+                        className={`py-2 text-base leading-relaxed transition-colors ${
+                          index === activeLyricIndex
+                            ? "font-semibold text-white"
+                            : "text-white/42"
+                        }`}
+                      >
+                        {entry.text}
+                      </div>
+                    ))}
+                </div>
+              </section>
+
+              <section className="min-w-0 border border-white/12 bg-[#080a0d]">
+                <header className="flex items-center gap-2 border-b border-white/10 px-4 py-3 font-mono-tech text-[0.65rem] uppercase tracking-[2px] text-white/55">
+                  <ListMusic size={15} className="text-primary" />
+                  Album tracks
+                </header>
+                <div className="h-[420px] overflow-y-auto p-2 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]">
+                  {albumTracks.map((track, index) => {
+                    const active =
+                      String(track.id_list) === String(song.id_list) ||
+                      String(track.id) === String(song.id);
+
+                    return (
+                      <Link
+                        key={`${track.id}-${index}`}
+                        to={`/music/${encodeURIComponent(String(track.id_list))}`}
+                        className={`mb-1 grid grid-cols-[42px_minmax(0,1fr)] gap-3 border px-3 py-2.5 transition-colors ${
+                          active
+                            ? "border-primary/45 bg-primary/12 text-white"
+                            : "border-white/10 bg-white/[0.025] text-white/55 hover:border-primary/30 hover:text-white"
+                        }`}
+                      >
+                        <span className="font-mono-tech text-[0.65rem] tabular-nums text-white/35">
+                          {String(track.id_list ?? index + 1).padStart(2, "0")}
+                        </span>
+                        <span className="min-w-0 truncate text-sm">
+                          {track.title}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -9,6 +9,7 @@ import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
 // lazy load pages
 const Home = lazy(() => import("./pages/Home"));
 const Music = lazy(() => import("./pages/Music"));
+const MusicDetail = lazy(() => import("./pages/MusicDetail"));
 const Operator = lazy(() => import("./pages/Operator"));
 
 const GuideStory = lazy(() => import("./pages/GuideStory"));
@@ -70,6 +71,7 @@ const App = () => {
                 <Route path="/operator/:id" element={<Operator />} />
                 {/* Music */}
                 <Route path="/music" element={<Music />} />
+                <Route path="/music/:songId" element={<MusicDetail />} />
 
                 {/* Guide */}
                 <Route path="/guide-story" element={<GuideStory />} />

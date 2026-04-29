@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Disc3, Loader2, Music2, Play, X } from "lucide-react";
 
 function DeckReel() {
@@ -46,27 +47,39 @@ const AlbumDeck = ({
   loading = false,
   error = null,
 }) => {
+  const navigate = useNavigate();
+
   if (!open) return null;
 
   const cover = albumCover || playlist?.[0]?.cover;
   const hasTracks = playlist.length > 0;
 
+  const handleTrackSelect = (song, index) => {
+    onSelectSong?.(song, index);
+    onClose?.();
+
+    const songId = song?.id_list ?? song?.id;
+    if (songId != null) {
+      navigate(`/music/${encodeURIComponent(String(songId))}`);
+    }
+  };
+
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center px-3 py-16 sm:px-6"
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-[#020304]/92 px-3 py-14 sm:px-6"
       role="dialog"
       aria-modal="true"
       aria-label={`${albumName} playlist`}
     >
       <button
         type="button"
-        className="absolute inset-0 bg-black/72 backdrop-blur-sm"
+        className="absolute inset-0 bg-[#020304]/92"
         onClick={onClose}
         aria-label="Close playlist"
       />
 
       <section
-        className="relative z-10 grid w-full max-w-5xl max-h-[82vh] grid-rows-[minmax(220px,0.7fr)_minmax(0,1fr)] overflow-hidden border border-white/15 bg-[#080a0d]/96 shadow-[0_24px_80px_rgba(0,0,0,0.58),0_0_30px_hsl(var(--primary)/0.14)] md:grid-cols-[330px_minmax(0,1fr)] md:grid-rows-none"
+        className="relative z-10 grid h-[min(680px,calc(100vh-96px))] w-[min(960px,calc(100vw-32px))] grid-rows-[260px_minmax(0,1fr)] overflow-hidden border border-white/15 bg-[#07090b] shadow-[0_24px_80px_rgba(0,0,0,0.64),0_0_26px_hsl(var(--primary)/0.12)] md:grid-cols-[320px_minmax(0,1fr)] md:grid-rows-none"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -79,37 +92,42 @@ const AlbumDeck = ({
           <X size={17} />
         </button>
 
-        <div className="relative min-h-[260px] overflow-hidden border-b border-white/10 bg-[#11100d] md:min-h-0 md:border-b-0 md:border-r md:border-white/10">
-          {cover ? (
-            <img
-              src={cover}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover opacity-40"
-              draggable={false}
-            />
-          ) : (
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(var(--primary)/0.28),rgba(255,255,255,0.05))]" />
-          )}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(255,255,255,0.2),transparent_26%),linear-gradient(180deg,rgba(0,0,0,0.22),#080a0d_78%)]" />
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_9px)] opacity-60" />
+        <div className="relative min-h-0 overflow-hidden border-b border-white/10 bg-[#0a0d10] md:border-b-0 md:border-r md:border-white/10">
+          <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.028)_0px,rgba(255,255,255,0.028)_1px,transparent_1px,transparent_10px)] opacity-70" />
+          <div className="relative flex h-full min-h-0 flex-col p-5 pr-16 md:p-6 md:pr-6">
+            <div className="grid min-h-0 flex-1 grid-cols-[112px_minmax(0,1fr)] gap-4 md:block">
+              <div className="relative aspect-square overflow-hidden border border-white/15 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.42)] md:w-full">
+                {cover ? (
+                  <img
+                    src={cover}
+                    alt=""
+                    className="h-full w-full object-cover"
+                    draggable={false}
+                  />
+                ) : (
+                  <div className="h-full w-full bg-[linear-gradient(135deg,hsl(var(--primary)/0.28),rgba(255,255,255,0.05))]" />
+                )}
+              </div>
 
-          <div className="relative flex h-full min-h-[260px] flex-col justify-end p-5 pr-16 md:min-h-[520px] md:p-6 md:pr-6">
-            <div className="mb-5 flex items-center gap-3">
-              <DeckReel />
-              <DeckReel />
+              <div className="min-w-0 self-end md:mt-5">
+                <div className="mb-3 flex items-center gap-2 font-mono-tech text-[0.62rem] uppercase tracking-[2px] text-primary">
+                  <Disc3 size={14} />
+                  Album tape
+                </div>
+                <h2 className="line-clamp-3 font-heading text-xl font-bold uppercase tracking-[1.4px] text-white md:text-2xl">
+                  {albumName}
+                </h2>
+                <div className="mt-3 flex items-center gap-3 border-t border-white/12 pt-3 font-mono-tech text-[0.62rem] uppercase tracking-[2px] text-white/45">
+                  <span>{playlist.length} tracks</span>
+                  <span className="h-1 w-1 rounded-full bg-primary/70" />
+                  <span>Side A</span>
+                </div>
+              </div>
             </div>
 
-            <div className="mb-3 flex items-center gap-2 font-mono-tech text-[0.62rem] uppercase tracking-[2px] text-primary">
-              <Disc3 size={14} />
-              Album tape
-            </div>
-            <h2 className="font-heading text-2xl font-bold uppercase tracking-[1.4px] text-white">
-              {albumName}
-            </h2>
-            <div className="mt-3 flex items-center gap-3 border-t border-white/12 pt-3 font-mono-tech text-[0.62rem] uppercase tracking-[2px] text-white/45">
-              <span>{playlist.length} tracks</span>
-              <span className="h-1 w-1 rounded-full bg-primary/70" />
-              <span>Side A</span>
+            <div className="mt-5 hidden items-center justify-center gap-5 md:flex">
+              <DeckReel />
+              <DeckReel />
             </div>
           </div>
         </div>
@@ -125,11 +143,11 @@ const AlbumDeck = ({
             </div>
           </header>
 
-          <div className="min-h-0 flex-1 overflow-y-auto p-3 sm:p-4">
+          <div className="min-h-0 flex-1 overflow-hidden p-3 sm:p-4">
             {error || loading || !hasTracks ? (
               <TrackState loading={loading} error={error} />
             ) : (
-              <ul className="grid gap-2">
+              <ul className="grid h-full gap-2 overflow-y-auto pr-1 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]">
                 {playlist.map((song, index) => {
                   const active = index === currentIndex;
                   const trackNumber = String(
@@ -140,7 +158,7 @@ const AlbumDeck = ({
                     <li key={song.id ?? `${song.id_list ?? index}-${index}`}>
                       <button
                         type="button"
-                        onClick={() => onSelectSong?.(song, index)}
+                        onClick={() => handleTrackSelect(song, index)}
                         className={`group grid w-full grid-cols-[46px_minmax(0,1fr)_32px] items-center gap-3 border px-3 py-3 text-left transition-colors ${
                           active
                             ? "border-primary/45 bg-primary/12 text-white"

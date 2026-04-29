@@ -97,7 +97,7 @@ export default function CassettePlayer() {
   } = useMusicPlayer();
 
   const [expanded, setExpanded] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const lyricListRef = useRef(null);
   const { entries, loading, error } = useLyrics(currentTrack?.lyrics);
 
@@ -125,10 +125,6 @@ export default function CassettePlayer() {
     );
     row?.scrollIntoView({ block: "center", behavior: "smooth" });
   }, [expanded, activeLyricIndex]);
-
-  useEffect(() => {
-    setHidden(false);
-  }, [currentTrack?.id]);
 
   if (!currentTrack) return null;
 
