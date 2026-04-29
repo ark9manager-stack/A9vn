@@ -12,7 +12,6 @@ import {
   subProfIconUrl,
   subProfLabel,
 } from "../../../utils/operatorUtils";
-import { useScrollLock } from "../../../hooks/useScrollLock";
 
 const tabs = [
   { id: "skins", label: "Trang phục" },
@@ -169,6 +168,8 @@ const OperatorSidebar = ({
   onTabChange,
   lang,
   onLangChange,
+  mobileOpen = false,
+  onMobileOpenChange,
 }) => {
   // normalize lang to EN/VN
   const langNorm = useMemo(() => {
@@ -219,30 +220,27 @@ const OperatorSidebar = ({
     ].filter(Boolean);
     return Array.from(new Set(arr));
   }, [charId, operator?.avatar, operator?.image]);
-  const avatarKey = useMemo(() => avatarCandidates.join("|"), [avatarCandidates]);
+  const avatarKey = useMemo(
+    () => avatarCandidates.join("|"),
+    [avatarCandidates],
+  );
 
   const [avatarIdx, setAvatarIdx] = useState(0);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  useScrollLock(mobileOpen);
 
   useEffect(() => {
     setAvatarIdx(0);
   }, [avatarKey]);
 
   useEffect(() => {
-    setMobileOpen(false);
-  }, [charId]);
-
-  useEffect(() => {
     if (!mobileOpen || typeof window === "undefined") return undefined;
 
     const onKeyDown = (event) => {
-      if (event.key === "Escape") setMobileOpen(false);
+      if (event.key === "Escape") onMobileOpenChange?.(false);
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [mobileOpen]);
+  }, [mobileOpen, onMobileOpenChange]);
 
   const avatarSrc = avatarCandidates[avatarIdx] || "";
 
@@ -275,48 +273,13 @@ const OperatorSidebar = ({
         />
       </div>
 
-      {/* Mobile drawer trigger */}
+      {/* Mobile drawer */}
       <div className="md:hidden">
-        <button
-          type="button"
-          aria-label={
-            mobileOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"
-          }
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((prev) => !prev)}
-          className={`fixed left-5 top-11 z-[60] flex items-center gap-2 rounded-full border border-white/10 bg-[#171717]/95 px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 ${
-            mobileOpen
-              ? "translate-x-0 opacity-100"
-              : "translate-x-0 opacity-100"
-          }`}
-        >
-          <span className="flex flex-col gap-[3px]">
-            <span
-              className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
-                mobileOpen ? "translate-y-[5px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-4 rounded-full bg-white transition-opacity duration-300 ${
-                mobileOpen ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
-                mobileOpen ? "-translate-y-[5px] -rotate-45" : ""
-              }`}
-            />
-          </span>
-          <span className="text-sm font-medium leading-none">
-            {mobileOpen ? "Đóng" : "Menu"}
-          </span>
-        </button>
-
         {/* Backdrop */}
         <button
           type="button"
           aria-label="Đóng menu"
-          onClick={() => setMobileOpen(false)}
+          onClick={() => onMobileOpenChange?.(false)}
           className={`fixed inset-0 z-40 bg-black/45 transition-opacity duration-300 ${
             mobileOpen
               ? "pointer-events-auto opacity-100"
@@ -348,7 +311,7 @@ const OperatorSidebar = ({
               avatarSrc={avatarSrc}
               handleAvatarError={handleAvatarError}
               isMobile
-              onTabClick={() => setMobileOpen(false)}
+              onTabClick={() => onMobileOpenChange?.(false)}
             />
           </div>
         </aside>

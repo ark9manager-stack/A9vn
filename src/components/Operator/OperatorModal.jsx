@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import OperatorSidebar from "./Modal/OperatorSidebar";
 import OperatorContent from "./Modal/OperatorContent";
 import { useScrollLock } from "../../hooks/useScrollLock";
@@ -6,7 +6,12 @@ import { useScrollLock } from "../../hooks/useScrollLock";
 const OperatorModal = ({ operator, onClose }) => {
   const [activeTab, setActiveTab] = useState("skins");
   const [lang, setLang] = useState("VN");
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   useScrollLock(!!operator);
+
+  useEffect(() => {
+    setMobileSidebarOpen(false);
+  }, [operator?.id]);
 
   if (!operator) return null;
 
@@ -19,10 +24,43 @@ const OperatorModal = ({ operator, onClose }) => {
         bg-[#121212] rounded-2xl shadow-2xl overflow-hidden flex
       "
       >
+        <button
+          type="button"
+          aria-label={
+            mobileSidebarOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"
+          }
+          aria-expanded={mobileSidebarOpen}
+          onClick={() => setMobileSidebarOpen((prev) => !prev)}
+          className="absolute left-4 top-4 z-[100] flex items-center gap-2 rounded-full border border-white/10 bg-[#171717]/95 px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 md:hidden"
+        >
+          <span className="flex flex-col gap-[3px]">
+            <span
+              className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
+                mobileSidebarOpen ? "translate-y-[5px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-4 rounded-full bg-white transition-opacity duration-300 ${
+                mobileSidebarOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
+                mobileSidebarOpen ? "-translate-y-[5px] -rotate-45" : ""
+              }`}
+            />
+          </span>
+          <span className="text-sm font-medium leading-none">
+            {mobileSidebarOpen ? "Đóng" : "Menu"}
+          </span>
+        </button>
+
         {/* Close button for mobile */}
         <button
-          className="absolute top-4 right-4 text-white md:hidden z-10"
+          type="button"
+          className="absolute top-4 right-4 text-white md:hidden z-[100]"
           onClick={onClose}
+          aria-label="Close operator modal"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +85,8 @@ const OperatorModal = ({ operator, onClose }) => {
           onTabChange={setActiveTab}
           lang={lang}
           onLangChange={setLang}
+          mobileOpen={mobileSidebarOpen}
+          onMobileOpenChange={setMobileSidebarOpen}
         />
 
         {/* RIGHT */}
