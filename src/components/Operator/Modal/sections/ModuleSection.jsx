@@ -225,29 +225,6 @@ function applyBlackboard(text, bbMap) {
   );
 }
 
-function formatNestedNoteTags(input) {
-  if (!isNonEmptyString(input)) return "";
-  let s = String(input);
-  s = s.replace(/<[@$][a-zA-Z0-9_.-]+>/g, "");
-  s = s.replace(/<\/>/g, "");
-  return s;
-}
-
-function matchCloseTagAt(str, i) {
-  if (typeof str !== "string") return 0;
-  if (str.startsWith("</>", i)) return 3;
-
-  if (str.startsWith("</ >", i)) return 4;
-
-  if (str[i] === "<" && str[i + 1] === "/") {
-    let j = i + 2;
-    while (j < str.length && /\s/.test(str[j])) j += 1;
-    if (str[j] === ">") return j - i + 1;
-  }
-
-  return 0;
-}
-
 function buildTraitMap(traitJson) {
   const list = traitJson?.traitDescription;
   if (!Array.isArray(list)) return {};
@@ -719,13 +696,6 @@ function collectUpgradeCandidatesForPot(phase) {
   return all;
 }
 
-function trustToPercent(raw) {
-  const n = Number(raw);
-  if (!Number.isFinite(n) || n <= 0) return 0;
-  if (n <= 100) return Math.round(n);
-  return Math.min(100, Math.round(n / 100));
-}
-
 function ModuleLevelBoardPane({
   module,
   isEnglishUI,
@@ -946,7 +916,7 @@ function ModuleLevelBoardPane({
   );
 }
 
-function ModuleMissionsPane({ module, isEnglishUI, charKey }) {
+function ModuleMissionsPane({ module, isEnglishUI }) {
   const id = module?.id;
   const vnOverride = React.useMemo(
     () => (isNonEmptyString(id) ? moduleVN?.[id] || null : null),
@@ -999,7 +969,7 @@ function ModuleMissionsPane({ module, isEnglishUI, charKey }) {
   );
 }
 
-function ModuleUpgradeCostsPane({ module, isEnglishUI, charKey }) {
+function ModuleUpgradeCostsPane({ module, isEnglishUI }) {
   const id = module?.id;
 
   const selectedBattle = React.useMemo(() => {
@@ -1274,6 +1244,10 @@ export default function ModuleSection(props) {
     Math.max(0, modules.length - 1),
   );
   const selected = modules?.[safeModuleIdx] || null;
+  const selectedModuleId = selected?.id ? String(selected.id) : "";
+  const selectedModuleIcon = selected?.uniEquipIcon
+    ? String(selected.uniEquipIcon)
+    : "";
 
   const [mountedModulePaneIds, setMountedModulePaneIds] = React.useState(() => {
     const s = new Set();
@@ -1282,9 +1256,7 @@ export default function ModuleSection(props) {
   });
 
   React.useEffect(() => {
-    const s = new Set();
-    if (selected?.id) s.add(String(selected.id));
-    setMountedModulePaneIds(s);
+    setMountedModulePaneIds(new Set());
   }, [charKey]);
 
   React.useEffect(() => {
@@ -1352,7 +1324,7 @@ export default function ModuleSection(props) {
     }
 
     return { generic, byUniEquip };
-  }, [traitModVN]);
+  }, []);
 
   const resolveTraitModVN = React.useCallback(
     (rawCN) => {
@@ -1571,10 +1543,8 @@ export default function ModuleSection(props) {
 
   const moduleImageCandidates = React.useMemo(() => {
     if (!selected) return [];
-    const id = String(selected?.id || "");
-    const icon = String(selected?.uniEquipIcon || "");
-    return getModuleImageCandidates(id, icon);
-  }, [selected?.id, selected?.uniEquipIcon]);
+    return getModuleImageCandidates(selectedModuleId, selectedModuleIcon);
+  }, [selected, selectedModuleId, selectedModuleIcon]);
 
   const allModuleImageUrls = React.useMemo(() => {
     const seen = new Set();
@@ -2023,11 +1993,7 @@ export default function ModuleSection(props) {
 
           return (
             <div key={`mis-pane-${mid}`} style={offscreen}>
-              <ModuleMissionsPane
-                module={m}
-                isEnglishUI={isEnglishUI}
-                charKey={charKey}
-              />
+              <ModuleMissionsPane module={m} isEnglishUI={isEnglishUI} />
             </div>
           );
         })}
@@ -2060,11 +2026,7 @@ export default function ModuleSection(props) {
 
           return (
             <div key={`up-pane-${mid}`} style={offscreen}>
-              <ModuleUpgradeCostsPane
-                module={m}
-                isEnglishUI={isEnglishUI}
-                charKey={charKey}
-              />
+              <ModuleUpgradeCostsPane module={m} isEnglishUI={isEnglishUI} />
             </div>
           );
         })}

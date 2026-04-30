@@ -176,7 +176,6 @@ function getLangLabel(vnObj, skinPrefix, langType, variantKey, charId) {
   );
   if (normalizeCvNames(baseCvNames).length)
     return buildLangCvLabel(langType, baseCvNames);
-  s;
 
   return langType;
 }
@@ -224,7 +223,9 @@ const VoiceSection = ({ operator }) => {
       try {
         audio.pause();
         audio.currentTime = 0;
-      } catch {}
+      } catch (_err) {
+        void _err;
+      }
     });
   }, []);
 
@@ -234,7 +235,9 @@ const VoiceSection = ({ operator }) => {
       try {
         audio.pause();
         audio.currentTime = 0;
-      } catch {}
+      } catch (_err) {
+        void _err;
+      }
     });
   }, []);
 
@@ -342,7 +345,7 @@ const VoiceSection = ({ operator }) => {
         </div>
       ) : null}
 
-      <div className="mb-4 flex items-center justify-between gap-4">
+      <div className="mb-4 flex items-center justify-between ">
         <div className="flex items-center gap-2 overflow-x-auto">
           {variants.map((wk) => {
             const isSelected = wk === selectedVariantKey;

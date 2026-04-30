@@ -1027,8 +1027,8 @@ export default function SkillsSection(props) {
     return characterTableEN?.[charKey] || null;
   }, [charKey]);
 
-  const rawTagList = charData?.tagList ?? operator?.tagList ?? [];
   const resolvedTags = React.useMemo(() => {
+    const rawTagList = charData?.tagList ?? operator?.tagList ?? [];
     if (!Array.isArray(rawTagList) || rawTagList.length === 0) return [];
     return rawTagList
       .filter((t) => isNonEmptyString(t))
@@ -1036,7 +1036,7 @@ export default function SkillsSection(props) {
         const key = String(t).trim();
         return tagMap && key in tagMap ? String(tagMap[key]) : key;
       });
-  }, [rawTagList, tagMap]);
+  }, [charData, operator, tagMap]);
 
   const positionRaw = charData?.position ?? operator?.position ?? "";
   const positionLabel =
@@ -1108,7 +1108,7 @@ export default function SkillsSection(props) {
     }
 
     return { variants, showElite: true };
-  }, [charData, operator, traitMap]);
+  }, [charData, charDataEN, isEnglishUI, operator, traitMap]);
 
   const [traitVariantIdx, setTraitVariantIdx] = React.useState(0);
 
@@ -1485,7 +1485,7 @@ export default function SkillsSection(props) {
     () => new Set(),
   );
   const [displaySkillIconUrl, setDisplaySkillIconUrl] = React.useState("");
-  const [isSkillIconLoading, setIsSkillIconLoading] = React.useState(false);
+  const [, setIsSkillIconLoading] = React.useState(false);
   const [skillIconError, setSkillIconError] = React.useState(false);
 
   React.useEffect(() => {
@@ -1680,14 +1680,14 @@ export default function SkillsSection(props) {
   const currentInitSp = currentSkillLevel?.spData?.initSp;
   const currentSpCost = currentSkillLevel?.spData?.spCost;
 
-  const allSkillLvlup = Array.isArray(charData?.allSkillLvlup)
-    ? charData.allSkillLvlup
-    : [];
-  const masteryConds = Array.isArray(selectedSkillRef?.levelUpCostCond)
-    ? selectedSkillRef.levelUpCostCond
-    : [];
-
   const selectedUpgradeInfo = React.useMemo(() => {
+    const allSkillLvlup = Array.isArray(charData?.allSkillLvlup)
+      ? charData.allSkillLvlup
+      : [];
+    const masteryConds = Array.isArray(selectedSkillRef?.levelUpCostCond)
+      ? selectedSkillRef.levelUpCostCond
+      : [];
+
     const lv = safeSkillLevelIdx + 1;
 
     if (lv <= 1) return null;
@@ -1724,7 +1724,7 @@ export default function SkillsSection(props) {
       time,
       costs,
     };
-  }, [safeSkillLevelIdx, allSkillLvlup, masteryConds]);
+  }, [charData, charDataEN, isEnglishUI, operator, traitMap]);
 
   //Kỹ năng hậu cần
   const buildingCharEntry = React.useMemo(() => {
@@ -1749,13 +1749,6 @@ export default function SkillsSection(props) {
   React.useEffect(() => {
     setBuildingHeaderOptIdx(defaultBuildingHeaderOptIdx);
   }, [charKey, defaultBuildingHeaderOptIdx]);
-
-  const activeBuildingHeaderOpt = buildingHeaderOptions[
-    Math.min(
-      Math.max(0, buildingHeaderOptIdx),
-      Math.max(0, buildingHeaderOptions.length - 1),
-    )
-  ] || { phaseIndex: 0, level: 1, showLv: false };
 
   const showBuildingEliteHeader = buildingHeaderOptions.length > 1;
 
