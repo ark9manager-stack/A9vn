@@ -29,7 +29,7 @@
   },
   "ba.dt.apoptosis": {
     "title": "Necrosis",
-    "text": "Necrosis sẽ nổ khi đạt 1000, đơn vị bị ảnh hưởng không thể sử dụng kỹ năng trong 15 giây; mất 1 SP mỗi giây và chịu 100 sát thương phép."
+    "text": "Necrosis sẽ nổ khi đạt 1000, đơn vị bị ảnh hưởng không thể sử dụng kỹ năng trong 15 giây; Cứ mỗi giây sẽ mất 1 SP và chịu 100 sát thương phép."
   },
   "ba.dt.apoptosis2": {
     "title": "Necrosis - nguồn từ đồng minh",
@@ -110,6 +110,10 @@
   "ba.dying": {
     "title": "Trọng thương/Critically Wounded",
     "text": "Giảm 80% tốc độ di chuyển và không thể bị chặn, sau 10 giây sẽ tự chết. Người hạ gục kẻ đang dính hiệu ứng này sẽ hồi SP."
+  },
+  "Sleep": {
+    "title": "Ngủ/Sleep",
+    "text": "Trở nên bất tử và không thể thực hiện bất kỳ hành động nào. Đồng thời cũng không thể chặn hoặc bị chặn."
   },
   "Sleep": {
     "title": "Ngủ/Sleep",
