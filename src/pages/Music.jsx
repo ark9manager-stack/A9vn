@@ -81,8 +81,8 @@ const Music = () => {
 
   return (
     <div id="music" className="w-full flex flex-col">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex flex-col">
-        <div className="w-full flex flex-col px-6">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-8 lg:px-16 flex flex-col">
+        <div className="w-full flex flex-col px-0 sm:px-2 md:px-6">
           {/* ── loading / error ── */}
           {loadingAlbums && <LoadingState />}
           {errorAlbums && <ErrorState message={errorAlbums} />}

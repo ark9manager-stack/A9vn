@@ -53,7 +53,7 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   );
 
   return (
-    <div className="ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto px-2 pb-2 pt-2 md:p-4">
+    <div className="ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto px-2 pb-2 pt-8 md:p-4">
       {tabIds.map((id) => {
         const isActive = activeTab === id;
         return (

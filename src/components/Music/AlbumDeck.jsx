@@ -68,7 +68,7 @@ const AlbumDeck = ({
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-[#020304]/92 px-3 py-14 sm:px-6"
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-[#020304]/92 px-3 py-4 sm:px-6 sm:py-10"
       role="dialog"
       aria-modal="true"
       aria-label={`${albumName} playlist`}
@@ -81,7 +81,7 @@ const AlbumDeck = ({
       />
 
       <section
-        className="relative z-10 grid h-[min(680px,calc(100vh-96px))] w-[min(960px,calc(100vw-32px))] grid-rows-[260px_minmax(0,1fr)] overflow-hidden border border-white/15 bg-[#07090b] shadow-[0_24px_80px_rgba(0,0,0,0.64),0_0_26px_hsl(var(--primary)/0.12)] md:grid-cols-[320px_minmax(0,1fr)] md:grid-rows-none"
+        className="relative z-10 grid h-[min(680px,calc(100vh-32px))] w-[min(960px,calc(100vw-24px))] grid-rows-[220px_minmax(0,1fr)] overflow-hidden border border-white/15 bg-[#07090b] shadow-[0_24px_80px_rgba(0,0,0,0.64),0_0_26px_hsl(var(--primary)/0.12)] sm:h-[min(680px,calc(100vh-80px))] sm:w-[min(960px,calc(100vw-32px))] sm:grid-rows-[260px_minmax(0,1fr)] md:grid-cols-[320px_minmax(0,1fr)] md:grid-rows-none"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -97,7 +97,7 @@ const AlbumDeck = ({
         <div className="relative min-h-0 overflow-hidden border-b border-white/10 bg-[#0a0d10] md:border-b-0 md:border-r md:border-white/10">
           <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.028)_0px,rgba(255,255,255,0.028)_1px,transparent_1px,transparent_10px)] opacity-70" />
           <div className="relative flex h-full min-h-0 flex-col p-5 pr-16 md:p-6 md:pr-6">
-            <div className="grid min-h-0 flex-1 grid-cols-[112px_minmax(0,1fr)] gap-4 md:block">
+            <div className="grid min-h-0 flex-1 grid-cols-[92px_minmax(0,1fr)] gap-4 sm:grid-cols-[112px_minmax(0,1fr)] md:block">
               <div className="relative aspect-square overflow-hidden border border-white/15 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.42)] md:w-full">
                 {cover ? (
                   <img

@@ -31,7 +31,7 @@ const OperatorModal = ({ operator, onClose }) => {
           }
           aria-expanded={mobileSidebarOpen}
           onClick={() => setMobileSidebarOpen((prev) => !prev)}
-          className="absolute left-4 top-4 z-[100] flex items-center gap-2 rounded-full border border-white/10 bg-[#171717]/95 px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 md:hidden"
+          className="absolute left-1 top-1 z-[100] flex items-center gap-2 rounded-full px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 md:hidden"
         >
           <span className="flex flex-col gap-[3px]">
             <span
@@ -58,7 +58,7 @@ const OperatorModal = ({ operator, onClose }) => {
         {/* Close button for mobile */}
         <button
           type="button"
-          className="absolute top-4 right-4 text-white md:hidden z-[100]"
+          className="absolute top-1 right-2 text-white md:hidden z-[100]"
           onClick={onClose}
           aria-label="Close operator modal"
         >

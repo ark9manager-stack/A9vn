@@ -152,7 +152,7 @@ export default function MusicDetail() {
           Music archive
         </Link>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-[400px_minmax(0,1fr)] xl:grid-cols-[440px_minmax(0,1fr)]">
+        <div className="mt-6 grid gap-4 sm:gap-6 lg:grid-cols-[minmax(300px,400px)_minmax(0,1fr)] xl:grid-cols-[minmax(320px,440px)_minmax(0,1fr)]">
           <aside className="min-w-0 border border-white/12 bg-[#0a0d10] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.4)] md:p-5">
             <div className="aspect-square overflow-hidden border border-white/15 bg-black">
               {song.cover ? (
@@ -189,7 +189,7 @@ export default function MusicDetail() {
                 <Radio size={15} />
                 Monster Siren record
               </div>
-              <h1 className="mt-4 font-heading text-4xl font-bold uppercase leading-none tracking-[1.4px] text-white md:text-6xl">
+              <h1 className="mt-4 break-words font-heading text-3xl font-bold uppercase leading-none tracking-[1.4px] text-white sm:text-4xl md:text-6xl">
                 {song.title}
               </h1>
               <div className="mt-3 truncate font-mono-tech text-[0.72rem] uppercase tracking-[2px] text-white/42">
@@ -211,7 +211,7 @@ export default function MusicDetail() {
                   {buttonLabel}
                 </button>
 
-                <div className="min-w-[220px] flex-1">
+                <div className="min-w-full flex-1 sm:min-w-[220px]">
                   <div className="h-2 border border-black/60 bg-black/70">
                     <div
                       className="h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
@@ -233,7 +233,7 @@ export default function MusicDetail() {
                 </header>
                 <div
                   ref={lyricListRef}
-                  className="h-[420px] overflow-y-auto p-4 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]"
+                  className="h-[360px] overflow-y-auto p-4 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)] md:h-[420px]"
                 >
                   {lyricLoading && (
                     <div className="flex items-center gap-3 text-sm text-white/45">
@@ -272,7 +272,7 @@ export default function MusicDetail() {
                   <ListMusic size={15} className="text-primary" />
                   Album tracks
                 </header>
-                <div className="h-[420px] overflow-y-auto p-2 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]">
+                <div className="h-[360px] overflow-y-auto p-2 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)] md:h-[420px]">
                   {albumTracks.map((track, index) => {
                     const active =
                       String(track.id_list) === String(song.id_list) ||
