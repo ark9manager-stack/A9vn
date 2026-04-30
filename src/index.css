@@ -378,11 +378,12 @@
 /* Music grid specific styles - Monster Siren exact sizing */
 .music-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 200px));
   gap: clamp(1rem, 2.4vw, 2rem);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(0rem, 2vw, 2rem);
+  justify-content: center;
 }
 
 /* Individual music card sizing */
@@ -429,13 +430,13 @@
 /* Responsive music grid */
 @media (max-width: 1200px) {
   .music-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 200px));
   }
 }
 
 @media (max-width: 768px) {
   .music-grid {
-    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 180px));
     gap: 0.875rem;
   }
 }
@@ -446,6 +447,20 @@
     flex-direction: column;
     gap: 0.75rem;
     padding: 0;
+  }
+
+  .music-mobile-scroll {
+    display: flex;
+    max-height: min(62vh, 560px);
+    min-height: 320px;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.18);
+    padding: 0.75rem;
+    scrollbar-color: hsl(var(--primary)) rgba(255, 255, 255, 0.08);
   }
 
   .music-card {

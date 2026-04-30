@@ -34,9 +34,10 @@ function PaginationInfo({
   startIndex,
   endIndex,
   total,
+  className = "",
 }) {
   return (
-    <div className="text-center text-gray-400 text-sm mb-4">
+    <div className={`text-center text-gray-400 text-sm mb-4 ${className}`}>
       Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
       {Math.min(endIndex, total)} / {total} album
     </div>
@@ -107,6 +108,17 @@ const Music = () => {
               songs={currentAlbums}
               startIndex={startIndex}
               onSelectMusic={handleSelectAlbum}
+              className="hidden sm:block"
+            />
+          )}
+
+          {!loadingAlbums && (
+            <MusicGrid
+              songs={filteredAlbums}
+              startIndex={0}
+              onSelectMusic={handleSelectAlbum}
+              className="block sm:hidden"
+              scrollable
             />
           )}
 
@@ -116,6 +128,7 @@ const Music = () => {
               totalPages={totalPages}
               currentPage={currentPage}
               handlePageChange={handlePageChange}
+              className="hidden sm:flex"
             />
           )}
 
@@ -126,6 +139,7 @@ const Music = () => {
               startIndex={startIndex}
               endIndex={endIndex}
               total={filteredAlbums.length}
+              className="hidden sm:block"
             />
           )}
         </div>

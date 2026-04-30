@@ -1,8 +1,13 @@
 import React from "react";
 
-const Pagination = ({ totalPages, currentPage, handlePageChange }) => {
+const Pagination = ({
+  totalPages,
+  currentPage,
+  handlePageChange,
+  className = "",
+}) => {
   return (
-    <div className="flex justify-center items-center space-x-6 mb-6">
+    <div className={`justify-center items-center space-x-6 mb-6 ${className}`}>
       {/* Prev */}
       <button
         onClick={() => handlePageChange(currentPage - 1)}
