@@ -349,7 +349,7 @@ export default function CassettePlayer() {
                   max="100"
                   value={visibleVolume}
                   onChange={(event) => setVolume(Number(event.target.value))}
-                  className="hidden w-24 accent-primary sm:block md:w-28"
+                  className="w-20 accent-primary sm:w-24 md:w-28"
                 />
 
                 <span className="mx-1 h-7 w-px bg-white/10" />

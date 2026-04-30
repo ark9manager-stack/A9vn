@@ -10,16 +10,17 @@ import { MusicPlayerContext } from "./MusicPlayerStore";
 const VOLUME_KEY = "a9vn_music_volume";
 const SHUFFLE_KEY = "a9vn_music_shuffle";
 const PLAYBACK_SCOPE_KEY = "a9vn_music_playback_scope";
+const DEFAULT_VOLUME = 80;
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
 function getInitialVolume() {
-  if (typeof window === "undefined") return 80;
+  if (typeof window === "undefined") return DEFAULT_VOLUME;
 
   const stored = Number(window.localStorage.getItem(VOLUME_KEY));
-  return Number.isFinite(stored) ? clamp(stored, 0, 100) : 80;
+  return Number.isFinite(stored) ? clamp(stored, 0, 100) : DEFAULT_VOLUME;
 }
 
 function getInitialShuffle() {
@@ -79,7 +80,7 @@ export function MusicPlayerProvider({ children }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolumeState] = useState(getInitialVolume);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(() => getInitialVolume() === 0);
   const [shuffle, setShuffle] = useState(getInitialShuffle);
   const [playbackScope, setPlaybackScopeState] = useState(
     getInitialPlaybackScope,
@@ -320,8 +321,19 @@ export function MusicPlayerProvider({ children }) {
   }, []);
 
   const toggleMute = useCallback(() => {
-    setIsMuted((value) => !value);
-  }, []);
+    if (isMuted || volume === 0) {
+      const restoredVolume = volume === 0 ? DEFAULT_VOLUME : volume;
+      setVolumeState(restoredVolume);
+      setIsMuted(false);
+
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(VOLUME_KEY, String(restoredVolume));
+      }
+      return;
+    }
+
+    setIsMuted(true);
+  }, [isMuted, volume]);
 
   const closePlayer = useCallback(() => {
     const audio = audioRef.current;
@@ -343,6 +355,7 @@ export function MusicPlayerProvider({ children }) {
     const audio = audioRef.current;
     if (!audio) return;
 
+    audio.muted = isMuted || volume === 0;
     audio.volume = isMuted ? 0 : volume / 100;
   }, [volume, isMuted]);
 
@@ -388,6 +401,8 @@ export function MusicPlayerProvider({ children }) {
       audio.src = currentTrack.audio;
       audio.load();
     }
+    audio.muted = isMuted || volume === 0;
+    audio.volume = isMuted ? 0 : volume / 100;
 
     if (!isPlaying) {
       audio.pause();
@@ -398,7 +413,7 @@ export function MusicPlayerProvider({ children }) {
     if (playPromise?.catch) {
       playPromise.catch(() => setIsPlaying(false));
     }
-  }, [currentTrack?.audio, isPlaying]);
+  }, [currentTrack?.audio, isMuted, isPlaying, volume]);
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
@@ -469,7 +484,7 @@ export function MusicPlayerProvider({ children }) {
   return (
     <MusicPlayerContext.Provider value={value}>
       {children}
-      <audio ref={audioRef} preload="metadata" />
+      <audio ref={audioRef} preload="auto" playsInline />
     </MusicPlayerContext.Provider>
   );
 }
