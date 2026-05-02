@@ -127,10 +127,10 @@
   },
   "char_1024_hbisc2": {
     "TitleTalent1": "Sớm nở chiều tàn",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đòn tấn công khiến mục tiêu nhận 6%<$ba.magicfragile>【Arts Fragility】</>trong 5 giây.",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu nhận 8%<@ba.talpu>(+2%)</><$ba.magicfragile>【Arts Fragility】</>trong 5 giây.",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu nhận 12%<$ba.magicfragile>【Arts Fragility】</>trong 5 giây.",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu nhận 14%<@ba.talpu>(+2%)</><$ba.magicfragile>【Arts Fragility】</>trong 5 giây."
   },
   "char_1026_gvial2": {
     "TitleTalent1": "Chiến phủ",
@@ -139,13 +139,13 @@
     "Talent1_p2": "ATK và DEF +7%<@ba.talpu>(+2%)</>, tăng thêm 4%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
     "Talent1_2": "ATK và DEF +10%, tăng thêm 4% cho mỗi kẻ địch bị chặn.",
     "Talent1_2_p2": "ATK và DEF +12%<@ba.talpu>(+2%)</>, tăng thêm 5%<@ba.talpu>(+1%)</> cho mỗi kẻ địch bị chặn.",
-    "Talent2": "Hiệu quả hồi phục +20%, tăng thành +40% khi HP dưới 50%.",
-    "Talent2_p4": "Hiệu quả hồi phục +25%<@ba.talpu>(+5%)</>, tăng thành +45%<@ba.talpu>(+5%)</> khi HP dưới 50%."
+    "Talent2": "Hiệu quả hồi phục +20%, tăng thành +40% khi dưới 50% HP.",
+    "Talent2_p4": "Hiệu quả hồi phục +25%<@ba.talpu>(+5%)</>, tăng thành +45%<@ba.talpu>(+5%)</> khi dưới 50% HP."
   },
   "char_1027_greyy2": {
     "TitleTalent1": "Xích ánh sáng",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Khi tấn công, có 25% tỷ lệ <$ba.sluggish>Làm chậm</> mục tiêu trong 2 giây.",
+    "Talent1_2": "Khi tấn công, có 40% tỷ lệ <$ba.sluggish>Làm chậm</> mục tiêu trong 2 giây."
   },
   "char_1028_texas2": {
     "TitleTalent1": "Phong cách của Texas",
@@ -172,12 +172,12 @@
   "char_1030_noirc2": {
     "TitleTalent1": "Bền bỉ",
     "TitleTalent2": "Luyện khí",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_1": "",
-    "Talent2_2": ""
+    "Talent0": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +30 ASPD và +30% DEF (đạt mức tối đa khi mất 50% HP).",
+    "Talent1": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +40 ASPD và +40% DEF (đạt mức tối đa khi mất 60% HP).",
+    "Talent1_2": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +50 ASPD và +50% DEF (đạt mức tối đa khi mất 70% HP).",
+    "Talent2": "Khi chưa kích hoạt kỹ năng, +3% ATK cho mỗi 5 đòn tấn công liên tiếp (cộng dồn tối đa 3 lần).",
+    "Talent2_1": "Khi chưa kích hoạt kỹ năng, +5% ATK cho mỗi 5 đòn tấn công liên tiếp (cộng dồn tối đa 3 lần).",
+    "Talent2_2": "Khi chưa kích hoạt kỹ năng, +7% ATK cho mỗi 5 đòn tấn công liên tiếp (cộng dồn tối đa 3 lần)."
   },
   "char_1031_slent2": {
     "TitleTalent1": "Trụ cột thầm lặng",
@@ -510,8 +510,8 @@
   },
   "char_135_halo": {
     "TitleTalent1": "Say mê nghiên cứu",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "+3 ASPD mỗi 15 giây có mặt trên sân (Cộng dồn tối đa 5 lần).",
+    "Talent1_2": "+4 ASPD mỗi 15 giây có mặt trên sân (Cộng dồn tối đa 5 lần)."
   },
   "char_136_hsguma": {
     "TitleTalent1": "Áo chống đạn",
@@ -614,11 +614,11 @@
   "char_154_morgan": {
     "TitleTalent1": "Tiên phong nóng tính",
     "TitleTalent2": "Lợi thế sân nhà",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +40% ATK (đạt mức tối đa khi mất 70% HP).",
+    "Talent1_p4": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +42%<@ba.talpu>(+2%)</> ATK (đạt mức tối đa khi mất 70% HP).",
+    "Talent1_2": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +50% ATK (đạt mức tối đa khi mất 70% HP).",
+    "Talent1_2_p4": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +52%<@ba.talpu>(+2%)</> ATK (đạt mức tối đa khi mất 70% HP).",
+    "Talent2": "Trong【All Quiet Under The Thunder】(Chapter 12), bản thân sẽ không chiếm giới hạn triển khai."
   },
   "char_155_tiger": {
     "TitleTalent1": "Hổ quyền chớp nhoáng",
@@ -630,9 +630,9 @@
   "char_157_dagda": {
     "TitleTalent1": "Tinh thần băng nhóm",
     "TitleTalent2": "Tinh thần hiệp sĩ",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": ""
+    "Talent1": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 130%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Cán viên【Glasgow】(tối đa tới 190%).",
+    "Talent1_2": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 150%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Cán viên【Glasgow】(tối đa tới 240%).",
+    "Talent2": "Trong【Return to Mist】(Chapter 11), HP +20%. Mỗi đòn tấn công hồi cho bản thân lượng HP bằng 20% sát thương gây ra."
   },
   "char_158_milu": {
     "TitleTalent1": "Sát thủ",
@@ -1310,10 +1310,10 @@
   },
   "char_297_hamoni": {
     "TitleTalent1": "Vị khách bất ngờ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Gây thêm 12% sát thương lên kẻ địch đang bị chặn.",
+    "Talent1_p4": "Gây thêm 15%<@ba.talpu>(+3%)</> sát thương lên kẻ địch đang bị chặn.",
+    "Talent1_2": "Gây thêm 17% sát thương lên kẻ địch đang bị chặn.",
+    "Talent1_2_p4": "Gây thêm 20%<@ba.talpu>(+3%)</> sát thương lên kẻ địch đang bị chặn."
   },
   "char_298_susuro": {
     "TitleTalent1": "Phẫu thuật xâm lấn tối thiểu",
@@ -1673,10 +1673,10 @@
   },
   "char_4006_melnte": {
     "TitleTalent1": "Tinh chỉnh thông số",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 10%.",
+    "Talent1_p4": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 11%<@ba.talpu>(+1%)</>.",
+    "Talent1_2": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 15%.",
+    "Talent1_2_p4": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 16%<@ba.talpu>(+1%)</>."
   },
   "char_4009_irene": {
     "TitleTalent1": "Ngọn lửa phán xét",
@@ -1720,8 +1720,8 @@
   },
   "char_4014_lunacu": {
     "TitleTalent1": "Bản năng hoang dã",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Khi chưa kích hoạt kỹ năng, nhận <$ba.camou>Ngụy trang</>.",
+    "Talent1_2": "Khi chưa kích hoạt kỹ năng, nhận <$ba.camou>Ngụy trang</>. Khi kích hoạt kỹ năng, khoảng thời gian tấn công được [[giảm nhẹ|IntervalLunacub]]."
   },
   "char_4015_spuria": {
     "TitleTalent1": "Thử nghiệm đối chiếu hiệu năng đạn dược",
@@ -1802,10 +1802,10 @@
   },
   "char_4032_provs": {
     "TitleTalent1": "Chuyên môn pháp lý Kazimierz",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ASPD +6. Khi có mặt trên sân, 1 đồng minh【Kazimierz】ngẫu nhiên cũng nhận hiệu ứng này.",
+    "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</>. Khi có mặt trên sân, 1 đồng minh【Kazimierz】ngẫu nhiên cũng nhận hiệu ứng này.",
+    "Talent1_2": "ASPD +10. Khi có mặt trên sân, 1 đồng minh【Kazimierz】ngẫu nhiên cũng nhận hiệu ứng này.",
+    "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>. Khi có mặt trên sân, 1 đồng minh【Kazimierz】ngẫu nhiên cũng nhận hiệu ứng này."
   },
   "char_4036_forcer": {
     "TitleTalent1": "Kỹ thuật ngắm",
@@ -1871,10 +1871,10 @@
   },
   "char_4047_pianst": {
     "TitleTalent1": "Hồi âm",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "RES +5. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 50% ATK của Czerny.",
+    "Talent1_p4": "RES +5. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 55%<@ba.talpu>(+5%)</> ATK của Czerny.",
+    "Talent1_2": "RES +10. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 80% ATK của Czerny.",
+    "Talent1_2_p4": "RES +10. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 85%<@ba.talpu>(+5%)</> ATK của Czerny."
   },
   "char_4048_doroth": {
     "TitleTalent1": "Bộ cộng hưởng",
@@ -1904,10 +1904,10 @@
   },
   "char_4054_malist": {
     "TitleTalent1": "Nảy ra ý tưởng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi tấn công, có 10% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_p4": "Khi tấn công, có 15%<@ba.talpu>(+5%)</> tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_2": "Khi tấn công, có 25% tỷ lệ tăng ATK của đòn đánh đó lên 150%.",
+    "Talent1_2_p4": "Khi tấn công, có 30%<@ba.talpu>(+5%)</> tỷ lệ tăng ATK của đòn đánh đó lên 150%."
   },
   "char_4055_bgsnow": {
     "TitleTalent1": "Máy đánh chữ tự động",
@@ -1986,12 +1986,12 @@
   "char_4066_highmo": {
     "TitleTalent1": "Bắt mồi, tiêu hóa",
     "TitleTalent2": "Nhiễm bệnh, thấm sâu",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_2": ""
+    "Talent1": "Mỗi kẻ địch trúng đòn sẽ hồi cho bản thân 18 <$ba.dt.element>Hiệu ứng nguyên tố</>, hồi tối đa theo số lượng chặn.",
+    "Talent1_p4": "Mỗi kẻ địch trúng đòn sẽ hồi cho bản thân 23<@ba.talpu>(+5)</> <$ba.dt.element>Hiệu ứng nguyên tố</>, hồi tối đa theo số lượng chặn.",
+    "Talent1_2": "Mỗi kẻ địch trúng đòn sẽ hồi cho bản thân 30 <$ba.dt.element>Hiệu ứng nguyên tố</>, hồi tối đa theo số lượng chặn.",
+    "Talent1_2_p4": "Mỗi kẻ địch trúng đòn sẽ hồi cho bản thân 35<@ba.talpu>(+5)</> <$ba.dt.element>Hiệu ứng nguyên tố</>, hồi tối đa theo số lượng chặn.",
+    "Talent2": "Trong【Mizuki & Caerula Arbor】(IS3), ASPD +10 và Chặn +1.",
+    "Talent2_2": "Trong【Mizuki & Caerula Arbor】(IS3), ASPD +25 và Chặn +1."
   },
   "char_4067_lolxh": {
     "TitleTalent1": "Chấp hành giả tập sự",
@@ -2000,10 +2000,10 @@
   },
   "char_4071_peper": {
     "TitleTalent1": "Ưu tiên chăm sóc",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi hồi phục, nếu đồng minh đang dưới 40% HP sẽ hồi thêm 80 HP.",
+    "Talent1_p4": "Khi hồi phục, nếu đồng minh đang dưới 40% HP sẽ hồi thêm 90<@ba.talpu>(+10)</> HP.",
+    "Talent1_2": "Khi hồi phục, nếu đồng minh đang dưới 40% HP sẽ hồi thêm 140 HP.",
+    "Talent1_2_p4": "Khi hồi phục, nếu đồng minh đang dưới 40% HP sẽ hồi thêm 150<@ba.talpu>(+10)</> HP."
   },
   "char_4072_ironmn": {
     "TitleTalent1": "Kỹ sư tiền tuyến",
@@ -2030,10 +2030,10 @@
   },
   "char_4078_bdhkgt": {
     "TitleTalent1": "Khởi đầu nơi hoang dã",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Lần triển khai đầu tiên -1 DP và +8% ATK.",
+    "Talent1_p4": "Lần triển khai đầu tiên -1 DP và +10%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Lần triển khai đầu tiên -3 DP và +13% ATK.",
+    "Talent1_2_p4": "Lần triển khai đầu tiên -3 DP và +15%<@ba.talpu>(+2%)</> ATK."
   },
   "char_4079_haini": {
     "TitleTalent1": "Tận dụng khéo thiết bị đo đạc",
@@ -2697,8 +2697,8 @@
     "Talent0": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 10% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
     "Talent1": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 20% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
     "Talent1_2": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 30% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
-    "Talent2": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi máu cho họ bằng 25% ATK của Haruka.",
-    "Talent2_p4": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi máu cho họ bằng 28%<@ba.talpu>(+3%)</> ATK của Haruka."
+    "Talent2": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi HP cho họ bằng 25% ATK của Haruka.",
+    "Talent2_p4": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi HP cho họ bằng 28%<@ba.talpu>(+3%)</> ATK của Haruka."
   },
   "char_4203_kichi": {
     "TitleTalent1": "Vận may dồn dập!",
@@ -2956,17 +2956,17 @@
   },
   "char_464_cement": {
     "TitleTalent1": "Kiểm tra bản vẽ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nhận 6% giảm sát thương vật lý; Sau 35 giây có mặt trên sân, hiệu ứng tăng gấp đôi.",
+    "Talent1_p4": "Nhận 9%<@ba.talpu>(+3%)</> giảm sát thương vật lý; Sau 35 giây có mặt trên sân, hiệu ứng tăng gấp đôi.",
+    "Talent1_2": "Nhận 12% giảm sát thương vật lý; Sau 35 giây có mặt trên sân, hiệu ứng tăng gấp đôi.",
+    "Talent1_2_p4": "Nhận 15%<@ba.talpu>(+3%)</> giảm sát thương vật lý; Sau 35 giây có mặt trên sân, hiệu ứng tăng gấp đôi."
   },
   "char_466_qanik": {
     "TitleTalent1": "Sinh tồn vùng đất băng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Tất cả đơn vị trên không trong phạm vi nhận 10%<$ba.magicfragile>【Arts Fragility】</>.",
+    "Talent1_p4": "Tất cả đơn vị trên không trong phạm vi nhận 12%<@ba.talpu>(+2%)</><$ba.magicfragile>【Arts Fragility】</>.",
+    "Talent1_2": "Tất cả đơn vị trên không trong phạm vi nhận 20%<$ba.magicfragile>【Arts Fragility】</>.",
+    "Talent1_2_p4": "Tất cả đơn vị trên không trong phạm vi nhận 22%<@ba.talpu>(+2%)</><$ba.magicfragile>【Arts Fragility】</>."
   },
   "char_469_indigo": {
     "TitleTalent1": "Ánh mắt mê hoặc",
@@ -3089,10 +3089,10 @@
   },
   "char_493_firwhl": {
     "TitleTalent1": "Công thủ linh hoạt",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi không chặn kẻ địch, ATK +6%; khi đang chặn kẻ địch, DEF +6%.",
+    "Talent1_p4": "Khi không chặn kẻ địch, ATK +8%<@ba.talpu>(+2%)</>; khi đang chặn kẻ địch, DEF +8%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi không chặn kẻ địch, ATK +12%; khi đang chặn kẻ địch, DEF +12%.",
+    "Talent1_2_p4": "Khi không chặn kẻ địch, ATK +14%<@ba.talpu>(+2%)</>; khi đang chặn kẻ địch, DEF +14%<@ba.talpu>(+2%)</>."
   },
   "char_494_vendla": {
     "TitleTalent1": "Cải tạo đất trồng",
@@ -3115,8 +3115,8 @@
   },
   "char_498_inside": {
     "TitleTalent1": "Yểm trợ hỏa lực",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Sau 20 giây có mặt trên sân, kỹ năng dùng đạn của Insider +2 giới hạn đạn.",
+    "Talent1_2": "Sau 20 giây có mặt trên sân, kỹ năng dùng đạn của Insider +3 giới hạn đạn; 1 Cán viên【Laterano】ngẫu nhiên +1 giới hạn đạn cho kỹ năng dùng đạn."
   },
   "char_499_kaitou": {
     "TitleTalent1": "Thư báo trước",
@@ -6702,5 +6702,40 @@
     "Talent0_p3": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -21%<@ba.talpu>(+6%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
     "Talent0_p4": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -23%<@ba.talpu>(+8%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
     "Talent0_p5": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -25%<@ba.talpu>(+10%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này."
+  },
+  "char_4225_tanya": {
+    "TitleTalent1": "Đề kháng với dung môi bẩn",
+    "Talent1": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -5%, riêng <$ba.dt.erosion>Corrosion</> phải chịu giảm thêm -5%.",
+    "Talent1_p4": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -7%<@ba.talpu>(+2%)</>, riêng <$ba.dt.erosion>Corrosion</> phải chịu giảm thêm -7%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -10%, riêng <$ba.dt.erosion>Corrosion</> phải chịu giảm thêm -10%.",
+    "Talent1_2_p4": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -12%<@ba.talpu>(+2%)</>, riêng <$ba.dt.erosion>Corrosion</> phải chịu giảm thêm -12%<@ba.talpu>(+2%)</>."
+  },
+  "char_4226_veen": {
+    "TitleTalent1": "'Trước khi vung đao'",
+    "TitleTalent2": "Nghệ thuật chiến tranh",
+    "Talent0": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +2%<@ba.talpu>(+2%)</> ATK khi có 'Năng lượng chuyển pha'; +5 ASPD nếu không có 'Năng lượng chuyển pha'.",
+    "Talent0_p4": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +4%<@ba.talpu>(+2%)</> ATK khi có 'Năng lượng chuyển pha'; +5 ASPD nếu không có 'Năng lượng chuyển pha'.",
+    "Talent1_2": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +10% ATK khi có 'Năng lượng chuyển pha'; +15 ASPD nếu không có 'Năng lượng chuyển pha'.",
+    "Talent1_2_p4": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +12%<@ba.talpu>(+2%)</> ATK khi có 'Năng lượng chuyển pha'; +15 ASPD nếu không có 'Năng lượng chuyển pha'.",
+    "Talent2": "Đòn tấn công và đòn tích trữ khiến mục tiêu mỗi giây chịu 90 sát thương phép trong 5 giây (cộng dồn tối đa 3 lần; nếu đòn tấn công bắn ra là 'Năng lượng chuyển pha' sẽ nhận ngay 3 lần cộng dồn); Viy sẽ ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này."
+  },
+  "char_4228_closur": {
+    "TitleTalent1": "Chiến thuật phân phối",
+    "TitleTalent2": "Điều phối cực hạn",
+    "Talent0": "Có thể triệu hồi 'Trung Tâm Chỉ Huy' tại Ô chiến thuật để hỗ trợ chiến đấu, khi 'Trung Tâm Chỉ Huy' bị hạ, nó sẽ tự động hồi sinh sau 15 giây; Phạm vi ảnh hưởng của Ô chiến thuật thay đổi theo kỹ năng được chọn; Đồng minh đứng trong phạm vi ảnh hưởng này được tính là 'Viện binh' của Closure.",
+    "Talent2": "Khi Closure có mặt trong đội hình, cho phép <$ba.costlowerbound>Hạn mức nợ DP</> là 3; Tất cả Cán viên【Rhodes Island】nhận +4% ATK.",
+    "Talent2_p2": "Khi Closure có mặt trong đội hình, cho phép <$ba.costlowerbound>Hạn mức nợ DP</> là 4<@ba.talpu>(+1)</>; Tất cả Cán viên【Rhodes Island】nhận +4% ATK."
+  },
+  "char_1052_kalts2": {
+    "TitleTalent1": "Canh giữ tàn tro",
+    "TitleTalent2": "Tượng đài y học",
+    "Talent0": "HP tối đa và DEF +5%, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
+    "Talent0_p2": "HP tối đa và DEF +10%<@ba.talpu>(+5%)</>, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
+    "Talent1": "HP tối đa và DEF +10%, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
+    "Talent1_p2": "HP tối đa và DEF +15%<@ba.talpu>(+5%)</>, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
+    "Talent1_2": "HP tối đa và DEF +25%, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
+    "Talent1_2_p2": "HP tối đa và DEF +30%<@ba.talpu>(+5%)</>, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
+    "Talent2": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 50 HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】.",
+    "Talent2_p5": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 60<@ba.talpu>(+10)</> HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】."
   }
 }
