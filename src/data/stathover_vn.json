@@ -111,11 +111,15 @@
     "title": "Trọng thương/Critically Wounded",
     "text": "Giảm 80% tốc độ di chuyển và không thể bị chặn, sau 10 giây sẽ tự chết. Người hạ gục kẻ đang dính hiệu ứng này sẽ hồi SP."
   },
+  "ba.dmgresistance": {
+    "title": "Miễn thương hoặc Giảm sát thương",
+    "text": "Sát thương phải chịu giảm đi một lượng nhất định (Chỉ áp dụng mức cao nhất của loại hiệu ứng này)."
+  },
   "Sleep": {
     "title": "Ngủ/Sleep",
     "text": "Trở nên bất tử và không thể thực hiện bất kỳ hành động nào. Đồng thời cũng không thể chặn hoặc bị chặn."
   },
-  "Sleep": {
+  "ba.sleep": {
     "title": "Ngủ/Sleep",
     "text": "Trở nên bất tử và không thể thực hiện bất kỳ hành động nào. Đồng thời cũng không thể chặn hoặc bị chặn."
   },
