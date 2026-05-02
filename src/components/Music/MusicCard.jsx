@@ -1,10 +1,12 @@
 import React from "react";
 
-const MusicCard = ({ item, onClick }) => {
+const MusicCard = ({ item, onClick, selected = false }) => {
   return (
     <button
       type="button"
-      className="music-card group cursor-pointer text-left transition-all duration-300"
+      className={`music-card group cursor-pointer text-left transition-all duration-300 ${
+        selected ? "music-card-selected" : ""
+      }`}
       onClick={onClick}
     >
       <div className="music-card-cover relative w-full shrink-0">

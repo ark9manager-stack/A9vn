@@ -81,7 +81,10 @@ const Music = () => {
   const showPaging = filteredAlbums.length > 0 && totalPages > 1;
 
   return (
-    <div id="music" className="w-full flex flex-col">
+    <div
+      id="music"
+      className="flex min-h-[calc(100vh-104px)] w-full flex-col justify-center py-4 sm:py-6"
+    >
       <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-8 lg:px-16 flex flex-col">
         <div className="w-full flex flex-col px-0 sm:px-2 md:px-6">
           {/* ── loading / error ── */}

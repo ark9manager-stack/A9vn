@@ -376,14 +376,22 @@
 }
 
 /* Music grid specific styles - Monster Siren exact sizing */
+.music-grid-wrap {
+  margin-bottom: clamp(1rem, 2.5vh, 1.75rem);
+}
+
 .music-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 200px));
+  grid-auto-rows: minmax(0, 200px);
   gap: clamp(1rem, 2.4vw, 2rem);
   max-width: 1200px;
+  min-height: clamp(330px, 42vh, 432px);
   margin: 0 auto;
   padding: 0 clamp(0rem, 2vw, 2rem);
+  align-content: center;
   justify-content: center;
+  place-items: center;
 }
 
 /* Individual music card sizing */
@@ -437,28 +445,34 @@
 @media (max-width: 768px) {
   .music-grid {
     grid-template-columns: repeat(3, minmax(0, 180px));
+    grid-auto-rows: minmax(0, 180px);
+    min-height: clamp(300px, 40vh, 392px);
     gap: 0.875rem;
   }
 }
 
 @media (max-width: 640px) {
+  .music-grid-wrap {
+    margin-bottom: 1rem;
+  }
+
   .music-grid {
     display: flex;
     flex-direction: column;
+    min-height: 0;
     gap: 0.75rem;
     padding: 0;
   }
 
   .music-mobile-scroll {
     display: flex;
-    max-height: min(62vh, 560px);
+    height: min(58vh, 560px);
     min-height: 320px;
     flex-direction: column;
     gap: 0.75rem;
     overflow-y: auto;
     overscroll-behavior: contain;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.18);
     padding: 0.75rem;
     scrollbar-color: hsl(var(--primary)) rgba(255, 255, 255, 0.08);
   }
@@ -478,6 +492,16 @@
     transform: none;
     border-color: hsl(var(--primary) / 0.35);
     background: rgba(255, 255, 255, 0.06);
+  }
+
+  .music-card-selected {
+    border-color: hsl(var(--primary) / 0.55);
+    background:
+      linear-gradient(90deg, hsl(var(--primary) / 0.14), transparent 42%),
+      rgba(255, 255, 255, 0.07);
+    box-shadow:
+      inset 3px 0 0 hsl(var(--primary) / 0.8),
+      0 10px 24px rgba(0, 0, 0, 0.22);
   }
 
   .music-card-cover {
@@ -1016,6 +1040,20 @@
 
 *::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+.music-mobile-list > div::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+.music-mobile-list > div::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.music-mobile-list > div::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: hsl(var(--primary) / 0.5);
 }
 /* =========================
    SIDEBAR BACKGROUND

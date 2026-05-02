@@ -115,7 +115,7 @@ export default function PRTSIntro({
         </div>
       </main>
 
-      <aside className="rightDiagnostics">
+      <aside className="rightDiagnostics hidden md:block">
         <div className="diagTitle">DIAGNOSTIC</div>
 
         <div className="diagRow">
