@@ -55,10 +55,10 @@
   "char_1013_chen2": {
     "TitleTalent1": "Tính tiết kiếm",
     "TitleTalent2": "Dư âm kỳ nghỉ",
-    "Talent1": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 15% tỷ lệ không tiêu hao đạn khi tấn công (Nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
-    "Talent1_p4": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 17%<@ba.talpu>(+2%)</> tỷ lệ không tiêu hao đạn khi tấn công (Nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
-    "Talent1_2": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 20% tỷ lệ không tiêu hao đạn khi tấn công; Với các đồng minh【Xạ thủ】khác cũng có 10% tỷ lệ này (Nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
-    "Talent1_2_p4": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 22%<@ba.talpu>(+2%)</> tỷ lệ không tiêu hao đạn khi tấn công; Với các đồng minh【Xạ thủ】khác cũng có 10% tỷ lệ này (Nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
+    "Talent1": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 15% tỷ lệ không tiêu hao đạn khi tấn công (nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
+    "Talent1_p4": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 17%<@ba.talpu>(+2%)</> tỷ lệ không tiêu hao đạn khi tấn công (nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
+    "Talent1_2": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 20% tỷ lệ không tiêu hao đạn khi tấn công; Với các đồng minh【Xạ thủ】khác cũng có 10% tỷ lệ này (nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
+    "Talent1_2_p4": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 22%<@ba.talpu>(+2%)</> tỷ lệ không tiêu hao đạn khi tấn công; Với các đồng minh【Xạ thủ】khác cũng có 10% tỷ lệ này (nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
     "Talent2": "ASPD +8; Tăng thành ASPD +12 nếu có địa hình nước trên sân."
   },
   "char_1014_nearl2": {
@@ -329,14 +329,14 @@
   "char_1046_sbell2": {
     "TitleTalent1": "Cảnh tuyết vô tận",
     "TitleTalent2": "Phúc lành thánh sơn",
-    "Talent0": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 20% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (Lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent0_p4": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 25%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (Lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 50% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (Lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1_p4": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 55%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (Lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1_2": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 75% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, cộng dộn tối đa 5 tầng (Lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1_2_p4": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 75%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, cộng dộn tối đa 5 tầng (Lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent2": "Kẻ địch gây sát thương lên bản thân sẽ chịu hiệu ứng <$ba.cold>Lạnh</> trong 1.5 giây. Khi nhận sát thương chí tử, ngay lập tức hồi lại toàn bộ HP và tự <$ba.frozen>Đóng băng</> bản thân trong 4 giây, đồng thời tất cả kẻ địch trong phạm vi tấn công cũng sẽ bị <$ba.frozen>Đóng băng</> trong 8 giây (Kích hoạt 1 lần duy nhất).",
-    "Talent2_p2": "Kẻ địch gây sát thương lên bản thân sẽ chịu hiệu ứng <$ba.cold>Lạnh</> trong 2<@ba.talpu>(+0.5)</> giây. Khi nhận sát thương chí tử, ngay lập tức hồi lại toàn bộ HP và tự <$ba.frozen>Đóng băng</> bản thân trong 4 giây, đồng thời tất cả kẻ địch trong phạm vi tấn công cũng sẽ bị <$ba.frozen>Đóng băng</> trong 8 giây (Kích hoạt 1 lần duy nhất)."
+    "Talent0": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 20% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent0_p4": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 25%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 50% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1_p4": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 55%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1_2": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 75% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1_2_p4": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 75%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent2": "Kẻ địch gây sát thương lên bản thân sẽ chịu hiệu ứng <$ba.cold>Lạnh</> trong 1.5 giây. Khi nhận sát thương chí tử, ngay lập tức hồi lại toàn bộ HP và tự <$ba.frozen>Đóng băng</> bản thân trong 4 giây, đồng thời tất cả kẻ địch trong phạm vi tấn công cũng sẽ bị <$ba.frozen>Đóng băng</> trong 8 giây (kích hoạt 1 lần duy nhất).",
+    "Talent2_p2": "Kẻ địch gây sát thương lên bản thân sẽ chịu hiệu ứng <$ba.cold>Lạnh</> trong 2<@ba.talpu>(+0.5)</> giây. Khi nhận sát thương chí tử, ngay lập tức hồi lại toàn bộ HP và tự <$ba.frozen>Đóng băng</> bản thân trong 4 giây, đồng thời tất cả kẻ địch trong phạm vi tấn công cũng sẽ bị <$ba.frozen>Đóng băng</> trong 8 giây (kích hoạt 1 lần duy nhất)."
   },
   "char_1047_halo2": {
     "TitleTalent1": "Mô hình hóa dữ liệu",
@@ -510,8 +510,8 @@
   },
   "char_135_halo": {
     "TitleTalent1": "Say mê nghiên cứu",
-    "Talent1": "+3 ASPD mỗi 15 giây có mặt trên sân (Cộng dồn tối đa 5 lần).",
-    "Talent1_2": "+4 ASPD mỗi 15 giây có mặt trên sân (Cộng dồn tối đa 5 lần)."
+    "Talent1": "+3 ASPD mỗi 15 giây có mặt trên sân (cộng dồn tối đa 5 lần).",
+    "Talent1_2": "+4 ASPD mỗi 15 giây có mặt trên sân (cộng dồn tối đa 5 lần)."
   },
   "char_136_hsguma": {
     "TitleTalent1": "Áo chống đạn",
@@ -770,10 +770,10 @@
   },
   "char_194_leto": {
     "TitleTalent1": "Khẩn trương lên!",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +10 ASPD cho đến khi kỹ năng kết thúc.",
+    "Talent1_p4": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +13<@ba.talpu>(+3)</> ASPD cho đến khi kỹ năng kết thúc.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +21 ASPD cho đến khi kỹ năng kết thúc.",
+    "Talent1_2_p4": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +24<@ba.talpu>(+3)</> ASPD cho đến khi kỹ năng kết thúc."
   },
   "char_195_glassb": {
     "TitleTalent1": "Thăm dò",
@@ -852,9 +852,9 @@
   "char_2023_ling": {
     "TitleTalent1": "Thắp đèn, hỏi mộng",
     "TitleTalent2": "Mượn rượu làm thơ",
-    "Talent0": "Có thể sử dụng 3 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1": "Có thể sử dụng 4 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1_2": "Có thể sử dụng 5 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent0": "Có thể gọi ra 3 vật triệu hồi (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1": "Có thể gọi ra 4 vật triệu hồi (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1_2": "Có thể gọi ra 5 vật triệu hồi (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent2": "Khi vật triệu hồi bị hạ gục/hợp nhất/rút lui, Ling nhận 2 SP và ATK +2% (cộng dồn tối đa 5 tầng).",
     "Talent2_p4": "Khi vật triệu hồi bị hạ gục/hợp nhất/rút lui, Ling nhận 3<@ba.talpu>(+1)</> SP và ATK +2% (cộng dồn tối đa 5 tầng).",
     "Talent2_2": "Khi vật triệu hồi bị hạ gục/hợp nhất/rút lui, Ling nhận 3 SP và ATK +3% (cộng dồn tối đa 5 tầng).",
@@ -891,12 +891,12 @@
   "char_2027_wang": {
     "TitleTalent1": "Đúc nên thế cờ",
     "TitleTalent2": "Nhìn thấu nước cờ",
-    "Talent0": "Có thể sử dụng 4 quân cờ (Tích trữ tối đa 5 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
-    "Talent0_p2": "Có thể sử dụng 5<@ba.talpu>(+1)</> quân cờ (Tích trữ tối đa 6<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
-    "Talent1": "Có thể sử dụng 5 quân cờ (Tích trữ tối đa 6 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 8 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
-    "Talent1_p2": "Có thể sử dụng 6<@ba.talpu>(+1)</> quân cờ (Tích trữ tối đa 7<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
-    "Talent1_2": "Có thể sử dụng 6 quân cờ (Tích trữ tối đa 7 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
-    "Talent1_2_p2": "Có thể sử dụng 7<@ba.talpu>(+1)</> quân cờ (Tích trữ tối đa 8<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 10<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent0": "Có thể sử dụng 4 quân cờ (tích trữ tối đa 5 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
+    "Talent0_p2": "Có thể sử dụng 5<@ba.talpu>(+1)</> quân cờ (tích trữ tối đa 6<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt.",
+    "Talent1": "Có thể sử dụng 5 quân cờ (tích trữ tối đa 6 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 8 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent1_p2": "Có thể sử dụng 6<@ba.talpu>(+1)</> quân cờ (tích trữ tối đa 7<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent1_2": "Có thể sử dụng 6 quân cờ (tích trữ tối đa 7 quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 9 quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
+    "Talent1_2_p2": "Có thể sử dụng 7<@ba.talpu>(+1)</> quân cờ (tích trữ tối đa 8<@ba.talpu>(+1)</> quân cờ). Các quân cờ khi nối liền nhau sẽ tiến vào trạng thái hoạt động, kẻ địch bước vào ô của một quân cờ đang hoạt động, hiệu ứng của quân cờ đó sẽ được kích hoạt. Khi tự đặt quân cờ, Wang sẽ triển khai thêm 1 quân cờ ở ô liền kề (triển khai được tối đa 10<@ba.talpu>(+1)</> quân cờ; Ưu tiên triển khai trên ô không thể triển khai và đang có địch đứng).",
     "Talent2": "Khi quân cờ bắt đầu hoạt động, với mỗi quân cờ nằm trên đường thẳng liền mạch với nhau sẽ giúp tất cả quân cờ cùng hàng gây thêm 10% sát thương và bỏ qua 9 RES của kẻ địch (cộng dồn tối đa 3 lần).",
     "Talent2_p4": "Khi quân cờ bắt đầu hoạt động, với mỗi quân cờ nằm trên đường thẳng liền mạch với nhau sẽ giúp tất cả quân cờ cùng hàng gây thêm 12%<@ba.talpu>(+2%)</> sát thương và bỏ qua 10<@ba.talpu>(+1)</> RES của kẻ địch (cộng dồn tối đa 3 lần)."
   },
@@ -1060,9 +1060,9 @@
   },
   "char_242_otter": {
     "TitleTalent1": "Rái cá máy",
-    "Talent0": "Có thể sử dụng 3 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -10 ASPD.",
-    "Talent1": "Có thể sử dụng 4 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD.",
-    "Talent1_2": "Có thể sử dụng 5 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD."
+    "Talent0": "Có thể triệu hồi 3 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -10 ASPD.",
+    "Talent1": "Có thể triệu hồi 4 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD.",
+    "Talent1_2": "Có thể triệu hồi 5 'Rái cá máy'. Kẻ địch bị 'Rái cá máy' chặn chịu -25 ASPD."
   },
   "char_243_waaifu": {
     "TitleTalent1": "Hong Mei Vịnh Xuân Quyền",
@@ -1083,9 +1083,9 @@
   "char_248_mgllan": {
     "TitleTalent1": "Drone yểm trợ - Long Đằng",
     "TitleTalent2": "Thiết bị khúc xạ quang học",
-    "Talent0": "Có thể sử dụng 3 Drone không thể chặn được địch (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1": "Có thể sử dụng 4 Drone không thể chặn được địch (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1_2": "Có thể sử dụng 5 Drone không thể chặn được địch (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent0": "Có thể sử dụng 3 Drone không thể chặn được địch (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1": "Có thể sử dụng 4 Drone không thể chặn được địch (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1_2": "Có thể sử dụng 5 Drone không thể chặn được địch (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent2": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 12 giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
     "Talent2_p4": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 14<@ba.talpu>(+2)</> giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
     "Talent2_2": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 20 giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
@@ -1384,7 +1384,7 @@
     "Talent1_p4": "Khi Lee chặn kẻ địch, khiến kẻ địch đó -8<@ba.talpu>(+1)</> ASPD và bản thân +8<@ba.talpu>(+1)</> ASPD; Hiệu ứng tăng gấp đôi nếu trong 8 ô xung quanh chỉ có 1 kẻ địch.",
     "Talent1_2": "Khi Lee chặn kẻ địch, khiến kẻ địch đó -14 ASPD và bản thân +14 ASPD; Hiệu ứng tăng gấp đôi nếu trong 8 ô xung quanh chỉ có 1 kẻ địch.",
     "Talent1_2_p4": "Khi Lee chặn kẻ địch, khiến kẻ địch đó -15<@ba.talpu>(+1)</> ASPD và bản thân +15<@ba.talpu>(+1)</> ASPD; Hiệu ứng tăng gấp đôi nếu trong 8 ô xung quanh chỉ có 1 kẻ địch.",
-    "Talent2": "Lần tiêu hao DP tiếp theo từ Đặc tính sẽ tiêu hao 5 DP (Chỉ tiêu hao nếu đủ DP) để chặn 1 lần hiệu ứng <$ba.stun>Choáng</>/<$ba.frozen>Đóng băng</> phải chịu, đồng thời <$ba.stun>Choáng</> kẻ địch gây ra hiệu ứng đó trong 3 giây."
+    "Talent2": "Lần tiêu hao DP tiếp theo từ Đặc tính sẽ tiêu hao 5 DP (chỉ tiêu hao nếu đủ DP) để chặn 1 lần hiệu ứng <$ba.stun>Choáng</>/<$ba.frozen>Đóng băng</> phải chịu, đồng thời <$ba.stun>Choáng</> kẻ địch gây ra hiệu ứng đó trong 3 giây."
   },
   "char_325_bison": {
     "TitleTalent1": "Bảo vệ lẫn nhau",
@@ -1420,9 +1420,9 @@
   },
   "char_336_folivo": {
     "TitleTalent1": "Đội nhiếp ảnh",
-    "Talent0": "Có thể sử dụng 3 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>.",
-    "Talent1": "Có thể sử dụng 4 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>.",
-    "Talent1_2": "Có thể sử dụng 5 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>."
+    "Talent0": "Có thể triệu hồi 3 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>.",
+    "Talent1": "Có thể triệu hồi 4 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>.",
+    "Talent1_2": "Có thể triệu hồi 5 'Xe quay phim di động'. Kẻ địch trong 8 ô xung quanh 'Xe quay phim di động' sẽ bị vô hiệu <$ba.invisible>Tàng hình</>."
   },
   "char_337_utage": {
     "TitleTalent1": "Chế độ nghiêm túc",
@@ -1448,10 +1448,10 @@
   },
   "char_341_sntlla": {
     "TitleTalent1": "Đứa con của vùng băng giá",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Sau khi triển khai được 20 giây, +10% ATK và <$ba.buffres>Kháng hiệu ứng</>.",
+    "Talent1_p4": "Sau khi triển khai được 20 giây, +13%<@ba.talpu>(+3%)</> ATK và <$ba.buffres>Kháng hiệu ứng</>.",
+    "Talent1_2": "Sau khi triển khai được 20 giây, +15% ATK và <$ba.buffres>Kháng hiệu ứng</>.",
+    "Talent1_2_p4": "Sau khi triển khai được 20 giây, +18%<@ba.talpu>(+3%)</> ATK và <$ba.buffres>Kháng hiệu ứng</>."
   },
   "char_343_tknogi": {
     "TitleTalent1": "Ban phước",
@@ -1473,17 +1473,17 @@
   },
   "char_346_aosta": {
     "TitleTalent1": "Đinh nhọn",
-    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 12% ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 18% ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (Không chịu ảnh hưởng bởi Đặc tính)."
+    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 12% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 18% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_347_jaksel": {
     "TitleTalent1": "Phản xạ cấp tốc",
-    "Talent1": "Nhận 15% tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn).",
-    "Talent1_p4": "Nhận 18%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn).",
-    "Talent1_2": "Nhận 30% tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn).",
-    "Talent1_2_p4": "Nhận 33%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (Duy trì 5 giây, không cộng dồn)."
+    "Talent1": "Nhận 15% tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (duy trì 5 giây, không cộng dồn).",
+    "Talent1_p4": "Nhận 18%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (duy trì 5 giây, không cộng dồn).",
+    "Talent1_2": "Nhận 30% tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (duy trì 5 giây, không cộng dồn).",
+    "Talent1_2_p4": "Nhận 33%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý; Sau khi né được đòn tấn công, +12 ASPD (duy trì 5 giây, không cộng dồn)."
   },
   "char_348_ceylon": {
     "TitleTalent1": "Dạo bước bên hồ",
@@ -1700,8 +1700,8 @@
     "Talent1_p4": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 50 HP tối đa của mục tiêu (tối đa 900), và khiến mục tiêu mỗi giây nhận 150<@ba.talpu>(+50)</> sát thương phép trong 5 giây.",
     "Talent1_2": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 75 HP tối đa của mục tiêu (tối đa 1350), và khiến mục tiêu mỗi giây nhận 200 sát thương phép trong 5 giây.",
     "Talent1_2_p4": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 75 HP tối đa của mục tiêu (tối đa 1350), và khiến mục tiêu mỗi giây nhận 250<@ba.talpu>(+50)</> sát thương phép trong 5 giây.",
-    "Talent2": "Khi HP thấp hơn 25%, lập tức hồi lại 50% HP tối đa và nhận hiệu ứng giảm 10% sát thương vật lý phải chịu (Mỗi lần triển khai chỉ kích hoạt 1 lần).",
-    "Talent2_p2": "Khi HP thấp hơn 25%, lập tức hồi lại 55%<@ba.talpu>(+5%)</> HP tối đa và nhận hiệu ứng giảm 15%<@ba.talpu>(+5%)</> sát thương vật lý phải chịu (Mỗi lần triển khai chỉ kích hoạt 1 lần)."
+    "Talent2": "Khi HP thấp hơn 25%, lập tức hồi lại 50% HP tối đa và nhận hiệu ứng giảm 10% sát thương vật lý phải chịu (mỗi lần triển khai chỉ kích hoạt 1 lần).",
+    "Talent2_p2": "Khi HP thấp hơn 25%, lập tức hồi lại 55%<@ba.talpu>(+5%)</> HP tối đa và nhận hiệu ứng giảm 15%<@ba.talpu>(+5%)</> sát thương vật lý phải chịu (mỗi lần triển khai chỉ kích hoạt 1 lần)."
   },
   "char_4011_lessng": {
     "TitleTalent1": "Chịu đựng cơn đau",
@@ -1725,9 +1725,9 @@
   },
   "char_4015_spuria": {
     "TitleTalent1": "Thử nghiệm đối chiếu hiệu năng đạn dược",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Mỗi đòn tấn công có 30% tỷ lệ kích hoạt ngẫu nhiên 1 trong các hiệu ứng sau: Bắn 2 phát liên tiếp; Mục tiêu bị <$ba.stun>Choáng</> 0.5 giây; Bỏ qua 60% DEF của mục tiêu.",
+    "Talent1": "Mỗi đòn tấn công có 50% tỷ lệ kích hoạt ngẫu nhiên 1 trong các hiệu ứng sau: Bắn 2 phát liên tiếp; Mục tiêu bị <$ba.stun>Choáng</> 1 giây; Bỏ qua 60% DEF của mục tiêu.",
+    "Talent1_2": "Mỗi đòn tấn công có 70% tỷ lệ kích hoạt ngẫu nhiên 1 trong các hiệu ứng sau: Bắn 2 phát liên tiếp; Mục tiêu bị <$ba.stun>Choáng</> 1 giây; Bỏ qua 80% DEF của mục tiêu."
   },
   "char_4016_kazema": {
     "TitleTalent1": "Thổi hồn vào giấy",
@@ -1821,15 +1821,15 @@
     "Talent1_p2": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +13%<@ba.talpu>(+3%)</> ATK.",
     "Talent1_2": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +20% ATK.",
     "Talent1_2_p2": "Khi có mặt trên sân, tất cả cán viên【Phòng ngự】nhận +23%<@ba.talpu>(+3%)</> ATK.",
-    "Talent2": "Bản thân không rút lui khi bị hạ, hồi đầy HP nhưng -50% HP tối đa, +18 ASPD và +18% DEF (Mỗi lần triển khai chỉ kích hoạt 1 lần).",
-    "Talent2_p4": "Bản thân không rút lui khi bị hạ, hồi đầy HP nhưng -50% HP tối đa, +21<@ba.talpu>(+3)</> ASPD và +21%<@ba.talpu>(+3%)</> DEF (Mỗi lần triển khai chỉ kích hoạt 1 lần)."
+    "Talent2": "Bản thân không rút lui khi bị hạ, hồi đầy HP nhưng -50% HP tối đa, +18 ASPD và +18% DEF (mỗi lần triển khai chỉ kích hoạt 1 lần).",
+    "Talent2_p4": "Bản thân không rút lui khi bị hạ, hồi đầy HP nhưng -50% HP tối đa, +21<@ba.talpu>(+3)</> ASPD và +21%<@ba.talpu>(+3%)</> DEF (mỗi lần triển khai chỉ kích hoạt 1 lần)."
   },
   "char_4040_rockr": {
     "TitleTalent1": "Vững như bàn thạch",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "+4% ATK mỗi 15 giây có mặt trên sân (Cộng dồn tối đa 4 lần).",
-    "Talent1_2_p4": ""
+    "Talent1": "+2% ATK mỗi 15 giây có mặt trên sân (cộng dồn tối đa 3 lần).",
+    "Talent1_p4": "+3%<@ba.talpu>(+1%)</> ATK mỗi 15 giây có mặt trên sân (cộng dồn tối đa 3 lần).",
+    "Talent1_2": "+4% ATK mỗi 15 giây có mặt trên sân (cộng dồn tối đa 4 lần).",
+    "Talent1_2_p4": "+5%<@ba.talpu>(+1%)</> ATK mỗi 15 giây có mặt trên sân (cộng dồn tối đa 4 lần)."
   },
   "char_4041_chnut": {
     "TitleTalent1": "Vững vàng trên đất",
@@ -1879,12 +1879,12 @@
   "char_4048_doroth": {
     "TitleTalent1": "Bộ cộng hưởng",
     "TitleTalent2": "Người mơ mộng",
-    "Talent0": "Có thể sử dụng 4 Bộ cộng hưởng (Tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng.",
-    "Talent0_p2": "Có thể sử dụng 6<@ba.talpu>(+2)</> Bộ cộng hưởng (Tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng.",
-    "Talent1": "Có thể sử dụng 6 Bộ cộng hưởng (Tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 1 Bộ cộng hưởng trong phạm vi tấn công.",
-    "Talent1_p2": "Có thể sử dụng 8<@ba.talpu>(+2)</> Bộ cộng hưởng (Tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 1 Bộ cộng hưởng trong phạm vi tấn công.",
-    "Talent1_2": "Có thể sử dụng 8 Bộ cộng hưởng (Tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 2 Bộ cộng hưởng trong phạm vi tấn công.",
-    "Talent1_2_p2": "Có thể sử dụng 10<@ba.talpu>(+2)</> Bộ cộng hưởng (Tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 2 Bộ cộng hưởng trong phạm vi tấn công.",
+    "Talent0": "Có thể sử dụng 4 Bộ cộng hưởng (tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng.",
+    "Talent0_p2": "Có thể sử dụng 6<@ba.talpu>(+2)</> Bộ cộng hưởng (tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng.",
+    "Talent1": "Có thể sử dụng 6 Bộ cộng hưởng (tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 1 Bộ cộng hưởng trong phạm vi tấn công.",
+    "Talent1_p2": "Có thể sử dụng 8<@ba.talpu>(+2)</> Bộ cộng hưởng (tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 1 Bộ cộng hưởng trong phạm vi tấn công.",
+    "Talent1_2": "Có thể sử dụng 8 Bộ cộng hưởng (tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 2 Bộ cộng hưởng trong phạm vi tấn công.",
+    "Talent1_2_p2": "Có thể sử dụng 10<@ba.talpu>(+2)</> Bộ cộng hưởng (tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Bộ cộng hưởng sẽ kích hoạt hiệu ứng; Sau khi triển khai, lập tức triển khai 2 Bộ cộng hưởng trong phạm vi tấn công.",
     "Talent2": "Mỗi khi bẫy được kích hoạt, Dorothy +2% ATK, cộng dồn tối đa 10 tầng.",
     "Talent2_p4": "Mỗi khi bẫy được kích hoạt, Dorothy +2% ATK, cộng dồn tối đa 12<@ba.talpu>(+2)</> tầng."
   },
@@ -2008,9 +2008,9 @@
   "char_4072_ironmn": {
     "TitleTalent1": "Kỹ sư tiền tuyến",
     "TitleTalent2": "Cắt giảm chi phí",
-    "Talent0": "Có thể mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 1 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1": "Có thể mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent0": "Có thể mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 1 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1": "Có thể mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent2": "Stainless có 70% tỷ lệ thu hồi lại thiết bị khi nó bị phá hủy trong 8 ô xung quanh anh.",
     "Talent2_p4": "Stainless có 80%<@ba.talpu>(+10%)</> tỷ lệ thu hồi lại thiết bị khi nó bị phá hủy trong 8 ô xung quanh anh."
   },
@@ -2037,10 +2037,10 @@
   },
   "char_4079_haini": {
     "TitleTalent1": "Tận dụng khéo thiết bị đo đạc",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nếu kẻ địch trong phạm vi tấn công không phải là Elite hoặc Leader sẽ nhận 8% <$ba.fragile>Fragile</>.",
+    "Talent1_p4": "Nếu kẻ địch trong phạm vi tấn công không phải là Elite hoặc Leader sẽ nhận 10%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>.",
+    "Talent1_2": "Nếu kẻ địch trong phạm vi tấn công không phải là Elite hoặc Leader sẽ nhận 16% <$ba.fragile>Fragile</>.",
+    "Talent1_2_p4": "Nếu kẻ địch trong phạm vi tấn công không phải là Elite hoặc Leader sẽ nhận 18%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>."
   },
   "char_4080_lin": {
     "TitleTalent1": "Kế sách hoàn hảo",
@@ -2054,10 +2054,10 @@
   },
   "char_4081_warmy": {
     "TitleTalent1": "Nồi lẩu sôi trào",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi kẻ địch trong phạm vi tấn công bộc phát <$ba.dt.burning2>Burn</>, chúng lập tức chịu sát thương nguyên tố bằng 200% ATK.",
+    "Talent1_p4": "Khi kẻ địch trong phạm vi tấn công bộc phát <$ba.dt.burning2>Burn</>, chúng lập tức chịu sát thương nguyên tố bằng 220%<@ba.talpu>(+20%)</> ATK.",
+    "Talent1_2": "Khi kẻ địch trong phạm vi tấn công bộc phát <$ba.dt.burning2>Burn</>, chúng lập tức chịu sát thương nguyên tố bằng 300% ATK.",
+    "Talent1_2_p4": "Khi kẻ địch trong phạm vi tấn công bộc phát <$ba.dt.burning2>Burn</>, chúng lập tức chịu sát thương nguyên tố bằng 320%<@ba.talpu>(+20%)</> ATK."
   },
   "char_4082_qiubai": {
     "TitleTalent1": "Tìm kẽ hở",
@@ -2141,33 +2141,33 @@
   "char_4102_threye": {
     "TitleTalent1": "Tiên tri",
     "TitleTalent2": "Ẩn dật",
-    "Talent1": "",
-    "Talent1_2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent1": "Trong【Expeditioner's Jǫklumarkar】(IS#4), đòn tấn công kèm thêm <$ba.dt.apoptosis2>Necrosis</> bằng 15% ATK.",
+    "Talent1_2": "Trong【Expeditioner's Jǫklumarkar】(IS#4), đòn tấn công kèm thêm <$ba.dt.apoptosis2>Necrosis</> bằng 30% ATK.",
+    "Talent2": "ATK +6%, ASPD +6.",
+    "Talent2_p4": "ATK +7%<@ba.talpu>(+1%)</>, ASPD +7<@ba.talpu>(+1)</>."
   },
   "char_4104_coldst": {
     "TitleTalent1": "Chẳng chịu thua ai",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Nếu bản thân không tấn công trong 2 giây, đòn tấn công kế tiếp gây sát thương vật lý bằng 120% ATK.",
+    "Talent1_p4": "Nếu bản thân không tấn công trong 2 giây, đòn tấn công kế tiếp gây sát thương vật lý bằng 123%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1_2": "Nếu bản thân không tấn công trong 2 giây, đòn tấn công kế tiếp gây sát thương vật lý bằng 130% ATK.",
+    "Talent1_2_p4": "Nếu bản thân không tấn công trong 2 giây, đòn tấn công kế tiếp gây sát thương vật lý bằng 133%<@ba.talpu>(+3%)</> ATK."
   },
   "char_4105_almond": {
     "TitleTalent1": "Ba lô kỹ sư",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Mỗi trận, lập tức hồi 4 SP cho lần đầu kích hoạt kỹ năng (hồi SP khi kỹ năng kết thúc).",
+    "Talent1_p4": "Mỗi trận, lập tức hồi 6<@ba.talpu>(+2)</> SP cho lần đầu kích hoạt kỹ năng (hồi SP khi kỹ năng kết thúc).",
+    "Talent1_2": "Mỗi trận, lập tức hồi 8 SP cho lần đầu kích hoạt kỹ năng (hồi SP khi kỹ năng kết thúc).",
+    "Talent1_2_p4": "Mỗi trận, lập tức hồi 10<@ba.talpu>(+2)</> SP cho lần đầu kích hoạt kỹ năng (hồi SP khi kỹ năng kết thúc)."
   },
   "char_4106_bryota": {
     "TitleTalent1": "Phán đoán tình hình",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Khi không chặn kẻ địch, +4% DEF cho đồng minh cận chiến trong 8 ô xung quanh; Khi đang chặn kẻ địch, bản thân nhận +4% DEF.",
+    "Talent0_p4": "Khi không chặn kẻ địch, +6%<@ba.talpu>(+2%)</> DEF cho đồng minh cận chiến trong 8 ô xung quanh; Khi đang chặn kẻ địch, bản thân nhận +6%<@ba.talpu>(+2%)</> DEF.",
+    "Talent1": "Khi không chặn kẻ địch, +8% DEF cho đồng minh cận chiến trong 8 ô xung quanh; Khi đang chặn kẻ địch, bản thân nhận +8% DEF.",
+    "Talent1_p4": "Khi không chặn kẻ địch, +10%<@ba.talpu>(+2%)</> DEF cho đồng minh cận chiến trong 8 ô xung quanh; Khi đang chặn kẻ địch, bản thân nhận +10%<@ba.talpu>(+2%)</> DEF.",
+    "Talent1_2": "Khi không chặn kẻ địch, +12% DEF cho đồng minh cận chiến trong 8 ô xung quanh; Khi đang chặn kẻ địch, bản thân nhận +12% DEF.",
+    "Talent1_2_p4": "Khi không chặn kẻ địch, +14%<@ba.talpu>(+2%)</> DEF cho đồng minh cận chiến trong 8 ô xung quanh; Khi đang chặn kẻ địch, bản thân nhận +14%<@ba.talpu>(+2%)</> DEF."
   },
   "char_4107_vrdant": {
     "TitleTalent1": "Thực vật tái sinh",
@@ -2178,24 +2178,24 @@
   },
   "char_4109_baslin": {
     "TitleTalent1": "Khuôn phép quyền lực",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "RES +6; Nếu có đồng minh trong 8 ô xung quanh, nhận thêm RES +2.",
+    "Talent1_2": "RES +12; Nếu có đồng minh trong 8 ô xung quanh, nhận thêm RES +4."
   },
   "char_4110_delphn": {
     "TitleTalent1": "Gột rửa lưỡi kiếm",
     "TitleTalent2": "Quyết tâm phục thù",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": ""
+    "Talent1": "Tăng 10% sát thương gây ra cho kẻ địch trên 80% HP.",
+    "Talent1_p4": "Tăng 12%<@ba.talpu>(+2%)</> sát thương gây ra cho kẻ địch trên 80% HP.",
+    "Talent1_2": "Tăng 18% sát thương gây ra cho kẻ địch trên 80% HP.",
+    "Talent1_2_p4": "Tăng 20%<@ba.talpu>(+2%)</> sát thương gây ra cho kẻ địch trên 80% HP.",
+    "Talent2": "Trong【The Whirlpool that is Passion】(Chapter 13), ATK tăng lên 120% khi tấn công kẻ địch【Sarkaz】, và có thể tích trữ thêm 1 đòn tấn công riêng chỉ dùng để tấn công kẻ địch【Sarkaz】."
   },
   "char_4114_harold": {
     "TitleTalent1": "Ta chính là quân doanh",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Khi đồng minh trong phạm vi tấn công tích lũy lượng <$ba.dt.element>Hiệu ứng nguyên tố</> vượt quá 50%, họ sẽ giảm 12% <$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu.",
+    "Talent1_p4": "Khi đồng minh trong phạm vi tấn công tích lũy lượng <$ba.dt.element>Hiệu ứng nguyên tố</> vượt quá 50%, họ sẽ giảm 15%<@ba.talpu>(+3%)</> <$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu.",
+    "Talent1_2": "Khi đồng minh trong phạm vi tấn công tích lũy lượng <$ba.dt.element>Hiệu ứng nguyên tố</> vượt quá 50%, họ sẽ giảm 15% <$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu.",
+    "Talent1_2_p4": "Khi đồng minh trong phạm vi tấn công tích lũy lượng <$ba.dt.element>Hiệu ứng nguyên tố</> vượt quá 50%, họ sẽ giảm 18%<@ba.talpu>(+3%)</> <$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu."
   },
   "char_4116_blkkgt": {
     "TitleTalent1": "Chiến binh thiên bẩm",
@@ -2242,50 +2242,50 @@
   },
   "char_4122_grabds": {
     "TitleTalent1": "Ngoan nào",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "ASPD +6. Nếu mục tiêu là【Wild Beast】, [[kéo dài|TalentGrainBudsE1]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
+    "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</>. Nếu mục tiêu là【Wild Beast】, [[kéo dài|TalentGrainBudsE1]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
+    "Talent1_2": "ASPD +10. Nếu mục tiêu là【Wild Beast】, [[kéo dài thêm|TalentGrainBudsE2]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
+    "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>. Nếu mục tiêu là【Wild Beast】, [[kéo dài thêm|TalentGrainBudsE2]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính."
   },
   "char_4123_ela": {
     "TitleTalent1": "Mìn GRZMOT",
     "TitleTalent2": "'Ngay giữa hồng tâm'",
-    "Talent0": "Có thể sử dụng 1 Mìn GRZMOT (Tích trữ và triển khai tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent0_p2": "Có thể sử dụng 2<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ và triển khai tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1": "Có thể sử dụng 2 Mìn GRZMOT (Tích trữ và triển khai tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1_p2": "Có thể sử dụng 3<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ và triển khai tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1_2": "Có thể sử dụng 3 Mìn GRZMOT (Tích trữ và triển khai tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
-    "Talent1_2_p2": "Có thể sử dụng 4<@ba.talpu>(+1)</> Mìn GRZMOT (Tích trữ và triển khai tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent0": "Có thể sử dụng 1 Mìn GRZMOT (tích trữ và triển khai tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent0_p2": "Có thể sử dụng 2<@ba.talpu>(+1)</> Mìn GRZMOT (tích trữ và triển khai tối đa 2 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1": "Có thể sử dụng 2 Mìn GRZMOT (tích trữ và triển khai tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1_p2": "Có thể sử dụng 3<@ba.talpu>(+1)</> Mìn GRZMOT (tích trữ và triển khai tối đa 3 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1_2": "Có thể sử dụng 3 Mìn GRZMOT (tích trữ và triển khai tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
+    "Talent1_2_p2": "Có thể sử dụng 4<@ba.talpu>(+1)</> Mìn GRZMOT (tích trữ và triển khai tối đa 4 cái); kẻ địch đầu tiên bước vào mìn sẽ kích hoạt hiệu ứng của nó. Khi rút lui, kích hoạt hiệu ứng Mìn GRZMOT ngay tại vị trí của bản thân.",
     "Talent2": "Đòn tấn công có 30% tỷ lệ gây sát thương vật lý bằng 150% ATK. Tỷ lệ tăng lên 100% khi tấn công mục tiêu đang chịu ảnh hưởng từ hiệu ứng của Mìn GRZMOT.",
     "Talent2_p4": "Đòn tấn công có 30% tỷ lệ gây sát thương vật lý bằng 160%<@ba.talpu>(+10%)</> ATK. Tỷ lệ tăng lên 100% khi tấn công mục tiêu đang chịu ảnh hưởng từ hiệu ứng của Mìn GRZMOT."
   },
   "char_4124_iana": {
     "TitleTalent1": "Máy phân thân Gemini",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Khi triển khai, tạo một 'Ảo ảnh ba chiều' tại vị trí đó. 'Ảo ảnh' không thể tấn công, nhưng khi bị tấn công, kẻ tấn công sẽ bị vô hiệu <$ba.invisible>Tàng hình</> trong 6 giây và bản thân lập tức chuyển sang <Thế Thân>.",
+    "Talent0_p4": "Khi triển khai, tạo một 'Ảo ảnh ba chiều' tại vị trí đó. 'Ảo ảnh' không thể tấn công, nhưng khi bị tấn công, kẻ tấn công sẽ bị vô hiệu <$ba.invisible>Tàng hình</> trong 6 giây và bản thân lập tức chuyển sang <Thế Thân>.",
+    "Talent1": "Khi triển khai, tạo một 'Ảo ảnh ba chiều' tại vị trí đó. 'Ảo ảnh' không thể tấn công, nhưng khi bị tấn công, kẻ tấn công sẽ chịu 10% <$ba.fragile>Fragile</> và bị vô hiệu <$ba.invisible>Tàng hình</> trong 6 giây. Ngay sau đó bản thân lập tức chuyển sang <Thế Thân>.",
+    "Talent1_p4": "Khi triển khai, tạo một 'Ảo ảnh ba chiều' tại vị trí đó. 'Ảo ảnh' không thể tấn công, nhưng khi bị tấn công, kẻ tấn công sẽ chịu 12%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</> và bị vô hiệu <$ba.invisible>Tàng hình</> trong 6 giây. Ngay sau đó bản thân lập tức chuyển sang <Thế Thân>.",
+    "Talent1_2": "Khi triển khai, tạo một 'Ảo ảnh ba chiều' tại vị trí đó. 'Ảo ảnh' không thể tấn công, nhưng khi bị tấn công, kẻ tấn công sẽ chịu 20% <$ba.fragile>Fragile</> và bị vô hiệu <$ba.invisible>Tàng hình</> trong 8 giây. Ngay sau đó bản thân lập tức chuyển sang <Thế Thân>.",
+    "Talent1_2_p4": "Khi triển khai, tạo một 'Ảo ảnh ba chiều' tại vị trí đó. 'Ảo ảnh' không thể tấn công, nhưng khi bị tấn công, kẻ tấn công sẽ chịu 22%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</> và bị vô hiệu <$ba.invisible>Tàng hình</> trong 8 giây. Ngay sau đó bản thân lập tức chuyển sang <Thế Thân>."
   },
   "char_4125_rdoc": {
     "TitleTalent1": "Quân y",
     "TitleTalent2": "Mô phỏng hệ thần kinh giao cảm",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": "",
-    "Talent2": "",
-    "Talent2_2": ""
+    "Talent0": "HP tối đa +3%, đòn tấn công bỏ qua 30 DEF của mục tiêu.",
+    "Talent0_p4": "HP tối đa +3%, đòn tấn công bỏ qua 50<@ba.talpu>(+20)</> DEF của mục tiêu.",
+    "Talent1": "HP tối đa +6%, đòn tấn công bỏ qua 60 DEF của mục tiêu.",
+    "Talent1_p4": "HP tối đa +6%, đòn tấn công bỏ qua 80<@ba.talpu>(+20)</> DEF của mục tiêu.",
+    "Talent1_2": "HP tối đa +12%, đòn tấn công bỏ qua 120 DEF của mục tiêu.",
+    "Talent1_2_p4": "HP tối đa +12%, đòn tấn công bỏ qua 140<@ba.talpu>(+20)</> DEF của mục tiêu.",
+    "Talent2": "Khi hồi phục cho đơn vị phe ta, lượng hồi phục vượt quá HP tối đa của đơn vị đó sẽ được chuyển thành <$ba.barrier>Lá chắn</> [[giảm mạnh|DocTalent2E1]] theo thời gian.",
+    "Talent2_2": "Khi hồi phục cho đơn vị phe ta, lượng hồi phục vượt quá HP tối đa của đơn vị đó sẽ được chuyển thành <$ba.barrier>Lá chắn</> [[giảm nhẹ|DocTalent2E2]] theo thời gian."
   },
   "char_4126_fuze": {
     "TitleTalent1": "Khiên chống đạn",
-    "Talent1": "Nhận 17% giảm sát thương vật lý tầm xa.",
-    "Talent1_p4": "Nhận 20%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa.",
-    "Talent1_2": "Nhận 27% giảm sát thương vật lý tầm xa.",
-    "Talent1_2_p4": "Nhận 30%<@ba.talpu>(+3%)</> giảm sát thương vật lý tầm xa."
+    "Talent1": "Có 17% tỷ lệ chặn sát thương vật lý tầm xa.",
+    "Talent1_p4": "Có 20%<@ba.talpu>(+3%)</> tỷ lệ chặn sát thương vật lý tầm xa.",
+    "Talent1_2": "Có 27% tỷ lệ chặn sát thương vật lý tầm xa.",
+    "Talent1_2_p4": "Có 30%<@ba.talpu>(+3%)</> tỷ lệ chặn sát thương vật lý tầm xa."
   },
   "char_4130_luton": {
     "TitleTalent1": "Vượt qua tử thần",
@@ -2296,10 +2296,10 @@
   },
   "char_4131_odda": {
     "TitleTalent1": "Nện búa",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "+9% ATK sau khi gây sát thương vật lý 45 lần.",
+    "Talent1_p4": "+12%<@ba.talpu>(+3%)</> ATK sau khi gây sát thương vật lý 45 lần.",
+    "Talent1_2": "+15% ATK sau khi gây sát thương vật lý 30 lần.",
+    "Talent1_2_p4": "+18%<@ba.talpu>(+3%)</> ATK sau khi gây sát thương vật lý 30 lần."
   },
   "char_4132_ascln": {
     "TitleTalent1": "Thẩm vấn đến chết",
@@ -2344,10 +2344,10 @@
   },
   "char_4137_udflow": {
     "TitleTalent1": "Chất ức chế hoạt tính tế bào",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đòn tấn công khiến mục tiêu mỗi giây chịu 40 sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu mỗi giây chịu 50<@ba.talpu>(+10)</> sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu mỗi giây chịu 80 sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu mỗi giây chịu 90<@ba.talpu>(+10)</> sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương)."
   },
   "char_4138_narant": {
     "TitleTalent1": "'Ta thấy, ta lấy'",
@@ -2361,37 +2361,37 @@
   },
   "char_4139_papyrs": { 
     "TitleTalent1": "Am hiểu cổ thư",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Mỗi lần hồi phục sẽ tạo cho đồng minh một lớp <$ba.barrier>Lá chắn</> bằng 5% ATK của Papyrus, kéo dài 8 giây.",
+    "Talent0_p4": "Mỗi lần hồi phục sẽ tạo cho đồng minh một lớp <$ba.barrier>Lá chắn</> bằng 7%<@ba.talpu>(+2%)</> ATK của Papyrus, kéo dài 8 giây.",
+    "Talent1": "Mỗi lần hồi phục sẽ tạo cho đồng minh một lớp <$ba.barrier>Lá chắn</> bằng 10% ATK của Papyrus, kéo dài 8 giây.",
+    "Talent1_p4": "Mỗi lần hồi phục sẽ tạo cho đồng minh một lớp <$ba.barrier>Lá chắn</> bằng 12%<@ba.talpu>(+2%)</> ATK của Papyrus, kéo dài 8 giây.",
+    "Talent1_2": "Mỗi lần hồi phục sẽ tạo cho đồng minh một lớp <$ba.barrier>Lá chắn</> bằng 20% ATK của Papyrus, kéo dài 8 giây.",
+    "Talent1_2_p4": "Mỗi lần hồi phục sẽ tạo cho đồng minh một lớp <$ba.barrier>Lá chắn</> bằng 22%<@ba.talpu>(+2%)</> ATK của Papyrus, kéo dài 8 giây."
   },
   "char_4140_lasher": {
     "TitleTalent1": "Lời dạy của người thợ xưa",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Có thể triệu hồi 3 'Vũ Thú Dây Cót'. 'Vũ Thú Dây Cót' và Sand Reckoner gây thêm 10% sát thương lên kẻ địch máy móc.",
+    "Talent1": "Có thể triệu hồi 4 'Vũ Thú Dây Cót'. 'Vũ Thú Dây Cót' và Sand Reckoner gây thêm 20% sát thương lên kẻ địch máy móc.",
+    "Talent1_2": "Có thể triệu hồi 5 'Vũ Thú Dây Cót'. 'Vũ Thú Dây Cót' và Sand Reckoner gây thêm 20% sát thương lên kẻ địch máy móc."
   },
   "char_4141_marcil": {
     "TitleTalent1": "Học sinh xuất sắc nhất trong lịch sử của trường ma thuật",
     "TitleTalent2": "Đồng đội đáng tin cậy",
-    "Talent0": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (Hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +10% và mở rộng phạm vi lan của đòn tấn công.",
-    "Talent0_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (Hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +15%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
-    "Talent1": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (Hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +20% và mở rộng phạm vi lan của đòn tấn công.",
-    "Talent1_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (Hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +25%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent0": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +10% và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent0_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +15%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent1": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +20% và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent1_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +25%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
     "Talent2": "<$ba.magicpoint>Ma lực</> khởi đầu +25, khi có 4 thành viên thuộc<$ba.laiosteam>【Tổ đội của Laios】</>trong đội hình, tất cả thành viên<$ba.laiosteam>【Tổ đội của Laios】</>nhận +25 ASPD và +35% DEF."
   },
   "char_4142_laios": {
     "TitleTalent1": "Kinh nghiệm xơi hầm ngục",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "Sau khi hạ kẻ địch, Laios bỏ qua 20% DEF khi tấn công các kẻ địch có cùng tên với kẻ địch vừa bị hạ.",
+    "Talent1_2": "Sau khi hạ kẻ địch, Laios bỏ qua 40% DEF khi tấn công các kẻ địch có cùng tên với kẻ địch vừa bị hạ."
   },
   "char_4143_sensi": {
     "TitleTalent1": "Thập niên nấu ma vật",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent1": "DEF +5%, lượng hồi phục của bản thân +5%.",
+    "Talent1_2": "DEF +10%, lượng hồi phục của bản thân +10%."
   },
   "char_4144_chilc": {
     "TitleTalent1": "Giác quan nhạy bén",
@@ -2424,28 +2424,28 @@
   },
   "char_4148_philae": {
     "TitleTalent1": "Sứ giả của dòng sông thiêng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -5%, và hồi 1 SP khi chịu Necrosis.",
+    "Talent1_p4": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -7%<@ba.talpu>(+2%)</>, và hồi 1 SP khi chịu Necrosis.",
+    "Talent1_2": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -10%, và hồi 2 SP khi chịu Necrosis.",
+    "Talent1_2_p4": "<$ba.dt.element>Hiệu ứng nguyên tố</> phải chịu -12%<@ba.talpu>(+2%)</>, và hồi 2 SP khi chịu Necrosis."
   },
   "char_4151_tinman": {
     "TitleTalent1": "'Tôi tới ngay'",
     "TitleTalent2": "Hồn phách suy tàn",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_p2": "",
-    "Talent1_2": "",
-    "Talent1_2_p2": "",
-    "Talent2": "",
-    "Talent2_p4": ""
+    "Talent0": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -1 Hope.",
+    "Talent1": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +3 Toil Limit khi được chọn làm Cán viên Gánh tải.",
+    "Talent1_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +4<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Cán viên Gánh tải.",
+    "Talent1_2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +9 Toil Limit khi được chọn làm Cán viên Gánh tải.",
+    "Talent1_2_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +10<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Cán viên Gánh tải.",
+    "Talent2": "Tăng 20% sát thương theo thời gian lên các kẻ địch mặt đất trong đơn vị Luyện Kim của Tin Man.",
+    "Talent2_p4": "Tăng 22%<@ba.talpu>(+2%)</> sát thương theo thời gian lên các kẻ địch mặt đất trong đơn vị Luyện Kim của Tin Man."
   },
   "char_4155_talr": {
     "TitleTalent1": "Lựa chọn khách hàng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Gây +10% sát thương lên kẻ địch không bị bản thân chặn.",
+    "Talent1_p4": "Gây +15%<@ba.talpu>(+5%)</> sát thương lên kẻ địch không bị bản thân chặn.",
+    "Talent1_2": "Gây +20% sát thương lên kẻ địch không bị bản thân chặn.",
+    "Talent1_2_p4": "Gây +25%<@ba.talpu>(+5%)</> sát thương lên kẻ địch không bị bản thân chặn."
   },
   "char_415_flint": {
     "TitleTalent1": "Outboxer",
@@ -2456,27 +2456,27 @@
   },
   "char_4162_cathy": {
     "TitleTalent1": "Tín hiệu hỗ trợ định hướng",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "Mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị sẽ nhận <$ba.barrier>Lá chắn</> bằng 10% HP tối đa của Catherine (nếu không bị tấn công trong vòng 5 giây, mỗi giây sẽ hồi lại <$ba.barrier>Lá chắn</> bằng 6% HP tối đa của Catherine, nhưng không vượt quá giá trị ban đầu); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent0_p4": "Mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị sẽ nhận <$ba.barrier>Lá chắn</> bằng 12%<@ba.talpu>(+2%)</> HP tối đa của Catherine (nếu không bị tấn công trong vòng 5 giây, mỗi giây sẽ hồi lại <$ba.barrier>Lá chắn</> bằng 6% HP tối đa của Catherine, nhưng không vượt quá giá trị ban đầu); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị sẽ nhận <$ba.barrier>Lá chắn</> bằng 15% HP tối đa của Catherine (nếu không bị tấn công trong vòng 5 giây, mỗi giây sẽ hồi lại <$ba.barrier>Lá chắn</> bằng 6% HP tối đa của Catherine, nhưng không vượt quá giá trị ban đầu); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_p4": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị sẽ nhận <$ba.barrier>Lá chắn</> bằng 17%<@ba.talpu>(+2%)</> HP tối đa của Catherine (nếu không bị tấn công trong vòng 5 giây, mỗi giây sẽ hồi lại <$ba.barrier>Lá chắn</> bằng 6% HP tối đa của Catherine, nhưng không vượt quá giá trị ban đầu); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_2": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị sẽ nhận <$ba.barrier>Lá chắn</> bằng 20% HP tối đa của Catherine (nếu không bị tấn công trong vòng 5 giây, mỗi giây sẽ hồi lại <$ba.barrier>Lá chắn</> bằng 6% HP tối đa của Catherine, nhưng không vượt quá giá trị ban đầu); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_2_p4": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị sẽ nhận <$ba.barrier>Lá chắn</> bằng 22%<@ba.talpu>(+2%)</> HP tối đa của Catherine (nếu không bị tấn công trong vòng 5 giây, mỗi giây sẽ hồi lại <$ba.barrier>Lá chắn</> bằng 6% HP tối đa của Catherine, nhưng không vượt quá giá trị ban đầu); Hiệu ứng từ Thiết bị không cộng dồn."
   },
   "char_4163_rosesa": {
     "TitleTalent1": "Dược sư số một",
-    "Talent0": "",
-    "Talent0_p4": "",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent0": "ATK -5%, bù lại đồng minh trong phạm vi tấn công nhận thêm 5% lượng hồi phục.",
+    "Talent0_p4": "ATK -5%, bù lại đồng minh trong phạm vi tấn công nhận thêm 7%<@ba.talpu>(+2%)</> lượng hồi phục.",
+    "Talent1": "ATK -5%, bù lại đồng minh trong phạm vi tấn công nhận thêm 10% lượng hồi phục.",
+    "Talent1_p4": "ATK -5%, bù lại đồng minh trong phạm vi tấn công nhận thêm 12%<@ba.talpu>(+2%)</> lượng hồi phục.",
+    "Talent1_2": "ATK -5%, bù lại đồng minh trong phạm vi tấn công nhận thêm 15% lượng hồi phục.",
+    "Talent1_2_p4": "ATK -5%, bù lại đồng minh trong phạm vi tấn công nhận thêm 17%<@ba.talpu>(+2%)</> lượng hồi phục."
   },
   "char_4164_tecno": {
     "TitleTalent1": "Ngẫu hứng múa rối",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
+    "Talent0": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 2 con cùng lúc); 'Vũ Công Rối' gây sát thương phép.",
+    "Talent1": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 3 con cùng lúc); 'Vũ Công Rối' gây sát thương phép.",
+    "Talent1_2": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 5 con cùng lúc); 'Vũ Công Rối' gây sát thương phép."
   },
   "char_4165_ctrail": {
     "TitleTalent1": "Nhiễu loạn không khí tầm thấp",
@@ -2503,26 +2503,26 @@
   },
   "char_4171_wulfen": {
     "TitleTalent1": "Đồ nghề thám hiểm",
-    "Talent0": "Có thể sử dụng 1 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 2 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
-    "Talent0_p4": "Có thể sử dụng 2<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 2 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
-    "Talent1": "Có thể sử dụng 2 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 3 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
-    "Talent1_p4": "Có thể sử dụng 3<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 3 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
-    "Talent1_2": "Có thể sử dụng 3 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 4 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
-    "Talent1_2_p4": "Có thể sử dụng 4<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (Tích trữ và triển khai tối đa 4 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công."
+    "Talent0": "Có thể sử dụng 1 'Sát thủ' khoáng thạch (tích trữ và triển khai tối đa 2 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent0_p4": "Có thể sử dụng 2<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (tích trữ và triển khai tối đa 2 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1": "Có thể sử dụng 2 'Sát thủ' khoáng thạch (tích trữ và triển khai tối đa 3 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1_p4": "Có thể sử dụng 3<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (tích trữ và triển khai tối đa 3 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1_2": "Có thể sử dụng 3 'Sát thủ' khoáng thạch (tích trữ và triển khai tối đa 4 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công.",
+    "Talent1_2_p4": "Có thể sử dụng 4<@ba.talpu>(+1)</> 'Sát thủ' khoáng thạch (tích trữ và triển khai tối đa 4 cái); Bẫy sau khi triển khai cần đợi một lúc để hoạt động và chỉ có thể kích nổ khi bấm thủ công."
   },
   "char_4172_xingzh": {
     "TitleTalent1": "Tình bạn đồng hành",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "2 đồng minh ngẫu nhiên trong phạm vi tấn công (trừ bản thân) nhận 7% <$ba.protect>Bảo hộ</>.",
+    "Talent1_p4": "2 đồng minh ngẫu nhiên trong phạm vi tấn công (trừ bản thân) nhận 9%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>.",
+    "Talent1_2": "2 đồng minh ngẫu nhiên trong phạm vi tấn công (trừ bản thân) nhận 10% <$ba.protect>Bảo hộ</>.",
+    "Talent1_2_p4": "2 đồng minh ngẫu nhiên trong phạm vi tấn công (trừ bản thân) nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>."
   },
   "char_4173_nowell": {
     "TitleTalent1": "Đo kính đúng độ",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Lượng hồi phục tăng lên 110% khi hồi cho đồng minh đang có <$ba.debuff>Hiệu ứng xấu</>.",
+    "Talent1_p4": "Lượng hồi phục tăng lên 113%<@ba.talpu>(+3%)</> khi hồi cho đồng minh đang có <$ba.debuff>Hiệu ứng xấu</>.",
+    "Talent1_2": "Lượng hồi phục tăng lên 120% khi hồi cho đồng minh đang có <$ba.debuff>Hiệu ứng xấu</>.",
+    "Talent1_2_p4": "Lượng hồi phục tăng lên 123%<@ba.talpu>(+3%)</> khi hồi cho đồng minh đang có <$ba.debuff>Hiệu ứng xấu</>."
   },
   "char_4177_brigid": {
     "TitleTalent1": "Khéo tay buộc dây",
@@ -2533,12 +2533,12 @@
   },
   "char_4178_alanna": {
     "TitleTalent1": "Độ máy tạm thời",
-    "Talent0": "Mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 40 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
-    "Talent0_p4": "Mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 50<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
-    "Talent1": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 60 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
-    "Talent1_p4": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 70<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
-    "Talent1_2": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 80 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
-    "Talent1_2_p4": "Mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 90<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn."
+    "Talent0": "Mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 40 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent0_p4": "Mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 50<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 60 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_p4": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 70<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_2": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 80 DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn.",
+    "Talent1_2_p4": "Mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc), đồng minh kết nối với Thiết bị bỏ qua 90<@ba.talpu>(+10)</> DEF của mục tiêu khi tấn công (tồn tại 30 giây); Hiệu ứng từ Thiết bị không cộng dồn."
   },
   "char_4179_monstr": {
     "TitleTalent1": "Tự vá",
@@ -2664,9 +2664,9 @@
   "char_4195_radian": {
     "TitleTalent1": "Cảm hứng từ những thước băng",
     "TitleTalent2": "Cố lên nào~",
-    "Talent0": "Có thể sử dụng 3 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1": "Có thể sử dụng 4 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1_2": "Có thể sử dụng 5 vật triệu hồi (Tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent0": "Có thể gọi ra 3 vật triệu hồi (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1": "Có thể gọi ra 4 vật triệu hồi (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1_2": "Có thể gọi ra 5 vật triệu hồi (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent2": "Vật triệu hồi của Raidian nhận hiệu ứng <$ba.inspire>Khích lệ</> bằng 12％ ATK, DEF và HP của cô.",
     "Talent2_p4": "Vật triệu hồi của Raidian nhận hiệu ứng <$ba.inspire>Khích lệ</> bằng 15％<@ba.talpu>(+3％)</> ATK, DEF và HP của cô."
   },
@@ -2686,10 +2686,10 @@
   },
   "char_4199_makiri": {
     "TitleTalent1": "Chậm mà chắc",
-    "Talent1": "Sau khi triển khai được 30 giây, +5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_p4": "Sau khi triển khai được 30 giây, +7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2": "Sau khi triển khai được 30 giây, +10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2_p4": "Sau khi triển khai được 30 giây, +12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (Hiệu ứng này chỉ kích hoạt 1 lần)."
+    "Talent1": "Sau khi triển khai được 30 giây, +5% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_p4": "Sau khi triển khai được 30 giây, +7%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2": "Sau khi triển khai được 30 giây, +10% ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2_p4": "Sau khi triển khai được 30 giây, +12%<@ba.talpu>(+2%)</> ATK cho tất cả cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
     "TitleTalent1": "Bọt nước mây bay",
@@ -2748,9 +2748,9 @@
   "char_4212_nasti": {
     "TitleTalent1": "Khu vực đang thi công",
     "TitleTalent2": "An toàn là trên hết",
-    "Talent0": "Có thể mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 1 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1": "Có thể mang theo 2 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (Tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.", 
+    "Talent0": "Có thể mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 1 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1": "Có thể mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
+    "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.", 
     "Talent2": "Nhận 10% <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các cán viên đang đứng trên ô cao nhận 15% <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP.",
     "Talent2_p4": "Nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các cán viên đang đứng trên ô cao nhận 18%<@ba.talpu>(+3%)</> <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP."
   },
@@ -2768,9 +2768,9 @@
   },
   "char_421_crow": {
     "TitleTalent1": "Vào guồng",
-    "Talent0": "+2 ASPD mỗi khi hạ 1 kẻ địch (Cộng dồn tối đa 8 lần).",
-    "Talent1": "+3 ASPD mỗi khi hạ 1 kẻ địch (Cộng dồn tối đa 8 lần).",
-    "Talent1_2": "+3 ASPD mỗi khi hạ 1 kẻ địch (Cộng dồn tối đa 12 lần)."
+    "Talent0": "+2 ASPD mỗi khi hạ 1 kẻ địch (cộng dồn tối đa 8 lần).",
+    "Talent1": "+3 ASPD mỗi khi hạ 1 kẻ địch (cộng dồn tối đa 8 lần).",
+    "Talent1_2": "+3 ASPD mỗi khi hạ 1 kẻ địch (cộng dồn tối đa 12 lần)."
   },
   "char_4221_ju": {
     "TitleTalent1": "Phép tắc",
@@ -2838,19 +2838,19 @@
   },
   "char_433_windft": {
     "TitleTalent1": "Sát cánh cùng nhau",
-    "Talent0": "Mang theo 2 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(Tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +5% ATK (Tồn tại trong 20 giây).",
-    "Talent0_p4": "Mang theo 2 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(Tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +7%<@ba.talpu>(+2%)</> ATK (Tồn tại trong 20 giây).",
-    "Talent1": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(Tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +10% ATK (Tồn tại trong 30 giây).",
-    "Talent1_p4": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(Tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +12%<@ba.talpu>(+2%)</> ATK (Tồn tại trong 30 giây).",
-    "Talent1_2": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(Tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +15% ATK (Tồn tại trong 30 giây).",
-    "Talent1_2_p4": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(Tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +17%<@ba.talpu>(+2%)</> ATK (Tồn tại trong 30 giây)."
+    "Talent0": "Mang theo 2 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +5% ATK (tồn tại trong 20 giây).",
+    "Talent0_p4": "Mang theo 2 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +7%<@ba.talpu>(+2%)</> ATK (tồn tại trong 20 giây).",
+    "Talent1": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +10% ATK (tồn tại trong 30 giây).",
+    "Talent1_p4": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +12%<@ba.talpu>(+2%)</> ATK (tồn tại trong 30 giây).",
+    "Talent1_2": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +15% ATK (tồn tại trong 30 giây).",
+    "Talent1_2_p4": "Mang theo 3 'Khối Pin Chất Lượng' chỉ có hiệu lực với đồng minh【Thuật sư】hoặc【Hỗ trợ】(tối đa triển khai 2 cái cùng lúc). Đồng minh được kết nối +17%<@ba.talpu>(+2%)</> ATK (tồn tại trong 30 giây)."
   },
   "char_436_whispr": {
     "TitleTalent1": "Tháp sinh mệnh",
-    "Talent1": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 3% ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 4%<@ba.talpu>(+1%)</> ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 6% ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 7%<@ba.talpu>(+1%)</> ATK của Whisperain (Hiệu ứng này không chịu ảnh hưởng bởi Đặc tính)."
+    "Talent1": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 3% ATK của Whisperain (hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 4%<@ba.talpu>(+1%)</> ATK của Whisperain (hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 6% ATK của Whisperain (hiệu ứng này không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 7%<@ba.talpu>(+1%)</> ATK của Whisperain (hiệu ứng này không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_437_mizuki": {
     "TitleTalent1": "Cơn Hysteria chấn thương",
@@ -2877,10 +2877,10 @@
   },
   "char_446_aroma": {
     "TitleTalent1": "Thử độ tạo bọt",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đòn tấn công đầu tiên lên mỗi kẻ địch, sẽ tăng ATK lên 105% và khiến mục tiêu bị <$ba.levitate>Lơ lửng</> trong 2.5 giây.",
+    "Talent1_p4": "Đòn tấn công đầu tiên lên mỗi kẻ địch, sẽ tăng ATK lên 110%<@ba.talpu>(+5%)</> và khiến mục tiêu bị <$ba.levitate>Lơ lửng</> trong 2.5 giây.",
+    "Talent1_2": "Đòn tấn công đầu tiên lên mỗi kẻ địch, sẽ tăng ATK lên 110% và khiến mục tiêu bị <$ba.levitate>Lơ lửng</> trong 2.5 giây.",
+    "Talent1_2_p4": "Đòn tấn công đầu tiên lên mỗi kẻ địch, sẽ tăng ATK lên 115%<@ba.talpu>(+5%)</> và khiến mục tiêu bị <$ba.levitate>Lơ lửng</> trong 2.5 giây."
   },
   "char_449_glider": {
     "TitleTalent1": "Tinh thần cộng đồng",
@@ -2900,12 +2900,12 @@
   },
   "char_451_robin": {
     "TitleTalent1": "Chuyên gia bẫy 'Kẹp'",
-    "Talent0": "Có thể sử dụng 4 bẫy 'Kẹp' (Tích trữ và triển khai tối đa 6 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
-    "Talent0_p4": "Có thể sử dụng 6<@ba.talpu>(+2)</> bẫy 'Kẹp' (Tích trữ và triển khai tối đa 6 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1": "Có thể sử dụng 6 bẫy 'Kẹp' (Tích trữ và triển khai tối đa 8 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1_p4": "Có thể sử dụng 8<@ba.talpu>(+2)</> bẫy 'Kẹp' (Tích trữ và triển khai tối đa 8 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1_2": "Có thể sử dụng 8 bẫy 'Kẹp' (Tích trữ và triển khai tối đa 10 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1_2_p4": "Có thể sử dụng 10<@ba.talpu>(+2)</> bẫy 'Kẹp' (Tích trữ và triển khai tối đa 10 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó."
+    "Talent0": "Có thể sử dụng 4 bẫy 'Kẹp' (tích trữ và triển khai tối đa 6 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent0_p4": "Có thể sử dụng 6<@ba.talpu>(+2)</> bẫy 'Kẹp' (tích trữ và triển khai tối đa 6 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1": "Có thể sử dụng 6 bẫy 'Kẹp' (tích trữ và triển khai tối đa 8 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_p4": "Có thể sử dụng 8<@ba.talpu>(+2)</> bẫy 'Kẹp' (tích trữ và triển khai tối đa 8 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_2": "Có thể sử dụng 8 bẫy 'Kẹp' (tích trữ và triển khai tối đa 10 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_2_p4": "Có thể sử dụng 10<@ba.talpu>(+2)</> bẫy 'Kẹp' (tích trữ và triển khai tối đa 10 cái); kẻ địch đầu tiên bước vào bẫy sẽ kích hoạt hiệu ứng của nó."
   },
   "char_452_bstalk": {
     "TitleTalent1": "Chuyên gia nhân giống",
@@ -2939,12 +2939,12 @@
   },
   "char_458_rfrost": {
     "TitleTalent1": "Welcome Mat",
-    "Talent0": "Có thể sử dụng 4 Welcome Mat (Tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
-    "Talent0_p4": "Có thể sử dụng 6<@ba.talpu>(+2)</> Welcome Mat (Tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1": "Có thể sử dụng 6 Welcome Mat (Tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1_p4": "Có thể sử dụng 8<@ba.talpu>(+2)</> Welcome Mat (Tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1_2": "Có thể sử dụng 8 Welcome Mat (Tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
-    "Talent1_2_p4": "Có thể sử dụng 10<@ba.talpu>(+2)</> Welcome Mat (Tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó."
+    "Talent0": "Có thể sử dụng 4 Welcome Mat (tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
+    "Talent0_p4": "Có thể sử dụng 6<@ba.talpu>(+2)</> Welcome Mat (tích trữ và triển khai tối đa 6 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1": "Có thể sử dụng 6 Welcome Mat (tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_p4": "Có thể sử dụng 8<@ba.talpu>(+2)</> Welcome Mat (tích trữ và triển khai tối đa 8 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_2": "Có thể sử dụng 8 Welcome Mat (tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó.",
+    "Talent1_2_p4": "Có thể sử dụng 10<@ba.talpu>(+2)</> Welcome Mat (tích trữ và triển khai tối đa 10 cái), kẻ địch đầu tiên giẫm lên Welcome Mat sẽ kích hoạt hiệu ứng của nó."
   },
   "char_459_tachak": {
     "TitleTalent1": "Hỏa lực hạng nặng",
@@ -3030,12 +3030,12 @@
   },
   "char_484_robrta": {
     "TitleTalent1": "Hiệu chỉnh mô hình",
-    "Talent0": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +10% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
-    "Talent0_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +13%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
-    "Talent1": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +20% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
-    "Talent1_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +23%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
-    "Talent1_2": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +30% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
-    "Talent1_2_p4": "Mang theo 3 'Thiết bị tạo hình' (Tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +33%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn)."
+    "Talent0": "Mang theo 3 'Thiết bị tạo hình' (tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +10% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent0_p4": "Mang theo 3 'Thiết bị tạo hình' (tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +13%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1": "Mang theo 3 'Thiết bị tạo hình' (tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +20% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1_p4": "Mang theo 3 'Thiết bị tạo hình' (tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +23%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1_2": "Mang theo 3 'Thiết bị tạo hình' (tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +30% và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn).",
+    "Talent1_2_p4": "Mang theo 3 'Thiết bị tạo hình' (tối đa triển khai 3 cái cùng lúc), 'Thiết bị tạo hình' sẽ cung cấp DEF +33%<@ba.talpu>(+3%)</> và 2 lớp <$ba.shield>Khiên</> cho đồng minh cận chiến trong vòng 25 giây (lượng DEF không được cộng dồn)."
   },
   "char_485_pallas": {
     "TitleTalent1": "Anh hùng xuất thế",
@@ -3054,10 +3054,10 @@
   },
   "char_487_bobb": {
     "TitleTalent1": "Điều hướng tụ nhiệt",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 10% ATK trong 5 giây.",
+    "Talent1_p4": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 12%<@ba.talpu>(+2%)</> ATK trong 5 giây.",
+    "Talent1_2": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 16% ATK trong 5 giây.",
+    "Talent1_2_p4": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 18%<@ba.talpu>(+2%)</> ATK trong 5 giây."
   },
   "char_488_buildr": {
     "TitleTalent1": "Quy tắc của đội phá dỡ",
@@ -3096,10 +3096,10 @@
   },
   "char_494_vendla": {
     "TitleTalent1": "Cải tạo đất trồng",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "Đồng minh có HP tối đa cao nhất trong phạm vi tấn công của Vendela tăng 8% hiệu quả hồi phục.",
+    "Talent1_p4": "Đồng minh có HP tối đa cao nhất trong phạm vi tấn công của Vendela tăng 11%<@ba.talpu>(+3%)</> hiệu quả hồi phục.",
+    "Talent1_2": "Đồng minh có HP tối đa cao nhất trong phạm vi tấn công của Vendela tăng 15% hiệu quả hồi phục.",
+    "Talent1_2_p4": "Đồng minh có HP tối đa cao nhất trong phạm vi tấn công của Vendela tăng 18%<@ba.talpu>(+3%)</> hiệu quả hồi phục."
   },
   "char_496_wildmn": {
     "TitleTalent1": "Đồng lòng tiến quân",
@@ -3120,10 +3120,10 @@
   },
   "char_499_kaitou": {
     "TitleTalent1": "Thư báo trước",
-    "Talent1": "",
-    "Talent1_p4": "",
-    "Talent1_2": "",
-    "Talent1_2_p4": ""
+    "Talent1": "+10% ATK khi có kẻ địch đang ở giai đoạn bộc phát thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Diamante.",
+    "Talent1_p4": "+13%<@ba.talpu>(+3%)</> ATK khi có kẻ địch đang ở giai đoạn bộc phát thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Diamante.",
+    "Talent1_2": "+18% ATK khi có kẻ địch đang ở giai đoạn bộc phát thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Diamante.",
+    "Talent1_2_p4": "+21%<@ba.talpu>(+3%)</> ATK khi có kẻ địch đang ở giai đoạn bộc phát thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Diamante."
   },
   "char_500_noirc": {
     "TitleTalent1": "Giáp cải tiến",
@@ -6657,10 +6657,10 @@
   "char_4037_demetr": {
     "TitleTalent1": "Thủ đoạn gia tộc",
     "TitleTalent2": "Trực giác đường phố",
-    "Talent1": "Đòn tấn công khiến mục tiêu giảm 5% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 120% sát thương khi mục tiêu dưới 20% HP.",
-    "Talent1_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
-    "Talent1_2": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128% sát thương khi mục tiêu dưới 20% HP.",
-    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (Cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 136%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1": "Đòn tấn công khiến mục tiêu giảm 5% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 120% sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128% sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 136%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
     "Talent2": "Nhận 40% tỷ lệ né sát thương vật lý và phép; Sau khi triển khai, hiệu ứng này tăng lên 80% và giảm dần trong 20 giây."
   },
   "char_4031_liesel": {

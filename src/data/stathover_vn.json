@@ -147,6 +147,10 @@
     "title": "Không trọng lượng/Weightless",
     "text": "Trọng lượng giảm 1 cấp (Hiệu ứng cùng tên sẽ không cộng dồn)."
   },
+  "ba.levitate": {
+    "title": "Lơ lửng/Levitate",
+    "text": "Mục tiêu bị hất lên không trung sẽ không thể di chuyển, tấn công hay sử dụng kỹ năng. Thời gian hiệu lực giảm một nửa nếu Trọng lượng lớn hơn 3."
+  },
   "Frighten": {
     "title": "Giải giới/Frighten",
     "text": "Không thể đánh thường sau khi bị chặn.\n• Có thể chặn được các kỹ năng cần kích bằng đòn đánh.\n• Có thể gián đoạn đòn đánh của kẻ địch bị chặn khi chịu hiệu ứng này."
@@ -174,6 +178,10 @@
   "ba.buffres": {
     "title": "Kháng hiệu ứng/Status Resistance",
     "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+  },
+  "ba.debuff": {
+    "title": "Hiệu ứng xấu/Negative Status",
+    "text": "Bao gồm: <$ba.stun>Choáng</>, <$ba.cold>Lạnh</>, <$ba.frozen>Đóng băng</>, etc."
   },
   "Stun": {
     "title": "Choáng/Stun",
@@ -246,6 +254,14 @@
   "NecrassTalent1E2": {
     "title": "",
     "text": "+1 chặn, +100% HP và ATK, +40% DEF"
+  },
+  "DocTalent2E1": {
+    "title": "",
+    "text": "Mỗi 0.1s giảm 2% Lá chắn hiện tại"
+  },
+  "DocTalent2E2": {
+    "title": "",
+    "text": "Mỗi 0.1s giảm 1% Lá chắn hiện tại"
   },
   "SlowerTrait": {
     "title": "",
@@ -406,6 +422,14 @@
   "IntervalLunacub": {
     "title": "",
     "text": "Giảm còn 2.295 giây"
+  },
+  "TalentGrainBudsE1": {
+    "title": "",
+    "text": "+0.2 giây"
+  },
+  "TalentGrainBudsE2": {
+    "title": "",
+    "text": "+0.4 giây"
   },
   "blackdS2": {
     "title": "",
