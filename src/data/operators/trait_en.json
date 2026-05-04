@@ -64,6 +64,7 @@
     { "soulcaster": "Deals <@ba.kw>Arts damage</>; Can create <@ba.kw>Summons</> by defeating enemies, and can attack enemies blocked by these <@ba.kw>Summons</>" },
     { "splashcaster": "Deals <@ba.kw>AOE Arts damage</>" },
     { "corecaster": "Deals <@ba.kw>Arts damage</>" },
+    { "corecaster1": "Deals <@ba.kw>Arts damage</> and ignores the <@ba.kw>Deployment Limit</>, but has a long Redeployment Time" },
     { "chainhealer": "Restores HP of allies, bouncing between <@ba.kw>3</> allies. Healing reduced by 25% per bounce." },
     { "incantationmedic": "Attacks deal Arts damage and heal the HP of an ally within Attack Range for 50% of the damage deal" },
     { "healer": "Has a large healing range, but the healing amount on farther targets is reduced to <@ba.kw>{heal_scale:0%}</>" },
