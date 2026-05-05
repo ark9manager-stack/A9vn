@@ -243,56 +243,57 @@ export default function SkinsSection({ operator, className = "" }) {
   }, [selectedOption, selectedHasSp, spMode]);
 
   useEffect(() => {
-    if (!charId || !options.length) return;
+    if (!charId || !options.length || !selectedOption) return;
 
     let cancelled = false;
+    const timer = window.setTimeout(() => {
+      const selectedIndex = options.findIndex((opt) => opt.key === selectedOption.key);
+      const nearOptions = [
+        options[selectedIndex - 1],
+        options[selectedIndex + 1],
+      ].filter(Boolean);
 
-    const preloadUrls = [
-      ...new Set(
-        options
-          .flatMap((opt) => {
-            const list = [opt?.url || null, opt?.fallbackUrl || null];
-            if (opt?.hasSp) {
-              if (opt?.url) list.push(withSpSuffix(opt.url));
-              if (opt?.fallbackUrl) list.push(withSpSuffix(opt.fallbackUrl));
+      const preloadUrls = [
+        ...new Set(
+          nearOptions
+            .flatMap((opt) => [opt?.url || null, opt?.fallbackUrl || null])
+            .filter(Boolean),
+        ),
+      ].slice(0, 2);
+
+      if (preloadUrls.length === 0) return;
+
+      Promise.allSettled(
+        preloadUrls.map((url) => preloadImageCached(url).then(() => url)),
+      ).then((results) => {
+        if (cancelled) return;
+        const loaded = results
+          .filter(
+            (r) =>
+              r.status === "fulfilled" && typeof r.value === "string" && r.value,
+          )
+          .map((r) => r.value);
+
+        if (loaded.length === 0) return;
+        setLoadedUrls((prev) => {
+          const next = new Set(prev);
+          let changed = false;
+          for (const url of loaded) {
+            if (!next.has(url)) {
+              next.add(url);
+              changed = true;
             }
-            return list;
-          })
-          .filter(Boolean),
-      ),
-    ];
-
-    if (preloadUrls.length === 0) return;
-
-    Promise.allSettled(
-      preloadUrls.map((url) => preloadImageCached(url).then(() => url)),
-    ).then((results) => {
-      if (cancelled) return;
-      const loaded = results
-        .filter(
-          (r) =>
-            r.status === "fulfilled" && typeof r.value === "string" && r.value,
-        )
-        .map((r) => r.value);
-
-      if (loaded.length === 0) return;
-      setLoadedUrls((prev) => {
-        const next = new Set(prev);
-        let changed = false;
-        for (const url of loaded) {
-          if (!next.has(url)) {
-            next.add(url);
-            changed = true;
           }
-        }
-        return changed ? next : prev;
+          return changed ? next : prev;
+        });
       });
-    });
+    }, 450);
 
     return () => {
       cancelled = true;
+      window.clearTimeout(timer);
     };
-  }, [charId, options]);
+  }, [charId, options, selectedOption]);
 
   useEffect(() => {
     let cancelled = false;
@@ -326,7 +327,7 @@ export default function SkinsSection({ operator, className = "" }) {
 
     (async () => {
       try {
-        await preloadImageCached(primary);
+        await preloadImageCached(primary, { priority: true });
         if (cancelled) return;
         markLoaded(primary);
         setDisplaySrc(primary);
@@ -334,7 +335,7 @@ export default function SkinsSection({ operator, className = "" }) {
       } catch {
         if (fallback) {
           try {
-            await preloadImageCached(fallback);
+            await preloadImageCached(fallback, { priority: true });
             if (cancelled) return;
             markLoaded(fallback);
             setDisplaySrc(fallback);

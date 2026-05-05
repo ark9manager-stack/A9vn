@@ -1509,3 +1509,54 @@
     linear-gradient(180deg, #06080a 0%, #0b0e12 42%, #07090c 100%);
   color: #eef3f6;
 }
+
+/* Operator modal mobile header/content fixes */
+.operator-mobile-modal-bar {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  height: 52px;
+  flex: 0 0 52px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(12, 15, 19, 0.98), rgba(5, 7, 10, 0.96));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  padding: 0 8px;
+}
+
+.operator-mobile-menu-btn,
+.operator-mobile-close-btn {
+  display: inline-flex;
+  height: 38px;
+  min-width: 86px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.28);
+  color: white;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.operator-mobile-close-btn {
+  min-width: 44px;
+  width: 44px;
+}
+
+.operator-content-shell {
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 767px) {
+  .operator-content-shell.ak-steel-content-bg {
+    background: transparent;
+    padding: 0;
+  }
+
+  .operator-content-shell > .block,
+  .operator-content-shell > .hidden {
+    min-height: 100%;
+  }
+}

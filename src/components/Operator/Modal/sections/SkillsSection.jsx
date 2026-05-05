@@ -796,18 +796,14 @@ function RangeGrid({ rangeId }) {
   );
 }
 
-function SkillRangeGrid({ baseRangeId, rangeId }) {
+function SkillRangeGrid({ rangeId }) {
   const skillGrids = rangeId ? rangeTable?.[rangeId]?.grids : null;
-  const baseGrids = baseRangeId ? rangeTable?.[baseRangeId]?.grids : null;
 
   if (!rangeId || !Array.isArray(skillGrids)) {
     return <div className="text-sm text-white/60">No range data.</div>;
   }
 
   const skillSet = new Set(skillGrids.map((g) => `${g.row},${g.col}`));
-  const baseSet = new Set(
-    Array.isArray(baseGrids) ? baseGrids.map((g) => `${g.row},${g.col}`) : [],
-  );
 
   const rowVals = [0, ...skillGrids.map((g) => g.row)];
   const colVals = [0, ...skillGrids.map((g) => g.col)];
@@ -834,28 +830,13 @@ function SkillRangeGrid({ baseRangeId, rangeId }) {
           const isCenter = r === 0 && c === 0;
           const isInSkill = skillSet.has(`${r},${c}`);
 
-          const isBase = isInSkill && baseSet.has(`${r},${c}`);
-          const icon = isCenter
-            ? RANGE_STAND
-            : isInSkill
-              ? isBase
-                ? RANGE_ATTACK
-                : RANGE_ATTACK_SKILL
-              : "";
+          const icon = isCenter ? RANGE_STAND : isInSkill ? RANGE_ATTACK_SKILL : "";
 
           return (
             <div
               key={`${r},${c}`}
               className="w-[18px] h-[18px] rounded-[3px] bg-black/20 border border-white/5 flex items-center justify-center"
-              title={
-                isCenter
-                  ? "Stand"
-                  : isInSkill
-                    ? isBase
-                      ? "Base Range"
-                      : "Extended Range"
-                    : ""
-              }
+              title={isCenter ? "Stand" : isInSkill ? "Skill Range" : ""}
             >
               {icon ? (
                 <img
@@ -1610,16 +1591,6 @@ export default function SkillsSection(props) {
   );
   const currentSkillLevel = skillLevels?.[safeSkillLevelIdx] || null;
 
-  const baseRangeId = React.useMemo(() => {
-    const phases = charData?.phases;
-    if (!Array.isArray(phases) || phases.length === 0) return "";
-    const p2 =
-      phases.find((p) => String(p?.phase || "") === "PHASE_2") ||
-      phases?.[2] ||
-      phases?.[phases.length - 1];
-    return isNonEmptyString(p2?.rangeId) ? String(p2.rangeId) : "";
-  }, [charData]);
-
   const vnSkillEntry = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
     return skillVN?.[charKey] || null;
@@ -2129,10 +2100,7 @@ export default function SkillsSection(props) {
                       <div className="text-sm font-semibold text-white text-center mb-2">
                         {isEnglishUI ? "Range" : "Phạm vi"}
                       </div>
-                      <SkillRangeGrid
-                        baseRangeId={baseRangeId}
-                        rangeId={currentRangeId}
-                      />
+                      <SkillRangeGrid rangeId={currentRangeId} />
                     </div>
                   ) : null}
                 </div>

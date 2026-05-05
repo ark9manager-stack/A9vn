@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";
@@ -18,6 +18,7 @@ const Operator = () => {
     search: "",
   });
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
+  const directOperatorBootstrapRef = useRef(false);
   const { filteredOperators } = useOperatorFilter({
     operators,
     activeClass: appliedFilter.class,
@@ -28,14 +29,49 @@ const Operator = () => {
   });
 
   const { id: operatorIdFromUrl } = useParams();
+  const shouldBootstrapDirectOperator =
+    !!operatorIdFromUrl &&
+    !location.state?.background &&
+    !location.state?.fromOperatorBootstrap;
+
+  useEffect(() => {
+    if (!shouldBootstrapDirectOperator) return;
+    if (directOperatorBootstrapRef.current) return;
+
+    directOperatorBootstrapRef.current = true;
+    navigate("/operator", {
+      replace: true,
+      state: { pendingOperatorId: operatorIdFromUrl },
+    });
+  }, [shouldBootstrapDirectOperator, operatorIdFromUrl, navigate]);
+
+  useEffect(() => {
+    const pendingId = location.state?.pendingOperatorId;
+    if (!pendingId || operatorIdFromUrl || !operators?.length) return;
+
+    const found = operators.find(
+      (op) => op.id === pendingId || String(op.idweb) === pendingId,
+    );
+
+    if (!found) return;
+
+    setSelectedOperator(found);
+    navigate(`/operator/${encodeURIComponent(found.id)}`, {
+      replace: true,
+      state: { fromOperatorBootstrap: true },
+    });
+  }, [location.state, operatorIdFromUrl, operators, navigate, setSelectedOperator]);
 
   useEffect(() => {
     if (!operators?.length) return;
 
     if (!operatorIdFromUrl) {
       setSelectedOperator(null);
+      directOperatorBootstrapRef.current = false;
       return;
     }
+
+    if (shouldBootstrapDirectOperator) return;
 
     const found = operators.find(
       (op) =>
@@ -43,7 +79,7 @@ const Operator = () => {
     );
 
     if (found) setSelectedOperator(found);
-  }, [operatorIdFromUrl, operators, setSelectedOperator]);
+  }, [operatorIdFromUrl, operators, setSelectedOperator, shouldBootstrapDirectOperator]);
 
   const openOperator = (op) => {
     setSelectedOperator(op);

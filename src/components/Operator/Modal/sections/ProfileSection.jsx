@@ -377,12 +377,14 @@ function TextPanel({ title, text, id }) {
   );
 }
 
-export default function ProfileSection({ operator, charId }) {
+export default function ProfileSection({ operator, charId, lang = "VN" }) {
   const resolvedCharId = useMemo(() => {
     const fromProp = isNonEmptyString(charId) ? charId : null;
     const fromOperator = operator ? getOperatorCharId(operator) : null;
     return normalizeCharId(fromProp || fromOperator || "");
   }, [operator, charId]);
+
+  const isEnglishUI = String(lang || "VN").toUpperCase() === "EN";
 
   const {
     transText,
@@ -403,12 +405,14 @@ export default function ProfileSection({ operator, charId }) {
     const cn = profileEntry?.cn || {};
 
     const _getText = (key) => {
-      const fromProfile = pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
+      const fromProfile = isEnglishUI
+        ? pickFirstNonEmpty(en?.[key], cn?.[key])
+        : pickFirstNonEmpty(vn?.[key], en?.[key], cn?.[key]);
       if (isNonEmptyString(fromProfile)) return fromProfile;
 
       return getHandbookText({ charId: resolvedCharId, key });
     };
-    const trans = pickFirstNonEmpty(vn?.trans);
+    const trans = isEnglishUI ? "" : pickFirstNonEmpty(vn?.trans);
 
     const charDataEn = resolvedCharId
       ? characterTableEn?.[resolvedCharId]
@@ -476,26 +480,20 @@ export default function ProfileSection({ operator, charId }) {
     const finalTokenUrlFallback = hasActivityVoucher ? "" : tokenUrlFallback;
 
     const _recruitFallbackText = (() => {
-      const itemDesc = pickFirstNonEmpty(
-        charDataEn?.itemDesc,
-        charDataBase?.itemDesc,
-        "",
-      );
-      const itemUsage = pickFirstNonEmpty(
-        charDataEn?.itemUsage,
-        charDataBase?.itemUsage,
-        "",
-      );
+      const itemDesc = isEnglishUI
+        ? pickFirstNonEmpty(charDataEn?.itemDesc, charDataBase?.itemDesc, "")
+        : pickFirstNonEmpty(charDataEn?.itemDesc, charDataBase?.itemDesc, "");
+      const itemUsage = isEnglishUI
+        ? pickFirstNonEmpty(charDataEn?.itemUsage, charDataBase?.itemUsage, "")
+        : pickFirstNonEmpty(charDataEn?.itemUsage, charDataBase?.itemUsage, "");
       if (isNonEmptyString(itemDesc) && isNonEmptyString(itemUsage))
         return `${itemDesc}\n${itemUsage}`;
       return pickFirstNonEmpty(itemDesc, itemUsage, "");
     })();
 
-    const _tokenFallbackText = pickFirstNonEmpty(
-      itemPack?.en?.description,
-      itemPack?.base?.description,
-      "",
-    );
+    const _tokenFallbackText = isEnglishUI
+      ? pickFirstNonEmpty(itemPack?.en?.description, itemPack?.base?.description, "")
+      : pickFirstNonEmpty(itemPack?.en?.description, itemPack?.base?.description, "");
 
     const physicalText = _getText("physical_exam");
     const performanceText = _getText("physical_exam_2");
@@ -527,7 +525,7 @@ export default function ProfileSection({ operator, charId }) {
       recruitFallbackText: _recruitFallbackText,
       tokenFallbackText: _tokenFallbackText,
     };
-  }, [resolvedCharId]);
+  }, [resolvedCharId, isEnglishUI]);
 
   const optionalKeys = new Set([
     "file_2",

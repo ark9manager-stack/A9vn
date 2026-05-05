@@ -253,7 +253,7 @@ const OperatorSidebar = ({
   return (
     <>
       {/* Desktop sidebar - keep original layout */}
-      <div className="hidden md:flex w-[300px] sidebar-steel-dark flex-col p-4 text-white shrink-0">
+      <div className="hidden md:flex w-[330px] sidebar-steel-dark flex-col p-5 text-white shrink-0">
         <SidebarPanel
           operator={operator}
           activeTab={activeTab}
@@ -289,7 +289,7 @@ const OperatorSidebar = ({
 
         {/* Drawer */}
         <aside
-          className={`fixed left-0 top-0 z-50 h-dvh w-[min(82vw,320px)] max-w-[320px] border-r border-white/10 bg-[#1a1a1a]/98 px-4 pb-5 pt-16 text-white shadow-2xl backdrop-blur-md transition-transform duration-300 ease-out ${
+          className={`fixed left-0 top-[52px] z-50 h-[calc(100dvh-52px)] w-[min(82vw,320px)] max-w-[320px] border-r border-white/10 bg-[#1a1a1a]/98 px-4 pb-5 pt-4 text-white shadow-2xl backdrop-blur-md transition-transform duration-300 ease-out ${
             mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >

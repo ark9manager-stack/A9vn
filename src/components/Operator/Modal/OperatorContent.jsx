@@ -1,4 +1,4 @@
-import React, { useCallback, Suspense, lazy } from "react";
+import React, { useCallback, Suspense, lazy, useEffect, useState } from "react";
 import LoadingOp from "../../UI/LoadingOp";
 // Lazy load các sections
 const SkinsSection = lazy(() => import("./sections/SkinsSection"));
@@ -17,6 +17,21 @@ const LoadingFallback = () => (
 
 const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   const tabIds = ["skins", "profile", "stats", "skills", "modules", "voice"];
+  const [mountedTabs, setMountedTabs] = useState(() => new Set([activeTab || "skins"]));
+
+  useEffect(() => {
+    setMountedTabs(new Set([activeTab || "skins"]));
+  }, [charId]);
+
+  useEffect(() => {
+    if (!activeTab) return;
+    setMountedTabs((prev) => {
+      if (prev.has(activeTab)) return prev;
+      const next = new Set(prev);
+      next.add(activeTab);
+      return next;
+    });
+  }, [activeTab]);
 
   const renderSection = useCallback(
     (id) => {
@@ -53,9 +68,10 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   );
 
   return (
-    <div className="ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto px-2 pb-2 pt-8 md:p-4">
+    <div className="operator-content-shell ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto p-0 md:p-5">
       {tabIds.map((id) => {
         const isActive = activeTab === id;
+        if (!mountedTabs.has(id)) return null;
         return (
           <div key={id} className={isActive ? "block h-full" : "hidden h-full"}>
             {renderSection(id)}

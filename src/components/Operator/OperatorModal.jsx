@@ -20,63 +20,71 @@ const OperatorModal = ({ operator, onClose }) => {
       <div className="absolute inset-0" onClick={onClose} />
 
       <div
-        className="relative w-[95%] max-w-6xl h-[92vh]
-        bg-[#121212] rounded-2xl shadow-2xl overflow-hidden flex
-      "
+        className="relative flex h-[100dvh] w-screen overflow-hidden bg-[#121212] shadow-2xl md:h-[92vh] md:w-[95%] md:max-w-7xl md:rounded-2xl md:flex-row flex-col"
       >
-        <button
-          type="button"
-          aria-label={
-            mobileSidebarOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"
-          }
-          aria-expanded={mobileSidebarOpen}
-          onClick={() => setMobileSidebarOpen((prev) => !prev)}
-          className="absolute left-1 top-1 z-[100] flex items-center gap-2 rounded-full px-3 py-2 text-white shadow-lg backdrop-blur-sm transition-all duration-300 md:hidden"
-        >
-          <span className="flex flex-col gap-[3px]">
-            <span
-              className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
-                mobileSidebarOpen ? "translate-y-[5px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-4 rounded-full bg-white transition-opacity duration-300 ${
-                mobileSidebarOpen ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
-                mobileSidebarOpen ? "-translate-y-[5px] -rotate-45" : ""
-              }`}
-            />
-          </span>
-          <span className="text-sm font-medium leading-none">
-            {mobileSidebarOpen ? "Đóng" : "Menu"}
-          </span>
-        </button>
-
-        {/* Close button for mobile */}
-        <button
-          type="button"
-          className="absolute top-1 right-2 text-white md:hidden z-[100]"
-          onClick={onClose}
-          aria-label="Close operator modal"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
+        <div className="operator-mobile-modal-bar md:hidden">
+          <button
+            type="button"
+            aria-label={
+              mobileSidebarOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"
+            }
+            aria-expanded={mobileSidebarOpen}
+            onClick={() => setMobileSidebarOpen((prev) => !prev)}
+            className="operator-mobile-menu-btn"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
+            <span className="flex flex-col gap-[3px]">
+              <span
+                className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
+                  mobileSidebarOpen ? "translate-y-[5px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`block h-[2px] w-4 rounded-full bg-white transition-opacity duration-300 ${
+                  mobileSidebarOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`block h-[2px] w-4 rounded-full bg-white transition-transform duration-300 ${
+                  mobileSidebarOpen ? "-translate-y-[5px] -rotate-45" : ""
+                }`}
+              />
+            </span>
+            <span className="text-sm font-medium leading-none">
+              {mobileSidebarOpen ? "Đóng" : "Menu"}
+            </span>
+          </button>
+
+          <div className="min-w-0 flex-1 px-3 text-center">
+            <div className="truncate text-[12px] font-bold uppercase tracking-[0.18em] text-white/90">
+              {operator?.name || operator?.id || "Operator"}
+            </div>
+            <div className="mt-0.5 text-[9px] uppercase tracking-[0.24em] text-white/40">
+              Rhodes Island Database
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="operator-mobile-close-btn"
+            onClick={onClose}
+            aria-label="Close operator modal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
 
         {/* LEFT */}
         <OperatorSidebar

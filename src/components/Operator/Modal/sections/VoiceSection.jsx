@@ -151,13 +151,15 @@ function getCvNamesFromTable(table, variantKey, charId, langType) {
   return entry?.dict?.[langType]?.cvName;
 }
 
-function getLangLabel(vnObj, skinPrefix, langType, variantKey, charId) {
+function getLangLabel(vnObj, skinPrefix, langType, variantKey, charId, isEnglishUI) {
   const key = skinPrefix
     ? `${skinPrefix}_${langType}_voice`
     : `${langType}_voice`;
 
-  const vnVal = vnObj?.[key];
-  if (typeof vnVal === "string" && vnVal.trim() !== "") return vnVal;
+  if (!isEnglishUI) {
+    const vnVal = vnObj?.[key];
+    if (typeof vnVal === "string" && vnVal.trim() !== "") return vnVal;
+  }
 
   const enCvNames = getCvNamesFromTable(
     charwordTableEn,
@@ -180,12 +182,16 @@ function getLangLabel(vnObj, skinPrefix, langType, variantKey, charId) {
   return langType;
 }
 
-function getVoiceText(vnObj, activePrefix, voiceId, fallbackText) {
-  if (!vnObj) return fallbackText || "";
+function getVoiceText({ vnObj, activePrefix, voiceId, enText, cnText, isEnglishUI }) {
+  const safeEn = typeof enText === "string" && enText.trim() !== "" && enText.trim() !== "/" ? enText : "";
+  const safeCn = typeof cnText === "string" && cnText.trim() !== "" && cnText.trim() !== "/" ? cnText : "";
+
+  if (isEnglishUI) return safeEn || safeCn || "";
+
   const key = activePrefix ? `${activePrefix}_${voiceId}` : voiceId;
-  const t = vnObj[key];
-  if (typeof t === "string" && t.trim() !== "") return t;
-  return fallbackText || "";
+  const vnText = vnObj?.[key];
+  if (typeof vnText === "string" && vnText.trim() !== "") return vnText;
+  return safeEn || safeCn || "";
 }
 
 function getVariantWordKeys(charId) {
@@ -207,8 +213,9 @@ function getVariantWordKeys(charId) {
   return list;
 }
 
-const VoiceSection = ({ operator }) => {
+const VoiceSection = ({ operator, lang = "VN" }) => {
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
+  const isEnglishUI = String(lang || "VN").toUpperCase() === "EN";
   const vnObj = useMemo(() => (charId ? charwordVn?.[charId] : null), [charId]);
 
   const variants = useMemo(() => getVariantWordKeys(charId), [charId]);
@@ -331,9 +338,10 @@ const VoiceSection = ({ operator }) => {
   }, [selectedVariantKey, selectedLangType, activeWordKey, stopAllAudios]);
 
   const transText = useMemo(() => {
+    if (isEnglishUI) return "";
     const t = vnObj?.trans;
     return typeof t === "string" ? t.trim() : "";
-  }, [vnObj]);
+  }, [vnObj, isEnglishUI]);
 
   const defaultAvatarUrl = useMemo(() => buildCnAvatarUrl(charId), [charId]);
 
@@ -345,8 +353,8 @@ const VoiceSection = ({ operator }) => {
         </div>
       ) : null}
 
-      <div className="mb-4 flex items-center justify-between ">
-        <div className="flex items-center gap-2 overflow-x-auto">
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex max-w-full items-center gap-2 overflow-x-auto">
           {variants.map((wk) => {
             const isSelected = wk === selectedVariantKey;
             const isDefault = wk === charId;
@@ -389,7 +397,7 @@ const VoiceSection = ({ operator }) => {
         </div>
 
         {/* Right: language dropdown */}
-        <div className="flex items-center gap-2">
+        <div className="flex w-full items-center gap-2 sm:w-auto sm:justify-end">
           <span className="text-base text-gray-300">Voice:</span>
           <select
             value={selectedLangType}
@@ -397,7 +405,7 @@ const VoiceSection = ({ operator }) => {
               stopAllAudios();
               setSelectedLangType(e.target.value);
             }}
-            className="rounded-lg border border-gray-700 bg-[#1a1a1a] px-3 py-1 text-sm text-white max-w-[220px] truncate"
+            className="min-w-0 flex-1 rounded-lg border border-gray-700 bg-[#1a1a1a] px-3 py-1 text-sm text-white sm:max-w-[220px] sm:flex-none truncate"
           >
             {availableLangTypes.map((lt) => (
               <option key={lt} value={lt}>
@@ -407,6 +415,7 @@ const VoiceSection = ({ operator }) => {
                   lt,
                   selectedVariantKey,
                   charId,
+                  isEnglishUI,
                 )}
               </option>
             ))}
@@ -424,19 +433,14 @@ const VoiceSection = ({ operator }) => {
             selectedLangType,
           );
           const enText = charwordTableEn?.charWords?.[v.charWordId]?.voiceText;
-          const fallbackText =
-            typeof enText === "string" &&
-            enText.trim() !== "" &&
-            enText.trim() !== "/"
-              ? enText
-              : v.voiceText;
-
-          const text = getVoiceText(
+          const text = getVoiceText({
             vnObj,
             activePrefix,
-            v.voiceId,
-            fallbackText,
-          );
+            voiceId: v.voiceId,
+            enText,
+            cnText: v.voiceText,
+            isEnglishUI,
+          });
 
           return (
             <div

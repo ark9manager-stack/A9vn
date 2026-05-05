@@ -67,11 +67,13 @@ function flushImgQueue() {
   }
 }
 
-function enqueueImgJob(run) {
+function enqueueImgJob(run, { priority = false } = {}) {
   return new Promise((resolve, reject) => {
-    __IMG_QUEUE__.push({
+    const job = {
       run: () => Promise.resolve(run()).then(resolve, reject),
-    });
+    };
+    if (priority) __IMG_QUEUE__.unshift(job);
+    else __IMG_QUEUE__.push(job);
     flushImgQueue();
   });
 }
@@ -116,7 +118,7 @@ export function clearImageCache(url) {
 
 export function preloadImageCached(
   url,
-  { retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS, decode = true } = {},
+  { retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS, decode = true, priority = false } = {},
 ) {
   const key = normalizeImgUrl(url);
   if (!key) return Promise.reject(new Error("no-url"));
@@ -172,6 +174,7 @@ export function preloadImageCached(
           done(true, key);
         }
       }),
+    { priority },
   );
 
   return entry.promise;
