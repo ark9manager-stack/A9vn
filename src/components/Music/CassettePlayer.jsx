@@ -306,12 +306,6 @@ export default function CassettePlayer() {
                       <ChevronUp size={17} />
                     )}
                   </IconButton>
-                  <IconButton
-                    label="Hide player"
-                    onClick={() => setHidden(true)}
-                  >
-                    <EyeOff size={16} />
-                  </IconButton>
                 </ControlGroup>
               </div>
             </div>
@@ -371,9 +365,6 @@ export default function CassettePlayer() {
                   ) : (
                     <ChevronUp size={17} />
                   )}
-                </IconButton>
-                <IconButton label="Hide player" onClick={() => setHidden(true)}>
-                  <EyeOff size={16} />
                 </IconButton>
               </ControlGroup>
             </div>
