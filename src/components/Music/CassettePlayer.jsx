@@ -67,6 +67,24 @@ function ControlGroup({ children, className = "" }) {
   );
 }
 
+function SeekControl({ progress, onSeek }) {
+  return (
+    <button
+      type="button"
+      aria-label="Seek track"
+      onClick={onSeek}
+      className="h-9 w-36 border border-black/50 bg-black/65 p-1 text-left transition-colors hover:border-primary/35 sm:w-44 md:w-56"
+    >
+      <span className="block h-full bg-black/45">
+        <span
+          className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
+          style={{ width: `${progress}%` }}
+        />
+      </span>
+    </button>
+  );
+}
+
 export default function CassettePlayer() {
   const {
     queue,
@@ -374,23 +392,9 @@ export default function CassettePlayer() {
                     <ChevronUp size={17} />
                   )}
                 </IconButton>
-                <IconButton label="Hide player" onClick={() => setHidden(true)}>
-                  <EyeOff size={16} />
-                </IconButton>
+                <SeekControl progress={progress} onSeek={handleSeek} />
               </ControlGroup>
             </div>
-
-            <button
-              type="button"
-              aria-label="Seek track"
-              onClick={handleSeek}
-              className="mt-3 h-2 w-full border border-black/50 bg-black/70 text-left md:hidden"
-            >
-              <span
-                className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
-                style={{ width: `${progress}%` }}
-              />
-            </button>
 
             <div className="mt-1 flex justify-between font-mono-tech text-[0.58rem] tracking-[1.5px] text-white/40 md:hidden">
               <span>{formatTime(currentTime)}</span>
