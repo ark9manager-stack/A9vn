@@ -679,7 +679,7 @@
     "Talent1_p4": "ATK +7%<@ba.talpu>(+2%)</>; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -7%<@ba.talpu>(+2%)</>",
     "Talent1_2": "ATK +10%; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -10%",
     "Talent1_2_p4": "ATK +12%<@ba.talpu>(+2%)</>; Khi bản thân có mặt trong đội hình, thời gian tái triển khai của tất cả đồng minh -12%<@ba.talpu>(+2%)</>",
-    "Talent2": "Vô hiệu hóa <$ba.invisible>tàng hình</> của kẻ địch đang đứng trong phạm vi."
+    "Talent2": "Vô hiệu hóa <$ba.invisible>Tàng hình</> của kẻ địch đang đứng trong phạm vi."
   },
   "char_173_slchan": {
     "TitleTalent1": "Thợ săn Karlan",
@@ -1086,10 +1086,10 @@
     "Talent0": "Có thể sử dụng 3 Drone không thể chặn được địch (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent1": "Có thể sử dụng 4 Drone không thể chặn được địch (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent1_2": "Có thể sử dụng 5 Drone không thể chặn được địch (tối đa triển khai 3 cái cùng lúc). Chức năng thay đổi theo kỹ năng được chọn.",
-    "Talent2": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 12 giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
-    "Talent2_p4": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 14<@ba.talpu>(+2)</> giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
-    "Talent2_2": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 20 giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
-    "Talent2_2_p4": "Drone tiến vào trạng thái <$ba.invisible>tàng hình</> trong 22<@ba.talpu>(+2)</> giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa)."
+    "Talent2": "Drone tiến vào trạng thái <$ba.invisible>Tàng hình</> trong 12 giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
+    "Talent2_p4": "Drone tiến vào trạng thái <$ba.invisible>Tàng hình</> trong 14<@ba.talpu>(+2)</> giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
+    "Talent2_2": "Drone tiến vào trạng thái <$ba.invisible>Tàng hình</> trong 20 giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa).",
+    "Talent2_2_p4": "Drone tiến vào trạng thái <$ba.invisible>Tàng hình</> trong 22<@ba.talpu>(+2)</> giây sau khi được triển khai (không trở thành mục tiêu tấn công của kẻ địch đánh xa)."
   },
   "char_249_mlyss": {
     "TitleTalent1": "Sinh mệnh sinh ra từ nước",

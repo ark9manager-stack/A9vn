@@ -55,6 +55,10 @@
     "title": "Điểm triển khai/Deployment Point",
     "text": ""
   },
+  "ba.costlowerbound": {
+    "title": "Hạn mức nợ DP",
+    "text": "Cho phép giới hạn DP tối thiểu xuống mức âm. Khi DP hiện tại nhỏ hơn 0, tốc độ hồi DP tự nhiên giảm 50%."
+  },
   "Reinforcement": {
     "title": "Viện binh/Reinforcement",
     "text": "Là vật triệu hồi của các cán viên thuộc Tactician"
@@ -243,6 +247,62 @@
     "title": "Ma lực/Mana",
     "text": "Một dạng SP đặc biệt tồn tại xuyên suốt trận chiến."
   },
+  "Barrier": {
+    "title": "Lá chắn/Barrier",
+    "text": "Hấp thụ một lượng sát thương nhất định."
+  },
+  "ba.barrier": {
+    "title": "Lá chắn/Barrier",
+    "text": "Hấp thụ một lượng sát thương nhất định."
+  },
+  "Tenacity": {
+    "title": "Kiên cường/Tenacity",
+    "text": "Tăng chỉ số tỷ lệ thuận với lượng (HP)% đã mất, chỉ số đạt mức tối đa khi mất một ngưỡng (HP)% nhất định (Chỉ áp dụng mức cao nhất của mỗi loại)."
+  },
+  "ba.berserk": {
+    "title": "Kiên cường/Tenacity",
+    "text": "Tăng chỉ số tỷ lệ thuận với lượng (HP)% đã mất, chỉ số đạt mức tối đa khi mất một ngưỡng (HP)% nhất định (Chỉ áp dụng mức cao nhất của mỗi loại)."
+  },
+  "Enfeeble": {
+    "title": "Suy nhược/Enfeeble",
+    "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
+  },
+  "ba.weaken": {
+    "title": "Suy nhược/Enfeeble",
+    "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
+  },
+  "ba.magicfragile": {
+    "title": "Arts Fragility",
+    "text": "Mục tiêu chịu thêm sát thương phép theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+  },
+  "ba.fragile": {
+    "title": "Fragility",
+    "text": "Mục tiêu chịu thêm sát thương vật lý, sát thương phép, sát thương chuẩn theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+  },
+  "ba.elementfragile": {
+    "title": "Elemental Fragility",
+    "text": "Mục tiêu chịu thêm sát thương nguyên tố theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+  },
+  "ba.addash": {
+    "title": "Di chuyển/Move",
+    "text": "Không thể rời khỏi sân; và được triển khai đến vị trí của mục tiêu với lượng HP hiện tại."
+  },
+  "IS6": {
+    "title": "",
+    "text": "Integrated Strategies 6"
+  },
+  "ModYmgllan": {
+    "title": "",
+    "text": "Soaring Dragon F (Skill 1): -1 DP\n Soaring Dragon L (Skill 2) và Soaring Dragon A (Skill 3): -3 DP"
+  },
+  "ModYling": {
+    "title": "",
+    "text": "'Tranquility' (Skill 1) và 'Peripateticism' (Skill 2): -3 DP\n'Thunderer' (Skill 3): -5 DP"
+  },
+  "ModYDeepcolor": {
+    "title": "",
+    "text": "-2 DP"
+  },
   "NecrassTalent1E0": {
     "title": "",
     "text": "+50% HP và ATK, +20% DEF"
@@ -314,62 +374,6 @@
   "SlowerModY": {
     "title": "",
     "text": "1.2 giây"
-  },
-  "Barrier": {
-    "title": "Lá chắn/Barrier",
-    "text": "Hấp thụ một lượng sát thương nhất định."
-  },
-  "ba.barrier": {
-    "title": "Lá chắn/Barrier",
-    "text": "Hấp thụ một lượng sát thương nhất định."
-  },
-  "Tenacity": {
-    "title": "Kiên cường/Tenacity",
-    "text": "Tăng chỉ số tỷ lệ thuận với lượng (HP)% đã mất, chỉ số đạt mức tối đa khi mất một ngưỡng (HP)% nhất định (Chỉ áp dụng mức cao nhất của mỗi loại)."
-  },
-  "ba.berserk": {
-    "title": "Kiên cường/Tenacity",
-    "text": "Tăng chỉ số tỷ lệ thuận với lượng (HP)% đã mất, chỉ số đạt mức tối đa khi mất một ngưỡng (HP)% nhất định (Chỉ áp dụng mức cao nhất của mỗi loại)."
-  },
-  "Enfeeble": {
-    "title": "Suy nhược/Enfeeble",
-    "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
-  },
-  "ba.weaken": {
-    "title": "Suy nhược/Enfeeble",
-    "text": "Giảm ATK của mục tiêu theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất, không cộng dồn)."
-  },
-  "ba.magicfragile": {
-    "title": "Arts Fragility",
-    "text": "Mục tiêu chịu thêm sát thương phép theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
-  },
-  "ba.fragile": {
-    "title": "Fragility",
-    "text": "Mục tiêu chịu thêm sát thương vật lý, sát thương phép, sát thương chuẩn theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
-  },
-  "ba.elementfragile": {
-    "title": "Elemental Fragility",
-    "text": "Mục tiêu chịu thêm sát thương nguyên tố theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
-  },
-  "ba.addash": {
-    "title": "Di chuyển/Move",
-    "text": "Không thể rời khỏi sân; và được triển khai đến vị trí của mục tiêu với lượng HP hiện tại."
-  },
-  "ModYDeepcolor": {
-    "title": "",
-    "text": "-2 DP"
-  },
-  "IS6": {
-    "title": "",
-    "text": "Integrated Strategies 6"
-  },
-  "ModYmgllan": {
-    "title": "",
-    "text": "Soaring Dragon F (Skill 1): -1 DP\n Soaring Dragon L (Skill 2) và Soaring Dragon A (Skill 3): -3 DP"
-  },
-  "ModYling": {
-    "title": "",
-    "text": "'Tranquility' (Skill 1) và 'Peripateticism' (Skill 2): -3 DP\n'Thunderer' (Skill 3): -5 DP"
   },
   "ModAZumama": {
     "title": "",
@@ -463,6 +467,18 @@
     "title": "",
     "text": "Giảm còn 0.528 giây"
   },
+  "closurS3DP": {
+    "title": "",
+    "text": "1.66 giây/1 DP"
+  },
+  "closurS3AI": {
+    "title": "",
+    "text": "-0.5 giây"
+  },
+  "veenS2": {
+    "title": "",
+    "text": "-0.5 giây"
+  },
   "bpipeS3": {
     "title": "",
     "text": "+0.7 giây"
@@ -470,6 +486,10 @@
   "surtrS3": {
     "title": "",
     "text": "Chu kì 0.2 giây"
+  },
+  "kalts2S3": {
+    "title": "",
+    "text": "-1.55 giây"
   },
   "DeadeyeModX": {
     "title": "",
