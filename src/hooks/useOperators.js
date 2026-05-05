@@ -1,14 +1,17 @@
 // src/hooks/useOperators.js
 import { useEffect, useState } from "react";
 import operators from "../data/operators/character_table.json";
+import charPatchTable from "../data/operators/char_patch_table.json";
 import nameVN from "../data/operators/name_vn.json";
 
+const characterPatchChars = charPatchTable?.patchChars || {};
+const operatorsWithPatch = { ...operators, ...characterPatchChars };
 export function useOperators() {
   const [list, setList] = useState([]);
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
-    const parsed = Object.entries(operators)
+    const parsed = Object.entries(operatorsWithPatch)
       .filter(([id]) => id !== "char_512_aprot")
       .filter(([, op]) => op.profession !== "TOKEN")
       .map(([id, op]) => ({

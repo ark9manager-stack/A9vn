@@ -1,6 +1,7 @@
 import React from "react";
 
 import characterTable from "../../../../data/operators/character_table.json";
+import characterPatchTable from "../../../../data/operators/char_patch_table.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import traitEN from "../../../../data/operators/trait_en.json";
@@ -32,6 +33,9 @@ import {
   isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
+const characterPatchChars = characterPatchTable?.patchChars || {};
+const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
+const characterTableENWithPatch = { ...characterPatchChars, ...characterTableEN };
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
@@ -95,8 +99,8 @@ function getCharEntry(rawCharId) {
   if (!id.startsWith("char_")) candidates.push(`char_${id}`);
 
   for (const k of candidates) {
-    if (k?.startsWith("char_") && characterTable?.[k]) {
-      return { charKey: k, charData: characterTable[k] };
+    if (k?.startsWith("char_") && characterTableWithPatch?.[k]) {
+      return { charKey: k, charData: characterTableWithPatch[k] };
     }
   }
 
@@ -1005,7 +1009,7 @@ export default function SkillsSection(props) {
 
   const charDataEN = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
-    return characterTableEN?.[charKey] || null;
+    return characterTableENWithPatch?.[charKey] || null;
   }, [charKey]);
 
   const resolvedTags = React.useMemo(() => {

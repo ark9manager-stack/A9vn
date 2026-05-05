@@ -5,6 +5,7 @@ import {
   getOperatorCharId,
 } from "../../../utils/operatorAvatar";
 import characterTable from "../../../data/operators/character_table.json";
+import charPatchTable from "../../../data/operators/char_patch_table.json";
 
 import {
   professionIconUrl,
@@ -13,6 +14,8 @@ import {
   subProfLabel,
 } from "../../../utils/operatorUtils";
 
+const characterPatchChars = charPatchTable?.patchChars || {};
+const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
 const tabs = [
   { id: "skins", label: "Trang phục" },
   { id: "profile", label: "Hồ sơ" },
@@ -180,7 +183,7 @@ const OperatorSidebar = ({
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
 
   const charEntry = useMemo(() => {
-    return characterTable?.[charId] || null;
+    return characterTableWithPatch?.[charId] || null;
   }, [charId]);
 
   const displayNumber = useMemo(() => {

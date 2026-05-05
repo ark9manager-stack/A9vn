@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import StatBar from "../../../UI/StatBar";
 
 import characterTable from "../../../../data/operators/character_table.json";
+import characterPatchTable from "../../../../data/operators/char_patch_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import rangeTable from "../../../../data/range_table.json";
 import potVN from "../../../../data/operators/pot_vn.json";
@@ -23,6 +24,8 @@ import {
   imgOnErrorHideDisplay,
 } from "../../../../utils/IconArtUrl";
 
+const characterPatchChars = characterPatchTable?.patchChars || {};
+const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
 const GOLD_ITEM_ID = "4001";
 
 const getGoldCostForPromotion = (rarity, fromElite, toElite) => {
@@ -369,7 +372,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const charData = useMemo(() => {
     if (!resolvedCharId) return null;
-    return characterTable?.[resolvedCharId] || null;
+    return characterTableWithPatch?.[resolvedCharId] || null;
   }, [resolvedCharId]);
 
   const phases = useMemo(() => {
@@ -515,10 +518,10 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     const pushUniqueIfValid = (tokenId, meta = {}) => {
       const tid = String(tokenId || "");
       if (!tid.startsWith("token_")) return;
-      if (!characterTable?.[tid]) return;
+      if (!characterTableWithPatch?.[tid]) return;
       if (out.some((x) => x.tokenId === tid)) return;
 
-      const tokenChar = characterTable[tid];
+      const tokenChar = characterTableWithPatch[tid];
       const tokenPhases = Array.isArray(tokenChar?.phases)
         ? tokenChar.phases
         : [];
@@ -558,7 +561,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
   const summonCharData = useMemo(() => {
     if (!selectedSummon?.tokenId) return null;
-    return characterTable?.[selectedSummon.tokenId] || null;
+    return characterTableWithPatch?.[selectedSummon.tokenId] || null;
   }, [selectedSummon]);
 
   const summonPhases = useMemo(() => {

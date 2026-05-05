@@ -4,6 +4,7 @@ import profileVN from "../../../../data/profile/profile_vn.json";
 import handbookInfoTable from "../../../../data/profile/handbook_info_table.json";
 import handbookInfoTableEn from "../../../../data/profile/handbook_info_table_en.json";
 import characterTable from "../../../../data/operators/character_table.json";
+import characterPatchTable from "../../../../data/operators/char_patch_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import characterTableEn from "../../../../data/operators/character_table_en.json";
 import itemTableEn from "../../../../data/operators/item_table_en.json";
@@ -24,6 +25,9 @@ import {
   makeStatefulImgFallbackHandler,
 } from "../../../../utils/IconArtUrl";
 
+const characterPatchChars = characterPatchTable?.patchChars || {};
+const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
+const characterTableEnWithPatch = { ...characterPatchChars, ...characterTableEn };
 const UI_SCALE = {
   overlayDx: -4,
   overlayDy: -4,
@@ -415,10 +419,10 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
     const trans = isEnglishUI ? "" : pickFirstNonEmpty(vn?.trans);
 
     const charDataEn = resolvedCharId
-      ? characterTableEn?.[resolvedCharId]
+      ? characterTableEnWithPatch?.[resolvedCharId]
       : null;
     const charDataBase = resolvedCharId
-      ? characterTable?.[resolvedCharId]
+      ? characterTableWithPatch?.[resolvedCharId]
       : null;
     const charData = charDataEn || charDataBase;
     const recruitBg = buildRecruitBgUrl(charData?.rarity);
