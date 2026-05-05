@@ -13,7 +13,6 @@ import {
   SkipForward,
   Volume2,
   VolumeX,
-  X,
 } from "lucide-react";
 
 import { useLyrics } from "../../hooks/useLyrics";
@@ -67,24 +66,6 @@ function ControlGroup({ children, className = "" }) {
   );
 }
 
-function SeekControl({ progress, onSeek }) {
-  return (
-    <button
-      type="button"
-      aria-label="Seek track"
-      onClick={onSeek}
-      className="h-9 w-36 border border-black/50 bg-black/65 p-1 text-left transition-colors hover:border-primary/35 sm:w-44 md:w-56"
-    >
-      <span className="block h-full bg-black/45">
-        <span
-          className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
-          style={{ width: `${progress}%` }}
-        />
-      </span>
-    </button>
-  );
-}
-
 export default function CassettePlayer() {
   const {
     queue,
@@ -110,7 +91,6 @@ export default function CassettePlayer() {
     toggleShuffle,
     togglePlaybackScope,
     cyclePlaybackMode,
-    closePlayer,
     seekTo,
   } = useMusicPlayer();
 
@@ -195,11 +175,11 @@ export default function CassettePlayer() {
         }`}
       >
         <IconButton
-          label="Close player"
-          onClick={closePlayer}
-          className="absolute right-2 top-2 z-20 h-8 w-8 border-white/15 bg-black/45 text-white/65 hover:border-red-300/45 hover:bg-red-500/10 hover:text-red-100"
+          label="Hide player"
+          onClick={() => setHidden(true)}
+          className="absolute right-2 top-2 z-20 h-8 w-8 border-white/15 bg-black/45 text-white/65 hover:border-primary/45 hover:bg-primary/10 hover:text-white"
         >
-          <X size={15} />
+          <EyeOff size={15} />
         </IconButton>
 
         <div className="relative">
@@ -392,9 +372,23 @@ export default function CassettePlayer() {
                     <ChevronUp size={17} />
                   )}
                 </IconButton>
-                <SeekControl progress={progress} onSeek={handleSeek} />
+                <IconButton label="Hide player" onClick={() => setHidden(true)}>
+                  <EyeOff size={16} />
+                </IconButton>
               </ControlGroup>
             </div>
+
+            <button
+              type="button"
+              aria-label="Seek track"
+              onClick={handleSeek}
+              className="mt-3 h-2 w-full border border-black/50 bg-black/70 text-left md:hidden"
+            >
+              <span
+                className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
+                style={{ width: `${progress}%` }}
+              />
+            </button>
 
             <div className="mt-1 flex justify-between font-mono-tech text-[0.58rem] tracking-[1.5px] text-white/40 md:hidden">
               <span>{formatTime(currentTime)}</span>
