@@ -73,6 +73,7 @@ function normalizeTrack(track, index, album) {
 
 export function MusicPlayerProvider({ children }) {
   const audioRef = useRef(null);
+  const playRequestIdRef = useRef(0);
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [currentAlbum, setCurrentAlbum] = useState(null);
@@ -375,45 +376,56 @@ export function MusicPlayerProvider({ children }) {
         setIsPlaying(false);
       }
     };
-    const onPlay = () => setIsPlaying(true);
-    const onPause = () => setIsPlaying(false);
+    const onError = () => setIsPlaying(false);
 
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
     audio.addEventListener("ended", onEnded);
-    audio.addEventListener("play", onPlay);
-    audio.addEventListener("pause", onPause);
+    audio.addEventListener("error", onError);
 
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
       audio.removeEventListener("loadedmetadata", onLoadedMetadata);
       audio.removeEventListener("ended", onEnded);
-      audio.removeEventListener("play", onPlay);
-      audio.removeEventListener("pause", onPause);
+      audio.removeEventListener("error", onError);
     };
   }, [nextTrack, queue.length]);
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio || !currentTrack?.audio) return;
+    if (!audio) return;
 
-    if (audio.src !== currentTrack.audio) {
-      audio.src = currentTrack.audio;
+    if (!currentTrackAudio) {
+      playRequestIdRef.current += 1;
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+      return;
+    }
+
+    if (audio.getAttribute("src") !== currentTrackAudio) {
+      playRequestIdRef.current += 1;
+      audio.src = currentTrackAudio;
       audio.load();
     }
-    audio.muted = isMuted || volume === 0;
-    audio.volume = isMuted ? 0 : volume / 100;
 
     if (!isPlaying) {
+      playRequestIdRef.current += 1;
       audio.pause();
       return;
     }
 
+    const requestId = playRequestIdRef.current + 1;
+    playRequestIdRef.current = requestId;
     const playPromise = audio.play();
     if (playPromise?.catch) {
-      playPromise.catch(() => setIsPlaying(false));
+      playPromise.catch(() => {
+        if (playRequestIdRef.current === requestId) {
+          setIsPlaying(false);
+        }
+      });
     }
-  }, [currentTrack?.audio, isMuted, isPlaying, volume]);
+  }, [currentTrackAudio, isPlaying]);
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
