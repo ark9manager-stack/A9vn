@@ -24,10 +24,10 @@ const __IMG_QUEUE__ = [];
 let __IMG_ACTIVE__ = 0;
 let __IMG_JOB_SEQ__ = 0;
 
-const IMG_PRELOAD_CONCURRENCY = 6;
-const IMG_PRELOAD_QUEUE_MAX = 48;
-const IMG_PRELOAD_TIMEOUT_MS = 15000;
-const IMG_PRIORITY_PRELOAD_TIMEOUT_MS = 30000;
+const IMG_PRELOAD_CONCURRENCY = 3;
+const IMG_PRELOAD_QUEUE_MAX = 0;
+const IMG_PRELOAD_TIMEOUT_MS = 0;
+const IMG_PRIORITY_PRELOAD_TIMEOUT_MS = 0;
 const IMG_ERROR_RETRY_COOLDOWN_MS = 15000;
 
 function normalizeImgUrl(url) {
@@ -82,7 +82,10 @@ function removeImgJob(job, { resolveValue, rejectReason } = {}) {
 }
 
 function trimImgQueue() {
-  while (__IMG_QUEUE__.length > IMG_PRELOAD_QUEUE_MAX) {
+  const max = Number(IMG_PRELOAD_QUEUE_MAX);
+  if (!Number.isFinite(max) || max <= 0) return;
+
+  while (__IMG_QUEUE__.length > max) {
     let idx = -1;
     for (let i = __IMG_QUEUE__.length - 1; i >= 0; i -= 1) {
       if (!__IMG_QUEUE__[i]?.priority) {
@@ -103,7 +106,7 @@ function trimImgQueue() {
       entry.promise = null;
     }
 
-    job.reject?.(new Error(`image-preload-dropped: ${job.url || "unknown"}`));
+    job.resolve?.(job.url || "");
   }
 }
 
@@ -164,7 +167,7 @@ function promoteImgJob(job) {
   return true;
 }
 
-function loadImageElement(key, { decode = true, priority = false, timeoutMs } = {}) {
+function loadImageElement(key, { decode = true, priority = false, timeoutMs = 0 } = {}) {
   return new Promise((resolve, reject) => {
     const img = new Image();
     let settled = false;
@@ -175,7 +178,7 @@ function loadImageElement(key, { decode = true, priority = false, timeoutMs } = 
       if (priority && "fetchPriority" in img) img.fetchPriority = "high";
       if (priority && "loading" in img) img.loading = "eager";
     } catch {
-
+      // no-op
     }
 
     const done = (ok, payload) => {
@@ -184,11 +187,6 @@ function loadImageElement(key, { decode = true, priority = false, timeoutMs } = 
       if (timer) globalThis.clearTimeout(timer);
       img.onload = null;
       img.onerror = null;
-      if (!ok) {
-        try {
-          img.src = "";
-        } catch {}
-      }
       ok ? resolve(key) : reject(payload);
     };
 
@@ -210,6 +208,63 @@ function loadImageElement(key, { decode = true, priority = false, timeoutMs } = 
       done(true, key);
     }
   });
+}
+
+function shouldRetryCachedError(entry, retryAfterMs) {
+  return !(
+    entry?.status === "error" &&
+    Number.isFinite(retryAfterMs) &&
+    retryAfterMs > 0 &&
+    Date.now() - (entry.errorAt || 0) < retryAfterMs
+  );
+}
+
+function scheduleBackgroundPreload(
+  key,
+  entry,
+  { decode = true, priority = false, timeoutMs = 0 } = {},
+) {
+  if (!entry) return null;
+
+  if (entry.status === "loaded") {
+    return Promise.resolve(key);
+  }
+
+  if ((entry.status === "queued" || entry.status === "loading") && entry.promise) {
+    if (entry.status === "queued" && entry.queueJob && priority) {
+      promoteImgJob(entry.queueJob);
+    }
+    return entry.promise;
+  }
+
+  entry.status = "queued";
+  entry.error = null;
+  entry.errorAt = 0;
+
+  const { promise, job } = enqueueImgJob(
+    key,
+    () =>
+      loadImageElement(key, {
+        decode,
+        priority,
+        timeoutMs,
+      })
+        .then(() => {
+          markImageLoaded(key);
+          return key;
+        })
+        .catch((error) => {
+          markImageError(key, error);
+          throw error;
+        }),
+    { priority },
+  );
+
+  promise.catch(() => {});
+  entry.promise = promise;
+  entry.queueJob = job;
+
+  return promise;
 }
 
 export function getImageCacheStatus(url) {
@@ -275,23 +330,8 @@ export function clearImageCache(url) {
   __IMG_STATUS__.clear();
 }
 
-function runImmediateImgJob(key, entry, options) {
-  entry.status = "loading";
-  entry.error = null;
-  entry.errorAt = 0;
-  entry.queueJob = null;
-
-  entry.promise = loadImageElement(key, options)
-    .then(() => {
-      markImageLoaded(key);
-      return key;
-    })
-    .catch((error) => {
-      markImageError(key, error);
-      throw error;
-    });
-
-  return entry.promise;
+export function getImmediateImageSrc(url) {
+  return normalizeImgUrl(url);
 }
 
 export function preloadImageCached(
@@ -301,6 +341,8 @@ export function preloadImageCached(
     decode = true,
     priority = false,
     timeoutMs,
+    waitForLoad = false,
+    background = true,
   } = {},
 ) {
   const key = normalizeImgUrl(url);
@@ -313,74 +355,32 @@ export function preloadImageCached(
     return Promise.resolve(key);
   }
 
-  if (
-    entry.status === "error" &&
-    Number.isFinite(retryAfterMs) &&
-    retryAfterMs > 0 &&
-    Date.now() - (entry.errorAt || 0) < retryAfterMs
-  ) {
+  if (!shouldRetryCachedError(entry, retryAfterMs)) {
+    if (!waitForLoad) return Promise.resolve(key);
     return Promise.reject(entry.error || new Error("cached-image-error"));
-  }
-
-  if ((entry.status === "queued" || entry.status === "loading") && entry.promise) {
-    if (entry.status === "queued" && entry.queueJob) {
-      if (priority) {
-        removeImgJob(entry.queueJob, {
-          rejectReason: new Error(`image-preload-superseded: ${key}`),
-        });
-      } else {
-        promoteImgJob(entry.queueJob);
-      }
-
-      if (priority) {
-        return runImmediateImgJob(key, entry, {
-          decode,
-          priority: true,
-          timeoutMs: timeoutMs ?? IMG_PRIORITY_PRELOAD_TIMEOUT_MS,
-        });
-      }
-    }
-    return entry.promise;
   }
 
   const effectiveTimeout =
     timeoutMs ?? (priority ? IMG_PRIORITY_PRELOAD_TIMEOUT_MS : IMG_PRELOAD_TIMEOUT_MS);
 
-  if (priority) {
-    return runImmediateImgJob(key, entry, {
-      decode,
-      priority: true,
-      timeoutMs: effectiveTimeout,
-    });
-  }
-
-  entry.status = "queued";
-  entry.error = null;
-  entry.errorAt = 0;
-
-  const { promise, job } = enqueueImgJob(
-    key,
-    () =>
-      loadImageElement(key, {
+  if (!waitForLoad) {
+    if (background && !priority) {
+      scheduleBackgroundPreload(key, entry, {
         decode,
         priority: false,
         timeoutMs: effectiveTimeout,
-      })
-        .then(() => {
-          markImageLoaded(key);
-          return key;
-        })
-        .catch((error) => {
-          markImageError(key, error);
-          throw error;
-        }),
-    { priority: false },
-  );
+      });
+    }
+    return Promise.resolve(key);
+  }
 
-  entry.promise = promise;
-  entry.queueJob = job;
+  const loadPromise = scheduleBackgroundPreload(key, entry, {
+    decode,
+    priority,
+    timeoutMs: effectiveTimeout,
+  });
 
-  return promise;
+  return loadPromise || Promise.resolve(key);
 }
 
 export function warmPreloadImageUrls(
@@ -394,7 +394,13 @@ export function warmPreloadImageUrls(
   ];
   const picked = list.slice(0, Math.max(0, Number(limit) || 0));
   return Promise.allSettled(
-    picked.map((url) => preloadImageCached(url, { retryAfterMs })),
+    picked.map((url) =>
+      preloadImageCached(url, {
+        retryAfterMs,
+        waitForLoad: false,
+        background: true,
+      }),
+    ),
   );
 }
 
