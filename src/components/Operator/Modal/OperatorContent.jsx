@@ -1,12 +1,85 @@
-import React, { useCallback, Suspense, lazy, useEffect, useState } from "react";
+import React, {
+  useCallback,
+  Suspense,
+  lazy,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import LoadingOp from "../../UI/LoadingOp";
-// Lazy load các sections
-const SkinsSection = lazy(() => import("./sections/SkinsSection"));
-const ProfileSection = lazy(() => import("./sections/ProfileSection"));
-const SkillsSection = lazy(() => import("./sections/SkillsSection"));
-const VoiceSection = lazy(() => import("./sections/VoiceSection"));
-const StatsSection = lazy(() => import("./sections/StatsSection"));
-const ModuleSection = lazy(() => import("./sections/ModuleSection"));
+
+const SECTION_IMPORTERS = {
+  skins: () => import("./sections/SkinsSection"),
+  profile: () => import("./sections/ProfileSection"),
+  stats: () => import("./sections/StatsSection"),
+  skills: () => import("./sections/SkillsSection"),
+  modules: () => import("./sections/ModuleSection"),
+  voice: () => import("./sections/VoiceSection"),
+};
+
+const SECTION_IDS = ["skins", "profile", "stats", "skills", "modules", "voice"];
+const SECTION_MODULE_PROMISES = new Map();
+
+function preloadSectionModule(id) {
+  const importer = SECTION_IMPORTERS[id];
+  if (!importer) return Promise.resolve(null);
+
+  if (!SECTION_MODULE_PROMISES.has(id)) {
+    SECTION_MODULE_PROMISES.set(
+      id,
+      importer().catch((error) => {
+        SECTION_MODULE_PROMISES.delete(id);
+        throw error;
+      }),
+    );
+  }
+
+  return SECTION_MODULE_PROMISES.get(id);
+}
+
+const SkinsSection = lazy(() => preloadSectionModule("skins"));
+const ProfileSection = lazy(() => preloadSectionModule("profile"));
+const SkillsSection = lazy(() => preloadSectionModule("skills"));
+const VoiceSection = lazy(() => preloadSectionModule("voice"));
+const StatsSection = lazy(() => preloadSectionModule("stats"));
+const ModuleSection = lazy(() => preloadSectionModule("modules"));
+
+function resolveOperatorKey(operator, charId) {
+  return String(
+    charId ||
+      operator?.id ||
+      operator?.charId ||
+      operator?.char_id ||
+      operator?.appellation ||
+      operator?.name ||
+      "",
+  );
+}
+
+function preloadAllOperatorSections() {
+  const load = () => {
+    for (const id of SECTION_IDS) {
+      preloadSectionModule(id).catch((error) => {
+        console.warn(`[OperatorContent] Failed to preload ${id} section`, error);
+      });
+    }
+  };
+
+  if (typeof window === "undefined") {
+    load();
+    return undefined;
+  }
+
+  const requestIdle = window.requestIdleCallback;
+  if (typeof requestIdle === "function") {
+    const handle = requestIdle(load, { timeout: 300 });
+    return () => window.cancelIdleCallback?.(handle);
+  }
+
+  const timer = window.setTimeout(load, 0);
+  return () => window.clearTimeout(timer);
+}
 
 // Component fallback cho loading
 const LoadingFallback = () => (
@@ -16,22 +89,34 @@ const LoadingFallback = () => (
 );
 
 const OperatorContent = ({ activeTab, operator, charId, lang }) => {
-  const tabIds = ["skins", "profile", "stats", "skills", "modules", "voice"];
-  const [mountedTabs, setMountedTabs] = useState(() => new Set([activeTab || "skins"]));
+  const activeTabId = SECTION_IDS.includes(activeTab) ? activeTab : "skins";
+  const operatorKey = useMemo(
+    () => resolveOperatorKey(operator, charId),
+    [operator, charId],
+  );
+  const [mountedTabs, setMountedTabs] = useState(() => new Set([activeTabId]));
+  const previousOperatorKeyRef = useRef(operatorKey);
 
   useEffect(() => {
-    setMountedTabs(new Set([activeTab || "skins"]));
-  }, [charId]);
+    if (previousOperatorKeyRef.current === operatorKey) return;
+    previousOperatorKeyRef.current = operatorKey;
+    setMountedTabs(new Set([activeTabId]));
+  }, [operatorKey, activeTabId]);
 
   useEffect(() => {
-    if (!activeTab) return;
+    if (!operatorKey) return undefined;
+    return preloadAllOperatorSections();
+  }, [operatorKey]);
+
+  useEffect(() => {
+    if (!activeTabId) return;
     setMountedTabs((prev) => {
-      if (prev.has(activeTab)) return prev;
+      if (prev.has(activeTabId)) return prev;
       const next = new Set(prev);
-      next.add(activeTab);
+      next.add(activeTabId);
       return next;
     });
-  }, [activeTab]);
+  }, [activeTabId]);
 
   const renderSection = useCallback(
     (id) => {
@@ -44,7 +129,7 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
           return (
             <SkillsSection
               {...sectionProps}
-              isTabActive={activeTab === "skills"}
+              isTabActive={activeTabId === "skills"}
             />
           );
         }
@@ -52,7 +137,7 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
           return (
             <ModuleSection
               {...sectionProps}
-              isTabActive={activeTab === "modules"}
+              isTabActive={activeTabId === "modules"}
             />
           );
         }
@@ -64,13 +149,13 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
         <Suspense fallback={<LoadingFallback />}>{section}</Suspense>
       ) : null;
     },
-    [activeTab, operator, charId, lang],
+    [activeTabId, operator, charId, lang],
   );
 
   return (
     <div className="operator-content-shell ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto p-0 md:p-5">
-      {tabIds.map((id) => {
-        const isActive = activeTab === id;
+      {SECTION_IDS.map((id) => {
+        const isActive = activeTabId === id;
         if (!mountedTabs.has(id)) return null;
         return (
           <div key={id} className={isActive ? "block h-full" : "hidden h-full"}>
