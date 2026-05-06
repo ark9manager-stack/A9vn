@@ -5,6 +5,7 @@ import handbookInfoTable from "../../../../data/profile/handbook_info_table.json
 import handbookInfoTableEn from "../../../../data/profile/handbook_info_table_en.json";
 import characterTable from "../../../../data/operators/character_table.json";
 import characterPatchTable from "../../../../data/operators/char_patch_table.json";
+import characterPatchTableEn from "../../../../data/operators/char_patch_table_en.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import characterTableEn from "../../../../data/operators/character_table_en.json";
 import itemTableEn from "../../../../data/operators/item_table_en.json";
@@ -14,6 +15,10 @@ import {
   getOperatorCharId,
   normalizeCharId,
 } from "../../../../utils/operatorAvatar";
+import {
+  getPatchMainCharId,
+  storyPatchListMatchesChar,
+} from "../../../../utils/operatorPatchResolver";
 
 import StatHover from "../../../StatHover";
 
@@ -26,8 +31,13 @@ import {
 } from "../../../../utils/IconArtUrl";
 
 const characterPatchChars = characterPatchTable?.patchChars || {};
+const characterPatchCharsEn = characterPatchTableEn?.patchChars || {};
 const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
-const characterTableEnWithPatch = { ...characterPatchChars, ...characterTableEn };
+const characterTableEnWithPatch = {
+  ...characterTableEn,
+  ...characterPatchChars,
+  ...characterPatchCharsEn,
+};
 const UI_SCALE = {
   overlayDx: -4,
   overlayDy: -4,
@@ -61,24 +71,55 @@ const HANDBOOK_TITLE_MAP = {
   physical_exam: { en: "Physical Exam", cn: "综合体检测试" },
   profile: { en: "Profile", cn: "客观履历" },
   clinical_analysis: { en: "Clinical Analysis", cn: "临床诊断分析" },
-  file_1: { en: "Archive File 1", cn: "档案资料一" },
+  file_1: { en: [ "Archive File 1", "Class Conversion Record 1", "Class Conversion Record 2", ], cn: ["档案资料一", "升变档案一", "升变档案二"], },
   file_2: { en: "Archive File 2", cn: "档案资料二" },
   file_3: { en: "Archive File 3", cn: "档案资料三" },
   file_4: { en: "Archive File 4", cn: "档案资料四" },
   promotion_record: { en: "Promotion Record", cn: "晋升记录" },
 };
 
-function getHandbookStoryTextByTitle(handbookEntry, storyTitle) {
+function getHandbookStoryTextByTitle(handbookEntry, storyTitle, charId = "") {
   const list = handbookEntry?.storyTextAudio;
   if (!Array.isArray(list) || !isNonEmptyString(storyTitle)) return "";
 
-  const block = list.find((x) => x?.storyTitle === storyTitle);
-  const stories = block?.stories;
-  if (!Array.isArray(stories)) return "";
+  const texts = [];
+  for (const block of list) {
+    if (block?.storyTitle !== storyTitle) continue;
+    const stories = block?.stories;
+    if (!Array.isArray(stories)) continue;
 
-  const texts = stories.map((s) => s?.storyText).filter(isNonEmptyString);
+    for (const story of stories) {
+      if (!storyPatchListMatchesChar(story, charId)) continue;
+      if (isNonEmptyString(story?.storyText)) texts.push(story.storyText);
+    }
+
+    if (texts.length > 0) break;
+  }
 
   return texts.join("\n\n");
+}
+
+function getHandbookEntry(table, charId) {
+  if (!isNonEmptyString(charId)) return null;
+  const dict = table?.handbookDict || {};
+  const direct = dict?.[charId];
+  if (direct) return direct;
+
+  const mainCharId = getPatchMainCharId(charId);
+  if (mainCharId && mainCharId !== charId) return dict?.[mainCharId] || null;
+  return null;
+}
+
+function getHandbookStage(table, charId) {
+  if (!isNonEmptyString(charId)) return null;
+  const direct = table?.handbookStageData?.[charId];
+  if (direct) return direct;
+
+  const mainCharId = getPatchMainCharId(charId);
+  if (mainCharId && mainCharId !== charId) {
+    return table?.handbookStageData?.[mainCharId] || null;
+  }
+  return null;
 }
 
 function buildParadoxTextFromStage(stage) {
@@ -93,8 +134,8 @@ function getHandbookText({ charId, key }) {
 
   // paradox: lấy từ handbookStageData, zoneId=storyMission
   if (key === "paradox") {
-    const enStage = handbookInfoTableEn?.handbookStageData?.[charId];
-    const cnStage = handbookInfoTable?.handbookStageData?.[charId];
+    const enStage = getHandbookStage(handbookInfoTableEn, charId);
+    const cnStage = getHandbookStage(handbookInfoTable, charId);
     return pickFirstNonEmpty(
       buildParadoxTextFromStage(enStage),
       buildParadoxTextFromStage(cnStage),
@@ -104,12 +145,19 @@ function getHandbookText({ charId, key }) {
   const map = HANDBOOK_TITLE_MAP[key];
   if (!map) return "";
 
-  const enEntry = handbookInfoTableEn?.handbookDict?.[charId];
-  const cnEntry = handbookInfoTable?.handbookDict?.[charId];
+  const enEntry = getHandbookEntry(handbookInfoTableEn, charId);
+  const cnEntry = getHandbookEntry(handbookInfoTable, charId);
+
+  const enTitles = Array.isArray(map.en) ? map.en : [map.en];
+  const cnTitles = Array.isArray(map.cn) ? map.cn : [map.cn];
 
   return pickFirstNonEmpty(
-    getHandbookStoryTextByTitle(enEntry, map.en),
-    getHandbookStoryTextByTitle(cnEntry, map.cn),
+    ...enTitles.map((title) =>
+      getHandbookStoryTextByTitle(enEntry, title, charId),
+    ),
+    ...cnTitles.map((title) =>
+      getHandbookStoryTextByTitle(cnEntry, title, charId),
+    ),
   );
 }
 

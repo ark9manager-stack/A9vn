@@ -2,6 +2,7 @@ import React from "react";
 
 import characterTable from "../../../../data/operators/character_table.json";
 import characterPatchTable from "../../../../data/operators/char_patch_table.json";
+import characterPatchTableEN from "../../../../data/operators/char_patch_table_en.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import traitEN from "../../../../data/operators/trait_en.json";
@@ -34,8 +35,13 @@ import {
 } from "../../../../utils/IconArtUrl";
 
 const characterPatchChars = characterPatchTable?.patchChars || {};
+const characterPatchCharsEN = characterPatchTableEN?.patchChars || {};
 const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
-const characterTableENWithPatch = { ...characterPatchChars, ...characterTableEN };
+const characterTableENWithPatch = {
+  ...characterTableEN,
+  ...characterPatchChars,
+  ...characterPatchCharsEN,
+};
 function isNonEmptyString(v) {
   return typeof v === "string" && v.trim().length > 0;
 }
@@ -1093,7 +1099,7 @@ export default function SkillsSection(props) {
     }
 
     return { variants, showElite: true };
-  }, [charData, charDataEN, isEnglishUI, operator, traitMap]);
+  }, [charData, selectedSkillRef, safeSkillLevelIdx]);
 
   const [traitVariantIdx, setTraitVariantIdx] = React.useState(0);
 
@@ -1699,7 +1705,7 @@ export default function SkillsSection(props) {
       time,
       costs,
     };
-  }, [charData, charDataEN, isEnglishUI, operator, traitMap]);
+  }, [charData, selectedSkillRef, safeSkillLevelIdx]);
 
   //Kỹ năng hậu cần
   const buildingCharEntry = React.useMemo(() => {

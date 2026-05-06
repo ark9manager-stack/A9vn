@@ -3,6 +3,10 @@ import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
 import LoadingOp from "../../../UI/LoadingOp";
 import bgInform from "../../../../assets/bg_inform.webp";
+import {
+  isPatchFormId,
+  skinIdBelongsToChar,
+} from "../../../../utils/operatorPatchResolver";
 
 import {
   ICON_MODEL_URL,
@@ -75,7 +79,9 @@ export default function SkinsSection({ operator, className = "" }) {
     const dict = skinsDict || {};
     const all = Object.values(dict);
 
-    const matched = all.filter((s) => s?.charId === charId);
+    const matched = all.filter(
+      (s) => s?.charId === charId || skinIdBelongsToChar(s?.skinId, charId),
+    );
 
     const extra = matched.filter((s) => {
       const sid = s?.skinId;
@@ -115,19 +121,23 @@ export default function SkinsSection({ operator, className = "" }) {
 
     const out = [];
 
-    out.push({
-      key: "E0",
-      kind: "elite",
-      label: "Elite 0",
-      url: buildEliteUrl(charId, "E0"),
-      fallbackUrl: null,
-      skinName: eliteMeta?.e0?.skinName ?? null,
-      drawerList: eliteMeta?.e0?.drawerList ?? [],
-      designerList: eliteMeta?.e0?.designerList ?? null,
-      hasSp: false,
-      skinId: null,
-      order: 0,
-    });
+    const shouldShowE0 = !isPatchFormId(charId) || !!eliteMeta?.e0;
+
+    if (shouldShowE0) {
+      out.push({
+        key: "E0",
+        kind: "elite",
+        label: "Elite 0",
+        url: buildEliteUrl(charId, "E0"),
+        fallbackUrl: null,
+        skinName: eliteMeta?.e0?.skinName ?? null,
+        drawerList: eliteMeta?.e0?.drawerList ?? [],
+        designerList: eliteMeta?.e0?.designerList ?? null,
+        hasSp: false,
+        skinId: null,
+        order: 0,
+      });
+    }
 
     if (eliteMeta?.hasE1) {
       out.push({

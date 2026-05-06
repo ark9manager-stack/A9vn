@@ -14,6 +14,7 @@ import {
   CN_AVATAR_BASE,
   getOperatorCharId,
 } from "../../../../utils/operatorAvatar";
+import { getPatchMainCharId } from "../../../../utils/operatorPatchResolver";
 
 const VOICE_ASSET_BASE =
   "https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/voice/assets/dyn/audio/sound_beta_2";
@@ -64,8 +65,9 @@ function translateVoiceTitle(voiceTitle) {
   return VOICE_TITLE_VI[voiceTitle] || voiceTitle;
 }
 
-function getPrefixFromWordKey(charId, wordKey) {
-  if (!wordKey || !charId || wordKey === charId) return "";
+function getPrefixFromWordKey(charId, wordKey, forceExactCharPrefix = false) {
+  if (!wordKey || !charId) return "";
+  if (wordKey === charId) return forceExactCharPrefix ? charId : "";
   if (wordKey.startsWith(`${charId}_`))
     return wordKey.slice(`${charId}_`.length);
   if (wordKey.startsWith(`${charId}#`)) return wordKey.slice(charId.length);
@@ -200,8 +202,9 @@ function getVariantWordKeys(charId) {
   const list = [];
   for (const k of Object.keys(dict)) {
     const entry = dict[k];
-    if (!entry || entry.charId !== charId) continue;
+    if (!entry) continue;
     if (k === charId) list.push(k);
+    else if (entry.charId !== charId) continue;
     else if (k.includes("#")) list.push(k);
   }
 
@@ -216,7 +219,20 @@ function getVariantWordKeys(charId) {
 const VoiceSection = ({ operator, lang = "VN" }) => {
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
   const isEnglishUI = String(lang || "VN").toUpperCase() === "EN";
-  const vnObj = useMemo(() => (charId ? charwordVn?.[charId] : null), [charId]);
+  const vnObj = useMemo(() => {
+    if (!charId) return null;
+    return (
+      charwordVn?.[charId] || charwordVn?.[getPatchMainCharId(charId)] || null
+    );
+  }, [charId]);
+
+  const vnObjUsesPatchMain = useMemo(
+    () =>
+      !!charId &&
+      !charwordVn?.[charId] &&
+      !!charwordVn?.[getPatchMainCharId(charId)],
+    [charId],
+  );
 
   const variants = useMemo(() => getVariantWordKeys(charId), [charId]);
 
@@ -259,8 +275,8 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
   }, [charId, variants]);
 
   const skinPrefix = useMemo(
-    () => getPrefixFromWordKey(charId, selectedVariantKey),
-    [charId, selectedVariantKey],
+    () => getPrefixFromWordKey(charId, selectedVariantKey, vnObjUsesPatchMain),
+    [charId, selectedVariantKey, vnObjUsesPatchMain],
   );
 
   const availableLangTypes = useMemo(() => {
@@ -274,6 +290,7 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
   const preferredDefaultLang = useMemo(() => {
     return (
       charwordTable?.charDefaultTypeDict?.[charId] ||
+      charwordTable?.charDefaultTypeDict?.[getPatchMainCharId(charId)] ||
       charwordTable?.defaultLangType ||
       "CN_MANDARIN"
     );
@@ -301,8 +318,8 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
   }, [charId, selectedVariantKey, selectedLangType]);
 
   const activePrefix = useMemo(
-    () => getPrefixFromWordKey(charId, activeWordKey),
-    [charId, activeWordKey],
+    () => getPrefixFromWordKey(charId, activeWordKey, vnObjUsesPatchMain),
+    [charId, activeWordKey, vnObjUsesPatchMain],
   );
 
   const voiceLines = useMemo(() => {

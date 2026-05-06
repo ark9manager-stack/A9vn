@@ -2,6 +2,7 @@ import React from "react";
 
 import characterTable from "../../../../data/operators/character_table.json";
 import characterPatchTable from "../../../../data/operators/char_patch_table.json";
+import characterPatchTableEN from "../../../../data/operators/char_patch_table_en.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
 import traitEN from "../../../../data/operators/trait_en.json";
@@ -15,6 +16,7 @@ import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
 import { renderAKText } from "../../../StatHover";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
+import { patchTmplMatchesChar } from "../../../../utils/operatorPatchResolver";
 import {
   RANGE_STAND,
   RANGE_ATTACK,
@@ -30,8 +32,13 @@ import {
 } from "../../../../utils/IconArtUrl";
 
 const characterPatchChars = characterPatchTable?.patchChars || {};
+const characterPatchCharsEN = characterPatchTableEN?.patchChars || {};
 const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
-const characterTableENWithPatch = { ...characterPatchChars, ...characterTableEN };
+const characterTableENWithPatch = {
+  ...characterTableEN,
+  ...characterPatchChars,
+  ...characterPatchCharsEN,
+};
 const MODULE_IMG_BOX_SIZE = 224;
 
 function isNonEmptyString(v) {
@@ -1182,10 +1189,12 @@ export default function ModuleSection(props) {
       if (!meta) continue;
 
       const metaCharId = cnMeta?.charId || enMeta?.charId || meta?.charId || "";
+      const tmplId = cnMeta?.tmplId || enMeta?.tmplId || meta?.tmplId || "";
       if (
         isNonEmptyString(metaCharId) &&
         isNonEmptyString(charKey) &&
-        String(metaCharId) !== String(charKey)
+        String(metaCharId) !== String(charKey) &&
+        !patchTmplMatchesChar(tmplId, charKey)
       ) {
         continue;
       }
