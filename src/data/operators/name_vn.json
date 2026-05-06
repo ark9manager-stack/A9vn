@@ -4,6 +4,16 @@
     "name": "阿米娅",
     "name_vn": "Amiya"
   },
+  "char_1001_amiya2": {
+    "idweb": 55,
+    "name": "阿米娅",
+    "name_vn": "Amiya (Guard)"
+  },
+  "char_1037_amiya3": {
+    "idweb": 55,
+    "name": "阿米娅",
+    "name_vn": "Amiya (Medic)"
+  },
   "char_003_kalts": {
     "idweb": 194,
     "name": "凯尔希",
