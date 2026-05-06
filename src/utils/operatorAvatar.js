@@ -5,6 +5,7 @@ export const CN_AVATAR_BASE =
 
 export const CN_AVATAR_OVERRIDES = {
   char_271_spikes: `${CN_AVATAR_BASE}elite/char_271_spikes.png`,
+  char_1037_amiya3: `${CN_AVATAR_BASE}elite/char_1037_amiya3_2.png`,
 };
 
 export function normalizeCharId(charId) {
