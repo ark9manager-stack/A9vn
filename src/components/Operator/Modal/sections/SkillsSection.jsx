@@ -1099,7 +1099,7 @@ export default function SkillsSection(props) {
     }
 
     return { variants, showElite: true };
-  }, [charData, selectedSkillRef, safeSkillLevelIdx]);
+  }, [charData, charDataEN, operator, traitMap, isEnglishUI]);
 
   const [traitVariantIdx, setTraitVariantIdx] = React.useState(0);
 
