@@ -22,8 +22,12 @@ function preferLocalAsset(fileName, remoteUrl) {
 
 const __IMG_QUEUE__ = [];
 let __IMG_ACTIVE__ = 0;
+let __IMG_JOB_SEQ__ = 0;
 
-const IMG_PRELOAD_CONCURRENCY = 4;
+const IMG_PRELOAD_CONCURRENCY = 6;
+const IMG_PRELOAD_QUEUE_MAX = 48;
+const IMG_PRELOAD_TIMEOUT_MS = 15000;
+const IMG_PRIORITY_PRELOAD_TIMEOUT_MS = 30000;
 const IMG_ERROR_RETRY_COOLDOWN_MS = 15000;
 
 function normalizeImgUrl(url) {
@@ -33,11 +37,12 @@ function normalizeImgUrl(url) {
 function createImgCacheEntry(url) {
   return {
     url,
-    status: "idle", // idle | loading | loaded | error
+    status: "idle", // idle | queued | loading | loaded | error
     promise: null,
     error: null,
     errorAt: 0,
     touchedAt: Date.now(),
+    queueJob: null,
   };
 }
 
@@ -53,28 +58,157 @@ function getImgCacheEntry(url) {
   return entry;
 }
 
+function createDeferred() {
+  let resolve;
+  let reject;
+  const promise = new Promise((res, rej) => {
+    resolve = res;
+    reject = rej;
+  });
+  return { promise, resolve, reject };
+}
+
+function removeImgJob(job, { resolveValue, rejectReason } = {}) {
+  if (!job) return false;
+  const idx = __IMG_QUEUE__.indexOf(job);
+  if (idx >= 0) {
+    __IMG_QUEUE__.splice(idx, 1);
+    job.cancelled = true;
+    if (rejectReason) job.reject?.(rejectReason);
+    else if (resolveValue !== undefined) job.resolve?.(resolveValue);
+    return true;
+  }
+  return false;
+}
+
+function trimImgQueue() {
+  while (__IMG_QUEUE__.length > IMG_PRELOAD_QUEUE_MAX) {
+    let idx = -1;
+    for (let i = __IMG_QUEUE__.length - 1; i >= 0; i -= 1) {
+      if (!__IMG_QUEUE__[i]?.priority) {
+        idx = i;
+        break;
+      }
+    }
+    if (idx < 0) idx = __IMG_QUEUE__.length - 1;
+
+    const [job] = __IMG_QUEUE__.splice(idx, 1);
+    if (!job) continue;
+    job.cancelled = true;
+
+    const entry = getImgCacheEntry(job.url);
+    if (entry?.queueJob === job && entry.status === "queued") {
+      entry.queueJob = null;
+      entry.status = "idle";
+      entry.promise = null;
+    }
+
+    job.reject?.(new Error(`image-preload-dropped: ${job.url || "unknown"}`));
+  }
+}
+
 function flushImgQueue() {
   while (__IMG_ACTIVE__ < IMG_PRELOAD_CONCURRENCY && __IMG_QUEUE__.length > 0) {
     const job = __IMG_QUEUE__.shift();
-    if (!job || typeof job.run !== "function") continue;
+    if (!job || job.cancelled || typeof job.run !== "function") continue;
+
+    job.started = true;
+
+    const entry = getImgCacheEntry(job.url);
+    if (entry?.queueJob === job && entry.status === "queued") {
+      entry.status = "loading";
+    }
+
     __IMG_ACTIVE__ += 1;
     Promise.resolve()
       .then(job.run)
       .finally(() => {
+        const currentEntry = getImgCacheEntry(job.url);
+        if (currentEntry?.queueJob === job) currentEntry.queueJob = null;
         __IMG_ACTIVE__ = Math.max(0, __IMG_ACTIVE__ - 1);
         flushImgQueue();
       });
   }
 }
 
-function enqueueImgJob(run, { priority = false } = {}) {
+function enqueueImgJob(url, run, { priority = false } = {}) {
+  const deferred = createDeferred();
+  const job = {
+    id: ++__IMG_JOB_SEQ__,
+    url,
+    run: () => Promise.resolve(run()).then(deferred.resolve, deferred.reject),
+    resolve: deferred.resolve,
+    reject: deferred.reject,
+    priority: !!priority,
+    started: false,
+    cancelled: false,
+  };
+
+  if (priority) __IMG_QUEUE__.unshift(job);
+  else __IMG_QUEUE__.push(job);
+
+  trimImgQueue();
+  flushImgQueue();
+
+  return { promise: deferred.promise, job };
+}
+
+function promoteImgJob(job) {
+  if (!job || job.started || job.cancelled) return false;
+  const idx = __IMG_QUEUE__.indexOf(job);
+  if (idx < 0) return false;
+  __IMG_QUEUE__.splice(idx, 1);
+  job.priority = true;
+  __IMG_QUEUE__.unshift(job);
+  flushImgQueue();
+  return true;
+}
+
+function loadImageElement(key, { decode = true, priority = false, timeoutMs } = {}) {
   return new Promise((resolve, reject) => {
-    const job = {
-      run: () => Promise.resolve(run()).then(resolve, reject),
+    const img = new Image();
+    let settled = false;
+    let timer = null;
+
+    if (decode) img.decoding = "async";
+    try {
+      if (priority && "fetchPriority" in img) img.fetchPriority = "high";
+      if (priority && "loading" in img) img.loading = "eager";
+    } catch {
+
+    }
+
+    const done = (ok, payload) => {
+      if (settled) return;
+      settled = true;
+      if (timer) globalThis.clearTimeout(timer);
+      img.onload = null;
+      img.onerror = null;
+      if (!ok) {
+        try {
+          img.src = "";
+        } catch {}
+      }
+      ok ? resolve(key) : reject(payload);
     };
-    if (priority) __IMG_QUEUE__.unshift(job);
-    else __IMG_QUEUE__.push(job);
-    flushImgQueue();
+
+    const safeTimeout = Number(timeoutMs);
+    if (Number.isFinite(safeTimeout) && safeTimeout > 0) {
+      timer = globalThis.setTimeout(
+        () => done(false, new Error(`image-load-timeout: ${key}`)),
+        safeTimeout,
+      );
+    }
+
+    img.onload = () => done(true, key);
+    img.onerror = (e) =>
+      done(false, e || new Error(`image-load-failed: ${key}`));
+
+    img.src = key;
+
+    if (img.complete && img.naturalWidth > 0) {
+      done(true, key);
+    }
   });
 }
 
@@ -90,35 +224,84 @@ export function isImageLoadedCached(url) {
 export function markImageLoaded(url) {
   const entry = getImgCacheEntry(url);
   if (!entry) return;
+  if (entry.queueJob && !entry.queueJob.started) {
+    removeImgJob(entry.queueJob, { resolveValue: entry.url || url });
+  }
   entry.status = "loaded";
   entry.promise = null;
   entry.error = null;
   entry.errorAt = 0;
+  entry.queueJob = null;
   entry.touchedAt = Date.now();
 }
 
 export function markImageError(url, error) {
   const entry = getImgCacheEntry(url);
   if (!entry) return;
+  if (entry.queueJob && !entry.queueJob.started) {
+    removeImgJob(entry.queueJob, {
+      rejectReason: error || new Error("image-error"),
+    });
+  }
   entry.status = "error";
   entry.promise = null;
   entry.error = error || new Error("image-error");
   entry.errorAt = Date.now();
+  entry.queueJob = null;
   entry.touchedAt = Date.now();
 }
 
 export function clearImageCache(url) {
   const key = normalizeImgUrl(url);
   if (key) {
+    const entry = __IMG_STATUS__.get(key);
+    if (entry?.queueJob && !entry.queueJob.started) {
+      removeImgJob(entry.queueJob, {
+        rejectReason: new Error(`image-cache-cleared: ${key}`),
+      });
+    }
     __IMG_STATUS__.delete(key);
     return;
   }
+
+  for (const entry of __IMG_STATUS__.values()) {
+    if (entry?.queueJob && !entry.queueJob.started) {
+      removeImgJob(entry.queueJob, {
+        rejectReason: new Error("image-cache-cleared"),
+      });
+    }
+  }
+  __IMG_QUEUE__.length = 0;
   __IMG_STATUS__.clear();
+}
+
+function runImmediateImgJob(key, entry, options) {
+  entry.status = "loading";
+  entry.error = null;
+  entry.errorAt = 0;
+  entry.queueJob = null;
+
+  entry.promise = loadImageElement(key, options)
+    .then(() => {
+      markImageLoaded(key);
+      return key;
+    })
+    .catch((error) => {
+      markImageError(key, error);
+      throw error;
+    });
+
+  return entry.promise;
 }
 
 export function preloadImageCached(
   url,
-  { retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS, decode = true, priority = false } = {},
+  {
+    retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS,
+    decode = true,
+    priority = false,
+    timeoutMs,
+  } = {},
 ) {
   const key = normalizeImgUrl(url);
   if (!key) return Promise.reject(new Error("no-url"));
@@ -130,10 +313,6 @@ export function preloadImageCached(
     return Promise.resolve(key);
   }
 
-  if (entry.status === "loading" && entry.promise) {
-    return entry.promise;
-  }
-
   if (
     entry.status === "error" &&
     Number.isFinite(retryAfterMs) &&
@@ -143,41 +322,65 @@ export function preloadImageCached(
     return Promise.reject(entry.error || new Error("cached-image-error"));
   }
 
-  entry.status = "loading";
+  if ((entry.status === "queued" || entry.status === "loading") && entry.promise) {
+    if (entry.status === "queued" && entry.queueJob) {
+      if (priority) {
+        removeImgJob(entry.queueJob, {
+          rejectReason: new Error(`image-preload-superseded: ${key}`),
+        });
+      } else {
+        promoteImgJob(entry.queueJob);
+      }
+
+      if (priority) {
+        return runImmediateImgJob(key, entry, {
+          decode,
+          priority: true,
+          timeoutMs: timeoutMs ?? IMG_PRIORITY_PRELOAD_TIMEOUT_MS,
+        });
+      }
+    }
+    return entry.promise;
+  }
+
+  const effectiveTimeout =
+    timeoutMs ?? (priority ? IMG_PRIORITY_PRELOAD_TIMEOUT_MS : IMG_PRELOAD_TIMEOUT_MS);
+
+  if (priority) {
+    return runImmediateImgJob(key, entry, {
+      decode,
+      priority: true,
+      timeoutMs: effectiveTimeout,
+    });
+  }
+
+  entry.status = "queued";
   entry.error = null;
   entry.errorAt = 0;
 
-  entry.promise = enqueueImgJob(
+  const { promise, job } = enqueueImgJob(
+    key,
     () =>
-      new Promise((resolve, reject) => {
-        const img = new Image();
-        if (decode) img.decoding = "async";
-
-        const done = (ok, payload) => {
-          img.onload = null;
-          img.onerror = null;
-          if (ok) {
-            markImageLoaded(key);
-            resolve(key);
-          } else {
-            markImageError(key, payload);
-            reject(payload);
-          }
-        };
-
-        img.onload = () => done(true, key);
-        img.onerror = (e) =>
-          done(false, e || new Error(`image-load-failed: ${key}`));
-        img.src = key;
-
-        if (img.complete && img.naturalWidth > 0) {
-          done(true, key);
-        }
-      }),
-    { priority },
+      loadImageElement(key, {
+        decode,
+        priority: false,
+        timeoutMs: effectiveTimeout,
+      })
+        .then(() => {
+          markImageLoaded(key);
+          return key;
+        })
+        .catch((error) => {
+          markImageError(key, error);
+          throw error;
+        }),
+    { priority: false },
   );
 
-  return entry.promise;
+  entry.promise = promise;
+  entry.queueJob = job;
+
+  return promise;
 }
 
 export function warmPreloadImageUrls(
