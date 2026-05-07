@@ -4,9 +4,6 @@ import {
   buildCnAvatarUrl,
   getOperatorCharId,
 } from "../../../utils/operatorAvatar";
-import characterTable from "../../../data/operators/character_table.json";
-import charPatchTable from "../../../data/operators/char_patch_table.json";
-
 import {
   professionIconUrl,
   professionLabel,
@@ -14,8 +11,6 @@ import {
   subProfLabel,
 } from "../../../utils/operatorUtils";
 
-const characterPatchChars = charPatchTable?.patchChars || {};
-const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
 const tabs = [
   { id: "skins", label: "Trang phục" },
   { id: "profile", label: "Hồ sơ" },
@@ -182,22 +177,17 @@ const OperatorSidebar = ({
 
   const charId = useMemo(() => getOperatorCharId(operator), [operator]);
 
-  const charEntry = useMemo(() => {
-    return characterTableWithPatch?.[charId] || null;
-  }, [charId]);
-
   const displayNumber = useMemo(() => {
-    return charEntry?.displayNumber || "";
-  }, [charEntry]);
+    return operator?.displayNumber || operator?.display_number || "";
+  }, [operator]);
 
-  // profession / subProfessionId from character_table.json
   const profession = useMemo(() => {
-    return charEntry?.profession || "";
-  }, [charEntry]);
+    return operator?.profession || "";
+  }, [operator]);
 
   const subProfessionId = useMemo(() => {
-    return charEntry?.subProfessionId || "";
-  }, [charEntry]);
+    return operator?.subProfessionId || operator?.subProfession || "";
+  }, [operator]);
 
   const profIcon = useMemo(() => professionIconUrl(profession), [profession]);
   const subIcon = useMemo(

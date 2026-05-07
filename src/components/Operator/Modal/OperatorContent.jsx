@@ -57,28 +57,68 @@ function resolveOperatorKey(operator, charId) {
   );
 }
 
-function preloadAllOperatorSections() {
-  const load = () => {
-    for (const id of SECTION_IDS) {
-      preloadSectionModule(id).catch((error) => {
-        console.warn(`[OperatorContent] Failed to preload ${id} section`, error);
-      });
-    }
-  };
-
+function requestIdleTask(callback, { timeout = 2500 } = {}) {
   if (typeof window === "undefined") {
-    load();
-    return undefined;
+    callback();
+    return () => {};
   }
 
-  const requestIdle = window.requestIdleCallback;
-  if (typeof requestIdle === "function") {
-    const handle = requestIdle(load, { timeout: 300 });
+  if (typeof window.requestIdleCallback === "function") {
+    const handle = window.requestIdleCallback(callback, { timeout });
     return () => window.cancelIdleCallback?.(handle);
   }
 
-  const timer = window.setTimeout(load, 0);
+  const timer = window.setTimeout(callback, timeout);
   return () => window.clearTimeout(timer);
+}
+
+function preloadOperatorSectionsGently(activeId) {
+  if (typeof window === "undefined") return undefined;
+
+  let cancelled = false;
+  let cancelIdle = null;
+  let timer = null;
+
+  const queue = SECTION_IDS.filter((id) => id !== activeId);
+
+  const cleanupPending = () => {
+    if (typeof cancelIdle === "function") {
+      cancelIdle();
+      cancelIdle = null;
+    }
+    if (timer) {
+      window.clearTimeout(timer);
+      timer = null;
+    }
+  };
+
+  const step = () => {
+    if (cancelled) return;
+    const id = queue.shift();
+    if (!id) return;
+
+    preloadSectionModule(id)
+      .catch((error) => {
+        console.warn(`[OperatorContent] Failed to preload ${id} section`, error);
+      })
+      .finally(() => {
+        if (cancelled || queue.length === 0) return;
+        timer = window.setTimeout(() => {
+          timer = null;
+          cancelIdle = requestIdleTask(step, { timeout: 2500 });
+        }, 900);
+      });
+  };
+
+  timer = window.setTimeout(() => {
+    timer = null;
+    cancelIdle = requestIdleTask(step, { timeout: 2500 });
+  }, 1200);
+
+  return () => {
+    cancelled = true;
+    cleanupPending();
+  };
 }
 
 // Component fallback cho loading
@@ -105,8 +145,8 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
 
   useEffect(() => {
     if (!operatorKey) return undefined;
-    return preloadAllOperatorSections();
-  }, [operatorKey]);
+    return preloadOperatorSectionsGently(activeTabId);
+  }, [operatorKey, activeTabId]);
 
   useEffect(() => {
     if (!activeTabId) return;

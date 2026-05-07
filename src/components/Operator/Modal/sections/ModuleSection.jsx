@@ -27,7 +27,6 @@ import {
   getModuleDirIconUrl,
   getModuleImageCandidates,
   getModuleLevelBoardUrl,
-  preloadImageCached,
   isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
@@ -1559,26 +1558,6 @@ export default function ModuleSection(props) {
     return getModuleImageCandidates(selectedModuleId, selectedModuleIcon);
   }, [selected, selectedModuleId, selectedModuleIcon]);
 
-  const allModuleImageUrls = React.useMemo(() => {
-    const seen = new Set();
-    const out = [];
-
-    for (const m of modules) {
-      const urls = getModuleImageCandidates(
-        String(m?.id || ""),
-        String(m?.uniEquipIcon || ""),
-      );
-
-      for (const url of urls) {
-        if (!isNonEmptyString(url) || seen.has(url)) continue;
-        seen.add(url);
-        out.push(url);
-      }
-    }
-
-    return out;
-  }, [modules]);
-
   const [moduleImgIdx, setModuleImgIdx] = React.useState(0);
   const moduleImgLoadedSetRef = React.useRef(new Set());
   const moduleImgPendingUrlRef = React.useRef("");
@@ -1607,41 +1586,6 @@ export default function ModuleSection(props) {
   const activeModuleImageUrl = moduleImageCandidates?.[moduleImgIdx] || "";
 
   React.useEffect(() => {
-    if (!isNonEmptyString(charKey) || allModuleImageUrls.length === 0) return;
-    let cancelled = false;
-
-    Promise.allSettled(
-      allModuleImageUrls.map((url) => preloadImageCached(url).then(() => url)),
-    ).then((results) => {
-      if (cancelled) return;
-      const loaded = results
-        .filter(
-          (r) =>
-            r.status === "fulfilled" && typeof r.value === "string" && r.value,
-        )
-        .map((r) => r.value);
-      if (loaded.length === 0) return;
-
-      setMountedModuleImageUrls((prev) => {
-        const next = new Set(prev);
-        let changed = false;
-        for (const url of loaded) {
-          moduleImgLoadedSetRef.current.add(url);
-          if (!next.has(url)) {
-            next.add(url);
-            changed = true;
-          }
-        }
-        return changed ? next : prev;
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [charKey, allModuleImageUrls]);
-
-  React.useEffect(() => {
     const url = activeModuleImageUrl;
     moduleImgPendingUrlRef.current = url;
     setModuleImgError(false);
@@ -1666,41 +1610,8 @@ export default function ModuleSection(props) {
       return;
     }
 
-    let cancelled = false;
-    setDisplayModuleImageUrl("");
+    setDisplayModuleImageUrl(url);
     setIsModuleImgLoading(true);
-
-    preloadImageCached(url)
-      .then(() => {
-        if (cancelled) return;
-        if (moduleImgPendingUrlRef.current !== url) return;
-        moduleImgLoadedSetRef.current.add(url);
-        setMountedModuleImageUrls((prev) => {
-          if (prev.has(url)) return prev;
-          const next = new Set(prev);
-          next.add(url);
-          return next;
-        });
-        setDisplayModuleImageUrl(url);
-        setIsModuleImgLoading(false);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        if (moduleImgPendingUrlRef.current !== url) return;
-        setIsModuleImgLoading(false);
-        const len = moduleImageCandidates?.length || 0;
-        const nextIdx = moduleImgIdx + 1;
-        if (nextIdx < len) {
-          setModuleImgIdx(nextIdx);
-        } else {
-          setModuleImgError(true);
-          setDisplayModuleImageUrl("");
-        }
-      });
-
-    return () => {
-      cancelled = true;
-    };
   }, [activeModuleImageUrl, moduleImageCandidates, moduleImgIdx]);
 
   const subProfIcon = React.useMemo(() => {
@@ -1808,6 +1719,8 @@ export default function ModuleSection(props) {
                         : "hidden",
                   }}
                   draggable={false}
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   onLoad={() => {
                     moduleImgLoadedSetRef.current.add(url);

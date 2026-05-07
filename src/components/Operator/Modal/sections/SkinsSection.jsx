@@ -11,7 +11,6 @@ import {
 import {
   ICON_MODEL_URL,
   ICON_DRAWER_URL,
-  preloadImageCached,
   buildEliteArtUrl as buildEliteUrl,
   buildSkinArtUrl as buildSkinUrl,
   withSpSuffix,
@@ -19,7 +18,6 @@ import {
 
 const SP_DYN_SKINS = skinTable?.spDynSkins || {};
 const SKIN_BG_URL = bgInform;
-// image URL logic moved to utils/IconArtUrl.js
 
 function pickDisplaySkin(obj) {
   return obj?.displaySkin || obj?.skin || obj || null;
@@ -195,8 +193,8 @@ export default function SkinsSection({ operator, className = "" }) {
   const [spMode, setSpMode] = useState(false);
   const [imgError, setImgError] = useState(false);
   const [isLoadingImg, setIsLoadingImg] = useState(false);
-  const [displaySrc, setDisplaySrc] = useState(null); // active URL currently displayed
-  const [loadedUrls, setLoadedUrls] = useState(() => new Set()); // URLs kept mounted
+  const [displaySrc, setDisplaySrc] = useState(null);
+  const [loadedUrls, setLoadedUrls] = useState(() => new Set());
   const skipSpResetRef = useRef(false);
 
   const markLoaded = (url) => {
@@ -209,7 +207,6 @@ export default function SkinsSection({ operator, className = "" }) {
     });
   };
 
-  // Reset per operator to avoid keeping too many large images in memory.
   useEffect(() => {
     setLoadedUrls(new Set());
     setDisplaySrc(null);
@@ -253,63 +250,7 @@ export default function SkinsSection({ operator, className = "" }) {
   }, [selectedOption, selectedHasSp, spMode]);
 
   useEffect(() => {
-    if (!charId || !options.length || !selectedOption) return;
-
-    let cancelled = false;
-    const timer = window.setTimeout(() => {
-      const selectedIndex = options.findIndex((opt) => opt.key === selectedOption.key);
-      const nearOptions = [
-        options[selectedIndex - 1],
-        options[selectedIndex + 1],
-      ].filter(Boolean);
-
-      const preloadUrls = [
-        ...new Set(
-          nearOptions
-            .flatMap((opt) => [opt?.url || null, opt?.fallbackUrl || null])
-            .filter(Boolean),
-        ),
-      ].slice(0, 2);
-
-      if (preloadUrls.length === 0) return;
-
-      Promise.allSettled(
-        preloadUrls.map((url) => preloadImageCached(url).then(() => url)),
-      ).then((results) => {
-        if (cancelled) return;
-        const loaded = results
-          .filter(
-            (r) =>
-              r.status === "fulfilled" && typeof r.value === "string" && r.value,
-          )
-          .map((r) => r.value);
-
-        if (loaded.length === 0) return;
-        setLoadedUrls((prev) => {
-          const next = new Set(prev);
-          let changed = false;
-          for (const url of loaded) {
-            if (!next.has(url)) {
-              next.add(url);
-              changed = true;
-            }
-          }
-          return changed ? next : prev;
-        });
-      });
-    }, 450);
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timer);
-    };
-  }, [charId, options, selectedOption]);
-
-  useEffect(() => {
-    let cancelled = false;
-
     const primary = effectiveUrl || null;
-    const fallback = effectiveFallbackUrl || null;
 
     setImgError(false);
 
@@ -319,52 +260,10 @@ export default function SkinsSection({ operator, className = "" }) {
       return;
     }
 
-    // If the target is already mounted, switch instantly.
-    if (loadedUrls.has(primary)) {
-      setIsLoadingImg(false);
-      setDisplaySrc(primary);
-      return;
-    }
-    if (fallback && loadedUrls.has(fallback)) {
-      setIsLoadingImg(false);
-      setDisplaySrc(fallback);
-      return;
-    }
-
-    // Aesthetic requirement: hide the old image immediately while loading the new one.
-    setDisplaySrc(null);
+    markLoaded(primary);
+    setDisplaySrc(primary);
     setIsLoadingImg(true);
-
-    (async () => {
-      try {
-        await preloadImageCached(primary, { priority: true });
-        if (cancelled) return;
-        markLoaded(primary);
-        setDisplaySrc(primary);
-        setIsLoadingImg(false);
-      } catch {
-        if (fallback) {
-          try {
-            await preloadImageCached(fallback, { priority: true });
-            if (cancelled) return;
-            markLoaded(fallback);
-            setDisplaySrc(fallback);
-            setIsLoadingImg(false);
-            return;
-          } catch (error) {
-            console.error("Error loading fallback image:", error);
-          }
-        }
-        if (cancelled) return;
-        setImgError(true);
-        setIsLoadingImg(false);
-      }
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [effectiveUrl, effectiveFallbackUrl, loadedUrls]);
+  }, [effectiveUrl]);
 
   const displaySkinName = useMemo(() => {
     if (!selectedOption) return "";
@@ -413,7 +312,7 @@ export default function SkinsSection({ operator, className = "" }) {
           )}
 
           {Array.from(loadedUrls).map((url) => {
-            const show = !isLoadingImg && !imgError && displaySrc === url;
+            const show = !imgError && displaySrc === url;
             return (
               <img
                 key={url}
@@ -421,8 +320,25 @@ export default function SkinsSection({ operator, className = "" }) {
                 alt={operator?.name || charId}
                 className="max-h-full max-w-full object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 draggable={false}
                 style={{ display: show ? "block" : "none" }}
+                onLoad={() => {
+                  if (displaySrc === url) setIsLoadingImg(false);
+                }}
+                onError={() => {
+                  if (displaySrc !== url) return;
+                  const fallback = effectiveFallbackUrl || null;
+                  if (fallback && fallback !== url) {
+                    markLoaded(fallback);
+                    setDisplaySrc(fallback);
+                    setIsLoadingImg(true);
+                    return;
+                  }
+                  setIsLoadingImg(false);
+                  setImgError(true);
+                }}
               />
             );
           })}

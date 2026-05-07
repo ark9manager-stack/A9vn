@@ -30,7 +30,6 @@ import {
   getSkillIconUrl,
   getSkillLevelIconUrl,
   getBuildingSkillIconUrl,
-  preloadImageCached,
   isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
@@ -1450,26 +1449,6 @@ export default function SkillsSection(props) {
     skillCnEntry?.iconId || skillEnEntry?.iconId,
   );
 
-  const allSkillIconUrls = React.useMemo(() => {
-    const seen = new Set();
-    const out = [];
-
-    for (const s of skillsList) {
-      const sid = String(s?.skillId || "").trim();
-      if (!sid) continue;
-
-      const cn = skillTable?.[sid] || null;
-      const en = skillTableEN?.[sid] || null;
-      const url = getSkillIconUrl(sid, cn?.iconId || en?.iconId);
-      if (!isNonEmptyString(url) || seen.has(url)) continue;
-
-      seen.add(url);
-      out.push(url);
-    }
-
-    return out;
-  }, [skillsList]);
-
   const skillIconLoadedSetRef = React.useRef(new Set());
   const skillIconPendingUrlRef = React.useRef("");
   const [mountedSkillIconUrls, setMountedSkillIconUrls] = React.useState(
@@ -1487,41 +1466,6 @@ export default function SkillsSection(props) {
     setIsSkillIconLoading(false);
     setSkillIconError(false);
   }, [charKey]);
-
-  React.useEffect(() => {
-    if (!isNonEmptyString(charKey) || allSkillIconUrls.length === 0) return;
-    let cancelled = false;
-
-    Promise.allSettled(
-      allSkillIconUrls.map((url) => preloadImageCached(url).then(() => url)),
-    ).then((results) => {
-      if (cancelled) return;
-      const loaded = results
-        .filter(
-          (r) =>
-            r.status === "fulfilled" && typeof r.value === "string" && r.value,
-        )
-        .map((r) => r.value);
-      if (loaded.length === 0) return;
-
-      setMountedSkillIconUrls((prev) => {
-        const next = new Set(prev);
-        let changed = false;
-        for (const url of loaded) {
-          skillIconLoadedSetRef.current.add(url);
-          if (!next.has(url)) {
-            next.add(url);
-            changed = true;
-          }
-        }
-        return changed ? next : prev;
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [charKey, allSkillIconUrls]);
 
   React.useEffect(() => {
     const url = selectedSkillIconUrl;
@@ -1548,35 +1492,8 @@ export default function SkillsSection(props) {
       return;
     }
 
-    let cancelled = false;
-    setDisplaySkillIconUrl("");
+    setDisplaySkillIconUrl(url);
     setIsSkillIconLoading(true);
-
-    preloadImageCached(url)
-      .then(() => {
-        if (cancelled) return;
-        if (skillIconPendingUrlRef.current !== url) return;
-        skillIconLoadedSetRef.current.add(url);
-        setMountedSkillIconUrls((prev) => {
-          if (prev.has(url)) return prev;
-          const next = new Set(prev);
-          next.add(url);
-          return next;
-        });
-        setDisplaySkillIconUrl(url);
-        setIsSkillIconLoading(false);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        if (skillIconPendingUrlRef.current !== url) return;
-        setIsSkillIconLoading(false);
-        setSkillIconError(true);
-        setDisplaySkillIconUrl("");
-      });
-
-    return () => {
-      cancelled = true;
-    };
   }, [selectedSkillIconUrl, charKey]);
 
   const skillLevels = React.useMemo(() => {
@@ -1984,6 +1901,8 @@ export default function SkillsSection(props) {
                                 : "hidden",
                           }}
                           draggable={false}
+                          loading="eager"
+                          decoding="async"
                           onLoad={() => {
                             skillIconLoadedSetRef.current.add(url);
                             if (skillIconPendingUrlRef.current === url) {
