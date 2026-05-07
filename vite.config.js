@@ -5,51 +5,17 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    sourcemap: false,
-    chunkSizeWarningLimit: 1000,
+    sourcemap: false, // tắt sourcemap ở production để giảm size
+    chunkSizeWarningLimit: 1000, // tăng limit warning
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          const normalized = String(id || "").replace(/\\/g, "/");
-
-          if (normalized.includes("/node_modules/")) {
-            if (normalized.includes("/react") || normalized.includes("/react-dom") || normalized.includes("/react-router-dom")) {
-              return "vendor-react";
-            }
-            return "vendor";
-          }
-
-          if (normalized.includes("/src/data/voiceline/")) return "data-voice";
-          if (normalized.includes("/src/data/module/")) return "data-module";
-          if (normalized.includes("/src/data/profile/")) return "data-profile";
-          if (normalized.includes("/src/data/skins/")) return "data-skins";
-
-          if (normalized.includes("/src/data/operators/character_table")) {
-            return normalized.endsWith("character_table_en.json")
-              ? "data-character-en"
-              : "data-character-cn";
-          }
-          if (normalized.includes("/src/data/operators/skill_table")) {
-            return normalized.endsWith("skill_table_en.json")
-              ? "data-skill-en"
-              : "data-skill-cn";
-          }
-          if (normalized.includes("/src/data/operators/building_data")) {
-            return "data-building";
-          }
-          if (normalized.includes("/src/data/operators/item_table")) {
-            return "data-items";
-          }
-          if (normalized.includes("/src/data/operators/")) {
-            return "data-operator-small";
-          }
-
-          return undefined;
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
         },
       },
     },
   },
   optimizeDeps: {
-    include: ["react-window", "react-virtualized-auto-sizer"],
+    include: ["react-window", "react-virtualized-auto-sizer"], // preload
   },
 });
