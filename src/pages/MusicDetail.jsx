@@ -13,6 +13,7 @@ import {
 import { useLyrics } from "../hooks/useLyrics";
 import { useSongDetail } from "../hooks/useSongDetail";
 import { useMusicPlayer } from "../contexts/useMusicPlayer";
+import { getMusicTrackRouteId, sameMusicTrack } from "../utils/musicTrackIds";
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds) || seconds <= 0) return "0:00";
@@ -54,6 +55,7 @@ export default function MusicDetail() {
   const { songId } = useParams();
   const { song, albumTracks, loading, error } = useSongDetail(songId);
   const lyricListRef = useRef(null);
+  const detailSeekDragRef = useRef(false);
   const { entries, loading: lyricLoading, error: lyricError } = useLyrics(
     song?.lyrics,
   );
@@ -65,14 +67,10 @@ export default function MusicDetail() {
     progress,
     playQueue,
     togglePlay,
+    seekTo,
   } = useMusicPlayer();
 
-  const isCurrentTrack =
-    !!song &&
-    !!currentTrack &&
-    (String(currentTrack.id) === String(song.id) ||
-      String(currentTrack.id_list) === String(song.id_list) ||
-      currentTrack.audio === song.audio);
+  const isCurrentTrack = !!song && !!currentTrack && sameMusicTrack(currentTrack, song);
 
   const activeLyricIndex = useMemo(() => {
     if (!isCurrentTrack || entries.length === 0) return -1;
@@ -89,10 +87,25 @@ export default function MusicDetail() {
   useEffect(() => {
     if (activeLyricIndex < 0) return;
 
-    const row = lyricListRef.current?.querySelector(
+    const container = lyricListRef.current;
+    const row = container?.querySelector(
       `[data-lyric-index="${activeLyricIndex}"]`,
     );
-    row?.scrollIntoView({ block: "center", behavior: "smooth" });
+    if (!container || !row) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const rowRect = row.getBoundingClientRect();
+    const nextTop =
+      container.scrollTop +
+      rowRect.top -
+      containerRect.top -
+      container.clientHeight / 2 +
+      row.clientHeight / 2;
+
+    container.scrollTo({
+      top: Math.max(0, nextTop),
+      behavior: "smooth",
+    });
   }, [activeLyricIndex]);
 
   const handlePlay = () => {
@@ -106,11 +119,7 @@ export default function MusicDetail() {
     const queue = albumTracks.length > 0 ? albumTracks : [song];
     const startIndex = Math.max(
       0,
-      queue.findIndex(
-        (track) =>
-          String(track.id) === String(song.id) ||
-          String(track.id_list) === String(song.id_list),
-      ),
+      queue.findIndex((track) => sameMusicTrack(track, song)),
     );
 
     playQueue(queue, startIndex, {
@@ -118,6 +127,40 @@ export default function MusicDetail() {
       name: song.albumName || "PLAYLIST",
       cover: song.cover,
     });
+  };
+
+  const seekFromDetailClientX = (target, clientX) => {
+    if (!isCurrentTrack) return;
+
+    const rect = target?.getBoundingClientRect?.();
+    if (!rect?.width) return;
+
+    const percent = ((clientX - rect.left) / rect.width) * 100;
+    seekTo(percent);
+  };
+
+  const handleDetailSeek = (event) => {
+    event.preventDefault?.();
+    seekFromDetailClientX(event.currentTarget, event.clientX);
+  };
+
+  const handleDetailSeekPointerDown = (event) => {
+    event.preventDefault?.();
+    detailSeekDragRef.current = true;
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    seekFromDetailClientX(event.currentTarget, event.clientX);
+  };
+
+  const handleDetailSeekPointerMove = (event) => {
+    if (!detailSeekDragRef.current) return;
+    event.preventDefault?.();
+    seekFromDetailClientX(event.currentTarget, event.clientX);
+  };
+
+  const handleDetailSeekPointerEnd = (event) => {
+    event.preventDefault?.();
+    detailSeekDragRef.current = false;
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
   };
 
   if (loading || error || !song) {
@@ -212,12 +255,22 @@ export default function MusicDetail() {
                 </button>
 
                 <div className="min-w-full flex-1 sm:min-w-[220px]">
-                  <div className="h-2 border border-black/60 bg-black/70">
-                    <div
-                      className="h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
+                  <button
+                    type="button"
+                    aria-label="Seek track"
+                    onClick={handleDetailSeek}
+                    onPointerDown={handleDetailSeekPointerDown}
+                    onPointerMove={handleDetailSeekPointerMove}
+                    onPointerUp={handleDetailSeekPointerEnd}
+                    onPointerCancel={handleDetailSeekPointerEnd}
+                    disabled={!isCurrentTrack}
+                    className="h-2 w-full touch-none border border-black/60 bg-black/70 text-left disabled:cursor-default"
+                  >
+                    <span
+                      className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
                       style={{ width: `${isCurrentTrack ? progress : 0}%` }}
                     />
-                  </div>
+                  </button>
                   <div className="mt-2 flex justify-between font-mono-tech text-[0.58rem] uppercase tracking-[1.5px] text-white/35">
                     <span>{isCurrentTrack ? formatTime(currentTime) : "0:00"}</span>
                     <span>{isCurrentTrack ? formatTime(duration) : "--:--"}</span>
@@ -274,14 +327,12 @@ export default function MusicDetail() {
                 </header>
                 <div className="h-[360px] overflow-y-auto p-2 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)] md:h-[420px]">
                   {albumTracks.map((track, index) => {
-                    const active =
-                      String(track.id_list) === String(song.id_list) ||
-                      String(track.id) === String(song.id);
+                    const active = sameMusicTrack(track, song);
 
                     return (
                       <Link
                         key={`${track.id}-${index}`}
-                        to={`/music/${encodeURIComponent(String(track.id_list))}`}
+                        to={`/music/${encodeURIComponent(String(getMusicTrackRouteId(track)))}`}
                         className={`mb-1 grid grid-cols-[42px_minmax(0,1fr)] gap-3 border px-3 py-2.5 transition-colors ${
                           active
                             ? "border-primary/45 bg-primary/12 text-white"

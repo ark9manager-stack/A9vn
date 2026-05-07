@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { makeMusicTrackId } from "../utils/musicTrackIds";
 
 function decodeSongId(songId) {
   try {
@@ -13,7 +14,7 @@ function normalizeSong(song, index) {
   const albumId = song?.albumId ?? song?.album_id ?? null;
 
   return {
-    id: song?.id ?? `${albumId ?? "album"}-${idList}`,
+    id: makeMusicTrackId(albumId, idList, song?.id),
     id_list: idList,
     title: song?.title ?? song?.name ?? song?.song_name ?? "UNKNOWN TRACK",
     name: song?.name ?? song?.title ?? song?.song_name ?? "UNKNOWN TRACK",
@@ -64,6 +65,16 @@ export function useSongDetail(songId) {
 
     const byStableId = songs.find((item) => String(item.id) === resolvedSongId);
     if (byStableId) return byStableId;
+
+    const [albumId, idList] = resolvedSongId.split("-");
+    if (albumId && idList) {
+      const byParts = songs.find(
+        (item) =>
+          String(item.albumId) === String(albumId) &&
+          String(item.id_list) === String(idList),
+      );
+      if (byParts) return byParts;
+    }
 
     return (
       songs.find((item) => String(item.id_list) === resolvedSongId) ?? null

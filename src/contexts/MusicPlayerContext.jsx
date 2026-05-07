@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { MusicPlayerContext } from "./MusicPlayerStore";
+import { makeMusicTrackId, sameMusicTrack } from "../utils/musicTrackIds";
 
 const VOLUME_KEY = "a9vn_music_volume";
 const SHUFFLE_KEY = "a9vn_music_shuffle";
@@ -20,7 +21,9 @@ function getInitialVolume() {
   if (typeof window === "undefined") return DEFAULT_VOLUME;
 
   const stored = Number(window.localStorage.getItem(VOLUME_KEY));
-  return Number.isFinite(stored) ? clamp(stored, 0, 100) : DEFAULT_VOLUME;
+  return Number.isFinite(stored) && stored > 0
+    ? clamp(stored, 1, 100)
+    : DEFAULT_VOLUME;
 }
 
 function getInitialShuffle() {
@@ -37,10 +40,7 @@ function getInitialPlaybackScope() {
 
 function findTrackIndex(tracks, track) {
   if (!track || !Array.isArray(tracks)) return -1;
-
-  return tracks.findIndex(
-    (item) => item.id === track.id || item.audio === track.audio,
-  );
+  return tracks.findIndex((item) => sameMusicTrack(item, track));
 }
 
 function getAdjacentIndex(index, length, shuffle) {
@@ -56,32 +56,98 @@ function getAdjacentIndex(index, length, shuffle) {
 }
 
 function normalizeTrack(track, index, album) {
-  const id = track?.id ?? `${album?.id ?? "album"}-${track?.id_list ?? index}`;
+  const idList = track?.id_list ?? track?.idList ?? index + 1;
+  const albumId = track?.albumId ?? track?.album_id ?? album?.id ?? null;
+  const id = makeMusicTrackId(albumId, idList, track?.id);
 
   return {
     id,
-    id_list: track?.id_list ?? track?.idList ?? index + 1,
+    id_list: idList,
     title: track?.title ?? track?.name ?? track?.song_name ?? "UNKNOWN TRACK",
     artist: track?.artist ?? track?.albumName ?? album?.name ?? "Monster Siren",
     albumName: track?.albumName ?? album?.name ?? "",
     audio: track?.audio ?? track?.url_song ?? track?.urlSong ?? "",
     lyrics: track?.lyrics ?? track?.url_lyric ?? track?.urlLyric ?? null,
     cover: track?.cover ?? track?.image ?? album?.cover ?? album?.url ?? "",
-    albumId: track?.albumId ?? track?.album_id ?? album?.id ?? null,
+    albumId,
   };
+}
+
+function isProbablyWavUrl(url) {
+  return /\.wav(?:[?#]|$)/i.test(String(url || ""));
+}
+
+function isFiniteDuration(value) {
+  return Number.isFinite(value) && value > 0;
+}
+
+function getMediaDuration(audio, fallback = 0) {
+  if (audio && isFiniteDuration(audio.duration)) return audio.duration;
+  return isFiniteDuration(fallback) ? fallback : 0;
+}
+
+function rangeContainsTime(ranges, time) {
+  if (!ranges || !Number.isFinite(time) || time < 0) return false;
+  try {
+    for (let i = 0; i < ranges.length; i += 1) {
+      if (time >= ranges.start(i) && time <= ranges.end(i)) return true;
+    }
+  } catch {
+    return false;
+  }
+  return false;
+}
+
+function waitForAudioReady(audio) {
+  if (!audio) return Promise.reject(new Error("No audio element"));
+  if (audio.readyState >= 1 && isFiniteDuration(audio.duration)) {
+    return Promise.resolve(audio);
+  }
+
+  return new Promise((resolve, reject) => {
+    let settled = false;
+    const cleanup = () => {
+      audio.removeEventListener("loadedmetadata", onReady);
+      audio.removeEventListener("canplay", onReady);
+      audio.removeEventListener("error", onError);
+    };
+    const finish = (ok, value) => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      ok ? resolve(audio) : reject(value);
+    };
+    const onReady = () => finish(true, audio);
+    const onError = () => finish(false, new Error("audio-ready-failed"));
+
+    audio.addEventListener("loadedmetadata", onReady, { once: true });
+    audio.addEventListener("canplay", onReady, { once: true });
+    audio.addEventListener("error", onError, { once: true });
+  });
 }
 
 export function MusicPlayerProvider({ children }) {
   const audioRef = useRef(null);
   const playRequestIdRef = useRef(0);
+  const allQueueRef = useRef([]);
+  const queueRef = useRef([]);
+  const currentTrackAudioRef = useRef("");
+  const currentTimeRef = useRef(0);
+  const durationRef = useRef(0);
+  const isPlayingRef = useRef(false);
+  const volumeRef = useRef(getInitialVolume());
+  const pendingSeekRef = useRef(null);
+  const recoveringRef = useRef(false);
+  const blobUrlCacheRef = useRef(new Map());
+
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [currentAlbum, setCurrentAlbum] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [volume, setVolumeState] = useState(getInitialVolume);
-  const [isMuted, setIsMuted] = useState(() => getInitialVolume() === 0);
+  const [volume, setVolumeState] = useState(() => volumeRef.current);
+  const [isMuted, setIsMuted] = useState(false);
   const [shuffle, setShuffle] = useState(getInitialShuffle);
   const [playbackScope, setPlaybackScopeState] = useState(
     getInitialPlaybackScope,
@@ -93,8 +159,6 @@ export function MusicPlayerProvider({ children }) {
   const currentTrack = queue[currentIndex] ?? null;
   const currentTrackAudio = currentTrack?.audio;
   const playbackMode = shuffle ? "shuffle" : playbackScope;
-  const allQueueRef = useRef([]);
-  const queueRef = useRef([]);
 
   useEffect(() => {
     allQueueRef.current = allQueue;
@@ -104,58 +168,206 @@ export function MusicPlayerProvider({ children }) {
     queueRef.current = queue;
   }, [queue]);
 
-  const syncAudioSource = useCallback((audioUrl) => {
+  useEffect(() => {
+    currentTrackAudioRef.current = currentTrackAudio || "";
+  }, [currentTrackAudio]);
+
+  useEffect(() => {
+    currentTimeRef.current = currentTime;
+  }, [currentTime]);
+
+  useEffect(() => {
+    durationRef.current = duration;
+  }, [duration]);
+
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
+
+  useEffect(() => {
+    volumeRef.current = volume;
+  }, [volume]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(VOLUME_KEY, String(volumeRef.current));
+    }
+  }, []);
+
+  useEffect(
+    () => () => {
+      for (const blobUrl of blobUrlCacheRef.current.values()) {
+        try {
+          URL.revokeObjectURL(blobUrl);
+        } catch {
+          // no-op
+        }
+      }
+      blobUrlCacheRef.current.clear();
+    },
+    [],
+  );
+
+  const syncAudioSource = useCallback((audioUrl, options = {}) => {
     const audio = audioRef.current;
     if (!audio) return null;
 
-    if (!audioUrl) {
+    const normalizedUrl = String(audioUrl || "").trim();
+    if (!normalizedUrl) {
       playRequestIdRef.current += 1;
       audio.pause();
       audio.removeAttribute("src");
+      audio.dataset.originalSrc = "";
       audio.load();
       return audio;
     }
 
-    if (audio.getAttribute("src") !== audioUrl) {
+    const nextSrc = options.objectUrl || normalizedUrl;
+    const originalSame = audio.dataset.originalSrc === normalizedUrl;
+    const hasCurrentSrc = !!audio.getAttribute("src");
+
+    if (!options.force && originalSame && hasCurrentSrc) {
+      return audio;
+    }
+
+    if (
+      options.force ||
+      !originalSame ||
+      audio.getAttribute("src") !== nextSrc
+    ) {
       playRequestIdRef.current += 1;
-      audio.src = audioUrl;
+      audio.dataset.originalSrc = normalizedUrl;
+      audio.src = nextSrc;
       audio.load();
     }
 
     return audio;
   }, []);
 
-  const requestAudioPlay = useCallback((audio) => {
-    if (!audio) return;
-
-    const requestId = playRequestIdRef.current + 1;
-    playRequestIdRef.current = requestId;
-    const playPromise = audio.play();
-
-    if (playPromise?.then) {
-      playPromise.then(() => {
-        if (playRequestIdRef.current === requestId) {
-          setIsPlaying(true);
-        }
-      });
+  const ensureAudible = useCallback((audio) => {
+    const nextVolume = volumeRef.current > 0 ? volumeRef.current : DEFAULT_VOLUME;
+    if (volumeRef.current <= 0) {
+      volumeRef.current = nextVolume;
+      setVolumeState(nextVolume);
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(VOLUME_KEY, String(nextVolume));
+      }
     }
 
-    if (playPromise?.catch) {
-      playPromise.catch(() => {
-        if (playRequestIdRef.current === requestId) {
-          setIsPlaying(false);
-        }
-      });
+    setIsMuted(false);
+    if (audio) {
+      audio.muted = false;
+      audio.volume = clamp(nextVolume, 1, 100) / 100;
     }
   }, []);
 
+  const requestAudioPlay = useCallback(
+    (audio) => {
+      if (!audio) return;
+
+      ensureAudible(audio);
+      const requestId = playRequestIdRef.current + 1;
+      playRequestIdRef.current = requestId;
+      const playPromise = audio.play();
+
+      if (playPromise?.then) {
+        playPromise.then(() => {
+          if (playRequestIdRef.current === requestId) {
+            setIsPlaying(true);
+          }
+        });
+      }
+
+      if (playPromise?.catch) {
+        playPromise.catch(() => {
+          if (playRequestIdRef.current === requestId) {
+            setIsPlaying(false);
+          }
+        });
+      }
+    },
+    [ensureAudible],
+  );
+
+  const getBlobAudioUrl = useCallback(async (audioUrl) => {
+    const key = String(audioUrl || "").trim();
+    if (!key) throw new Error("no-audio-url");
+
+    const cached = blobUrlCacheRef.current.get(key);
+    if (cached) return cached;
+
+    const response = await fetch(key, { cache: "force-cache" });
+    if (!response.ok) {
+      throw new Error(`audio-blob-fetch-failed: ${response.status}`);
+    }
+
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    blobUrlCacheRef.current.set(key, blobUrl);
+    return blobUrl;
+  }, []);
+
+  const recoverAudioForSeek = useCallback(
+    async (targetTime, { playAfter } = {}) => {
+      const sourceUrl = currentTrackAudioRef.current;
+      const audio = audioRef.current;
+      if (!sourceUrl || !audio || recoveringRef.current) return false;
+
+      recoveringRef.current = true;
+      try {
+        let objectUrl = null;
+        if (isProbablyWavUrl(sourceUrl)) {
+          objectUrl = await getBlobAudioUrl(sourceUrl);
+        }
+
+        if (currentTrackAudioRef.current !== sourceUrl) return false;
+
+        const nextAudio = syncAudioSource(sourceUrl, {
+          objectUrl,
+          force: true,
+        });
+        if (!nextAudio) return false;
+
+        await waitForAudioReady(nextAudio);
+        const mediaDuration = getMediaDuration(nextAudio, durationRef.current);
+        const safeTime = mediaDuration
+          ? clamp(Number(targetTime) || 0, 0, Math.max(0, mediaDuration - 0.05))
+          : Math.max(0, Number(targetTime) || 0);
+
+        try {
+          nextAudio.currentTime = safeTime;
+        } catch {
+          nextAudio.currentTime = 0;
+        }
+
+        setCurrentTime(nextAudio.currentTime || safeTime);
+        setDuration(mediaDuration);
+        pendingSeekRef.current = null;
+
+        if (playAfter ?? isPlayingRef.current) {
+          requestAudioPlay(nextAudio);
+        }
+
+        return true;
+      } catch {
+        return false;
+      } finally {
+        recoveringRef.current = false;
+      }
+    },
+    [getBlobAudioUrl, requestAudioPlay, syncAudioSource],
+  );
+
   const setVolume = useCallback((nextVolume) => {
     const safeVolume = clamp(Number(nextVolume) || 0, 0, 100);
+    const storedVolume = safeVolume > 0 ? safeVolume : DEFAULT_VOLUME;
+
     setVolumeState(safeVolume);
     setIsMuted(safeVolume === 0);
+    volumeRef.current = safeVolume;
 
     if (typeof window !== "undefined") {
-      window.localStorage.setItem(VOLUME_KEY, String(safeVolume));
+      window.localStorage.setItem(VOLUME_KEY, String(storedVolume));
     }
   }, []);
 
@@ -185,10 +397,11 @@ export function MusicPlayerProvider({ children }) {
       setCurrentIndex(safeIndex);
       setCurrentTime(0);
       setDuration(0);
+      pendingSeekRef.current = null;
       setIsPlaying(true);
 
       if (selectedTrack?.audio) {
-        const audio = syncAudioSource(selectedTrack.audio);
+        const audio = syncAudioSource(selectedTrack.audio, { force: true });
         requestAudioPlay(audio);
       }
     },
@@ -318,10 +531,11 @@ export function MusicPlayerProvider({ children }) {
       setCurrentIndex(safeIndex);
       setCurrentTime(0);
       setDuration(0);
+      pendingSeekRef.current = null;
       setIsPlaying(play);
 
       if (play && track?.audio) {
-        const audio = syncAudioSource(track.audio);
+        const audio = syncAudioSource(track.audio, { force: true });
         requestAudioPlay(audio);
       } else if (!play) {
         audioRef.current?.pause();
@@ -339,6 +553,7 @@ export function MusicPlayerProvider({ children }) {
     });
     setCurrentTime(0);
     setDuration(0);
+    pendingSeekRef.current = null;
     setIsPlaying(true);
   }, [queue.length, shuffle]);
 
@@ -348,6 +563,7 @@ export function MusicPlayerProvider({ children }) {
     if (audio && audio.currentTime > 4) {
       audio.currentTime = 0;
       setCurrentTime(0);
+      pendingSeekRef.current = null;
       return;
     }
 
@@ -359,6 +575,7 @@ export function MusicPlayerProvider({ children }) {
     });
     setCurrentTime(0);
     setDuration(0);
+    pendingSeekRef.current = null;
     setIsPlaying(true);
   }, [queue.length]);
 
@@ -377,28 +594,61 @@ export function MusicPlayerProvider({ children }) {
     requestAudioPlay(audio);
   }, [currentTrack, isPlaying, requestAudioPlay, syncAudioSource]);
 
-  const seekTo = useCallback((percent) => {
-    const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
+  const seekToTime = useCallback(
+    (time) => {
+      const audio = audioRef.current;
+      if (!audio) return;
 
-    const nextTime = (clamp(percent, 0, 100) / 100) * audio.duration;
-    audio.currentTime = nextTime;
-    setCurrentTime(nextTime);
-  }, []);
+      const mediaDuration = getMediaDuration(audio, durationRef.current);
+      if (!mediaDuration) return;
 
-  const seekToTime = useCallback((time) => {
-    const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
+      const nextTime = clamp(
+        Number(time) || 0,
+        0,
+        Math.max(0, mediaDuration - 0.05),
+      );
+      pendingSeekRef.current = nextTime;
 
-    const nextTime = clamp(Number(time) || 0, 0, audio.duration);
-    audio.currentTime = nextTime;
-    setCurrentTime(nextTime);
-  }, []);
+      const shouldRecoverBeforeSeek =
+        isProbablyWavUrl(currentTrackAudioRef.current) &&
+        nextTime > 0 &&
+        !rangeContainsTime(audio.seekable, nextTime);
+
+      if (shouldRecoverBeforeSeek) {
+        setCurrentTime(nextTime);
+        recoverAudioForSeek(nextTime, { playAfter: isPlayingRef.current });
+        return;
+      }
+
+      try {
+        audio.currentTime = nextTime;
+        setCurrentTime(nextTime);
+        pendingSeekRef.current = null;
+        if (isPlayingRef.current && audio.paused) requestAudioPlay(audio);
+      } catch {
+        recoverAudioForSeek(nextTime, { playAfter: isPlayingRef.current });
+      }
+    },
+    [recoverAudioForSeek, requestAudioPlay],
+  );
+
+  const seekTo = useCallback(
+    (percent) => {
+      const audio = audioRef.current;
+      const mediaDuration = getMediaDuration(audio, durationRef.current);
+      if (!mediaDuration) return;
+
+      const nextTime = (clamp(percent, 0, 100) / 100) * mediaDuration;
+      seekToTime(nextTime);
+    },
+    [seekToTime],
+  );
 
   const toggleMute = useCallback(() => {
     if (isMuted || volume === 0) {
       const restoredVolume = volume === 0 ? DEFAULT_VOLUME : volume;
       setVolumeState(restoredVolume);
+      volumeRef.current = restoredVolume;
       setIsMuted(false);
 
       if (typeof window !== "undefined") {
@@ -415,6 +665,7 @@ export function MusicPlayerProvider({ children }) {
     if (audio) {
       audio.pause();
       audio.removeAttribute("src");
+      audio.dataset.originalSrc = "";
       audio.load();
     }
 
@@ -424,6 +675,7 @@ export function MusicPlayerProvider({ children }) {
     setIsPlaying(false);
     setCurrentTime(0);
     setDuration(0);
+    pendingSeekRef.current = null;
   }, []);
 
   useEffect(() => {
@@ -431,17 +683,36 @@ export function MusicPlayerProvider({ children }) {
     if (!audio) return;
 
     audio.muted = isMuted || volume === 0;
-    audio.volume = isMuted ? 0 : volume / 100;
+    audio.volume = isMuted ? 0 : clamp(volume, 0, 100) / 100;
   }, [volume, isMuted]);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    const applyPendingSeek = () => {
+      const pending = pendingSeekRef.current;
+      if (pending == null || !isFiniteDuration(audio.duration)) return;
+
+      const safeTime = clamp(pending, 0, Math.max(0, audio.duration - 0.05));
+      try {
+        audio.currentTime = safeTime;
+        setCurrentTime(safeTime);
+        pendingSeekRef.current = null;
+      } catch {
+        // handled by error/recovery path
+      }
+    };
+
     const onTimeUpdate = () => setCurrentTime(audio.currentTime || 0);
     const onLoadedMetadata = () => {
-      setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
+      setDuration(isFiniteDuration(audio.duration) ? audio.duration : 0);
       setCurrentTime(audio.currentTime || 0);
+      applyPendingSeek();
+    };
+    const onCanPlay = () => {
+      applyPendingSeek();
+      if (isPlayingRef.current && audio.paused) requestAudioPlay(audio);
     };
     const onEnded = () => {
       if (queue.length > 1) {
@@ -450,20 +721,37 @@ export function MusicPlayerProvider({ children }) {
         setIsPlaying(false);
       }
     };
-    const onError = () => setIsPlaying(false);
+    const onError = () => {
+      const target = pendingSeekRef.current ?? currentTimeRef.current ?? 0;
+      const canTryRecover =
+        pendingSeekRef.current != null || isProbablyWavUrl(currentTrackAudioRef.current);
+
+      if (!canTryRecover) {
+        setIsPlaying(false);
+        return;
+      }
+
+      recoverAudioForSeek(target, { playAfter: isPlayingRef.current }).then(
+        (recovered) => {
+          if (!recovered) setIsPlaying(false);
+        },
+      );
+    };
 
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
+    audio.addEventListener("canplay", onCanPlay);
     audio.addEventListener("ended", onEnded);
     audio.addEventListener("error", onError);
 
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
       audio.removeEventListener("loadedmetadata", onLoadedMetadata);
+      audio.removeEventListener("canplay", onCanPlay);
       audio.removeEventListener("ended", onEnded);
       audio.removeEventListener("error", onError);
     };
-  }, [nextTrack, queue.length]);
+  }, [nextTrack, queue.length, recoverAudioForSeek, requestAudioPlay]);
 
   useEffect(() => {
     const audio = syncAudioSource(currentTrackAudio);

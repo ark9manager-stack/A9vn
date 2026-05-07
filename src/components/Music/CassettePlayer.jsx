@@ -122,7 +122,21 @@ export default function CassettePlayer() {
     const row = container?.querySelector(
       `[data-lyric-idx="${activeLyricIndex}"]`,
     );
-    row?.scrollIntoView({ block: "center", behavior: "smooth" });
+    if (!container || !row) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const rowRect = row.getBoundingClientRect();
+    const nextTop =
+      container.scrollTop +
+      rowRect.top -
+      containerRect.top -
+      container.clientHeight / 2 +
+      row.clientHeight / 2;
+
+    container.scrollTo({
+      top: Math.max(0, nextTop),
+      behavior: "smooth",
+    });
   }, [expanded, activeLyricIndex]);
 
   if (!currentTrack) return null;
@@ -157,10 +171,12 @@ export default function CassettePlayer() {
   };
 
   const handleSeek = (event) => {
+    event.preventDefault?.();
     seekFromClientX(event.currentTarget, event.clientX);
   };
 
   const handleSeekPointerDown = (event) => {
+    event.preventDefault?.();
     seekDragRef.current = true;
     event.currentTarget.setPointerCapture?.(event.pointerId);
     seekFromClientX(event.currentTarget, event.clientX);
@@ -168,10 +184,12 @@ export default function CassettePlayer() {
 
   const handleSeekPointerMove = (event) => {
     if (!seekDragRef.current) return;
+    event.preventDefault?.();
     seekFromClientX(event.currentTarget, event.clientX);
   };
 
   const handleSeekPointerEnd = (event) => {
+    event.preventDefault?.();
     seekDragRef.current = false;
     event.currentTarget.releasePointerCapture?.(event.pointerId);
   };

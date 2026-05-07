@@ -73,8 +73,17 @@ const MusicDetailModal = ({
 
     const row = container.querySelector(`[data-idx="${activeIndex}"]`);
     if (row) {
-      row.scrollIntoView({
-        block: "center",
+      const containerRect = container.getBoundingClientRect();
+      const rowRect = row.getBoundingClientRect();
+      const nextTop =
+        container.scrollTop +
+        rowRect.top -
+        containerRect.top -
+        container.clientHeight / 2 +
+        row.clientHeight / 2;
+
+      container.scrollTo({
+        top: Math.max(0, nextTop),
         behavior: currentTime < 0.3 ? "auto" : "smooth",
       });
     }

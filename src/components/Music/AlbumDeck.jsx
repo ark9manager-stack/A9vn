@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Disc3, Loader2, Music2, Play, X } from "lucide-react";
 import { useScrollLock } from "../../hooks/useScrollLock";
+import { getMusicTrackRouteId } from "../../utils/musicTrackIds";
 
 function DeckReel() {
   return (
@@ -60,7 +61,7 @@ const AlbumDeck = ({
     onSelectSong?.(song, index);
     onClose?.();
 
-    const songId = song?.id ?? song?.id_list;
+    const songId = getMusicTrackRouteId(song) || song?.id || song?.id_list;
     if (songId != null) {
       navigate(`/music/${encodeURIComponent(String(songId))}`);
     }

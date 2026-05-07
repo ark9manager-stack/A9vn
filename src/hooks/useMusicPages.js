@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useAlbums } from "./useAlbums";
 import { useMusic } from "./useMusic";
 import { useMusicPlayer } from "../contexts/useMusicPlayer";
+import { makeMusicTrackId, sameMusicTrack } from "../utils/musicTrackIds";
 
 // ── helpers ────────────────────────────────────────────────────────
 export function norm(str) {
@@ -11,6 +12,37 @@ export function norm(str) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
+}
+
+const MUSIC_PAGE_STATE_KEY = "a9vn_music_page_state_v1";
+
+function readStoredMusicPageState() {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.sessionStorage.getItem(MUSIC_PAGE_STATE_KEY);
+    return raw ? JSON.parse(raw) || {} : {};
+  } catch {
+    return {};
+  }
+}
+
+function getWindowScrollY() {
+  if (typeof window === "undefined") return 0;
+  return window.scrollY || window.pageYOffset || 0;
+}
+
+function writeStoredMusicPageState(state) {
+  if (typeof window === "undefined") return;
+  try {
+    const prevRaw = window.sessionStorage.getItem(MUSIC_PAGE_STATE_KEY);
+    const prev = prevRaw ? JSON.parse(prevRaw) || {} : {};
+    window.sessionStorage.setItem(
+      MUSIC_PAGE_STATE_KEY,
+      JSON.stringify({ ...prev, ...state }),
+    );
+  } catch {
+    // no-op
+  }
 }
 
 // ── hook ──────────────────────────────────────────────────────────
@@ -26,12 +58,19 @@ export function useMusicPage() {
   } = useMusic(selectedAlbum?.id);
   const { currentTrack, playQueue } = useMusicPlayer();
 
+  const storedPageStateRef = useRef(readStoredMusicPageState());
+
   // ── search ────────────────────────────────────────────────────
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(
+    () => storedPageStateRef.current.searchTerm || "",
+  );
   const qNorm = useMemo(() => norm(searchTerm), [searchTerm]);
 
   // ── pagination ────────────────────────────────────────────────
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(() => {
+    const n = Number(storedPageStateRef.current.currentPage);
+    return Number.isFinite(n) && n > 0 ? Math.floor(n) : 1;
+  });
   const ITEMS_PER_PAGE = 10;
 
   // ── ui state ──────────────────────────────────────────────────
@@ -223,23 +262,25 @@ export function useMusicPage() {
     const albumName = selectedAlbum?.name ?? "";
 
     return (rawSongs ?? []).map((s, idx) => ({
-      id: `${selectedAlbum?.id ?? "x"}-${s.id_list ?? idx + 1}`,
+      id: makeMusicTrackId(
+        selectedAlbum?.id ?? s.albumId ?? s.album_id,
+        s.id_list ?? s.idList ?? idx + 1,
+        s.id,
+      ),
       id_list: s.id_list ?? s.idList ?? idx + 1,
       name: s.name ?? s.song_name ?? "",
       audio: s.audio ?? s.url_song ?? s.urlSong ?? "",
       lyrics: s.lyrics ?? s.url_lyric ?? s.urlLyric ?? null,
       cover,
       albumName,
-      albumId: selectedAlbum?.id ?? null,
+      albumId: selectedAlbum?.id ?? s.albumId ?? s.album_id ?? null,
     }));
   }, [rawSongs, selectedAlbum]);
 
   const currentSongIndex = useMemo(() => {
     if (!currentTrack || playlistItems.length === 0) return -1;
 
-    return playlistItems.findIndex(
-      (song) => song.id === currentTrack.id || song.audio === currentTrack.audio,
-    );
+    return playlistItems.findIndex((song) => sameMusicTrack(song, currentTrack));
   }, [currentTrack, playlistItems]);
 
   // ── handlers ──────────────────────────────────────────────────
@@ -249,12 +290,55 @@ export function useMusicPage() {
     setPlaylistOpen(true);
   };
 
+  useEffect(() => {
+    writeStoredMusicPageState({
+      currentPage,
+      searchTerm,
+      scrollY: getWindowScrollY(),
+    });
+  }, [currentPage, searchTerm]);
+
+  useEffect(() => {
+    if (loadingAlbums) return undefined;
+
+    const y = Number(storedPageStateRef.current.scrollY);
+    if (!Number.isFinite(y) || y <= 0) return undefined;
+
+    const timer = window.setTimeout(() => {
+      window.scrollTo({ top: y, behavior: "auto" });
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [loadingAlbums]);
+
+  useEffect(() => {
+    return () => {
+      writeStoredMusicPageState({
+        currentPage,
+        searchTerm,
+        scrollY: getWindowScrollY(),
+      });
+    };
+  }, [currentPage, searchTerm]);
+
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+    else if (currentPage < 1) setCurrentPage(1);
+  }, [currentPage, totalPages]);
+
   const handlePageChange = (page) => {
-    setCurrentPage(page);
+    const safePage = Math.min(Math.max(Number(page) || 1, 1), totalPages);
+    setCurrentPage(safePage);
     document.getElementById("music")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const openSongModal = (song, idx) => {
+    writeStoredMusicPageState({
+      currentPage,
+      searchTerm,
+      scrollY: getWindowScrollY(),
+    });
+
     playQueue(playlistItems, idx, {
       id: selectedAlbum?.id,
       name: selectedAlbum?.name ?? song.albumName ?? "PLAYLIST",
