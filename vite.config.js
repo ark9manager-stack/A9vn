@@ -26,6 +26,7 @@ export default defineConfig({
 
           if (normalized.includes("/src/data/operators/character_table")) {
             return normalized.endsWith("character_table_en.json")
+              ? "data-character-en"
               : "data-character-cn";
           }
           if (normalized.includes("/src/data/operators/skill_table")) {
