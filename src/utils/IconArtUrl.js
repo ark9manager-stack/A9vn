@@ -20,6 +20,44 @@ function preferLocalAsset(fileName, remoteUrl) {
   return getLocalAssetUrl(fileName) || remoteUrl;
 }
 
+const AK_ASSET_BRANCH = "cn";
+const AK_ASSET_RAW_BASE = `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/${AK_ASSET_BRANCH}`;
+const AK_ASSET_JSDELIVR_BASE = `https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@${AK_ASSET_BRANCH}`;
+
+function buildAkAssetUrl(path = "") {
+  const clean = String(path || "").replace(/^\/+/, "");
+  return `${AK_ASSET_RAW_BASE}/${clean}`;
+}
+
+export function toJsDelivrAssetUrl(url) {
+  const rawPrefix = `${AK_ASSET_RAW_BASE}/`;
+  const value = String(url || "");
+  if (!value.startsWith(rawPrefix)) return value;
+  return `${AK_ASSET_JSDELIVR_BASE}/${value.slice(rawPrefix.length)}`;
+}
+
+export function toRawGithubAssetUrl(url) {
+  const jsdelivrPrefix = `${AK_ASSET_JSDELIVR_BASE}/`;
+  const value = String(url || "");
+  if (!value.startsWith(jsdelivrPrefix)) return value;
+  return `${AK_ASSET_RAW_BASE}/${value.slice(jsdelivrPrefix.length)}`;
+}
+
+export function makeRawToJsDelivrFallbackHandler({ onFallback } = {}) {
+  return (e) => {
+    const img = e?.currentTarget;
+    if (!img) return;
+    const current = String(img.currentSrc || img.src || "");
+    const next = toJsDelivrAssetUrl(current);
+    if (!next || next === current || img?.dataset?.cdnFallback === "1") return;
+    try {
+      if (img.dataset) img.dataset.cdnFallback = "1";
+    } catch {}
+    onFallback?.(next, img);
+    img.src = next;
+  };
+}
+
 const __IMG_QUEUE__ = [];
 let __IMG_ACTIVE__ = 0;
 let __IMG_JOB_SEQ__ = 0;
@@ -500,7 +538,7 @@ export const getPotIconSmall = (idx1) =>
   getLocalAssetUrl(`potential_${idx1}_small.png`);
 
 export const SKILL_ICON_DIR =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/skills/";
+  `${buildAkAssetUrl("assets/dyn/arts/skills")}/`;
 export const SKILL_ICON_BASE = `${SKILL_ICON_DIR}skill_icon_`;
 
 export function getSkillIconUrl(skillId, iconId) {
@@ -523,7 +561,7 @@ export function getSkillLevelIconUrl(levelNum) {
 }
 
 export const BUILDING_SKILL_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/building/skills/";
+  `${buildAkAssetUrl("assets/dyn/arts/building/skills")}/`;
 
 export function getBuildingSkillIconUrl(iconKey) {
   const key = String(iconKey || "").trim();
@@ -532,9 +570,9 @@ export function getBuildingSkillIconUrl(iconKey) {
 }
 
 export const ITEM_BG_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/[uc]home/mail/panel_mail_item/";
+  `${buildAkAssetUrl("assets/dyn/ui/[uc]home/mail/panel_mail_item")}/`;
 export const ITEM_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/items/icons/";
+  `${buildAkAssetUrl("assets/dyn/arts/items/icons")}/`;
 
 function clamp(n, min, max) {
   const x = Number(n);
@@ -578,9 +616,9 @@ export function buildRecruitBgUrl(rarity) {
 }
 
 export const TOKEN_ICON_BASE_POTENTIAL =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/items/icons/potential/";
+  `${buildAkAssetUrl("assets/dyn/arts/items/icons/potential")}/`;
 export const TOKEN_ICON_BASE_CLASSPOTENTIAL =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/items/icons/classpotential/";
+  `${buildAkAssetUrl("assets/dyn/arts/items/icons/classpotential")}/`;
 
 export function buildPotentialTokenIconUrl(iconId) {
   const key = String(iconId || "").trim();
@@ -609,12 +647,12 @@ export function buildActivityVoucherIconUrl(
 }
 
 export const MODULE_DIR_ICON_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequipdirection/";
+  `${buildAkAssetUrl("assets/dyn/arts/ui/uniequipdirection")}/`;
 export const MODULE_DIR_ICON_ORIGINAL = getLocalAssetUrl("original.png");
 export const MODULE_IMG_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/uniequipimg/";
+  `${buildAkAssetUrl("assets/dyn/arts/ui/uniequipimg")}/`;
 export const MODULE_LEVEL_BOARD_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/ui/uniequip/uniequip_level_board/";
+  `${buildAkAssetUrl("assets/dyn/ui/uniequip/uniequip_level_board")}/`;
 
 export function getModuleDirIconUrl(iconKey) {
   const key = String(iconKey || "original").toLowerCase();
@@ -683,7 +721,7 @@ export function makeModuleCandidateOnError({
 }
 
 export const SKIN_ART_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/characters";
+  buildAkAssetUrl("assets/dyn/arts/characters");
 
 export const ICON_MODEL_URL = getLocalAssetUrl("icon_model.png");
 export const ICON_DRAWER_URL = getLocalAssetUrl("icon_drawer.png");
@@ -730,7 +768,7 @@ export function withSpSuffix(url) {
 }
 
 export const CHARAVATAR_BASE =
-  "https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/charavatars/";
+  `${buildAkAssetUrl("assets/dyn/arts/charavatars")}/`;
 
 const SUMMON_AVATAR_OVERRIDE = {
   token_10012_rosmon_shield: `${SKILL_ICON_DIR}skill_icon_sktok_rosmon.png`,

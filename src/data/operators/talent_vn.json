@@ -6667,10 +6667,10 @@
   "char_4037_demetr": {
     "TitleTalent1": "Thủ đoạn gia tộc",
     "TitleTalent2": "Trực giác đường phố",
-    "Talent1": "Đòn tấn công khiến mục tiêu giảm 5% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 120% sát thương khi mục tiêu dưới 20% HP.",
-    "Talent1_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
-    "Talent1_2": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128% sát thương khi mục tiêu dưới 20% HP.",
-    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 lần). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 136%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1": "Đòn tấn công khiến mục tiêu giảm 5% DEF trong 10 giây (cộng dồn tối đa 5 tầng). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 120% sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 tầng). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 tầng). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 128% sát thương khi mục tiêu dưới 20% HP.",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu giảm 7% DEF trong 10 giây (cộng dồn tối đa 5 tầng). Ngoài ra, HP còn lại của mục tiêu càng thấp thì Bellone gây sát thương càng cao, đạt tối đa 136%<@ba.talpu>（+8%）</> sát thương khi mục tiêu dưới 20% HP.",
     "Talent2": "Nhận 40% tỷ lệ né sát thương vật lý và phép; Sau khi triển khai, hiệu ứng này tăng lên 80% và giảm dần trong 20 giây."
   },
   "char_4031_liesel": {
