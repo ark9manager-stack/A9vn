@@ -230,6 +230,7 @@ export function useMusicPage() {
       lyrics: s.lyrics ?? s.url_lyric ?? s.urlLyric ?? null,
       cover,
       albumName,
+      albumId: selectedAlbum?.id ?? null,
     }));
   }, [rawSongs, selectedAlbum]);
 

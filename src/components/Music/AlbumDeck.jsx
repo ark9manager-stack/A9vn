@@ -60,7 +60,7 @@ const AlbumDeck = ({
     onSelectSong?.(song, index);
     onClose?.();
 
-    const songId = song?.id_list ?? song?.id;
+    const songId = song?.id ?? song?.id_list;
     if (songId != null) {
       navigate(`/music/${encodeURIComponent(String(songId))}`);
     }

@@ -97,6 +97,7 @@ export default function CassettePlayer() {
   const [expanded, setExpanded] = useState(false);
   const [hidden, setHidden] = useState(true);
   const lyricListRef = useRef(null);
+  const seekDragRef = useRef(false);
   const { entries, loading, error } = useLyrics(currentTrack?.lyrics);
 
   const activeLyricIndex = useMemo(() => {
@@ -147,10 +148,32 @@ export default function CassettePlayer() {
         ? "border-primary/50 bg-primary/15 text-primary"
         : "border-white/15 bg-white/[0.05] text-[#d7d0b8]";
 
-  const handleSeek = (event) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const percent = ((event.clientX - rect.left) / rect.width) * 100;
+  const seekFromClientX = (target, clientX) => {
+    const rect = target?.getBoundingClientRect?.();
+    if (!rect?.width) return;
+
+    const percent = ((clientX - rect.left) / rect.width) * 100;
     seekTo(percent);
+  };
+
+  const handleSeek = (event) => {
+    seekFromClientX(event.currentTarget, event.clientX);
+  };
+
+  const handleSeekPointerDown = (event) => {
+    seekDragRef.current = true;
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    seekFromClientX(event.currentTarget, event.clientX);
+  };
+
+  const handleSeekPointerMove = (event) => {
+    if (!seekDragRef.current) return;
+    seekFromClientX(event.currentTarget, event.clientX);
+  };
+
+  const handleSeekPointerEnd = (event) => {
+    seekDragRef.current = false;
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
   };
 
   return (
@@ -236,7 +259,11 @@ export default function CassettePlayer() {
                         type="button"
                         aria-label="Seek track"
                         onClick={handleSeek}
-                        className="mt-2 h-2 w-full border border-black/50 bg-black/60 text-left"
+                        onPointerDown={handleSeekPointerDown}
+                        onPointerMove={handleSeekPointerMove}
+                        onPointerUp={handleSeekPointerEnd}
+                        onPointerCancel={handleSeekPointerEnd}
+                        className="mt-2 h-2 w-full touch-none border border-black/50 bg-black/60 text-left"
                       >
                         <span
                           className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
@@ -373,7 +400,11 @@ export default function CassettePlayer() {
               type="button"
               aria-label="Seek track"
               onClick={handleSeek}
-              className="mt-3 h-2 w-full border border-black/50 bg-black/70 text-left md:hidden"
+              onPointerDown={handleSeekPointerDown}
+              onPointerMove={handleSeekPointerMove}
+              onPointerUp={handleSeekPointerEnd}
+              onPointerCancel={handleSeekPointerEnd}
+              className="mt-3 h-2 w-full touch-none border border-black/50 bg-black/70 text-left md:hidden"
             >
               <span
                 className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"

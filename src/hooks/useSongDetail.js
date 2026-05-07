@@ -62,12 +62,11 @@ export function useSongDetail(songId) {
   const song = useMemo(() => {
     if (!resolvedSongId) return null;
 
+    const byStableId = songs.find((item) => String(item.id) === resolvedSongId);
+    if (byStableId) return byStableId;
+
     return (
-      songs.find(
-        (item) =>
-          String(item.id_list) === resolvedSongId ||
-          String(item.id) === resolvedSongId,
-      ) ?? null
+      songs.find((item) => String(item.id_list) === resolvedSongId) ?? null
     );
   }, [resolvedSongId, songs]);
 

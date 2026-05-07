@@ -104,6 +104,51 @@ export function MusicPlayerProvider({ children }) {
     queueRef.current = queue;
   }, [queue]);
 
+  const syncAudioSource = useCallback((audioUrl) => {
+    const audio = audioRef.current;
+    if (!audio) return null;
+
+    if (!audioUrl) {
+      playRequestIdRef.current += 1;
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+      return audio;
+    }
+
+    if (audio.getAttribute("src") !== audioUrl) {
+      playRequestIdRef.current += 1;
+      audio.src = audioUrl;
+      audio.load();
+    }
+
+    return audio;
+  }, []);
+
+  const requestAudioPlay = useCallback((audio) => {
+    if (!audio) return;
+
+    const requestId = playRequestIdRef.current + 1;
+    playRequestIdRef.current = requestId;
+    const playPromise = audio.play();
+
+    if (playPromise?.then) {
+      playPromise.then(() => {
+        if (playRequestIdRef.current === requestId) {
+          setIsPlaying(true);
+        }
+      });
+    }
+
+    if (playPromise?.catch) {
+      playPromise.catch(() => {
+        if (playRequestIdRef.current === requestId) {
+          setIsPlaying(false);
+        }
+      });
+    }
+  }, []);
+
   const setVolume = useCallback((nextVolume) => {
     const safeVolume = clamp(Number(nextVolume) || 0, 0, 100);
     setVolumeState(safeVolume);
@@ -114,33 +159,41 @@ export function MusicPlayerProvider({ children }) {
     }
   }, []);
 
-  const playQueue = useCallback((tracks, startIndex = 0, album = null) => {
-    const safeTracks = Array.isArray(tracks)
-      ? tracks.filter((track) => track?.audio)
-      : [];
+  const playQueue = useCallback(
+    (tracks, startIndex = 0, album = null) => {
+      const safeTracks = Array.isArray(tracks)
+        ? tracks.filter((track) => track?.audio)
+        : [];
 
-    if (safeTracks.length === 0) return;
+      if (safeTracks.length === 0) return;
 
-    const safeIndex = clamp(startIndex, 0, safeTracks.length - 1);
-    const normalizedAlbum = album
-      ? {
-          id: album.id,
-          name: album.name ?? "PLAYLIST",
-          cover: album.cover ?? album.url ?? "",
-        }
-      : null;
-
-    setQueue(
-      safeTracks.map((track, index) =>
+      const safeIndex = clamp(startIndex, 0, safeTracks.length - 1);
+      const normalizedAlbum = album
+        ? {
+            id: album.id,
+            name: album.name ?? "PLAYLIST",
+            cover: album.cover ?? album.url ?? "",
+          }
+        : null;
+      const normalizedTracks = safeTracks.map((track, index) =>
         normalizeTrack(track, index, normalizedAlbum),
-      ),
-    );
-    setCurrentAlbum(normalizedAlbum);
-    setCurrentIndex(safeIndex);
-    setCurrentTime(0);
-    setDuration(0);
-    setIsPlaying(true);
-  }, []);
+      );
+      const selectedTrack = normalizedTracks[safeIndex];
+
+      setQueue(normalizedTracks);
+      setCurrentAlbum(normalizedAlbum);
+      setCurrentIndex(safeIndex);
+      setCurrentTime(0);
+      setDuration(0);
+      setIsPlaying(true);
+
+      if (selectedTrack?.audio) {
+        const audio = syncAudioSource(selectedTrack.audio);
+        requestAudioPlay(audio);
+      }
+    },
+    [requestAudioPlay, syncAudioSource],
+  );
 
   const loadAllQueue = useCallback(async () => {
     if (allQueueRef.current.length > 0) return allQueueRef.current;
@@ -258,12 +311,23 @@ export function MusicPlayerProvider({ children }) {
   const selectTrack = useCallback(
     (index, play = true) => {
       if (queue.length === 0) return;
-      setCurrentIndex(clamp(index, 0, queue.length - 1));
+
+      const safeIndex = clamp(index, 0, queue.length - 1);
+      const track = queue[safeIndex];
+
+      setCurrentIndex(safeIndex);
       setCurrentTime(0);
       setDuration(0);
       setIsPlaying(play);
+
+      if (play && track?.audio) {
+        const audio = syncAudioSource(track.audio);
+        requestAudioPlay(audio);
+      } else if (!play) {
+        audioRef.current?.pause();
+      }
     },
-    [queue.length],
+    [queue, requestAudioPlay, syncAudioSource],
   );
 
   const nextTrack = useCallback(() => {
@@ -300,12 +364,22 @@ export function MusicPlayerProvider({ children }) {
 
   const togglePlay = useCallback(() => {
     if (!currentTrack?.audio) return;
-    setIsPlaying((value) => !value);
-  }, [currentTrack?.audio]);
+
+    if (isPlaying) {
+      playRequestIdRef.current += 1;
+      audioRef.current?.pause();
+      setIsPlaying(false);
+      return;
+    }
+
+    setIsPlaying(true);
+    const audio = syncAudioSource(currentTrack.audio);
+    requestAudioPlay(audio);
+  }, [currentTrack, isPlaying, requestAudioPlay, syncAudioSource]);
 
   const seekTo = useCallback((percent) => {
     const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration)) return;
+    if (!audio || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
 
     const nextTime = (clamp(percent, 0, 100) / 100) * audio.duration;
     audio.currentTime = nextTime;
@@ -314,7 +388,7 @@ export function MusicPlayerProvider({ children }) {
 
   const seekToTime = useCallback((time) => {
     const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration)) return;
+    if (!audio || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
 
     const nextTime = clamp(Number(time) || 0, 0, audio.duration);
     audio.currentTime = nextTime;
@@ -392,22 +466,10 @@ export function MusicPlayerProvider({ children }) {
   }, [nextTrack, queue.length]);
 
   useEffect(() => {
-    const audio = audioRef.current;
+    const audio = syncAudioSource(currentTrackAudio);
     if (!audio) return;
 
-    if (!currentTrackAudio) {
-      playRequestIdRef.current += 1;
-      audio.pause();
-      audio.removeAttribute("src");
-      audio.load();
-      return;
-    }
-
-    if (audio.getAttribute("src") !== currentTrackAudio) {
-      playRequestIdRef.current += 1;
-      audio.src = currentTrackAudio;
-      audio.load();
-    }
+    if (!currentTrackAudio) return;
 
     if (!isPlaying) {
       playRequestIdRef.current += 1;
@@ -415,17 +477,8 @@ export function MusicPlayerProvider({ children }) {
       return;
     }
 
-    const requestId = playRequestIdRef.current + 1;
-    playRequestIdRef.current = requestId;
-    const playPromise = audio.play();
-    if (playPromise?.catch) {
-      playPromise.catch(() => {
-        if (playRequestIdRef.current === requestId) {
-          setIsPlaying(false);
-        }
-      });
-    }
-  }, [currentTrackAudio, isPlaying]);
+    requestAudioPlay(audio);
+  }, [currentTrackAudio, isPlaying, requestAudioPlay, syncAudioSource]);
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
