@@ -6,6 +6,16 @@
     "Talent1_2": "Hồi 2 SP khi tấn công kẻ địch, và nhận thêm 8 SP khi hạ được kẻ địch.",
     "Talent1_2_p5": "Hồi 3<@ba.talpu>(+1)</> SP khi tấn công kẻ địch, và nhận thêm 10<@ba.talpu>(+2)</> SP khi hạ gục kẻ địch."
   },
+  "char_1001_amiya2": {
+    "TitleTalent1": "Lửa lam phẫn nộ",
+    "Talent1": "Khi có mặt trên sân, +4% ATK và DEF cho tất cả đồng minh; Hiệu ứng tăng gấp đôi khi kỹ năng của Amiya đang hoạt động.",
+    "Talent1_2": "Khi có mặt trên sân, +7% ATK và DEF cho tất cả đồng minh; Hiệu ứng tăng gấp đôi khi kỹ năng của Amiya đang hoạt động."
+  },
+  "char_1037_amiya3": {
+    "TitleTalent1": "Lời nguyện chân thành",
+    "Talent1": "Khi có mặt trên sân, +5% HP tối đa cho tất cả đồng minh; Trong thời gian kỹ năng hoạt động, tất cả đồng minh hồi 1.5% HP tối đa mỗi giây.",
+    "Talent1_2": "Khi có mặt trên sân, +8% HP tối đa cho tất cả đồng minh; Trong thời gian kỹ năng hoạt động, tất cả đồng minh hồi 2.5% HP tối đa mỗi giây."
+  },
   "char_003_kalts": {
     "TitleTalent1": "Mon3tr",
     "TitleTalent2": "Tái cấu trúc bất hoại",

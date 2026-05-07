@@ -24,11 +24,12 @@ const __IMG_QUEUE__ = [];
 let __IMG_ACTIVE__ = 0;
 let __IMG_JOB_SEQ__ = 0;
 
-const IMG_PRELOAD_CONCURRENCY = 3;
+const IMG_PRELOAD_CONCURRENCY = 1;
 const IMG_PRELOAD_QUEUE_MAX = 0;
 const IMG_PRELOAD_TIMEOUT_MS = 0;
 const IMG_PRIORITY_PRELOAD_TIMEOUT_MS = 0;
 const IMG_ERROR_RETRY_COOLDOWN_MS = 15000;
+const IMG_BACKGROUND_PRELOAD_ENABLED = false;
 
 function normalizeImgUrl(url) {
   return typeof url === "string" ? url.trim() : "";
@@ -342,7 +343,7 @@ export function preloadImageCached(
     priority = false,
     timeoutMs,
     waitForLoad = false,
-    background = true,
+    background = false,
   } = {},
 ) {
   const key = normalizeImgUrl(url);
@@ -364,7 +365,7 @@ export function preloadImageCached(
     timeoutMs ?? (priority ? IMG_PRIORITY_PRELOAD_TIMEOUT_MS : IMG_PRELOAD_TIMEOUT_MS);
 
   if (!waitForLoad) {
-    if (background && !priority) {
+    if (background && IMG_BACKGROUND_PRELOAD_ENABLED && !priority) {
       scheduleBackgroundPreload(key, entry, {
         decode,
         priority: false,
@@ -385,13 +386,22 @@ export function preloadImageCached(
 
 export function warmPreloadImageUrls(
   urls,
-  { limit = 2, retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS } = {},
+  {
+    limit = 0,
+    retryAfterMs = IMG_ERROR_RETRY_COOLDOWN_MS,
+    enabled = IMG_BACKGROUND_PRELOAD_ENABLED,
+  } = {},
 ) {
   const list = [
     ...new Set(
       (Array.isArray(urls) ? urls : []).map(normalizeImgUrl).filter(Boolean),
     ),
   ];
+
+  if (!enabled) {
+    return Promise.resolve(list.map((url) => ({ status: "fulfilled", value: url })));
+  }
+
   const picked = list.slice(0, Math.max(0, Number(limit) || 0));
   return Promise.allSettled(
     picked.map((url) =>
