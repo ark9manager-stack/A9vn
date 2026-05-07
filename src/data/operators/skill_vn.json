@@ -19871,7 +19871,7 @@
     "S1_7M1": "ATK <@ba.vup>+{atk:0%}</>; ASPD <@ba.vup>+{attack_speed}</>.",
     "S1_7M2": "ATK <@ba.vup>+{atk:0%}</>; ASPD <@ba.vup>+{attack_speed}</>.",
     "S1_7M3": "ATK <@ba.vup>+{atk:0%}</>; ASPD <@ba.vup>+{attack_speed}</>.",
-    "S2_1": "被动效果：每次有高台触发第一天赋的效果时，获得<@ba.vup>{sp_per_highland}</>点技力\\n自动开启：攻击范围<@ba.vup>扩大</>，攻击力<@ba.vup>+{atk:0%}</>，防御力<@ba.vup>+{def:0%}</>\\n<@ba.rem>第二次及以后使用时能力加成变为最初的两倍，且持续时间无限</>",
+    "S2_1": "Nội tại: 每次有高台触发第一天赋的效果时，获得<@ba.vup>{sp_per_highland}</>点技力\\nKích hoạt: 攻击范围<@ba.vup>扩大</>，攻击力<@ba.vup>+{atk:0%}</>，防御力<@ba.vup>+{def:0%}</>\\n<@ba.rem>第二次及以后使用时能力加成变为最初的两倍，且持续时间无限</>",
     "S2_2": "",
     "S2_3": "",
     "S2_4": "",
