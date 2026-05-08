@@ -6,6 +6,7 @@ import OperatorModal from "../components/Operator/OperatorModal";
 import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
+import { resetScrollLock } from "../hooks/useScrollLock";
 
 const Operator = () => {
   const location = useLocation();
@@ -67,6 +68,10 @@ const Operator = () => {
     navigate,
     setSelectedOperator,
   ]);
+
+  useEffect(() => {
+    if (!selectedOperator) resetScrollLock({ restorePosition: false });
+  }, [selectedOperator]);
 
   useEffect(() => {
     if (!operators?.length) return;

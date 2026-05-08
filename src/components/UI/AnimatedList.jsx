@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 const defaultItems = [
   "Item 1",

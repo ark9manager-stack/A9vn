@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 let lockCount = 0;
 let savedScrollY = 0;
 let savedStyles = null;
+const activeLocks = new Set();
 
 function getScrollbarWidth() {
   if (typeof window === "undefined" || typeof document === "undefined") {
@@ -12,10 +13,39 @@ function getScrollbarWidth() {
   return Math.max(0, window.innerWidth - document.documentElement.clientWidth);
 }
 
-function lockScroll() {
+function restoreScrollStyles({ restorePosition = true } = {}) {
   if (typeof window === "undefined" || typeof document === "undefined") {
     return;
   }
+
+  const { body, documentElement } = document;
+  const styles = savedStyles;
+  const y = savedScrollY;
+
+  body.style.overflow = styles?.bodyOverflow ?? "";
+  body.style.paddingRight = styles?.bodyPaddingRight ?? "";
+  body.style.position = styles?.bodyPosition ?? "";
+  body.style.top = styles?.bodyTop ?? "";
+  body.style.width = styles?.bodyWidth ?? "";
+  documentElement.style.overflow = styles?.htmlOverflow ?? "";
+
+  savedScrollY = 0;
+  savedStyles = null;
+
+  if (restorePosition && Number.isFinite(y) && y > 0) {
+    try {
+      window.scrollTo(0, y);
+    } catch {
+      // no-op
+    }
+  }
+}
+
+function lockScroll(lockId) {
+  if (typeof window === "undefined" || typeof document === "undefined") {
+    return;
+  }
+  if (activeLocks.has(lockId)) return;
 
   const { body, documentElement } = document;
 
@@ -42,36 +72,43 @@ function lockScroll() {
     }
   }
 
-  lockCount += 1;
+  activeLocks.add(lockId);
+  lockCount = activeLocks.size;
 }
 
-function unlockScroll() {
+function unlockScroll(lockId) {
   if (typeof window === "undefined" || typeof document === "undefined") {
     return;
   }
 
-  lockCount = Math.max(0, lockCount - 1);
-  if (lockCount > 0 || !savedStyles) return;
+  if (lockId != null) activeLocks.delete(lockId);
+  lockCount = activeLocks.size;
 
-  const { body, documentElement } = document;
+  if (lockCount > 0) return;
+  restoreScrollStyles();
+}
 
-  body.style.overflow = savedStyles.bodyOverflow;
-  body.style.paddingRight = savedStyles.bodyPaddingRight;
-  body.style.position = savedStyles.bodyPosition;
-  body.style.top = savedStyles.bodyTop;
-  body.style.width = savedStyles.bodyWidth;
-  documentElement.style.overflow = savedStyles.htmlOverflow;
+export function resetScrollLock({ restorePosition = false } = {}) {
+  if (typeof window === "undefined" || typeof document === "undefined") {
+    return;
+  }
 
-  window.scrollTo(0, savedScrollY);
-  savedScrollY = 0;
-  savedStyles = null;
+  activeLocks.clear();
+  lockCount = 0;
+  restoreScrollStyles({ restorePosition });
 }
 
 export function useScrollLock(locked) {
-  useEffect(() => {
-    if (!locked) return undefined;
+  const lockIdRef = useRef(Symbol("scroll-lock"));
 
-    lockScroll();
-    return unlockScroll;
+  useEffect(() => {
+    const lockId = lockIdRef.current;
+    if (!locked) {
+      unlockScroll(lockId);
+      return undefined;
+    }
+
+    lockScroll(lockId);
+    return () => unlockScroll(lockId);
   }, [locked]);
 }

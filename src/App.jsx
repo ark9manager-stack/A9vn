@@ -4,11 +4,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Layout from "./components/Layout";
 import LoadingScreen from "./components/UI/LoadingScreen";
+import RouteErrorBoundary from "./components/UI/RouteErrorBoundary";
 import PRTSIntro from "./components/PRTSIntro";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
 // lazy load pages
 const Home = lazy(() => import("./pages/Home"));
 const Music = lazy(() => import("./pages/Music"));
+const MusicDetail = lazy(() => import("./pages/MusicDetail"));
 const Operator = lazy(() => import("./pages/Operator"));
 
 const GuideStory = lazy(() => import("./pages/GuideStory"));
@@ -59,17 +61,23 @@ const App = () => {
       <MusicPlayerProvider>
         {showIntro && <PRTSIntro onComplete={() => setShowIntro(false)} />}
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
-          <Suspense fallback={<LoadingScreen />}>
-            <Routes location={location}>
-              <Route element={<Layout />}>
+          <RouteErrorBoundary resetKey={location.pathname}>
+            <Suspense fallback={<LoadingScreen />}>
+              <Routes location={location}>
+                <Route element={<Layout />}>
                 {/* Home */}
                 <Route path="/" element={<Home />} />
 
                 {/* Operators */}
                 <Route path="/operator" element={<Operator />} />
+                <Route path="/Operator" element={<Operator />} />
                 <Route path="/operator/:id" element={<Operator />} />
+                <Route path="/Operator/:id" element={<Operator />} />
                 {/* Music */}
                 <Route path="/music" element={<Music />} />
+                <Route path="/Music" element={<Music />} />
+                <Route path="/music/:songId" element={<MusicDetail />} />
+                <Route path="/Music/:songId" element={<MusicDetail />} />
 
                 {/* Guide */}
                 <Route path="/guide-story" element={<GuideStory />} />
@@ -97,9 +105,10 @@ const App = () => {
 
                 {/* 404 */}
                 <Route path="*" element={<NotFound />} />
-              </Route>
-            </Routes>
-          </Suspense>
+                </Route>
+              </Routes>
+            </Suspense>
+          </RouteErrorBoundary>
         </main>
       </MusicPlayerProvider>
     </QueryClientProvider>
