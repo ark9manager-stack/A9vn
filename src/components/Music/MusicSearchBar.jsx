@@ -46,19 +46,6 @@ const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
               />
             </div>
 
-            <div className="hidden h-[clamp(28px,4.5vh,36px)] items-end gap-1 border-l border-white/10 pl-3 sm:flex lg:pl-4">
-              {[18, 28, 14, 34, 22].map((height, index) => (
-                <span
-                  key={height}
-                  className="music-search-signal-bar block w-1 rounded-full bg-gradient-to-t from-primary/40 via-white/65 to-accent/80"
-                  style={{
-                    height,
-                    animationDelay: `${index * 120}ms`,
-                  }}
-                />
-              ))}
-            </div>
-
             {searchTerm && (
               <button
                 type="button"
