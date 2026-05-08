@@ -25,9 +25,10 @@ const MusicGrid = ({
               selected={selected}
             />
           )}
-          showGradients
+          showGradients={false}
           enableArrowNavigation
-          displayScrollbar
+          displayScrollbar={false}
+          constrainHeight={false}
         />
       </div>
     );

@@ -453,7 +453,7 @@
 
 @media (max-width: 640px) {
   .music-grid-wrap {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .music-grid {

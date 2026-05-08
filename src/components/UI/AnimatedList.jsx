@@ -57,6 +57,7 @@ const AnimatedList = ({
   className = "",
   itemClassName = "",
   displayScrollbar = true,
+  constrainHeight = true,
   initialSelectedIndex = -1,
   renderItem,
   getItemKey,
@@ -141,16 +142,23 @@ const AnimatedList = ({
       <div
         ref={listRef}
         tabIndex={enableArrowNavigation ? 0 : undefined}
-        className={`max-h-[min(58vh,560px)] min-h-[320px] overflow-y-auto overscroll-contain p-3 outline-none ${
-          displayScrollbar
-            ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-thumb]:bg-primary/50"
-            : "scrollbar-hide"
+        className={`outline-none ${
+          constrainHeight
+            ? `max-h-[min(58vh,560px)] min-h-[320px] overflow-y-auto overscroll-contain p-3 ${
+                displayScrollbar
+                  ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-thumb]:bg-primary/50"
+                  : "scrollbar-hide"
+              }`
+            : "overflow-visible p-0"
         }`}
         onKeyDown={handleKeyDown}
         onScroll={handleScroll}
         style={{
-          scrollbarWidth: displayScrollbar ? "thin" : "none",
-          scrollbarColor: "hsl(var(--primary) / 0.5) rgba(255,255,255,0.05)",
+          scrollbarWidth: constrainHeight && displayScrollbar ? "thin" : "none",
+          scrollbarColor:
+            constrainHeight && displayScrollbar
+              ? "hsl(var(--primary) / 0.5) rgba(255,255,255,0.05)"
+              : "auto",
         }}
       >
         <div className="flex flex-col gap-3">
