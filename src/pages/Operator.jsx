@@ -104,17 +104,18 @@ const Operator = () => {
     <div id="operator">
       <div className="w-full h-full">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
-          <div className="w-full flex items-center mb-0 gap-4">
+          <div className="w-full flex items-center justify-between mb-3 gap-3">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
               Operator
             </h1>
+            <OperatorFilter
+              className="flex-1 md:flex-none"
+              operators={operators}
+              onFilterChange={(filterData) => {
+                setAppliedFilter(filterData);
+              }}
+            />
           </div>
-          <OperatorFilter
-            operators={operators}
-            onFilterChange={(filterData) => {
-              setAppliedFilter(filterData);
-            }}
-          />
 
           <div className="w-full border-t border-gray-600 my-1" />
 

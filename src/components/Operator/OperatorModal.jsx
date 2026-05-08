@@ -19,15 +19,10 @@ const OperatorModal = ({ operator, onClose }) => {
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div
-        className="relative flex h-[100dvh] w-screen overflow-hidden bg-[#121212] shadow-2xl md:h-[92vh] md:w-[95%] md:max-w-7xl md:rounded-2xl md:flex-row flex-col"
-      >
+      <div className="relative flex h-[100dvh] w-screen overflow-hidden bg-[#121212] shadow-2xl md:h-[92vh] md:w-[95%] md:max-w-7xl md:rounded-2xl md:flex-row flex-col">
         <div className="operator-mobile-modal-bar md:hidden">
           <button
             type="button"
-            aria-label={
-              mobileSidebarOpen ? "Đóng thanh thông tin" : "Mở thanh thông tin"
-            }
             aria-expanded={mobileSidebarOpen}
             onClick={() => setMobileSidebarOpen((prev) => !prev)}
             className="operator-mobile-menu-btn"
@@ -48,9 +43,6 @@ const OperatorModal = ({ operator, onClose }) => {
                   mobileSidebarOpen ? "-translate-y-[5px] -rotate-45" : ""
                 }`}
               />
-            </span>
-            <span className="text-sm font-medium leading-none">
-              {mobileSidebarOpen ? "Đóng" : "Menu"}
             </span>
           </button>
 

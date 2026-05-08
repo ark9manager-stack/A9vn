@@ -79,7 +79,6 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
     setMountedTabs(new Set([activeTabId]));
   }, [operatorKey, activeTabId]);
 
-
   useEffect(() => {
     if (!activeTabId) return;
     setMountedTabs((prev) => {
