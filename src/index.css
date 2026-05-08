@@ -1022,38 +1022,190 @@
   transform: translateX(calc(var(--toggle-width) - 26px));
 }
 
-/* Hide scrollbar for all elements */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-
-/* Hide scrollbar globally */
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(73, 191, 225, 0.52) rgba(255, 255, 255, 0.045);
 }
 
 *::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  width: 10px;
+  height: 10px;
 }
 
+*::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent),
+    rgba(3, 5, 8, 0.48);
+}
+
+*::-webkit-scrollbar-thumb {
+  min-height: 44px;
+  border: 2px solid rgba(3, 5, 8, 0.84);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.72),
+    rgba(210, 215, 202, 0.62) 48%,
+    hsl(var(--accent) / 0.7)
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 0 14px hsl(var(--primary) / 0.18);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.95),
+    rgba(238, 230, 204, 0.82) 48%,
+    hsl(var(--accent) / 0.88)
+  );
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.a9-scroll,
+.music-list-scroll,
+.operator-list-scroll,
+.section-scroll,
+.operator-sidebar-scroll,
+.music-mobile-list > div {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary) / 0.64) rgba(255, 255, 255, 0.055);
+}
+
+.a9-scroll::-webkit-scrollbar,
+.music-list-scroll::-webkit-scrollbar,
+.operator-list-scroll::-webkit-scrollbar,
+.section-scroll::-webkit-scrollbar,
+.operator-sidebar-scroll::-webkit-scrollbar,
 .music-mobile-list > div::-webkit-scrollbar {
   display: block;
-  width: 8px;
+  width: 9px;
+  height: 9px;
 }
 
+.a9-scroll::-webkit-scrollbar-track,
+.music-list-scroll::-webkit-scrollbar-track,
+.operator-list-scroll::-webkit-scrollbar-track,
+.section-scroll::-webkit-scrollbar-track,
+.operator-sidebar-scroll::-webkit-scrollbar-track,
 .music-mobile-list > div::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent),
+    rgba(2, 4, 7, 0.62);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.055);
 }
 
+.a9-scroll::-webkit-scrollbar-thumb,
+.music-list-scroll::-webkit-scrollbar-thumb,
+.operator-list-scroll::-webkit-scrollbar-thumb,
+.section-scroll::-webkit-scrollbar-thumb,
+.operator-sidebar-scroll::-webkit-scrollbar-thumb,
 .music-mobile-list > div::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background: hsl(var(--primary) / 0.5);
+  border: 2px solid rgba(2, 4, 7, 0.78);
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.78),
+    rgba(216, 214, 198, 0.68),
+    hsl(var(--accent) / 0.72)
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 0 16px hsl(var(--primary) / 0.16);
+}
+
+.a9-scroll::-webkit-scrollbar-thumb:hover,
+.music-list-scroll::-webkit-scrollbar-thumb:hover,
+.operator-list-scroll::-webkit-scrollbar-thumb:hover,
+.section-scroll::-webkit-scrollbar-thumb:hover,
+.operator-sidebar-scroll::-webkit-scrollbar-thumb:hover,
+.music-mobile-list > div::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.98),
+    rgba(245, 237, 206, 0.86),
+    hsl(var(--accent) / 0.9)
+  );
+}
+
+.operator-list-scroll,
+.music-list-scroll,
+.section-scroll {
+  overscroll-behavior: contain;
+}
+
+.operator-list-scroll {
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.026), transparent 18%),
+    rgba(0, 0, 0, 0.08);
+}
+
+.section-scroll {
+  position: relative;
+  border-radius: 10px;
+}
+
+.operator-list-scroll .ark-card {
+  position: relative;
+  will-change: transform, border-color, box-shadow;
+}
+
+.music-card {
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.music-list-scroll button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.operator-list-scroll:focus-within,
+.music-list-scroll:focus-within,
+.section-scroll:focus-within {
+  box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.2);
+}
+
+@keyframes a9-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+    filter: saturate(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+.animate-in {
+  animation: a9-rise-in 360ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none;
+  }
 }
 /* =========================
    SIDEBAR BACKGROUND

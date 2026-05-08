@@ -286,7 +286,7 @@ const OperatorSidebar = ({
             mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="h-full overflow-y-auto pr-1">
+          <div className="operator-sidebar-scroll h-full overflow-y-auto pr-2">
             <SidebarPanel
               operator={operator}
               activeTab={activeTab}

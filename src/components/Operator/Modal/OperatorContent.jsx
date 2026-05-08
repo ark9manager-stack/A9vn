@@ -124,7 +124,7 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   );
 
   return (
-    <div className="operator-content-shell ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto p-0 md:p-5">
+    <div className="operator-content-shell section-scroll ak-steel-content-bg flex-1 h-full min-h-0 overflow-y-auto p-0 md:p-5">
       {SECTION_IDS.map((id) => {
         const isActive = activeTabId === id;
         if (!mountedTabs.has(id)) return null;

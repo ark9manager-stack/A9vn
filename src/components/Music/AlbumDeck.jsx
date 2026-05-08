@@ -150,7 +150,7 @@ const AlbumDeck = ({
             {error || loading || !hasTracks ? (
               <TrackState loading={loading} error={error} />
             ) : (
-              <ul className="flex h-full flex-col gap-2 overflow-y-auto pr-1 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]">
+              <ul className="music-list-scroll flex h-full flex-col gap-2 overflow-y-auto pr-2 [scrollbar-color:hsl(var(--primary))_rgba(255,255,255,0.08)]">
                 {playlist.map((song, index) => {
                   const active = index === currentIndex;
                   const trackNumber = String(

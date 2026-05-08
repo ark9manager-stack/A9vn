@@ -60,7 +60,13 @@ const Operator = () => {
       replace: true,
       state: { fromOperatorBootstrap: true },
     });
-  }, [location.state, operatorIdFromUrl, operators, navigate, setSelectedOperator]);
+  }, [
+    location.state,
+    operatorIdFromUrl,
+    operators,
+    navigate,
+    setSelectedOperator,
+  ]);
 
   useEffect(() => {
     if (!operators?.length) return;
@@ -79,7 +85,12 @@ const Operator = () => {
     );
 
     if (found) setSelectedOperator(found);
-  }, [operatorIdFromUrl, operators, setSelectedOperator, shouldBootstrapDirectOperator]);
+  }, [
+    operatorIdFromUrl,
+    operators,
+    setSelectedOperator,
+    shouldBootstrapDirectOperator,
+  ]);
 
   const openOperator = (op) => {
     setSelectedOperator(op);
@@ -101,9 +112,9 @@ const Operator = () => {
   };
 
   return (
-    <div id="operator">
-      <div className="w-full h-full">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-full flex flex-col">
+    <div id="operator" className="flex min-h-[calc(100vh-104px)] flex-col">
+      <div className="w-full">
+        <div className="mx-auto flex w-full max-w-7xl flex-col px-4 md:px-8 lg:px-16">
           <div className="w-full flex items-center justify-between mb-3 gap-3">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
               Operator
@@ -120,7 +131,7 @@ const Operator = () => {
           <div className="w-full border-t border-gray-600 my-1" />
 
           <div className="fullpage-section">
-            <div className=" w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+            <div className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
               {filteredOperators.length === 0 ? (
                 <div className="w-full text-center text-gray-300 py-20">
                   No operator found
