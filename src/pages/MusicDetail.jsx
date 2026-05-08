@@ -58,8 +58,6 @@ export default function MusicDetail() {
   const detailSeekDragRef = useRef(false);
   const detailSeekPointerHandledRef = useRef(false);
   const detailPendingSeekPercentRef = useRef(null);
-  const detailSeekPointerHandledRef = useRef(false);
-  const detailPendingSeekPercentRef = useRef(null);
   const { entries, loading: lyricLoading, error: lyricError } = useLyrics(
     song?.lyrics,
   );
