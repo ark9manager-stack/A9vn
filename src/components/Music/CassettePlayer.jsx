@@ -505,7 +505,7 @@ export default function CassettePlayer() {
                       className={`py-1.5 text-sm leading-relaxed transition-colors ${
                         index === activeLyricIndex
                           ? "font-semibold text-white"
-                          : "text-white/38"
+                          : "text-white/24"
                       }`}
                     >
                       {entry.text}

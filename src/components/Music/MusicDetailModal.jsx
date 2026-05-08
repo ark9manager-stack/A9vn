@@ -174,7 +174,7 @@ const MusicDetailModal = ({
                       ${
                         idx === activeIndex
                           ? "text-white font-bold"
-                          : "text-gray-400"
+                          : "text-white/28"
                       }`}
                   >
                     {e.text}

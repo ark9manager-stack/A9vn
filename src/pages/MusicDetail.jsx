@@ -339,7 +339,7 @@ export default function MusicDetail() {
                         className={`py-2 text-base leading-relaxed transition-colors ${
                           index === activeLyricIndex
                             ? "font-semibold text-white"
-                            : "text-white/42"
+                            : "text-white/24"
                         }`}
                       >
                         {entry.text}

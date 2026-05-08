@@ -140,6 +140,8 @@ export function MusicPlayerProvider({ children }) {
   const recoveringRef = useRef(false);
   const blobUrlCacheRef = useRef(new Map());
   const blobUrlPromiseCacheRef = useRef(new Map());
+  const wavBlobFailedRef = useRef(new Set());
+  const audioLoadRequestIdRef = useRef(0);
 
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -217,6 +219,7 @@ export function MusicPlayerProvider({ children }) {
     const normalizedUrl = String(audioUrl || "").trim();
     if (!normalizedUrl) {
       playRequestIdRef.current += 1;
+      audioLoadRequestIdRef.current += 1;
       audio.pause();
       audio.removeAttribute("src");
       audio.dataset.originalSrc = "";
@@ -301,7 +304,12 @@ export function MusicPlayerProvider({ children }) {
     const pending = blobUrlPromiseCacheRef.current.get(key);
     if (pending) return pending;
 
-    const promise = fetch(key, { cache: "force-cache" })
+    const promise = fetch(key, {
+      cache: "force-cache",
+      mode: "cors",
+      credentials: "omit",
+      headers: { Accept: "audio/wav,audio/x-wav,audio/*,*/*" },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`audio-blob-fetch-failed: ${response.status}`);
@@ -339,6 +347,7 @@ export function MusicPlayerProvider({ children }) {
       try {
         let objectUrl = null;
         if (isProbablyWavUrl(sourceUrl)) {
+          if (wavBlobFailedRef.current.has(sourceUrl)) return false;
           objectUrl = await getBlobAudioUrl(sourceUrl);
         }
 
@@ -373,10 +382,64 @@ export function MusicPlayerProvider({ children }) {
 
         return true;
       } catch {
+        if (isProbablyWavUrl(sourceUrl)) wavBlobFailedRef.current.add(sourceUrl);
         return false;
       } finally {
         recoveringRef.current = false;
       }
+    },
+    [getBlobAudioUrl, requestAudioPlay, syncAudioSource],
+  );
+
+  const loadAudioSource = useCallback(
+    async (audioUrl, { force = false, play = false, seekTime = null } = {}) => {
+      const key = String(audioUrl || "").trim();
+      const requestId = audioLoadRequestIdRef.current + 1;
+      audioLoadRequestIdRef.current = requestId;
+
+      if (!key) {
+        syncAudioSource("", { force: true });
+        return null;
+      }
+
+      let objectUrl = null;
+
+      if (isProbablyWavUrl(key) && !wavBlobFailedRef.current.has(key)) {
+        try {
+          objectUrl = await getBlobAudioUrl(key);
+        } catch {
+          wavBlobFailedRef.current.add(key);
+          objectUrl = null;
+        }
+      }
+
+      if (audioLoadRequestIdRef.current !== requestId) return null;
+
+      const audio = syncAudioSource(key, {
+        objectUrl,
+        force: force || !!objectUrl,
+      });
+      if (!audio) return null;
+
+      if (seekTime != null) {
+        try {
+          await waitForAudioReady(audio);
+          const mediaDuration = getMediaDuration(audio, durationRef.current);
+          const safeTime = mediaDuration
+            ? clamp(Number(seekTime) || 0, 0, Math.max(0, mediaDuration - 0.05))
+            : Math.max(0, Number(seekTime) || 0);
+          audio.currentTime = safeTime;
+          setCurrentTime(safeTime);
+        } catch {
+          // Keep the source; normal media error/recovery will handle failures.
+        }
+      }
+
+      if (play && isPlayingRef.current) {
+        requestAudioPlay(audio);
+      }
+
+      return audio;
     },
     [getBlobAudioUrl, requestAudioPlay, syncAudioSource],
   );
@@ -421,14 +484,14 @@ export function MusicPlayerProvider({ children }) {
       setCurrentTime(0);
       setDuration(0);
       pendingSeekRef.current = null;
+      isPlayingRef.current = true;
       setIsPlaying(true);
 
       if (selectedTrack?.audio) {
-        const audio = syncAudioSource(selectedTrack.audio, { force: true });
-        requestAudioPlay(audio);
+        loadAudioSource(selectedTrack.audio, { force: true, play: true });
       }
     },
-    [requestAudioPlay, syncAudioSource],
+    [loadAudioSource],
   );
 
   const loadAllQueue = useCallback(async () => {
@@ -555,16 +618,17 @@ export function MusicPlayerProvider({ children }) {
       setCurrentTime(0);
       setDuration(0);
       pendingSeekRef.current = null;
+      isPlayingRef.current = !!play;
       setIsPlaying(play);
 
       if (play && track?.audio) {
-        const audio = syncAudioSource(track.audio, { force: true });
-        requestAudioPlay(audio);
+        loadAudioSource(track.audio, { force: true, play: true });
       } else if (!play) {
+        audioLoadRequestIdRef.current += 1;
         audioRef.current?.pause();
       }
     },
-    [queue, requestAudioPlay, syncAudioSource],
+    [loadAudioSource, queue],
   );
 
   const nextTrack = useCallback(() => {
@@ -577,6 +641,7 @@ export function MusicPlayerProvider({ children }) {
     setCurrentTime(0);
     setDuration(0);
     pendingSeekRef.current = null;
+    isPlayingRef.current = true;
     setIsPlaying(true);
   }, [queue.length, shuffle]);
 
@@ -599,6 +664,7 @@ export function MusicPlayerProvider({ children }) {
     setCurrentTime(0);
     setDuration(0);
     pendingSeekRef.current = null;
+    isPlayingRef.current = true;
     setIsPlaying(true);
   }, [queue.length]);
 
@@ -607,15 +673,17 @@ export function MusicPlayerProvider({ children }) {
 
     if (isPlaying) {
       playRequestIdRef.current += 1;
+      audioLoadRequestIdRef.current += 1;
+      isPlayingRef.current = false;
       audioRef.current?.pause();
       setIsPlaying(false);
       return;
     }
 
+    isPlayingRef.current = true;
     setIsPlaying(true);
-    const audio = syncAudioSource(currentTrack.audio);
-    requestAudioPlay(audio);
-  }, [currentTrack, isPlaying, requestAudioPlay, syncAudioSource]);
+    loadAudioSource(currentTrack.audio, { play: true });
+  }, [currentTrack, isPlaying, loadAudioSource]);
 
   const seekToTime = useCallback(
     (time) => {
@@ -696,6 +764,8 @@ export function MusicPlayerProvider({ children }) {
   }, [isMuted, volume]);
 
   const closePlayer = useCallback(() => {
+    audioLoadRequestIdRef.current += 1;
+    isPlayingRef.current = false;
     const audio = audioRef.current;
     if (audio) {
       audio.pause();
@@ -707,6 +777,7 @@ export function MusicPlayerProvider({ children }) {
     setQueue([]);
     setCurrentIndex(-1);
     setCurrentAlbum(null);
+    isPlayingRef.current = false;
     setIsPlaying(false);
     setCurrentTime(0);
     setDuration(0);
@@ -753,6 +824,7 @@ export function MusicPlayerProvider({ children }) {
       if (queue.length > 1) {
         nextTrack();
       } else {
+        isPlayingRef.current = false;
         setIsPlaying(false);
       }
     };
@@ -764,6 +836,7 @@ export function MusicPlayerProvider({ children }) {
         pendingSeekRef.current != null || isProbablyWavUrl(currentTrackAudioRef.current);
 
       if (!canTryRecover) {
+        isPlayingRef.current = false;
         setIsPlaying(false);
         return;
       }
@@ -772,6 +845,7 @@ export function MusicPlayerProvider({ children }) {
         (recovered) => {
           if (!recovered) {
             pendingSeekRef.current = null;
+            isPlayingRef.current = false;
             setIsPlaying(false);
           }
         },
@@ -794,19 +868,22 @@ export function MusicPlayerProvider({ children }) {
   }, [nextTrack, queue.length, recoverAudioForSeek, requestAudioPlay]);
 
   useEffect(() => {
-    const audio = syncAudioSource(currentTrackAudio);
-    if (!audio) return;
-
-    if (!currentTrackAudio) return;
-
-    if (!isPlaying) {
-      playRequestIdRef.current += 1;
-      audio.pause();
+    if (!currentTrackAudio) {
+      syncAudioSource("");
       return;
     }
 
-    requestAudioPlay(audio);
-  }, [currentTrackAudio, isPlaying, requestAudioPlay, syncAudioSource]);
+    if (!isPlaying) {
+      playRequestIdRef.current += 1;
+      audioLoadRequestIdRef.current += 1;
+      isPlayingRef.current = false;
+      audioRef.current?.pause();
+      return;
+    }
+
+    isPlayingRef.current = true;
+    loadAudioSource(currentTrackAudio, { play: true });
+  }, [currentTrackAudio, isPlaying, loadAudioSource, syncAudioSource]);
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
