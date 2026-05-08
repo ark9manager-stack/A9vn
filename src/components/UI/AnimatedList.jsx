@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 const defaultItems = [
   "Item 1",
@@ -116,9 +116,7 @@ const AnimatedList = ({
     if (!keyboardNav || selectedIndex < 0 || !listRef.current) return;
 
     const container = listRef.current;
-    const selectedItem = container.querySelector(
-      `[data-index="${selectedIndex}"]`,
-    );
+    const selectedItem = container.querySelector(`[data-index="${selectedIndex}"]`);
     if (!selectedItem) return;
 
     const extraMargin = 44;
@@ -129,10 +127,7 @@ const AnimatedList = ({
 
     if (itemTop < containerScrollTop + extraMargin) {
       container.scrollTo({ top: itemTop - extraMargin, behavior: "smooth" });
-    } else if (
-      itemBottom >
-      containerScrollTop + containerHeight - extraMargin
-    ) {
+    } else if (itemBottom > containerScrollTop + containerHeight - extraMargin) {
       container.scrollTo({
         top: itemBottom - containerHeight + extraMargin,
         behavior: "smooth",
