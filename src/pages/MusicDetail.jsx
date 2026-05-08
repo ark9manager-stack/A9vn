@@ -56,6 +56,10 @@ export default function MusicDetail() {
   const { song, albumTracks, loading, error } = useSongDetail(songId);
   const lyricListRef = useRef(null);
   const detailSeekDragRef = useRef(false);
+  const detailSeekPointerHandledRef = useRef(false);
+  const detailPendingSeekPercentRef = useRef(null);
+  const detailSeekPointerHandledRef = useRef(false);
+  const detailPendingSeekPercentRef = useRef(null);
   const { entries, loading: lyricLoading, error: lyricError } = useLyrics(
     song?.lyrics,
   );
@@ -129,37 +133,63 @@ export default function MusicDetail() {
     });
   };
 
-  const seekFromDetailClientX = (target, clientX) => {
-    if (!isCurrentTrack) return;
+  const getDetailSeekPercentFromClientX = (target, clientX) => {
+    if (!isCurrentTrack) return null;
 
     const rect = target?.getBoundingClientRect?.();
-    if (!rect?.width) return;
+    if (!rect?.width) return null;
 
     const percent = ((clientX - rect.left) / rect.width) * 100;
+    return Math.min(100, Math.max(0, percent));
+  };
+
+  const commitDetailSeekFromClientX = (target, clientX) => {
+    const percent = getDetailSeekPercentFromClientX(target, clientX);
+    if (percent == null) return;
+    detailPendingSeekPercentRef.current = percent;
     seekTo(percent);
   };
 
   const handleDetailSeek = (event) => {
     event.preventDefault?.();
-    seekFromDetailClientX(event.currentTarget, event.clientX);
+    if (detailSeekPointerHandledRef.current) {
+      detailSeekPointerHandledRef.current = false;
+      return;
+    }
+    commitDetailSeekFromClientX(event.currentTarget, event.clientX);
   };
 
   const handleDetailSeekPointerDown = (event) => {
     event.preventDefault?.();
     detailSeekDragRef.current = true;
+    detailSeekPointerHandledRef.current = false;
+    detailPendingSeekPercentRef.current = getDetailSeekPercentFromClientX(
+      event.currentTarget,
+      event.clientX,
+    );
     event.currentTarget.setPointerCapture?.(event.pointerId);
-    seekFromDetailClientX(event.currentTarget, event.clientX);
   };
 
   const handleDetailSeekPointerMove = (event) => {
     if (!detailSeekDragRef.current) return;
     event.preventDefault?.();
-    seekFromDetailClientX(event.currentTarget, event.clientX);
+    detailPendingSeekPercentRef.current = getDetailSeekPercentFromClientX(
+      event.currentTarget,
+      event.clientX,
+    );
   };
 
   const handleDetailSeekPointerEnd = (event) => {
     event.preventDefault?.();
+    if (detailSeekDragRef.current) {
+      const percent =
+        getDetailSeekPercentFromClientX(event.currentTarget, event.clientX) ??
+        detailPendingSeekPercentRef.current;
+      if (percent != null) seekTo(percent);
+    }
     detailSeekDragRef.current = false;
+    detailSeekPointerHandledRef.current = true;
+    detailPendingSeekPercentRef.current = null;
     event.currentTarget.releasePointerCapture?.(event.pointerId);
   };
 

@@ -162,35 +162,61 @@ export default function CassettePlayer() {
         ? "border-primary/50 bg-primary/15 text-primary"
         : "border-white/15 bg-white/[0.05] text-[#d7d0b8]";
 
-  const seekFromClientX = (target, clientX) => {
+  const getSeekPercentFromClientX = (target, clientX) => {
     const rect = target?.getBoundingClientRect?.();
-    if (!rect?.width) return;
+    if (!rect?.width) return null;
 
     const percent = ((clientX - rect.left) / rect.width) * 100;
+    return Math.min(100, Math.max(0, percent));
+  };
+
+  const commitSeekFromClientX = (target, clientX) => {
+    const percent = getSeekPercentFromClientX(target, clientX);
+    if (percent == null) return;
+    pendingSeekPercentRef.current = percent;
     seekTo(percent);
   };
 
   const handleSeek = (event) => {
     event.preventDefault?.();
-    seekFromClientX(event.currentTarget, event.clientX);
+    if (seekPointerHandledRef.current) {
+      seekPointerHandledRef.current = false;
+      return;
+    }
+    commitSeekFromClientX(event.currentTarget, event.clientX);
   };
 
   const handleSeekPointerDown = (event) => {
     event.preventDefault?.();
     seekDragRef.current = true;
+    seekPointerHandledRef.current = false;
+    pendingSeekPercentRef.current = getSeekPercentFromClientX(
+      event.currentTarget,
+      event.clientX,
+    );
     event.currentTarget.setPointerCapture?.(event.pointerId);
-    seekFromClientX(event.currentTarget, event.clientX);
   };
 
   const handleSeekPointerMove = (event) => {
     if (!seekDragRef.current) return;
     event.preventDefault?.();
-    seekFromClientX(event.currentTarget, event.clientX);
+    pendingSeekPercentRef.current = getSeekPercentFromClientX(
+      event.currentTarget,
+      event.clientX,
+    );
   };
 
   const handleSeekPointerEnd = (event) => {
     event.preventDefault?.();
+    if (seekDragRef.current) {
+      const percent =
+        getSeekPercentFromClientX(event.currentTarget, event.clientX) ??
+        pendingSeekPercentRef.current;
+      if (percent != null) seekTo(percent);
+    }
     seekDragRef.current = false;
+    seekPointerHandledRef.current = true;
+    pendingSeekPercentRef.current = null;
     event.currentTarget.releasePointerCapture?.(event.pointerId);
   };
 

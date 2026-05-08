@@ -139,6 +139,7 @@ export function MusicPlayerProvider({ children }) {
   const pendingSeekRef = useRef(null);
   const recoveringRef = useRef(false);
   const blobUrlCacheRef = useRef(new Map());
+  const blobUrlPromiseCacheRef = useRef(new Map());
 
   const [queue, setQueue] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -204,6 +205,7 @@ export function MusicPlayerProvider({ children }) {
         }
       }
       blobUrlCacheRef.current.clear();
+      blobUrlPromiseCacheRef.current.clear();
     },
     [],
   );
@@ -296,22 +298,42 @@ export function MusicPlayerProvider({ children }) {
     const cached = blobUrlCacheRef.current.get(key);
     if (cached) return cached;
 
-    const response = await fetch(key, { cache: "force-cache" });
-    if (!response.ok) {
-      throw new Error(`audio-blob-fetch-failed: ${response.status}`);
-    }
+    const pending = blobUrlPromiseCacheRef.current.get(key);
+    if (pending) return pending;
 
-    const blob = await response.blob();
-    const blobUrl = URL.createObjectURL(blob);
-    blobUrlCacheRef.current.set(key, blobUrl);
-    return blobUrl;
+    const promise = fetch(key, { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`audio-blob-fetch-failed: ${response.status}`);
+        }
+        return response.blob();
+      })
+      .then((blob) => {
+        const blobUrl = URL.createObjectURL(blob);
+        blobUrlCacheRef.current.set(key, blobUrl);
+        blobUrlPromiseCacheRef.current.delete(key);
+        return blobUrl;
+      })
+      .catch((error) => {
+        blobUrlPromiseCacheRef.current.delete(key);
+        throw error;
+      });
+
+    blobUrlPromiseCacheRef.current.set(key, promise);
+    return promise;
   }, []);
 
   const recoverAudioForSeek = useCallback(
     async (targetTime, { playAfter } = {}) => {
       const sourceUrl = currentTrackAudioRef.current;
       const audio = audioRef.current;
-      if (!sourceUrl || !audio || recoveringRef.current) return false;
+      if (!sourceUrl || !audio) return false;
+
+      pendingSeekRef.current = Number.isFinite(Number(targetTime))
+        ? Number(targetTime)
+        : pendingSeekRef.current;
+
+      if (recoveringRef.current) return true;
 
       recoveringRef.current = true;
       try {
@@ -330,9 +352,10 @@ export function MusicPlayerProvider({ children }) {
 
         await waitForAudioReady(nextAudio);
         const mediaDuration = getMediaDuration(nextAudio, durationRef.current);
+        const target = pendingSeekRef.current ?? targetTime;
         const safeTime = mediaDuration
-          ? clamp(Number(targetTime) || 0, 0, Math.max(0, mediaDuration - 0.05))
-          : Math.max(0, Number(targetTime) || 0);
+          ? clamp(Number(target) || 0, 0, Math.max(0, mediaDuration - 0.05))
+          : Math.max(0, Number(target) || 0);
 
         try {
           nextAudio.currentTime = safeTime;
@@ -616,7 +639,13 @@ export function MusicPlayerProvider({ children }) {
 
       if (shouldRecoverBeforeSeek) {
         setCurrentTime(nextTime);
-        recoverAudioForSeek(nextTime, { playAfter: isPlayingRef.current });
+        recoverAudioForSeek(nextTime, { playAfter: isPlayingRef.current }).then(
+          (recovered) => {
+            if (!recovered && pendingSeekRef.current === nextTime) {
+              pendingSeekRef.current = null;
+            }
+          },
+        );
         return;
       }
 
@@ -626,7 +655,13 @@ export function MusicPlayerProvider({ children }) {
         pendingSeekRef.current = null;
         if (isPlayingRef.current && audio.paused) requestAudioPlay(audio);
       } catch {
-        recoverAudioForSeek(nextTime, { playAfter: isPlayingRef.current });
+        recoverAudioForSeek(nextTime, { playAfter: isPlayingRef.current }).then(
+          (recovered) => {
+            if (!recovered && pendingSeekRef.current === nextTime) {
+              pendingSeekRef.current = null;
+            }
+          },
+        );
       }
     },
     [recoverAudioForSeek, requestAudioPlay],
@@ -722,6 +757,8 @@ export function MusicPlayerProvider({ children }) {
       }
     };
     const onError = () => {
+      if (recoveringRef.current) return;
+
       const target = pendingSeekRef.current ?? currentTimeRef.current ?? 0;
       const canTryRecover =
         pendingSeekRef.current != null || isProbablyWavUrl(currentTrackAudioRef.current);
@@ -733,7 +770,10 @@ export function MusicPlayerProvider({ children }) {
 
       recoverAudioForSeek(target, { playAfter: isPlayingRef.current }).then(
         (recovered) => {
-          if (!recovered) setIsPlaying(false);
+          if (!recovered) {
+            pendingSeekRef.current = null;
+            setIsPlaying(false);
+          }
         },
       );
     };
