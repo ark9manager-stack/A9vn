@@ -96,8 +96,11 @@ export default function CassettePlayer() {
 
   const [expanded, setExpanded] = useState(false);
   const [hidden, setHidden] = useState(true);
+  const [seekPreviewPercent, setSeekPreviewPercent] = useState(null);
   const lyricListRef = useRef(null);
   const seekDragRef = useRef(false);
+  const seekPointerHandledRef = useRef(false);
+  const pendingSeekPercentRef = useRef(null);
   const { entries, loading, error } = useLyrics(currentTrack?.lyrics);
 
   const activeLyricIndex = useMemo(() => {
@@ -161,6 +164,10 @@ export default function CassettePlayer() {
       : playbackMode === "all"
         ? "border-primary/50 bg-primary/15 text-primary"
         : "border-white/15 bg-white/[0.05] text-[#d7d0b8]";
+  const visibleProgress =
+    seekPreviewPercent != null
+      ? seekPreviewPercent
+      : progress;
 
   const getSeekPercentFromClientX = (target, clientX) => {
     const rect = target?.getBoundingClientRect?.();
@@ -174,7 +181,9 @@ export default function CassettePlayer() {
     const percent = getSeekPercentFromClientX(target, clientX);
     if (percent == null) return;
     pendingSeekPercentRef.current = percent;
+    setSeekPreviewPercent(percent);
     seekTo(percent);
+    setSeekPreviewPercent(null);
   };
 
   const handleSeek = (event) => {
@@ -190,20 +199,24 @@ export default function CassettePlayer() {
     event.preventDefault?.();
     seekDragRef.current = true;
     seekPointerHandledRef.current = false;
-    pendingSeekPercentRef.current = getSeekPercentFromClientX(
+    const percent = getSeekPercentFromClientX(
       event.currentTarget,
       event.clientX,
     );
+    pendingSeekPercentRef.current = percent;
+    setSeekPreviewPercent(percent);
     event.currentTarget.setPointerCapture?.(event.pointerId);
   };
 
   const handleSeekPointerMove = (event) => {
     if (!seekDragRef.current) return;
     event.preventDefault?.();
-    pendingSeekPercentRef.current = getSeekPercentFromClientX(
+    const percent = getSeekPercentFromClientX(
       event.currentTarget,
       event.clientX,
     );
+    pendingSeekPercentRef.current = percent;
+    setSeekPreviewPercent(percent);
   };
 
   const handleSeekPointerEnd = (event) => {
@@ -217,6 +230,7 @@ export default function CassettePlayer() {
     seekDragRef.current = false;
     seekPointerHandledRef.current = true;
     pendingSeekPercentRef.current = null;
+    setSeekPreviewPercent(null);
     event.currentTarget.releasePointerCapture?.(event.pointerId);
   };
 
@@ -311,7 +325,7 @@ export default function CassettePlayer() {
                       >
                         <span
                           className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
-                          style={{ width: `${progress}%` }}
+                          style={{ width: `${visibleProgress}%` }}
                         />
                       </button>
                     </div>
@@ -452,7 +466,7 @@ export default function CassettePlayer() {
             >
               <span
                 className="block h-full bg-gradient-to-r from-primary via-[#d7d0b8] to-accent"
-                style={{ width: `${progress}%` }}
+                style={{ width: `${visibleProgress}%` }}
               />
             </button>
 

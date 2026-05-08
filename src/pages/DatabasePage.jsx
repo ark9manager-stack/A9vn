@@ -58,7 +58,7 @@ const DatabasePage = () => {
   return (
     <WorkInProgress
       title="Database"
-      message="Trang database vẫn đang được sắp xếp và cập nhật thêm thông tin để hoàn thiện."
+      message="Trang database vẫn đang được sắp xếp và cập nhật thêm thông tin để hoàn thiện, sẽ đăng tải sau."
     />
   );
 };
