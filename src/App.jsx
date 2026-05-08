@@ -7,10 +7,10 @@ import LoadingScreen from "./components/UI/LoadingScreen";
 import RouteErrorBoundary from "./components/UI/RouteErrorBoundary";
 import PRTSIntro from "./components/PRTSIntro";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
+
 // lazy load pages
 const Home = lazy(() => import("./pages/Home"));
 const Music = lazy(() => import("./pages/Music"));
-const MusicDetail = lazy(() => import("./pages/MusicDetail"));
 const Operator = lazy(() => import("./pages/Operator"));
 
 const GuideStory = lazy(() => import("./pages/GuideStory"));
@@ -65,46 +65,47 @@ const App = () => {
             <Suspense fallback={<LoadingScreen />}>
               <Routes location={location}>
                 <Route element={<Layout />}>
-                {/* Home */}
-                <Route path="/" element={<Home />} />
+                  {/* Home */}
+                  <Route path="/" element={<Home />} />
 
-                {/* Operators */}
-                <Route path="/operator" element={<Operator />} />
-                <Route path="/Operator" element={<Operator />} />
-                <Route path="/operator/:id" element={<Operator />} />
-                <Route path="/Operator/:id" element={<Operator />} />
-                {/* Music */}
-                <Route path="/music" element={<Music />} />
-                <Route path="/Music" element={<Music />} />
-                <Route path="/music/:songId" element={<MusicDetail />} />
-                <Route path="/Music/:songId" element={<MusicDetail />} />
+                  {/* Operators */}
+                  <Route path="/operator" element={<Operator />} />
+                  <Route path="/Operator" element={<Operator />} />
+                  <Route path="/operator/:id" element={<Operator />} />
+                  <Route path="/Operator/:id" element={<Operator />} />
 
-                {/* Guide */}
-                <Route path="/guide-story" element={<GuideStory />} />
-                <Route path="/guide/:id" element={<GuideDetail />} />
+                  {/* Music */}
+                  <Route path="/music" element={<Music />} />
+                  <Route path="/Music" element={<Music />} />
+                  <Route path="/music/:songId" element={<Music />} />
+                  <Route path="/Music/:songId" element={<Music />} />
 
-                {/* Story */}
-                <Route path="/story/:id" element={<StoryDetail />} />
+                  {/* Guide */}
+                  <Route path="/guide-story" element={<GuideStory />} />
+                  <Route path="/guide/:id" element={<GuideDetail />} />
 
-                {/* Database */}
-                <Route path="/database" element={<DatabasePage />} />
+                  {/* Story */}
+                  <Route path="/story/:id" element={<StoryDetail />} />
 
-                {/* Materials */}
-                <Route path="/database/materials" element={<MaterialsPage />} />
-                <Route
-                  path="/database/materials/:id"
-                  element={<MaterialDetail />}
-                />
+                  {/* Database */}
+                  <Route path="/database" element={<DatabasePage />} />
 
-                {/* Planner */}
-                <Route path="/database/planner" element={<MaterialPlanner />} />
+                  {/* Materials */}
+                  <Route path="/database/materials" element={<MaterialsPage />} />
+                  <Route
+                    path="/database/materials/:id"
+                    element={<MaterialDetail />}
+                  />
 
-                {/* Boss */}
-                <Route path="/database/bosses" element={<BossesPage />} />
-                <Route path="/database/bosses/:id" element={<BossDetail />} />
+                  {/* Planner */}
+                  <Route path="/database/planner" element={<MaterialPlanner />} />
 
-                {/* 404 */}
-                <Route path="*" element={<NotFound />} />
+                  {/* Boss */}
+                  <Route path="/database/bosses" element={<BossesPage />} />
+                  <Route path="/database/bosses/:id" element={<BossDetail />} />
+
+                  {/* 404 */}
+                  <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>
             </Suspense>
