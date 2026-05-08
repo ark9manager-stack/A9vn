@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import skinTable from "../../../../data/skins/skin_table.json";
 import skinTableEn from "../../../../data/skins/skin_table_en.json";
-import LoadingOp from "../../../UI/LoadingOp";
 import bgInform from "../../../../assets/bg_inform.webp";
 import {
   isPatchFormId,
@@ -303,8 +302,6 @@ export default function SkinsSection({ operator, className = "" }) {
 
         {/* Art */}
         <div className="absolute inset-0 z-10 flex items-center justify-center">
-          {isLoadingImg && <LoadingOp />}
-
           {!isLoadingImg && imgError && (
             <div className="rounded-lg bg-black/70 px-3 py-2 text-white/90 text-sm backdrop-blur">
               Failed to load

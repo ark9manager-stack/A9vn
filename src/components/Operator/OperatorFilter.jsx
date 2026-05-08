@@ -4,7 +4,7 @@ import { CLASSES } from "../../config/operatorConfig";
 import { useOperatorFilter } from "../../hooks/useOperatorFilter";
 import { professionIconUrl } from "../../utils/operatorUtils";
 
-const OperatorFilter = ({ onFilterChange, operators }) => {
+const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
   const [activeClasses, setActiveClasses] = useState([]);
   const [activeSubclasses, setActiveSubclasses] = useState([]);
   const [tags, setTags] = useState([]);
@@ -89,10 +89,10 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className={`relative min-w-0 ${className}`}>
       {/* ===== TOP BAR ===== */}
-      <div className="flex items-center gap-2 mb-3">
-        <div className="relative flex-1 max-w-sm">
+      <div className="flex items-center justify-end gap-2">
+        <div className="relative min-w-0 flex-1 md:w-72 md:flex-none">
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -105,20 +105,6 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
             className="w-full pl-3 pr-3 py-2 rounded-md bg-black/50 border border-white/10 text-sm text-white placeholder-gray-100 focus:outline-none focus:border-blue-400"
           />
         </div>
-
-        {/* Toggle Filter */}
-        <button
-          onClick={() => setShowFilter(!showFilter)}
-          className={`p-2.5 rounded-md border transition
-          ${
-            showFilter
-              ? "bg-blue-500/30 border-blue-400"
-              : "bg-black/50 border-white/10 hover:bg-white/10"
-          }
-        `}
-        >
-          <FaFilter size={14} />
-        </button>
 
         {/* Reset */}
         {(activeClasses.length ||
@@ -133,14 +119,28 @@ const OperatorFilter = ({ onFilterChange, operators }) => {
             Clear
           </button>
         )}
+
+        {/* Toggle Filter */}
+        <button
+          onClick={() => setShowFilter(!showFilter)}
+          className={`p-2.5 rounded-md border transition
+          ${
+            showFilter
+              ? "bg-blue-500/30 border-blue-400"
+              : "bg-black/50 border-white/10 hover:bg-white/10"
+          }
+        `}
+        >
+          <FaFilter size={14} />
+        </button>
       </div>
 
       {/* ===== FILTER PANEL ===== */}
       {showFilter && (
-        <div className="w-full relative">
+        <div className="w-full">
           <div
             ref={panelRef}
-            className="absolute left-0 top-full mt-3 w-full 
+            className="absolute right-0 top-full mt-3 w-full min-w-72 md:w-[72rem] 
     p-4 rounded-lg border border-white/10 
     bg-black/80 backdrop-blur-md 
     space-y-4 shadow-2xl z-50 animate-fade-in"

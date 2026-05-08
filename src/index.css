@@ -1519,8 +1519,11 @@
   flex: 0 0 52px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(180deg, rgba(12, 15, 19, 0.98), rgba(5, 7, 10, 0.96));
+  background: linear-gradient(
+    180deg,
+    rgba(12, 15, 19, 0.98),
+    rgba(5, 7, 10, 0.96)
+  );
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
   padding: 0 8px;
 }
@@ -1533,13 +1536,10 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.28);
   color: white;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.operator-mobile-menu-btn,
 .operator-mobile-close-btn {
   min-width: 44px;
   width: 44px;
