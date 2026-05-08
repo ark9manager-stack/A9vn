@@ -37,7 +37,9 @@ function PaginationInfo({
   className = "",
 }) {
   return (
-    <div className={`text-center text-gray-400 text-sm mb-4 ${className}`}>
+    <div
+      className={`music-pagination-info text-center text-gray-400 text-sm ${className}`}
+    >
       Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
       {Math.min(endIndex, total)} / {total} album
     </div>
@@ -83,10 +85,10 @@ const Music = () => {
   return (
     <div
       id="music"
-      className="flex min-h-[calc(100vh-104px)] w-full flex-col justify-start py-4 sm:h-[calc(100vh-104px)] sm:min-h-0 sm:justify-center sm:overflow-hidden sm:py-6"
+      className="music-page-shell flex w-full flex-col justify-start overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-8 lg:px-16 flex flex-col">
-        <div className="w-full flex flex-col px-0 sm:px-2 md:px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-3 sm:px-4 md:px-8 lg:px-12">
+        <div className="flex w-full flex-1 flex-col px-0 sm:justify-center sm:px-2 md:px-4">
           {/* ── loading / error ── */}
           {loadingAlbums && <LoadingState />}
           {errorAlbums && <ErrorState message={errorAlbums} />}

@@ -393,19 +393,40 @@
 }
 
 /* Music grid specific styles - Monster Siren exact sizing */
+.music-page-shell {
+  min-height: calc(100svh - 112px);
+  padding-block: clamp(0.75rem, 1.9vh, 1.45rem) clamp(0.45rem, 1.2vh, 1rem);
+}
+
+.music-search-shell {
+  margin-bottom: clamp(0.85rem, 2.3vh, 1.75rem);
+}
+
+.music-pagination-shell {
+  margin-bottom: clamp(0.45rem, 1.4vh, 1.25rem);
+}
+
+.music-pagination-info {
+  margin-bottom: clamp(0.15rem, 0.8vh, 0.65rem);
+  font-size: clamp(0.78rem, 1.6vh, 0.875rem);
+  line-height: 1.35;
+}
+
 .music-grid-wrap {
-  margin-bottom: clamp(1rem, 2.5vh, 1.75rem);
+  --music-card-size: clamp(150px, min(12vw, 22vh), 200px);
+  --music-grid-gap: clamp(0.75rem, min(2vw, 2.6vh), 2rem);
+  margin-bottom: clamp(0.9rem, 2vh, 1.5rem);
 }
 
 .music-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 200px));
-  grid-auto-rows: minmax(0, 200px);
-  gap: clamp(1rem, 2.4vw, 2rem);
-  max-width: 1200px;
-  min-height: clamp(330px, 42vh, 432px);
+  grid-template-columns: repeat(5, minmax(0, var(--music-card-size)));
+  grid-auto-rows: minmax(0, var(--music-card-size));
+  gap: var(--music-grid-gap);
+  max-width: calc(var(--music-card-size) * 5 + var(--music-grid-gap) * 4);
+  min-height: calc(var(--music-card-size) * 2 + var(--music-grid-gap));
   margin: 0 auto;
-  padding: 0 clamp(0rem, 2vw, 2rem);
+  padding: 0;
   align-content: center;
   justify-content: center;
   place-items: center;
@@ -415,7 +436,7 @@
 .music-card {
   position: relative;
   width: 100%;
-  max-width: 200px;
+  max-width: var(--music-card-size);
   margin: 0 auto;
   border-radius: 8px;
 }
@@ -454,21 +475,45 @@
 
 /* Responsive music grid */
 @media (max-width: 1200px) {
+  .music-page-shell {
+    min-height: calc(100svh - 112px);
+  }
+
+  .music-grid-wrap {
+    --music-card-size: clamp(148px, min(15vw, 22vh), 190px);
+  }
+
   .music-grid {
-    grid-template-columns: repeat(4, minmax(0, 200px));
+    grid-template-columns: repeat(4, minmax(0, var(--music-card-size)));
+    max-width: calc(var(--music-card-size) * 4 + var(--music-grid-gap) * 3);
   }
 }
 
 @media (max-width: 768px) {
+  .music-grid-wrap {
+    --music-card-size: clamp(132px, min(28vw, 20vh), 180px);
+    --music-grid-gap: clamp(0.7rem, 1.8vh, 0.875rem);
+  }
+
   .music-grid {
-    grid-template-columns: repeat(3, minmax(0, 180px));
-    grid-auto-rows: minmax(0, 180px);
-    min-height: clamp(300px, 40vh, 392px);
-    gap: 0.875rem;
+    grid-template-columns: repeat(3, minmax(0, var(--music-card-size)));
+    grid-auto-rows: minmax(0, var(--music-card-size));
+    max-width: calc(var(--music-card-size) * 3 + var(--music-grid-gap) * 2);
+    min-height: calc(var(--music-card-size) * 2 + var(--music-grid-gap));
   }
 }
 
 @media (max-width: 640px) {
+  .music-page-shell {
+    min-height: calc(100svh - 112px);
+    overflow: visible;
+    padding-block: 0.75rem;
+  }
+
+  .music-search-shell {
+    margin-bottom: 0.85rem;
+  }
+
   .music-grid-wrap {
     margin-bottom: 0;
   }
