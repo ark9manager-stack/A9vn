@@ -362,6 +362,23 @@
   animation: ticker 30s linear infinite;
 }
 
+@keyframes music-search-signal {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+    opacity: 0.42;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 0.92;
+  }
+}
+
+.music-search-signal-bar {
+  transform-origin: bottom;
+  animation: music-search-signal 1.1s ease-in-out infinite;
+}
+
 @keyframes hero-pulse-dot {
   0%,
   100% {
@@ -1203,6 +1220,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .music-search-signal-bar,
   .animate-in {
     animation: none;
   }
