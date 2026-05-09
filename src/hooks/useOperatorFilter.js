@@ -7,6 +7,14 @@ import {
   subProfLabel,
 } from "../utils/operatorUtils";
 
+function normalizeTextForSearch(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function normalizeCharIdForSearch(value) {
+  return normalizeTextForSearch(value).replace(/^char_?/, "");
+}
+
 export function useOperatorFilter({
   operators,
   activeClass,
@@ -60,7 +68,8 @@ export function useOperatorFilter({
       .sort((a, b) => a.label.localeCompare(b.label));
   }, [operators, activeClasses]);
 
-  const searchTerm = search?.trim().toLowerCase();
+  const searchTerm = normalizeTextForSearch(search);
+  const idSearchTerm = normalizeCharIdForSearch(search);
 
   const filteredOperators = useMemo(() => {
     return operators
@@ -85,16 +94,18 @@ export function useOperatorFilter({
       )
       .filter((op) => {
         if (!searchTerm) return true;
-        const nameMatch = String(op.name || "")
-          .toLowerCase()
-          .includes(searchTerm);
-        const rawNameMatch = String(op.nameRaw || "")
-          .toLowerCase()
-          .includes(searchTerm);
-        const idMatch = String(op.id || "")
-          .toLowerCase()
-          .includes(searchTerm);
-        return nameMatch || rawNameMatch || idMatch;
+
+        const nameMatch = normalizeTextForSearch(op.name).includes(searchTerm);
+        const rawNameMatch = normalizeTextForSearch(op.nameRaw).includes(
+          searchTerm,
+        );
+        const appellationMatch = normalizeTextForSearch(
+          op.appellation,
+        ).includes(searchTerm);
+        const idForSearch = normalizeCharIdForSearch(op.id);
+        const idMatch = Boolean(idSearchTerm) && idForSearch.includes(idSearchTerm);
+
+        return nameMatch || rawNameMatch || appellationMatch || idMatch;
       })
       .sort((a, b) => {
         const ra = rarityRank(getRarityTier(a.rarity));
@@ -116,6 +127,7 @@ export function useOperatorFilter({
     activePositions,
     tags,
     searchTerm,
+    idSearchTerm,
   ]);
 
   return { availableSubclasses, filteredOperators };

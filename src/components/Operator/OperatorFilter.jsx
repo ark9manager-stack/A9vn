@@ -4,13 +4,41 @@ import { CLASSES } from "../../config/operatorConfig";
 import { useOperatorFilter } from "../../hooks/useOperatorFilter";
 import { professionIconUrl } from "../../utils/operatorUtils";
 
-const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
+const OperatorFilter = ({ onFilterChange, operators, className = "", value }) => {
   const [activeClasses, setActiveClasses] = useState([]);
   const [activeSubclasses, setActiveSubclasses] = useState([]);
   const [tags, setTags] = useState([]);
   const [positions, setPositions] = useState([]);
   const [search, setSearch] = useState("");
   const [showFilter, setShowFilter] = useState(false);
+
+  useEffect(() => {
+    if (!value || typeof value !== "object") return;
+
+    setActiveClasses(Array.isArray(value.class) ? value.class : []);
+    setActiveSubclasses(
+      Array.isArray(value.subclasses) ? value.subclasses : [],
+    );
+    setTags(Array.isArray(value.tags) ? value.tags : []);
+    setPositions(Array.isArray(value.position) ? value.position : []);
+    setSearch(typeof value.search === "string" ? value.search : "");
+  }, [value]);
+
+  const emitFilterChange = (patch = {}) => {
+    onFilterChange?.({
+      class: activeClasses,
+      subclasses: activeSubclasses,
+      tags,
+      position: positions,
+      search,
+      ...patch,
+    });
+  };
+
+  const handleSearchChange = (nextSearch) => {
+    setSearch(nextSearch);
+    emitFilterChange({ search: nextSearch });
+  };
 
   const { availableSubclasses } = useOperatorFilter({
     operators,
@@ -67,7 +95,7 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
     setPositions([]);
     setSearch("");
 
-    onFilterChange({
+    onFilterChange?.({
       class: [],
       subclasses: [],
       tags: [],
@@ -77,14 +105,7 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
   };
 
   const handleApply = () => {
-    onFilterChange({
-      class: activeClasses,
-      subclasses: activeSubclasses,
-      tags,
-      position: positions,
-      search,
-    });
-
+    emitFilterChange();
     setShowFilter(false);
   };
 
@@ -95,7 +116,7 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
         <div className="relative min-w-0 flex-1 md:w-72 md:flex-none">
           <input
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 handleApply();

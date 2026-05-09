@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 
 let lockCount = 0;
-let savedScrollY = 0;
 let savedStyles = null;
 const activeLocks = new Set();
 
@@ -13,14 +12,11 @@ function getScrollbarWidth() {
   return Math.max(0, window.innerWidth - document.documentElement.clientWidth);
 }
 
-function restoreScrollStyles({ restorePosition = true } = {}) {
-  if (typeof window === "undefined" || typeof document === "undefined") {
-    return;
-  }
+function restoreScrollStyles() {
+  if (typeof document === "undefined") return;
 
   const { body, documentElement } = document;
   const styles = savedStyles;
-  const y = savedScrollY;
 
   body.style.overflow = styles?.bodyOverflow ?? "";
   body.style.paddingRight = styles?.bodyPaddingRight ?? "";
@@ -29,16 +25,7 @@ function restoreScrollStyles({ restorePosition = true } = {}) {
   body.style.width = styles?.bodyWidth ?? "";
   documentElement.style.overflow = styles?.htmlOverflow ?? "";
 
-  savedScrollY = 0;
   savedStyles = null;
-
-  if (restorePosition && Number.isFinite(y) && y > 0) {
-    try {
-      window.scrollTo(0, y);
-    } catch {
-      // no-op
-    }
-  }
 }
 
 function lockScroll(lockId) {
@@ -51,7 +38,6 @@ function lockScroll(lockId) {
 
   if (lockCount === 0) {
     const scrollbarWidth = getScrollbarWidth();
-    savedScrollY = window.scrollY || documentElement.scrollTop || 0;
     savedStyles = {
       bodyOverflow: body.style.overflow,
       bodyPaddingRight: body.style.paddingRight,
@@ -63,9 +49,9 @@ function lockScroll(lockId) {
 
     documentElement.style.overflow = "hidden";
     body.style.overflow = "hidden";
-    body.style.position = "fixed";
-    body.style.top = `-${savedScrollY}px`;
-    body.style.width = "100%";
+    body.style.position = savedStyles.bodyPosition || "";
+    body.style.top = savedStyles.bodyTop || "";
+    body.style.width = savedStyles.bodyWidth || "";
 
     if (scrollbarWidth > 0) {
       body.style.paddingRight = `${scrollbarWidth}px`;
@@ -77,9 +63,7 @@ function lockScroll(lockId) {
 }
 
 function unlockScroll(lockId) {
-  if (typeof window === "undefined" || typeof document === "undefined") {
-    return;
-  }
+  if (typeof document === "undefined") return;
 
   if (lockId != null) activeLocks.delete(lockId);
   lockCount = activeLocks.size;
@@ -88,14 +72,21 @@ function unlockScroll(lockId) {
   restoreScrollStyles();
 }
 
-export function resetScrollLock({ restorePosition = false } = {}) {
-  if (typeof window === "undefined" || typeof document === "undefined") {
-    return;
-  }
+export function resetScrollLock() {
+  if (typeof document === "undefined") return;
 
   activeLocks.clear();
   lockCount = 0;
-  restoreScrollStyles({ restorePosition });
+  restoreScrollStyles();
+
+  const { body, documentElement } = document;
+  if (body.style.position === "fixed") body.style.position = "";
+  if (body.style.top) body.style.top = "";
+  if (body.style.width === "100%") body.style.width = "";
+  if (body.style.overflow === "hidden") body.style.overflow = "";
+  if (documentElement.style.overflow === "hidden") {
+    documentElement.style.overflow = "";
+  }
 }
 
 export function useScrollLock(locked) {

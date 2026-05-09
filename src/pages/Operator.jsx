@@ -7,6 +7,8 @@ import { useOperators } from "../hooks/useOperators";
 import { useOperatorFilter } from "../hooks/useOperatorFilter";
 import OperatorFilter from "../components/Operator/OperatorFilter";
 import { resetScrollLock } from "../hooks/useScrollLock";
+import { CLASSES } from "../config/operatorConfig";
+import { professionIconUrl } from "../utils/operatorUtils";
 
 const Operator = () => {
   const location = useLocation();
@@ -34,6 +36,25 @@ const Operator = () => {
     !!operatorIdFromUrl &&
     !location.state?.background &&
     !location.state?.fromOperatorBootstrap;
+
+  const updateAppliedFilter = (patch) => {
+    setAppliedFilter((prev) => ({ ...prev, ...patch }));
+  };
+
+  const handleQuickProfessionClick = (profession) => {
+    setAppliedFilter((prev) => {
+      const current = Array.isArray(prev.class) ? prev.class : [];
+      const nextClasses = current.includes(profession)
+        ? current.filter((item) => item !== profession)
+        : [...current, profession];
+
+      return {
+        ...prev,
+        class: nextClasses,
+        subclasses: [],
+      };
+    });
+  };
 
   useEffect(() => {
     if (!shouldBootstrapDirectOperator) return;
@@ -71,6 +92,33 @@ const Operator = () => {
 
   useEffect(() => {
     if (!selectedOperator) resetScrollLock({ restorePosition: false });
+  }, [selectedOperator]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      return undefined;
+    }
+
+    const repairOperatorPage = () => {
+      const path = window.location.pathname.toLowerCase();
+      const isOperatorIndex = path === "/operator" || path === "/operator/";
+
+      if (isOperatorIndex || !selectedOperator) {
+        resetScrollLock({ restorePosition: false });
+      }
+    };
+
+    window.addEventListener("pageshow", repairOperatorPage);
+    window.addEventListener("focus", repairOperatorPage);
+    window.addEventListener("popstate", repairOperatorPage);
+    document.addEventListener("visibilitychange", repairOperatorPage);
+
+    return () => {
+      window.removeEventListener("pageshow", repairOperatorPage);
+      window.removeEventListener("focus", repairOperatorPage);
+      window.removeEventListener("popstate", repairOperatorPage);
+      document.removeEventListener("visibilitychange", repairOperatorPage);
+    };
   }, [selectedOperator]);
 
   useEffect(() => {
@@ -120,15 +168,45 @@ const Operator = () => {
     <div id="operator" className="flex min-h-[calc(100vh-104px)] flex-col">
       <div className="w-full">
         <div className="mx-auto flex w-full max-w-7xl flex-col px-4 md:px-8 lg:px-16">
-          <div className="w-full flex items-center justify-between mb-3 gap-3">
+          <div className="mb-3 grid w-full grid-cols-[auto_minmax(0,1fr)] items-center gap-3 lg:grid-cols-[auto_minmax(0,1fr)_auto]">
             <h1 className="font-bold text-3xl md:text-4xl lg:text-1xl bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
               Operator
             </h1>
+
+            <div className="hidden min-w-0 items-center justify-center gap-1.5 lg:flex">
+              {CLASSES.map((cls) => {
+                const isActive = appliedFilter.class.includes(cls.value);
+                return (
+                  <button
+                    key={cls.value}
+                    type="button"
+                    onClick={() => handleQuickProfessionClick(cls.value)}
+                    className={`flex w-[58px] flex-col items-center justify-center rounded-md border px-1 py-1.5 text-[10px] leading-tight transition ${
+                      isActive
+                        ? "border-blue-400 bg-blue-500/30 text-white"
+                        : "border-white/10 bg-black/35 text-gray-300 hover:bg-white/10"
+                    }`}
+                    title={cls.label}
+                  >
+                    <img
+                      src={professionIconUrl(cls.value)}
+                      alt={cls.label}
+                      className="h-7 w-7 object-contain"
+                      loading="lazy"
+                      draggable={false}
+                    />
+                    <span className="mt-0.5 max-w-full truncate">{cls.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
             <OperatorFilter
-              className="flex-1 md:flex-none"
+              className="min-w-0 justify-self-end"
               operators={operators}
+              value={appliedFilter}
               onFilterChange={(filterData) => {
-                setAppliedFilter(filterData);
+                updateAppliedFilter(filterData);
               }}
             />
           </div>

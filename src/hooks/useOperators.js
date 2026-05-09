@@ -18,6 +18,7 @@ export function useOperators() {
         id,
         name: nameVN?.[id]?.name_vn || op.name,
         nameRaw: op.name,
+        appellation: op.appellation,
         idweb: nameVN?.[id]?.idweb ?? null,
         sortIndex: op.sortIndex ?? 0,
         displayNumber: op.displayNumber ?? "",

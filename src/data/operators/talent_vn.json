@@ -63,7 +63,7 @@
     "Talent2_p4": "ATK +9%<@ba.talpu>(+3%)</> khi có đồng minh đứng trong phạm vi tấn công của bản thân hoặc Seaborn, chuyển thành ATK +18%<@ba.talpu>(+3%)</> nếu đồng minh đó thuộc【Thợ săn vực thẳm】"
   },
   "char_1013_chen2": {
-    "TitleTalent1": "Tính tiết kiếm",
+    "TitleTalent1": "Tính tiết kiệm",
     "TitleTalent2": "Dư âm kỳ nghỉ",
     "Talent1": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 15% tỷ lệ không tiêu hao đạn khi tấn công (nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
     "Talent1_p4": "Khi có mặt trên sân, kỹ năng dùng đạn của Ch'en có 17%<@ba.talpu>(+2%)</> tỷ lệ không tiêu hao đạn khi tấn công (nếu có nhiều hiệu ứng cùng loại, chỉ lấy hiệu ứng cao nhất).",
@@ -72,7 +72,7 @@
     "Talent2": "ASPD +8; Tăng thành ASPD +12 nếu có địa hình nước trên sân."
   },
   "char_1014_nearl2": {
-    "TitleTalent1": "Đương đầu với bóng tối",
+    "TitleTalent1": "Đương đầu bóng tối",
     "TitleTalent2": "Ánh bình minh",
     "Talent1": "Khi triển khai, gây sát thương chuẩn bằng 50% ATK lên kẻ địch trong 4 ô xung quanh và khiến chúng bị <$ba.stun>Choáng</> trong 2 giây. Nếu đồng minh được triển khai trước đó thuộc【Kazimierz】, gây thêm 1 lần sát thương chuẩn nữa.",
     "Talent1_2": "Khi triển khai, gây sát thương chuẩn bằng 80% ATK lên kẻ địch trong 4 ô xung quanh và khiến chúng bị <$ba.stun>Choáng</> trong 3 giây. Nếu đồng minh được triển khai trước đó thuộc【Kazimierz】, gây thêm 1 lần sát thương chuẩn nữa.",
@@ -338,7 +338,7 @@
   },
   "char_1046_sbell2": {
     "TitleTalent1": "Cảnh tuyết vô tận",
-    "TitleTalent2": "Phúc lành thánh sơn",
+    "TitleTalent2": "Phúc lành Karlan",
     "Talent0": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 20% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
     "Talent0_p4": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 25%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
     "Talent1": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 50% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, cộng dộn tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
@@ -1483,10 +1483,10 @@
   },
   "char_346_aosta": {
     "TitleTalent1": "Đinh nhọn",
-    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 12% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 18% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, mỗi giây chịu sát thương phép bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính)."
+    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 12% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 18% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_347_jaksel": {
     "TitleTalent1": "Phản xạ cấp tốc",
@@ -2314,9 +2314,9 @@
   "char_4132_ascln": {
     "TitleTalent1": "Thẩm vấn đến chết",
     "TitleTalent2": "Mượn bóng ẩn mình",
-    "Talent0": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 12% tốc độ di chuyển và mỗi giây chịu sát thương phép bằng 6% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
-    "Talent1": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 15% tốc độ di chuyển và mỗi giây chịu sát thương phép bằng 8% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
-    "Talent1_2": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 18% tốc độ di chuyển và mỗi giây chịu sát thương phép bằng 10% ATK hiện tại của Ascalon trong 25 giây; cộng dồn tối đa 3 tầng.",
+    "Talent0": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 12% tốc độ di chuyển và chịu sát thương phép mỗi giây bằng 6% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
+    "Talent1": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 15% tốc độ di chuyển và chịu sát thương phép mỗi giây bằng 8% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
+    "Talent1_2": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 18% tốc độ di chuyển và chịu sát thương phép mỗi giây bằng 10% ATK hiện tại của Ascalon trong 25 giây; cộng dồn tối đa 3 tầng.",
     "Talent2": "ASPD +8; nếu trong 4 ô xung quanh bản thân có địa hình cao (ô cao) sẽ nhận thêm ASPD +6.",
     "Talent2_p4": "ASPD +10<@ba.talpu>(+2)</>; nếu trong 4 ô xung quanh bản thân có địa hình cao (ô cao) sẽ nhận thêm ASPD +6."
   },
@@ -2863,7 +2863,7 @@
     "Talent1_2_p4": "Đồng minh trong phạm vi tấn công có <$ba.buffres>Kháng hiệu ứng</> sẽ hồi HP mỗi giây bằng 7%<@ba.talpu>(+1%)</> ATK của Whisperain (hiệu ứng này không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_437_mizuki": {
-    "TitleTalent1": "Cơn Hysteria chấn thương",
+    "TitleTalent1": "Sang chấn Hysteria",
     "TitleTalent2": "Phản chuyển di",
     "Talent0": "Đòn tấn công gây thêm sát thương phép bằng 20% ATK lên mục tiêu có HP thấp nhất.",
     "Talent1": "Đòn tấn công gây thêm sát thương phép bằng 30% ATK lên mục tiêu có HP thấp nhất.",
@@ -3064,10 +3064,10 @@
   },
   "char_487_bobb": {
     "TitleTalent1": "Điều hướng tụ nhiệt",
-    "Talent1": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 10% ATK trong 5 giây.",
-    "Talent1_p4": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 12%<@ba.talpu>(+2%)</> ATK trong 5 giây.",
-    "Talent1_2": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 16% ATK trong 5 giây.",
-    "Talent1_2_p4": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó mỗi giây chịu <$ba.dt.burning2>Burn</> bằng 18%<@ba.talpu>(+2%)</> ATK trong 5 giây."
+    "Talent1": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó chịu <$ba.dt.burning2>Burn</> mỗi giây bằng 10% ATK trong 5 giây.",
+    "Talent1_p4": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó chịu <$ba.dt.burning2>Burn</> mỗi giây bằng 12%<@ba.talpu>(+2%)</> ATK trong 5 giây.",
+    "Talent1_2": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó chịu <$ba.dt.burning2>Burn</> mỗi giây bằng 16% ATK trong 5 giây.",
+    "Talent1_2_p4": "Đòn tấn công đầu tiên vào mỗi kẻ địch sẽ khiến mục tiêu đó chịu <$ba.dt.burning2>Burn</> mỗi giây bằng 18%<@ba.talpu>(+2%)</> ATK trong 5 giây."
   },
   "char_488_buildr": {
     "TitleTalent1": "Quy tắc của đội phá dỡ",
