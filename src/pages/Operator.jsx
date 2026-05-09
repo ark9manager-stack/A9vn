@@ -178,7 +178,7 @@ const Operator = () => {
             <div className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
               {filteredOperators.length === 0 ? (
                 <div className="w-full text-center text-gray-300 py-20">
-                  No operator found
+                  Đang tải danh sách
                 </div>
               ) : (
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-0">
