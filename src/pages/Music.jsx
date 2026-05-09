@@ -28,22 +28,6 @@ function RemoteSearchIndicator() {
   );
 }
 
-function PaginationInfo({
-  currentPage,
-  totalPages,
-  startIndex,
-  endIndex,
-  total,
-  className = "",
-}) {
-  return (
-    <div className={`text-center text-gray-400 text-sm mb-4 ${className}`}>
-      Trang {currentPage} / {totalPages} • Hiển thị {startIndex + 1}–
-      {Math.min(endIndex, total)} / {total} album
-    </div>
-  );
-}
-
 // ── page ──────────────────────────────────────────────────────────
 
 const Music = () => {
@@ -77,7 +61,6 @@ const Music = () => {
     closePlaylist,
   } = useMusicPage();
 
-  const endIndex = startIndex + 10;
   const showPaging = filteredAlbums.length > 0 && totalPages > 1;
 
   return (
@@ -132,17 +115,6 @@ const Music = () => {
               currentPage={currentPage}
               handlePageChange={handlePageChange}
               className="hidden sm:flex"
-            />
-          )}
-
-          {showPaging && (
-            <PaginationInfo
-              currentPage={currentPage}
-              totalPages={totalPages}
-              startIndex={startIndex}
-              endIndex={endIndex}
-              total={filteredAlbums.length}
-              className="hidden sm:block"
             />
           )}
         </div>
