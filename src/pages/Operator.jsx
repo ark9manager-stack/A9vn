@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
+import React, { useLayoutEffect, useMemo, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";
 import OperatorModal from "../components/Operator/OperatorModal";
@@ -10,8 +10,21 @@ import { resetScrollLock } from "../hooks/useScrollLock";
 import { CLASSES } from "../config/operatorConfig";
 import { professionIconUrl } from "../utils/operatorUtils";
 
+function decodeRouteId(value) {
+  if (!value) return "";
+  try {
+    return decodeURIComponent(String(value));
+  } catch {
+    return String(value);
+  }
+}
+
+function isOperatorRouteMatch(operator, routeId) {
+  if (!operator || !routeId) return false;
+  return operator.id === routeId || String(operator.idweb ?? "") === routeId;
+}
+
 const Operator = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [appliedFilter, setAppliedFilter] = useState({
     class: [],
@@ -21,7 +34,12 @@ const Operator = () => {
     search: "",
   });
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
-  const directOperatorBootstrapRef = useRef(false);
+  const { id: operatorIdFromUrl } = useParams();
+  const routeOperatorKey = useMemo(
+    () => decodeRouteId(operatorIdFromUrl),
+    [operatorIdFromUrl],
+  );
+
   const { filteredOperators } = useOperatorFilter({
     operators,
     activeClass: appliedFilter.class,
@@ -31,11 +49,12 @@ const Operator = () => {
     search: appliedFilter.search,
   });
 
-  const { id: operatorIdFromUrl } = useParams();
-  const shouldBootstrapDirectOperator =
-    !!operatorIdFromUrl &&
-    !location.state?.background &&
-    !location.state?.fromOperatorBootstrap;
+  const modalOperator = useMemo(() => {
+    if (!routeOperatorKey) return null;
+    return isOperatorRouteMatch(selectedOperator, routeOperatorKey)
+      ? selectedOperator
+      : null;
+  }, [routeOperatorKey, selectedOperator]);
 
   const updateAppliedFilter = (patch) => {
     setAppliedFilter((prev) => ({ ...prev, ...patch }));
@@ -56,111 +75,53 @@ const Operator = () => {
     });
   };
 
-  useEffect(() => {
-    if (!shouldBootstrapDirectOperator) return;
-    if (directOperatorBootstrapRef.current) return;
+  useLayoutEffect(() => {
+    if (!routeOperatorKey) {
+      setSelectedOperator(null);
+      resetScrollLock({ restorePosition: false });
+      return;
+    }
 
-    directOperatorBootstrapRef.current = true;
-    navigate("/operator", {
-      replace: true,
-      state: { pendingOperatorId: operatorIdFromUrl },
-    });
-  }, [shouldBootstrapDirectOperator, operatorIdFromUrl, navigate]);
+    if (!operators?.length) return;
 
-  useEffect(() => {
-    const pendingId = location.state?.pendingOperatorId;
-    if (!pendingId || operatorIdFromUrl || !operators?.length) return;
+    const found = operators.find((op) => isOperatorRouteMatch(op, routeOperatorKey));
+    setSelectedOperator(found || null);
+  }, [operators, routeOperatorKey, setSelectedOperator]);
 
-    const found = operators.find(
-      (op) => op.id === pendingId || String(op.idweb) === pendingId,
-    );
-
-    if (!found) return;
-
-    setSelectedOperator(found);
-    navigate(`/operator/${encodeURIComponent(found.id)}`, {
-      replace: true,
-      state: { fromOperatorBootstrap: true },
-    });
-  }, [
-    location.state,
-    operatorIdFromUrl,
-    operators,
-    navigate,
-    setSelectedOperator,
-  ]);
-
-  useEffect(() => {
-    if (!selectedOperator) resetScrollLock({ restorePosition: false });
-  }, [selectedOperator]);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window === "undefined" || typeof document === "undefined") {
       return undefined;
     }
 
-    const repairOperatorPage = () => {
+    const repairOperatorRoute = () => {
       const path = window.location.pathname.toLowerCase();
       const isOperatorIndex = path === "/operator" || path === "/operator/";
 
-      if (isOperatorIndex || !selectedOperator) {
+      if (isOperatorIndex) {
+        setSelectedOperator(null);
         resetScrollLock({ restorePosition: false });
       }
     };
 
-    window.addEventListener("pageshow", repairOperatorPage);
-    window.addEventListener("focus", repairOperatorPage);
-    window.addEventListener("popstate", repairOperatorPage);
-    document.addEventListener("visibilitychange", repairOperatorPage);
+    window.addEventListener("pageshow", repairOperatorRoute);
+    window.addEventListener("popstate", repairOperatorRoute);
+    document.addEventListener("visibilitychange", repairOperatorRoute);
 
     return () => {
-      window.removeEventListener("pageshow", repairOperatorPage);
-      window.removeEventListener("focus", repairOperatorPage);
-      window.removeEventListener("popstate", repairOperatorPage);
-      document.removeEventListener("visibilitychange", repairOperatorPage);
+      window.removeEventListener("pageshow", repairOperatorRoute);
+      window.removeEventListener("popstate", repairOperatorRoute);
+      document.removeEventListener("visibilitychange", repairOperatorRoute);
     };
-  }, [selectedOperator]);
-
-  useEffect(() => {
-    if (!operators?.length) return;
-
-    if (!operatorIdFromUrl) {
-      setSelectedOperator(null);
-      directOperatorBootstrapRef.current = false;
-      return;
-    }
-
-    if (shouldBootstrapDirectOperator) return;
-
-    const found = operators.find(
-      (op) =>
-        op.id === operatorIdFromUrl || String(op.idweb) === operatorIdFromUrl,
-    );
-
-    if (found) setSelectedOperator(found);
-  }, [
-    operatorIdFromUrl,
-    operators,
-    setSelectedOperator,
-    shouldBootstrapDirectOperator,
-  ]);
+  }, [setSelectedOperator]);
 
   const openOperator = (op) => {
     setSelectedOperator(op);
-
-    navigate(`/operator/${encodeURIComponent(op.id)}`, {
-      state: { background: location },
-    });
+    navigate(`/operator/${encodeURIComponent(op.id)}`);
   };
 
   const closeOperatorModal = () => {
     setSelectedOperator(null);
-
-    if (location.state?.background) {
-      navigate(-1);
-      return;
-    }
-
+    resetScrollLock({ restorePosition: false });
     navigate("/operator", { replace: true });
   };
 
@@ -235,11 +196,8 @@ const Operator = () => {
         </div>
       </div>
 
-      {selectedOperator && (
-        <OperatorModal
-          operator={selectedOperator}
-          onClose={closeOperatorModal}
-        />
+      {modalOperator && (
+        <OperatorModal operator={modalOperator} onClose={closeOperatorModal} />
       )}
     </div>
   );
