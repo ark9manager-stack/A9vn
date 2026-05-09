@@ -16,12 +16,10 @@ const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
           <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-gradient-to-r from-primary via-white to-accent transition-transform duration-500 group-focus-within:scale-x-100" />
 
           <div className="relative flex min-h-[clamp(48px,6vh,58px)] items-center gap-2.5 px-3 sm:gap-3 sm:px-5">
-            <div className="grid size-[clamp(34px,4.5vh,40px)] shrink-0 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-              <Search
-                className="size-[clamp(17px,2.3vh,20px)]"
-                aria-hidden="true"
-              />
-            </div>
+            <Search
+              className="size-[clamp(17px,2.3vh,20px)]"
+              aria-hidden="true"
+            />
 
             <div className="min-w-0 flex-1">
               <label htmlFor="music-search" className="sr-only">
@@ -54,19 +52,6 @@ const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>
             )}
-          </div>
-
-          <div className="relative grid grid-cols-12 gap-px border-t border-white/10 bg-white/[0.03] px-3 py-1 sm:px-4 sm:py-1.5">
-            {Array.from({ length: 12 }, (_, index) => (
-              <span
-                key={index}
-                className={`h-1 rounded-full ${
-                  searchTerm
-                    ? "bg-primary/45 shadow-[0_0_10px_hsl(var(--primary)/0.18)]"
-                    : "bg-white/10"
-                }`}
-              />
-            ))}
           </div>
         </div>
       </div>
