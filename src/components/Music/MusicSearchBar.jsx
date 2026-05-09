@@ -24,9 +24,6 @@ const MusicSearchBar = ({ searchTerm, setSearchTerm, setCurrentPage }) => {
             </div>
 
             <div className="min-w-0 flex-1">
-              <div className="mb-0.5 hidden font-mono-tech text-[10px] uppercase tracking-[0.22em] text-white/35 sm:block">
-                Monster Siren signal search
-              </div>
               <label htmlFor="music-search" className="sr-only">
                 Tìm album hoặc bài hát
               </label>
