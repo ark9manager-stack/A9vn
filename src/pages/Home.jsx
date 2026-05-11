@@ -5,8 +5,8 @@ const tickerItems = [
   { text: "// WELCOME COMMANDER ▸" },
   { text: "OPERATOR DATABASE", hi: "ONLINE" },
   { text: "// RHODES ISLAND INTEL SYSTEM" },
-  { text: "TOTAL OPERATORS:", hi: "250+" },
-  { text: "// NEW EVENT: CHAPTER 13 UNLOCKED" },
+  { text: "TOTAL OPERATORS:", hi: "300+" },
+  { text: "// NEW EVENT: CHAPTER 16 UNLOCKED" },
   { text: "THREAT LEVEL:", hi: "CONTINGENCY" },
   { text: "// COMMANDER ACCESS GRANTED" },
 ];
@@ -82,10 +82,10 @@ export default function Home() {
 
             <div className="flex gap-8 mt-10 pt-8 border-t border-primary/20 flex-wrap">
               {[
-                { num: "250", suffix: "+", label: "OPERATORS" },
+                { num: "300", suffix: "+", label: "OPERATORS" },
                 { num: "180", suffix: "+", label: "ENEMIES" },
                 { num: "400", suffix: "+", label: "BGM TRACKS" },
-                { num: "13", suffix: "", label: "CHAPTERS" },
+                { num: "16", suffix: "", label: "CHAPTERS" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col gap-1">
                   <span className="font-heading text-3xl font-bold text-foreground leading-none">
