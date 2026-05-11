@@ -12,6 +12,22 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
   const [search, setSearch] = useState("");
   const [showFilter, setShowFilter] = useState(false);
 
+  const emitFilterChange = (patch = {}) => {
+    onFilterChange?.({
+      class: activeClasses,
+      subclasses: activeSubclasses,
+      tags,
+      position: positions,
+      search,
+      ...patch,
+    });
+  };
+
+  const handleSearchChange = (nextSearch) => {
+    setSearch(nextSearch);
+    emitFilterChange({ search: nextSearch });
+  };
+
   const { availableSubclasses } = useOperatorFilter({
     operators,
     activeClass: activeClasses,
@@ -67,7 +83,7 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
     setPositions([]);
     setSearch("");
 
-    onFilterChange({
+    onFilterChange?.({
       class: [],
       subclasses: [],
       tags: [],
@@ -77,14 +93,7 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
   };
 
   const handleApply = () => {
-    onFilterChange({
-      class: activeClasses,
-      subclasses: activeSubclasses,
-      tags,
-      position: positions,
-      search,
-    });
-
+    emitFilterChange();
     setShowFilter(false);
   };
 
@@ -95,7 +104,7 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
         <div className="relative min-w-0 flex-1 md:w-72 md:flex-none">
           <input
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 handleApply();
@@ -105,20 +114,6 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
             className="w-full pl-3 pr-3 py-2 rounded-md bg-black/50 border border-white/10 text-sm text-white placeholder-gray-100 focus:outline-none focus:border-blue-400"
           />
         </div>
-
-        {/* Reset */}
-        {(activeClasses.length ||
-          activeSubclasses.length ||
-          tags.length ||
-          positions.length ||
-          search) && (
-          <button
-            onClick={handleReset}
-            className="text-xs px-2 py-1 rounded bg-black/70 border border-white/10 hover:bg-white/10"
-          >
-            Clear
-          </button>
-        )}
 
         {/* Toggle Filter */}
         <button
@@ -240,6 +235,12 @@ const OperatorFilter = ({ onFilterChange, operators, className = "" }) => {
                 className="px-3 py-1 text-sm rounded bg-blue-500/80 hover:bg-blue-500"
               >
                 Apply
+              </button>
+              <button
+                onClick={handleReset}
+                className="text-xs px-2 py-1 rounded bg-black/70 border border-white/10 hover:bg-white/10"
+              >
+                Clear
               </button>
             </div>
           </div>
