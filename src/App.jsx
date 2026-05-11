@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 import Layout from "./components/Layout";
 import LoadingScreen from "./components/UI/LoadingScreen";
@@ -59,6 +60,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <MusicPlayerProvider>
+        <AnalyticsTracker />
         {showIntro && <PRTSIntro onComplete={() => setShowIntro(false)} />}
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
           <RouteErrorBoundary resetKey={location.pathname}>
@@ -91,14 +93,20 @@ const App = () => {
                   <Route path="/database" element={<DatabasePage />} />
 
                   {/* Materials */}
-                  <Route path="/database/materials" element={<MaterialsPage />} />
+                  <Route
+                    path="/database/materials"
+                    element={<MaterialsPage />}
+                  />
                   <Route
                     path="/database/materials/:id"
                     element={<MaterialDetail />}
                   />
 
                   {/* Planner */}
-                  <Route path="/database/planner" element={<MaterialPlanner />} />
+                  <Route
+                    path="/database/planner"
+                    element={<MaterialPlanner />}
+                  />
 
                   {/* Boss */}
                   <Route path="/database/bosses" element={<BossesPage />} />
