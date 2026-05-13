@@ -247,6 +247,7 @@ function applyNoteKeyStyle(nodes, noteKey, keyPrefix) {
 function resolveHoverTarget(keyRaw, { preferNote = false } = {}) {
   const key = normalizeHoverKey(keyRaw);
   if (!isNonEmptyString(key)) return { kind: null, key: "" };
+
   const note = getNote(key);
   if (note) return { kind: "note", key };
 
@@ -436,6 +437,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
 
   const note = getNote(noteKey) || getNote(termId);
   const term = getTerm(termId) || getTerm(noteKey);
+
   const title = note?.title || note?.termName || term?.termName || term?.title || "";
   const text = note?.text || note?.description || term?.description || term?.text || "";
 
@@ -481,11 +483,11 @@ export default function StatHover({ label, noteKey, termId, children }) {
 
     const top =
       place === "bottom"
-        ? rect.bottom + gap + window.scrollY
-        : rect.top - gap - tipH + window.scrollY;
+        ? rect.bottom + gap
+        : rect.top - gap - tipH;
 
-    let left = rect.left + rect.width / 2 - tipW / 2 + window.scrollX;
-    left = Math.max(8 + window.scrollX, Math.min(left, vw - tipW - 8 + window.scrollX));
+    let left = rect.left + rect.width / 2 - tipW / 2;
+    left = Math.max(8, Math.min(left, vw - tipW - 8));
 
     setPos({ top, left, place });
   }, []);
