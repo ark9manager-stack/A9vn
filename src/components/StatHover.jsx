@@ -247,17 +247,14 @@ function applyNoteKeyStyle(nodes, noteKey, keyPrefix) {
 function resolveHoverTarget(keyRaw, { preferNote = false } = {}) {
   const key = normalizeHoverKey(keyRaw);
   if (!isNonEmptyString(key)) return { kind: null, key: "" };
+  const note = getNote(key);
+  if (note) return { kind: "note", key };
+
+  const term = getTerm(key);
+  if (term) return { kind: "term", key };
 
   if (preferNote) {
-    const note = getNote(key);
-    if (note) return { kind: "note", key };
-    const term = getTerm(key);
-    if (term) return { kind: "term", key };
-  } else {
-    const term = getTerm(key);
-    if (term) return { kind: "term", key };
-    const note = getNote(key);
-    if (note) return { kind: "note", key };
+    return { kind: null, key };
   }
 
   return { kind: null, key };
@@ -437,11 +434,10 @@ export default function StatHover({ label, noteKey, termId, children }) {
     }
   }, []);
 
-  const term = getTerm(termId) || getTerm(noteKey);
   const note = getNote(noteKey) || getNote(termId);
-
-  const title = term?.termName || term?.title || note?.title || note?.termName || "";
-  const text = term?.description || term?.text || note?.text || note?.description || "";
+  const term = getTerm(termId) || getTerm(noteKey);
+  const title = note?.title || note?.termName || term?.termName || term?.title || "";
+  const text = note?.text || note?.description || term?.description || term?.text || "";
 
   const hasTooltip = isNonEmptyString(title) || isNonEmptyString(text);
   const visible = hasTooltip && (open || pinned);
