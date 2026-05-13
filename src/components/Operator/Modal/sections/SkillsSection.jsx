@@ -1106,12 +1106,13 @@ function TokenSkillPanel({
   );
 
   const tokenSkillDesc = React.useMemo(() => {
+    if (!tokenSkillId || tokenSkillLevels.length === 0) return "";
     const vnText = getTokenSkillVnText(vnEntry, selectedSkillOrder, tokenSkillLevelIdx);
     const enText = tokenSkillLevelEN?.description || "";
     const cnText = tokenSkillLevelCN?.description || "";
     const rawText = isEnglishUI ? enText || cnText || "" : vnText || cnText || enText || "";
     return applyBlackboard(rawText, buildSkillParamMap(tokenSkillLevel));
-  }, [vnEntry, selectedSkillOrder, tokenSkillLevelIdx, tokenSkillLevel, tokenSkillLevelEN, tokenSkillLevelCN, isEnglishUI]);
+  }, [tokenSkillId, tokenSkillLevels.length, vnEntry, selectedSkillOrder, tokenSkillLevelIdx, tokenSkillLevel, tokenSkillLevelEN, tokenSkillLevelCN, isEnglishUI]);
 
   const tokenTalentVariants = React.useMemo(
     () => collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }),
@@ -1130,120 +1131,153 @@ function TokenSkillPanel({
   );
   const tokenTalent = tokenTalentVariants?.[safeTokenTalentIdx] || null;
 
-  if (!tokenCharData || !tokenSkillId) return null;
+  const skillIconUrl = tokenSkillId
+    ? getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId)
+    : "";
+  const tokenAvatarUrl = getSummonAvatarUrl(tokenId);
+  const tokenIconUrl = skillIconUrl || tokenAvatarUrl;
+  const [tokenIconFailed, setTokenIconFailed] = React.useState(false);
 
-  const tokenIconUrl =
-    getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId) ||
-    getSummonAvatarUrl(tokenId);
+  React.useEffect(() => {
+    setTokenIconFailed(false);
+  }, [tokenId, tokenSkillId, tokenIconUrl]);
+
+  if (!tokenCharData) return null;
+
   const tokenSpType = tokenSkillLevel?.spData?.spType;
   const tokenSkillType = tokenSkillLevel?.skillType;
   const tokenDuration = tokenSkillLevel?.duration;
   const tokenInitSp = Number(tokenSkillLevel?.spData?.initSp || 0);
   const tokenSpCost = Number(tokenSkillLevel?.spData?.spCost || 0);
   const tokenRangeId = tokenSkillLevel?.rangeId || "";
-  const showTokenSp = String(tokenSkillType || "") !== "PASSIVE" && (tokenInitSp !== 0 || tokenSpCost !== 0);
+  const showTokenSp =
+    !!tokenSkillLevel &&
+    String(tokenSkillType || "") !== "PASSIVE" &&
+    (tokenInitSp !== 0 || tokenSpCost !== 0);
   const showTokenTalentControls = tokenTalentVariants.length > 1;
   const hasTalent = !!tokenTalent && isNonEmptyString(tokenTalent.text);
   const hasSkillDesc = isNonEmptyString(tokenSkillDesc);
+  const hasTrait = isNonEmptyString(tokenTraitText);
+  const tokenIconKey = `${tokenId || "token"}-${tokenSkillId || "noskill"}-${tokenIconUrl || "noicon"}`;
+
+  const tokenImage = tokenIconUrl && !tokenIconFailed ? (
+    <img
+      key={tokenIconKey}
+      src={tokenIconUrl}
+      alt={tokenSkillId || tokenId}
+      className="w-24 h-24 object-contain"
+      draggable={false}
+      loading="eager"
+      decoding="async"
+      onError={(e) => {
+        const fallback = tokenAvatarUrl;
+        if (fallback && e.currentTarget.src !== fallback) {
+          e.currentTarget.src = fallback;
+          return;
+        }
+        setTokenIconFailed(true);
+      }}
+    />
+  ) : null;
+
+  const traitBlock = hasTrait ? (
+    <div className="min-w-0 text-sm text-white/70 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+      {renderTextWithHovers(tokenTraitText, `token-trait-${tokenId}`, isEnglishUI)}
+    </div>
+  ) : null;
 
   return (
     <div className="rounded-xl border border-white/10 bg-black/20 p-4">
       <div className="flex flex-col md:flex-row md:items-start gap-4">
-        <div className="shrink-0">
-          {tokenIconUrl ? (
-            <img
-              src={tokenIconUrl}
-              alt={tokenSkillId}
-              className="w-24 h-24 object-contain"
-              draggable={false}
-              loading="eager"
-              decoding="async"
-              onError={(e) => {
-                const fallback = getSummonAvatarUrl(tokenId);
-                if (fallback && e.currentTarget.src !== fallback) {
-                  e.currentTarget.src = fallback;
-                  return;
-                }
-                e.currentTarget.style.display = "none";
-              }}
-            />
-          ) : null}
-        </div>
-
-        <div className="min-w-0 flex-1">
-          <div className="text-lg font-semibold text-white break-words">
-            {tokenTitle || tokenId}
+        <div className="flex items-start gap-4 min-w-0 md:contents">
+          <div className="shrink-0 flex flex-col items-center md:items-start gap-2 w-24 md:w-auto">
+            <div className="w-24 h-24 flex items-center justify-center">
+              {tokenImage}
+            </div>
+            <div className="hidden md:block w-24">
+              {traitBlock}
+            </div>
           </div>
 
-          <div className="mt-2 flex items-center gap-2 flex-wrap">
-            {Number(tokenSpType) === 8 || String(tokenSpType) === "8"
-              ? null
-              : (() => {
-                  const k = String(tokenSpType || "");
-                  const meta = SP_TYPE_META?.[k];
-                  const label = meta ? (isEnglishUI ? meta.en : meta.vi) : k;
-                  const bg = meta?.bg || "#808080";
-                  return isNonEmptyString(label) ? (
-                    <span
-                      className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold"
-                      style={{ backgroundColor: bg, color: "#000" }}
-                    >
-                      {label}
-                    </span>
-                  ) : null;
-                })()}
+          <div className="min-w-0 flex-1 md:order-none">
+            <div className="text-lg font-semibold text-white whitespace-normal break-words" style={{ overflowWrap: "anywhere" }}>
+              {tokenTitle || tokenId}
+            </div>
 
-            {isNonEmptyString(tokenSkillType) ? (
-              <span
-                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white"
-                style={{ backgroundColor: "#808080" }}
-              >
-                {SKILL_TYPE_META?.[tokenSkillType]?.[isEnglishUI ? "en" : "vi"] || String(tokenSkillType)}
-              </span>
+            <div className="mt-2 flex items-center gap-2 flex-wrap">
+              {Number(tokenSpType) === 8 || String(tokenSpType) === "8"
+                ? null
+                : (() => {
+                    const k = String(tokenSpType || "");
+                    const meta = SP_TYPE_META?.[k];
+                    const label = meta ? (isEnglishUI ? meta.en : meta.vi) : k;
+                    const bg = meta?.bg || "#808080";
+                    return isNonEmptyString(label) ? (
+                      <span
+                        className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold"
+                        style={{ backgroundColor: bg, color: "#000" }}
+                      >
+                        {label}
+                      </span>
+                    ) : null;
+                  })()}
+
+              {isNonEmptyString(tokenSkillType) ? (
+                <span
+                  className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white"
+                  style={{ backgroundColor: "#808080" }}
+                >
+                  {SKILL_TYPE_META?.[tokenSkillType]?.[isEnglishUI ? "en" : "vi"] || String(tokenSkillType)}
+                </span>
+              ) : null}
+
+              {(() => {
+                const d = Number(tokenDuration);
+                if (!Number.isFinite(d) || d <= 0 || d === -1) return null;
+                const v = isAlmostInt(d) ? String(Math.round(d)) : trimFixed(d, 1);
+                return (
+                  <span
+                    className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                    style={{ backgroundColor: "#D3D3D3" }}
+                  >
+                    {isEnglishUI ? `${v} seconds` : `${v} giây`}
+                  </span>
+                );
+              })()}
+            </div>
+
+            {showTokenSp ? (
+              <div className="mt-3 flex items-center gap-6 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-white/70">
+                    {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
+                  </span>
+                  <div className="relative w-[52px] h-[38px] shrink-0">
+                    <img src={INIT_SP_ICON} alt="init-sp" className="w-full h-full object-contain" draggable={false} />
+                    <span className="absolute right-[12px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                      {tokenInitSp}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-white/70">
+                    {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
+                  </span>
+                  <div className="relative w-[52px] h-[28px] shrink-0">
+                    <img src={SP_COST_ICON} alt="sp-cost" className="w-full h-full object-contain" draggable={false} />
+                    <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                      {tokenSpCost}
+                    </span>
+                  </div>
+                </div>
+              </div>
             ) : null}
 
-            {(() => {
-              const d = Number(tokenDuration);
-              if (!Number.isFinite(d) || d <= 0 || d === -1) return null;
-              const v = isAlmostInt(d) ? String(Math.round(d)) : trimFixed(d, 1);
-              return (
-                <span
-                  className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                  style={{ backgroundColor: "#D3D3D3" }}
-                >
-                  {isEnglishUI ? `${v} seconds` : `${v} giây`}
-                </span>
-              );
-            })()}
-          </div>
-
-          {showTokenSp ? (
-            <div className="mt-3 flex items-center gap-6 flex-wrap">
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-white/70">
-                  {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
-                </span>
-                <div className="relative w-[52px] h-[38px] shrink-0">
-                  <img src={INIT_SP_ICON} alt="init-sp" className="w-full h-full object-contain" draggable={false} />
-                  <span className="absolute right-[12px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
-                    {tokenInitSp}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-white/70">
-                  {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
-                </span>
-                <div className="relative w-[52px] h-[28px] shrink-0">
-                  <img src={SP_COST_ICON} alt="sp-cost" className="w-full h-full object-contain" draggable={false} />
-                  <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
-                    {tokenSpCost}
-                  </span>
-                </div>
-              </div>
+            <div className="mt-3 md:hidden">
+              {traitBlock}
             </div>
-          ) : null}
+          </div>
         </div>
 
         {isNonEmptyString(tokenRangeId) ? (
@@ -1256,43 +1290,24 @@ function TokenSkillPanel({
         ) : null}
       </div>
 
-      {isNonEmptyString(tokenTraitText) ? (
-        <div className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4">
-          <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-            Trait
-          </div>
-          <div className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
-            {renderTextWithHovers(tokenTraitText, `token-trait-${tokenId}`, isEnglishUI)}
-          </div>
-        </div>
-      ) : null}
-
       {hasTalent || hasSkillDesc ? (
         <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
           {hasTalent ? (
             <div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-start gap-3 min-w-0">
-                    <span
-                      className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
-                      title={tokenTalent?.name ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}` : isEnglishUI ? "Talent" : "Thiên phú"}
-                    >
-                      {tokenTalent?.name
-                        ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}`
-                        : isEnglishUI
-                          ? "Talent"
-                          : "Thiên phú"}
-                    </span>
-                  </div>
-
-                  <div className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
-                    {renderTextWithHovers(tokenTalent.text, `token-talent-${tokenId}-e${tokenTalent.phaseIndex}`, isEnglishUI)}
-                  </div>
-                </div>
+              <div className="flex items-start gap-3 min-w-0 flex-wrap">
+                <span
+                  className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
+                  title={tokenTalent?.name ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}` : isEnglishUI ? "Talent" : "Thiên phú"}
+                >
+                  {tokenTalent?.name
+                    ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}`
+                    : isEnglishUI
+                      ? "Talent"
+                      : "Thiên phú"}
+                </span>
 
                 {showTokenTalentControls ? (
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-1.5 shrink-0">
                     {tokenTalentVariants.map((v, idx) => {
                       const active = idx === safeTokenTalentIdx;
                       return (
@@ -1300,13 +1315,13 @@ function TokenSkillPanel({
                           key={`token-talent-phase-${tokenId}-${v.phaseIndex}-${idx}`}
                           type="button"
                           onClick={() => setTokenTalentIdx(idx)}
-                          className={`rounded-lg p-1.5 transition ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
+                          className={`rounded-md p-1 transition ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
                           title={`E${v.phaseIndex}`}
                         >
                           <img
                             src={getEliteIconLarge(v.phaseIndex)}
                             alt={`E${v.phaseIndex}`}
-                            className="w-8 h-8 object-contain"
+                            className="w-6 h-6 object-contain"
                             draggable={false}
                             loading="lazy"
                           />
@@ -1316,14 +1331,28 @@ function TokenSkillPanel({
                   </div>
                 ) : null}
               </div>
+
+              <div className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+                {renderTextWithHovers(tokenTalent.text, `token-talent-${tokenId}-e${tokenTalent.phaseIndex}`, isEnglishUI)}
+              </div>
             </div>
           ) : null}
 
           {hasTalent && hasSkillDesc ? <div className="h-px bg-white/10 my-4" /> : null}
 
           {hasSkillDesc ? (
-            <div className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
-              {renderTextWithHovers(tokenSkillDesc, `token-skill-${charKey || "unknown"}-${tokenSkillId}-lv${tokenSkillLevelIdx + 1}`, isEnglishUI)}
+            <div>
+              <div className="flex items-start gap-3 min-w-0">
+                <span
+                  className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
+                  title={isEnglishUI ? "Skill" : "Kỹ năng"}
+                >
+                  {isEnglishUI ? "Skill" : "Kỹ năng"}
+                </span>
+              </div>
+              <div className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+                {renderTextWithHovers(tokenSkillDesc, `token-skill-${charKey || "unknown"}-${tokenSkillId}-lv${tokenSkillLevelIdx + 1}`, isEnglishUI)}
+              </div>
             </div>
           ) : null}
         </div>

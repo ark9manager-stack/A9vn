@@ -52,14 +52,31 @@ export function collectOperatorTokenOptions(charData) {
 }
 
 export function resolveTokenForSkill(charData, selectedSkillRef, selectedSkillIndex = 0) {
-  const direct = normalizeTokenId(selectedSkillRef?.overrideTokenKey);
-  if (direct) return { tokenId: direct, source: "skill", skillIndex: selectedSkillIndex + 1 };
+  if (!charData || typeof charData !== "object") return null;
 
-  const options = collectOperatorTokenOptions(charData);
+  const direct = normalizeTokenId(selectedSkillRef?.overrideTokenKey);
+  if (direct) {
+    return {
+      tokenId: direct,
+      source: "skill",
+      skillIndex: Number(selectedSkillIndex || 0) + 1,
+    };
+  }
+
+  const skills = Array.isArray(charData?.skills) ? charData.skills : [];
+  const hasAnySkillSpecificToken = skills.some((skill) =>
+    normalizeTokenId(skill?.overrideTokenKey),
+  );
+
+  // If this operator has skill-specific tokens, do not fall back to displayTokenDict
+  // on skills that do not actually use a token. This prevents cases like Tragodia S1
+  // showing the S2 token by mistake.
+  if (hasAnySkillSpecificToken) return null;
+
+  const options = collectOperatorTokenOptions(charData).filter(
+    (opt) => opt?.source !== "skill",
+  );
   if (options.length === 0) return null;
 
-  const sameSkill = options.find(
-    (opt) => Number(opt?.skillIndex || 0) === Number(selectedSkillIndex || 0) + 1,
-  );
-  return sameSkill || options[0] || null;
+  return options[0] || null;
 }
