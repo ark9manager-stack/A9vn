@@ -6,6 +6,37 @@ import {
   CLASS_LABELS_I18N,
 } from "../config/operatorConfig";
 
+const AK_ASSET_BRANCH = "cn";
+const AK_ASSET_RAW_BASE = `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/${AK_ASSET_BRANCH}`;
+const AK_ASSET_JSDELIVR_BASE = `https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@${AK_ASSET_BRANCH}`;
+
+function buildAkAssetUrl(path = "") {
+  const clean = String(path || "").replace(/^\/+/, "");
+  return `${AK_ASSET_RAW_BASE}/${clean}`;
+}
+
+export function toJsDelivrOperatorAssetUrl(url) {
+  const rawPrefix = `${AK_ASSET_RAW_BASE}/`;
+  const value = String(url || "");
+  if (!value.startsWith(rawPrefix)) return value;
+  return `${AK_ASSET_JSDELIVR_BASE}/${value.slice(rawPrefix.length)}`;
+}
+
+export function makeOperatorAssetFallbackHandler({ onFallback } = {}) {
+  return (e) => {
+    const img = e?.currentTarget;
+    if (!img) return;
+    const current = String(img.currentSrc || img.src || "");
+    const next = toJsDelivrOperatorAssetUrl(current);
+    if (!next || next === current || img?.dataset?.operatorCdnFallback === "1") return;
+    try {
+      if (img.dataset) img.dataset.operatorCdnFallback = "1";
+    } catch {}
+    onFallback?.(next, img);
+    img.src = next;
+  };
+}
+
 export function professionIconUrl(profession) {
   const file = PROFESSION_ICON_MAP[profession];
   return file ? `${PROF_ICON_BASE}/${file}` : "";
@@ -44,7 +75,7 @@ export function getIdWebNumber(op) {
 
 export function subProfIconUrl(id) {
   if (!id) return "";
-  return `https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@cn/assets/dyn/arts/ui/subprofessionicon/sub_${id}_icon.png`;
+  return `${buildAkAssetUrl("assets/dyn/arts/ui/subprofessionicon")}/sub_${id}_icon.png`;
 }
 
 export function subProfLabel(id, lang = "EN") {

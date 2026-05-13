@@ -94,10 +94,17 @@ export default function SkinsSection({ operator, className = "" }) {
         const display = pickDisplaySkin(s);
         const enEntry = skinsDictEn?.[s.skinId];
         const displayEn = pickDisplaySkin(enEntry);
-        const primaryUrl = buildSkinUrl(charId, s.skinId);
-        const fallbackUrl = buildSkinUrl(charId, s.skinId, {
-          forceLowerTheme: true,
+        const shouldForceLowerTheme = String(s.skinId || "")
+          .toLowerCase()
+          .includes("@ambiencesynesthesia#");
+        const primaryUrl = buildSkinUrl(charId, s.skinId, {
+          forceLowerTheme: shouldForceLowerTheme,
         });
+        const fallbackUrl = shouldForceLowerTheme
+          ? null
+          : buildSkinUrl(charId, s.skinId, {
+              forceLowerTheme: true,
+            });
 
         return {
           key: s.skinId,

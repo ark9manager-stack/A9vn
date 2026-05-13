@@ -330,9 +330,9 @@
   "char_1045_svash2": {
     "TitleTalent1": "Thế cờ mở",
     "TitleTalent2": "Sứ giả Karlan",
-    "Talent0": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +2 SP khởi đầu và thời gian tái triển khai -10%.",
-    "Talent1": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +3 SP khởi đầu, và thời gian tái triển khai -15%.",
-    "Talent1_2": "Khi có mặt trên sân, đưa 'Mắt Bão' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Mắt Bão' và bản thân SilverAsh nhận +4 SP khởi đầu và thời gian tái triển khai -20%.",
+    "Talent0": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +2 SP khởi đầu và thời gian tái triển khai -10%.",
+    "Talent1": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +3 SP khởi đầu, và thời gian tái triển khai -15%.",
+    "Talent1_2": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các cán viên theo thứ tự chi phí triển khai. Những cán viên nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +4 SP khởi đầu và thời gian tái triển khai -20%.",
     "Talent2": "Khi có mặt trên sân, tất cả cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], +60 DEF, và hồi 1.5% HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi.",
     "Talent2_p4": "Khi có mặt trên sân, tất cả cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], +80<@ba.talpu>(+20)</> DEF, và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
   },

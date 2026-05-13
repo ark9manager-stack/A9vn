@@ -9,6 +9,7 @@ import potVN from "../../../../data/operators/pot_vn.json";
 import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
+import { collectOperatorTokenOptions } from "../../../../utils/operatorTokenResolver";
 
 import {
   STAT_ICON,
@@ -514,37 +515,12 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
   const summonOptions = useMemo(() => {
     if (!charData) return [];
 
-    const out = [];
-    const pushUniqueIfValid = (tokenId, meta = {}) => {
-      const tid = String(tokenId || "");
-      if (!tid.startsWith("token_")) return;
-      if (!characterTableWithPatch?.[tid]) return;
-      if (out.some((x) => x.tokenId === tid)) return;
-
-      const tokenChar = characterTableWithPatch[tid];
-      const tokenPhases = Array.isArray(tokenChar?.phases)
-        ? tokenChar.phases
-        : [];
-      if (!hasAnyScalingInPhases(tokenPhases)) return;
-
-      out.push({
-        tokenId: tid,
-        skillIndex: meta.skillIndex ?? null,
-      });
-    };
-
-    const skillsArr = Array.isArray(charData?.skills) ? charData.skills : [];
-    skillsArr.forEach((s, idx) => {
-      if (s?.overrideTokenKey)
-        pushUniqueIfValid(s.overrideTokenKey, { skillIndex: idx + 1 });
-    });
-
-    const tokenDict = charData?.displayTokenDict;
-    if (tokenDict && typeof tokenDict === "object") {
-      Object.keys(tokenDict).forEach((k) => pushUniqueIfValid(k));
-    }
-
-    return out;
+    return collectOperatorTokenOptions(charData)
+      .filter((opt) => opt?.tokenId && characterTableWithPatch?.[opt.tokenId])
+      .map((opt) => ({
+        tokenId: opt.tokenId,
+        skillIndex: opt.skillIndex ?? null,
+      }));
   }, [charData]);
 
   const [summonIndex, setSummonIndex] = useState(0);
@@ -618,12 +594,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     if (vnName) return vnName;
     return summonCharData?.name || selectedSummon?.tokenId || "";
   }, [summonNameVNRow, summonCharData, selectedSummon]);
-
-  const summonDisplayDesc = useMemo(() => {
-    const vnDesc = summonNameVNRow?.Descripton;
-    if (vnDesc) return vnDesc;
-    return summonCharData?.description || "";
-  }, [summonNameVNRow, summonCharData]);
 
   const summonPositionVN = useMemo(() => {
     const pos = summonCharData?.position;
@@ -1167,10 +1137,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
               <h3 className="text-lg font-semibold text-white">
                 Vật phẩm triệu hồi
               </h3>
-              <p className="mt-1 text-xs text-white/60">
-                Chỉ những vật phẩm thay đổi chỉ số mới có ở đây, còn lại sẽ nằm
-                ở phần kỹ năng
-              </p>
             </div>
 
             {summonOptions.length > 1 && (
@@ -1232,11 +1198,6 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 <span className="text-white/90">{summonPositionVN}</span>
               </div>
 
-              {!!summonDisplayDesc && (
-                <div className="text-xs text-white/70 mt-1 whitespace-pre-wrap">
-                  {summonDisplayDesc}
-                </div>
-              )}
             </div>
           </div>
 

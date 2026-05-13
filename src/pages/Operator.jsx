@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo, useState } from "react";
+import React, { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import OperatorCard from "../components/Operator/OperatorCard";
@@ -34,6 +34,26 @@ const Operator = () => {
     search: "",
   });
   const { operators, selectedOperator, setSelectedOperator } = useOperators();
+  const listScrollRef = useRef(null);
+  const savedScrollRef = useRef({ windowY: 0, listY: 0 });
+
+  const saveCurrentScrollPosition = () => {
+    if (typeof window === "undefined") return;
+    savedScrollRef.current = {
+      windowY: window.scrollY || window.pageYOffset || 0,
+      listY: listScrollRef.current?.scrollTop || 0,
+    };
+  };
+
+  const restoreSavedScrollPosition = () => {
+    if (typeof window === "undefined") return;
+    const saved = savedScrollRef.current || { windowY: 0, listY: 0 };
+    window.requestAnimationFrame(() => {
+      if (listScrollRef.current) listScrollRef.current.scrollTop = saved.listY || 0;
+      window.scrollTo({ top: saved.windowY || 0, left: 0, behavior: "auto" });
+    });
+  };
+
   const { id: operatorIdFromUrl } = useParams();
   const routeOperatorKey = useMemo(
     () => decodeRouteId(operatorIdFromUrl),
@@ -115,6 +135,7 @@ const Operator = () => {
   }, [setSelectedOperator]);
 
   const openOperator = (op) => {
+    saveCurrentScrollPosition();
     setSelectedOperator(op);
     navigate(`/operator/${encodeURIComponent(op.id)}`);
   };
@@ -123,6 +144,7 @@ const Operator = () => {
     setSelectedOperator(null);
     resetScrollLock({ restorePosition: false });
     navigate("/operator", { replace: true });
+    restoreSavedScrollPosition();
   };
 
   return (
@@ -175,7 +197,7 @@ const Operator = () => {
           <div className="w-full border-t border-gray-600 my-1" />
 
           <div className="fullpage-section">
-            <div className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+            <div ref={listScrollRef} className="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
               {filteredOperators.length === 0 ? (
                 <div className="w-full text-center text-gray-300 py-20">
                   Đang tải danh sách

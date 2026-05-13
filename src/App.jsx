@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AnalyticsTracker from "./components/AnalyticsTracker";
@@ -53,8 +53,19 @@ const App = () => {
     }
   }, [showIntro]);
 
+  const previousPathRef = useRef(location.pathname);
+
   useEffect(() => {
-    // reset scroll when page changes
+    const previousPath = previousPathRef.current;
+    const currentPath = location.pathname;
+    previousPathRef.current = currentPath;
+
+    const isOperatorPath = (path) => /^\/operator(?:\/|$)/i.test(String(path || ""));
+
+    if (isOperatorPath(previousPath) && isOperatorPath(currentPath)) {
+      return;
+    }
+
     window.scrollTo(0, 0);
   }, [location.pathname]);
 

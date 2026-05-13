@@ -16,6 +16,7 @@ import buildingData from "../../../../data/operators/building_data.json";
 import buildingDataEN from "../../../../data/operators/building_data_en.json";
 import buildingVN from "../../../../data/operators/building_vn.json";
 import itemTable from "../../../../data/operators/item_table.json";
+import { resolveTokenForSkill } from "../../../../utils/operatorTokenResolver";
 import StatHover, { renderAKText } from "../../../StatHover";
 import {
   getEliteIconLarge,
@@ -30,6 +31,7 @@ import {
   getSkillIconUrl,
   getSkillLevelIconUrl,
   getBuildingSkillIconUrl,
+  getSummonAvatarUrl,
   isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
@@ -918,6 +920,418 @@ function MaterialIcon({ itemId, count }) {
   );
 }
 
+
+function getSkillLevelShortKey(levelIdx) {
+  const lv = Number(levelIdx) + 1;
+  if (!Number.isFinite(lv) || lv <= 0) return "1";
+  return lv <= 7 ? String(lv) : `7M${lv - 7}`;
+}
+
+function getTokenSkillRefForMainSkill(tokenCharData, selectedSkillOrder) {
+  const skills = Array.isArray(tokenCharData?.skills)
+    ? tokenCharData.skills.filter((s) => isNonEmptyString(s?.skillId))
+    : [];
+  if (skills.length === 0) return null;
+
+  const uniqueIds = [...new Set(skills.map((s) => String(s.skillId)))];
+  if (uniqueIds.length === 1) return skills[0];
+
+  const idx = clamp(Number(selectedSkillOrder || 1) - 1, 0, skills.length - 1);
+  return skills[idx] || skills[0];
+}
+
+function getTokenSkillVnText(vnEntry, selectedSkillOrder, levelIdx) {
+  if (!vnEntry || typeof vnEntry !== "object") return "";
+  const lvKey = getSkillLevelShortKey(levelIdx);
+  const simple = vnEntry?.[lvKey];
+  if (isNonEmptyString(simple)) return String(simple);
+
+  const skillKey = `S${selectedSkillOrder}_${lvKey}`;
+  const bySkill = vnEntry?.[skillKey];
+  if (isNonEmptyString(bySkill)) return String(bySkill);
+
+  return "";
+}
+
+function getTokenDisplayTitle({ tokenId, tokenCharData, tokenCharDataEN, vnEntry, selectedSkillOrder, isEnglishUI }) {
+  if (isEnglishUI) {
+    return tokenCharDataEN?.name || tokenCharData?.name || tokenId || "";
+  }
+
+  const direct = vnEntry?.Title;
+  if (isNonEmptyString(direct)) return String(direct);
+
+  const bySkill = vnEntry?.[`Title_S${selectedSkillOrder}`];
+  if (isNonEmptyString(bySkill)) return String(bySkill);
+
+  return tokenCharDataEN?.name || tokenCharData?.name || tokenId || "";
+}
+
+function getTokenTraitText({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }) {
+  if (!isEnglishUI && isNonEmptyString(vnEntry?.Token_Trait)) {
+    return String(vnEntry.Token_Trait);
+  }
+
+  const enDesc = tokenCharDataEN?.description || "";
+  const cnDesc = tokenCharData?.description || "";
+  return isEnglishUI ? enDesc || cnDesc || "" : cnDesc || enDesc || "";
+}
+
+function getTokenTalentCandidates(block) {
+  const cands = Array.isArray(block?.candidates) ? block.candidates : [];
+  return cands.filter((c) => {
+    if (!c) return false;
+    const desc = String(c?.description || "").trim();
+    if (!desc || desc === "-") return false;
+    return true;
+  });
+}
+
+function findTokenTalentCandidate(block, phaseIndex, requiredPotentialRank = 0) {
+  const cands = getTokenTalentCandidates(block);
+  if (!cands.length) return null;
+
+  const phase = Number(phaseIndex || 0);
+  const req = Number(requiredPotentialRank || 0);
+  return (
+    cands.find((c) => phaseToIndex(c?.unlockCondition?.phase) === phase && Number(c?.requiredPotentialRank || 0) === req) ||
+    cands.find((c) => phaseToIndex(c?.unlockCondition?.phase) === phase) ||
+    null
+  );
+}
+
+function collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }) {
+  const blocks = Array.isArray(tokenCharData?.talents) ? tokenCharData.talents : [];
+  const blocksEN = Array.isArray(tokenCharDataEN?.talents) ? tokenCharDataEN.talents : [];
+  const variants = [];
+  const seen = new Set();
+
+  blocks.forEach((block, blockIdx) => {
+    const cands = getTokenTalentCandidates(block);
+    if (!cands.length) return;
+
+    const byPhase = new Map();
+    cands.forEach((cand) => {
+      const phaseIndex = phaseToIndex(cand?.unlockCondition?.phase);
+      const req = Number(cand?.requiredPotentialRank || 0);
+      const current = byPhase.get(phaseIndex);
+      if (!current || req < Number(current?.requiredPotentialRank || 0)) {
+        byPhase.set(phaseIndex, cand);
+      }
+    });
+
+    [...byPhase.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .forEach(([phaseIndex, cand]) => {
+        const candEN = isEnglishUI
+          ? findTokenTalentCandidate(blocksEN?.[blockIdx], phaseIndex, cand?.requiredPotentialRank)
+          : null;
+        const vnKey = `Talent_E${phaseIndex}`;
+        const rawText = isEnglishUI
+          ? candEN?.description || cand?.description || ""
+          : (isNonEmptyString(vnEntry?.[vnKey]) ? String(vnEntry[vnKey]) : "") ||
+            cand?.description ||
+            candEN?.description ||
+            "";
+
+        const text = applyBlackboard(rawText, buildBlackboardMap(candEN?.blackboard || cand?.blackboard));
+        if (!isNonEmptyString(text) || String(text).trim() === "-") return;
+
+        const name = isEnglishUI
+          ? candEN?.name || cand?.name || ""
+          : cand?.name || candEN?.name || "";
+        const key = `${phaseIndex}|${text}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        variants.push({ phaseIndex, name, text, rangeId: candEN?.rangeId || cand?.rangeId || "" });
+      });
+  });
+
+  return variants;
+}
+
+function TokenSkillPanel({
+  tokenOption,
+  selectedSkillOrder,
+  safeSkillLevelIdx,
+  isEnglishUI,
+  charKey,
+}) {
+  const tokenId = tokenOption?.tokenId || "";
+  const tokenCharData = tokenId ? characterTableWithPatch?.[tokenId] : null;
+  const tokenCharDataEN = tokenId ? characterTableENWithPatch?.[tokenId] : null;
+  const vnEntry = tokenId ? skillVN?.[tokenId] || null : null;
+
+  const tokenSkillRef = React.useMemo(
+    () => getTokenSkillRefForMainSkill(tokenCharData, selectedSkillOrder),
+    [tokenCharData, selectedSkillOrder],
+  );
+
+  const tokenSkillId = tokenSkillRef?.skillId || "";
+  const tokenSkillCnEntry = tokenSkillId ? skillTable?.[tokenSkillId] : null;
+  const tokenSkillEnEntry = tokenSkillId ? skillTableEN?.[tokenSkillId] : null;
+  const tokenSkillLevels = React.useMemo(() => {
+    const cnLevels = tokenSkillCnEntry?.levels;
+    const enLevels = tokenSkillEnEntry?.levels;
+    if (Array.isArray(cnLevels) && cnLevels.length > 0) return cnLevels;
+    if (Array.isArray(enLevels) && enLevels.length > 0) return enLevels;
+    return [];
+  }, [tokenSkillCnEntry, tokenSkillEnEntry]);
+
+  const tokenSkillLevelIdx = clamp(
+    safeSkillLevelIdx,
+    0,
+    Math.max(0, tokenSkillLevels.length - 1),
+  );
+  const tokenSkillLevel = tokenSkillLevels?.[tokenSkillLevelIdx] || null;
+  const tokenSkillLevelEN = tokenSkillEnEntry?.levels?.[tokenSkillLevelIdx] || null;
+  const tokenSkillLevelCN = tokenSkillCnEntry?.levels?.[tokenSkillLevelIdx] || null;
+
+  const tokenTitle = React.useMemo(
+    () =>
+      getTokenDisplayTitle({
+        tokenId,
+        tokenCharData,
+        tokenCharDataEN,
+        vnEntry,
+        selectedSkillOrder,
+        isEnglishUI,
+      }),
+    [tokenId, tokenCharData, tokenCharDataEN, vnEntry, selectedSkillOrder, isEnglishUI],
+  );
+
+  const tokenTraitText = React.useMemo(
+    () => getTokenTraitText({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }),
+    [tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI],
+  );
+
+  const tokenSkillDesc = React.useMemo(() => {
+    const vnText = getTokenSkillVnText(vnEntry, selectedSkillOrder, tokenSkillLevelIdx);
+    const enText = tokenSkillLevelEN?.description || "";
+    const cnText = tokenSkillLevelCN?.description || "";
+    const rawText = isEnglishUI ? enText || cnText || "" : vnText || cnText || enText || "";
+    return applyBlackboard(rawText, buildSkillParamMap(tokenSkillLevel));
+  }, [vnEntry, selectedSkillOrder, tokenSkillLevelIdx, tokenSkillLevel, tokenSkillLevelEN, tokenSkillLevelCN, isEnglishUI]);
+
+  const tokenTalentVariants = React.useMemo(
+    () => collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }),
+    [tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI],
+  );
+
+  const [tokenTalentIdx, setTokenTalentIdx] = React.useState(0);
+  React.useEffect(() => {
+    setTokenTalentIdx(Math.max(0, tokenTalentVariants.length - 1));
+  }, [tokenId, tokenTalentVariants.length]);
+
+  const safeTokenTalentIdx = clamp(
+    tokenTalentIdx,
+    0,
+    Math.max(0, tokenTalentVariants.length - 1),
+  );
+  const tokenTalent = tokenTalentVariants?.[safeTokenTalentIdx] || null;
+
+  if (!tokenCharData || !tokenSkillId) return null;
+
+  const tokenIconUrl =
+    getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId) ||
+    getSummonAvatarUrl(tokenId);
+  const tokenSpType = tokenSkillLevel?.spData?.spType;
+  const tokenSkillType = tokenSkillLevel?.skillType;
+  const tokenDuration = tokenSkillLevel?.duration;
+  const tokenInitSp = Number(tokenSkillLevel?.spData?.initSp || 0);
+  const tokenSpCost = Number(tokenSkillLevel?.spData?.spCost || 0);
+  const tokenRangeId = tokenSkillLevel?.rangeId || "";
+  const showTokenSp = String(tokenSkillType || "") !== "PASSIVE" && (tokenInitSp !== 0 || tokenSpCost !== 0);
+  const showTokenTalentControls = tokenTalentVariants.length > 1;
+  const hasTalent = !!tokenTalent && isNonEmptyString(tokenTalent.text);
+  const hasSkillDesc = isNonEmptyString(tokenSkillDesc);
+
+  return (
+    <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+      <div className="flex flex-col md:flex-row md:items-start gap-4">
+        <div className="shrink-0">
+          {tokenIconUrl ? (
+            <img
+              src={tokenIconUrl}
+              alt={tokenSkillId}
+              className="w-24 h-24 object-contain"
+              draggable={false}
+              loading="eager"
+              decoding="async"
+              onError={(e) => {
+                const fallback = getSummonAvatarUrl(tokenId);
+                if (fallback && e.currentTarget.src !== fallback) {
+                  e.currentTarget.src = fallback;
+                  return;
+                }
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          ) : null}
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <div className="text-lg font-semibold text-white break-words">
+            {tokenTitle || tokenId}
+          </div>
+
+          <div className="mt-2 flex items-center gap-2 flex-wrap">
+            {Number(tokenSpType) === 8 || String(tokenSpType) === "8"
+              ? null
+              : (() => {
+                  const k = String(tokenSpType || "");
+                  const meta = SP_TYPE_META?.[k];
+                  const label = meta ? (isEnglishUI ? meta.en : meta.vi) : k;
+                  const bg = meta?.bg || "#808080";
+                  return isNonEmptyString(label) ? (
+                    <span
+                      className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold"
+                      style={{ backgroundColor: bg, color: "#000" }}
+                    >
+                      {label}
+                    </span>
+                  ) : null;
+                })()}
+
+            {isNonEmptyString(tokenSkillType) ? (
+              <span
+                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white"
+                style={{ backgroundColor: "#808080" }}
+              >
+                {SKILL_TYPE_META?.[tokenSkillType]?.[isEnglishUI ? "en" : "vi"] || String(tokenSkillType)}
+              </span>
+            ) : null}
+
+            {(() => {
+              const d = Number(tokenDuration);
+              if (!Number.isFinite(d) || d <= 0 || d === -1) return null;
+              const v = isAlmostInt(d) ? String(Math.round(d)) : trimFixed(d, 1);
+              return (
+                <span
+                  className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                  style={{ backgroundColor: "#D3D3D3" }}
+                >
+                  {isEnglishUI ? `${v} seconds` : `${v} giây`}
+                </span>
+              );
+            })()}
+          </div>
+
+          {showTokenSp ? (
+            <div className="mt-3 flex items-center gap-6 flex-wrap">
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-white/70">
+                  {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
+                </span>
+                <div className="relative w-[52px] h-[38px] shrink-0">
+                  <img src={INIT_SP_ICON} alt="init-sp" className="w-full h-full object-contain" draggable={false} />
+                  <span className="absolute right-[12px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                    {tokenInitSp}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-white/70">
+                  {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
+                </span>
+                <div className="relative w-[52px] h-[28px] shrink-0">
+                  <img src={SP_COST_ICON} alt="sp-cost" className="w-full h-full object-contain" draggable={false} />
+                  <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                    {tokenSpCost}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ) : null}
+        </div>
+
+        {isNonEmptyString(tokenRangeId) ? (
+          <div className="shrink-0 self-start rounded-xl border border-white/10 bg-black/30 p-3">
+            <div className="text-sm font-semibold text-white text-center mb-2">
+              {isEnglishUI ? "Range" : "Phạm vi"}
+            </div>
+            <SkillRangeGrid rangeId={tokenRangeId} />
+          </div>
+        ) : null}
+      </div>
+
+      {isNonEmptyString(tokenTraitText) ? (
+        <div className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4">
+          <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
+            Trait
+          </div>
+          <div className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+            {renderTextWithHovers(tokenTraitText, `token-trait-${tokenId}`, isEnglishUI)}
+          </div>
+        </div>
+      ) : null}
+
+      {hasTalent || hasSkillDesc ? (
+        <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
+          {hasTalent ? (
+            <div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-start gap-3 min-w-0">
+                    <span
+                      className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
+                      title={tokenTalent?.name ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}` : isEnglishUI ? "Talent" : "Thiên phú"}
+                    >
+                      {tokenTalent?.name
+                        ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}`
+                        : isEnglishUI
+                          ? "Talent"
+                          : "Thiên phú"}
+                    </span>
+                  </div>
+
+                  <div className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+                    {renderTextWithHovers(tokenTalent.text, `token-talent-${tokenId}-e${tokenTalent.phaseIndex}`, isEnglishUI)}
+                  </div>
+                </div>
+
+                {showTokenTalentControls ? (
+                  <div className="flex items-center gap-2 shrink-0">
+                    {tokenTalentVariants.map((v, idx) => {
+                      const active = idx === safeTokenTalentIdx;
+                      return (
+                        <button
+                          key={`token-talent-phase-${tokenId}-${v.phaseIndex}-${idx}`}
+                          type="button"
+                          onClick={() => setTokenTalentIdx(idx)}
+                          className={`rounded-lg p-1.5 transition ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
+                          title={`E${v.phaseIndex}`}
+                        >
+                          <img
+                            src={getEliteIconLarge(v.phaseIndex)}
+                            alt={`E${v.phaseIndex}`}
+                            className="w-8 h-8 object-contain"
+                            draggable={false}
+                            loading="lazy"
+                          />
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
+
+          {hasTalent && hasSkillDesc ? <div className="h-px bg-white/10 my-4" /> : null}
+
+          {hasSkillDesc ? (
+            <div className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+              {renderTextWithHovers(tokenSkillDesc, `token-skill-${charKey || "unknown"}-${tokenSkillId}-lv${tokenSkillLevelIdx + 1}`, isEnglishUI)}
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 function InfoTable({
   title,
   titleInline,
@@ -1624,6 +2038,11 @@ export default function SkillsSection(props) {
     };
   }, [charData, selectedSkillRef, safeSkillLevelIdx]);
 
+  const selectedTokenOption = React.useMemo(
+    () => resolveTokenForSkill(charData, selectedSkillRef, safeSkillIdx),
+    [charData, selectedSkillRef, safeSkillIdx],
+  );
+
   //Kỹ năng hậu cần
   const buildingCharEntry = React.useMemo(() => {
     if (!isNonEmptyString(charKey)) return null;
@@ -2092,6 +2511,16 @@ export default function SkillsSection(props) {
                   </div>
                 ) : null}
               </div>
+
+              {selectedTokenOption ? (
+                <TokenSkillPanel
+                  tokenOption={selectedTokenOption}
+                  selectedSkillOrder={selectedSkillOrder}
+                  safeSkillLevelIdx={safeSkillLevelIdx}
+                  isEnglishUI={isEnglishUI}
+                  charKey={charKey}
+                />
+              ) : null}
 
               {selectedUpgradeInfo ? (
                 <div className="space-y-2">
