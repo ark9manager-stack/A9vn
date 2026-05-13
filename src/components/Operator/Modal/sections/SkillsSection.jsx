@@ -1000,16 +1000,52 @@ function findTokenTalentCandidate(block, phaseIndex, requiredPotentialRank = 0) 
   );
 }
 
+function getTokenTalentVnTitle(vnEntry, { visibleTalentCount, visibleTalentOrder, blockIdx, phaseIndex }) {
+  if (!vnEntry || typeof vnEntry !== "object") return "";
+
+  const order = Number(visibleTalentOrder || 0) + 1;
+  const rawBlockOrder = Number(blockIdx || 0) + 1;
+  const phase = Number(phaseIndex || 0);
+  const keys = [];
+
+  if (Number(visibleTalentCount || 0) > 1) {
+    keys.push(`Token_Talent${order}`);
+    if (rawBlockOrder !== order) keys.push(`Token_Talent${rawBlockOrder}`);
+  } else {
+    keys.push("Token_Talent");
+    keys.push("Token_Talent1");
+  }
+
+  // Backward-compatible aliases from earlier temporary convention.
+  keys.push(`Talent_Title${order}_E${phase}`);
+  if (rawBlockOrder !== order) keys.push(`Talent_Title${rawBlockOrder}_E${phase}`);
+  keys.push(`Talent_Title_E${phase}`);
+
+  for (const key of keys) {
+    const value = vnEntry?.[key];
+    if (isNonEmptyString(value)) return String(value);
+  }
+
+  return "";
+}
+
 function collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }) {
   const blocks = Array.isArray(tokenCharData?.talents) ? tokenCharData.talents : [];
   const blocksEN = Array.isArray(tokenCharDataEN?.talents) ? tokenCharDataEN.talents : [];
   const variants = [];
   const seen = new Set();
 
-  blocks.forEach((block, blockIdx) => {
-    const cands = getTokenTalentCandidates(block);
-    if (!cands.length) return;
+  const visibleBlocks = blocks
+    .map((block, blockIdx) => ({
+      block,
+      blockIdx,
+      cands: getTokenTalentCandidates(block),
+    }))
+    .filter((row) => row.cands.length > 0);
 
+  const visibleTalentCount = visibleBlocks.length;
+
+  visibleBlocks.forEach(({ block, blockIdx, cands }, visibleTalentOrder) => {
     const byPhase = new Map();
     cands.forEach((cand) => {
       const phaseIndex = phaseToIndex(cand?.unlockCondition?.phase);
@@ -1037,10 +1073,16 @@ function collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, i
         const text = applyBlackboard(rawText, buildBlackboardMap(candEN?.blackboard || cand?.blackboard));
         if (!isNonEmptyString(text) || String(text).trim() === "-") return;
 
+        const vnName = getTokenTalentVnTitle(vnEntry, {
+          visibleTalentCount,
+          visibleTalentOrder,
+          blockIdx,
+          phaseIndex,
+        });
         const name = isEnglishUI
           ? candEN?.name || cand?.name || ""
-          : cand?.name || candEN?.name || "";
-        const key = `${phaseIndex}|${text}`;
+          : vnName || cand?.name || candEN?.name || "";
+        const key = `${blockIdx}|${phaseIndex}|${text}`;
         if (seen.has(key)) return;
         seen.add(key);
         variants.push({ phaseIndex, name, text, rangeId: candEN?.rangeId || cand?.rangeId || "" });
