@@ -19920,6 +19920,14 @@
     "S3_7M2": "Trong thời gian kỹ năng hoạt động, [[nhận dần|closurS3DP]] <@ba.vup>{cost_period}</> DP và [[giảm|closurS3AI]] khoảng cách giữa các đòn đánh. Closure liên kết với phạm vi tấn công của tất cả Viện binh để tấn công các mục tiêu bị khóa, gây sát thương vật lý bằng <@ba.vup>{attack@atk_scale:0%}</> ATK và áp <@ba.vup>{attack@slow_down:0%}</> <$ba.slowdown>Trì trệ</> trong <@ba.vup>{attack@slow_down_time}</> giây (cộng dồn tối đa <@ba.vup>{attack@slow_down_max:0%}</>). Cứ mỗi <@ba.vup>{attack_trigger_cnt}</> lần tấn công, số mục tiêu tấn công +1 (cộng dồn tối đa <@ba.vup>{max_trigger_cnt}</> lần).",
     "S3_7M3": "Trong thời gian kỹ năng hoạt động, [[nhận dần|closurS3DP]] <@ba.vup>{cost_period}</> DP và [[giảm|closurS3AI]] khoảng cách giữa các đòn đánh. Closure liên kết với phạm vi tấn công của tất cả Viện binh để tấn công các mục tiêu bị khóa, gây sát thương vật lý bằng <@ba.vup>{attack@atk_scale:0%}</> ATK và áp <@ba.vup>{attack@slow_down:0%}</> <$ba.slowdown>Trì trệ</> trong <@ba.vup>{attack@slow_down_time}</> giây (cộng dồn tối đa <@ba.vup>{attack@slow_down_max:0%}</>). Cứ mỗi <@ba.vup>{attack_trigger_cnt}</> lần tấn công, số mục tiêu tấn công +1 (cộng dồn tối đa <@ba.vup>{max_trigger_cnt}</> lần)."
   },
+  "token_10066_closur_ourbase": {
+    "Title": "Trung Tâm Chỉ Huy",
+    "Token_Trait": "Không thể tấn công, có thể chặn 2 kẻ địch, chỉ có thể triển khai trong phạm vi tấn công của người triệu hồi.",
+    "Talent_E0": "Phạm vi ảnh hưởng thay đổi theo kỹ năng Closure đang mang; Đồng minh đứng trong phạm vi ảnh hưởng này được tính là 'Viện binh' của Closure.",
+    "Title_S1": "Phủ sóng diện rộng",
+    "Title_S2": "Phủ sóng diện rộng",
+    "Title_S3": "Phủ sóng diện rộng"
+  },
   "char_1052_kalts2": {
     "Title_S1": "Phòng tuyến khẩn cấp",
     "Title_S2": "Vùng cấm bảo hộ",
@@ -19954,6 +19962,10 @@
     "S3_7M1": "Lập tức nhận 1 'Định vị chiến thuật', ATK <@ba.vup>+{atk:0%}</>, <@ba.vup>[[Giảm mạnh|kalts2S3]]</> khoảng cách giữa các đòn đánh, hồi phục thêm <@ba.vup>1</> đồng minh nữa; Sau khi triển khai 'Định vị chiến thuật', bản thân sẽ <$ba.addash>Di chuyển</> đến vị trí đó và đưa tối đa <@ba.vup>2</> đồng minh trong phạm vi tấn công công theo, sau đó có thể triển khai họ lại trong phạm vi tấn công của cô.",
     "S3_7M2": "Lập tức nhận 1 'Định vị chiến thuật', ATK <@ba.vup>+{atk:0%}</>, <@ba.vup>[[Giảm mạnh|kalts2S3]]</> khoảng cách giữa các đòn đánh, hồi phục thêm <@ba.vup>1</> đồng minh nữa; Sau khi triển khai 'Định vị chiến thuật', bản thân sẽ <$ba.addash>Di chuyển</> đến vị trí đó và đưa tối đa <@ba.vup>2</> đồng minh trong phạm vi tấn công công theo, sau đó có thể triển khai họ lại trong phạm vi tấn công của cô.",
     "S3_7M3": "Lập tức nhận 1 'Định vị chiến thuật', ATK <@ba.vup>+{atk:0%}</>, <@ba.vup>[[Giảm mạnh|kalts2S3]]</> khoảng cách giữa các đòn đánh, hồi phục thêm <@ba.vup>1</> đồng minh nữa; Sau khi triển khai 'Định vị chiến thuật', bản thân sẽ <$ba.addash>Di chuyển</> đến vị trí đó và đưa tối đa <@ba.vup>2</> đồng minh trong phạm vi tấn công công theo, sau đó có thể triển khai họ lại trong phạm vi tấn công của cô."
+  },
+  "token_10068_kalts2_mtship": {
+    "Title": "Định Vị Chiến Thuật",
+    "Token_Trait": "Không thể bị tấn công, chỉ có thể triển khai trên ô tầm xa nằm ngoài phạm vi tấn công của Kal'tsit·Esperanta."
   },
   "char_0000_example": {
     "Title_S1": "",
