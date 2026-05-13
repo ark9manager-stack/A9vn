@@ -146,29 +146,54 @@ export function NoteKeyStyle({ noteKey, children, keyPrefix = "nks" }) {
   return applyNoteKeyStyle(children, noteKey, keyPrefix);
 }
 
+function normalizeHoverKey(raw) {
+  let key = String(raw || "").trim();
+  if (!key) return "";
+
+  key = key
+    .replace(/^<\s*[@$]\s*/i, "")
+    .replace(/>$/i, "")
+    .replace(/^[@$]/, "")
+    .trim();
+
+  return key;
+}
+
+function lookupCaseInsensitive(dict, rawKey) {
+  if (!dict || typeof dict !== "object") return null;
+  const key = normalizeHoverKey(rawKey);
+  if (!key) return null;
+
+  if (dict[key]) return dict[key];
+
+  const lower = key.toLowerCase();
+  if (dict[lower]) return dict[lower];
+
+  const found = Object.keys(dict).find((k) => String(k).toLowerCase() === lower);
+  return found ? dict[found] : null;
+}
+
 function getNote(noteKey) {
-  if (!isNonEmptyString(noteKey)) return null;
-
-  if (statHoverVN?.[noteKey]) return statHoverVN[noteKey];
-
-  const lower = noteKey.toLowerCase();
-  if (statHoverVN?.[lower]) return statHoverVN[lower];
-
-  const keys = Object.keys(statHoverVN || {});
-  const found = keys.find((k) => k.toLowerCase() === lower);
-  return found ? statHoverVN[found] : null;
+  return lookupCaseInsensitive(statHoverVN, noteKey);
 }
 
 function getTerm(termId) {
-  if (!isNonEmptyString(termId)) return null;
+  const key = normalizeHoverKey(termId);
+  if (!isNonEmptyString(key)) return null;
 
-  const key = String(termId).trim();
-  const lower = key.toLowerCase();
+  const dictCandidates = [
+    gameDataConstEN?.termDescriptionDict,
+    gameDataConstEN?.gamedataConst?.termDescriptionDict,
+    gameDataConst?.termDescriptionDict,
+    gameDataConst?.gamedataConst?.termDescriptionDict,
+  ].filter(Boolean);
 
-  const dictEn = gameDataConstEN?.termDescriptionDict || {};
-  const dictCn = gameDataConst?.termDescriptionDict || {};
+  for (const dict of dictCandidates) {
+    const found = lookupCaseInsensitive(dict, key);
+    if (found) return found;
+  }
 
-  return dictEn[key] || dictEn[lower] || dictCn[key] || dictCn[lower] || null;
+  return null;
 }
 
 function getTemplateForNoteKey(noteKey) {
@@ -219,14 +244,23 @@ function applyNoteKeyStyle(nodes, noteKey, keyPrefix) {
   return inner;
 }
 
-function resolveHoverTarget(keyRaw) {
-  const key = String(keyRaw || "").trim();
+function resolveHoverTarget(keyRaw, { preferNote = false } = {}) {
+  const key = normalizeHoverKey(keyRaw);
   if (!isNonEmptyString(key)) return { kind: null, key: "" };
-  const term = getTerm(key);
-  if (term) return { kind: "term", key };
-  const note = getNote(key);
-  if (note) return { kind: "note", key };
-  return { kind: "note", key };
+
+  if (preferNote) {
+    const note = getNote(key);
+    if (note) return { kind: "note", key };
+    const term = getTerm(key);
+    if (term) return { kind: "term", key };
+  } else {
+    const term = getTerm(key);
+    if (term) return { kind: "term", key };
+    const note = getNote(key);
+    if (note) return { kind: "note", key };
+  }
+
+  return { kind: null, key };
 }
 
 function parseRichNodes(str, state, keyPrefix, opts = {}, stopAtClose = false) {
@@ -291,11 +325,25 @@ if (str.startsWith("[[", state.i)) {
       const compKey = `${keyPrefix}-hv-${state.k++}-${state.i}-${end}`;
 
       if (isNonEmptyString(keyPart)) {
-        nodes.push(
-          <StatHover key={compKey} noteKey={keyPart}>
-            {labelNodes}
-          </StatHover>
-        );
+        const target = resolveHoverTarget(keyPart, {
+          preferNote: !!opts?.preferNoteForDollar,
+        });
+
+        if (target.kind === "term") {
+          nodes.push(
+            <StatHover key={compKey} termId={target.key}>
+              {labelNodes}
+            </StatHover>
+          );
+        } else if (target.kind === "note") {
+          nodes.push(
+            <StatHover key={compKey} noteKey={target.key}>
+              {labelNodes}
+            </StatHover>
+          );
+        } else {
+          nodes.push(labelNodes);
+        }
       } else {
         nodes.push(labelNodes);
       }
@@ -320,20 +368,25 @@ if (str.startsWith("[[", state.i)) {
         if (sigil === "@") {
           nodes.push(applyNoteKeyStyle(inner, key, wrapKey));
 } else {
-  const preferNote = !!opts?.preferNoteForDollar;
-  const vnNote = preferNote ? getNote(key) : null;
+  const target = resolveHoverTarget(key, {
+    preferNote: !!opts?.preferNoteForDollar,
+  });
 
-  nodes.push(
-    vnNote ? (
-      <StatHover key={wrapKey} noteKey={key}>
+  if (target.kind === "note") {
+    nodes.push(
+      <StatHover key={wrapKey} noteKey={target.key}>
         {inner}
       </StatHover>
-    ) : (
-      <StatHover key={wrapKey} termId={key}>
+    );
+  } else if (target.kind === "term") {
+    nodes.push(
+      <StatHover key={wrapKey} termId={target.key}>
         {inner}
       </StatHover>
-    )
-  );
+    );
+  } else {
+    nodes.push(inner);
+  }
 }
         continue;
       }
@@ -384,11 +437,11 @@ export default function StatHover({ label, noteKey, termId, children }) {
     }
   }, []);
 
-  const term = getTerm(termId);
-  const note = getNote(noteKey);
+  const term = getTerm(termId) || getTerm(noteKey);
+  const note = getNote(noteKey) || getNote(termId);
 
-  const title = term?.termName || note?.title || "";
-  const text = term?.description || note?.text || "";
+  const title = term?.termName || term?.title || note?.title || note?.termName || "";
+  const text = term?.description || term?.text || note?.text || note?.description || "";
 
   const hasTooltip = isNonEmptyString(title) || isNonEmptyString(text);
   const visible = hasTooltip && (open || pinned);

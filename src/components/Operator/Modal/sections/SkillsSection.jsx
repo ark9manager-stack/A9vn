@@ -1181,7 +1181,10 @@ function TokenSkillPanel({
   ) : null;
 
   const traitBlock = hasTrait ? (
-    <div className="min-w-0 text-sm text-white/70 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+    <div
+      className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+      style={{ overflowWrap: "anywhere" }}
+    >
       {renderTextWithHovers(tokenTraitText, `token-trait-${tokenId}`, isEnglishUI)}
     </div>
   ) : null;
@@ -1193,9 +1196,6 @@ function TokenSkillPanel({
           <div className="shrink-0 flex flex-col items-center md:items-start gap-2 w-24 md:w-auto">
             <div className="w-24 h-24 flex items-center justify-center">
               {tokenImage}
-            </div>
-            <div className="hidden md:block w-24">
-              {traitBlock}
             </div>
           </div>
 
@@ -1274,9 +1274,11 @@ function TokenSkillPanel({
               </div>
             ) : null}
 
-            <div className="mt-3 md:hidden">
-              {traitBlock}
-            </div>
+            {traitBlock ? (
+              <div className="mt-3 md:hidden">
+                {traitBlock}
+              </div>
+            ) : null}
           </div>
         </div>
 
@@ -1289,6 +1291,12 @@ function TokenSkillPanel({
           </div>
         ) : null}
       </div>
+
+      {traitBlock ? (
+        <div className="mt-3 hidden md:block">
+          {traitBlock}
+        </div>
+      ) : null}
 
       {hasTalent || hasSkillDesc ? (
         <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
