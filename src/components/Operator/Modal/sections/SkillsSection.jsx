@@ -1365,11 +1365,15 @@ function TokenSkillPanel({
     Math.max(0, tokenTalentHeaderOptions.length - 1),
   );
 
-  const activeTokenTalentHeaderOpt = tokenTalentHeaderOptions?.[safeTokenTalentHeaderIdx] || {
-    phaseIndex: 0,
-    level: 1,
-    showLv: false,
-  };
+  const activeTokenTalentHeaderOpt = React.useMemo(
+    () =>
+      tokenTalentHeaderOptions?.[safeTokenTalentHeaderIdx] || {
+        phaseIndex: 0,
+        level: 1,
+        showLv: false,
+      },
+    [tokenTalentHeaderOptions, safeTokenTalentHeaderIdx],
+  );
 
   const tokenTalentGroups = React.useMemo(
     () =>
@@ -1581,80 +1585,79 @@ function TokenSkillPanel({
                   : talentPrefix;
                 const hasRange = isNonEmptyString(variant?.rangeId);
 
-                const tokenTalentControls = talentRenderIdx === 0 ? (
-                  <div className="flex flex-wrap items-center justify-start sm:justify-end gap-1.5 shrink-0">
-                    {showTokenTalentEliteControls ? (
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        {tokenTalentHeaderOptions.map((opt, idx) => {
-                          const active = idx === safeTokenTalentHeaderIdx;
-                          return (
-                            <button
-                              key={`token-talent-header-${tokenId}-${opt.phaseIndex}-${opt.level}-${idx}`}
-                              type="button"
-                              onClick={() => setTokenTalentHeaderIdx(idx)}
-                              className={`rounded-md px-1.5 py-1 transition flex items-center gap-1 ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
-                              title={opt.showLv ? `E${opt.phaseIndex} Lv${opt.level}` : `E${opt.phaseIndex}`}
-                            >
-                              <img
-                                src={getEliteIconLarge(opt.phaseIndex)}
-                                alt={`E${opt.phaseIndex}`}
-                                className="w-6 h-6 object-contain"
-                                draggable={false}
-                                loading="lazy"
-                              />
-                              {opt.showLv ? (
-                                <span className="text-[11px] font-semibold tabular-nums">
-                                  Lv{opt.level}
-                                </span>
-                              ) : null}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    ) : null}
-
-                    {showTokenTalentPotControls ? (
-                      <div className="flex flex-wrap items-center gap-1">
-                        {tokenAvailablePotRanks.map((idx0) => {
-                          const active = idx0 === tokenPotRank;
-                          return (
-                            <button
-                              key={`token-talent-pot-${tokenId}-${idx0}`}
-                              type="button"
-                              onClick={() => setTokenPotRank(idx0)}
-                              className={`rounded-md px-1.5 py-1 transition flex items-center gap-1 ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
-                              title={`Pot ${idx0 + 1}`}
-                            >
-                              <img
-                                src={getPotIcon(idx0)}
-                                alt={`pot-${idx0}`}
-                                className="w-5 h-5 object-contain"
-                                draggable={false}
-                                loading="lazy"
-                              />
+                const tokenTalentEliteControls =
+                  talentRenderIdx === 0 && showTokenTalentEliteControls ? (
+                    <div className="flex flex-wrap items-center gap-1.5 shrink-0">
+                      {tokenTalentHeaderOptions.map((opt, idx) => {
+                        const active = idx === safeTokenTalentHeaderIdx;
+                        return (
+                          <button
+                            key={`token-talent-header-${tokenId}-${opt.phaseIndex}-${opt.level}-${idx}`}
+                            type="button"
+                            onClick={() => setTokenTalentHeaderIdx(idx)}
+                            className={`rounded-md px-1.5 py-1 transition flex items-center gap-1 ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
+                            title={opt.showLv ? `E${opt.phaseIndex} Lv${opt.level}` : `E${opt.phaseIndex}`}
+                          >
+                            <img
+                              src={getEliteIconLarge(opt.phaseIndex)}
+                              alt={`E${opt.phaseIndex}`}
+                              className="w-6 h-6 object-contain"
+                              draggable={false}
+                              loading="lazy"
+                            />
+                            {opt.showLv ? (
                               <span className="text-[11px] font-semibold tabular-nums">
-                                {idx0 + 1}
+                                Lv{opt.level}
                               </span>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null;
+                            ) : null}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : null;
+
+                const tokenTalentPotControls =
+                  talentRenderIdx === 0 && showTokenTalentPotControls ? (
+                    <div className="flex flex-wrap items-center justify-start sm:justify-end gap-1 shrink-0">
+                      {tokenAvailablePotRanks.map((idx0) => {
+                        const active = idx0 === tokenPotRank;
+                        return (
+                          <button
+                            key={`token-talent-pot-${tokenId}-${idx0}`}
+                            type="button"
+                            onClick={() => setTokenPotRank(idx0)}
+                            className={`rounded-md px-1.5 py-1 transition flex items-center gap-1 ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
+                            title={`Pot ${idx0 + 1}`}
+                          >
+                            <img
+                              src={getPotIcon(idx0)}
+                              alt={`pot-${idx0}`}
+                              className="w-5 h-5 object-contain"
+                              draggable={false}
+                              loading="lazy"
+                            />
+                            <span className="text-[11px] font-semibold tabular-nums">
+                              {idx0 + 1}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : null;
 
                 return (
                   <div key={`token-talent-card-${tokenId}-${group?.blockIdx}-${talentRenderIdx}`} className={talentRenderIdx > 0 ? "mt-4" : ""}>
                     <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                      <div className="flex items-start gap-3 min-w-0 flex-wrap">
+                      <div className="flex items-start gap-2 min-w-0 flex-wrap">
                         <span
                           className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
                           title={titleText}
                         >
                           {titleText}
                         </span>
+                        {tokenTalentEliteControls}
                       </div>
-                      {tokenTalentControls}
+                      {tokenTalentPotControls}
                     </div>
 
                     <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start">
