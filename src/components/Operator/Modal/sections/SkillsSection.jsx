@@ -1576,10 +1576,10 @@ function TokenSkillPanel({
                 const talentPrefix = hasMultipleTokenTalents
                   ? isEnglishUI
                     ? `Talent ${talentOrder}`
-                    : `Thiên phú ${talentOrder}`
+                    : `Talent ${talentOrder}`
                   : isEnglishUI
                     ? "Talent"
-                    : "Thiên phú";
+                    : "Talent";
                 const titleText = variant?.name
                   ? `${talentPrefix}: ${variant.name}`
                   : talentPrefix;

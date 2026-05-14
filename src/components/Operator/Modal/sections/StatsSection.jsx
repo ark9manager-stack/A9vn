@@ -859,7 +859,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 },
                 {
                   icon: STAT_ICON.baseAttackTime,
-                  label: "Tốc độ tấn công",
+                  label: "Khoảng cách tấn công",
                   value: (
                     <ValueWithDeltas
                       value={stats.baseAttackTime}
@@ -1322,7 +1322,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     },
                     {
                       icon: STAT_ICON.baseAttackTime,
-                      label: "Thời gian tấn công",
+                      label: "Khoảng cách tấn công",
                       value: formatSecondsTrim(summonStats.baseAttackTime, {
                         maxDecimals: 2,
                       }),
