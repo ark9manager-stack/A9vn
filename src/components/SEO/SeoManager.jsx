@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getSeoMetaForPath, SITE_NAME } from "../../config/seoConfig";
 
@@ -41,7 +41,7 @@ function upsertJsonLd(id, data) {
 export default function SeoManager() {
   const location = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL;
     const meta = getSeoMetaForPath(location.pathname, { siteUrl });
 
