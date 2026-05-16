@@ -203,6 +203,14 @@
     "title": "Bảo hộ/Sanctuary",
     "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
+  "ba.attract": {
+    "title": "Dẫn dụ/Lures",
+    "text": "Không thể bị chặn và di chuyển về vị trí của mục tiêu."
+  },
+  "ba.slowdown": {
+    "title": "Trì trệ",
+    "text": ""
+  },
   "ba.permanentatk": {
     "title": "Liên tục tấn công/Continuously Attack",
     "text": "Thực hiện đòn tấn công bất kể trong phạm vi tấn công có kẻ địch hay không."
@@ -434,6 +442,30 @@
   "TalentGrainBudsE2": {
     "title": "",
     "text": "+0.4 giây"
+  },
+  "sbell2S3": {
+    "title": "",
+    "text": "Giảm còn 1.5 giây"
+  },
+  "halo2S3": {
+    "title": "",
+    "text": "-0.7 giây"
+  },
+  "mantraS2lv1": {
+    "title": "",
+    "text": "-0.5 giây"
+  },
+  "mantraS2lv4": {
+    "title": "",
+    "text": "-0.6 giây"
+  },
+  "mantraS2lv7": {
+    "title": "",
+    "text": "-0.7 giây"
+  },
+  "mantraS2lv10": {
+    "title": "",
+    "text": "-0.8 giây"
   },
   "blackdS2": {
     "title": "",

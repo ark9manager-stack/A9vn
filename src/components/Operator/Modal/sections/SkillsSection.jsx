@@ -987,67 +987,286 @@ function getTokenTalentCandidates(block) {
   });
 }
 
-function findTokenTalentCandidate(block, phaseIndex, requiredPotentialRank = 0) {
+function findTokenTalentCandidate(
+  block,
+  phaseIndex,
+  level = 1,
+  requiredPotentialRank = 0,
+) {
   const cands = getTokenTalentCandidates(block);
   if (!cands.length) return null;
 
   const phase = Number(phaseIndex || 0);
+  const lvl = Number(level || 1);
   const req = Number(requiredPotentialRank || 0);
-  return (
-    cands.find((c) => phaseToIndex(c?.unlockCondition?.phase) === phase && Number(c?.requiredPotentialRank || 0) === req) ||
-    cands.find((c) => phaseToIndex(c?.unlockCondition?.phase) === phase) ||
-    null
-  );
+
+  const exact = cands.find((c) => {
+    const cp = phaseToIndex(c?.unlockCondition?.phase);
+    const cl = Number(c?.unlockCondition?.level || 1);
+    const cr = Number(c?.requiredPotentialRank || 0);
+    return cp === phase && cl === lvl && cr === req;
+  });
+  if (exact) return exact;
+
+  let best = null;
+  let bestReq = -1;
+  for (const c of cands) {
+    const cp = phaseToIndex(c?.unlockCondition?.phase);
+    const cl = Number(c?.unlockCondition?.level || 1);
+    const cr = Number(c?.requiredPotentialRank || 0);
+    if (cp !== phase || cl !== lvl) continue;
+    if (cr <= req && cr > bestReq) {
+      best = c;
+      bestReq = cr;
+    }
+  }
+  if (best) return best;
+
+  return cands.find((c) => phaseToIndex(c?.unlockCondition?.phase) === phase) || null;
 }
 
-function collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }) {
-  const blocks = Array.isArray(tokenCharData?.talents) ? tokenCharData.talents : [];
-  const blocksEN = Array.isArray(tokenCharDataEN?.talents) ? tokenCharDataEN.talents : [];
-  const variants = [];
-  const seen = new Set();
+function collectTokenTalentHeaderOptions(tokenTalentBlocks) {
+  const rawBlocks = Array.isArray(tokenTalentBlocks) ? tokenTalentBlocks : [];
+  const map = new Map();
 
-  blocks.forEach((block, blockIdx) => {
-    const cands = getTokenTalentCandidates(block);
-    if (!cands.length) return;
+  for (const row of rawBlocks) {
+    const cands = Array.isArray(row?.cands)
+      ? row.cands
+      : getTokenTalentCandidates(row?.block || row);
+    if (!cands.length) continue;
 
-    const byPhase = new Map();
-    cands.forEach((cand) => {
-      const phaseIndex = phaseToIndex(cand?.unlockCondition?.phase);
-      const req = Number(cand?.requiredPotentialRank || 0);
-      const current = byPhase.get(phaseIndex);
-      if (!current || req < Number(current?.requiredPotentialRank || 0)) {
-        byPhase.set(phaseIndex, cand);
-      }
-    });
+    for (const c of cands) {
+      const p = phaseToIndex(c?.unlockCondition?.phase);
+      const l = Number(c?.unlockCondition?.level || 1);
+      const lvl = Number.isFinite(l) ? l : 1;
+      if (!map.has(p)) map.set(p, new Set());
+      map.get(p).add(lvl);
+    }
+  }
 
-    [...byPhase.entries()]
-      .sort((a, b) => a[0] - b[0])
-      .forEach(([phaseIndex, cand]) => {
-        const candEN = isEnglishUI
-          ? findTokenTalentCandidate(blocksEN?.[blockIdx], phaseIndex, cand?.requiredPotentialRank)
-          : null;
-        const vnKey = `Talent_E${phaseIndex}`;
-        const rawText = isEnglishUI
-          ? candEN?.description || cand?.description || ""
-          : (isNonEmptyString(vnEntry?.[vnKey]) ? String(vnEntry[vnKey]) : "") ||
-            cand?.description ||
-            candEN?.description ||
-            "";
+  const phases = [...map.keys()].sort((a, b) => a - b);
+  const options = [];
+  for (const p of phases) {
+    const levels = [...(map.get(p) || [])].sort((a, b) => a - b);
+    if (!levels.length) continue;
+    const baseLevel = levels[0];
+    options.push({ phaseIndex: p, level: baseLevel, showLv: false });
+    for (const lvl of levels.slice(1)) {
+      options.push({ phaseIndex: p, level: lvl, showLv: true });
+    }
+  }
 
-        const text = applyBlackboard(rawText, buildBlackboardMap(candEN?.blackboard || cand?.blackboard));
-        if (!isNonEmptyString(text) || String(text).trim() === "-") return;
+  return options;
+}
 
-        const name = isEnglishUI
-          ? candEN?.name || cand?.name || ""
-          : cand?.name || candEN?.name || "";
-        const key = `${phaseIndex}|${text}`;
-        if (seen.has(key)) return;
-        seen.add(key);
-        variants.push({ phaseIndex, name, text, rangeId: candEN?.rangeId || cand?.rangeId || "" });
+function collectTokenAvailablePotRanks(tokenTalentBlocks) {
+  const set = new Set([0]);
+  const rawBlocks = Array.isArray(tokenTalentBlocks) ? tokenTalentBlocks : [];
+
+  for (const row of rawBlocks) {
+    const cands = Array.isArray(row?.cands)
+      ? row.cands
+      : getTokenTalentCandidates(row?.block || row);
+    for (const c of cands) {
+      const req = Number(c?.requiredPotentialRank || 0);
+      if (Number.isFinite(req) && req >= 0 && req <= 5) set.add(req);
+    }
+  }
+
+  return [...set].sort((a, b) => a - b);
+}
+
+function getTokenTalentVnTitle(
+  vnEntry,
+  { visibleTalentOrder, blockIdx, phaseIndex, level, requiredPotentialRank },
+) {
+  if (!vnEntry || typeof vnEntry !== "object") return "";
+
+  const order = Number(visibleTalentOrder || 0) + 1;
+  const rawBlockOrder = Number(blockIdx || 0) + 1;
+  const phase = Number(phaseIndex || 0);
+  const lvl = Number(level || 1);
+  const req = Number(requiredPotentialRank || 0);
+
+  const orderKeys = [];
+  const addOrderKeys = (prefix) => {
+    if (!prefix) return;
+    if (Number.isFinite(lvl) && lvl > 1) {
+      if (Number.isFinite(req) && req > 0) orderKeys.push(`${prefix}_lv${lvl}_p${req}`);
+      orderKeys.push(`${prefix}_lv${lvl}`);
+    }
+    if (Number.isFinite(req) && req > 0) orderKeys.push(`${prefix}_p${req}`);
+    orderKeys.push(prefix);
+  };
+
+  addOrderKeys(`Token_Talent${order}`);
+  if (rawBlockOrder !== order) addOrderKeys(`Token_Talent${rawBlockOrder}`);
+
+  // Backward-compatible aliases from earlier temporary conventions.
+  orderKeys.push(`Talent_Title${order}_E${phase}`);
+  if (rawBlockOrder !== order) orderKeys.push(`Talent_Title${rawBlockOrder}_E${phase}`);
+  orderKeys.push(`Talent_Title_E${phase}`);
+  if (order === 1) orderKeys.push("Token_Talent");
+
+  for (const key of orderKeys) {
+    const value = vnEntry?.[key];
+    if (isNonEmptyString(value)) return String(value);
+  }
+
+  return "";
+}
+
+function getTokenTalentVnText(
+  vnEntry,
+  { visibleTalentOrder, blockIdx, phaseIndex, level, requiredPotentialRank, fallbackText },
+) {
+  const fallback = isNonEmptyString(fallbackText) ? String(fallbackText) : "";
+  if (!vnEntry || typeof vnEntry !== "object") return fallback;
+
+  const order = Number(visibleTalentOrder || 0) + 1;
+  const rawBlockOrder = Number(blockIdx || 0) + 1;
+  const phase = Number(phaseIndex || 0);
+  const lvl = Number(level || 1);
+  const req = Number(requiredPotentialRank || 0);
+
+  const keys = [];
+  const addTextKeys = (base) => {
+    if (!base) return;
+    if (Number.isFinite(lvl) && lvl > 1) {
+      if (Number.isFinite(req) && req > 0) keys.push(`${base}_lv${lvl}_p${req}`);
+      keys.push(`${base}_lv${lvl}`);
+    }
+    if (Number.isFinite(req) && req > 0) keys.push(`${base}_p${req}`);
+    keys.push(base);
+  };
+
+  addTextKeys(`Talent${order}_E${phase}`);
+  if (rawBlockOrder !== order) addTextKeys(`Talent${rawBlockOrder}_E${phase}`);
+
+  // Backward compatibility for the older single-token-talent convention.
+  if (order === 1) addTextKeys(`Talent_E${phase}`);
+
+  for (const key of keys) {
+    const value = vnEntry?.[key];
+    if (isNonEmptyString(value)) return String(value);
+  }
+
+  return fallback;
+}
+
+function computeTokenTalentResolved({
+  talentBlock,
+  talentBlockEN,
+  visibleTalentOrder,
+  blockIdx,
+  potRank,
+  vnEntry,
+  isEnglishUI,
+}) {
+  const raw = getTokenTalentCandidates(talentBlock);
+  if (!Array.isArray(raw) || raw.length === 0) {
+    return { variants: [], minPhaseIndex: 0, visibleTalentOrder, blockIdx };
+  }
+
+  const grouped = groupCandidatesByPhaseLevel(raw);
+  const combos = [...grouped.keys()]
+    .map((k) => {
+      const [p, l] = k.split(":");
+      return { phaseIndex: Number(p), level: Number(l) };
+    })
+    .filter((x) => Number.isFinite(x.phaseIndex) && Number.isFinite(x.level))
+    .sort((a, b) => a.phaseIndex - b.phaseIndex || a.level - b.level);
+
+  const variants = combos
+    .map(({ phaseIndex, level }) => {
+      const key = `${phaseIndex}:${level}`;
+      const list = grouped.get(key) || [];
+      const picked = pickBestCandidateByPot(list, potRank);
+      if (!picked) return null;
+
+      const req = Number(picked?.requiredPotentialRank || 0);
+      const pickedEN = isEnglishUI
+        ? findTokenTalentCandidate(talentBlockEN, phaseIndex, level, req)
+        : null;
+
+      const bbMap = buildBlackboardMap(pickedEN?.blackboard || picked?.blackboard);
+      const baseFallback = isEnglishUI
+        ? pickedEN?.description || picked?.description || ""
+        : picked?.description || pickedEN?.description || "";
+
+      const rawText = isEnglishUI
+        ? baseFallback
+        : getTokenTalentVnText(vnEntry, {
+            visibleTalentOrder,
+            blockIdx,
+            phaseIndex,
+            level,
+            requiredPotentialRank: req,
+            fallbackText: baseFallback,
+          });
+
+      const text = applyBlackboard(rawText, bbMap);
+      if (!isNonEmptyString(text) || String(text).trim() === "-") return null;
+
+      const vnName = getTokenTalentVnTitle(vnEntry, {
+        visibleTalentOrder,
+        blockIdx,
+        phaseIndex,
+        level,
+        requiredPotentialRank: req,
       });
-  });
 
-  return variants;
+      const name = isEnglishUI
+        ? pickedEN?.name || picked?.name || ""
+        : vnName || picked?.name || pickedEN?.name || "";
+
+      return {
+        phaseIndex,
+        level,
+        requiredPotentialRank: req,
+        name,
+        text,
+        rangeId: pickedEN?.rangeId || picked?.rangeId || "",
+        visibleTalentOrder,
+        blockIdx,
+      };
+    })
+    .filter(Boolean);
+
+  const minPhaseIndex =
+    variants.length > 0 ? Math.min(...variants.map((v) => v.phaseIndex)) : 0;
+
+  return { variants, minPhaseIndex, visibleTalentOrder, blockIdx };
+}
+
+function collectTokenTalentBlocks(tokenCharData) {
+  const blocks = Array.isArray(tokenCharData?.talents) ? tokenCharData.talents : [];
+  return blocks
+    .map((block, blockIdx) => ({
+      block,
+      blockIdx,
+      cands: getTokenTalentCandidates(block),
+    }))
+    .filter((row) => row.cands.length > 0);
+}
+
+function collectTokenTalentGroups({ tokenCharData, tokenCharDataEN, vnEntry, potRank, isEnglishUI }) {
+  const visibleBlocks = collectTokenTalentBlocks(tokenCharData);
+  const blocksEN = Array.isArray(tokenCharDataEN?.talents) ? tokenCharDataEN.talents : [];
+
+  return visibleBlocks
+    .map(({ block, blockIdx }, visibleTalentOrder) =>
+      computeTokenTalentResolved({
+        talentBlock: block,
+        talentBlockEN: blocksEN?.[blockIdx],
+        visibleTalentOrder,
+        blockIdx,
+        potRank,
+        vnEntry,
+        isEnglishUI,
+      }),
+    )
+    .filter((group) => Array.isArray(group?.variants) && group.variants.length > 0);
 }
 
 function TokenSkillPanel({
@@ -1106,144 +1325,229 @@ function TokenSkillPanel({
   );
 
   const tokenSkillDesc = React.useMemo(() => {
+    if (!tokenSkillId || tokenSkillLevels.length === 0) return "";
     const vnText = getTokenSkillVnText(vnEntry, selectedSkillOrder, tokenSkillLevelIdx);
     const enText = tokenSkillLevelEN?.description || "";
     const cnText = tokenSkillLevelCN?.description || "";
     const rawText = isEnglishUI ? enText || cnText || "" : vnText || cnText || enText || "";
     return applyBlackboard(rawText, buildSkillParamMap(tokenSkillLevel));
-  }, [vnEntry, selectedSkillOrder, tokenSkillLevelIdx, tokenSkillLevel, tokenSkillLevelEN, tokenSkillLevelCN, isEnglishUI]);
+  }, [tokenSkillId, tokenSkillLevels.length, vnEntry, selectedSkillOrder, tokenSkillLevelIdx, tokenSkillLevel, tokenSkillLevelEN, tokenSkillLevelCN, isEnglishUI]);
 
-  const tokenTalentVariants = React.useMemo(
-    () => collectTokenTalentVariants({ tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI }),
-    [tokenCharData, tokenCharDataEN, vnEntry, isEnglishUI],
+  const tokenTalentBlocks = React.useMemo(
+    () => collectTokenTalentBlocks(tokenCharData),
+    [tokenCharData],
   );
 
-  const [tokenTalentIdx, setTokenTalentIdx] = React.useState(0);
+  const tokenTalentHeaderOptions = React.useMemo(
+    () => collectTokenTalentHeaderOptions(tokenTalentBlocks),
+    [tokenTalentBlocks],
+  );
+
+  const tokenAvailablePotRanks = React.useMemo(
+    () => collectTokenAvailablePotRanks(tokenTalentBlocks),
+    [tokenTalentBlocks],
+  );
+
+  const defaultTokenTalentHeaderIdx =
+    tokenTalentHeaderOptions.length > 0 ? tokenTalentHeaderOptions.length - 1 : 0;
+
+  const [tokenTalentHeaderIdx, setTokenTalentHeaderIdx] = React.useState(defaultTokenTalentHeaderIdx);
+  const [tokenPotRank, setTokenPotRank] = React.useState(0);
+
   React.useEffect(() => {
-    setTokenTalentIdx(Math.max(0, tokenTalentVariants.length - 1));
-  }, [tokenId, tokenTalentVariants.length]);
+    setTokenTalentHeaderIdx(defaultTokenTalentHeaderIdx);
+    setTokenPotRank(0);
+  }, [tokenId, defaultTokenTalentHeaderIdx]);
 
-  const safeTokenTalentIdx = clamp(
-    tokenTalentIdx,
+  const safeTokenTalentHeaderIdx = clamp(
+    tokenTalentHeaderIdx,
     0,
-    Math.max(0, tokenTalentVariants.length - 1),
+    Math.max(0, tokenTalentHeaderOptions.length - 1),
   );
-  const tokenTalent = tokenTalentVariants?.[safeTokenTalentIdx] || null;
 
-  if (!tokenCharData || !tokenSkillId) return null;
+  const activeTokenTalentHeaderOpt = React.useMemo(
+    () =>
+      tokenTalentHeaderOptions?.[safeTokenTalentHeaderIdx] || {
+        phaseIndex: 0,
+        level: 1,
+        showLv: false,
+      },
+    [tokenTalentHeaderOptions, safeTokenTalentHeaderIdx],
+  );
 
-  const tokenIconUrl =
-    getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId) ||
-    getSummonAvatarUrl(tokenId);
+  const tokenTalentGroups = React.useMemo(
+    () =>
+      collectTokenTalentGroups({
+        tokenCharData,
+        tokenCharDataEN,
+        vnEntry,
+        potRank: tokenPotRank,
+        isEnglishUI,
+      }),
+    [tokenCharData, tokenCharDataEN, vnEntry, tokenPotRank, isEnglishUI],
+  );
+
+  const visibleTokenTalents = React.useMemo(
+    () =>
+      tokenTalentGroups
+        .map((group) => ({
+          group,
+          variant: pickVariantByHeaderOption(group?.variants, activeTokenTalentHeaderOpt),
+        }))
+        .filter((row) => row?.variant && isNonEmptyString(row.variant.text)),
+    [tokenTalentGroups, activeTokenTalentHeaderOpt],
+  );
+
+  const skillIconUrl = tokenSkillId
+    ? getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId)
+    : "";
+  const tokenAvatarUrl = getSummonAvatarUrl(tokenId);
+  const tokenIconUrl = skillIconUrl || tokenAvatarUrl;
+  const [tokenIconFailed, setTokenIconFailed] = React.useState(false);
+
+  React.useEffect(() => {
+    setTokenIconFailed(false);
+  }, [tokenId, tokenSkillId, tokenIconUrl]);
+
+  if (!tokenCharData) return null;
+
   const tokenSpType = tokenSkillLevel?.spData?.spType;
   const tokenSkillType = tokenSkillLevel?.skillType;
   const tokenDuration = tokenSkillLevel?.duration;
   const tokenInitSp = Number(tokenSkillLevel?.spData?.initSp || 0);
   const tokenSpCost = Number(tokenSkillLevel?.spData?.spCost || 0);
   const tokenRangeId = tokenSkillLevel?.rangeId || "";
-  const showTokenSp = String(tokenSkillType || "") !== "PASSIVE" && (tokenInitSp !== 0 || tokenSpCost !== 0);
-  const showTokenTalentControls = tokenTalentVariants.length > 1;
-  const hasTalent = !!tokenTalent && isNonEmptyString(tokenTalent.text);
+  const showTokenSp =
+    !!tokenSkillLevel &&
+    String(tokenSkillType || "") !== "PASSIVE" &&
+    (tokenInitSp !== 0 || tokenSpCost !== 0);
+  const showTokenTalentEliteControls = tokenTalentHeaderOptions.length > 1;
+  const showTokenTalentPotControls = tokenAvailablePotRanks.length > 1;
+  const hasTalent = visibleTokenTalents.length > 0;
   const hasSkillDesc = isNonEmptyString(tokenSkillDesc);
+  const hasTrait = isNonEmptyString(tokenTraitText);
+  const tokenIconKey = `${tokenId || "token"}-${tokenSkillId || "noskill"}-${tokenIconUrl || "noicon"}`;
+
+  const tokenImage = tokenIconUrl && !tokenIconFailed ? (
+    <img
+      key={tokenIconKey}
+      src={tokenIconUrl}
+      alt={tokenSkillId || tokenId}
+      className="w-24 h-24 object-contain"
+      draggable={false}
+      loading="eager"
+      decoding="async"
+      onError={(e) => {
+        const fallback = tokenAvatarUrl;
+        if (fallback && e.currentTarget.src !== fallback) {
+          e.currentTarget.src = fallback;
+          return;
+        }
+        setTokenIconFailed(true);
+      }}
+    />
+  ) : null;
+
+  const traitBlock = hasTrait ? (
+    <div
+      className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words"
+      style={{ overflowWrap: "anywhere" }}
+    >
+      {renderTextWithHovers(tokenTraitText, `token-trait-${tokenId}`, isEnglishUI)}
+    </div>
+  ) : null;
 
   return (
     <div className="rounded-xl border border-white/10 bg-black/20 p-4">
       <div className="flex flex-col md:flex-row md:items-start gap-4">
-        <div className="shrink-0">
-          {tokenIconUrl ? (
-            <img
-              src={tokenIconUrl}
-              alt={tokenSkillId}
-              className="w-24 h-24 object-contain"
-              draggable={false}
-              loading="eager"
-              decoding="async"
-              onError={(e) => {
-                const fallback = getSummonAvatarUrl(tokenId);
-                if (fallback && e.currentTarget.src !== fallback) {
-                  e.currentTarget.src = fallback;
-                  return;
-                }
-                e.currentTarget.style.display = "none";
-              }}
-            />
-          ) : null}
-        </div>
-
-        <div className="min-w-0 flex-1">
-          <div className="text-lg font-semibold text-white break-words">
-            {tokenTitle || tokenId}
+        <div className="flex items-start gap-4 min-w-0 md:contents">
+          <div className="shrink-0 flex flex-col items-center md:items-start gap-2 w-24 md:w-auto">
+            <div className="w-24 h-24 flex items-center justify-center">
+              {tokenImage}
+            </div>
           </div>
 
-          <div className="mt-2 flex items-center gap-2 flex-wrap">
-            {Number(tokenSpType) === 8 || String(tokenSpType) === "8"
-              ? null
-              : (() => {
-                  const k = String(tokenSpType || "");
-                  const meta = SP_TYPE_META?.[k];
-                  const label = meta ? (isEnglishUI ? meta.en : meta.vi) : k;
-                  const bg = meta?.bg || "#808080";
-                  return isNonEmptyString(label) ? (
-                    <span
-                      className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold"
-                      style={{ backgroundColor: bg, color: "#000" }}
-                    >
-                      {label}
-                    </span>
-                  ) : null;
-                })()}
+          <div className="min-w-0 flex-1 md:order-none">
+            <div className="text-lg font-semibold text-white whitespace-normal break-words" style={{ overflowWrap: "anywhere" }}>
+              {tokenTitle || tokenId}
+            </div>
 
-            {isNonEmptyString(tokenSkillType) ? (
-              <span
-                className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white"
-                style={{ backgroundColor: "#808080" }}
-              >
-                {SKILL_TYPE_META?.[tokenSkillType]?.[isEnglishUI ? "en" : "vi"] || String(tokenSkillType)}
-              </span>
+            <div className="mt-2 flex items-center gap-2 flex-wrap">
+              {Number(tokenSpType) === 8 || String(tokenSpType) === "8"
+                ? null
+                : (() => {
+                    const k = String(tokenSpType || "");
+                    const meta = SP_TYPE_META?.[k];
+                    const label = meta ? (isEnglishUI ? meta.en : meta.vi) : k;
+                    const bg = meta?.bg || "#808080";
+                    return isNonEmptyString(label) ? (
+                      <span
+                        className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold"
+                        style={{ backgroundColor: bg, color: "#000" }}
+                      >
+                        {label}
+                      </span>
+                    ) : null;
+                  })()}
+
+              {isNonEmptyString(tokenSkillType) ? (
+                <span
+                  className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-white"
+                  style={{ backgroundColor: "#808080" }}
+                >
+                  {SKILL_TYPE_META?.[tokenSkillType]?.[isEnglishUI ? "en" : "vi"] || String(tokenSkillType)}
+                </span>
+              ) : null}
+
+              {(() => {
+                const d = Number(tokenDuration);
+                if (!Number.isFinite(d) || d <= 0 || d === -1) return null;
+                const v = isAlmostInt(d) ? String(Math.round(d)) : trimFixed(d, 1);
+                return (
+                  <span
+                    className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
+                    style={{ backgroundColor: "#D3D3D3" }}
+                  >
+                    {isEnglishUI ? `${v} seconds` : `${v} giây`}
+                  </span>
+                );
+              })()}
+            </div>
+
+            {showTokenSp ? (
+              <div className="mt-3 flex items-center gap-6 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-white/70">
+                    {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
+                  </span>
+                  <div className="relative w-[52px] h-[38px] shrink-0">
+                    <img src={INIT_SP_ICON} alt="init-sp" className="w-full h-full object-contain" draggable={false} />
+                    <span className="absolute right-[12px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                      {tokenInitSp}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-white/70">
+                    {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
+                  </span>
+                  <div className="relative w-[52px] h-[28px] shrink-0">
+                    <img src={SP_COST_ICON} alt="sp-cost" className="w-full h-full object-contain" draggable={false} />
+                    <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
+                      {tokenSpCost}
+                    </span>
+                  </div>
+                </div>
+              </div>
             ) : null}
 
-            {(() => {
-              const d = Number(tokenDuration);
-              if (!Number.isFinite(d) || d <= 0 || d === -1) return null;
-              const v = isAlmostInt(d) ? String(Math.round(d)) : trimFixed(d, 1);
-              return (
-                <span
-                  className="inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold text-black"
-                  style={{ backgroundColor: "#D3D3D3" }}
-                >
-                  {isEnglishUI ? `${v} seconds` : `${v} giây`}
-                </span>
-              );
-            })()}
+            {traitBlock ? (
+              <div className="mt-3 md:hidden">
+                {traitBlock}
+              </div>
+            ) : null}
           </div>
-
-          {showTokenSp ? (
-            <div className="mt-3 flex items-center gap-6 flex-wrap">
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-white/70">
-                  {isEnglishUI ? "Initial SP:" : "SP khởi đầu:"}
-                </span>
-                <div className="relative w-[52px] h-[38px] shrink-0">
-                  <img src={INIT_SP_ICON} alt="init-sp" className="w-full h-full object-contain" draggable={false} />
-                  <span className="absolute right-[12px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
-                    {tokenInitSp}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-white/70">
-                  {isEnglishUI ? "SP Cost:" : "SP tiêu hao:"}
-                </span>
-                <div className="relative w-[52px] h-[28px] shrink-0">
-                  <img src={SP_COST_ICON} alt="sp-cost" className="w-full h-full object-contain" draggable={false} />
-                  <span className="absolute right-[10px] top-1/2 -translate-y-1/2 text-[12px] font-bold text-white tabular-nums drop-shadow">
-                    {tokenSpCost}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ) : null}
         </div>
 
         {isNonEmptyString(tokenRangeId) ? (
@@ -1256,14 +1560,9 @@ function TokenSkillPanel({
         ) : null}
       </div>
 
-      {isNonEmptyString(tokenTraitText) ? (
-        <div className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4">
-          <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-            Trait
-          </div>
-          <div className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
-            {renderTextWithHovers(tokenTraitText, `token-trait-${tokenId}`, isEnglishUI)}
-          </div>
+      {traitBlock ? (
+        <div className="mt-3 hidden md:block">
+          {traitBlock}
         </div>
       ) : null}
 
@@ -1271,59 +1570,135 @@ function TokenSkillPanel({
         <div className="mt-3 rounded-xl border border-white/10 bg-black/30 p-4">
           {hasTalent ? (
             <div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-start gap-3 min-w-0">
-                    <span
-                      className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
-                      title={tokenTalent?.name ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}` : isEnglishUI ? "Talent" : "Thiên phú"}
-                    >
-                      {tokenTalent?.name
-                        ? `${isEnglishUI ? "Talent" : "Thiên phú"}: ${tokenTalent.name}`
-                        : isEnglishUI
-                          ? "Talent"
-                          : "Thiên phú"}
-                    </span>
-                  </div>
+              {visibleTokenTalents.map(({ group, variant }, talentRenderIdx) => {
+                const talentOrder = Number(group?.visibleTalentOrder || 0) + 1;
+                const hasMultipleTokenTalents = tokenTalentGroups.length > 1;
+                const talentPrefix = hasMultipleTokenTalents
+                  ? isEnglishUI
+                    ? `Talent ${talentOrder}`
+                    : `Talent ${talentOrder}`
+                  : isEnglishUI
+                    ? "Talent"
+                    : "Talent";
+                const titleText = variant?.name
+                  ? `${talentPrefix}: ${variant.name}`
+                  : talentPrefix;
+                const hasRange = isNonEmptyString(variant?.rangeId);
 
-                  <div className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
-                    {renderTextWithHovers(tokenTalent.text, `token-talent-${tokenId}-e${tokenTalent.phaseIndex}`, isEnglishUI)}
-                  </div>
-                </div>
+                const tokenTalentEliteControls =
+                  talentRenderIdx === 0 && showTokenTalentEliteControls ? (
+                    <div className="flex flex-wrap items-center gap-1.5 shrink-0">
+                      {tokenTalentHeaderOptions.map((opt, idx) => {
+                        const active = idx === safeTokenTalentHeaderIdx;
+                        return (
+                          <button
+                            key={`token-talent-header-${tokenId}-${opt.phaseIndex}-${opt.level}-${idx}`}
+                            type="button"
+                            onClick={() => setTokenTalentHeaderIdx(idx)}
+                            className={`rounded-md px-1.5 py-1 transition flex items-center gap-1 ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
+                            title={opt.showLv ? `E${opt.phaseIndex} Lv${opt.level}` : `E${opt.phaseIndex}`}
+                          >
+                            <img
+                              src={getEliteIconLarge(opt.phaseIndex)}
+                              alt={`E${opt.phaseIndex}`}
+                              className="w-6 h-6 object-contain"
+                              draggable={false}
+                              loading="lazy"
+                            />
+                            {opt.showLv ? (
+                              <span className="text-[11px] font-semibold tabular-nums">
+                                Lv{opt.level}
+                              </span>
+                            ) : null}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : null;
 
-                {showTokenTalentControls ? (
-                  <div className="flex items-center gap-2 shrink-0">
-                    {tokenTalentVariants.map((v, idx) => {
-                      const active = idx === safeTokenTalentIdx;
-                      return (
-                        <button
-                          key={`token-talent-phase-${tokenId}-${v.phaseIndex}-${idx}`}
-                          type="button"
-                          onClick={() => setTokenTalentIdx(idx)}
-                          className={`rounded-lg p-1.5 transition ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
-                          title={`E${v.phaseIndex}`}
+                const tokenTalentPotControls =
+                  talentRenderIdx === 0 && showTokenTalentPotControls ? (
+                    <div className="flex flex-wrap items-center justify-start sm:justify-end gap-1 shrink-0">
+                      {tokenAvailablePotRanks.map((idx0) => {
+                        const active = idx0 === tokenPotRank;
+                        return (
+                          <button
+                            key={`token-talent-pot-${tokenId}-${idx0}`}
+                            type="button"
+                            onClick={() => setTokenPotRank(idx0)}
+                            className={`rounded-md px-1.5 py-1 transition flex items-center gap-1 ${active ? "ak-steel-btn-active" : "ak-steel-btn-idle"}`}
+                            title={`Pot ${idx0 + 1}`}
+                          >
+                            <img
+                              src={getPotIcon(idx0)}
+                              alt={`pot-${idx0}`}
+                              className="w-5 h-5 object-contain"
+                              draggable={false}
+                              loading="lazy"
+                            />
+                            <span className="text-[11px] font-semibold tabular-nums">
+                              {idx0 + 1}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : null;
+
+                return (
+                  <div key={`token-talent-card-${tokenId}-${group?.blockIdx}-${talentRenderIdx}`} className={talentRenderIdx > 0 ? "mt-4" : ""}>
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="flex items-start gap-2 min-w-0 flex-wrap">
+                        <span
+                          className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
+                          title={titleText}
                         >
-                          <img
-                            src={getEliteIconLarge(v.phaseIndex)}
-                            alt={`E${v.phaseIndex}`}
-                            className="w-8 h-8 object-contain"
-                            draggable={false}
-                            loading="lazy"
-                          />
-                        </button>
-                      );
-                    })}
+                          {titleText}
+                        </span>
+                        {tokenTalentEliteControls}
+                      </div>
+                      {tokenTalentPotControls}
+                    </div>
+
+                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-start">
+                      <div className="min-w-0 flex-1 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+                        {renderTextWithHovers(
+                          variant.text,
+                          `token-talent-${tokenId}-t${talentOrder}-e${variant.phaseIndex}-lv${variant.level}-pot${tokenPotRank}`,
+                          isEnglishUI,
+                        )}
+                      </div>
+
+                      {hasRange ? (
+                        <div className="shrink-0 self-center sm:self-start rounded-xl border border-white/10 bg-black/30 p-3">
+                          <div className="text-sm font-semibold text-white text-center mb-2">
+                            {isEnglishUI ? "Range" : "Phạm vi"}
+                          </div>
+                          <RangeGrid rangeId={variant.rangeId} />
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
-                ) : null}
-              </div>
+                );
+              })}
             </div>
           ) : null}
 
           {hasTalent && hasSkillDesc ? <div className="h-px bg-white/10 my-4" /> : null}
 
           {hasSkillDesc ? (
-            <div className="min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
-              {renderTextWithHovers(tokenSkillDesc, `token-skill-${charKey || "unknown"}-${tokenSkillId}-lv${tokenSkillLevelIdx + 1}`, isEnglishUI)}
+            <div>
+              <div className="flex items-start gap-3 min-w-0">
+                <span
+                  className="inline-block max-w-full rounded-md bg-white px-2 py-1 text-black font-semibold text-sm leading-snug whitespace-normal break-words"
+                  title={isEnglishUI ? "Skill" : "Kỹ năng"}
+                >
+                  {isEnglishUI ? "Skill" : "Kỹ năng"}
+                </span>
+              </div>
+              <div className="mt-3 min-w-0 text-[1.025rem] text-gray-300 leading-relaxed break-words" style={{ overflowWrap: "anywhere" }}>
+                {renderTextWithHovers(tokenSkillDesc, `token-skill-${charKey || "unknown"}-${tokenSkillId}-lv${tokenSkillLevelIdx + 1}`, isEnglishUI)}
+              </div>
             </div>
           ) : null}
         </div>

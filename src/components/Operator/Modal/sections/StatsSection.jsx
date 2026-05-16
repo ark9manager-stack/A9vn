@@ -21,7 +21,6 @@ import {
   getItemIconUrl,
   getSummonAvatarUrl,
   getSummonSkillIconUrl,
-  makeSummonSkillIconOnError,
   imgOnErrorHideDisplay,
 } from "../../../../utils/IconArtUrl";
 
@@ -860,7 +859,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                 },
                 {
                   icon: STAT_ICON.baseAttackTime,
-                  label: "Tốc độ tấn công",
+                  label: "Khoảng cách tấn công",
                   value: (
                     <ValueWithDeltas
                       value={stats.baseAttackTime}
@@ -1166,7 +1165,16 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                         className="w-7 h-7 object-contain shrink-0"
                         draggable={false}
                         loading="lazy"
-                        onError={makeSummonSkillIconOnError(opt.tokenId)}
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          const fallback = getSummonAvatarUrl(opt.tokenId);
+                          if (fallback && img?.dataset?.fallback !== "1" && img.src !== fallback) {
+                            if (img.dataset) img.dataset.fallback = "1";
+                            img.src = fallback;
+                            return;
+                          }
+                          img.style.display = "none";
+                        }}
                       />
                       <span className="text-xs text-white/90 whitespace-nowrap">
                         {skillLabel}
@@ -1181,11 +1189,15 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
           {/* Header: avatar + basic info */}
           <div className="mt-3 flex items-start gap-3">
             <img
+              key={selectedSummon.tokenId}
               src={getSummonAvatarUrl(selectedSummon.tokenId)}
               alt=""
               className="w-14 h-14 rounded-lg bg-white/5 object-contain shrink-0"
               draggable={false}
               loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
             />
 
             <div className="min-w-0">
@@ -1310,7 +1322,7 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                     },
                     {
                       icon: STAT_ICON.baseAttackTime,
-                      label: "Thời gian tấn công",
+                      label: "Khoảng cách tấn công",
                       value: formatSecondsTrim(summonStats.baseAttackTime, {
                         maxDecimals: 2,
                       }),

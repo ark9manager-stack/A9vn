@@ -118,7 +118,7 @@ export const CLASS_LABELS_I18N = {
     CASTER: "Thuật sư",
     MEDIC: "Y tế",
     SUPPORT: "Hỗ trợ",
-    SPECIAL: "Chuyên viên",
+    SPECIAL: "Đặc nhiệm",
   },
 };
 
