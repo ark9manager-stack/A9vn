@@ -499,6 +499,10 @@
     "title": "",
     "text": "1.25 giây/1 DP"
   },
+  "mlyssS1lv10": {
+    "title": "",
+    "text": "1.154 giây/1 DP"
+  },
   "svash2S3": {
     "title": "",
     "text": "2 giây/1 DP"
@@ -531,6 +535,22 @@
     "title": "",
     "text": "0.75 giây/1 DP"
   },
+  "sagaS3": {
+    "title": "",
+    "text": "1 giây/1 DP"
+  },
+  "acpionS2lv1": {
+    "title": "",
+    "text": "1.6 giây/1 DP"
+  },
+  "acpionS2lv7": {
+    "title": "",
+    "text": "1.4 giây/1 DP"
+  },
+  "acpionS2lv10": {
+    "title": "",
+    "text": "1.2 giây/1 DP"
+  },
   "vignaS2": {
     "title": "",
     "text": "+0.5 giây"
@@ -562,6 +582,10 @@
   "cerberS2lv10": {
     "title": "",
     "text": "Giảm còn 0.528 giây"
+  },
+  "sagaS3interval": {
+    "title": "",
+    "text": "+0.5 giây"
   },
   "closurS3DP": {
     "title": "",
