@@ -487,6 +487,10 @@
     "title": "",
     "text": "1.87 giây/1 DP"
   },
+  "headbrS2": {
+    "title": "",
+    "text": "0.83 giây/1 DP"
+  },
   "mlyssS1lv1": {
     "title": "",
     "text": "1.501 giây/1 DP"
@@ -498,6 +502,10 @@
   "mlyssS1lv7": {
     "title": "",
     "text": "1.25 giây/1 DP"
+  },
+  "mlyssS1lv10": {
+    "title": "",
+    "text": "1.154 giây/1 DP"
   },
   "mlyssS1lv10": {
     "title": "",
@@ -538,6 +546,10 @@
   "sagaS3": {
     "title": "",
     "text": "1 giây/1 DP"
+  },
+  "myrtleS1": {
+    "title": "",
+    "text": "0.57 giây/1 DP"
   },
   "acpionS2lv1": {
     "title": "",

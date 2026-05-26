@@ -2824,9 +2824,9 @@
   "char_427_vigil": {
     "TitleTalent1": "Thủ lĩnh bầy sói",
     "TitleTalent2": "Bản tính bầy sói",
-    "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
-    "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
-    "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent0": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 30 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent1": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 27 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và đòn tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
+    "Talent1_2": "Triệu hồi một bầy sói với khởi đầu là 2 'Ảnh Lang' tại Ô chiến thuật, và cứ mỗi 25 giây sẽ tạo 1 'Ảnh Lang' (tối đa 3). Mỗi 'Ảnh Lang' giúp tăng 1 lần chặn và giúp tấn công gây thêm một lần sát thương. Khi có từ 2 'Ảnh Lang' trở lên, nếu nhận sát thương chí tử, sẽ hy sinh 1 'Ảnh Lang' để hồi đầy HP.",
     "Talent2": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 175 DEF của kẻ địch đang bị 'Ảnh Lang' chặn.",
     "Talent2_p4": "Đòn tấn công của Vigil và 'Ảnh Lang' sẽ bỏ qua 200<@ba.talpu>(+25)</> DEF của kẻ địch đang bị 'Ảnh Lang' chặn."
   },
