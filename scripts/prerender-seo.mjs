@@ -12,7 +12,11 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.join(rootDir, "dist");
-const siteUrl = (process.env.SITE_URL || process.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "");
+const siteUrl = (
+  process.env.SITE_URL ||
+  process.env.VITE_SITE_URL ||
+  DEFAULT_SITE_URL
+).replace(/\/+$/, "");
 const indexPath = path.join(distDir, "index.html");
 
 function readJson(relativePath) {
@@ -87,7 +91,13 @@ function buildHead(meta) {
     `<meta name="twitter:title" content="${escapeHtml(meta.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(meta.description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(meta.image)}" />`,
-    `<script id="a9vn-jsonld" type="application/ld+json">${escapeJsonForHtml(jsonLd)}</script>`,
+    `
+    <style>
+      /* Hide prerendered SEO block from users to prevent flicker while keeping the
+         content available in the HTML for crawlers. */
+      .seo-prerender { position: fixed !important; left: -9999px !important; top: auto !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+    </style>
+    <script id="a9vn-jsonld" type="application/ld+json">${escapeJsonForHtml(jsonLd)}</script>`,
   ].join("\n    ");
 }
 
@@ -99,14 +109,20 @@ function stripSeoHead(html) {
     .replace(/\s*<link\s+rel=["']canonical["'][^>]*>\s*/gi, "\n")
     .replace(/\s*<meta\s+property=["']og:[^"']+["'][^>]*>\s*/gi, "\n")
     .replace(/\s*<meta\s+name=["']twitter:[^"']+["'][^>]*>\s*/gi, "\n")
-    .replace(/\s*<script\s+id=["']a9vn-jsonld["'][\s\S]*?<\/script>\s*/gi, "\n");
+    .replace(
+      /\s*<script\s+id=["']a9vn-jsonld["'][\s\S]*?<\/script>\s*/gi,
+      "\n",
+    );
 }
 
 function buildPrerenderContent(route) {
   const links = route.links?.length
     ? `<ul>${route.links
         .slice(0, 24)
-        .map((link) => `<li><a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a></li>`)
+        .map(
+          (link) =>
+            `<li><a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a></li>`,
+        )
         .join("")}</ul>`
     : "";
 
@@ -124,7 +140,10 @@ function renderRoute(baseHtml, route) {
   const html = stripSeoHead(baseHtml)
     .replace(/<html\s+lang=["'][^"']*["']/i, '<html lang="vi"')
     .replace("</head>", `    ${buildHead(meta)}\n  </head>`)
-    .replace(/<div id="root"><\/div>/, `<div id="root">${buildPrerenderContent(route)}</div>`);
+    .replace(
+      /<div id="root"><\/div>/,
+      `<div id="root">${buildPrerenderContent(route)}</div>`,
+    );
 
   return html;
 }
@@ -136,7 +155,10 @@ function getOperators() {
   const merged = { ...operators, ...(charPatchTable.patchChars || {}) };
 
   return Object.entries(merged)
-    .filter(([id, operator]) => id !== "char_512_aprot" && operator.profession !== "TOKEN")
+    .filter(
+      ([id, operator]) =>
+        id !== "char_512_aprot" && operator.profession !== "TOKEN",
+    )
     .map(([id, operator]) => {
       const name = nameVn[id]?.name_vn || operator.name || id;
       return {
@@ -151,8 +173,13 @@ function getOperators() {
 }
 
 function getBosses() {
-  const source = fs.readFileSync(path.join(rootDir, "src/data/enemies/enemies.ts"), "utf8");
-  const match = source.match(/export const bosses: Boss\[\] = (\[[\s\S]*?\n\]);/);
+  const source = fs.readFileSync(
+    path.join(rootDir, "src/data/enemies/enemies.ts"),
+    "utf8",
+  );
+  const match = source.match(
+    /export const bosses: Boss\[\] = (\[[\s\S]*?\n\]);/,
+  );
   if (!match) return [];
 
   return Function(`"use strict"; return (${match[1]});`)()
@@ -160,7 +187,9 @@ function getBosses() {
       id: boss.id,
       name: boss.name,
       description: cleanText(boss.description),
-      damageType: Array.isArray(boss.damageType) ? boss.damageType.join(", ") : "",
+      damageType: Array.isArray(boss.damageType)
+        ? boss.damageType.join(", ")
+        : "",
     }))
     .sort((a, b) => a.name.localeCompare(b.name, "en"));
 }
@@ -200,7 +229,8 @@ function buildRoutes() {
 
   routes.find((route) => route.path === "/operator").links = operatorLinks;
   routes.find((route) => route.path === "/database/bosses").links = bossLinks;
-  routes.find((route) => route.path === "/database/materials").links = getMaterialLinks();
+  routes.find((route) => route.path === "/database/materials").links =
+    getMaterialLinks();
 
   for (const operator of operators) {
     const routePath = `/operator/${encodeURIComponent(operator.id)}`;
@@ -223,7 +253,8 @@ function buildRoutes() {
   for (const boss of bosses) {
     const routePath = `/database/bosses/${encodeURIComponent(boss.id)}`;
     const description = cleanText(
-      boss.description || `Tra cứu boss ${boss.name}, loại sát thương ${boss.damageType} và cơ chế kỹ năng trong Arknights.`,
+      boss.description ||
+        `Tra cứu boss ${boss.name}, loại sát thương ${boss.damageType} và cơ chế kỹ năng trong Arknights.`,
     );
     routes.push({
       path: routePath,
@@ -276,7 +307,9 @@ Sitemap: ${siteUrl}/sitemap.xml
 }
 
 if (!fs.existsSync(indexPath)) {
-  throw new Error("dist/index.html not found. Run vite build before prerender-seo.");
+  throw new Error(
+    "dist/index.html not found. Run vite build before prerender-seo.",
+  );
 }
 
 const baseHtml = fs.readFileSync(indexPath, "utf8");
@@ -290,4 +323,6 @@ writeSitemap(routes);
 writeRobots();
 
 console.log(`SEO prerendered ${routes.length} routes.`);
-console.log(`Sitemap: ${path.relative(rootDir, path.join(distDir, "sitemap.xml"))}`);
+console.log(
+  `Sitemap: ${path.relative(rootDir, path.join(distDir, "sitemap.xml"))}`,
+);
