@@ -5599,5 +5599,20 @@
     "idweb": 417,
     "name": "凯尔希·思衡托",
     "name_vn": "Kal'tsit·Esperanta"
+  },
+  "char_4215_buddy": {
+    "idweb": 418,
+    "name": "罗德岛隐秘队",
+    "name_vn": "Rhodes Island Recon"
+  },
+  "char_1049_catap2": {
+    "idweb": 419,
+    "name": "雷狼龙S空爆",
+    "name_vn": "Zinogre S Catapult"
+  },
+  "char_1048_orchd2": {
+    "idweb": 420,
+    "name": "焰狐龙梓兰",
+    "name_vn": "Violet Mizutsune Orchid"
   }
 }
