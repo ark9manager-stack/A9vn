@@ -6757,6 +6757,15 @@
     "Talent0_p4": "",
     "Talent0_p5": ""
   },
+  "char_1049_catap2": {
+    "TitleTalent1": "Biến chuyển dạng rìu",
+    "Talent0": "Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công. Khi kích hoạt kỹ năng, thi triển Morph Slash gây sát thương và tiêu hao toàn bộ tích trữ từ kỹ năng; mỗi tích trữ tăng thêm 20% thời gian duy trì của kỹ năng.",
+    "Talent0_p4": "Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công. Khi kích hoạt kỹ năng, thi triển Morph Slash gây sát thương và tiêu hao toàn bộ tích trữ từ kỹ năng; mỗi tích trữ tăng thêm 30%<@ba.talpu>(+10%)</> thời gian duy trì của kỹ năng.",
+    "Talent1": "Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công. Khi kích hoạt kỹ năng, thi triển Morph Slash gây sát thương và tiêu hao toàn bộ tích trữ từ kỹ năng; mỗi tích trữ tăng thêm 30% thời gian duy trì của kỹ năng.",
+    "Talent1_p4": "Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công. Khi kích hoạt kỹ năng, thi triển Morph Slash gây sát thương và tiêu hao toàn bộ tích trữ từ kỹ năng; mỗi tích trữ tăng thêm 40%<@ba.talpu>(+10%)</> thời gian duy trì của kỹ năng.",
+    "Talent1_2": "Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công. Khi kích hoạt kỹ năng, thi triển Morph Slash gây sát thương và tiêu hao toàn bộ tích trữ từ kỹ năng; mỗi tích trữ tăng thêm 40% thời gian duy trì của kỹ năng.",
+    "Talent1_2_p4": "Trong thời gian kỹ năng hoạt động, mở rộng phạm vi tấn công. Khi kích hoạt kỹ năng, thi triển Morph Slash gây sát thương và tiêu hao toàn bộ tích trữ từ kỹ năng; mỗi tích trữ tăng thêm 50%<@ba.talpu>(+10%)</> thời gian duy trì của kỹ năng."
+  },
   "char_1048_orchd2": {
     "TitleTalent1": "Bậc thầy cường hóa mũi tên",
     "TitleTalent2": "Wirebug cơ động",
