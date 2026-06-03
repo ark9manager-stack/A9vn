@@ -6747,5 +6747,26 @@
     "Talent1_2_p2": "HP tối đa và DEF +30%<@ba.talpu>(+5%)</>, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
     "Talent2": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 50 HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】.",
     "Talent2_p5": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 60<@ba.talpu>(+10)</> HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】."
+  },
+  "char_4215_buddy": {
+    "TitleTalent1": "",
+    "Talent0": "",
+    "Talent0_p1": "",
+    "Talent0_p2": "",
+    "Talent0_p3": "",
+    "Talent0_p4": "",
+    "Talent0_p5": ""
+  },
+  "char_1048_orchd2": {
+    "TitleTalent1": "Bậc thầy cường hóa mũi tên",
+    "TitleTalent2": "Wirebug cơ động",
+    "Talent0": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 105%.",
+    "Talent0_p4": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 110%<@ba.talpu>(+5%)</>.",
+    "Talent1": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 110%.",
+    "Talent1_p4": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 115%<@ba.talpu>(+5%)</>.",
+    "Talent1_2": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 115%.",
+    "Talent1_2_p4": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 120%<@ba.talpu>(+5%)</>.",
+    "Talent2": "Thời gian tái triển khai -15 giây; khi triển khai tại khu vực xung quanh vị trí triển khai lần trước, ATK +10% trong 30 giây và có thể triển khai trên ô cận chiến.",
+    "Talent2_2": "Thời gian tái triển khai -15 giây và không tăng DP khi rút lui; khi triển khai tại khu vực xung quanh vị trí triển khai lần trước, ATK +15% trong 30 giây và có thể triển khai trên ô cận chiến."
   }
 }

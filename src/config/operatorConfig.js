@@ -112,7 +112,7 @@ export const CLASS_LABELS_I18N = {
   },
   VN: {
     PIONEER: "Tiên phong",
-    WARRIOR: "Cận vệ",
+    WARRIOR: "Vệ binh",
     TANK: "Phòng ngự",
     SNIPER: "Xạ thủ",
     CASTER: "Thuật sư",
