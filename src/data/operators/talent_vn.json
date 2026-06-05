@@ -709,14 +709,14 @@
   },
   "char_179_cgbird": {
     "TitleTalent1": "Bạch ma bảo hộ",
-    "TitleTalent2": "Hư ảnh",
+    "TitleTalent2": "Huyễn ảnh nhất thời",
     "Talent0": "+5 RES cho các đồng minh trong phạm vi.",
     "Talent0_p4": "+7<@ba.talpu>(+2)</> RES cho các đồng minh trong phạm vi.",
     "Talent1": "+10 RES cho các đồng minh trong phạm vi.",
     "Talent1_p4": "+12<@ba.talpu>(+2)</> RES cho các đồng minh trong phạm vi.",
     "Talent1_2": "+15 RES cho các đồng minh trong phạm vi.",
     "Talent1_2_p4": "+17<@ba.talpu>(+2)</> RES cho các đồng minh trong phạm vi.",
-    "Talent2": "Có thể triển khai 'Ảo ảnh'. 'Ảo ảnh' không thể tấn công hay chặn kẻ địch, nhưng có 75 RES và 30% né sát thương vật lý, đồng thời ưu tiên bị nhắm làm mục tiêu hơn. 'Ảo ảnh' mất 3% HP tối đa mỗi giây"
+    "Talent2": "Có thể triển khai 'Ảo ảnh'. 'Ảo ảnh' không thể tấn công hay chặn kẻ địch, nhưng có 75 RES và 30% tỷ lệ né sát thương vật lý, đồng thời ưu tiên bị nhắm làm mục tiêu hơn. 'Ảo ảnh' mất 3% HP tối đa mỗi giây"
   },
   "char_180_amgoat": {
     "TitleTalent1": "Hỏa tức",
@@ -6749,13 +6749,18 @@
     "Talent2_p5": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 60<@ba.talpu>(+10)</> HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】."
   },
   "char_4215_buddy": {
-    "TitleTalent1": "",
-    "Talent0": "",
-    "Talent0_p1": "",
-    "Talent0_p2": "",
-    "Talent0_p3": "",
-    "Talent0_p4": "",
-    "Talent0_p5": ""
+    "TitleTalent1": "Long đạn miêu thức I",
+    "TitleTalent1_p1": "Long đạn miêu thức II",
+    "TitleTalent1_p2": "Long đạn miêu thức III",
+    "TitleTalent1_p3": "Long đạn miêu thức IV",
+    "TitleTalent1_p4": "Long đạn miêu thức V",
+    "TitleTalent1_p5": "Long đạn miêu thức VI",
+    "Talent0": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 150% ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2 giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
+    "Talent0_p1": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 230%<@ba.talpu>(+80%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.2<@ba.talpu>(+0.2)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
+    "Talent0_p2": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 280%<@ba.talpu>(+130%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.4<@ba.talpu>(+0.4)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
+    "Talent0_p3": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 350%<@ba.talpu>(+200%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.6<@ba.talpu>(+0.6)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
+    "Talent0_p4": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 420%<@ba.talpu>(+270%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.8<@ba.talpu>(+0.8)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
+    "Talent0_p5": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 500%<@ba.talpu>(+350%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 3<@ba.talpu>(+1)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây."
   },
   "char_1049_catap2": {
     "TitleTalent1": "Biến chuyển dạng rìu",

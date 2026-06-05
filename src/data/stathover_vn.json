@@ -27,6 +27,10 @@
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
     "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
   },
+  "ba.epbarrier": {
+    "title": "Lá chắn bảo hộ/Protective Barrier",
+    "text": "Hấp thụ một lượng <$ba.dt.element>Hiệu ứng nguyên tố</> nhất định."
+  },
   "ba.dt.apoptosis": {
     "title": "Necrosis",
     "text": "Necrosis sẽ nổ khi đạt 1000, đơn vị bị ảnh hưởng không thể sử dụng kỹ năng trong 15 giây; Cứ mỗi giây sẽ mất 1 SP và chịu 100 sát thương phép."
@@ -54,6 +58,10 @@
   "DP": {
     "title": "Điểm triển khai/Deployment Point",
     "text": ""
+  },
+  "ba.binding": {
+    "title": "Ràng buộc/Tied",
+    "text": "Khi đơn vị Ràng buộc tương ứng không còn trên sân, kỹ năng của đơn vị này sẽ kết thúc ngay lập tức, SP được đặt về 0 và không thể tăng SP nữa."
   },
   "ba.costlowerbound": {
     "title": "Hạn mức nợ DP",
@@ -423,6 +431,34 @@
     "title": "",
     "text": "-0.11 giây"
   },
+  "rosesaS2lv1": {
+    "title": "",
+    "text": "-0.75 giây"
+  },
+  "rosesaS2lv4": {
+    "title": "",
+    "text": "-1.05 giây"
+  },
+  "rosesaS2lv7": {
+    "title": "",
+    "text": "-1.35 giây"
+  },
+  "plosisS2lv1": {
+    "title": "",
+    "text": "-1.65 giây"
+  },
+  "plosisS2lv4": {
+    "title": "",
+    "text": "-1.8 giây"
+  },
+  "plosisS2lv7": {
+    "title": "",
+    "text": "-1.9 giây"
+  },
+  "plosisS2lv10": {
+    "title": "",
+    "text": "-2.1 giây"
+  },
   "IntervalSiege": {
     "title": "",
     "text": "+1 giây"
@@ -438,6 +474,26 @@
   "IntervalLunacub": {
     "title": "",
     "text": "Giảm còn 2.295 giây"
+  },
+  "whisprS2": {
+    "title": "",
+    "text": "Giảm còn 2.28 giây"
+  },
+  "finlppS2": {
+    "title": "",
+    "text": "Giảm còn 0.342 giây"
+  },
+  "mberryS2lv1": {
+    "title": "",
+    "text": "Giảm còn 1.14 giây"
+  },
+  "mberryS2lv4": {
+    "title": "",
+    "text": "Giảm còn 0.9405 giây"
+  },
+  "mberryS2lv9": {
+    "title": "",
+    "text": "Giảm còn 0.741 giây"
   },
   "TalentGrainBudsE1": {
     "title": "",
@@ -630,6 +686,10 @@
   "kalts2S3": {
     "title": "",
     "text": "-1.55 giây"
+  },
+  "monstrS3": {
+    "title": "",
+    "text": "-1.5 giây"
   },
   "DeadeyeModX": {
     "title": "",
