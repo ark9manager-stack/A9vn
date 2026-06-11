@@ -471,6 +471,10 @@
     "title": "",
     "text": "-1.1 giây"
   },
+  "provsS1": {
+    "title": "",
+    "text": "Tăng thành 1.6 giây"
+  },
   "IntervalAngelina": {
     "title": "",
     "text": "Giảm còn 0.285 giây"
@@ -534,6 +538,14 @@
   "mantraS2lv10": {
     "title": "",
     "text": "-0.8 giây"
+  },
+  "provsS2lv4": {
+    "title": "",
+    "text": "-0.9 giây"
+  },
+  "provsS2lv7": {
+    "title": "",
+    "text": "-1 giây"
   },
   "harukaS3lv1": {
     "title": "",

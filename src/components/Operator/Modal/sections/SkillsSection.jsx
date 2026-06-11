@@ -927,17 +927,25 @@ function getSkillLevelShortKey(levelIdx) {
   return lv <= 7 ? String(lv) : `7M${lv - 7}`;
 }
 
-function getTokenSkillRefForMainSkill(tokenCharData, selectedSkillOrder) {
-  const skills = Array.isArray(tokenCharData?.skills)
-    ? tokenCharData.skills.filter((s) => isNonEmptyString(s?.skillId))
-    : [];
-  if (skills.length === 0) return null;
+function getTokenSkillRefForMainSkill(
+  tokenCharData,
+  selectedSkillOrder,
+  tokenOption = null,
+) {
+  const slots = Array.isArray(tokenCharData?.skills) ? tokenCharData.skills : [];
+  if (slots.length === 0) return null;
 
-  const uniqueIds = [...new Set(skills.map((s) => String(s.skillId)))];
-  if (uniqueIds.length === 1) return skills[0];
+  const selectedIdx = Number(selectedSkillOrder || 1) - 1;
+  if (Number.isFinite(selectedIdx) && selectedIdx >= 0 && selectedIdx < slots.length) {
+    const selectedSlot = slots[selectedIdx];
+    return isNonEmptyString(selectedSlot?.skillId) ? selectedSlot : null;
+  }
 
-  const idx = clamp(Number(selectedSkillOrder || 1) - 1, 0, skills.length - 1);
-  return skills[idx] || skills[0];
+  if (tokenOption?.source === "skill") {
+    return slots.find((slot) => isNonEmptyString(slot?.skillId)) || null;
+  }
+
+  return null;
 }
 
 function getTokenSkillVnText(vnEntry, selectedSkillOrder, levelIdx) {
@@ -1102,7 +1110,6 @@ function getTokenTalentVnTitle(
   addOrderKeys(`Token_Talent${order}`);
   if (rawBlockOrder !== order) addOrderKeys(`Token_Talent${rawBlockOrder}`);
 
-  // Backward-compatible aliases from earlier temporary conventions.
   orderKeys.push(`Talent_Title${order}_E${phase}`);
   if (rawBlockOrder !== order) orderKeys.push(`Talent_Title${rawBlockOrder}_E${phase}`);
   orderKeys.push(`Talent_Title_E${phase}`);
@@ -1142,8 +1149,6 @@ function getTokenTalentVnText(
 
   addTextKeys(`Talent${order}_E${phase}`);
   if (rawBlockOrder !== order) addTextKeys(`Talent${rawBlockOrder}_E${phase}`);
-
-  // Backward compatibility for the older single-token-talent convention.
   if (order === 1) addTextKeys(`Talent_E${phase}`);
 
   for (const key of keys) {
@@ -1282,8 +1287,8 @@ function TokenSkillPanel({
   const vnEntry = tokenId ? skillVN?.[tokenId] || null : null;
 
   const tokenSkillRef = React.useMemo(
-    () => getTokenSkillRefForMainSkill(tokenCharData, selectedSkillOrder),
-    [tokenCharData, selectedSkillOrder],
+    () => getTokenSkillRefForMainSkill(tokenCharData, selectedSkillOrder, tokenOption),
+    [tokenCharData, selectedSkillOrder, tokenOption],
   );
 
   const tokenSkillId = tokenSkillRef?.skillId || "";

@@ -54,12 +54,13 @@ export function collectOperatorTokenOptions(charData) {
 export function resolveTokenForSkill(charData, selectedSkillRef, selectedSkillIndex = 0) {
   if (!charData || typeof charData !== "object") return null;
 
+  const skillOrder = Number(selectedSkillIndex || 0) + 1;
   const direct = normalizeTokenId(selectedSkillRef?.overrideTokenKey);
   if (direct) {
     return {
       tokenId: direct,
       source: "skill",
-      skillIndex: Number(selectedSkillIndex || 0) + 1,
+      skillIndex: skillOrder,
     };
   }
 
@@ -68,15 +69,30 @@ export function resolveTokenForSkill(charData, selectedSkillRef, selectedSkillIn
     normalizeTokenId(skill?.overrideTokenKey),
   );
 
-  // If this operator has skill-specific tokens, do not fall back to displayTokenDict
-  // on skills that do not actually use a token. This prevents cases like Tragodia S1
-  // showing the S2 token by mistake.
-  if (hasAnySkillSpecificToken) return null;
+  const options = collectOperatorTokenOptions(charData);
+  const nonSkillOptions = options.filter((opt) => opt?.source !== "skill");
 
-  const options = collectOperatorTokenOptions(charData).filter(
-    (opt) => opt?.source !== "skill",
-  );
-  if (options.length === 0) return null;
+  if (!hasAnySkillSpecificToken) {
+    return nonSkillOptions[0] || null;
+  }
 
-  return options[0] || null;
+  const talents = Array.isArray(charData?.talents) ? charData.talents : [];
+  for (let talentIdx = 0; talentIdx < talents.length; talentIdx += 1) {
+    const candidates = Array.isArray(talents?.[talentIdx]?.candidates)
+      ? talents[talentIdx].candidates
+      : [];
+    for (const candidate of candidates) {
+      const talentTokenId = normalizeTokenId(candidate?.tokenKey);
+      if (talentTokenId) {
+        return {
+          tokenId: talentTokenId,
+          source: "talent",
+          talentIndex: talentIdx + 1,
+          skillIndex: null,
+        };
+      }
+    }
+  }
+
+  return null;
 }

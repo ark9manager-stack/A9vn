@@ -3310,10 +3310,10 @@
     "Talent2": "ATK +10% khi 4 ô xung quanh chỉ có 1 kẻ địch."
   },
   "char_616_pithst": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent2": ""
+    "TitleTalent1": "Nguyên tố luân phiên",
+    "TitleTalent2": "Hiệp ước linh hoạt",
+    "Talent0": "Đòn tấn công kèm thêm <$ba.dt.neural2>Nervous Impairment</> (ưu tiên), <$ba.dt.burning2>Burn</>, <$ba.dt.apoptosis2>Necrosis</> bằng 18% ATK; ưu tiên tấn công mục tiêu chưa ở giai đoạn bộc phát nguyên tố.",
+    "Talent2": "Là một phần của【Harmony】trong【Stronghold Protocol】."
   },
   "char_617_sharp2": {
     "TitleTalent1": "Lưỡi dao thầm lặng",
