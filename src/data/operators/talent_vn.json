@@ -246,10 +246,10 @@
   "char_1038_whitw2": {
     "TitleTalent1": "Sói đầu đàn",
     "TitleTalent2": "Danh dự của Siracusa",
-    "Talent1": "Mỗi 30 giây có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +6%, gây sát thương sẽ câm lặng kẻ địch trong 1 giây, Drone +1.",
-    "Talent1_p5": "Mỗi 26 giây<@ba.talpu>(-4)</> có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +6%, gây sát thương sẽ câm lặng kẻ địch trong 1 giây, Drone +1.",
-    "Talent1_2": "Mỗi 20 giây có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +10%, gây sát thương sẽ câm lặng kẻ địch trong 2 giây, Drone +1.",
-    "Talent1_2_p5": "Mỗi 16 giây<@ba.talpu>(-4)</> có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +10%, gây sát thương sẽ câm lặng kẻ địch trong 2 giây, Drone +1.",
+    "Talent1": "Mỗi 30 giây có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +6%, gây sát thương sẽ Câm lặng kẻ địch trong 1 giây, Drone +1.",
+    "Talent1_p5": "Mỗi 26 giây<@ba.talpu>(-4)</> có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +6%, gây sát thương sẽ Câm lặng kẻ địch trong 1 giây, Drone +1.",
+    "Talent1_2": "Mỗi 20 giây có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +10%, gây sát thương sẽ Câm lặng kẻ địch trong 2 giây, Drone +1.",
+    "Talent1_2_p5": "Mỗi 16 giây<@ba.talpu>(-4)</> có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +10%, gây sát thương sẽ Câm lặng kẻ địch trong 2 giây, Drone +1.",
     "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Siracusa】sẽ nhận +5 SP khởi đầu.",
     "Talent2_p2": "Khi có mặt trong đội hình, tất cả Cán viên【Siracusa】sẽ nhận +6<@ba.talpu>(+1)</> SP khởi đầu."
   },
@@ -400,7 +400,7 @@
   },
   "char_112_siege": {
     "TitleTalent1": "Chúa tể muôn loài",
-    "TitleTalent2": "Nghiền Nát",
+    "TitleTalent2": "Nghiền nát",
     "Talent1": "Tất cả Cán viên【Tiên Phong】ATK và DEF +4%.",
     "Talent1_p4": "Tất cả Cán viên【Tiên Phong】ATK và DEF +6%<@ba.talpu>(+2%)</>.",
     "Talent1_2": "Tất cả Cán viên【Tiên Phong】ATK và DEF +8%.",
@@ -542,10 +542,10 @@
   },
   "char_140_whitew": {
     "TitleTalent1": "Hủy diệt tinh thần",
-    "Talent1": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 1 giây.",
-    "Talent1_p4": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 2<@ba.talpu>(+1)</> giây.",
-    "Talent1_2": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 5 giây.",
-    "Talent1_2_p4": "Khi tấn công, sẽ [[câm lặng|Silence]] mục tiêu trong vòng 6<@ba.talpu>(+1)</> giây."
+    "Talent1": "Khi tấn công, sẽ [[Câm lặng|Silence]] mục tiêu trong vòng 1 giây.",
+    "Talent1_p4": "Khi tấn công, sẽ [[Câm lặng|Silence]] mục tiêu trong vòng 2<@ba.talpu>(+1)</> giây.",
+    "Talent1_2": "Khi tấn công, sẽ [[Câm lặng|Silence]] mục tiêu trong vòng 5 giây.",
+    "Talent1_2_p4": "Khi tấn công, sẽ [[Câm lặng|Silence]] mục tiêu trong vòng 6<@ba.talpu>(+1)</> giây."
   },
   "char_141_nights": {
     "TitleTalent1": "Màn sương đen",
@@ -882,10 +882,10 @@
   "char_2025_shu": {
     "TitleTalent1": "Mùa màng mãi xanh tươi",
     "TitleTalent2": "Trời có bốn mùa",
-    "Talent1": "Khi hồi phục cho đồng minh, gieo hạt lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 40 HP mỗi giây, nhận 5% <$ba.protect>Bảo hộ</>.",
-    "Talent1_p4": "Khi hồi phục cho đồng minh, gieo hạt lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 45<@ba.talpu>(+5)</> HP mỗi giây, nhận 7%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>.",
-    "Talent1_2": "Khi hồi phục cho đồng minh, gieo hạt lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 70 HP mỗi giây, nhận 10% <$ba.protect>Bảo hộ</>.",
-    "Talent1_2_p4": "Khi hồi phục cho đồng minh, gieo hạt lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 75<@ba.talpu>(+5)</> HP mỗi giây, nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>.",
+    "Talent1": "Khi hồi phục cho đồng minh, gieo mầm lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 40 HP mỗi giây, nhận 5% <$ba.protect>Bảo hộ</>.",
+    "Talent1_p4": "Khi hồi phục cho đồng minh, gieo mầm lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 45<@ba.talpu>(+5)</> HP mỗi giây, nhận 7%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>.",
+    "Talent1_2": "Khi hồi phục cho đồng minh, gieo mầm lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 70 HP mỗi giây, nhận 10% <$ba.protect>Bảo hộ</>.",
+    "Talent1_2_p4": "Khi hồi phục cho đồng minh, gieo mầm lên ô đó và 4 ô liền kề, tạo ra các hiệu ứng sau: hồi 75<@ba.talpu>(+5)</> HP mỗi giây, nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>.",
     "Talent2": "Khi trên sân có 3 đồng minh thuộc 3 vai trò khác nhau, tất cả đồng minh +12% HP tối đa; Khi trên sân có 3 đồng minh cùng vai trò, tất cả đồng minh +12 ASPD; Nếu trong đội hình có 4【Sui】tất cả đồng minh +12% ATK và mỗi 4 giây hồi 1 SP."
   },
   "char_2026_yu": {
@@ -1051,7 +1051,6 @@
   "char_237_gravel": {
     "TitleTalent1": "Triển khai siêu tốc",
     "TitleTalent1_2": "Hỗ trợ nhóm nhỏ",
-    "TitleTalent2": "",
     "Talent1": "-1 DP",
     "Talent1_2": "-1 DP. Các đơn vị đồng minh từ 10 DP trở xuống nhận +6% DEF.",
     "Talent1_2_p4": "-1 DP. Các đơn vị đồng minh từ 10 DP trở xuống nhận +8%<@ba.talpu>(+2%)</> DEF."
@@ -1082,7 +1081,7 @@
     "Talent1_2_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</> và đẩy lùi nhẹ mục tiêu."
   },
   "char_245_cello": {
-    "TitleTalent1": "Khúc bi ca không lời",
+    "TitleTalent1": "Khúc tiễn biệt không lời",
     "TitleTalent2": "Bẻ ngược tư duy",
     "Talent0": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 6% ATK.",
     "Talent1": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 8% ATK và bị <$ba.sluggish>Làm chậm</> 0.2 giây.",
@@ -1152,7 +1151,6 @@
   },
   "char_261_sddrag": {
     "TitleTalent1": "Huyết mạch lụi tàn",
-    "TitleTalent2": "",
     "Talent1": "RES +10",
     "Talent1_2": "RES +20"
   },
@@ -1257,7 +1255,6 @@
     "TitleTalent1_p3": "Phun sương y tế IV",
     "TitleTalent1_p4": "Phun sương y tế V",
     "TitleTalent1_p5": "Phun sương y tế VI",
-    "TitleTalent2": "",
     "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
     "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
     "Talent0_p2": "Ngay sau khi triển khai, lập tức hồi 320<@ba.talpu>(+120)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
@@ -1797,10 +1794,10 @@
   "char_4027_heyak": {
     "TitleTalent1": "Di sản cuối cùng",
     "TitleTalent2": "Tước bỏ đôi cánh",
-    "Talent1": "Khi tấn công mục tiêu trên không, ATK tăng lên 110% và câm lặng chúng trong 1 giây.",
-    "Talent1_p4": "Khi tấn công mục tiêu trên không, ATK tăng lên 113%<@ba.talpu>(+3%)</> và câm lặng chúng trong 1 giây.",
-    "Talent1_2": "Khi tấn công mục tiêu trên không, ATK tăng lên 120% và câm lặng chúng trong 3 giây.",
-    "Talent1_2_p4": "Khi tấn công mục tiêu trên không, ATK tăng lên 123%<@ba.talpu>(+3%)</> và câm lặng chúng trong 3 giây.",
+    "Talent1": "Khi tấn công mục tiêu trên không, ATK tăng lên 110% và Câm lặng chúng trong 1 giây.",
+    "Talent1_p4": "Khi tấn công mục tiêu trên không, ATK tăng lên 113%<@ba.talpu>(+3%)</> và Câm lặng chúng trong 1 giây.",
+    "Talent1_2": "Khi tấn công mục tiêu trên không, ATK tăng lên 120% và Câm lặng chúng trong 3 giây.",
+    "Talent1_2_p4": "Khi tấn công mục tiêu trên không, ATK tăng lên 123%<@ba.talpu>(+3%)</> và Câm lặng chúng trong 3 giây.",
     "Talent2": "Kẻ địch trong phạm vi tấn công có HP trên 80% sẽ bị <$ba.weightless>Không trọng lượng</>."
   },
   "char_402_tuye": {
@@ -2766,8 +2763,8 @@
   },
   "char_4213_skybx": {
     "TitleTalent1": "Mở cửa! Cục quản lý đây",
-    "Talent1": "Kẻ địch lần đầu chịu sát thương từ Skybox sẽ bị câm lặng trong 4 giây.",
-    "Talent1_2": "Kẻ địch lần đầu chịu sát thương từ Skybox sẽ bị câm lặng trong 7 giây."
+    "Talent1": "Kẻ địch lần đầu chịu sát thương từ Skybox sẽ bị Câm lặng trong 4 giây.",
+    "Talent1_2": "Kẻ địch lần đầu chịu sát thương từ Skybox sẽ bị Câm lặng trong 7 giây."
   },
   "char_4214_cairn": {
     "TitleTalent1": "Thuyết minh quá độ",
@@ -3151,22 +3148,6 @@
     "TitleTalent1": "Bậc thầy phòng không",
     "Talent0_lv30": "ATK +50% khi tấn công mục tiêu trên không"
   },
-  "char_504_rguard": {
-    "TitleTalent1": "",
-    "TitleTalent2": ""
-  },
-  "char_505_rcast": {
-    "TitleTalent1": "",
-    "TitleTalent2": ""
-  },
-  "char_506_rmedic": {
-    "TitleTalent1": "",
-    "TitleTalent2": ""
-  },
-  "char_507_rsnipe": {
-    "TitleTalent1": "",
-    "TitleTalent2": ""
-  },
   "char_508_aguard": {
     "TitleTalent1": "Lưỡi đao vô hình",
     "Talent1": "ATK +10%; Nhận 20% né sát thương vật lý",
@@ -3187,21 +3168,10 @@
     "Talent1": "Có 15% tỷ lệ giúp tăng ATK lên 200%",
     "Talent1_2": "Có 25% tỷ lệ giúp tăng ATK lên 200%"
   },
-  "char_512_aprot": {
-    "TitleTalent1": "",
-    "TitleTalent2": "",
-    "Talent0": "",
-    "Talent1": "",
-    "Talent1_2": ""
-  },
   "char_513_apionr": {
     "TitleTalent1": "Tấm lòng vô tận",
     "Talent1": "Sau khi triển khai, tốc độ hồi SP tự nhiên +0,6/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2.",
     "Talent1_2": "Sau khi triển khai, tốc độ hồi SP tự nhiên +1/giây. Hiệu ứng sẽ mất khi kỹ năng được kích hoạt lần thứ 2."
-  },
-  "char_514_rdfend": {
-    "TitleTalent1": "",
-    "TitleTalent2": ""
   },
   "char_600_cpione": {
     "TitleTalent1": "Tăng ATK",
@@ -3295,7 +3265,7 @@
   },
   "char_614_acsupo": {
     "TitleTalent1": "Đồng pha",
-    "TitleTalent2": "Dẫn dụ",
+    "TitleTalent2": "Mồi nhử",
     "Talent0": "ASPD +5, và đồng minh ở ô kề bên có ASPD +3.",
     "Talent1": "ASPD +10, và đồng minh ở ô kề bên có ASPD +5.",
     "Talent1_2": "ASPD +15, và đồng minh ở ô kề bên có ASPD +10.",

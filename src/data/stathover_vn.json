@@ -303,6 +303,14 @@
     "title": "Di chuyển/Move",
     "text": "Không thể rời khỏi sân; và được triển khai đến vị trí của mục tiêu với lượng HP hiện tại."
   },
+  "ba.addbullet": {
+    "title": "Tiếp tế/Replenish",
+    "text": "Tiếp tế đạn dược cho Cán viên có kỹ năng sử dụng đạn. Mỗi lần kích hoạt kỹ năng dạng đạn, lượng đạn tối đa được tiếp tế sẽ không vượt quá giới hạn đạn của kỹ năng đó."
+  },
+  "ba.overdrive": {
+    "title": "Quá tải/Overload",
+    "text": "Thanh thời lượng của kỹ năng gồm có 2 giai đoạn. Khi thời lượng kỹ năng đi được một nửa, Quá tải sẽ được kích hoạt.\n• Khi Quá tải được kích hoạt, thanh thời lượng kỹ năng sẽ chuyển sang màu đỏ và nhận thêm hiệu ứng bổ sung (không thể quay lại trạng thái trước đó). Vì mỗi giai đoạn được hiển thị bằng một thanh thời lượng riêng, thanh thời lượng ở mỗi giai đoạn chỉ hiển thị một nửa so với mô tả của kỹ năng; kỹ năng dùng đạn cũng hoạt động tương tự.\nVới kỹ năng dùng đạn có mô tả “Kỹ năng có X viên đạn”, Quá Tải sẽ kích hoạt khi số đạn chỉ còn lại một nửa so với ban đầu."
+  },
   "IS6": {
     "title": "",
     "text": "Integrated Strategies 6"
@@ -419,6 +427,10 @@
     "title": "",
     "text": "Skill 1 và Skill 2: -2 DP\nSkill 3: -3 DP"
   },
+  "ShuS2": {
+    "title": "",
+    "text": "1.3 giây"
+  },
   "ModXtraper": {
     "title": "",
     "text": "-1 DP"
@@ -430,6 +442,14 @@
   "IntervalMinor": {
     "title": "",
     "text": "-0.08 giây"
+  },
+  "acsupoS2lv1": {
+    "title": "",
+    "text": "-0.1 giây"
+  },
+  "acsupoS2lv10": {
+    "title": "",
+    "text": "-0.3 giây"
   },
   "IntervalSlight": {
     "title": "",
@@ -511,6 +531,14 @@
     "title": "",
     "text": "+0.4 giây"
   },
+  "jesca2S3": {
+    "title": "",
+    "text": "+0.6 giây"
+  },
+  "judgeS3": {
+    "title": "",
+    "text": "+0.9 giây"
+  },
   "sbell2S3": {
     "title": "",
     "text": "Giảm còn 1.5 giây"
@@ -546,6 +574,10 @@
   "provsS2lv7": {
     "title": "",
     "text": "-1 giây"
+  },
+  "hornS3lv4": {
+    "title": "",
+    "text": "-1.2 giây"
   },
   "harukaS3lv1": {
     "title": "",
