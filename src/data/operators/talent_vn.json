@@ -256,12 +256,12 @@
   "char_1039_thorn2": {
     "TitleTalent1": "Bản chất tâm hồn",
     "TitleTalent2": "Tầm nhìn vươn tới",
-    "Talent0": "ATK +3%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra kéo dài thêm 1 giây.",
-    "Talent0_p4": "ATK +7%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra kéo dài thêm 2<@ba.talpu>(+1)</> giây.",
-    "Talent1": "ATK +6%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra kéo dài thêm 2 giây.",
-    "Talent1_p4": "ATK +10%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra kéo dài thêm 3<@ba.talpu>(+1)</> giây.",
-    "Talent1_2": "ATK +10%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra kéo dài thêm 3 giây.",
-    "Talent1_2_p4": "ATK +14%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra kéo dài thêm 4<@ba.talpu>(+1)</> giây.",
+    "Talent0": "ATK +3%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 1 giây.",
+    "Talent0_p4": "ATK +7%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 2<@ba.talpu>(+1)</> giây.",
+    "Talent1": "ATK +6%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 2 giây.",
+    "Talent1_p4": "ATK +10%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 3<@ba.talpu>(+1)</> giây.",
+    "Talent1_2": "ATK +10%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 3 giây.",
+    "Talent1_2_p4": "ATK +14%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 4<@ba.talpu>(+1)</> giây.",
     "Talent2": "Khi có mặt trên sân, ASPD +5 cho toàn bộ phe ta, ASPD -5 cho toàn bộ phe địch; hiệu ứng này tăng gấp đôi với phe ta và phe địch khi đứng trên đoạn đường thẳng liên tiếp dài từ 6 ô trở lên."
   },
   "char_103_angel": {
@@ -658,10 +658,10 @@
   },
   "char_163_hpsts": {
     "TitleTalent1": "Tự vệ",
-    "Talent1": "Khi kỹ năng đang hoạt động, mỗi giây hồi 4% HP tối đa.",
-    "Talent1_p4": "Khi kỹ năng đang hoạt động, mỗi giây hồi 5%<@ba.talpu>(+1%)</> HP tối đa.",
-    "Talent1_2": "Khi kỹ năng đang hoạt động, mỗi giây hồi 4% HP tối đa và nhận 25% tỷ lệ né sát thương vật lý cận chiến.",
-    "Talent1_2_p4": "Khi kỹ năng đang hoạt động, mỗi giây hồi 5%<@ba.talpu>(+1%)</> HP tối đa và nhận 30%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý cận chiến."
+    "Talent1": "Khi kỹ năng đang hoạt động, hồi 4% HP tối đa mỗi giây.",
+    "Talent1_p4": "Khi kỹ năng đang hoạt động, hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây.",
+    "Talent1_2": "Khi kỹ năng đang hoạt động, hồi 4% HP tối đa mỗi giây và nhận 25% tỷ lệ né sát thương vật lý cận chiến.",
+    "Talent1_2_p4": "Khi kỹ năng đang hoạt động, hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây và nhận 30%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý cận chiến."
   },
   "char_164_nightm": {
     "TitleTalent1": "Đa nhân cách",
@@ -836,7 +836,7 @@
   },
   "char_2014_nian": {
     "TitleTalent1": "Giáp chất như núi",
-    "TitleTalent2": "Khiên hộ thân",
+    "TitleTalent2": "Trong sáng như gương",
     "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +8% HP tối đa.",
     "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +12%<@ba.talpu>(+4%)</> HP tối đa.",
     "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +16% HP tối đa.",
@@ -2701,9 +2701,9 @@
   "char_4202_haruka": {
     "TitleTalent1": "Bọt nước mây bay",
     "TitleTalent2": "Bắn pháo hoa",
-    "Talent0": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 10% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
-    "Talent1": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 20% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
-    "Talent1_2": "Mỗi khoảng thời gian tấn công, tạo một lớp bong bóng có 30% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
+    "Talent0": "Mỗi khoảng cách tấn công, tạo một lớp bong bóng có 10% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
+    "Talent1": "Mỗi khoảng cách tấn công, tạo một lớp bong bóng có 20% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
+    "Talent1_2": "Mỗi khoảng cách tấn công, tạo một lớp bong bóng có 30% <$ba.protect>Bảo hộ</> cho 1 đồng minh trong phạm vi; Bong bóng sẽ vỡ sau một khoảng thời gian ngắn khi chịu sát thương từ kẻ địch.",
     "Talent2": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi HP cho họ bằng 25% ATK của Haruka.",
     "Talent2_p4": "Khi đồng minh có bong bóng bị vỡ, sẽ hồi HP cho họ bằng 28%<@ba.talpu>(+3%)</> ATK của Haruka."
   },

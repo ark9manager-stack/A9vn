@@ -491,9 +491,33 @@
     "title": "",
     "text": "-1.1 giây"
   },
+  "aprot2S1lv1": {
+    "title": "",
+    "text": "Giảm còn 1.36 giây"
+  },
+  "aprot2S1lv4": {
+    "title": "",
+    "text": "Giảm còn 1.20 giây"
+  },
+  "aprot2S1lv7": {
+    "title": "",
+    "text": "Giảm còn 1.04 giây"
+  },
+  "aprot2S1lv10": {
+    "title": "",
+    "text": "Giảm còn 0.88 giây"
+  },
   "provsS1": {
     "title": "",
     "text": "Tăng thành 1.6 giây"
+  },
+  "auroraS2": {
+    "title": "",
+    "text": "Tăng thành 2 giây"
+  },
+  "liskamS2": {
+    "title": "",
+    "text": "Tăng thành 2.04 giây"
   },
   "IntervalAngelina": {
     "title": "",
@@ -522,6 +546,22 @@
   "mberryS2lv9": {
     "title": "",
     "text": "Giảm còn 0.741 giây"
+  },
+  "ashlokS2lv1": {
+    "title": "",
+    "text": "Giảm còn 1.96 giây"
+  },
+  "ashlokS2lv4": {
+    "title": "",
+    "text": "Giảm còn 1.68 giây"
+  },
+  "ashlokS2lv7": {
+    "title": "",
+    "text": "Giảm còn 1.4 giây"
+  },
+  "ashlokS2lv10": {
+    "title": "",
+    "text": "Giảm còn 0.98 giây"
   },
   "TalentGrainBudsE1": {
     "title": "",
