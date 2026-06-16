@@ -331,6 +331,14 @@
     "title": "",
     "text": "Tái tạo sau 3 giây"
   },
+  "yato2S3note1": {
+    "title": "",
+    "text": "Yato lao về phía trước với tốc độ 8 ô/giây và có bán kính va chạm 0,51 ô (tính từ trung tâm).\nCứ mỗi 0,267 ô di chuyển, kỹ năng sẽ kiểm tra va chạm và gây sát thương lên mục tiêu trong phạm vi."
+  },
+  "yato2S3note2": {
+    "title": "",
+    "text": "tăng thêm 0,3 ô mỗi lần gây sát thương thành công."
+  },
   "NecrassTalent1E0": {
     "title": "",
     "text": "+50% HP và ATK, +20% DEF"
@@ -514,6 +522,14 @@
   "auroraS2": {
     "title": "",
     "text": "Tăng thành 2 giây"
+  },
+  "gladyS2": {
+    "title": "",
+    "text": "Tăng thành 2.7 giây"
+  },
+  "weedyS2": {
+    "title": "",
+    "text": "Tăng thành 3.84 giây"
   },
   "liskamS2": {
     "title": "",
@@ -763,6 +779,10 @@
     "title": "",
     "text": "-0.5 giây"
   },
+  "elaS3": {
+    "title": "",
+    "text": "-0.35 giây"
+  },
   "bpipeS3": {
     "title": "",
     "text": "+0.7 giây"
@@ -778,6 +798,10 @@
   "monstrS3": {
     "title": "",
     "text": "-1.5 giây"
+  },
+  "weedyS3": {
+    "title": "",
+    "text": "1200 sát thương chuẩn/ô"
   },
   "DeadeyeModX": {
     "title": "",
