@@ -2444,8 +2444,8 @@
     "Talent1_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +4<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Cán viên Gánh tải.",
     "Talent1_2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +9 Toil Limit khi được chọn làm Cán viên Gánh tải.",
     "Talent1_2_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +10<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Cán viên Gánh tải.",
-    "Talent2": "Tăng 20% sát thương theo thời gian lên các kẻ địch mặt đất trong đơn vị Luyện Kim của Tin Man.",
-    "Talent2_p4": "Tăng 22%<@ba.talpu>(+2%)</> sát thương theo thời gian lên các kẻ địch mặt đất trong đơn vị Luyện Kim của Tin Man."
+    "Talent2": "Tăng 20% sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Đơn Vị Luyện Kim của Tin Man.",
+    "Talent2_p4": "Tăng 22%<@ba.talpu>(+2%)</> sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Đơn Vị Luyện Kim của Tin Man."
   },
   "char_4155_talr": {
     "TitleTalent1": "Lựa chọn khách hàng",
