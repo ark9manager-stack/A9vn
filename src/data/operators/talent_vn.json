@@ -59,8 +59,8 @@
     "TitleTalent2": "Tập tính săn mồi",
     "Talent1": "Có thể triển khai một Seaborn tồn tại trong 15 giây, phạm vi tấn công của Seaborn được tính là phần mở rộng phạm vi tấn công của bản thân.",
     "Talent1_2": "Có thể triển khai một Seaborn tồn tại trong 25 giây, phạm vi tấn công của Seaborn được tính là phần mở rộng phạm vi tấn công của bản thân.",
-    "Talent2": "ATK +6% khi có đồng minh đứng trong phạm vi tấn công của bản thân hoặc Seaborn, chuyển thành ATK +15% nếu đồng minh đó thuộc【Thợ săn vực thẳm】",
-    "Talent2_p4": "ATK +9%<@ba.talpu>(+3%)</> khi có đồng minh đứng trong phạm vi tấn công của bản thân hoặc Seaborn, chuyển thành ATK +18%<@ba.talpu>(+3%)</> nếu đồng minh đó thuộc【Thợ săn vực thẳm】"
+    "Talent2": "ATK +6% khi có đồng minh đứng trong phạm vi tấn công của bản thân hoặc Seaborn, chuyển thành ATK +15% nếu đồng minh đó thuộc【Abyssal Hunter】",
+    "Talent2_p4": "ATK +9%<@ba.talpu>(+3%)</> khi có đồng minh đứng trong phạm vi tấn công của bản thân hoặc Seaborn, chuyển thành ATK +18%<@ba.talpu>(+3%)</> nếu đồng minh đó thuộc【Abyssal Hunter】"
   },
   "char_1013_chen2": {
     "TitleTalent1": "Tính tiết kiệm",
@@ -132,8 +132,8 @@
     "Talent0": "<Thế thân> khiến kẻ địch xung quanh -20% tốc độ di chuyển và chịu sát thương phép bằng 20% ATK mỗi giây.",
     "Talent1": "<Thế thân> khiến kẻ địch xung quanh -30% tốc độ di chuyển và chịu sát thương phép bằng 30% ATK mỗi giây.",
     "Talent1_2": "<Thế thân> khiến kẻ địch xung quanh -40% tốc độ di chuyển và chịu sát thương phép bằng 40% ATK mỗi giây.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +20% HP tối đa.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +23%<@ba.talpu>(+3%)</> HP tối đa."
+    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +20% HP tối đa.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +23%<@ba.talpu>(+3%)</> HP tối đa."
   },
   "char_1024_hbisc2": {
     "TitleTalent1": "Sớm nở chiều tàn",
@@ -988,10 +988,10 @@
   },
   "char_218_cuttle": {
     "TitleTalent1": "Trực giác vực thẳm",
-    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +6 ASPD.",
-    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +8<@ba.talpu>(+2)</> ASPD.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +12 ASPD.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +14<@ba.talpu>(+2)</> ASPD."
+    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +6 ASPD.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +8<@ba.talpu>(+2)</> ASPD.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +12 ASPD.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +14<@ba.talpu>(+2)</> ASPD."
   },
   "char_219_meteo": {
     "TitleTalent1": "Cải tiến đầu đạn nổ",
@@ -1157,10 +1157,10 @@
   "char_263_skadi": {
     "TitleTalent1": "Thợ săn mồi vực thẳm",
     "TitleTalent2": "Hành động nhanh chóng",
-    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +7% ATK.",
-    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +9%<@ba.talpu>(+2%)</> ATK.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +14% ATK.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Thợ săn vực thẳm】nhận +16%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +7% ATK.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +9%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +14% ATK.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +16%<@ba.talpu>(+2%)</> ATK.",
     "Talent2": "Thời gian tái triển khai -10 giây."
   },
   "char_264_f12yin": {
@@ -2412,8 +2412,8 @@
     "TitleTalent2": "Nuôi dưỡng dòng máu",
     "Talent1": "Hồi 80 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 120 HP.",
     "Talent1_2": "Hồi 100 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 160 HP.",
-    "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các Cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên.",
-    "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các Cán viên【Thợ săn vực thẳm】nhận được 50% lượng chỉ số trên."
+    "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các Cán viên【Abyssal Hunter】khác nhận được 50% lượng chỉ số trên.",
+    "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các Cán viên【Abyssal Hunter】khác nhận được 50% lượng chỉ số trên."
   },
   "char_4146_nymph": {
     "TitleTalent1": "Đoạt hồn",
@@ -2812,10 +2812,10 @@
   "char_426_billro": {
     "TitleTalent1": "Bữa ăn sinh mệnh",
     "TitleTalent2": "Chuẩn bị tung đòn",
-    "Talent1": "Khi kích hoạt kỹ năng, lập tức hồi 30% HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
-    "Talent1_p4": "Khi kích hoạt kỹ năng, lập tức hồi 35%<@ba.talpu>(+5%)</> HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
-    "Talent1_2": "Khi kích hoạt kỹ năng, lập tức hồi 40% HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
-    "Talent1_2_p4": "Khi kích hoạt kỹ năng, lập tức hồi 45%<@ba.talpu>(+5%)</> HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Nạp tràn</>.",
+    "Talent1": "Khi kích hoạt kỹ năng, lập tức hồi 30% HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Tích lực</>.",
+    "Talent1_p4": "Khi kích hoạt kỹ năng, lập tức hồi 35%<@ba.talpu>(+5%)</> HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Tích lực</>.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, lập tức hồi 40% HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Tích lực</>.",
+    "Talent1_2_p4": "Khi kích hoạt kỹ năng, lập tức hồi 45%<@ba.talpu>(+5%)</> HP tối đa;\\nHiệu ứng trên sẽ tăng gấp đôi nếu ở trạng thái <$ba.charged>Tích lực</>.",
     "Talent2": "Tốc độ hồi SP +0.6/giây khi SP đã hồi vượt quá giới hạn tối đa."
   },
   "char_427_vigil": {
@@ -3002,8 +3002,8 @@
   "char_474_glady": {
     "TitleTalent1": "Làn sóng triều từ Ægir",
     "TitleTalent2": "Luật của kẻ săn mồi",
-    "Talent1": "Khi có mặt trên trên sân, tất cả Cán viên【Thợ săn vực thẳm】hồi 1.5% HP tối đa mỗi giây, và giảm 15% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
-    "Talent1_2": "Khi có mặt trên trên sân, tất cả Cán viên【Thợ săn vực thẳm】hồi 2.5% HP tối đa mỗi giây, và giảm 25% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
+    "Talent1": "Khi có mặt trên trên sân, tất cả Cán viên【Abyssal Hunter】hồi 1.5% HP tối đa mỗi giây, và giảm 15% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
+    "Talent1_2": "Khi có mặt trên trên sân, tất cả Cán viên【Abyssal Hunter】hồi 2.5% HP tối đa mỗi giây, và giảm 25% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
     "Talent2": "ATK tăng lên 130% khi tấn công kẻ địch có trọng lượng từ cấp 3 trở xuống.",
     "Talent2_p4": "ATK tăng lên 136%<@ba.talpu>(+6%)</> khi tấn công kẻ địch có trọng lượng từ cấp 3 trở xuống."
   },

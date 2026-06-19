@@ -256,8 +256,8 @@
     "text": "Vô hiệu hóa kỹ năng đặc biệt của mục tiêu"
   },
   "ba.charged": {
-    "title": "Nạp tràn/Charged",
-    "text": "SP đã đầy vẫn tiếp tục hồi; Khi đạt gấp đôi giới hạn SP sẽ tiến vào trạng thái 'Nạp tràn'. Trong trạng thái này, kích hoạt kỹ năng sẽ nhận thêm hiệu ứng bổ sung (Khi kỹ năng kích hoạt sẽ tiêu hao toàn bộ SP).\n• Khi vào trạng thái 'Nạp tràn', dấu hiệu kích hoạt phía trên đầu nhân vật sẽ đổi từ vàng sang đỏ.\n• Về mặt cơ chế, đây là biến thể của kỹ năng có thể tích thêm SP."
+    "title": "Tích lực/Charged",
+    "text": "SP đã đầy vẫn tiếp tục hồi; Khi đạt gấp đôi giới hạn SP sẽ tiến vào trạng thái 'Tích lực'. Trong trạng thái này, kích hoạt kỹ năng sẽ nhận thêm hiệu ứng bổ sung (Khi kỹ năng kích hoạt sẽ tiêu hao toàn bộ SP).\n• Khi vào trạng thái 'Tích lực', dấu hiệu kích hoạt phía trên đầu nhân vật sẽ đổi từ vàng sang đỏ.\n• Về mặt cơ chế, đây là biến thể của kỹ năng có thể tích thêm SP."
   },
   "ba.magicpoint": {
     "title": "Ma lực/Mana",
@@ -455,21 +455,73 @@
     "title": "",
     "text": "-0.1 giây"
   },
+  "IntervalSlight": {
+    "title": "",
+    "text": "-0.11 giây"
+  },
+  "harukaS3lv1": {
+    "title": "",
+    "text": "-0.2 giây"
+  },
+  "siege2S3": {
+    "title": "",
+    "text": "-0.25 giây"
+  },
   "acsupoS2lv10": {
     "title": "",
     "text": "-0.3 giây"
   },
-  "IntervalSlight": {
+  "harukaS3lv4": {
     "title": "",
-    "text": "-0.11 giây"
+    "text": "-0.4 giây"
+  },
+  "mantraS2lv1": {
+    "title": "",
+    "text": "-0.5 giây"
+  },
+  "mantraS2lv4": {
+    "title": "",
+    "text": "-0.6 giây"
+  },
+  "harukaS3lv7": {
+    "title": "",
+    "text": "-0.6 giây"
+  },
+  "mantraS2lv7": {
+    "title": "",
+    "text": "-0.7 giây"
+  },
+  "mantraS2lv10": {
+    "title": "",
+    "text": "-0.8 giây"
+  },
+  "provsS2lv4": {
+    "title": "",
+    "text": "-0.9 giây"
+  },
+  "halo2S3": {
+    "title": "",
+    "text": "-0.7 giây"
   },
   "rosesaS2lv1": {
     "title": "",
     "text": "-0.75 giây"
   },
+  "provsS2lv7": {
+    "title": "",
+    "text": "-1 giây"
+  },
   "rosesaS2lv4": {
     "title": "",
     "text": "-1.05 giây"
+  },
+  "IntervalEyjafjalla": {
+    "title": "",
+    "text": "-1.1 giây"
+  },
+  "hornS3lv4": {
+    "title": "",
+    "text": "-1.2 giây"
   },
   "rosesaS2lv7": {
     "title": "",
@@ -494,10 +546,6 @@
   "IntervalSiege": {
     "title": "",
     "text": "+1 giây"
-  },
-  "IntervalEyjafjalla": {
-    "title": "",
-    "text": "-1.1 giây"
   },
   "aprot2S1lv1": {
     "title": "",
@@ -599,53 +647,9 @@
     "title": "",
     "text": "Giảm còn 1.5 giây"
   },
-  "halo2S3": {
-    "title": "",
-    "text": "-0.7 giây"
-  },
   "catap2S1": {
     "title": "",
     "text": "+1.25 giây"
-  },
-  "mantraS2lv1": {
-    "title": "",
-    "text": "-0.5 giây"
-  },
-  "mantraS2lv4": {
-    "title": "",
-    "text": "-0.6 giây"
-  },
-  "mantraS2lv7": {
-    "title": "",
-    "text": "-0.7 giây"
-  },
-  "mantraS2lv10": {
-    "title": "",
-    "text": "-0.8 giây"
-  },
-  "provsS2lv4": {
-    "title": "",
-    "text": "-0.9 giây"
-  },
-  "provsS2lv7": {
-    "title": "",
-    "text": "-1 giây"
-  },
-  "hornS3lv4": {
-    "title": "",
-    "text": "-1.2 giây"
-  },
-  "harukaS3lv1": {
-    "title": "",
-    "text": "-0.2 giây"
-  },
-  "harukaS3lv4": {
-    "title": "",
-    "text": "-0.4 giây"
-  },
-  "harukaS3lv7": {
-    "title": "",
-    "text": "-0.6 giây"
   },
   "leizi2S3": {
     "title": "",
