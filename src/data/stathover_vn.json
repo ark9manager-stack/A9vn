@@ -491,14 +491,6 @@
     "title": "",
     "text": "-0.7 giây"
   },
-  "mantraS2lv10": {
-    "title": "",
-    "text": "-0.8 giây"
-  },
-  "provsS2lv4": {
-    "title": "",
-    "text": "-0.9 giây"
-  },
   "halo2S3": {
     "title": "",
     "text": "-0.7 giây"
@@ -506,6 +498,14 @@
   "rosesaS2lv1": {
     "title": "",
     "text": "-0.75 giây"
+  },
+  "mantraS2lv10": {
+    "title": "",
+    "text": "-0.8 giây"
+  },
+  "provsS2lv4": {
+    "title": "",
+    "text": "-0.9 giây"
   },
   "provsS2lv7": {
     "title": "",
@@ -654,6 +654,10 @@
   "leizi2S3": {
     "title": "",
     "text": "+1.7 giây"
+  },
+  "wisdelS3": {
+    "title": "",
+    "text": "+2.9 giây"
   },
   "blackdS2": {
     "title": "",

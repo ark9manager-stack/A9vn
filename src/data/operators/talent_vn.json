@@ -236,7 +236,7 @@
     "Talent1_p4": "Các đòn tấn công khắc ấn 'Dư ảnh' lên mục tiêu. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 130%<@ba.talpu>(+10%)</> ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>Choáng</> 0.5 giây.",
     "Talent1_2": "Các đòn tấn công gây sát thương lên mục tiêu chính bằng 115% ATK và khắc ấn 'Dư ảnh' lên mục tiêu đó. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 150% ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>Choáng</> 1 giây.",
     "Talent1_2_p4": "Các đòn tấn công gây sát thương lên mục tiêu chính bằng 115% ATK và khắc ấn 'Dư ảnh' lên mục tiêu đó. Khi mục tiêu mang ấn 'Dư ảnh' bị trúng sóng xung kích của Wiš'adel, ấn này có 15% tỷ lệ phát nổ gây sát thương vật lý bằng 160%<@ba.talpu>(+10%)</> ATK lên toàn bộ kẻ địch xung quanh và khiến chúng bị <$ba.stun>Choáng</> 1 giây.",
-    "Talent2": "Sau khi triển khai, triệu hồi 1 'Hồn ảnh' trong phạm vi tấn công; Nhận hiệu ứng <$ba.camou>Ngụy trang</> khi bản thân đứng kế 'Hồn ảnh'."
+    "Talent2": "Sau khi triển khai, triệu hồi 1 'Hồn ảnh tái thế' trong phạm vi tấn công; Nhận hiệu ứng <$ba.camou>Ngụy trang</> khi bản thân đứng kế 'Hồn ảnh tái thế'."
   },
   "char_1036_fang2": {
     "TitleTalent1": "Nước đi linh hoạt",
@@ -2094,7 +2094,7 @@
   },
   "char_4088_hodrer": {
     "TitleTalent1": "Thời cơ ra tay",
-    "TitleTalent2": "Tàn lửa từ chiếc áo choàng",
+    "TitleTalent2": "Chiếc áo còn vương hơi lửa",
     "Talent1": "ATK tăng lên 105% khi tấn công kẻ địch; Nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK sẽ tăng lên 125%.",
     "Talent1_2": "ATK tăng lên 110% khi tấn công kẻ địch; Nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK sẽ tăng lên 140%.",
     "Talent2": "Bản thân và đồng minh ngay ô đằng sau nhận 18% [[Bảo hộ|Sanctuary]].",
