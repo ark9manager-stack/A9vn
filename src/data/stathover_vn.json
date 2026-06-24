@@ -471,6 +471,10 @@
     "title": "",
     "text": "-0.3 giây"
   },
+  "elaS3": {
+    "title": "",
+    "text": "-0.35 giây"
+  },
   "harukaS3lv4": {
     "title": "",
     "text": "-0.4 giây"
@@ -483,15 +487,7 @@
     "title": "",
     "text": "-0.6 giây"
   },
-  "harukaS3lv7": {
-    "title": "",
-    "text": "-0.6 giây"
-  },
   "mantraS2lv7": {
-    "title": "",
-    "text": "-0.7 giây"
-  },
-  "halo2S3": {
     "title": "",
     "text": "-0.7 giây"
   },
@@ -527,6 +523,14 @@
     "title": "",
     "text": "-1.35 giây"
   },
+  "monstrS3": {
+    "title": "",
+    "text": "-1.5 giây"
+  },
+  "kalts2S3": {
+    "title": "",
+    "text": "-1.55 giây"
+  },
   "plosisS2lv1": {
     "title": "",
     "text": "-1.65 giây"
@@ -543,25 +547,101 @@
     "title": "",
     "text": "-2.1 giây"
   },
-  "IntervalSiege": {
+  "IntervalAngelina": {
     "title": "",
-    "text": "+1 giây"
+    "text": "Giảm còn 0.285 giây"
   },
-  "aprot2S1lv1": {
+  "finlppS2": {
     "title": "",
-    "text": "Giảm còn 1.36 giây"
+    "text": "Giảm còn 0.342 giây"
   },
-  "aprot2S1lv4": {
+  "ebnhlzS1lv8": {
     "title": "",
-    "text": "Giảm còn 1.20 giây"
+    "text": "Giảm còn 0.51 giây"
+  },
+  "cerberS2lv10": {
+    "title": "",
+    "text": "Giảm còn 0.528 giây"
+  },
+  "cerberS2lv8": {
+    "title": "",
+    "text": "Giảm còn 0.576 giây"
+  },
+  "ebnhlzS1lv1": {
+    "title": "",
+    "text": "Giảm còn 0.6 giây"
+  },
+  "cerberS2lv7": {
+    "title": "",
+    "text": "Giảm còn 0.64 giây"
+  },
+  "flamtlS3Interval": {
+    "title": "",
+    "text": "Giảm còn 0.7 giây"
+  },
+  "mberryS2lv9": {
+    "title": "",
+    "text": "Giảm còn 0.741 giây"
+  },
+  "aprot2S1lv10": {
+    "title": "",
+    "text": "Giảm còn 0.88 giây"
+  },
+  "mberryS2lv4": {
+    "title": "",
+    "text": "Giảm còn 0.9405 giây"
+  },
+  "cerberS2lv4": {
+    "title": "",
+    "text": "Giảm còn 0.96 giây"
+  },
+  "ashlokS2lv10": {
+    "title": "",
+    "text": "Giảm còn 0.98 giây"
   },
   "aprot2S1lv7": {
     "title": "",
     "text": "Giảm còn 1.04 giây"
   },
-  "aprot2S1lv10": {
+  "cerberS2lv1": {
     "title": "",
-    "text": "Giảm còn 0.88 giây"
+    "text": "Giảm còn 1.12 giây"
+  },
+  "mberryS2lv1": {
+    "title": "",
+    "text": "Giảm còn 1.14 giây"
+  },
+  "aprot2S1lv4": {
+    "title": "",
+    "text": "Giảm còn 1.20 giây"
+  },
+  "aprot2S1lv1": {
+    "title": "",
+    "text": "Giảm còn 1.36 giây"
+  },
+  "ashlokS2lv7": {
+    "title": "",
+    "text": "Giảm còn 1.4 giây"
+  },
+  "sbell2S3": {
+    "title": "",
+    "text": "Giảm còn 1.5 giây"
+  },
+  "ashlokS2lv4": {
+    "title": "",
+    "text": "Giảm còn 1.68 giây"
+  },
+  "ashlokS2lv1": {
+    "title": "",
+    "text": "Giảm còn 1.96 giây"
+  },
+  "whisprS2": {
+    "title": "",
+    "text": "Giảm còn 2.28 giây"
+  },
+  "IntervalLunacub": {
+    "title": "",
+    "text": "Giảm còn 2.295 giây"
   },
   "provsS1": {
     "title": "",
@@ -571,6 +651,10 @@
     "title": "",
     "text": "Tăng thành 2 giây"
   },
+  "liskamS2": {
+    "title": "",
+    "text": "Tăng thành 2.04 giây"
+  },
   "gladyS2": {
     "title": "",
     "text": "Tăng thành 2.7 giây"
@@ -579,73 +663,41 @@
     "title": "",
     "text": "Tăng thành 3.84 giây"
   },
-  "liskamS2": {
+  "duskS3": {
     "title": "",
-    "text": "Tăng thành 2.04 giây"
+    "text": "Tăng thành 4.06 giây"
   },
-  "IntervalAngelina": {
+  "rosmonS2": {
     "title": "",
-    "text": "Giảm còn 0.285 giây"
-  },
-  "IntervalLunacub": {
-    "title": "",
-    "text": "Giảm còn 2.295 giây"
-  },
-  "whisprS2": {
-    "title": "",
-    "text": "Giảm còn 2.28 giây"
-  },
-  "finlppS2": {
-    "title": "",
-    "text": "Giảm còn 0.342 giây"
-  },
-  "mberryS2lv1": {
-    "title": "",
-    "text": "Giảm còn 1.14 giây"
-  },
-  "mberryS2lv4": {
-    "title": "",
-    "text": "Giảm còn 0.9405 giây"
-  },
-  "mberryS2lv9": {
-    "title": "",
-    "text": "Giảm còn 0.741 giây"
-  },
-  "ashlokS2lv1": {
-    "title": "",
-    "text": "Giảm còn 1.96 giây"
-  },
-  "ashlokS2lv4": {
-    "title": "",
-    "text": "Giảm còn 1.68 giây"
-  },
-  "ashlokS2lv7": {
-    "title": "",
-    "text": "Giảm còn 1.4 giây"
-  },
-  "ashlokS2lv10": {
-    "title": "",
-    "text": "Giảm còn 0.98 giây"
+    "text": "Tăng thành 3.15 giây"
   },
   "TalentGrainBudsE1": {
     "title": "",
     "text": "+0.2 giây"
   },
-  "TalentGrainBudsE2": {
+  "shwazS3": {
     "title": "",
     "text": "+0.4 giây"
+  },
+  "vignaS2": {
+    "title": "",
+    "text": "+0.5 giây"
   },
   "jesca2S3": {
     "title": "",
     "text": "+0.6 giây"
   },
+  "bpipeS3": {
+    "title": "",
+    "text": "+0.7 giây"
+  },
   "judgeS3": {
     "title": "",
     "text": "+0.9 giây"
   },
-  "sbell2S3": {
+  "IntervalSiege": {
     "title": "",
-    "text": "Giảm còn 1.5 giây"
+    "text": "+1 giây"
   },
   "catap2S1": {
     "title": "",
@@ -659,157 +711,89 @@
     "title": "",
     "text": "+2.9 giây"
   },
-  "blackdS2": {
+  "talrS2": {
     "title": "",
-    "text": "1.87 giây/1 DP"
-  },
-  "headbrS2": {
-    "title": "",
-    "text": "0.83 giây/1 DP"
-  },
-  "mlyssS1lv1": {
-    "title": "",
-    "text": "1.501 giây/1 DP"
-  },
-  "mlyssS1lv4": {
-    "title": "",
-    "text": "1.364 giây/1 DP"
-  },
-  "mlyssS1lv7": {
-    "title": "",
-    "text": "1.25 giây/1 DP"
-  },
-  "mlyssS1lv10": {
-    "title": "",
-    "text": "1.154 giây/1 DP"
-  },
-  "rfalcnS2": {
-    "title": "",
-    "text": "1.3 giây/1 DP"
-  },
-  "svash2S3": {
-    "title": "",
-    "text": "2 giây/1 DP"
-  },
-  "vigilS3lv1": {
-    "title": "",
-    "text": "1.667 giây/1 DP"
-  },
-  "vigilS3lv4": {
-    "title": "",
-    "text": "1.5 giây/1 DP"
-  },
-  "vigilS3lv7": {
-    "title": "",
-    "text": "1.364 giây/1 DP"
-  },
-  "vigilS3lv10": {
-    "title": "",
-    "text": "1.25 giây/1 DP"
-  },
-  "flamtlS3": {
-    "title": "",
-    "text": "1 giây/1 DP"
+    "text": "0.32 giây/1 DP"
   },
   "sleachS1": {
     "title": "",
     "text": "0.44 giây/1 DP"
   },
+  "myrtleS1": {
+    "title": "",
+    "text": "0.57 giây/1 DP"
+  },
   "sleachS2": {
     "title": "",
     "text": "0.75 giây/1 DP"
+  },
+  "headbrS2": {
+    "title": "",
+    "text": "0.83 giây/1 DP"
   },
   "sagaS3": {
     "title": "",
     "text": "1 giây/1 DP"
   },
-  "myrtleS1": {
+  "flamtlS3": {
     "title": "",
-    "text": "0.57 giây/1 DP"
+    "text": "1 giây/1 DP"
   },
-  "acpionS2lv1": {
+  "mlyssS1lv10": {
     "title": "",
-    "text": "1.6 giây/1 DP"
-  },
-  "acpionS2lv7": {
-    "title": "",
-    "text": "1.4 giây/1 DP"
+    "text": "1.154 giây/1 DP"
   },
   "acpionS2lv10": {
     "title": "",
     "text": "1.2 giây/1 DP"
   },
-  "talrS2": {
+  "mlyssS1lv7": {
     "title": "",
-    "text": "0.32 giây/1 DP"
+    "text": "1.25 giây/1 DP"
   },
-  "vignaS2": {
+  "rfalcnS2": {
     "title": "",
-    "text": "+0.5 giây"
+    "text": "1.3 giây/1 DP"
   },
-  "shwazS3": {
+  "mlyssS1lv4": {
     "title": "",
-    "text": "+0.4 giây"
+    "text": "1.364 giây/1 DP"
   },
-  "flamtlS3Interval": {
+  "acpionS2lv7": {
     "title": "",
-    "text": "Giảm còn 0.7 giây"
+    "text": "1.4 giây/1 DP"
   },
-  "cerberS2lv1": {
+  "vigilS3lv4": {
     "title": "",
-    "text": "Giảm còn 1.12 giây"
+    "text": "1.5 giây/1 DP"
   },
-  "cerberS2lv4": {
+  "mlyssS1lv1": {
     "title": "",
-    "text": "Giảm còn 0.96 giây"
+    "text": "1.501 giây/1 DP"
   },
-  "cerberS2lv7": {
+  "acpionS2lv1": {
     "title": "",
-    "text": "Giảm còn 0.64 giây"
-  },
-  "cerberS2lv8": {
-    "title": "",
-    "text": "Giảm còn 0.576 giây"
-  },
-  "cerberS2lv10": {
-    "title": "",
-    "text": "Giảm còn 0.528 giây"
-  },
-  "sagaS3interval": {
-    "title": "",
-    "text": "+0.5 giây"
+    "text": "1.6 giây/1 DP"
   },
   "closurS3DP": {
     "title": "",
     "text": "1.66 giây/1 DP"
   },
-  "closurS3AI": {
+  "vigilS3lv1": {
     "title": "",
-    "text": "-0.5 giây"
+    "text": "1.667 giây/1 DP"
   },
-  "veenS2": {
+  "blackdS2": {
     "title": "",
-    "text": "-0.5 giây"
+    "text": "1.87 giây/1 DP"
   },
-  "elaS3": {
+  "svash2S3": {
     "title": "",
-    "text": "-0.35 giây"
-  },
-  "bpipeS3": {
-    "title": "",
-    "text": "+0.7 giây"
+    "text": "2 giây/1 DP"
   },
   "surtrS3": {
     "title": "",
     "text": "Chu kì 0.2 giây"
-  },
-  "kalts2S3": {
-    "title": "",
-    "text": "-1.55 giây"
-  },
-  "monstrS3": {
-    "title": "",
-    "text": "-1.5 giây"
   },
   "weedyS3": {
     "title": "",

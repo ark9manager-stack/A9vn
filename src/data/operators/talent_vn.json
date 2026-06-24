@@ -2251,8 +2251,8 @@
     "TitleTalent1": "Ngoan nào",
     "Talent1": "ASPD +6. Nếu mục tiêu là【Wild Beast】, [[kéo dài|TalentGrainBudsE1]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
     "Talent1_p4": "ASPD +8<@ba.talpu>(+2)</>. Nếu mục tiêu là【Wild Beast】, [[kéo dài|TalentGrainBudsE1]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
-    "Talent1_2": "ASPD +10. Nếu mục tiêu là【Wild Beast】, [[kéo dài thêm|TalentGrainBudsE2]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
-    "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>. Nếu mục tiêu là【Wild Beast】, [[kéo dài thêm|TalentGrainBudsE2]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính."
+    "Talent1_2": "ASPD +10. Nếu mục tiêu là【Wild Beast】, [[kéo dài thêm|ShwazS3]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính.",
+    "Talent1_2_p4": "ASPD +12<@ba.talpu>(+2)</>. Nếu mục tiêu là【Wild Beast】, [[kéo dài thêm|ShwazS3]] thời gian <$ba.sluggish>Làm chậm</> của Đặc tính."
   },
   "char_4123_ela": {
     "TitleTalent1": "Mìn GRZMOT",
