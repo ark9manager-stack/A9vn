@@ -2486,7 +2486,7 @@
     "Talent1_2": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 5 con cùng lúc); 'Vũ Công Rối' gây sát thương phép."
   },
   "char_4165_ctrail": {
-    "TitleTalent1": "Nhiễu loạn không khí tầm thấp",
+    "TitleTalent1": "Nhiễu lưu tầm thấp",
     "Talent1": "Nhận +5% DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 105% khi tấn công kẻ địch.",
     "Talent1_p4": "Nhận +7%<@ba.talpu>(+2%)</> DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 107%<@ba.talpu>(+2%)</> khi tấn công kẻ địch.",
     "Talent1_2": "Nhận +10% DEF khi đang đứng trên mặt đất; Sau khi <$ba.liftoff>Cất cánh</>, tăng ATK lên 110% khi tấn công kẻ địch.",
