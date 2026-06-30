@@ -2094,7 +2094,7 @@
   },
   "char_4088_hodrer": {
     "TitleTalent1": "Thời cơ ra tay",
-    "TitleTalent2": "Chiếc áo còn vương hơi lửa",
+    "TitleTalent2": "Hơi lửa còn vương trên vai",
     "Talent1": "ATK tăng lên 105% khi tấn công kẻ địch; Nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK sẽ tăng lên 125%.",
     "Talent1_2": "ATK tăng lên 110% khi tấn công kẻ địch; Nếu mục tiêu đang bị [[Choáng|Stun]] hoặc [[Trói chân|Bind]] thì ATK sẽ tăng lên 140%.",
     "Talent2": "Bản thân và đồng minh ngay ô đằng sau nhận 18% [[Bảo hộ|Sanctuary]].",
@@ -2190,7 +2190,7 @@
   },
   "char_4110_delphn": {
     "TitleTalent1": "Gột rửa lưỡi kiếm",
-    "TitleTalent2": "Quyết tâm phục thù",
+    "TitleTalent2": "Ra tay dứt khoát",
     "Talent1": "Tăng 10% sát thương gây ra cho kẻ địch trên 80% HP.",
     "Talent1_p4": "Tăng 12%<@ba.talpu>(+2%)</> sát thương gây ra cho kẻ địch trên 80% HP.",
     "Talent1_2": "Tăng 18% sát thương gây ra cho kẻ địch trên 80% HP.",
@@ -2239,8 +2239,8 @@
     "Talent1_2_p4": "Khi kích hoạt kỹ năng, thu hẹp phạm vi tấn công, đòn tấn công chuyển thành sát thương vật lý và chỉ tấn công kẻ địch trên mặt đất; ATK +120%<@ba.talpu>(+20%)</>."
   },
   "char_4121_zuole": {
-    "TitleTalent1": "Phản chiếu ánh nến",
-    "TitleTalent2": "Giữ mình ngay thẳng",
+    "TitleTalent1": "Ánh nến soi rọi",
+    "TitleTalent2": "Giữ lòng ngay thẳng",
     "Talent0": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +30 ASPD và tốc độ hồi phục SP +0.5/giây (đạt mức tối đa khi mất 50% HP).",
     "Talent1": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +40 ASPD và tốc độ hồi phục SP +1/giây (đạt mức tối đa khi mất 60% HP).",
     "Talent1_2": "Bản thân nhận hiệu ứng <$ba.berserk>Kiên cường</> giúp tăng tối đa tới +50 ASPD và tốc độ hồi phục SP +2/giây (đạt mức tối đa khi mất 70% HP).",
@@ -2417,7 +2417,7 @@
   },
   "char_4146_nymph": {
     "TitleTalent1": "Đoạt hồn",
-    "TitleTalent2": "Mở khóa tâm hồn",
+    "TitleTalent2": "Chìa khóa thấu tâm",
     "Talent1": "Khi tấn công kẻ địch đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, sẽ khiến mục tiêu mỗi giây nhận sát thương nguyên tố bằng 30% ATK của bản thân, kéo dài cho đến khi giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</> kết thúc.",
     "Talent1_2": "Khi tấn công kẻ địch đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, sẽ khiến mục tiêu mỗi giây nhận sát thương nguyên tố bằng 40% ATK của bản thân, kéo dài cho đến khi giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</> kết thúc.",
     "Talent2": "ATK +2% mỗi khi có kẻ địch nổ thanh <$ba.dt.apoptosis2>Necrosis</> trong phạm vi tấn công của Nymph (cộng dồn tối đa 10 tầng).",
