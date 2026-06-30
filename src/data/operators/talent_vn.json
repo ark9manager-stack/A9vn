@@ -49,10 +49,10 @@
   },
   "char_1011_lava2": {
     "TitleTalent1": "Phòng tuyến ma thuật",
-    "Talent1": "Nhận ngay 15 SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Cán viên【Thuật sư】nhận +2 SP. Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +2 SP khởi đầu.",
-    "Talent1_p4": "Nhận ngay 20<@ba.talpu>(+5)</> SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Cán viên【Thuật sư】nhận +3<@ba.talpu>(+1)</> SP. Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +3<@ba.talpu>(+1)</> SP khởi đầu.",
-    "Talent1_2": "Nhận ngay 30 SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Cán viên【Thuật sư】nhận +4 SP. Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +4 SP khởi đầu.",
-    "Talent1_2_p4": "Nhận ngay 35<@ba.talpu>(+5)</> SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Cán viên【Thuật sư】nhận +5<@ba.talpu>(+1)</> SP. Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +5<@ba.talpu>(+1)</> SP khởi đầu."
+    "Talent1": "Nhận ngay 15 SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Operator【Thuật sư】nhận +2 SP. Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +2 SP khởi đầu.",
+    "Talent1_p4": "Nhận ngay 20<@ba.talpu>(+5)</> SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Operator【Thuật sư】nhận +3<@ba.talpu>(+1)</> SP. Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +3<@ba.talpu>(+1)</> SP khởi đầu.",
+    "Talent1_2": "Nhận ngay 30 SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Operator【Thuật sư】nhận +4 SP. Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +4 SP khởi đầu.",
+    "Talent1_2_p4": "Nhận ngay 35<@ba.talpu>(+5)</> SP cho lần triển khai đầu tiên. Mỗi lần triển khai, tất cả Operator【Thuật sư】nhận +5<@ba.talpu>(+1)</> SP. Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +5<@ba.talpu>(+1)</> SP khởi đầu."
   },
   "char_1012_skadi2": {
     "TitleTalent1": "Dòng máu cổ xưa",
@@ -132,8 +132,8 @@
     "Talent0": "<Thế thân> khiến kẻ địch xung quanh -20% tốc độ di chuyển và chịu sát thương phép bằng 20% ATK mỗi giây.",
     "Talent1": "<Thế thân> khiến kẻ địch xung quanh -30% tốc độ di chuyển và chịu sát thương phép bằng 30% ATK mỗi giây.",
     "Talent1_2": "<Thế thân> khiến kẻ địch xung quanh -40% tốc độ di chuyển và chịu sát thương phép bằng 40% ATK mỗi giây.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +20% HP tối đa.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +23%<@ba.talpu>(+3%)</> HP tối đa."
+    "Talent2": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +20% HP tối đa.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +23%<@ba.talpu>(+3%)</> HP tối đa."
   },
   "char_1024_hbisc2": {
     "TitleTalent1": "Sớm nở chiều tàn",
@@ -194,8 +194,8 @@
     "TitleTalent2": "Đủ lông đủ cánh",
     "Talent1": "Đồng minh trong phạm vi tấn công nhận 8% <$ba.protect>Bảo hộ</>; HP của đồng minh càng thấp, hiệu ứng này càng mạnh (đạt tối đa 15% <$ba.protect>Bảo hộ</> khi dưới 30% HP).",
     "Talent1_2": "Đồng minh trong phạm vi tấn công nhận 10% <$ba.protect>Bảo hộ</>; HP của đồng minh càng thấp, hiệu ứng này càng mạnh (đạt tối đa 24% <$ba.protect>Bảo hộ</> khi dưới 30% HP).",
-    "Talent2": "Khi đồng minh trong phạm vi tấn công dưới 50% HP sẽ hồi HP bằng 5% ATK của Silence the Paradigmatic; Hiệu quả tăng gấp đôi nếu Cán viên thuộc【Rhine Lab】.",
-    "Talent2_p4": "Khi đồng minh trong phạm vi tấn công dưới 50% HP sẽ hồi HP bằng 5%<@ba.talpu>(+1%)</> ATK của Silence the Paradigmatic; Hiệu quả tăng gấp đôi nếu Cán viên thuộc【Rhine Lab】."
+    "Talent2": "Khi đồng minh trong phạm vi tấn công dưới 50% HP sẽ hồi HP bằng 5% ATK của Silence the Paradigmatic; Hiệu quả tăng gấp đôi nếu Operator thuộc【Rhine Lab】.",
+    "Talent2_p4": "Khi đồng minh trong phạm vi tấn công dưới 50% HP sẽ hồi HP bằng 5%<@ba.talpu>(+1%)</> ATK của Silence the Paradigmatic; Hiệu quả tăng gấp đôi nếu Operator thuộc【Rhine Lab】."
   },
   "char_1032_excu2": {
     "TitleTalent1": "Người được chọn",
@@ -240,8 +240,8 @@
   },
   "char_1036_fang2": {
     "TitleTalent1": "Nước đi linh hoạt",
-    "Talent1": "DP ban đầu -2; Sau khi rút lui, Cán viên tiếp theo -1 DP.",
-    "Talent1_2": "DP ban đầu -3; Sau khi rút lui, Cán viên tiếp theo -1 DP."
+    "Talent1": "DP ban đầu -2; Sau khi rút lui, Operator tiếp theo -1 DP.",
+    "Talent1_2": "DP ban đầu -3; Sau khi rút lui, Operator tiếp theo -1 DP."
   },
   "char_1038_whitw2": {
     "TitleTalent1": "Sói đầu đàn",
@@ -250,8 +250,8 @@
     "Talent1_p5": "Mỗi 26 giây<@ba.talpu>(-4)</> có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +6%, gây sát thương sẽ Câm lặng kẻ địch trong 1 giây, Drone +1.",
     "Talent1_2": "Mỗi 20 giây có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +10%, gây sát thương sẽ Câm lặng kẻ địch trong 2 giây, Drone +1.",
     "Talent1_2_p5": "Mỗi 16 giây<@ba.talpu>(-4)</> có mặt trên sân, Drone sẽ lần lượt nhận 1 trong các hiệu ứng sau: giới hạn sát thương +10%, gây sát thương sẽ Câm lặng kẻ địch trong 2 giây, Drone +1.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Siracusa】sẽ nhận +5 SP khởi đầu.",
-    "Talent2_p2": "Khi có mặt trong đội hình, tất cả Cán viên【Siracusa】sẽ nhận +6<@ba.talpu>(+1)</> SP khởi đầu."
+    "Talent2": "Khi có mặt trong đội hình, tất cả Operator【Siracusa】sẽ nhận +5 SP khởi đầu.",
+    "Talent2_p2": "Khi có mặt trong đội hình, tất cả Operator【Siracusa】sẽ nhận +6<@ba.talpu>(+1)</> SP khởi đầu."
   },
   "char_1039_thorn2": {
     "TitleTalent1": "Bản chất tâm hồn",
@@ -287,12 +287,12 @@
   "char_1041_angel2": {
     "TitleTalent1": "Hỏa lực FM",
     "TitleTalent2": "Tân ước đạn dược",
-    "Talent0": "Khi có mặt trên sân, mỗi khi có Cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Cán viên đó, gây sát thương vật lý diện rộng bằng 105% ATK của bản thân.",
-    "Talent0_p4": "Khi có mặt trên sân, mỗi khi có Cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Cán viên đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
-    "Talent1": "Khi có mặt trên sân, mỗi khi có Cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Cán viên đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
-    "Talent1_p4": "Khi có mặt trên sân, mỗi khi có Cán viên phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Cán viên đó, gây sát thương vật lý diện rộng bằng 165%<@ba.talpu>(+15%)</> ATK của bản thân.",
-    "Talent2": "Khi có mặt trên sân, Cán viên có kỹ năng dùng đạn được +9% ATK; hiệu ứng tăng gấp đôi đối với Cán viên【Laterano】",
-    "Talent2_p2": "Khi có mặt trên sân, Cán viên có kỹ năng dùng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với Cán viên【Laterano】"
+    "Talent0": "Khi có mặt trên sân, mỗi khi có Operator phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Operator đó, gây sát thương vật lý diện rộng bằng 105% ATK của bản thân.",
+    "Talent0_p4": "Khi có mặt trên sân, mỗi khi có Operator phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 20% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Operator đó, gây sát thương vật lý diện rộng bằng 120%<@ba.talpu>(+15%)</> ATK của bản thân.",
+    "Talent1": "Khi có mặt trên sân, mỗi khi có Operator phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Operator đó, gây sát thương vật lý diện rộng bằng 150% ATK của bản thân.",
+    "Talent1_p4": "Khi có mặt trên sân, mỗi khi có Operator phe ta tiêu hao đạn sẽ hồi cho bản thân 6% HP, đồng thời có 25% tỷ lệ dội bom lên kẻ địch trong phạm vi tấn công của Operator đó, gây sát thương vật lý diện rộng bằng 165%<@ba.talpu>(+15%)</> ATK của bản thân.",
+    "Talent2": "Khi có mặt trên sân, Operator có kỹ năng dùng đạn được +9% ATK; hiệu ứng tăng gấp đôi đối với Operator【Laterano】",
+    "Talent2_p2": "Khi có mặt trên sân, Operator có kỹ năng dùng đạn được +13%<@ba.talpu>(+4%)</> ATK; hiệu ứng tăng gấp đôi đối với Operator【Laterano】"
   },
   "char_1042_phatm2": {
     "TitleTalent1": "Ý chí vượt qua thể xác",
@@ -330,11 +330,11 @@
   "char_1045_svash2": {
     "TitleTalent1": "Thế cờ mở",
     "TitleTalent2": "Sứ giả Karlan",
-    "Talent0": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các Cán viên theo thứ tự chi phí triển khai. Những Cán viên nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +2 SP khởi đầu và thời gian tái triển khai -10%.",
-    "Talent1": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các Cán viên theo thứ tự chi phí triển khai. Những Cán viên nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +3 SP khởi đầu, và thời gian tái triển khai -15%.",
-    "Talent1_2": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các Cán viên theo thứ tự chi phí triển khai. Những Cán viên nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +4 SP khởi đầu và thời gian tái triển khai -20%.",
-    "Talent2": "Khi có mặt trên sân, tất cả Cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], +60 DEF, và hồi 1.5% HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi.",
-    "Talent2_p4": "Khi có mặt trên sân, tất cả Cán viên【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], +80<@ba.talpu>(+20)</> DEF, và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
+    "Talent0": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các Operator theo thứ tự chi phí triển khai. Những Operator nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +2 SP khởi đầu và thời gian tái triển khai -10%.",
+    "Talent1": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các Operator theo thứ tự chi phí triển khai. Những Operator nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +3 SP khởi đầu, và thời gian tái triển khai -15%.",
+    "Talent1_2": "Khi có mặt trên sân, đưa 'Con Mắt Bão Tuyết' vào khu vực chờ triển khai và sắp xếp các Operator theo thứ tự chi phí triển khai. Những Operator nằm bên trái 'Con Mắt Bão Tuyết' và bản thân SilverAsh nhận +4 SP khởi đầu và thời gian tái triển khai -20%.",
+    "Talent2": "Khi có mặt trên sân, tất cả Operator【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], +60 DEF, và hồi 1.5% HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi.",
+    "Talent2_p4": "Khi có mặt trên sân, tất cả Operator【Kjerag】miễn nhiễm [[Đóng băng|Frozen]], +80<@ba.talpu>(+20)</> DEF, và hồi 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây. Sau 15 giây có mặt trên sân, DEF và hồi phục tăng gấp đôi."
   },
   "char_1046_sbell2": {
     "TitleTalent1": "Cảnh tuyết vô tận",
@@ -380,10 +380,10 @@
   },
   "char_108_silent": {
     "TitleTalent1": "Liều tăng cường",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Y tế】nhận +6 ASPD.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả Cán viên【Y tế】nhận +8<@ba.talpu>(+2)</> ASPD.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Y tế】nhận +12 ASPD.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Y tế】nhận +14<@ba.talpu>(+2)</> ASPD."
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Y tế】nhận +6 ASPD.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả Operator【Y tế】nhận +8<@ba.talpu>(+2)</> ASPD.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Y tế】nhận +12 ASPD.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Y tế】nhận +14<@ba.talpu>(+2)</> ASPD."
   },
   "char_109_fmout": {
     "TitleTalent1": "Bói toán",
@@ -401,10 +401,10 @@
   "char_112_siege": {
     "TitleTalent1": "Chúa tể muôn loài",
     "TitleTalent2": "Nghiền nát",
-    "Talent1": "Tất cả Cán viên【Tiên Phong】ATK và DEF +4%.",
-    "Talent1_p4": "Tất cả Cán viên【Tiên Phong】ATK và DEF +6%<@ba.talpu>(+2%)</>.",
-    "Talent1_2": "Tất cả Cán viên【Tiên Phong】ATK và DEF +8%.",
-    "Talent1_2_p4": "Tất cả Cán viên【Tiên Phong】ATK và DEF +10%<@ba.talpu>(+2%)</>.",
+    "Talent1": "Tất cả Operator【Tiên Phong】ATK và DEF +4%.",
+    "Talent1_p4": "Tất cả Operator【Tiên Phong】ATK và DEF +6%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Tất cả Operator【Tiên Phong】ATK và DEF +8%.",
+    "Talent1_2_p4": "Tất cả Operator【Tiên Phong】ATK và DEF +10%<@ba.talpu>(+2%)</>.",
     "Talent2": "Nhận 1 SP khi có kẻ địch bị hạ gục trong 4 ô xung quanh."
   },
   "char_113_cqbw": {
@@ -418,7 +418,7 @@
   "char_115_headbr": {
     "TitleTalent1": "Thủ lĩnh tiên phong",
     "Talent1": "-1 DP",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Tiên Phong】-1 DP."
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả Operator【Tiên Phong】-1 DP."
   },
   "char_117_myrrh": {
     "TitleTalent1": "Bộ sơ cứu",
@@ -487,10 +487,10 @@
   },
   "char_130_doberm": {
     "TitleTalent1": "Giáo quan tân binh",
-    "Talent1": "Khi triển khai, tất cả Cán viên 3-sao nhận +5% ATK.",
-    "Talent1_p4": "Khi triển khai, tất cả Cán viên 3-sao nhận +6%<@ba.talpu>(+1%)</> ATK.",
-    "Talent1_2": "Khi triển khai, tất cả Cán viên 3-sao nhận +10% ATK.",
-    "Talent1_2_p4": "Khi triển khai, tất cả Cán viên 3-sao nhận +11%<@ba.talpu>(+1%)</> ATK."
+    "Talent1": "Khi triển khai, tất cả Operator 3-sao nhận +5% ATK.",
+    "Talent1_p4": "Khi triển khai, tất cả Operator 3-sao nhận +6%<@ba.talpu>(+1%)</> ATK.",
+    "Talent1_2": "Khi triển khai, tất cả Operator 3-sao nhận +10% ATK.",
+    "Talent1_2_p4": "Khi triển khai, tất cả Operator 3-sao nhận +11%<@ba.talpu>(+1%)</> ATK."
   },
   "char_131_flameb": {
     "TitleTalent1": "Huyết sát",
@@ -530,8 +530,8 @@
     "Talent1_p2": "Có 15%<@ba.talpu>(+3%)</> tỷ lệ chặn một lần sát thương.",
     "Talent1_2": "Có 25% tỷ lệ chặn một lần sát thương.",
     "Talent1_2_p2": "Có 28%<@ba.talpu>(+3%)</> tỷ lệ chặn một lần sát thương.",
-    "Talent2": "Khi có mặt trên sân, tất cả Cán viên【Phòng ngự】nhận +6% DEF.",
-    "Talent2_p5": "Khi có mặt trên sân, tất cả Cán viên【Phòng ngự】nhận +8%<@ba.talpu>(+2%)</> DEF."
+    "Talent2": "Khi có mặt trên sân, tất cả Operator【Phòng ngự】nhận +6% DEF.",
+    "Talent2_p5": "Khi có mặt trên sân, tất cả Operator【Phòng ngự】nhận +8%<@ba.talpu>(+2%)</> DEF."
   },
   "char_137_brownb": {
     "TitleTalent1": "Tập trung thi đấu",
@@ -618,8 +618,8 @@
   },
   "char_151_myrtle": {
     "TitleTalent1": "Tỏa sáng",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Tiên Phong】hồi 25 HP mỗi giây.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Tiên Phong】hồi 28<@ba.talpu>(+3)</> HP mỗi giây."
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Tiên Phong】hồi 25 HP mỗi giây.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Tiên Phong】hồi 28<@ba.talpu>(+3)</> HP mỗi giây."
   },
   "char_154_morgan": {
     "TitleTalent1": "Tiên phong nóng tính",
@@ -640,8 +640,8 @@
   "char_157_dagda": {
     "TitleTalent1": "Tinh thần băng nhóm",
     "TitleTalent2": "Tinh thần hiệp sĩ",
-    "Talent1": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 130%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Cán viên【Glasgow】(tối đa tới 190%).",
-    "Talent1_2": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 150%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Cán viên【Glasgow】(tối đa tới 240%).",
+    "Talent1": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 130%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Operator【Glasgow】(tối đa tới 190%).",
+    "Talent1_2": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 150%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Operator【Glasgow】(tối đa tới 240%).",
     "Talent2": "Trong【Return to Mist】(Chapter 11), HP +20%. Mỗi đòn tấn công hồi cho bản thân lượng HP bằng 20% sát thương gây ra."
   },
   "char_158_milu": {
@@ -721,10 +721,10 @@
   "char_180_amgoat": {
     "TitleTalent1": "Hỏa tức",
     "TitleTalent2": "Ngọn lửa hỗn loạn",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +7% ATK.",
-    "Talent1_p5": "Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +9%<@ba.talpu>(+2%)</> ATK.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +14% ATK.",
-    "Talent1_2_p5": "Khi có mặt trên sân, tất cả Cán viên【Thuật sư】nhận +16%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +7% ATK.",
+    "Talent1_p5": "Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +9%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +14% ATK.",
+    "Talent1_2_p5": "Khi có mặt trên sân, tất cả Operator【Thuật sư】nhận +16%<@ba.talpu>(+2%)</> ATK.",
     "Talent2": "Sau khi triển khai, nhận ngẫu nhiên 7~15 SP",
     "Talent2_p2": "Sau khi triển khai, nhận ngẫu nhiên 10<@ba.talpu>(+3)</>~19<@ba.talpu>(+4)</> SP"
   },
@@ -750,10 +750,10 @@
   },
   "char_187_ccheal": {
     "TitleTalent1": "Y sĩ tiền tuyến",
-    "Talent1": "Sau khi triển khai, tất cả Cán viên【Y tế】nhận ATK +5% và DEF +50，kéo dài 15 giây.",
-    "Talent1_p4": "Sau khi triển khai, tất cả Cán viên【Y tế】nhận ATK +7%<@ba.talpu>(+2%)</> và DEF +70<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây.",
-    "Talent1_2": "Sau khi triển khai, tất cả Cán viên【Y tế】nhận ATK +10% và DEF +100，kéo dài 15 giây.",
-    "Talent1_2_p4": "Sau khi triển khai, tất cả Cán viên【Y tế】nhận ATK +12%<@ba.talpu>(+2%)</> và DEF +120<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây."
+    "Talent1": "Sau khi triển khai, tất cả Operator【Y tế】nhận ATK +5% và DEF +50，kéo dài 15 giây.",
+    "Talent1_p4": "Sau khi triển khai, tất cả Operator【Y tế】nhận ATK +7%<@ba.talpu>(+2%)</> và DEF +70<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây.",
+    "Talent1_2": "Sau khi triển khai, tất cả Operator【Y tế】nhận ATK +10% và DEF +100，kéo dài 15 giây.",
+    "Talent1_2_p4": "Sau khi triển khai, tất cả Operator【Y tế】nhận ATK +12%<@ba.talpu>(+2%)</> và DEF +120<@ba.talpu>(+20)</>，kéo dài 17<@ba.talpu>(+2)</> giây."
   },
   "char_188_helage": {
     "TitleTalent1": "Trăng khuất",
@@ -780,10 +780,10 @@
   },
   "char_194_leto": {
     "TitleTalent1": "Khẩn trương lên!",
-    "Talent1": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +10 ASPD cho đến khi kỹ năng kết thúc.",
-    "Talent1_p4": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +13<@ba.talpu>(+3)</> ASPD cho đến khi kỹ năng kết thúc.",
-    "Talent1_2": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +21 ASPD cho đến khi kỹ năng kết thúc.",
-    "Talent1_2_p4": "Khi kích hoạt kỹ năng, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +24<@ba.talpu>(+3)</> ASPD cho đến khi kỹ năng kết thúc."
+    "Talent1": "Khi kích hoạt kỹ năng, tất cả Operator【Ursus Student Self-Governing Group】nhận +10 ASPD cho đến khi kỹ năng kết thúc.",
+    "Talent1_p4": "Khi kích hoạt kỹ năng, tất cả Operator【Ursus Student Self-Governing Group】nhận +13<@ba.talpu>(+3)</> ASPD cho đến khi kỹ năng kết thúc.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, tất cả Operator【Ursus Student Self-Governing Group】nhận +21 ASPD cho đến khi kỹ năng kết thúc.",
+    "Talent1_2_p4": "Khi kích hoạt kỹ năng, tất cả Operator【Ursus Student Self-Governing Group】nhận +24<@ba.talpu>(+3)</> ASPD cho đến khi kỹ năng kết thúc."
   },
   "char_195_glassb": {
     "TitleTalent1": "Thăm dò",
@@ -802,8 +802,8 @@
     "TitleTalent2": "Học sinh gương mẫu",
     "Talent1": "Khi tấn công kẻ địch có trọng lượng lớn, bỏ qua 40% DEF của mục tiêu đó (có trọng lượng từ cấp 3 trở lên).",
     "Talent1_2": "Khi tấn công kẻ địch có trọng lượng lớn, bỏ qua 60% DEF của mục tiêu đó (có trọng lượng từ cấp 3 trở lên).",
-    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +8% ATK.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Ursus Student Self-Governing Group】nhận +10%<@ba.talpu>(+2%)</> ATK."
+    "Talent2": "Khi có mặt trong đội hình, tất cả Operator【Ursus Student Self-Governing Group】nhận +8% ATK.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Operator【Ursus Student Self-Governing Group】nhận +10%<@ba.talpu>(+2%)</> ATK."
   },
   "char_198_blackd": {
     "TitleTalent1": "Tuần cảnh Karlan",
@@ -837,10 +837,10 @@
   "char_2014_nian": {
     "TitleTalent1": "Giáp chất như núi",
     "TitleTalent2": "Trong sáng như gương",
-    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +8% HP tối đa.",
-    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +12%<@ba.talpu>(+4%)</> HP tối đa.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +16% HP tối đa.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Phòng ngự】nhận +20%<@ba.talpu>(+4%)</> HP tối đa.",
+    "Talent1": "Khi có mặt trong đội hình, tất cả Operator【Phòng ngự】nhận +8% HP tối đa.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Operator【Phòng ngự】nhận +12%<@ba.talpu>(+4%)</> HP tối đa.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả Operator【Phòng ngự】nhận +16% HP tối đa.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Operator【Phòng ngự】nhận +20%<@ba.talpu>(+4%)</> HP tối đa.",
     "Talent2": "Sau khi triển khai, lập tức nhận 3 lớp <$ba.shield>Khiên</>."
   },
   "char_2015_dusk": {
@@ -895,8 +895,8 @@
     "Talent1_p2": "Khi chặn kẻ địch, bản thân nhận 20%<@ba.talpu>(+5%)</> <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 8% ATK mỗi giây.",
     "Talent1_2": "Khi chặn kẻ địch, bản thân nhận 25% <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 40% ATK và <$ba.dt.burning2>Burn</> bằng 12% ATK mỗi giây.",
     "Talent1_2_p2": "Khi chặn kẻ địch, bản thân nhận 30%<@ba.talpu>(+5%)</> <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 12% ATK mỗi giây.",
-    "Talent2": "Khi có ít nhất 4 Cán viên trên sân, bản thân được hồi cả HP lẫn <$ba.dt.element>Hiệu ứng nguyên tố</> bằng 1.5% HP tối đa mỗi giây.",
-    "Talent2_p4": "Khi có ít nhất 4 Cán viên trên sân, bản thân được hồi cả HP lẫn <$ba.dt.element>Hiệu ứng nguyên tố</> bằng 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
+    "Talent2": "Khi có ít nhất 4 Operator trên sân, bản thân được hồi cả HP lẫn <$ba.dt.element>Hiệu ứng nguyên tố</> bằng 1.5% HP tối đa mỗi giây.",
+    "Talent2_p4": "Khi có ít nhất 4 Operator trên sân, bản thân được hồi cả HP lẫn <$ba.dt.element>Hiệu ứng nguyên tố</> bằng 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
   "char_2027_wang": {
     "TitleTalent1": "Đúc nên thế cờ",
@@ -933,7 +933,7 @@
     "Talent1_p4": "Đòn tấn công gây hiệu ứng <$ba.cold>Lạnh</> trong 1 giây; Kẻ địch bị <$ba.cold>Lạnh</> trong phạm vi sẽ nhận 17%<@ba.talpu>(+2%)</> <$ba.fragile>Fragility</>. Nếu kẻ địch trong phạm vi bị <$ba.frozen>Đóng băng</> thì hiệu ứng từ <$ba.fragile>Fragility</> tăng gấp đôi.",
     "Talent1_2": "Đòn tấn công gây hiệu ứng <$ba.cold>Lạnh</> trong 1 giây; Kẻ địch bị <$ba.cold>Lạnh</> trong phạm vi sẽ nhận 25% <$ba.fragile>Fragility</>. Nếu kẻ địch trong phạm vi bị <$ba.frozen>Đóng băng</> thì hiệu ứng từ <$ba.fragile>Fragility</> tăng gấp đôi.",
     "Talent1_2_p4": "Đòn tấn công gây hiệu ứng <$ba.cold>Lạnh</> trong 1 giây; Kẻ địch bị <$ba.cold>Lạnh</> trong phạm vi sẽ nhận 27%<@ba.talpu>(+2%)</> <$ba.fragile>Fragility</>. Nếu kẻ địch trong phạm vi bị <$ba.frozen>Đóng băng</> thì hiệu ứng từ <$ba.fragile>Fragility</> tăng gấp đôi.",
-    "Talent2": "Khi Gnosis có mặt trên sân được 10 giây, tất cả Cán viên【Kjerag】nhận <$ba.buffres>Kháng hiệu ứng</>."
+    "Talent2": "Khi Gnosis có mặt trên sân được 10 giây, tất cả Operator【Kjerag】nhận <$ba.buffres>Kháng hiệu ứng</>."
   },
   "char_208_melan": {
     "TitleTalent1": "Tăng ATK",
@@ -965,8 +965,8 @@
   "char_213_mostma": {
     "TitleTalent1": "Năng lượng dâng trào: Thuật sư",
     "TitleTalent2": "Giãn nở thời gian",
-    "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Cán viên【Thuật sư】+0.2/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
-    "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Cán viên【Thuật sư】+0.4/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
+    "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Operator【Thuật sư】+0.2/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
+    "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Operator【Thuật sư】+0.4/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
     "Talent2": "-15% tốc độ di chuyển của kẻ địch trong phạm vi tấn công.",
     "Talent2_p4": "-18%<@ba.talpu>(+3%)</> tốc độ di chuyển của kẻ địch trong phạm vi tấn công."
   },
@@ -988,10 +988,10 @@
   },
   "char_218_cuttle": {
     "TitleTalent1": "Trực giác vực thẳm",
-    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +6 ASPD.",
-    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +8<@ba.talpu>(+2)</> ASPD.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +12 ASPD.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +14<@ba.talpu>(+2)</> ASPD."
+    "Talent1": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +6 ASPD.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +8<@ba.talpu>(+2)</> ASPD.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +12 ASPD.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +14<@ba.talpu>(+2)</> ASPD."
   },
   "char_219_meteo": {
     "TitleTalent1": "Cải tiến đầu đạn nổ",
@@ -1000,10 +1000,10 @@
   },
   "char_220_grani": {
     "TitleTalent1": "Cảnh sát kỵ binh",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Tiên Phong】nhận 10% tỷ lệ né sát thương vật lý.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả Cán viên【Tiên Phong】nhận 15%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Tiên Phong】nhận 20% tỷ lệ né sát thương vật lý.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Tiên Phong】nhận 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý."
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Tiên Phong】nhận 10% tỷ lệ né sát thương vật lý.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả Operator【Tiên Phong】nhận 15%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Tiên Phong】nhận 20% tỷ lệ né sát thương vật lý.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Tiên Phong】nhận 25%<@ba.talpu>(+5%)</> tỷ lệ né sát thương vật lý."
   },
   "char_222_bpipe": {
     "TitleTalent1": "Tiếp đạn tinh vi",
@@ -1012,8 +1012,8 @@
     "Talent1_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> tỷ lệ tăng ATK lên 110% và tấn công thêm 1 mục tiêu.",
     "Talent1_2": "Mỗi lần tấn công có 25% tỷ lệ tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
     "Talent1_2_p2": "Mỗi lần tấn công có 28%<@ba.talpu>(+3%)</> tỷ lệ tăng ATK lên 130% và tấn công thêm 1 mục tiêu.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Tiên Phong】sẽ nhận +6 SP khởi đầu.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Tiên Phong】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
+    "Talent2": "Khi có mặt trong đội hình, tất cả Operator【Tiên Phong】sẽ nhận +6 SP khởi đầu.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Operator【Tiên Phong】sẽ nhận +8<@ba.talpu>(+2)</> SP khởi đầu."
   },
   "char_225_haak": {
     "TitleTalent1": "Đạn dược hỗn hợp",
@@ -1103,11 +1103,11 @@
   "char_249_mlyss": {
     "TitleTalent1": "Sinh mệnh sinh ra từ nước",
     "TitleTalent2": "Tối ưu nguồn lực",
-    "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một Cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
-    "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một Cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
-    "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một Cán viên chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
-    "Talent2": "Khi có mặt trong đội hình, tất cả Cán viên【Rhine Lab】được -2 DP, và -1 DP thêm cho Cán viên【Rhine Lab】đầu tiên được triển khai.",
-    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Rhine Lab】được -2 DP, và -2<@ba.talpu>(+1)</> DP thêm cho Cán viên【Rhine Lab】đầu tiên được triển khai."
+    "Talent0": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 50% thuộc tính của một Operator chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 30 giây sẽ tự động hồi sinh.",
+    "Talent1": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 70% thuộc tính của một Operator chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 28 giây sẽ tự động hồi sinh.",
+    "Talent1_2": "Có thể triệu hồi 'Thủy Hình' để hỗ trợ chiến đấu. 'Thủy Hình' có thể sao chép 90% thuộc tính của một Operator chưa được triển khai (HP tối đa, ATK, DEF, RES, chặn, thời gian tấn công, phạm vi tấn công, loại sát thương, đồng thời nhận đặc tính riêng tùy theo vị trí cận chiến/tầm xa). Khi 'Thủy Hình' bị hạ, sau 25 giây sẽ tự động hồi sinh.",
+    "Talent2": "Khi có mặt trong đội hình, tất cả Operator【Rhine Lab】được -2 DP, và -1 DP thêm cho Operator【Rhine Lab】đầu tiên được triển khai.",
+    "Talent2_p4": "Khi có mặt trong đội hình, tất cả Operator【Rhine Lab】được -2 DP, và -2<@ba.talpu>(+1)</> DP thêm cho Operator【Rhine Lab】đầu tiên được triển khai."
   },
   "char_250_phatom": {
     "TitleTalent1": "Bóng ma trong gương",
@@ -1139,10 +1139,10 @@
   },
   "char_258_podego": {
     "TitleTalent1": "Người chăm vườn hoa",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Hỗ trợ】nhận +5% ATK.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả Cán viên【Hỗ trợ】nhận +7%<@ba.talpu>(+2%)</> ATK.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Hỗ trợ】nhận +9% ATK.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Hỗ trợ】nhận +11%<@ba.talpu>(+2%)</> ATK."
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Hỗ trợ】nhận +5% ATK.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả Operator【Hỗ trợ】nhận +7%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Hỗ trợ】nhận +9% ATK.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Hỗ trợ】nhận +11%<@ba.talpu>(+2%)</> ATK."
   },
   "char_260_durnar": {
     "TitleTalent1": "Công thủ toàn diện",
@@ -1157,10 +1157,10 @@
   "char_263_skadi": {
     "TitleTalent1": "Thợ săn mồi vực thẳm",
     "TitleTalent2": "Hành động nhanh chóng",
-    "Talent1": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +7% ATK.",
-    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +9%<@ba.talpu>(+2%)</> ATK.",
-    "Talent1_2": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +14% ATK.",
-    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Cán viên【Abyssal Hunter】nhận +16%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +7% ATK.",
+    "Talent1_p4": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +9%<@ba.talpu>(+2%)</> ATK.",
+    "Talent1_2": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +14% ATK.",
+    "Talent1_2_p4": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +16%<@ba.talpu>(+2%)</> ATK.",
     "Talent2": "Thời gian tái triển khai -10 giây."
   },
   "char_264_f12yin": {
@@ -1203,8 +1203,8 @@
   },
   "char_275_breeze": {
     "TitleTalent1": "Bảo hộ của tổ y tế",
-    "Talent1": "Khi kích hoạt kỹ năng, tất cả Cán viên【Y tế】nhận <$ba.buffres>Kháng hiệu ứng</>.",
-    "Talent1_2": "Khi kích hoạt kỹ năng, tất cả Cán viên【Y tế】và【Hỗ trợ】nhận <$ba.buffres>Kháng hiệu ứng</>."
+    "Talent1": "Khi kích hoạt kỹ năng, tất cả Operator【Y tế】nhận <$ba.buffres>Kháng hiệu ứng</>.",
+    "Talent1_2": "Khi kích hoạt kỹ năng, tất cả Operator【Y tế】và【Hỗ trợ】nhận <$ba.buffres>Kháng hiệu ứng</>."
   },
   "char_277_sqrrel": {
     "TitleTalent1": "Bộ đồ chống cháy",
@@ -1415,8 +1415,8 @@
   "char_332_archet": {
     "TitleTalent1": "Chiến thuật Landen",
     "TitleTalent2": "Dây cung thép",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Xạ thủ】có kỹ năng 'Hồi theo đòn đánh' sẽ hồi 1 SP mỗi 3 giây.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Xạ thủ】có kỹ năng 'Hồi theo đòn đánh' sẽ hồi 1 SP mỗi 2.5 giây.",
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Xạ thủ】có kỹ năng 'Hồi theo đòn đánh' sẽ hồi 1 SP mỗi 3 giây.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Xạ thủ】có kỹ năng 'Hồi theo đòn đánh' sẽ hồi 1 SP mỗi 2.5 giây.",
     "Talent2": "Sau khi triển khai, lập tức nhận 1 lớp <$ba.shield>Khiên</>; khi Khiên bị phá, nhận 7 SP.",
     "Talent2_p4": "Sau khi triển khai, lập tức nhận 1 lớp <$ba.shield>Khiên</>; khi Khiên bị phá, nhận 9<@ba.talpu>(+2)</> SP."
   },
@@ -1450,8 +1450,8 @@
     "Talent0": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 130%.",
     "Talent1": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 130% và khiến DEF của mục tiêu -10% trong 5 giây.",
     "Talent1_2": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160% và khiến DEF của mục tiêu -20% trong 5 giây.",
-    "Talent2": "Khi Schwarz và 1 Cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả Cán viên【Xạ thủ】nhận ATK +8%.",
-    "Talent2_p5": "Khi Schwarz và 1 Cán viên【Xạ thủ】khác cùng có mặt trên sân, tất cả Cán viên【Xạ thủ】nhận ATK +10%<@ba.talpu>(+2%)</>."
+    "Talent2": "Khi Schwarz và 1 Operator【Xạ thủ】khác cùng có mặt trên sân, tất cả Operator【Xạ thủ】nhận ATK +8%.",
+    "Talent2_p5": "Khi Schwarz và 1 Operator【Xạ thủ】khác cùng có mặt trên sân, tất cả Operator【Xạ thủ】nhận ATK +10%<@ba.talpu>(+2%)</>."
   },
   "char_341_sntlla": {
     "TitleTalent1": "Đứa con của vùng băng giá",
@@ -1501,10 +1501,10 @@
   },
   "char_349_chiave": {
     "TitleTalent1": "Chuyên môn kỹ thuật",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Robot】-75% thời gian tái triển khai; Mỗi Cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +7% ATK và DEF.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả Cán viên【Robot】-75% thời gian tái triển khai; Mỗi Cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +9%<@ba.talpu>(+2%)</> ATK và DEF.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Robot】-75% thời gian tái triển khai; Mỗi Cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +11% ATK và DEF.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Robot】-75% thời gian tái triển khai; Mỗi Cán viên【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +13%<@ba.talpu>(+2%)</> ATK và DEF."
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Robot】-75% thời gian tái triển khai; Mỗi Operator【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +7% ATK và DEF.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả Operator【Robot】-75% thời gian tái triển khai; Mỗi Operator【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +9%<@ba.talpu>(+2%)</> ATK và DEF.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Robot】-75% thời gian tái triển khai; Mỗi Operator【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +11% ATK và DEF.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Robot】-75% thời gian tái triển khai; Mỗi Operator【Robot】đang triển khai trên sân sẽ giúp bản thân nhận +13%<@ba.talpu>(+2%)</> ATK và DEF."
   },
   "char_350_surtr": {
     "TitleTalent1": "Nung chảy",
@@ -1533,8 +1533,8 @@
   "char_358_lisa": {
     "TitleTalent1": "Năng lượng dâng trào: Hỗ trợ",
     "TitleTalent2": "Vùng giam cầm",
-    "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Cán viên【Hỗ trợ】+0.2/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
-    "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Cán viên【Hỗ trợ】+0.4/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
+    "Talent1": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Operator【Hỗ trợ】+0.2/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
+    "Talent1_2": "Khi có mặt trên sân, tốc độ hồi SP của toàn bộ Operator【Hỗ trợ】+0.4/giây (chỉ áp dụng mức cao nhất của loại hiệu ứng này).",
     "Talent2": "Kẻ địch bị <$ba.sluggish>Làm chậm</> trong phạm vi tấn công sẽ nhận 20% <$ba.fragile>Fragile</>, duy trì trong cùng khoảng thời gian.",
     "Talent2_p4": "Kẻ địch bị <$ba.sluggish>Làm chậm</> trong phạm vi tấn công sẽ nhận 23%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile</>, duy trì trong cùng khoảng thời gian."
   },
@@ -1760,10 +1760,10 @@
   },
   "char_401_elysm": {
     "TitleTalent1": "Tiếp viện xạ thủ",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Xạ thủ】-2 DP, và +10 ASPD khi kỹ năng của Elysium đang hoạt động.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả Cán viên【Xạ thủ】-2 DP, và +13<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Xạ thủ】-2 DP, và +20 ASPD khi kỹ năng của Elysium đang hoạt động.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Xạ thủ】-2 DP, và +23<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động."
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Xạ thủ】-2 DP, và +10 ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả Operator【Xạ thủ】-2 DP, và +13<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Xạ thủ】-2 DP, và +20 ASPD khi kỹ năng của Elysium đang hoạt động.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Xạ thủ】-2 DP, và +23<@ba.talpu>(+3)</> ASPD khi kỹ năng của Elysium đang hoạt động."
   },
   "char_4023_rfalcn": {
     "TitleTalent1": "Đòn đánh thô bạo",
@@ -1824,10 +1824,10 @@
   "char_4039_horn": {
     "TitleTalent1": "Pháo đài quân sự",
     "TitleTalent2": "Tắm máu",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Phòng ngự】nhận +10% ATK.",
-    "Talent1_p2": "Khi có mặt trên sân, tất cả Cán viên【Phòng ngự】nhận +13%<@ba.talpu>(+3%)</> ATK.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Phòng ngự】nhận +20% ATK.",
-    "Talent1_2_p2": "Khi có mặt trên sân, tất cả Cán viên【Phòng ngự】nhận +23%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Phòng ngự】nhận +10% ATK.",
+    "Talent1_p2": "Khi có mặt trên sân, tất cả Operator【Phòng ngự】nhận +13%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Phòng ngự】nhận +20% ATK.",
+    "Talent1_2_p2": "Khi có mặt trên sân, tất cả Operator【Phòng ngự】nhận +23%<@ba.talpu>(+3%)</> ATK.",
     "Talent2": "Bản thân không rút lui khi bị hạ, hồi đầy HP nhưng -50% HP tối đa, +18 ASPD và +18% DEF (mỗi lần triển khai chỉ kích hoạt 1 lần).",
     "Talent2_p4": "Bản thân không rút lui khi bị hạ, hồi đầy HP nhưng -50% HP tối đa, +21<@ba.talpu>(+3)</> ASPD và +21%<@ba.talpu>(+3%)</> DEF (mỗi lần triển khai chỉ kích hoạt 1 lần)."
   },
@@ -1904,10 +1904,10 @@
   },
   "char_4052_surfer": {
     "TitleTalent1": "Lữ hành đơn độc",
-    "Talent1": "Khi triển khai, nếu trong 4 ô xung quanh không có Cán viên khác sẽ nhận 1 DP.",
-    "Talent1_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có Cán viên khác sẽ nhận 2<@ba.talpu>(+1)</> DP.",
-    "Talent1_2": "Khi triển khai, nếu trong 4 ô xung quanh không có Cán viên khác sẽ nhận 2 DP.",
-    "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có Cán viên khác sẽ nhận 3<@ba.talpu>(+1)</> DP."
+    "Talent1": "Khi triển khai, nếu trong 4 ô xung quanh không có Operator khác sẽ nhận 1 DP.",
+    "Talent1_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có Operator khác sẽ nhận 2<@ba.talpu>(+1)</> DP.",
+    "Talent1_2": "Khi triển khai, nếu trong 4 ô xung quanh không có Operator khác sẽ nhận 2 DP.",
+    "Talent1_2_p4": "Khi triển khai, nếu trong 4 ô xung quanh không có Operator khác sẽ nhận 3<@ba.talpu>(+1)</> DP."
   },
   "char_4054_malist": {
     "TitleTalent1": "Nảy ra ý tưởng",
@@ -1932,8 +1932,8 @@
     "Talent1_p2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 11%<@ba.talpu>(+1%)</> ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 20%<@ba.talpu>(+2%)</> ATK của Titi.",
     "Talent1_2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 15% ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 30% ATK của Titi.",
     "Talent1_2_p2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 16%<@ba.talpu>(+1%)</> ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 32%<@ba.talpu>(+2%)</> ATK của Titi.",
-    "Talent2": "Các Cán viên【Minos】hoặc【Sargon】trên sân có HP trên 50%, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ASPD +20.",
-    "Talent2_p5": "Các Cán viên【Minos】hoặc【Sargon】trên sân có HP trên 50%, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ASPD +22<@ba.talpu>(+2)</>."
+    "Talent2": "Các Operator【Minos】hoặc【Sargon】trên sân có HP trên 50%, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ASPD +20.",
+    "Talent2_p5": "Các Operator【Minos】hoặc【Sargon】trên sân có HP trên 50%, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ASPD +22<@ba.talpu>(+2)</>."
   },
   "char_4058_pepe": {
     "TitleTalent1": "Kế thừa di sản",
@@ -1942,8 +1942,8 @@
     "Talent1_p4": "Trong thời gian kỹ năng hoạt động, mỗi lần hạ 1 kẻ địch sẽ giúp Pepe hồi 1 SP khi kỹ năng kết thúc, tối đa 13<@ba.talpu>(+3)</> SP.",
     "Talent1_2": "Trong thời gian kỹ năng hoạt động, mỗi lần hạ 1 kẻ địch sẽ giúp Pepe hồi 1 SP khi kỹ năng kết thúc, tối đa 14 SP.",
     "Talent1_2_p4": "Trong thời gian kỹ năng hoạt động, mỗi lần hạ 1 kẻ địch sẽ giúp Pepe hồi 1 SP khi kỹ năng kết thúc, tối đa 17<@ba.talpu>(+3)</> SP.",
-    "Talent2": "Khi có mặt trên sân, tất cả Cán viên【Cận vệ】nhận +16% ATK.",
-    "Talent2_p2": "Khi có mặt trên sân, tất cả Cán viên【Cận vệ】nhận +20%<@ba.talpu>(+4%)</> ATK."
+    "Talent2": "Khi có mặt trên sân, tất cả Operator【Cận vệ】nhận +16% ATK.",
+    "Talent2_p2": "Khi có mặt trên sân, tất cả Operator【Cận vệ】nhận +20%<@ba.talpu>(+4%)</> ATK."
   },
   "char_405_absin": {
     "TitleTalent1": "Thực thi pháp luật",
@@ -2224,10 +2224,10 @@
   },
   "char_4119_wanqin": {
     "TitleTalent1": "Am hiểu thời tiết",
-    "Talent1": "+3% HP tối đa cho các Cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +5% nếu triển khai cùng hướng với Wanqing.",
-    "Talent1_p4": "+4%<@ba.talpu>(+1%)</> HP tối đa cho các Cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +6%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing.",
-    "Talent1_2": "+5% HP tối đa cho các Cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +9% nếu triển khai cùng hướng với Wanqing.",
-    "Talent1_2_p4": "+6%<@ba.talpu>(+1%)</> HP tối đa cho các Cán viên đứng trong 8 ô xung quanh Wanqing, và tăng thành +10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
+    "Talent1": "+3% HP tối đa cho các Operator đứng trong 8 ô xung quanh Wanqing, và tăng thành +5% nếu triển khai cùng hướng với Wanqing.",
+    "Talent1_p4": "+4%<@ba.talpu>(+1%)</> HP tối đa cho các Operator đứng trong 8 ô xung quanh Wanqing, và tăng thành +6%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing.",
+    "Talent1_2": "+5% HP tối đa cho các Operator đứng trong 8 ô xung quanh Wanqing, và tăng thành +9% nếu triển khai cùng hướng với Wanqing.",
+    "Talent1_2_p4": "+6%<@ba.talpu>(+1%)</> HP tối đa cho các Operator đứng trong 8 ô xung quanh Wanqing, và tăng thành +10%<@ba.talpu>(+1%)</> nếu triển khai cùng hướng với Wanqing."
   },
   "char_411_tomimi": {
     "TitleTalent1": "Phép thuật hoang dã",
@@ -2412,8 +2412,8 @@
     "TitleTalent2": "Nuôi dưỡng dòng máu",
     "Talent1": "Hồi 80 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 120 HP.",
     "Talent1_2": "Hồi 100 HP mỗi khi bản thân nhận sát thương, khi HP dưới 50% thì lượng hồi tăng thành 160 HP.",
-    "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các Cán viên【Abyssal Hunter】khác nhận được 50% lượng chỉ số trên.",
-    "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các Cán viên【Abyssal Hunter】khác nhận được 50% lượng chỉ số trên."
+    "Talent2": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 9 lần; Các Operator【Abyssal Hunter】khác nhận được 50% lượng chỉ số trên.",
+    "Talent2_p4": "Mỗi khi hạ gục kẻ địch, bản thân tăng 120 HP tối đa và 30 ATK, cộng dồn tối đa 10<@ba.talpu>(+1)</> lần; Các Operator【Abyssal Hunter】khác nhận được 50% lượng chỉ số trên."
   },
   "char_4146_nymph": {
     "TitleTalent1": "Đoạt hồn",
@@ -2440,10 +2440,10 @@
     "TitleTalent1": "'Tôi tới ngay'",
     "TitleTalent2": "Hồn phách suy tàn",
     "Talent0": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -1 Hope.",
-    "Talent1": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +3 Toil Limit khi được chọn làm Cán viên Gánh tải.",
-    "Talent1_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +4<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Cán viên Gánh tải.",
-    "Talent1_2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +9 Toil Limit khi được chọn làm Cán viên Gánh tải.",
-    "Talent1_2_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +10<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Cán viên Gánh tải.",
+    "Talent1": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +3 Toil Limit khi được chọn làm Operator Gánh tải.",
+    "Talent1_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +4<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Operator Gánh tải.",
+    "Talent1_2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +9 Toil Limit khi được chọn làm Operator Gánh tải.",
+    "Talent1_2_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +10<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Operator Gánh tải.",
     "Talent2": "Tăng 20% sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Đơn Vị Luyện Kim của Tin Man.",
     "Talent2_p4": "Tăng 22%<@ba.talpu>(+2%)</> sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Đơn Vị Luyện Kim của Tin Man."
   },
@@ -2494,10 +2494,10 @@
   },
   "char_4166_varkis": {
     "TitleTalent1": "Khắc cốt ghi tâm",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Minos】tăng ATK lên 107% khi tấn công kẻ địch có %HP thấp hơn bản thân.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả Cán viên【Minos】tăng ATK lên 109%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có %HP thấp hơn bản thân.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Minos】tăng ATK lên 110% khi tấn công kẻ địch có %HP thấp hơn bản thân.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Cán viên【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có %HP thấp hơn bản thân."
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Minos】tăng ATK lên 107% khi tấn công kẻ địch có %HP thấp hơn bản thân.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả Operator【Minos】tăng ATK lên 109%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có %HP thấp hơn bản thân.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Minos】tăng ATK lên 110% khi tấn công kẻ địch có %HP thấp hơn bản thân.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả Operator【Minos】tăng ATK lên 112%<@ba.talpu>(+2%)</> khi tấn công kẻ địch có %HP thấp hơn bản thân."
   },
   "char_416_zumama": {
     "TitleTalent1": "Khí phách vô song",
@@ -2568,10 +2568,10 @@
     "Talent1": "Togawa Sakiko có thể <$ba.permanentatk>Liên tục tấn công</>; Các đòn tấn công sẽ diễn tấu ra những nốt nhạc truy đuổi kẻ địch và biến mất sau khi rời khỏi phạm vi tấn công của bản thân 1 giây. Mỗi nốt nhạc tồn tại trên sân giúp các thành viên <$ba.mujica>Ave Mujica</> bỏ qua 2.5% DEF và 1.5% RES của kẻ địch (cộng dồn tối đa 10 lần).",
     "Talent1_2": "Togawa Sakiko có thể <$ba.permanentatk>Liên tục tấn công</>; Các đòn tấn công sẽ diễn tấu ra những nốt nhạc truy đuổi kẻ địch và biến mất sau khi rời khỏi phạm vi tấn công của bản thân 1 giây. Mỗi nốt nhạc tồn tại trên sân giúp các thành viên <$ba.mujica>Ave Mujica</> bỏ qua 3% DEF và 2% RES của kẻ địch (cộng dồn tối đa 10 lần).",
     "Talent2": "<$ba.fever>Fever</> +1 khi gây sát thương cho kẻ địch.",
-    "Talent2_1": "<$ba.fever>Fever</> +2 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +5.",
-    "Talent2_1_p4": "<$ba.fever>Fever</> +2 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +9<@ba.talpu>(+4)</>.",
-    "Talent2_2": "<$ba.fever>Fever</> +3 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +12.",
-    "Talent2_2_p4": "<$ba.fever>Fever</> +3 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Cán viên đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +16<@ba.talpu>(+4)</>."
+    "Talent2_1": "<$ba.fever>Fever</> +2 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Operator đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +5.",
+    "Talent2_1_p4": "<$ba.fever>Fever</> +2 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Operator đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +9<@ba.talpu>(+4)</>.",
+    "Talent2_2": "<$ba.fever>Fever</> +3 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Operator đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +12.",
+    "Talent2_2_p4": "<$ba.fever>Fever</> +3 khi gây sát thương cho kẻ địch; Nếu phạm vi tấn công của các thành viên <$ba.mujica>Ave Mujica</> chồng lên phạm vi tấn công gốc của Togawa Sakiko, phần phạm vi đó sẽ được coi là phần mở rộng thêm cho cô; Các Operator đứng trong trong phạm vi tấn công của Togawa Sakiko nhận ASPD +16<@ba.talpu>(+4)</>."
   },
   "char_4183_mortis": {
     "TitleTalent1": "'Cô nàng' khác",
@@ -2654,10 +2654,10 @@
   "char_4193_lemuen": {
     "TitleTalent1": "Lệnh truy bắt xuyên biên giới",
     "TitleTalent2": "Thủ tục bàn giao tội phạm vượt ngục",
-    "Talent1": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Cán viên【Laterano】quá 10 giây sẽ bị gán Truy nã. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
-    "Talent1_p4": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Cán viên【Laterano】quá 8<@ba.talpu>(-2)</> giây sẽ bị gán Truy nã. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
-    "Talent1_2": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Cán viên【Laterano】quá 8 giây sẽ bị gán Truy nã; Kẻ địch mang ấn Truy nã sẽ phải chịu thêm 15% sát thương từ Cán viên【Laterano】. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
-    "Talent1_2_p4": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Cán viên【Laterano】quá 6<@ba.talpu>(-2)</> giây sẽ bị gán Truy nã; Kẻ địch mang ấn Truy nã sẽ phải chịu thêm 18%<@ba.talpu>(+3%)</> sát thương từ Cán viên【Laterano】. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Operator【Laterano】quá 10 giây sẽ bị gán Truy nã. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1_p4": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Operator【Laterano】quá 8<@ba.talpu>(-2)</> giây sẽ bị gán Truy nã. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1_2": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Operator【Laterano】quá 8 giây sẽ bị gán Truy nã; Kẻ địch mang ấn Truy nã sẽ phải chịu thêm 15% sát thương từ Operator【Laterano】. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
+    "Talent1_2_p4": "Kẻ địch Elite hoặc Leader ở trong phạm vi tấn công của Operator【Laterano】quá 6<@ba.talpu>(-2)</> giây sẽ bị gán Truy nã; Kẻ địch mang ấn Truy nã sẽ phải chịu thêm 18%<@ba.talpu>(+3%)</> sát thương từ Operator【Laterano】. Lemuen có thể tấn công tất cả mục tiêu đang bị Truy nã.",
     "Talent2": "Sau khi có mặt trên sân 20 giây, ATK +10%, kỹ năng dùng đạn của Lemuen +1 giới hạn đạn."
   },
   "char_4194_rmixer": {
@@ -2693,10 +2693,10 @@
   },
   "char_4199_makiri": {
     "TitleTalent1": "Chậm mà chắc",
-    "Talent1": "Sau khi triển khai được 30 giây, +5% ATK cho tất cả Cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_p4": "Sau khi triển khai được 30 giây, +7%<@ba.talpu>(+2%)</> ATK cho tất cả Cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2": "Sau khi triển khai được 30 giây, +10% ATK cho tất cả Cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
-    "Talent1_2_p4": "Sau khi triển khai được 30 giây, +12%<@ba.talpu>(+2%)</> ATK cho tất cả Cán viên【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần)."
+    "Talent1": "Sau khi triển khai được 30 giây, +5% ATK cho tất cả Operator【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_p4": "Sau khi triển khai được 30 giây, +7%<@ba.talpu>(+2%)</> ATK cho tất cả Operator【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2": "Sau khi triển khai được 30 giây, +10% ATK cho tất cả Operator【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần).",
+    "Talent1_2_p4": "Sau khi triển khai được 30 giây, +12%<@ba.talpu>(+2%)</> ATK cho tất cả Operator【Phòng ngự】và【Hỗ trợ】trên sân lẫn khu vực chờ triển khai (hiệu ứng này chỉ kích hoạt 1 lần)."
   },
   "char_4202_haruka": {
     "TitleTalent1": "Bọt nước mây bay",
@@ -2742,8 +2742,8 @@
     "TitleTalent2": "Thủ lĩnh Pinus Sylvestris",
     "Talent1": "Mỗi khi né thành công, đòn đánh kế tiếp sẽ chém 2 nhát liên tiếp.",
     "Talent1_2": "Mỗi khi né thành công, đòn đánh kế tiếp sẽ chém 2 nhát liên tiếp lên toàn bộ kẻ địch đang bị chặn.",
-    "Talent2": "Khi có mặt trên sân, tất cả Cán viên【Kazimierz】nhận 22% tỷ lệ né sát thương vật lý.",
-    "Talent2_p4": "Khi có mặt trên sân, tất cả Cán viên【Kazimierz】nhận 25%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
+    "Talent2": "Khi có mặt trên sân, tất cả Operator【Kazimierz】nhận 22% tỷ lệ né sát thương vật lý.",
+    "Talent2_p4": "Khi có mặt trên sân, tất cả Operator【Kazimierz】nhận 25%<@ba.talpu>(+3%)</> tỷ lệ né sát thương vật lý."
   },
   "char_4211_snhunt": {
     "TitleTalent1": "Vân thú vồ mồi",
@@ -2758,8 +2758,8 @@
     "Talent0": "Có thể mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 1 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent1": "Có thể mang theo 2 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.",
     "Talent1_2": "Có thể mang theo 3 <Thiết bị hỗ trợ> (tối đa triển khai 2 cái cùng lúc); Chức năng thay đổi theo kỹ năng được chọn.", 
-    "Talent2": "Nhận 10% <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các Cán viên đang đứng trên ô cao nhận 15% <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP.",
-    "Talent2_p4": "Nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các Cán viên đang đứng trên ô cao nhận 18%<@ba.talpu>(+3%)</> <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP."
+    "Talent2": "Nhận 10% <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các Operator đang đứng trên ô cao nhận 15% <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP.",
+    "Talent2_p4": "Nhận 12%<@ba.talpu>(+2%)</> <$ba.protect>Bảo hộ</>; Khi có kẻ địch tấn công tầm xa xuất hiện, hiệu quả được chuyển thành bản thân và các Operator đang đứng trên ô cao nhận 18%<@ba.talpu>(+3%)</> <$ba.protect>Bảo hộ</>, đồng thời cứ mỗi 6 giây sẽ hồi 1 SP."
   },
   "char_4213_skybx": {
     "TitleTalent1": "Mở cửa! Cục quản lý đây",
@@ -2994,16 +2994,16 @@
   },
   "char_473_mberry": {
     "TitleTalent1": "Phụ tá",
-    "Talent1": "Khi Mulberry và 1 Cán viên【Y tế】khác cùng có mặt trên sân, ATK của tất cả Cán viên【Y tế】nhận ATK +6%.",
-    "Talent1_p4": "Khi Mulberry và 1 Cán viên【Y tế】khác cùng có mặt trên sân, ATK của tất cả Cán viên【Y tế】nhận ATK +7%<@ba.talpu>(+1%)</>.",
-    "Talent1_2": "Khi Mulberry và 1 Cán viên【Y tế】khác cùng có mặt trên sân, ATK của tất cả Cán viên【Y tế】nhận ATK +10%.",
-    "Talent1_2_p4": "Khi Mulberry và 1 Cán viên【Y tế】khác cùng có mặt trên sân, ATK của tất cả Cán viên【Y tế】nhận ATK +11%<@ba.talpu>(+1%)</>."
+    "Talent1": "Khi Mulberry và 1 Operator【Y tế】khác cùng có mặt trên sân, ATK của tất cả Operator【Y tế】nhận ATK +6%.",
+    "Talent1_p4": "Khi Mulberry và 1 Operator【Y tế】khác cùng có mặt trên sân, ATK của tất cả Operator【Y tế】nhận ATK +7%<@ba.talpu>(+1%)</>.",
+    "Talent1_2": "Khi Mulberry và 1 Operator【Y tế】khác cùng có mặt trên sân, ATK của tất cả Operator【Y tế】nhận ATK +10%.",
+    "Talent1_2_p4": "Khi Mulberry và 1 Operator【Y tế】khác cùng có mặt trên sân, ATK của tất cả Operator【Y tế】nhận ATK +11%<@ba.talpu>(+1%)</>."
   },
   "char_474_glady": {
     "TitleTalent1": "Làn sóng triều từ Ægir",
     "TitleTalent2": "Luật của kẻ săn mồi",
-    "Talent1": "Khi có mặt trên trên sân, tất cả Cán viên【Abyssal Hunter】hồi 1.5% HP tối đa mỗi giây, và giảm 15% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
-    "Talent1_2": "Khi có mặt trên trên sân, tất cả Cán viên【Abyssal Hunter】hồi 2.5% HP tối đa mỗi giây, và giảm 25% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
+    "Talent1": "Khi có mặt trên trên sân, tất cả Operator【Abyssal Hunter】hồi 1.5% HP tối đa mỗi giây, và giảm 15% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
+    "Talent1_2": "Khi có mặt trên trên sân, tất cả Operator【Abyssal Hunter】hồi 2.5% HP tối đa mỗi giây, và giảm 25% sát thương vật lý và phép phải chịu từ kẻ địch【Seaborn】.",
     "Talent2": "ATK tăng lên 130% khi tấn công kẻ địch có trọng lượng từ cấp 3 trở xuống.",
     "Talent2_p4": "ATK tăng lên 136%<@ba.talpu>(+6%)</> khi tấn công kẻ địch có trọng lượng từ cấp 3 trở xuống."
   },
@@ -3033,7 +3033,7 @@
     "Talent1_p4": "Khi triển khai sẽ cầm theo Lá cờ; Đồng minh trong 8 ô xung quanh Lá cờ nhận +7<@ba.talpu>(+2)</> ASPD và kẻ địch bị -7<@ba.talpu>(+2)</> ASPD.",
     "Talent1_2": "Khi triển khai sẽ cầm theo Lá cờ; Đồng minh trong 8 ô xung quanh Lá cờ nhận +10 ASPD và kẻ địch -10 ASPD.",
     "Talent1_2_p4": "Khi triển khai sẽ cầm theo Lá cờ; Đồng minh trong 8 ô xung quanh Lá cờ nhận +12<@ba.talpu>(+2)</> ASPD và kẻ địch -12<@ba.talpu>(+2)</> ASPD.",
-    "Talent2": "Sau khi triển khai, -2 DP cho Cán viên kế tiếp."
+    "Talent2": "Sau khi triển khai, -2 DP cho Operator kế tiếp."
   },
   "char_484_robrta": {
     "TitleTalent1": "Hiệu chỉnh mô hình",
@@ -3047,8 +3047,8 @@
   "char_485_pallas": {
     "TitleTalent1": "Anh hùng xuất thế",
     "TitleTalent2": "Sự khích lệ của nữ thần",
-    "Talent1": "Khi có mặt trên sân, tất cả Cán viên【Minos】trên 80% HP, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với +15% ATK.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả Cán viên【Minos】trên 80% HP, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với +25% ATK.",
+    "Talent1": "Khi có mặt trên sân, tất cả Operator【Minos】trên 80% HP, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với +15% ATK.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả Operator【Minos】trên 80% HP, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với +25% ATK.",
     "Talent2": "Mỗi lần tấn công trúng kẻ địch, hồi 40 HP cho bản thân và đồng minh ở ngay ô phía trước.",
     "Talent2_p4": "Mỗi lần tấn công trúng kẻ địch, hồi 45<@ba.talpu>(+5)</> HP cho bản thân và đồng minh ở ngay ô phía trước."
   },
@@ -3110,8 +3110,8 @@
   },
   "char_496_wildmn": {
     "TitleTalent1": "Đồng lòng tiến quân",
-    "Talent1": "Sau lần triển khai đầu tiên, tất cả Cán viên【Cận Vệ】chưa triển khai -1 DP.",
-    "Talent1_2": "Sau khi được triển khai, tất cả Cán viên【Cận Vệ】chưa triển khai -1 DP (mỗi Cán viên được tối đa -5 DP trước mỗi lần triển khai)."
+    "Talent1": "Sau lần triển khai đầu tiên, tất cả Operator【Cận Vệ】chưa triển khai -1 DP.",
+    "Talent1_2": "Sau khi được triển khai, tất cả Operator【Cận Vệ】chưa triển khai -1 DP (mỗi Operator được tối đa -5 DP trước mỗi lần triển khai)."
   },
   "char_497_ctable": {
     "TitleTalent1": "Ứng biến",
@@ -3123,7 +3123,7 @@
   "char_498_inside": {
     "TitleTalent1": "Yểm trợ hỏa lực",
     "Talent1": "Sau 20 giây có mặt trên sân, kỹ năng dùng đạn của Insider +2 giới hạn đạn.",
-    "Talent1_2": "Sau 20 giây có mặt trên sân, kỹ năng dùng đạn của Insider +3 giới hạn đạn; 1 Cán viên【Laterano】ngẫu nhiên +1 giới hạn đạn cho kỹ năng dùng đạn."
+    "Talent1_2": "Sau 20 giây có mặt trên sân, kỹ năng dùng đạn của Insider +3 giới hạn đạn; 1 Operator【Laterano】ngẫu nhiên +1 giới hạn đạn cho kỹ năng dùng đạn."
   },
   "char_499_kaitou": {
     "TitleTalent1": "Thư báo trước",
@@ -3253,7 +3253,7 @@
     "Talent0": "Đòn đánh bỏ qua 6 RES của mục tiêu.",
     "Talent1": "Đòn đánh bỏ qua 9 RES của mục tiêu.",
     "Talent1_2": "Đòn đánh bỏ qua 12 RES của mục tiêu.",
-    "Talent2": "Pith và Cán viên【Thuật sư】đứng ở 4 ô xung quanh cô nhận +10% ATK."
+    "Talent2": "Pith và Operator【Thuật sư】đứng ở 4 ô xung quanh cô nhận +10% ATK."
   },
   "char_613_acmedc": {
     "TitleTalent1": "Thúc đẩy",
@@ -3763,8 +3763,8 @@
     "Talent1_p4": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh.",
     "Talent1_2": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 24% ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>Làm chậm</> chúng 0.5 giây.",
     "Talent1_2_p4": "Sát thương vật lý diện rộng từ Đặc tính tăng 24%, mỗi ô cao bị vùng sát thương lan chạm tới sẽ gây sát thương vật lý bằng 27%<@ba.talpu>(+3%)</> ATK lên toàn bộ kẻ địch mặt đất trong 4 ô xung quanh và <$ba.sluggish>Làm chậm</> chúng 0.5 giây.",
-    "Talent2": "Khi kỹ năng hoạt động, tất cả Cán viên trên sân nhận ATK và DEF +14%, nhận gấp đôi nếu Cán viên thuộc【Ursus Student Self-Governing Group】",
-    "Talent2_p2": "Khi kỹ năng hoạt động, tất cả Cán viên trên sân nhận ATK và DEF +18%<@ba.talpu>(+4%)</>, nhận gấp đôi nếu Cán viên thuộc【Ursus Student Self-Governing Group】"
+    "Talent2": "Khi kỹ năng hoạt động, tất cả Operator trên sân nhận ATK và DEF +14%, nhận gấp đôi nếu Operator thuộc【Ursus Student Self-Governing Group】",
+    "Talent2_p2": "Khi kỹ năng hoạt động, tất cả Operator trên sân nhận ATK và DEF +18%<@ba.talpu>(+4%)</>, nhận gấp đôi nếu Operator thuộc【Ursus Student Self-Governing Group】"
   },
   "char_4227_gallus": {
     "TitleTalent1": "'Ngon Thì Bắt Tao Đi!'",
@@ -3795,8 +3795,8 @@
     "TitleTalent1": "Chiến thuật phân phối",
     "TitleTalent2": "Điều phối cực hạn",
     "Talent0": "Có thể triệu hồi 'Trung Tâm Chỉ Huy' tại Ô chiến thuật để hỗ trợ chiến đấu, khi 'Trung Tâm Chỉ Huy' bị hạ, nó sẽ tự động hồi sinh sau 15 giây; Phạm vi ảnh hưởng của Ô chiến thuật thay đổi theo kỹ năng được chọn; Đồng minh đứng trong phạm vi ảnh hưởng này được tính là 'Viện binh' của Closure.",
-    "Talent2": "Khi Closure có mặt trong đội hình, cho phép <$ba.costlowerbound>Hạn mức nợ DP</> là 3; Tất cả Cán viên【Rhodes Island】nhận +4% ATK.",
-    "Talent2_p2": "Khi Closure có mặt trong đội hình, cho phép <$ba.costlowerbound>Hạn mức nợ DP</> là 4<@ba.talpu>(+1)</>; Tất cả Cán viên【Rhodes Island】nhận +4% ATK."
+    "Talent2": "Khi Closure có mặt trong đội hình, cho phép <$ba.costlowerbound>Hạn mức nợ DP</> là 3; Tất cả Operator【Rhodes Island】nhận +4% ATK.",
+    "Talent2_p2": "Khi Closure có mặt trong đội hình, cho phép <$ba.costlowerbound>Hạn mức nợ DP</> là 4<@ba.talpu>(+1)</>; Tất cả Operator【Rhodes Island】nhận +4% ATK."
   },
   "char_1052_kalts2": {
     "TitleTalent1": "Canh giữ tàn tro",
@@ -3807,8 +3807,8 @@
     "Talent1_p2": "HP tối đa và DEF +15%<@ba.talpu>(+5%)</>, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
     "Talent1_2": "HP tối đa và DEF +25%, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
     "Talent1_2_p2": "HP tối đa và DEF +30%<@ba.talpu>(+5%)</>, Chặn +1, mở rộng phạm vi chặn. Sau khi triển khai, 'Mô-đun Phục Hồi Sinh Mệnh' bay lên và giúp bản thân <$ba.liftoff>Cất cánh</>.",
-    "Talent2": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 50 HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】.",
-    "Talent2_p5": "Khi có Cán viên triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 60<@ba.talpu>(+10)</> HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Cán viên thuộc【Rhodes Island】."
+    "Talent2": "Khi có Operator triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 50 HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Operator thuộc【Rhodes Island】.",
+    "Talent2_p5": "Khi có Operator triển khai hoặc di chuyển vào trong phạm vi tấn công của bản thân, họ lập tức nhận 1 lớp <$ba.shield>Khiên</> và hiệu ứng chữa trị giúp mỗi giây hồi 60<@ba.talpu>(+10)</> HP, kéo dài 30 giây (không cộng dồn). Hiệu ứng chữa trị tăng gấp đôi nếu Operator thuộc【Rhodes Island】."
   },
   "char_4215_buddy": {
     "TitleTalent1": "Long đạn miêu thức I",
