@@ -2958,7 +2958,7 @@
   "char_2025_shu": {
     "Title_S1": "Mưa thuận gió hòa",
     "Title_S2": "Mùa màng bội thu",
-    "Title_S3": "Vòng đời thực vật",
+    "Title_S3": "Luân hồi",
     "S1_1": "Đòn tấn công tiếp theo sẽ hồi một lượng HP bằng <@ba.vup>{heal_scale:0%}</> ATK cho 1 đồng minh xung quanh đang có HP dưới 50%.\\n<@ba.rem>Có thể tích trữ {ct} lần</>",
     "S1_2": "Đòn tấn công tiếp theo sẽ hồi một lượng HP bằng <@ba.vup>{heal_scale:0%}</> ATK cho 1 đồng minh xung quanh đang có HP dưới 50%.\\n<@ba.rem>Có thể tích trữ {ct} lần</>",
     "S1_3": "Đòn tấn công tiếp theo sẽ hồi một lượng HP bằng <@ba.vup>{heal_scale:0%}</> ATK cho 1 đồng minh xung quanh đang có HP dưới 50%.\\n<@ba.rem>Có thể tích trữ {ct} lần</>",
@@ -7863,7 +7863,7 @@
   "char_4146_nymph": {
     "Title_S1": "Đánh vào tâm hồn",
     "Title_S2": "Bùng phát nỗi sợ",
-    "Title_S3": "Tâm hồn sụp đổ",
+    "Title_S3": "Tâm hồn tan vỡ",
     "S1_1": "ATK <@ba.vup>+{atk:0%}</>, đòn tấn công kèm thêm <$ba.dt.apoptosis2>Necrosis</> bằng <@ba.vup>{attack@ep_damage_ratio:0%}</> sát thương phép gây ra; nếu mục tiêu đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, gây thêm sát thương nguyên tố bằng <@ba.vup>{attack@extra_ep_damage_scale:0%}</> ATK.",
     "S1_2": "ATK <@ba.vup>+{atk:0%}</>, đòn tấn công kèm thêm <$ba.dt.apoptosis2>Necrosis</> bằng <@ba.vup>{attack@ep_damage_ratio:0%}</> sát thương phép gây ra; nếu mục tiêu đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, gây thêm sát thương nguyên tố bằng <@ba.vup>{attack@extra_ep_damage_scale:0%}</> ATK.",
     "S1_3": "ATK <@ba.vup>+{atk:0%}</>, đòn tấn công kèm thêm <$ba.dt.apoptosis2>Necrosis</> bằng <@ba.vup>{attack@ep_damage_ratio:0%}</> sát thương phép gây ra; nếu mục tiêu đang trong giai đoạn bộc phát <$ba.dt.apoptosis2>Necrosis</>, gây thêm sát thương nguyên tố bằng <@ba.vup>{attack@extra_ep_damage_scale:0%}</> ATK.",
