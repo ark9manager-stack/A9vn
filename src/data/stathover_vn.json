@@ -263,6 +263,10 @@
     "title": "Ma lực/Mana",
     "text": "Một dạng SP đặc biệt tồn tại xuyên suốt trận chiến."
   },
+  "ba.chant": {
+    "title": "Niệm chú/Chanting",
+    "text": "Ngừng tấn công trong một khoảng thời gian, sau đó cố gắng kích hoạt kỹ năng. Nếu bị gián đoạn trong thời gian này, quá trình Niệm chú sẽ bị hủy.\n• Thanh thời gian kỹ năng sẽ chuyển sang màu xám và giảm dần; khi về 0, quá trình niệm chú hoàn tất.\n• Thời gian niệm chú không được tính là thời gian kỹ năng. Khi bắt đầu Niệm chú, chỉ được xem là đã bắt đầu quy trình kích hoạt kỹ năng; kỹ năng chỉ thật sự kích hoạt sau khi Niệm chú hoàn tất."
+  },
   "Barrier": {
     "title": "Lá chắn/Barrier",
     "text": "Hấp thụ một lượng sát thương nhất định."

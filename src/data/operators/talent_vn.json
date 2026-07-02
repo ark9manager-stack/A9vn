@@ -2324,8 +2324,8 @@
     "Talent1_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 45%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
     "Talent1_2": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 60% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>Làm chậm</> trong 0.8 giây.",
     "Talent1_2_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 65%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>Làm chậm</> trong 0.8 giây.",
-    "Talent2": "Đòn tấn công khiến mục tiêu -10 RES và chịu thêm +150 sát thương phép trong 5 giây.",
-    "Talent2_p2": "Đòn tấn công khiến mục tiêu -10 RES và chịu thêm +165<@ba.talpu>(+15)</> sát thương phép trong 5 giây."
+    "Talent2": "Đòn tấn công khiến mục tiêu -10 RES và sát thương phép phải chịu +150 trong 5 giây.",
+    "Talent2_p2": "Đòn tấn công khiến mục tiêu -10 RES và sát thương phép phải chịu +165<@ba.talpu>(+15)</> trong 5 giây."
   },
   "char_4134_cetsyr": {
     "TitleTalent1": "Tàn dư của quá khứ",
@@ -2384,10 +2384,10 @@
   "char_4141_marcil": {
     "TitleTalent1": "Học sinh xuất sắc nhất trong lịch sử của trường ma thuật",
     "TitleTalent2": "Đồng đội đáng tin cậy",
-    "Talent0": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +10% và mở rộng phạm vi lan của đòn tấn công.",
-    "Talent0_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +15%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
-    "Talent1": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +20% và mở rộng phạm vi lan của đòn tấn công.",
-    "Talent1_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 ma lực/1 giây khi không triển khai trên sân); Khi có <$ba.magicpoint>Ma lực</>, ATK +25%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent0": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 Ma lực/1 giây khi không triển khai trên sân, tối đa 80 Ma lực); Khi có <$ba.magicpoint>Ma lực</>, ATK +10% và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent0_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 Ma lực/1 giây khi không triển khai trên sân, tối đa 80 Ma lực); Khi có <$ba.magicpoint>Ma lực</>, ATK +15%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent1": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 Ma lực/1 giây khi không triển khai trên sân, tối đa 80 Ma lực); Khi có <$ba.magicpoint>Ma lực</>, ATK +20% và mở rộng phạm vi lan của đòn tấn công.",
+    "Talent1_p2": "Kỹ năng tiêu hao <$ba.magicpoint>Ma lực</> và có thể kích hoạt bất cứ lúc nào. <$ba.magicpoint>Ma lực</> không thể hồi tự nhiên (hồi 1 Ma lực/1 giây khi không triển khai trên sân, tối đa 80 Ma lực); Khi có <$ba.magicpoint>Ma lực</>, ATK +25%<@ba.talpu>(+5%)</> và mở rộng phạm vi lan của đòn tấn công.",
     "Talent2": "<$ba.magicpoint>Ma lực</> khởi đầu +25, khi có 4 thành viên thuộc<$ba.laiosteam>【Tổ đội của Laios】</>trong đội hình, tất cả thành viên<$ba.laiosteam>【Tổ đội của Laios】</>nhận +25 ASPD và +35% DEF."
   },
   "char_4142_laios": {
