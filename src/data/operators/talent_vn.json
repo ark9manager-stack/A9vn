@@ -3053,7 +3053,7 @@
     "Talent2_p4": "Mỗi lần tấn công trúng kẻ địch, hồi 45<@ba.talpu>(+5)</> HP cho bản thân và đồng minh ở ngay ô phía trước."
   },
   "char_486_takila": {
-    "TitleTalent1": "Chờ đợi hành động",
+    "TitleTalent1": "Chờ thời cơ",
     "Talent1": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 10% ATK của Tequila.",
     "Talent1_p4": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 13%<@ba.talpu>(+3%)</> ATK của Tequila.",
     "Talent1_2": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 20% ATK của Tequila.",
