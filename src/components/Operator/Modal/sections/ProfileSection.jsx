@@ -21,6 +21,7 @@ import {
 } from "../../../../utils/operatorPatchResolver";
 
 import StatHover from "../../../StatHover";
+import TranslatorCredit from "./TranslatorCredit";
 
 import {
   buildRecruitBgUrl,
@@ -440,6 +441,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
 
   const {
     transText,
+    transLinks,
     getText,
     recruitBgUrl,
     avatarUrl,
@@ -567,6 +569,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
 
     return {
       transText: trans,
+      transLinks: vn,
       getText: _getText,
       recruitBgUrl: recruitBg,
       avatarUrl: _avatarUrl,
@@ -605,21 +608,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-      {isNonEmptyString(transText) ? (
-        <div
-          style={{
-            padding: "12px 14px",
-            borderRadius: 10,
-            border: "1px dashed rgba(255,255,255,0.18)",
-            background: "rgba(0,0,0,0.12)",
-            fontSize: UI_SCALE.transFont,
-            lineHeight: 1.6,
-            opacity: 0.95,
-          }}
-        >
-          {renderMultiline(transText)}
-        </div>
-      ) : null}
+      <TranslatorCredit text={transText} links={transLinks} />
 
       <div
         style={{

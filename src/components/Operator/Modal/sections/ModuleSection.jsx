@@ -15,6 +15,7 @@ import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.js
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
 import { renderAKText } from "../../../StatHover";
+import TranslatorCredit from "./TranslatorCredit";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 import { patchTmplMatchesChar } from "../../../../utils/operatorPatchResolver";
 import {
@@ -314,7 +315,7 @@ function MaterialIcon({ itemId, count }) {
   );
 }
 
-function InfoTable({ title, titleInline, titleRight, children }) {
+function InfoTable({ title, titleInline, titleRight, titleBelow, children }) {
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
       <div className="flex items-center justify-between gap-3">
@@ -326,6 +327,8 @@ function InfoTable({ title, titleInline, titleRight, children }) {
         </div>
         {titleRight ? <div className="shrink-0">{titleRight}</div> : null}
       </div>
+
+      {titleBelow ? <div className="mt-3">{titleBelow}</div> : null}
 
       <div className="h-px bg-white/10 my-3" />
 
@@ -1553,6 +1556,12 @@ export default function ModuleSection(props) {
     );
   }, [selected, isEnglishUI, vnOverride]);
 
+  const displayTransText = React.useMemo(() => {
+    if (isEnglishUI) return "";
+    const t = vnOverride?.trans;
+    return typeof t === "string" ? t.trim() : "";
+  }, [vnOverride, isEnglishUI]);
+
   const moduleImageCandidates = React.useMemo(() => {
     if (!selected) return [];
     return getModuleImageCandidates(selectedModuleId, selectedModuleIcon);
@@ -1958,7 +1967,18 @@ export default function ModuleSection(props) {
         })}
       </div>
 
-      <InfoTable title={isEnglishUI ? "Story" : "Cốt truyện"}>
+      <InfoTable
+        title={isEnglishUI ? "Story" : "Cốt truyện"}
+        titleBelow={
+          isNonEmptyString(displayTransText) ? (
+            <TranslatorCredit
+              text={displayTransText}
+              links={vnOverride}
+              className="text-[0.92rem]"
+            />
+          ) : null
+        }
+      >
         {isNonEmptyString(displayStoryText) ? (
           <div
             className="text-white/95 leading-relaxed"

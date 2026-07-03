@@ -94,9 +94,10 @@ export default function SkinsSection({ operator, className = "" }) {
         const display = pickDisplaySkin(s);
         const enEntry = skinsDictEn?.[s.skinId];
         const displayEn = pickDisplaySkin(enEntry);
-        const shouldForceLowerTheme = String(s.skinId || "")
-          .toLowerCase()
-          .includes("@ambiencesynesthesia#");
+        const lowerSkinId = String(s.skinId || "").toLowerCase();
+        const shouldForceLowerTheme =
+          lowerSkinId.includes("@ambiencesynesthesia#") ||
+          lowerSkinId.includes("@littlepony#");
         const primaryUrl = buildSkinUrl(charId, s.skinId, {
           forceLowerTheme: shouldForceLowerTheme,
         });

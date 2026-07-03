@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import { renderAKText } from "../../../StatHover";
+import TranslatorCredit from "./TranslatorCredit";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
 import charwordTableEn from "../../../../data/voiceline/charword_table_en.json";
@@ -67,15 +68,19 @@ function translateVoiceTitle(voiceTitle) {
 
 function getPrefixFromWordKey(charId, wordKey, forceExactCharPrefix = false) {
   if (!wordKey || !charId) return "";
-  if (wordKey === charId) return forceExactCharPrefix ? charId : "";
-  if (wordKey.startsWith(`${charId}_`))
-    return wordKey.slice(`${charId}_`.length);
-  if (wordKey.startsWith(`${charId}#`)) return wordKey.slice(charId.length);
-  if (wordKey.startsWith(charId)) {
-    let rest = wordKey.slice(charId.length);
+  const wk = String(wordKey);
+  const cid = String(charId);
+  if (wk === cid) return forceExactCharPrefix ? cid : "";
+  if (wk.startsWith(`${cid}_`)) return wk.slice(`${cid}_`.length);
+  if (wk.startsWith(`${cid}#`)) return wk.slice(cid.length);
+  if (wk.startsWith(cid)) {
+    let rest = wk.slice(cid.length);
     if (rest.startsWith("_")) rest = rest.slice(1);
     return rest;
   }
+
+  if (wk.startsWith("char_")) return wk;
+
   return "";
 }
 
@@ -200,12 +205,18 @@ function getVariantWordKeys(charId) {
   if (!charId) return [];
   const dict = charwordTable?.voiceLangDict || {};
   const list = [];
+  const seen = new Set();
+
+  const push = (key) => {
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    list.push(key);
+  };
+
   for (const k of Object.keys(dict)) {
     const entry = dict[k];
     if (!entry) continue;
-    if (k === charId) list.push(k);
-    else if (entry.charId !== charId) continue;
-    else if (k.includes("#")) list.push(k);
+    if (k === charId || entry.charId === charId) push(k);
   }
 
   list.sort((a, b) => {
@@ -214,6 +225,324 @@ function getVariantWordKeys(charId) {
     return a.localeCompare(b);
   });
   return list;
+}
+
+function isNonEmptyString(v) {
+  return typeof v === "string" && v.trim().length > 0;
+}
+
+function isNonEmptyNoteValue(v) {
+  if (isNonEmptyString(v)) return true;
+  if (Array.isArray(v)) return v.length > 0;
+  if (v && typeof v === "object") return Object.keys(v).length > 0;
+  return false;
+}
+
+function normalizeNewlines(text) {
+  return String(text ?? "")
+    .split("\r\n")
+    .join("\n")
+    .split("\r")
+    .join("\n")
+    .split("\\n")
+    .join("\n");
+}
+
+function getScopedVnValue(
+  vnObj,
+  { baseKey, charId, selectedVariantKey, activePrefix, skinPrefix },
+) {
+  if (!vnObj || !baseKey) return "";
+
+  const hasScopedPrefix = isNonEmptyString(activePrefix) || isNonEmptyString(skinPrefix);
+  const isBaseVariant =
+    (!selectedVariantKey || !charId || String(selectedVariantKey) === String(charId)) &&
+    !hasScopedPrefix;
+
+  const candidates = [];
+  const push = (key) => {
+    if (!key || candidates.includes(key)) return;
+    candidates.push(key);
+  };
+
+  if (isBaseVariant) {
+    push(baseKey);
+  } else {
+    push(`${selectedVariantKey}_${baseKey}`);
+    push(activePrefix ? `${activePrefix}_${baseKey}` : "");
+    push(skinPrefix ? `${skinPrefix}_${baseKey}` : "");
+  }
+
+  for (const key of candidates) {
+    const val = vnObj?.[key];
+    if (isNonEmptyNoteValue(val)) return val;
+  }
+
+  return "";
+}
+
+function normalizeNoteId(raw, fallback) {
+  const s = String(raw ?? "").trim();
+  const cleaned = s
+    .replace(/^\[/, "")
+    .replace(/\]$/, "")
+    .replace(/^note[_-]?/i, "")
+    .trim();
+  return cleaned || String(fallback || "");
+}
+
+function getNoteTextFromValue(value) {
+  if (isNonEmptyString(value)) return value.trim();
+  if (!value || typeof value !== "object") return "";
+  return (
+    value.text ||
+    value.note ||
+    value.content ||
+    value.description ||
+    value.value ||
+    ""
+  );
+}
+
+function parseTranslatorNotes(raw) {
+  if (!isNonEmptyNoteValue(raw)) return [];
+
+  if (Array.isArray(raw)) {
+    return raw
+      .map((item, idx) => {
+        const id = normalizeNoteId(item?.id ?? item?.key ?? item?.noteId, idx + 1);
+        const text = getNoteTextFromValue(item);
+        return isNonEmptyString(text) ? { id, text: String(text).trim() } : null;
+      })
+      .filter(Boolean);
+  }
+
+  if (raw && typeof raw === "object") {
+    return Object.entries(raw)
+      .map(([key, value], idx) => {
+        const id = normalizeNoteId(key, idx + 1);
+        const text = getNoteTextFromValue(value);
+        return isNonEmptyString(text) ? { id, text: String(text).trim() } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => {
+        const an = Number(a.id);
+        const bn = Number(b.id);
+        if (Number.isFinite(an) && Number.isFinite(bn)) return an - bn;
+        return String(a.id).localeCompare(String(b.id));
+      });
+  }
+
+  const lines = normalizeNewlines(raw)
+    .split("\n")
+    .map((x) => x.trim())
+    .filter(Boolean);
+
+  const parsed = lines
+    .map((line, idx) => {
+      const m = /^(?:\[([^\]]+)\]|(\d+))[\s:.)-]+([\s\S]+)$/.exec(line);
+      if (m) {
+        return { id: normalizeNoteId(m[1] || m[2], idx + 1), text: m[3].trim() };
+      }
+      return { id: String(idx + 1), text: line };
+    })
+    .filter((note) => isNonEmptyString(note.text));
+
+  return parsed;
+}
+
+function makeDomId(raw) {
+  return String(raw || "note")
+    .trim()
+    .replace(/[^a-zA-Z0-9_-]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "note";
+}
+
+function getNoteRefDomId(scopeId, noteId) {
+  return `voice-note-ref-${scopeId}-${makeDomId(noteId)}`;
+}
+
+function getNoteItemDomId(scopeId, noteId) {
+  return `voice-trans-note-${scopeId}-${makeDomId(noteId)}`;
+}
+
+function scrollToDomId(id) {
+  if (typeof document === "undefined" || !id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+const SUPERSCRIPT_DIGITS = {
+  0: "⁰",
+  1: "¹",
+  2: "²",
+  3: "³",
+  4: "⁴",
+  5: "⁵",
+  6: "⁶",
+  7: "⁷",
+  8: "⁸",
+  9: "⁹",
+};
+
+function toSuperscriptNoteId(noteId) {
+  return String(noteId ?? "")
+    .split("")
+    .map((ch) => SUPERSCRIPT_DIGITS[ch] || ch)
+    .join("");
+}
+
+function TranslatorNoteLink({
+  id,
+  label,
+  keyPrefix,
+  start,
+  noteIds,
+  scopeId,
+  seenRefIds,
+}) {
+  if (!noteIds?.has(id)) return label ? `{'${label}'[${id}]}` : `[${id}]`;
+
+  const refId = getNoteRefDomId(scopeId, id);
+  const itemId = getNoteItemDomId(scopeId, id);
+  const isFirstRef = !seenRefIds?.has(id);
+  seenRefIds?.add(id);
+  const superscriptId = toSuperscriptNoteId(id);
+
+  if (label) {
+    return (
+      <button
+        key={`${keyPrefix}-note-label-${id}-${start}`}
+        id={isFirstRef ? refId : undefined}
+        type="button"
+        onClick={() => scrollToDomId(itemId)}
+        className="inline align-baseline font-semibold text-[#22BBFF] underline decoration-[#22BBFF]/70 decoration-dotted underline-offset-2 transition hover:text-white hover:decoration-white"
+        title={`Xem ghi chú của dịch giả [${id}]`}
+      >
+        <span>{label}</span>
+        <sup className="ml-0.5 align-super text-[0.72em] font-bold leading-none">
+          {superscriptId}
+        </sup>
+      </button>
+    );
+  }
+
+  return (
+    <sup
+      key={`${keyPrefix}-note-${id}-${start}`}
+      className="ml-0.5 align-super text-[0.72em] leading-none"
+    >
+      <button
+        id={isFirstRef ? refId : undefined}
+        type="button"
+        onClick={() => scrollToDomId(itemId)}
+        className="font-bold text-[#22BBFF] underline decoration-[#22BBFF]/70 underline-offset-2 transition hover:text-white hover:decoration-white"
+        title={`Xem ghi chú của dịch giả [${id}]`}
+      >
+        {superscriptId}
+      </button>
+    </sup>
+  );
+}
+
+function renderVoiceTextWithTranslatorNotes({
+  text,
+  keyPrefix,
+  noteIds,
+  scopeId,
+  seenRefIds,
+}) {
+  const value = String(text ?? "");
+  if (!value) return null;
+
+  const re = /\{\s*'([^']+)'\s*\[(\d+)\]\s*\}|\[(\d+)\]/g;
+  const nodes = [];
+  let last = 0;
+  let match;
+
+  while ((match = re.exec(value)) !== null) {
+    const label = match[1] || "";
+    const id = normalizeNoteId(match[2] || match[3]);
+    const start = match.index;
+    const end = re.lastIndex;
+
+    if (start > last) {
+      nodes.push(
+        <React.Fragment key={`${keyPrefix}-text-${last}-${start}`}>
+          {renderAKText(value.slice(last, start), `${keyPrefix}-ak-${last}`, {
+            preferNoteForDollar: true,
+          })}
+        </React.Fragment>,
+      );
+    }
+
+    nodes.push(
+      <TranslatorNoteLink
+        key={`${keyPrefix}-note-link-${id}-${start}`}
+        id={id}
+        label={label}
+        keyPrefix={keyPrefix}
+        start={start}
+        noteIds={noteIds}
+        scopeId={scopeId}
+        seenRefIds={seenRefIds}
+      />,
+    );
+
+    last = end;
+  }
+
+  if (last < value.length) {
+    nodes.push(
+      <React.Fragment key={`${keyPrefix}-text-tail-${last}`}>
+        {renderAKText(value.slice(last), `${keyPrefix}-ak-tail-${last}`, {
+          preferNoteForDollar: true,
+        })}
+      </React.Fragment>,
+    );
+  }
+
+  return nodes.length ? nodes : renderAKText(value, keyPrefix, { preferNoteForDollar: true });
+}
+
+function TranslatorNotesBlock({ notes, scopeId }) {
+  if (!Array.isArray(notes) || notes.length === 0) return null;
+
+  return (
+    <div className="ak-steel-card rounded-xl border border-[#22BBFF]/25 bg-[#0b5f85]/10 px-4 py-4">
+      <div className="mb-3 flex items-center gap-2 text-lg font-semibold text-white">
+        <span className="h-2 w-2 rounded-full bg-[#22BBFF] shadow-[0_0_10px_rgba(34,187,255,0.85)]" />
+        Ghi chú của dịch giả
+      </div>
+      <div className="space-y-3 text-sm leading-relaxed text-[#dceefa]">
+        {notes.map((note) => {
+          const refId = getNoteRefDomId(scopeId, note.id);
+          const itemId = getNoteItemDomId(scopeId, note.id);
+          return (
+            <div key={note.id} id={itemId} className="flex gap-3 scroll-mt-24">
+              <button
+                type="button"
+                onClick={() => scrollToDomId(refId)}
+                className="shrink-0 font-bold text-[#22BBFF] underline decoration-[#22BBFF]/70 underline-offset-2 transition hover:text-white hover:decoration-white"
+                title={`Quay lại voiceline [${note.id}]`}
+                aria-label={`Quay lại voiceline ghi chú ${note.id}`}
+              >
+                <sup className="align-super text-[0.8em] leading-none">
+                  {toSuperscriptNoteId(note.id)}
+                </sup>
+              </button>
+              <div className="min-w-0 flex-1 text-gray-100">
+                {renderAKText(note.text, `translator-note-${scopeId}-${note.id}`, {
+                  preferNoteForDollar: true,
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 const VoiceSection = ({ operator, lang = "VN" }) => {
@@ -356,20 +685,43 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
 
   const transText = useMemo(() => {
     if (isEnglishUI) return "";
-    const t = vnObj?.trans;
+    const t = getScopedVnValue(vnObj, {
+      baseKey: "trans",
+      charId,
+      selectedVariantKey,
+      activePrefix,
+      skinPrefix,
+    });
     return typeof t === "string" ? t.trim() : "";
-  }, [vnObj, isEnglishUI]);
+  }, [vnObj, isEnglishUI, charId, selectedVariantKey, activePrefix, skinPrefix]);
+
+  const translatorNotes = useMemo(() => {
+    if (isEnglishUI) return [];
+    const raw = getScopedVnValue(vnObj, {
+      baseKey: "trans_note",
+      charId,
+      selectedVariantKey,
+      activePrefix,
+      skinPrefix,
+    });
+    return parseTranslatorNotes(raw);
+  }, [vnObj, isEnglishUI, charId, selectedVariantKey, activePrefix, skinPrefix]);
+
+  const translatorNoteIds = useMemo(
+    () => new Set(translatorNotes.map((note) => String(note.id))),
+    [translatorNotes],
+  );
+
+  const translatorNoteScopeId = useMemo(
+    () => makeDomId(`${charId || "voice"}-${selectedVariantKey || activeWordKey || "base"}`),
+    [charId, selectedVariantKey, activeWordKey],
+  );
 
   const defaultAvatarUrl = useMemo(() => buildCnAvatarUrl(charId), [charId]);
+  const noteRefSeenInRender = new Set();
 
   return (
     <div className="bg-[#1b1b1b] rounded-xl p-4 text-white">
-      {transText ? (
-        <div className="mb-4 rounded-lg ak-steel-subcard px-3 py-2 text-sm text-[#dce4ea]">
-          {transText}
-        </div>
-      ) : null}
-
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex max-w-full items-center gap-2 overflow-x-auto">
           {variants.map((wk) => {
@@ -440,6 +792,8 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
         </div>
       </div>
 
+      <TranslatorCredit text={transText} links={vnObj} className="mb-4" />
+
       {/* Voice list */}
       <div className="space-y-4">
         {voiceLines.map((v) => {
@@ -492,8 +846,12 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
 
               {/* Text (bigger) */}
               <div className="bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
-                {renderAKText(text, `voice-text-${v.charWordId}`, {
-                  preferNoteForDollar: true,
+                {renderVoiceTextWithTranslatorNotes({
+                  text,
+                  keyPrefix: `voice-text-${v.charWordId}`,
+                  noteIds: translatorNoteIds,
+                  scopeId: translatorNoteScopeId,
+                  seenRefIds: noteRefSeenInRender,
                 })}
               </div>
             </div>
@@ -505,6 +863,8 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
             No voice lines for this Operator.
           </div>
         ) : null}
+
+        <TranslatorNotesBlock notes={translatorNotes} scopeId={translatorNoteScopeId} />
       </div>
     </div>
   );
