@@ -137,9 +137,8 @@ export default function TranslatorCredit({ text, links, className = "" }) {
     <div
       className={`rounded-xl border border-[#22BBFF]/35 bg-[#0b5f85]/20 px-4 py-3 text-sm text-[#e8f8ff] shadow-[0_0_24px_rgba(34,187,255,0.10)] ${className}`}
     >
-      <div className="mb-1 flex items-center gap-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#8fe3ff]">
-        <span className="h-2 w-2 rounded-full bg-[#22BBFF] shadow-[0_0_10px_rgba(34,187,255,0.85)]" />
-        Credit bản dịch
+      <div className="mb-1 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#8fe3ff]">
+        [Credit bản dịch]
       </div>
       <div className="leading-relaxed text-[#f4fbff]">
         {renderCreditText(text, links, "translator-credit")}

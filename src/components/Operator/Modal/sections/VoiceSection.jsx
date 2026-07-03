@@ -408,41 +408,37 @@ function TranslatorNoteLink({
   const itemId = getNoteItemDomId(scopeId, id);
   const isFirstRef = !seenRefIds?.has(id);
   seenRefIds?.add(id);
-  const superscriptId = toSuperscriptNoteId(id);
 
   if (label) {
+    const superscriptId = toSuperscriptNoteId(id);
     return (
       <button
         key={`${keyPrefix}-note-label-${id}-${start}`}
         id={isFirstRef ? refId : undefined}
         type="button"
         onClick={() => scrollToDomId(itemId)}
-        className="inline align-baseline font-semibold text-[#22BBFF] underline decoration-[#22BBFF]/70 decoration-dotted underline-offset-2 transition hover:text-white hover:decoration-white"
+        className="inline align-baseline font-semibold text-[#22BBFF] transition hover:text-white"
         title={`Xem ghi chú của dịch giả [${id}]`}
       >
         <span>{label}</span>
-        <sup className="ml-0.5 align-super text-[0.72em] font-bold leading-none">
+        <span className="ml-0.5 align-baseline text-[0.72em] font-bold leading-none">
           {superscriptId}
-        </sup>
+        </span>
       </button>
     );
   }
 
   return (
-    <sup
+    <button
       key={`${keyPrefix}-note-${id}-${start}`}
-      className="ml-0.5 align-super text-[0.72em] leading-none"
+      id={isFirstRef ? refId : undefined}
+      type="button"
+      onClick={() => scrollToDomId(itemId)}
+      className="inline align-baseline font-bold text-[#22BBFF] transition hover:text-white"
+      title={`Xem ghi chú của dịch giả [${id}]`}
     >
-      <button
-        id={isFirstRef ? refId : undefined}
-        type="button"
-        onClick={() => scrollToDomId(itemId)}
-        className="font-bold text-[#22BBFF] underline decoration-[#22BBFF]/70 underline-offset-2 transition hover:text-white hover:decoration-white"
-        title={`Xem ghi chú của dịch giả [${id}]`}
-      >
-        {superscriptId}
-      </button>
-    </sup>
+      [{id}]
+    </button>
   );
 }
 
@@ -510,12 +506,11 @@ function TranslatorNotesBlock({ notes, scopeId }) {
   if (!Array.isArray(notes) || notes.length === 0) return null;
 
   return (
-    <div className="ak-steel-card rounded-xl border border-[#22BBFF]/25 bg-[#0b5f85]/10 px-4 py-4">
-      <div className="mb-3 flex items-center gap-2 text-lg font-semibold text-white">
-        <span className="h-2 w-2 rounded-full bg-[#22BBFF] shadow-[0_0_10px_rgba(34,187,255,0.85)]" />
-        Ghi chú của dịch giả
+    <div className="rounded-xl bg-[#2a2a2a] px-4 py-4 text-base text-gray-100 whitespace-pre-wrap">
+      <div className="mb-3 text-lg font-semibold text-white">
+        [Ghi chú của dịch giả]
       </div>
-      <div className="space-y-3 text-sm leading-relaxed text-[#dceefa]">
+      <div className="space-y-3 leading-relaxed">
         {notes.map((note) => {
           const refId = getNoteRefDomId(scopeId, note.id);
           const itemId = getNoteItemDomId(scopeId, note.id);
@@ -524,15 +519,13 @@ function TranslatorNotesBlock({ notes, scopeId }) {
               <button
                 type="button"
                 onClick={() => scrollToDomId(refId)}
-                className="shrink-0 font-bold text-[#22BBFF] underline decoration-[#22BBFF]/70 underline-offset-2 transition hover:text-white hover:decoration-white"
+                className="shrink-0 font-bold text-[#22BBFF] transition hover:text-white"
                 title={`Quay lại voiceline [${note.id}]`}
                 aria-label={`Quay lại voiceline ghi chú ${note.id}`}
               >
-                <sup className="align-super text-[0.8em] leading-none">
-                  {toSuperscriptNoteId(note.id)}
-                </sup>
+                {note.id}
               </button>
-              <div className="min-w-0 flex-1 text-gray-100">
+              <div className="min-w-0 flex-1">
                 {renderAKText(note.text, `translator-note-${scopeId}-${note.id}`, {
                   preferNoteForDollar: true,
                 })}
