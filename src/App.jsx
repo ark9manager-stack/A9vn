@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AnalyticsTracker from "./components/AnalyticsTracker";
@@ -9,26 +9,27 @@ import LoadingScreen from "./components/UI/LoadingScreen";
 import RouteErrorBoundary from "./components/UI/RouteErrorBoundary";
 import PRTSIntro from "./components/PRTSIntro";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
+import { lazyWithRetry } from "./utils/lazyWithRetry";
 
 // lazy load pages
-const Home = lazy(() => import("./pages/Home"));
-const Music = lazy(() => import("./pages/Music"));
-const Operator = lazy(() => import("./pages/Operator"));
+const Home = lazyWithRetry(() => import("./pages/Home"), { label: "Home page" });
+const Music = lazyWithRetry(() => import("./pages/Music"), { label: "Music page" });
+const Operator = lazyWithRetry(() => import("./pages/Operator"), { label: "Operator page" });
 
-const GuideStory = lazy(() => import("./pages/GuideStory"));
-const GuideDetail = lazy(() => import("./pages/GuideDetail"));
-const StoryDetail = lazy(() => import("./pages/StoryDetail"));
+const GuideStory = lazyWithRetry(() => import("./pages/GuideStory"), { label: "GuideStory page" });
+const GuideDetail = lazyWithRetry(() => import("./pages/GuideDetail"), { label: "GuideDetail page" });
+const StoryDetail = lazyWithRetry(() => import("./pages/StoryDetail"), { label: "StoryDetail page" });
 
-const DatabasePage = lazy(() => import("./pages/DatabasePage"));
+const DatabasePage = lazyWithRetry(() => import("./pages/DatabasePage"), { label: "Database page" });
 
-const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
-const MaterialDetail = lazy(() => import("./pages/MaterialDetail"));
-const MaterialPlanner = lazy(() => import("./pages/MaterialPlanner"));
+const MaterialsPage = lazyWithRetry(() => import("./pages/MaterialsPage"), { label: "Materials page" });
+const MaterialDetail = lazyWithRetry(() => import("./pages/MaterialDetail"), { label: "MaterialDetail page" });
+const MaterialPlanner = lazyWithRetry(() => import("./pages/MaterialPlanner"), { label: "MaterialPlanner page" });
 
-const BossesPage = lazy(() => import("./pages/BossesPage"));
-const BossDetail = lazy(() => import("./pages/BossDetail"));
+const BossesPage = lazyWithRetry(() => import("./pages/BossesPage"), { label: "Bosses page" });
+const BossDetail = lazyWithRetry(() => import("./pages/BossDetail"), { label: "BossDetail page" });
 
-const NotFound = lazy(() => import("./pages/NotFound"));
+const NotFound = lazyWithRetry(() => import("./pages/NotFound"), { label: "NotFound page" });
 
 const queryClient = new QueryClient();
 const INTRO_KEY = "prts_intro_shown_v1";

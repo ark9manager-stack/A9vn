@@ -1,13 +1,13 @@
 import React, {
   useCallback,
   Suspense,
-  lazy,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
 import LoadingOp from "../../UI/LoadingOp";
+import { lazyWithRetry, retryDynamicImport } from "../../../utils/lazyWithRetry";
 
 const SECTION_IMPORTERS = {
   skins: () => import("./sections/SkinsSection"),
@@ -28,7 +28,7 @@ function preloadSectionModule(id) {
   if (!SECTION_MODULE_PROMISES.has(id)) {
     SECTION_MODULE_PROMISES.set(
       id,
-      importer().catch((error) => {
+      retryDynamicImport(importer, { label: `operator ${id} section` }).catch((error) => {
         SECTION_MODULE_PROMISES.delete(id);
         throw error;
       }),
@@ -38,12 +38,12 @@ function preloadSectionModule(id) {
   return SECTION_MODULE_PROMISES.get(id);
 }
 
-const SkinsSection = lazy(() => preloadSectionModule("skins"));
-const ProfileSection = lazy(() => preloadSectionModule("profile"));
-const SkillsSection = lazy(() => preloadSectionModule("skills"));
-const VoiceSection = lazy(() => preloadSectionModule("voice"));
-const StatsSection = lazy(() => preloadSectionModule("stats"));
-const ModuleSection = lazy(() => preloadSectionModule("modules"));
+const SkinsSection = lazyWithRetry(() => preloadSectionModule("skins"), { label: "operator skins section", retries: 1 });
+const ProfileSection = lazyWithRetry(() => preloadSectionModule("profile"), { label: "operator profile section", retries: 1 });
+const SkillsSection = lazyWithRetry(() => preloadSectionModule("skills"), { label: "operator skills section", retries: 1 });
+const VoiceSection = lazyWithRetry(() => preloadSectionModule("voice"), { label: "operator voice section", retries: 1 });
+const StatsSection = lazyWithRetry(() => preloadSectionModule("stats"), { label: "operator stats section", retries: 1 });
+const ModuleSection = lazyWithRetry(() => preloadSectionModule("modules"), { label: "operator modules section", retries: 1 });
 
 function resolveOperatorKey(operator, charId) {
   return String(

@@ -1,11 +1,5 @@
 import React from "react";
-
-function isChunkLoadError(error) {
-  const message = String(error?.message || error || "");
-  return /Failed to fetch dynamically imported module|Importing a module script failed|Loading chunk|ChunkLoadError|dynamically imported module/i.test(
-    message,
-  );
-}
+import { isDynamicImportError } from "../../utils/lazyWithRetry";
 
 export default class RouteErrorBoundary extends React.Component {
   constructor(props) {
@@ -30,18 +24,6 @@ export default class RouteErrorBoundary extends React.Component {
     } catch {
       // no-op
     }
-
-    if (isChunkLoadError(error) && typeof window !== "undefined") {
-      try {
-        const key = `a9vn_route_chunk_reload_v1:${window.location.pathname}`;
-        if (window.sessionStorage.getItem(key) !== "1") {
-          window.sessionStorage.setItem(key, "1");
-          window.location.reload();
-        }
-      } catch {
-        // no-op
-      }
-    }
   }
 
   handleReload = () => {
@@ -52,7 +34,7 @@ export default class RouteErrorBoundary extends React.Component {
     const { error } = this.state;
     if (!error) return this.props.children;
 
-    const chunkError = isChunkLoadError(error);
+    const moduleLoadError = isDynamicImportError(error);
 
     return (
       <div className="flex min-h-[calc(100vh-104px)] items-center justify-center px-4 py-12 text-white">
@@ -61,9 +43,9 @@ export default class RouteErrorBoundary extends React.Component {
             Page module failed to render
           </div>
           <p className="mt-3 text-sm leading-relaxed text-white/60">
-            {chunkError
-              ? "Trình duyệt đang giữ chunk cũ hoặc tải module động bị lỗi. Trang sẽ tự reload một lần; nếu vẫn lỗi, bấm Reload."
-              : "Một phần của trang bị lỗi khi render, nhưng app đã được chặn để không trắng màn hình."}
+            {moduleLoadError
+              ? "Module của trang tải không thành công sau vài lần thử. Hãy reload lại web, rất mong bạn thông cảm vấn đề này."
+              : "1"}
           </p>
           <button
             type="button"
