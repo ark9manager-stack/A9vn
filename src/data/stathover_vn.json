@@ -349,11 +349,19 @@
   },
   "NecrassTalent1E1": {
     "title": "",
-    "text": "+1 chặn, +50% HP và ATK, +20% DEF"
+    "text": "+1 Chặn, +50% HP và ATK, +20% DEF"
   },
   "NecrassTalent1E2": {
     "title": "",
-    "text": "+1 chặn, +100% HP và ATK, +40% DEF"
+    "text": "+1 Chặn, +100% HP và ATK, +40% DEF"
+  },
+  "NecrassS3summon": {
+    "title": "",
+    "text": "HP tối đa +200%, ATK +200%, DEF +100%, RES +10, Khoảng cách tấn công +0.7, Chặn +1."
+  },
+  "NecrassS3upgrade": {
+    "title": "",
+    "text": "Mỗi lần tiến hóa: HP tối đa +80%, ATK +80%, DEF +40%. Ở cấp 3/6 nhận thêm: Chặn +1, phạm vi tấn công của kỹ năng +1."
   },
   "DocTalent2E1": {
     "title": "",
@@ -551,6 +559,14 @@
     "title": "",
     "text": "-2.1 giây"
   },
+  "tachakS2": {
+    "title": "",
+    "text": "Giảm còn 0.195 giây"
+  },
+  "ashS2": {
+    "title": "",
+    "text": "Giảm còn 0.2 giây"
+  },
   "IntervalAngelina": {
     "title": "",
     "text": "Giảm còn 0.285 giây"
@@ -649,7 +665,7 @@
   },
   "indigoS2lv10": {
     "title": "",
-    "text": "Giảm còn 1.84 giây"
+    "text": "Giảm còn 1.8 giây"
   },
   "pasngrS2lv1": {
     "title": "",
