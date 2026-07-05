@@ -595,6 +595,10 @@
     "title": "",
     "text": "Giảm còn 0.64 giây"
   },
+  "crowS2lv10": {
+    "title": "",
+    "text": "Giảm còn 0.65 giây"
+  },
   "flamtlS3Interval": {
     "title": "",
     "text": "Giảm còn 0.7 giây"
@@ -603,9 +607,21 @@
     "title": "",
     "text": "Giảm còn 0.741 giây"
   },
+  "crowS2lv8": {
+    "title": "",
+    "text": "Giảm còn 0.78 giây"
+  },
+  "crowS2lv4": {
+    "title": "",
+    "text": "Giảm còn 0.845 giây"
+  },
   "aprot2S1lv10": {
     "title": "",
     "text": "Giảm còn 0.88 giây"
+  },
+  "crowS2lv1": {
+    "title": "",
+    "text": "Giảm còn 0.91 giây"
   },
   "mberryS2lv4": {
     "title": "",
