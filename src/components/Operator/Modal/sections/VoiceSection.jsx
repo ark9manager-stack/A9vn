@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { renderAKText } from "../../../StatHover";
-import TranslatorCredit from "./TranslatorCredit";
+import TranslatorCredit from "../../../TranslatorCredit";
 import charwordTable from "../../../../data/voiceline/charword_table.json";
 import charwordVn from "../../../../data/voiceline/charword_vn.json";
 import charwordTableEn from "../../../../data/voiceline/charword_table_en.json";

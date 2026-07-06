@@ -7,43 +7,16 @@ import React, {
   useState,
 } from "react";
 import LoadingOp from "../../UI/LoadingOp";
-import { lazyWithRetry, retryDynamicImport } from "../../../utils/lazyWithRetry";
-
-const SECTION_IMPORTERS = {
-  skins: () => import("./sections/SkinsSection"),
-  profile: () => import("./sections/ProfileSection"),
-  stats: () => import("./sections/StatsSection"),
-  skills: () => import("./sections/SkillsSection"),
-  modules: () => import("./sections/ModuleSection"),
-  voice: () => import("./sections/VoiceSection"),
-};
+import { createLazyAppModule } from "../../../utils/appModules";
 
 const SECTION_IDS = ["skins", "profile", "stats", "skills", "modules", "voice"];
-const SECTION_MODULE_PROMISES = new Map();
 
-function preloadSectionModule(id) {
-  const importer = SECTION_IMPORTERS[id];
-  if (!importer) return Promise.resolve(null);
-
-  if (!SECTION_MODULE_PROMISES.has(id)) {
-    SECTION_MODULE_PROMISES.set(
-      id,
-      retryDynamicImport(importer, { label: `operator ${id} section` }).catch((error) => {
-        SECTION_MODULE_PROMISES.delete(id);
-        throw error;
-      }),
-    );
-  }
-
-  return SECTION_MODULE_PROMISES.get(id);
-}
-
-const SkinsSection = lazyWithRetry(() => preloadSectionModule("skins"), { label: "operator skins section", retries: 1 });
-const ProfileSection = lazyWithRetry(() => preloadSectionModule("profile"), { label: "operator profile section", retries: 1 });
-const SkillsSection = lazyWithRetry(() => preloadSectionModule("skills"), { label: "operator skills section", retries: 1 });
-const VoiceSection = lazyWithRetry(() => preloadSectionModule("voice"), { label: "operator voice section", retries: 1 });
-const StatsSection = lazyWithRetry(() => preloadSectionModule("stats"), { label: "operator stats section", retries: 1 });
-const ModuleSection = lazyWithRetry(() => preloadSectionModule("modules"), { label: "operator modules section", retries: 1 });
+const SkinsSection = createLazyAppModule("sectionSkins");
+const ProfileSection = createLazyAppModule("sectionProfile");
+const SkillsSection = createLazyAppModule("sectionSkills");
+const VoiceSection = createLazyAppModule("sectionVoice");
+const StatsSection = createLazyAppModule("sectionStats");
+const ModuleSection = createLazyAppModule("sectionModules");
 
 function resolveOperatorKey(operator, charId) {
   return String(

@@ -1987,8 +1987,8 @@
     "Talent1_p2": "Sau khi triển khai, nhận <$ba.barrier>Lá chắn</> bằng 35%<@ba.talpu>(+5%)</> HP tối đa; Mỗi khi hạ gục 1 kẻ địch, nhận <$ba.barrier>Lá chắn</> bằng 6% HP tối đa (tối đa không vượt quá 300% HP tối đa).",
     "Talent1_2": "Sau khi triển khai, nhận <$ba.barrier>Lá chắn</> bằng 50% HP tối đa; Mỗi khi hạ gục 1 kẻ địch, nhận <$ba.barrier>Lá chắn</> bằng 10% HP tối đa (tối đa không vượt quá 300% HP tối đa).",
     "Talent1_2_p2": "Sau khi triển khai, nhận <$ba.barrier>Lá chắn</> bằng 55%<@ba.talpu>(+5%)</> HP tối đa; Mỗi khi hạ gục 1 kẻ địch, nhận <$ba.barrier>Lá chắn</> bằng 10% HP tối đa (tối đa không vượt quá 300% HP tối đa).",
-    "Talent2": "Kẻ địch tấn công Penance khi cô vẫn còn <$ba.barrier>Lá chắn</> sẽ chịu sát thương phép bằng 50% ATK.",
-    "Talent2_p4": "Kẻ địch tấn công Penance khi cô vẫn còn <$ba.barrier>Lá chắn</> sẽ chịu sát thương phép bằng 53%<@ba.talpu>(+3%)</> ATK."
+    "Talent2": "Khi Penance vẫn còn <$ba.barrier>Lá chắn</> từ nguồn của bản thân, kẻ địch tấn công cô sẽ chịu sát thương phép bằng 50% ATK.",
+    "Talent2_p4": "Khi Penance vẫn còn <$ba.barrier>Lá chắn</> từ nguồn của bản thân, kẻ địch tấn công cô sẽ chịu sát thương phép bằng 53%<@ba.talpu>(+3%)</> ATK."
   },
   "char_4066_highmo": {
     "TitleTalent1": "Bắt mồi, tiêu hóa",

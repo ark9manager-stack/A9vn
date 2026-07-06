@@ -15,7 +15,7 @@ import battleEquipTableEN from "../../../../data/module/battle_equip_table_en.js
 import moduleVN from "../../../../data/module/Module_vn.json";
 import traitModVN from "../../../../data/module/TraitMod_vn.json";
 import { renderAKText } from "../../../StatHover";
-import TranslatorCredit from "./TranslatorCredit";
+import TranslatorCredit from "../../../TranslatorCredit";
 import { subProfIconUrl } from "../../../../utils/operatorUtils";
 import { patchTmplMatchesChar } from "../../../../utils/operatorPatchResolver";
 import {

@@ -7,6 +7,7 @@ import {
 } from "react";
 import { MusicPlayerContext } from "./MusicPlayerStore";
 import { makeMusicTrackId, sameMusicTrack } from "../utils/musicTrackIds";
+import { fetchWithRawGithub429Fallback } from "../utils/githubCdnFallback";
 
 const VOLUME_KEY = "a9vn_music_volume";
 const SHUFFLE_KEY = "a9vn_music_shuffle";
@@ -304,7 +305,7 @@ export function MusicPlayerProvider({ children }) {
     const pending = blobUrlPromiseCacheRef.current.get(key);
     if (pending) return pending;
 
-    const promise = fetch(key, {
+    const promise = fetchWithRawGithub429Fallback(key, {
       cache: "force-cache",
       mode: "cors",
       credentials: "omit",

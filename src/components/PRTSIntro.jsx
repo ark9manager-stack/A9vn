@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function formatClock(date) {
   const hours = String(date.getHours()).padStart(2, "0");
@@ -19,11 +19,18 @@ function formatDateLine(date) {
 
 export default function PRTSIntro({
   onComplete,
-  duration = 5000,
+  preload,
+  duration = 6800,
+  maxPreloadWait = 12000,
   subtitle = "R H O D E S • I S L A N D",
   className = "",
 }) {
   const [now, setNow] = useState(() => new Date());
+  const [preloadProgress, setPreloadProgress] = useState(0);
+  const [preloadDone, setPreloadDone] = useState(!preload);
+  const [progress, setProgress] = useState(1);
+  const preloadProgressRef = useRef(0);
+  const preloadDoneRef = useRef(!preload);
 
   useEffect(() => {
     const tick = window.setInterval(() => {
@@ -33,15 +40,78 @@ export default function PRTSIntro({
     return () => window.clearInterval(tick);
   }, []);
 
-  useEffect(() => {
-    if (!onComplete) return;
 
-    const timer = window.setTimeout(onComplete, duration);
-    return () => window.clearTimeout(timer);
-  }, [onComplete, duration]);
+  useEffect(() => {
+    preloadProgressRef.current = preloadProgress;
+  }, [preloadProgress]);
+
+  useEffect(() => {
+    preloadDoneRef.current = preloadDone;
+  }, [preloadDone]);
+
+  useEffect(() => {
+    if (typeof preload !== "function") {
+      setPreloadDone(true);
+      setPreloadProgress(1);
+      return undefined;
+    }
+
+    let cancelled = false;
+
+    Promise.resolve()
+      .then(() =>
+        preload((state) => {
+          if (cancelled) return;
+          const next = Number(state?.percent);
+          setPreloadProgress(Number.isFinite(next) ? Math.max(0, Math.min(1, next)) : 0);
+        }),
+      )
+      .catch(() => null)
+      .finally(() => {
+        if (!cancelled) {
+          setPreloadProgress(1);
+          setPreloadDone(true);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [preload]);
+
+  useEffect(() => {
+    if (!onComplete) return undefined;
+
+    const start = Date.now();
+    let completed = false;
+
+    const tick = () => {
+      const elapsed = Date.now() - start;
+      const timeRatio = Math.max(0, Math.min(1, elapsed / duration));
+      const resourceRatio = Math.max(0, Math.min(1, preloadProgressRef.current));
+      const isPreloadDone = preloadDoneRef.current;
+      const mixed = timeRatio * 0.42 + resourceRatio * 0.58;
+      const cap = elapsed >= duration && !isPreloadDone ? 96 : 99;
+      const nextProgress = Math.min(cap, Math.max(1, Math.round(mixed * 100)));
+
+      setProgress((prev) => Math.max(prev, nextProgress));
+
+      const timedOut = elapsed >= Math.max(duration, maxPreloadWait);
+      if (!completed && elapsed >= duration && (preloadDoneRef.current || timedOut)) {
+        completed = true;
+        setProgress(100);
+        window.setTimeout(onComplete, 220);
+      }
+    };
+
+    tick();
+    const timer = window.setInterval(tick, 80);
+    return () => window.clearInterval(timer);
+  }, [onComplete, duration, maxPreloadWait]);
 
   const time = useMemo(() => formatClock(now), [now]);
   const dateLine = useMemo(() => formatDateLine(now), [now]);
+  const progressText = `${progress}%`;
 
   return (
     <section
@@ -107,10 +177,22 @@ export default function PRTSIntro({
           </div>
           <div className="bootStatus">
             <span>BOOT SEQUENCE</span>
-            <span>00:05</span>
+            <span>{preloadDone ? "READY" : "LOADING"}</span>
           </div>
-          <div className="progressTrack" aria-hidden="true">
-            <div className="progressBar" />
+          <div
+            className="progressLine"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={progress}
+          >
+            <div className="progressTrack">
+              <div
+                className="progressBar"
+                style={{ transform: `scaleX(${progress / 100})` }}
+              />
+            </div>
+            <span className="progressPercent">{progressText}</span>
           </div>
         </div>
       </main>
@@ -130,7 +212,7 @@ export default function PRTSIntro({
 
         <div className="diagRow">
           <span>SYNC</span>
-          <b>97%</b>
+          <b>{progressText}</b>
         </div>
       </aside>
 
@@ -454,11 +536,19 @@ export default function PRTSIntro({
           text-transform: uppercase;
         }
 
+        .progressLine {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          width: min(100%, 580px);
+          margin: 12px auto 0;
+        }
+
         .progressTrack {
           position: relative;
-          width: min(100%, 520px);
-          height: 6px;
-          margin: 12px auto 0;
+          flex: 1 1 auto;
+          height: 7px;
           border: 1px solid rgba(216,221,227,.22);
           background: rgba(255,255,255,.06);
           overflow: hidden;
@@ -470,7 +560,18 @@ export default function PRTSIntro({
           transform: scaleX(0);
           transform-origin: left;
           background: linear-gradient(90deg, rgba(136,144,156,.7), rgba(242,244,247,.92));
-          animation: progressFill 1.02s 1.74s cubic-bezier(.3,.75,.2,1) forwards;
+          transition: transform .28s cubic-bezier(.3,.75,.2,1);
+        }
+
+        .progressPercent {
+          flex: 0 0 auto;
+          min-width: 48px;
+          color: rgba(240,243,247,.88);
+          font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+          font-size: clamp(.68rem, 1vw, .84rem);
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-align: right;
         }
 
         .rightDiagnostics {
@@ -588,10 +689,6 @@ export default function PRTSIntro({
         }
 
         @keyframes lineGrow {
-          to { transform: scaleX(1); }
-        }
-
-        @keyframes progressFill {
           to { transform: scaleX(1); }
         }
 

@@ -1,34 +1,20 @@
 // src/utils/operatorAvatar.js
 
+import { makeRawGithubImageFallbackHandler, rawGithubToJsDelivr } from "./githubCdnFallback";
+
 const AK_ASSET_BRANCH = "cn";
 const AK_ASSET_RAW_BASE = `https://raw.githubusercontent.com/ArknightsAssets/ArknightsAssets2/${AK_ASSET_BRANCH}`;
-const AK_ASSET_JSDELIVR_BASE = `https://cdn.jsdelivr.net/gh/ArknightsAssets/ArknightsAssets2@${AK_ASSET_BRANCH}`;
-
 function buildAkAssetUrl(path = "") {
   const clean = String(path || "").replace(/^\/+/, "");
   return `${AK_ASSET_RAW_BASE}/${clean}`;
 }
 
 export function toJsDelivrAvatarUrl(url) {
-  const rawPrefix = `${AK_ASSET_RAW_BASE}/`;
-  const value = String(url || "");
-  if (!value.startsWith(rawPrefix)) return value;
-  return `${AK_ASSET_JSDELIVR_BASE}/${value.slice(rawPrefix.length)}`;
+  return rawGithubToJsDelivr(url);
 }
 
 export function makeAvatarCdnFallbackHandler({ onFallback } = {}) {
-  return (e) => {
-    const img = e?.currentTarget;
-    if (!img) return;
-    const current = String(img.currentSrc || img.src || "");
-    const next = toJsDelivrAvatarUrl(current);
-    if (!next || next === current || img?.dataset?.avatarCdnFallback === "1") return;
-    try {
-      if (img.dataset) img.dataset.avatarCdnFallback = "1";
-    } catch {}
-    onFallback?.(next, img);
-    img.src = next;
-  };
+  return makeRawGithubImageFallbackHandler({ onFallback });
 }
 
 export const CN_AVATAR_BASE =

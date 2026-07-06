@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { fetchWithRawGithub429Fallback } from "../utils/githubCdnFallback";
 
 function parseLrc(text) {
   const lines = text.split(/\r?\n/);
@@ -64,7 +65,7 @@ export function useLyrics(url) {
         setLoading(true);
         setError(null);
 
-        const res = await fetch(url);
+        const res = await fetchWithRawGithub429Fallback(url);
         if (!res.ok) throw new Error("Không thể tải lyrics từ URL.");
 
         const text = await res.text();

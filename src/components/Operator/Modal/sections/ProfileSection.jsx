@@ -21,7 +21,7 @@ import {
 } from "../../../../utils/operatorPatchResolver";
 
 import StatHover from "../../../StatHover";
-import TranslatorCredit from "./TranslatorCredit";
+import TranslatorCredit from "../../../TranslatorCredit";
 
 import {
   buildRecruitBgUrl,
