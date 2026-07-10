@@ -5614,5 +5614,15 @@
     "idweb": 420,
     "name": "焰狐龙梓兰",
     "name_vn": "Violet Mizutsune Orchid"
+  },
+  "char_4234_pedro": {
+    "idweb": 421,
+    "name": "佩德洛",
+    "name_vn": "Pedro"
+  },
+  "char_4229_aphris": {
+    "idweb": 422,
+    "name": "谬因",
+    "name_vn": "Aphrissa"
   }
 }

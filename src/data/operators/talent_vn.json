@@ -3844,5 +3844,21 @@
     "Talent1_2_p4": "Lần đầu kích hoạt kỹ năng sau khi triển khai, ATK của 50 đòn tấn công kế tiếp tăng lên 120%<@ba.talpu>(+5%)</>.",
     "Talent2": "Thời gian tái triển khai -15 giây; khi triển khai tại khu vực xung quanh vị trí triển khai lần trước, ATK +10% trong 30 giây và có thể triển khai trên ô cận chiến.",
     "Talent2_2": "Thời gian tái triển khai -15 giây và không tăng DP khi rút lui; khi triển khai tại khu vực xung quanh vị trí triển khai lần trước, ATK +15% trong 30 giây và có thể triển khai trên ô cận chiến."
+  },
+  "char_4234_pedro": {
+    "TitleTalent1": "Chiến thuật yểm hộ",
+    "Talent1": "Khi trong phạm vi tấn công có ít nhất 2 Operator khác, bản thân nhận ATK +5%.",
+    "Talent1_p4": "Khi trong phạm vi tấn công có ít nhất 2 Operator khác, bản thân nhận ATK +7%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Khi trong phạm vi tấn công có ít nhất 2 Operator khác, bản thân nhận ATK +10%.",
+    "Talent1_2_p4": "Khi trong phạm vi tấn công có ít nhất 2 Operator khác, bản thân nhận ATK +12%<@ba.talpu>(+2%)</>."
+  },
+  "char_4229_aphris": {
+    "TitleTalent1": "Giao thức liên kết",
+    "TitleTalent2": "Tối ưu lấy mẫu",
+    "Talent0": "Có thể triển khai 1 'Bộ Tiếp Sóng' tồn tại trong 15 giây. Đòn tấn công đi qua 'Bộ Tiếp Sóng' có khả năng chuyển hướng tấn công và phạm vi tấn công +2 ô.",
+    "Talent1": "Có thể triển khai 1 'Bộ Tiếp Sóng' tồn tại trong 20 giây. Đòn tấn công đi qua 'Bộ Tiếp Sóng' có khả năng chuyển hướng tấn công và phạm vi tấn công +2 ô; khi 'Bộ Tiếp Sóng' có mặt trên sân, bản thân nhận ATK +15%.",
+    "Talent1_2": "Có thể triển khai 1 'Bộ Tiếp Sóng' tồn tại trong 25 giây. Đòn tấn công đi qua 'Bộ Tiếp Sóng' có khả năng chuyển hướng tấn công và phạm vi tấn công +2 ô; khi 'Bộ Tiếp Sóng' có mặt trên sân, bản thân nhận ATK +25%.",
+    "Talent2": "Operator đồng minh đứng trong phạm vi tấn công sẽ bỏ qua 10 RES của kẻ địch.",
+    "Talent2_p5": "Operator đồng minh đứng trong phạm vi tấn công sẽ bỏ qua 13<@ba.talpu>(+3)</> RES của kẻ địch."
   }
 }
