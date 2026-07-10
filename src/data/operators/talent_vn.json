@@ -281,8 +281,8 @@
     "Talent1_p4": "Khi bất kỳ kẻ địch nào trên sân vừa bộc phát <$ba.dt.burning2>Burn</>, lập tức gây sát thương nguyên tố bằng 280%<@ba.talpu>(+30%)</> ATK lên kẻ địch đó và hồi 9%<@ba.talpu>(+3%)</> HP tối đa cho bản thân.",
     "Talent1_2": "Khi bất kỳ kẻ địch nào trên sân vừa bộc phát <$ba.dt.burning2>Burn</>, lập tức gây sát thương nguyên tố bằng 350% ATK lên kẻ địch đó và hồi 12% HP tối đa cho bản thân.",
     "Talent1_2_p4": "Khi bất kỳ kẻ địch nào trên sân vừa bộc phát <$ba.dt.burning2>Burn</>, lập tức gây sát thương nguyên tố bằng 380%<@ba.talpu>(+30%)</> ATK lên kẻ địch đó và hồi 15%<@ba.talpu>(+3%)</> HP tối đa cho bản thân.",
-    "Talent2": "Khi bị hạ gục, ngã xuống và nhận 6000 <$ba.barrier>Lá chắn</>; Trong quá trình ngã xuống, bản thân không thể tấn công hay nhận hồi phục, và hồi 3% HP mỗi giây. Khi HP đã đầy, hồi sinh và khiến kẻ địch xung quanh bị <$ba.stun>Choáng</> trong 5 giây.",
-    "Talent2_p2": "Khi bị hạ gục, ngã xuống và nhận 6000 <$ba.barrier>Lá chắn</>; Trong quá trình ngã xuống, bản thân không thể tấn công hay nhận hồi phục, và hồi 3.5%<@ba.talpu>(+0.5%)</> HP mỗi giây. Khi HP đã đầy, hồi sinh và khiến kẻ địch xung quanh bị <$ba.stun>Choáng</> trong 5 giây."
+    "Talent2": "Khi bị hạ gục, ngã xuống và nhận 6000 <$ba.barrier>Lá chắn</>; Trong quá trình ngã xuống, bản thân không thể tấn công hoặc nhận hồi phục, nhưng có thể hồi 3% HP mỗi giây. Khi HP đã đầy, hồi sinh và khiến kẻ địch xung quanh bị <$ba.stun>Choáng</> trong 5 giây.",
+    "Talent2_p2": "Khi bị hạ gục, ngã xuống và nhận 6000 <$ba.barrier>Lá chắn</>; Trong quá trình ngã xuống, bản thân không thể tấn công hoặc nhận hồi phục, nhưng có thể hồi 3.5%<@ba.talpu>(+0.5%)</> HP mỗi giây. Khi HP đã đầy, hồi sinh và khiến kẻ địch xung quanh bị <$ba.stun>Choáng</> trong 5 giây."
   },
   "char_1041_angel2": {
     "TitleTalent1": "Hỏa lực FM",
@@ -2050,7 +2050,7 @@
     "Talent1_2_p4": "Nếu kẻ địch trong phạm vi tấn công không phải là Elite hoặc Leader sẽ nhận 18%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>."
   },
   "char_4080_lin": {
-    "TitleTalent1": "Kế sách hoàn hảo",
+    "TitleTalent1": "Mưu tính vẹn toàn",
     "TitleTalent2": "Giấu nghề",
     "Talent1": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 150 sát thương từ một nguồn, và gây sát thương phép bằng 60% ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 12 giây.",
     "Talent1_p4": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 150 sát thương từ một nguồn, và gây sát thương phép bằng 70%<@ba.talpu>(+10%)</> ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 12 giây.",
