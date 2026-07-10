@@ -31,7 +31,7 @@ import {
   getSkillIconUrl,
   getSkillLevelIconUrl,
   getBuildingSkillIconUrl,
-  getSummonAvatarUrl,
+  getSummonImageCandidates,
   isImageLoadedCached,
 } from "../../../../utils/IconArtUrl";
 
@@ -1406,13 +1406,16 @@ function TokenSkillPanel({
   const skillIconUrl = tokenSkillId
     ? getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId)
     : "";
-  const tokenAvatarUrl = getSummonAvatarUrl(tokenId);
-  const tokenIconUrl = skillIconUrl || tokenAvatarUrl;
-  const [tokenIconFailed, setTokenIconFailed] = React.useState(false);
+  const tokenImageCandidates = React.useMemo(
+    () => getSummonImageCandidates(tokenId, skillIconUrl),
+    [tokenId, skillIconUrl],
+  );
+  const [tokenImageIndex, setTokenImageIndex] = React.useState(0);
+  const tokenIconUrl = tokenImageCandidates[tokenImageIndex] || "";
 
   React.useEffect(() => {
-    setTokenIconFailed(false);
-  }, [tokenId, tokenSkillId, tokenIconUrl]);
+    setTokenImageIndex(0);
+  }, [tokenId, tokenSkillId, skillIconUrl]);
 
   if (!tokenCharData) return null;
 
@@ -1431,9 +1434,9 @@ function TokenSkillPanel({
   const hasTalent = visibleTokenTalents.length > 0;
   const hasSkillDesc = isNonEmptyString(tokenSkillDesc);
   const hasTrait = isNonEmptyString(tokenTraitText);
-  const tokenIconKey = `${tokenId || "token"}-${tokenSkillId || "noskill"}-${tokenIconUrl || "noicon"}`;
+  const tokenIconKey = `${tokenId || "token"}-${tokenSkillId || "noskill"}-${tokenImageIndex}-${tokenIconUrl || "noicon"}`;
 
-  const tokenImage = tokenIconUrl && !tokenIconFailed ? (
+  const tokenImage = tokenIconUrl ? (
     <img
       key={tokenIconKey}
       src={tokenIconUrl}
@@ -1442,13 +1445,10 @@ function TokenSkillPanel({
       draggable={false}
       loading="eager"
       decoding="async"
-      onError={(e) => {
-        const fallback = tokenAvatarUrl;
-        if (fallback && e.currentTarget.src !== fallback) {
-          e.currentTarget.src = fallback;
-          return;
-        }
-        setTokenIconFailed(true);
+      onError={() => {
+        setTokenImageIndex((current) =>
+          Math.min(current + 1, tokenImageCandidates.length - 1),
+        );
       }}
     />
   ) : null;

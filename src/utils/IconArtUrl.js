@@ -752,9 +752,19 @@ export function withSpSuffix(url) {
 export const CHARAVATAR_BASE =
   `${buildAkAssetUrl("assets/dyn/arts/charavatars")}/`;
 
+export const ERROR_IMAGE_URL = new URL("../assets/error.png", import.meta.url).href;
+
 const SUMMON_AVATAR_OVERRIDE = {
   token_10012_rosmon_shield: `${SKILL_ICON_DIR}skill_icon_sktok_rosmon.png`,
 };
+
+// Chỉ các token này được thiết kế để dùng icon kỹ năng làm ảnh chính.
+// Các token khác phải ưu tiên charavatars/token_*.png dù chúng có skillId.
+const SUMMON_PREFER_SKILL_ICON = new Set([
+  "token_10005_mgllan_drone1",
+  "token_10005_mgllan_drone2",
+  "token_10005_mgllan_drone3",
+]);
 
 const SUMMON_SKILL_ICON_OVERRIDE = {
   token_10005_mgllan_drone1: "skill_icon_skchr_mgllan_1",
@@ -780,6 +790,19 @@ export function getSummonSkillIconUrl(tokenId) {
   const key = tokenToSkillIconKey(tokenId);
   if (!key) return "";
   return `${SKILL_ICON_DIR}${key}.png`;
+}
+
+export function getSummonImageCandidates(tokenId, skillIconUrl = "") {
+  const tid = String(tokenId || "");
+  if (!tid) return [ERROR_IMAGE_URL];
+
+  const avatarUrl = getSummonAvatarUrl(tid);
+  const resolvedSkillIconUrl = skillIconUrl || getSummonSkillIconUrl(tid);
+  const ordered = SUMMON_PREFER_SKILL_ICON.has(tid)
+    ? [resolvedSkillIconUrl, avatarUrl]
+    : [avatarUrl];
+
+  return [...new Set([...ordered.filter(Boolean), ERROR_IMAGE_URL])];
 }
 
 export function makeSummonSkillIconOnError(tokenId) {

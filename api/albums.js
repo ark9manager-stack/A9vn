@@ -18,6 +18,10 @@ function getPool() {
 }
 
 export default async function handler(req, res) {
+  if (req.method !== "GET") {
+    res.setHeader("Allow", "GET");
+    return res.status(405).json({ error: "Method not allowed" });
+  }
   try {
     const p = getPool();
     const [rows] = await p.query(`SELECT id, name, url FROM album ORDER BY id`);
@@ -27,6 +31,6 @@ export default async function handler(req, res) {
     console.error(e);
     return res
       .status(500)
-      .json({ error: "DB query failed", detail: String(e?.message || e) });
+      .json({ error: "DB query failed" });
   }
 }

@@ -20,11 +20,16 @@ function getPool() {
 }
 
 export default async function handler(req, res) {
+  if (req.method !== "GET") {
+    res.setHeader("Allow", "GET");
+    return res.status(405).json({ error: "Method not allowed" });
+  }
   try {
-    const albumId = req.query?.albumId;
+    const albumIdRaw = req.query?.albumId;
     const scope = req.query?.scope;
-    if (!albumId && scope !== "all") {
-      return res.status(400).json({ error: "Missing albumId" });
+    const albumId = albumIdRaw == null ? null : Number(albumIdRaw);
+    if (scope !== "all" && (!Number.isInteger(albumId) || albumId < 0)) {
+      return res.status(400).json({ error: "Invalid albumId" });
     }
 
     const p = getPool();
@@ -114,6 +119,6 @@ export default async function handler(req, res) {
     console.error(e);
     return res
       .status(500)
-      .json({ error: "DB query failed", detail: String(e?.message || e) });
+      .json({ error: "DB query failed" });
   }
 }
