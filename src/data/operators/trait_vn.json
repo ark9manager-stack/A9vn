@@ -71,6 +71,7 @@
     { "watchman": "Hồi HP cho đồng minh, và có thể [[Cất cánh|liftoff]]." },
     { "blessing": "Đòn tấn công gây <@ba.kw>sát thương phép</>. Khi kỹ năng đang kích hoạt, đòn tấn công chuyển thành hồi HP cho đồng minh (lượng hồi bằng 75% ATK)." },
     { "craftsman": "Chặn được 2 kẻ địch, có thể sử dụng <Thiết bị hỗ trợ> trong chiến đấu." },
+    { "supportiveranger": "Có thể sử dụng <$ba.triggereffect>Hiệu ứng kích hoạt</> để hỗ trợ trong chiến đấu." },
     { "slower": "Đòn tấn công gây <@ba.kw>sát thương phép</>, và gây hiệu ứng [[Làm chậm|Slow]] trong thời gian [[ngắn|SlowerTrait]]." },
     { "underminer": "Đòn tấn công gây <@ba.kw>sát thương phép</>." },
     { "alchemist": "Có thể ném các <@ba.kw>đơn vị Luyện Kim</> để hỗ trợ trong chiến đấu." },
