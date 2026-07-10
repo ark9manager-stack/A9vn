@@ -1,4 +1,5 @@
 import { makeRawGithubImageFallbackHandler, rawGithubToJsDelivr } from "./githubCdnFallback";
+import errorIconConfig from "./errorIcon.json";
 const __IMG_STATUS__ = new Map();
 const __LOCAL_ASSET_MODULES__ = import.meta.glob("../assets/assets_op/*", {
   eager: true,
@@ -754,6 +755,78 @@ export const CHARAVATAR_BASE =
 
 export const ERROR_IMAGE_URL = new URL("../assets/error.png", import.meta.url).href;
 
+const __LOST_ASSET_MODULES__ = import.meta.glob("../assets/lost_assets/*", {
+  eager: true,
+  import: "default",
+});
+
+const __LOST_ASSET_BY_NAME__ = Object.fromEntries(
+  Object.entries(__LOST_ASSET_MODULES__).map(([path, url]) => {
+    const fileName = path.split("/").pop()?.toLowerCase?.() || "";
+    return [fileName, url];
+  }),
+);
+
+const LOST_ASSET_ERROR_IDS = new Set(
+  Array.isArray(errorIconConfig?.lostassetErrorIds)
+    ? errorIconConfig.lostassetErrorIds
+        .map((id) => String(id || "").trim())
+        .filter(Boolean)
+    : [],
+);
+
+function getLostAssetUrl(tokenId) {
+  const tid = String(tokenId || "").trim().toLowerCase();
+  if (!tid || !LOST_ASSET_ERROR_IDS.has(tid)) return "";
+  return __LOST_ASSET_BY_NAME__[`${tid}.png`] || "";
+}
+
+const IMMEDIATE_ERROR_IDS = new Set(
+  Array.isArray(errorIconConfig?.immediateErrorIds)
+    ? errorIconConfig.immediateErrorIds
+        .map((id) => String(id || "").trim())
+        .filter(Boolean)
+    : [],
+);
+
+const PREFER_SKILL_ICON_RULES = Array.isArray(
+  errorIconConfig?.preferSkillIconRules,
+)
+  ? errorIconConfig.preferSkillIconRules
+  : [];
+
+function shouldUseImmediateError({ charId = "", tokenId = "" } = {}) {
+  const cid = String(charId || "").trim();
+  const tid = String(tokenId || "").trim();
+  return (cid && IMMEDIATE_ERROR_IDS.has(cid)) ||
+    (tid && IMMEDIATE_ERROR_IDS.has(tid));
+}
+
+function matchesPreferSkillIconRule({
+  charId = "",
+  tokenId = "",
+  skillNumber = 0,
+} = {}) {
+  const cid = String(charId || "").trim();
+  const tid = String(tokenId || "").trim();
+  const skillNo = Number(skillNumber);
+
+  return PREFER_SKILL_ICON_RULES.some((rule) => {
+    const ruleCharId = String(rule?.charId || "").trim();
+    const ruleTokenId = String(rule?.tokenId || "").trim();
+    const ruleSkillNumber = Number(rule?.skillNumber);
+
+    const charMatches = !ruleCharId || ruleCharId === cid;
+    const tokenMatches = !ruleTokenId || ruleTokenId === tid;
+    const skillMatches =
+      !Number.isFinite(ruleSkillNumber) ||
+      ruleSkillNumber <= 0 ||
+      ruleSkillNumber === skillNo;
+
+    return charMatches && tokenMatches && skillMatches;
+  });
+}
+
 const SUMMON_AVATAR_OVERRIDE = {
   token_10012_rosmon_shield: `${SKILL_ICON_DIR}skill_icon_sktok_rosmon.png`,
 };
@@ -780,8 +853,12 @@ function tokenToSkillIconKey(tokenId) {
 }
 
 export function getSummonAvatarUrl(tokenId) {
-  const tid = String(tokenId || "");
+  const tid = String(tokenId || "").trim();
   if (!tid) return "";
+
+  const lostAssetUrl = getLostAssetUrl(tid);
+  if (lostAssetUrl) return lostAssetUrl;
+
   if (SUMMON_AVATAR_OVERRIDE[tid]) return SUMMON_AVATAR_OVERRIDE[tid];
   return `${CHARAVATAR_BASE}${tid}.png`;
 }
@@ -792,13 +869,31 @@ export function getSummonSkillIconUrl(tokenId) {
   return `${SKILL_ICON_DIR}${key}.png`;
 }
 
-export function getSummonImageCandidates(tokenId, skillIconUrl = "") {
-  const tid = String(tokenId || "");
+export function getSummonImageCandidates(
+  tokenId,
+  skillIconUrl = "",
+  { charId = "", skillNumber = 0 } = {},
+) {
+  const tid = String(tokenId || "").trim();
+  const cid = String(charId || "").trim();
+
+  if (shouldUseImmediateError({ charId: cid, tokenId: tid })) {
+    return [ERROR_IMAGE_URL];
+  }
+
   if (!tid) return [ERROR_IMAGE_URL];
 
   const avatarUrl = getSummonAvatarUrl(tid);
   const resolvedSkillIconUrl = skillIconUrl || getSummonSkillIconUrl(tid);
-  const ordered = SUMMON_PREFER_SKILL_ICON.has(tid)
+  const preferSkillIcon =
+    SUMMON_PREFER_SKILL_ICON.has(tid) ||
+    matchesPreferSkillIconRule({
+      charId: cid,
+      tokenId: tid,
+      skillNumber,
+    });
+
+  const ordered = preferSkillIcon
     ? [resolvedSkillIconUrl, avatarUrl]
     : [avatarUrl];
 

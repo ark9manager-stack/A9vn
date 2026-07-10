@@ -1,0 +1,19 @@
+{
+  "immediateErrorIds": [
+    "char_1019_siege2",
+    "token_10039_ulpia_block",
+    "token_10040_siege2_vlion",
+    "token_10055_phatm2_mndclv",
+    "token_10065_demetr_dmtpos"
+  ],
+  "preferSkillIconRules": [
+    {
+      "charId": "char_0000_oprator",
+      "skillNumber": 2
+    }
+  ],
+  "lostassetErrorIds": [
+    "token_10015_dusk_drgn",
+    "token_10024_ebnhlz_rcube"
+  ]
+}

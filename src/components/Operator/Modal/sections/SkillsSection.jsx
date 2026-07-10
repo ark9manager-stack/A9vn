@@ -1407,8 +1407,12 @@ function TokenSkillPanel({
     ? getSkillIconUrl(tokenSkillId, tokenSkillCnEntry?.iconId || tokenSkillEnEntry?.iconId)
     : "";
   const tokenImageCandidates = React.useMemo(
-    () => getSummonImageCandidates(tokenId, skillIconUrl),
-    [tokenId, skillIconUrl],
+    () =>
+      getSummonImageCandidates(tokenId, skillIconUrl, {
+        charId: charKey,
+        skillNumber: selectedSkillOrder,
+      }),
+    [tokenId, skillIconUrl, charKey, selectedSkillOrder],
   );
   const [tokenImageIndex, setTokenImageIndex] = React.useState(0);
   const tokenIconUrl = tokenImageCandidates[tokenImageIndex] || "";
