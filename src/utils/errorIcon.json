@@ -1,6 +1,6 @@
 {
   "immediateErrorIds": [
-    "char_1019_siege2",
+    "token_10058_sbell2_icetgt",
     "token_10039_ulpia_block",
     "token_10040_siege2_vlion",
     "token_10055_phatm2_mndclv",
@@ -14,6 +14,8 @@
   ],
   "lostassetErrorIds": [
     "token_10015_dusk_drgn",
-    "token_10024_ebnhlz_rcube"
+    "token_10024_ebnhlz_rcube",
+    "token_10019_nearl2_sword",
+    "token_10022_kazema_shadow"
   ]
 }
