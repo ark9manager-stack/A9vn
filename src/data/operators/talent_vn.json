@@ -1654,10 +1654,10 @@
   },
   "char_394_hadiya": {
     "TitleTalent1": "Hậu duệ vùng hoang dã",
-    "Talent1": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +2% ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 3 tầng).",
-    "Talent1_p4": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +3%<@ba.talpu>(+1%)</> ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 3 tầng).",
-    "Talent1_2": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +4% ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 5 tầng).",
-    "Talent1_2_p4": "Khi tiêu hao DP thông qua: triển khai, kích hoạt kỹ năng, hoặc <$ba.alter>Trang bị ứng biến</>; Hadiya +5%<@ba.talpu>(+1%)</> ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 5 tầng)."
+    "Talent1": "Khi tiêu hao DP thông qua: Triển khai, kích hoạt kỹ năng, hoặc sử dụng <$ba.alter>Trang bị ứng biến</>; Hadiya +2% ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 3 tầng).",
+    "Talent1_p4": "Khi tiêu hao DP thông qua: Triển khai, kích hoạt kỹ năng, hoặc sử dụng <$ba.alter>Trang bị ứng biến</>; Hadiya +3%<@ba.talpu>(+1%)</> ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 3 tầng).",
+    "Talent1_2": "Khi tiêu hao DP thông qua: Triển khai, kích hoạt kỹ năng, hoặc sử dụng <$ba.alter>Trang bị ứng biến</>; Hadiya +4% ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 5 tầng).",
+    "Talent1_2_p4": "Khi tiêu hao DP thông qua: Triển khai, kích hoạt kỹ năng, hoặc sử dụng <$ba.alter>Trang bị ứng biến</>; Hadiya +5%<@ba.talpu>(+1%)</> ATK và khiến kẻ địch trong phạm vi tấn công bị <$ba.stun>Choáng</> 2 giây (ATK cộng dồn tối đa 5 tầng)."
   },
   "char_4000_jnight": {
     "TitleTalent1": "Trợ lực công lý I",
@@ -1679,7 +1679,7 @@
     "Talent1_2": "ATK +10%"
   },
   "char_4006_melnte": {
-    "TitleTalent1": "Tinh chỉnh thông số",
+    "TitleTalent1": "Hiệu chỉnh tham số",
     "Talent1": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 10%.",
     "Talent1_p4": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 11%<@ba.talpu>(+1%)</>.",
     "Talent1_2": "Kích hoạt kỹ năng từ lần thứ 2 trở đi, sát thương gây ra trong thời gian kỹ năng tăng 15%.",
