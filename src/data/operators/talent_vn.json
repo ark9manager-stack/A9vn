@@ -368,8 +368,8 @@
   },
   "char_106_franka": {
     "TitleTalent1": "Lưỡi kiếm Thermite",
-    "Talent1": "Khi tấn công, có 10% tỷ lệ bỏ qua DEF của mục tiêu",
-    "Talent1_2": "Khi tấn công, có 20% tỷ lệ bỏ qua DEF của mục tiêu"
+    "Talent1": "Khi tấn công, có 10% tỷ lệ bỏ qua toàn bộ DEF của mục tiêu",
+    "Talent1_2": "Khi tấn công, có 20% tỷ lệ bỏ qua toàn bộ DEF của mục tiêu"
   },
   "char_107_liskam": {
     "TitleTalent1": "Chiến thuật phòng ngự",
@@ -638,8 +638,8 @@
     "Talent1_2_p4": "Có 33%<@ba.talpu>(+3%)</> tỷ lệ né đòn cận chiến vật lý của kẻ địch; Sau khi né thành công, ATK +100% cho đòn tấn công kế tiếp của bản thân."
   },
   "char_157_dagda": {
-    "TitleTalent1": "Tinh thần băng nhóm",
-    "TitleTalent2": "Tinh thần hiệp sĩ",
+    "TitleTalent1": "Tinh thần băng đảng",
+    "TitleTalent2": "Ý chí hiệp sĩ",
     "Talent1": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 130%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Operator【Glasgow】(tối đa tới 190%).",
     "Talent1_2": "Khi tấn công, có 30% tỷ lệ tăng ATK của đòn đánh đó lên 150%. Khi có mặt trên sân, hệ số tăng ATK sẽ +5% mỗi khi có 1 kẻ địch bị hạ trong 4 ô xung quanh Operator【Glasgow】(tối đa tới 240%).",
     "Talent2": "Trong【Return to Mist】(Chapter 11), HP +20%. Mỗi đòn tấn công hồi cho bản thân lượng HP bằng 20% sát thương gây ra."
@@ -652,7 +652,7 @@
     "Talent1_2_p4": "ATK tăng lên 145%<@ba.talpu>(+5%)</> khi tấn công kẻ địch đánh tầm xa."
   },
   "char_159_peacok": {
-    "TitleTalent1": "Đáp đất an toàn",
+    "TitleTalent1": "Hạ cánh an toàn",
     "Talent0": "-2 DP, Thời gian tái triển khai -8 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây.",
     "Talent1_2": "-4 DP, Thời gian tái triển khai -15 giây. Ngay sau khi triển khai, bản thân sẽ bị <$ba.berserk>Choáng</> 10 giây."
   },
