@@ -979,8 +979,8 @@
     "Talent1_2_p4": "Trong thời gian nội tại có hiệu lực, ATK +18%<@ba.talpu>(+3%)</>, chặn giảm còn 0 và nhận <$ba.camou>Ngụy trang</>."
   },
   "char_215_mantic": {
-    "TitleTalent1": "Sát thủ vô hình - Trung cấp",
-    "TitleTalent1_2": "Sát thủ vô hình - Tinh anh",
+    "TitleTalent1": "Sát thủ ẩn mình - Trung cấp",
+    "TitleTalent1_2": "Sát thủ ẩn mình - Tinh nhuệ",
     "Talent1": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +25%. Sau khi ngừng tấn công 6 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>.",
     "Talent1_p4": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +29%<@ba.talpu>(+4%)</>. Sau khi ngừng tấn công 6 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>.",
     "Talent1_2": "Bản thân sẽ luôn ở trạng thái <$ba.invisible>Tàng hình</>, khi tấn công sẽ mất <$ba.invisible>Tàng hình</> và ATK của đòn đó +50%. Sau khi ngừng tấn công 5 giây, vào lại trạng thái <$ba.invisible>Tàng hình</>.",
