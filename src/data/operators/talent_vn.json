@@ -3432,5 +3432,13 @@
     "Talent1_2": "Có thể triển khai 1 'Bộ Tiếp Sóng' tồn tại trong 25 giây. Đòn tấn công đi qua 'Bộ Tiếp Sóng' có khả năng chuyển hướng tấn công và phạm vi tấn công +2 ô; khi 'Bộ Tiếp Sóng' có mặt trên sân, bản thân nhận ATK +25%.",
     "Talent2": "Operator đồng minh đứng trong phạm vi tấn công sẽ bỏ qua 10 RES của kẻ địch.",
     "Talent2_p5": "Operator đồng minh đứng trong phạm vi tấn công sẽ bỏ qua 13<@ba.talpu>(+3)</> RES của kẻ địch."
+  },
+  "char_4230_mcnist": {
+    "TitleTalent1": "Nguyên lý kết cấu",
+    "TitleTalent2": "Phương trình sinh mệnh",
+    "Talent1": "Có thể triển khai 1 'Nguyên Lý Kết Cấu' tồn tại trong 20 giây và có thời gian tái triển khai độc lập.",
+    "Talent1_2": "Có thể triển khai 1 'Nguyên Lý Kết Cấu' tồn tại trong 30 giây và có thời gian tái triển khai độc lập.",
+    "Talent2": "Mechanist và 'Nguyên Lý Kết Cấu' sẽ nhận <$ba.barrier>Lá chắn</> bằng 30% HP tối đa sau khi triển khai; <$ba.barrier>Lá chắn</> do Mechanist tạo ra có thể hấp thụ toàn bộ sát thương vượt quá lượng Lá chắn còn lại.",
+    "Talent2_p4": "Mechanist và 'Nguyên Lý Kết Cấu' sẽ nhận <$ba.barrier>Lá chắn</> bằng 40%<@ba.talpu>(+10%)</> HP tối đa sau khi triển khai; <$ba.barrier>Lá chắn</> do Mechanist tạo ra có thể hấp thụ toàn bộ sát thương vượt quá lượng Lá chắn còn lại."
   }
 }

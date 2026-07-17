@@ -185,11 +185,11 @@
   },
   "StatusRes": {
     "title": "Kháng hiệu ứng/Status Resistance",
-    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   },
   "ba.buffres": {
     "title": "Kháng hiệu ứng/Status Resistance",
-    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   },
   "ba.debuff": {
     "title": "Hiệu ứng xấu/Negative Status",
@@ -197,11 +197,11 @@
   },
   "Stun": {
     "title": "Choáng/Stun",
-    "text": "Không thể di chuyển, chặn, tấn công, sử dụng kỹ năng."
+    "text": "Không thể di chuyển, Chặn, tấn công, sử dụng kỹ năng."
   },
   "ba.stun": {
     "title": "Choáng/Stun",
-    "text": "Không thể di chuyển, chặn, tấn công, sử dụng kỹ năng."
+    "text": "Không thể di chuyển, Chặn, tấn công, sử dụng kỹ năng."
   },
   "Sanctuary": {
     "title": "Bảo hộ/Sanctuary",

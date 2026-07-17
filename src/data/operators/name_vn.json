@@ -2253,5 +2253,10 @@
     "idweb": 422,
     "name": "谬因",
     "name_vn": "Aphrissa"
+  },
+  "char_4230_mcnist": {
+    "idweb": 423,
+    "name": "机械师",
+    "name_vn": "Mechanist"
   }
 }
