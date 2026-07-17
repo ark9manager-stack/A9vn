@@ -1,6 +1,2950 @@
 {
+  "control_prod_spd[000]": {
+    "Name": "Quyền hạn tối cao",
+    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng loại hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+  },
+  "control_prod_spd[1000]": {
+    "Name": "Quyền hạn tối cao",
+    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng loại hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+  },
+  "control_prod_fraction[000]": {
+    "Name": "Ánh le lói của Kỵ Sĩ Nến",
+    "description": "Khi Operator này được phân công vào Control Center, tất cả Operator <$cc.tag.knight><@cc.kw>Kỵ Sĩ</></> được phân công vào Factory nhận năng suất <@cc.vup>+7%</>."
+  },
+  "control_prod_bd_spd[000]": {
+    "Name": "Kinh nghiệm làm việc dày dặn",
+    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Precious Metals</> của tất cả Factory <@cc.vup>+0.5%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+0.5%</>."
+  },
+  "control_prod_bd_spd[010]": {
+    "Name": "Kinh nghiệm làm việc dày dặn",
+    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Precious Metals</> của tất cả Factory <@cc.vup>+1%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+1%</>."
+  },
+  "control_token_prod_spd[000]": {
+    "Name": "Ép xung",
+    "description": "进驻控制中枢时，如果有<@cc.kw>2</>台以上<$cc.tag.op><@cc.kw>作业平台</></>进驻在<@cc.kw>发电站</>，则所有制造站生产力<@cc.vup>+2%</>（同种效果取最高）"
+  },
+  "control_token_prod_spd2[000]": {
+    "Name": "",
+    "description": "当与<$cc.tag.mh><@cc.kw>怪物猎人小队</></>干员进驻控制中枢一起工作时，所有制造站生产力<@cc.vup>+2%</>（同种效果取最高）"
+  },
+  "control_token_prod_spd3[000]": {
+    "Name": "",
+    "description": "当与<$cc.g.lgd><@cc.kw>龙门近卫局</></>干员进驻控制中枢一起工作时，所有制造站生产力<@cc.vup>+3%</>（同种效果取最高）"
+  },
+  "control_token_tra_spd[000]": {
+    "Name": "",
+    "description": "当与<$cc.tag.mh><@cc.kw>怪物猎人小队</></>干员进驻控制中枢一起工作时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+  },
+  "control_bd_spd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>；每个进驻在制造站的<$cc.g.bs><@cc.kw>黑钢国际</></>干员，生产力<@cc.vup>+5%</>"
+  },
+  "control_pow_bot[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，如果<@cc.kw>Lancet-2</>进驻在<@cc.kw>发电站</>，<@cc.kw>发电站</>额外<@cc.vup>+2</>（仅影响设施数量）"
+  },
+  "control_tra_spd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+  },
+  "control_tra_spd[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+  },
+  "control_tra_spd[020]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+  },
+  "control_tra_spd[030]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+  },
+  "control_tra_limit&spd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，每个进驻在贸易站的<$cc.g.karlan><@cc.kw>谢拉格</></>干员，订单获取效率<@cc.vdown>-15%</>，订单上限<@cc.vup>+6</>"
+  },
+  "control_tra_limit&spd2[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，每个进驻在贸易站的<$cc.g.siracusa><@cc.kw>叙拉古</></>干员，订单获取效率<@cc.vup>+5%</>"
+  },
+  "control_tra_limit&spd3[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，每个存在<@cc.vup>3</>名<$cc.g.karlan><@cc.kw>谢拉格</></>干员的贸易站，订单获取效率<@cc.vup>+10%</>"
+  },
+  "control_hire_spd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，人力办公室联络速度小于<@cc.vup>30%</>时（其中包含基础联络速度5%），则联络速度额外<@cc.vup>+20%</>（该加成全局效果唯一，不受其它加成影响）"
+  },
+  "control_hire_spd_all[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，人力办公室联络速度<@cc.vup>+10%</>（同种效果取最高）"
+  },
+  "control_upMeetingSpeed[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，会客室线索搜集速度<@cc.vup>+25%</>（同种效果取最高）"
+  },
+  "control_upMeetingSpeed[100]": {
+    "Name": "",
+    "description": "进驻控制中枢时，会客室线索搜集速度<@cc.vup>+15%</>（同种效果取最高）"
+  },
+  "control_meeting&ord[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，当<@cc.kw>伊内丝</>入驻会客室时，会客室线索搜集速度<@cc.vup>+5%</>；当<@cc.kw>赫德雷</>入驻贸易站时，赫德雷所在贸易站订单上限<@cc.vup>+1</>"
+  },
+  "control_meeting&ord[001]": {
+    "Name": "",
+    "description": "进驻控制中枢时，当<@cc.kw>伊内丝</>入驻会客室时，会客室线索搜集速度<@cc.vup>+5%</>；当<@cc.kw>赫德雷</>入驻贸易站时，赫德雷所在贸易站订单上限<@cc.vup>+2</>"
+  },
+  "control_meeting&mp_cost[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.minos><@cc.kw>米诺斯</></>干员，会客室线索搜集速度<@cc.vup>+4%</>（最多<@cc.vup>+20%</>，同种效果取最高）；当与<$cc.g.sargon><@cc.kw>萨尔贡</></>干员进驻控制中枢一起工作时，自身心情每小时消耗<@cc.vdown>+0.02</>"
+  },
+  "control_meeting&mp_cost[100]": {
+    "Name": "",
+    "description": "进驻控制中枢时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.minos><@cc.kw>米诺斯</></>干员，会客室线索搜集速度<@cc.vup>+5%</>（最多<@cc.vup>+25%</>，同种效果取最高）；当与<$cc.g.sargon><@cc.kw>萨尔贡</></>干员进驻控制中枢一起工作时，自身心情每小时消耗<@cc.vdown>+0.02</>"
+  },
+  "control_meeting_bd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>，每个进驻在会客室的<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员，线索搜集速度<@cc.vup>+10%</>"
+  },
+  "control_clue_cost[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<@cc.kw>提升</>会客室内干员<@cc.kw>所属派系的线索倾向效果</>，但控制中枢内所有干员的心情每小时消耗<@cc.vdown>+1.5</>"
+  },
+  "control_clue_cost[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<@cc.kw>小幅提升</>会客室内干员<@cc.kw>所属派系的线索倾向效果</>，但控制中枢内所有干员的心情每小时消耗<@cc.vdown>+0.5</>"
+  },
+  "control_clue_cost[011]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<@cc.kw>小幅提升</>会客室内干员<@cc.kw>所属派系的线索倾向效果</>"
+  },
+  "control_clue_faction[070]": {
+    "Name": "",
+    "description": "进驻控制中枢时，会客室更容易获得<@cc.kw>格拉斯哥帮</>线索（工作时长影响概率）"
+  },
+  "control_mp_cost[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[001]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[002]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[003]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[004]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[005]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[006]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[007]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[008]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[009]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[011]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[012]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[013]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost[014]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost_double[000]": {
+    "Name": "",
+    "description": "当与<@cc.kw>阿米娅</>一起进驻控制中枢时，自身和<@cc.kw>阿米娅</>心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost_double[001]": {
+    "Name": "",
+    "description": "当与<@cc.kw>阿米娅</>一起进驻控制中枢时，自身和<@cc.kw>阿米娅</>心情每小时恢复<@cc.vup>+0.1</>"
+  },
+  "control_allCost_condChar[000]": {
+    "Name": "",
+    "description": "当与<@cc.kw>阿</>进驻控制中枢一起工作时，控制中枢内所有干员心情每小时恢复<@cc.vup>+0.25</>"
+  },
+  "control_mp_cost&faction2[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.lda><@cc.kw>鲤氏侦探事务所</></>干员可使该派系干员<@cc.kw>额外恢复心情</>，同时每人可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.2</>"
+  },
+  "control_mp_cost&faction[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.lgd><@cc.kw>龙门近卫局</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost&faction[020]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost&faction[030]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.karlan><@cc.kw>谢拉格</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost&faction[900]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.sp><@cc.kw>异格</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_mp_cost&faction[990]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.R6><@cc.kw>彩虹小队</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "control_clue_cost&faction[990]": {
+    "Name": "",
+    "description": "进驻控制中枢时，更容易获得线索板上尚未拥有的线索，但控制中枢内除自身以外的其余干员心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "control_mp_cost&bd1[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>；当自身心情处于<@cc.kw>12</>以下时，<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+15</>"
+  },
+  "control_mp_cost&bd2[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>；当自身心情大于<@cc.kw>12</>时，<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+10</>"
+  },
+  "control_mp_cost&bd3[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，热情值处于<@cc.kw>40</>点及以上时，自身心情每小时消耗<@cc.vdown>+0.05</>"
+  },
+  "control_mp_cost&bd_up[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>；每个<$cc.g.sui><@cc.kw>岁</></>干员进驻在宿舍和活动室以外的设施则<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+5</>（最多5名）"
+  },
+  "control_mp_bd_cost_expand[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.05</>；同时每有<@cc.vup>20</>点<$cc.bd_b1><@cc.rem>人间烟火</></>，则额外<@cc.vup>+0.05</>，（与控制中枢加成有<$cc.c.sui2_1><@cc.rem>特殊比较规则</></>）"
+  },
+  "control_mp_expand_double[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>，当<@cc.kw>魔王</>进驻中枢时额外<@cc.vup>+0.1</>（与控制中枢加成有<$cc.c.sui2_1><@cc.rem>特殊比较规则</></>）"
+  },
+  "control_mp_cost&bd2[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>，<$cc.bd_felyne><@cc.rem>木天蓼</></><@cc.vup>+8</>"
+  },
+  "control_mp_cost_reset[000]": {
+    "Name": "",
+    "description": "当与<@cc.kw>丰川祥子</>一起进驻控制中枢时，消除自身心情消耗的影响"
+  },
+  "control_mp&meet_spd[000]": {
+    "Name": "",
+    "description": "当与<@cc.kw>丰川祥子</>一起进驻控制中枢时，<@cc.kw>丰川祥子</>心情每小时消耗<@cc.vdown>+0.05</>，会客室线索搜集速度额外提升<@cc.vup>+5%</>（同种效果取最高）"
+  },
+  "control_facCostReset[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<@cc.kw>消除</>当前控制中枢内所有<$cc.g.sui><@cc.kw>岁</></>干员<@cc.kw>自身</>心情消耗的影响"
+  },
+  "control_costToBD[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，当自身心情大于<@cc.kw>12</>时，<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+15</>；当自身心情处于<@cc.kw>12</>以下时，<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+10</>"
+  },
+  "control_mp_bd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每有1名<$cc.g.R6><@cc.kw>彩虹小队</></>干员，则<$cc.bd_ash><@cc.rem>情报储备</></><@cc.vup>+1</>"
+  },
+  "control_mp_bd[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每有1名<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员，则<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></><@cc.vup>+1</>"
+  },
+  "control_mp_bd2[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内每有1名<$cc.tag.mh><@cc.kw>怪物猎人小队</></>干员，则<$cc.bd_felyne><@cc.rem>木天蓼</></><@cc.vup>+2</>"
+  },
+  "control_mp_aegir1[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，每有1个<$cc.g.abyssal><@cc.kw>深海猎人</></>干员进驻在宿舍以外的设施，则自身心情每小时消耗<@cc.vdown>+0.5</>；反之则自身心情每小时恢复<@cc.vup>+0.5</>，如果进驻在宿舍内的<$cc.g.abyssal><@cc.kw>深海猎人</></>干员为满心情，则额外<@cc.vup>+0.5</>"
+  },
+  "control_mp_aegir2[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>；基建内（不包含副手及活动室使用者）<$cc.g.abyssal><@cc.kw>深海猎人</></>干员获得<$cc.c.abyssal2_1><@cc.rem>特殊加成</></>（与部分技能有<$cc.c.abyssal2_3><@cc.rem>特殊叠加规则</></>）"
+  },
+  "control_mp_aegir2[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>；基建内（不包含副手及活动室使用者）<$cc.g.abyssal><@cc.kw>深海猎人</></>干员获得<$cc.c.abyssal2_2><@cc.rem>特殊加成</></>（与部分技能有<$cc.c.abyssal2_3><@cc.rem>特殊叠加规则</></>）"
+  },
+  "control_mp_psk[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，每个进驻在制造站的<$cc.g.psk><@cc.kw>红松骑士团</></>干员，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+10%</>，<@cc.kw>贵金属</>类配方的生产力<@cc.vdown>-10%</>"
+  },
+  "control_mp_lonely[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<$cc.c.room1><@cc.kw>部分设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>；同时控制中枢内<$cc.c.skill><@cc.kw>部分技能</></>可以为<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员额外提供心情恢复"
+  },
+  "control_dorm_rec[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）"
+  },
+  "control_dorm_rec[001]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）"
+  },
+  "control_dorm_rec[002]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）"
+  },
+  "control_dorm_rec_tag[001]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有宿舍内<$cc.g.elite><@cc.kw>精英干员</></>的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "control_dorm_rec2[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）；当与<@cc.kw>丰川祥子</>一起进驻控制中枢时，<@cc.kw>丰川祥子</>的心情每小时恢复<@cc.vup>+0.1</>"
+  },
+  "control_train_spd[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</>（同种效果取最高）"
+  },
+  "control_train_spd[011]": {
+    "Name": "",
+    "description": "进驻控制中枢时，如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</>（同种效果取最高）"
+  },
+  "control_train_spd[012]": {
+    "Name": "",
+    "description": "进驻控制中枢时，如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</>（同种效果取最高）"
+  },
+  "control_tra_limit&spd[010]": {
+    "Name": "",
+    "description": "进驻控制中枢时，同一贸易站中，每有<@cc.vup>1</>名<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员，订单获取效率<@cc.vup>+10%</>"
+  },
+  "control_mp_bd&trade[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+20</>；每有<@cc.vup>8</>点<$cc.bd_mujica><@cc.rem>热情值</></>，自身心情每小时消耗<@cc.vdown>+0.01</>，所有贸易站订单效率<@cc.vup>+1%</>（同种效果取最高）"
+  },
+  "control_meeting_spd&bd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+10</>；会客室线索搜集速度提升<@cc.vup>+5%</>（同种效果取最高）"
+  },
+  "control_dorm_bd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+1</>"
+  },
+  "control_hire_spd&bd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+10</>；人脉资源的联络速度<@cc.vup>+10%</>（同种效果取最高）"
+  },
+  "control_prod_tra_spd[000]": {
+    "Name": "",
+    "description": "进驻控制中枢时，若<$cc.bd_wang_1><@cc.kw>外势</></>大于等于<$cc.bd_wang_2><@cc.kw>实地</></>，所有贸易站订单效率<@cc.vup>+7%</>；若<$cc.bd_wang_2><@cc.kw>实地</></>大于<$cc.bd_wang_1><@cc.kw>外势</></>，所有制造站生产力<@cc.vup>+2%</>（同种效果取最高）"
+  },
+  "power_rec_spd&cost[000]": {
+    "Name": "",
+    "description": "进驻发电站时，心情每小时消耗<@cc.vup>-0.52</>"
+  },
+  "power_rec_spd&cost[010]": {
+    "Name": "",
+    "description": "进驻发电站时，心情每小时消耗<@cc.vup>-0.3</>"
+  },
+  "power_rec_spd[000]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[010]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[011]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[020]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[023]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[001]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[022]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[1022]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[024]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[013]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[014]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[021]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[003]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[015]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[016]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[002]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[017]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[004]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[025]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_spd[026]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+20%</>"
+  },
+  "power_rec_spd[005]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[006]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[007]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[008]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_rec_spd[009]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+15%</>"
+  },
+  "power_rec_drone[000]": {
+    "Name": "",
+    "description": "进驻发电站时，每<@cc.vup>10</>架无人机上限<@cc.vup>+1%</>无人机充能速度（最多<@cc.vup>+25%</>）"
+  },
+  "power_rec_spd[0010]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>"
+  },
+  "power_count[000]": {
+    "Name": "",
+    "description": "进驻发电站时，如果其他<@cc.kw>发电站</>内没有进驻<$cc.tag.op><@cc.kw>作业平台</></>，则<@cc.kw>发电站</>额外<@cc.vup>+1</>(仅影响设施数量)"
+  },
+  "power_prod_spd_P[000]": {
+    "Name": "",
+    "description": "进驻发电站时，<@cc.kw>野鬃</>所在的制造站生产力<@cc.vup>+5%</>"
+  },
+  "power_rec_spd_P[000]": {
+    "Name": "",
+    "description": "进驻发电站时，如果<@cc.kw>凯尔希</>进驻在控制中枢，则无人机充能速度<@cc.vup>+5%</>"
+  },
+  "power_rec_spd_P[001]": {
+    "Name": "",
+    "description": "进驻发电站时，如果<@cc.kw>逻各斯</>进驻在训练室协助位，则无人机充能速度<@cc.vup>+5%</>"
+  },
+  "power_rec_spd_ext&faction[000]": {
+    "Name": "",
+    "description": "进驻发电站时，如果其他<$cc.g.laterano><@cc.kw>拉特兰</></>干员进驻在发电站，则无人机充能速度<@cc.vup>+5%</>"
+  },
+  "power_rec_spd_ext&tag[000]": {
+    "Name": "",
+    "description": "进驻发电站时，如果其他<$cc.tag.op><@cc.kw>作业平台</></>进驻在发电站，则无人机充能速度<@cc.vup>+5%</>"
+  },
+  "power_rec_rhine[000]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度<@cc.vup>+10%</>，基建内（不包含副手及活动室使用者）每有1名除自身以外的<$cc.g.rh><@cc.kw>莱茵生命</></>干员（最多<@cc.kw>5</>名），充能速度额外<@cc.vup>+3%</>"
+  },
+  "power_rec_spd&addition[000]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度首小时<@cc.vup>+10%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+15%</>"
+  },
+  "power_rec_spd&addition[001]": {
+    "Name": "",
+    "description": "进驻发电站时，无人机充能速度首小时<@cc.vup>+15%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+20%</>"
+  },
+  "power_rec_spd&dorm&lv[000]": {
+    "Name": "",
+    "description": "进驻发电站时，每间宿舍每级为充能速度额外<@cc.vup>+0.5%</>"
+  },
+  "manu_bd_to_bd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>5</>点<$cc.bd_b1><@cc.rem>人间烟火</></>转化为<@cc.vup>1</>点<$cc.bd_C><@cc.rem>巫术结晶</></>"
+  },
+  "manu_prod_spd&power[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个<@cc.kw>发电站</>为当前制造站<@cc.vup>+5%</>的生产力"
+  },
+  "manu_prod_spd&power[010]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个<@cc.kw>发电站</>为当前制造站<@cc.vup>+10%</>的生产力"
+  },
+  "manu_prod_spd&power[020]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个<@cc.kw>发电站</>为当前制造站<@cc.vup>+15%</>的生产力"
+  },
+  "manu_prod_spd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+  },
+  "manu_prod_spd[1000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+  },
+  "manu_prod_spd[010]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd[001]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+  },
+  "manu_prod_spd[011]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd[021]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+30%</>"
+  },
+  "manu_prod_spd[002]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+  },
+  "manu_prod_spd[012]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd[003]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+  },
+  "manu_prod_spd[020]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+30%</>"
+  },
+  "manu_prod_spd[004]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+20%</>"
+  },
+  "manu_prod_spd[014]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+30%</>"
+  },
+  "manu_skill_spd1[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu1><@cc.kw>标准化类技能</></>为自身<@cc.vup>+5%</>的生产力"
+  },
+  "manu_skill_spd1[010]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu2><@cc.kw>莱茵科技类技能</></>为自身<@cc.vup>+5%</>的生产力"
+  },
+  "manu_skill_spd1[020]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu4><@cc.kw>金属工艺类技能</></>为自身<@cc.vup>+5%</>的生产力"
+  },
+  "manu_skill_change[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内所有<$cc.sk.manu2><@cc.kw>莱茵科技类</></>、<$cc.sk.manu3><@cc.kw>红松骑士团类</></>技能也全都视作<@cc.kw>标准化类</>技能"
+  },
+  "manu_skill_limit[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu2><@cc.kw>莱茵科技类</></>技能为自身<@cc.vup>+5</>的仓库上限容量"
+  },
+  "manu_prod_bd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，每有<@cc.vup>1</>瓶<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></>，则仓库容量上限<@cc.vup>+2</>"
+  },
+  "manu_prod_spd_addition[030]": {
+    "Name": "",
+    "description": "进驻制造站后，生产力首小时<@cc.vup>+20%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd_addition[031]": {
+    "Name": "",
+    "description": "进驻制造站后，生产力首小时<@cc.vup>+20%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd_addition[040]": {
+    "Name": "",
+    "description": "进驻制造站后，生产力首小时<@cc.vup>+15%</>，此后每小时<@cc.vup>+2%</>，最终达到<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd_addition[041]": {
+    "Name": "",
+    "description": "进驻制造站后，生产力首小时<@cc.vup>+15%</>，此后每小时<@cc.vup>+2%</>，最终达到<@cc.vup>+25%</>"
+  },
+  "manu_prod_spd_addition[100]": {
+    "Name": "",
+    "description": "进驻制造站后，生产力每小时<@cc.vup>+2%</>，最终达到<@cc.vup>+20%</>"
+  },
+  "manu_prod_spd_reduce[000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+30%</>，自身每有<@cc.kw>4</>点<$cc.bd.costdrop><@cc.kw>心情落差</></>，生产力<@cc.vdown>-5%</>"
+  },
+  "manu_prod_spd_addition&cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当自身<$cc.bd.costdrop><@cc.kw>心情落差</></>大于<@cc.kw>12</>时，生产力<@cc.vup>+10%</>，仓库容量<@cc.vup>+6</>"
+  },
+  "manu_prod_spd&limit[000]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+6</>，生产力<@cc.vup>+10%</>"
+  },
+  "manu_prod_spd&limit[001]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，生产力<@cc.vup>+10%</>"
+  },
+  "manu_prod_spd&fraction[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内每个<$cc.g.A1><@cc.kw>A1小队</></>干员为自身<@cc.vup>+10%</>的生产力"
+  },
+  "manu_prod_spd&limit&bd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，生产力<@cc.vup>+5%</>，同时每有1个<$cc.bd_felyne><@cc.rem>木天蓼</></>，则生产力<@cc.vup>+1%</>"
+  },
+  "manu_prod_limit&cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[0000]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[001]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[002]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[003]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[010]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[011]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[012]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[020]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_limit&cost[1020]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_formula_cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_formula_limit[0000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+12</>"
+  },
+  "manu_formula_limit[010]": {
+    "Name": "",
+    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+15</>"
+  },
+  "manu_formula_limit[020]": {
+    "Name": "",
+    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+4</>"
+  },
+  "manu_prod_spd&limit&cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.15</>"
+  },
+  "manu_prod_spd&limit&cost[001]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+19</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_spd&limit&cost[010]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_prod_spd&limit&cost[011]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_prod_spd&limit&cost[020]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vdown>-20%</>，仓库容量上限<@cc.vup>+17</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_spd&limit&cost[100]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_prod_spd&limit&cost[101]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_prod_spd&limit&cost[110]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+30%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_prod_spd&limit&cost[200]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+25%</>，仓库容量上限<@cc.vup>+6</>"
+  },
+  "manu_prod_spd&limit&cost[300]": {
+    "Name": "",
+    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，仓库容量上限<@cc.vdown>-8</>"
+  },
+  "manu_prod_limit&cost[021]": {
+    "Name": "",
+    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_prod_spd_variable[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内干员提升的每格仓库容量，提供<@cc.vup>2%</>生产力"
+  },
+  "manu_prod_spd_variable3[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内干员根据自身提升的仓库容量提供一定的生产力。提升<@cc.vup>16</>格以下的，每格仓库容量提供<@cc.vup>1%</>生产力；提升大于<@cc.vup>16</>格的，每格仓库容量提供<@cc.vup>3%</>生产力（无法与<$cc.m.var1><@cc.rem>回收利用</></>叠加，且优先生效）"
+  },
+  "manu_prod_spd_variable2[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内其他干员提供的每<@cc.vup>5%</>生产力（不包含根据设施数量提供加成的生产力），额外提供<@cc.vup>5%</>生产力，最多提供<@cc.vup>40%</>生产力"
+  },
+  "manu_prod_spd_train&lv[000]": {
+    "Name": "",
+    "description": "进驻制造站时，训练室每级为当前制造站<@cc.vup>+10%</>生产力，最多<@cc.vup>30%</>"
+  },
+  "manu_prod_spd_bd_n1[000]": {
+    "Name": "",
+    "description": "进驻制造站时，宿舍内每有<@cc.kw>1</>名干员则<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+1</>，同时每<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>感知信息</></>转化为<@cc.vup>1</>点<$cc.bd_A><@cc.rem>思维链环</></>"
+  },
+  "manu_constrLv[000]": {
+    "Name": "",
+    "description": "进驻制造站时，基建内除活动室外每间设施每级<@cc.vup>+1</>个<@cc.kw><$cc.bd_malist>工程机器人</></>，上限<@cc.vup>64</>个"
+  },
+  "manu_prod_spd_bd[100]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>16</>个<@cc.kw><$cc.bd_malist>工程机器人</></><@cc.vup>+5%</>生产力"
+  },
+  "manu_prod_spd_bd[110]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>8</>个<@cc.kw><$cc.bd_malist>工程机器人</></><@cc.vup>+5%</>生产力"
+  },
+  "manu_prod_spd_bd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>2</>点<$cc.bd_A><@cc.rem>思维链环</></><@cc.vup>+1%</>生产力"
+  },
+  "manu_prod_spd_bd[010]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_A><@cc.rem>思维链环</></><@cc.vup>+1%</>生产力"
+  },
+  "manu_prod_spd_bd[200]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_C><@cc.rem>巫术结晶</></><@cc.vup>+1%</>生产力"
+  },
+  "manu_prod_spd_bd[201]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_C><@cc.rem>巫术结晶</></><@cc.vup>+2%</>生产力"
+  },
+  "manu_prod_spd_bd[300]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>3</>点<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+1%</>生产力"
+  },
+  "manu_prod_spd_bd[400]": {
+    "Name": "",
+    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_dungeon><@cc.rem>魔物料理</></><@cc.vup>+1%</>生产力"
+  },
+  "manu_prod_spd&manu[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站仓库容量上限<@cc.vup>+5</>"
+  },
+  "manu_prod_spd&manu[100]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站<@cc.vup>+10%</>生产力，仓库容量上限<@cc.vup>+5</>"
+  },
+  "manu_formula_spd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+25%</>"
+  },
+  "manu_formula_spd[010]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd[020]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[022]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[030]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+20%</>"
+  },
+  "manu_formula_spd[031]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd&limit&cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_formula_spd&limit&cost[010]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "manu_formula_spd&limit&cost[100]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_prod_spd&trade[000]": {
+    "Name": "",
+    "description": "进驻制造站时，每个<@cc.kw>贸易站</>为当前制造站<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+20%</>"
+  },
+  "manu_prod_spd&trade[1000]": {
+    "Name": "",
+    "description": "进驻制造站时，每个<@cc.kw>贸易站</>为当前制造站<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+3%</>"
+  },
+  "manu_formula_spd[100]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd[110]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[101]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd[102]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd&dorm&lv[000]": {
+    "Name": "",
+    "description": "进驻制造站时，每间宿舍每级为<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+1%</>"
+  },
+  "manu_formula_spd&cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+25%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_formula_spd&cost[001]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+25%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "manu_formula_spd&cost_bd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.bs><@cc.kw>黑钢国际</></>干员（最多<@cc.kw>3</>名），<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+2%</>，心情每小时消耗<@cc.vup>-0.15</>"
+  },
+  "manu_formula_spd&cost_bd[100]": {
+    "Name": "",
+    "description": "进驻制造站时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.rh><@cc.kw>莱茵生命</></>干员（最多<@cc.kw>5</>名），<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+3%</>"
+  },
+  "manu_token_prod_spd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，每有<@cc.vup>1</>台<$cc.tag.op><@cc.kw>作业平台</></>进驻发电站，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+5%</>"
+  },
+  "manu_token_prod_spd[010]": {
+    "Name": "",
+    "description": "进驻制造站时，每有<@cc.vup>1</>台<$cc.tag.op><@cc.kw>作业平台</></>进驻发电站，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+10%</>"
+  },
+  "manu_prod_spd_double[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当与<@cc.kw>温米</>在同一个制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+15%</>"
+  },
+  "manu_prod_spd_double[100]": {
+    "Name": "",
+    "description": "进驻制造站时，当与<@cc.kw>酒神</>在同一个制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd[200]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd[210]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[201]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd[211]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[212]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[213]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd[214]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd_P[000]": {
+    "Name": "",
+    "description": "进驻制造站时，若<@cc.kw>古米</>在贸易站，则<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>"
+  },
+  "manu_formula_spd&bd[000]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+  },
+  "manu_formula_spd&bd[001]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>，当与<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员在同一个制造站时，<@cc.kw>作战记录</>类配方的生产力额外<@cc.vup>+10%</>"
+  },
+  "manu_cost_all[000]": {
+    "Name": "",
+    "description": "进驻制造站时，<@cc.kw>消除</>当前制造站内所有干员<@cc.kw>自身</>心情消耗的影响"
+  },
+  "manu_cost[000]": {
+    "Name": "",
+    "description": "进驻制造站时，当前制造站内所有干员心情每小时消耗<@cc.vup>-0.1</>"
+  },
+  "trade_cost[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，贸易站内干员心情每小时消耗<@cc.vup>-0.1</>"
+  },
+  "trade_cost&bd2[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，贸易站内全体干员每小时心情消耗<@cc.vup>-0.1</>，每有<@cc.vup>10</>点<$cc.bd_b1><@cc.rem>人间烟火</></>，则额外<@cc.vup>-0.01</>"
+  },
+  "trade_cost&bd2[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，贸易站内全体干员每小时心情消耗<@cc.vup>-0.1</>，每有<@cc.vup>10</>点<$cc.bd_b1><@cc.rem>人间烟火</></>，则额外<@cc.vup>-0.02</>"
+  },
+  "trade_ord_spd[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+  },
+  "trade_ord_spd[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd[011]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+  },
+  "trade_ord_spd[1001]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+  },
+  "trade_ord_spd[020]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+35%</>"
+  },
+  "trade_ord_spd[021]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+35%</>"
+  },
+  "trade_ord_spd[022]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+35%</>"
+  },
+  "trade_ord_vodfox[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站内其他干员提供的订单获取效率<@cc.vdown>全部归零</>，且每人为自身<@cc.vup>+45%</>订单获取效率，同时全体心情每小时消耗<@cc.vdown>+0.25</>"
+  },
+  "trade_ord_pepe[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，固定获取<$cc.tra.pepe><@cc.kw>特别独占订单</></>（不视作违约订单），且该类订单<@cc.vdown>不受任何订单获取效率的影响</>"
+  },
+  "trade_ord_spd_variable[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站内干员提升的每个订单上限，提供<@cc.vup>4%</>订单获取效率"
+  },
+  "trade_ord_spd_variable2[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站内干员提供的每<@cc.vup>5%</>订单获取效率，额外提供<@cc.vup>5%</>效率，最多提供<@cc.vup>25%</>效率"
+  },
+  "trade_ord_spd_variable2[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站内干员提供的每<@cc.vup>5%</>订单获取效率，额外提供<@cc.vup>5%</>效率，最多提供<@cc.vup>35%</>效率"
+  },
+  "trade_ord_spd_variable3[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站内干员提升的每<@cc.vup>5</>个订单上限，提供<@cc.vup>25%</>订单获取效率，最多提供<@cc.vup>100%</>效率"
+  },
+  "trade_ord_spd&dorm&lv[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，每间宿舍每级<@cc.vup>+1%</>获取效率"
+  },
+  "trade_ord_spd&dorm&lv[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，每间宿舍每级<@cc.vup>+2%</>获取效率"
+  },
+  "trade_ord_limit&trade&lv[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站每级<@cc.vup>+1</>个订单上限"
+  },
+  "trade_ord_limit&trade&lv[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站每级<@cc.vup>+1</>个订单上限"
+  },
+  "trade_ord_spd&meet[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，会客室每级额外提供<@cc.vup>5%</>获取效率，最多提供<@cc.vup>40%</>效率"
+  },
+  "trade_ord_closure[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，固定获取<$cc.tra.closure><@cc.kw>可露希尔特别订单</></>（不视作违约订单）"
+  },
+  "trade_ord_spd&meet[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+15%</>，会客室每级额外提供<@cc.vup>5%</>获取效率，最多提供<@cc.vup>30%</>效率"
+  },
+  "trade_ord_spd&formula[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，制造站每有<@cc.kw>1</>类配方进行加工，则当前贸易站订单获取效率额外<@cc.vup>+2%</>"
+  },
+  "trade_ord_spd&limit[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，且订单上限<@cc.vup>+2</>"
+  },
+  "trade_ord_spd&limit[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，且订单上限<@cc.vup>+4</>"
+  },
+  "trade_ord_spd&gold[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>4</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则当前贸易站订单获取效率额外<@cc.vup>+15%</>"
+  },
+  "trade_ord_spd&gold[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则当前贸易站订单获取效率额外<@cc.vup>+15%</>"
+  },
+  "trade_ord_spd&gold[100]": {
+    "Name": "",
+    "description": "进驻贸易站时，每有<@cc.kw>1</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则当前贸易站订单获取效率<@cc.vup>+5%</>"
+  },
+  "trade_ord_line_gold[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>4</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则为当前贸易站额外提供<@cc.vup>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>"
+  },
+  "trade_ord_line_gold[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则为当前贸易站额外提供<@cc.vup>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>"
+  },
+  "trade_ord_line_durin[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，基建内（不包含副手及活动室使用者）每<@cc.kw>1</>名<$cc.tag.durin><@cc.kw>杜林族</></>干员（最多<@cc.kw>4</>名）为当前贸易站提供<@cc.kw>1</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>"
+  },
+  "trade_ord_spd&limit[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，且订单上限<@cc.vup>+1</>"
+  },
+  "trade_ord_spd&limit[020]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+15%</>，且订单上限<@cc.vup>+2</>"
+  },
+  "trade_ord_spd&limit[021]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+15%</>，且订单上限<@cc.vup>+4</>"
+  },
+  "trade_ord_spd&limit[022]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>，且订单上限<@cc.vup>+4</>"
+  },
+  "trade_ord_spd&limit[030]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd&limit[031]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+  },
+  "trade_ord_spd&limit[032]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd&limit[033]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+  },
+  "trade_ord_spd&limit[034]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd&limit[035]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+  },
+  "trade_ord_spd&limit[036]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+  },
+  "trade_ord_spd&limit[100]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>，且订单上限<@cc.vdown>-2</>（订单最少为1）"
+  },
+  "trade_ord_spd&limit[101]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，且订单上限<@cc.vdown>-6</>（订单最少为1）"
+  },
+  "trade_ord_spd&cost[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_spd_bd_n1[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，宿舍内每有<@cc.kw>1</>名干员则<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+1</>，同时每<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>感知信息</></>转化为<@cc.vup>1</>点<$cc.bd_B><@cc.rem>无声共鸣</></>"
+  },
+  "trade_ord_spd_bd_n2[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，宿舍内每有<@cc.kw>1</>名干员则<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+1</>，同时每有<@cc.vup>1</>点<$cc.bd_b1><@cc.rem>人间烟火</></>，则订单获取效率<@cc.vup>+1%</>"
+  },
+  "trade_ord_spd_bd[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，每<@cc.vup>4</>点<$cc.bd_B><@cc.rem>无声共鸣</></><@cc.vup>+1%</>订单效率"
+  },
+  "trade_ord_spd_bd[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，每<@cc.vup>2</>点<$cc.bd_B><@cc.rem>无声共鸣</></><@cc.vup>+1%</>订单效率"
+  },
+  "trade_ord_spd_bd[100]": {
+    "Name": "",
+    "description": "进驻贸易站时，每<@cc.vup>1</>点<$cc.bd_dungeon><@cc.rem>魔物料理</></><@cc.vup>+1%</>订单效率"
+  },
+  "trade_ord_limit&cost[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单上限<@cc.vup>+5</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_limit_diff[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前订单数与订单上限每差<@cc.vup>1</>笔订单，则订单获取效率<@cc.vup>+4%</>"
+  },
+  "trade_ord_limit_count[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，当前贸易站内其他干员提供的每<@cc.vup>10%</>订单获取效率使订单上限<@cc.vdown>-1</>（订单最少为1），同时每有<@cc.vup>1</>笔订单就<@cc.vup>+4%</>订单获取效率（与部分技能有<$cc.t.strong2><@cc.rem>特殊叠加规则</></>）"
+  },
+  "trade_ord_wt&cost[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_wt&cost[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_wt&cost[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_wt&cost[011]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_wt&cost[002]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_wt&cost[012]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_wt&cost[003]": {
+    "Name": "",
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_spd&share[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+15%</>订单获取效率"
+  },
+  "trade_ord_spd&share[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+10%</>订单获取效率"
+  },
+  "trade_ord_spd&share[002]": {
+    "Name": "",
+    "description": "进驻贸易站时，贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+20%</>订单获取效率"
+  },
+  "trade_ord_spd&cost_P[000]": {
+    "Name": "",
+    "description": "当与<@cc.kw>拉普兰德</>在同一个贸易站时，心情每小时消耗<@cc.vdown>+0.3</>，订单获取效率<@cc.vup>+65%</>"
+  },
+  "trade_ord_spd&limit&bd[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，且订单上限<@cc.vup>+2</>，同时每有1个<$cc.bd_felyne><@cc.rem>木天蓼</></>，则订单获取效率<@cc.vup>+3%</>"
+  },
+  "trade_ord_spd&limit_tag[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单上限<@cc.vup>+3</>，且每有一个<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>干员进驻贸易站，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd&wt[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，当前贸易站<@cc.kw>赤金订单</>的<@cc.kw>赤金</>交付数必定为<@cc.kw>2</>（不视作违约订单）"
+  },
+  "trade_ord_limit&cost_P[020]": {
+    "Name": "",
+    "description": "当与<@cc.kw>伺夜</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
+  },
+  "trade_ord_limit&cost_P[010]": {
+    "Name": "",
+    "description": "当与<@cc.kw>能天使</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.3</>"
+  },
+  "trade_ord_limit&cost_P[000]": {
+    "Name": "",
+    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
+  },
+  "trade_ord_limit&cost_P[001]": {
+    "Name": "",
+    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.1</>，订单上限<@cc.vup>+4</>"
+  },
+  "trade_ord_long[000]": {
+    "Name": "",
+    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+250</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_long[010]": {
+    "Name": "",
+    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+500</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "trade_ord_law[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>交付数小于<@cc.kw>4</>，则视为<@cc.kw>违约订单</>"
+  },
+  "trade_ord_against[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+1</>"
+  },
+  "trade_ord_against[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+2</>"
+  },
+  "trade_ord_spd_par[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，同个贸易站中每有1名<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员，当前贸易站订单获取效率<@cc.vup>+20%</>；当与<@cc.kw>推进之王</>在同一个贸易站时，订单获取效率额外<@cc.vup>+35%</>"
+  },
+  "trade_ord_spd_par[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，同个贸易站中每有1名<$cc.g.laterano><@cc.kw>拉特兰</></>干员，当前贸易站订单获取效率<@cc.vup>+15%</>"
+  },
+  "trade_ord_spd&multiPar[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd&multiPar[100]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>；当与<@cc.kw><$cc.angel>能天使</></>在同一个贸易站时，订单获取效率额外<@cc.vup>+25%</>"
+  },
+  "trade_ord_par&per[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>；当<@cc.kw>伊内丝</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率额外<@cc.vup>+5%</>"
+  },
+  "trade_ord_par&per[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当<@cc.kw>伊内丝</>、<@cc.kw>W</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率分别额外<@cc.vup>+5%</>"
+  },
+  "trade_ord_spd_ext[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
+  },
+  "trade_ord_spd_ext[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
+  },
+  "trade_ord_spd_ext[020]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
+  },
+  "trade_ord_spd_ext[021]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
+  },
+  "trade_ord_spd&par[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+  },
+  "trade_ord_spd&par[001]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当前贸易站内存在<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员时，订单获取效率额外<@cc.vup>+10%</>"
+  },
+  "trade_ord_spd&tag[000]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+  },
+  "trade_ord_spd&tag[010]": {
+    "Name": "",
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>精英干员</></>的设施，订单获取效率额外<@cc.vup>+2%</>（最多<@cc.kw>10</>间）"
+  },
+  "trade_ord_spd&tag[020]": {
+    "Name": "",
+    "description": "进驻贸易站时，基建内（不包含副手及活动室）每有一间进驻<$cc.g.sui><@cc.kw>岁</></>干员的设施，订单获取效率<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
+  },
+  "workshop_proc_probability[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>40%</>"
+  },
+  "workshop_proc_probability[020]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>60%</>"
+  },
+  "workshop_proc_probability[010]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+  },
+  "workshop_proc_probability[011]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+  },
+  "workshop_proc_probability[012]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+  },
+  "workshop_proc_probability[013]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+  },
+  "workshop_proc_probability[021]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>60%</>"
+  },
+  "workshop_proc_probability[030]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+  },
+  "workshop_proc_probability[031]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+  },
+  "workshop_proc_probability[032]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+  },
+  "workshop_proc_probability[033]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+  },
+  "workshop_proc_probability[040]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_proc_probability[041]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_proc_probability[050]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_proc_cost[000]": {
+    "Name": "",
+    "description": "进驻加工站加工原始心情消耗为<@cc.kw>8</>的<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+  },
+  "workshop_formula_lolxh[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>以上的配方全部除以<@cc.vup>4</>心情消耗"
+  },
+  "workshop_proc_probability&ext[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+  },
+  "workshop_proc_probability&ext[001]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>；如果<@cc.kw>白铁</>进驻在宿舍，则额外提升<@cc.vup>10%</>"
+  },
+  "workshop_formula_bonus1[000]": {
+    "Name": "",
+    "description": "进驻加工站时，累积<@cc.kw>40</>点<$cc.w.ncdeer1><@cc.rem>因果</></>必定产出一次副产品"
+  },
+  "workshop_formula_bonus2[000]": {
+    "Name": "",
+    "description": "进驻加工站时，累积<@cc.kw>80</>点<$cc.w.ncdeer2><@cc.rem>业报</></>必定产出一次副产品"
+  },
+  "workshop_formula_cost[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>以上的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost[001]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>以上的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost3[400]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[500]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_recovery[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，每<@cc.vup>2</>次加工没有产出副产品，则<@cc.kw>恢复自身一次心情</>，恢复量为<@cc.kw>对应配方所需消耗的心情</>（加工结束后统一结算）"
+  },
+  "workshop_formula_frost[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外提升<@cc.vup>5%</>；如果<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></>达到<@cc.vup>4</>瓶，则额外提升<@cc.vup>15%</>"
+  },
+  "workshop_formula_cost4[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方的心情消耗恒定为<@cc.vup>2</>"
+  },
+  "workshop_formula_cost2[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>40%</>，同时心情消耗为<@cc.kw>8</>以上的配方全部<@cc.vup>-4</>心情消耗"
+  },
+  "workshop_formula_cost2[110]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>60%</>，同时心情消耗为<@cc.kw>8</>以上的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost2[111]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>，同时心情消耗为<@cc.kw>4</>以上的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost[010]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方全部<@cc.vdown>+2</>心情消耗"
+  },
+  "workshop_formula_cost3[100]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[110]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[111]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[112]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[120]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost3[102]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[600]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>8</>的配方全部<@cc.vup>-4</>心情消耗"
+  },
+  "workshop_formula_cost3[220]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost3[221]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-2</>心情消耗"
+  },
+  "workshop_formula_cost3[200]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[300]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>芯片</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[001]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost3[101]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost4[010]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方的心情消耗恒定为<@cc.vup>4</>"
+  },
+  "workshop_formula_cost4[011]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方的心情消耗恒定为<@cc.vup>3</>"
+  },
+  "workshop_formula_cost5[100]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>异铁组</>材料时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+  },
+  "workshop_formula_cost5[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>晶体类材料</>时，全部心情消耗<@cc.vup>-1</>"
+  },
+  "workshop_formula_cost&dorm[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>10</>名心情<@cc.vup>12</>以下的干员时，心情消耗为<@cc.kw>4</>的配方心情消耗全部<@cc.vup>-1</>"
+  },
+  "workshop_formula_probability[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_formula_probability[010]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[011]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[020]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[021]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[030]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[031]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[032]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[100]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_formula_probability[101]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_formula_probability[102]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_formula_probability[115]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[119]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[1110]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[129]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[139]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[113]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[123]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[110]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[120]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[111]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[121]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[112]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[122]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[114]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[124]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[160]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>100%</>"
+  },
+  "workshop_formula_probability[221]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[116]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[126]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[117]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[118]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[128]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_dorm[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>4</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+  },
+  "workshop_formula_dorm[001]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>20</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+  },
+  "workshop_formula_dorm[002]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>12</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+  },
+  "workshop_formula_drop[020]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>聚酸酯组</>"
+  },
+  "workshop_formula_drop[030]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>异铁组</>"
+  },
+  "workshop_formula_drop[040]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>固源岩组</>"
+  },
+  "workshop_formula_free[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>精英材料</>时，减免龙门币消耗"
+  },
+  "workshop_formula_probability[200]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_formula_probability[210]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_probability[220]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+  },
+  "workshop_formula_probability[300]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>芯片</>时，副产品的产出概率提升<@cc.vup>70%</>"
+  },
+  "workshop_formula_probability[310]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>芯片</>时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_device[000]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>装置</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+  },
+  "workshop_formula_device[020]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>异铁</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+  },
+  "workshop_formula_device[021]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>异铁组</>材料时，副产品的产出概率提升<@cc.vup>90%</>"
+  },
+  "workshop_formula_device[030]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>聚酸酯</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+  },
+  "workshop_formula_device[050]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>源岩</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+  },
+  "workshop_formula_device[111]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>炽合金块</>材料时，副产品的产出概率提升<@cc.vup>100%</>"
+  },
+  "workshop_formula_device[060]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>酮凝集</>类材料时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_device[070]": {
+    "Name": "",
+    "description": "进驻加工站加工<@cc.kw>晶体</>类材料时，副产品的产出概率提升<@cc.vup>80%</>"
+  },
+  "workshop_formula_rub[000]": {
+    "Name": "",
+    "description": "进驻加工站加工原始心情消耗为<@cc.kw>2</>的<@cc.kw>精英材料</>时，副产品的产出概率额外提升<@cc.vup>40%</>"
+  },
+  "train_spd[001]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+  },
+  "train_spd[002]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+  },
+  "train_spd[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+  },
+  "train_spd[0000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+  },
+  "train_spd_bd[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，心情每小时消耗<@cc.vdown>+1</>，每<@cc.vup>1</>点<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+1%</>专精技能训练速度"
+  },
+  "train_spd_power[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.sm><@cc.kw>萨米</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>3</>名）"
+  },
+  "train_spd_tag[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.tag.knight><@cc.kw>骑士</></>干员为当前干员的专精技能训练速度<@cc.vup>+5%</>（最多生效<@cc.kw>5</>名）"
+  },
+  "train_spd_tag[010]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.tag.knight><@cc.kw>骑士</></>干员为当前干员的专精技能训练速度<@cc.vup>+5%</>（最多生效<@cc.kw>8</>名）"
+  },
+  "train_spd_tag[020]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Defence><@cc.kw>防守方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+  },
+  "train_spd_tag[1020]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Defence><@cc.kw>防守方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+  },
+  "train_spd_tag[030]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Attack><@cc.kw>进攻方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+  },
+  "train_spd_tag[1030]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Attack><@cc.kw>进攻方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+  },
+  "train_spd_tag[040]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.siracusa><@cc.kw>叙拉古</></>干员为当前干员的专精技能训练速度<@cc.vup>+5%</>（最多生效<@cc.kw>7</>名）"
+  },
+  "train_spd&level[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，如果本次训练专精技能至<@cc.vup>3</>级，专精技能训练速度<@cc.vup>+70%</>"
+  },
+  "train_spd_power_down[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，心情每小时消耗<@cc.vdown>+1</>，基建内（不包含副手及活动室使用者）每名<$cc.g.abyssal><@cc.kw>深海猎人</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>5</>名）"
+  },
+  "train_spd_doubleProf[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>与<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf[100]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>与<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf[200]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>与<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf[201]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>与<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf[300]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>与<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf[301]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>与<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf[310]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>与<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+45%</>"
+  },
+  "train_spd_doubleProf[110]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>与<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+45%</>"
+  },
+  "train_spd_doubleProf2[001]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>与<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf2[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>与<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+50%</>"
+  },
+  "train_spd_doubleProf3[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>与<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd_doubleProf3[100]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>与<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+50%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "train_spd_reduceTime[000]": {
+    "Name": "",
+    "description": "进驻训练室单次协助一名干员训练时长达<@cc.vup>5</>小时，则该名干员下次训练所需时间<@cc.vup>-50%</>（任意一方离开训练室时，效果消失）"
+  },
+  "train_spd_reduceTime[001]": {
+    "Name": "",
+    "description": "进驻训练室单次协助一名干员训练时长达<@cc.vup>5</>小时，则该名干员下次训练所需时间<@cc.vup>-50%</>（任意一方离开训练室时，效果消失）"
+  },
+  "train_spd_bd&reduceTime[000]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，每完整协助完成1次专精训练，累计一定<$cc.t.accmuguard1><@cc.rem>武道</></>。<$cc.t.accmuguard1><@cc.rem>武道</></>达到上限时，下一次开始协助<@cc.kw>近卫</>干员训练专精技能至<@cc.kw>1</>级将立即完成，并消耗已有<$cc.t.accmuguard1><@cc.rem>武道</></>"
+  },
+  "train_spd&profession[010]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[010]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[011]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[020]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[1020]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[020]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[021]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[030]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[030]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[031]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[040]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[040]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[041]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[050]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[050]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[051]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession2[052]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[060]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[060]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[061]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[070]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[071]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[080]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[080]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession[081]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[1081]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+50%</>"
+  },
+  "train_spd&profession[110]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[120]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[130]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[140]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[150]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[160]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[170]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession[180]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+60%</>"
+  },
+  "train_spd&profession3[130]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession3[131]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>驭法铁卫</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[140]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>速射手</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[150]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession3[151]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>斗士</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[160]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession3[161]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>领主</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[170]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>攻城手</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[180]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[321]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[322]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[181]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>行医</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[182]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession3[183]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>链愈师</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession3[184]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession3[190]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession3[191]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>游击手</>，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[110]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[120]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[130]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[440]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+65%</>"
+  },
+  "train_spd&profession2[150]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[111]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>"
+  },
+  "train_spd&profession2[112]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>先锋</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+50%</>"
+  },
+  "train_spd&profession2[180]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[220]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[230]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[240]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[250]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[270]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>医疗</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[320]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[620]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+  },
+  "train_spd&profession2[630]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+  },
+  "train_spd&profession2[640]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+  },
+  "train_spd&profession2[650]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>术师</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+  },
+  "train_spd&profession2[660]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>辅助</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+  },
+  "train_spd&profession2[680]": {
+    "Name": "",
+    "description": "进驻训练室协助位时，<@cc.kw>特种</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+  },
+  "train_cost&profession[140]": {
+    "Name": "",
+    "description": "进驻训练室协助<@cc.kw>狙击</>干员训练专精技能至<@cc.vup>1</>级时，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "train_cost&profession[320]": {
+    "Name": "",
+    "description": "进驻训练室协助<@cc.kw>近卫</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "train_cost&profession[340]": {
+    "Name": "",
+    "description": "进驻训练室协助<@cc.kw>狙击</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "train_cost&profession[350]": {
+    "Name": "",
+    "description": "进驻训练室协助<@cc.kw>术师</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "train_cost&profession[360]": {
+    "Name": "",
+    "description": "进驻训练室协助<@cc.kw>辅助</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "train_cost&profession[380]": {
+    "Name": "",
+    "description": "进驻训练室协助<@cc.kw>特种</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "dorm_rec_oneself[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>"
+  },
+  "dorm_rec_oneself[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>"
+  },
+  "dorm_rec_oneself[010]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.85</>"
+  },
+  "dorm_rec_oneself[011]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.85</>"
+  },
+  "dorm_rec_oneself[020]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+1</>"
+  },
+  "dorm_rec_oneself[040]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>"
+  },
+  "dorm_rec_oneself[030]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.75</>"
+  },
+  "dorm_rec_oneself2[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>；如果该宿舍内有其他干员，则每人额外为自身心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "dorm_rec_oneself2[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>；如果该宿舍内有其他干员，则每人额外为自身心情每小时恢复<@cc.vup>+0.05</>"
+  },
+  "dorm_rec_single[010]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高）"
+  },
+  "dorm_rec_single[1010]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高）"
+  },
+  "dorm_rec_single_power[100]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高）"
+  },
+  "dorm_rec_single[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</>（同种效果取最高）"
+  },
+  "dorm_rec_single[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</>（同种效果取最高）"
+  },
+  "dorm_rec_bd_n1_n3[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</>（同种效果取最高），同时当前宿舍每级提供<@cc.vup>1</>个<$cc.bd_a1_a3><@cc.rem>小节</></>"
+  },
+  "dorm_rec_bd_n1[100]": {
+    "Name": "",
+    "description": "进驻宿舍时，每<@cc.vup>1</>个<$cc.bd_a1_a3><@cc.rem>小节</></>转化为<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>感知信息</></>"
+  },
+  "dorm_rec_single[030]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+  },
+  "dorm_rec_single[031]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+  },
+  "dorm_rec_single[032]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+  },
+  "dorm_rec_single[033]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+  },
+  "dorm_rec_single[020]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.75</>（同种效果取最高）"
+  },
+  "dorm_rec_single_P[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
+  },
+  "dorm_rec_single_P[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<@cc.kw><$cc.gvial>嘉维尔</></>，则恢复效果额外<@cc.vup>+0.45</>"
+  },
+  "dorm_rec_single_P[002]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<@cc.kw>蓝毒</>，则恢复效果额外<@cc.vup>+0.45</>"
+  },
+  "dorm_rec_single&tag[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<$cc.tag.mh><@cc.kw>怪物猎人小队</></>成员和<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>，则恢复效果额外<@cc.vup>+0.45</>"
+  },
   "dorm_rec_all[000]": {
     "Name": "",
-    "description": ""
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_bd_n1_n2[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高），同时当前宿舍每级提供<@cc.vup>1</>层<$cc.bd_a1_a2><@cc.rem>梦境</></>"
+  },
+  "dorm_rec_bd_n1[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，每<@cc.vup>1</>层<$cc.bd_a1_a2><@cc.rem>梦境</></>转化为<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>感知信息</></>"
+  },
+  "dorm_rec_bd_dungeon[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，当前宿舍每级提供<@cc.vup>1</>层<$cc.bd_dungeon><@cc.rem>魔物料理</></>"
+  },
+  "dorm_rec_all[010]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[011]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[012]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[013]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[014]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[017]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[020]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all[021]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all[022]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all[027]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all[028]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all&tag[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，如果目标是<$cc.tag.dungeon><@cc.kw>莱欧斯小队</></>干员，则恢复效果额外<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all&unfull[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all&unfull[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>；同时该宿舍每有<@cc.kw>1</>名心情未满的干员，则恢复效果额外<@cc.vup>+0.01</>（同种效果取最高）"
+  },
+  "dorm_rec_all&single[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使心情未满的宿舍成员，平均分配到总计每小时心情恢复<@cc.vup>+0.8</>的加成（该技能对单名干员和多名干员生效时，同种效果分别取最高）"
+  },
+  "dorm_powToRecAll[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>，同时每有<@cc.kw>1</>间发电站，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
+  },
+  "dorm_powToRecAll[010]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，同时每有<@cc.kw>1</>间发电站，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
+  },
+  "dorm_hireToRecAll[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.15</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+0.05</>恢复效果（叠加后的最终值同种效果取最高）"
+  },
+  "dorm_rec_all&lv[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all&lv[100]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，同时当前宿舍每级为恢复效果额外<@cc.vup>+0.02</>（叠加后的最终值同种效果取最高）"
+  },
+  "dorm_rec_single&oneself[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.2</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+  },
+  "dorm_rec_single&oneself[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.25</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.5</>"
+  },
+  "dorm_rec_single&oneself[010]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.3</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.3</>"
+  },
+  "dorm_rec_single&oneself[011]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+  },
+  "dorm_rec_single&oneself[012]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+  },
+  "dorm_rec_single&oneself[020]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.2</>"
+  },
+  "dorm_rec_single&oneself[021]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+  },
+  "dorm_hireToRecAll[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.1</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+0.05</>恢复效果（叠加后的最终值同种效果取最高）"
+  },
+  "dorm_hireToRecAll[021]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.1</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+0.1</>恢复效果（叠加后的最终值同种效果取最高）"
+  },
+  "dorm_rec_single&oneself[030]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+  },
+  "dorm_rec_single&oneself[040]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+  },
+  "dorm_rec_single_power[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<$cc.g.sm><@cc.kw>萨米</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+  },
+  "dorm_rec_single_power[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<$cc.g.laterano><@cc.kw>拉特兰</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+  },
+  "dorm_rec_all&oneself[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all&oneself[001]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</>（同种效果取最高）"
+  },
+  "dorm_rec_all&oneself[010]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>"
+  },
+  "dorm_rec_all&oneself[011]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内除自身以外所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_all&oneself[012]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_all&oneself[021]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_all&oneself[042]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_all&group[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<$cc.g.sui><@cc.kw>岁</></>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</>（最多生效<@cc.kw>4</>名，且同种效果取最高）"
+  },
+  "dorm_rec_all&oneself[022]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_all&profession[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<@cc.kw>行医</>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</>（最多生效<@cc.kw>4</>名，且同种效果取最高）"
+  },
+  "dorm_exchangeAp[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，如果自身为<@cc.kw>满心情</>，则与当前宿舍<@cc.kw>前一位</>进驻的干员互换心情"
+  },
+  "dorm_recExcludeOther[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+2</>，同时<@cc.vdown>无法获得</>其他来源提供的心情恢复效果"
+  },
+  "dorm_rec_toone[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，<@cc.kw>推进之王</>对该宿舍中<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员恢复效果额外<@cc.vup>+0.3</>"
+  },
+  "dorm_rec_all[023]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[024]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all[025]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_rec_all[026]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+  },
+  "dorm_rec_all[029]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+  },
+  "dorm_bd_num[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_B><@cc.rem>无声共鸣</></><@cc.vup>+1</>"
+  },
+  "dorm_rec_all&bd[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>无声共鸣</></>，该宿舍内所有干员的心情每小时恢复额外<@cc.vup>+0.01</>（同种效果取最高）"
+  },
+  "dorm_rec_all&tired[000]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.15</>，同时该宿舍内心情<@cc.vup>18</>以下的干员恢复效果额外<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "dorm_rec_all&tired[100]": {
+    "Name": "",
+    "description": "进驻宿舍时，该宿舍内心情<@cc.vup>20</>以下的干员恢复效果额外<@cc.vup>+0.1</>（同种效果取最高）"
+  },
+  "hire_spd[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>"
+  },
+  "hire_spd[001]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>"
+  },
+  "hire_spd[010]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+  },
+  "hire_spd[011]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>"
+  },
+  "hire_spd[012]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>"
+  },
+  "hire_spd[020]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+  },
+  "hire_spd[030]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+  },
+  "hire_spd[031]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+  },
+  "hire_spd[032]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+  },
+  "hire_spd_cost[010]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+  },
+  "hire_spd_cost[200]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>，心情每小时消耗<@cc.vdown>+2</>"
+  },
+  "hire_spd_cost[210]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+50%</>，心情每小时消耗<@cc.vdown>+0.5</>"
+  },
+  "hire_spd_cost[220]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "hire_spd_cost[230]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "hire_spd_cost[100]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd_cost[110]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd_cost[111]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd_cost[101]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd_cost[120]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd_cost&clue[001]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+  },
+  "hire_spd_cost&clue[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）使心情每小时消耗<@cc.vup>-0.1</>"
+  },
+  "hire_spd_cost&extra[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+10%</>人脉资源的联络速度"
+  },
+  "hire_spd_cost&char[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd_cost&char[001]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，心情每小时消耗<@cc.vup>-0.25</>，如果<@cc.kw>凛御银灰</>进驻在<@cc.kw>控制中枢</>，则人脉资源的联络速度额外<@cc.vup>+10%</>"
+  },
+  "hire_spd&clue[010]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+  },
+  "hire_spd&clue[100]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+  },
+  "hire_spd_cost[112]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd&clue[101]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+  },
+  "hire_spd&clue[110]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+  },
+  "hire_spd&clue[120]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+  },
+  "hire_spd&clue[121]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+  },
+  "hire_spd&clue2[230]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<@cc.kw>黑钢国际</>线索的概率（工作时长和招募位影响概率）"
+  },
+  "hire_spd_cost[121]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，心情每小时消耗<@cc.vup>-0.25</>"
+  },
+  "hire_spd&clue2[250]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<@cc.kw>乌萨斯学生自治团</>线索的概率（工作时长和招募位影响概率）"
+  },
+  "hire_spd_bd_n1_n1[100]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，同时每个招募位（不包含初始招募位）<@cc.vup>+10</>点<$cc.bd_a1_a1><@cc.rem>记忆碎片</></>"
+  },
+  "hire_spd_bd_n1[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，每<@cc.vup>1</>点<$cc.bd_a1_a1><@cc.rem>记忆碎片</></>转化为<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>感知信息</></>，心情耗尽时清空所有<$cc.bd_a1_a1><@cc.rem>记忆碎片</></>和自身累积的<$cc.bd_a1><@cc.rem>感知信息</></>"
+  },
+  "hire_spd_bd_n1_n1[200]": {
+    "Name": "",
+    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+10</>点<<$cc.bd_b1><@cc.rem>人间烟火</></>"
+  },
+  "hire_spd_bd_n1_n1[300]": {
+    "Name": "",
+    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+15</>点<$cc.bd_B><@cc.rem>无声共鸣</></>"
+  },
+  "hire_spd_blitz[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外<@cc.vup>+5%</>联络速度，每<@cc.vup>1</>瓶<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></>额外<@cc.vup>+5%</>联络速度"
+  },
+  "hire_spd&clue2[260]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>线索的概率（工作时长和招募位影响概率）"
+  },
+  "hire_spd_dorm&lv[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+5%</>，每间宿舍每级额外<@cc.vup>+1%</>人脉资源的联络速度"
+  },
+  "hire_spd_dorm&lv[010]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+5%</>，每间宿舍每级额外<@cc.vup>+2%</>人脉资源的联络速度"
+  },
+  "hire_spd_tag[000]": {
+    "Name": "",
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>精英干员</></>的设施，联络速度额外<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
+  },
+  "meet_spd[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+  },
+  "meet_spd[1000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+  },
+  "meet_spd&cost[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+  },
+  "meet_spd[010]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>15%</>"
+  },
+  "meet_spd[011]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>15%</>"
+  },
+  "meet_spd[020]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+  },
+  "meet_spd[0020]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+  },
+  "meet_spd[1020]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+  },
+  "meet_spd[021]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+  },
+  "meet_spd[022]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+  },
+  "meet_spd[1010]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+  },
+  "meet_spd[030]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+  },
+  "meet_spd[031]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+  },
+  "meet_spd[032]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+  },
+  "meet_spd&sami[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.sm><@cc.kw>萨米</></>干员进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>5%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+  },
+  "meet_spd&sami[100]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>黑钢国际干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+  },
+  "meet_spd&sami[110]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>黑钢国际干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>20%</>"
+  },
+  "meet_spd&bd[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，当与<@cc.kw>提丰</>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+  },
+  "meet_spd&bd[010]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，当与<@cc.kw>提丰</>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>，且更容易获得线索板上尚未拥有的线索"
+  },
+  "meet_spd&bd[100]": {
+    "Name": "",
+    "description": "进驻会客室时，当与<@cc.kw>铃兰</>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>30%</>"
+  },
+  "meet_spd_ext&P[000]": {
+    "Name": "",
+    "description": "进驻会客室时，如果<@cc.kw>菲亚梅塔</>进驻在宿舍，则线索搜集速度额外提升<@cc.vup>10%</>"
+  },
+  "meet_spd_condChar[000]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</>"
+  },
+  "meet_spd&cost[100]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>35%</>，心情每小时消耗<@cc.vdown>+2</>"
+  },
+  "meet_spd&cost_condChar[000]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>50%</>，心情每小时消耗<@cc.vdown>+2</>"
+  },
+  "meet_spd&cost_condChar[001]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "meet_spd&cost_condChar[011]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "meet_spd&cost_condChar[020]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "meet_spd&cost_condChar[021]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</>，心情每小时消耗<@cc.vdown>+1</>"
+  },
+  "meet_spd&exchange[000]": {
+    "Name": "",
+    "description": "进驻会客室时，处于线索交流时线索搜集速度提升<@cc.vup>30%</>"
+  },
+  "meet_spd&exchange[001]": {
+    "Name": "",
+    "description": "进驻会客室时，处于线索交流时线索搜集速度提升<@cc.vup>30%</>"
+  },
+  "meet_team[020]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得<@cc.kw>企鹅物流</>线索（工作时长影响概率）"
+  },
+  "meet_team[050]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得<@cc.kw>乌萨斯学生自治团</>线索（工作时长影响概率）"
+  },
+  "meet_team[060]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得<@cc.kw>罗德岛制药</>线索（工作时长影响概率）"
+  },
+  "meet_team[070]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得<@cc.kw>格拉斯哥帮</>线索（工作时长影响概率）"
+  },
+  "meet_team&char[000]": {
+    "Name": "",
+    "description": "进驻会客室时，<@cc.kw>提升</>会客室内另一干员<@cc.kw>所属派系的线索倾向效果</>（如会客室没有另一干员则不提升）"
+  },
+  "meet_flag[010]": {
+    "Name": "",
+    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>莱茵生命</>时，则额外增加<@cc.kw>莱茵生命</>线索的出现概率（工作时长影响概率）"
+  },
+  "meet_flag[040]": {
+    "Name": "",
+    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>喀兰贸易</>时，则额外增加<@cc.kw>喀兰贸易</>线索的出现概率（工作时长影响概率）"
+  },
+  "meet_flag[050]": {
+    "Name": "",
+    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>乌萨斯学生自治团</>时，则额外增加<@cc.kw>乌萨斯学生自治团</>线索的出现概率（工作时长影响概率）"
+  },
+  "meet_flag[060]": {
+    "Name": "",
+    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>罗德岛制药</>时，则额外增加<@cc.kw>罗德岛制药</>线索的出现概率（工作时长影响概率）"
+  },
+  "meet_flag[070]": {
+    "Name": "",
+    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>格拉斯哥帮</>时，则额外增加<@cc.kw>格拉斯哥帮</>线索的出现概率（工作时长影响概率）"
+  },
+  "meet_spd&team[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+  },
+  "meet_spd&team[010]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>莱茵生命</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[020]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>企鹅物流</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[030]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>黑钢国际</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[031]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>黑钢国际</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[040]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>喀兰贸易</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[041]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>喀兰贸易</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[050]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>乌萨斯学生自治团</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[060]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>罗德岛制药</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[070]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>格拉斯哥帮</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[071]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>格拉斯哥帮</>线索（工作时长影响概率）"
+  },
+  "meet_spd&team[100]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+  },
+  "meet_spd&team[110]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+  },
+  "meet_spd_notOwned[000]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+  },
+  "meet_spd_notOwned[010]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得线索板上尚未拥有的线索"
+  },
+  "meet_spd_notOwned[001]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+  },
+  "meet_spd_notOwned[002]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+  },
+  "meet_spd_notOwned[003]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+  },
+  "meet_spd_notOwned_P[000]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索，若<@cc.kw>焰狐龙梓兰</>进驻控制中枢，则线索搜集速度提升<@cc.vup>10%</>"
+  },
+  "meet_spd_Owned[000]": {
+    "Name": "",
+    "description": "进驻会客室时，更容易获得线索板上已经拥有的线索"
+  },
+  "meet_spd_bd[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>5%</>，同时每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外提升<@cc.vup>5%</>"
+  },
+  "meet_spd_bd[001]": {
+    "Name": "",
+    "description": "进驻会客室时，每拥有<@cc.vup>1</>点<$cc.bd_dungeon><@cc.rem>魔物料理</></>，线索搜集速度额外提升<@cc.vup>2%</>"
+  },
+  "meet_spd_bd[002]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>，同时每<@cc.vup>10</>点<$cc.bd_b1><@cc.rem>人间烟火</></>额外提升<@cc.vup>1%</>"
+  },
+  "meet_spd_hast[000]": {
+    "Name": "",
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>，此后每小时提升<@cc.vup>2%</>，最终达到<@cc.vup>30%</>"
+  },
+  "meet_spd&condChar_mustget[000]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，连续消耗超过<@cc.kw>16</>点心情下一次<@cc.kw>必定</>获得<@cc.kw>莱茵生命</>的线索"
+  },
+  "meet_spd&condChar_mustget[100]": {
+    "Name": "",
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，连续消耗超过<@cc.kw>16</>点心情下一次<@cc.kw>必定</>获得<@cc.kw>罗德岛制药</>的线索"
+  },
+  "meet_spd&clue[000]": {
+    "Name": "",
+    "description": "进驻会客室时，每个招募位（不包含初始招募位）提升<@cc.vup>5%</>线索搜集速度"
+  },
+  "meet_spd_notOwned&exchange[000]": {
+    "Name": "",
+    "description": "进驻会客室时，处于线索交流时更容易获得线索板上尚未拥有的线索"
   }
 }

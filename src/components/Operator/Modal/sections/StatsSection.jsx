@@ -2,11 +2,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import StatBar from "../../../UI/StatBar";
 
 import characterTable from "../../../../data/operators/character_table.json";
+import characterTableEN from "../../../../data/operators/character_table_en.json";
+import skillVN from "../../../../data/operators/skill_vn.json";
+import errorIconConfig from "../../../../utils/errorIcon.json";
 import characterPatchTable from "../../../../data/operators/char_patch_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import rangeTable from "../../../../data/range_table.json";
 import potVN from "../../../../data/operators/pot_vn.json";
-import nameVN from "../../../../data/operators/name_vn.json";
 
 import { getOperatorCharId } from "../../../../utils/operatorAvatar";
 import { collectOperatorTokenOptions } from "../../../../utils/operatorTokenResolver";
@@ -19,14 +21,101 @@ import {
   getPotIconSmall,
   getItemBgUrl,
   getItemIconUrl,
+  ERROR_IMAGE_URL,
   getSummonAvatarUrl,
   getSummonSkillIconUrl,
+  getSummonImageCandidates,
   imgOnErrorHideDisplay,
 } from "../../../../utils/IconArtUrl";
 
 const characterPatchChars = characterPatchTable?.patchChars || {};
 const characterTableWithPatch = { ...characterTable, ...characterPatchChars };
 const GOLD_ITEM_ID = "4001";
+
+const STATS_IMMEDIATE_ERROR_IDS = new Set(
+  Array.isArray(errorIconConfig?.immediateErrorIds)
+    ? errorIconConfig.immediateErrorIds
+        .map((id) => String(id || "").trim())
+        .filter(Boolean)
+    : [],
+);
+
+function firstNonEmptyText(...values) {
+  for (const value of values) {
+    const text = String(value || "").trim();
+    if (text) return text;
+  }
+  return "";
+}
+
+function resolveTokenDisplayName({
+  tokenId,
+  isEnglishUI,
+  tokenDataCN,
+  tokenDataEN,
+}) {
+  const tid = String(tokenId || "").trim();
+
+  if (isEnglishUI) {
+    return firstNonEmptyText(tokenDataEN?.name, tokenDataCN?.name, tid);
+  }
+
+  const vnEntry = skillVN?.[tid] || null;
+  return firstNonEmptyText(
+    vnEntry?.Title,
+    vnEntry?.Title_S1,
+    tokenDataEN?.name,
+    tokenDataCN?.name,
+    tid,
+  );
+}
+
+function SummonTokenImage({
+  tokenId,
+  charId,
+  skillNumber,
+  skillIconUrl = "",
+  alt = "",
+  className = "",
+  loading = "lazy",
+}) {
+  const candidates = useMemo(() => {
+    const tid = String(tokenId || "").trim();
+    if (!tid || STATS_IMMEDIATE_ERROR_IDS.has(tid)) {
+      return [ERROR_IMAGE_URL];
+    }
+
+    return getSummonImageCandidates(tid, skillIconUrl, {
+      charId,
+      skillNumber,
+    });
+  }, [tokenId, skillIconUrl, charId, skillNumber]);
+
+  const [candidateIndex, setCandidateIndex] = useState(0);
+
+  useEffect(() => {
+    setCandidateIndex(0);
+  }, [tokenId, skillIconUrl, charId, skillNumber]);
+
+  const src = candidates[candidateIndex] || ERROR_IMAGE_URL;
+
+  return (
+    <img
+      key={`${tokenId || "token"}-${skillNumber || 0}-${candidateIndex}-${src}`}
+      src={src}
+      alt={alt}
+      className={className}
+      draggable={false}
+      loading={loading}
+      decoding="async"
+      onError={() => {
+        setCandidateIndex((current) =>
+          Math.min(current + 1, Math.max(0, candidates.length - 1)),
+        );
+      }}
+    />
+  );
+}
 
 const getGoldCostForPromotion = (rarity, fromElite, toElite) => {
   const r = String(rarity || "");
@@ -363,7 +452,8 @@ function MaterialIcon({ itemId, count }) {
   );
 }
 
-const StatsSection = ({ operator, charId: charIdProp }) => {
+const StatsSection = ({ operator, charId: charIdProp, lang }) => {
+  const isEnglishUI = String(lang || "VN").toUpperCase() === "EN";
   const resolvedCharId = useMemo(() => {
     if (charIdProp) return String(charIdProp);
     const fromOp = getOperatorCharId?.(operator);
@@ -539,6 +629,11 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     return characterTableWithPatch?.[selectedSummon.tokenId] || null;
   }, [selectedSummon]);
 
+  const summonCharDataEN = useMemo(() => {
+    if (!selectedSummon?.tokenId) return null;
+    return characterTableEN?.[selectedSummon.tokenId] || null;
+  }, [selectedSummon]);
+
   const summonPhases = useMemo(() => {
     const arr = summonCharData?.phases;
     if (!Array.isArray(arr)) return [];
@@ -582,17 +677,16 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
     };
   }, [summonPhase, summonLevel]);
 
-  const summonNameVNRow = useMemo(() => {
-    const tid = selectedSummon?.tokenId;
-    if (!tid) return null;
-    return nameVN?.[tid] || null;
-  }, [selectedSummon]);
-
-  const summonDisplayName = useMemo(() => {
-    const vnName = summonNameVNRow?.name_vn;
-    if (vnName) return vnName;
-    return summonCharData?.name || selectedSummon?.tokenId || "";
-  }, [summonNameVNRow, summonCharData, selectedSummon]);
+  const summonDisplayName = useMemo(
+    () =>
+      resolveTokenDisplayName({
+        tokenId: selectedSummon?.tokenId,
+        isEnglishUI,
+        tokenDataCN: summonCharData,
+        tokenDataEN: summonCharDataEN,
+      }),
+    [selectedSummon, isEnglishUI, summonCharData, summonCharDataEN],
+  );
 
   const summonPositionVN = useMemo(() => {
     const pos = summonCharData?.position;
@@ -1159,22 +1253,13 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
                           : "ak-steel-btn-idle"
                       }`}
                     >
-                      <img
-                        src={icon}
+                      <SummonTokenImage
+                        tokenId={opt.tokenId}
+                        charId={resolvedCharId}
+                        skillNumber={opt.skillIndex ?? idx + 1}
+                        skillIconUrl={icon}
                         alt={skillLabel}
                         className="w-7 h-7 object-contain shrink-0"
-                        draggable={false}
-                        loading="lazy"
-                        onError={(e) => {
-                          const img = e.currentTarget;
-                          const fallback = getSummonAvatarUrl(opt.tokenId);
-                          if (fallback && img?.dataset?.fallback !== "1" && img.src !== fallback) {
-                            if (img.dataset) img.dataset.fallback = "1";
-                            img.src = fallback;
-                            return;
-                          }
-                          img.style.display = "none";
-                        }}
                       />
                       <span className="text-xs text-white/90 whitespace-nowrap">
                         {skillLabel}
@@ -1188,16 +1273,13 @@ const StatsSection = ({ operator, charId: charIdProp }) => {
 
           {/* Header: avatar + basic info */}
           <div className="mt-3 flex items-start gap-3">
-            <img
-              key={selectedSummon.tokenId}
-              src={getSummonAvatarUrl(selectedSummon.tokenId)}
-              alt=""
+            <SummonTokenImage
+              tokenId={selectedSummon.tokenId}
+              charId={resolvedCharId}
+              skillNumber={selectedSummon.skillIndex ?? summonIndex + 1}
+              skillIconUrl={getSummonSkillIconUrl(selectedSummon.tokenId)}
+              alt={summonDisplayName}
               className="w-14 h-14 rounded-lg bg-white/5 object-contain shrink-0"
-              draggable={false}
-              loading="lazy"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
             />
 
             <div className="min-w-0">
