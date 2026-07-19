@@ -1,11 +1,11 @@
 {
   "control_prod_spd[000]": {
     "Name": "Quyền hạn tối cao",
-    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng loại hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_prod_spd[1000]": {
     "Name": "Quyền hạn tối cao",
-    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng loại hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_prod_fraction[000]": {
     "Name": "Ánh le lói của Kỵ Sĩ Nến",
@@ -21,175 +21,175 @@
   },
   "control_token_prod_spd[000]": {
     "Name": "Ép xung",
-    "description": "进驻控制中枢时，如果有<@cc.kw>2</>台以上<$cc.tag.op><@cc.kw>作业平台</></>进驻在<@cc.kw>发电站</>，则所有制造站生产力<@cc.vup>+2%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, nếu có từ <@cc.kw>2</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> trở lên được phân công vào <@cc.kw>Power Plants</>, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_token_prod_spd2[000]": {
-    "Name": "",
-    "description": "当与<$cc.tag.mh><@cc.kw>怪物猎人小队</></>干员进驻控制中枢一起工作时，所有制造站生产力<@cc.vup>+2%</>（同种效果取最高）"
+    "Name": "Dẫn đầu làm gương",
+    "description": "Khi Operator này được phân công vào Control Center cùng với các Operator thuộc <$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_token_prod_spd3[000]": {
-    "Name": "",
-    "description": "当与<$cc.g.lgd><@cc.kw>龙门近卫局</></>干员进驻控制中枢一起工作时，所有制造站生产力<@cc.vup>+3%</>（同种效果取最高）"
+    "Name": "Tình đồng đội",
+    "description": "Khi Operator này được phân công vào Control Center cùng các Operator thuộc <$cc.g.lgd><@cc.kw>L.G.D.</></>, năng suất của tất cả Factory <@cc.vup>+3%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_token_tra_spd[000]": {
-    "Name": "",
-    "description": "当与<$cc.tag.mh><@cc.kw>怪物猎人小队</></>干员进驻控制中枢一起工作时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+    "Name": "Bí thuật đàm phán",
+    "description": "Khi Operator này được phân công vào Control Center cùng các Operator thuộc <$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>, hiệu suất đơn hàng của tất cả Trading Post <@cc.vup>+7%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_bd_spd[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>；每个进驻在制造站的<$cc.g.bs><@cc.kw>黑钢国际</></>干员，生产力<@cc.vup>+5%</>"
+    "Name": "Hội ngộ bạn cũ",
+    "description": "Khi Operator này được phân công vào Control Center, mức tiêu hao Tinh thần mỗi giờ của bản thân <@cc.vdown>+0.5</>; với mỗi Operator thuộc <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> được phân công vào Factory, năng suất <@cc.vup>+5%</>."
   },
   "control_pow_bot[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，如果<@cc.kw>Lancet-2</>进驻在<@cc.kw>发电站</>，<@cc.kw>发电站</>额外<@cc.vup>+2</>（仅影响设施数量）"
+    "Name": "Tôi lo được",
+    "description": "Khi Operator này được phân công vào Control Center, nếu <@cc.kw>Lancet-2</> được phân công vào <@cc.kw>Power Plant</>, số lượng <@cc.kw>Power Plant</> được tính thêm <@cc.vup>+2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_tra_spd[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+    "Name": "Thỏa thuận hợp tác",
+    "description": "Khi Operator này được phân công vào Control Center, hiệu suất đơn hàng của tất cả Trading Post <@cc.vup>+7%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_tra_spd[010]": {
-    "Name": "",
-    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+    "Name": "Đại tiểu thư",
+    "description": "Khi Operator này được phân công vào Control Center, hiệu suất đơn hàng của tất cả Trading Post <@cc.vup>+7%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_tra_spd[020]": {
-    "Name": "",
-    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+    "Name": "Tràn đầy sinh lực",
+    "description": "Khi Operator này được phân công vào Control Center, hiệu suất đơn hàng của tất cả Trading Post <@cc.vup>+7%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_tra_spd[030]": {
-    "Name": "",
-    "description": "进驻控制中枢时，所有贸易站订单效率<@cc.vup>+7%</>（同种效果取最高）"
+    "Name": "Đầu não tình báo",
+    "description": "Khi Operator này được phân công vào Control Center, hiệu suất đơn hàng của tất cả Trading Post <@cc.vup>+7%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_tra_limit&spd[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，每个进驻在贸易站的<$cc.g.karlan><@cc.kw>谢拉格</></>干员，订单获取效率<@cc.vdown>-15%</>，订单上限<@cc.vup>+6</>"
+    "Name": "Tính toán tỉ mỉ",
+    "description": "Khi Operator này được phân công vào Control Center, mỗi Operator thuộc <$cc.g.karlan><@cc.kw>Kjerag</></> được phân công vào Trading Post sẽ khiến hiệu suất nhận đơn hàng <@cc.vdown>-15%</>, bù lại giới hạn đơn hàng <@cc.vup>+6</>."
   },
   "control_tra_limit&spd2[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，每个进驻在贸易站的<$cc.g.siracusa><@cc.kw>叙拉古</></>干员，订单获取效率<@cc.vup>+5%</>"
+    "Name": "Sự công nhận của gia tộc",
+    "description": "Khi Operator này được phân công vào Control Center, mỗi Operator thuộc <$cc.g.siracusa><@cc.kw>Siracusa</></> được phân công vào Trading Post sẽ giúp hiệu suất nhận đơn hàng <@cc.vup>+5%</>."
   },
   "control_tra_limit&spd3[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，每个存在<@cc.vup>3</>名<$cc.g.karlan><@cc.kw>谢拉格</></>干员的贸易站，订单获取效率<@cc.vup>+10%</>"
+    "Name": "Địa bàn kinh doanh",
+    "description": "Khi Operator này được phân công vào Control Center, tất cả Trading Post có <@cc.vup>3</> Operator thuộc <$cc.g.karlan><@cc.kw>Kjerag</></> được phân công sẽ nhận hiệu suất đơn hàng <@cc.vup>+10%</>."
   },
   "control_hire_spd[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，人力办公室联络速度小于<@cc.vup>30%</>时（其中包含基础联络速度5%），则联络速度额外<@cc.vup>+20%</>（该加成全局效果唯一，不受其它加成影响）"
+    "Name": "Sức ảnh hưởng",
+    "description": "Khi Operator này được phân công vào Control Center, nếu tốc độ liên hệ nhân sự của HR Office thấp hơn <@cc.vup>30%</> (bao gồm tốc độ cơ bản 5%), tốc độ liên hệ tăng thêm <@cc.vup>+20%</> (hiệu ứng duy nhất ảnh hưởng trên toàn Căn cứ, không chịu ảnh hưởng bởi các hiệu ứng khác)."
   },
   "control_hire_spd_all[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，人力办公室联络速度<@cc.vup>+10%</>（同种效果取最高）"
+    "Name": "Gương mặt tiêu biểu của năm tại phòng nhân sự",
+    "description": "Khi Operator này được phân công vào Control Center, tốc độ liên hệ nhân sự của HR Office <@cc.vup>+10%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_upMeetingSpeed[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，会客室线索搜集速度<@cc.vup>+25%</>（同种效果取最高）"
+    "Name": "Thấu hiểu sự đời",
+    "description": "Khi Operator này được phân công vào Control Center, tốc độ tìm Clue của Reception Room <@cc.vup>+25%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_upMeetingSpeed[100]": {
-    "Name": "",
-    "description": "进驻控制中枢时，会客室线索搜集速度<@cc.vup>+15%</>（同种效果取最高）"
+    "Name": "Nơi hội tụ hy vọng",
+    "description": "Khi Operator này được phân công vào Control Center, tốc độ tìm Clue của Reception Room <@cc.vup>+15%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_meeting&ord[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，当<@cc.kw>伊内丝</>入驻会客室时，会客室线索搜集速度<@cc.vup>+5%</>；当<@cc.kw>赫德雷</>入驻贸易站时，赫德雷所在贸易站订单上限<@cc.vup>+1</>"
+    "Name": "Chủ mưu α",
+    "description": "Khi Operator này được phân công vào Control Center, nếu <@cc.kw>Ines</> được phân công vào Reception Room, tốc độ tìm Clue của Reception Room <@cc.vup>+5%</>; nếu <@cc.kw>Hoederer</> được phân công vào Trading Post, giới hạn đơn hàng của Trading Post nơi Hoederer làm việc <@cc.vup>+1</>."
   },
   "control_meeting&ord[001]": {
-    "Name": "",
-    "description": "进驻控制中枢时，当<@cc.kw>伊内丝</>入驻会客室时，会客室线索搜集速度<@cc.vup>+5%</>；当<@cc.kw>赫德雷</>入驻贸易站时，赫德雷所在贸易站订单上限<@cc.vup>+2</>"
+    "Name": "Chủ mưu β",
+    "description": "Khi Operator này được phân công vào Control Center, nếu <@cc.kw>Ines</> được phân công vào Reception Room, tốc độ tìm Clue của Reception Room <@cc.vup>+5%</>; nếu <@cc.kw>Hoederer</> được phân công vào Trading Post, giới hạn đơn hàng của Trading Post nơi Hoederer làm việc <@cc.vup>+2</>."
   },
   "control_meeting&mp_cost[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.minos><@cc.kw>米诺斯</></>干员，会客室线索搜集速度<@cc.vup>+4%</>（最多<@cc.vup>+20%</>，同种效果取最高）；当与<$cc.g.sargon><@cc.kw>萨尔贡</></>干员进驻控制中枢一起工作时，自身心情每小时消耗<@cc.vdown>+0.02</>"
+    "Name": "Niềm kiêu hãnh của một anh hùng α",
+    "description": "Khi Operator này được phân công vào Control Center, với mỗi Operator thuộc <$cc.g.minos><@cc.kw>Minos</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ tìm Clue của Reception Room <@cc.vup>+4%</> (tối đa <@cc.vup>+20%</>, chỉ áp dụng hiệu ứng mạnh nhất nếu cùng loại); khi được phân công cùng các Operator thuộc <$cc.g.sargon><@cc.kw>Sargon</></>, mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.02</> mỗi giờ."
   },
   "control_meeting&mp_cost[100]": {
-    "Name": "",
-    "description": "进驻控制中枢时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.minos><@cc.kw>米诺斯</></>干员，会客室线索搜集速度<@cc.vup>+5%</>（最多<@cc.vup>+25%</>，同种效果取最高）；当与<$cc.g.sargon><@cc.kw>萨尔贡</></>干员进驻控制中枢一起工作时，自身心情每小时消耗<@cc.vdown>+0.02</>"
+    "Name": "Niềm kiêu hãnh của một anh hùng β",
+    "description": "Khi Operator này được phân công vào Control Center, với mỗi Operator thuộc <$cc.g.minos><@cc.kw>Minos</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ tìm Clue của Reception Room <@cc.vup>+5%</> (tối đa <@cc.vup>+25%</>, chỉ áp dụng hiệu ứng mạnh nhất nếu cùng loại); khi được phân công cùng các Operator thuộc <$cc.g.sargon><@cc.kw>Sargon</></>, mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.02</> mỗi giờ."
   },
   "control_meeting_bd[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>，每个进驻在会客室的<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员，线索搜集速度<@cc.vup>+10%</>"
+    "Name": "'Rõ, thưa Thủ lĩnh'",
+    "description": "Khi Operator này được phân công vào Control Center, mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.5</> mỗi giờ; với mỗi Operator thuộc <$cc.g.ussg><@cc.kw>Ursus Student Self-government Group</></> được phân công vào Reception Room, tốc độ tìm Clue <@cc.vup>+10%</>."
   },
   "control_clue_cost[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，<@cc.kw>提升</>会客室内干员<@cc.kw>所属派系的线索倾向效果</>，但控制中枢内所有干员的心情每小时消耗<@cc.vdown>+1.5</>"
+    "Name": "Tính nhiễu tâm",
+    "description": "Khi Operator này được phân công vào Control Center, <@cc.kw>tăng</> khả năng nhận được Clue <@cc.kw>tương ứng với khu vực của các Operator được phân công vào Reception Room</>, nhưng mức tiêu hao Tinh thần mỗi giờ của tất cả Operator trong Control Center <@cc.vdown>+1.5</>."
   },
   "control_clue_cost[010]": {
-    "Name": "",
-    "description": "进驻控制中枢时，<@cc.kw>小幅提升</>会客室内干员<@cc.kw>所属派系的线索倾向效果</>，但控制中枢内所有干员的心情每小时消耗<@cc.vdown>+0.5</>"
+    "Name": "Xem xét khắc khe",
+    "description": "Khi Operator này được phân công vào Control Center, <@cc.kw>tăng nhẹ</> khả năng nhận được Clue <@cc.kw>tương ứng với khu vực của các Operator được phân công vào Reception Room</>, nhưng mức tiêu hao Tinh thần mỗi giờ của tất cả Operator trong Control Center <@cc.vdown>+0.5</>"
   },
   "control_clue_cost[011]": {
-    "Name": "",
-    "description": "进驻控制中枢时，<@cc.kw>小幅提升</>会客室内干员<@cc.kw>所属派系的线索倾向效果</>"
+    "Name": "Phán đoán như thần",
+    "description": "Khi Operator này được phân công vào Control Center, <@cc.kw>tăng nhẹ</> khả năng nhận được Clue <@cc.kw>tương ứng với khu vực của các Operator được phân công vào Reception Room</>."
   },
   "control_clue_faction[070]": {
-    "Name": "",
-    "description": "进驻控制中枢时，会客室更容易获得<@cc.kw>格拉斯哥帮</>线索（工作时长影响概率）"
+    "Name": "'Một nghìn lá thư'",
+    "description": "Khi Operator này được phân công vào Control Center, khả năng Reception Room nhận được Clue của <@cc.kw>Glasgow</> cao hơn (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "control_mp_cost[000]": {
-    "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "Name": "Cánh tay đắc lực",
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[001]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[002]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[003]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[004]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[005]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[006]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[007]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[008]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[009]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[010]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[011]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[012]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[013]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost[014]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost_double[000]": {
     "Name": "",
-    "description": "当与<@cc.kw>阿米娅</>一起进驻控制中枢时，自身和<@cc.kw>阿米娅</>心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "当与<@cc.kw>阿米娅</>一起Khi Operator này được phân công vào Control Center, 自身和<@cc.kw>阿米娅</>心情每小时恢复<@cc.vup>+0.05</>"
   },
   "control_mp_cost_double[001]": {
     "Name": "",
-    "description": "当与<@cc.kw>阿米娅</>一起进驻控制中枢时，自身和<@cc.kw>阿米娅</>心情每小时恢复<@cc.vup>+0.1</>"
+    "description": "当与<@cc.kw>阿米娅</>一起Khi Operator này được phân công vào Control Center, 自身和<@cc.kw>阿米娅</>心情每小时恢复<@cc.vup>+0.1</>"
   },
   "control_allCost_condChar[000]": {
     "Name": "",
@@ -197,163 +197,163 @@
   },
   "control_mp_cost&faction2[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.lda><@cc.kw>鲤氏侦探事务所</></>干员可使该派系干员<@cc.kw>额外恢复心情</>，同时每人可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.2</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每个<$cc.g.lda><@cc.kw>鲤氏侦探事务所</></>干员可使该派系干员<@cc.kw>额外恢复心情</>，同时每人可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.2</>"
   },
   "control_mp_cost&faction[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.lgd><@cc.kw>龙门近卫局</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每个<$cc.g.lgd><@cc.kw>L.G.D.</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
   },
   "control_mp_cost&faction[020]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每个<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
   },
   "control_mp_cost&faction[030]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.karlan><@cc.kw>谢拉格</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每个<$cc.g.karlan><@cc.kw>谢拉格</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
   },
   "control_mp_cost&faction[900]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.sp><@cc.kw>异格</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每个<$cc.g.sp><@cc.kw>异格</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
   },
   "control_mp_cost&faction[990]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每个<$cc.g.R6><@cc.kw>彩虹小队</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每个<$cc.g.R6><@cc.kw>彩虹小队</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
   },
   "control_clue_cost&faction[990]": {
     "Name": "",
-    "description": "进驻控制中枢时，更容易获得线索板上尚未拥有的线索，但控制中枢内除自身以外的其余干员心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Control Center, 更容易获得线索板上尚未拥有的线索，但控制中枢内除自身以外的其余干员心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "control_mp_cost&bd1[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>；当自身心情处于<@cc.kw>12</>以下时，<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+15</>"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</>；当自身心情处于<@cc.kw>12</>以下时，<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+15</>"
   },
   "control_mp_cost&bd2[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>；当自身心情大于<@cc.kw>12</>时，<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+10</>"
+    "description": "Khi Operator này được phân công vào Control Center, 自身心情每小时消耗<@cc.vdown>+0.5</>；当自身心情大于<@cc.kw>12</>时，<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+10</>"
   },
   "control_mp_cost&bd3[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，热情值处于<@cc.kw>40</>点及以上时，自身心情每小时消耗<@cc.vdown>+0.05</>"
+    "description": "Khi Operator này được phân công vào Control Center, 热情值处于<@cc.kw>40</>点及以上时，自身心情每小时消耗<@cc.vdown>+0.05</>"
   },
   "control_mp_cost&bd_up[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>；每个<$cc.g.sui><@cc.kw>岁</></>干员进驻在宿舍和活动室以外的设施则<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+5</>（最多5名）"
+    "description": "Khi Operator này được phân công vào Control Center, 自身心情每小时消耗<@cc.vdown>+0.5</>；每个<$cc.g.sui><@cc.kw>岁</></>干员进驻在宿舍和活动室以外的设施则<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+5</>（最多5名）"
   },
   "control_mp_bd_cost_expand[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.05</>；同时每有<@cc.vup>20</>点<$cc.bd_b1><@cc.rem>人间烟火</></>，则额外<@cc.vup>+0.05</>，（与控制中枢加成有<$cc.c.sui2_1><@cc.rem>特殊比较规则</></>）"
+    "description": "Khi Operator này được phân công vào Control Center, <$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.05</>；同时每有<@cc.vup>20</>点<$cc.bd_b1><@cc.rem>人间烟火</></>，则额外<@cc.vup>+0.05</>，（与控制中枢加成有<$cc.c.sui2_1><@cc.rem>特殊比较规则</></>）"
   },
   "control_mp_expand_double[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>，当<@cc.kw>魔王</>进驻中枢时额外<@cc.vup>+0.1</>（与控制中枢加成有<$cc.c.sui2_1><@cc.rem>特殊比较规则</></>）"
+    "description": "Khi Operator này được phân công vào Control Center, <$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>，当<@cc.kw>魔王</>进驻中枢时额外<@cc.vup>+0.1</>（与控制中枢加成有<$cc.c.sui2_1><@cc.rem>特殊比较规则</></>）"
   },
   "control_mp_cost&bd2[010]": {
     "Name": "",
-    "description": "进驻控制中枢时，自身心情每小时消耗<@cc.vdown>+0.5</>，<$cc.bd_felyne><@cc.rem>木天蓼</></><@cc.vup>+8</>"
+    "description": "Khi Operator này được phân công vào Control Center, 自身心情每小时消耗<@cc.vdown>+0.5</>，<$cc.bd_felyne><@cc.rem>木天蓼</></><@cc.vup>+8</>"
   },
   "control_mp_cost_reset[000]": {
     "Name": "",
-    "description": "当与<@cc.kw>丰川祥子</>一起进驻控制中枢时，消除自身心情消耗的影响"
+    "description": "当与<@cc.kw>丰川祥子</>一起Khi Operator này được phân công vào Control Center, 消除自身心情消耗的影响"
   },
   "control_mp&meet_spd[000]": {
     "Name": "",
-    "description": "当与<@cc.kw>丰川祥子</>一起进驻控制中枢时，<@cc.kw>丰川祥子</>心情每小时消耗<@cc.vdown>+0.05</>，会客室线索搜集速度额外提升<@cc.vup>+5%</>（同种效果取最高）"
+    "description": "当与<@cc.kw>丰川祥子</>一起Khi Operator này được phân công vào Control Center, <@cc.kw>丰川祥子</>心情每小时消耗<@cc.vdown>+0.05</>，会客室线索搜集速度额外提升<@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_facCostReset[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<@cc.kw>消除</>当前控制中枢内所有<$cc.g.sui><@cc.kw>岁</></>干员<@cc.kw>自身</>心情消耗的影响"
+    "description": "Khi Operator này được phân công vào Control Center, <@cc.kw>消除</>当前控制中枢内所有<$cc.g.sui><@cc.kw>岁</></>干员<@cc.kw>自身</>心情消耗的影响"
   },
   "control_costToBD[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，当自身心情大于<@cc.kw>12</>时，<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+15</>；当自身心情处于<@cc.kw>12</>以下时，<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+10</>"
+    "description": "Khi Operator này được phân công vào Control Center, 当自身心情大于<@cc.kw>12</>时，<$cc.bd_b1><@cc.rem>人间烟火</></><@cc.vup>+15</>；当自身心情处于<@cc.kw>12</>以下时，<$cc.bd_a1><@cc.rem>感知信息</></><@cc.vup>+10</>"
   },
   "control_mp_bd[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每有1名<$cc.g.R6><@cc.kw>彩虹小队</></>干员，则<$cc.bd_ash><@cc.rem>情报储备</></><@cc.vup>+1</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每有1名<$cc.g.R6><@cc.kw>彩虹小队</></>干员，则<$cc.bd_ash><@cc.rem>情报储备</></><@cc.vup>+1</>"
   },
   "control_mp_bd[010]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每有1名<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员，则<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></><@cc.vup>+1</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每有1名<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员，则<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></><@cc.vup>+1</>"
   },
   "control_mp_bd2[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内每有1名<$cc.tag.mh><@cc.kw>怪物猎人小队</></>干员，则<$cc.bd_felyne><@cc.rem>木天蓼</></><@cc.vup>+2</>"
+    "description": "Khi Operator này được phân công vào Control Center, 控制中枢内每有1名<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>干员，则<$cc.bd_felyne><@cc.rem>木天蓼</></><@cc.vup>+2</>"
   },
   "control_mp_aegir1[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，每有1个<$cc.g.abyssal><@cc.kw>深海猎人</></>干员进驻在宿舍以外的设施，则自身心情每小时消耗<@cc.vdown>+0.5</>；反之则自身心情每小时恢复<@cc.vup>+0.5</>，如果进驻在宿舍内的<$cc.g.abyssal><@cc.kw>深海猎人</></>干员为满心情，则额外<@cc.vup>+0.5</>"
+    "description": "Khi Operator này được phân công vào Control Center, 每有1个<$cc.g.abyssal><@cc.kw>深海猎人</></>干员进驻在宿舍以外的设施，则自身心情每小时消耗<@cc.vdown>+0.5</>；反之则自身心情每小时恢复<@cc.vup>+0.5</>，如果进驻在宿舍内的<$cc.g.abyssal><@cc.kw>深海猎人</></>干员为满心情，则额外<@cc.vup>+0.5</>"
   },
   "control_mp_aegir2[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>；基建内（不包含副手及活动室使用者）<$cc.g.abyssal><@cc.kw>深海猎人</></>干员获得<$cc.c.abyssal2_1><@cc.rem>特殊加成</></>（与部分技能有<$cc.c.abyssal2_3><@cc.rem>特殊叠加规则</></>）"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</>；基建内（不包含副手及活动室使用者）<$cc.g.abyssal><@cc.kw>深海猎人</></>干员获得<$cc.c.abyssal2_1><@cc.rem>特殊加成</></>（与部分技能有<$cc.c.abyssal2_3><@cc.rem>特殊叠加规则</></>）"
   },
   "control_mp_aegir2[010]": {
     "Name": "",
-    "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>；基建内（不包含副手及活动室使用者）<$cc.g.abyssal><@cc.kw>深海猎人</></>干员获得<$cc.c.abyssal2_2><@cc.rem>特殊加成</></>（与部分技能有<$cc.c.abyssal2_3><@cc.rem>特殊叠加规则</></>）"
+    "description": "Khi Operator này được phân công vào Control Center, Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.05</>；基建内（不包含副手及活动室使用者）<$cc.g.abyssal><@cc.kw>深海猎人</></>干员获得<$cc.c.abyssal2_2><@cc.rem>特殊加成</></>（与部分技能有<$cc.c.abyssal2_3><@cc.rem>特殊叠加规则</></>）"
   },
   "control_mp_psk[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，每个进驻在制造站的<$cc.g.psk><@cc.kw>红松骑士团</></>干员，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+10%</>，<@cc.kw>贵金属</>类配方的生产力<@cc.vdown>-10%</>"
+    "description": "Khi Operator này được phân công vào Control Center, 每个进驻在制造站的<$cc.g.psk><@cc.kw>红松骑士团</></>干员，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+10%</>，<@cc.kw>贵金属</>类配方的生产力<@cc.vdown>-10%</>"
   },
   "control_mp_lonely[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<$cc.c.room1><@cc.kw>部分设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>；同时控制中枢内<$cc.c.skill><@cc.kw>部分技能</></>可以为<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员额外提供心情恢复"
+    "description": "Khi Operator này được phân công vào Control Center, <$cc.c.room1><@cc.kw>部分设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>；同时控制中枢内<$cc.c.skill><@cc.kw>部分技能</></>可以为<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员额外提供心情恢复"
   },
   "control_dorm_rec[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_dorm_rec[001]": {
     "Name": "",
-    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_dorm_rec[002]": {
     "Name": "",
-    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_dorm_rec_tag[001]": {
     "Name": "",
-    "description": "进驻控制中枢时，所有宿舍内<$cc.g.elite><@cc.kw>精英干员</></>的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 所有宿舍内<$cc.g.elite><@cc.kw>精英干员</></>的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_dorm_rec2[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</>（同种效果取最高）；当与<@cc.kw>丰川祥子</>一起进驻控制中枢时，<@cc.kw>丰川祥子</>的心情每小时恢复<@cc.vup>+0.1</>"
+    "description": "Khi Operator này được phân công vào Control Center, 所有宿舍内所有干员的心情每小时恢复<@cc.vup>+0.05</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；当与<@cc.kw>丰川祥子</>一起Khi Operator này được phân công vào Control Center, <@cc.kw>丰川祥子</>的心情每小时恢复<@cc.vup>+0.1</>"
   },
   "control_train_spd[010]": {
     "Name": "",
-    "description": "进驻控制中枢时，如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_train_spd[011]": {
     "Name": "",
-    "description": "进驻控制中枢时，如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_train_spd[012]": {
     "Name": "",
-    "description": "进驻控制中枢时，如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 如训练室有干员在进行技能专精，则该干员的专精技能训练速度<@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_tra_limit&spd[010]": {
     "Name": "",
-    "description": "进驻控制中枢时，同一贸易站中，每有<@cc.vup>1</>名<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员，订单获取效率<@cc.vup>+10%</>"
+    "description": "Khi Operator này được phân công vào Control Center, 同一贸易站中，每有<@cc.vup>1</>名<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员，订单获取效率<@cc.vup>+10%</>"
   },
   "control_mp_bd&trade[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+20</>；每有<@cc.vup>8</>点<$cc.bd_mujica><@cc.rem>热情值</></>，自身心情每小时消耗<@cc.vdown>+0.01</>，所有贸易站订单效率<@cc.vup>+1%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, <$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+20</>；每有<@cc.vup>8</>点<$cc.bd_mujica><@cc.rem>热情值</></>，自身心情每小时消耗<@cc.vdown>+0.01</>，所有贸易站订单效率<@cc.vup>+1%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_meeting_spd&bd[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+10</>；会客室线索搜集速度提升<@cc.vup>+5%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, <$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+10</>；会客室线索搜集速度提升<@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_dorm_bd[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+1</>"
+    "description": "Khi Operator này được phân công vào Control Center, 宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+1</>"
   },
   "control_hire_spd&bd[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，<$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+10</>；人脉资源的联络速度<@cc.vup>+10%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, <$cc.bd_mujica><@cc.rem>热情值</></><@cc.vup>+10</>；人脉资源的联络速度<@cc.vup>+10%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_prod_tra_spd[000]": {
     "Name": "",
-    "description": "进驻控制中枢时，若<$cc.bd_wang_1><@cc.kw>外势</></>大于等于<$cc.bd_wang_2><@cc.kw>实地</></>，所有贸易站订单效率<@cc.vup>+7%</>；若<$cc.bd_wang_2><@cc.kw>实地</></>大于<$cc.bd_wang_1><@cc.kw>外势</></>，所有制造站生产力<@cc.vup>+2%</>（同种效果取最高）"
+    "description": "Khi Operator này được phân công vào Control Center, 若<$cc.bd_wang_1><@cc.kw>外势</></>大于等于<$cc.bd_wang_2><@cc.kw>实地</></>，所有贸易站订单效率<@cc.vup>+7%</>；若<$cc.bd_wang_2><@cc.kw>实地</></>大于<$cc.bd_wang_1><@cc.kw>外势</></>，所有制造站生产力<@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "power_rec_spd&cost[000]": {
     "Name": "",
@@ -881,7 +881,7 @@
   },
   "manu_formula_spd&cost_bd[000]": {
     "Name": "",
-    "description": "进驻制造站时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.bs><@cc.kw>黑钢国际</></>干员（最多<@cc.kw>3</>名），<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+2%</>，心情每小时消耗<@cc.vup>-0.15</>"
+    "description": "进驻制造站时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.bs><@cc.kw>Blacksteel Worldwide</></>干员（最多<@cc.kw>3</>名），<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+2%</>，心情每小时消耗<@cc.vup>-0.15</>"
   },
   "manu_formula_spd&cost_bd[100]": {
     "Name": "",
@@ -2205,27 +2205,27 @@
   },
   "dorm_rec_single[010]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[1010]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single_power[100]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_bd_n1_n3[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</>（同种效果取最高），同时当前宿舍每级提供<@cc.vup>1</>个<$cc.bd_a1_a3><@cc.rem>小节</></>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，同时当前宿舍每级提供<@cc.vup>1</>个<$cc.bd_a1_a3><@cc.rem>小节</></>"
   },
   "dorm_rec_bd_n1[100]": {
     "Name": "",
@@ -2233,47 +2233,47 @@
   },
   "dorm_rec_single[030]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[031]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[032]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[033]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[020]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.75</>（同种效果取最高）"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.75</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single_P[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_P[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<@cc.kw><$cc.gvial>嘉维尔</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw><$cc.gvial>嘉维尔</></>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_P[002]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<@cc.kw>蓝毒</>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw>蓝毒</>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single&tag[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<$cc.tag.mh><@cc.kw>怪物猎人小队</></>成员和<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>成员和<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_all[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_bd_n1_n2[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高），同时当前宿舍每级提供<@cc.vup>1</>层<$cc.bd_a1_a2><@cc.rem>梦境</></>"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，同时当前宿舍每级提供<@cc.vup>1</>层<$cc.bd_a1_a2><@cc.rem>梦境</></>"
   },
   "dorm_rec_bd_n1[000]": {
     "Name": "",
@@ -2285,59 +2285,59 @@
   },
   "dorm_rec_all[010]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[011]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[012]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[013]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[014]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[017]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[020]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[021]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[022]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[027]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[028]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tag[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，如果目标是<$cc.tag.dungeon><@cc.kw>莱欧斯小队</></>干员，则恢复效果额外<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，如果目标是<$cc.tag.dungeon><@cc.kw>莱欧斯小队</></>干员，则恢复效果额外<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&unfull[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&unfull[001]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>；同时该宿舍每有<@cc.kw>1</>名心情未满的干员，则恢复效果额外<@cc.vup>+0.01</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>；同时该宿舍每有<@cc.kw>1</>名心情未满的干员，则恢复效果额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&single[000]": {
     "Name": "",
@@ -2357,7 +2357,7 @@
   },
   "dorm_rec_all&lv[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&lv[100]": {
     "Name": "",
@@ -2365,31 +2365,31 @@
   },
   "dorm_rec_single&oneself[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.2</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
   },
   "dorm_rec_single&oneself[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.25</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.5</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.5</>"
   },
   "dorm_rec_single&oneself[010]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.3</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.3</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.3</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.3</>"
   },
   "dorm_rec_single&oneself[011]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
   },
   "dorm_rec_single&oneself[012]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
   },
   "dorm_rec_single&oneself[020]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.2</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.2</>"
   },
   "dorm_rec_single&oneself[021]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
   },
   "dorm_hireToRecAll[001]": {
     "Name": "",
@@ -2401,27 +2401,27 @@
   },
   "dorm_rec_single&oneself[030]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
   },
   "dorm_rec_single&oneself[040]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</>（同种效果取最高）；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
   },
   "dorm_rec_single_power[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<$cc.g.sm><@cc.kw>萨米</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.sm><@cc.kw>萨米</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_power[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高），如果目标是<$cc.g.laterano><@cc.kw>拉特兰</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.laterano><@cc.kw>拉特兰</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_all&oneself[000]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[001]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</>（同种效果取最高）"
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[010]": {
     "Name": "",
@@ -2429,19 +2429,19 @@
   },
   "dorm_rec_all&oneself[011]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内除自身以外所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内除自身以外所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[012]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[021]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[042]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&group[000]": {
     "Name": "",
@@ -2449,7 +2449,7 @@
   },
   "dorm_rec_all&oneself[022]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&profession[000]": {
     "Name": "",
@@ -2469,23 +2469,23 @@
   },
   "dorm_rec_all[023]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[024]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[025]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[026]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[029]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_bd_num[000]": {
     "Name": "",
@@ -2493,15 +2493,15 @@
   },
   "dorm_rec_all&bd[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>无声共鸣</></>，该宿舍内所有干员的心情每小时恢复额外<@cc.vup>+0.01</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>无声共鸣</></>，该宿舍内所有干员的心情每小时恢复额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.15</>，同时该宿舍内心情<@cc.vup>18</>以下的干员恢复效果额外<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.15</>，同时该宿舍内心情<@cc.vup>18</>以下的干员恢复效果额外<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[100]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内心情<@cc.vup>20</>以下的干员恢复效果额外<@cc.vup>+0.1</>（同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内心情<@cc.vup>20</>以下的干员恢复效果额外<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "hire_spd[000]": {
     "Name": "",
@@ -2629,7 +2629,7 @@
   },
   "hire_spd&clue2[230]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<@cc.kw>黑钢国际</>线索的概率（工作时长和招募位影响概率）"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<@cc.kw>Blacksteel Worldwide</>线索的概率（工作时长和招募位影响概率）"
   },
   "hire_spd_cost[121]": {
     "Name": "",
@@ -2737,11 +2737,11 @@
   },
   "meet_spd&sami[100]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>黑钢国际干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>Blacksteel Worldwide干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
   },
   "meet_spd&sami[110]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>黑钢国际干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>20%</>"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>Blacksteel Worldwide干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>20%</>"
   },
   "meet_spd&bd[000]": {
     "Name": "",
@@ -2849,11 +2849,11 @@
   },
   "meet_spd&team[030]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>黑钢国际</>线索（工作时长影响概率）"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</>线索（工作时长影响概率）"
   },
   "meet_spd&team[031]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>黑钢国际</>线索（工作时长影响概率）"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</>线索（工作时长影响概率）"
   },
   "meet_spd&team[040]": {
     "Name": "",

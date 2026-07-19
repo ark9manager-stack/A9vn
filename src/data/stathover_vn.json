@@ -17,15 +17,15 @@
   },
   "Inspiration": {
     "title": "Khích lệ/Inspiration",
-    "text": "Tăng chỉ số cơ bản (Chỉ áp dụng mức cao nhất của mỗi loại). \n• Người có buff【Khích lệ】sẽ lấy % chỉ số của bản thân tính ra chỉ số cố định rồi mới chuyển cho người nhận. \n• Nhiều nguồn【Khích lệ】sẽ chỉ lấy mức cao nhất của mỗi loại (ATK, HP, DEF) chứ không cộng dồn. \n• Ví dụ: Nếu có 2 nguồn【Khích lệ】đang buff cho 1 người gồm có 60% ATK và DEF | 100% ATK thì sẽ nhận 100% ATK và 60% DEF."
+    "text": "Tăng chỉ số cơ bản (chỉ áp dụng mức cao nhất của mỗi loại). \n• Người có buff【Khích lệ】sẽ lấy % chỉ số của bản thân tính ra chỉ số cố định rồi mới chuyển cho người nhận. \n• Nhiều nguồn【Khích lệ】sẽ chỉ lấy mức cao nhất của mỗi loại (ATK, HP, DEF) chứ không cộng dồn. \n• Ví dụ: Nếu có 2 nguồn【Khích lệ】đang buff cho 1 người gồm có 60% ATK và DEF | 100% ATK thì sẽ nhận 100% ATK và 60% DEF."
   },
   "EleInjury": {
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
-    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
+    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
   },
   "ba.dt.element": {
     "title": "Hiệu ứng nguyên tố/Elemental Injury",
-    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (Đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
+    "text": "Bao gồm:【Nervous Impairment】【Corrosion Damage】【Burn Damage】【Necrosis Damage】\n• Hiệu ứng nguyên tố là 1 dạng tích lũy sát thương (hiển thị bằng thanh vòng tròn nằm trên thanh HP), và tách biệt với thanh HP. Nếu có 1 đơn vị chịu nhiều【Hiệu ứng nguyên tố】cùng lúc thì chỉ hiển thị giá trị cao nhất. \n• Khi tích lũy đủ【Hiệu ứng nguyên tố】thì sẽ bộc phát thanh nguyên tố và gây hiệu ứng hoặc sát thương tùy loại nguyên tố đó. (đối với đồng minh là 1000. Đối với kẻ địch thường/Tinh anh là 1000, Thủ lĩnh/Trùm là 2000)"
   },
   "ba.epbarrier": {
     "title": "Lá chắn bảo hộ/Protective Barrier",
@@ -173,7 +173,7 @@
   },
   "ba.weaknessatk": {
     "title": "Công kích điểm yếu/Weakness damage",
-    "text": "Khi gây sát thương vật lý hoặc phép, loại sát thương sẽ được chuyển đổi dựa trên DEF và RES của mục tiêu.\n• Khi bắt đầu gây sát thương, hệ thống sẽ tạm tính riêng lý thuyết của cả 2 loại sát thương dựa trên DEF và RES của mục tiêu; Trong quá trình tính chỉ xét tới ATK, hệ số ATK, ATK cộng thêm, xuyên DEF/RES, và chỉ số DEF/RES của mục tiêu, toàn bộ dữ liệu và hiệu ứng ngoài các điều kiện nêu trên đều không được tính vào.\n• Sau khi tính xong hai giá trị chênh lệch, sẽ gây loại sát thương có giá trị cao hơn (Nếu xấp xỉ bằng nhau thì sẽ không thay đổi loại sát thương đã gây ra)."
+    "text": "Khi gây sát thương vật lý hoặc phép, loại sát thương sẽ được chuyển đổi dựa trên DEF và RES của mục tiêu.\n• Khi bắt đầu gây sát thương, hệ thống sẽ tạm tính riêng lý thuyết của cả 2 loại sát thương dựa trên DEF và RES của mục tiêu; Trong quá trình tính chỉ xét tới ATK, hệ số ATK, ATK cộng thêm, xuyên DEF/RES, và chỉ số DEF/RES của mục tiêu, toàn bộ dữ liệu và hiệu ứng ngoài các điều kiện nêu trên đều không được tính vào.\n• Sau khi tính xong hai giá trị chênh lệch, sẽ gây loại sát thương có giá trị cao hơn (nếu xấp xỉ bằng nhau thì sẽ không thay đổi loại sát thương đã gây ra)."
   },
   "Shield": {
     "title": "Khiên/Shield",
@@ -185,11 +185,11 @@
   },
   "StatusRes": {
     "title": "Kháng hiệu ứng/Status Resistance",
-    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   },
   "ba.buffres": {
     "title": "Kháng hiệu ứng/Status Resistance",
-    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (Các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (Ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   },
   "ba.debuff": {
     "title": "Hiệu ứng xấu/Negative Status",
@@ -205,11 +205,11 @@
   },
   "Sanctuary": {
     "title": "Bảo hộ/Sanctuary",
-    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
+    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
   "ba.protect": {
     "title": "Bảo hộ/Sanctuary",
-    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
+    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
   "ba.attract": {
     "title": "Dẫn dụ/Lures",
@@ -237,11 +237,11 @@
   },
   "Vigor": {
     "title": "Sung sức/Vigor",
-    "text": "Khi lượng HP cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
+    "text": "Khi lượng HP cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
   },
   "ba.strong": {
     "title": "Sung sức/Vigor",
-    "text": "Khi lượng HP cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (Nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
+    "text": "Khi lượng HP cao hơn một mức nhất định, cán viên sẽ nhận thêm lượng chỉ số tương ứng trong mô tả (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất).\n• Hiệu ứng này không biến mất khi cán viên không đạt điều kiện kích hoạt trong mô tả. Nó luôn kiểm tra lượng HP hiện tại (0.1 giây/1 lần) để xác định điều kiện cán viên đó có kích hoạt lượng chỉ số được nhận hay không."
   },
   "Slow": {
     "title": "Làm chậm/Slow",
@@ -831,6 +831,10 @@
     "title": "",
     "text": "+1.25 giây"
   },
+  "mcnistS1": {
+    "title": "",
+    "text": "+1.3 giây"
+  },
   "heyakS3": {
     "title": "",
     "text": "+1.4 giây"
@@ -838,6 +842,10 @@
   "leizi2S3": {
     "title": "",
     "text": "+1.7 giây"
+  },
+  "mcnistS3": {
+    "title": "",
+    "text": "+2.3 giây"
   },
   "wisdelS3": {
     "title": "",
