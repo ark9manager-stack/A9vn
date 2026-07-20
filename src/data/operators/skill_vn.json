@@ -8063,8 +8063,8 @@
     "S2_7M3": "Trong thời gian kỹ năng hoạt động, Đặc tính không còn hồi HP; mỗi {interval} giây, gây sát thương phép bằng <@ba.vup>{attack@atk_scale:0%}</> ATK lên 1 kẻ địch ngẫu nhiên trong phạm vi tấn công và hồi HP cho 1 đơn vị đồng minh bằng <@ba.vup>{attack@heal_scale:0%}</> ATK; toàn bộ đồng minh trong phạm vi tấn công nhận Khích lệ bằng <@ba.vup>{attack@atk:0%}</> ATK của Misumi Uika."
   },
   "char_4185_amoris": {
-    "Title_S1": "Nhiệt huyết tuôn trào!",
-    "Title_S2": "Vươn lên mạnh mẽ!",
+    "Title_S1": "Như ngọn lửa nồng nhiệt",
+    "Title_S2": "Như lúa mì vươn mình",
     "S1_1": "Đòn tấn công đánh ra 1 chuỗi 3-đòn đặc biệt; trong đó đòn đầu tiên có giá trị bằng <@ba.vup>{attack@atk_scale_heavy:0%}</> ATK với phạm vi ảnh hưởng <@ba.vup>rộng hơn</>, 2 đòn sau có giá trị bằng <@ba.vup>{attack@atk_scale_light:0%}</> ATK.",
     "S1_2": "Đòn tấn công đánh ra 1 chuỗi 3-đòn đặc biệt; trong đó đòn đầu tiên có giá trị bằng <@ba.vup>{attack@atk_scale_heavy:0%}</> ATK với phạm vi ảnh hưởng <@ba.vup>rộng hơn</>, 2 đòn sau có giá trị bằng <@ba.vup>{attack@atk_scale_light:0%}</> ATK.",
     "S1_3": "Đòn tấn công đánh ra 1 chuỗi 3-đòn đặc biệt; trong đó đòn đầu tiên có giá trị bằng <@ba.vup>{attack@atk_scale_heavy:0%}</> ATK với phạm vi ảnh hưởng <@ba.vup>rộng hơn</>, 2 đòn sau có giá trị bằng <@ba.vup>{attack@atk_scale_light:0%}</> ATK.",
