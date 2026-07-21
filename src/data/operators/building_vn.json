@@ -493,111 +493,111 @@
   },
   "power_rec_spd_ext&tag[000]": {
     "Name": "Kê khích lệ",
-    "description": "Khi Operator này được phân công vào Power Plant, nếu có Operator <$cc.tag.op><@cc.kw>Nền tảng vận hành</></>进驻在发电站，则无人机充能速度<@cc.vup>+5%</>"
+    "description": "Khi Operator này được phân công vào Power Plant, nếu có Operator <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> khác đang được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+5%</>. "
   },
   "power_rec_rhine[000]": {
     "Name": "Trưởng phòng sinh thái",
     "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+10%</>; với mỗi Operator thuộc <$cc.g.rh><@cc.kw>Rhine Lab</></> khác trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>5</> Operator), tốc độ hồi Drone tăng thêm <@cc.vup>+3%</>."
   },
   "power_rec_spd&addition[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone 首小时<@cc.vup>+10%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+15%</>"
+    "Name": "Trao đổi kỹ thuật α",
+    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone trong giờ đầu tiên <@cc.vup>+10%</>, sau đó tăng thêm <@cc.vup>+1%</> với mỗi giờ, và đạt tối đa <@cc.vup>+15%</>."
   },
   "power_rec_spd&addition[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone 首小时<@cc.vup>+15%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+20%</>"
+    "Name": "Trao đổi kỹ thuật β",
+    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone trong giờ đầu tiên <@cc.vup>+15%</>, sau đó tăng thêm <@cc.vup>+1%</> với mỗi giờ, và đạt tối đa <@cc.vup>+20%</>."
   },
   "power_rec_spd&dorm&lv[000]": {
-    "Name": "",
-    "description": "进驻发电站时，每间宿舍每级为充能速度额外<@cc.vup>+0.5%</>"
+    "Name": "Dòng sông cộng hưởng",
+    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone tăng thêm <@cc.vup>+0.5%</> với mỗi cấp của mỗi Dormitory."
   },
   "manu_bd_to_bd[000]": {
-    "Name": "",
-    "description": "进驻制造站时，每<@cc.vup>5</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>转化为<@cc.vup>1</>点<$cc.bd_C><@cc.rem>巫术结晶</></>"
+    "Name": "Tà thuật cổ xưa",
+    "description": "Khi Operator này được phân công vào Factory, cứ mỗi <@cc.vup>5</> <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_C><@cc.rem>Tinh thể tà thuật</></>."
   },
   "manu_prod_spd&power[000]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个<@cc.kw>发电站</>为当前制造站<@cc.vup>+5%</>的生产力"
+    "Name": "Tự động hóa α",
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất do các Operator khác trong Factory hiện tại cung cấp bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory hiện tại <@cc.vup>+5%</>."
   },
   "manu_prod_spd&power[010]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个<@cc.kw>发电站</>为当前制造站<@cc.vup>+10%</>的生产力"
+    "Name": "Tự động hóa β",
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất do các Operator khác trong Factory hiện tại cung cấp bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory hiện tại <@cc.vup>+10%</>."
   },
   "manu_prod_spd&power[020]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个<@cc.kw>发电站</>为当前制造站<@cc.vup>+15%</>的生产力"
+    "Name": "Cá rồng biển nhân tạo",
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất do các Operator khác trong Factory hiện tại cung cấp bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory hiện tại <@cc.vup>+15%</>."
   },
   "manu_prod_spd[000]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+    "Name": "Tiêu chuẩn hóa α",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+15%</>."
   },
   "manu_prod_spd[1000]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+    "Name": "Tiêu chuẩn hóa α",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+15%</>."
   },
   "manu_prod_spd[010]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+25%</>"
+    "Name": "Tiêu chuẩn hóa β",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>."
   },
   "manu_prod_spd[001]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+    "Name": "Công nghệ Rhine α",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+15%</>."
   },
   "manu_prod_spd[011]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+25%</>"
+    "Name": "Công nghệ Rhine β",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>."
   },
   "manu_prod_spd[021]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+30%</>"
+    "Name": "Công nghệ Rhine γ",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>."
   },
   "manu_prod_spd[002]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+    "Name": "Pinus Sylvestris α",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+15%</>."
   },
   "manu_prod_spd[012]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+25%</>"
+    "Name": "Pinus Sylvestris β",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>."
   },
   "manu_prod_spd[003]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+15%</>"
+    "Name": "Cua Sắt - Đậu Đậu",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+15%</>."
   },
   "manu_prod_spd[020]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+30%</>"
+    "Name": "Cua Sắt - Loại hình sản xuất",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>."
   },
   "manu_prod_spd[004]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+20%</>"
+    "Name": "Điều động sử ma α",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>."
   },
   "manu_prod_spd[014]": {
-    "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+30%</>"
+    "Name": "Điều động sử ma β",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>."
   },
   "manu_skill_spd1[000]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu1><@cc.kw>标准化类技能</></>为自身<@cc.vup>+5%</>的生产力"
+    "Name": "Giao ước ý thức",
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu1><@cc.kw>Tiêu chuẩn hóa</></> trong Factory hiện tại, năng suất của bản thân <@cc.vup>+5%</>."
   },
   "manu_skill_spd1[010]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu2><@cc.kw>莱茵科技类技能</></>为自身<@cc.vup>+5%</>的生产力"
+    "Name": "Ứng dụng lý thuyết Originium Arts",
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> trong Factory hiện tại, năng suất của bản thân <@cc.vup>+5%</>."
   },
   "manu_skill_spd1[020]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu4><@cc.kw>金属工艺类技能</></>为自身<@cc.vup>+5%</>的生产力"
+    "Name": "Kinh nghiệm làm thêm",
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu4><@cc.kw>Gia công kim loại</></> trong Factory hiện tại, năng suất của bản thân <@cc.vup>+5%</>."
   },
   "manu_skill_change[000]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内所有<$cc.sk.manu2><@cc.kw>莱茵科技类</></>、<$cc.sk.manu3><@cc.kw>Pinus Sylvestris类</></>技能也全都视作<@cc.kw>标准化类</>技能"
+    "Name": "Tương thích ý thức",
+    "description": "Khi Operator này được phân công vào Factory, tất cả kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> và <$cc.sk.manu3><@cc.kw>Pinus Sylvestris</></> trong Factory hiện tại cũng được xem là kỹ năng thuộc <@cc.kw>Tiêu chuẩn hóa</>."
   },
   "manu_skill_limit[000]": {
-    "Name": "",
-    "description": "进驻制造站时，当前制造站内每个<$cc.sk.manu2><@cc.kw>莱茵科技类</></>技能为自身<@cc.vup>+5</>的仓库上限容量"
+    "Name": "Ba lô thám hiểm",
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> trong Factory hiện tại, sức chứa của kho <@cc.vup>+5</>."
   },
   "manu_prod_bd[000]": {
     "Name": "Nói ít, làm nhiều",
-    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，每有<@cc.vup>1</>瓶<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></>，则仓库容量上限<@cc.vup>+2</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>; với <@cc.vup>mỗi</> chai  <$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>, sức chứa của kho <@cc.vup>+2</>."
   },
   "manu_prod_spd_addition[030]": {
     "Name": "",
@@ -621,7 +621,7 @@
   },
   "manu_prod_spd_reduce[000]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+30%</>，自身每有<@cc.kw>4</>点<$cc.bd.costdrop><@cc.kw>心情落差</></>，生产力<@cc.vdown>-5%</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>，自身每有<@cc.kw>4</>点<$cc.bd.costdrop><@cc.kw>心情落差</></>，生产力<@cc.vdown>-5%</>"
   },
   "manu_prod_spd_addition&cost[000]": {
     "Name": "",
@@ -637,7 +637,7 @@
   },
   "manu_prod_spd&fraction[000]": {
     "Name": "",
-    "description": "进驻制造站时，当前制造站内每个<$cc.g.A1><@cc.kw>A1小队</></>干员为自身<@cc.vup>+10%</>的生产力"
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc loại <$cc.g.A1><@cc.kw>A1小队</></>干员为自身<@cc.vup>+10%</>的生产力"
   },
   "manu_prod_spd&limit&bd[000]": {
     "Name": "",
@@ -701,43 +701,43 @@
   },
   "manu_prod_spd&limit&cost[000]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.15</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.15</>"
   },
   "manu_prod_spd&limit&cost[001]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+19</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+19</>，心情每小时消耗<@cc.vup>-0.25</>"
   },
   "manu_prod_spd&limit&cost[010]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[011]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[020]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vdown>-20%</>，仓库容量上限<@cc.vup>+17</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-20%</>，仓库容量上限<@cc.vup>+17</>，心情每小时消耗<@cc.vup>-0.25</>"
   },
   "manu_prod_spd&limit&cost[100]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[101]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[110]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+30%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>，心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[200]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+25%</>，仓库容量上限<@cc.vup>+6</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>，仓库容量上限<@cc.vup>+6</>"
   },
   "manu_prod_spd&limit&cost[300]": {
     "Name": "",
-    "description": "进驻制造站时，生产力<@cc.vup>+20%</>，仓库容量上限<@cc.vdown>-8</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>，仓库容量上限<@cc.vdown>-8</>"
   },
   "manu_prod_limit&cost[021]": {
     "Name": "",
@@ -785,11 +785,11 @@
   },
   "manu_prod_spd_bd[200]": {
     "Name": "",
-    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_C><@cc.rem>巫术结晶</></><@cc.vup>+1%</>生产力"
+    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_C><@cc.rem>Tinh thể tà thuật</></><@cc.vup>+1%</>生产力"
   },
   "manu_prod_spd_bd[201]": {
     "Name": "",
-    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_C><@cc.rem>巫术结晶</></><@cc.vup>+2%</>生产力"
+    "description": "进驻制造站时，每<@cc.vup>1</>点<$cc.bd_C><@cc.rem>Tinh thể tà thuật</></><@cc.vup>+2%</>生产力"
   },
   "manu_prod_spd_bd[300]": {
     "Name": "",
@@ -801,11 +801,11 @@
   },
   "manu_prod_spd&manu[000]": {
     "Name": "",
-    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站仓库容量上限<@cc.vup>+5</>"
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>đặt về 0</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站仓库容量上限<@cc.vup>+5</>"
   },
   "manu_prod_spd&manu[100]": {
     "Name": "",
-    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>全部归零</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站<@cc.vup>+10%</>生产力，仓库容量上限<@cc.vup>+5</>"
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>đặt về 0</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站<@cc.vup>+10%</>生产力，仓库容量上限<@cc.vup>+5</>"
   },
   "manu_formula_spd[000]": {
     "Name": "",
@@ -889,11 +889,11 @@
   },
   "manu_token_prod_spd[000]": {
     "Name": "",
-    "description": "进驻制造站时，每有<@cc.vup>1</>台<$cc.tag.op><@cc.kw>Nền tảng vận hành</></>进驻发电站，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+5%</>"
+    "description": "进驻制造站时，每有<@cc.vup>1</>台<$cc.tag.op><@cc.kw>Nền tảng vận hành</></>进驻Power Plant，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+5%</>"
   },
   "manu_token_prod_spd[010]": {
     "Name": "",
-    "description": "进驻制造站时，每有<@cc.vup>1</>台<$cc.tag.op><@cc.kw>Nền tảng vận hành</></>进驻发电站，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+10%</>"
+    "description": "进驻制造站时，每有<@cc.vup>1</>台<$cc.tag.op><@cc.kw>Nền tảng vận hành</></>进驻Power Plant，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+10%</>"
   },
   "manu_prod_spd_double[000]": {
     "Name": "",
@@ -997,7 +997,7 @@
   },
   "trade_ord_vodfox[000]": {
     "Name": "",
-    "description": "进驻贸易站时，当前贸易站内其他干员提供的订单获取效率<@cc.vdown>全部归零</>，且每人为自身<@cc.vup>+45%</>订单获取效率，同时全体心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "进驻贸易站时，当前贸易站内其他干员提供的订单获取效率<@cc.vdown>đặt về 0</>，且每人为自身<@cc.vup>+45%</>订单获取效率，同时全体心情每小时消耗<@cc.vdown>+0.25</>"
   },
   "trade_ord_pepe[000]": {
     "Name": "",
@@ -1425,7 +1425,7 @@
   },
   "workshop_formula_frost[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外提升<@cc.vup>5%</>；如果<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></>达到<@cc.vup>4</>瓶，则额外提升<@cc.vup>15%</>"
+    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外提升<@cc.vup>5%</>；如果<$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>达到<@cc.vup>4</>瓶，则额外提升<@cc.vup>15%</>"
   },
   "workshop_formula_cost4[000]": {
     "Name": "",
@@ -2345,11 +2345,11 @@
   },
   "dorm_powToRecAll[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>，同时每有<@cc.kw>1</>间发电站，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>，同时每有<@cc.kw>1</>间Power Plant，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
   },
   "dorm_powToRecAll[010]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，同时每有<@cc.kw>1</>间发电站，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，同时每有<@cc.kw>1</>间Power Plant，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
   },
   "dorm_hireToRecAll[000]": {
     "Name": "",
@@ -2657,7 +2657,7 @@
   },
   "hire_spd_blitz[000]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外<@cc.vup>+5%</>联络速度，每<@cc.vup>1</>瓶<$cc.bd_tachanka><@cc.rem>乌萨斯特饮</></>额外<@cc.vup>+5%</>联络速度"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外<@cc.vup>+5%</>联络速度，每<@cc.vup>1</>瓶<$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>额外<@cc.vup>+5%</>联络速度"
   },
   "hire_spd&clue2[260]": {
     "Name": "",
