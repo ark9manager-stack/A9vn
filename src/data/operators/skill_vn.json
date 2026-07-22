@@ -11691,7 +11691,7 @@
   "char_4230_mcnist": {
     "Title_S1": "Phân tích cụm",
     "Title_S2": "Liên kết phòng tuyến",
-    "Title_S3": "Kết cấu hình Sao Chữ Thập",
+    "Title_S3": "Thiết kế Sao Chữ Thập",
     "S1_1": "<@ba.vdown>[[Tăng|mcnistS1]]</> khoảng cách tấn công; đòn tấn công gây sát thương <@ba.vup>5 lần liên tiếp</>, mỗi lần gây sát thương vật lý diện rộng bằng <@ba.vup>{attack@atk_scale:0%}</> ATK.\\n<@ba.rem>Kích hoạt kỹ năng sẽ nhận {attack@trigger_time} viên đạn, và tiêu hao hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>",
     "S1_2": "<@ba.vdown>[[Tăng|mcnistS1]]</> khoảng cách tấn công; đòn tấn công gây sát thương <@ba.vup>5 lần liên tiếp</>, mỗi lần gây sát thương vật lý diện rộng bằng <@ba.vup>{attack@atk_scale:0%}</> ATK.\\n<@ba.rem>Kích hoạt kỹ năng sẽ nhận {attack@trigger_time} viên đạn, và tiêu hao hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>",
     "S1_3": "<@ba.vdown>[[Tăng|mcnistS1]]</> khoảng cách tấn công; đòn tấn công gây sát thương <@ba.vup>5 lần liên tiếp</>, mỗi lần gây sát thương vật lý diện rộng bằng <@ba.vup>{attack@atk_scale:0%}</> ATK.\\n<@ba.rem>Kích hoạt kỹ năng sẽ nhận {attack@trigger_time} viên đạn, và tiêu hao hết đạn thì kỹ năng kết thúc (có thể tắt kỹ năng bất cứ lúc nào)</>",
