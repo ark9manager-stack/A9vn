@@ -600,148 +600,148 @@
     "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>; với <@cc.vup>mỗi</> chai  <$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>, sức chứa của kho <@cc.vup>+2</>."
   },
   "manu_prod_spd_addition[030]": {
-    "Name": "",
-    "description": "进驻制造站后，生产力首小时<@cc.vup>+20%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+25%</>"
+    "Name": "Nóng vội",
+    "description": "Khi Operator này được phân công vào Factory, năng suất trong giờ đầu tiên <@cc.vup>+20%</>, sau đó tăng thêm <@cc.vup>+1%</> với mỗi giờ, và đạt tối đa <@cc.vup>+25%</>."
   },
   "manu_prod_spd_addition[031]": {
-    "Name": "",
-    "description": "进驻制造站后，生产力首小时<@cc.vup>+20%</>，此后每小时<@cc.vup>+1%</>，最终达到<@cc.vup>+25%</>"
+    "Name": "'Ngay bây giờ!'",
+    "description": "Khi Operator này được phân công vào Factory, năng suất trong giờ đầu tiên <@cc.vup>+20%</>, sau đó tăng thêm <@cc.vup>+1%</> với mỗi giờ, và đạt tối đa <@cc.vup>+25%</>."
   },
   "manu_prod_spd_addition[040]": {
-    "Name": "",
-    "description": "进驻制造站后，生产力首小时<@cc.vup>+15%</>，此后每小时<@cc.vup>+2%</>，最终达到<@cc.vup>+25%</>"
+    "Name": "Từ tốn",
+    "description": "Khi Operator này được phân công vào Factory, năng suất trong giờ đầu tiên <@cc.vup>+15%</>, sau đó tăng thêm <@cc.vup>+2%</> với mỗi giờ, và đạt tối đa <@cc.vup>+25%</>."
   },
   "manu_prod_spd_addition[041]": {
-    "Name": "",
-    "description": "进驻制造站后，生产力首小时<@cc.vup>+15%</>，此后每小时<@cc.vup>+2%</>，最终达到<@cc.vup>+25%</>"
+    "Name": "Kỹ thuật chụp Time-Lapse",
+    "description": "Khi Operator này được phân công vào Factory, năng suất trong giờ đầu tiên <@cc.vup>+15%</>, sau đó tăng thêm <@cc.vup>+2%</> với mỗi giờ, và đạt tối đa <@cc.vup>+25%</>."
   },
   "manu_prod_spd_addition[100]": {
-    "Name": "",
-    "description": "进驻制造站后，生产力每小时<@cc.vup>+2%</>，最终达到<@cc.vup>+20%</>"
+    "Name": "Vệ sinh định kỳ",
+    "description": "Khi Operator này được phân công vào Factory, năng suất tăng thêm <@cc.vup>+2%</> với mỗi giờ, và đạt tối đa <@cc.vup>+20%</>"
   },
   "manu_prod_spd_reduce[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>，自身每有<@cc.kw>4</>点<$cc.bd.costdrop><@cc.kw>心情落差</></>，生产力<@cc.vdown>-5%</>"
+    "Name": "Tầm nhìn mờ dần",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>, cứ mỗi <@cc.kw>4</> <$cc.bd.costdrop><@cc.kw>Tinh thần thiếu hụt</></> của bản thân, năng suất <@cc.vdown>-5%</>."
   },
   "manu_prod_spd_addition&cost[000]": {
-    "Name": "",
-    "description": "进驻制造站时，当自身<$cc.bd.costdrop><@cc.kw>心情落差</></>大于<@cc.kw>12</>时，生产力<@cc.vup>+10%</>，仓库容量<@cc.vup>+6</>"
+    "Name": "Bão tuyết ngoài khung cửa",
+    "description": "Khi Operator này được phân công vào Factory, nếu <$cc.bd.costdrop><@cc.kw>Tinh thần thiếu hụt</></> của bản thân lớn hơn <@cc.kw>12</>, năng suất <@cc.vup>+10%</> và sức chứa của kho <@cc.vup>+6</>."
   },
   "manu_prod_spd&limit[000]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+6</>，生产力<@cc.vup>+10%</>"
+    "Name": "Sắp xếp kho α",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+6</> và năng suất <@cc.vup>+10%</>."
   },
   "manu_prod_spd&limit[001]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，生产力<@cc.vup>+10%</>"
+    "Name": "Sắp xếp kho β",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+10</> và năng suất <@cc.vup>+10%</>."
   },
   "manu_prod_spd&fraction[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc loại <$cc.g.A1><@cc.kw>A1小队</></>干员为自身<@cc.vup>+10%</>的生产力"
+    "Name": "Khoảnh khắc đoàn tụ",
+    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.A1><@cc.kw>Đội A1</></> ở cùng Factory, năng suất của bản thân <@cc.vup>+10%</>."
   },
   "manu_prod_spd&limit&bd[000]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，生产力<@cc.vup>+5%</>，同时每有1个<$cc.bd_felyne><@cc.rem>木天蓼</></>，则生产力<@cc.vup>+1%</>"
+    "Name": "Hội bạn đáng tin",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+8</> và năng suất <@cc.vup>+5%</>; năng suất tăng thêm <@cc.vup>+1%</> với mỗi <$cc.bd_felyne><@cc.rem>Felvine</></>."
   },
   "manu_prod_limit&cost[000]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Người nhặt phế liệu",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+8</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[0000]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Người nhặt phế liệu",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+8</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[001]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Cua Sắt - Trey",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+8</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[002]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "'Mún tất cả'",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+8</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[003]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Cõi trí tuệ",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+8</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[010]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Người tích trữ",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+10</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[011]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Khí phách hiên ngang",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+10</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[012]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Chỗ ngủ trưa lý tưởng",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+10</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[020]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Nhà thám hiểm",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+16</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_limit&cost[1020]": {
-    "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Chuyên gia lưu trữ",
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+16</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_formula_cost[000]": {
-    "Name": "",
-    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Vlog",
+    "description": "Khi Operator này được phân công vào Factory và sản xuất <@cc.kw>Battle Record</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_formula_limit[0000]": {
-    "Name": "",
-    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+12</>"
+    "Name": "Biên tập α",
+    "description": "Khi Operator này được phân công vào Factory và sản xuất <@cc.kw>Battle Record</>, sức chứa của kho <@cc.vup>+12</>."
   },
   "manu_formula_limit[010]": {
-    "Name": "",
-    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+15</>"
+    "Name": "Biên tập β",
+    "description": "Khi Operator này được phân công vào Factory và sản xuất <@cc.kw>Battle Record</>, sức chứa của kho <@cc.vup>+15</>."
   },
   "manu_formula_limit[020]": {
-    "Name": "",
-    "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+4</>"
+    "Name": "Tận dụng hợp lý",
+    "description": "Khi Operator này được phân công vào Factory và sản xuất <@cc.kw>Battle Record</>, sức chứa của kho <@cc.vup>+4</>."
   },
   "manu_prod_spd&limit&cost[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+16</>，心情每小时消耗<@cc.vup>-0.15</>"
+    "Name": "Tinh thần của thợ thủ công α",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-5%</>, sức chứa của kho <@cc.vup>+16</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.15</>."
   },
   "manu_prod_spd&limit&cost[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-5%</>，仓库容量上限<@cc.vup>+19</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Tinh thần của thợ thủ công β",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-5%</>, sức chứa của kho <@cc.vup>+19</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_spd&limit&cost[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "Name": "Người gây rắc rối",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>, sức chứa của kho <@cc.vdown>-12</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
   },
   "manu_prod_spd&limit&cost[011]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>，仓库容量上限<@cc.vdown>-12</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "Name": "Kẻ lập dị",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>, sức chứa của kho <@cc.vdown>-12</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
   },
   "manu_prod_spd&limit&cost[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-20%</>，仓库容量上限<@cc.vup>+17</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "Name": "Trợ thủ 'đáng tin'",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vdown>-20%</>, sức chứa của kho <@cc.vup>+17</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "manu_prod_spd&limit&cost[100]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[101]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[110]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&limit&cost[200]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>，仓库容量上限<@cc.vup>+6</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+25%</>, sức chứa của kho <@cc.vup>+6</>"
   },
   "manu_prod_spd&limit&cost[300]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>，仓库容量上限<@cc.vdown>-8</>"
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>, sức chứa của kho <@cc.vdown>-8</>"
   },
   "manu_prod_limit&cost[021]": {
     "Name": "",
-    "description": "进驻制造站时，仓库容量上限<@cc.vup>+10</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "Khi Operator này được phân công vào Factory, sức chứa của kho <@cc.vup>+10</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "manu_prod_spd_variable[000]": {
     "Name": "",
@@ -805,43 +805,43 @@
   },
   "manu_prod_spd&manu[100]": {
     "Name": "",
-    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>đặt về 0</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站<@cc.vup>+10%</>生产力，仓库容量上限<@cc.vup>+5</>"
+    "description": "进驻制造站时，当前制造站内其他干员提供的生产力<@cc.vdown>đặt về 0</>（不包含根据设施数量提供加成的生产力），每个当前制造站内干员为当前制造站<@cc.vup>+10%</>生产力, sức chứa của kho <@cc.vup>+5</>"
   },
   "manu_formula_spd[000]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+25%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+25%</>"
   },
   "manu_formula_spd[010]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+30%</>"
   },
   "manu_formula_spd[020]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+35%</>"
   },
   "manu_formula_spd[022]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+35%</>"
   },
   "manu_formula_spd[030]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+20%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+20%</>"
   },
   "manu_formula_spd[031]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+30%</>"
   },
   "manu_formula_spd&limit&cost[000]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "manu_formula_spd&limit&cost[010]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "manu_formula_spd&limit&cost[100]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>"
   },
   "manu_prod_spd&trade[000]": {
     "Name": "",
@@ -873,15 +873,15 @@
   },
   "manu_formula_spd&cost[000]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+25%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>"
   },
   "manu_formula_spd&cost[001]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+25%</>，心情每小时消耗<@cc.vdown>+0.25</>"
+    "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>"
   },
   "manu_formula_spd&cost_bd[000]": {
     "Name": "",
-    "description": "进驻制造站时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.bs><@cc.kw>Blacksteel Worldwide</></>干员（最多<@cc.kw>3</>名），<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+2%</>，心情每小时消耗<@cc.vup>-0.15</>"
+    "description": "进驻制造站时，基建内（不包含副手及活动室使用者）每有1名<$cc.g.bs><@cc.kw>Blacksteel Worldwide</></>干员（最多<@cc.kw>3</>名），<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+2%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.15</>"
   },
   "manu_formula_spd&cost_bd[100]": {
     "Name": "",
@@ -901,7 +901,7 @@
   },
   "manu_prod_spd_double[100]": {
     "Name": "",
-    "description": "进驻制造站时，当与<@cc.kw>酒神</>在同一个制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+    "description": "进驻制造站时，当与<@cc.kw>酒神</>在同一个制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+30%</>"
   },
   "manu_formula_spd[200]": {
     "Name": "",
@@ -933,15 +933,15 @@
   },
   "manu_formula_spd_P[000]": {
     "Name": "",
-    "description": "进驻制造站时，若<@cc.kw>古米</>在贸易站，则<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+35%</>"
+    "description": "进驻制造站时，若<@cc.kw>古米</>在贸易站，则<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+35%</>"
   },
   "manu_formula_spd&bd[000]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+30%</>"
   },
   "manu_formula_spd&bd[001]": {
     "Name": "",
-    "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>，当与<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员在同一个制造站时，<@cc.kw>作战记录</>类配方的生产力额外<@cc.vup>+10%</>"
+    "description": "进驻制造站时，<@cc.kw>Battle Record</>类配方的生产力<@cc.vup>+30%</>，当与<$cc.g.ussg><@cc.kw>乌萨斯学生自治团</></>干员在同一个制造站时，<@cc.kw>Battle Record</>类配方的生产力额外<@cc.vup>+10%</>"
   },
   "manu_cost_all[000]": {
     "Name": "",
@@ -1137,7 +1137,7 @@
   },
   "trade_ord_spd&cost[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_spd_bd_n1[000]": {
     "Name": "",
@@ -1161,7 +1161,7 @@
   },
   "trade_ord_limit&cost[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单上限<@cc.vup>+5</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，订单上限<@cc.vup>+5</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_limit_diff[000]": {
     "Name": "",
@@ -1173,31 +1173,31 @@
   },
   "trade_ord_wt&cost[000]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_wt&cost[010]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_wt&cost[001]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_wt&cost[011]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_wt&cost[002]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_wt&cost[012]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_wt&cost[003]": {
     "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率），心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质贵金属订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_spd&share[000]": {
     "Name": "",
@@ -1213,11 +1213,11 @@
   },
   "trade_ord_spd&cost_P[000]": {
     "Name": "",
-    "description": "当与<@cc.kw>拉普兰德</>在同一个贸易站时，心情每小时消耗<@cc.vdown>+0.3</>，订单获取效率<@cc.vup>+65%</>"
+    "description": "当与<@cc.kw>拉普兰德</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.3</>，订单获取效率<@cc.vup>+65%</>"
   },
   "trade_ord_spd&limit&bd[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，且订单上限<@cc.vup>+2</>，同时每有1个<$cc.bd_felyne><@cc.rem>木天蓼</></>，则订单获取效率<@cc.vup>+3%</>"
+    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，且订单上限<@cc.vup>+2</>，同时每有1个<$cc.bd_felyne><@cc.rem>Felvine</></>，则订单获取效率<@cc.vup>+3%</>"
   },
   "trade_ord_spd&limit_tag[000]": {
     "Name": "",
@@ -1229,27 +1229,27 @@
   },
   "trade_ord_limit&cost_P[020]": {
     "Name": "",
-    "description": "当与<@cc.kw>伺夜</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
+    "description": "当与<@cc.kw>伺夜</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
   },
   "trade_ord_limit&cost_P[010]": {
     "Name": "",
-    "description": "当与<@cc.kw>能天使</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.3</>"
+    "description": "当与<@cc.kw>能天使</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.3</>"
   },
   "trade_ord_limit&cost_P[000]": {
     "Name": "",
-    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
+    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
   },
   "trade_ord_limit&cost_P[001]": {
     "Name": "",
-    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时，心情每小时消耗<@cc.vup>-0.1</>，订单上限<@cc.vup>+4</>"
+    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</>，订单上限<@cc.vup>+4</>"
   },
   "trade_ord_long[000]": {
     "Name": "",
-    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+250</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+250</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_long[010]": {
     "Name": "",
-    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+500</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+500</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "trade_ord_law[000]": {
     "Name": "",
@@ -1757,7 +1757,7 @@
   },
   "train_spd_bd[000]": {
     "Name": "",
-    "description": "进驻训练室协助位时，心情每小时消耗<@cc.vdown>+1</>，每<@cc.vup>1</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></><@cc.vup>+1%</>专精技能训练速度"
+    "description": "进驻训练室协助位时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>，每<@cc.vup>1</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></><@cc.vup>+1%</>专精技能训练速度"
   },
   "train_spd_power[000]": {
     "Name": "",
@@ -1797,7 +1797,7 @@
   },
   "train_spd_power_down[000]": {
     "Name": "",
-    "description": "进驻训练室协助位时，心情每小时消耗<@cc.vdown>+1</>，基建内（不包含副手及活动室使用者）每名<$cc.g.abyssal><@cc.kw>Abyssal Hunters</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>5</>名）"
+    "description": "进驻训练室协助位时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>，基建内（不包含副手及活动室使用者）每名<$cc.g.abyssal><@cc.kw>Abyssal Hunters</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>5</>名）"
   },
   "train_spd_doubleProf[000]": {
     "Name": "",
@@ -1845,7 +1845,7 @@
   },
   "train_spd_doubleProf3[100]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>近卫</>与<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+50%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助位时，<@cc.kw>近卫</>与<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "train_spd_reduceTime[000]": {
     "Name": "",
@@ -2145,27 +2145,27 @@
   },
   "train_cost&profession[140]": {
     "Name": "",
-    "description": "进驻训练室协助<@cc.kw>狙击</>干员训练专精技能至<@cc.vup>1</>级时，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助<@cc.kw>狙击</>干员训练专精技能至<@cc.vup>1</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "train_cost&profession[320]": {
     "Name": "",
-    "description": "进驻训练室协助<@cc.kw>近卫</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助<@cc.kw>近卫</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "train_cost&profession[340]": {
     "Name": "",
-    "description": "进驻训练室协助<@cc.kw>狙击</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助<@cc.kw>狙击</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "train_cost&profession[350]": {
     "Name": "",
-    "description": "进驻训练室协助<@cc.kw>术师</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助<@cc.kw>术师</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "train_cost&profession[360]": {
     "Name": "",
-    "description": "进驻训练室协助<@cc.kw>辅助</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助<@cc.kw>辅助</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "train_cost&profession[380]": {
     "Name": "",
-    "description": "进驻训练室协助<@cc.kw>特种</>干员训练专精技能至<@cc.vup>3</>级时，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻训练室协助<@cc.kw>特种</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "dorm_rec_oneself[000]": {
     "Name": "",
@@ -2545,39 +2545,39 @@
   },
   "hire_spd_cost[200]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>，心情每小时消耗<@cc.vdown>+2</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>"
   },
   "hire_spd_cost[210]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+50%</>，心情每小时消耗<@cc.vdown>+0.5</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.5</>"
   },
   "hire_spd_cost[220]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "hire_spd_cost[230]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "hire_spd_cost[100]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd_cost[110]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd_cost[111]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd_cost[101]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd_cost[120]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd_cost&clue[001]": {
     "Name": "",
@@ -2593,11 +2593,11 @@
   },
   "hire_spd_cost&char[000]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd_cost&char[001]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，心情每小时消耗<@cc.vup>-0.25</>，如果<@cc.kw>凛御银灰</>进驻在<@cc.kw>控制中枢</>，则人脉资源的联络速度额外<@cc.vup>+10%</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>，如果<@cc.kw>凛御银灰</>进驻在<@cc.kw>控制中枢</>，则人脉资源的联络速度额外<@cc.vup>+10%</>"
   },
   "hire_spd&clue[010]": {
     "Name": "",
@@ -2609,7 +2609,7 @@
   },
   "hire_spd_cost[112]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd&clue[101]": {
     "Name": "",
@@ -2633,7 +2633,7 @@
   },
   "hire_spd_cost[121]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，心情每小时消耗<@cc.vup>-0.25</>"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
   },
   "hire_spd&clue2[250]": {
     "Name": "",
@@ -2765,27 +2765,27 @@
   },
   "meet_spd&cost[100]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>35%</>，心情每小时消耗<@cc.vdown>+2</>"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>"
   },
   "meet_spd&cost_condChar[000]": {
     "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>50%</>，心情每小时消耗<@cc.vdown>+2</>"
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>"
   },
   "meet_spd&cost_condChar[001]": {
     "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "meet_spd&cost_condChar[011]": {
     "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "meet_spd&cost_condChar[020]": {
     "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "meet_spd&cost_condChar[021]": {
     "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</>，心情每小时消耗<@cc.vdown>+1</>"
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
   },
   "meet_spd&exchange[000]": {
     "Name": "",
@@ -2929,7 +2929,7 @@
   },
   "meet_spd_hast[000]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>，此后每小时提升<@cc.vup>2%</>，最终达到<@cc.vup>30%</>"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>, sau đó tăng thêm 提升<@cc.vup>2%</> với mỗi giờ, và đạt tối đa <@cc.vup>30%</>"
   },
   "meet_spd&condChar_mustget[000]": {
     "Name": "",
