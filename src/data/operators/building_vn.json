@@ -468,7 +468,7 @@
     "description": "Khi Operator này được phân công vào Power Plant, cứ mỗi <@cc.vup>10</> giới hạn tối đa Drone trong Căn cứ, tốc độ hồi Drone <@cc.vup>+1%</> (tối đa <@cc.vup>+25%</>)."
   },
   "power_rec_spd[0010]": {
-    "Name": "Kỹ thuật Gà điện",
+    "Name": "Kỹ thuật Kê điện",
     "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+10%</>"
   },
   "power_count[000]": {
@@ -517,15 +517,15 @@
   },
   "manu_prod_spd&power[000]": {
     "Name": "Tự động hóa α",
-    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất do các Operator khác trong Factory hiện tại cung cấp bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory hiện tại <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất được cung cấp bởi Operator khác trong Factory này bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory này <@cc.vup>+5%</>."
   },
   "manu_prod_spd&power[010]": {
     "Name": "Tự động hóa β",
-    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất do các Operator khác trong Factory hiện tại cung cấp bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory hiện tại <@cc.vup>+10%</>."
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất được cung cấp bởi Operator khác trong Factory này bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory này <@cc.vup>+10%</>."
   },
   "manu_prod_spd&power[020]": {
     "Name": "Cá rồng biển nhân tạo",
-    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất do các Operator khác trong Factory hiện tại cung cấp bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory hiện tại <@cc.vup>+15%</>."
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất được cung cấp bởi Operator khác trong Factory này bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); với mỗi <@cc.kw>Power Plant</>, năng suất của Factory này <@cc.vup>+15%</>."
   },
   "manu_prod_spd[000]": {
     "Name": "Tiêu chuẩn hóa α",
@@ -577,23 +577,23 @@
   },
   "manu_skill_spd1[000]": {
     "Name": "Giao ước ý thức",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu1><@cc.kw>Tiêu chuẩn hóa</></> trong Factory hiện tại, năng suất của bản thân <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu1><@cc.kw>Tiêu chuẩn hóa</></> trong Factory này, năng suất của bản thân <@cc.vup>+5%</>."
   },
   "manu_skill_spd1[010]": {
     "Name": "Ứng dụng lý thuyết Originium Arts",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> trong Factory hiện tại, năng suất của bản thân <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> trong Factory này, năng suất của bản thân <@cc.vup>+5%</>."
   },
   "manu_skill_spd1[020]": {
     "Name": "Kinh nghiệm làm thêm",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu4><@cc.kw>Gia công kim loại</></> trong Factory hiện tại, năng suất của bản thân <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu4><@cc.kw>Gia công kim loại</></> trong Factory này, năng suất của bản thân <@cc.vup>+5%</>."
   },
   "manu_skill_change[000]": {
     "Name": "Tương thích ý thức",
-    "description": "Khi Operator này được phân công vào Factory, tất cả kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> và <$cc.sk.manu3><@cc.kw>Pinus Sylvestris</></> trong Factory hiện tại cũng được xem là kỹ năng thuộc <@cc.kw>Tiêu chuẩn hóa</>."
+    "description": "Khi Operator này được phân công vào Factory, tất cả kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> và <$cc.sk.manu3><@cc.kw>Pinus Sylvestris</></> trong Factory này cũng được xem là kỹ năng thuộc <@cc.kw>Tiêu chuẩn hóa</>."
   },
   "manu_skill_limit[000]": {
     "Name": "Ba lô thám hiểm",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> trong Factory hiện tại, sức chứa của kho <@cc.vup>+5</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi kỹ năng thuộc <$cc.sk.manu2><@cc.kw>Rhine Lab</></> trong Factory này, sức chứa của kho <@cc.vup>+5</>."
   },
   "manu_prod_bd[000]": {
     "Name": "Nói ít, làm nhiều",
@@ -757,7 +757,7 @@
   },
   "manu_prod_spd_train&lv[000]": {
     "Name": "Thợ lành nghề",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của Training Room, năng suất của Factory hiện tại <@cc.vup>+10%</>, tối đa <@cc.vup>30%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của Training Room, năng suất của Factory này <@cc.vup>+10%</>, tối đa <@cc.vup>30%</>."
   },
   "manu_prod_spd_bd_n1[000]": {
     "Name": "Ngoại cảm",
@@ -805,7 +805,7 @@
   },
   "manu_prod_spd&manu[100]": {
     "Name": "Tối ưu quy trình",
-    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất được cung cấp bởi Operator khác trong Factory này bị <@cc.vdown>đặt về 0</>(không bao gồm năng suất tăng dựa trên số lượng cơ sở); mỗi Operator trong Factory này sẽ giúp năng suất <@cc.vup>+10%</> và sức chứa của kho <@cc.vup>+5</>."
+    "description": "Khi Operator này được phân công vào Factory, toàn bộ năng suất được cung cấp bởi Operator khác trong Factory này bị <@cc.vdown>đặt về 0</> (không bao gồm năng suất tăng dựa trên số lượng cơ sở); mỗi Operator trong Factory này sẽ giúp năng suất <@cc.vup>+10%</> và sức chứa của kho <@cc.vup>+5</>."
   },
   "manu_formula_spd[000]": {
     "Name": "Kế sách chiến thắng",
@@ -948,7 +948,7 @@
     "description": "Khi Operator này được phân công vào Factory, <@cc.kw>loại bỏ</> hiệu ứng tiêu hao Tinh thần cho các Operator tại Factory này, nếu kỹ năng hậu cầu ảnh hưởng lên <@cc.kw>họ</>."
   },
   "manu_cost[000]": {
-    "Name": "Sấm xuân vang dội, muôn loài phát triển",
+    "Name": "Tiếng sấm mùa xuân, vạn vật sinh sôi",
     "description": "Khi Operator này được phân công vào Factory, mức tiêu hao Tinh thần mỗi giờ của tất cả Operator trong Factory này <@cc.vup>-0.1</>."
   },
   "trade_cost[000]": {
@@ -960,256 +960,256 @@
     "description": "Khi Operator này được phân công vào Trading Post, mức tiêu hao Tinh thần mỗi giờ của tất cả Operator trong Trading Post này <@cc.vup>-0.1</>; giảm thêm <@cc.vup>-0.01</> với mỗi <@cc.vup>10</> <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>."
   },
   "trade_cost&bd2[001]": {
-    "Name": "",
+    "Name": "Lá thư ngàn dặm",
     "description": "Khi Operator này được phân công vào Trading Post, mức tiêu hao Tinh thần mỗi giờ của tất cả Operator trong Trading Post này <@cc.vup>-0.1</>; giảm thêm <@cc.vup>-0.02</> với mỗi <@cc.vup>10</> <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>."
   },
   "trade_ord_spd[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "Name": "Phân phối đơn hàng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd[001]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+    "Name": "Phân phối đơn hàng β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>."
   },
   "trade_ord_spd[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "Name": "Penguin Logistics α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd[011]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+    "Name": "Penguin Logistics β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>."
   },
   "trade_ord_spd[1001]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+    "Name": "Phân phối đơn hàng β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>."
   },
   "trade_ord_spd[020]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+35%</>"
+    "Name": "Chuyên gia logistics",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+35%</>."
   },
   "trade_ord_spd[021]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+35%</>"
+    "Name": "Buổi tiệc của giới thượng lưu",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+35%</>."
   },
   "trade_ord_spd[022]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+35%</>"
+    "Name": "Khuấy động không khí",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+35%</>."
   },
   "trade_ord_vodfox[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站内其他干员提供的订单获取效率<@cc.vdown>đặt về 0</>，且每人为自身<@cc.vup>+45%</>订单获取效率，同时全体心情每小时消耗<@cc.vdown>+0.25</>"
+    "Name": "Tiếng thì thầm",
+    "description": "Khi Operator này được phân công vào Trading Post, toàn bộ năng suất được cung cấp bởi Operator khác trong Trading Post này bị <@cc.vdown>đặt về 0</>; với mỗi Operator trong Trading Post này, hiệu suất nhận đơn hàng của bản thân <@cc.vup>+45%</>, và mức tiêu hao Tinh thần mỗi giờ của tất cả Operator trong Trading Post này <@cc.vdown>+0.25</>."
   },
   "trade_ord_pepe[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，固定获取<$cc.tra.pepe><@cc.kw>特别独占订单</></>（不视作违约订单），且该类订单<@cc.vdown>不受任何订单获取效率的影响</>"
+    "Name": "Nhãn quan sắc bén",
+    "description": "Khi Operator này được phân công vào Trading Post, sẽ luôn nhận <$cc.tra.pepe><@cc.kw>Đơn hàng đặc quyền</></> theo tốc độ cố định (không được xem là đơn hàng vi phạm hợp đồng), và loại đơn hàng này <@cc.vdown>không chịu ảnh hưởng bởi bất kỳ hiệu ứng thay đổi hiệu suất nhận đơn hàng nào</>."
   },
   "trade_ord_spd_variable[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站内干员提升的每个订单上限，提供<@cc.vup>4%</>订单获取效率"
+    "Name": "Kêu gọi đầu tư",
+    "description": "Khi Operator này được phân công vào Trading Post, với mỗi giới hạn đơn hàng được nhận thêm bởi Operator khác trong Trading Post sẽ cung cấp thêm <@cc.vup>4%</> hiệu suất nhận đơn hàng."
   },
   "trade_ord_spd_variable2[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站内干员提供的每<@cc.vup>5%</>订单获取效率，额外提供<@cc.vup>5%</>效率，最多提供<@cc.vup>25%</>效率"
+    "Name": "Đền đáp xứng đáng α",
+    "description": "Khi Operator này được phân công vào Trading Post, nhận thêm <@cc.vup>5%</> hiệu suất nhận đơn hàng với mỗi <@cc.vup>5%</> hiệu suất nhận đơn hàng được cung cấp bởi Operator khác trong Trading Post này, tối đa <@cc.vup>25%</>."
   },
   "trade_ord_spd_variable2[001]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站内干员提供的每<@cc.vup>5%</>订单获取效率，额外提供<@cc.vup>5%</>效率，最多提供<@cc.vup>35%</>效率"
+    "Name": "Đền đáp xứng đáng β",
+    "description": "Khi Operator này được phân công vào Trading Post, nhận thêm <@cc.vup>5%</> hiệu suất nhận đơn hàng với mỗi @cc.vup>5%</> hiệu suất nhận đơn hàng được cung cấp bởi Operator khác trong Trading Post này, tối đa <@cc.vup>35%</>."
   },
   "trade_ord_spd_variable3[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站内干员提升的每<@cc.vup>5</>个订单上限，提供<@cc.vup>25%</>订单获取效率，最多提供<@cc.vup>100%</>效率"
+    "Name": "Phong thái nhà vô địch",
+    "description": "Khi Operator này được phân công vào Trading Post, nhận thêm <@cc.vup>25%</> hiệu suất nhận đơn hàng với mỗi <@cc.vup>5</> giới hạn đơn hàng được cung cấp bởi Operator khác trong Trading Post này, tối đa <@cc.vup>100%</>."
   },
   "trade_ord_spd&dorm&lv[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，每间宿舍每级<@cc.vup>+1%</>获取效率"
+    "Name": "Gây quỹ từ thiện α",
+    "description": "Khi Operator này được phân công vào Trading Post, với mỗi cấp của mỗi Dormitory, hiệu suất nhận đơn hàng <@cc.vup>+1%</>."
   },
   "trade_ord_spd&dorm&lv[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，每间宿舍每级<@cc.vup>+2%</>获取效率"
+    "Name": "Gây quỹ từ thiện β",
+    "description": "Khi Operator này được phân công vào Trading Post, với mỗi cấp của mỗi Dormitory, hiệu suất nhận đơn hàng  <@cc.vup>+2%</>."
   },
   "trade_ord_limit&trade&lv[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站每级<@cc.vup>+1</>个订单上限"
+    "Name": "Đa tài",
+    "description": "Khi Operator này được phân công vào Trading Post, giới hạn đơn hàng <@cc.vup>+1</> với mỗi cấp của Trading Post này."
   },
   "trade_ord_limit&trade&lv[001]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站每级<@cc.vup>+1</>个订单上限"
+    "Name": "Tiền bạc không chờ đợi ai",
+    "description": "Khi Operator này được phân công vào Trading Post, giới hạn đơn hàng <@cc.vup>+1</> với mỗi cấp của Trading Post này."
   },
   "trade_ord_spd&meet[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，会客室每级额外提供<@cc.vup>5%</>获取效率，最多提供<@cc.vup>40%</>效率"
+    "Name": "Giao thương Thành Phố mới",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>; với mỗi cấp của Reception Room, hiệu suất tăng thêm <@cc.vup>5%</>, tối đa <@cc.vup>40%</>."
   },
   "trade_ord_closure[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，固定获取<$cc.tra.closure><@cc.kw>可露希尔特别订单</></>（不视作违约订单）"
+    "Name": "Đơn hàng đặc biệt",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+10%</> và luôn nhận được <$cc.tra.closure><@cc.kw>Đơn hàng đặc biệt của Closure</></> theo tốc độ cố định (không được xem là đơn hàng vi phạm hợp đồng)."
   },
   "trade_ord_spd&meet[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+15%</>，会客室每级额外提供<@cc.vup>5%</>获取效率，最多提供<@cc.vup>30%</>效率"
+    "Name": "Cố vấn bẩm sinh",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+15%</>; với mỗi cấp của Reception Room, hiệu suất tăng thêm <@cc.vup>5%</>, tối đa <@cc.vup>30%</>."
   },
   "trade_ord_spd&formula[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，制造站每有<@cc.kw>1</>类配方进行加工，则当前贸易站订单获取效率额外<@cc.vup>+2%</>"
+    "Name": "Xếp lịch chi tiết",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>; với <@cc.kw>mỗi</> loại công thức đang được gia công tại các Factory, hiệu suất nhận đơn hàng của Trading Post này tăng thêm <@cc.vup>+2%</>."
   },
   "trade_ord_spd&limit[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，且订单上限<@cc.vup>+2</>"
+    "Name": "Quản lý đơn hàng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+10%</> và giới hạn đơn hàng <@cc.vup>+2</>."
   },
   "trade_ord_spd&limit[001]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，且订单上限<@cc.vup>+4</>"
+    "Name": "Quản lý đơn hàng β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+10%</> và giới hạn đơn hàng <@cc.vup>+4</>."
   },
   "trade_ord_spd&gold[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>4</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则当前贸易站订单获取效率额外<@cc.vup>+15%</>"
+    "Name": "Kế hoạch Logistics α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</>; cứ mỗi <@cc.kw>4</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>, hiệu suất nhận đơn hàng của Trading Post này tăng thêm <@cc.vup>+15%</>."
   },
   "trade_ord_spd&gold[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则当前贸易站订单获取效率额外<@cc.vup>+15%</>"
+    "Name": "Kế hoạch Logistics β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</>; cứ mỗi <@cc.kw>2</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>, hiệu suất nhận đơn hàng của Trading Post này tăng thêm <@cc.vup>+15%</>."
   },
   "trade_ord_spd&gold[100]": {
-    "Name": "",
-    "description": "进驻贸易站时，每有<@cc.kw>1</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则当前贸易站订单获取效率<@cc.vup>+5%</>"
+    "Name": "Quảng bá thị trường",
+    "description": "Khi Operator này được phân công vào Trading Post, với <@cc.kw>mỗi</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>, hiệu suất nhận đơn hàng của Trading Post này <@cc.vup>+5%</>."
   },
   "trade_ord_line_gold[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>4</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则为当前贸易站额外提供<@cc.vup>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>"
+    "Name": "Trực quan hóa luồng đơn hàng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</>; cứ mỗi <@cc.kw>4</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>, Trading Post này được tính thêm <@cc.vup>2</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>."
   },
   "trade_ord_line_gold[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，每有<@cc.kw>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>，则为当前贸易站额外提供<@cc.vup>2</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>"
+    "Name": "Trực quan hóa luồng đơn hàng β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</>; cứ mỗi <@cc.kw>2</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>, Trading Post này được tính thêm <@cc.vup>2</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>."
   },
   "trade_ord_line_durin[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，基建内（不包含副手及活动室使用者）每<@cc.kw>1</>名<$cc.tag.durin><@cc.kw>杜林族</></>干员（最多<@cc.kw>4</>名）为当前贸易站提供<@cc.kw>1</>条<$cc.t.flow_gold><@cc.kw>赤金生产线</></>"
+    "Name": "Cư dân Zeruertza",
+    "description": "Khi Operator này được phân công vào Trading Post, với <@cc.kw>mỗi</> Operator thuộc <$cc.tag.durin><@cc.kw>Durin</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>4</> Operator), Trading Post này được cung cấp thêm <@cc.kw>1</> <$cc.t.flow_gold><@cc.kw>Dây chuyền sản xuất Pure Gold</></>."
   },
   "trade_ord_spd&limit[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，且订单上限<@cc.vup>+1</>"
+    "Name": "Quản lý nguồn cung",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</> và giới hạn đơn hàng <@cc.vup>+1</>."
   },
   "trade_ord_spd&limit[020]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+15%</>，且订单上限<@cc.vup>+2</>"
+    "Name": "Karlan Trade α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+15%</> và giới hạn đơn hàng <@cc.vup>+2</>."
   },
   "trade_ord_spd&limit[021]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+15%</>，且订单上限<@cc.vup>+4</>"
+    "Name": "Karlan Trade β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+15%</> và giới hạn đơn hàng <@cc.vup>+4</>."
   },
   "trade_ord_spd&limit[022]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>，且订单上限<@cc.vup>+4</>"
+    "Name": "Lãnh chúa của Karlan",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</> và giới hạn đơn hàng <@cc.vup>+4</>."
   },
   "trade_ord_spd&limit[030]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "Name": "Penguin Logistics α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd&limit[031]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+    "Name": "Giao hàng đúng hẹn",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</> và giới hạn đơn hàng <@cc.vup>+1</>."
   },
   "trade_ord_spd&limit[032]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "Name": "MountainDash Logistics",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>"
   },
   "trade_ord_spd&limit[033]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+    "Name": "Thiếu chủ",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</> và giới hạn đơn hàng <@cc.vup>+1</>."
   },
   "trade_ord_spd&limit[034]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "Name": "Phân phối đơn hàng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd&limit[035]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+    "Name": "Quản lý Grand Bazaar",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</> và giới hạn đơn hàng <@cc.vup>+1</>."
   },
   "trade_ord_spd&limit[036]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>，且订单上限<@cc.vup>+1</>"
+    "Name": "Đại diện Hội Half-foot",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</> và giới hạn đơn hàng <@cc.vup>+1</>."
   },
   "trade_ord_spd&limit[100]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>，且订单上限<@cc.vdown>-2</>（订单最少为1）"
+    "Name": "Uy hiếp",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</> và giới hạn đơn hàng <@cc.vdown>-2</> (giới hạn đơn hàng không thể thấp hơn 1)."
   },
   "trade_ord_spd&limit[101]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，且订单上限<@cc.vdown>-6</>（订单最少为1）"
+    "Name": "Khí chất uy nghiêm",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</> và giới hạn đơn hàng <@cc.vdown>-6</> (giới hạn đơn hàng không thể thấp hơn 1)."
   },
   "trade_ord_spd&cost[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Giao tiếp",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_spd_bd_n1[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，宿舍内每有<@cc.kw>1</>名干员则<$cc.bd_a1><@cc.rem>Thông tin nhận biết</></><@cc.vup>+1</>，同时每<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>转化为<@cc.vup>1</>点<$cc.bd_B><@cc.rem>无声共鸣</></>"
+    "Name": "Cảm âm",
+    "description": "Khi Operator này được phân công vào Trading Post, với <@cc.kw>mỗi</> Operator trong Dormitory, <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> <@cc.vup>+1</>; đồng thời, cứ <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>."
   },
   "trade_ord_spd_bd_n2[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，宿舍内每有<@cc.kw>1</>名干员则<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></><@cc.vup>+1</>，同时每有<@cc.vup>1</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>，则订单获取效率<@cc.vup>+1%</>"
+    "Name": "'Chui đầu vào rọ'",
+    "description": "Khi Operator này được phân công vào Trading Post, với <@cc.kw>mỗi</> Operator trong Dormitory, <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></> <@cc.vup>+1</>; đồng thời, cứ <@cc.vup>1</> <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>, hiệu suất nhận đơn hàng <@cc.vup>+1%</>."
   },
   "trade_ord_spd_bd[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，每<@cc.vup>4</>点<$cc.bd_B><@cc.rem>无声共鸣</></><@cc.vup>+1%</>订单效率"
+    "Name": "Giai điệu hoài niệm",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>4</> <$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>."
   },
   "trade_ord_spd_bd[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，每<@cc.vup>2</>点<$cc.bd_B><@cc.rem>无声共鸣</></><@cc.vup>+1%</>订单效率"
+    "Name": "Hòa âm lạc lối",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>2</> <$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>."
   },
   "trade_ord_spd_bd[100]": {
-    "Name": "",
-    "description": "进驻贸易站时，每<@cc.vup>1</>点<$cc.bd_dungeon><@cc.rem>Đặc sản quái vật</></><@cc.vup>+1%</>订单效率"
+    "Name": "Hương vị quen thuộc",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Đặc sản quái vật</></>."
   },
   "trade_ord_limit&cost[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，订单上限<@cc.vup>+5</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đàm phán",
+    "description": "Khi Operator này được phân công vào Trading Post, giới hạn đơn hàng <@cc.vup>+5</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_limit_diff[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前订单数与订单上限每差<@cc.vup>1</>笔订单，则订单获取效率<@cc.vup>+4%</>"
+    "Name": "Kinh tế vỉa hè",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+4%</> với <@cc.vup>mỗi</> đơn hàng còn trống trong giới hạn đơn hàng."
   },
   "trade_ord_limit_count[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，当前贸易站内其他干员提供的每<@cc.vup>10%</>订单获取效率使订单上限<@cc.vdown>-1</>（订单最少为1），同时每有<@cc.vup>1</>笔订单就<@cc.vup>+4%</>订单获取效率（与部分技能有<$cc.t.strong2><@cc.rem>特殊叠加规则</></>）"
+    "Name": "Mánh khóe dân dã",
+    "description": "Khi Operator này được phân công vào Trading Post, cứ mỗi <@cc.vup>10%</> hiệu suất nhận đơn hàng được cung cấp bởi các Operator khác trong Trading Post này sẽ khiến giới hạn đơn hàng <@cc.vdown>-1</> (giới hạn đơn hàng không thể thấp hơn 1); hiệu suất nhận đơn hàng <@cc.vup>+4%</> với mỗi <@cc.vup>1</> đơn hàng hiện có (có áp dụng <$cc.t.strong2><@cc.rem>Quy tắc tương tác đặc biệt</></> với một số kỹ năng)."
   },
   "trade_ord_wt&cost[000]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "May vá α",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[010]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "May vá β",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[001]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đồ thủ công α",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[011]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đồ thủ công β",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[002]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đôi mắt thẩm định",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[012]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Cách thức thẩm định",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[003]": {
-    "Name": "",
-    "description": "进驻贸易站时，<@cc.kw>小幅提升</>当前贸易站<@cc.kw>高品质Precious Metals订单</>的出现概率（工作时长影响概率） và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Am hiểu công việc",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_spd&share[000]": {
     "Name": "",
-    "description": "进驻贸易站时，贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+15%</>订单获取效率"
+    "description": "Khi Operator này được phân công vào Trading Post, 贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+15%</>订单获取效率"
   },
   "trade_ord_spd&share[001]": {
     "Name": "",
-    "description": "进驻贸易站时，贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+10%</>订单获取效率"
+    "description": "Khi Operator này được phân công vào Trading Post, 贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+10%</>订单获取效率"
   },
   "trade_ord_spd&share[002]": {
     "Name": "",
-    "description": "进驻贸易站时，贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+20%</>订单获取效率"
+    "description": "Khi Operator này được phân công vào Trading Post, 贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+20%</>订单获取效率"
   },
   "trade_ord_spd&cost_P[000]": {
     "Name": "",
@@ -1217,15 +1217,15 @@
   },
   "trade_ord_spd&limit&bd[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+5%</>，且订单上限<@cc.vup>+2</>，同时每有1个<$cc.bd_felyne><@cc.rem>Felvine</></>，则订单获取效率<@cc.vup>+3%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</> và giới hạn đơn hàng <@cc.vup>+2</>，同时每有1个<$cc.bd_felyne><@cc.rem>Felvine</></>，则订单获取效率<@cc.vup>+3%</>"
   },
   "trade_ord_spd&limit_tag[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单上限<@cc.vup>+3</>，且每有一个<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>干员进驻贸易站，订单获取效率<@cc.vup>+20%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, 订单上限<@cc.vup>+3</>，且每有一个<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>干员进驻贸易站，订单获取效率<@cc.vup>+20%</>"
   },
   "trade_ord_spd&wt[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+10%</>，当前贸易站<@cc.kw>赤金订单</>的<@cc.kw>赤金</>交付数必定为<@cc.kw>2</>（不视作违约订单）"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+10%</>，当前贸易站<@cc.kw>赤金订单</>的<@cc.kw>赤金</>交付数必定为<@cc.kw>2</>（不视作违约订单）"
   },
   "trade_ord_limit&cost_P[020]": {
     "Name": "",
@@ -1253,75 +1253,75 @@
   },
   "trade_ord_law[000]": {
     "Name": "",
-    "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>交付数小于<@cc.kw>4</>，则视为<@cc.kw>违约订单</>"
+    "description": "Khi Operator này được phân công vào Trading Post, 如果下笔<@cc.kw>赤金订单</>交付数小于<@cc.kw>4</>，则视为<@cc.kw>违约订单</>"
   },
   "trade_ord_against[000]": {
     "Name": "",
-    "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+1</>"
+    "description": "Khi Operator này được phân công vào Trading Post, 如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+1</>"
   },
   "trade_ord_against[010]": {
     "Name": "",
-    "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+2</>"
+    "description": "Khi Operator này được phân công vào Trading Post, 如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+2</>"
   },
   "trade_ord_spd_par[000]": {
     "Name": "",
-    "description": "进驻贸易站时，同个贸易站中每有1名<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员，当前贸易站订单获取效率<@cc.vup>+20%</>；当与<@cc.kw>推进之王</>在同一个贸易站时，订单获取效率额外<@cc.vup>+35%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, 同个贸易站中每有1名<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员，当前贸易站订单获取效率<@cc.vup>+20%</>；当与<@cc.kw>推进之王</>在同一个贸易站时，订单获取效率额外<@cc.vup>+35%</>"
   },
   "trade_ord_spd_par[001]": {
     "Name": "",
-    "description": "进驻贸易站时，同个贸易站中每有1名<$cc.g.laterano><@cc.kw>拉特兰</></>干员，当前贸易站订单获取效率<@cc.vup>+15%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, 同个贸易站中每有1名<$cc.g.laterano><@cc.kw>拉特兰</></>干员，当前贸易站订单获取效率<@cc.vup>+15%</>"
   },
   "trade_ord_spd&multiPar[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>"
   },
   "trade_ord_spd&multiPar[100]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>；当与<@cc.kw><$cc.angel>能天使</></>在同一个贸易站时，订单获取效率额外<@cc.vup>+25%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>；当与<@cc.kw><$cc.angel>能天使</></>在同一个贸易站时，订单获取效率额外<@cc.vup>+25%</>"
   },
   "trade_ord_par&per[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>；当<@cc.kw>伊内丝</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率额外<@cc.vup>+5%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>；当<@cc.kw>伊内丝</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率额外<@cc.vup>+5%</>"
   },
   "trade_ord_par&per[001]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当<@cc.kw>伊内丝</>、<@cc.kw>W</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率分别额外<@cc.vup>+5%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当<@cc.kw>伊内丝</>、<@cc.kw>W</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率分别额外<@cc.vup>+5%</>"
   },
   "trade_ord_spd_ext[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
   },
   "trade_ord_spd_ext[001]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
   },
   "trade_ord_spd_ext[020]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
   },
   "trade_ord_spd_ext[021]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
   },
   "trade_ord_spd&par[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>"
   },
   "trade_ord_spd&par[001]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+30%</>；当前贸易站内存在<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员时，订单获取效率额外<@cc.vup>+10%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当前贸易站内存在<$cc.g.glasgow><@cc.kw>格拉斯哥帮</></>干员时，订单获取效率额外<@cc.vup>+10%</>"
   },
   "trade_ord_spd&tag[000]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+20%</>"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>"
   },
   "trade_ord_spd&tag[010]": {
     "Name": "",
-    "description": "进驻贸易站时，订单获取效率<@cc.vup>+25%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>精英干员</></>的设施，订单获取效率额外<@cc.vup>+2%</>（最多<@cc.kw>10</>间）"
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>精英干员</></>的设施，订单获取效率额外<@cc.vup>+2%</>（最多<@cc.kw>10</>间）"
   },
   "trade_ord_spd&tag[020]": {
     "Name": "",
-    "description": "进驻贸易站时，基建内（不包含副手及活动室）每有一间进驻<$cc.g.sui><@cc.kw>岁</></>干员的设施，订单获取效率<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
+    "description": "Khi Operator này được phân công vào Trading Post, 基建内（不包含副手及活动室）每有一间进驻<$cc.g.sui><@cc.kw>岁</></>干员的设施，订单获取效率<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
   },
   "workshop_proc_probability[000]": {
     "Name": "",
@@ -2489,11 +2489,11 @@
   },
   "dorm_bd_num[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_B><@cc.rem>无声共鸣</></><@cc.vup>+1</>"
+    "description": "进驻宿舍时，该宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></><@cc.vup>+1</>"
   },
   "dorm_rec_all&bd[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>无声共鸣</></>，该宿舍内所有干员的心情每小时恢复额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>，该宿舍内所有干员的心情每小时恢复额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[000]": {
     "Name": "",
@@ -2653,7 +2653,7 @@
   },
   "hire_spd_bd_n1_n1[300]": {
     "Name": "",
-    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+15</>点<$cc.bd_B><@cc.rem>无声共鸣</></>"
+    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+15</>点<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>"
   },
   "hire_spd_blitz[000]": {
     "Name": "",
@@ -2813,7 +2813,7 @@
   },
   "meet_team&char[000]": {
     "Name": "",
-    "description": "进驻会客室时，<@cc.kw>提升</>会客室内另一干员<@cc.kw>所属派系的线索倾向效果</>（如会客室没有另一干员则不提升）"
+    "description": "进驻会客室时，<@cc.kw>tăng</> 会客室内另一干员<@cc.kw>所属派系的线索倾向效果</>（如会客室没有另一干员则不提升）"
   },
   "meet_flag[010]": {
     "Name": "",
