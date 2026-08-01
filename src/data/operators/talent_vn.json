@@ -3311,10 +3311,10 @@
   },
   "char_4223_botany": {
     "TitleTalent1": "Phá vỡ im lặng",
-    "Talent1": "ASPD +4 mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
-    "Talent1_p4": "ASPD +5<@ba.talpu>(+1)</> mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
-    "Talent1_2": "ASPD +6 mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
-    "Talent1_2_p4": "ASPD +7<@ba.talpu>(+1)</> mỗi khi có kẻ địch nổ thanh <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng)."
+    "Talent1": "ASPD +4 mỗi khi có kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
+    "Talent1_p4": "ASPD +5<@ba.talpu>(+1)</> mỗi khi có kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
+    "Talent1_2": "ASPD +6 mỗi khi có kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng).",
+    "Talent1_2_p4": "ASPD +7<@ba.talpu>(+1)</> mỗi khi có kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> trong phạm vi tấn công của Botani (cộng dồn tối đa 3 tầng)."
   },
   "char_4224_turdus": {
     "TitleTalent1": "Trăm bệnh hóa lương y",
@@ -3440,5 +3440,39 @@
     "Talent1_2": "Có thể triển khai 1 'Nguyên Lý Kết Cấu' tồn tại trong 30 giây và có thời gian tái triển khai độc lập.",
     "Talent2": "Mechanist và 'Nguyên Lý Kết Cấu' sẽ nhận <$ba.barrier>Lá chắn</> bằng 30% HP tối đa sau khi triển khai; <$ba.barrier>Lá chắn</> do Mechanist tạo ra có thể hấp thụ toàn bộ sát thương vượt quá lượng Lá chắn còn lại.",
     "Talent2_p4": "Mechanist và 'Nguyên Lý Kết Cấu' sẽ nhận <$ba.barrier>Lá chắn</> bằng 40%<@ba.talpu>(+10%)</> HP tối đa sau khi triển khai; <$ba.barrier>Lá chắn</> do Mechanist tạo ra có thể hấp thụ toàn bộ sát thương vượt quá lượng Lá chắn còn lại."
+  },
+  "char_4236_tmslot": {
+    "TitleTalent1": "Đánh giá sản phẩm mới",
+    "Talent1": "ATK +4%; đòn tấn công của Drone có 15% tỷ lệ <$ba.sluggish>Làm chậm</> mục tiêu trong 1.5 giây.",
+    "Talent1_p4": "ATK +7%<@ba.talpu>(+3%)</>; đòn tấn công của Drone có 15% tỷ lệ <$ba.sluggish>Làm chậm</> mục tiêu trong 1.5 giây.",
+    "Talent1_2": "ATK +8%; đòn tấn công của Drone có 15% tỷ lệ <$ba.sluggish>Làm chậm</> mục tiêu trong 1.5 giây.",
+    "Talent1_2_p4": "ATK +11%<@ba.talpu>(+3%)</>; đòn tấn công của Drone có 15% tỷ lệ <$ba.sluggish>Làm chậm</> mục tiêu trong 1.5 giây."
+  },
+  "char_4237_jcinta": {
+    "TitleTalent1": "Phong thái quý cô",
+    "Talent1": "Sau khi triển khai, Jacinta và đồng minh trong 8 ô xung quanh nhận 8% <$ba.airprotect>Bảo hộ trên không</>.",
+    "Talent1_p4": "Sau khi triển khai, Jacinta và đồng minh trong 8 ô xung quanh nhận 10%<@ba.talpu>(+2%)</> <$ba.airprotect>Bảo hộ trên không</>.",
+    "Talent1_2": "Sau khi triển khai, Jacinta và đồng minh trong 8 ô xung quanh nhận 13% <$ba.airprotect>Bảo hộ trên không</>.",
+    "Talent1_2_p4": "Sau khi triển khai, Jacinta và đồng minh trong 8 ô xung quanh nhận 15%<@ba.talpu>(+2%)</> <$ba.airprotect>Bảo hộ trên không</>."
+  },
+  "char_4235_thumpy": {
+    "TitleTalent1": "Lý thuyết thám hiểm",
+    "TitleTalent2": "Bước chân rắn rỏi",
+    "Talent1": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 5%. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 8% ATK và giảm 1 giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
+    "Talent1_p2": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 10%<@ba.talpu>(+5%)</>. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 10%<@ba.talpu>(+2%)</> ATK và giảm 1.2<@ba.talpu>(+0.2)</> giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
+    "Talent1_2": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 15%. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 10% ATK và giảm 1 giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
+    "Talent1_2_p2": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 20%<@ba.talpu>(+5%)</>. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 12%<@ba.talpu>(+2%)</> ATK và giảm 1.2<@ba.talpu>(+0.2)</> giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
+    "Talent2": "Khi kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> từng chịu sát thương từ Thumpy, cô nhận 8 DEF (cộng dồn tối đa 30 tầng) và 250 <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "Talent2_p4": "Khi kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> từng chịu sát thương từ Thumpy, cô nhận 11<@ba.talpu>(+3)</> DEF (cộng dồn tối đa 30 tầng) và 330<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy)."
+  },
+  "char_1015_aglna2": {
+    "TitleTalent1": "Bay bỏng trên mặt đất",
+    "TitleTalent2": "Bước nhảy giữa trời cao",
+    "Talent1": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 13% ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 20% ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 18%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 30%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1_2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 25% ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 35% ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1_2_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 30%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 45%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent2": "Khi Angelina the Mellow Wish có mặt trên sân, tất cả Operator đồng minh đang <$ba.liftoff>Cất cánh</> sẽ nhận ATK +13% và hồi 8% HP tối đa mỗi giây khi đang Chặn kẻ địch.",
+    "Talent2_p4": "Khi Angelina the Mellow Wish có mặt trên sân, tất cả Operator đồng minh đang <$ba.liftoff>Cất cánh</> sẽ nhận ATK +18%<@ba.talpu>(+5%)</> và hồi 10%<@ba.talpu>(+2%)</> HP tối đa mỗi giây khi đang Chặn kẻ địch."
   }
 }

@@ -2258,5 +2258,25 @@
     "idweb": 423,
     "name": "机械师",
     "name_vn": "Mechanist"
+  },
+  "char_4236_tmslot": {
+    "idweb": 424,
+    "name": "时隙",
+    "name_vn": "Timeslot"
+  },
+  "char_4237_jcinta": {
+    "idweb": 425,
+    "name": "嘉辛塔",
+    "name_vn": "Jacinta"
+  },
+  "char_4235_thumpy": {
+    "idweb": 426,
+    "name": "珊比",
+    "name_vn": "Thumpy"
+  },
+  "char_1015_aglna2": {
+    "idweb": 427,
+    "name": "予愿安洁莉娜",
+    "name_vn": "Angelina the Mellow Wish"
   }
 }
