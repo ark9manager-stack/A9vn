@@ -13,11 +13,11 @@
   },
   "control_prod_bd_spd[000]": {
     "Name": "Kinh nghiệm làm việc dày dặn",
-    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Precious Metals</> của tất cả Factory <@cc.vup>+0.5%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+0.5%</>."
+    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Pure Gold</> của tất cả Factory <@cc.vup>+0.5%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+0.5%</>."
   },
   "control_prod_bd_spd[010]": {
     "Name": "Kinh nghiệm làm việc dày dặn",
-    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Precious Metals</> của tất cả Factory <@cc.vup>+1%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+1%</>."
+    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Pure Gold</> của tất cả Factory <@cc.vup>+1%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+1%</>."
   },
   "control_token_prod_spd[000]": {
     "Name": "Ép xung",
@@ -25,7 +25,7 @@
   },
   "control_token_prod_spd2[000]": {
     "Name": "Dẫn đầu làm gương",
-    "description": "Khi Operator này được phân công vào Control Center cùng với các Operator thuộc <$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào cùng Control Center với các Operator thuộc <$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_token_prod_spd3[000]": {
     "Name": "Tình đồng đội",
@@ -185,15 +185,15 @@
   },
   "control_mp_cost_double[000]": {
     "Name": "Di sản của Ma vương",
-    "description": "Khi Operator này được phân công vào Control Center cùng với <@cc.kw>Amiya</>, Tinh thần của bản thân và <@cc.kw>Amiya</> hồi phục<@cc.vup>+0.05</> mỗi giờ."
+    "description": "Khi Operator này được phân công vào cùng Control Center với <@cc.kw>Amiya</>, Tinh thần của bản thân và <@cc.kw>Amiya</> hồi phục<@cc.vup>+0.05</> mỗi giờ."
   },
   "control_mp_cost_double[001]": {
     "Name": "Câu chuyện còn dang dở",
-    "description": "Khi Operator này được phân công vào Control Center cùng với <@cc.kw>Amiya</>, Tinh thần của bản thân và <@cc.kw>Amiya</> hồi phục<@cc.vup>+0.1</> mỗi giờ."
+    "description": "Khi Operator này được phân công vào cùng Control Center với <@cc.kw>Amiya</>, Tinh thần của bản thân và <@cc.kw>Amiya</> hồi phục<@cc.vup>+0.1</> mỗi giờ."
   },
   "control_allCost_condChar[000]": {
     "Name": "Một thoáng thảnh thơi",
-    "description": "Khi Operator này được phân công vào Control Center cùng với <@cc.kw>Aak</> , Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.25</> mỗi giờ."
+    "description": "Khi Operator này được phân công vào cùng Control Center với <@cc.kw>Aak</> , Tinh thần của tất cả Operator trong Control Center hồi phục <@cc.vup>+0.25</> mỗi giờ."
   },
   "control_mp_cost&faction2[000]": {
     "Name": "Vững vàng và hiền hòa",
@@ -253,11 +253,11 @@
   },
   "control_mp_cost_reset[000]": {
     "Name": "Hai nửa của nhau",
-    "description": "Khi Operator này được phân công vào Control Center cùng với <@cc.kw>Togawa Sakiko</>, loại bỏ hiệu ứng tiêu hao Tinh thần từ kỹ năng hậu cầu của bản thân."
+    "description": "Khi Operator này được phân công vào cùng Control Center với <@cc.kw>Togawa Sakiko</>, loại bỏ hiệu ứng tiêu hao Tinh thần từ kỹ năng hậu cầu của bản thân."
   },
   "control_mp&meet_spd[000]": {
     "Name": "Ưu tiên kết quả",
-    "description": "Khi Operator này được phân công vào Control Center cùng với <@cc.kw>Togawa Sakiko</>, mức tiêu hao Tinh thần mỗi giờ của <@cc.kw>Togawa Sakiko</> <@cc.vdown>+0.05</>, và tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào cùng Control Center với <@cc.kw>Togawa Sakiko</>, mức tiêu hao Tinh thần mỗi giờ của <@cc.kw>Togawa Sakiko</> <@cc.vdown>+0.05</>, và tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_facCostReset[000]": {
     "Name": "Chén rượu không vơi",
@@ -293,7 +293,7 @@
   },
   "control_mp_psk[000]": {
     "Name": "Những Kỵ sĩ Pinus Sylvestris",
-    "description": "Khi Operator này được phân công vào Control Center, với mỗi Operator thuộc <$cc.g.psk><@cc.kw>Pinus Sylvestris</></> được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+10%</>, nhưng năng suất đối với công thức <@cc.kw>Precious Metals</> <@cc.vdown>-10%</>."
+    "description": "Khi Operator này được phân công vào Control Center, với mỗi Operator thuộc <$cc.g.psk><@cc.kw>Pinus Sylvestris</></> được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+10%</>, nhưng năng suất đối với công thức <@cc.kw>Pure Gold</> <@cc.vdown>-10%</>."
   },
   "control_mp_lonely[000]": {
     "Name": "Công tư phân minh",
@@ -845,63 +845,63 @@
   },
   "manu_prod_spd&trade[000]": {
     "Name": "Năng lượng tái tạo",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+20%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+20%</>."
   },
   "manu_prod_spd&trade[1000]": {
     "Name": "Phụ phẩm từ quá trình chuyển hóa tinh chất",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+3%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+3%</>."
   },
   "manu_formula_spd[100]": {
     "Name": "Gia công kim loại α",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd[110]": {
     "Name": "Gia công kim loại β",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+35%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+35%</>."
   },
   "manu_formula_spd[101]": {
     "Name": "Gia công kim loại α",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd[102]": {
     "Name": "Gia công kim loại α",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd&dorm&lv[000]": {
     "Name": "Liên minh băng cướp sa mạc",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của mỗi Dormitory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+1%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của mỗi Dormitory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+1%</>."
   },
   "manu_formula_spd&cost[000]": {
     "Name": "Ý tưởng nho nhỏ",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
   },
   "manu_formula_spd&cost[001]": {
     "Name": "Hương thơm thanh lọc",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
   },
   "manu_formula_spd&cost_bd[000]": {
     "Name": "Gánh vác trọng trách",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>3</> Operator), năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+2%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.15</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>3</> Operator), năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+2%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.15</>."
   },
   "manu_formula_spd&cost_bd[100]": {
     "Name": "Kinh phí đắt đỏ",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.rh><@cc.kw>Rhine Lab</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>5</> Operator), năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+3%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.rh><@cc.kw>Rhine Lab</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>5</> Operator), năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+3%</>."
   },
   "manu_token_prod_spd[000]": {
     "Name": "Tinh thông máy móc α",
-    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+5%</>."
   },
   "manu_token_prod_spd[010]": {
     "Name": "Tinh thông máy móc β",
-    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+10%</>."
+    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+10%</>."
   },
   "manu_prod_spd_double[000]": {
     "Name": "'Để tôi phụ một tay'",
-    "description": "Khi Operator này được phân công vào Factory cùng với <@cc.kw>Warmy</>, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+15%</>."
+    "description": "Khi Operator này được phân công vào cùng Factory với <@cc.kw>Warmy</>, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+15%</>."
   },
   "manu_prod_spd_double[100]": {
     "Name": "Món quà đáp lễ",
-    "description": "Khi Operator này được phân công vào Factory cùng với <@cc.kw>Tragodia</>, năng suất đối với công thức <@cc.kw>Battle Record</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào cùng Factory với <@cc.kw>Tragodia</>, năng suất đối với công thức <@cc.kw>Battle Record</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd[200]": {
     "Name": "Quy trình chế tác Originium α",
@@ -1173,95 +1173,95 @@
   },
   "trade_ord_wt&cost[000]": {
     "Name": "May vá α",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[010]": {
     "Name": "May vá β",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[001]": {
     "Name": "Đồ thủ công α",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[011]": {
     "Name": "Đồ thủ công β",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[002]": {
     "Name": "Đôi mắt thẩm định",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[012]": {
     "Name": "Cách thức thẩm định",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[003]": {
     "Name": "Am hiểu công việc",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_spd&share[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+15%</>订单获取效率"
+    "Name": "Đại diện thương lượng",
+    "description": "Khi Operator này được phân công vào Trading Post, các Operator khác đang làm việc trong Trading Post này nhận <@cc.vup>+15%</> hiệu suất nhận đơn hàng."
   },
   "trade_ord_spd&share[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+10%</>订单获取效率"
+    "Name": "Quản lý tận tâm α",
+    "description": "Khi Operator này được phân công vào Trading Post, các Operator khác đang làm việc trong Trading Post này nhận <@cc.vup>+10%</> hiệu suất nhận đơn hàng."
   },
   "trade_ord_spd&share[002]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 贸易站内除自身以外每名处于工作状态的干员<@cc.vup>+20%</>订单获取效率"
+    "Name": "Quản lý tận tâm β",
+    "description": "Khi Operator này được phân công vào Trading Post, các Operator khác đang làm việc trong Trading Post này nhận <@cc.vup>+20%</> hiệu suất nhận đơn hàng."
   },
   "trade_ord_spd&cost_P[000]": {
-    "Name": "",
-    "description": "当与<@cc.kw>拉普兰德</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.3</>，订单获取效率<@cc.vup>+65%</>"
+    "Name": "Ác cảm",
+    "description": "Khi Operator này được phân công vào cùng Trading Post với <@cc.kw>Lappland</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.3</> và hiệu suất nhận đơn hàng <@cc.vup>+65%</>."
   },
   "trade_ord_spd&limit&bd[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</> và giới hạn đơn hàng <@cc.vup>+2</>，同时每有1个<$cc.bd_felyne><@cc.rem>Felvine</></>，则订单获取效率<@cc.vup>+3%</>"
+    "Name": "Felyne đáng yêu",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+5%</> và giới hạn đơn hàng <@cc.vup>+2</>; hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+3%</> với mỗi <$cc.bd_felyne><@cc.rem>Felvine</></>."
   },
   "trade_ord_spd&limit_tag[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 订单上限<@cc.vup>+3</>，且每有一个<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>干员进驻贸易站，订单获取效率<@cc.vup>+20%</>"
+    "Name": "Bổn phận của đội trưởng",
+    "description": "Khi Operator này được phân công vào Trading Post, giới hạn đơn hàng <@cc.vup>+3</>; với mỗi Operator thuộc <$cc.tag.mh2><@cc.kw>Biệt đội săn Bubble Realm</></> được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd&wt[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+10%</>，当前贸易站<@cc.kw>赤金订单</>的<@cc.kw>赤金</>交付数必定为<@cc.kw>2</>（不视作违约订单）"
+    "Name": "Nhà đàm phán ngây ngô",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+10%</>; mọi <@cc.kw>Đơn hàng Pure Gold</> tại Trading Post này đều chỉ giao dịch <@cc.kw>2 Pure Gold</> (không được tính là đơn hàng vi phạm hợp đồng)."
   },
   "trade_ord_limit&cost_P[020]": {
-    "Name": "",
-    "description": "当与<@cc.kw>伺夜</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
+    "Name": "Món nợ chưa trả",
+    "description": "Khi Operator này được phân công vào cùng Trading Post với <@cc.kw>Vigil</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</> và giới hạn đơn hàng <@cc.vup>+2</>."
   },
   "trade_ord_limit&cost_P[010]": {
-    "Name": "",
-    "description": "当与<@cc.kw>能天使</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.3</>"
+    "Name": "Hiểu ý nhau",
+    "description": "Khi Operator này được phân công vào cùng Trading Post với <@cc.kw>Exusiai</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.3</>."
   },
   "trade_ord_limit&cost_P[000]": {
-    "Name": "",
-    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</>，订单上限<@cc.vup>+2</>"
+    "Name": "Ý đồ sâu xa α",
+    "description": "Khi Operator này được phân công vào cùng Trading Post với <@cc.kw>Texas</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</> và giới hạn đơn hàng <@cc.vup>+2</>."
   },
   "trade_ord_limit&cost_P[001]": {
-    "Name": "",
-    "description": "当与<@cc.kw>德克萨斯</>在同一个贸易站时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</>，订单上限<@cc.vup>+4</>"
+    "Name": "Ý đồ sâu xa β",
+    "description": "Khi Operator này được phân công vào cùng Trading Post với <@cc.kw>Texas</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</> và giới hạn đơn hàng <@cc.vup>+4</>."
   },
   "trade_ord_long[000]": {
-    "Name": "",
-    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+250</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đầu tư α",
+    "description": "Khi Operator này được phân công vào Trading Post, nếu đơn hàng <@cc.kw>Pure Gold</> tiếp theo giao dịch nhiều hơn <@cc.kw>3</> (đơn hàng vi phạm hợp đồng không được tính là đơn hàng Pure Gold), lượng LMD thu được từ đơn hàng đó <@cc.kw>+250</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_long[010]": {
-    "Name": "",
-    "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+500</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đầu tư β",
+    "description": "Khi Operator này được phân công vào Trading Post, nếu đơn hàng <@cc.kw>Pure Gold</> tiếp theo giao dịch nhiều hơn <@cc.kw>3</> (đơn hàng vi phạm hợp đồng không được tính là đơn hàng Pure Gold), lượng LMD thu được từ đơn hàng đó <@cc.kw>+500</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_law[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 如果下笔<@cc.kw>赤金订单</>交付数小于<@cc.kw>4</>，则视为<@cc.kw>违约订单</>"
+    "Name": "Pháp luật hợp đồng",
+    "description": "Khi Operator này được phân công vào Trading Post, nếu đơn hàng <@cc.kw>Pure Gold</> tiếp theo giao dịch ít hơn <@cc.kw>4</>, đơn hàng đó được tính là <@cc.kw>Đơn hàng vi phạm hợp đồng</>."
   },
   "trade_ord_against[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+1</>"
+    "Name": "Bồi thường hợp đồng α",
+    "description": "Khi Operator này được phân công vào Trading Post, nếu đơn hàng <@cc.kw>Pure Gold</> tiếp theo là <@cc.kw>Đơn hàng vi phạm hợp đồng</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+1</>"
   },
   "trade_ord_against[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+2</>"
+    "Name": "Bồi thường hợp đồng β",
+    "description": "Khi Operator này được phân công vào Trading Post, nếu đơn hàng <@cc.kw>Pure Gold</> tiếp theo là <@cc.kw>Đơn hàng vi phạm hợp đồng</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+2</>"
   },
   "trade_ord_spd_par[000]": {
     "Name": "",
@@ -2265,7 +2265,7 @@
   },
   "dorm_rec_single&tag[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>成员和<$cc.tag.mh2><@cc.kw>泡影国狩猎小队</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>成员和<$cc.tag.mh2><@cc.kw>Biệt đội săn Bubble Realm</></>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_all[000]": {
     "Name": "",

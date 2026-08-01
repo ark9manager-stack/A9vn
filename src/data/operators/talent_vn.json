@@ -1332,9 +1332,9 @@
   "char_300_phenxi": {
     "TitleTalent1": "Người mang khổ nạn",
     "TitleTalent2": "Tuyên bố hồi kết",
-    "Talent0": "Liên tục giảm HP theo thời gian (hiệu ứng này không khiến HP giảm xuống 0); khi HP trên 50% sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ATK +15%; Hiệu ứng tăng gấp đôi nếu trên 80% HP.",
-    "Talent1": "Liên tục giảm HP theo thời gian (hiệu ứng này không khiến HP giảm xuống 0); khi HP trên 50% sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ATK +20%; Hiệu ứng tăng gấp đôi nếu trên 80% HP.",
-    "Talent1_2": "Liên tục giảm HP theo thời gian (hiệu ứng này không khiến HP giảm xuống 0); khi HP trên 50% sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ATK +25%; Hiệu ứng tăng gấp đôi nếu trên 80% HP.",
+    "Talent0": "Liên tục mất HP theo thời gian (HP không thể giảm xuống 0 bởi hiệu ứng này); khi HP trên 50% sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ATK +15%; Hiệu ứng tăng gấp đôi nếu trên 80% HP.",
+    "Talent1": "Liên tục mất HP theo thời gian (HP không thể giảm xuống 0 bởi hiệu ứng này); khi HP trên 50% sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ATK +20%; Hiệu ứng tăng gấp đôi nếu trên 80% HP.",
+    "Talent1_2": "Liên tục mất HP theo thời gian (HP không thể giảm xuống 0 bởi hiệu ứng này); khi HP trên 50% sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ATK +25%; Hiệu ứng tăng gấp đôi nếu trên 80% HP.",
     "Talent2": "ASPD +27 nếu kỹ năng của bản thân không hoạt động.",
     "Talent2_p4": "ASPD +30<@ba.talpu>(+3)</> nếu kỹ năng của bản thân không hoạt động."
   },
