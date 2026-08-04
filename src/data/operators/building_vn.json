@@ -13,11 +13,11 @@
   },
   "control_prod_bd_spd[000]": {
     "Name": "Kinh nghiệm làm việc dày dặn",
-    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Pure Gold</> của tất cả Factory <@cc.vup>+0.5%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+0.5%</>."
+    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Precious Metals</> của tất cả Factory <@cc.vup>+0.5%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+0.5%</>."
   },
   "control_prod_bd_spd[010]": {
     "Name": "Kinh nghiệm làm việc dày dặn",
-    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Pure Gold</> của tất cả Factory <@cc.vup>+1%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+1%</>."
+    "description": "Khi Operator này được phân công vào Control Center, năng suất sản xuất <@cc.kw>Precious Metals</> của tất cả Factory <@cc.vup>+1%</>; với mỗi <@cc.vup>20</> <$cc.bd_mujica><@cc.rem>Đam mê</></>, hiệu ứng tăng thêm <@cc.vup>+1%</>."
   },
   "control_token_prod_spd[000]": {
     "Name": "Ép xung",
@@ -293,7 +293,7 @@
   },
   "control_mp_psk[000]": {
     "Name": "Những Kỵ sĩ Pinus Sylvestris",
-    "description": "Khi Operator này được phân công vào Control Center, với mỗi Operator thuộc <$cc.g.psk><@cc.kw>Pinus Sylvestris</></> được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+10%</>, nhưng năng suất đối với công thức <@cc.kw>Pure Gold</> <@cc.vdown>-10%</>."
+    "description": "Khi Operator này được phân công vào Control Center, với mỗi Operator thuộc <$cc.g.psk><@cc.kw>Pinus Sylvestris</></> được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+10%</>, nhưng năng suất đối với công thức <@cc.kw>Precious Metals</> <@cc.vdown>-10%</>."
   },
   "control_mp_lonely[000]": {
     "Name": "Công tư phân minh",
@@ -564,7 +564,7 @@
     "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+15%</>."
   },
   "manu_prod_spd[020]": {
-    "Name": "Cua Sắt - Loại hình sản xuất",
+    "Name": "Meeboo: Loại hình sản xuất",
     "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+30%</>."
   },
   "manu_prod_spd[004]": {
@@ -756,7 +756,7 @@
     "description": "Khi Operator này được phân công vào Factory, cứ mỗi <@cc.vup>5%</> năng suất do các Operator khác trong Factory này cung cấp (không bao gồm năng suất tăng dựa trên số lượng cơ sở), năng suất tăng thêm <@cc.vup>5%</>, tối đa <@cc.vup>40%</>."
   },
   "manu_prod_spd_train&lv[000]": {
-    "Name": "Thợ lành nghề",
+    "Name": "Thợ thủ công",
     "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của Training Room, năng suất của Factory này <@cc.vup>+10%</>, tối đa <@cc.vup>30%</>."
   },
   "manu_prod_spd_bd_n1[000]": {
@@ -845,59 +845,59 @@
   },
   "manu_prod_spd&trade[000]": {
     "Name": "Năng lượng tái tạo",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+20%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+20%</>."
   },
   "manu_prod_spd&trade[1000]": {
     "Name": "Phụ phẩm từ quá trình chuyển hóa tinh chất",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+3%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi <@cc.kw>Trading Post</> đang có, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+3%</>."
   },
   "manu_formula_spd[100]": {
     "Name": "Gia công kim loại α",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd[110]": {
     "Name": "Gia công kim loại β",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+35%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+35%</>."
   },
   "manu_formula_spd[101]": {
     "Name": "Gia công kim loại α",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd[102]": {
     "Name": "Gia công kim loại α",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+30%</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+30%</>."
   },
   "manu_formula_spd&dorm&lv[000]": {
     "Name": "Liên minh băng cướp sa mạc",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của mỗi Dormitory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+1%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi cấp của mỗi Dormitory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+1%</>."
   },
   "manu_formula_spd&cost[000]": {
     "Name": "Ý tưởng nho nhỏ",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
   },
   "manu_formula_spd&cost[001]": {
     "Name": "Hương thơm thanh lọc",
-    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+25%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.25</>."
   },
   "manu_formula_spd&cost_bd[000]": {
     "Name": "Gánh vác trọng trách",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>3</> Operator), năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+2%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.15</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>3</> Operator), năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+2%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.15</>."
   },
   "manu_formula_spd&cost_bd[100]": {
     "Name": "Kinh phí đắt đỏ",
-    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.rh><@cc.kw>Rhine Lab</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>5</> Operator), năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+3%</>."
+    "description": "Khi Operator này được phân công vào Factory, với mỗi Operator thuộc <$cc.g.rh><@cc.kw>Rhine Lab</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room, tối đa <@cc.kw>5</> Operator), năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+3%</>."
   },
   "manu_token_prod_spd[000]": {
     "Name": "Tinh thông máy móc α",
-    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+5%</>."
   },
   "manu_token_prod_spd[010]": {
     "Name": "Tinh thông máy móc β",
-    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+10%</>."
+    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+10%</>."
   },
   "manu_prod_spd_double[000]": {
     "Name": "'Để tôi phụ một tay'",
-    "description": "Khi Operator này được phân công vào cùng Factory với <@cc.kw>Warmy</>, năng suất đối với công thức <@cc.kw>Pure Gold</> của Factory này <@cc.vup>+15%</>."
+    "description": "Khi Operator này được phân công vào cùng Factory với <@cc.kw>Warmy</>, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+15%</>."
   },
   "manu_prod_spd_double[100]": {
     "Name": "Món quà đáp lễ",
@@ -1173,31 +1173,31 @@
   },
   "trade_ord_wt&cost[000]": {
     "Name": "May vá α",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[010]": {
     "Name": "May vá β",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[001]": {
     "Name": "Đồ thủ công α",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[011]": {
     "Name": "Đồ thủ công β",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[002]": {
     "Name": "Đôi mắt thẩm định",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[012]": {
     "Name": "Cách thức thẩm định",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_wt&cost[003]": {
     "Name": "Am hiểu công việc",
-    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Pure Gold giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "trade_ord_spd&share[000]": {
     "Name": "Đại diện thương lượng",
@@ -1268,476 +1268,476 @@
     "description": "Khi Operator này được phân công vào Trading Post, với mỗi Operator thuộc <$cc.g.glasgow><@cc.kw>Glasgow Gang</></> trong cùng Trading Post, hiệu suất nhận đơn hàng của Trading Post này <@cc.vup>+20%</>; khi được phân công vào cùng Trading Post với <@cc.kw>Siege</>, hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+35%</>."
   },
   "trade_ord_spd_par[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 同个贸易站中每有1名<$cc.g.laterano><@cc.kw>拉特兰</></>干员，当前贸易站订单获取效率<@cc.vup>+15%</>"
+    "Name": "Giao hàng hỏa tốc",
+    "description": "Khi Operator này được phân công vào Trading Post, với mỗi Operator thuộc <$cc.g.laterano><@cc.kw>Laterano</></> trong cùng Trading Post, hiệu suất nhận đơn hàng của Trading Post này <@cc.vup>+15%</>."
   },
   "trade_ord_spd&multiPar[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>"
+    "Name": "Phân phối đơn hàng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd&multiPar[100]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>；当与<@cc.kw><$cc.angel>能天使</></>在同一个贸易站时，订单获取效率额外<@cc.vup>+25%</>"
+    "Name": "Đồng hành",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>; khi được phân công vào cùng Trading Post với <@cc.kw><$cc.angel>Exusiai</></>, hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+25%</>."
   },
   "trade_ord_par&per[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>；当<@cc.kw>伊内丝</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率额外<@cc.vup>+5%</>"
+    "Name": "Khởi nghiệp từ đôi bàn tay trắng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>; khi <@cc.kw>Ines</> được phân công vào bất kỳ <$cc.c.room3><@cc.kw>cơ sở làm việc</></> nào (không bao gồm R.I.I.C. Assistants), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+5%</>."
   },
   "trade_ord_par&per[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当<@cc.kw>伊内丝</>、<@cc.kw>W</>入驻<$cc.c.room3><@cc.kw>工作场所</></>时（不包含副手），订单获取效率分别额外<@cc.vup>+5%</>"
+    "Name": "Khởi nghiệp từ đôi bàn tay trắng β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>; khi <@cc.kw>Ines</> và <@cc.kw>W</> được phân công vào bất kỳ <$cc.c.room3><@cc.kw>cơ sở làm việc</></> nào (không bao gồm R.I.I.C. Assistants), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+5%</>."
   },
   "trade_ord_spd_ext[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
+    "Name": "Đại diện liên lạc với đất liền α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>; khi <@cc.kw>Ulpianus</> có mặt trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+5%</>."
   },
   "trade_ord_spd_ext[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当<@cc.kw>乌尔比安</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
+    "Name": "Đại diện liên lạc với đất liền β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>; khi <@cc.kw>Ulpianus</> có mặt trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+10%</>."
   },
   "trade_ord_spd_ext[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+5%</>"
+    "Name": "Điều hành gia tộc α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>; khi <@cc.kw>Vigil</> có mặt trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+5%</>."
   },
   "trade_ord_spd_ext[021]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当<@cc.kw>伺夜</>在基建内时（不包含副手及活动室使用者），订单获取效率额外<@cc.vup>+10%</>"
+    "Name": "Điều hành gia tộc β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>; khi <@cc.kw>Vigil</> có mặt trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+10%</>."
   },
   "trade_ord_spd&par[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>"
+    "Name": "Nghị quyết về ngoại thương α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>."
   },
   "trade_ord_spd&par[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>；当前贸易站内存在<$cc.g.glasgow><@cc.kw>Glasgow Gang</></>干员时，订单获取效率额外<@cc.vup>+10%</>"
+    "Name": "Nghị quyết về ngoại thương β",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+30%</>; khi có Operator thuộc <$cc.g.glasgow><@cc.kw>Glasgow Gang</></> trong Trading Post này, hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+10%</>."
   },
   "trade_ord_spd&tag[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>"
+    "Name": "Phân phối đơn hàng α",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+20%</>."
   },
   "trade_ord_spd&tag[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>精英干员</></>的设施，订单获取效率额外<@cc.vup>+2%</>（最多<@cc.kw>10</>间）"
+    "Name": "Đội tinh nhuệ",
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất nhận đơn hàng <@cc.vup>+25%</>; cứ mỗi cơ sở trong Căn cứ có Operator thuộc <$cc.g.elite><@cc.kw>Elite Operator</></> được phân công (không bao gồm R.I.I.C. Assistants và Activity Room), hiệu suất nhận đơn hàng tăng thêm <@cc.vup>+2%</> (tối đa <@cc.kw>10</> cơ sở)."
   },
   "trade_ord_spd&tag[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Trading Post, 基建内（不包含副手及活动室）每有一间进驻<$cc.g.sui><@cc.kw>岁</></>干员的设施，订单获取效率<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
+    "Name": "'Đứa học trò đầy triển vọng!'",
+    "description": "Khi Operator này được phân công vào Trading Post, cứ mỗi cơ sở trong Căn cứ có Operator thuộc <$cc.g.sui><@cc.kw>Sui</></> được phân công (không bao gồm R.I.I.C. Assistants và Activity Room), hiệu suất nhận đơn hàng <@cc.vup>+4%</> (tối đa <@cc.kw>5</> cơ sở)."
   },
   "workshop_proc_probability[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>40%</>"
+    "Name": "Tập trung α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>40%</>."
   },
   "workshop_proc_probability[020]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>60%</>"
+    "Name": "Tập trung β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>60%</>."
   },
   "workshop_proc_probability[010]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+    "Name": "Thợ lành nghề",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>."
   },
   "workshop_proc_probability[011]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+    "Name": "Máy đo đạc đa năng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>."
   },
   "workshop_proc_probability[012]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+    "Name": "'Giả kim thuật'",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>."
   },
   "workshop_proc_probability[013]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+    "Name": "Sửa tí vẫn xài ngon",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>."
   },
   "workshop_proc_probability[021]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>60%</>"
+    "Name": "Gừng càng già càng cay",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>60%</>."
   },
   "workshop_proc_probability[030]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+    "Name": "Meeboo: Gia công",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>65%</>."
   },
   "workshop_proc_probability[031]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+    "Name": "Loại bỏ phần thừa",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>65%</>."
   },
   "workshop_proc_probability[032]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+    "Name": "Kỹ thuật chế tác của Thiên Sư Phủ",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>65%</>."
   },
   "workshop_proc_probability[033]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>65%</>"
+    "Name": "Người đa năng trong Wrankwood",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>65%</>."
   },
   "workshop_proc_probability[040]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "Name": "Công nghệ bí ẩn",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_proc_probability[041]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "Name": "Giảng giải kỹ thuật",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_proc_probability[050]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "Name": "Đổi mới lý thuyết",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_proc_cost[000]": {
-    "Name": "",
-    "description": "进驻加工站加工原始心情消耗为<@cc.kw>8</>的<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+    "Name": "Điều khiển Ngự Linh: Kim",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào và vật đó tiêu hao <@cc.kw>8</> Tinh thần, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>."
   },
   "workshop_formula_lolxh[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>以上的配方全部除以<@cc.vup>4</>心情消耗"
+    "Name": "Dạng mèo",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, nếu bất kỳ công thức nào tiêu hao từ <@cc.kw>4</> Tinh thần trở lên sẽ chia mức tiêu hao đó cho <@cc.vup>4</>."
   },
   "workshop_proc_probability&ext[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>"
+    "Name": "Công nhân gương mẫu α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>"
   },
   "workshop_proc_probability&ext[001]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>；如果<@cc.kw>白铁</>进驻在宿舍，则额外提升<@cc.vup>10%</>"
+    "Name": "Công nhân gương mẫu β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>; nếu <@cc.kw>Stainless</> được phân công vào Dormitory, tỷ lệ này tăng thêm <@cc.vup>10%</>."
   },
   "workshop_formula_bonus1[000]": {
-    "Name": "",
-    "description": "进驻加工站时，累积<@cc.kw>40</>点<$cc.w.ncdeer1><@cc.rem>因果</></>必定产出一次副产品"
+    "Name": "Nhân quả",
+    "description": "Khi Operator này được phân công vào Workshop, sau khi tích lũy <@cc.kw>40</> <$cc.w.ncdeer1><@cc.rem>Nhân quả</></>, lần gia công kế tiếp chắc chắn nhận được sản phẩm phụ."
   },
   "workshop_formula_bonus2[000]": {
-    "Name": "",
-    "description": "进驻加工站时，累积<@cc.kw>80</>点<$cc.w.ncdeer2><@cc.rem>业报</></>必定产出一次副产品"
+    "Name": "Nghiệp quả",
+    "description": "Khi Operator này được phân công vào Workshop, sau khi tích lũy <@cc.kw>80</> <$cc.w.ncdeer2><@cc.rem>Nghiệp quả</></>, lần gia công kế tiếp chắc chắn nhận được sản phẩm phụ."
   },
   "workshop_formula_cost[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>以上的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Drone - Long Đằng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao từ <@cc.kw>4</> Tinh thần trở lên."
   },
   "workshop_formula_cost[001]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>以上的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Dây chuyền tự động",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao từ <@cc.kw>4</> Tinh thần trở lên."
   },
   "workshop_formula_cost3[400]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Miệt mài học tập",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[500]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Ngày đẹp trời để quay phim",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_recovery[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，每<@cc.vup>2</>次加工没有产出副产品，则<@cc.kw>恢复自身一次心情</>，恢复量为<@cc.kw>对应配方所需消耗的心情</>（加工结束后统一结算）"
+    "Name": "'Nghệ thuật bùng nổ'",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, cứ <@cc.vup>2</> lần gia công không nhận được sản phẩm phụ, <@cc.kw>Tinh thần của bản thân được hồi phục một lần</> bằng <@cc.kw>mức Tinh thần tiêu hao của công thức tương ứng</> (được tính tổng sau khi hoàn tất gia công)."
   },
   "workshop_formula_frost[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>任意类材料</>时，副产品的产出概率提升<@cc.vup>50%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外提升<@cc.vup>5%</>；如果<$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>达到<@cc.vup>4</>瓶，则额外提升<@cc.vup>15%</>"
+    "Name": "Kỹ thuật cơ khí",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>bất kỳ vật liệu</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>50%</>; với <@cc.vup>mỗi</> <$cc.bd_ash><@cc.rem>Kho trữ tình báo</></> sẽ tăng tỷ lệ thêm <@cc.vup>5%</>; nếu có từ <@cc.vup>4</> chai <$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></> trở lên, tỷ lệ này tăng thêm <@cc.vup>15%</>."
   },
   "workshop_formula_cost4[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方的心情消耗恒定为<@cc.vup>2</>"
+    "Name": "Kiên trì",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần của công thức tương ứng được cố định ở <@cc.vup>2</>."
   },
   "workshop_formula_cost2[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>40%</>，同时心情消耗为<@cc.kw>8</>以上的配方全部<@cc.vup>-4</>心情消耗"
+    "Name": "Người thợ tận tâm",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>40%</>; mức tiêu hao Tinh thần <@cc.vup>-4</> cho tất cả công thức tiêu hao từ <@cc.kw>8</> Tinh thần trở lên."
   },
   "workshop_formula_cost2[110]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>60%</>，同时心情消耗为<@cc.kw>8</>以上的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Tinh thần nghệ nhân α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>60%</>; mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao từ <@cc.kw>8</> Tinh thần trở lên."
   },
   "workshop_formula_cost2[111]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>，同时心情消耗为<@cc.kw>4</>以上的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Tinh thần nghệ nhân β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>; mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao từ <@cc.kw>4</> Tinh thần trở lên."
   },
   "workshop_formula_cost[010]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方全部<@cc.vdown>+2</>心情消耗"
+    "Name": "Không chút kiêng dè",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vdown>+2</> cho tất cả công thức tương ứng."
   },
   "workshop_formula_cost3[100]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Tỉ mỉ từng li",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[110]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Cảm hứng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[111]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Đúc điện",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[112]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Kỹ thuật quân sự",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[120]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Tối giản thực dụng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[102]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Đời sống thong dong",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[600]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>8</>的配方全部<@cc.vup>-4</>心情消耗"
+    "Name": "Đối thoại với lịch sử",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-4</> cho tất cả công thức tiêu hao <@cc.kw>8</> Tinh thần."
   },
   "workshop_formula_cost3[220]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Kỹ thuật tuyển khoáng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[221]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，心情消耗为<@cc.kw>4</>的配方全部<@cc.vup>-2</>心情消耗"
+    "Name": "Một ngày không gặp vận xui",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, mức tiêu hao Tinh thần <@cc.vup>-2</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_cost3[200]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Pin di động",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[300]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>芯片</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Cuộc sống đạm bạc",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[000]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Thả hồn",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[001]": {
-    "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Mặt trận tuyên truyền",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[101]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost4[010]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方的心情消耗恒定为<@cc.vup>4</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，相应配方的心情消耗恒定为<@cc.vup>4</>"
   },
   "workshop_formula_cost4[011]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，相应配方的心情消耗恒定为<@cc.vup>3</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，相应配方的心情消耗恒定为<@cc.vup>3</>"
   },
   "workshop_formula_cost5[100]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>异铁组</>材料时，心情消耗为<@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>异铁组</>材料, mức tiêu hao Tinh thần <@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
   },
   "workshop_formula_cost5[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>晶体类材料</>时，全部心情消耗<@cc.vup>-1</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>晶体类材料</>时，全部心情消耗<@cc.vup>-1</>"
   },
   "workshop_formula_cost&dorm[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>10</>名心情<@cc.vup>12</>以下的干员时，心情消耗为<@cc.kw>4</>的配方心情消耗全部<@cc.vup>-1</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>10</>名心情<@cc.vup>12</>以下的干员, mức tiêu hao Tinh thần <@cc.kw>4</>的配方心情消耗全部<@cc.vup>-1</>"
   },
   "workshop_formula_probability[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[010]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[011]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[020]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[021]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[030]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[031]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[032]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[100]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[101]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[102]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[115]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[119]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[1110]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[129]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[139]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[113]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[123]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[110]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[120]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[111]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[121]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[112]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[122]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[114]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[124]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[160]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>100%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>100%</>"
   },
   "workshop_formula_probability[221]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[116]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[126]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[117]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[118]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[128]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_dorm[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>4</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>4</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
   },
   "workshop_formula_dorm[001]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>20</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>20</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
   },
   "workshop_formula_dorm[002]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>12</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>12</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
   },
   "workshop_formula_drop[020]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>聚酸酯组</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>聚酸酯组</>"
   },
   "workshop_formula_drop[030]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>异铁组</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>异铁组</>"
   },
   "workshop_formula_drop[040]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>固源岩组</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>固源岩组</>"
   },
   "workshop_formula_free[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>精英材料</>时，减免龙门币消耗"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，减免龙门币消耗"
   },
   "workshop_formula_probability[200]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[210]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[220]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[300]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>芯片</>时，副产品的产出概率提升<@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[310]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>芯片</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_device[000]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>装置</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>装置</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
   },
   "workshop_formula_device[020]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>异铁</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>异铁</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
   },
   "workshop_formula_device[021]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>异铁组</>材料时，副产品的产出概率提升<@cc.vup>90%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>异铁组</>材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
   },
   "workshop_formula_device[030]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>聚酸酯</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>聚酸酯</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
   },
   "workshop_formula_device[050]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>源岩</>类材料时，副产品的产出概率提升<@cc.vup>90%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>源岩</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
   },
   "workshop_formula_device[111]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>炽合金块</>材料时，副产品的产出概率提升<@cc.vup>100%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>炽合金块</>材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>100%</>"
   },
   "workshop_formula_device[060]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>酮凝集</>类材料时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>酮凝集</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_device[070]": {
     "Name": "",
-    "description": "进驻加工站加工<@cc.kw>晶体</>类材料时，副产品的产出概率提升<@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>晶体</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_rub[000]": {
     "Name": "",
-    "description": "进驻加工站加工原始心情消耗为<@cc.kw>2</>的<@cc.kw>精英材料</>时，副产品的产出概率额外提升<@cc.vup>40%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công 原始心情消耗为<@cc.kw>2</>的<@cc.kw>Elite Material</>时，副产品的产出概率额外提升<@cc.vup>40%</>"
   },
   "train_spd[001]": {
     "Name": "",
@@ -2413,7 +2413,7 @@
   },
   "dorm_rec_single_power[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.laterano><@cc.kw>拉特兰</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.laterano><@cc.kw>Laterano</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_all&oneself[000]": {
     "Name": "",
@@ -2445,7 +2445,7 @@
   },
   "dorm_rec_all&group[000]": {
     "Name": "",
-    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<$cc.g.sui><@cc.kw>岁</></>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</>（最多生效<@cc.kw>4</>名，且同种效果取最高）"
+    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<$cc.g.sui><@cc.kw>Sui</></>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</>（最多生效<@cc.kw>4</>名，且同种效果取最高）"
   },
   "dorm_rec_all&oneself[022]": {
     "Name": "",
@@ -2673,7 +2673,7 @@
   },
   "hire_spd_tag[000]": {
     "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>精英干员</></>的设施，联络速度额外<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
+    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>Elite Operator</></>的设施，联络速度额外<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
   },
   "meet_spd[000]": {
     "Name": "",

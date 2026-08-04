@@ -10452,6 +10452,7 @@
     "Title": "Bóng Ma Trong Gương",
     "Token_Trait": "Có thể Chặn 1 kẻ địch.",
     "Talent1_E1": "Có thể triển khai được một bóng ma và sở hữu các kỹ năng giống hệt Phantom, có thời gian tái triển khai độc lập.",
+    "Talent1_E2": "Có thể triển khai được một bóng ma và sở hữu các kỹ năng giống hệt Phantom, có thời gian tái triển khai độc lập.",
     "Token_Talent2": "Đạo diễn bóng ma",
     "Talent2_E2": "Thời gian tái triển khai -10 giây.",
     "S1_1": "Ngay sau khi được triển khai, nhận <@ba.vup>{prob:0%}</> tỷ lệ né sát thương vật lý và một lớp <$ba.barrier>Lá chắn</> có thể hấp thụ lượng sát thương bằng <@ba.vup>{hp_ratio:0%}</> HP tối đa của bản thân, kéo dài <@ba.vup>{duration}</> giây.",
@@ -11817,7 +11818,7 @@
     "S3_7M3": "Chặn <@ba.vup>+2</> và tấn công tất cả kẻ địch trong phạm vi theo số lượng Chặn của Thumpy, ATK <@ba.vup>+{atk:0%}</>, DEF <@ba.vup>+{def:0%}</>. Triển khai một băng chuyền di động dài <@ba.vup>4</> ô về phía trước, những kẻ địch chưa bị Chặn và có Trọng lượng từ <@ba.vup>4</> trở xuống sẽ bị băng chuyền kéo về phía Thumpy với tốc độ <@ba.vup>0.8</> ô mỗi giây; kẻ địch trên băng chuyền sẽ chịu sát thương vật lý mỗi giây bằng <@ba.vup>{atk_scale:0%}</> ATK của Thumpy, và giảm thêm <@ba.vup>{thumpy[ep_break_water].def}</> DEF nếu chúng bộc phát <$ba.dt.erosion2>Corrosion</>."
   },
   "char_1015_aglna2": {
-    "Title_S1": "Chuyển phát hỏa tốc",
+    "Title_S1": "Chuyển phát thần tốc",
     "Title_S2": "Tùy chỉnh trọng lực",
     "Title_S3": "Nỗi niềm Chanh Xanh",
     "S1_1": "Sau khi triển khai, lập tức <$ba.liftoff>Cất cánh</>, <@ba.vup>mở rộng</> phạm vi tấn công, ATK <@ba.vup>+{atk:0%}</> và tấn công 2 kẻ địch cùng lúc.",
