@@ -1500,184 +1500,184 @@
     "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost3[101]": {
-    "Name": "",
+    "Name": "Gia công cẩn thận",
     "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost4[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，相应配方的心情消耗恒定为<@cc.vup>4</>"
+    "Name": "Kỷ luật khổ luyện",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần của công thức tương ứng được cố định ở <@cc.vup>4</>."
   },
   "workshop_formula_cost4[011]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，相应配方的心情消耗恒定为<@cc.vup>3</>"
+    "Name": "Kỷ luật tu tâm",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, mức tiêu hao Tinh thần của công thức tương ứng được cố định ở <@cc.vup>3</>."
   },
   "workshop_formula_cost5[100]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>异铁组</>材料, mức tiêu hao Tinh thần <@cc.kw>2</>的配方全部<@cc.vup>-1</>心情消耗"
+    "Name": "Thiên phú rèn đúc",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Oriron Cluster</>, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>2</> Tinh thần."
   },
   "workshop_formula_cost5[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>晶体类材料</>时，全部心情消耗<@cc.vup>-1</>"
+    "Name": "Quen tay hay làm",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Crystal</>, toàn bộ mức tiêu hao Tinh thần <@cc.vup>-1</>."
   },
   "workshop_formula_cost&dorm[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>10</>名心情<@cc.vup>12</>以下的干员, mức tiêu hao Tinh thần <@cc.kw>4</>的配方心情消耗全部<@cc.vup>-1</>"
+    "Name": "Tâm ý gắn kết",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, cứ mỗi <@cc.kw>10</> Operator có Tinh thần từ <@cc.vup>12</> trở xuống trong các Dormitory, mức tiêu hao Tinh thần <@cc.vup>-1</> cho tất cả công thức tiêu hao <@cc.kw>4</> Tinh thần."
   },
   "workshop_formula_probability[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "Name": "Lý thuyết về kỹ năng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_formula_probability[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Binh pháp biến hóa",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[011]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Sinh tồn nơi hoang dã",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Đạt đến đỉnh cao",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[021]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Nghiêm khắc tu luyện",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[030]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Khả năng thích nghi",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[031]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Tuyệt kỹ nanh sắc",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[032]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Ý tưởng cải tạo",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Skill Summary</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[100]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "Name": "Dinh dưỡng học",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_formula_probability[101]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "Name": "Tái chế hiệu quả",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_formula_probability[102]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "Name": "Truyền động luồng khí",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_formula_probability[115]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Khóa học bắt buộc",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[119]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Thiết kế công nghiệp",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[1110]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Bung sức quá đà",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[129]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Học giả",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[139]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Tri thức của Lich",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[113]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Nghiên cứu ăn mòn α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[123]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Nghiên cứu ăn mòn β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[110]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Dược lý học α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[120]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Dược lý học β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[111]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Độc chất học α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[121]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Độc chất học β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[112]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Kỹ thuật vật liệu nổ α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[122]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Kỹ thuật vật liệu nổ β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[114]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Thảo dược học α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[124]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Thảo dược học β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[160]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>100%</>"
+    "Name": "Nhận diện kim loại hiếm",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>100%</>."
   },
   "workshop_formula_probability[221]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "May mắn bất ngờ",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[116]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Thợ thăm dò mỏ α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[126]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Thợ thăm dò mỏ β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[117]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Phẩm giá của nghệ nhân",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[118]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Tu bổ di tích α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[128]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Tu bổ di tích β",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_dorm[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>4</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+    "Name": "'Tận dụng triệt để'",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>5%</> với <@cc.kw>mỗi</> Operator trong các Dormitory đang có Tinh thần từ <@cc.vup>4</> trở xuống."
   },
   "workshop_formula_dorm[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>20</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+    "Name": "'Người nào việc nấy'",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>5%</> với <@cc.kw>mỗi</> Operator trong các Dormitory đang có Tinh thần từ <@cc.vup>20</> trở xuống."
   },
   "workshop_formula_dorm[002]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，宿舍内每有<@cc.kw>1</>名心情<@cc.vup>12</>以下的干员，副产品的产出概率提升<@cc.vup>5%</>"
+    "Name": "Tâm ý tương thông",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>5%</> với <@cc.kw>mỗi</> Operator trong các Dormitory đang có Tinh thần từ <@cc.vup>12</> trở xuống."
   },
   "workshop_formula_drop[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>聚酸酯组</>"
+    "Name": "Món quà vô dụng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, nếu sản phẩm phụ nhận được có chất lượng thuộc <@cc.kw>T3</>, sản phẩm nhận được chắc chắn là <@cc.kw>Polyester Pack</>."
   },
   "workshop_formula_drop[030]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>异铁组</>"
+    "Name": "Kỹ thuật chống ăn mòn",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, nếu sản phẩm phụ nhận được có chất lượng thuộc <@cc.kw>T3</>, sản phẩm nhận được chắc chắn là <@cc.kw>Oriron Cluster</>."
   },
   "workshop_formula_drop[040]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>产出<@cc.kw>T3</>品质的副产品时，副产品必定为<@cc.kw>固源岩组</>"
+    "Name": "Gia cố khối đá",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, nếu sản phẩm phụ nhận được có chất lượng thuộc <@cc.kw>T3</>, sản phẩm nhận được chắc chắn là <@cc.kw>Orirock Clusters</>."
   },
   "workshop_formula_free[000]": {
     "Name": "",
@@ -1685,23 +1685,23 @@
   },
   "workshop_formula_probability[200]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[210]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_probability[220]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
   },
   "workshop_formula_probability[300]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
   },
   "workshop_formula_probability[310]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</> nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
   },
   "workshop_formula_device[000]": {
     "Name": "",
@@ -1713,7 +1713,7 @@
   },
   "workshop_formula_device[021]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>异铁组</>材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Oriron Cluster</>材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
   },
   "workshop_formula_device[030]": {
     "Name": "",

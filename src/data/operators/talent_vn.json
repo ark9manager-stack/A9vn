@@ -1711,8 +1711,8 @@
     "Talent2_p2": "Khi HP thấp hơn 25%, lập tức hồi lại 55%<@ba.talpu>(+5%)</> HP tối đa và nhận hiệu ứng giảm 15%<@ba.talpu>(+5%)</> sát thương vật lý phải chịu (mỗi lần triển khai chỉ kích hoạt 1 lần)."
   },
   "char_4011_lessng": {
-    "TitleTalent1": "Chịu đựng cơn đau",
-    "TitleTalent2": "Mài sắc bằng nỗi đau",
+    "TitleTalent1": "Lấy nỗi đau rèn ý chí",
+    "TitleTalent2": "Lấy cơn đau làm lưỡi kiếm",
     "Talent1": "Khi đang chặn kẻ địch, giảm 20% sát thương vật lý và phép gánh chịu từ các kẻ địch không bị bản thân chặn.",
     "Talent1_2": "Khi đang chặn kẻ địch, giảm 35% sát thương vật lý và phép gánh chịu từ các kẻ địch không bị bản thân chặn.",
     "Talent2": "Khi chịu sát thương, ATK +12% trong 15 giây (không cộng dồn).",

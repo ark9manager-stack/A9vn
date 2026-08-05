@@ -5404,8 +5404,8 @@
   },
   "char_4011_lessng": {
     "Title_S1": "Công kích · loại γ",
-    "Title_S2": "Tu hành đối kháng",
-    "Title_S3": "Kẻ bội ước",
+    "Title_S2": "Đối kháng khổ luyện",
+    "Title_S3": "Bội ước",
     "S1_1": "Đòn tấn công kế tiếp gây sát thương bằng <@ba.vup>{atk_scale:0%}</> ATK.",
     "S1_2": "Đòn tấn công kế tiếp gây sát thương bằng <@ba.vup>{atk_scale:0%}</> ATK.",
     "S1_3": "Đòn tấn công kế tiếp gây sát thương bằng <@ba.vup>{atk_scale:0%}</> ATK.",
