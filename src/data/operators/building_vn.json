@@ -928,7 +928,7 @@
     "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Originium</> của Factory này <@cc.vup>+35%</>."
   },
   "manu_formula_spd[214]": {
-    "Name": "Xử lý Orirock",
+    "Name": "Phân tích Orirock",
     "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Originium</> của Factory này <@cc.vup>+35%</>."
   },
   "manu_formula_spd_P[000]": {
@@ -1680,124 +1680,124 @@
     "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, nếu sản phẩm phụ nhận được có chất lượng thuộc <@cc.kw>T3</>, sản phẩm nhận được chắc chắn là <@cc.kw>Orirock Clusters</>."
   },
   "workshop_formula_free[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>时，减免龙门币消耗"
+    "Name": "Tính toán kỹ lưỡng",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</>, giảm chi phí LMD."
   },
   "workshop_formula_probability[200]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "Name": "Ngành kỹ thuật",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_formula_probability[210]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Chém sắt xẻ thép",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_probability[220]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>"
+    "Name": "Cơ học kết cấu",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Building Material</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>75%</>."
   },
   "workshop_formula_probability[300]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>"
+    "Name": "Hồ sơ huấn luyện",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
   "workshop_formula_probability[310]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "Rèn luyện bài bản",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_device[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>装置</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
+    "Name": "DIY Thiết bị",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Device</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
   },
   "workshop_formula_device[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>异铁</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
+    "Name": "DIY Oriron",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Oriron</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
   },
   "workshop_formula_device[021]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Oriron Cluster</>材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
+    "Name": "Tận dụng phần thừa",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Oriron Cluster</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
   },
   "workshop_formula_device[030]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>聚酸酯</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
+    "Name": "DIY Polyester",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc <@cc.kw>Polyester</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
   },
   "workshop_formula_device[050]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>源岩</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>"
+    "Name": "DIY Orirock",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Orirock</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
   },
   "workshop_formula_device[111]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>炽合金块</>材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>100%</>"
+    "Name": "DIY Incandescent Alloy",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Incandescent Alloy Block</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>100%</>."
   },
   "workshop_formula_device[060]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>酮凝集</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "DIY Polyketon α",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Polyketon</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_device[070]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>晶体</>类材料 nào, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>"
+    "Name": "DIY Crystal",
+    "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Crystal</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_rub[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Workshop để gia công 原始心情消耗为<@cc.kw>2</>的<@cc.kw>Elite Material</>时，副产品的产出概率额外提升<@cc.vup>40%</>"
+    "Name": "Tiết kiệm sinh lời",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> có mức tiêu hao Tinh thần cơ bản là <@cc.kw>2</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>40%</>."
   },
   "train_spd[001]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+    "Name": "Học vấn uyên thâm α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.vup>+25%</>."
   },
   "train_spd[002]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+    "Name": "Học vấn uyên thâm α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.vup>+25%</>."
   },
   "train_spd[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+    "Name": "Giáo quan",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.vup>+25%</>."
   },
   "train_spd[0000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，干员的专精技能训练速度<@cc.vup>+25%</>"
+    "Name": "Giáo quan",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.vup>+25%</>."
   },
   "train_spd_bd[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>，每<@cc.vup>1</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></><@cc.vup>+1%</>专精技能训练速度"
+    "Name": "Chia sẻ niềm vui",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, mức tiêu hao Tinh thần của bản thân <@cc.vdown>+1</> mỗi giờ; tốc độ huấn luyện Chuyên môn hóa <@cc.vup>+1%</> với <@cc.vup>mỗi</> <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>."
   },
   "train_spd_power[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.sm><@cc.kw>萨米</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>3</>名）"
+    "Name": "Ứng viên Tư tế Tuyết",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.g.sm><@cc.kw>Sami</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+10%</> (tối đa <@cc.kw>3</> Operator)."
   },
   "train_spd_tag[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.tag.knight><@cc.kw>骑士</></>干员为当前干员的专精技能训练速度<@cc.vup>+5%</>（最多生效<@cc.kw>5</>名）"
+    "Name": "Huấn luyện kỵ sĩ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.tag.knight><@cc.kw>Kỵ sĩ</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+5%</> (tối đa <@cc.kw>5</> Operator)."
   },
   "train_spd_tag[010]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.tag.knight><@cc.kw>骑士</></>干员为当前干员的专精技能训练速度<@cc.vup>+5%</>（最多生效<@cc.kw>8</>名）"
+    "Name": "Tín điều cao quý",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.tag.knight><@cc.kw>Kỵ sĩ</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+5%</> (tối đa <@cc.kw>8</> Operator)."
   },
   "train_spd_tag[020]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Defence><@cc.kw>防守方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+    "Name": "Chỉ đạo chiến thuật: Phòng thủ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.g.Defence><@cc.kw>Phe phòng thủ</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+10%</> (tối đa <@cc.kw>4</> Operator)."
   },
   "train_spd_tag[1020]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Defence><@cc.kw>防守方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+    "Name": "Chỉ đạo chiến thuật: Phòng thủ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.g.Defence><@cc.kw>Phe phòng thủ</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+10%</> (tối đa <@cc.kw>4</> Operator)."
   },
   "train_spd_tag[030]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Attack><@cc.kw>进攻方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+    "Name": "Chỉ đạo chiến thuật: Tấn công",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.g.Attack><@cc.kw>Phe tấn công</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+10%</> (tối đa <@cc.kw>4</> Operator)."
   },
   "train_spd_tag[1030]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.Attack><@cc.kw>进攻方</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>4</>名）"
+    "Name": "Chỉ đạo chiến thuật: Tấn công",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.g.Attack><@cc.kw>Phe tấn công</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+10%</> (tối đa <@cc.kw>4</> Operator)."
   },
   "train_spd_tag[040]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，基建内（不包含副手及活动室使用者）每名<$cc.g.siracusa><@cc.kw>叙拉古</></>干员为当前干员的专精技能训练速度<@cc.vup>+5%</>（最多生效<@cc.kw>7</>名）"
+    "Name": "Tiệc vui tại Siracusa",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, với mỗi Operator thuộc <$cc.g.siracusa><@cc.kw>Siracusa</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+5%</> (tối đa <@cc.kw>7</> Operator)."
   },
   "train_spd&level[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，如果本次训练专精技能至<@cc.vup>3</>级，专精技能训练速度<@cc.vup>+70%</>"
+    "Name": "Dốc trọn tâm trí",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện Chuyên môn hóa <@cc.vup>+70%</>."
   },
   "train_spd_power_down[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>，基建内（不包含副手及活动室使用者）每名<$cc.g.abyssal><@cc.kw>Abyssal Hunters</></>干员为当前干员的专精技能训练速度<@cc.vup>+10%</>（最多生效<@cc.kw>5</>名）"
+    "Name": "'Phương pháp phải hiệu quả'",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, mức tiêu hao Tinh thần của bản thân <@cc.vdown>+1</> mỗi giờ; với mỗi Operator thuộc <$cc.g.abyssal><@cc.kw>Abyssal Hunters</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), tốc độ huấn luyện Chuyên môn hóa của Operator đang huấn luyện <@cc.vup>+10%</> (tối đa <@cc.kw>5</> Operator)."
   },
   "train_spd_doubleProf[000]": {
     "Name": "",
@@ -2409,7 +2409,7 @@
   },
   "dorm_rec_single_power[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.sm><@cc.kw>萨米</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.sm><@cc.kw>Sami</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_power[001]": {
     "Name": "",
@@ -2445,7 +2445,7 @@
   },
   "dorm_rec_all&group[000]": {
     "Name": "",
-    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<$cc.g.sui><@cc.kw>Sui</></>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</>（最多生效<@cc.kw>4</>名，且同种效果取最高）"
+    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<$cc.g.sui><@cc.kw>Sui</></>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</> (tối đa <@cc.kw>4</>名，且同种效果取最高）"
   },
   "dorm_rec_all&oneself[022]": {
     "Name": "",
@@ -2453,7 +2453,7 @@
   },
   "dorm_rec_all&profession[000]": {
     "Name": "",
-    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<@cc.kw>行医</>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</>（最多生效<@cc.kw>4</>名，且同种效果取最高）"
+    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<@cc.kw>行医</>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</> (tối đa <@cc.kw>4</>名，且同种效果取最高）"
   },
   "dorm_exchangeAp[000]": {
     "Name": "",
@@ -2733,7 +2733,7 @@
   },
   "meet_spd&sami[000]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.sm><@cc.kw>萨米</></>干员进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>5%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.sm><@cc.kw>Sami</></>干员进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>5%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
   },
   "meet_spd&sami[100]": {
     "Name": "",
