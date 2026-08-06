@@ -1832,7 +1832,7 @@
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Thuật sư</> và <@cc.kw>Y tế</> <@cc.vup>+45%</>."
   },
   "train_spd_doubleProf2[001]": {
-    "Name": "'Im lặng chính là lưỡi kiếm'",
+    "Name": "Im lặng chính là lưỡi kiếm",
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Đặc nhiệm</> và <@cc.kw>Tiên phong</> <@cc.vup>+30%</>."
   },
   "train_spd_doubleProf2[000]": {
@@ -1840,308 +1840,308 @@
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Đặc nhiệm</> và <@cc.kw>Tiên phong</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>2</>, tốc độ huấn luyện tăng thêm <@cc.vup>+50%</>."
   },
   "train_spd_doubleProf3[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>与<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Tùy hứng mà làm α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Vệ binh</> và <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>."
   },
   "train_spd_doubleProf3[100]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>与<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Tùy hứng mà làm β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Vệ binh</> và <@cc.kw>Xạ thủ</> <@cc.vup>+50%</>; nhưng mức tiêu hao Tinh thần mỗi giờ của bản thân <@cc.vdown>+1</>."
   },
   "train_spd_reduceTime[000]": {
-    "Name": "",
-    "description": "进驻训练室单次协助一名干员训练时长达<@cc.vup>5</>小时，则该名干员下次训练所需时间<@cc.vup>-50%</>（任意一方离开训练室时，效果消失）"
+    "Name": "Rèn luyện tinh thần",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room và hỗ trợ 1 Operator huấn luyện liên tục đủ <@cc.vup>5</> giờ, thời gian cần huấn luyện tiếp theo của Operator đó <@cc.vup>-50%</> (hiệu ứng biến mất nếu 1 trong 2 Operator rời Training Room)."
   },
   "train_spd_reduceTime[001]": {
-    "Name": "",
-    "description": "进驻训练室单次协助一名干员训练时长达<@cc.vup>5</>小时，则该名干员下次训练所需时间<@cc.vup>-50%</>（任意一方离开训练室时，效果消失）"
+    "Name": "Ý nghĩa của ngôn từ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room và hỗ trợ 1 Operator huấn luyện liên tục đủ <@cc.vup>5</> giờ, thời gian cần huấn luyện tiếp theo của Operator đó <@cc.vup>-50%</> (hiệu ứng biến mất nếu 1 trong 2 Operator rời Training Room)."
   },
   "train_spd_bd&reduceTime[000]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，每完整协助完成1次专精训练，累计一定<$cc.t.accmuguard1><@cc.rem>武道</></>。<$cc.t.accmuguard1><@cc.rem>武道</></>达到上限时，下一次开始协助<@cc.kw>Vệ binh</>干员训练专精技能至<@cc.kw>1</>级将立即完成，并消耗已有<$cc.t.accmuguard1><@cc.rem>武道</></>"
+    "Name": "Nghĩ kỹ trước khi làm",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, mỗi lần hỗ trợ hoàn tất 1 quá trình huấn luyện Chuyên môn hóa sẽ tích lũy một lượng <$cc.t.accmuguard1><@cc.rem>Võ đạo</></>. Khi <$cc.t.accmuguard1><@cc.rem>Võ đạo</></> đạt tối đa, quá trình huấn luyện Chuyên môn hóa cấp <@cc.kw>1</> tiếp theo cho Operator <@cc.kw>Vệ binh</> sẽ được hoàn tất ngay lập tức, và sau đó tiêu hao toàn bộ <$cc.t.accmuguard1><@cc.rem>Võ đạo</></> hiện có."
   },
   "train_spd&profession[010]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Tiên phong α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[010]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Tiên phong α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[011]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Tiên phong β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[020]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Vệ binh α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[1020]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Vệ binh α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[020]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Vệ binh α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[021]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Vệ binh β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[030]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Phòng ngự α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[030]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Phòng ngự α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[031]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Phòng ngự β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[040]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Xạ thủ α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[040]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Xạ thủ α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[041]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Xạ thủ β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[050]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Thuật sư α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[050]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Thuật sư α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[051]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Thuật sư β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+50%</>."
   },
   "train_spd&profession2[052]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Thuật sư α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[060]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Hỗ trợ α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[060]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Hỗ trợ α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[061]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Hỗ trợ β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[070]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Y tế α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[071]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Y tế β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[080]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Đặc nhiệm α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[080]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Đặc nhiệm α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>."
   },
   "train_spd&profession[081]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Đặc nhiệm β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[1081]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+50%</>"
+    "Name": "Chuyên môn hóa Đặc nhiệm β",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+50%</>."
   },
   "train_spd&profession[110]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Bước vào thế gian",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[120]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Ký ức đường kiếm",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[130]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Hannya",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[140]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Mũi tên đen",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[150]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Ngay trong tầm tay",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[160]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Cộng hưởng",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[170]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Phẫu thuật chuẩn xác",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+60%</>."
   },
   "train_spd&profession[180]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    "Name": "Bóng ma đeo mặt nạ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+60%</>."
   },
   "train_spd&profession3[130]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Phòng ngự α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>."
   },
   "train_spd&profession3[131]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>驭法铁卫</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Arts Protector",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Arts Protector</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[140]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>速射手</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Tốc xạ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Tốc xạ</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[150]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Vệ binh α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>."
   },
   "train_spd&profession3[151]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>斗士</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Võ sư",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Võ sư</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[160]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Vệ binh α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>"
   },
   "train_spd&profession3[161]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>领主</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Lord",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Lord</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[170]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>攻城手</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Vây kích",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Vây kích</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[180]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Y tế α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[321]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Vệ binh α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[322]": {
-    "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kế thừa dũng khí",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[181]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>行医</>，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>行医</>，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession3[182]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>"
   },
   "train_spd&profession3[183]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>链愈师</>，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>链愈师</>，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession3[184]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>"
   },
   "train_spd&profession3[190]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>"
   },
   "train_spd&profession3[191]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果训练位干员分支为<@cc.kw>游击手</>，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>游击手</>，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[110]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[120]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[130]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[440]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+65%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+65%</>"
   },
   "train_spd&profession2[150]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[111]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+30%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>"
   },
   "train_spd&profession2[112]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Tiên phong</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+50%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+50%</>"
   },
   "train_spd&profession2[180]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[220]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[230]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[240]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[250]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[270]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Y tế</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[320]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[620]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Vệ binh</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
   },
   "train_spd&profession2[630]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
   },
   "train_spd&profession2[640]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Xạ thủ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
   },
   "train_spd&profession2[650]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Thuật sư</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
   },
   "train_spd&profession2[660]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Hỗ trợ</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
   },
   "train_spd&profession2[680]": {
     "Name": "",
-    "description": "进驻训练室协助位时，<@cc.kw>Đặc nhiệm</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
   },
   "train_cost&profession[140]": {
     "Name": "",
