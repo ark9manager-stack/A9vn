@@ -10578,8 +10578,8 @@
     "7M3": "Khi xuất hiện, khiến kẻ địch xung quanh bị <$ba.stun>Choáng</> trong <@ba.vup>{stun}</> giây."
   },
   "token_10013_robin_mine": {
-    "Title_S1": "Welcome Mat",
-    "Title_S2": "Welcome Mat",
+    "Title_S1": "'Kẹp'",
+    "Title_S2": "'Kẹp'",
     "Token_Trait": "Không thể bị tấn công; không thể triển khai lên ô <@ba.kw>đã có kẻ địch</>.",
     "S1_1": "Khi kích hoạt, gây sát thương vật lý bằng <@ba.vup>{atk_scale:0%}</> ATK và <$ba.root>Trói chân</> mục tiêu trong <@ba.vup>{constraint}</> giây.",
     "S1_2": "Khi kích hoạt, gây sát thương vật lý bằng <@ba.vup>{atk_scale:0%}</> ATK và <$ba.root>Trói chân</> mục tiêu trong <@ba.vup>{constraint}</> giây.",

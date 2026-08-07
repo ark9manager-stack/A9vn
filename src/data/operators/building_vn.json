@@ -2040,224 +2040,224 @@
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[181]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>行医</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Du y",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Du y</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[182]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Y tế α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>."
   },
   "train_spd&profession3[183]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>链愈师</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Liên trị",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Liên trị</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession3[184]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Y tế α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>."
   },
   "train_spd&profession3[190]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Hỗ trợ α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>."
   },
   "train_spd&profession3[191]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>游击手</>，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kỹ thuật thực chiến: Du kích",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>; nếu Operator ở vị trí huấn luyện thuộc nhánh <@cc.kw>Du kích</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[110]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Trau dồi chiến thuật",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>1</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[120]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kiếm phái Nobukage",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>1</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[130]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Sinh tồn ở vùng cực",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>1</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[440]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+65%</>"
+    "Name": "Lấy mình làm gương",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>1</>, tốc độ huấn luyện tăng thêm <@cc.vup>+65%</>."
   },
   "train_spd&profession2[150]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Hiểu biết nửa vời",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>1</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[111]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>"
+    "Name": "Chuyên môn hóa Tiên phong α",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>."
   },
   "train_spd&profession2[112]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+50%</>"
+    "Name": "Đồng lòng khai phá",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Tiên phong</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+50%</>."
   },
   "train_spd&profession2[180]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>1</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Bẫy nét",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>1</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[220]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Khắc khổ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>2</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[230]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Kinh nghiệm trận địa",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Phòng ngự</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>2</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[240]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Gảy dây",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>2</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[250]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Học cao hiểu rộng",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>2</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[270]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>2</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Chuyên môn điều dưỡng",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Y tế</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>2</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[320]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Dốc hết tâm sức",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[620]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "Name": "Huấn luyện thực chiến",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Vệ binh</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+65%</>."
   },
   "train_spd&profession2[630]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+    "Name": "Hiệu chỉnh cuối cùng",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+45%</>."
   },
   "train_spd&profession2[640]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "Name": "Khâu hoàn thiện cuối cùng",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Xạ thủ</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+65%</>."
   },
   "train_spd&profession2[650]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "Name": "Tử diệm dẫn lối",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Thuật sư</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+65%</>"
   },
   "train_spd&profession2[660]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "Name": "Đồng hóa",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Hỗ trợ</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+65%</>."
   },
   "train_spd&profession2[680]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
+    "Name": "Chiến thuật Ægir",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa kỹ năng của Operator <@cc.kw>Đặc nhiệm</> <@cc.vup>+30%</>; nếu kỹ năng đang được huấn luyện lên Chuyên môn hóa cấp <@cc.vup>3</>, tốc độ huấn luyện tăng thêm <@cc.vup>+65%</>."
   },
   "train_cost&profession[140]": {
-    "Name": "",
-    "description": "进驻训练室协助<@cc.kw>Xạ thủ</>干员训练专精技能至<@cc.vup>1</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Nghiện công việc",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Xạ thủ</> lên Chuyên môn hóa cấp <@cc.vup>1</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[320]": {
-    "Name": "",
-    "description": "进驻训练室协助<@cc.kw>Vệ binh</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Tập luyện quá sức",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Vệ binh</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[340]": {
-    "Name": "",
-    "description": "进驻训练室协助<@cc.kw>Xạ thủ</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Chán phèo",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Xạ thủ</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[350]": {
-    "Name": "",
-    "description": "进驻训练室协助<@cc.kw>Thuật sư</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Chẳng cần yên nghỉ",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Thuật sư</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[360]": {
-    "Name": "",
-    "description": "进驻训练室协助<@cc.kw>Hỗ trợ</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Đột biến",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Hỗ trợ</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[380]": {
-    "Name": "",
-    "description": "进驻训练室协助<@cc.kw>Đặc nhiệm</>干员训练专精技能至<@cc.vup>3</>级时 và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Khao khát chiến đấu",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Đặc nhiệm</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "dorm_rec_oneself[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>"
+    "Name": "Không gian riêng tư",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.7</> mỗi giờ."
   },
   "dorm_rec_oneself[001]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>"
+    "Name": "Nàng sói thư giãn",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.7</> mỗi giờ."
   },
   "dorm_rec_oneself[010]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.85</>"
+    "Name": "Cơn cuồng say",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.85</> mỗi giờ."
   },
   "dorm_rec_oneself[011]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.85</>"
+    "Name": "Tránh xa phiền phức",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.85</> mỗi giờ."
   },
   "dorm_rec_oneself[020]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+1</>"
+    "Name": "Khúc bi ca",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+1</> mỗi giờ."
   },
   "dorm_rec_oneself[040]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>"
+    "Name": "Giây phút hiếm hoi",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ."
   },
   "dorm_rec_oneself[030]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.75</>"
+    "Name": "Thực khách vô hình",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.75</> mỗi giờ."
   },
   "dorm_rec_oneself2[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>；如果该宿舍内有其他干员，则每人额外为自身心情每小时恢复<@cc.vup>+0.05</>"
+    "Name": "'Cần ở một mình'",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.7</> mỗi giờ; với mỗi Operator khác trong Dormitory này, Tinh thần của bản thân hồi phục thêm <@cc.vup>+0.05</> mỗi giờ."
   },
   "dorm_rec_oneself2[001]": {
-    "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.7</>；如果该宿舍内有其他干员，则每人额外为自身心情每小时恢复<@cc.vup>+0.05</>"
+    "Name": "Hòa quyện Tẩu pháp",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.7</> mỗi giờ; với mỗi Operator khác trong Dormitory này, Tinh thần của bản thân hồi phục thêm <@cc.vup>+0.05</> mỗi giờ."
   },
   "dorm_rec_single[010]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Chu đáo",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[1010]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Chu đáo",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single_power[100]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Lạc quan bẩm sinh",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Dịch vụ y tế",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.65</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[001]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Tĩnh dưỡng",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.65</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_bd_n1_n3[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.65</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，同时当前宿舍每级提供<@cc.vup>1</>个<$cc.bd_a1_a3><@cc.rem>小节</></>"
+    "Name": "Nhịp điệu khoan thai",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.65</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); và nhận <@cc.vup>1</> <$cc.bd_a1_a3><@cc.rem>Ô nhịp</></> với mỗi cấp của Dormitory."
   },
   "dorm_rec_bd_n1[100]": {
-    "Name": "",
-    "description": "进驻宿舍时，每<@cc.vup>1</>个<$cc.bd_a1_a3><@cc.rem>小节</></>转化为<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>"
+    "Name": "Dạo bước trên phím đàn",
+    "description": "Khi Operator này được phân công vào Dormitory, <@cc.vup>mỗi</> <$cc.bd_a1_a3><@cc.rem>Ô nhịp</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>."
   },
   "dorm_rec_single[030]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Thiên khải",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[031]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Văn học Victoria",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[032]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[033]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.7</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[020]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.75</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.75</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single_P[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_P[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw><$cc.gvial>嘉维尔</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw><$cc.gvial>嘉维尔</></>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_P[002]": {
     "Name": "",
@@ -2265,7 +2265,7 @@
   },
   "dorm_rec_single&tag[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>成员和<$cc.tag.mh2><@cc.kw>Biệt đội săn Bubble Realm</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>成员和<$cc.tag.mh2><@cc.kw>Biệt đội săn Bubble Realm</></>，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_all[000]": {
     "Name": "",
@@ -2365,31 +2365,31 @@
   },
   "dorm_rec_single&oneself[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
   },
   "dorm_rec_single&oneself[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.5</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.5</>"
   },
   "dorm_rec_single&oneself[010]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.3</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.3</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.3</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.3</>"
   },
   "dorm_rec_single&oneself[011]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
   },
   "dorm_rec_single&oneself[012]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
   },
   "dorm_rec_single&oneself[020]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.2</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.2</>"
   },
   "dorm_rec_single&oneself[021]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
   },
   "dorm_hireToRecAll[001]": {
     "Name": "",
@@ -2401,31 +2401,31 @@
   },
   "dorm_rec_single&oneself[030]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
   },
   "dorm_rec_single&oneself[040]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
   },
   "dorm_rec_single_power[000]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.sm><@cc.kw>Sami</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.sm><@cc.kw>Sami</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_single_power[001]": {
     "Name": "",
-    "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.laterano><@cc.kw>Laterano</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.laterano><@cc.kw>Laterano</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
   },
   "dorm_rec_all&oneself[000]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[001]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[010]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>"
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>"
   },
   "dorm_rec_all&oneself[011]": {
     "Name": "",
@@ -2433,15 +2433,15 @@
   },
   "dorm_rec_all&oneself[012]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[021]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[042]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&group[000]": {
     "Name": "",
@@ -2449,7 +2449,7 @@
   },
   "dorm_rec_all&oneself[022]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&profession[000]": {
     "Name": "",
@@ -2461,7 +2461,7 @@
   },
   "dorm_recExcludeOther[000]": {
     "Name": "",
-    "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+2</>，同时<@cc.vdown>无法获得</>其他来源提供的心情恢复效果"
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+2</>，同时<@cc.vdown>无法获得</>其他来源提供的心情恢复效果"
   },
   "dorm_rec_toone[000]": {
     "Name": "",
