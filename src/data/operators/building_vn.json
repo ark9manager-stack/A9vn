@@ -2240,208 +2240,208 @@
     "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[032]": {
-    "Name": "",
+    "Name": "Tư vấn tâm lý",
     "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[033]": {
-    "Name": "",
+    "Name": "Thánh ca ân sủng",
     "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.7</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single[020]": {
-    "Name": "",
+    "Name": "Từ bi",
     "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.75</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_single_P[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
+    "Name": "Pha trà",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); nếu mục tiêu là <@cc.kw>Ceylon</>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.45</>."
   },
   "dorm_rec_single_P[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw><$cc.gvial>嘉维尔</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "Name": "Bậc thầy nướng thịt",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); nếu mục tiêu là <@cc.kw><$cc.gvial>Gavial</></>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.45</>."
   },
   "dorm_rec_single_P[002]": {
-    "Name": "",
-    "description": "进驻宿舍时，使该宿舍内心情未满的某个干员每小时恢复<@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<@cc.kw>蓝毒</>，则恢复效果额外<@cc.vup>+0.45</>"
+    "Name": "Bạn của người chế độc",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> Tinh thần mỗi giờ cho 1 Operator khác khi họ chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); nếu mục tiêu là <@cc.kw>Blue Poison</>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.45</>."
   },
   "dorm_rec_single&tag[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></>成员和<$cc.tag.mh2><@cc.kw>Biệt đội săn Bubble Realm</></>，则恢复效果额外<@cc.vup>+0.45</>"
+    "Name": "Trợ thủ săn bắt",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); nếu mục tiêu là Operator thuộc <$cc.tag.mh><@cc.kw>Đội thám hiểm Soubo</></> hoặc <$cc.tag.mh2><@cc.kw>Biệt đội săn Bubble Realm</></>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.45</>."
   },
   "dorm_rec_all[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Khích lệ",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_bd_n1_n2[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，同时当前宿舍每级提供<@cc.vup>1</>层<$cc.bd_a1_a2><@cc.rem>梦境</></>"
+    "Name": "Truyện kể trước khi ngủ",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); và nhận <@cc.vup>1</> <$cc.bd_a1_a2><@cc.rem>Cõi mộng</></> với mỗi cấp của Dormitory này."
   },
   "dorm_rec_bd_n1[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，每<@cc.vup>1</>层<$cc.bd_a1_a2><@cc.rem>梦境</></>转化为<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>"
+    "Name": "Nói mơ khi ngủ",
+    "description": "Khi Operator này được phân công vào Dormitory, <@cc.vup>mỗi</> <$cc.bd_a1_a2><@cc.rem>Cõi mộng</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>."
   },
   "dorm_rec_bd_dungeon[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，当前宿舍每级提供<@cc.vup>1</>层<$cc.bd_dungeon><@cc.rem>Đặc sản quái vật</></>"
+    "Name": "Bữa tiệc của Senshi",
+    "description": "Khi Operator này được phân công vào Dormitory, nhận <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Đặc sản quái vật</></> với mỗi cấp của Dormitory này."
   },
   "dorm_rec_all[010]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Độc tấu violin",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[011]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Thần tượng",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[012]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Hương hoa thư thái",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[013]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Thủ lĩnh",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[014]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Bữa ăn sum vầy α",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[017]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Nghi thức tịnh tâm α",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[020]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Nữ tướng Zima",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[021]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Người phụ nữ với cây đèn",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[022]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Trái tim của vua sư tử",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[027]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Nghi thức tịnh tâm β",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[028]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Sức hút của ngôi sao",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tag[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，如果目标是<$cc.tag.dungeon><@cc.kw>莱欧斯小队</></>干员，则恢复效果额外<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Đầu bếp lão luyện",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</>; nếu mục tiêu là Operator thuộc <$cc.tag.dungeon><@cc.kw>Tổ đội của Laios</></>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&unfull[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Người lắng nghe",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&unfull[001]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>；同时该宿舍每有<@cc.kw>1</>名心情未满的干员，则恢复效果额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Người trò chuyện",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ; với <@cc.kw>mỗi</> Operator chưa đầy Tinh thần trong Dormitory này, hiệu quả hồi phục tăng thêm <@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&single[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，使心情未满的宿舍成员，平均分配到总计每小时心情恢复<@cc.vup>+0.8</>的加成（该技能对单名干员和多名干员生效时，同种效果分别取最高）"
+    "Name": "Nhâm nhi chén rượu",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.8</> Tinh thần mỗi giờ và tổng lượng hồi phục đó sẽ được chia đều cho các Operator chưa đầy Tinh thần trong Dormitory này (khi kỹ năng này có hiệu lực lên một hoặc nhiều Operator, mỗi trường hợp chỉ áp dụng hiệu ứng mạnh nhất cùng loại)."
   },
   "dorm_powToRecAll[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>，同时每有<@cc.kw>1</>间Power Plant，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
+    "Name": "Ánh sáng dịu êm α",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với <@cc.kw>mỗi</> Power Plant sẽ giúp hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_powToRecAll[010]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，同时每有<@cc.kw>1</>间Power Plant，则恢复效果额外<@cc.vup>+0.05</>（叠加后的最终值同种效果取最高）"
+    "Name": "Ánh sáng dịu êm β",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ; với <@cc.kw>mỗi</> Power Plant sẽ giúp hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_hireToRecAll[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.15</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+0.05</>恢复效果（叠加后的最终值同种效果取最高）"
+    "Name": "Người cùng chí hướng",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ; với mỗi ô recuit (không bao gồm ô recuit khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_rec_all&lv[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Truyện phải nghe trước khi ngủ",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&lv[100]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</>，同时当前宿舍每级为恢复效果额外<@cc.vup>+0.02</>（叠加后的最终值同种效果取最高）"
+    "Name": "Danh sách phải làm trong đời",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ; với mỗi cấp của Dormitory này, hiệu quả hồi phục tăng thêm <@cc.vup>+0.02</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_rec_single&oneself[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+    "Name": "Hoạt bát",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.2</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.4</> mỗi giờ."
   },
   "dorm_rec_single&oneself[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.5</>"
+    "Name": "Đam mê của nhà thám hiểm",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.25</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.5</> mỗi giờ."
   },
   "dorm_rec_single&oneself[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.3</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.3</>"
+    "Name": "Làm bánh",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.3</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.3</> mỗi giờ."
   },
   "dorm_rec_single&oneself[011]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+    "Name": "Nấu nướng",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.35</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.35</> mỗi giờ."
   },
   "dorm_rec_single&oneself[012]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.35</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.35</>"
+    "Name": "Đập tay cái nào!",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.35</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.35</> mỗi giờ."
   },
   "dorm_rec_single&oneself[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.2</>"
+    "Name": "Hòa hợp",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.4</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.2</> mỗi giờ."
   },
   "dorm_rec_single&oneself[021]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+    "Name": "Thánh nữ Karlan",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.5</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.25</> mỗi giờ."
   },
   "dorm_hireToRecAll[001]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.1</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+0.05</>恢复效果（叠加后的最终值同种效果取最高）"
+    "Name": "Tấm lòng thuần khiết α",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với mỗi ô recuit (không bao gồm ô recuit khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_hireToRecAll[021]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.1</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+0.1</>恢复效果（叠加后的最终值同种效果取最高）"
+    "Name": "Tấm lòng thuần khiết β",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với mỗi ô recuit (không bao gồm ô recuit khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.1</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_rec_single&oneself[030]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.5</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.25</>"
+    "Name": "Đồng hành cùng nhau",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.5</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.25</> mỗi giờ."
   },
   "dorm_rec_single&oneself[040]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.4</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).；同时自身心情每小时恢复<@cc.vup>+0.4</>"
+    "Name": "Tiệc Donut",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.4</> Tinh thần mỗi giờ cho 1 Operator khác chưa đầy Tinh thần trong Dormitory này (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); tinh thần của bản thân hồi phục thêm <@cc.vup>+0.4</> mỗi giờ."
   },
   "dorm_rec_single_power[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.sm><@cc.kw>Sami</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "Name": "Sinh ra giữa vùng băng giá",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); nếu mục tiêu là Operator thuộc <$cc.g.sm><@cc.kw>Sami</></>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.45</>."
   },
   "dorm_rec_single_power[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất).，如果目标是<$cc.g.laterano><@cc.kw>Laterano</></>干员，则恢复效果额外<@cc.vup>+0.45</>"
+    "Name": "Chuyện vui ở Thành phố linh thiêng",
+    "description": "Khi Operator này được phân công vào Dormitory, hồi phục <@cc.vup>+0.55</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất); nếu mục tiêu là Operator thuộc <$cc.g.laterano><@cc.kw>Laterano</></>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.45</>."
   },
   "dorm_rec_all&oneself[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Lười biếng",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Mê ngủ",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.25</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>"
+    "Name": "Thoát khỏi vướng bận",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ."
   },
   "dorm_rec_all&oneself[011]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内除自身以外所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Thoát khỏi xiềng xích",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator khác trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[012]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Thoát khỏi phiền muộn",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, và Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[021]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Khúc hát đồng quê",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, và Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[042]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, và Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&group[000]": {
     "Name": "",
@@ -2449,7 +2449,7 @@
   },
   "dorm_rec_all&oneself[022]": {
     "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&profession[000]": {
     "Name": "",
@@ -2469,23 +2469,23 @@
   },
   "dorm_rec_all[023]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[024]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[025]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[026]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[029]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_bd_num[000]": {
     "Name": "",
@@ -2493,11 +2493,11 @@
   },
   "dorm_rec_all&bd[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>，该宿舍内所有干员的心情每小时恢复额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm 额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[000]": {
     "Name": "",
-    "description": "进驻宿舍时，该宿舍内所有干员心情每小时恢复<@cc.vup>+0.15</>，同时该宿舍内心情<@cc.vup>18</>以下的干员恢复效果额外<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</>，同时该宿舍内心情<@cc.vup>18</>以下的干员恢复效果额外<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[100]": {
     "Name": "",
