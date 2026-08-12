@@ -1081,7 +1081,7 @@
     "Talent1_2_p4": "Khi tấn công, có 20% tỷ lệ tăng ATK của đòn đánh đó lên 160%<@ba.talpu>(+10%)</> và đẩy lùi nhẹ mục tiêu."
   },
   "char_245_cello": {
-    "TitleTalent1": "Khúc tiễn biệt không lời",
+    "TitleTalent1": "Bi khúc không lời",
     "TitleTalent2": "Bẻ ngược tư duy",
     "Talent0": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 6% ATK.",
     "Talent1": "Kẻ địch trong phạm vi tấn công mỗi giây phải chịu <$ba.dt.apoptosis2>Necrosis</> bằng 8% ATK và bị <$ba.sluggish>Làm chậm</> 0.2 giây.",

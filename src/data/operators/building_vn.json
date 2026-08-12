@@ -932,7 +932,7 @@
     "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Originium</> của Factory này <@cc.vup>+35%</>."
   },
   "manu_formula_spd_P[000]": {
-    "Name": "Hoạn nạn có nhau",
+    "Name": "Kề vai sát cánh",
     "description": "Khi Operator này được phân công vào Factory, nếu <@cc.kw>Gummy</> được phân công vào Trading Post, năng suất đối với công thức <@cc.kw>Battle Record</> của Factory này <@cc.vup>+35%</>."
   },
   "manu_formula_spd&bd[000]": {
@@ -1141,7 +1141,7 @@
   },
   "trade_ord_spd_bd_n1[000]": {
     "Name": "Cảm âm",
-    "description": "Khi Operator này được phân công vào Trading Post, với <@cc.kw>mỗi</> Operator trong Dormitory, <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> <@cc.vup>+1</>; đồng thời, cứ <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>."
+    "description": "Khi Operator này được phân công vào Trading Post, với <@cc.kw>mỗi</> Operator trong Dormitory, <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> <@cc.vup>+1</>; đồng thời, cứ <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></>."
   },
   "trade_ord_spd_bd_n2[000]": {
     "Name": "'Chui đầu vào rọ'",
@@ -1149,11 +1149,11 @@
   },
   "trade_ord_spd_bd[000]": {
     "Name": "Giai điệu hoài niệm",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>4</> <$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>."
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>4</> <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></>."
   },
   "trade_ord_spd_bd[010]": {
     "Name": "Hòa âm lạc lối",
-    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>2</> <$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>."
+    "description": "Khi Operator này được phân công vào Trading Post, hiệu suất đơn hàng <@cc.vup>+1%</> với mỗi <@cc.vup>2</> <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></>."
   },
   "trade_ord_spd_bd[100]": {
     "Name": "Hương vị quen thuộc",
@@ -2152,7 +2152,7 @@
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Vệ binh</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[340]": {
-    "Name": "Chán phèo",
+    "Name": "Chán như con gián",
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room để hỗ trợ huấn luyện kỹ năng cho Operator <@cc.kw>Xạ thủ</> lên Chuyên môn hóa cấp <@cc.vup>3</>, mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "train_cost&profession[350]": {
@@ -2353,7 +2353,7 @@
   },
   "dorm_hireToRecAll[000]": {
     "Name": "Người cùng chí hướng",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ; với mỗi ô recuit (không bao gồm ô recuit khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ; với mỗi ô Recruitment (không bao gồm ô Recruitment khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_rec_all&lv[000]": {
     "Name": "Truyện phải nghe trước khi ngủ",
@@ -2393,11 +2393,11 @@
   },
   "dorm_hireToRecAll[001]": {
     "Name": "Tấm lòng thuần khiết α",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với mỗi ô recuit (không bao gồm ô recuit khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với mỗi ô Recruitment (không bao gồm ô Recruitment khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.05</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_hireToRecAll[021]": {
     "Name": "Tấm lòng thuần khiết β",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với mỗi ô recuit (không bao gồm ô recuit khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.1</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ; với mỗi ô Recruitment (không bao gồm ô Recruitment khởi đầu), hiệu quả hồi phục tăng thêm <@cc.vup>+0.1</> (sau khi cộng dồn, chỉ hiệu ứng mạnh nhất cùng loại có hiệu lực)."
   },
   "dorm_rec_single&oneself[030]": {
     "Name": "Đồng hành cùng nhau",
@@ -2440,484 +2440,492 @@
     "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, và Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[042]": {
-    "Name": "",
+    "Name": "'Trở về quê nhà'",
     "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, và Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&group[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<$cc.g.sui><@cc.kw>Sui</></>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</> (tối đa <@cc.kw>4</>名，且同种效果取最高）"
+    "Name": "Chiều mọi khẩu vị",
+    "description": "Khi Operator này được phân công vào Dormitory, với mỗi Operator thuộc <$cc.g.sui><@cc.kw>Sui</></> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.06</> mỗi giờ (tối đa <@cc.kw>4</> Operator, và nếu có cùng hiệu ứng kỹ năng thì chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[022]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Vẻ đẹp trời sinh",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.55</> mỗi giờ, và Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&profession[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，基建内（不包含副手及活动室使用者）每名<@cc.kw>行医</>干员为该宿舍内所有干员心情每小时恢复速度<@cc.vup>+0.06</> (tối đa <@cc.kw>4</>名，且同种效果取最高）"
+    "Name": "Tắm suối nước nóng núi lửa",
+    "description": "Khi Operator này được phân công vào Dormitory, với mỗi Operator thuộc nhánh <@cc.kw>Du y</> trong Căn cứ (không bao gồm R.I.I.C. Assistants và người sử dụng Activity Room), Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.06</> mỗi giờ (tối đa <@cc.kw>4</> Operator, và nếu có cùng hiệu ứng kỹ năng thì chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_exchangeAp[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，如果自身为<@cc.kw>满心情</>，则与当前宿舍<@cc.kw>前一位</>进驻的干员互换心情"
+    "Name": "Hoạn nạn có nhau",
+    "description": "Khi Operator này được phân công vào Dormitory, nếu bản thân đang <@cc.kw>đầy Tinh thần</>, hoán đổi Tinh thần với Operator được phân công <@cc.kw>ngay trước đó</> trong Dormitory này."
   },
   "dorm_recExcludeOther[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+2</>，同时<@cc.vdown>无法获得</>其他来源提供的心情恢复效果"
+    "Name": "Tự kỷ luật",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục thêm <@cc.vup>+2</> mỗi giờ, nhưng <@cc.vdown>không thể nhận</> hiệu ứng hồi phục Tinh thần từ các nguồn khác."
   },
   "dorm_rec_toone[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，<@cc.kw>Siege</>对该宿舍中<$cc.g.glasgow><@cc.kw>Glasgow Gang</></>干员恢复效果额外<@cc.vup>+0.3</>"
+    "Name": "Bạn tập số một",
+    "description": "Khi Operator này được phân công vào Dormitory, hiệu quả hồi phục Tinh thần của <@cc.kw>Siege</> sẽ tăng thêm <@cc.vup>+0.3</> cho các Operator thuộc <$cc.g.glasgow><@cc.kw>Glasgow Gang</></> trong Dormitory này."
   },
   "dorm_rec_all[023]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Liệu pháp hương thơm α",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[024]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Bữa ăn sum vầy β",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[025]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Tiếng sáo đồng quê",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[026]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Lòng vị tha",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all[029]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Xoa dịu tâm hồn",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_bd_num[000]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内每有<@cc.vup>1</>名干员，<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></><@cc.vup>+1</>"
+    "Name": "Đồng điệu thầm lặng",
+    "description": "Khi Operator này được phân công vào Dormitory, với <@cc.vup>mỗi</> Operator trong Dormitory này, <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></> <@cc.vup>+1</>."
   },
   "dorm_rec_all&bd[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</>，每有<@cc.vup>5</>点<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm 额外<@cc.vup>+0.01</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Tụng ca không lời",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ; hiệu quả hồi phục tăng thêm <@cc.vup>+0.01</> mỗi giờ với mỗi <@cc.vup>5</> <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</>，同时该宿舍内心情<@cc.vup>18</>以下的干员恢复效果额外<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Liệu pháp hương thơm β",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ; các Operator đang dưới <@cc.vup>18</> Tinh thần trong Dormitory này sẽ nhận thêm <@cc.vup>+0.1</> hiệu quả hồi phục mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&tired[100]": {
-    "Name": "",
-    "description": "进驻宿舍时，该宿舍内心情<@cc.vup>20</>以下的干员恢复效果额外<@cc.vup>+0.1</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "Name": "Hơi thở thanh khiết",
+    "description": "Khi Operator này được phân công vào Dormitory, các Operator đang dưới <@cc.vup>20</> Tinh thần trong Dormitory này sẽ nhận thêm <@cc.vup>+0.1</> hiệu quả hồi phục mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "hire_spd[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>"
+    "Name": "Quản lý nhân sự α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</>."
   },
   "hire_spd[001]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>"
+    "Name": "Quản lý nhân sự β",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+35%</>."
   },
   "hire_spd[010]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+    "Name": "Liên lạc viên cảnh báo Thiên tai α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>."
   },
   "hire_spd[011]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>"
+    "Name": "Liên lạc viên cảnh báo Thiên tai β",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+45%</>."
   },
   "hire_spd[012]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</>"
+    "Name": "Lời mời tham gia chương trình",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+45%</>."
   },
   "hire_spd[020]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+    "Name": "Tâm lý học",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+40%</>."
   },
   "hire_spd[030]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+    "Name": "WRITER",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+40%</>."
   },
   "hire_spd[031]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+    "Name": "B-girl",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+40%</>."
   },
   "hire_spd[032]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+40%</>"
+    "Name": "Điện thoại reo không ngớt",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+40%</>."
   },
   "hire_spd_cost[010]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+    "Name": "Liên lạc viên cảnh báo Thiên tai α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>."
   },
   "hire_spd_cost[200]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>"
+    "Name": "Tan ca đúng giờ",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+45%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>."
   },
   "hire_spd_cost[210]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.5</>"
+    "Name": "Khuôn khổ pháp luật",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+0.5</>."
   },
   "hire_spd_cost[220]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Đời sống du mục α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "hire_spd_cost[230]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+45%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Đời sống du mục β",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+45%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "hire_spd_cost[100]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đội cứu hộ - Bàn tính",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost[110]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đội cứu hộ - Kiểm kê vật tư",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost[111]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đường dây đặc biệt",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost[101]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Lễ nghi của triều đình",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost[120]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Đại diện cho triều đình",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost&clue[001]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+    "Name": "Đội cứu hộ - Cầu nối liên lạc",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>"
   },
   "hire_spd_cost&clue[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）使心情每小时消耗<@cc.vup>-0.1</>"
+    "Name": "Đội cứu hộ - Bảo toàn thể lực",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+35%</>; mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.1</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_cost&extra[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+10%</>人脉资源的联络速度"
+    "Name": "Trọng dụng nhân tài",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+10%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_cost&char[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Uy danh của Thánh nữ",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost&char[001]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>，如果<@cc.kw>凛御银灰</>进驻在<@cc.kw>控制中枢</>，则人脉资源的联络速度额外<@cc.vup>+10%</>"
+    "Name": "Xứ tuyết trong tim",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>; nếu <@cc.kw>SilverAsh the Reignfrost</> được phân công vào <@cc.kw>Control Center</>, tốc độ liên hệ nhân sự tăng thêm <@cc.vup>+10%</>."
   },
   "hire_spd&clue[010]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>"
+    "Name": "Liên lạc viên cảnh báo Thiên tai α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>."
   },
   "hire_spd&clue[100]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+    "Name": "Thấu hiểu lòng người",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+35%</>; tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_cost[112]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Du ký ẩm thực α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd&clue[101]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+    "Name": "Tay hóng hớt",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+35%</>; tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd&clue[110]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+    "Name": "Quan hệ rộng",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>; tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd&clue[120]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+    "Name": "'Tin sốt dẻo đây!'",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>; tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd&clue[121]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+35%</>，同时每个招募位（不包含初始招募位）额外<@cc.vup>+5%</>会客室线索搜集速度"
+    "Name": "Quy tắc đường phố",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+35%</>; tốc độ tìm Clue của Reception Room tăng thêm <@cc.vup>+5%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd&clue2[230]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<@cc.kw>Blacksteel Worldwide</>线索的概率（工作时长和招募位影响概率）"
+    "Name": "Nội tình",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</>; mỗi <@cc.vup>1</> lần liên hệ được nhân sự, tăng tỷ lệ nhận Clue của <@cc.kw>Blacksteel Worldwide</> (tỷ lệ này cũng chịu ảnh hưởng bởi thời gian làm việc và số slot Recruitment)."
   },
   "hire_spd_cost[121]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>"
+    "Name": "Du ký ẩm thực β",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd&clue2[250]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<@cc.kw>Ursus Student Self-government Group</>线索的概率（工作时长和招募位影响概率）"
+    "Name": "Sự uy tín",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</>; mỗi <@cc.vup>1</> lần liên hệ được nhân sự, tăng tỷ lệ nhận Clue của <@cc.kw>Ursus Student Self-government Group</> (tỷ lệ này cũng chịu ảnh hưởng bởi thời gian làm việc và số slot Recruitment)."
   },
   "hire_spd_bd_n1_n1[100]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，同时每个招募位（不包含初始招募位）<@cc.vup>+10</>点<$cc.bd_a1_a1><@cc.rem>记忆碎片</></>"
+    "Name": "Phiêu du",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</>; <$cc.bd_a1_a1><@cc.rem>Mảnh ký ức</></> <@cc.vup>+10</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_bd_n1[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，每<@cc.vup>1</>点<$cc.bd_a1_a1><@cc.rem>记忆碎片</></>转化为<@cc.vup>1</>点<$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>，心情耗尽时清空所有<$cc.bd_a1_a1><@cc.rem>记忆碎片</></>和自身累积的<$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>"
+    "Name": "Hồi tưởng",
+    "description": "Khi Operator này được phân công vào HR Office, với mỗi <@cc.vup>1</> <$cc.bd_a1_a1><@cc.rem>Mảnh ký ức</></> sẽ được chuyển hóa thành <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></>; khi Tinh thần cạn kiệt, xóa toàn bộ <$cc.bd_a1_a1><@cc.rem>Mảnh ký ức</></> và <$cc.bd_a1><@cc.rem>Thông tin nhận biết</></> mà bản thân đã tích lũy."
   },
   "hire_spd_bd_n1_n1[200]": {
-    "Name": "",
-    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+10</>点<<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>"
+    "Name": "Đội cứu hộ - Khảo sát sau Thiên tai",
+    "description": "Khi Operator này được phân công vào HR Office, <<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></> <@cc.vup>+10</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_bd_n1_n1[300]": {
-    "Name": "",
-    "description": "进驻人力办公室时，每个招募位（不包含初始招募位）<@cc.vup>+15</>点<$cc.bd_B><@cc.rem>Cộng hưởng thầm lặng</></>"
+    "Name": "Vẽ nên tiếng lòng",
+    "description": "Khi Operator này được phân công vào HR Office, <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></> <@cc.vup>+15</>  với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_blitz[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外<@cc.vup>+5%</>联络速度，每<@cc.vup>1</>瓶<$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>额外<@cc.vup>+5%</>联络速度"
+    "Name": "Ngôn ngữ học",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</>, tốc độ liên hệ tăng thêm <@cc.vup>+5%</> với mỗi <@cc.vup>1</> <$cc.bd_ash><@cc.rem>Kho trữ tình báo</></>; tốc độ liên hệ tăng thêm <@cc.vup>+5%</> với mỗi <@cc.vup>1</> chai <$cc.bd_tachanka><@cc.rem>Đồ uống đặc chế của Ursus</></>."
   },
   "hire_spd&clue2[260]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+20%</>，每产生<@cc.vup>1</>次联络次数，增加<$cc.g.glasgow><@cc.kw>Glasgow Gang</></>线索的概率（工作时长和招募位影响概率）"
+    "Name": "Bạn cũ, bạn mới",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</>; mỗi <@cc.vup>1</> lần liên hệ được nhân sự, tăng tỷ lệ nhận Clue của <$cc.g.glasgow><@cc.kw>Glasgow Gang</></> (tỷ lệ này cũng chịu ảnh hưởng bởi thời gian làm việc và số slot Recruitment)."
   },
   "hire_spd_dorm&lv[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+5%</>，每间宿舍每级额外<@cc.vup>+1%</>人脉资源的联络速度"
+    "Name": "Thám tử Maylander α",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+5%</>; với mỗi cấp của mỗi Dormitory, tốc độ liên hệ tăng thêm <@cc.vup>+1%</>."
   },
   "hire_spd_dorm&lv[010]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+5%</>，每间宿舍每级额外<@cc.vup>+2%</>人脉资源的联络速度"
+    "Name": "Thám tử Maylander β",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+5%</>; với mỗi cấp của mỗi Dormitory, tốc độ liên hệ tăng thêm <@cc.vup>+2%</>."
   },
   "hire_spd_tag[000]": {
-    "Name": "",
-    "description": "进驻人力办公室时，人脉资源的联络速度<@cc.vup>+30%</>，基建内（不包含副手及活动室）每有一间进驻<$cc.g.elite><@cc.kw>Elite Operator</></>的设施，联络速度额外<@cc.vup>+4%</>（最多<@cc.kw>5</>间）"
+    "Name": "'Con tàu hy vọng của Terra'",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>; với mỗi cơ sở có Operator thuộc <$cc.g.elite><@cc.kw>Elite Operator</></> được phân công trong Căn cứ (không bao gồm R.I.I.C. Assistants và Activity Room), tốc độ liên hệ tăng thêm <@cc.vup>+4%</> (tối đa <@cc.kw>5</> cơ sở)."
   },
   "meet_spd[000]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+    "Name": "Thu thập manh mối α",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>."
   },
   "meet_spd[1000]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+    "Name": "Thu thập manh mối α",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>."
   },
   "meet_spd&cost[000]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+    "Name": "Thu thập manh mối α",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>."
   },
   "meet_spd[010]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>15%</>"
+    "Name": "Ẩn trong bóng tối",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>15%</>."
   },
   "meet_spd[011]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>15%</>"
+    "Name": "Bậc thầy pha trà",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>15%</>."
   },
   "meet_spd[020]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    "Name": "Thu thập manh mối β",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
   },
   "meet_spd[0020]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    "Name": "Thu thập manh mối β",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
   },
   "meet_spd[1020]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    "Name": "Thu thập manh mối β",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
   },
   "meet_spd[021]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    "Name": "Hiếu kỳ",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
   },
   "meet_spd[022]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    "Name": "Bậc thầy giao tiếp",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
+  },
+  "meet_spd[023]": {
+    "Name": "Danh tiếng nhà Campbell",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
   },
   "meet_spd[1010]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    "Name": "Thu thập manh mối β",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>."
   },
   "meet_spd[030]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    "Name": "Bói toán",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd[031]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    "Name": "Lần theo dấu vết",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd[032]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    "Name": "Tài ngoại giao của gia chủ",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd&sami[000]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.sm><@cc.kw>Sami</></>干员进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>5%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+    "Name": "Dẫn lối qua vùng băng giá",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>; khi được phân công cùng Operator <$cc.g.sm><@cc.kw>Sami</></> khác trong Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>5%</>, và mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.5</> mỗi giờ."
   },
   "meet_spd&sami[100]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>Blacksteel Worldwide干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+    "Name": "Đối nhân xử thế",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>; khi được phân công cùng Operator <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> khác trong Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>15%</>, và mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.5</> mỗi giờ."
   },
   "meet_spd&sami[110]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，与其他<$cc.g.bs><@cc.kw>Blacksteel Worldwide干员</></>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>20%</>"
+    "Name": "Thu thập tình báo",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>; khi được phân công cùng Operator <$cc.g.bs><@cc.kw>Blacksteel Worldwide</></> khác trong Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>20%</>."
   },
   "meet_spd&bd[000]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，当与<@cc.kw>提丰</>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>"
+    "Name": "Nhìn thấy tương lai",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>; khi được phân công cùng <@cc.kw>Typhon</> trong Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>15%</>, và mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.5</>."
   },
   "meet_spd&bd[010]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，当与<@cc.kw>提丰</>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>15%</>，自身心情每小时消耗<@cc.vdown>+0.5</>，且更容易获得线索板上尚未拥有的线索"
+    "Name": "Theo lối tương lai",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>; khi được phân công cùng <@cc.kw>Typhon</> trong Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>15%</>, và mức tiêu hao Tinh thần của bản thân <@cc.vdown>+0.5</>, đồng thời tăng khả năng nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd&bd[100]": {
-    "Name": "",
-    "description": "进驻会客室时，当与<@cc.kw>铃兰</>进驻会客室一起工作时，线索搜集速度额外提升<@cc.vup>30%</>"
+    "Name": "Kỳ nghỉ của sát thủ",
+    "description": "Khi Operator này được phân công vào Reception Room cùng <@cc.kw>Suzuran</>, tốc độ tìm Clue tăng thêm <@cc.vup>30%</>."
   },
   "meet_spd_ext&P[000]": {
-    "Name": "",
-    "description": "进驻会客室时，如果<@cc.kw>菲亚梅塔</>进驻在宿舍，则线索搜集速度额外提升<@cc.vup>10%</>"
+    "Name": "Tâm hồn mãi trẻ thơ",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu <@cc.kw>Fiammetta</> được phân công vào Dormitory, tốc độ tìm Clue tăng thêm <@cc.vup>10%</>."
   },
   "meet_spd_condChar[000]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</>"
+    "Name": "Tay nghề điêu luyện",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>35%</>."
   },
   "meet_spd&cost[100]": {
-    "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>"
+    "Name": "Suy luận logic",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>."
   },
   "meet_spd&cost_condChar[000]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>"
+    "Name": "Điệp viên hai mang",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>."
   },
   "meet_spd&cost_condChar[001]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "'Đạo đức nghề nghiệp' α",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>15%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
+  },
+  "meet_spd&cost_condChar[002]": {
+    "Name": "Ước nguyện của riêng tôi",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>50%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+2</>."
   },
   "meet_spd&cost_condChar[011]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "'Đạo đức nghề nghiệp' β",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "meet_spd&cost_condChar[020]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>15%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Quản lý chuyên nghiệp α",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>15%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "meet_spd&cost_condChar[021]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，线索搜集速度提升<@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>"
+    "Name": "Quản lý chuyên nghiệp β",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, tốc độ tìm Clue tăng <@cc.vup>35%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vdown>+1</>."
   },
   "meet_spd&exchange[000]": {
-    "Name": "",
-    "description": "进驻会客室时，处于线索交流时线索搜集速度提升<@cc.vup>30%</>"
+    "Name": "Nụ cười ngây thơ",
+    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue <@cc.vup>30%</>."
   },
   "meet_spd&exchange[001]": {
-    "Name": "",
-    "description": "进驻会客室时，处于线索交流时线索搜集速度提升<@cc.vup>30%</>"
+    "Name": "Cố vấn phương pháp đặc biệt",
+    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue <@cc.vup>30%</>."
   },
   "meet_team[020]": {
-    "Name": "",
-    "description": "进驻会客室时，更容易获得<@cc.kw>企鹅物流</>线索（工作时长影响概率）"
+    "Name": "Thám tử Hoàng gia (tự xưng)",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của <@cc.kw>Penguin Logistics</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_team[050]": {
-    "Name": "",
-    "description": "进驻会客室时，更容易获得<@cc.kw>Ursus Student Self-government Group</>线索（工作时长影响概率）"
+    "Name": "Âm thầm điều tra",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của <@cc.kw>Ursus Student Self-government Group</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_team[060]": {
-    "Name": "",
-    "description": "进驻会客室时，更容易获得<@cc.kw>罗德岛制药</>线索（工作时长影响概率）"
+    "Name": "Thông tín viên",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của <@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_team[070]": {
-    "Name": "",
-    "description": "进驻会客室时，更容易获得<@cc.kw>Glasgow Gang</>线索（工作时长影响概率）"
+    "Name": "Gió mang tin về",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của <@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_team&char[000]": {
-    "Name": "",
-    "description": "进驻会客室时，<@cc.kw>tăng</> 会客室内另一干员<@cc.kw>所属派系的线索倾向效果</>（如会客室没有另一干员则不提升）"
+    "Name": "Kết bạn",
+    "description": "Khi Operator này được phân công vào Reception Room, <@cc.kw>tăng</> <@cc.kw>khả năng tìm Clue thuộc phe của</> Operator còn lại trong Reception Room (không có hiệu lực nếu không có Operator nào khác)."
   },
   "meet_flag[010]": {
-    "Name": "",
-    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>Rhine Lab</>时，则额外增加<@cc.kw>Rhine Lab</>线索的出现概率（工作时长影响概率）"
+    "Name": "Lịch sử Columbia",
+    "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Rhine Lab</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Rhine Lab</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_flag[040]": {
-    "Name": "",
-    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>喀兰贸易</>时，则额外增加<@cc.kw>喀兰贸易</>线索的出现概率（工作时长影响概率）"
+    "Name": "Kjeragandr",
+    "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Karlan Trade</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_flag[050]": {
-    "Name": "",
-    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>Ursus Student Self-government Group</>时，则额外增加<@cc.kw>Ursus Student Self-government Group</>线索的出现概率（工作时长影响概率）"
+    "Name": "Sàng lọc",
+    "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Ursus Student Self-government Group</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Ursus Student Self-government Group</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_flag[060]": {
-    "Name": "",
-    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>罗德岛制药</>时，则额外增加<@cc.kw>罗德岛制药</>线索的出现概率（工作时长影响概率）"
+    "Name": "Cắm cờ",
+    "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Rhodes Island</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_flag[070]": {
     "Name": "",
-    "description": "进驻会客室后，每当新搜集到的线索不是<@cc.kw>Glasgow Gang</>时，则额外增加<@cc.kw>Glasgow Gang</>线索的出现概率（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Glasgow Gang</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[000]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>"
   },
   "meet_spd&team[010]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Rhine Lab</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Rhine Lab</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[020]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>企鹅物流</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Penguin Logistics</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[030]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[031]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[040]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>喀兰贸易</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[041]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>喀兰贸易</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[050]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Ursus Student Self-government Group</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Ursus Student Self-government Group</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[060]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>罗德岛制药</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[070]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Glasgow Gang</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[071]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>Glasgow Gang</>线索（工作时长影响概率）"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[100]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>"
   },
   "meet_spd&team[110]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>"
   },
   "meet_spd_notOwned[000]": {
     "Name": "",
-    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
   },
   "meet_spd_notOwned[010]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得线索板上尚未拥有的线索"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得线索板上尚未拥有的线索"
   },
   "meet_spd_notOwned[001]": {
     "Name": "",
-    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
   },
   "meet_spd_notOwned[002]": {
     "Name": "",
-    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
   },
   "meet_spd_notOwned[003]": {
     "Name": "",
-    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索"
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
   },
   "meet_spd_notOwned_P[000]": {
     "Name": "",
-    "description": "进驻会客室时，更容易获得线索板上尚未拥有的线索，若<@cc.kw>焰狐龙梓兰</>进驻控制中枢，则线索搜集速度提升<@cc.vup>10%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索，若<@cc.kw>焰狐龙梓兰</>进驻控制中枢，则线索搜集速度提升<@cc.vup>10%</>"
   },
   "meet_spd_Owned[000]": {
     "Name": "",
-    "description": "进驻会客室时，更容易获得线索板上已经拥有的线索"
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上已经拥有的线索"
   },
   "meet_spd_bd[000]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>5%</>，同时每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>情报储备</></>额外提升<@cc.vup>5%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>5%</>，同时每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>Kho trữ tình báo</></>额外提升<@cc.vup>5%</>"
   },
   "meet_spd_bd[001]": {
     "Name": "",
@@ -2925,11 +2933,11 @@
   },
   "meet_spd_bd[002]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>，同时每<@cc.vup>10</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>额外提升<@cc.vup>1%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>，同时每<@cc.vup>10</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>额外提升<@cc.vup>1%</>"
   },
   "meet_spd_hast[000]": {
     "Name": "",
-    "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>, sau đó tăng thêm 提升<@cc.vup>2%</> với mỗi giờ, và đạt tối đa <@cc.vup>30%</>"
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>, sau đó tăng thêm 提升<@cc.vup>2%</> với mỗi giờ, và đạt tối đa <@cc.vup>30%</>"
   },
   "meet_spd&condChar_mustget[000]": {
     "Name": "",
@@ -2937,7 +2945,7 @@
   },
   "meet_spd&condChar_mustget[100]": {
     "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，连续消耗超过<@cc.kw>16</>点心情下一次<@cc.kw>必定</>获得<@cc.kw>罗德岛制药</>的线索"
+    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，连续消耗超过<@cc.kw>16</>点心情下一次<@cc.kw>必定</>获得<@cc.kw>Rhodes Island</>的线索"
   },
   "meet_spd&clue[000]": {
     "Name": "",
