@@ -443,6 +443,10 @@
     "Name": "Điều vận Mái Vòm β",
     "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+20%</>."
   },
+  "power_rec_spd[027]": {
+    "Name": "6 phút nữa mới trễ giờ",
+    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+20%</>."
+  },
   "power_rec_spd[005]": {
     "Name": "Dòng sông năng lượng α",
     "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+10%</>."
@@ -1199,6 +1203,10 @@
     "Name": "Am hiểu công việc",
     "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
+  "trade_ord_wt&cost[004]": {
+    "Name": "Mắt nhìn của tiểu thư",
+    "description": "Khi Operator này được phân công vào Trading Post, <@cc.kw>tăng nhẹ</> khả năng xuất hiện <@cc.kw>Đơn hàng Precious Metals giá trị cao</> trong Trading Post này (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc), và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+  },
   "trade_ord_spd&share[000]": {
     "Name": "Đại diện thương lượng",
     "description": "Khi Operator này được phân công vào Trading Post, các Operator khác đang làm việc trong Trading Post này nhận <@cc.vup>+15%</> hiệu suất nhận đơn hàng."
@@ -1699,12 +1707,16 @@
     "Name": "Hồ sơ huấn luyện",
     "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
   },
+  "workshop_formula_probability[301]": {
+    "Name": "Tài năng bị ngó lơ",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>70%</>."
+  },
   "workshop_formula_probability[310]": {
     "Name": "Rèn luyện bài bản",
     "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chip</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
   "workshop_formula_device[000]": {
-    "Name": "DIY Thiết bị",
+    "Name": "DIY Device",
     "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Device</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
   },
   "workshop_formula_device[020]": {
@@ -2175,6 +2187,10 @@
     "Name": "Nàng sói thư giãn",
     "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.7</> mỗi giờ."
   },
+  "dorm_rec_oneself[002]": {
+    "Name": "Đâu đâu cũng là hang thỏ",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.7</> mỗi giờ."
+  },
   "dorm_rec_oneself[010]": {
     "Name": "Cơn cuồng say",
     "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vup>+0.85</> mỗi giờ."
@@ -2523,6 +2539,10 @@
     "Name": "Lời mời tham gia chương trình",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+45%</>."
   },
+  "hire_spd[013]": {
+    "Name": "Cựu tổng đài viên xuất sắc",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+45%</>."
+  },
   "hire_spd[020]": {
     "Name": "Tâm lý học",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+40%</>."
@@ -2653,7 +2673,7 @@
   },
   "hire_spd_bd_n1_n1[300]": {
     "Name": "Vẽ nên tiếng lòng",
-    "description": "Khi Operator này được phân công vào HR Office, <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></> <@cc.vup>+15</>  với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
+    "description": "Khi Operator này được phân công vào HR Office, <$cc.bd_B><@cc.rem>Đồng điệu thầm lặng</></> <@cc.vup>+15</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "hire_spd_blitz[000]": {
     "Name": "Ngôn ngữ học",
@@ -2797,11 +2817,11 @@
   },
   "meet_spd&exchange[000]": {
     "Name": "Nụ cười ngây thơ",
-    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue <@cc.vup>30%</>."
+    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue tăng <@cc.vup>30%</>."
   },
   "meet_spd&exchange[001]": {
     "Name": "Cố vấn phương pháp đặc biệt",
-    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue <@cc.vup>30%</>."
+    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue tăng <@cc.vup>30%</>."
   },
   "meet_team[020]": {
     "Name": "Thám tử Hoàng gia (tự xưng)",
@@ -2840,119 +2860,123 @@
     "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Rhodes Island</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_flag[070]": {
-    "Name": "",
+    "Name": "Tổng hợp tình báo",
     "description": "Khi Operator này được phân công vào Reception Room, mỗi khi Clue mới tìm được không thuộc <@cc.kw>Glasgow Gang</>, tăng thêm tỷ lệ nhận được Clue của <@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>"
+    "Name": "Thu thập manh mối α",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>."
   },
   "meet_spd&team[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Rhine Lab</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Giám sát viên",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Rhine Lab</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[020]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Penguin Logistics</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Liên lạc viên - Penguin Logistics",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Penguin Logistics</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[030]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Trung gian",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[031]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "B.P.R.S.",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[040]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Courier",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[041]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Quan sát xứ tuyết",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Karlan Trade</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[050]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Ursus Student Self-government Group</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Cố vấn quân sự",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Ursus Student Self-government Group</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[060]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Liên lạc viên - Rhodes Island",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[070]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Người triệu tập",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[071]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得<@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
+    "Name": "Quý tộc sa cơ",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Glasgow Gang</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[100]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>"
+    "Name": "Sĩ quan cảnh sát",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd&team[110]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>"
+    "Name": "Chiêm tinh học",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd_notOwned[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
+    "Name": "Không bỏ sót α",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned[010]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>，且更容易获得线索板上尚未拥有的线索"
+    "Name": "Không bỏ sót β",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned[001]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
+    "Name": "Phân tích tình báo",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned[002]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
+    "Name": "Tay buôn thông tin",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned[003]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索"
+    "Name": "Phiêu bạt bốn phương",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
+  },
+  "meet_spd_notOwned[004]": {
+    "Name": "Liên lạc viên kỳ cựu",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned_P[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上尚未拥有的线索，若<@cc.kw>焰狐龙梓兰</>进驻控制中枢，则线索搜集速度提升<@cc.vup>10%</>"
+    "Name": "Đội trinh sát bí mật",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board; nếu <@cc.kw>Violet Mizutsune Orchid</> được phân công vào Control Center, tốc độ tìm Clue tăng <@cc.vup>10%</>."
   },
   "meet_spd_Owned[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được Clue của 线索板上已经拥有的线索"
+    "Name": "Điều tra viên nổi bần bật",
+    "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue đã có trên Clue Board."
   },
   "meet_spd_bd[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>5%</>，同时每<@cc.vup>1</>点<$cc.bd_ash><@cc.rem>Kho trữ tình báo</></>额外提升<@cc.vup>5%</>"
+    "Name": "Chuyên gia tình báo",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>5%</>; tốc độ tìm Clue tăng thêm <@cc.vup>5%</> với mỗi <@cc.vup>1</> <$cc.bd_ash><@cc.rem>Kho trữ tình báo</></>."
   },
   "meet_spd_bd[001]": {
-    "Name": "",
-    "description": "进驻会客室时，每拥有<@cc.vup>1</>点<$cc.bd_dungeon><@cc.rem>Đặc sản quái vật</></>，线索搜集速度额外提升<@cc.vup>2%</>"
+    "Name": "Quyết tâm lúc bụng no",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>2%</> với mỗi <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Đặc sản quái vật</></>."
   },
   "meet_spd_bd[002]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>，同时每<@cc.vup>10</>点<$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>额外提升<@cc.vup>1%</>"
+    "Name": "Hành hiệp trượng nghĩa",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>; tốc độ tìm Clue tăng thêm <@cc.vup>1%</> với mỗi <@cc.vup>10</> <$cc.bd_b1><@cc.rem>Hơi thở nhân gian</></>."
   },
   "meet_spd_hast[000]": {
-    "Name": "",
-    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>, sau đó tăng thêm 提升<@cc.vup>2%</> với mỗi giờ, và đạt tối đa <@cc.vup>30%</>"
+    "Name": "Ảnh tụ",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>20%</>, sau đó tăng thêm <@cc.vup>2%</> với mỗi giờ, và đạt tối đa <@cc.vup>30%</>."
   },
   "meet_spd&condChar_mustget[000]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，连续消耗超过<@cc.kw>16</>点心情下一次<@cc.kw>必定</>获得<@cc.kw>Rhine Lab</>的线索"
+    "Name": "Cố vấn nghiên cứu tư liệu",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, sau khi liên tục tiêu hao hơn <@cc.kw>16</> Tinh thần, Clue nhận được tiếp theo <@cc.kw>chắc chắn</> là <@cc.kw>Rhine Lab</>."
   },
   "meet_spd&condChar_mustget[100]": {
-    "Name": "",
-    "description": "进驻会客室时，如果会客室内只有自身处于工作状态时，连续消耗超过<@cc.kw>16</>点心情下一次<@cc.kw>必定</>获得<@cc.kw>Rhodes Island</>的线索"
+    "Name": "Đầu mối bí mật",
+    "description": "Khi Operator này được phân công vào Reception Room, nếu chỉ có bản thân đang làm việc trong Reception Room, sau khi liên tục tiêu hao hơn <@cc.kw>16</> Tinh thần, Clue nhận được tiếp theo <@cc.kw>chắc chắn</> là <@cc.kw>Rhodes Island</>."
   },
   "meet_spd&clue[000]": {
-    "Name": "",
-    "description": "进驻会客室时，每个招募位（不包含初始招募位）提升<@cc.vup>5%</>线索搜集速度"
+    "Name": "Kết bạn bốn phương",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>5%</> với mỗi ô Recruitment đã mở thêm (không bao gồm ô Recruitment khởi đầu)."
   },
   "meet_spd_notOwned&exchange[000]": {
-    "Name": "",
-    "description": "进驻会客室时，处于线索交流时更容易获得线索板上尚未拥有的线索"
+    "Name": "Mắt nhìn bốn hướng",
+    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   }
 }
