@@ -357,8 +357,8 @@
     "Talent2_p4": "Kẻ địch trong phạm vi tấn công nhận 12%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>, tăng lên 16%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</> nếu kẻ địch đứng trong phạm vi tấn công của bản thân quá 7 giây."
   },
   "char_1050_chen3": {
-    "TitleTalent1": "Soi xét tường tận",
-    "TitleTalent2": "Trực giác chiến đấu",
+    "TitleTalent1": "Nhìn thấu hình, hiểu thấu ý",
+    "TitleTalent2": "Cảm nhận dòng chảy thời gian",
     "Talent1": "ATK +8%, ASPD +8, đòn tấn công chuyển thành <$ba.weaknessatk>Công kích điểm yếu</>.",
     "Talent1_p4": "ATK +11%<@ba.talpu>(+3%)</>, ASPD +11<@ba.talpu>(+3)</>, đòn tấn công chuyển thành <$ba.weaknessatk>Công kích điểm yếu</>.",
     "Talent1_2": "ATK +13%, ASPD +13, đòn tấn công chuyển thành <$ba.weaknessatk>Công kích điểm yếu</>.",
