@@ -2752,7 +2752,7 @@
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd[032]": {
-    "Name": "Tài ngoại giao của gia chủ",
+    "Name": "Tài ngoại giao của ông trùm",
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>25%</>."
   },
   "meet_spd&sami[000]": {
@@ -2872,11 +2872,11 @@
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Rhine Lab</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[020]": {
-    "Name": "Liên lạc viên - Penguin Logistics",
+    "Name": "Người đưa tin - Penguin Logistics",
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Penguin Logistics</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[030]": {
-    "Name": "Trung gian",
+    "Name": "Liên lạc viên",
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Blacksteel Worldwide</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[031]": {
@@ -2896,7 +2896,7 @@
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Ursus Student Self-government Group</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[060]": {
-    "Name": "Liên lạc viên - Rhodes Island",
+    "Name": "Người đưa tin - Rhodes Island",
     "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng <@cc.vup>10%</>, và tăng tỷ lệ nhận được Clue của <@cc.kw>Rhodes Island</> (tỷ lệ chịu ảnh hưởng bởi thời gian làm việc)."
   },
   "meet_spd&team[070]": {
@@ -2936,7 +2936,7 @@
     "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned[004]": {
-    "Name": "Liên lạc viên kỳ cựu",
+    "Name": "Người đưa tin kỳ cựu",
     "description": "Khi Operator này được phân công vào Reception Room, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
   },
   "meet_spd_notOwned_P[000]": {
