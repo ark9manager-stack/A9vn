@@ -25,7 +25,7 @@ const sideStories = [
   ["INTERMEZZI", "LONE TRAIL", "COLUMBIA", "A journey through ambition, science, and the stars above Terra."],
   ["SIDESTORY", "GUIDE AHEAD", "LATERANO", "Faith and conflict collide beneath the bells of Laterano."],
 ];
-
+ 
 function SectionTitle({ code, title, description }) {
   return <div className="mb-6 flex flex-col gap-3 border-b border-white/10 pb-5 sm:flex-row sm:items-end sm:justify-between"><div><div className="mb-2 font-mono-tech text-[0.65rem] tracking-[2px] text-primary/80">// {code}</div><h2 className="font-heading text-3xl font-bold uppercase tracking-[2px] text-foreground sm:text-4xl">{title}</h2></div><p className="max-w-xl text-sm leading-6 text-muted-foreground sm:text-right">{description}</p></div>;
 }
