@@ -1,21 +1,24 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Archive, BookOpen, ChevronRight, Layers3, Sparkles } from "lucide-react";
+import { Archive, BookOpen, ChevronRight, Layers3, PanelsTopLeft } from "lucide-react";
 
 const archiveTypes = [
   { id: "main", title: "MAIN STORY", label: "RHODES ISLAND RECORDS", description: "Theo dõi tuyến truyện trung tâm của Rhodes Island theo từng chương.", icon: BookOpen, accent: "primary" },
   { id: "side", title: "SIDE STORIES", label: "TERRA EVENT ARCHIVE", description: "Khám phá các sự kiện, vùng đất và những mảnh truyện bên ngoài tuyến chính.", icon: Archive, accent: "accent" },
+  { id: "comic-manga", title: "COMIC & MANGA", label: "VISUAL STORY ARCHIVE", description: "Comic official vÃ  manga do cá»™ng Ä‘á»“ng Ä‘Ã³ng gÃ³p, táº­p trung trong má»™t kho riÃªng.", icon: PanelsTopLeft, accent: "manga" },
 ];
 
 function ArchiveChoice({ item }) {
   const Icon = item.icon;
   const side = item.accent === "accent";
-  const accentClass = side ? "border-accent/25 hover:border-accent/60 hover:shadow-[0_16px_36px_rgba(0,0,0,0.32),0_0_32px_hsl(var(--accent)/0.11)]" : "border-primary/25 hover:border-primary/60 hover:shadow-[0_16px_36px_rgba(0,0,0,0.32),0_0_32px_hsl(var(--primary)/0.11)]";
-  const color = side ? "text-accent" : "text-primary";
-  return <Link to={item.id === "main" ? "/mainpath" : "/sidepath"} className={`group relative min-h-[330px] overflow-hidden border bg-[#080b0f]/85 p-6 text-left transition-all duration-300 hover:-translate-y-1 sm:p-8 ${accentClass}`} style={{ clipPath: "polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px))" }}>
-    <div className={`absolute inset-0 opacity-70 ${side ? "bg-[radial-gradient(circle_at_85%_10%,rgba(255,184,70,0.18),transparent_28%),linear-gradient(145deg,#090b0e_0%,#201c14_52%,#080a0d_100%)]" : "bg-[radial-gradient(circle_at_16%_10%,rgba(117,224,255,0.17),transparent_28%),linear-gradient(145deg,#080b0f_0%,#16232c_52%,#080a0d_100%)]"}`} />
+  const manga = item.accent === "manga";
+  const accentClass = side ? "border-accent/25 hover:border-accent/60 hover:shadow-[0_16px_36px_rgba(0,0,0,0.32),0_0_32px_hsl(var(--accent)/0.11)]" : manga ? "border-fuchsia-300/25 hover:border-fuchsia-300/60 hover:shadow-[0_16px_36px_rgba(0,0,0,.32),0_0_32px_rgba(232,121,249,.15)]" : "border-primary/25 hover:border-primary/60 hover:shadow-[0_16px_36px_rgba(0,0,0,0.32),0_0_32px_hsl(var(--primary)/0.11)]";
+  const color = side ? "text-accent" : manga ? "text-fuchsia-300" : "text-primary";
+  const destination = item.id === "main" ? "/mainpath" : item.id === "side" ? "/sidepath" : "/comic-manga";
+  return <Link to={destination} className={`group relative min-h-[330px] overflow-hidden border bg-[#080b0f]/85 p-6 text-left transition-all duration-300 hover:-translate-y-1 sm:p-8 ${accentClass}`} style={{ clipPath: "polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px))" }}>
+    <div className={`absolute inset-0 opacity-70 ${side ? "bg-[radial-gradient(circle_at_85%_10%,rgba(255,184,70,0.18),transparent_28%),linear-gradient(145deg,#090b0e_0%,#201c14_52%,#080a0d_100%)]" : manga ? "bg-[radial-gradient(circle_at_82%_12%,rgba(232,121,249,.2),transparent_29%),radial-gradient(circle_at_15%_88%,rgba(129,140,248,.17),transparent_34%),linear-gradient(145deg,#100b16_0%,#241126_52%,#080a0d_100%)]" : "bg-[radial-gradient(circle_at_16%_10%,rgba(117,224,255,0.17),transparent_28%),linear-gradient(145deg,#080b0f_0%,#16232c_52%,#080a0d_100%)]"}`} />
     <div className="absolute inset-0 opacity-30 bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_12px)]" />
-    <div className="relative flex h-full flex-col"><div className="flex items-start justify-between"><div className={`flex h-14 w-14 items-center justify-center border bg-black/20 ${side ? "border-accent/35 text-accent" : "border-primary/35 text-primary"}`}><Icon size={28} /></div><span className="font-mono-tech text-[0.6rem] tracking-[2px] text-white/35">{item.id === "main" ? "CHANNEL_01" : "CHANNEL_02"}</span></div><div className={`mt-12 font-mono-tech text-[0.62rem] tracking-[2px] ${color}`}>{item.label}</div><h2 className="mt-2 font-heading text-3xl font-bold uppercase tracking-[1.5px] text-white sm:text-4xl">{item.title}</h2><p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">{item.description}</p><div className="mt-auto flex items-center justify-between border-t border-white/10 pt-5 font-mono-tech text-[0.64rem] tracking-[1.6px] text-white/50 transition-colors group-hover:text-white/85"><span>OPEN ARCHIVE</span><ChevronRight size={18} className={`${color} transition-transform group-hover:translate-x-1`} /></div></div>
+    <div className="relative flex h-full flex-col"><div className="flex items-start justify-between"><div className={`flex h-14 w-14 items-center justify-center border bg-black/20 ${side ? "border-accent/35 text-accent" : manga ? "border-fuchsia-300/35 text-fuchsia-300" : "border-primary/35 text-primary"}`}><Icon size={28} /></div><span className="font-mono-tech text-[0.6rem] tracking-[2px] text-white/35">{item.id === "main" ? "CHANNEL_01" : item.id === "side" ? "CHANNEL_02" : "CHANNEL_03"}</span></div><div className={`mt-12 font-mono-tech text-[0.62rem] tracking-[2px] ${color}`}>{item.label}</div><h2 className="mt-2 font-heading text-3xl font-bold uppercase tracking-[1.5px] text-white sm:text-4xl">{item.title}</h2><p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">{item.description}</p><div className="mt-auto flex items-center justify-between border-t border-white/10 pt-5 font-mono-tech text-[0.64rem] tracking-[1.6px] text-white/50 transition-colors group-hover:text-white/85"><span>OPEN ARCHIVE</span><ChevronRight size={18} className={`${color} transition-transform group-hover:translate-x-1`} /></div></div>
   </Link>;
 }
 

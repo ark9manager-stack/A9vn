@@ -22,6 +22,7 @@ const Operator = createLazyAppModule("pageOperator");
 const GuideStory = createLazyAppModule("pageGuideStory");
 const MainPath = createLazyAppModule("pageMainPath");
 const SidePath = createLazyAppModule("pageSidePath");
+const ComicManga = createLazyAppModule("pageComicManga");
 const GuideDetail = createLazyAppModule("pageGuideDetail");
 const StoryDetail = createLazyAppModule("pageStoryDetail");
 
@@ -120,6 +121,7 @@ const App = () => {
                     <Route path="/story" element={<GuideStory />} />
                     <Route path="/mainpath" element={<MainPath />} />
                     <Route path="/sidepath" element={<SidePath />} />
+                    <Route path="/comic-manga" element={<ComicManga />} />
                     <Route path="/guide/:id" element={<GuideDetail />} />
 
                     {/* Story */}
