@@ -20,6 +20,8 @@ const Music = createLazyAppModule("pageMusic");
 const Operator = createLazyAppModule("pageOperator");
 
 const GuideStory = createLazyAppModule("pageGuideStory");
+const MainPath = createLazyAppModule("pageMainPath");
+const SidePath = createLazyAppModule("pageSidePath");
 const GuideDetail = createLazyAppModule("pageGuideDetail");
 const StoryDetail = createLazyAppModule("pageStoryDetail");
 
@@ -115,7 +117,9 @@ const App = () => {
                     <Route path="/Music/:songId" element={<Music />} />
 
                     {/* Guide */}
-                    <Route path="/guide-story" element={<GuideStory />} />
+                    <Route path="/story" element={<GuideStory />} />
+                    <Route path="/mainpath" element={<MainPath />} />
+                    <Route path="/sidepath" element={<SidePath />} />
                     <Route path="/guide/:id" element={<GuideDetail />} />
 
                     {/* Story */}

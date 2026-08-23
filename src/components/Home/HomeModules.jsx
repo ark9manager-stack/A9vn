@@ -46,7 +46,7 @@ const modules = [
     title: "STORY",
     desc: "Tóm tắt chương, event lore, hồ sơ nhân vật và worldbuilding.",
     count: "16 CHAPTERS",
-    to: "/guide-story",
+    to: "/story",
     image: bgWhite,
     imageClass: "object-cover object-center",
   },
