@@ -15,7 +15,6 @@ const MODULE_IMPORTERS = {
   pageMaterialDetail: () => import("../pages/MaterialDetail"),
   pageMaterialPlanner: () => import("../pages/MaterialPlanner"),
   pageBosses: () => import("../pages/BossesPage"),
-  pageBossDetail: () => import("../pages/BossDetail"),
   pageNotFound: () => import("../pages/NotFound"),
 
   sectionSkins: () => import("../components/Operator/Modal/sections/SkinsSection"),
@@ -41,7 +40,6 @@ const MODULE_LABELS = {
   pageMaterialDetail: "MaterialDetail page",
   pageMaterialPlanner: "MaterialPlanner page",
   pageBosses: "Bosses page",
-  pageBossDetail: "BossDetail page",
   pageNotFound: "NotFound page",
   sectionSkins: "operator skins section",
   sectionProfile: "operator profile section",
@@ -66,7 +64,6 @@ const INTRO_PRELOAD_KEYS = [
   "pageMaterialDetail",
   "pageMaterialPlanner",
   "pageBosses",
-  "pageBossDetail",
   "pageNotFound",
   "sectionSkins",
   "sectionProfile",
