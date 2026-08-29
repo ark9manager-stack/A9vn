@@ -602,8 +602,8 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
     { id: "file_2", key: "file_2", title: "Tài liệu lưu trữ 2" },
     { id: "file_3", key: "file_3", title: "Tài liệu lưu trữ 3" },
     { id: "file_4", key: "file_4", title: "Tài liệu lưu trữ 4" },
-    { id: "promotion", key: "promotion_record", title: "Bản ghi thăng tiến" },
-    { id: "paradox", key: "paradox", title: "Giả thuyết/Paradox Simulation" },
+    { id: "promotion", key: "promotion_record", title: "Hồ sơ thăng tiến" },
+    { id: "paradox", key: "paradox", title: "Mô phỏng Nghịch lý/Paradox Simulation" },
   ];
 
   return (
@@ -663,7 +663,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
 
       <TextPanel
         id="clinicalanalysis"
-        title="Phân tích y tế"
+        title="Biện luận lâm sàng"
         text={clinicalAnalysisText}
       />
 
