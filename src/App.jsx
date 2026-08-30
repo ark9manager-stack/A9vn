@@ -30,7 +30,6 @@ const MaterialDetail = createLazyAppModule("pageMaterialDetail");
 const MaterialPlanner = createLazyAppModule("pageMaterialPlanner");
 
 const BossesPage = createLazyAppModule("pageBosses");
-const BossDetail = createLazyAppModule("pageBossDetail");
 
 const NotFound = createLazyAppModule("pageNotFound");
 
@@ -74,9 +73,14 @@ const App = () => {
     const currentPath = location.pathname;
     previousPathRef.current = currentPath;
 
-    const isOperatorPath = (path) => /^\/operator(?:\/|$)/i.test(String(path || ""));
+      const isOverlayCollectionPath = (path) =>
+      /^\/operator(?:\/|$)/i.test(String(path || "")) ||
+      /^\/database\/bosses(?:\/|$)/i.test(String(path || ""));
 
-    if (isOperatorPath(previousPath) && isOperatorPath(currentPath)) {
+      if (
+      isOverlayCollectionPath(previousPath) &&
+      isOverlayCollectionPath(currentPath)
+    ) {
       return;
     }
 
@@ -142,7 +146,7 @@ const App = () => {
 
                     {/* Boss */}
                     <Route path="/database/bosses" element={<BossesPage />} />
-                    <Route path="/database/bosses/:id" element={<BossDetail />} />
+                    <Route path="/database/bosses/:id" element={<BossesPage />} />
 
                     {/* 404 */}
                     <Route path="*" element={<NotFound />} />
