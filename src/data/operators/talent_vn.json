@@ -129,9 +129,9 @@
   "char_1023_ghost2": {
     "TitleTalent1": "Chấp nhận bản thân",
     "TitleTalent2": "Vực sâu của Ægir",
-    "Talent0": "<Thế thân> khiến kẻ địch xung quanh -20% tốc độ di chuyển và chịu sát thương phép bằng 20% ATK mỗi giây.",
-    "Talent1": "<Thế thân> khiến kẻ địch xung quanh -30% tốc độ di chuyển và chịu sát thương phép bằng 30% ATK mỗi giây.",
-    "Talent1_2": "<Thế thân> khiến kẻ địch xung quanh -40% tốc độ di chuyển và chịu sát thương phép bằng 40% ATK mỗi giây.",
+    "Talent0": "<Thế thân> khiến kẻ địch xung quanh -20% tốc độ di chuyển và chịu sát thương thuật pháp bằng 20% ATK mỗi giây.",
+    "Talent1": "<Thế thân> khiến kẻ địch xung quanh -30% tốc độ di chuyển và chịu sát thương thuật pháp bằng 30% ATK mỗi giây.",
+    "Talent1_2": "<Thế thân> khiến kẻ địch xung quanh -40% tốc độ di chuyển và chịu sát thương thuật pháp bằng 40% ATK mỗi giây.",
     "Talent2": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +20% HP tối đa.",
     "Talent2_p4": "Khi có mặt trong đội hình, tất cả Operator【Abyssal Hunter】nhận +23%<@ba.talpu>(+3%)</> HP tối đa."
   },
@@ -168,9 +168,9 @@
   "char_1029_yato2": {
     "TitleTalent1": "Song đao Kirin",
     "TitleTalent2": "Quỷ nhân hóa",
-    "Talent0": "Đòn tấn công gây thêm sát thương phép bằng 6% ATK.",
-    "Talent1": "Đòn tấn công gây thêm sát thương phép bằng 13% ATK.",
-    "Talent1_2": "Đòn tấn công gây thêm sát thương phép bằng 20% ATK.",
+    "Talent0": "Đòn tấn công gây thêm sát thương thuật pháp bằng 6% ATK.",
+    "Talent1": "Đòn tấn công gây thêm sát thương thuật pháp bằng 13% ATK.",
+    "Talent1_2": "Đòn tấn công gây thêm sát thương thuật pháp bằng 20% ATK.",
     "Talent2": "Trong thời gian kỹ năng hoạt động và 10 giây sau khi kỹ năng kết thúc, ATK +13%.",
     "Talent2_p4": "Trong thời gian kỹ năng hoạt động và 10 giây sau khi kỹ năng kết thúc, ATK +16%<@ba.talpu>(+3%)</>."
   },
@@ -309,14 +309,14 @@
   "char_1043_leizi2": {
     "TitleTalent1": "Sáng suốt",
     "TitleTalent2": "Truy cứu trách nhiệm",
-    "Talent0": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 50% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt.",
-    "Talent0_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 50% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt.",
-    "Talent1": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 80% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 104% khi kích hoạt kỹ năng.",
-    "Talent1_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 80% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 108%<@ba.talpu>(+4%)</> khi kích hoạt kỹ năng.",
-    "Talent1_2": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 100% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 107% khi kích hoạt kỹ năng.",
-    "Talent1_2_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương phép bằng 100% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 111%<@ba.talpu>(+4%)</> khi kích hoạt kỹ năng.",
-    "Talent2": "Khi kích hoạt kỹ năng, ngay lập tức gọi sét đánh lên tất cả ô trong phạm vi tấn công, gây sát thương phép bằng 100% ATK và áp hiệu ứng <$ba.tremble>Giải giới</> lên tất cả kẻ địch trong 2 giây.",
-    "Talent2_p2": "Khi kích hoạt kỹ năng, ngay lập tức gọi sét đánh lên tất cả ô trong phạm vi tấn công, gây sát thương phép bằng 100% ATK và áp hiệu ứng <$ba.tremble>Giải giới</> lên tất cả kẻ địch trong 3<@ba.talpu>(+1)</> giây."
+    "Talent0": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương thuật pháp bằng 50% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt.",
+    "Talent0_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương thuật pháp bằng 50% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt.",
+    "Talent1": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương thuật pháp bằng 80% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 104% khi kích hoạt kỹ năng.",
+    "Talent1_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương thuật pháp bằng 80% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 108%<@ba.talpu>(+4%)</> khi kích hoạt kỹ năng.",
+    "Talent1_2": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương thuật pháp bằng 100% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 107% khi kích hoạt kỹ năng.",
+    "Talent1_2_p4": "Mỗi giây, có 10% tỷ lệ gọi sét đánh xuống ô trong phạm vi tấn công gây sát thương thuật pháp bằng 100% ATK lên tất cả kẻ địch đứng trong ô đó. <$ba.liftoff>Cất cánh</> khi kỹ năng chưa kích hoạt; ATK tăng lên 111%<@ba.talpu>(+4%)</> khi kích hoạt kỹ năng.",
+    "Talent2": "Khi kích hoạt kỹ năng, ngay lập tức gọi sét đánh lên tất cả ô trong phạm vi tấn công, gây sát thương thuật pháp bằng 100% ATK và áp hiệu ứng <$ba.tremble>Giải giới</> lên tất cả kẻ địch trong 2 giây.",
+    "Talent2_p2": "Khi kích hoạt kỹ năng, ngay lập tức gọi sét đánh lên tất cả ô trong phạm vi tấn công, gây sát thương thuật pháp bằng 100% ATK và áp hiệu ứng <$ba.tremble>Giải giới</> lên tất cả kẻ địch trong 3<@ba.talpu>(+1)</> giây."
   },
   "char_1044_hsgma2": {
     "TitleTalent1": "Nghiệp hỏa",
@@ -339,12 +339,12 @@
   "char_1046_sbell2": {
     "TitleTalent1": "Cảnh tuyết vô tận",
     "TitleTalent2": "Phúc lành Karlan",
-    "Talent0": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 20% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent0_p4": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 25%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 50% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1_p4": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 55%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1_2": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 75% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
-    "Talent1_2_p4": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương phép bằng 75%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent0": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương thuật pháp bằng 20% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent0_p4": "Mỗi 10 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương thuật pháp bằng 25%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương thuật pháp bằng 50% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1_p4": "Mỗi 7.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương thuật pháp bằng 55%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 10%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1_2": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương thuật pháp bằng 75% ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
+    "Talent1_2_p4": "Mỗi 5.5 giây, trong phạm vi tấn công của bản thân sẽ hình thành 1 lớp tuyết trên mặt đất; Kẻ địch trên mặt đất khi bước vào lớp tuyết này sẽ lập tức chịu sát thương thuật pháp bằng 75%<@ba.talpu>(+5%)</> ATK. Mỗi lớp tuyết khiến tốc độ di chuyển của toàn bộ kẻ địch giảm 12%, phủ tối đa 5 tầng (lớp tuyết sẽ tan biến hết khi có kẻ địch đầu tiên rời khỏi ô tuyết đó).",
     "Talent2": "Kẻ địch gây sát thương lên bản thân sẽ chịu hiệu ứng <$ba.cold>Lạnh</> trong 1.5 giây. Khi nhận sát thương chí tử, ngay lập tức hồi lại toàn bộ HP và tự <$ba.frozen>Đóng băng</> bản thân trong 4 giây, đồng thời tất cả kẻ địch trong phạm vi tấn công cũng sẽ bị <$ba.frozen>Đóng băng</> trong 8 giây (kích hoạt 1 lần duy nhất).",
     "Talent2_p2": "Kẻ địch gây sát thương lên bản thân sẽ chịu hiệu ứng <$ba.cold>Lạnh</> trong 2<@ba.talpu>(+0.5)</> giây. Khi nhận sát thương chí tử, ngay lập tức hồi lại toàn bộ HP và tự <$ba.frozen>Đóng băng</> bản thân trong 4 giây, đồng thời tất cả kẻ địch trong phạm vi tấn công cũng sẽ bị <$ba.frozen>Đóng băng</> trong 8 giây (kích hoạt 1 lần duy nhất)."
   },
@@ -480,10 +480,10 @@
   },
   "char_129_bluep": {
     "TitleTalent1": "Chất độc thần kinh",
-    "Talent1": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 30 sát thương phép trong vòng 3 giây.",
-    "Talent1_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 40<@ba.talpu>(+10)</> sát thương phép trong vòng 3 giây.",
-    "Talent1_2": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 75 sát thương phép trong vòng 3 giây.",
-    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 85<@ba.talpu>(+10)</> sát thương phép trong vòng 3 giây."
+    "Talent1": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 30 sát thương thuật pháp trong vòng 3 giây.",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 40<@ba.talpu>(+10)</> sát thương thuật pháp trong vòng 3 giây.",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 75 sát thương thuật pháp trong vòng 3 giây.",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 85<@ba.talpu>(+10)</> sát thương thuật pháp trong vòng 3 giây."
   },
   "char_130_doberm": {
     "TitleTalent1": "Giáo quan tân binh",
@@ -672,10 +672,10 @@
   },
   "char_166_skfire": {
     "TitleTalent1": "Xạ thủ ma pháp",
-    "Talent1": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 7% sát thương phép.",
-    "Talent1_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 10%<@ba.talpu>(+3%)</> sát thương phép.",
-    "Talent1_2": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 15% sát thương phép.",
-    "Talent1_2_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 18%<@ba.talpu>(+3%)</> sát thương phép."
+    "Talent1": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 7% sát thương thuật pháp.",
+    "Talent1_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 10%<@ba.talpu>(+3%)</> sát thương thuật pháp.",
+    "Talent1_2": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 15% sát thương thuật pháp.",
+    "Talent1_2_p4": "Khi có mặt trên sân, tất cả kẻ địch đang bị chặn sẽ nhận thêm 18%<@ba.talpu>(+3%)</> sát thương thuật pháp."
   },
   "char_171_bldsk": {
     "TitleTalent1": "Thu hồi mẫu máu",
@@ -828,10 +828,10 @@
   "char_2013_cerber": {
     "TitleTalent1": "Bóc vỏ",
     "TitleTalent2": "Đi chơi một mình",
-    "Talent1": "Khi tấn công, gây thêm sát thương phép bằng 25% DEF của mục tiêu.",
-    "Talent1_p4": "Khi tấn công, gây thêm sát thương phép bằng 29%<@ba.talpu>(+4%)</> DEF của mục tiêu.",
-    "Talent1_2": "Khi tấn công, gây thêm sát thương phép bằng 40% DEF của mục tiêu.",
-    "Talent1_2_p4": "Khi tấn công, gây thêm sát thương phép bằng 44%<@ba.talpu>(+4%)</> DEF của mục tiêu.",
+    "Talent1": "Khi tấn công, gây thêm sát thương thuật pháp bằng 25% DEF của mục tiêu.",
+    "Talent1_p4": "Khi tấn công, gây thêm sát thương thuật pháp bằng 29%<@ba.talpu>(+4%)</> DEF của mục tiêu.",
+    "Talent1_2": "Khi tấn công, gây thêm sát thương thuật pháp bằng 40% DEF của mục tiêu.",
+    "Talent1_2_p4": "Khi tấn công, gây thêm sát thương thuật pháp bằng 44%<@ba.talpu>(+4%)</> DEF của mục tiêu.",
     "Talent2": "Khi trong 4 ô xung quanh không có đồng minh nào khác, ATK +8% và ASPD +8"
   },
   "char_2014_nian": {
@@ -891,10 +891,10 @@
   "char_2026_yu": {
     "TitleTalent1": "Có qua có lại",
     "TitleTalent2": "Hòa mình giữa chốn đô hội",
-    "Talent1": "Khi chặn kẻ địch, bản thân nhận 15% <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 8% ATK mỗi giây.",
-    "Talent1_p2": "Khi chặn kẻ địch, bản thân nhận 20%<@ba.talpu>(+5%)</> <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 8% ATK mỗi giây.",
-    "Talent1_2": "Khi chặn kẻ địch, bản thân nhận 25% <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 40% ATK và <$ba.dt.burning2>Burn</> bằng 12% ATK mỗi giây.",
-    "Talent1_2_p2": "Khi chặn kẻ địch, bản thân nhận 30%<@ba.talpu>(+5%)</> <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương phép bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 12% ATK mỗi giây.",
+    "Talent1": "Khi chặn kẻ địch, bản thân nhận 15% <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương thuật pháp bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 8% ATK mỗi giây.",
+    "Talent1_p2": "Khi chặn kẻ địch, bản thân nhận 20%<@ba.talpu>(+5%)</> <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương thuật pháp bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 8% ATK mỗi giây.",
+    "Talent1_2": "Khi chặn kẻ địch, bản thân nhận 25% <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương thuật pháp bằng 40% ATK và <$ba.dt.burning2>Burn</> bằng 12% ATK mỗi giây.",
+    "Talent1_2_p2": "Khi chặn kẻ địch, bản thân nhận 30%<@ba.talpu>(+5%)</> <$ba.protect>Bảo hộ</>; đồng thời kẻ địch bị chặn chịu sát thương thuật pháp bằng 25% ATK và <$ba.dt.burning2>Burn</> bằng 12% ATK mỗi giây.",
     "Talent2": "Khi có ít nhất 4 Operator trên sân, bản thân được hồi cả HP lẫn <$ba.dt.element>Hiệu ứng nguyên tố</> bằng 1.5% HP tối đa mỗi giây.",
     "Talent2_p4": "Khi có ít nhất 4 Operator trên sân, bản thân được hồi cả HP lẫn <$ba.dt.element>Hiệu ứng nguyên tố</> bằng 2%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
@@ -1301,10 +1301,10 @@
   "char_293_thorns": {
     "TitleTalent1": "Ăn mòn thần kinh",
     "TitleTalent2": "Dòng chảy cố hương",
-    "Talent1": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 65 sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
-    "Talent1_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 80<@ba.talpu>(+15)</> sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
-    "Talent1_2": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 125 sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
-    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 140<@ba.talpu>(+15)</> sát thương phép trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 65 sát thương thuật pháp trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 80<@ba.talpu>(+15)</> sát thương thuật pháp trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 125 sát thương thuật pháp trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu bị trúng độc, mỗi giây chịu 140<@ba.talpu>(+15)</> sát thương thuật pháp trong vòng 3 giây (sát thương tăng gấp đôi với kẻ địch tấn công tầm xa).",
     "Talent2": "Nếu bản thân không tấn công trong 2 giây, hồi 3.5% HP tối đa mỗi giây.",
     "Talent2_p2": "Nếu bản thân không tấn công trong 2 giây, hồi 4%<@ba.talpu>(+0.5%)</> HP tối đa mỗi giây."
   },
@@ -1480,10 +1480,10 @@
   },
   "char_346_aosta": {
     "TitleTalent1": "Đinh nhọn",
-    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 12% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 18% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
-    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương phép mỗi giây bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính)."
+    "Talent1": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương thuật pháp mỗi giây bằng 12% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương thuật pháp mỗi giây bằng 14%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương thuật pháp mỗi giây bằng 18% ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính).",
+    "Talent1_2_p4": "Đòn tấn công gây hiệu ứng Chảy máu lên các kẻ địch chưa bị chặn, chịu sát thương thuật pháp mỗi giây bằng 20%<@ba.talpu>(+2%)</> ATK của Aosta trong 3 giây (không chịu ảnh hưởng bởi Đặc tính)."
   },
   "char_347_jaksel": {
     "TitleTalent1": "Phản xạ cấp tốc",
@@ -1570,11 +1570,11 @@
   },
   "char_369_bena": {
     "TitleTalent1": "Thước đo góc của Bena",
-    "Talent0": "<Thế thân> tấn công gây sát thương phép.",
-    "Talent1": "<Thế thân> tấn công gây sát thương phép, đồng thời giảm 20% sát thương vật lý và phép phải chịu.",
-    "Talent1_p4": "<Thế thân> tấn công gây sát thương phép, đồng thời giảm 23%<@ba.talpu>(+3%)</> sát thương vật lý và phép phải chịu.",
-    "Talent1_2": "<Thế thân> tấn công gây sát thương phép, đồng thời giảm 40% sát thương vật lý và phép phải chịu.",
-    "Talent1_2_p4": "<Thế thân> tấn công gây sát thương phép, đồng thời giảm 43%<@ba.talpu>(+3%)</> sát thương vật lý và phép phải chịu."
+    "Talent0": "<Thế thân> tấn công gây sát thương thuật pháp.",
+    "Talent1": "<Thế thân> tấn công gây sát thương thuật pháp, đồng thời giảm 20% sát thương vật lý và phép phải chịu.",
+    "Talent1_p4": "<Thế thân> tấn công gây sát thương thuật pháp, đồng thời giảm 23%<@ba.talpu>(+3%)</> sát thương vật lý và phép phải chịu.",
+    "Talent1_2": "<Thế thân> tấn công gây sát thương thuật pháp, đồng thời giảm 40% sát thương vật lý và phép phải chịu.",
+    "Talent1_2_p4": "<Thế thân> tấn công gây sát thương thuật pháp, đồng thời giảm 43%<@ba.talpu>(+3%)</> sát thương vật lý và phép phải chịu."
   },
   "char_373_lionhd": {
     "TitleTalent1": "Mảnh vỡ chết người",
@@ -1600,10 +1600,10 @@
   "char_377_gdglow": {
     "TitleTalent1": "Tín hiệu bùng nổ",
     "TitleTalent2": "Điều hướng chính xác",
-    "Talent1": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương phép bằng 200% ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
-    "Talent1_p2": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương phép bằng 215%<@ba.talpu>(+15%)</> ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
-    "Talent1_2": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương phép bằng 300% ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
-    "Talent1_2_p2": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương phép bằng 315%<@ba.talpu>(+15%)</> ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
+    "Talent1": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương thuật pháp bằng 200% ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
+    "Talent1_p2": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương thuật pháp bằng 215%<@ba.talpu>(+15%)</> ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
+    "Talent1_2": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương thuật pháp bằng 300% ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
+    "Talent1_2_p2": "Sau khi kích hoạt kỹ năng, Drone có 10% tỷ lệ tự hủy khi tấn công (và quay về bên cạnh Goldenglow), gây sát thương thuật pháp bằng 315%<@ba.talpu>(+15%)</> ATK của Goldenglow lên kẻ địch trong phạm vi nhỏ.",
     "Talent2": "Goldenglow và Drone của cô khi tấn công bỏ qua 15 RES.",
     "Talent2_p5": "Goldenglow và Drone của cô khi tấn công bỏ qua 18<@ba.talpu>(+3)</> RES."
   },
@@ -1703,10 +1703,10 @@
   "char_4010_etlchi": {
     "TitleTalent1": "Kho máu",
     "TitleTalent2": "Dự trù",
-    "Talent1": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 50 HP tối đa của mục tiêu (tối đa 900), và khiến mục tiêu mỗi giây nhận 100 sát thương phép trong 5 giây.",
-    "Talent1_p4": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 50 HP tối đa của mục tiêu (tối đa 900), và khiến mục tiêu mỗi giây nhận 150<@ba.talpu>(+50)</> sát thương phép trong 5 giây.",
-    "Talent1_2": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 75 HP tối đa của mục tiêu (tối đa 1350), và khiến mục tiêu mỗi giây nhận 200 sát thương phép trong 5 giây.",
-    "Talent1_2_p4": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 75 HP tối đa của mục tiêu (tối đa 1350), và khiến mục tiêu mỗi giây nhận 250<@ba.talpu>(+50)</> sát thương phép trong 5 giây.",
+    "Talent1": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 50 HP tối đa của mục tiêu (tối đa 900), và khiến mục tiêu mỗi giây nhận 100 sát thương thuật pháp trong 5 giây.",
+    "Talent1_p4": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 50 HP tối đa của mục tiêu (tối đa 900), và khiến mục tiêu mỗi giây nhận 150<@ba.talpu>(+50)</> sát thương thuật pháp trong 5 giây.",
+    "Talent1_2": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 75 HP tối đa của mục tiêu (tối đa 1350), và khiến mục tiêu mỗi giây nhận 200 sát thương thuật pháp trong 5 giây.",
+    "Talent1_2_p4": "Mỗi lần tấn công, sẽ <$ba.steal>Cướp</> 75 HP tối đa của mục tiêu (tối đa 1350), và khiến mục tiêu mỗi giây nhận 250<@ba.talpu>(+50)</> sát thương thuật pháp trong 5 giây.",
     "Talent2": "Khi HP thấp hơn 25%, lập tức hồi lại 50% HP tối đa và nhận hiệu ứng giảm 10% sát thương vật lý phải chịu (mỗi lần triển khai chỉ kích hoạt 1 lần).",
     "Talent2_p2": "Khi HP thấp hơn 25%, lập tức hồi lại 55%<@ba.talpu>(+5%)</> HP tối đa và nhận hiệu ứng giảm 15%<@ba.talpu>(+5%)</> sát thương vật lý phải chịu (mỗi lần triển khai chỉ kích hoạt 1 lần)."
   },
@@ -1738,12 +1738,12 @@
   },
   "char_4016_kazema": {
     "TitleTalent1": "Thổi hồn vào giấy",
-    "Talent0": "Khi <Thế thân> xuất hiện, gây sát thương phép bằng 150% ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
-    "Talent0_p4": "Khi <Thế thân> xuất hiện, gây sát thương phép bằng 155%<@ba.talpu>(+5%)</> ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
-    "Talent1": "Khi <Thế thân> xuất hiện, gây sát thương phép bằng 225% ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
-    "Talent1_p4": "Khi <Thế thân> xuất hiện, gây sát thương phép bằng 230%<@ba.talpu>(+5%)</> ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
-    "Talent1_2": "Khi <Thế thân> xuất hiện, gây sát thương phép bằng 270% ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
-    "Talent1_2_p4": "Khi <Thế thân> xuất hiện, gây sát thương phép bằng 275%<@ba.talpu>(+5%)</> ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh."
+    "Talent0": "Khi <Thế thân> xuất hiện, gây sát thương thuật pháp bằng 150% ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
+    "Talent0_p4": "Khi <Thế thân> xuất hiện, gây sát thương thuật pháp bằng 155%<@ba.talpu>(+5%)</> ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
+    "Talent1": "Khi <Thế thân> xuất hiện, gây sát thương thuật pháp bằng 225% ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
+    "Talent1_p4": "Khi <Thế thân> xuất hiện, gây sát thương thuật pháp bằng 230%<@ba.talpu>(+5%)</> ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
+    "Talent1_2": "Khi <Thế thân> xuất hiện, gây sát thương thuật pháp bằng 270% ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh.",
+    "Talent1_2_p4": "Khi <Thế thân> xuất hiện, gây sát thương thuật pháp bằng 275%<@ba.talpu>(+5%)</> ATK của <Thế thân> lên tất cả kẻ địch trong 8 ô xung quanh."
   },
   "char_4017_puzzle": {
     "TitleTalent1": "Trật tự",
@@ -1786,8 +1786,8 @@
   "char_4026_vulpis": {
     "TitleTalent1": "Truy sát",
     "TitleTalent2": "Thế trận dâng cao",
-    "Talent1": "Kẻ địch lần đầu chịu sát thương từ Vulpisfoglia sẽ bị đánh dấu trong 10 giây tiếp theo, mỗi khi cô gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 20% ATK.",
-    "Talent1_2": "Kẻ địch lần đầu chịu sát thương từ Vulpisfoglia sẽ bị đánh dấu trong 10 giây tiếp theo, mỗi khi cô gây sát thương lên mục tiêu này sẽ gây thêm sát thương phép bằng 30% ATK.",
+    "Talent1": "Kẻ địch lần đầu chịu sát thương từ Vulpisfoglia sẽ bị đánh dấu trong 10 giây tiếp theo, mỗi khi cô gây sát thương lên mục tiêu này sẽ gây thêm sát thương thuật pháp bằng 20% ATK.",
+    "Talent1_2": "Kẻ địch lần đầu chịu sát thương từ Vulpisfoglia sẽ bị đánh dấu trong 10 giây tiếp theo, mỗi khi cô gây sát thương lên mục tiêu này sẽ gây thêm sát thương thuật pháp bằng 30% ATK.",
     "Talent2": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 4% HP tối đa mỗi giây.",
     "Talent2_p4": "Khi có mặt trên sân, tốc độ hồi DP tự nhiên +10%. Nếu trong 4 giây không nhận sát thương, sẽ hồi 5%<@ba.talpu>(+1%)</> HP tối đa mỗi giây."
   },
@@ -1873,15 +1873,15 @@
     "TitleTalent2": "Nốt hoa mỹ",
     "Talent1": "Sát thương từ đòn tích trữ tăng lên 120%; Có thể tích trữ thêm 1 đòn tấn công riêng sau khi tích đầy Đặc tính, và chỉ dùng để tấn công kẻ địch Elite hoặc Leader.",
     "Talent1_2": "Sát thương từ đòn tích trữ tăng lên 135%; Có thể tích trữ thêm 1 đòn tấn công riêng sau khi tích đầy Đặc tính, và chỉ dùng để tấn công kẻ địch Elite hoặc Leader.",
-    "Talent2": "Nếu xung quanh mục tiêu đang tấn công không có kẻ địch nào khác, đòn tấn công sẽ gây thêm sát thương phép bằng 15% ATK.",
-    "Talent2_p4": "Nếu xung quanh mục tiêu đang tấn công không có kẻ địch nào khác, đòn tấn công sẽ gây thêm sát thương phép bằng 17%<@ba.talpu>(+2%)</> ATK."
+    "Talent2": "Nếu xung quanh mục tiêu đang tấn công không có kẻ địch nào khác, đòn tấn công sẽ gây thêm sát thương thuật pháp bằng 15% ATK.",
+    "Talent2_p4": "Nếu xung quanh mục tiêu đang tấn công không có kẻ địch nào khác, đòn tấn công sẽ gây thêm sát thương thuật pháp bằng 17%<@ba.talpu>(+2%)</> ATK."
   },
   "char_4047_pianst": {
     "TitleTalent1": "Hồi âm",
-    "Talent1": "RES +5. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 50% ATK của Czerny.",
-    "Talent1_p4": "RES +5. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 55%<@ba.talpu>(+5%)</> ATK của Czerny.",
-    "Talent1_2": "RES +10. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 80% ATK của Czerny.",
-    "Talent1_2_p4": "RES +10. Khi kẻ địch gây sát thương phép lên Czerny, phản lại sát thương phép bằng 85%<@ba.talpu>(+5%)</> ATK của Czerny."
+    "Talent1": "RES +5. Khi kẻ địch gây sát thương thuật pháp lên Czerny, phản lại sát thương thuật pháp bằng 50% ATK của Czerny.",
+    "Talent1_p4": "RES +5. Khi kẻ địch gây sát thương thuật pháp lên Czerny, phản lại sát thương thuật pháp bằng 55%<@ba.talpu>(+5%)</> ATK của Czerny.",
+    "Talent1_2": "RES +10. Khi kẻ địch gây sát thương thuật pháp lên Czerny, phản lại sát thương thuật pháp bằng 80% ATK của Czerny.",
+    "Talent1_2_p4": "RES +10. Khi kẻ địch gây sát thương thuật pháp lên Czerny, phản lại sát thương thuật pháp bằng 85%<@ba.talpu>(+5%)</> ATK của Czerny."
   },
   "char_4048_doroth": {
     "TitleTalent1": "Bộ cộng hưởng",
@@ -1928,10 +1928,10 @@
   "char_4056_titi": {
     "TitleTalent1": "Ngưng đọng thời gian",
     "TitleTalent2": "Phần thưởng cho lòng dũng cảm",
-    "Talent1": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 10% ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 18% ATK của Titi.",
-    "Talent1_p2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 11%<@ba.talpu>(+1%)</> ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 20%<@ba.talpu>(+2%)</> ATK của Titi.",
-    "Talent1_2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 15% ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 30% ATK của Titi.",
-    "Talent1_2_p2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương phép bằng 16%<@ba.talpu>(+1%)</> ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương phép mỗi giây bằng 32%<@ba.talpu>(+2%)</> ATK của Titi.",
+    "Talent1": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương thuật pháp bằng 10% ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương thuật pháp mỗi giây bằng 18% ATK của Titi.",
+    "Talent1_p2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương thuật pháp bằng 11%<@ba.talpu>(+1%)</> ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương thuật pháp mỗi giây bằng 20%<@ba.talpu>(+2%)</> ATK của Titi.",
+    "Talent1_2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương thuật pháp bằng 15% ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương thuật pháp mỗi giây bằng 30% ATK của Titi.",
+    "Talent1_2_p2": "Bản thân có thể tấn công kẻ địch đang <$ba.sleep>Ngủ</>; Khi tấn công kẻ địch không di chuyển sẽ gây sát thương thuật pháp bằng 16%<@ba.talpu>(+1%)</> ATK. Khi có mặt trên sân, kẻ địch đang <$ba.sleep>Ngủ</> sẽ nhận sát thương thuật pháp mỗi giây bằng 32%<@ba.talpu>(+2%)</> ATK của Titi.",
     "Talent2": "Các Operator【Minos】hoặc【Sargon】trên sân có HP trên 50%, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ASPD +20.",
     "Talent2_p5": "Các Operator【Minos】hoặc【Sargon】trên sân có HP trên 50%, sẽ nhận hiệu ứng <$ba.strong>Sung sức</> với ASPD +22<@ba.talpu>(+2)</>."
   },
@@ -1987,8 +1987,8 @@
     "Talent1_p2": "Sau khi triển khai, nhận <$ba.barrier>Lá chắn</> bằng 35%<@ba.talpu>(+5%)</> HP tối đa; Mỗi khi hạ gục 1 kẻ địch, nhận <$ba.barrier>Lá chắn</> bằng 6% HP tối đa (tối đa không vượt quá 300% HP tối đa).",
     "Talent1_2": "Sau khi triển khai, nhận <$ba.barrier>Lá chắn</> bằng 50% HP tối đa; Mỗi khi hạ gục 1 kẻ địch, nhận <$ba.barrier>Lá chắn</> bằng 10% HP tối đa (tối đa không vượt quá 300% HP tối đa).",
     "Talent1_2_p2": "Sau khi triển khai, nhận <$ba.barrier>Lá chắn</> bằng 55%<@ba.talpu>(+5%)</> HP tối đa; Mỗi khi hạ gục 1 kẻ địch, nhận <$ba.barrier>Lá chắn</> bằng 10% HP tối đa (tối đa không vượt quá 300% HP tối đa).",
-    "Talent2": "Khi Penance vẫn còn <$ba.barrier>Lá chắn</> từ nguồn của bản thân, kẻ địch tấn công cô sẽ chịu sát thương phép bằng 50% ATK.",
-    "Talent2_p4": "Khi Penance vẫn còn <$ba.barrier>Lá chắn</> từ nguồn của bản thân, kẻ địch tấn công cô sẽ chịu sát thương phép bằng 53%<@ba.talpu>(+3%)</> ATK."
+    "Talent2": "Khi Penance vẫn còn <$ba.barrier>Lá chắn</> từ nguồn của bản thân, kẻ địch tấn công cô sẽ chịu sát thương thuật pháp bằng 50% ATK.",
+    "Talent2_p4": "Khi Penance vẫn còn <$ba.barrier>Lá chắn</> từ nguồn của bản thân, kẻ địch tấn công cô sẽ chịu sát thương thuật pháp bằng 53%<@ba.talpu>(+3%)</> ATK."
   },
   "char_4066_highmo": {
     "TitleTalent1": "Bắt mồi, tiêu hóa",
@@ -2052,10 +2052,10 @@
   "char_4080_lin": {
     "TitleTalent1": "Mưu tính vẹn toàn",
     "TitleTalent2": "Giấu nghề",
-    "Talent1": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 150 sát thương từ một nguồn, và gây sát thương phép bằng 60% ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 12 giây.",
-    "Talent1_p4": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 150 sát thương từ một nguồn, và gây sát thương phép bằng 70%<@ba.talpu>(+10%)</> ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 12 giây.",
-    "Talent1_2": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 200 sát thương từ một nguồn, và gây sát thương phép bằng 100% ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 8 giây.",
-    "Talent1_2_p4": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 200 sát thương từ một nguồn, và gây sát thương phép bằng 110%<@ba.talpu>(+10%)</> ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 8 giây.",
+    "Talent1": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 150 sát thương từ một nguồn, và gây sát thương thuật pháp bằng 60% ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 12 giây.",
+    "Talent1_p4": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 150 sát thương từ một nguồn, và gây sát thương thuật pháp bằng 70%<@ba.talpu>(+10%)</> ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 12 giây.",
+    "Talent1_2": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 200 sát thương từ một nguồn, và gây sát thương thuật pháp bằng 100% ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 8 giây.",
+    "Talent1_2_p4": "Sở hữu lớp chắn Lưu Ly Bích có thể chặn mọi sát thương; Lưu Ly Bích sẽ vỡ khi chịu quá 200 sát thương từ một nguồn, và gây sát thương thuật pháp bằng 110%<@ba.talpu>(+10%)</> ATK của Lin lên tất cả kẻ địch xung quanh, đồng thời khiến chúng bị <$ba.stun>Choáng</> trong 1 giây; tái tạo sau 8 giây.",
     "Talent2": "Có 50% tỷ lệ hồi 1 SP khi bị tấn công.",
     "Talent2_p2": "Có 55%<@ba.talpu>(+5%)</> tỷ lệ hồi 1 SP khi bị tấn công."
   },
@@ -2069,10 +2069,10 @@
   "char_4082_qiubai": {
     "TitleTalent1": "Tìm kẽ hở",
     "TitleTalent2": "Cánh hoa rơi",
-    "Talent1": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương phép bằng 25% ATK.",
-    "Talent1_p4": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương phép bằng 28%<@ba.talpu>(+3%)</> ATK.",
-    "Talent1_2": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương phép bằng 40% ATK.",
-    "Talent1_2_p4": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương phép bằng 43%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương thuật pháp bằng 25% ATK.",
+    "Talent1_p4": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương thuật pháp bằng 28%<@ba.talpu>(+3%)</> ATK.",
+    "Talent1_2": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương thuật pháp bằng 40% ATK.",
+    "Talent1_2_p4": "Tấn công kẻ địch đang bị <$ba.sluggish>Làm chậm</> hoặc <$ba.root>Trói chân</> sẽ gây thêm sát thương thuật pháp bằng 43%<@ba.talpu>(+3%)</> ATK.",
     "Talent2": "Đòn tấn công có 20% tỷ lệ khiến mục tiêu bị <$ba.root>Trói chân</> trong 1.5 giây.",
     "Talent2_p2": "Đòn tấn công có 23%<@ba.talpu>(+3%)</> tỷ lệ khiến mục tiêu bị <$ba.root>Trói chân</> trong 1.5 giây."
   },
@@ -2131,10 +2131,10 @@
   "char_4098_vvana": {
     "TitleTalent1": "Ánh nến dẫn lối",
     "TitleTalent2": "Tân tinh",
-    "Talent1": "+5% sát thương phép gây ra, -5% sát thương vật lý và sát thương phép phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
-    "Talent1_p4": "+6%<@ba.talpu>(+1%)</> sát thương phép gây ra, -6%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương phép phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
-    "Talent1_2": "+8% sát thương phép gây ra, -8% sát thương vật lý và sát thương phép phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
-    "Talent1_2_p4": "+9%<@ba.talpu>(+1%)</> sát thương phép gây ra, -9%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương phép phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
+    "Talent1": "+5% sát thương thuật pháp gây ra, -5% sát thương vật lý và sát thương thuật pháp phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
+    "Talent1_p4": "+6%<@ba.talpu>(+1%)</> sát thương thuật pháp gây ra, -6%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương thuật pháp phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
+    "Talent1_2": "+8% sát thương thuật pháp gây ra, -8% sát thương vật lý và sát thương thuật pháp phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
+    "Talent1_2_p4": "+9%<@ba.talpu>(+1%)</> sát thương thuật pháp gây ra, -9%<@ba.talpu>(-1%)</> sát thương vật lý và sát thương thuật pháp phải chịu. Hiệu ứng trên tăng gấp đôi nếu trong phạm vi tấn công có kẻ địch Elite hoặc Leader.",
     "Talent2": "Khi tấn công kẻ địch Elite hoặc Leader, có 18% tỷ lệ nhận được một lớp [[Khiên|Shield]] giúp chặn đòn đánh cận chiến (tối đa 1 lớp).",
     "Talent2_p2": "Khi tấn công kẻ địch Elite hoặc Leader, có 20%<@ba.talpu>(+2%)</> tỷ lệ nhận được một lớp [[Khiên|Shield]] giúp chặn đòn đánh cận chiến (tối đa 1 lớp)."
   },
@@ -2311,21 +2311,21 @@
   "char_4132_ascln": {
     "TitleTalent1": "Thẩm vấn đến chết",
     "TitleTalent2": "Mượn bóng ẩn mình",
-    "Talent0": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 12% tốc độ di chuyển và chịu sát thương phép mỗi giây bằng 6% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
-    "Talent1": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 15% tốc độ di chuyển và chịu sát thương phép mỗi giây bằng 8% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
-    "Talent1_2": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 18% tốc độ di chuyển và chịu sát thương phép mỗi giây bằng 10% ATK hiện tại của Ascalon trong 25 giây; cộng dồn tối đa 3 tầng.",
+    "Talent0": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 12% tốc độ di chuyển và chịu sát thương thuật pháp mỗi giây bằng 6% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
+    "Talent1": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 15% tốc độ di chuyển và chịu sát thương thuật pháp mỗi giây bằng 8% ATK hiện tại của Ascalon trong 18 giây; cộng dồn tối đa 3 tầng.",
+    "Talent1_2": "Đòn tấn công gây các hiệu ứng sau lên kẻ địch: giảm 18% tốc độ di chuyển và chịu sát thương thuật pháp mỗi giây bằng 10% ATK hiện tại của Ascalon trong 25 giây; cộng dồn tối đa 3 tầng.",
     "Talent2": "ASPD +8; nếu trong 4 ô xung quanh bản thân có địa hình cao (ô cao) sẽ nhận thêm ASPD +6.",
     "Talent2_p4": "ASPD +10<@ba.talpu>(+2)</>; nếu trong 4 ô xung quanh bản thân có địa hình cao (ô cao) sẽ nhận thêm ASPD +6."
   },
   "char_4133_logos": {
     "TitleTalent1": "Tiến hóa vốn từ",
     "TitleTalent2": "Chú ngữ rạch hồn",
-    "Talent1": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 40% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
-    "Talent1_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 45%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
-    "Talent1_2": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 60% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>Làm chậm</> trong 0.8 giây.",
-    "Talent1_2_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương phép bằng 65%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>Làm chậm</> trong 0.8 giây.",
-    "Talent2": "Đòn tấn công khiến mục tiêu -10 RES và sát thương phép phải chịu +150 trong 5 giây.",
-    "Talent2_p2": "Đòn tấn công khiến mục tiêu -10 RES và sát thương phép phải chịu +165<@ba.talpu>(+15)</> trong 5 giây."
+    "Talent1": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương thuật pháp bằng 40% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
+    "Talent1_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương thuật pháp bằng 45%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công.",
+    "Talent1_2": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương thuật pháp bằng 60% ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>Làm chậm</> trong 0.8 giây.",
+    "Talent1_2_p4": "Khi tấn công một mục tiêu, có 40% tỷ lệ gây sát thương thuật pháp bằng 65%<@ba.talpu>(+5%)</> ATK lên 1 mục tiêu ngẫu nhiên trong phạm vi tấn công và khiến mục tiêu đó bị <$ba.sluggish>Làm chậm</> trong 0.8 giây.",
+    "Talent2": "Đòn tấn công khiến mục tiêu -10 RES và sát thương thuật pháp phải chịu +150 trong 5 giây.",
+    "Talent2_p2": "Đòn tấn công khiến mục tiêu -10 RES và sát thương thuật pháp phải chịu +165<@ba.talpu>(+15)</> trong 5 giây."
   },
   "char_4134_cetsyr": {
     "TitleTalent1": "Tàn dư của quá khứ",
@@ -2351,10 +2351,10 @@
   },
   "char_4137_udflow": {
     "TitleTalent1": "Chất ức chế hoạt tính tế bào",
-    "Talent1": "Đòn tấn công khiến mục tiêu mỗi giây chịu 40 sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
-    "Talent1_p4": "Đòn tấn công khiến mục tiêu mỗi giây chịu 50<@ba.talpu>(+10)</> sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
-    "Talent1_2": "Đòn tấn công khiến mục tiêu mỗi giây chịu 80 sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
-    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu mỗi giây chịu 90<@ba.talpu>(+10)</> sát thương phép trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương)."
+    "Talent1": "Đòn tấn công khiến mục tiêu mỗi giây chịu 40 sát thương thuật pháp trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
+    "Talent1_p4": "Đòn tấn công khiến mục tiêu mỗi giây chịu 50<@ba.talpu>(+10)</> sát thương thuật pháp trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
+    "Talent1_2": "Đòn tấn công khiến mục tiêu mỗi giây chịu 80 sát thương thuật pháp trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương).",
+    "Talent1_2_p4": "Đòn tấn công khiến mục tiêu mỗi giây chịu 90<@ba.talpu>(+10)</> sát thương thuật pháp trong 3 giây (Nếu kẻ địch là【Sea Monster】sẽ chịu gấp đôi sát thương)."
   },
   "char_4138_narant": {
     "TitleTalent1": "'Ta thấy, ta lấy'",
@@ -2481,9 +2481,9 @@
   },
   "char_4164_tecno": {
     "TitleTalent1": "Ngẫu hứng múa rối",
-    "Talent0": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 2 con cùng lúc); 'Vũ Công Rối' gây sát thương phép.",
-    "Talent1": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 3 con cùng lúc); 'Vũ Công Rối' gây sát thương phép.",
-    "Talent1_2": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 5 con cùng lúc); 'Vũ Công Rối' gây sát thương phép."
+    "Talent0": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 2 con cùng lúc); 'Vũ Công Rối' gây sát thương thuật pháp.",
+    "Talent1": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 3 con cùng lúc); 'Vũ Công Rối' gây sát thương thuật pháp.",
+    "Talent1_2": "Khi kẻ địch mặt đất bị hạ trong phạm vi tấn công, tạo một 'Vũ Công Rối' tại vị trí đó (tối đa 5 con cùng lúc); 'Vũ Công Rối' gây sát thương thuật pháp."
   },
   "char_4165_ctrail": {
     "TitleTalent1": "Nhiễu lưu tầm thấp",
@@ -2596,8 +2596,8 @@
     "Talent1_2": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 30% ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
     "Talent1_2_p4": "Khi chưa kích hoạt kỹ năng, mỗi 4 giây sẽ hồi cho đồng minh đang có HP thấp nhất trong phạm vi tấn công với lượng HP bằng 35%<@ba.talpu>(+5%)</> ATK. Khi kỹ năng hoạt động, ưu tiên hồi phục cho Togawa Sakiko.",
     "Talent2": "<$ba.fever>Fever</> +2 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>.",
-    "Talent2_1": "<$ba.fever>Fever</> +3 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 15% ATK của Misumi Uika lên kẻ địch, nếu họ đứng trong phạm vi tấn công của cô.",
-    "Talent2_2": "<$ba.fever>Fever</> +5 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương phép bằng 30% ATK của Misumi Uika lên kẻ địch, nếu họ đứng trong phạm vi tấn công của cô."
+    "Talent2_1": "<$ba.fever>Fever</> +3 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương thuật pháp bằng 15% ATK của Misumi Uika lên kẻ địch, nếu họ đứng trong phạm vi tấn công của cô.",
+    "Talent2_2": "<$ba.fever>Fever</> +5 khi cô hồi phục cho thành viên <$ba.mujica>Ave Mujica</>; Thành viên <$ba.mujica>Ave Mujica</> sẽ gây thêm sát thương thuật pháp bằng 30% ATK của Misumi Uika lên kẻ địch, nếu họ đứng trong phạm vi tấn công của cô."
   },
   "char_4185_amoris": {
     "TitleTalent1": "Thuận cả hai tay",
@@ -2862,9 +2862,9 @@
   "char_437_mizuki": {
     "TitleTalent1": "Sang chấn Hysteria",
     "TitleTalent2": "Phản chuyển di",
-    "Talent0": "Đòn tấn công gây thêm sát thương phép bằng 20% ATK lên mục tiêu có HP thấp nhất.",
-    "Talent1": "Đòn tấn công gây thêm sát thương phép bằng 30% ATK lên mục tiêu có HP thấp nhất.",
-    "Talent1_2": "Đòn tấn công gây thêm sát thương phép bằng 50% ATK lên mục tiêu có HP thấp nhất.",
+    "Talent0": "Đòn tấn công gây thêm sát thương thuật pháp bằng 20% ATK lên mục tiêu có HP thấp nhất.",
+    "Talent1": "Đòn tấn công gây thêm sát thương thuật pháp bằng 30% ATK lên mục tiêu có HP thấp nhất.",
+    "Talent1_2": "Đòn tấn công gây thêm sát thương thuật pháp bằng 50% ATK lên mục tiêu có HP thấp nhất.",
     "Talent2": "Nếu trong phạm vi tấn công có kẻ địch dưới 50% HP, ATK +10%.",
     "Talent2_p4": "Nếu trong phạm vi tấn công có kẻ địch dưới 50% HP, ATK +12%<@ba.talpu>(+2%)</>."
   },
@@ -3054,10 +3054,10 @@
   },
   "char_486_takila": {
     "TitleTalent1": "Chờ thời cơ",
-    "Talent1": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 10% ATK của Tequila.",
-    "Talent1_p4": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 13%<@ba.talpu>(+3%)</> ATK của Tequila.",
-    "Talent1_2": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 20% ATK của Tequila.",
-    "Talent1_2_p4": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương phép bằng 23%<@ba.talpu>(+3%)</> ATK của Tequila."
+    "Talent1": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương thuật pháp bằng 10% ATK của Tequila.",
+    "Talent1_p4": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương thuật pháp bằng 13%<@ba.talpu>(+3%)</> ATK của Tequila.",
+    "Talent1_2": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương thuật pháp bằng 20% ATK của Tequila.",
+    "Talent1_2_p4": "Khi chưa kích hoạt kỹ năng, kẻ địch tấn công Tequila sẽ bị phản lại sát thương thuật pháp bằng 23%<@ba.talpu>(+3%)</> ATK của Tequila."
   },
   "char_487_bobb": {
     "TitleTalent1": "Điều hướng tụ nhiệt",
@@ -3138,7 +3138,7 @@
   },
   "char_501_durin": {
     "TitleTalent1": "Cô nhóc may mắn",
-    "Talent0_lv30": "Có 50% né sát thương phép."
+    "Talent0_lv30": "Có 50% né sát thương thuật pháp."
   },
   "char_502_nblade": {
     "TitleTalent1": "Tái triển khai siêu tốc",
@@ -3288,7 +3288,7 @@
   "char_617_sharp2": {
     "TitleTalent1": "Lưỡi dao thầm lặng",
     "TitleTalent2": "Dũng khí xung trận",
-    "Talent0": "ATK +5%; Nhận 10% né sát thương phép.",
+    "Talent0": "ATK +5%; Nhận 10% né sát thương thuật pháp.",
     "Talent1": "ATK +10%; Nhận 20% né sát thương vật lý.",
     "Talent1_2": "ATK +20%; Nhận 25% né sát thương vật lý.",
     "Talent2": "ASPD +12 khi trong phạm vi tấn công có từ 2 kẻ địch trở lên."
@@ -3361,7 +3361,7 @@
     "Talent0_p4": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +4%<@ba.talpu>(+2%)</> ATK khi có 'Năng lượng chuyển pha'; +5 ASPD nếu không có 'Năng lượng chuyển pha'.",
     "Talent1_2": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +10% ATK khi có 'Năng lượng chuyển pha'; +15 ASPD nếu không có 'Năng lượng chuyển pha'.",
     "Talent1_2_p4": "Khi đạt 3 đòn tích trữ của Đặc tính, chúng sẽ hợp thành 1 đòn 'Năng lượng chuyển pha' (tối đa tích trữ được 9 lần từ Đặc tính). +12%<@ba.talpu>(+2%)</> ATK khi có 'Năng lượng chuyển pha'; +15 ASPD nếu không có 'Năng lượng chuyển pha'.",
-    "Talent2": "Đòn tấn công và đòn tích trữ khiến mục tiêu mỗi giây chịu 90 sát thương phép trong 5 giây (cộng dồn tối đa 3 lần; nếu đòn tấn công bắn ra là 'Năng lượng chuyển pha' sẽ nhận ngay 3 lần cộng dồn); Viy sẽ ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này."
+    "Talent2": "Đòn tấn công và đòn tích trữ khiến mục tiêu mỗi giây chịu 90 sát thương thuật pháp trong 5 giây (cộng dồn tối đa 3 lần; nếu đòn tấn công bắn ra là 'Năng lượng chuyển pha' sẽ nhận ngay 3 lần cộng dồn); Viy sẽ ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này."
   },
   "char_4228_closur": {
     "TitleTalent1": "Chiến thuật phân phối",
@@ -3462,16 +3462,16 @@
     "Talent1_p2": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 10%<@ba.talpu>(+5%)</>. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 10%<@ba.talpu>(+2%)</> ATK và giảm 1.2<@ba.talpu>(+0.2)</> giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
     "Talent1_2": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 15%. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 10% ATK và giảm 1 giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
     "Talent1_2_p2": "<$ba.dt.element>Hiệu ứng nguyên tố</> mà Thumpy phải chịu giảm 20%<@ba.talpu>(+5%)</>. Khi Thumpy gây sát thương vật lý, gây thêm <$ba.dt.erosion2>Corrosion</> bằng 12%<@ba.talpu>(+2%)</> ATK và giảm 1.2<@ba.talpu>(+0.2)</> giây hồi thanh bộc phát <$ba.dt.erosion2>Corrosion</> của mục tiêu.",
-    "Talent2": "Khi kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> từng chịu sát thương từ Thumpy, cô nhận 8 DEF (cộng dồn tối đa 30 tầng) và 250 <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
-    "Talent2_p4": "Khi kẻ địch bộc phát <$ba.dt.erosion2>Corrosion</> từng chịu sát thương từ Thumpy, cô nhận 11<@ba.talpu>(+3)</> DEF (cộng dồn tối đa 30 tầng) và 330<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy)."
+    "Talent2": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 8 DEF (cộng dồn tối đa 30 tầng) và 250 <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "Talent2_p4": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 11<@ba.talpu>(+3)</> DEF (cộng dồn tối đa 30 tầng) và 330<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy)."
   },
   "char_1015_aglna2": {
-    "TitleTalent1": "Bay bỏng trên mặt đất",
+    "TitleTalent1": "Bay bổng trên mặt đất",
     "TitleTalent2": "Bước nhảy giữa trời cao",
-    "Talent1": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 13% ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 20% ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
-    "Talent1_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 18%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 30%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
-    "Talent1_2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 25% ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 35% ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
-    "Talent1_2_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương phép bằng 30%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương phép gây thêm sẽ tăng lên 45%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương thuật pháp bằng 13% ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương thuật pháp gây thêm sẽ tăng lên 20% ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương thuật pháp bằng 18%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương thuật pháp gây thêm sẽ tăng lên 30%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1_2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương thuật pháp bằng 25% ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương thuật pháp gây thêm sẽ tăng lên 35% ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
+    "Talent1_2_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương thuật pháp bằng 30%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương thuật pháp gây thêm sẽ tăng lên 45%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
     "Talent2": "Khi Angelina the Mellow Wish có mặt trên sân, tất cả Operator đồng minh đang <$ba.liftoff>Cất cánh</> sẽ nhận ATK +13% và hồi 8% HP tối đa mỗi giây khi đang Chặn kẻ địch.",
     "Talent2_p4": "Khi Angelina the Mellow Wish có mặt trên sân, tất cả Operator đồng minh đang <$ba.liftoff>Cất cánh</> sẽ nhận ATK +18%<@ba.talpu>(+5%)</> và hồi 10%<@ba.talpu>(+2%)</> HP tối đa mỗi giây khi đang Chặn kẻ địch."
   }

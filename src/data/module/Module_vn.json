@@ -1,6 +1,6 @@
 {
   "uniequip_001_mgllan": {
-    "Name": "Huy hiệu của Magallan",
+    "Name": "Huân chương của Magallan",
     "description": "Operator Magallan has demonstrated a remarkable aptitude in combat with the deployment and control of her self-developed drones.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Supporter Operator during field operations to exercise Summoner responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_mgllan": {
@@ -20,14 +20,14 @@
     "TalentLv3_p4": ""
   },
   "uniequip_001_nights": {
-    "Name": "Huy hiệu của Haze",
+    "Name": "Huân chương của Haze",
     "description": "Operator Haze has demonstrated a remarkable aptitude for inflicting Arts casualties on the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Core Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_nights": {
     "Name": "The Witch's Hat",
     "description": "Through the 'Forest' she makes her way. Between the bars of naked steel she skips, from one end of the alleyway to the other, and on top of a faded billboard she climbs. Not far away, an empty tin can topples over. She takes a small step back, crouching for a while under the shadow. Only once she's sure her silhouette is alone again under the moonlight—does her step pick up once again, deft like a wisp of fog. She finds her way straight through a window empty of its glass.\nA puddle of water rests on the ground, which she avoids with great intent. Probably the recent shower of rain, that tonight's so especially bright. Not a good omen, in any case. In times gone by, no one would dare trespass into the Forest thick of fog, for there was Witch's domain. The greedy merchant had want of the Witch's powers, but pitch-black smoke would bind the neck of such a soul. Only lost children would have good fortune in the night... Most of the coven had come to suffer a different kind of curse already, but in the hazy night those inauspicious stones would happily be hidden from view.\nA great fire of yore took the original Witch Forest. Thereafter, one nomadic city to the next, these empty rooms have been little more than the cracks amidst neon and skyscraper's reflections... hardly fit for a safe domain.\nShe silently patrols her temporary lodgings, and finds the Hat out of a pile of miscellanies. A broad-brimmed one, cloth heavy-set in all its layers. Its inside is riddled with patchwork, every hand which sewed on those eclectic fabrics still there in her memories. Some were wizened, some young, all so soft without exception, so tender. She jumps into it, lets the sheets of fabric surround her body, as if she's returned to their embrace.\nAnother hand rests upon her head. She remembers this one, the youngest among them, and the last to still follow her. This girl's hand once carried the scent of clean grass and fresh paper, like the others, but in these times it was always sullied with rust, with blood.\n'We've been found again.' The young Witch picks her up and cradles her, and puts on another hat entirely. 'Take a guess. How long can we still run, I wonder, before the next time we're caught?'\nThe creature brushes against the Witch's cheek, reflecting not an inch of light.\nTogether, she and the girl leap into the dark of night, straight through the Forest. Such is the freedom they were meant to share.",
-    "Mission1": "Haze gây tổng 80,000 sát thương (tính cả Support Units)",
-    "Mission2": "Hoàn thành Main Theme S2-4 đạt 3-sao; Bạn cần triển khai Haze (không tính Support Units), và Haze phải hạ ít nhất 2 Heavy Defenders",
+    "Mission1": "Haze cần gây tổng 80,000 sát thương (tính cả Support Units)",
+    "Mission2": "Hoàn thành Main Theme S2-4 đạt 3-sao; cần triển khai Haze (không tính Support Units), và Haze phải hạ ít nhất 2 Heavy Defenders",
     "TalentLv1VN": "Đòn tấn công khiến RES của mục tiêu -20% trong 1 giây.",
     "TalentLv1_p4VN": "Đòn tấn công khiến RES của mục tiêu -23%<@ba.talpu>(+3%)</> trong 1 giây.",
     "TalentLv1EN": "Attacks reduce the target's RES by 20% for 1 second",
@@ -40,7 +40,7 @@
     "TalentLv3_p4": "Đòn tấn công khiến RES của mục tiêu -30%<@ba.talpu>(+3%)</> trong 1 giây."
   },
   "uniequip_001_fmout": {
-    "Name": "Huy hiệu của Gitano",
+    "Name": "Huân chương của Gitano",
     "description": "Operator Gitano has demonstrated a remarkable aptitude for inflicting Arts casualties on multitudes of enemies.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Splash Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_fmout": {
@@ -60,7 +60,7 @@
     "TalentLv3_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +20%<@ba.talpu>(+2%)</>; ASPD +20<@ba.talpu>(+2%)</>; HP Tối đa +30%<@ba.talpu>(+2%)</>"
   },
   "uniequip_001_jesica": {
-    "Name": "Huy hiệu của Jessica",
+    "Name": "Huân chương của Jessica",
     "description": "Operator Jessica has demonstrated a remarkable aptitude for maintaining distance whilst conducting suppressive fire against the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Sniper Operator during field operations to exercise Marksman responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_jesica": {
@@ -76,14 +76,106 @@
     "TalentLv3": "ASPD +16, ATK +6%"
   },
   "uniequip_001_shotst": {
-    "Name": "Huy hiệu của Meteor",
+    "Name": "Huân chương của Meteor",
     "description": "Operator Meteor has demonstrated a remarkable aptitude for maintaining distance whilst conducting suppressive fire against the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Sniper Operator during field operations to exercise Marksman responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_shotst": {
     "Name": "Hunter's Knife",
     "description": "Coming in at a clip through the dense forest hills, her heart pounds like it wants to leap from her chest. The prey at her knees thrashes relentlessly and still draws ragged gasps, kiln-hot breath met with the ice-cold forest air as it flares from its nostrils, giving rise to a fine white mist.\nStooping low, she leans to its ear, and speaks a few soft words of comfort.\n'Shh, it'll be fine soon. Calm down, calm down.'\nHeeding her warm caress, the prey's struggles slowly cease, and it stares at her with its deep black gaze. In the pool of its stagnant eye, its pupil still tremors and quakes, stirring a whirlpool in its sclera, tenaciously seeking to draw one last drop of mercy from the two eyes staring back.\nYet her voice is a ruthless gust that coils through dead leaves.\n'It'll all be over soon.'\nWith a draw of a hunter's knife from her rear hip, slitting the prey's throat is both quick and clean. Fresh blood gushes from the incision and stains the earth, leaving behind a thick iron stench which mixes with the rotting autumn leaves and lingers for a good while in her nose.\nThis month shows signs of spring, winter having only just thawed, and the ice-littered creeks chill her fingers to a deep red swell while the blood hardened on the knife washes and melts away in the current. Like red threads needling through the water, flowing with the creek to the forest's edge.\nBehind her, a full beastskin hangs on a branch, with a bonfire lit below to cook the moisture from it. The prey's carcass has been split, one half skewered above the fire, wafting an enticing aroma of grease as it roasts. The other half she's left by the creek, soon to be found by scavenging animals following the scent of blood, and dragged away in their mouths.\nDaytime follows in the departing footsteps of night, early morn filtering through the forest in slanted beams from the east. Perfectly pale light glances again and again off the creek's shimmering waves, stabbing at her undefended eyes still adjusted to the earlier darkness. Her hand quickly shields them as she waits for them to adapt to the sun's sting. Warmth takes to the fine veins in her eyelids, inviting her to open her eyes again and see the beautiful sight. Letting out a deep sigh, she experimentally opens her tightly curled fingers. Her eyelashes tremble, she opens her eyes, and that which filters through the cracks between her fingers is the faint green of a rich forest. Deep in the trees, a kyebeast wanders through the cover, chewing leisurely at the grass, unaware that it's already been trapped in that frigid forest, and of the keen arrow nocked in a bow aimed at the hollow of its throat.",
     "Mission1": "Meteor hạ tổng cộng 30 kẻ địch (tính cả Support Units)",
-    "Mission2": "Hoàn thành Main Theme 2-7 đạt 3-sao; Bạn cần triển khai Meteor (không tính Support Units), và Meteor phải hạ ít nhất 2 Defender-4s",
+    "Mission2": "Hoàn thành Main Theme 2-7 đạt 3-sao; cần triển khai Meteor (không tính Support Units), và Meteor phải hạ ít nhất 2 Defender-4s",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
+    "TalentLv2": "",
+    "TitleLv3": "",
+    "TalentLv3": ""
+  },
+  "uniequip_001_thumpy": {
+    "Name": "Huân chương của Thumpy",
+    "description": "Cán viên Thumpy đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+  },
+  "uniequip_002_thumpy": {
+    "Name": "Dũng khí lên đường",
+    "description": "“Ây da...... Ăn không hết đâu, con chỉ đi có năm sáu ngày thôi mà, không cần phải tiễn con long trọng thế này đâu......” Đó là giọng cuống quýt của chính cô.\n“Con nói gì thế bé Thumpy——thịt nướng cà rốt vẫn chưa đủ à——” Đó là giọng của cha đang gần như bị tiếng ồn trong bếp át mất.\n“Ơ......” Nghe đến đây, Tarneey chợt nhớ ra vì sao lúc ấy mình bỗng dưng im bặt. Thịt nướng cà rốt ba làm là món cô thích nhất, nhưng cô lập tức nghĩ tới chuyện ngày mai mình sẽ chẳng được ăn món xương thịt hầm rau dại nữa. Đi xa lúc nào cũng khiến cô háo hức, nhưng chuyện “rời khỏi nhà” vẫn làm cô có chút buồn bã.\n“Đồ ăn lên đủ rồi, tiệc chia tay bắt đầu——” Đó là giọng vui vẻ của mẹ. Ngay sau đó là tiếng bước chân thình thịch của cả đại gia đình đang mỗi lúc một gần. Tarneey lập tức bị nhấn chìm giữa những lời chúc ríu rít đầy nhiệt tình; lúc ấy tai cô đã ù cả lên, mà đến giờ nghe lại vẫn chẳng thể nghe rõ rốt cuộc mọi người đã nói những gì. Nhưng đoán cũng chẳng khó, đại loại vẫn là nhớ cẩn thận trên đường này, nhớ mang đặc sản về này, nhớ trả lời tin nhắn này.\nHẳn lúc ấy cô đã nhận ra ba mình có vẻ hơi lúng túng.\n“Bé Thumpy, chuyện là......” Cha ấp a ấp úng, chẳng giống ông ngày thường chút nào. “Nói cho mọi người biết món quà con thật sự muốn đi. Cha và mẹ con, rồi cậu, chú, dì, cô, anh chị em họ nội họ ngoại...... tất cả đều sẽ nghiêm túc lắng nghe mong muốn của con.”\n......\nNghe lại mới thấy, lúc ấy cả căn phòng đã im phăng phắc từ lúc nào. Rồi một tiếng “phì” chợt vang lên, hóa ra chính cô đã bật cười.\n“Ba à, lời xin lỗi của ba ngượng nghịu và vòng vo quá đi, còn kéo theo bao nhiêu người vào để lấy thêm can đảm nữa chứ.”\n“Khụ khụ......”\n“Nhưng con không muốn quà mới đâu. Dù không làm tổng đài viên nữa, con vẫn muốn trân trọng tấm lòng của mọi người khi tặng con những món quà sinh nhật ấy.”\n“Nhưng mà......”\n“Mẹ, chẳng phải lần này mọi người đã hứa sẽ nghiêm túc lắng nghe điều con muốn hay sao? Thật ra con chỉ cần mọi người giúp con một việc thôi~ Ừm, tuy con sắp lên đường rồi, nhưng nếu cả nhà cùng chung tay thì nhất định sẽ kịp hoàn thành trước khi con đi!”\nGiữa một vùng trũng heo hút bị gió xói mòn, Tarneey đang thoải mái nằm trên chiếc ghế bập bênh mát-xa của mình. Cô cắn thử một miếng bánh cà rốt giòn rụm, bên trên còn phủ một lớp caramel được nấu từ kẹo ngậm làm dịu cổ họng. Ừm, kẹo ngậm quả thật có một hương vị khá kỳ lạ, caramel cũng hơi cháy quá tay, thế nhưng lại cực kỳ hợp với mấy anh chị họ vừa vụng về vừa đáng yêu của cô. Bên dưới Tarneey là một thứ phương tiện cực chất——một chiếc ghế bập bênh mát-xa đã được độ thành xe, gắn thêm động cơ đốt trong Originium và lốp địa hình. Chính cô đã lái cái thứ đồ sộ này tới đây; đến nơi chỉ cần tháo lớp vỏ ngoài ra, nó sẽ biến thành một chiếc ghế dã ngoại có chức năng mát-xa. Dù lớp vỏ được dán bằng keo không mấy chắc chắn, còn chiếc ghế cứ lắc lư không ngừng lúc chạy xe và khiến cô suýt nôn thẳng lên bảng điều khiển, nhưng quá trình cùng mọi người làm ra nó thật sự vui không tả nổi.\nVà còn...... chiếc tai nghe ba mẹ tặng, cùng bộ chuyển mạch được cải tạo riêng để tương thích với máy nghe nhạc. Tarneey vốn định lấy ra để nghe nhạc, nào ngờ lại tình cờ phát hiện ra đoạn ghi âm ồn ào náo nhiệt này đã vô tình được lưu lại.",
+    "Mission1": "Trong trận chiến, Thumpy phải gây ra tổng cộng 8 lần bộc phát Corrosion (không tính Support Units).",
+    "Mission2": "Hoàn thành《Maria Nearl》MN-EX-4 đạt 3-sao; bắt buộc phải đưa Thumpy vào đội hình (không tính Support Units) và triển khai cô, đồng thời Thumpy phải sử dụng kỹ năng “Không cho đi đâu!” (Skill 3) 1 lần.",
+    "TalentLv1VN": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 8 DEF (cộng dồn tối đa 30 tầng) và 250 <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "TalentLv1_p4VN": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 11<@ba.talpu>(+3)</> DEF (cộng dồn tối đa 30 tầng) và 330<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "Bước chân rắn rỏi",
+    "TalentLv2": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 10 DEF và 3 ATK (cộng dồn tối đa 30 tầng), đồng thời nhận 350 <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "TalentLv2_p4": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 13<@ba.talpu>(+3)</> DEF và 4<@ba.talpu>(+1)</> ATK (cộng dồn tối đa 30 tầng), đồng thời nhận 430<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "TitleLv3": "Bước chân rắn rỏi",
+    "TalentLv3": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 12 DEF và 5 ATK (cộng dồn tối đa 30 tầng), đồng thời nhận 400 <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy).",
+    "TalentLv3_p4": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 15<@ba.talpu>(+3)</> DEF và 6<@ba.talpu>(+1)</> ATK (cộng dồn tối đa 30 tầng), đồng thời nhận 480<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy)."
+  },
+  "uniequip_001_yu": {
+    "Name": "Huân chương của Yu",
+    "description": "Cán viên Yu đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+  },
+  "uniequip_002_yu": {
+    "Name": "",
+    "description": "",
+    "Mission1": "",
+    "Mission2": "",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
+    "TalentLv2": "",
+    "TitleLv3": "",
+    "TalentLv3": ""
+  },
+  "uniequip_001_tanya": {
+    "Name": "Huân chương của Crackborne",
+    "description": "Cán viên Crackborne đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+  },
+  "uniequip_002_tanya": {
+    "Name": "",
+    "description": "",
+    "Mission1": "",
+    "Mission2": "",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
+    "TalentLv2": "",
+    "TitleLv3": "",
+    "TalentLv3": ""
+  },
+  "uniequip_001_cairn": {
+    "Name": "Huân chương của Cairn",
+    "description": "Cán viên Cairn đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+  },
+  "uniequip_002_cairn": {
+    "Name": "",
+    "description": "",
+    "Mission1": "",
+    "Mission2": "",
+    "TalentLv1VN": "",
+    "TalentLv1_p4VN": "",
+    "TalentLv1EN": "",
+    "TalentLv1_p4EN": "",
+    "TitleLv2": "",
+    "TalentLv2": "",
+    "TitleLv3": "",
+    "TalentLv3": ""
+  },
+  "uniequip_001_philae": {
+    "Name": "Huân chương của Philae",
+    "description": "Cán viên Philae đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+  },
+  "uniequip_002_philae": {
+    "Name": "",
+    "description": "",
+    "Mission1": "",
+    "Mission2": "",
     "TalentLv1VN": "",
     "TalentLv1_p4VN": "",
     "TalentLv1EN": "",
@@ -94,7 +186,7 @@
     "TalentLv3": ""
   },
   "uniequip_001": {
-    "Name": "Huy hiệu của",
+    "Name": "Huân chương của",
     "description": ""
   },
   "uniequip_002": {

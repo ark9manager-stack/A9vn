@@ -33,7 +33,7 @@
   },
   "ba.dt.apoptosis": {
     "title": "Necrosis",
-    "text": "Necrosis sẽ nổ khi đạt 1000, đơn vị bị ảnh hưởng không thể sử dụng kỹ năng trong 15 giây; Cứ mỗi giây sẽ mất 1 SP và chịu 100 sát thương phép."
+    "text": "Necrosis sẽ nổ khi đạt 1000, đơn vị bị ảnh hưởng không thể sử dụng kỹ năng trong 15 giây; Cứ mỗi giây sẽ mất 1 SP và chịu 100 sát thương Thuật pháp."
   },
   "ba.dt.apoptosis2": {
     "title": "Necrosis - nguồn từ đồng minh",
@@ -185,11 +185,11 @@
   },
   "StatusRes": {
     "title": "Kháng hiệu ứng/Status Resistance",
-    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】【Hoảng sợ】【Dẫn dụ】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (ví dụ 'mỗi giây chịu sát thương Thuật pháp' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương Thuật pháp').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   },
   "ba.buffres": {
     "title": "Kháng hiệu ứng/Status Resistance",
-    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (ví dụ 'mỗi giây chịu sát thương phép' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương phép').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
+    "text": "Giảm một nửa thời gian khống chế của các hiệu ứng【Choáng】【Lạnh】【Đóng băng】【Hoảng sợ】【Dẫn dụ】. Hiệu ứng khác như【Tê Liệt】sẽ mất 1 tầng mỗi 5 giây (các hiệu ứng cùng tên sẽ không cộng dồn).\n• Bản chất của 'Kháng hiệu ứng' là đẩy nhanh thời gian của một số hiệu ứng nhất định, nên nó sẽ làm các hiệu ứng gây sát thương theo thời gian bị đẩy nhanh theo (ví dụ 'mỗi giây chịu sát thương Thuật pháp' thì dưới tác dụng 'Kháng hiệu ứng' sẽ thành 'mỗi 0,5 giây chịu sát thương Thuật pháp').\n• Tuy nhiên, nếu trong mô tả đã ghi rõ là kích hoạt theo chu kỳ, thì sẽ không bị ảnh hưởng bởi hệ số thời gian này."
   },
   "ba.debuff": {
     "title": "Hiệu ứng xấu/Negative Status",
@@ -205,11 +205,11 @@
   },
   "Sanctuary": {
     "title": "Bảo hộ/Sanctuary",
-    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
+    "text": "Giảm sát thương vật lý và sát thương Thuật pháp nhận vào theo tỷ lệ tương ứng (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
   "ba.protect": {
     "title": "Bảo hộ/Sanctuary",
-    "text": "Giảm sát thương vật lý và sát thương phép nhận vào theo tỷ lệ tương ứng (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
+    "text": "Giảm sát thương vật lý và sát thương Thuật pháp nhận vào theo tỷ lệ tương ứng (nếu có nhiều hiệu ứng cùng tên, chỉ áp dụng giá trị cao nhất)."
   },
   "ba.attract": {
     "title": "Dẫn dụ/Lures",
@@ -293,11 +293,11 @@
   },
   "ba.magicfragile": {
     "title": "Arts Fragility",
-    "text": "Mục tiêu chịu thêm sát thương phép theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+    "text": "Mục tiêu chịu thêm sát thương Thuật pháp theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
   },
   "ba.fragile": {
     "title": "Fragility",
-    "text": "Mục tiêu chịu thêm sát thương vật lý, sát thương phép, sát thương chuẩn theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
+    "text": "Mục tiêu chịu thêm sát thương vật lý, sát thương Thuật pháp, sát thương chuẩn theo tỷ lệ tương ứng (hiệu ứng cùng tên chỉ áp dụng mức cao nhất)."
   },
   "ba.elementfragile": {
     "title": "Elemental Fragility",
