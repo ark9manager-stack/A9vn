@@ -173,22 +173,32 @@ function lookupCaseInsensitive(dict, rawKey) {
   return found ? dict[found] : null;
 }
 
-function getNote(noteKey) {
+function isEnglishLanguage(value) {
+  return typeof value === "string" && value.toLowerCase().startsWith("en");
+}
+
+function getNote(noteKey, isEnglishUI = false) {
+  if (isEnglishUI) return null;
   return lookupCaseInsensitive(statHoverVN, noteKey);
 }
 
-function getTerm(termId) {
+function getTerm(termId, isEnglishUI = false) {
   const key = normalizeHoverKey(termId);
   if (!isNonEmptyString(key)) return null;
 
-  const dictCandidates = [
-    gameDataConstEN?.termDescriptionDict,
-    gameDataConstEN?.gamedataConst?.termDescriptionDict,
-    gameDataConst?.termDescriptionDict,
-    gameDataConst?.gamedataConst?.termDescriptionDict,
-  ].filter(Boolean);
+  const dictCandidates = isEnglishUI
+    ? [
+        gameDataConstEN?.termDescriptionDict,
+        gameDataConstEN?.gamedataConst?.termDescriptionDict,
+      ]
+    : [
+        gameDataConstEN?.termDescriptionDict,
+        gameDataConstEN?.gamedataConst?.termDescriptionDict,
+        gameDataConst?.termDescriptionDict,
+        gameDataConst?.gamedataConst?.termDescriptionDict,
+      ];
 
-  for (const dict of dictCandidates) {
+  for (const dict of dictCandidates.filter(Boolean)) {
     const found = lookupCaseInsensitive(dict, key);
     if (found) return found;
   }
@@ -244,14 +254,17 @@ function applyNoteKeyStyle(nodes, noteKey, keyPrefix) {
   return inner;
 }
 
-function resolveHoverTarget(keyRaw, { preferNote = false } = {}) {
+function resolveHoverTarget(
+  keyRaw,
+  { preferNote = false, isEnglishUI = false } = {},
+) {
   const key = normalizeHoverKey(keyRaw);
   if (!isNonEmptyString(key)) return { kind: null, key: "" };
 
-  const note = getNote(key);
+  const note = getNote(key, isEnglishUI);
   if (note) return { kind: "note", key };
 
-  const term = getTerm(key);
+  const term = getTerm(key, isEnglishUI);
   if (term) return { kind: "term", key };
 
   if (preferNote) {
@@ -325,17 +338,26 @@ if (str.startsWith("[[", state.i)) {
       if (isNonEmptyString(keyPart)) {
         const target = resolveHoverTarget(keyPart, {
           preferNote: !!opts?.preferNoteForDollar,
+          isEnglishUI: !!opts?.isEnglishUI,
         });
 
         if (target.kind === "term") {
           nodes.push(
-            <StatHover key={compKey} termId={target.key}>
+            <StatHover
+              key={compKey}
+              termId={target.key}
+              isEnglishUI={!!opts?.isEnglishUI}
+            >
               {labelNodes}
             </StatHover>
           );
         } else if (target.kind === "note") {
           nodes.push(
-            <StatHover key={compKey} noteKey={target.key}>
+            <StatHover
+              key={compKey}
+              noteKey={target.key}
+              isEnglishUI={!!opts?.isEnglishUI}
+            >
               {labelNodes}
             </StatHover>
           );
@@ -368,17 +390,26 @@ if (str.startsWith("[[", state.i)) {
 } else {
   const target = resolveHoverTarget(key, {
     preferNote: !!opts?.preferNoteForDollar,
+    isEnglishUI: !!opts?.isEnglishUI,
   });
 
   if (target.kind === "note") {
     nodes.push(
-      <StatHover key={wrapKey} noteKey={target.key}>
+      <StatHover
+        key={wrapKey}
+        noteKey={target.key}
+        isEnglishUI={!!opts?.isEnglishUI}
+      >
         {inner}
       </StatHover>
     );
   } else if (target.kind === "term") {
     nodes.push(
-      <StatHover key={wrapKey} termId={target.key}>
+      <StatHover
+        key={wrapKey}
+        termId={target.key}
+        isEnglishUI={!!opts?.isEnglishUI}
+      >
         {inner}
       </StatHover>
     );
@@ -411,13 +442,27 @@ export function renderRichInline(text, keyPrefix, opts = {}) {
 }
 
 export function renderAKText(text, keyPrefix = "ak", options = {}) {
-  const { inline = false, preferNoteForDollar = false } = options || {};
+  const {
+    inline = false,
+    preferNoteForDollar = false,
+    isEnglishUI = false,
+    lang,
+  } = options || {};
+  const useEnglish = !!isEnglishUI || isEnglishLanguage(lang);
+  const renderOptions = { preferNoteForDollar, isEnglishUI: useEnglish };
   return inline
-    ? renderRichInline(text, keyPrefix, { preferNoteForDollar })
-    : renderRich(text, keyPrefix, { preferNoteForDollar });
+    ? renderRichInline(text, keyPrefix, renderOptions)
+    : renderRich(text, keyPrefix, renderOptions);
 }
 
-export default function StatHover({ label, noteKey, termId, children }) {
+export default function StatHover({
+  label,
+  noteKey,
+  termId,
+  children,
+  lang = "VN",
+  isEnglishUI: isEnglishUIProp = false,
+}) {
   const anchorRef = React.useRef(null);
   const tooltipRef = React.useRef(null);
   const hoveringRef = React.useRef(false);
@@ -435,8 +480,11 @@ export default function StatHover({ label, noteKey, termId, children }) {
     }
   }, []);
 
-  const note = getNote(noteKey) || getNote(termId);
-  const term = getTerm(termId) || getTerm(noteKey);
+  const isEnglishUI = !!isEnglishUIProp || isEnglishLanguage(lang);
+  const note =
+    getNote(noteKey, isEnglishUI) || getNote(termId, isEnglishUI);
+  const term =
+    getTerm(termId, isEnglishUI) || getTerm(noteKey, isEnglishUI);
 
   const title = note?.title || note?.termName || term?.termName || term?.title || "";
   const text = note?.text || note?.description || term?.description || term?.text || "";
@@ -453,7 +501,9 @@ export default function StatHover({ label, noteKey, termId, children }) {
   if (hasChildren) {
     anchorContent = children;
   } else {
-    const parsed = renderRichInline(String(label || ""), "sh-lbl");
+    const parsed = renderRichInline(String(label || ""), "sh-lbl", {
+      isEnglishUI,
+    });
     const tpl = getTemplateForNoteKey(noteKey);
     anchorContent = tpl ? applyNoteKeyStyle(parsed, noteKey, "sh-lblwrap") : parsed;
   }
@@ -577,6 +627,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
           {renderRich(title, "sh-ttl", {
             allowNewlines: true,
             preferNoteForDollar: !!note,
+            isEnglishUI,
           })}
         </div>
       ) : null}
@@ -590,6 +641,7 @@ export default function StatHover({ label, noteKey, termId, children }) {
           {renderRich(text, "sh-txt", {
             allowNewlines: true,
             preferNoteForDollar: !!note,
+            isEnglishUI,
           })}
         </div>
       ) : null}

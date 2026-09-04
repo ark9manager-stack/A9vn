@@ -2278,5 +2278,25 @@
     "idweb": 427,
     "name": "予愿安洁莉娜",
     "name_vn": "Angelina the Mellow Wish"
+  },
+  "char_4220_kormr": {
+    "idweb": 428,
+    "name": "虎狼丸",
+    "name_vn": "Koromaru"
+  },
+  "char_4219_yukari": {
+    "idweb": 429,
+    "name": "岳羽由加莉",
+    "name_vn": "Yukari Takeba"
+  },
+  "char_4218_aigis": {
+    "idweb": 430,
+    "name": "埃癸斯",
+    "name_vn": "Aegis"
+  },
+  "char_4217_makoto": {
+    "idweb": 431,
+    "name": "结城理",
+    "name_vn": "Makoto Yuki"
   }
 }

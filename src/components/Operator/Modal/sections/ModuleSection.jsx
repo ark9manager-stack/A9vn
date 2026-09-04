@@ -5,7 +5,6 @@ import characterPatchTable from "../../../../data/operators/char_patch_table.jso
 import characterPatchTableEN from "../../../../data/operators/char_patch_table_en.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
-import traitEN from "../../../../data/operators/trait_en.json";
 import rangeTable from "../../../../data/range_table.json";
 import itemTable from "../../../../data/operators/item_table.json";
 import uniequipTable from "../../../../data/module/uniequip_table.json";
@@ -878,7 +877,7 @@ function ModuleLevelBoardPane({
                               renderAKText(
                                 lv1DetailText,
                                 `module-up-${charKey}-${id}-lv1-pot${potRank}`,
-                                { preferNoteForDollar: !isEnglishUI },
+                                { preferNoteForDollar: !isEnglishUI, isEnglishUI },
                               )
                             ) : (
                               <span className="text-white/40 italic">-</span>
@@ -894,7 +893,7 @@ function ModuleLevelBoardPane({
                             renderAKText(
                               rightText,
                               `module-up-${charKey}-${id}-lv${lv}-pot${potRank}`,
-                              { preferNoteForDollar: !isEnglishUI },
+                              { preferNoteForDollar: !isEnglishUI, isEnglishUI },
                             )
                           ) : (
                             <span className="text-white/40 italic">-</span>
@@ -973,6 +972,7 @@ function ModuleMissionsPane({ module, isEnglishUI }) {
             <div className="min-w-0">
               {renderAKText(t, `module-mission-${id}-${idx0}`, {
                 preferNoteForDollar: !isEnglishUI,
+                isEnglishUI,
               })}
             </div>
           </div>
@@ -1125,7 +1125,7 @@ export default function ModuleSection(props) {
     props?.english === true;
 
   const traitMap = React.useMemo(
-    () => buildTraitMap(isEnglishUI ? traitEN : traitVN),
+    () => buildTraitMap(isEnglishUI ? null : traitVN),
     [isEnglishUI],
   );
 
@@ -1472,17 +1472,29 @@ export default function ModuleSection(props) {
     return pickCharTraitCandidateAtPhase(charData, 2, potRank);
   }, [charData, potRank]);
 
+  const baseTraitCandidateE2EN = React.useMemo(() => {
+    return pickCharTraitCandidateAtPhase(charDataEN, 2, potRank);
+  }, [charDataEN, potRank]);
+
   const baseTraitBBMapE2 = React.useMemo(() => {
-    return buildBlackboardMap(baseTraitCandidateE2?.blackboard);
-  }, [baseTraitCandidateE2]);
+    const candidate = isEnglishUI
+      ? baseTraitCandidateE2EN || baseTraitCandidateE2
+      : baseTraitCandidateE2;
+    return buildBlackboardMap(candidate?.blackboard);
+  }, [baseTraitCandidateE2, baseTraitCandidateE2EN, isEnglishUI]);
 
   const baseTraitText = React.useMemo(() => {
     const subProfessionId =
       charData?.subProfessionId ?? operator?.subProfessionId;
     const rarity = charData?.rarity ?? operator?.rarity;
 
-    const baseDescCN = charData?.description ?? operator?.description ?? "";
-    const baseDescEN = charDataEN?.description ?? "";
+    const baseDescCN =
+      baseTraitCandidateE2?.description ??
+      charData?.description ??
+      operator?.description ??
+      "";
+    const baseDescEN =
+      baseTraitCandidateE2EN?.description ?? charDataEN?.description ?? "";
     const baseDesc = isEnglishUI ? baseDescEN || baseDescCN : baseDescCN;
 
     const raw = resolveTraitTexts(
@@ -1491,7 +1503,16 @@ export default function ModuleSection(props) {
     ).mainText;
 
     return applyBlackboard(raw, baseTraitBBMapE2);
-  }, [charData, charDataEN, operator, isEnglishUI, traitMap, baseTraitBBMapE2]);
+  }, [
+    charData,
+    charDataEN,
+    operator,
+    isEnglishUI,
+    traitMap,
+    baseTraitBBMapE2,
+    baseTraitCandidateE2,
+    baseTraitCandidateE2EN,
+  ]);
 
   const traitCandidate = React.useMemo(() => {
     const ph1 = phasesByLevel.get(1) || null;
@@ -1798,7 +1819,7 @@ export default function ModuleSection(props) {
                   renderAKText(
                     baseTraitText,
                     `module-trait-base-${charKey}-${selected.id}`,
-                    { preferNoteForDollar: !isEnglishUI },
+                    { preferNoteForDollar: !isEnglishUI, isEnglishUI },
                   )
                 ) : (
                   <span className="text-white/40 italic">-</span>
@@ -1818,7 +1839,7 @@ export default function ModuleSection(props) {
                     {renderAKText(
                       traitOverrideText,
                       `module-trait-override-${selected.id}-pot${potRank}`,
-                      { preferNoteForDollar: !isEnglishUI },
+                      { preferNoteForDollar: !isEnglishUI, isEnglishUI },
                     )}
                     {isNonEmptyString(traitAdditionalText) ? <br /> : null}
                   </>
@@ -1831,7 +1852,7 @@ export default function ModuleSection(props) {
                       ? renderAKText(
                           baseTraitText,
                           `module-trait-base2-${charKey}-${selected.id}`,
-                          { preferNoteForDollar: !isEnglishUI },
+                          { preferNoteForDollar: !isEnglishUI, isEnglishUI },
                         )
                       : null}
                     {isNonEmptyString(baseTraitText) ? <br /> : null}
@@ -1841,7 +1862,7 @@ export default function ModuleSection(props) {
                     {renderAKText(
                       traitAdditionalText,
                       `module-trait-add-${selected.id}-pot${potRank}`,
-                      { preferNoteForDollar: !isEnglishUI },
+                      { preferNoteForDollar: !isEnglishUI, isEnglishUI },
                     )}
                   </>
                 ) : null}
@@ -1986,6 +2007,7 @@ export default function ModuleSection(props) {
           >
             {renderAKText(displayStoryText, `module-story-${selected?.id}`, {
               preferNoteForDollar: !isEnglishUI,
+              isEnglishUI,
             })}
           </div>
         ) : (

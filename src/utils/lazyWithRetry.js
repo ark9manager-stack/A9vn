@@ -1,8 +1,10 @@
 import { lazy } from "react";
 
-const DEFAULT_RETRIES = 8;
+const DEFAULT_RETRIES = 3;
 const DEFAULT_DELAY_MS = 450;
-const MAX_DELAY_MS = 5000;
+const MAX_DELAY_MS = 3000;
+const AUTO_RELOAD_GUARD_KEY = "a9_dynamic_import_reload_v2";
+const AUTO_RELOAD_GUARD_MS = 60_000;
 
 function getErrorText(error) {
   return `${String(error?.name || "")} ${String(error?.message || error || "")}`;
@@ -42,32 +44,39 @@ function waitUntilOnline(timeoutMs) {
   });
 }
 
-function getDynamicImportUrl(error) {
-  if (typeof window === "undefined") return "";
-
-  const text = getErrorText(error);
-  const absoluteMatch = text.match(/https?:\/\/[^\s'"<>)]*?\.js(?:\?[^\s'"<>)]*)?/i);
-  const relativeMatch = text.match(/\/[\w./@~!$&'()*+,;=:%-]+?\.js(?:\?[^\s'"<>)]*)?/i);
-  const rawUrl = absoluteMatch?.[0] || relativeMatch?.[0] || "";
-  if (!rawUrl) return "";
+function canAutoReloadAfterDynamicImportError() {
+  if (typeof window === "undefined") return false;
+  if (typeof navigator !== "undefined" && navigator.onLine === false) return false;
 
   try {
-    const parsed = new URL(rawUrl, window.location.href);
-    if (parsed.origin !== window.location.origin) return "";
-    if (!/\.js$/i.test(parsed.pathname)) return "";
-    return parsed.href;
+    const now = Date.now();
+    const lastReload = Number(sessionStorage.getItem(AUTO_RELOAD_GUARD_KEY) || 0);
+    if (Number.isFinite(lastReload) && now - lastReload < AUTO_RELOAD_GUARD_MS) {
+      return false;
+    }
+    sessionStorage.setItem(AUTO_RELOAD_GUARD_KEY, String(now));
+    return true;
   } catch {
-    return "";
+    return true;
   }
 }
 
-async function importWithCacheBust(url, attempt) {
-  if (!url) throw new Error("no-dynamic-import-url");
+function reloadOnceForStaleChunk(error, label) {
+  if (!isDynamicImportError(error) || !canAutoReloadAfterDynamicImportError()) {
+    return false;
+  }
 
-  const parsed = new URL(url, window.location.href);
-  parsed.searchParams.set("a9_retry", `${Date.now()}_${attempt}`);
+  try {
+    console.warn(
+      `[A9VN] ${label} is incompatible with the current cached build; reloading once to sync assets.`,
+      error,
+    );
+  } catch {
+    // no-op
+  }
 
-  return import(/* @vite-ignore */ parsed.href);
+  window.location.reload();
+  return true;
 }
 
 export async function retryDynamicImport(importer, options = {}) {
@@ -80,7 +89,6 @@ export async function retryDynamicImport(importer, options = {}) {
   const label = options.label || "dynamic module";
 
   let lastError;
-  let cacheBustUrl = "";
 
   for (let attempt = 0; attempt <= retries; attempt += 1) {
     try {
@@ -88,11 +96,11 @@ export async function retryDynamicImport(importer, options = {}) {
     } catch (error) {
       lastError = error;
 
-      if (!isDynamicImportError(error) || attempt >= retries) {
+      if (!isDynamicImportError(error)) {
         throw error;
       }
 
-      if (!cacheBustUrl) cacheBustUrl = getDynamicImportUrl(error);
+      if (attempt >= retries) break;
 
       const retryNumber = attempt + 1;
       const delayMs = Math.min(baseDelayMs * 2 ** attempt, MAX_DELAY_MS);
@@ -108,15 +116,11 @@ export async function retryDynamicImport(importer, options = {}) {
 
       await waitUntilOnline(5000);
       await sleep(delayMs);
-
-      if (cacheBustUrl) {
-        try {
-          return await importWithCacheBust(cacheBustUrl, retryNumber);
-        } catch (cacheBustError) {
-          lastError = cacheBustError;
-        }
-      }
     }
+  }
+
+  if (reloadOnceForStaleChunk(lastError, label)) {
+    return new Promise(() => {});
   }
 
   throw lastError;

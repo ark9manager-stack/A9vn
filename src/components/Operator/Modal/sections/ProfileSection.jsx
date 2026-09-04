@@ -70,12 +70,20 @@ function pickFirstNonEmpty(...vals) {
 const HANDBOOK_TITLE_MAP = {
   basic_info: { en: "Basic Info", cn: "基础档案" },
   physical_exam: { en: "Physical Exam", cn: "综合体检测试" },
+  physical_exam_2: { en: "Performance Review", cn: "综合性能检测结果" },
+  physical_exam_3: { en: "", cn: "综合能力测试" },
   profile: { en: "Profile", cn: "客观履历" },
+  profile_2: { en: "", cn: "学生概况" },
   clinical_analysis: { en: "Clinical Analysis", cn: "临床诊断分析" },
-  file_1: { en: [ "Archive File 1", "Class Conversion Record 1", "Class Conversion Record 2", ], cn: ["档案资料一", "升变档案一", "升变档案二"], },
+  clinical_analysis_2: { en: "", cn: "特殊疾病筛查" },
+  file_1: {
+    en: ["Archive File 1", "Class Conversion Record 1", "Class Conversion Record 2"],
+    cn: ["档案资料一", "升变档案一", "升变档案二"],
+  },
   file_2: { en: "Archive File 2", cn: "档案资料二" },
   file_3: { en: "Archive File 3", cn: "档案资料三" },
   file_4: { en: "Archive File 4", cn: "档案资料四" },
+  file_encryted: { en: "", cn: "加密报告" },
   promotion_record: { en: "Promotion Record", cn: "晋升记录" },
 };
 
@@ -181,7 +189,7 @@ function renderInlineItalic(str, keyPrefix = "t") {
   return nodes;
 }
 
-function renderLineWithNotes(line, keyPrefix = "line") {
+function renderLineWithNotes(line, keyPrefix = "line", isEnglishUI = false) {
   if (!line.includes("[[")) {
     return renderInlineItalic(line, `${keyPrefix}-plain`);
   }
@@ -224,6 +232,7 @@ function renderLineWithNotes(line, keyPrefix = "line") {
           key={`${keyPrefix}-note-${start}-${end}-${noteKey}`}
           label={label}
           noteKey={noteKey}
+          isEnglishUI={isEnglishUI}
         />,
       );
     }
@@ -238,14 +247,14 @@ function renderLineWithNotes(line, keyPrefix = "line") {
   return out;
 }
 
-function renderMultiline(text) {
+function renderMultiline(text, isEnglishUI = false) {
   if (!isNonEmptyString(text)) return null;
 
   const parts = String(text).replace(/\r\n/g, "\n").split("\n");
 
   return parts.map((line, idx) => (
     <React.Fragment key={`line-${idx}`}>
-      {renderLineWithNotes(line, `line-${idx}`)}
+      {renderLineWithNotes(line, `line-${idx}`, isEnglishUI)}
       {idx < parts.length - 1 ? <br /> : null}
     </React.Fragment>
   ));
@@ -296,13 +305,13 @@ function SectionTitle({ children }) {
   );
 }
 
-function TextBody({ text }) {
+function TextBody({ text, isEnglishUI = false }) {
   if (!isNonEmptyString(text)) return null;
   return (
     <div
       style={{ lineHeight: 1.6, fontSize: UI_SCALE.bodyFont, opacity: 0.95 }}
     >
-      {renderMultiline(text)}
+      {renderMultiline(text, isEnglishUI)}
     </div>
   );
 }
@@ -316,6 +325,7 @@ function ImageTextPanel({
   text,
   id,
   imgObjectPosition,
+  isEnglishUI = false,
 }) {
   const [src, setSrc] = React.useState(imgUrl || "");
   const [usedFallback, setUsedFallback] = React.useState(false);
@@ -404,13 +414,13 @@ function ImageTextPanel({
 
       <div style={{ minWidth: 0, flex: 1 }}>
         <SectionTitle>{title}</SectionTitle>
-        <TextBody text={text} />
+        <TextBody text={text} isEnglishUI={isEnglishUI} />
       </div>
     </div>
   );
 }
 
-function TextPanel({ title, text, id }) {
+function TextPanel({ title, text, id, isEnglishUI = false }) {
   if (!isNonEmptyString(text)) return null;
   return (
     <div
@@ -425,7 +435,7 @@ function TextPanel({ title, text, id }) {
       }}
     >
       <SectionTitle>{title}</SectionTitle>
-      <TextBody text={text} />
+      <TextBody text={text} isEnglishUI={isEnglishUI} />
     </div>
   );
 }
@@ -551,6 +561,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
 
     const physicalText = _getText("physical_exam");
     const performanceText = _getText("physical_exam_2");
+    const generalAbilityText = _getText("physical_exam_3");
 
     let _physicalPanel = null;
     if (isNonEmptyString(physicalText)) {
@@ -564,6 +575,12 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
         id: "performancereview",
         title: "Đánh giá hiệu suất",
         text: performanceText,
+      };
+    } else if (isNonEmptyString(generalAbilityText)) {
+      _physicalPanel = {
+        id: "generalability",
+        title: "Năng lực tổng quát",
+        text: generalAbilityText,
       };
     }
 
@@ -583,9 +600,12 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
   }, [resolvedCharId, isEnglishUI]);
 
   const optionalKeys = new Set([
+    "profile_2",
+    "clinical_analysis_2",
     "file_2",
     "file_3",
     "file_4",
+    "file_encryted",
     "promotion_record",
     "paradox",
   ]);
@@ -598,10 +618,17 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
   const clinicalAnalysisText = getText("clinical_analysis");
 
   const sections = [
+    { id: "profile_2", key: "profile_2", title: "Hồ sơ học sinh" },
+    {
+      id: "clinical_analysis_2",
+      key: "clinical_analysis_2",
+      title: "Sàng lọc bệnh lý đặc biệt",
+    },
     { id: "file_1", key: "file_1", title: "Tài liệu lưu trữ 1" },
     { id: "file_2", key: "file_2", title: "Tài liệu lưu trữ 2" },
     { id: "file_3", key: "file_3", title: "Tài liệu lưu trữ 3" },
     { id: "file_4", key: "file_4", title: "Tài liệu lưu trữ 4" },
+    { id: "file_encryted", key: "file_encryted", title: "Tài liệu mã hóa" },
     { id: "promotion", key: "promotion_record", title: "Hồ sơ thăng tiến" },
     { id: "paradox", key: "paradox", title: "Mô phỏng Nghịch lý/Paradox Simulation" },
   ];
@@ -625,6 +652,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
           overlayUrl={avatarUrl}
           text={recuitText}
           imgObjectPosition="50% 55%"
+          isEnglishUI={isEnglishUI}
         />
 
         <ImageTextPanel
@@ -635,6 +663,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
           imgAlt="Token"
           overlayUrl=""
           text={tokenText}
+          isEnglishUI={isEnglishUI}
         />
       </div>
 
@@ -649,28 +678,44 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
           id="basicinfo"
           title="Thông tin cơ bản"
           text={basicInfoText}
+          isEnglishUI={isEnglishUI}
         />
         {physicalPanel ? (
           <TextPanel
             id={physicalPanel.id}
             title={physicalPanel.title}
             text={physicalPanel.text}
+            isEnglishUI={isEnglishUI}
           />
         ) : null}
       </div>
 
-      <TextPanel id="profile" title="Hồ sơ" text={profileText} />
+      <TextPanel
+        id="profile"
+        title="Hồ sơ"
+        text={profileText}
+        isEnglishUI={isEnglishUI}
+      />
 
       <TextPanel
         id="clinicalanalysis"
         title="Biện luận lâm sàng"
         text={clinicalAnalysisText}
+        isEnglishUI={isEnglishUI}
       />
 
       {sections.map((s) => {
         const text = getText(s.key);
         if (optionalKeys.has(s.key) && !isNonEmptyString(text)) return null;
-        return <TextPanel key={s.id} id={s.id} title={s.title} text={text} />;
+        return (
+          <TextPanel
+            key={s.id}
+            id={s.id}
+            title={s.title}
+            text={text}
+            isEnglishUI={isEnglishUI}
+          />
+        );
       })}
     </div>
   );

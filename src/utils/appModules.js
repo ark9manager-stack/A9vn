@@ -1,4 +1,5 @@
-import { lazyWithRetry, retryDynamicImport } from "./lazyWithRetry";
+import { lazy } from "react";
+import { retryDynamicImport } from "./lazyWithRetry";
 
 const MODULE_IMPORTERS = {
   pageHome: () => import("../pages/Home"),
@@ -43,9 +44,19 @@ const MODULE_LABELS = {
   sectionVoice: "operator voice section",
 };
 
+const OPERATOR_SECTION_PRELOAD_KEYS = [
+  "sectionSkins",
+  "sectionProfile",
+  "sectionStats",
+  "sectionSkills",
+  "sectionModules",
+  "sectionVoice",
+];
+
 const INTRO_PRELOAD_KEYS = [
-  "pageHome",
+  ...OPERATOR_SECTION_PRELOAD_KEYS,
   "pageOperator",
+  "pageHome",
   "pageMusic",
   "pageDatabase",
   "pageGuideStory",
@@ -56,12 +67,6 @@ const INTRO_PRELOAD_KEYS = [
   "pageMaterialPlanner",
   "pageBosses",
   "pageNotFound",
-  "sectionSkins",
-  "sectionProfile",
-  "sectionStats",
-  "sectionSkills",
-  "sectionModules",
-  "sectionVoice",
 ];
 
 const modulePromiseCache = new Map();
@@ -77,7 +82,7 @@ export function loadAppModule(key, options = {}) {
   if (!modulePromiseCache.has(key)) {
     const label = getModuleLabel(key, options.label);
     const promise = retryDynamicImport(importer, {
-      retries: 8,
+      retries: 3,
       delayMs: 450,
       label,
       ...options,
@@ -93,17 +98,12 @@ export function loadAppModule(key, options = {}) {
 }
 
 export function createLazyAppModule(key, options = {}) {
-  return lazyWithRetry(() => loadAppModule(key, options), {
-    label: getModuleLabel(key, options.label),
-    retries: 8,
-    delayMs: 450,
-    ...options,
-  });
+  return lazy(() => loadAppModule(key, options));
 }
 
-export function preloadIntroAppModules({ onProgress, concurrency = 3 } = {}) {
-  const keys = INTRO_PRELOAD_KEYS.slice();
-  const total = keys.length;
+function preloadKeys(keys, { onProgress, concurrency = 3 } = {}) {
+  const queue = keys.slice();
+  const total = queue.length;
   let completed = 0;
   let nextIndex = 0;
 
@@ -120,14 +120,14 @@ export function preloadIntroAppModules({ onProgress, concurrency = 3 } = {}) {
 
   const runNext = async () => {
     while (nextIndex < total) {
-      const key = keys[nextIndex];
+      const key = queue[nextIndex];
       nextIndex += 1;
 
       try {
         const value = await loadAppModule(key, {
           label: getModuleLabel(key),
-          retries: 6,
-          delayMs: 500,
+          retries: 3,
+          delayMs: 450,
         });
         results.push({ key, status: "fulfilled", value });
       } catch (reason) {
@@ -140,4 +140,12 @@ export function preloadIntroAppModules({ onProgress, concurrency = 3 } = {}) {
   };
 
   return Promise.all(Array.from({ length: workerCount }, runNext)).then(() => results);
+}
+
+export function preloadOperatorSectionModules(options = {}) {
+  return preloadKeys(OPERATOR_SECTION_PRELOAD_KEYS, options);
+}
+
+export function preloadIntroAppModules(options = {}) {
+  return preloadKeys(INTRO_PRELOAD_KEYS, options);
 }

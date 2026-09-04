@@ -5,7 +5,6 @@ import characterPatchTable from "../../../../data/operators/char_patch_table.jso
 import characterPatchTableEN from "../../../../data/operators/char_patch_table_en.json";
 import characterTableEN from "../../../../data/operators/character_table_en.json";
 import traitVN from "../../../../data/operators/trait_vn.json";
-import traitEN from "../../../../data/operators/trait_en.json";
 import talentVN from "../../../../data/operators/talent_vn.json";
 import rangeTable from "../../../../data/range_table.json";
 import tagVN from "../../../../data/operators/tag_vn.json";
@@ -53,6 +52,7 @@ function renderTextWithHovers(text, keyPrefix = "txt", isEnglishUI = false) {
     <>
       {renderAKText(String(text), keyPrefix, {
         preferNoteForDollar: !isEnglishUI,
+        isEnglishUI,
       })}
     </>
   );
@@ -1790,7 +1790,7 @@ export default function SkillsSection(props) {
     props?.english === true;
 
   const traitMap = React.useMemo(
-    () => buildTraitMap(isEnglishUI ? traitEN : traitVN),
+    () => buildTraitMap(isEnglishUI ? null : traitVN),
     [isEnglishUI],
   );
   const tagMap = React.useMemo(() => buildTagMap(tagVN), []);

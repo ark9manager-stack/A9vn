@@ -7,7 +7,10 @@ import React, {
   useState,
 } from "react";
 import LoadingOp from "../../UI/LoadingOp";
-import { createLazyAppModule } from "../../../utils/appModules";
+import {
+  createLazyAppModule,
+  preloadOperatorSectionModules,
+} from "../../../utils/appModules";
 
 const SECTION_IDS = ["skins", "profile", "stats", "skills", "modules", "voice"];
 
@@ -45,6 +48,10 @@ const OperatorContent = ({ activeTab, operator, charId, lang }) => {
   );
   const [mountedTabs, setMountedTabs] = useState(() => new Set([activeTabId]));
   const previousOperatorKeyRef = useRef(operatorKey);
+
+  useEffect(() => {
+    preloadOperatorSectionModules({ concurrency: 3 }).catch(() => null);
+  }, []);
 
   useEffect(() => {
     if (previousOperatorKeyRef.current === operatorKey) return;

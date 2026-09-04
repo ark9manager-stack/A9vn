@@ -448,6 +448,7 @@ function renderVoiceTextWithTranslatorNotes({
   noteIds,
   scopeId,
   seenRefIds,
+  isEnglishUI = false,
 }) {
   const value = String(text ?? "");
   if (!value) return null;
@@ -467,7 +468,8 @@ function renderVoiceTextWithTranslatorNotes({
       nodes.push(
         <React.Fragment key={`${keyPrefix}-text-${last}-${start}`}>
           {renderAKText(value.slice(last, start), `${keyPrefix}-ak-${last}`, {
-            preferNoteForDollar: true,
+            preferNoteForDollar: !isEnglishUI,
+            isEnglishUI,
           })}
         </React.Fragment>,
       );
@@ -493,13 +495,19 @@ function renderVoiceTextWithTranslatorNotes({
     nodes.push(
       <React.Fragment key={`${keyPrefix}-text-tail-${last}`}>
         {renderAKText(value.slice(last), `${keyPrefix}-ak-tail-${last}`, {
-          preferNoteForDollar: true,
+          preferNoteForDollar: !isEnglishUI,
+          isEnglishUI,
         })}
       </React.Fragment>,
     );
   }
 
-  return nodes.length ? nodes : renderAKText(value, keyPrefix, { preferNoteForDollar: true });
+  return nodes.length
+    ? nodes
+    : renderAKText(value, keyPrefix, {
+        preferNoteForDollar: !isEnglishUI,
+        isEnglishUI,
+      });
 }
 
 function TranslatorNotesBlock({ notes, scopeId }) {
@@ -845,6 +853,7 @@ const VoiceSection = ({ operator, lang = "VN" }) => {
                   noteIds: translatorNoteIds,
                   scopeId: translatorNoteScopeId,
                   seenRefIds: noteRefSeenInRender,
+                  isEnglishUI,
                 })}
               </div>
             </div>
