@@ -3474,5 +3474,47 @@
     "Talent1_2_p2": "Đòn tấn công của Angelina the Mellow Wish gây thêm sát thương thuật pháp bằng 30%<@ba.talpu>(+5%)</> ATK; khi tấn công kẻ địch có Trọng lượng từ 3 trở xuống, lượng sát thương thuật pháp gây thêm sẽ tăng lên 45%<@ba.talpu>(+10%)</> ATK. Khi bản thân đang <$ba.liftoff>Cất cánh</>, kẻ địch trong phạm vi tấn công bị <$ba.weightless>Không trọng lượng</>.",
     "Talent2": "Khi Angelina the Mellow Wish có mặt trên sân, tất cả Operator đồng minh đang <$ba.liftoff>Cất cánh</> sẽ nhận ATK +13% và hồi 8% HP tối đa mỗi giây khi đang Chặn kẻ địch.",
     "Talent2_p4": "Khi Angelina the Mellow Wish có mặt trên sân, tất cả Operator đồng minh đang <$ba.liftoff>Cất cánh</> sẽ nhận ATK +18%<@ba.talpu>(+5%)</> và hồi 10%<@ba.talpu>(+2%)</> HP tối đa mỗi giây khi đang Chặn kẻ địch."
+  },
+  "char_4220_kormr": {
+    "TitleTalent1": "Chó săn địa ngục I",
+    "TitleTalent1_p1": "Chó săn địa ngục II",
+    "TitleTalent1_p2": "Chó săn địa ngục III",
+    "TitleTalent1_p3": "Chó săn địa ngục IV",
+    "TitleTalent1_p4": "Chó săn địa ngục V",
+    "TitleTalent1_p5": "Chó săn địa ngục VI",
+    "Talent0": "Sau khi triển khai, tung tổng cộng 6 nhát chém bỏ qua Né lên 1 kẻ địch gần nhất trong phạm vi xung quanh; mỗi nhát chém gây sát thương Thuật pháp bằng 100% ATK, nhát chém cuối sẽ gây sát thương Thuật pháp bằng 200% ATK và khiến mục tiêu bị <$ba.fear>Hoảng sợ</> trong 4 giây.",
+    "Talent0_p1": "Sau khi triển khai, tung tổng cộng 6 nhát chém bỏ qua Né lên 1 kẻ địch gần nhất trong phạm vi xung quanh; mỗi nhát chém gây sát thương Thuật pháp bằng 120%<@ba.talpu>(+20%)</> ATK, nhát chém cuối sẽ gây sát thương Thuật pháp bằng 240%<@ba.talpu>(+40%)</> ATK và khiến mục tiêu bị <$ba.fear>Hoảng sợ</> trong 4 giây.",
+    "Talent0_p2": "Sau khi triển khai, tung tổng cộng 6 nhát chém bỏ qua Né lên 1 kẻ địch gần nhất trong phạm vi xung quanh; mỗi nhát chém gây sát thương Thuật pháp bằng 140%<@ba.talpu>(+40%)</> ATK, nhát chém cuối sẽ gây sát thương Thuật pháp bằng 280%<@ba.talpu>(+80%)</> ATK và khiến mục tiêu bị <$ba.fear>Hoảng sợ</> trong 4 giây.",
+    "Talent0_p3": "Sau khi triển khai, tung tổng cộng 6 nhát chém bỏ qua Né lên 1 kẻ địch gần nhất trong phạm vi xung quanh; mỗi nhát chém gây sát thương Thuật pháp bằng 160%<@ba.talpu>(+60%)</> ATK, nhát chém cuối sẽ gây sát thương Thuật pháp bằng 320%<@ba.talpu>(+120%)</> ATK và khiến mục tiêu bị <$ba.fear>Hoảng sợ</> trong 4 giây.",
+    "Talent0_p4": "Sau khi triển khai, tung tổng cộng 6 nhát chém bỏ qua Né lên 1 kẻ địch gần nhất trong phạm vi xung quanh; mỗi nhát chém gây sát thương Thuật pháp bằng 180%<@ba.talpu>(+80%)</> ATK, nhát chém cuối sẽ gây sát thương Thuật pháp bằng 360%<@ba.talpu>(+160%)</> ATK và khiến mục tiêu bị <$ba.fear>Hoảng sợ</> trong 4 giây.",
+    "Talent0_p5": "Sau khi triển khai, tung tổng cộng 6 nhát chém bỏ qua Né lên 1 kẻ địch gần nhất trong phạm vi xung quanh; mỗi nhát chém gây sát thương Thuật pháp bằng 200%<@ba.talpu>(+100%)</> ATK, nhát chém cuối sẽ gây sát thương Thuật pháp bằng 400%<@ba.talpu>(+200%)</> ATK và khiến mục tiêu bị <$ba.fear>Hoảng sợ</> trong 4 giây."
+  },
+  "char_4219_yukari": {
+    "TitleTalent1": "Làn gió chữa lành",
+    "Talent1": "Sau khi kỹ năng kết thúc, hồi HP cho bản thân và tối đa 2 Operator khác trong phạm vi tấn công bằng 50% ATK của Yukari Takeba.",
+    "Talent1_2": "Sau khi kỹ năng kết thúc, hồi HP cho bản thân và tối đa 3 Operator khác trong phạm vi tấn công bằng 100% ATK của Yukari Takeba."
+  },
+  "char_4218_aigis": {
+    "TitleTalent1": "Vũ trang đặc biệt áp chế Shadow",
+    "Talent1": "Sát thương vật lý gây ra +5%, sát thương vật lý nhận vào -5%.",
+    "Talent1_p4": "Sát thương vật lý gây ra +7%<@ba.talpu>(+2%)</>, sát thương vật lý nhận vào -7%<@ba.talpu>(+2%)</>.",
+    "Talent1_2": "Sát thương vật lý gây ra +10%, sát thương vật lý nhận vào -10%.",
+    "Talent1_2_p4": "Sát thương vật lý gây ra +12%<@ba.talpu>(+2%)</>, sát thương vật lý nhận vào -12%<@ba.talpu>(+2%)</>."
+  },
+  "char_4217_makoto": {
+    "TitleTalent1": "Lá bài vạn năng",
+    "TitleTalent2": "Đội trưởng S.E.E.S.",
+    "Talent0": "Trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +40%, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
+    "Talent0_p4": "Trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +45%<@ba.talpu>(+5%)</>, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
+    "Talent1": "Khi Makoto Yuki chuyển sang trạng thái <Thế Thân>, kẻ địch trong phạm vi xung quanh sẽ bị <$ba.sluggish>Làm chậm</> trong 5 giây; trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +60%, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
+    "Talent1_p4": "Khi Makoto Yuki chuyển sang trạng thái <Thế Thân>, kẻ địch trong phạm vi xung quanh sẽ bị <$ba.sluggish>Làm chậm</> trong 5 giây; trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +65%<@ba.talpu>(+5%)</>, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
+    "Talent1_2": "Khi Makoto Yuki chuyển sang trạng thái <Thế Thân>, kẻ địch trong phạm vi xung quanh sẽ bị <$ba.sluggish>Làm chậm</> trong 8 giây; trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +80%, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
+    "Talent1_2_p4": "Khi Makoto Yuki chuyển sang trạng thái <Thế Thân>, kẻ địch trong phạm vi xung quanh sẽ bị <$ba.sluggish>Làm chậm</> trong 8 giây; trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +85%<@ba.talpu>(+5%)</>, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
+    "Talent2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 180% ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
+    "Talent2_p2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 200%<@ba.talpu>(+20%)</> ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
+    "Talent2_1": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 280% ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
+    "Talent2_1_p2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 300%<@ba.talpu>(+20%)</> ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
+    "Talent2_2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 430% ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
+    "Talent2_2_p2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 450%<@ba.talpu>(+20%)</> ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn)."
   }
 }

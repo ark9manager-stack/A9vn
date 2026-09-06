@@ -7,6 +7,10 @@
     "Name": "Quyền hạn tối cao",
     "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
+  "control_prod_spd[999]": {
+    "Name": "Khí chất thủ lĩnh",
+    "description": "Khi Operator này được phân công vào Control Center, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+  },
   "control_prod_fraction[000]": {
     "Name": "Ánh le lói của Kỵ Sĩ Nến",
     "description": "Khi Operator này được phân công vào Control Center, tất cả Operator <$cc.tag.knight><@cc.kw>Kỵ Sĩ</></> được phân công vào Factory nhận năng suất <@cc.vup>+7%</>."
@@ -491,6 +495,10 @@
     "Name": "Cộng hưởng chú ngữ",
     "description": "Khi Operator này được phân công vào Power Plant, nếu <@cc.kw>Logos</> được phân công vào vị trí huấn luyện của Training Room, tốc độ hồi Drone <@cc.vup>+5%</>."
   },
+  "power_rec_spd_P2[999]": {
+    "Name": "Kỹ thuật cơ khí",
+    "description": "Khi Operator này được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+15%</> mỗi giờ; nếu <@cc.kw>Makoto Yuki</> được phân công vào Factory, tốc độ hồi Drone <@cc.vup>+5%</> mỗi giờ."
+  },
   "power_rec_spd_ext&faction[000]": {
     "Name": "Đang bảo trì",
     "description": "Khi Operator này được phân công vào Power Plant, nếu có Operator <$cc.g.laterano><@cc.kw>Laterano</></> khác đang được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+5%</>."
@@ -630,6 +638,10 @@
   "manu_prod_spd_addition&cost[000]": {
     "Name": "Bão tuyết ngoài khung cửa",
     "description": "Khi Operator này được phân công vào Factory, nếu <$cc.bd.costdrop><@cc.kw>Tinh thần thiếu hụt</></> của bản thân lớn hơn <@cc.kw>12</>, năng suất <@cc.vup>+10%</> và sức chứa của kho <@cc.vup>+6</>."
+  },
+  "manu_prod_spd&bd[000]": {
+    "Name": "Ý nghĩa của Liên Kết Tâm Giao",
+    "description": "Khi Operator này được phân công vào Factory, năng suất <@cc.vup>+20%</>; với mỗi Operator <$cc.tag.sees><@cc.kw>S.E.E.S.</></> có mặt trong Căn cứ (không tính R.I.I.C. Assistants và tối đa <@cc.kw>4</> Operator), năng suất tăng thêm <@cc.vup>+5%</>."
   },
   "manu_prod_spd&limit[000]": {
     "Name": "Sắp xếp kho α",
@@ -819,6 +831,10 @@
     "Name": "Video hướng dẫn tác chiến",
     "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+30%</>."
   },
+  "manu_formula_spd[011]": {
+    "Name": "Video hướng dẫn tác chiến",
+    "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+30%</>."
+  },
   "manu_formula_spd[020]": {
     "Name": "Video hướng dẫn võ thuật",
     "description": "Khi Operator này được phân công vào Factory, năng suất đối với công thức <@cc.kw>Battle Record</> <@cc.vup>+35%</>."
@@ -906,6 +922,10 @@
   "manu_prod_spd_double[100]": {
     "Name": "Món quà đáp lễ",
     "description": "Khi Operator này được phân công vào cùng Factory với <@cc.kw>Tragodia</>, năng suất đối với công thức <@cc.kw>Battle Record</> của Factory này <@cc.vup>+30%</>."
+  },
+  "manu_prod_cost_min[001]": {
+    "Name": "'Tôi ngủ quên mất'",
+    "description": "Khi Operator này được phân công vào cùng Factory, năng suất <@cc.vup>+10%</> sau khi ca làm việc đó liên tục đủ <@cc.vup>12</> giờ."
   },
   "manu_formula_spd[200]": {
     "Name": "Quy trình chế tác Originium α",
@@ -1859,6 +1879,10 @@
     "Name": "Tùy hứng mà làm β",
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Vệ binh</> và <@cc.kw>Xạ thủ</> <@cc.vup>+50%</>; nhưng mức tiêu hao Tinh thần mỗi giờ của bản thân <@cc.vdown>+1</>."
   },
+  "train_spd_doubleProf3[999]": {
+    "Name": "Kiêm nhiệm hợp lý",
+    "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room, tốc độ huấn luyện Chuyên môn hóa của Operator <@cc.kw>Xạ thủ</> và <@cc.kw>Y tế</> <@cc.vup>+45%</>."
+  },
   "train_spd_reduceTime[000]": {
     "Name": "Rèn luyện tinh thần",
     "description": "Khi Operator này được phân công vào vị trí hỗ trợ trong Training Room và hỗ trợ 1 Operator huấn luyện liên tục đủ <@cc.vup>5</> giờ, thời gian cần huấn luyện tiếp theo của Operator đó <@cc.vup>-50%</> (hiệu ứng biến mất nếu 1 trong 2 Operator rời Training Room)."
@@ -2343,6 +2367,10 @@
     "Name": "Sức hút của ngôi sao",
     "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
+  "dorm_rec_all[999]": {
+    "Name": "Ôm ấp lông xù",
+    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.1</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+  },
   "dorm_rec_all&tag[000]": {
     "Name": "Đầu bếp lão luyện",
     "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.15</>; nếu mục tiêu là Operator thuộc <$cc.tag.dungeon><@cc.kw>Tổ đội của Laios</></>, hiệu quả hồi phục tăng thêm <@cc.vup>+0.15</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
@@ -2599,6 +2627,10 @@
     "Name": "Đại diện cho triều đình",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
+  "hire_spd_cost[999]": {
+    "Name": "Điều tra độc lập",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+  },
   "hire_spd_cost&clue[001]": {
     "Name": "Đội cứu hộ - Cầu nối liên lạc",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</>"
@@ -2779,6 +2811,10 @@
     "Name": "Kỳ nghỉ của sát thủ",
     "description": "Khi Operator này được phân công vào Reception Room cùng <@cc.kw>Suzuran</>, tốc độ tìm Clue tăng thêm <@cc.vup>30%</>."
   },
+  "meet_spd&bd[999]": {
+    "Name": "Giao lưu liên ngành",
+    "description": "Khi Operator này được phân công vào Reception Room, tốc độ tìm Clue tăng thêm <@cc.vup>10%</>; nếu <@cc.kw>Koromaru</> được phân công vào cùng Reception Room, tăng khả năng nhận được những Clue chưa có trên Clue Board."
+  },
   "meet_spd_ext&P[000]": {
     "Name": "Tâm hồn mãi trẻ thơ",
     "description": "Khi Operator này được phân công vào Reception Room, nếu <@cc.kw>Fiammetta</> được phân công vào Dormitory, tốc độ tìm Clue tăng thêm <@cc.vup>10%</>."
@@ -2821,6 +2857,10 @@
   },
   "meet_spd&exchange[001]": {
     "Name": "Cố vấn phương pháp đặc biệt",
+    "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue tăng <@cc.vup>30%</>."
+  },
+  "meet_spd&exchange[999]": {
+    "Name": "Koromaru trả ơn",
     "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tốc độ tìm Clue tăng <@cc.vup>30%</>."
   },
   "meet_team[020]": {
