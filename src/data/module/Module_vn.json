@@ -1,6 +1,6 @@
 {
   "uniequip_001_mgllan": {
-    "Name": "Huân chương của Magallan",
+    "Name": "Huy hiệu của Magallan",
     "description": "Operator Magallan has demonstrated a remarkable aptitude in combat with the deployment and control of her self-developed drones.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Supporter Operator during field operations to exercise Summoner responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_mgllan": {
@@ -20,7 +20,7 @@
     "TalentLv3_p4": ""
   },
   "uniequip_001_nights": {
-    "Name": "Huân chương của Haze",
+    "Name": "Huy hiệu của Haze",
     "description": "Operator Haze has demonstrated a remarkable aptitude for inflicting Arts casualties on the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Core Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_nights": {
@@ -40,7 +40,7 @@
     "TalentLv3_p4": "Đòn tấn công khiến RES của mục tiêu -30%<@ba.talpu>(+3%)</> trong 1 giây."
   },
   "uniequip_001_fmout": {
-    "Name": "Huân chương của Gitano",
+    "Name": "Huy hiệu của Gitano",
     "description": "Operator Gitano has demonstrated a remarkable aptitude for inflicting Arts casualties on multitudes of enemies.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Caster Operator during field operations to exercise Splash Caster responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_fmout": {
@@ -60,7 +60,7 @@
     "TalentLv3_p4": "Sau khi triển khai, sẽ vĩnh viễn nhận ngẫu nhiên 1 trong các hiệu ứng sau: ATK +20%<@ba.talpu>(+2%)</>; ASPD +20<@ba.talpu>(+2%)</>; HP Tối đa +30%<@ba.talpu>(+2%)</>"
   },
   "uniequip_001_jesica": {
-    "Name": "Huân chương của Jessica",
+    "Name": "Huy hiệu của Jessica",
     "description": "Operator Jessica has demonstrated a remarkable aptitude for maintaining distance whilst conducting suppressive fire against the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Sniper Operator during field operations to exercise Marksman responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_jesica": {
@@ -76,7 +76,7 @@
     "TalentLv3": "ASPD +16, ATK +6%"
   },
   "uniequip_001_shotst": {
-    "Name": "Huân chương của Meteor",
+    "Name": "Huy hiệu của Meteor",
     "description": "Operator Meteor has demonstrated a remarkable aptitude for maintaining distance whilst conducting suppressive fire against the enemy.\nThe Field Operations Department has thus passed the following resolution:\nThis operator shall be appointed a Sniper Operator during field operations to exercise Marksman responsibilities.\nIn witness whereof,\nThis badge is hereby conferred upon the above named."
   },
   "uniequip_002_shotst": {
@@ -94,8 +94,8 @@
     "TalentLv3": ""
   },
   "uniequip_001_thumpy": {
-    "Name": "Huân chương của Thumpy",
-    "description": "Cán viên Thumpy đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+    "Name": "Huy hiệu của Thumpy",
+    "description": "Cán viên Thumpy đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
   },
   "uniequip_002_thumpy": {
     "Name": "Dũng khí lên đường",
@@ -114,79 +114,57 @@
     "TalentLv3_p4": "Khi <$ba.dt.erosion2>Corrosion</> bộc phát trên kẻ địch từng chịu sát thương từ Thumpy, cô nhận 15<@ba.talpu>(+3)</> DEF và 6<@ba.talpu>(+1)</> ATK (cộng dồn tối đa 30 tầng), đồng thời nhận 480<@ba.talpu>(+80)</> <$ba.barrier>Lá chắn</> (Lá chắn không thể vượt quá 300% HP tối đa của Thumpy)."
   },
   "uniequip_001_yu": {
-    "Name": "Huân chương của Yu",
-    "description": "Cán viên Yu đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
-  },
-  "uniequip_002_yu": {
-    "Name": "",
-    "description": "",
-    "Mission1": "",
-    "Mission2": "",
-    "TalentLv1VN": "",
-    "TalentLv1_p4VN": "",
-    "TalentLv1EN": "",
-    "TalentLv1_p4EN": "",
-    "TitleLv2": "",
-    "TalentLv2": "",
-    "TitleLv3": "",
-    "TalentLv3": ""
+    "Name": "Huy hiệu của Yu",
+    "description": "Cán viên Yu đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
   },
   "uniequip_001_tanya": {
-    "Name": "Huân chương của Crackborne",
-    "description": "Cán viên Crackborne đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
-  },
-  "uniequip_002_tanya": {
-    "Name": "",
-    "description": "",
-    "Mission1": "",
-    "Mission2": "",
-    "TalentLv1VN": "",
-    "TalentLv1_p4VN": "",
-    "TalentLv1EN": "",
-    "TalentLv1_p4EN": "",
-    "TitleLv2": "",
-    "TalentLv2": "",
-    "TitleLv3": "",
-    "TalentLv3": ""
+    "Name": "Huy hiệu của Crackborne",
+    "description": "Cán viên Crackborne đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
   },
   "uniequip_001_cairn": {
-    "Name": "Huân chương của Cairn",
-    "description": "Cán viên Cairn đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
-  },
-  "uniequip_002_cairn": {
-    "Name": "",
-    "description": "",
-    "Mission1": "",
-    "Mission2": "",
-    "TalentLv1VN": "",
-    "TalentLv1_p4VN": "",
-    "TalentLv1EN": "",
-    "TalentLv1_p4EN": "",
-    "TitleLv2": "",
-    "TalentLv2": "",
-    "TitleLv3": "",
-    "TalentLv3": ""
+    "Name": "Huy hiệu của Cairn",
+    "description": "Cán viên Cairn đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
   },
   "uniequip_001_philae": {
-    "Name": "Huân chương của Philae",
-    "description": "Cán viên Philae đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời có thể gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng huân chương cho cá nhân được nêu trên."
+    "Name": "Huy hiệu của Philae",
+    "description": "Cán viên Philae đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến, đồng thời gây sát thương Nguyên tố lên kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Primal Protector.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
   },
-  "uniequip_002_philae": {
-    "Name": "",
-    "description": "",
-    "Mission1": "",
-    "Mission2": "",
-    "TalentLv1VN": "",
-    "TalentLv1_p4VN": "",
+  "uniequip_001_mcnist": {
+    "Name": "Huy hiệu của Mechanist",
+    "description": "Cán viên Mechanist đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến và ngăn chặn kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Cảnh vệ.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
+  },
+  "uniequip_002_mcnist": {
+    "Name": "Huy hiệu đặc biệt của Mechanist",
+    "description": "Cán viên Tinh nhuệ Mechanist đã được cấp quyền hạn đặc biệt khi thực hiện nhiệm vụ thực địa.\nĐã thiết lập cho anh các lựa chọn chiến thuật định hướng riêng cho chuỗi nhiệm vụ Integrated Strategies.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên.\n“Giao thức đã được thiết lập.”",
+    "TalentLv1VN": "Có thể triển khai 1 'Nguyên Lý Kết Cấu' tồn tại trong 30 giây và có thời gian tái triển khai độc lập.",
     "TalentLv1EN": "",
-    "TalentLv1_p4EN": "",
-    "TitleLv2": "",
-    "TalentLv2": "",
-    "TitleLv3": "",
-    "TalentLv3": ""
+    "TitleLv2": "Nguyên Lý Kết Cấu",
+    "TalentLv2": "Có thể triển khai 1 'Nguyên Lý Kết Cấu' tồn tại trong 30 giây và có thời gian tái triển khai độc lập; trong[[【The Black Flow of the Drowning Seekers】|IS7]], thời gian tồn tại của Nguyên Lý Kết Cấu là vô hạn.",
+    "TitleLv3": "Nguyên Lý Kết Cấu",
+    "TalentLv3": "Có thể triển khai 1 'Nguyên Lý Kết Cấu' tồn tại trong 30 giây và có thời gian tái triển khai độc lập; trong[[【The Black Flow of the Drowning Seekers】|IS7]], thời gian tồn tại của Nguyên Lý Kết Cấu là vô hạn. Sau khi Nguyên Lý Kết Cấu không chịu sát thương trong 5 giây, nó nhận <$ba.barrier>Lá chắn</> bằng 4% HP tối đa mỗi giây (giới hạn ở 20% HP tối đa)"
+  },
+  "uniequip_001_rmixer": {
+    "Name": "Huy hiệu của Sankta Miksaparato",
+    "description": "Cán viên Sankta Miksaparato đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến và ngăn chặn kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Cảnh vệ.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
+  },
+  "uniequip_001_jesca2": {
+    "Name": "Huy hiệu của Jessica the Liberated",
+    "description": "Cán viên Jessica the Liberated đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến và ngăn chặn kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Cảnh vệ.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
+  },
+  "uniequip_001_udflow": {
+    "Name": "Huy hiệu của Underflow",
+    "description": "Cán viên Underflow đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến và ngăn chặn kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Cảnh vệ.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
+  },
+  "uniequip_001_blitz": {
+    "Name": "Huy hiệu của Blitz",
+    "description": "Cán viên Blitz đã thể hiện năng lực xuất sắc trong phòng ngự chiến thuật và phá vỡ trận tuyến.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa. Để chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên.\nNhưng những người như họ, liệu có thật sự cần một tấm Huy hiệu để chứng minh điều đó?"
+  },
+  "uniequip_001_liskam": {
+    "Name": "Huy hiệu của Liskarm",
+    "description": "Cán viên Liskarm đã thể hiện năng lực xuất sắc trong việc giữ vững trận tuyến và ngăn chặn kẻ địch.\nCăn cứ theo quyết định của Bộ phận thực địa,\nCán viên này được xếp vào nhóm Cán viên Phòng ngự trong các hoạt động thực địa để đảm nhiệm chức trách của một Cảnh vệ.\nĐể chứng nhận cho việc này,\nChính thức trao tặng Huy hiệu cho cá nhân được nêu trên."
   },
   "uniequip_001": {
-    "Name": "Huân chương của",
+    "Name": "Huy hiệu của",
     "description": ""
   },
   "uniequip_002": {
