@@ -123,7 +123,7 @@ export const CLASS_LABELS_I18N = {
 };
 
 export const SUBPROF_LABELS_VN_OVERRIDES = {
-  agent: "Đặc vụ",
+  agent: "Tình báo",
   bearer: "Cờ hiệu",
   charger: "Xung kích",
   counsellor: "Chiến lược gia",

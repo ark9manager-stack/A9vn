@@ -573,7 +573,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
     } else if (isNonEmptyString(performanceText)) {
       _physicalPanel = {
         id: "performancereview",
-        title: "Đánh giá hiệu suất",
+        title: "Hiệu năng tổng quát",
         text: performanceText,
       };
     } else if (isNonEmptyString(generalAbilityText)) {
