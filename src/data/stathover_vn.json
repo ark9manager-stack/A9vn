@@ -966,5 +966,9 @@
   "platnmTalent": {
     "title": "",
     "text": "[Sát thương tăng tuyến tính theo thời gian]\nTối thiểu 1 giây\nTối đa 2.5 giây"
+  },
+  "realnameArene": {
+    "title": "",
+    "text": "Tên thật của Cán viên Arene"
   }
 }
