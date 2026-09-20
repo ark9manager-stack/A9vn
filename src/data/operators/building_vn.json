@@ -25,7 +25,7 @@
   },
   "control_token_prod_spd[000]": {
     "Name": "Ép xung",
-    "description": "Khi Operator này được phân công vào Control Center, nếu có từ <@cc.kw>2</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> trở lên được phân công vào <@cc.kw>Power Plants</>, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Control Center, nếu có từ <@cc.kw>2</> <$cc.tag.op><@cc.kw>Nền tảng tác nghiệp</></> trở lên được phân công vào <@cc.kw>Power Plants</>, năng suất của tất cả Factory <@cc.vup>+2%</> (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "control_token_prod_spd2[000]": {
     "Name": "Dẫn đầu làm gương",
@@ -481,7 +481,7 @@
   },
   "power_count[000]": {
     "Name": "Ánh ban mai",
-    "description": "Khi Operator này được phân công vào Power Plant, nếu không có <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> ở các <@cc.kw>Power Plant</>, số lượng <@cc.kw>Power Plant</> được tính thêm <@cc.vup>+1</> (chỉ ảnh hưởng đến số lượng cơ sở)."
+    "description": "Khi Operator này được phân công vào Power Plant, nếu không có <$cc.tag.op><@cc.kw>Nền tảng tác nghiệp</></> ở các <@cc.kw>Power Plant</>, số lượng <@cc.kw>Power Plant</> được tính thêm <@cc.vup>+1</> (chỉ ảnh hưởng đến số lượng cơ sở)."
   },
   "power_prod_spd_P[000]": {
     "Name": "'Bip bip, khởi động!'",
@@ -505,7 +505,7 @@
   },
   "power_rec_spd_ext&tag[000]": {
     "Name": "Kê khích lệ",
-    "description": "Khi Operator này được phân công vào Power Plant, nếu có Operator <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> khác đang được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+5%</>. "
+    "description": "Khi Operator này được phân công vào Power Plant, nếu có Operator <$cc.tag.op><@cc.kw>Nền tảng tác nghiệp</></> khác đang được phân công vào Power Plant, tốc độ hồi Drone <@cc.vup>+5%</>. "
   },
   "power_rec_rhine[000]": {
     "Name": "Trưởng phòng sinh thái",
@@ -909,11 +909,11 @@
   },
   "manu_token_prod_spd[000]": {
     "Name": "Tinh thông máy móc α",
-    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+5%</>."
+    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng tác nghiệp</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+5%</>."
   },
   "manu_token_prod_spd[010]": {
     "Name": "Tinh thông máy móc β",
-    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng vận hành</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+10%</>."
+    "description": "Khi Operator này được phân công vào Factory, với <@cc.vup>mỗi</> <$cc.tag.op><@cc.kw>Nền tảng tác nghiệp</></> được phân công vào Power Plant, năng suất đối với công thức <@cc.kw>Precious Metals</> của Factory này <@cc.vup>+10%</>."
   },
   "manu_prod_spd_double[000]": {
     "Name": "'Để tôi phụ một tay'",

@@ -2772,19 +2772,12 @@
   },
   "char_285_medic2": {
     "vn": {
-      "trans": "",
-      "recuit": "",
-      "token": "",
-      "basic_info": "",
-      "physical_exam_2": "【Vận tốc tối đa】15km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Thời gian hoạt động】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
-      "profile": "",
-      "clinical_analysis": "",
-      "file_1": "",
-      "file_2": "",
-      "file_3": "",
-      "file_4": "",
-      "promotion_record": "",
-      "paradox": ""
+      "recuit": "Cô ấy biết mình là một robot.\nRobot y tế Lancet-2 của Rhodes Island, được kỹ sư Closure cử đi thực hiện nhiệm vụ y tế trên chiến trường.",
+      "token": "Một bộ xịt y tế với dòng chữ “Hiệu quả tức thì sau một lần xịt” in trên vỏ hộp. Có thể lắp vào thiết bị y tế hoặc dùng trực tiếp.",
+      "basic_info": "【Mẫu máy】Lancet-2\n【Giới tính thiết lập】Nữ\n【Thời gian vận hành】2 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】12 tháng 5\n【Chiều cao】149cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có dấu hiệu mài mòn nhẹ, kết cấu còn nguyên vẹn và độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Các thiết bị y tế hoạt động bình thường, toàn bộ vật tư y tế tiêu hao đã được thay mới. ECU vẫn trong tình trạng tốt.",
+      "physical_exam_2": "【Vận tốc tối đa】15km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
+      "profile": "Lancet-2 là nền tảng tác nghiệp sáu bánh Raythean Exister™ S-Typer 62 đã được Closure tùy chỉnh riêng. Nhờ ngoại hình tròn trịa, đáng yêu, cô dần trở thành một kiểu linh vật của Rhodes Island. Mặc dù trong lời nói đôi lúc khá tiêu cực, nhưng Lancet-2 vẫn được mọi người vô cùng yêu mến.\nSau khi được Closure cải tiến, Lancet-2 có thể đảm nhiệm nhiều nhu cầu y tế hơn trên Rhodes Island. Hệ thống thiết bị của cô cũng được tăng cường các khả năng khử khuẩn và xử lý ô nhiễm Originium.",
+      "file_1": "Lancet-2 khá bận tâm về những chỉnh sửa mà Closure đã thực hiện trên bản thân cô; đặc biệt là phần thiết lập “thứ yêu thích nhất” của cô lại chính là Closure, khiến Lancet-2 chẳng tài nào hiểu nổi tại sao mình lại phải thích Closure. Closure thấy tính cách có phần tiêu cực ấy lại khá thú vị, nên đã cố tình tăng tần suất Lancet-2 sử dụng những câu tự giễu bản thân trong thiết lập tính cách của cô."
     }
   },
   "char_286_cast3": {
@@ -2794,7 +2787,7 @@
       "token": "",
       "basic_info": "",
       "physical_exam": "",
-      "physical_exam_2": "【Vận tốc tối đa】23km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Thời gian hoạt động】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
+      "physical_exam_2": "【Vận tốc tối đa】23km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
       "profile": "",
       "clinical_analysis": "",
       "file_1": "",
@@ -3543,7 +3536,7 @@
       "token": "",
       "basic_info": "",
       "physical_exam": "",
-      "physical_exam_2": "【Vận tốc tối đa】22.2km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Thời gian hoạt động】Yếu\n【Độ ổn định kết cấu】Tiêu chuẩn",
+      "physical_exam_2": "【Vận tốc tối đa】22.2km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Yếu\n【Độ ổn định kết cấu】Tiêu chuẩn",
       "profile": "",
       "clinical_analysis": "",
       "file_1": "",
@@ -3714,7 +3707,7 @@
       "token": "",
       "basic_info": "",
       "physical_exam": "",
-      "physical_exam_2": "【Vận tốc tối đa】20km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Thời gian hoạt động】Bình thường\n【Độ ổn định kết cấu】Tiêu chuẩn",
+      "physical_exam_2": "【Vận tốc tối đa】20km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Bình thường\n【Độ ổn định kết cấu】Tiêu chuẩn",
       "profile": "",
       "clinical_analysis": "",
       "file_1": "",
@@ -5092,7 +5085,7 @@
       "token": "",
       "basic_info": "",
       "physical_exam": "",
-      "physical_exam_2": "【Vận tốc tối đa】22km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Thời gian hoạt động】Tiêu chuẩn\n【Độ ổn định kết cấu】Tiêu chuẩn",
+      "physical_exam_2": "【Vận tốc tối đa】22km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Tiêu chuẩn\n【Độ ổn định kết cấu】Tiêu chuẩn",
       "profile": "",
       "clinical_analysis": "",
       "file_1": "",
@@ -5671,7 +5664,7 @@
       "token": "",
       "basic_info": "",
       "physical_exam": "",
-      "physical_exam_2": "【Vận tốc tối đa】16km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Thời gian hoạt động】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
+      "physical_exam_2": "【Vận tốc tối đa】16km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
       "profile": "",
       "clinical_analysis": "",
       "file_1": "",
@@ -6970,23 +6963,6 @@
       "paradox": ""
     }
   },
-  "char_id_text": {
-    "vn": {
-      "trans": "",
-      "recuit": "",
-      "token": "",
-      "basic_info": "【Mật danh】Operator\n【Giới tính】Nam/Nữ\n【Kinh nghiệm chiến đấu】năm\n【Nơi sinh】Vùng\n【Ngày sinh】5月14日\n【Chủng tộc】Vulpo\n【Chiều cao】162cm\n【Tình trạng nhiễm bệnh】\nCác tinh thể Originium phân bố trên bề mặt cơ thể; xác nhận nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
-      "physical_exam": "【Thể lực】Nah\n【Cơ động】Nah\n【Sức bền】Nah\n【Chiến thuật】Nah\n【Kỹ năng chiến đấu】Nah\n【Khả năng thích ứng Originium Arts】Nah",
-      "profile": "",
-      "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên không hiển thị rõ ràng, đồng thời có thể quan sát thấy các vết mờ bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng cho thấy dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên đã nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】0%\nText text text\n\n【Mật độ tinh thể-Originium trong máu】0.24u/L\nText text text",
-      "file_1": "",
-      "file_2": "",
-      "file_3": "",
-      "file_4": "",
-      "promotion_record": "",
-      "paradox": ""
-    }
-  },
   "char_4221_ju": {
     "vn": {
       "trans": "",
@@ -7215,7 +7191,7 @@
       "token": "",
       "basic_info": "",
       "physical_exam": "",
-      "physical_exam_2": "【Vận tốc tối đa】55km/h\n【Khả năng leo dốc】Xuất sắc\n【Hiệu quả phanh】Xuất sắc\n【Tính năng vượt địa hình】Xuất sắc\n【Thời gian hoạt động】Bình thường\n【Độ ổn định kết cấu】Yếu",
+      "physical_exam_2": "【Vận tốc tối đa】55km/h\n【Khả năng leo dốc】Xuất sắc\n【Hiệu quả phanh】Xuất sắc\n【Tính năng vượt địa hình】Xuất sắc\n【Khả năng hoạt động liên tục】Bình thường\n【Độ ổn định kết cấu】Yếu",
       "profile": "",
       "clinical_analysis": "",
       "file_1": "",
@@ -7391,6 +7367,23 @@
       "physical_exam_3": "【Trình độ học vấn】Xuất sắc\n【Thể chất】Xuất sắc\n【Sức khỏe tâm thần】Xuất sắc\n【Hoạt động ngoại khóa】Xuất sắc\n【Kỹ năng giao tiếp】Xuất sắc\n【Năng khiếu sử dụng súng】Yếu",
       "profile": "",
       "clinical_analysis": "",
+      "file_1": "",
+      "file_2": "",
+      "file_3": "",
+      "file_4": "",
+      "promotion_record": "",
+      "paradox": ""
+    }
+  },
+  "char_id_text": {
+    "vn": {
+      "trans": "",
+      "recuit": "",
+      "token": "",
+      "basic_info": "【Mật danh】Operator\n【Giới tính】Nam/Nữ\n【Kinh nghiệm chiến đấu】năm\n【Nơi sinh】Vùng\n【Ngày sinh】5月14日\n【Chủng tộc】Vulpo\n【Chiều cao】162cm\n【Tình trạng nhiễm bệnh】\nCác tinh thể Originium phân bố trên bề mặt cơ thể; xác nhận nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
+      "physical_exam": "【Thể lực】Nah\n【Cơ động】Nah\n【Sức bền】Nah\n【Chiến thuật】Nah\n【Kỹ năng chiến đấu】Nah\n【Khả năng thích ứng Originium Arts】Nah",
+      "profile": "",
+      "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên không hiển thị rõ ràng, đồng thời có thể quan sát thấy các vết mờ bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng cho thấy dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên đã nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】0%\nText text text\n\n【Mật độ tinh thể-Originium trong máu】0.24u/L\nText text text",
       "file_1": "",
       "file_2": "",
       "file_3": "",
