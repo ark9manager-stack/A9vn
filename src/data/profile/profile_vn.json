@@ -2774,28 +2774,20 @@
     "vn": {
       "recuit": "Cô ấy biết mình là một robot.\nRobot y tế Lancet-2 của Rhodes Island, được kỹ sư Closure cử đi thực hiện nhiệm vụ y tế trên chiến trường.",
       "token": "Một bộ xịt y tế với dòng chữ “Hiệu quả tức thì sau một lần xịt” in trên vỏ hộp. Có thể lắp vào thiết bị y tế hoặc dùng trực tiếp.",
-      "basic_info": "【Mẫu máy】Lancet-2\n【Giới tính thiết lập】Nữ\n【Thời gian vận hành】2 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】12 tháng 5\n【Chiều cao】149cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có dấu hiệu mài mòn nhẹ, kết cấu còn nguyên vẹn và độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Các thiết bị y tế hoạt động bình thường, toàn bộ vật tư y tế tiêu hao đã được thay mới. ECU vẫn trong tình trạng tốt.",
+      "basic_info": "【Mẫu máy】Lancet-2\n【Giới tính thiết lập】Nữ\n【Thời gian vận hành】2 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】12 tháng 5\n【Chiều cao】149cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có dấu hiệu mài mòn nhẹ, kết cấu còn nguyên vẹn, độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Các thiết bị y tế hoạt động bình thường, toàn bộ vật tư y tế đã tiêu hao đều được thay mới. ECU vẫn trong tình trạng tốt.",
       "physical_exam_2": "【Vận tốc tối đa】15km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
-      "profile": "Lancet-2 là nền tảng tác nghiệp sáu bánh Raythean Exister™ S-Typer 62 đã được Closure tùy chỉnh riêng. Nhờ ngoại hình tròn trịa, đáng yêu, cô dần trở thành một kiểu linh vật của Rhodes Island. Mặc dù trong lời nói đôi lúc khá tiêu cực, nhưng Lancet-2 vẫn được mọi người vô cùng yêu mến.\nSau khi được Closure cải tiến, Lancet-2 có thể đảm nhiệm nhiều nhu cầu y tế hơn trên Rhodes Island. Hệ thống thiết bị của cô cũng được tăng cường các khả năng khử khuẩn và xử lý ô nhiễm Originium.",
+      "profile": "Lancet-2 là nền tảng tác nghiệp sáu bánh thuộc dòng Exister™ S-Typer 62 của Raythean được Closure tùy chỉnh riêng. Nhờ ngoại hình tròn trịa và đáng yêu, cô dần trở thành một kiểu linh vật của Rhodes Island. Mặc dù trong lời nói đôi lúc khá tiêu cực, nhưng Lancet-2 vẫn được mọi người vô cùng yêu mến.\nSau khi được Closure cải tiến, Lancet-2 có thể đảm nhiệm nhiều nhu cầu y tế hơn trên Rhodes Island. Hệ thống thiết bị của cô cũng được tăng cường các khả năng khử khuẩn và xử lý ô nhiễm Originium.",
       "file_1": "Lancet-2 khá bận tâm về những chỉnh sửa mà Closure đã thực hiện trên bản thân cô; đặc biệt là phần thiết lập “thứ yêu thích nhất” của cô lại chính là Closure, khiến Lancet-2 chẳng tài nào hiểu nổi tại sao mình lại phải thích Closure. Closure thấy tính cách có phần tiêu cực ấy lại khá thú vị, nên đã cố tình tăng tần suất Lancet-2 sử dụng những câu tự giễu bản thân trong thiết lập tính cách của cô."
     }
   },
   "char_286_cast3": {
     "vn": {
-      "trans": "",
-      "recuit": "",
-      "token": "",
-      "basic_info": "",
-      "physical_exam": "",
+      "recuit": "Anh ấy biết mình là một robot.\nRobot Cận vệ Castle-3 của Rhodes Island, được kỹ sư Closure cử đi thực hiện nhiệm vụ chiến đấu trên chiến trường.",
+      "token": "Một tấm giáp chắc chắn, tiện mang theo. Không kèm hướng dẫn sử dụng.",
+      "basic_info": "【Mẫu máy】Castle-3\n【Giới tính thiết lập】Nam\n【Thời gian vận hành】3 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】10 tháng 12\n【Chiều cao】167cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có nhiều dấu hiệu mài mòn, kết cấu còn nguyên vẹn, độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Thiết bị tấn công hoạt động bình thường, vỏ pin bị hư hỏng nhẹ nhưng không ảnh hưởng đến quá trình sử dụng. ECU vẫn trong tình trạng tốt.",
       "physical_exam_2": "【Vận tốc tối đa】23km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
-      "profile": "",
-      "clinical_analysis": "",
-      "file_1": "",
-      "file_2": "",
-      "file_3": "",
-      "file_4": "",
-      "promotion_record": "",
-      "paradox": ""
+      "profile": "Castle-3 là nền tảng tác nghiệp sáu bánh thuộc dòng Exister™ Plus của Raythean được Closure tùy chỉnh riêng. Anh rất được mọi người yêu mến và cũng được xem như một linh vật của Rhodes Island, chỉ có điều vì tính cách khá bình thường nên không thu hút nhiều sự chú ý như những người bạn robot khác.\nNgoại hình vuông vức của Castle-3 tạo cho người ta cảm giác vững chãi và đáng tin cậy.\nNhững vết khắc trên người anh có lẽ dùng để ghi lại số kẻ địch đã bị hạ. Nhưng Castle-3 vốn chẳng có tay, vậy ai là người đã khắc chúng lên đó?",
+      "file_1": "Castle-3 hoàn toàn không bận tâm đến những chỉnh sửa mà Closure đã thực hiện trên bản thân anh, trái lại anh còn rất hài lòng vì được nâng cấp. Phần thiết lập “thứ yêu thích nhất” của anh cũng được đặt thành Closure, nhưng Castle-3 chẳng có ý kiến gì về chuyện đó, vì anh luôn thuận theo bất cứ điều gì mà chủ nhân muốn."
     }
   },
   "char_289_gyuki": {
