@@ -2777,12 +2777,12 @@
       "basic_info": "【Mẫu máy】Lancet-2\n【Giới tính thiết lập】Nữ\n【Thời gian vận hành】2 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】12 tháng 5\n【Chiều cao】149cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có dấu hiệu mài mòn nhẹ, kết cấu còn nguyên vẹn, độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Các thiết bị y tế hoạt động bình thường, toàn bộ vật tư y tế đã tiêu hao đều được thay mới. ECU vẫn trong tình trạng tốt.",
       "physical_exam_2": "【Vận tốc tối đa】15km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
       "profile": "Lancet-2 là nền tảng tác nghiệp sáu bánh thuộc dòng Exister™ S-Typer 62 của Raythean được Closure tùy chỉnh riêng. Nhờ ngoại hình tròn trịa và đáng yêu, cô dần trở thành một kiểu linh vật của Rhodes Island. Mặc dù trong lời nói đôi lúc khá tiêu cực, nhưng Lancet-2 vẫn được mọi người vô cùng yêu mến.\nSau khi được Closure cải tiến, Lancet-2 có thể đảm nhiệm nhiều nhu cầu y tế hơn trên Rhodes Island. Hệ thống thiết bị của cô cũng được tăng cường các khả năng khử khuẩn và xử lý ô nhiễm Originium.",
-      "file_1": "Lancet-2 khá bận tâm về những chỉnh sửa mà Closure đã thực hiện trên bản thân cô; đặc biệt là phần thiết lập “thứ yêu thích nhất” của cô lại chính là Closure, khiến Lancet-2 chẳng tài nào hiểu nổi tại sao mình lại phải thích Closure. Closure thấy tính cách có phần tiêu cực ấy lại khá thú vị, nên đã cố tình tăng tần suất Lancet-2 sử dụng những câu tự giễu bản thân trong thiết lập tính cách của cô."
+      "file_1": "Lancet-2 khá bận tâm về những chỉnh sửa mà Closure đã thực hiện trên bản thân cô; đặc biệt là phần thiết lập “thứ yêu thích nhất” của cô lại chính là Closure, điều này khiến Lancet-2 chẳng tài nào hiểu nổi tại sao mình lại phải thích Closure. Closure thấy tính cách có phần tiêu cực ấy lại khá thú vị, nên đã cố tình tăng tần suất Lancet-2 sử dụng những câu tự giễu bản thân trong thiết lập tính cách của cô."
     }
   },
   "char_286_cast3": {
     "vn": {
-      "recuit": "Anh ấy biết mình là một robot.\nRobot Cận vệ Castle-3 của Rhodes Island, được kỹ sư Closure cử đi thực hiện nhiệm vụ chiến đấu trên chiến trường.",
+      "recuit": "Anh ấy biết mình là một robot.\nRobot Vệ binh Castle-3 của Rhodes Island, được kỹ sư Closure cử đi thực hiện nhiệm vụ chiến đấu trên chiến trường.",
       "token": "Một tấm giáp chắc chắn, tiện mang theo. Không kèm hướng dẫn sử dụng.",
       "basic_info": "【Mẫu máy】Castle-3\n【Giới tính thiết lập】Nam\n【Thời gian vận hành】3 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】10 tháng 12\n【Chiều cao】167cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có nhiều dấu hiệu mài mòn, kết cấu còn nguyên vẹn, độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Thiết bị tấn công hoạt động bình thường, vỏ pin bị hư hỏng nhẹ nhưng không ảnh hưởng đến quá trình sử dụng. ECU vẫn trong tình trạng tốt.",
       "physical_exam_2": "【Vận tốc tối đa】23km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Xuất sắc\n【Độ ổn định kết cấu】Tiêu chuẩn",
@@ -3686,20 +3686,12 @@
   },
   "char_4000_jnight": {
     "vn": {
-      "trans": "",
-      "recuit": "",
-      "token": "",
-      "basic_info": "",
-      "physical_exam": "",
+      "recuit": "Cô ấy biết mình là một robot.\n'Justice Knight' là thành viên của Pinus Sylvestris Knightclub, hiện đảm nhiệm công việc yểm trợ hỏa lực tại Rhodes Island.",
+      "token": "Phần vải của lá cờ gắn trên 'Justice Knight'. Mỗi khi cần thay ra để giặt, hãy tốt bụng giúp cô ấy một tay nhé.",
+      "basic_info": "【Mẫu máy】'Justice Knight'\n【Giới tính thiết lập】Nữ\n【Thời gian vận hành】Hơn 4 năm\n【Nhà sản xuất】Raythean Industries\n【Nơi sản xuất】Columbia\n【Ngày xuất xưởng】21 tháng 1\n【Chiều cao】160cm\n【Trọng lượng】Bảo mật\n【Báo cáo kiểm tra bảo trì】\nVỏ ngoài có nhiều dấu hiệu mài mòn, kết cấu còn nguyên vẹn, độ bền ở mức bình thường. Động cơ và khung gầm đều trong tình trạng tốt. Hệ thống hỗ trợ hoạt động bình thường, thiết bị ngắm đã được hiệu chỉnh và không ghi nhận bất thường trong quá trình sử dụng. ECU vẫn trong tình trạng tốt.",
       "physical_exam_2": "【Vận tốc tối đa】20km/h\n【Khả năng leo dốc】Bình thường\n【Hiệu quả phanh】Bình thường\n【Tính năng vượt địa hình】Bình thường\n【Khả năng hoạt động liên tục】Bình thường\n【Độ ổn định kết cấu】Tiêu chuẩn",
-      "profile": "",
-      "clinical_analysis": "",
-      "file_1": "",
-      "file_2": "",
-      "file_3": "",
-      "file_4": "",
-      "promotion_record": "",
-      "paradox": ""
+      "profile": "'Justice Knight' là nền tảng tác nghiệp bốn bánh thuộc dòng Exister S-1044 của Raythean được một kỹ sư Kazimierz tùy chỉnh, sau đó tiếp tục được Mayer cùng Closure cải tạo và nâng cấp. Dòng nguyên mẫu này chủ yếu được trang bị đèn pha tìm kiếm, nhưng chức năng ấy không mang lại nhiều giá trị thực tế, còn khả năng yểm trợ hỏa lực lại chỉ đáp ứng nhu cầu của một nhóm khách hàng nhỏ, nên sản phẩm hiện đã ngừng sản xuất. Trước khi đến tay Bộ phận kỹ thuật của Rhodes Island, 'Justice Knight' đã trải qua hơn mười lần cải tạo lớn nhỏ, đến mức những chức năng hiện tại gần như đã khác hẳn nguyên mẫu ban đầu. Hệ điều hành cũ cùng toàn bộ dữ liệu lệnh được lưu trữ đều đã hư hỏng hoàn toàn và không thể khôi phục. Sau khi được thay thế phần cứng cốt lõi, mở rộng dung lượng lưu trữ, cập nhật hệ điều hành và bổ sung hệ thống giọng nói nhân tạo, hiệu năng của 'Justice Knight' hiện đã gần như ngang bằng với các nền tảng tác nghiệp thế hệ mới của Raythean. Cô là thành viên của Pinus Sylvestris Knightclub và hiện được cấp quyền cho Rhodes Island sử dụng.",
+      "file_1": "Wild Mane từng là chủ nhân của 'Justice Knight' và đã nhiều lần nhờ người cải tạo cô theo những yêu cầu khác nhau. Nhờ vậy, ngoài chức năng yểm trợ hỏa lực ban đầu, cô còn được bổ sung hàng loạt chức năng phục vụ cho sinh hoạt như tưới hoa, giao đồ ăn, sạc máy chơi game…… với 'Justice Knight' thì việc giúp cuộc sống của mọi người trở nên thuận lợi hơn cũng là một trong những sứ mệnh của cô. 'Justice Knight' vẫn luôn ghi nhớ và để tâm về khoảng thời gian mình từng bị bỏ rơi. Kể từ khi được Wild Mane nhặt về và khởi động lại, ngoài những lúc phải sạc điện hoặc bảo trì, cô luôn chủ động ở bên mọi người."
     }
   },
   "char_4004_pudd": {
@@ -6934,7 +6926,7 @@
   "char_4217_makoto": {
     "vn": {
       "recuit": "Bóp cò và Persona sẽ được giải phóng từ nơi sâu thẳm trong tâm hồn, ngọn lửa rực cháy sẽ cuốn mọi kẻ địch vào diệt vong.\nĐội trưởng S.E.E.S. Makoto Yuki, được thấy một phiên bản khác của chính mình vào đêm trăng tròn.",
-      "token": "Một chiếc băng đeo tay màu đỏ, minh chứng cho tư cách là một thành viên S.E.E.S. của anh. Nó thắt chặt tựa như vòng bit của máy đo huyết áp, mềm mại mà chắc chắn bao quanh cánh tay anh.",
+      "token": "Một chiếc băng đeo tay màu đỏ, minh chứng cho tư cách là một thành viên S.E.E.S. của anh. Nó ôm chặt tựa như vòng bit của máy đo huyết áp, mềm mại mà chắc chắn bao quanh cánh tay anh.",
       "basic_info": "【Họ tên】Makoto Yuki \n【Giới tính】Nam \n【Khối nhập học】Khối 11 \n【Nơi sinh】Chưa ghi nhận \n【Ngày sinh】Chưa ghi nhận \n【Chủng tộc】Chưa ghi nhận \n【Chiều cao】Chưa ghi nhận \n【Tình trạng nhiễm bệnh】 \nXác nhận không nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
       "physical_exam_3": "【Trình độ học vấn】Xuất sắc\n【Thể chất】Xuất sắc\n【Sức khỏe tâm thần】Tiêu chuẩn\n【Hoạt động ngoại khóa】Xuất sắc\n【Kỹ năng giao tiếp】Bình thường\n【Năng khiếu sử dụng súng】Yếu",
       "profile_2": "Makoto Yuki được đăng ký với tư cách là thân nhân của một công dân Laterano tại Tòa Công Chứng Laterano vào tháng 3 năm 1102. Căn cứ Điều 34 thuộc Phụ lục của Hiến chương quyền lợi công dân Laterano, anh được Trường liên cấp Saint-Marsol tiếp nhận nhập học.\nNhận xét của giáo viên: Em Makoto Yuki rất điềm tĩnh trong cách xử sự, hòa đồng với bạn bè, kính trọng thầy cô, tích cực tham gia các hoạt động ngoại khóa và luôn được đánh giá cao trong các hoạt động tình nguyện. Mong em tiếp tục giữ vững tinh thần này, và không ngừng nỗ lực để tiến xa hơn nữa.",
