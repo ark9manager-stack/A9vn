@@ -532,7 +532,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
         : "";
     const hasActivityVoucher = isNonEmptyString(activityPotentialItemId);
 
-    const _tokenPanelTitle = hasActivityVoucher ? "Thư mục" : "Tín vật";
+    const _tokenPanelTitle = hasActivityVoucher ? "Kẹp file" : "Tín vật";
 
     const activityIconUrl = hasActivityVoucher
       ? buildActivityVoucherIconUrl(activityPotentialItemId, resolvedCharId)
