@@ -2298,5 +2298,20 @@
     "idweb": 431,
     "name": "结城理",
     "name_vn": "Makoto Yuki"
+  },
+  "char_4232_hbound": {
+    "idweb": 432,
+    "name": "旅骨",
+    "name_vn": "Homebound"
+  },
+  "char_393_toledo": {
+    "idweb": 433,
+    "name": "德·托莱多",
+    "name_vn": "De Toledo"
+  },
+  "char_4231_clemnt": {
+    "idweb": 434,
+    "name": "克莱门莎",
+    "name_vn": "Clementia"
   }
 }
