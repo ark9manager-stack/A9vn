@@ -1979,7 +1979,7 @@
   "char_1502_crosly": {
     "Title_S1": "Khói bụi mịt mù",
     "Title_S2": "Nổ bom khói",
-    "Title_S3": "Hành quyết trong làn khói",
+    "Title_S3": "Ám sát trong khói",
     "S1_1": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> và nhận <@ba.vup>{prob:0%}</> tỷ lệ né sát thương vật lý và phép.",
     "S1_2": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> và nhận <@ba.vup>{prob:0%}</> tỷ lệ né sát thương vật lý và phép.",
     "S1_3": "Sau khi triển khai, ATK <@ba.vup>+{atk:0%}</> và nhận <@ba.vup>{prob:0%}</> tỷ lệ né sát thương vật lý và phép.",
@@ -2340,7 +2340,7 @@
   },
   "char_179_cgbird": {
     "Title_S1": "Tăng cường hồi phục · loại γ",
-    "Title_S2": "Khiên phép",
+    "Title_S2": "Khiên Thuật pháp",
     "Title_S3": "Thánh vực",
     "S2_1": "Lần hồi phục kế tiếp sẽ tạo cho toàn bộ mục tiêu một lớp <$ba.barrier>Lá chắn</> tồn tại <@ba.vup>{duration}</> giây\nLớp lá chắn này có thể hấp thụ lượng <@ba.vup>sát thương Thuật pháp</> bằng <@ba.vup>{atk_scale:0%}</> ATK của Nightingale, đồng thời RES của mục tiêu được <@ba.vup>+{magic_resistance}</>; <@ba.rem>Có thể tích trữ {ct} lần</>",
     "S2_2": "Lần hồi phục kế tiếp sẽ tạo cho toàn bộ mục tiêu một lớp <$ba.barrier>Lá chắn</> tồn tại <@ba.vup>{duration}</> giây\nLớp lá chắn này có thể hấp thụ lượng <@ba.vup>sát thương Thuật pháp</> bằng <@ba.vup>{atk_scale:0%}</> ATK của Nightingale, đồng thời RES của mục tiêu được <@ba.vup>+{magic_resistance}</>; <@ba.rem>Có thể tích trữ {ct} lần</>",
@@ -10337,7 +10337,7 @@
     "Talent2_E2_p4": "Khi bị hạ gục (không tính rút lui), khiến tất cả kẻ địch trong 8 ô xung quanh chịu 1400<@ba.talpu>(+200)</> sát thương chuẩn và bị Choáng trong 3.5<@ba.talpu>(+0.5)</> giây."
   },
   "token_10003_cgbird_bird": {
-    "Title": "Ảo ảnh",
+    "Title": "Huyễn ảnh",
     "Token_Trait": "Không thể chặn kẻ địch.",
     "Token_Talent1": "Huyễn ảnh nhất thời",
     "Talent1_E2": "Có 75 RES, 30% tỷ lệ né sát thương vật lý, và ưu tiên bị chọn làm mục tiêu hơn, nhưng mất 3% HP tối đa mỗi giây."
