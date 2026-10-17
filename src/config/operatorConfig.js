@@ -97,6 +97,7 @@ export const SUBPROF_LABELS = {
   skywalker: "Skyranger",
   stalker: "Ambusher",
   traper: "Trapmaster",
+  supportiveranger: "Supportive Ranger",
 };
 
 export const CLASS_LABELS_I18N = {
@@ -112,7 +113,7 @@ export const CLASS_LABELS_I18N = {
   },
   VN: {
     PIONEER: "Tiên phong",
-    WARRIOR: "Vệ binh",
+    WARRIOR: "Cận vệ",
     TANK: "Phòng ngự",
     SNIPER: "Xạ thủ",
     CASTER: "Thuật sư",
@@ -161,15 +162,15 @@ export const SUBPROF_LABELS_VN_OVERRIDES = {
   reaperrange: "Tản xạ",
   siegesniper: "Vây kích",
   skybreaker: "Phá thiên",
-  blastcaster: "Blast Caster",
+  blastcaster: "Thuật sư bộc phát",
   chain: "Chain Caster",
-  corecaster: "Core Caster",
+  corecaster: "Thuật sư nồng cốt",
   funnel: "Cơ giới",
   mystic: "Huyền bí",
   phalanx: "Trận pháp",
   primcaster: "Thuật sư nguyên tố",
   soulcaster: "Linh thể",
-  splashcaster: "Splash Caster",
+  splashcaster: "Tán thuật",
   chainhealer: "Liên trị",
   healer: "Liệu dưỡng",
   incantationmedic: "Thuật trị",
@@ -182,7 +183,7 @@ export const SUBPROF_LABELS_VN_OVERRIDES = {
   craftsman: "Chế tác",
   ritualist: "Vu tế",
   slower: "Hãm tốc",
-  summoner: "Triệu hồi",
+  summoner: "Triệu hồi sư",
   underminer: "Nguyền thuật",
   alchemist: "Giả kim thuật",
   dollkeeper: "Thế thân",
@@ -191,9 +192,10 @@ export const SUBPROF_LABELS_VN_OVERRIDES = {
   hookmaster: "Kéo",
   merchant: "Thương nhân",
   pusher: "Đẩy",
-  skywalker: "Phòng không",
+  skywalker: "Không quân",
   stalker: "Phục kích",
-  traper: "Đặt bẫy",
+  traper: "Chuyên gia đặt bẫy",
+  supportiveranger: "Hỗ trợ kích ấn",
 };
 
 export const SUBPROF_LABELS_I18N = {

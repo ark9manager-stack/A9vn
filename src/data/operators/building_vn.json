@@ -1767,6 +1767,10 @@
     "Name": "DIY Crystal",
     "description": "Khi Operator này được phân công vào Workshop để gia công vật liệu thuộc loại <@cc.kw>Crystal</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>80%</>."
   },
+  "workshop_formula_device[080]": {
+    "Name": "Ánh sáng trên đầu ngón tay",
+    "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Chiral Refractor</> hoặc <@cc.kw>Rephasic Enantiomer</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>90%</>."
+  },
   "workshop_formula_rub[000]": {
     "Name": "Tiết kiệm sinh lời",
     "description": "Khi Operator này được phân công vào Workshop để gia công <@cc.kw>Elite Material</> có mức tiêu hao Tinh thần cơ bản là <@cc.kw>2</>, tỷ lệ nhận sản phẩm phụ tăng <@cc.vup>40%</>."
@@ -2619,12 +2623,20 @@
     "Name": "Đường dây đặc biệt",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
+  "hire_spd_cost[113]": {
+    "Name": "Lôi kéo thính giả",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+20%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+  },
   "hire_spd_cost[101]": {
     "Name": "Lễ nghi của triều đình",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+10%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost[120]": {
     "Name": "Đại diện cho triều đình",
+    "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
+  },
+  "hire_spd_cost[122]": {
+    "Name": "Diễn thuyết trước đám đông",
     "description": "Khi Operator này được phân công vào HR Office, tốc độ liên hệ nhân sự <@cc.vup>+30%</> và mức tiêu hao Tinh thần mỗi giờ <@cc.vup>-0.25</>."
   },
   "hire_spd_cost[999]": {
@@ -3018,5 +3030,13 @@
   "meet_spd_notOwned&exchange[000]": {
     "Name": "Mắt nhìn bốn hướng",
     "description": "Khi Operator này được phân công vào Reception Room, trong thời gian Clue Exchange, tăng tỷ lệ nhận được những Clue chưa có trên Clue Board."
+  },
+  "recycle_spd&cost[000]": {
+    "Name": "Người nhặt phế liệu",
+    "description": "Khi Operator này được phân công vào Recycling Station, hiệu suất chuyển hóa nguyên liệu <@cc.vup>+20%</>."
+  },
+  "recycle_spd&cost[010]": {
+    "Name": "Người mót biển",
+    "description": "Khi Operator này được phân công vào Recycling Station, hiệu suất chuyển hóa nguyên liệu <@cc.vup>+30%</>."
   }
 }

@@ -1666,7 +1666,7 @@ export default function ModuleSection(props) {
         <span className="text-white/90">
           {isEnglishUI
             ? "This Operator has no module."
-            : "Cán viên này không có module"}
+            : "Operator này không có module"}
         </span>
       </InfoTable>
     );

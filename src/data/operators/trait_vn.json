@@ -75,7 +75,7 @@
     { "supportiveranger": "Có thể sử dụng <$ba.triggereffect>Hiệu ứng kích hoạt</> để hỗ trợ trong chiến đấu." },
     { "slower": "Đòn tấn công gây <@ba.kw>sát thương Thuật pháp</>, và gây hiệu ứng [[Làm chậm|Slow]] trong thời gian [[ngắn|SlowerTrait]]." },
     { "underminer": "Đòn tấn công gây <@ba.kw>sát thương Thuật pháp</>." },
-    { "alchemist": "Có thể ném các <@ba.kw>đơn vị Luyện Kim</> để hỗ trợ trong chiến đấu." },
+    { "alchemist": "Có thể ném các <@ba.kw>Thiết Bị Giả Kim</> để hỗ trợ trong chiến đấu." },
     { "stalker": "Gây sát thương lên <@ba.kw>tất cả kẻ địch</> trong phạm vi tấn công\nCó 50% né sát thương vật lý và phép, đồng thời hạn chế bị kẻ địch <@ba.kw>chọn làm mục tiêu</> tấn công." },
     { "dollkeeper": "Khi nhận sát thương chí tử sẽ không rút lui, mà chuyển sang <Thế thân> chiến đấu (<Thế thân> có số lượng chặn là 0). Sau 20 giây sẽ đổi trở lại bản thể ban đầu." },
     { "geek": "Liên tục mất HP theo thời gian." },

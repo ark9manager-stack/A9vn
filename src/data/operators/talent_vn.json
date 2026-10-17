@@ -256,12 +256,12 @@
   "char_1039_thorn2": {
     "TitleTalent1": "Bản chất tâm hồn",
     "TitleTalent2": "Tầm nhìn vươn tới",
-    "Talent0": "ATK +3%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 1 giây.",
-    "Talent0_p4": "ATK +7%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 2<@ba.talpu>(+1)</> giây.",
-    "Talent1": "ATK +6%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 2 giây.",
-    "Talent1_p4": "ATK +10%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 3<@ba.talpu>(+1)</> giây.",
-    "Talent1_2": "ATK +10%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 3 giây.",
-    "Talent1_2_p4": "ATK +14%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Đơn Vị Luyện Kim do bản thân ném ra sẽ kéo dài thêm 4<@ba.talpu>(+1)</> giây.",
+    "Talent0": "ATK +3%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Thiết Bị Giả Kim do bản thân ném ra sẽ kéo dài thêm 1 giây.",
+    "Talent0_p4": "ATK +7%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Thiết Bị Giả Kim do bản thân ném ra sẽ kéo dài thêm 2<@ba.talpu>(+1)</> giây.",
+    "Talent1": "ATK +6%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Thiết Bị Giả Kim do bản thân ném ra sẽ kéo dài thêm 2 giây.",
+    "Talent1_p4": "ATK +10%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Thiết Bị Giả Kim do bản thân ném ra sẽ kéo dài thêm 3<@ba.talpu>(+1)</> giây.",
+    "Talent1_2": "ATK +10%; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Thiết Bị Giả Kim do bản thân ném ra sẽ kéo dài thêm 3 giây.",
+    "Talent1_2_p4": "ATK +14%<@ba.talpu>(+4%)</>; Khi trong phạm vi tấn công có đồng minh khác, thời gian tồn tại của các Thiết Bị Giả Kim do bản thân ném ra sẽ kéo dài thêm 4<@ba.talpu>(+1)</> giây.",
     "Talent2": "Khi có mặt trên sân, ASPD +5 cho toàn bộ phe ta, ASPD -5 cho toàn bộ phe địch; hiệu ứng này tăng gấp đôi với phe ta và phe địch khi đứng trên đoạn đường thẳng liên tiếp dài từ 6 ô trở lên."
   },
   "char_103_angel": {
@@ -1690,8 +1690,8 @@
     "TitleTalent2": "Kiếm thanh tẩy",
     "Talent1": "Khi gây sát thương vật lý lên mục tiêu, có 50% tỷ lệ bỏ qua 30% DEF của chúng; Tỷ lệ này tăng lên 100% đối với mục tiêu trên không.",
     "Talent1_2": "Khi gây sát thương vật lý lên mục tiêu, có 50% tỷ lệ bỏ qua 50% DEF của chúng; Tỷ lệ này tăng lên 100% đối với mục tiêu trên không.",
-    "Talent2": "ASPD +18; Hiệu ứng này tăng gấp đôi nếu trên sân có kẻ địch【Seaborn】.",
-    "Talent2_p4": "ASPD +21<@ba.talpu>(+3)</>; Hiệu ứng này tăng gấp đôi nếu trên sân có kẻ địch【Seaborn】."
+    "Talent2": "ASPD +18; Hiệu ứng này tăng gấp đôi nếu trên sân có kẻ địch【Sea Monster】.",
+    "Talent2_p4": "ASPD +21<@ba.talpu>(+3)</>; Hiệu ứng này tăng gấp đôi nếu trên sân có kẻ địch【Sea Monster】."
   },
   "char_400_weedy": {
     "TitleTalent1": "Vòi rồng công nghiệp",
@@ -2444,8 +2444,8 @@
     "Talent1_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +4<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Operator Gánh tải.",
     "Talent1_2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +9 Toil Limit khi được chọn làm Operator Gánh tải.",
     "Talent1_2_p2": "Trong【Sarkaz's Furnaceside Fables】(IS#5), phí tuyển dụng Tin Man -2 Hope và +10<@ba.talpu>(+1)</> Toil Limit khi được chọn làm Operator Gánh tải.",
-    "Talent2": "Tăng 20% sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Đơn Vị Luyện Kim của Tin Man.",
-    "Talent2_p4": "Tăng 22%<@ba.talpu>(+2%)</> sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Đơn Vị Luyện Kim của Tin Man."
+    "Talent2": "Tăng 20% sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Thiết Bị Giả Kim của Tin Man.",
+    "Talent2_p4": "Tăng 22%<@ba.talpu>(+2%)</> sát thương theo thời gian lên các kẻ địch mặt đất đứng trong Thiết Bị Giả Kim của Tin Man."
   },
   "char_4155_talr": {
     "TitleTalent1": "Lựa chọn khách hàng",
@@ -3502,7 +3502,7 @@
     "Talent1_2_p4": "Sát thương vật lý gây ra +12%<@ba.talpu>(+2%)</>, sát thương vật lý nhận vào -12%<@ba.talpu>(+2%)</>."
   },
   "char_4217_makoto": {
-    "TitleTalent1": "Lá bài vạn năng",
+    "TitleTalent1": "Lá bài quyền năng",
     "TitleTalent2": "Đội trưởng S.E.E.S.",
     "Talent0": "Trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +40%, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
     "Talent0_p4": "Trong trạng thái <Thế Thân>, Makoto Yuki sẽ triệu hồi Persona để chiến đấu, [[tăng|shwazS3]] khoảng cách tấn công, ATK +45%<@ba.talpu>(+5%)</>, HP +35%, cơ chế chiến đấu thay đổi tùy theo kỹ năng được chọn.",
@@ -3516,5 +3516,29 @@
     "Talent2_1_p2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 300%<@ba.talpu>(+20%)</> ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
     "Talent2_2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 430% ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn).",
     "Talent2_2_p2": "Sau khi trạng thái <Thế Thân> của Makoto Yuki kết thúc, anh dẫn toàn đội <$ba.sees>S.E.E.S.</> phát động Tổng Tấn Công, gây sát thương chuẩn bằng 450%<@ba.talpu>(+20%)</> ATK của Makoto Yuki lên tất cả kẻ địch trong phạm vi xung quanh các thành viên <$ba.sees>S.E.E.S.</> (có thể cộng dồn)."
+  },
+  "char_4232_hbound": {
+    "TitleTalent1": "Tác nghiệp dưới biển",
+    "Talent1": "-5% tỷ lệ tấn công chính xác các đòn vật lý và Thuật pháp của kẻ địch mặt đất đứng trong phạm vi ảnh hưởng của Thiết Bị Giả Kim do Homebound triển khai; nếu Trọng lượng của kẻ địch từ 3 trở lên, hiệu quả sẽ đổi thành -9%.",
+    "Talent1_p4": "-6%<@ba.talpu>(-1%)</>tỷ lệ tấn công chính xác các đòn vật lý và Thuật pháp của kẻ địch mặt đất đứng trong phạm vi ảnh hưởng của Thiết Bị Giả Kim do Homebound triển khai; nếu Trọng lượng của kẻ địch từ 3 trở lên, hiệu quả sẽ đổi thành -11%<@ba.talpu>(-2%)</>.",
+    "Talent1_2": "-9% tỷ lệ tấn công chính xác các đòn vật lý và Thuật pháp của kẻ địch mặt đất đứng trong phạm vi ảnh hưởng của Thiết Bị Giả Kim do Homebound triển khai; nếu Trọng lượng của kẻ địch từ 3 trở lên, hiệu quả sẽ đổi thành -13%.",
+    "Talent1_2_p4": "-10%<@ba.talpu>(-1%)</> tỷ lệ tấn công chính xác các đòn vật lý và Thuật pháp của kẻ địch mặt đất đứng trong phạm vi ảnh hưởng của Thiết Bị Giả Kim do Homebound triển khai; nếu Trọng lượng của kẻ địch từ 3 trở lên, hiệu quả sẽ đổi thành -15%<@ba.talpu>(-2%)</>."
+  },
+  "char_393_toledo": {
+    "TitleTalent1": "“Dòng dõi quý tộc”",
+    "Talent1": "Kẻ địch đang bị Chặn trong phạm vi tấn công nhận 8% <$ba.fragile>Fragile</>.",
+    "Talent1_p4": "Kẻ địch đang bị Chặn trong phạm vi tấn công nhận 10%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>.",
+    "Talent1_2": "Kẻ địch đang bị Chặn trong phạm vi tấn công nhận 16% <$ba.fragile>Fragile</>.",
+    "Talent1_2_p4": "Kẻ địch đang bị Chặn trong phạm vi tấn công nhận 18%<@ba.talpu>(+2%)</> <$ba.fragile>Fragile</>."
+  },
+  "char_4231_clemnt": {
+    "TitleTalent1": "Định đoạt sinh tử",
+    "TitleTalent2": "Cơ chế phòng vệ",
+    "Talent1": "Khi gây sát thương vật lý, có 25% tỷ lệ tăng ATK lên 120%, tỷ lệ sẽ tăng lên 50% nếu DEF của mục tiêu thấp hơn giá trị ban đầu.",
+    "Talent1_p2": "Khi gây sát thương vật lý, có 25% tỷ lệ tăng ATK lên 135%<@ba.talpu>(+15%)</>, tỷ lệ sẽ tăng lên 50% nếu DEF của mục tiêu thấp hơn giá trị ban đầu.",
+    "Talent1_2": "Khi gây sát thương vật lý, có 25% tỷ lệ tăng ATK lên 135%, tỷ lệ sẽ tăng lên 50% nếu DEF của mục tiêu thấp hơn giá trị ban đầu.",
+    "Talent1_p4": "Khi gây sát thương vật lý, có 25% tỷ lệ tăng ATK lên 150%<@ba.talpu>(+15%)</>, tỷ lệ sẽ tăng lên 50% nếu DEF của mục tiêu thấp hơn giá trị ban đầu.",
+    "Talent2": "Giảm 30% sát thương vật lý và Thuật pháp nhận vào từ các kẻ địch phía trước, giảm 50% nếu nguồn sát thương nhận vào đến từ【Sea Monster】.",
+    "Talent2_p4": "Giảm 35%<@ba.talpu>(+5%)</> sát thương vật lý và Thuật pháp nhận vào từ các kẻ địch phía trước, giảm 55%<@ba.talpu>(+5%)</> nếu nguồn sát thương nhận vào đến từ【Sea Monster】."
   }
 }
