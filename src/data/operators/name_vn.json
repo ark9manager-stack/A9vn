@@ -2313,5 +2313,35 @@
     "idweb": 434,
     "name": "克莱门莎",
     "name_vn": "Clementia"
+  },
+  "char_4170_hdbell": {
+    "idweb": 435,
+    "name": "行铃",
+    "name_vn": "Herdbells"
+  },
+  "char_4169_caledo": {
+    "idweb": 436,
+    "name": "镜匠",
+    "name_vn": "Caleido"
+  },
+  "char_4245_alga": {
+    "idweb": 437,
+    "name": "奥尔佳",
+    "name_vn": "Olga"
+  },
+  "char_4246_dminon": {
+    "idweb": 438,
+    "name": "国度",
+    "name_vn": "Dominion/Lãnh Thổ"
+  },
+  "char_4244_tocka": {
+    "idweb": 439,
+    "name": "冻河",
+    "name_vn": "Toska"
+  },
+  "char_4247_oxi": {
+    "idweb": 440,
+    "name": "塔露拉",
+    "name_vn": "Talulah"
   }
 }
