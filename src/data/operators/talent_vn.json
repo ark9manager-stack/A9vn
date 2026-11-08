@@ -1255,12 +1255,12 @@
     "TitleTalent1_p3": "Phun sương y tế IV",
     "TitleTalent1_p4": "Phun sương y tế V",
     "TitleTalent1_p5": "Phun sương y tế VI",
-    "Talent0": "Ngay sau khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
-    "Talent0_p1": "Ngay sau khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p2": "Ngay sau khi triển khai, lập tức hồi 320<@ba.talpu>(+120)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p3": "Ngay sau khi triển khai, lập tức hồi 380<@ba.talpu>(+180)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p4": "Ngay sau khi triển khai, lập tức hồi 440<@ba.talpu>(+240)</> HP cho toàn bộ đồng minh trên toàn bản đồ.",
-    "Talent0_p5": "Ngay sau khi triển khai, lập tức hồi 500<@ba.talpu>(+300)</> HP cho toàn bộ đồng minh trên toàn bản đồ."
+    "Talent0": "Khi triển khai, lập tức hồi 200 HP cho toàn bộ đồng minh trên sân.",
+    "Talent0_p1": "Khi triển khai, lập tức hồi 260<@ba.talpu>(+60)</> HP cho toàn bộ đồng minh trên sân.",
+    "Talent0_p2": "Khi triển khai, lập tức hồi 320<@ba.talpu>(+120)</> HP cho toàn bộ đồng minh trên sân.",
+    "Talent0_p3": "Khi triển khai, lập tức hồi 380<@ba.talpu>(+180)</> HP cho toàn bộ đồng minh trên sân.",
+    "Talent0_p4": "Khi triển khai, lập tức hồi 440<@ba.talpu>(+240)</> HP cho toàn bộ đồng minh trên sân.",
+    "Talent0_p5": "Khi triển khai, lập tức hồi 500<@ba.talpu>(+300)</> HP cho toàn bộ đồng minh trên sân."
   },
   "char_286_cast3": {
     "TitleTalent1": "Điều phối chiến thuật I",
@@ -1269,12 +1269,12 @@
     "TitleTalent1_p3": "Điều phối chiến thuật IV",
     "TitleTalent1_p4": "Điều phối chiến thuật V",
     "TitleTalent1_p5": "Điều phối chiến thuật VI",
-    "Talent0": "Trong 10 giây sau khi triển khai, tất cả đồng minh đứng trên ô【Cận chiến】nhận +10% ATK và DEF.",
-    "Talent0_p1": "Trong 12<@ba.talpu>(+2)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Cận chiến】nhận +12%<@ba.talpu>(+2%)</> ATK và DEF.",
-    "Talent0_p2": "Trong 14<@ba.talpu>(+4)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Cận chiến】nhận +14%<@ba.talpu>(+4%)</> ATK và DEF.",
-    "Talent0_p3": "Trong 16<@ba.talpu>(+6)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Cận chiến】nhận +16%<@ba.talpu>(+6%)</> ATK và DEF.",
-    "Talent0_p4": "Trong 18<@ba.talpu>(+8)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Cận chiến】nhận +18%<@ba.talpu>(+8%)</> ATK và DEF.",
-    "Talent0_p5": "Trong 20<@ba.talpu>(+10)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Cận chiến】nhận +20%<@ba.talpu>(+10%)</> ATK và DEF."
+    "Talent0": "Trong 10 giây sau khi triển khai, tất cả Operator【Cận chiến】nhận +10% ATK và DEF.",
+    "Talent0_p1": "Trong 12<@ba.talpu>(+2)</> giây sau khi triển khai, tất cả Operator【Cận chiến】nhận +12%<@ba.talpu>(+2%)</> ATK và DEF.",
+    "Talent0_p2": "Trong 14<@ba.talpu>(+4)</> giây sau khi triển khai, tất cả Operator【Cận chiến】nhận +14%<@ba.talpu>(+4%)</> ATK và DEF.",
+    "Talent0_p3": "Trong 16<@ba.talpu>(+6)</> giây sau khi triển khai, tất cả Operator【Cận chiến】nhận +16%<@ba.talpu>(+6%)</> ATK và DEF.",
+    "Talent0_p4": "Trong 18<@ba.talpu>(+8)</> giây sau khi triển khai, tất cả Operator【Cận chiến】nhận +18%<@ba.talpu>(+8%)</> ATK và DEF.",
+    "Talent0_p5": "Trong 20<@ba.talpu>(+10)</> giây sau khi triển khai, tất cả Operator【Cận chiến】nhận +20%<@ba.talpu>(+10%)</> ATK và DEF."
   },
   "char_289_gyuki": {
     "TitleTalent1": "Thể chất của quỷ",
@@ -1590,12 +1590,12 @@
     "TitleTalent1_p3": "Bom hẹn giờ IV",
     "TitleTalent1_p4": "Bom hẹn giờ V",
     "TitleTalent1_p5": "Bom hẹn giờ VI",
-    "Talent0": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 300% ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 10% <$ba.fragile>Fragile</>. Sau đó tự động rút lui khỏi sân.",
-    "Talent0_p1": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 320%<@ba.talpu>(+20%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 18%<@ba.talpu>(+8%)</> <$ba.fragile>Fragile</>. Sau đó tự động rút lui khỏi sân.",
-    "Talent0_p2": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 340%<@ba.talpu>(+40%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 21%<@ba.talpu>(+11%)</> <$ba.fragile>Fragile</>. Sau đó tự động rút lui khỏi sân.",
-    "Talent0_p3": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 360%<@ba.talpu>(+60%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 24%<@ba.talpu>(+14%)</> <$ba.fragile>Fragile</>. Sau đó tự động rút lui khỏi sân.",
-    "Talent0_p4": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 380%<@ba.talpu>(+80%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 27%<@ba.talpu>(+17%)</> <$ba.fragile>Fragile</>. Sau đó tự động rút lui khỏi sân.",
-    "Talent0_p5": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 400%<@ba.talpu>(+100%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 30%<@ba.talpu>(+20%)</> <$ba.fragile>Fragile</>. Sau đó tự động rút lui khỏi sân."
+    "Talent0": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 300% ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 10% <$ba.fragile>Fragile</> trong 8 giây. Sau đó tự động rút lui khỏi sân.",
+    "Talent0_p1": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 320%<@ba.talpu>(+20%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 18%<@ba.talpu>(+8%)</> <$ba.fragile>Fragile</> trong 8 giây. Sau đó tự động rút lui khỏi sân.",
+    "Talent0_p2": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 340%<@ba.talpu>(+40%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 21%<@ba.talpu>(+11%)</> <$ba.fragile>Fragile</> trong 8 giây. Sau đó tự động rút lui khỏi sân.",
+    "Talent0_p3": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 360%<@ba.talpu>(+60%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 24%<@ba.talpu>(+14%)</> <$ba.fragile>Fragile</> trong 8 giây. Sau đó tự động rút lui khỏi sân.",
+    "Talent0_p4": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 380%<@ba.talpu>(+80%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 27%<@ba.talpu>(+17%)</> <$ba.fragile>Fragile</> trong 8 giây. Sau đó tự động rút lui khỏi sân.",
+    "Talent0_p5": "Sau khi triển khai được 3 giây, bản thân sẽ phát nổ gây sát thương vật lý bằng 400%<@ba.talpu>(+100%)</> ATK lên tất cả kẻ địch trong 8 ô xung quanh, và khiến chúng nhận 30%<@ba.talpu>(+20%)</> <$ba.fragile>Fragile</> trong 8 giây. Sau đó tự động rút lui khỏi sân."
   },  
   "char_377_gdglow": {
     "TitleTalent1": "Tín hiệu bùng nổ",
@@ -1666,12 +1666,12 @@
     "TitleTalent1_p3": "Trợ lực công lý IV",
     "TitleTalent1_p4": "Trợ lực công lý V",
     "TitleTalent1_p5": "Trợ lực công lý VI",
-    "Talent0": "Trong 10 giây sau khi triển khai, tất cả đồng minh đứng trên ô【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không nhận 10% <$ba.fragile>Fragile</>.",
-    "Talent0_p1": "Trong 12<@ba.talpu>(+2)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không nhận 13%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile</>.",
-    "Talent0_p2": "Trong 14<@ba.talpu>(+4)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không nhận 16%<@ba.talpu>(+6%)</> <$ba.fragile>Fragile</>.",
-    "Talent0_p3": "Trong 16<@ba.talpu>(+6)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không nhận 19%<@ba.talpu>(+9%)</> <$ba.fragile>Fragile</>.",
-    "Talent0_p4": "Trong 18<@ba.talpu>(+8)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không nhận 22%<@ba.talpu>(+12%)</> <$ba.fragile>Fragile</>.",
-    "Talent0_p5": "Trong 20<@ba.talpu>(+10)</> giây sau khi triển khai, tất cả đồng minh đứng trên ô【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không nhận 25%<@ba.talpu>(+15%)</> <$ba.fragile>Fragile</>."
+    "Talent0": "Trong 10 giây sau khi triển khai, tất cả Operator【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không trong phạm vi nhận 10% <$ba.fragile>Fragile</>.",
+    "Talent0_p1": "Trong 12<@ba.talpu>(+2)</> giây sau khi triển khai, tất cả Operator【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không trong phạm vi nhận 13%<@ba.talpu>(+3%)</> <$ba.fragile>Fragile</>.",
+    "Talent0_p2": "Trong 14<@ba.talpu>(+4)</> giây sau khi triển khai, tất cả Operator【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không trong phạm vi nhận 16%<@ba.talpu>(+6%)</> <$ba.fragile>Fragile</>.",
+    "Talent0_p3": "Trong 16<@ba.talpu>(+6)</> giây sau khi triển khai, tất cả Operator【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không trong phạm vi nhận 19%<@ba.talpu>(+9%)</> <$ba.fragile>Fragile</>.",
+    "Talent0_p4": "Trong 18<@ba.talpu>(+8)</> giây sau khi triển khai, tất cả Operator【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không trong phạm vi nhận 22%<@ba.talpu>(+12%)</> <$ba.fragile>Fragile</>.",
+    "Talent0_p5": "Trong 20<@ba.talpu>(+10)</> giây sau khi triển khai, tất cả Operator【Tầm xa】trong phạm vi tấn công sẽ hạn chế bị chọn làm mục tiêu tấn công, và các kẻ địch trên không trong phạm vi nhận 25%<@ba.talpu>(+15%)</> <$ba.fragile>Fragile</>."
   },
   "char_4004_pudd": {
     "TitleTalent1": "Sóng điện từ",
@@ -2121,12 +2121,12 @@
     "TitleTalent1_p3": "Trường tồn IV",
     "TitleTalent1_p4": "Trường tồn V",
     "TitleTalent1_p5": "Trường tồn VI",
-    "Talent0": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 50 <$ba.dmgresistance>Miễn thương</>.",
-    "Talent0_p1": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 55<@ba.talpu>(+5)</> <$ba.dmgresistance>Miễn thương</>.",
-    "Talent0_p2": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 60<@ba.talpu>(+10)</> <$ba.dmgresistance>Miễn thương</>.",
-    "Talent0_p3": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 65<@ba.talpu>(+15)</> <$ba.dmgresistance>Miễn thương</>.",
-    "Talent0_p4": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 70<@ba.talpu>(+20)</> <$ba.dmgresistance>Miễn thương</>.",
-    "Talent0_p5": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 75<@ba.talpu>(+25)</> <$ba.dmgresistance>Miễn thương</>."
+    "Talent0": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 50 <$ba.dmgresistance>Giảm sát thương</>.",
+    "Talent0_p1": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 55<@ba.talpu>(+5)</> <$ba.dmgresistance>Giảm sát thương</>.",
+    "Talent0_p2": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 60<@ba.talpu>(+10)</> <$ba.dmgresistance>Giảm sát thương</>.",
+    "Talent0_p3": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 65<@ba.talpu>(+15)</> <$ba.dmgresistance>Giảm sát thương</>.",
+    "Talent0_p4": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 70<@ba.talpu>(+20)</> <$ba.dmgresistance>Giảm sát thương</>.",
+    "Talent0_p5": "Trong 10 giây sau khi triển khai, tất cả đơn vị phe ta trong 8 ô xung quanh nhận 75<@ba.talpu>(+25)</> <$ba.dmgresistance>Giảm sát thương</>."
   },
   "char_4098_vvana": {
     "TitleTalent1": "Ánh nến dẫn lối",
@@ -2631,12 +2631,12 @@
     "Talent1_2_p4": "ATK +13%<@ba.talpu>(+3%)</>; Hiệu ứng đổi thành ATK +18%<@ba.talpu>(+3%)</> sau khi hạ gục kẻ địch đang trong giai đoạn bộc phát <$ba.dt.neural2>Nervous Impairment</>."
   },
   "char_4188_confes": {
-    "TitleTalent1": "Thanh toán trước, Xưng tội sau I",
-    "TitleTalent1_p1": "Thanh toán trước, Xưng tội sau II",
-    "TitleTalent1_p2": "Thanh toán trước, Xưng tội sau III",
-    "TitleTalent1_p3": "Thanh toán trước, Xưng tội sau IV",
-    "TitleTalent1_p4": "Thanh toán trước, Xưng tội sau V",
-    "TitleTalent1_p5": "Thanh toán trước, Xưng tội sau VI",
+    "TitleTalent1": "Trả phí trước, Xưng tội sau I",
+    "TitleTalent1_p1": "Trả phí trước, Xưng tội sau II",
+    "TitleTalent1_p2": "Trả phí trước, Xưng tội sau III",
+    "TitleTalent1_p3": "Trả phí trước, Xưng tội sau IV",
+    "TitleTalent1_p4": "Trả phí trước, Xưng tội sau V",
+    "TitleTalent1_p5": "Trả phí trước, Xưng tội sau VI",
     "Talent0": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 5 giây.",
     "Talent0_p1": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 2 DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
     "Talent0_p2": "Lần đầu chặn được kẻ địch sẽ ngay lập tức nhận 3<@ba.talpu>(+1)</> DP và khiến kẻ địch đó rơi vào hiệu ứng [[Ngủ|Sleep]] trong 6<@ba.talpu>(+1)</> giây.",
