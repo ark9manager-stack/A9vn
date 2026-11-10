@@ -3141,7 +3141,7 @@
     "Talent0_lv30": "Có 50% né sát thương Thuật pháp."
   },
   "char_502_nblade": {
-    "TitleTalent1": "Tái triển khai siêu tốc",
+    "TitleTalent1": "Tái triển khai nhanh",
     "Talent0_lv30": "Thời gian tái triển khai -30 giây."
   },
   "char_503_rang": {
@@ -3340,12 +3340,12 @@
     "TitleTalent1_p3": "'Ngon chan tao đê!' IV",
     "TitleTalent1_p4": "'Ngon chan tao đê!' V",
     "TitleTalent1_p5": "'Ngon chan tao đê!' VI",
-    "Talent0": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -15% RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
-    "Talent0_p1": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -17%<@ba.talpu>(+2%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
-    "Talent0_p2": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -19%<@ba.talpu>(+4%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
-    "Talent0_p3": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -21%<@ba.talpu>(+6%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
-    "Talent0_p4": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -23%<@ba.talpu>(+8%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
-    "Talent0_p5": "Trong 20 giây sau khi triển khai, đòn tấn công khiến kẻ địch bị -25%<@ba.talpu>(+10%)</> RES (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này."
+    "Talent0": "Trong 20 giây sau khi triển khai, đòn tấn công khiến RES của kẻ địch -15% (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
+    "Talent0_p1": "Trong 20 giây sau khi triển khai, đòn tấn công khiến RES của kẻ địch -17%<@ba.talpu>(+2%)</> (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
+    "Talent0_p2": "Trong 20 giây sau khi triển khai, đòn tấn công khiến RES của kẻ địch -19%<@ba.talpu>(+4%)</> (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
+    "Talent0_p3": "Trong 20 giây sau khi triển khai, đòn tấn công khiến RES của kẻ địch -21%<@ba.talpu>(+6%)</> (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
+    "Talent0_p4": "Trong 20 giây sau khi triển khai, đòn tấn công khiến RES của kẻ địch -23%<@ba.talpu>(+8%)</> (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này.",
+    "Talent0_p5": "Trong 20 giây sau khi triển khai, đòn tấn công khiến RES của kẻ địch -25%<@ba.talpu>(+10%)</> (kéo dài 10 giây); Ưu tiên tấn công kẻ địch chưa chịu hiệu ứng này."
   },
   "char_4225_tanya": {
     "TitleTalent1": "Đề kháng với dung môi bẩn",
@@ -3389,12 +3389,12 @@
     "TitleTalent1_p3": "Long đạn miêu thức IV",
     "TitleTalent1_p4": "Long đạn miêu thức V",
     "TitleTalent1_p5": "Long đạn miêu thức VI",
-    "Talent0": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 150% ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2 giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
-    "Talent0_p1": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 230%<@ba.talpu>(+80%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.2<@ba.talpu>(+0.2)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
-    "Talent0_p2": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 280%<@ba.talpu>(+130%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.4<@ba.talpu>(+0.4)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
-    "Talent0_p3": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 350%<@ba.talpu>(+200%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.6<@ba.talpu>(+0.6)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
-    "Talent0_p4": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 420%<@ba.talpu>(+270%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.8<@ba.talpu>(+0.8)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây.",
-    "Talent0_p5": "Đòn tấn công đầu tiên lên 3 kẻ địch đầu tiên sẽ ném 'Long Đạn Miêu Thức'. Đồng minh phe ta khi gây sát thương lên kẻ địch đang có 'Long Đạn Miêu Thức' sẽ kích nổ, gây sát thương bằng 500%<@ba.talpu>(+350%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 3<@ba.talpu>(+1)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi kích nổ hoặc sau 30 giây."
+    "Talent0": "Với 3 kẻ địch đầu tiên, đòn tấn công đầu tiên lên mỗi kẻ địch được thay bằng 'Long Đạn Miêu Thức'. Sát thương từ đơn vị đồng minh sẽ kích nổ 'Long Đạn Miêu Thức', gây sát thương bằng 150% ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2 giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi bị kích nổ hoặc sau 30 giây.",
+    "Talent0_p1": "Với 3 kẻ địch đầu tiên, đòn tấn công đầu tiên lên mỗi kẻ địch được thay bằng 'Long Đạn Miêu Thức'. Sát thương từ đơn vị đồng minh sẽ kích nổ 'Long Đạn Miêu Thức', gây sát thương bằng 230%<@ba.talpu>(+80%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.2<@ba.talpu>(+0.2)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi bị kích nổ hoặc sau 30 giây.",
+    "Talent0_p2": "Với 3 kẻ địch đầu tiên, đòn tấn công đầu tiên lên mỗi kẻ địch được thay bằng 'Long Đạn Miêu Thức'. Sát thương từ đơn vị đồng minh sẽ kích nổ 'Long Đạn Miêu Thức', gây sát thương bằng 280%<@ba.talpu>(+130%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.4<@ba.talpu>(+0.4)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi bị kích nổ hoặc sau 30 giây.",
+    "Talent0_p3": "Với 3 kẻ địch đầu tiên, đòn tấn công đầu tiên lên mỗi kẻ địch được thay bằng 'Long Đạn Miêu Thức'. Sát thương từ đơn vị đồng minh sẽ kích nổ 'Long Đạn Miêu Thức', gây sát thương bằng 350%<@ba.talpu>(+200%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.6<@ba.talpu>(+0.6)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi bị kích nổ hoặc sau 30 giây.",
+    "Talent0_p4": "Với 3 kẻ địch đầu tiên, đòn tấn công đầu tiên lên mỗi kẻ địch được thay bằng 'Long Đạn Miêu Thức'. Sát thương từ đơn vị đồng minh sẽ kích nổ 'Long Đạn Miêu Thức', gây sát thương bằng 420%<@ba.talpu>(+270%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 2.8<@ba.talpu>(+0.8)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi bị kích nổ hoặc sau 30 giây.",
+    "Talent0_p5": "Với 3 kẻ địch đầu tiên, đòn tấn công đầu tiên lên mỗi kẻ địch được thay bằng 'Long Đạn Miêu Thức'. Sát thương từ đơn vị đồng minh sẽ kích nổ 'Long Đạn Miêu Thức', gây sát thương bằng 500%<@ba.talpu>(+350%)</> ATK của Rhodes Island Recon và <$ba.stun>Choáng</> mục tiêu trong 3<@ba.talpu>(+1)</> giây, đồng thời nhận 1 DP. 'Long Đạn Miêu Thức' sẽ biến mất sau khi bị kích nổ hoặc sau 30 giây."
   },
   "char_1049_catap2": {
     "TitleTalent1": "Biến chuyển dạng rìu",
