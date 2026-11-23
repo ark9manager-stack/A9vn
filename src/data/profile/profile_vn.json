@@ -6691,16 +6691,16 @@
   },
   "char_500_noirc": {
     "vn": {
-      "recuit": "Ngày nào cũng có thể bắt gặp anh đang cẩn thận lau chùi chiếc mặt nạ của mình.\nNoir Corne, Cán viên Phòng ngự của Rhodes Island, sẽ trở thành một tấm khiên vững chắc nhất cho đồng đội.",
+      "recuit": "Ngày nào cũng có thể bắt gặp anh đang cẩn thận lau chùi chiếc mặt nạ của mình.\nNoir Corne, Cán viên Phòng ngự của Rhodes Island, sẽ là tấm khiên vững chắc nhất cho đồng đội.",
       "token": "Một chiếc mặt nạ tế lễ hằn đậm dấu vết của năm tháng. Đôi hốc mắt trống rỗng ấy đã chứng kiến buổi bình minh của vùng đất này.",
       "basic_info": "【Mật danh】Noir Corne\n【Giới tính】Nam\n【Kinh nghiệm chiến đấu】8 năm\n【Nơi sinh】Higashi\n【Ngày sinh】30 tháng 8\n【Chủng tộc】Oni\n【Chiều cao】180cm\n【Tình trạng nhiễm bệnh】\nXác nhận nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
       "physical_exam": "【Thể lực】Tiêu chuẩn\n【Cơ động】Bình thường\n【Sức bền】Xuất sắc\n【Chiến thuật】Bình thường\n【Kỹ năng chiến đấu】Bình thường\n【Khả năng thích ứng Originium Arts】Tiêu chuẩn",
-      "profile": "Một trong những Cán viên nòng cốt của Rhodes Island. Trên chiến trường, anh luôn xông pha tuyến đầu để bảo vệ đồng đội, còn khi trở về tàu, anh sẽ lặng lẽ lùi về sau và đảm đương công việc hậu cần. Anh là kiểu người không phô trương, chỉ âm thầm làm tốt việc của mình.",
+      "profile": "Một trong những Cán viên nòng cốt của Rhodes Island. Trên chiến trường, Noir Corne luôn xông pha tuyến đầu để bảo vệ đồng đội, rồi lại lặng lẽ lui về làm hậu cần khi trở về tàu. Anh là kiểu người nói ít làm nhiều, luôn âm thầm làm tốt công việc của mình.",
       "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên không hiển thị rõ ràng, đồng thời ghi nhận hình ảnh bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng cho thấy dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên đã nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】11%\nHiện chưa ghi nhận dấu hiệu Oripathy trên bề mặt cơ thể.\n\n【Mật độ tinh thể Originium trong máu】0.22u/L\nMức độ nhiễm còn nhẹ và hiện chưa gây ảnh hưởng đáng kể đến cơ thể.",
-      "file_1": "Là một Cán viên kỳ cựu của Rhodes Island cả về tuổi đời lẫn kinh nghiệm, Noir Corne thường tạo cảm giác khó gần vì chiếc mặt nạ anh đeo. Tuy nhiên, những ai từng trò chuyện với anh sẽ nhanh chóng nhận ra anh là một người anh vui tính, dễ gần, luôn hòa đồng với các hậu bối và chẳng bao giờ lên mặt tiền bối.",
-      "file_2": "黑角的房间里收藏着各式各样的面具，在不同的节日，他会戴上符合节日氛围的面具。\n平时穿戴的似乎是他最喜欢的一款，用他的话说，就是“俺觉得这一款最搭罗德岛的氛围”。\n顺便一提，面具下并没有见不得人的秘密。",
-      "file_3": "黑角的性格中，唯一有些令人在意的地方，就是他似乎有些畏惧夜刀。并不是恐惧，而是不想惹她生气的感觉。这引起了一些比较八卦的干员的注意。 \n不过无论是两人的履历还是相处模式，都无法看出更多的东西。",
-      "paradox": "\n\n在实战中，黑角凭借着丰富的战斗经验，总能很快做好准备，帮助指挥官第一时间展开阵线。\n哪怕敌人的攻势过于猛烈，黑角也不会慌乱，因为他清楚得很，如果他先于队友倒下，那么他也会先于队友站起来。无论是最前线还是最后方，他，都会坚守。"
+      "file_1": "Là một Cán viên kỳ cựu của Rhodes Island cả về tuổi đời lẫn kinh nghiệm, Noir Corne thường tạo cảm giác khó gần vì chiếc mặt nạ anh đeo. Tuy nhiên, những ai từng trò chuyện với anh sẽ nhanh chóng nhận ra anh là một người anh vui tính, dễ gần, luôn hòa đồng với các đàn em và chẳng bao giờ lên mặt đàn anh.",
+      "file_2": "Trong phòng Noir Corne sưu tầm đủ các loại mặt nạ. Mỗi dịp lễ khác nhau, anh sẽ đeo một chiếc phù hợp với không khí của ngày hôm ấy.\nChiếc anh thường đeo dường như cũng chính là chiếc mà anh thích nhất. Anh bảo rằng “Tôi thấy kiểu này hợp với không khí Rhodes Island nhất”.\nNhân tiện, đằng sau lớp mặt nạ ấy chẳng có bí mật gì phải giấu giếm cả.",
+      "file_3": "Điểm duy nhất ở Noir Corne mà khiến người khác phải để ý, là anh dường như hơi e ngại Yato. Không phải kiểu sợ cô ấy, mà chỉ là không muốn chọc cô giận. Và chủ đề này cũng đã khơi gợi sự hứng thú của những Cán viên thích hóng chuyện.\nTuy nhiên, không thể tìm ra điều gì hơn về cách hai người qua lại.",
+      "paradox": "Phòng tuyến thần tốc\n\nNhờ kinh nghiệm chiến đấu dày dạn, Noir Corne luôn nhanh chóng sẵn sàng xuất trận, giúp chỉ huy triển khai phòng tuyến ngay lập tức.\nDù kẻ địch có tấn công ác liệt đến đâu, anh vẫn luôn giữ bình tĩnh. Anh hiểu rất rõ rằng nếu ngã xuống trước đồng đội, anh cũng sẽ đứng dậy trước họ. Dù ở mũi nhọn tiền tuyến hay ở tận cùng hậu phương, anh đều kiên cường trụ vững."
     }
   },
   "char_501_durin": {

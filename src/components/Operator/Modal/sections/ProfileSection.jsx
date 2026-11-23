@@ -618,7 +618,7 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
   const clinicalAnalysisText = getText("clinical_analysis");
 
   const sections = [
-    { id: "profile_2", key: "profile_2", title: "Hồ sơ học sinh" },
+    { id: "profile_2", key: "profile_2", title: "Lý lịch học sinh" },
     {
       id: "clinical_analysis_2",
       key: "clinical_analysis_2",
@@ -692,14 +692,14 @@ export default function ProfileSection({ operator, charId, lang = "VN" }) {
 
       <TextPanel
         id="profile"
-        title="Hồ sơ"
+        title="Lý lịch"
         text={profileText}
         isEnglishUI={isEnglishUI}
       />
 
       <TextPanel
         id="clinicalanalysis"
-        title="Biện luận lâm sàng"
+        title="Phân tích lâm sàng"
         text={clinicalAnalysisText}
         isEnglishUI={isEnglishUI}
       />
