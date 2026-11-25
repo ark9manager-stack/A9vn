@@ -6735,18 +6735,15 @@
   },
   "char_503_rang": {
     "vn": {
-      "recuit": "",
-      "token": "",
+      "recuit": "Tinh thần tràn đầy sức sống, thật khó tin ông đã cao tuổi.\nRangers, Cán viên Xạ thủ của Rhodes Island, sẽ dùng trường cung để đánh lui các đợt tấn công của kẻ địch.",
+      "token": "Hai viên đá lửa được buộc với nhau bằng một sợi dây mảnh. Nền văn minh khởi nguồn từ những thứ nhỏ bé như thế.",
       "basic_info": "【Mật danh】Rangers\n【Giới tính】Nam\n【Kinh nghiệm chiến đấu】5 năm\n【Nơi sinh】Không công khai\n【Ngày sinh】22 tháng 7\n【Chủng tộc】Savra\n【Chiều cao】179cm\n【Tình trạng nhiễm bệnh】\nXác nhận không nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
       "physical_exam": "【Thể lực】Bình thường\n【Cơ động】Xuất sắc\n【Sức bền】Bình thường\n【Chiến thuật】Bình thường\n【Kỹ năng chiến đấu】Xuất sắc\n【Khả năng thích ứng Originium Arts】Bình thường",
-      "profile": "",
-      "clinical_analysis": "",
-      "file_1": "",
-      "file_2": "",
-      "file_3": "",
-      "file_4": "",
-      "promotion_record": "",
-      "paradox": ""
+      "profile": "Rangers là Cán viên thuộc Đội Operations A4 và đã gắn bó với Rhodes Island nhiều năm. Từng chu du nhiều nơi, nay ông ở lại Rhodes Island và làm nhiệm vụ theo sự phân công của tổ chức. Là một cung thủ lão luyện, dù tuổi đã cao, ông vẫn giữ được sự nhanh nhẹn và sức sống đặc trưng của người Savra.",
+      "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên hiển thị rõ ràng, đồng thời không ghi nhận hình ảnh bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng không có dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên không nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】0%\n干员巡林者没有被源石感染的迹象。\n\n【Mật độ tinh thể Originium trong máu】0.12u/L\n干员巡林者甚少前往矿石病高发地区。",
+      "file_1": "比起守株待兔更擅长发起突袭，先发制人，熟练运用环境来掩盖本身体色在隐蔽性上的劣势。",
+      "file_2": "毫无疑问，巡林者是个优秀的说书人，他的脑袋里，永远储藏着你从未听闻过的精彩故事，他本人似乎也期待着与他人分享这些故事，因此，当罗德岛的小干员们上完清晨的课程后，许多人便会请“巡林者爷爷”讲故事，于是，一杯热水，一个说书人，孩子们美好的休闲时光便开始了。",
+      "file_3": "与大部分萨弗拉人不同，巡林者的体色完全无法为他提供拟态和遮蔽，但相对的，巡林者要比其他萨弗拉更加自信，也更乐于与人交流。这既是诅咒，也是馈赠。好坏与否只取决于巡林者本人对此的看法。"
     }
   },
   "char_508_aguard": {
