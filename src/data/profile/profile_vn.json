@@ -6705,18 +6705,15 @@
   },
   "char_501_durin": {
     "vn": {
-      "recuit": "",
-      "token": "",
+      "recuit": "Có vẻ cô ấy đang rất buồn ngủ.\nDurin, Cán viên Thuật sư của Rhodes Island, sẽ tạo lợi thế chiến lược cho cả đội bằng Originium Arts.",
+      "token": "Một món đồ nhỏ bằng Originium được người Durin gia công mài giũa. Nắm chặt nó trong tay một lúc, bạn sẽ bỗng thấy tràn đầy năng lượng.",
       "basic_info": "【Mật danh】Durin\n【Giới tính】Nữ\n【Kinh nghiệm chiến đấu】2 năm\n【Nơi sinh】Không công khai\n【Ngày sinh】15 tháng 12\n【Chủng tộc】Durin\n【Chiều cao】131cm\n【Tình trạng nhiễm bệnh】\nXác nhận không nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
       "physical_exam": "【Thể lực】Yếu\n【Cơ động】Bình thường\n【Sức bền】Yếu\n【Chiến thuật】Bình thường\n【Kỹ năng chiến đấu】Bình thường\n【Khả năng thích ứng Originium Arts】Xuất sắc",
-      "profile": "",
-      "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên hiển thị rõ ràng, đồng thời không ghi nhận hình ảnh bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng không có dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên không nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】0%\n干员杜林没有被源石感染的迹象。\n\n【Mật độ tinh thể Originium trong máu】0.18u/L\n干员杜林经常接触经过处理的源石制品，但从未发生任何异常。",
-      "file_1": "",
-      "file_2": "",
-      "file_3": "",
-      "file_4": "",
-      "promotion_record": "",
-      "paradox": ""
+      "profile": "Durin là Cán viên thuộc Đội Operations A4 của Rhodes Island.\nCô có năng khiếu nổi trội về Arts, nhưng vì tính cách và thể chất của bản thân nên chưa thể phát huy hết khả năng.\nDurin rất ham ngủ và có thể ngủ thiếp đi bất cứ lúc nào, ở bất cứ đâu. Mặc dù thời gian ngủ mỗi ngày cao hơn nhiều so với mức trung bình của các Cán viên, nhưng cô vẫn hiếm khi sơ suất trong công việc.",
+      "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên hiển thị rõ ràng, đồng thời không ghi nhận hình ảnh bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng không có dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên không nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】0%\nCán viên Durin không có dấu hiệu nhiễm Originium.\n\n【Mật độ tinh thể Originium trong máu】0.18u/L\nCán viên Durin thường xuyên tiếp xúc với các sản phẩm Originium đã qua xử lý, nhưng chưa từng ghi nhận dấu hiệu bất thường nào ở cô.",
+      "file_1": "Chế độ làm việc: Tận dụng vóc người nhỏ bé để tấn công bất ngờ kẻ địch bằng Arts.\nChế độ thường ngày: Tìm một chỗ tương đối thoải mái để ngủ.",
+      "file_2": "Do xuất thân khác biệt, Durin có chế độ ăn uống hơi khác mọi người, nhưng điều đó không có nghĩa là cô ăn ít hơn. Tuy nhỏ bé nhưng cô lại ăn nhanh hơn người bình thường rất nhiều. Có khi các Cán viên khác mới ăn được vài miếng, thì Durin đã ăn xong và đi tìm chỗ ngủ.",
+      "paradox": "Phối hợp đúng cách\n\nĐể phối hợp tốt hơn khi làm nhiệm vụ, đôi khi Đội Operations A4 sẽ mời các Cán viên khác cùng tham gia huấn luyện, nhất là trong những buổi huấn luyện lấy Durin làm trọng tâm. Khi ấy, các thành viên lâu năm sẽ chỉ cho người mới cách bắt quả tang Durin trốn việc và cách trông chừng cô sao cho thật khéo, để cô hoàn thành phần việc của mình.\nLưu ý: Để buổi huấn luyện trở nên hiệu quả hơn, nên cân nhắc bố trí Durin ở vị trí khó trốn việc nhất."
     }
   },
   "char_502_nblade": {
@@ -6741,9 +6738,9 @@
       "physical_exam": "【Thể lực】Bình thường\n【Cơ động】Xuất sắc\n【Sức bền】Bình thường\n【Chiến thuật】Bình thường\n【Kỹ năng chiến đấu】Xuất sắc\n【Khả năng thích ứng Originium Arts】Bình thường",
       "profile": "Rangers là Cán viên thuộc Đội Operations A4 và đã gắn bó với Rhodes Island nhiều năm. Từng chu du nhiều nơi, nay ông ở lại Rhodes Island và làm nhiệm vụ theo sự phân công của tổ chức. Là một cung thủ lão luyện, dù tuổi đã cao, ông vẫn giữ được sự nhanh nhẹn và sức sống đặc trưng của người Savra.",
       "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên hiển thị rõ ràng, đồng thời không ghi nhận hình ảnh bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng không có dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên không nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】0%\nCán viên Rangers không có dấu hiệu nhiễm Originium.\n\n【Mật độ tinh thể Originium trong máu】0.12u/L\nCán viên Rangers rất hiếm khi đến các khu vực có tỷ lệ mắc Oripathy cao.",
-      "file_1": "比起守株待兔更擅长发起突袭，先发制人，熟练运用环境来掩盖本身体色在隐蔽性上的劣势。",
-      "file_2": "毫无疑问，巡林者是个优秀的说书人，他的脑袋里，永远储藏着你从未听闻过的精彩故事，他本人似乎也期待着与他人分享这些故事，因此，当罗德岛的小干员们上完清晨的课程后，许多人便会请“巡林者爷爷”讲故事，于是，一杯热水，一个说书人，孩子们美好的休闲时光便开始了。",
-      "file_3": "与大部分萨弗拉人不同，巡林者的体色完全无法为他提供拟态和遮蔽，但相对的，巡林者要比其他萨弗拉更加自信，也更乐于与人交流。这既是诅咒，也是馈赠。好坏与否只取决于巡林者本人对此的看法。"
+      "file_1": "Rangers chính là một tay đột kích cừ khôi, luôn ra tay trước để giành lợi thế thay vì nằm chờ con mồi. Màu da khiến ông khó ẩn mình, nhưng ông biết khéo léo tận dụng môi trường xung quanh để khắc phục nhược điểm ấy.",
+      "file_2": "Rangers quả thật là một người kể chuyện tài tình. Ông lúc nào cũng có những câu chuyện hấp dẫn mà người nghe chưa từng biết đến, và cũng rất thích chia sẻ chúng. Thế nên, cứ tan lớp buổi sáng, nhiều Cán viên nhỏ tuổi ở Rhodes Island lại tìm đến “ông Rangers” để lắng nghe nhiều câu chuyện hơn. Một cốc nước nóng, một người kể chuyện, vậy là giờ nghỉ vui vẻ của bọn trẻ bắt đầu.",
+      "file_3": "Khác với phần lớn người Savra, Rangers không thể dựa vào màu da của bản thân để hòa vào môi trường và ẩn mình. Nhưng đổi lại, ông tự tin và thích giao tiếp hơn những người Savra khác. Điều ấy vừa là lời nguyền, vừa là món quà. Tốt hay xấu còn phụ thuộc vào cách chính ông nhìn nhận mà thôi."
     }
   },
   "char_508_aguard": {
@@ -7426,7 +7423,7 @@
       "trans": "",
       "recuit": "",
       "token": "",
-      "basic_info": "【Mật danh】Herdbells\n【Giới tính】Nữ\n【驮兽接触经验】八年\n【Nơi sinh】Minos\n【Ngày sinh】未知\n【Chủng tộc】Perro\n【Chiều cao】153cm\n【Tình trạng nhiễm bệnh】\nXác nhận nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
+      "basic_info": "【Mật danh】Herdbells\n【Giới tính】Nữ\n【驮兽接触经验】八年\n【Nơi sinh】Minos\n【Ngày sinh】Không rõ\n【Chủng tộc】Perro\n【Chiều cao】153cm\n【Tình trạng nhiễm bệnh】\nXác nhận nhiễm bệnh theo các báo cáo xét nghiệm y tế.",
       "physical_exam": "【Thể lực】Tiêu chuẩn\n【Cơ động】Xuất sắc\n【Sức bền】Vượt trội\n【Chiến thuật】Yếu\n【Kỹ năng chiến đấu】Yếu\n【Khả năng thích ứng Originium Arts】Yếu\n\n注：\n干员行铃与她的驮兽表现出了字面意义上的“密不可分”。她强烈希望我们能将她与驮兽共同视作一位干员，并允许他们一起接受测试。\n由于每位干员的档案里只可容纳一份测试结果，我们将行铃本人与驮兽的结果取平均值记录。",
       "profile": "",
       "clinical_analysis": "Kết quả chẩn đoán hình ảnh cho thấy đường nét các cơ quan nội tạng của Cán viên không hiển thị rõ ràng, đồng thời ghi nhận hình ảnh bất thường. Xét nghiệm hạt Originium trong hệ tuần hoàn cũng cho thấy dấu hiệu nhiễm Oripathy. Căn cứ vào các kết quả trên, có thể xác nhận Cán viên đã nhiễm Oripathy.\n\n【Tỷ lệ dung hợp tế bào cơ thể với Originium】4%\n干员行铃没有常规意义上的体表结晶，但其体表部分毛发表现出结晶化倾向。\n\n【Mật độ tinh thể Originium trong máu】0.20u/L\n幼年时的急性感染经历使病灶扩散到了体内多处重要器官。虽然病情已趋向稳定，但过度刺激很可能在短时间内导致致命的恶化。\n“战场上摸爬滚打长大的孩子，你指望是什么结果呢。”\n\n另：驮兽的临床诊断分析见档案附件。\n“退役下来的军用驮兽，你又指望是什么结果呢。”",

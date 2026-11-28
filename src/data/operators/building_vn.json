@@ -2465,11 +2465,11 @@
   },
   "dorm_rec_all&oneself[000]": {
     "Name": "Lười biếng",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, tốc độ hồi phục Tinh thần của bản thân <@cc.vdown>-0.1</> mỗi giờ, còn tốc độ hồi phục Tinh thần của tất cả Operator trong Dormitory này tăng thêm <@cc.vup>+0.2</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[001]": {
     "Name": "Mê ngủ",
-    "description": "Khi Operator này được phân công vào Dormitory, Tinh thần của bản thân hồi phục <@cc.vdown>-0.1</> mỗi giờ, còn Tinh thần của tất cả Operator trong Dormitory này hồi phục thêm <@cc.vup>+0.25</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
+    "description": "Khi Operator này được phân công vào Dormitory, tốc độ hồi phục Tinh thần của bản thân <@cc.vdown>-0.1</> mỗi giờ, còn tốc độ hồi phục Tinh thần của tất cả Operator trong Dormitory này tăng thêm <@cc.vup>+0.25</> mỗi giờ (nếu các Operator được phân công có cùng hiệu ứng kỹ năng, chỉ áp dụng hiệu ứng mạnh nhất)."
   },
   "dorm_rec_all&oneself[010]": {
     "Name": "Thoát khỏi vướng bận",
